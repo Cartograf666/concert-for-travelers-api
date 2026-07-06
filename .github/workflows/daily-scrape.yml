@@ -37,7 +37,22 @@ jobs:
         run: npm run build
 
       - name: Run Scraper
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: npm run scrape
+
+      - name: Commit and Push Enriched Artist Metadata
+        run: |
+          if git diff --quiet data/approved_artists.json; then
+            echo "No new artist metadata enriched."
+          else
+            git config --local user.email "github-actions[bot]@users.noreply.github.com"
+            git config --local user.name "github-actions[bot]"
+            git add data/approved_artists.json
+            git commit -m "auto: enrich artist websites and socials [skip ci]"
+            git push
+            echo "Successfully committed and pushed enriched artist metadata."
+          fi
 
       - name: Upload fail log report
         uses: actions/upload-artifact@v4

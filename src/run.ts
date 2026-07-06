@@ -2,6 +2,7 @@ import * as fs from 'fs/promises';
 import * as path from 'path';
 import { loadConfigs, runAllScrapers, ScraperResult } from './engine/runner.js';
 import { processConcerts } from './pipeline/process.js';
+import { enrichMissingArtistMetadata } from './pipeline/enrich.js';
 import { publishConcerts } from './generator/publish.js';
 
 async function main() {
@@ -34,11 +35,25 @@ async function main() {
     const allScrapedConcerts = results.flatMap((r) => r.concerts);
     console.log(`[Orchestrator] Gathered ${allScrapedConcerts.length} raw events before processing.`);
 
-    // 5. Normalize and deduplicate
-    const normalizedConcerts = await processConcerts(allScrapedConcerts, approvedArtistsPath);
-    console.log(`[Orchestrator] Cleaned and normalized into ${normalizedConcerts.length} valid events.`);
+    // 5. First-pass normalization and deduplication
+    let normalizedConcerts = await processConcerts(allScrapedConcerts, approvedArtistsPath);
+    console.log(`[Orchestrator] First pass: parsed ${normalizedConcerts.length} valid events.`);
 
-    // 6. Write static API files to dist/
+    // 6. JIT Metadata Enrichment (if API Key is present)
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (apiKey) {
+      const touringArtists = Array.from(new Set(normalizedConcerts.map((c) => c.artist)));
+      console.log(`[Orchestrator] Running JIT metadata enrichment for ${touringArtists.length} active artists...`);
+      await enrichMissingArtistMetadata(touringArtists, approvedArtistsPath, apiKey);
+      
+      // Re-run normalization to pick up updated website and social links from disk
+      normalizedConcerts = await processConcerts(allScrapedConcerts, approvedArtistsPath);
+      console.log(`[Orchestrator] Second pass (post-enrichment): loaded updated metadata.`);
+    } else {
+      console.log('[Orchestrator] GEMINI_API_KEY not found. Skipping JIT metadata enrichment.');
+    }
+
+    // 7. Write static API files to dist/
     await publishConcerts(normalizedConcerts, distDir);
 
     // 7. Process failures & save to reports/fail-log.json for self-healing

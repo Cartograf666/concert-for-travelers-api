@@ -58,7 +58,9 @@ export function matchApprovedArtist(scrapedName: string, approvedArtists: any[])
     // Matches as whole words, e.g. "The Cure" matches "The Cure in Berlin" but not "The Cured"
     const regex = new RegExp(`\\b${escaped}\\b`, 'i');
     if (regex.test(cleaned)) {
-      return typeof approved === 'string' ? { name: approved } : { name: approved.name, website: approved.website };
+      return typeof approved === 'string' 
+        ? { name: approved } 
+        : { name: approved.name, website: approved.website, socials: approved.socials };
     }
   }
 
@@ -223,6 +225,14 @@ export async function processConcerts(
     const concertData: Concert = {
       artist: matched.name,
       artistWebsite: matched.website || undefined,
+      artistSocials: matched.socials ? {
+        spotify: matched.socials.spotify || undefined,
+        instagram: matched.socials.instagram || undefined,
+        facebook: matched.socials.facebook || undefined,
+        youtube: matched.socials.youtube || undefined,
+        telegram: matched.socials.telegram || undefined,
+        vk: matched.socials.vk || undefined
+      } : undefined,
       date: normalizedDate,
       venue: raw.venue.trim(),
       city: raw.city.trim(),
