@@ -39,7 +39,7 @@ export function cleanArtistName(name: string): string {
 /**
  * Match a scraped artist name against the approved list, filter out tribute/cover bands
  */
-export function matchApprovedArtist(scrapedName: string, approvedArtists: any[]): { name: string; website?: string } | null {
+export function matchApprovedArtist(scrapedName: string, approvedArtists: any[]): { name: string; website?: string | null; socials?: any } | null {
   const cleaned = cleanArtistName(scrapedName);
   
   // If it's a cover band or tribute night, filter it out

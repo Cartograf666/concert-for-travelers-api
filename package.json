@@ -7,6 +7,7 @@
     "build": "tsc",
     "scrape": "tsx src/run.ts",
     "heal": "tsx src/heal.ts",
+    "clean-artists": "tsx src/scripts/clean_artists.ts",
     "test": "node --import tsx --test tests/**/*.test.ts"
   },
   "keywords": [

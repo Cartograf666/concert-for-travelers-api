@@ -1,13 +1,20 @@
-# Community-Driven Self-Healing Concert Scraper Network
+# Resilient Self-Healing Concert Scraper & Metadata Enrichment Network
 
-A serverless, zero-maintenance concert scraping network built with Node.js, TypeScript, Cheerio, and Zod. It aggregates concert data across venues, normalizes artist names and dates, and exposes the aggregated data as a free, highly-performant Static JSON API. It features self-healing capabilities powered by the Gemini API to fix broken scrapers automatically when website layouts change.
+A serverless, zero-maintenance concert scraping and metadata enrichment network built with **Node.js**, **TypeScript**, **Cheerio**, and **Zod**. It aggregates concert data across multiple venues, normalizes artist names and dates, performs JIT (Just-In-Time) social links extraction, and exposes the aggregated data as a free, highly-performant **Static JSON API**. 
+
+Features an automated **Self-Healing Selector Repair** and a robust **Cascading Model Failover Cascade** powered by the Gemini API to keep scrapers functioning even when target websites change their layouts.
+
+---
 
 ## 🚀 Key Features
 
-1. **Zero-Ops Infrastructure**: Fully runs inside GitHub Actions and deploys to GitHub Pages as static JSON. No traditional databases needed.
-2. **Community-Driven**: New venues/scrapers and artists can be added by simply making a Pull Request modifying `scrapers/` or `data/approved_artists.json`.
-3. **Self-Healing**: If a scraper's CSS selector fails, a post-scrape job calls the Gemini API (`gemini-2.5-flash`) to analyze the new HTML layout, corrects the selectors, tests them locally, and automatically pushes the fix back to the `main` branch.
-4. **Strict Schema Validation**: Uses Zod to validate configs and outputs before publishing, preventing corrupted data from entering the static endpoints.
+1. **Zero-Ops Serverless Architecture**: Runs entirely inside GitHub Actions workflows and deploys statically to GitHub Pages. Requires no traditional databases or running servers.
+2. **JIT Artist Metadata & Socials Enrichment**: Automatically detects newly scraped touring artists with missing info and queries Gemini in batches to lookup their official website and social platforms (Spotify, Instagram, Facebook, YouTube, Telegram, and VK).
+3. **Resilient Cascading Failover Cascade**: To bypass API rate limits on free-tier keys, both enrichment and self-healing systems implement a fallback model list:
+   `gemini-3.5-flash` ➡️ `gemini-3.1-flash` ➡️ `gemini-2.5-flash` ➡️ `gemini-2.5-flash-lite` ➡️ `gemini-1.5-flash` ➡️ `gemini-1.5-pro`
+4. **Wikipedia Artist Whitelist Database**: Employs a pre-downloaded, sanitized catalog of over **62,000+** artists to whitelist verified touring acts and automatically filters out local cover/tribute bands.
+5. **Self-Healing CSS Selectors**: If a scraper's CSS selector stops returning concerts, an automated flow queries Gemini to analyze the new HTML sample, repairs the selectors, validates them locally, and commits the fix back to the repository.
+6. **Strict Schema Verification**: Uses Zod schemas to validate scraper configurations and outputs before publishing, preventing malformed data from reaching the static endpoints.
 
 ---
 
@@ -15,28 +22,34 @@ A serverless, zero-maintenance concert scraping network built with Node.js, Type
 
 ```
 ├── .github/workflows/
-│   ├── daily-scrape.yml        # Cron job running every day at 03:00 UTC
-│   ├── self-heal.yml           # Runs after daily-scrape to fix broken selectors
-│   └── pr-test.yml             # Validates scrapers and code changes on PRs
-├── scrapers/                   # JSON config files for each scraped venue/club
+│   ├── daily-scrape.yml        # Daily cron job that scrapes, enriches, and publishes
+│   ├── self-heal.yml           # Auto-heals selectors if scraping failures are logged
+│   └── pr-test.yml             # Validates PR code changes and compiler checks
+├── scrapers/                   # JSON config files for each venue scraper
 ├── data/
-│   └── approved_artists.json   # Approved artist master list for normalization
+│   └── approved_artists.json   # Approved artist master list for normalization & socials
 ├── src/
 │   ├── schemas/
-│   │   ├── concert.ts          # Concert Zod schema
+│   │   ├── concert.ts          # Concert Zod schema (with socials and web validation)
 │   │   └── config.ts           # Scraper configuration Zod schema
 │   ├── engine/
 │   │   └── runner.ts           # Axios and Cheerio scraper core execution
 │   ├── pipeline/
-│   │   └── process.ts          # Normalization, relative-date parsing, deduplication
+│   │   ├── process.ts          # Normalization, relative-date parsing, deduplication
+│   │   └── enrich.ts           # JIT metadata lookup using Gemini API with failover
 │   ├── generator/
-│   │   └── publish.ts          # Generates and splits JSON files into /dist
+│   │   └── publish.ts          # Generates and splits JSON endpoints into /dist
 │   ├── healing/
-│   │   └── repair.ts           # Self-healing logic using @google/generative-ai
-│   ├── run.ts                  # Entry CLI orchestrator for scraping
-│   └── heal.ts                 # Entry CLI orchestrator for self-healing
-├── tests/                      # Automated test suite
-└── package.json
+│   │   └── repair.ts           # Self-healing logic with model failover cascade
+│   ├── scripts/
+│   │   ├── download_artists.ts # Seed database downloader from Wikipedia
+│   │   └── clean_artists.ts    # Cleans Approved Artists from typographic noise/duplicates
+│   ├── run.ts                  # Main entry point orchestrator for scraping
+│   └── heal.ts                 # Main entry point orchestrator for self-healing
+├── tests/                      # Automated test suite (node --test)
+├── tsconfig.json               # TypeScript compiler config
+├── package.json
+└── README.md
 ```
 
 ---
@@ -45,7 +58,7 @@ A serverless, zero-maintenance concert scraping network built with Node.js, Type
 
 ### Prerequisites
 - Node.js v20+
-- A Gemini API Key (for self-healing)
+- A Gemini API Key (optional, needed for JIT enrichment & self-healing)
 
 ### Installation
 ```bash
@@ -57,21 +70,30 @@ npm install
 npm run build
 ```
 
-### Run Scraper
-This executes all scrapers in the `scrapers/` folder, processes results, outputs static endpoints to `dist/`, and writes failures to `reports/fail-log.json`.
+### Run Scraper & Aggregator
+This will run all scrapers in `scrapers/`, run JIT social/website enrichment on Gemini, write results to `/dist`, and log failure reports to `reports/fail-log.json`.
 ```bash
+# Optional: Set Gemini key for enrichment
+export GEMINI_API_KEY="your-gemini-key"
+
 npm run scrape
 ```
 
 ### Run Self-Healing Locally
 If you have a `reports/fail-log.json` file and a Gemini API Key, you can execute the healer locally:
 ```bash
-export GEMINI_API_KEY="your-gemini-api-key"
+export GEMINI_API_KEY="your-gemini-key"
 npm run heal
 ```
 
-### Run Tests
-Runs the test suite verifying parser extraction, date parsing, deduplication, and mock LLM repairs using Node.js's native test runner.
+### Clean Artist Database
+Cleans the raw approved artists list from typographic noise, case-insensitive duplicates, and invalid Wikipedia HTML tags.
+```bash
+npm run clean-artists
+```
+
+### Run Unit Tests
+Runs the test suite verifying HTML selector parsing, date normalization, deduplication, and mock LLM repairs:
 ```bash
 npm run test
 ```
@@ -80,19 +102,19 @@ npm run test
 
 ## 📂 Static API Outputs (`dist/`)
 
-The following files are published under the `dist/` directory (serving as a high-speed CDN API):
+When deployed, the project acts as a high-speed CDN API exposing the following JSON endpoints:
 
 - **`index.json`**: Metadata index containing run metrics, statistics, unique artist list, and unique city list.
-- **`concerts.json`**: The complete, unfiltered master array of all concerts.
-- **`artists/{artist-slug}.json`**: Filtered concerts for a specific artist (e.g. `artists/the-cure.json`).
+- **`concerts.json`**: The complete, unfiltered master array of all upcoming concerts.
+- **`artists/{artist-slug}.json`**: Filtered concerts for a specific artist (e.g. `artists/the-cure.json`), including their website and socials metadata.
 - **`cities/{city-slug}.json`**: Filtered concerts for a specific city (e.g. `cities/berlin.json`).
 
 ---
 
-## 🧬 Self-Healing Flow Detail
+## 🧬 JIT Enrichment & Self-Healing Flow Detail
 
-1. **Daily Scrape**: A cron job runs. If a scraper config returns `0` concerts or crashes, it is logged to `reports/fail-log.json` alongside a captured HTML sample of the page.
-2. **Failure Detected**: The self-healing workflow is triggered if `reports/fail-log.json` is not empty.
-3. **LLM Selector Repair**: The healer calls the Gemini API (`gemini-2.5-flash`), providing it with the broken configuration and the updated HTML sample.
-4. **Validation Test**: The new selectors returned by Gemini are tested locally on the cached HTML sample.
-5. **Auto-Commit**: If the test successfully extracts concerts, the JSON config file under `scrapers/` is overwritten, and the action automatically commits and pushes the fix back to the repository.
+1. **Daily Scrape**: A cron job runs. If a scraper fails or returns `0` concerts, the HTML sample and error are logged to `reports/fail-log.json`.
+2. **Metadata Enrichment**: The scraper checks all incoming concert artist names against the approved list. If an artist has no website or socials, the script groups them into batches and queries the highest-priority model in the cascade to extract official Spotify, Instagram, Facebook, YouTube, Telegram, VK, and website URLs.
+3. **Failure Mitigation**: If the main model limits are hit, the model failover cascade seamlessly tries alternative models (`gemini-3.5-flash` ➡️ `gemini-3.1-flash` ➡️ `gemini-2.5-flash` ➡️ `gemini-2.5-flash-lite` ➡️ `gemini-1.5-flash` ➡️ `gemini-1.5-pro`).
+4. **LLM Selector Repair**: If failures occurred, the healing workflow calls Gemini to analyze the broken selectors and the cached HTML.
+5. **Self-Correction**: Once Gemini returns new CSS selectors, they are tested locally on the cached HTML. If they successfully parse the page, the venue's config under `scrapers/` is updated, committed, and pushed back to the `main` branch.
