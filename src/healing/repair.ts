@@ -107,7 +107,7 @@ export async function repairScraperConfig(
 
     // 2. Query Gemini API with failover model cascade
     const genAI = new GoogleGenerativeAI(apiKey);
-    const models = ['gemini-2.5-flash', 'gemini-1.5-flash', 'gemini-2.0-flash-lite', 'gemini-1.5-pro'];
+    const models = ['gemini-2.5-flash', 'gemini-2.5-flash-lite', 'gemini-1.5-flash', 'gemini-1.5-pro'];
     let result: any = null;
     let lastError: any = null;
 

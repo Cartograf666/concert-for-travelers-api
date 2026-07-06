@@ -103,7 +103,7 @@ Provide ONLY the raw JSON array. Do not include markdown code block backticks (\
     try {
       let result: any = null;
       let lastError: any = null;
-      const models = ['gemini-2.5-flash', 'gemini-1.5-flash', 'gemini-2.0-flash-lite', 'gemini-1.5-pro'];
+      const models = ['gemini-2.5-flash', 'gemini-2.5-flash-lite', 'gemini-1.5-flash', 'gemini-1.5-pro'];
 
       for (const modelName of models) {
         try {
