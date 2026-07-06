@@ -107,7 +107,8 @@ test('Healing - repairScraperConfig end-to-end with mocked Gemini API', async ()
   const originalGetGenerativeModel = GoogleGenerativeAI.prototype.getGenerativeModel;
 
   GoogleGenerativeAI.prototype.getGenerativeModel = function (options: any) {
-    assert.strictEqual(options.model, 'gemini-2.5-flash');
+    const cascadeModels = ['gemini-3.5-flash', 'gemini-3.1-flash', 'gemini-2.5-flash', 'gemini-2.5-flash-lite', 'gemini-1.5-flash', 'gemini-1.5-pro'];
+    assert.ok(cascadeModels.includes(options.model), `Model ${options.model} should be in the cascade`);
     return {
       generateContent: async (prompt: string) => {
         assert.ok(prompt.includes('broken-scraper'));
