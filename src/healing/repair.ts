@@ -105,10 +105,11 @@ export async function repairScraperConfig(
 
     console.log(`[Repair] Initiating LLM self-healing for: ${brokenConfig.id}`);
 
-    // 2. Query Gemini API
+    // 2. Query Gemini API with failover model cascade
     const genAI = new GoogleGenerativeAI(apiKey);
-    // Use gemini-2.5-flash as the fast and reliable developer model
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+    const models = ['gemini-2.5-flash', 'gemini-1.5-flash', 'gemini-2.0-flash-lite', 'gemini-1.5-pro'];
+    let result: any = null;
+    let lastError: any = null;
 
     const prompt = `You are a professional self-healing web scraper AI assistant.
 We have a concert scraper configuration that has stopped working because the website's HTML layout has changed.
@@ -136,7 +137,23 @@ The output must be a JSON object containing the "selectors" block matching the S
 
 Respond with ONLY the JSON object. Do not include markdown code block syntax (like \`\`\`json), explanations, or notes. Ensure the selectors are valid CSS selectors compatible with Cheerio.`;
 
-    const result = await model.generateContent(prompt);
+    for (const modelName of models) {
+      try {
+        console.log(`[Repair] Attempting generation with model: ${modelName}`);
+        const model = genAI.getGenerativeModel({ model: modelName });
+        result = await model.generateContent(prompt);
+        console.log(`[Repair] Model ${modelName} succeeded.`);
+        break; // Success! Break out of loop
+      } catch (err: any) {
+        console.warn(`[Repair] Warning: Failed with model ${modelName} - ${err.message}`);
+        lastError = err;
+      }
+    }
+
+    if (!result) {
+      throw new Error(`All Gemini models failed. Last error: ${lastError?.message}`);
+    }
+
     const responseText = result.response.text();
 
     console.log(`[Repair] LLM response received. Parsing...`);

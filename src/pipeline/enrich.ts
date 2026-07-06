@@ -73,7 +73,6 @@ export async function enrichMissingArtistMetadata(
   // Batch artists to avoid overloading (e.g. 15 per batch)
   const batchSize = 15;
   const genAI = new GoogleGenerativeAI(apiKey);
-  const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 
   for (let i = 0; i < missingArtists.length; i += batchSize) {
     const batch = missingArtists.slice(i, i + batchSize);
@@ -102,7 +101,27 @@ Your output must be a valid JSON array of objects conforming to this shape:
 Provide ONLY the raw JSON array. Do not include markdown code block backticks (\`\`\`json) or any explanations. If a URL is missing or cannot be found, set it to null.`;
 
     try {
-      const result = await model.generateContent(prompt);
+      let result: any = null;
+      let lastError: any = null;
+      const models = ['gemini-2.5-flash', 'gemini-1.5-flash', 'gemini-2.0-flash-lite', 'gemini-1.5-pro'];
+
+      for (const modelName of models) {
+        try {
+          console.log(`[Enricher] Attempting generation with model: ${modelName}`);
+          const model = genAI.getGenerativeModel({ model: modelName });
+          result = await model.generateContent(prompt);
+          console.log(`[Enricher] Model ${modelName} succeeded.`);
+          break; // Success! Break out of model loop
+        } catch (err: any) {
+          console.warn(`[Enricher] Warning: Failed with model ${modelName} - ${err.message}`);
+          lastError = err;
+        }
+      }
+
+      if (!result) {
+        throw new Error(`All Gemini models failed for batch enrichment. Last error: ${lastError?.message}`);
+      }
+
       const responseText = result.response.text();
       const enrichedEntries = cleanAndParseArtistBatch(responseText);
 
