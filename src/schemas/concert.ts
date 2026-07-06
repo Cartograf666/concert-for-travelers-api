@@ -2,6 +2,7 @@ import { z } from 'zod';
 
 export const ConcertSchema = z.object({
   artist: z.string().min(1).describe("Normalized artist or band name"),
+  artistWebsite: z.string().url().or(z.literal("")).optional().describe("Official website of the artist"),
   date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).describe("ISO Date: YYYY-MM-DD"),
   venue: z.string().min(1).describe("Name of the venue/club"),
   city: z.string().min(1).describe("City name"),

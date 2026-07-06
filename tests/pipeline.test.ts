@@ -24,12 +24,12 @@ test('Pipeline - match approved artists and detect cover bands', () => {
   const approved = ['The Cure', 'Rammstein', 'Metallica', 'Daft Punk'];
 
   // Case-insensitive exact matches
-  assert.strictEqual(matchApprovedArtist('the cure', approved), 'The Cure');
-  assert.strictEqual(matchApprovedArtist('RAMMSTEIN', approved), 'Rammstein');
+  assert.deepStrictEqual(matchApprovedArtist('the cure', approved), { name: 'The Cure' });
+  assert.deepStrictEqual(matchApprovedArtist('RAMMSTEIN', approved), { name: 'Rammstein' });
 
   // Substring matches inside cleaned strings
-  assert.strictEqual(matchApprovedArtist('The Cure - SOLD OUT', approved), 'The Cure');
-  assert.strictEqual(matchApprovedArtist('Metallica - Special Guest', approved), 'Metallica');
+  assert.deepStrictEqual(matchApprovedArtist('The Cure - SOLD OUT', approved), { name: 'The Cure' });
+  assert.deepStrictEqual(matchApprovedArtist('Metallica - Special Guest', approved), { name: 'Metallica' });
 
   // Cover bands / Tribute checks (must return null)
   assert.strictEqual(matchApprovedArtist('The Cure Tribute Band', approved), null);
@@ -125,6 +125,7 @@ test('Pipeline - full concert processing & deduplication', async () => {
   assert.strictEqual(processed.length, 1);
   const result = processed[0];
   assert.strictEqual(result.artist, 'The Cure'); // Canonical name
+  assert.strictEqual(result.artistWebsite, 'https://www.thecure.com'); // Website populated
   assert.strictEqual(result.date, '2026-10-12'); // Normalized date
   assert.strictEqual(result.city, 'Berlin');
   assert.strictEqual(result.country, 'DE'); // Uppercased

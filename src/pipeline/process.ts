@@ -39,7 +39,7 @@ export function cleanArtistName(name: string): string {
 /**
  * Match a scraped artist name against the approved list, filter out tribute/cover bands
  */
-export function matchApprovedArtist(scrapedName: string, approvedArtists: string[]): string | null {
+export function matchApprovedArtist(scrapedName: string, approvedArtists: any[]): { name: string; website?: string } | null {
   const cleaned = cleanArtistName(scrapedName);
   
   // If it's a cover band or tribute night, filter it out
@@ -53,11 +53,12 @@ export function matchApprovedArtist(scrapedName: string, approvedArtists: string
   }
 
   for (const approved of approvedArtists) {
-    const escaped = escapeRegExp(approved);
+    const approvedName = typeof approved === 'string' ? approved : approved.name;
+    const escaped = escapeRegExp(approvedName);
     // Matches as whole words, e.g. "The Cure" matches "The Cure in Berlin" but not "The Cured"
     const regex = new RegExp(`\\b${escaped}\\b`, 'i');
     if (regex.test(cleaned)) {
-      return approved; // Return canonical name
+      return typeof approved === 'string' ? { name: approved } : { name: approved.name, website: approved.website };
     }
   }
 
@@ -188,7 +189,7 @@ export async function processConcerts(
   approvedArtistsPath: string,
   baseDateStr: string = new Date().toISOString()
 ): Promise<Concert[]> {
-  let approvedArtists: string[] = [];
+  let approvedArtists: any[] = [];
   try {
     const data = await fs.readFile(approvedArtistsPath, 'utf-8');
     approvedArtists = JSON.parse(data);
@@ -205,8 +206,8 @@ export async function processConcerts(
     }
 
     // 1. Artist Normalization & Filter
-    const matchedArtist = matchApprovedArtist(raw.artist, approvedArtists);
-    if (!matchedArtist) {
+    const matched = matchApprovedArtist(raw.artist, approvedArtists);
+    if (!matched) {
       // Filter out if not approved or represents a tribute band
       continue;
     }
@@ -220,7 +221,8 @@ export async function processConcerts(
 
     // Prepare full concert model
     const concertData: Concert = {
-      artist: matchedArtist,
+      artist: matched.name,
+      artistWebsite: matched.website || undefined,
       date: normalizedDate,
       venue: raw.venue.trim(),
       city: raw.city.trim(),
