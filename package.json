@@ -1,0 +1,32 @@
+{
+  "name": "concert-for-travelers-api",
+  "version": "1.0.0",
+  "description": "Community-Driven Self-Healing Concert Scraper Network",
+  "main": "dist/run.js",
+  "scripts": {
+    "build": "tsc",
+    "scrape": "tsx src/run.ts",
+    "heal": "tsx src/heal.ts",
+    "test": "node --import tsx --test tests/**/*.test.ts"
+  },
+  "keywords": [
+    "concert",
+    "scraper",
+    "self-healing",
+    "gemini",
+    "static-api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "axios": "^1.7.9",
+    "cheerio": "^1.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.3.3"
+  }
+}

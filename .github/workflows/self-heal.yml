@@ -1,0 +1,73 @@
+name: Self-Healing Pipeline
+
+on:
+  workflow_run:
+    workflows: ["Daily Concert Scrape"]
+    types:
+      - completed
+
+permissions:
+  contents: write
+
+jobs:
+  heal:
+    runs-on: ubuntu-latest
+    # Run only if the triggering workflow succeeded or completed, and we have failures to check
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download fail log from triggering run
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p reports
+          # Use GitHub CLI to download the artifact from the triggering run
+          gh run download ${{ github.event.workflow_run.id }} --name scraper-reports --dir reports || echo "No reports artifact found"
+
+      - name: Check if there are failures
+        id: check-failures
+        run: |
+          if [ -f reports/fail-log.json ] && [ "$(jq '. | length' reports/fail-log.json)" -gt 0 ]; then
+            echo "has_failures=true" >> $GITHUB_OUTPUT
+            echo "Found failed scrapers. Proceeding with self-healing."
+          else
+            echo "has_failures=false" >> $GITHUB_OUTPUT
+            echo "No failed scrapers found. Nothing to heal."
+          fi
+
+      - name: Setup Node.js
+        if: steps.check-failures.outputs.has_failures == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        if: steps.check-failures.outputs.has_failures == 'true'
+        run: npm ci
+
+      - name: Run Healer Script
+        if: steps.check-failures.outputs.has_failures == 'true'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: npm run heal
+
+      - name: Verify Fixed Configs
+        if: steps.check-failures.outputs.has_failures == 'true'
+        run: npm run test
+
+      - name: Commit and Push Repaired Scrapers
+        if: steps.check-failures.outputs.has_failures == 'true'
+        run: |
+          if [ -f reports/repair-summary.json ]; then
+            git config --local user.email "github-actions[bot]@users.noreply.github.com"
+            git config --local user.name "github-actions[bot]"
+            
+            git add scrapers/
+            git commit -m "auto: self-healed broken scrapers [skip ci]"
+            git push
+            echo "Successfully committed and pushed healed scraper configuration files."
+          else
+            echo "No scraper configs were successfully repaired."
+          fi

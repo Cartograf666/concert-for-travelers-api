@@ -1,0 +1,15 @@
+{
+  "id": "club-arena-berlin",
+  "domain": "club-arena-berlin.de",
+  "url": "http://localhost:9999/club-arena-berlin",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-card",
+    "artist": ".artist-name",
+    "date": ".event-date",
+    "ticketUrl": ".ticket-link",
+    "venueNameFallback": "Club Arena",
+    "cityNameFallback": "Berlin",
+    "countryNameFallback": "DE"
+  }
+}
