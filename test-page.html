@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mock Club Arena Schedule</title>
+</head>
+<body>
+    <div class="schedule">
+        <!-- Этот концерт должен успешно распарситься (The Cure) -->
+        <div class="event-card">
+            <h2 class="artist-name">The Cure - SOLD OUT</h2>
+            <span class="event-date">12. Okt 2026</span>
+            <a class="ticket-link" href="https://example.com/tickets/cure">Buy Tickets</a>
+        </div>
+        <!-- Этот концерт тоже должен распарситься (Rammstein) -->
+        <div class="event-card">
+            <h2 class="artist-name">Rammstein - Live in Berlin</h2>
+            <span class="event-date">2026-10-15</span>
+            <a class="ticket-link" href="https://example.com/tickets/rammstein">Tickets</a>
+        </div>
+        <!-- Этот концерт отфильтруется пайплайном, так как это кавер-группа -->
+        <div class="event-card">
+            <h2 class="artist-name">The Cure Cover Band</h2>
+            <span class="event-date">2026-10-20</span>
+            <a class="ticket-link" href="https://example.com/tickets/cover">Tickets</a>
+        </div>
+        <!-- Этот концерт отфильтруется пайплайном, так как артиста нет в белом списке approved_artists.json -->
+        <div class="event-card">
+            <h2 class="artist-name">Random Local Singer</h2>
+            <span class="event-date">2026-10-22</span>
+            <a class="ticket-link" href="https://example.com/tickets/random">Tickets</a>
+        </div>
+    </div>
+</body>
+</html>
