@@ -1,0 +1,15 @@
+{
+  "id": "tolhuistuin-amsterdam",
+  "domain": "tolhuistuin.nl",
+  "url": "https://tolhuistuin.nl/en/agenda/",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": "agenda-filter-component",
+    "date": "",
+    "venueNameFallback": "Tolhuistuin",
+    "cityNameFallback": "Amsterdam",
+    "countryNameFallback": "NL",
+    "lat": 52.383748,
+    "lng": 4.903823
+  }
+}
