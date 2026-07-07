@@ -1,0 +1,16 @@
+{
+  "id": "tatuza-jazz-club-tbilisi",
+  "domain": "telegraphhotel.com",
+  "url": "https://telegraphhotel.com/restaurants-bars/tatuza-jazz-club/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.featured-carousel:has(h2:contains('Upcoming Performances')) li.splide__slide[data-equaliser-item] .featured-carousel__item",
+    "artist": ".featured-carousel__item-content h2",
+    "date": ".featured-carousel__item-price",
+    "datePattern": "d[-d] MMMM",
+    "ticketUrl": ".featured-carousel__item-content a.button--fill-dark, .links__link a.button--fill-dark",
+    "venueNameFallback": "Tatuza Jazz Club",
+    "cityNameFallback": "Tbilisi",
+    "countryNameFallback": "GE"
+  }
+}

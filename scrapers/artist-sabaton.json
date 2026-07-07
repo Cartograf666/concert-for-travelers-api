@@ -1,0 +1,18 @@
+{
+  "id": "artist-sabaton",
+  "domain": "www.sabaton.net",
+  "url": "https://www.sabaton.net/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.tour-wrapper table tr:has(span.tour-date)",
+    "artistNameFallback": "Sabaton",
+    "date": "span.tour-date",
+    "ticketUrl": "span.tour-tickets a.btn-primary",
+    "venue": "span.tour-venue",
+    "city": "span.tour-city",
+    "country": "span.tour-country-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "SE"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "bitterzoet-amsterdam",
+  "domain": "bitterzoet.com",
+  "url": "https://www.bitterzoet.com/agenda/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.agenda-page__agenda-item",
+    "artist": ".agenda-item__title .title-component",
+    "date": ".agenda-item__date-time-price:not(.agenda-item__date-time-price--phone)",
+    "datePattern": "EEEE d MMMM yyyy / HH:mm",
+    "ticketUrl": ".agenda-item__buy-tickets:not(.agenda-item__buy-tickets--phone) a",
+    "venueNameFallback": "Bitterzoet",
+    "cityNameFallback": "Amsterdam",
+    "countryNameFallback": "NL"
+  }
+}

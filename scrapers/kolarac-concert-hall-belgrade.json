@@ -1,0 +1,16 @@
+{
+  "id": "kolarac-concert-hall-belgrade",
+  "domain": "kolarac.rs",
+  "url": "https://www.kolarac.rs/concerts-monthly-program/?lang=en",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": "article.post",
+    "artist": "h3.entry-title a (title attr, split before date substring)",
+    "date": "h3.entry-title a (title attr, date substring)",
+    "datePattern": "\\d{1,2}\\s+\\S+\\s+\\d{4}\\s+at\\s+\\d{1,2}",
+    "ticketUrl": "h3.entry-title a[href]",
+    "venueNameFallback": "Kolarac Concert Hall",
+    "cityNameFallback": "Belgrade",
+    "countryNameFallback": "RS"
+  }
+}

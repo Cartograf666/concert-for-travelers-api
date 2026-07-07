@@ -1,0 +1,16 @@
+{
+  "id": "union-chapel-london",
+  "domain": "unionchapel.org.uk",
+  "url": "https://unionchapel.org.uk/whats-on",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.item",
+    "artist": ".card-body > p.card-title",
+    "date": "p.small.text-uppercase strong",
+    "datePattern": "EEE d MMM yyyy",
+    "ticketUrl": "a.btn-primary",
+    "venueNameFallback": "Union Chapel",
+    "cityNameFallback": "London",
+    "countryNameFallback": "GB"
+  }
+}

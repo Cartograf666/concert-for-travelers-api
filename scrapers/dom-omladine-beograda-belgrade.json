@@ -1,0 +1,16 @@
+{
+  "id": "dom-omladine-beograda-belgrade",
+  "domain": "domomladine.org",
+  "url": "https://domomladine.org/koncerti/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.post-item.concert",
+    "artist": "h3.entry-title .main-title",
+    "date": "b.post-date",
+    "datePattern": "EEEE, d. MMMM yyyy. 'u' HH.mm",
+    "ticketUrl": "h3.entry-title a[href], a.buttony[href]",
+    "venueNameFallback": "Dom omladine Beograda (Youth Centre Belgrade)",
+    "cityNameFallback": "Belgrade",
+    "countryNameFallback": "RS"
+  }
+}

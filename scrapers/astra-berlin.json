@@ -1,0 +1,15 @@
+{
+  "id": "astra-berlin",
+  "domain": "astra-berlin.de",
+  "url": "https://www.astra-berlin.de/programm",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.event",
+    "artist": ".event__title-link",
+    "date": ".event__date--full",
+    "ticketUrl": ".event__title-link",
+    "venueNameFallback": "Astra Kulturhaus",
+    "cityNameFallback": "Berlin",
+    "countryNameFallback": "DE"
+  }
+}

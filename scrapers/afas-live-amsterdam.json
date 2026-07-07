@@ -1,0 +1,16 @@
+{
+  "id": "afas-live-amsterdam",
+  "domain": "afaslive.nl",
+  "url": "https://www.afaslive.nl/agenda",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article[id^=\"_agenda_\"]",
+    "artist": "a label",
+    "date": "a datetime",
+    "datePattern": "EEEE dd MMMM yyyy",
+    "ticketUrl": "a[href]",
+    "venueNameFallback": "AFAS Live",
+    "cityNameFallback": "Amsterdam",
+    "countryNameFallback": "NL"
+  }
+}

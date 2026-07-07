@@ -1,0 +1,16 @@
+{
+  "id": "the-o2-arena-london",
+  "domain": "theo2.co.uk",
+  "url": "https://www.theo2.co.uk/events/venue/the-o2-arena",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "#list .eventItem.entry",
+    "artist": "h3.title a",
+    "date": "span.m-date__singleDate",
+    "datePattern": "d MMM yyyy",
+    "ticketUrl": "div.buttons a.tickets[target='_blank']",
+    "venueNameFallback": "The O2 Arena",
+    "cityNameFallback": "London",
+    "countryNameFallback": "GB"
+  }
+}

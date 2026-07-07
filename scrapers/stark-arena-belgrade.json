@@ -1,0 +1,16 @@
+{
+  "id": "stark-arena-belgrade",
+  "domain": "arenabeograd.com",
+  "url": "https://arenabeograd.com/wp-json/tribe/events/v1/events",
+  "type": "json_api",
+  "selectors": {
+    "eventBlock": "events",
+    "artist": "title",
+    "date": "start_date",
+    "datePattern": "yyyy-MM-dd HH:mm:ss",
+    "ticketUrl": "url",
+    "venueNameFallback": "Štark Arena (Arena Beograd)",
+    "cityNameFallback": "Belgrade",
+    "countryNameFallback": "RS"
+  }
+}

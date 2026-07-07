@@ -1,0 +1,16 @@
+{
+  "id": "paradiso-amsterdam",
+  "domain": "paradiso.nl",
+  "url": "https://www.paradiso.nl/en/landing/concertagenda-paradiso/2069817",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.css-8tb23n",
+    "artist": "h3.css-lc3xen",
+    "date": "p.css-nlja75",
+    "datePattern": "EEE d MMM",
+    "ticketUrl": "a.css-mesnsh",
+    "venueNameFallback": "Paradiso",
+    "cityNameFallback": "Amsterdam",
+    "countryNameFallback": "NL"
+  }
+}

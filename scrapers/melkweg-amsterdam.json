@@ -1,0 +1,16 @@
+{
+  "id": "melkweg-amsterdam",
+  "domain": "www.melkweg.nl",
+  "url": "https://www.melkweg.nl/en/agenda/",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": "__NEXT_DATA__ -> props.pageProps.pageData.attributes.content[layout=agenda].attributes.initialEvents",
+    "artist": "attributes.name",
+    "date": "attributes.startDate",
+    "datePattern": "ISO8601",
+    "ticketUrl": "attributes.url",
+    "venueNameFallback": "Melkweg",
+    "cityNameFallback": "Amsterdam",
+    "countryNameFallback": "NL"
+  }
+}

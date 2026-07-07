@@ -1,0 +1,16 @@
+{
+  "id": "fabrika-tbilisi",
+  "domain": "fabrikatbilisi.com",
+  "url": "https://fabrikatbilisi.com/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.lb-event",
+    "artist": ".lb-title",
+    "date": ".lb-time",
+    "datePattern": "dd MMM[ - dd MMM] yyyy | HH:mm[ - HH:mm]",
+    "ticketUrl": ".lb-event-buttons a[href]",
+    "venueNameFallback": "Fabrika Tbilisi",
+    "cityNameFallback": "Tbilisi",
+    "countryNameFallback": "GE"
+  }
+}

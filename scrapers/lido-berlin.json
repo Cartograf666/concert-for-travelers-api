@@ -1,0 +1,15 @@
+{
+  "id": "lido-berlin",
+  "domain": "lido-berlin.de",
+  "url": "https://lido-berlin.de",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.event-ticket",
+    "artist": ".event-ticket__content__title a",
+    "date": ".event-ticket__meta--desktop .event-ticket__meta__date",
+    "ticketUrl": ".event-ticket__content__title a",
+    "venueNameFallback": "Lido Berlin",
+    "cityNameFallback": "Berlin",
+    "countryNameFallback": "DE"
+  }
+}

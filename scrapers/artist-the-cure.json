@@ -1,0 +1,18 @@
+{
+  "id": "artist-the-cure",
+  "domain": "www.thecure.com",
+  "url": "https://www.thecure.com/shows/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div[itemtype='http://schema.org/MusicEvent']",
+    "artistNameFallback": "The Cure",
+    "date": ".s_dateblock",
+    "ticketUrl": ".s_tickets a",
+    "venue": ".s_venue",
+    "city": ".addressLocality",
+    "country": ".addressCountry",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}
