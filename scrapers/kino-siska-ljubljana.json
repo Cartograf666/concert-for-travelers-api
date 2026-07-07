@@ -1,0 +1,16 @@
+{
+  "id": "kino-siska-ljubljana",
+  "domain": "kinosiska.si",
+  "url": "https://www.kinosiska.si/en/dogodek/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.card-event-archive",
+    "artist": "h6.title",
+    "date": "p.time",
+    "venueNameFallback": "Kino Šiška",
+    "cityNameFallback": "Ljubljana",
+    "countryNameFallback": "SI",
+    "lat": 46.0553,
+    "lng": 14.5144
+  }
+}
