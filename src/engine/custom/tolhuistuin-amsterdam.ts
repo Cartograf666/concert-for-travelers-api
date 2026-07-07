@@ -24,6 +24,10 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
     const dateText = String(item?.eventStartDate || '').trim();
     if (!artistText || !dateText) continue;
 
+    const label = item?.eventType?.label;
+    const val = item?.eventType?.value;
+    if (label !== 'Muziek' && val !== 'muziekPerformance') continue;
+
     let ticketUrl: string | undefined = item?.ticketLink || item?.url;
     if (ticketUrl && !ticketUrl.startsWith('http')) {
       try {

@@ -22,6 +22,9 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
     const date = rawDate.match(/^\d{4}-\d{2}-\d{2}/)?.[0] || '';
     if (!artist || !date) return;
 
+    const artistLower = artist.toLowerCase();
+    if (artistLower.includes('høt spøt') || artistLower.includes('hot spot') || artistLower.includes('every wednesday')) return;
+
     concerts.push({
       artist,
       date,

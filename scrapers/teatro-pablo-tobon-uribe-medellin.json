@@ -4,7 +4,7 @@
   "url": "https://teatropablotobon.com/eventos/",
   "type": "static_selectors",
   "selectors": {
-    "eventBlock": "div.card",
+    "eventBlock": "div.card:has(.chips__chip--musica)",
     "artist": "h2.card__title",
     "date": ".card__details > div:first-child strong",
     "ticketUrl": "a.card__link",

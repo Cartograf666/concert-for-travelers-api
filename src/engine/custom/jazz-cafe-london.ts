@@ -25,6 +25,9 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
 
     if (!artistText || !dateText) return;
 
+    const artistLower = artistText.toLowerCase();
+    if (artistLower.includes('soul city') || artistLower.includes('every saturday')) return;
+
     // 3. Extract ticketUrl
     let ticketUrl = $(el).find('a').attr('href');
     if (ticketUrl && !ticketUrl.startsWith('http')) {

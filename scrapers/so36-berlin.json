@@ -2,7 +2,7 @@
   "id": "so36-berlin",
   "domain": "so36.com",
   "url": "https://www.so36.com/tickets.json",
-  "type": "json_api",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "products",
     "artist": "title",

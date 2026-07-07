@@ -25,6 +25,8 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
     const [, day, month, year] = match;
     const date = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
 
+    if (artist.toLowerCase().includes('video party')) return;
+
     concerts.push({
       artist,
       date,

@@ -4,7 +4,7 @@
   "url": "https://www.opera.am/en/repertoire",
   "type": "static_selectors",
   "selectors": {
-    "eventBlock": "article.repo-card",
+    "eventBlock": "#repo-tab-4 article.repo-card",
     "artist": "h5.repo-title a",
     "date": ".repo-date",
     "ticketUrl": "a.repo-image",

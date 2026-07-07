@@ -4,7 +4,7 @@
   "url": "https://www.afaslive.nl/agenda",
   "type": "static_selectors",
   "selectors": {
-    "eventBlock": "article[id^=\"_agenda_\"]",
+    "eventBlock": "article[id^=\"_agenda_\"]:not(:contains(\"Fellowship of the Ring\"))",
     "artist": "a label",
     "date": "a datetime",
     "datePattern": "EEEE dd MMMM yyyy",
