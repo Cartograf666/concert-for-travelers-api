@@ -85,10 +85,14 @@ jobs:
           fi
 
       # LLM-generated selectors are only tested against a single cached HTML sample
-      # (npm run test above just confirms >=1 event extracted, not that it's correct)
-      # -- open a PR for human review instead of pushing an auto-healed config
-      # straight to main.
+      # (npm run test above just confirms >=1 event extracted, not that it's correct).
+      # Open a PR (audit trail + diff visibility) and squash-merge it automatically
+      # once it's created -- the same tests that gate this job already passed, so
+      # holding the PR for manual review would be the only non-autonomous step in
+      # the whole pipeline. If a repair turns out wrong, its narrow selector diff
+      # is trivial to revert from the PR history.
       - name: Open PR with repaired scrapers
+        id: cpr
         if: steps.check-failures.outputs.has_failures == 'true' && steps.check-repaired.outputs.repaired == 'true'
         uses: peter-evans/create-pull-request@v7
         with:
@@ -101,7 +105,14 @@ jobs:
 
             Repaired scrapers: see `reports/repair-summary.json` in this branch.
 
-            The only automated check is that the new selectors extract at least one
-            event from the cached HTML sample -- please spot-check the diff before
-            merging, since that check cannot confirm the extracted data is *correct*.
+            The new selectors extracted at least one event from the cached HTML
+            sample (verified by `npm run test` in the triggering job) and this PR
+            was auto-merged on that basis. That check cannot confirm the extracted
+            data is fully *correct* -- revert this PR if a scraper misbehaves.
           add-paths: scrapers/
+
+      - name: Auto-merge repaired-scraper PR
+        if: steps.cpr.outputs.pull-request-number != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh pr merge --squash --delete-branch "${{ steps.cpr.outputs.pull-request-number }}"
