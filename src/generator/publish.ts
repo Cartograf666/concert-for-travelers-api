@@ -142,6 +142,17 @@ export async function publishConcerts(concerts: Concert[], outputDir: string): P
     'utf-8'
   );
 
+  // Ship the human-facing status dashboard as the site root (index.html). It reads
+  // status.json / index.json / concerts.json client-side, so it needs no build step
+  // -- just copy the static file in. Best-effort: a missing source file must never
+  // fail a publish (e.g. a checkout that didn't include public/).
+  try {
+    const dashboardSrc = path.join(process.cwd(), 'public', 'dashboard.html');
+    await fs.copyFile(dashboardSrc, path.join(outputDir, 'index.html'));
+  } catch (err: any) {
+    console.warn(`[Publisher] Skipped dashboard copy: ${err.message}`);
+  }
+
   console.log(`[Publisher] Successfully published static API into: ${outputDir}`);
   console.log(`[Publisher] Total concerts: ${concerts.length}`);
   console.log(`[Publisher] Unique artists: ${uniqueArtists.size}`);

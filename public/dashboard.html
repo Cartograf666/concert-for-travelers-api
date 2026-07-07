@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Concert Parser Status</title>
+<style>
+  :root {
+    --bg: #0e1016; --panel: #171a23; --panel2: #1e222d; --line: #2a2f3d;
+    --txt: #e7e9ee; --muted: #9099ab; --accent: #6ea8fe;
+    --ok: #47c479; --warn: #e0b341; --bad: #e5605e;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--txt);
+    font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  a { color: var(--accent); }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 24px 18px 60px; }
+  header { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 6px; }
+  h1 { font-size: 22px; margin: 0; font-weight: 650; }
+  .sub { color: var(--muted); font-size: 13px; margin: 2px 0 22px; }
+  .badge { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; letter-spacing: .3px; }
+  .badge.ok { background: rgba(71,196,121,.14); color: var(--ok); }
+  .badge.warn { background: rgba(224,179,65,.14); color: var(--warn); }
+  .badge.bad { background: rgba(229,96,94,.14); color: var(--bad); }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 26px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .card .n { font-size: 28px; font-weight: 700; }
+  .card .l { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .5px; margin-top: 2px; }
+  section { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px 18px 8px; margin-bottom: 20px; }
+  section h2 { font-size: 14px; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin: 0 0 14px; font-weight: 650; }
+  .row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .row .name { width: 190px; flex: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row .bar { flex: 1; height: 10px; background: var(--panel2); border-radius: 6px; overflow: hidden; }
+  .row .bar > i { display: block; height: 100%; background: linear-gradient(90deg, #3b6fd4, #6ea8fe); }
+  .row .v { width: 64px; flex: none; text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 720px) { .grid2 { grid-template-columns: 1fr; } .row .name { width: 120px; } }
+  .pill { display: inline-block; background: var(--panel2); border: 1px solid var(--line); border-radius: 6px;
+    padding: 3px 8px; margin: 0 6px 6px 0; font-size: 12.5px; color: var(--muted); }
+  .pill.bad { color: var(--bad); border-color: rgba(229,96,94,.35); }
+  .pill.warn { color: var(--warn); border-color: rgba(224,179,65,.35); }
+  .note { color: var(--muted); font-size: 13px; margin: 4px 0 12px; }
+  .heal { background: rgba(71,196,121,.08); border: 1px solid rgba(71,196,121,.25); color: #bfe9cf;
+    border-radius: 8px; padding: 10px 12px; font-size: 13px; margin-bottom: 8px; }
+  .err { color: var(--bad); }
+  .foot { color: var(--muted); font-size: 12px; margin-top: 8px; }
+  .toggle { cursor: pointer; color: var(--accent); font-size: 13px; user-select: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Concert Parser Status</h1>
+    <span id="health" class="badge warn">loading…</span>
+  </header>
+  <div class="sub" id="lastrun">Loading status…</div>
+
+  <div class="cards" id="cards"></div>
+
+  <div class="grid2">
+    <section>
+      <h2>By source</h2>
+      <div id="sources"><div class="note">…</div></div>
+    </section>
+    <section>
+      <h2>Parser health</h2>
+      <div class="heal">🔧 Failed parsers are re-diagnosed and repaired automatically by the self-heal workflow — a red entry here is queued for auto-fix, not lost.</div>
+      <div id="health-detail"><div class="note">…</div></div>
+    </section>
+  </div>
+
+  <section>
+    <h2>Coverage by country</h2>
+    <div id="countries"><div class="note">…</div></div>
+  </section>
+
+  <div class="foot" id="foot"></div>
+</div>
+
+<script>
+const flag = (cc) => {
+  if (!/^[A-Za-z]{2}$/.test(cc)) return '';
+  return String.fromCodePoint(...[...cc.toUpperCase()].map(c => 0x1F1E6 + c.charCodeAt(0) - 65)) + ' ';
+};
+const fmt = (n) => (n == null ? '—' : n.toLocaleString('en-US'));
+const ago = (iso) => {
+  if (!iso) return 'unknown';
+  const s = Math.max(0, (Date.now() - new Date(iso).getTime()) / 1000);
+  if (s < 90) return 'just now';
+  if (s < 5400) return Math.round(s / 60) + ' min ago';
+  if (s < 129600) return Math.round(s / 3600) + ' h ago';
+  return Math.round(s / 86400) + ' d ago';
+};
+
+function bars(el, rows, max) {
+  el.innerHTML = '';
+  if (!rows.length) { el.innerHTML = '<div class="note">No data.</div>'; return; }
+  for (const r of rows) {
+    const div = document.createElement('div');
+    div.className = 'row';
+    div.innerHTML = `<div class="name">${r.label}</div>
+      <div class="bar"><i style="width:${max ? Math.max(2, (r.value / max) * 100) : 0}%"></i></div>
+      <div class="v">${fmt(r.value)}</div>`;
+    el.appendChild(div);
+  }
+}
+
+const SOURCE_LABEL = (s) =>
+  s === 'ticketmaster.com' ? 'Ticketmaster' : s === 'bandsintown.com' ? 'Bandsintown' : 'Direct scrapers';
+
+async function load() {
+  let status = {}, index = {}, concerts = [];
+  try { status = await (await fetch('./status.json?_=' + Date.now())).json(); } catch (e) {}
+  try { index = await (await fetch('./index.json?_=' + Date.now())).json(); } catch (e) {}
+  try { concerts = await (await fetch('./concerts.json?_=' + Date.now())).json(); } catch (e) {}
+
+  // By-country and by-source are computed client-side from the full published
+  // concerts.json (each concert carries country + originalSource), so the dashboard
+  // needs no extra server-side fields to render coverage.
+  const countryCounts = new Map(), sourceCounts = new Map();
+  const artistSet = new Set(), citySet = new Set();
+  for (const c of concerts) {
+    if (!c || !c.country) continue;
+    countryCounts.set(c.country, (countryCounts.get(c.country) || 0) + 1);
+    const src = SOURCE_LABEL(c.originalSource);
+    sourceCounts.set(src, (sourceCounts.get(src) || 0) + 1);
+    artistSet.add(c.artist);
+    citySet.add(c.city + '|' + c.country);
+  }
+  const byCountry = [...countryCounts.entries()].map(([country, n]) => ({ country, concerts: n })).sort((a, b) => b.concerts - a.concerts);
+  const bySource = [...sourceCounts.entries()].map(([source, n]) => ({ source, concerts: n })).sort((a, b) => b.concerts - a.concerts);
+
+  const failed = status.scrapersFailed || 0;
+  const stale = (status.staleVenues || []).length;
+  const healthEl = document.getElementById('health');
+  if (failed === 0 && stale === 0) { healthEl.className = 'badge ok'; healthEl.textContent = 'HEALTHY'; }
+  else if (failed > (status.scrapersTotal || 1) * 0.25) { healthEl.className = 'badge bad'; healthEl.textContent = 'DEGRADED'; }
+  else { healthEl.className = 'badge warn'; healthEl.textContent = 'MINOR ISSUES'; }
+
+  document.getElementById('lastrun').textContent =
+    'Last run ' + ago(status.generatedAt) + ' · ' + (status.generatedAt || '').replace('T', ' ').slice(0, 16) + ' UTC';
+
+  const totalConcerts = concerts.length || (index.stats && index.stats.totalConcerts);
+  const cards = [
+    ['Concerts live', totalConcerts],
+    ['Artists', artistSet.size || (index.stats && index.stats.uniqueArtists)],
+    ['Cities', citySet.size || (index.stats && index.stats.uniqueCities)],
+    ['Countries', byCountry.length || null],
+    ['Venue parsers OK', (status.scrapersOk != null ? status.scrapersOk + '/' + status.scrapersTotal : null)]
+  ];
+  document.getElementById('cards').innerHTML = cards.map(([l, n]) =>
+    `<div class="card"><div class="n">${n == null ? '—' : (typeof n === 'number' ? fmt(n) : n)}</div><div class="l">${l}</div></div>`
+  ).join('');
+
+  // Sources
+  const srcRows = bySource.map(s => ({ label: s.source, value: s.concerts }));
+  const srcMax = Math.max(1, ...srcRows.map(r => r.value));
+  bars(document.getElementById('sources'), srcRows, srcMax);
+
+  // Parser health detail
+  const hd = document.getElementById('health-detail');
+  let html = `<div class="note">
+    ${fmt(status.scrapersOk)} OK · ${fmt(failed)} failed · ${fmt(status.venuesUnchanged)} unchanged · ${fmt(status.venuesChanged)} changed this run · ${fmt(status.ticketmasterEvents)} Ticketmaster events</div>`;
+  if (failed) html += '<div><b class="err">Failing:</b><br>' + (status.failedVenueIds || []).map(id => `<span class="pill bad">${id}</span>`).join('') + '</div>';
+  if (stale) html += '<div style="margin-top:8px"><b class="warn">Stale (serving old cache):</b><br>' + (status.staleVenues || []).map(id => `<span class="pill warn">${id}</span>`).join('') + '</div>';
+  if (!failed && !stale) html += '<div class="pill ok" style="color:var(--ok);border-color:rgba(71,196,121,.35)">All parsers healthy ✓</div>';
+  hd.innerHTML = html;
+
+  // Countries
+  const rows = byCountry.map(c => ({ label: flag(c.country) + c.country, value: c.concerts }));
+  const cmax = Math.max(1, ...rows.map(r => r.value));
+  const cEl = document.getElementById('countries');
+  const TOP = 20;
+  const render = (showAll) => {
+    bars(cEl, showAll ? rows : rows.slice(0, TOP), cmax);
+    if (rows.length > TOP) {
+      const t = document.createElement('div');
+      t.className = 'toggle';
+      t.textContent = showAll ? '▲ show less' : `▼ show all ${rows.length} countries`;
+      t.onclick = () => render(!showAll);
+      cEl.appendChild(t);
+    }
+  };
+  if (rows.length) render(false); else cEl.innerHTML = '<div class="note">No per-country data in this run (no-op run reuses the last published set).</div>';
+
+  document.getElementById('foot').textContent = 'Auto-refreshes every 60s · data from status.json / index.json';
+}
+
+load();
+setInterval(load, 60000);
+</script>
+</body>
+</html>
