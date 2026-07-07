@@ -4,3 +4,6 @@ dist-compiled/
 reports/
 .DS_Store
 *.log
+
+# worktree node_modules symlink
+/node_modules
