@@ -95,6 +95,16 @@ jobs:
           restore-keys: |
             artist-scrape-cache-
 
+      # Read-only, same as the artist tour-page cache above: owned by
+      # artist-scrape.yml's Bandsintown sweep, merged into today's publish here.
+      - name: Restore Bandsintown cache
+        uses: actions/cache/restore@v4
+        with:
+          path: reports/bandsintown-cache.json
+          key: bandsintown-cache-${{ github.run_id }}
+          restore-keys: |
+            bandsintown-cache-
+
       - name: Run Scraper
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}

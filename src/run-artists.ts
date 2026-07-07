@@ -2,6 +2,23 @@ import * as fs from 'fs/promises';
 import * as path from 'path';
 import { loadConfigs, runAllScrapers, closeBrowser } from './engine/runner.js';
 import { loadCache, saveCache } from './engine/cache.js';
+import { fetchBandsintownConcerts, loadBandsintownCache, saveBandsintownCache } from './engine/bandsintown.js';
+
+/** Reads the newline-delimited artist target list, dropping blanks/dupes. */
+async function loadArtistTargets(filePath: string): Promise<string[]> {
+  try {
+    const raw = await fs.readFile(filePath, 'utf-8');
+    const seen = new Set<string>();
+    for (const line of raw.split('\n')) {
+      const name = line.trim();
+      if (name) seen.add(name);
+    }
+    return Array.from(seen);
+  } catch (err: any) {
+    console.warn(`[ArtistScrape] Could not read artist target list at ${filePath}: ${err.message}`);
+    return [];
+  }
+}
 
 /**
  * Scrapes artist tour-page configs (scrapers/artists/*.json) into their own cache
@@ -54,8 +71,24 @@ async function main() {
       }
     }
     await saveCache(cachePath, cache);
+    console.log(`[ArtistScrape] Tour-page pass done. ${changedCount}/${configs.length} changed, ${failedCount} failed. Cache saved to ${cachePath}.`);
 
-    console.log(`[ArtistScrape] Done. ${changedCount}/${configs.length} changed, ${failedCount} failed. Cache saved to ${cachePath}.`);
+    // Bandsintown public-widget sweep -- the artist-keyed, worldwide source (covers
+    // markets the venue/Ticketmaster sources miss). Batched + resumable via its own
+    // cache, so a big list is worked across successive runs. Separate cache file
+    // from the tour-page configs above; run.ts merges both into the daily publish.
+    const artistTargets = await loadArtistTargets(path.join(process.cwd(), 'data', 'artist_scrape_targets.txt'));
+    if (artistTargets.length > 0) {
+      const maxPerRun = process.env.BANDSINTOWN_MAX_PER_RUN ? parseInt(process.env.BANDSINTOWN_MAX_PER_RUN, 10) : undefined;
+      const bitCachePath = path.join(reportsDir, 'bandsintown-cache.json');
+      const bitCache = await loadBandsintownCache(bitCachePath);
+      console.log(`[ArtistScrape] Starting Bandsintown sweep over ${artistTargets.length} artist targets...`);
+      const bitConcerts = await fetchBandsintownConcerts(artistTargets, { cache: bitCache, maxPerRun });
+      await saveBandsintownCache(bitCachePath, bitCache);
+      console.log(`[ArtistScrape] Bandsintown sweep done -> ${bitConcerts.length} raw events cached across ${Object.keys(bitCache).length} artists.`);
+    } else {
+      console.log('[ArtistScrape] No artist targets found -- skipping Bandsintown sweep.');
+    }
   } catch (error: any) {
     console.error(`[ArtistScrape] Critical error: ${error.message}`);
     process.exit(1);

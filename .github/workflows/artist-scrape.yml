@@ -56,7 +56,26 @@ jobs:
           restore-keys: |
             artist-scrape-cache-
 
-      - name: Run artist tour-page scraper
+      # Per-artist last-successful Bandsintown results. Persisted so the batched
+      # sweep resumes where it left off (stalest-first) instead of re-fetching the
+      # same head of the list every run, and so a blocked/failed run falls back to
+      # last-good data instead of dropping an artist's shows.
+      - name: Restore Bandsintown cache
+        uses: actions/cache/restore@v4
+        with:
+          path: reports/bandsintown-cache.json
+          key: bandsintown-cache-${{ github.run_id }}
+          restore-keys: |
+            bandsintown-cache-
+
+      - name: Run artist tour-page + Bandsintown scraper
+        env:
+          # Optional: a real partner app_id if/when granted. Falls back to the public
+          # widget app_id in code when unset. See src/engine/bandsintown.ts.
+          BANDSINTOWN_APP_ID: ${{ secrets.BANDSINTOWN_APP_ID }}
+          # Batch size per run -- keeps each run gentle on the public feed; the
+          # cache makes successive runs advance through the full list.
+          BANDSINTOWN_MAX_PER_RUN: '800'
         run: npm run scrape-artists
 
       - name: Save artist scrape cache
@@ -66,9 +85,18 @@ jobs:
           path: reports/artist-scrape-cache.json
           key: artist-scrape-cache-${{ github.run_id }}
 
+      - name: Save Bandsintown cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: reports/bandsintown-cache.json
+          key: bandsintown-cache-${{ github.run_id }}
+
       - name: Upload reports
         uses: actions/upload-artifact@v4
         with:
           name: artist-scrape-reports
-          path: reports/artist-scrape-cache.json
+          path: |
+            reports/artist-scrape-cache.json
+            reports/bandsintown-cache.json
           retention-days: 5

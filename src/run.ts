@@ -131,6 +131,19 @@ async function main() {
       console.log(`[Orchestrator] Loaded ${artistConcertCount} cached events from ${Object.keys(artistCache).length} artist tour-page scrapers.`);
     }
 
+    // 4d. Same read-only merge for the Bandsintown artist sweep cache (also owned
+    // and written by run-artists.ts / artist-scrape.yml, never by this daily job).
+    // Same on-disk shape (values carry a `concerts` array), so loadCache reads it too.
+    const bitCache = await loadCache(path.join(reportsDir, 'bandsintown-cache.json'));
+    let bitConcertCount = 0;
+    for (const entry of Object.values(bitCache)) {
+      allScrapedConcerts.push(...entry.concerts);
+      bitConcertCount += entry.concerts.length;
+    }
+    if (bitConcertCount > 0) {
+      console.log(`[Orchestrator] Loaded ${bitConcertCount} cached events from ${Object.keys(bitCache).length} Bandsintown artists.`);
+    }
+
     // 5. Always record failures for the separate self-healing run.
     const failures = results
       .filter((r) => !r.success)
