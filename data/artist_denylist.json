@@ -1,0 +1,15 @@
+{
+  "_comment": "Terms that are genres, languages, or generic descriptors -- never a real artist the whitelist should match. A source (Ticketmaster segment/classification names, festival titles) occasionally emits one of these as an event's artist, which then exact-matches a junk whitelist entry and pollutes the published output (a user saw 'Amsterdam', 'Alternative rock', 'Afrikaans' listed as artists). Removal is guarded: clean_denylist.ts never removes anything that also appears in data/artist_scrape_targets.txt, and real-band homonyms (Live, Amsterdam, Berlin, Muse, Yes, Chicago, ...) are deliberately NOT listed here.",
+  "terms": [
+    "a cappella", "afrikaans", "alternative", "alternative metal", "alternative rock",
+    "ambient", "arabic", "art rock", "black metal", "blues", "classical", "country",
+    "czech", "death metal", "disco", "doom metal", "dutch", "electronic", "electronica",
+    "english", "finnish", "flamenco", "folk", "folk rock", "french", "funk", "garage",
+    "german", "gospel", "greek", "grunge", "hard rock", "hardcore", "heavy metal",
+    "hindi", "hip hop", "hip-hop", "house", "indie pop", "indie rock", "italian",
+    "j-pop", "jazz", "k-pop", "latin", "metal", "music", "norwegian", "opera", "polish",
+    "pop rock", "portuguese", "post-rock", "progressive rock", "psychedelic rock",
+    "punk rock", "reggae", "rock", "russian", "soul", "swedish", "techno",
+    "thrash metal", "trance", "various", "world music"
+  ]
+}
