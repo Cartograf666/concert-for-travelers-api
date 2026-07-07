@@ -119,3 +119,37 @@ test('Enrich - saves progress after every batch, not only at the end', async () 
 
   await fs.unlink(file);
 });
+
+test('Enrich - preserves existing socials when not returned by LLM', async () => {
+  const file = await tempArtistsFile([{
+    name: 'Artist A',
+    website: null,
+    socials: {
+      spotify: 'https://spotify.com/artist/a',
+      instagram: 'https://instagram.com/a'
+    }
+  }]);
+
+  const generateFn: GenerateEnrichmentFn = async () => {
+    return JSON.stringify([{
+      name: 'Artist A',
+      website: 'https://new.example',
+      socials: {
+        instagram: 'https://instagram.com/new-a'
+      }
+    }]);
+  };
+
+  await enrichMissingArtistMetadata(['Artist A'], file, 'fake-key', generateFn, TEST_MODELS);
+
+  const final = JSON.parse(await fs.readFile(file, 'utf-8'));
+  const artist = final.find((a: any) => a.name === 'Artist A');
+  
+  assert.strictEqual(artist.website, 'https://new.example');
+  assert.strictEqual(artist.socials.spotify, 'https://spotify.com/artist/a');
+  assert.strictEqual(artist.socials.instagram, 'https://instagram.com/new-a');
+  assert.strictEqual(artist.socials.facebook, null);
+
+  await fs.unlink(file);
+});
+

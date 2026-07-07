@@ -193,12 +193,12 @@ Provide ONLY the raw JSON array. Do not include markdown code block backticks (\
             ...approvedArtists[index],
             website: entry.website || approvedArtists[index].website || null,
             socials: {
-              spotify: entry.socials?.spotify || null,
-              instagram: entry.socials?.instagram || null,
-              facebook: entry.socials?.facebook || null,
-              youtube: entry.socials?.youtube || null,
-              telegram: entry.socials?.telegram || null,
-              vk: entry.socials?.vk || null
+              spotify: entry.socials?.spotify || approvedArtists[index].socials?.spotify || null,
+              instagram: entry.socials?.instagram || approvedArtists[index].socials?.instagram || null,
+              facebook: entry.socials?.facebook || approvedArtists[index].socials?.facebook || null,
+              youtube: entry.socials?.youtube || approvedArtists[index].socials?.youtube || null,
+              telegram: entry.socials?.telegram || approvedArtists[index].socials?.telegram || null,
+              vk: entry.socials?.vk || approvedArtists[index].socials?.vk || null
             }
           };
           console.log(`[Enricher] Enriched metadata for: ${entry.name}`);
