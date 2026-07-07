@@ -1,0 +1,17 @@
+{
+  "id": "ancienne-belgique-brussels",
+  "domain": "abconcerts.be",
+  "url": "https://www.abconcerts.be/nl/agenda",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.content-card__list__row",
+    "artist": ".content-card__title",
+    "date": ".content-card__media__label",
+    "ticketUrl": "a.content-card",
+    "venueNameFallback": "Ancienne Belgique",
+    "cityNameFallback": "Brussels",
+    "countryNameFallback": "BE",
+    "lat": 50.8503,
+    "lng": 4.3517
+  }
+}
