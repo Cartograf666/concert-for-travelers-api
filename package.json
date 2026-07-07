@@ -9,6 +9,7 @@
     "heal": "tsx src/heal.ts",
     "clean-artists": "tsx src/scripts/clean_artists.ts",
     "enrich-auto": "tsx src/scripts/enrich_auto.ts",
+    "enrich-wd-bulk": "tsx src/scripts/enrich_wikidata_bulk.ts",
     "enrich-sites": "tsx src/scripts/enrich_sites.ts",
     "test": "node --import tsx --test tests/**/*.test.ts"
   },
