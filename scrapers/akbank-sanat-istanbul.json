@@ -1,0 +1,16 @@
+{
+  "id": "akbank-sanat-istanbul",
+  "domain": "akbanksanat.com",
+  "url": "https://www.akbanksanat.com/etkinlik-takvimi",
+  "type": "custom_js",
+  "maxRetries": 2,
+  "requestDelayMs": 500,
+  "allowEmpty": false,
+  "selectors": {
+    "eventBlock": "div[data-category]",
+    "date": "p.hour",
+    "venueNameFallback": "Akbank Sanat",
+    "cityNameFallback": "Istanbul",
+    "countryNameFallback": "TR"
+  }
+}
