@@ -1,0 +1,15 @@
+{
+  "id": "babylon-istanbul",
+  "domain": "babylon.com.tr",
+  "url": "https://babylon.com.tr/en",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tickets__list-item",
+    "artist": ".tickets__subheading:first-of-type",
+    "date": ".tickets__subheading:nth-of-type(2)",
+    "ticketUrl": "a",
+    "venueNameFallback": "Babylon",
+    "cityNameFallback": "Istanbul",
+    "countryNameFallback": "TR"
+  }
+}
