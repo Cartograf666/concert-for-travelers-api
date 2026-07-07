@@ -13,6 +13,7 @@
     "enrich-sites": "tsx src/scripts/enrich_sites.ts",
     "geocode-venues": "tsx src/scripts/geocode_venues.ts",
     "test-config": "tsx src/scripts/test_config.ts",
+    "audit-gaps": "tsx src/scripts/audit_artist_gaps.ts",
     "test": "node --import tsx --test tests/*.test.ts"
   },
   "keywords": [
