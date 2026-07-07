@@ -1,0 +1,17 @@
+{
+  "id": "lacigale-paris",
+  "domain": "lacigale.fr",
+  "url": "https://lacigale.fr/programmation/",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": "li.artiste-event__item",
+    "artist": "h3.artiste-event__title",
+    "date": "h3.artiste-event__title",
+    "ticketUrl": "a.artiste-event__link",
+    "venueNameFallback": "La Cigale",
+    "cityNameFallback": "Paris",
+    "countryNameFallback": "FR",
+    "lat": 48.8824,
+    "lng": 2.3427
+  }
+}
