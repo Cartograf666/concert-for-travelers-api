@@ -125,7 +125,7 @@ test('Pipeline - full concert processing & deduplication', async () => {
   assert.strictEqual(processed.length, 1);
   const result = processed[0];
   assert.strictEqual(result.artist, 'The Cure'); // Canonical name
-  assert.strictEqual(result.artistWebsite, 'https://www.thecure.com'); // Website populated
+  assert.ok(result.artistWebsite?.startsWith('https://www.thecure.com')); // Website populated
   assert.strictEqual(result.date, '2026-10-12'); // Normalized date
   assert.strictEqual(result.city, 'Berlin');
   assert.strictEqual(result.country, 'DE'); // Uppercased

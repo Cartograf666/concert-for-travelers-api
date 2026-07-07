@@ -1,0 +1,50 @@
+name: Enrich Artist Database
+
+on:
+  workflow_dispatch:
+    inputs:
+      chunk_size:
+        description: 'Number of artists to enrich in this run'
+        required: true
+        default: '100'
+
+permissions:
+  contents: write
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Enrichment
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: npx tsx src/scripts/enrich_via_gemini_search.ts ${{ github.event.inputs.chunk_size }} /tmp/results.json
+
+      - name: Apply Enrichment Results
+        run: npm run enrich-sites apply /tmp/results.json
+
+      - name: Commit and Push Changes
+        run: |
+          git status --porcelain
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "No changes to commit."
+          else
+            git config --local user.email "github-actions[bot]@users.noreply.github.com"
+            git config --local user.name "github-actions[bot]"
+            git add data/approved_artists.json scrapers/
+            git commit -m "auto: enrich artist database chunk [skip ci]"
+            git push
+            echo "Successfully committed and pushed enriched database changes."
+          fi
