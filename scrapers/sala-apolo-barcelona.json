@@ -1,0 +1,17 @@
+{
+  "id": "sala-apolo-barcelona",
+  "domain": "sala-apolo.com",
+  "url": "https://www.sala-apolo.com/es/agenda",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": "div.c-results__event",
+    "artist": "a.c-results__event__title",
+    "date": "a.c-results__event__title",
+    "ticketUrl": "a.c-results__event__title",
+    "venueNameFallback": "Sala Apolo",
+    "cityNameFallback": "Barcelona",
+    "countryNameFallback": "ES",
+    "lat": 41.3745,
+    "lng": 2.1698
+  }
+}
