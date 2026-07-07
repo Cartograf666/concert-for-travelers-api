@@ -36,10 +36,28 @@ jobs:
       - name: Build project
         run: npm run build
 
+      # Persist the per-venue change-detection cache across daily runs. Without it
+      # the fresh checkout starts empty, every venue always looks "changed", and the
+      # scraper's short-circuit never fires in CI.
+      - name: Restore scrape cache
+        uses: actions/cache/restore@v4
+        with:
+          path: reports/scrape-cache.json
+          key: scrape-cache-${{ github.run_id }}
+          restore-keys: |
+            scrape-cache-
+
       - name: Run Scraper
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: npm run scrape
+
+      - name: Save scrape cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: reports/scrape-cache.json
+          key: scrape-cache-${{ github.run_id }}
 
       - name: Commit and Push Enriched Artist Metadata
         run: |

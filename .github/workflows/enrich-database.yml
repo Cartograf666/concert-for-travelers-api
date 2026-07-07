@@ -27,6 +27,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Tier-0: free structured enrichment (Wikidata SPARQL bulk, no LLM) sweeps the
+      # whole catalog first so Gemini only spends calls on the remaining long tail.
+      # Idempotent — already-tried artists are marked and skipped.
+      - name: Run Wikidata bulk enrichment (Tier-0, no LLM)
+        run: npm run enrich-wd-bulk -- 100000
+
       - name: Debug Model IDs
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
