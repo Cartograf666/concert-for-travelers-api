@@ -1,0 +1,17 @@
+{
+  "id": "asiaworld-expo-hong-kong",
+  "domain": "asiaworld-expo.com",
+  "url": "https://www.asiaworld-expo.com/whats-on/upcoming-events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-filter-tab",
+    "artist": "h3",
+    "date": "div.event-filter-tab-date",
+    "venue": "div.event-filter-tab-location",
+    "venueNameFallback": "AsiaWorld-Expo",
+    "cityNameFallback": "Hong Kong",
+    "countryNameFallback": "HK",
+    "lat": 22.3047,
+    "lng": 113.9397
+  }
+}
