@@ -142,8 +142,34 @@ jobs:
             git config --local user.name "github-actions[bot]"
             git add data/approved_artists.json
             git commit -m "auto: enrich artist websites and socials [skip ci]"
-            git push
-            echo "Successfully committed and pushed enriched artist metadata."
+
+            # main is written to concurrently (self-heal auto-merges, the enrich-*
+            # workflows, manual pushes) -- a bare push races and fails on any
+            # concurrent write. Retry with rebase a few times before giving up;
+            # this file is supplementary enrichment data, so on an unresolvable
+            # conflict, drop this run's commit rather than fail the whole job --
+            # the next scheduled enrichment pass will redo the work.
+            pushed=false
+            for i in 1 2 3 4 5; do
+              if git push; then
+                pushed=true
+                break
+              fi
+              echo "Push rejected (concurrent write), retrying with rebase ($i/5)..."
+              git fetch origin main
+              if ! git rebase origin/main; then
+                echo "::warning::Rebase conflict on data/approved_artists.json -- dropping this run's enrichment commit."
+                git rebase --abort
+                break
+              fi
+              sleep $((RANDOM % 5 + 2))
+            done
+
+            if [ "$pushed" = "true" ]; then
+              echo "Successfully committed and pushed enriched artist metadata."
+            else
+              echo "::warning::Could not push enriched artist metadata after retries -- skipped for this run."
+            fi
           fi
 
       - name: Upload fail log report
