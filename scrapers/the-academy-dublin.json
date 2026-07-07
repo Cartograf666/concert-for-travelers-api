@@ -1,0 +1,17 @@
+{
+  "id": "the-academy-dublin",
+  "domain": "theacademydublin.com",
+  "url": "https://www.theacademydublin.com",
+  "type": "next_data",
+  "selectors": {
+    "eventBlock": "props.pageProps.SSRdata.events",
+    "artist": "title",
+    "date": "startDate.date",
+    "ticketUrl": "ticketsUrl",
+    "venueNameFallback": "The Academy",
+    "cityNameFallback": "Dublin",
+    "countryNameFallback": "IE",
+    "lat": 53.3484,
+    "lng": -6.2653
+  }
+}
