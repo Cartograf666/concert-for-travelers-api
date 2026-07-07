@@ -560,7 +560,11 @@ export async function processConcerts(
   const match = buildApprovedMatcher(approvedArtists);
   const processedMap = new Map<string, Concert>();
   // Telemetry: why events are dropped, so silent losses are visible.
-  const drops = { incomplete: 0, notApproved: 0, badDate: 0, zodFail: 0 };
+  const drops = { incomplete: 0, notApproved: 0, badDate: 0, pastDate: 0, zodFail: 0 };
+  // Some venue pages list past shows alongside upcoming ones (an archive
+  // section the scraper's selector also happens to pick up); nothing should
+  // ever publish a concert that's already happened.
+  const todayIso = toLocalIso(new Date(baseDateStr));
 
   for (const raw of rawConcerts) {
     if (!raw.artist || !raw.date || !raw.venue || !raw.city || !raw.country || !raw.originalSource || !raw.scrapedAt) {
@@ -579,6 +583,10 @@ export async function processConcerts(
     const normalizedDate = parseDate(raw.date, baseDateStr);
     if (!normalizedDate) {
       drops.badDate++;
+      continue;
+    }
+    if (normalizedDate < todayIso) {
+      drops.pastDate++;
       continue;
     }
 
@@ -625,10 +633,11 @@ export async function processConcerts(
   }
 
   const kept = processedMap.size;
-  const totalDropped = drops.incomplete + drops.notApproved + drops.badDate + drops.zodFail;
+  const totalDropped = drops.incomplete + drops.notApproved + drops.badDate + drops.pastDate + drops.zodFail;
   console.log(
     `[Pipeline] ${rawConcerts.length} raw -> ${kept} valid events. ` +
-    `Dropped ${totalDropped}: ${drops.notApproved} not-approved, ${drops.badDate} bad-date, ${drops.incomplete} incomplete, ${drops.zodFail} zod-fail.`
+    `Dropped ${totalDropped}: ${drops.notApproved} not-approved, ${drops.badDate} bad-date, ` +
+    `${drops.pastDate} past-date, ${drops.incomplete} incomplete, ${drops.zodFail} zod-fail.`
   );
 
   return Array.from(processedMap.values());

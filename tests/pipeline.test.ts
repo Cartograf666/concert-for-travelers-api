@@ -201,6 +201,41 @@ test('Pipeline - full concert processing & deduplication', async () => {
   assert.strictEqual(result.ticketUrl, 'https://example.com/cure'); // Ticket URL retained
 });
 
+test('Pipeline - drops concerts whose date has already passed', async () => {
+  // Real case found auditing live published output: some venue pages list past
+  // shows alongside upcoming ones (an archive section the scraper's selector
+  // also picks up), so a concert dated well before the scrape date was making
+  // it all the way into dist/concerts.json with nothing to catch it.
+  const approvedArtistsPath = path.join(process.cwd(), 'data', 'approved_artists.json');
+  const baseDate = '2026-07-07T00:00:00.000Z';
+  const scrapedAt = new Date().toISOString();
+
+  const rawConcerts: Partial<Concert>[] = [
+    {
+      artist: 'The Cure',
+      date: '2026-03-29', // before baseDate -- must be dropped
+      venue: 'Club Arena',
+      city: 'Berlin',
+      country: 'de',
+      originalSource: 'club-arena.de',
+      scrapedAt
+    },
+    {
+      artist: 'The Cure',
+      date: '2026-07-07', // exactly baseDate's day -- must be kept, not dropped
+      venue: 'Club Arena',
+      city: 'Berlin',
+      country: 'de',
+      originalSource: 'club-arena.de',
+      scrapedAt
+    }
+  ];
+
+  const processed = await processConcerts(rawConcerts, approvedArtistsPath, baseDate);
+  assert.strictEqual(processed.length, 1);
+  assert.strictEqual(processed[0].date, '2026-07-07');
+});
+
 test('Pipeline - normalizeCountry accepts full country names (schema.org addressCountry) as well as codes', () => {
   // Real-world case: an artist tour-page scraper's .addressCountry microdata
   // renders the full country name, not a 2-letter code.
