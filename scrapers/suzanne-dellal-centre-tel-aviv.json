@@ -1,0 +1,15 @@
+{
+  "id": "suzanne-dellal-centre-tel-aviv",
+  "domain": "suzannedellal.org.il",
+  "url": "https://suzannedellal.org.il/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".single-show-wrapper",
+    "artist": ".general-info",
+    "date": ".dates",
+    "ticketUrl": "a",
+    "venueNameFallback": "Suzanne Dellal Centre",
+    "cityNameFallback": "Tel Aviv",
+    "countryNameFallback": "IL"
+  }
+}
