@@ -1,0 +1,17 @@
+{
+  "id": "majestic-music-club-bratislava",
+  "domain": "majestic.sk",
+  "url": "https://majestic.sk/program/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tt-evt-li",
+    "artist": ".tt-evt-li__name",
+    "date": ".tt-evt-li__sub-info--BeginDate",
+    "ticketUrl": ".tt-evt-li__btn-holder a",
+    "venueNameFallback": "Majestic Music Club",
+    "cityNameFallback": "Bratislava",
+    "countryNameFallback": "SK",
+    "lat": 48.148194,
+    "lng": 17.107558
+  }
+}
