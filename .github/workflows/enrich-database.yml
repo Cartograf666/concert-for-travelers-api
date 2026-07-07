@@ -11,6 +11,12 @@ on:
 permissions:
   contents: write
 
+# Serialize with the MusicBrainz Tier-0 workflow so two writers never race on
+# data/approved_artists.json.
+concurrency:
+  group: artist-db-write
+  cancel-in-progress: false
+
 jobs:
   enrich:
     runs-on: ubuntu-latest

@@ -1,0 +1,58 @@
+name: Enrich Artists (Tier-0 MusicBrainz)
+
+# Free, LLM-free enrichment tail: sweeps the artists that the Wikidata bulk pass
+# missed, in resumable chunks, on a schedule. Each run marks what it processed
+# (enrichedAt on a hit, autoTriedAt on a clean miss), so successive runs advance
+# through the catalog and become cheap no-ops once nothing is left.
+
+on:
+  schedule:
+    - cron: '30 */3 * * *' # every 3 hours, offset from the 03:00 daily scrape
+  workflow_dispatch:
+    inputs:
+      chunk_size:
+        description: 'Artists to process this run'
+        required: true
+        default: '3000'
+
+permissions:
+  contents: write
+
+# Serialize with the Gemini enrichment workflow so two writers never race on
+# data/approved_artists.json.
+concurrency:
+  group: artist-db-write
+  cancel-in-progress: false
+
+jobs:
+  enrich-auto:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run MusicBrainz Tier-0 enrichment
+        run: npm run enrich-auto -- ${{ github.event.inputs.chunk_size || '3000' }}
+
+      - name: Commit and push enriched metadata
+        run: |
+          if git diff --quiet data/approved_artists.json; then
+            echo "No new artist metadata enriched this run."
+          else
+            git config --local user.email "github-actions[bot]@users.noreply.github.com"
+            git config --local user.name "github-actions[bot]"
+            git add data/approved_artists.json
+            git commit -m "auto: MusicBrainz Tier-0 enrichment [skip ci]"
+            git push
+            echo "Committed and pushed Tier-0 enrichment."
+          fi
