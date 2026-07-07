@@ -1,0 +1,17 @@
+{
+  "id": "vega-copenhagen",
+  "domain": "vega.dk",
+  "url": "https://vega.dk/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.canExpand",
+    "artist": "h2",
+    "date": "b",
+    "ticketUrl": "a[href*='ticketmaster']",
+    "venueNameFallback": "Vega",
+    "cityNameFallback": "Copenhagen",
+    "countryNameFallback": "DK",
+    "lat": 55.6761,
+    "lng": 12.5683
+  }
+}
