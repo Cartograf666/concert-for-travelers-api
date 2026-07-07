@@ -1,0 +1,18 @@
+{
+  "id": "cafe-del-mar-bali",
+  "domain": "cafedelmarbali.co.id",
+  "url": "https://www.cafedelmarbali.co.id/whats-on/",
+  "type": "static_selectors",
+  "allowEmpty": true,
+  "selectors": {
+    "eventBlock": ".bc-area",
+    "artist": "h3",
+    "date": ".wo-row-date",
+    "ticketUrl": ".bc-btn-book",
+    "venueNameFallback": "Cafe del Mar Bali",
+    "cityNameFallback": "Canggu",
+    "countryNameFallback": "ID",
+    "lat": -8.670710459596695,
+    "lng": 115.144450569321
+  }
+}
