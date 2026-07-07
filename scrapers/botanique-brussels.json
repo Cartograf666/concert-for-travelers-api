@@ -1,0 +1,17 @@
+{
+  "id": "botanique-brussels",
+  "domain": "botanique.be",
+  "url": "https://botanique.be/en/concerts",
+  "type": "static_selectors",
+  "maxRetries": 2,
+  "requestDelayMs": 0,
+  "allowEmpty": false,
+  "selectors": {
+    "eventBlock": "div.node-type-event",
+    "artist": "div.node-type-event__title h2 a span",
+    "date": "div.node-date__wrapper",
+    "venueNameFallback": "Botanique",
+    "cityNameFallback": "Brussels",
+    "countryNameFallback": "BE"
+  }
+}
