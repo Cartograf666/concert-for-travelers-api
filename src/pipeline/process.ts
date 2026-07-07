@@ -580,19 +580,26 @@ function parseDateUnchecked(dateStr: string, baseDateStr: string): string | null
   const CHRONO_MIN_COVERAGE = 0.4;
   try {
     const results = chrono.parse(dateStr, baseDate, { forwardDate: true });
-    if (results.length > 0 && results[0].text.length / dateStr.trim().length >= CHRONO_MIN_COVERAGE) {
+    // Require both a meaningful coverage AND a *certain* day or month component. A bare
+    // time ("19:30", 100% coverage) or a lone weekday makes chrono default the missing
+    // parts to baseDate ("today at 8pm") -- isCertain rejects that so we drop instead of
+    // publishing a phantom concert dated today.
+    if (
+      results.length > 0 &&
+      results[0].text.length / dateStr.trim().length >= CHRONO_MIN_COVERAGE &&
+      results[0].start.isCertain('day') &&
+      results[0].start.isCertain('month')
+    ) {
       return toLocalIso(results[0].start.date());
     }
   } catch {
     // chrono failure is non-fatal; fall through.
   }
 
-  // 12. Last resort: the platform date parser.
-  const parsed = Date.parse(dateStr);
-  if (!isNaN(parsed)) {
-    return new Date(parsed).toISOString().slice(0, 10);
-  }
-
+  // No parseable date. Deliberately NO Date.parse() last resort: it silently fabricates
+  // plausible-but-wrong dates from foreign-language / marketing-copy strings (e.g.
+  // Date.parse('12 Marta 2026') yields a real but wrong day). A clean null drop -- counted
+  // by drops.badDate -- is always better than a confidently wrong date reaching users.
   return null;
 }
 
