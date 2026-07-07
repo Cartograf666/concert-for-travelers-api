@@ -5,12 +5,12 @@ import * as path from 'path';
 /**
  * Tier-0 deterministic artist enrichment: structured sources BEFORE any LLM.
  *
- * For each un-enriched artist it cascades three free, structured catalogs and
- * fills official website + social links WITHOUT a single Gemini call:
+ * For each un-enriched artist it cascades free, structured catalogs and fills
+ * official website + social links WITHOUT a single Gemini call:
  *
  *   1. MusicBrainz  (no key)  — url-rels: homepage + Spotify/Instagram/Facebook/YouTube
  *   2. Wikidata     (no key)  — P856 site, P1902 Spotify, P2003 IG, P2013 FB, P2397 YT
- *   3. Spotify API  (key opt) — canonical Spotify URL for the artist
+ *                               (skipped per artist when the bulk pass already tried it)
  *
  * Markers:
  *   enrichedAt + enrichedBy   set when a source contributes data. Gemini's
@@ -43,6 +43,7 @@ interface ArtistEntry {
   enrichedAt?: string;
   enrichedBy?: string;
   autoTriedAt?: string;
+  wdBulkTriedAt?: string;
 }
 
 /** A single source's contribution. `ok` = the server was reachable (not a network error). */
@@ -209,53 +210,8 @@ async function wikidata(name: string): Promise<Lookup> {
 }
 
 // ---------------------------------------------------------------------------
-// Source 3: Spotify (client-credentials). Only fills the Spotify URL.
-// ---------------------------------------------------------------------------
-let spotifyToken: string | null | undefined; // undefined = not yet fetched, null = unavailable
-
-async function getSpotifyToken(): Promise<string | null> {
-  if (spotifyToken !== undefined) return spotifyToken;
-  const id = process.env.SPOTIFY_CLIENT_ID;
-  const secret = process.env.SPOTIFY_CLIENT_SECRET;
-  if (!id || !secret) {
-    console.error('[enrich-auto] SPOTIFY_CLIENT_ID/SECRET not set — skipping Spotify tier.');
-    spotifyToken = null;
-    return null;
-  }
-  try {
-    const basic = Buffer.from(`${id}:${secret}`).toString('base64');
-    const res = await axios.post('https://accounts.spotify.com/api/token', 'grant_type=client_credentials', {
-      headers: { Authorization: `Basic ${basic}`, 'Content-Type': 'application/x-www-form-urlencoded' },
-      timeout: 15000
-    });
-    spotifyToken = res.data?.access_token ?? null;
-  } catch (err: any) {
-    console.error(`[enrich-auto] Spotify token request failed: ${err.message}`);
-    spotifyToken = null;
-  }
-  return spotifyToken ?? null;
-}
-
-async function spotify(name: string): Promise<Lookup> {
-  const token = await getSpotifyToken();
-  if (!token) return { ok: false }; // treat as not-attempted rather than a clean miss
-  try {
-    const res = await axios.get(
-      `https://api.spotify.com/v1/search?q=${encodeURIComponent(name)}&type=artist&limit=1`,
-      { headers: { Authorization: `Bearer ${token}` }, timeout: 15000 }
-    );
-    await sleep(120);
-    const artist = res.data?.artists?.items?.[0];
-    if (!artist || normName(artist.name) !== normName(name)) return { ok: true };
-    const url: string | undefined = artist.external_urls?.spotify;
-    return { ok: true, socials: url ? { spotify: url } : {} };
-  } catch {
-    return { ok: false };
-  }
-}
-
-// ---------------------------------------------------------------------------
 // Cascade + persistence
+// (Spotify tier retired — the project does not use Spotify credentials.)
 // ---------------------------------------------------------------------------
 function hasAny(website: string | null, socials: Socials): boolean {
   return !!website || Object.values(socials).some(Boolean);
@@ -300,11 +256,12 @@ async function main() {
     let anyReached = false;
     let anyError = false;
 
+    // MusicBrainz always; Wikidata only if the fast bulk pass hasn't already tried
+    // it (avoids redundant per-artist REST calls). Spotify tier retired (unused).
     const sources: Array<[string, (name: string) => Promise<Lookup>]> = [
-      ['musicbrainz', musicbrainz],
-      ['wikidata', wikidata],
-      ['spotify', spotify]
+      ['musicbrainz', musicbrainz]
     ];
+    if (!entry.wdBulkTriedAt) sources.push(['wikidata', wikidata]);
 
     for (const [srcName, fn] of sources) {
       if (enough(websiteVal, socials)) break;

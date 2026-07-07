@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert';
 import { createServer, Server } from 'node:http';
 import { runScraper } from '../src/engine/runner.js';
-import { parseDate } from '../src/pipeline/process.js';
+import { parseDate, buildApprovedMatcher } from '../src/pipeline/process.js';
 import { extractJsonLd } from '../src/engine/structured.js';
 import { ScraperConfig } from '../src/schemas/config.js';
 
@@ -154,6 +154,22 @@ test('parseDate rolls year-less dates forward to next occurrence', () => {
 test('parseDate falls back to chrono for ordinal/natural formats', () => {
   const base = '2026-01-01T12:00:00';
   assert.strictEqual(parseDate('October 3rd 2026', base), '2026-10-03');
+});
+
+test('parseDate keeps a just-passed year-less date in the current year (grace window)', () => {
+  const base = '2026-07-07T12:00:00';
+  // 3 July, seen on the 7th -> a few days late, stays 2026 (not rolled to 2027).
+  assert.strictEqual(parseDate('3 July', base), '2026-07-03');
+  // Months in the past -> next year's occurrence.
+  assert.strictEqual(parseDate('3 February', base), '2027-02-03');
+});
+
+test('short approved names match only exactly, longer names match whole-word', () => {
+  const match = buildApprovedMatcher(['U2', 'Muse']);
+  assert.strictEqual(match('U2')?.name, 'U2');
+  assert.strictEqual(match('U2 and friends live'), null, 'short name not matched as a substring');
+  assert.strictEqual(match('Muse at the O2')?.name, 'Muse', 'normal name matched whole-word');
+  assert.strictEqual(match('Muse Tribute Night'), null, 'tribute filtered out');
 });
 
 const CACHE_HTML = `<div class="event-card"><div class="artist-name">Muse</div><span class="event-date">2026-08-01</span></div>`;
