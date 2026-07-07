@@ -8,6 +8,34 @@ import { enrichMissingArtistMetadata } from './pipeline/enrich.js';
 import { publishConcerts } from './generator/publish.js';
 import { fetchTicketmasterConcerts, loadTicketmasterCache, saveTicketmasterCache } from './engine/ticketmaster.js';
 
+/**
+ * Writes dist/status.json — a small machine-readable health surface so a watchdog /
+ * dashboard can tell whether the daily run is healthy or silently rotting (venues
+ * failing, everything served from stale cache) without scraping the Actions logs.
+ */
+async function writeStatus(
+  distDir: string,
+  results: ScraperResult[],
+  changedCount: number,
+  ticketmasterCount: number,
+  publishedConcerts: number | null
+): Promise<void> {
+  const failed = results.filter((r) => !r.success);
+  const status = {
+    generatedAt: new Date().toISOString(),
+    scrapersTotal: results.length,
+    scrapersOk: results.length - failed.length,
+    scrapersFailed: failed.length,
+    venuesChanged: changedCount,
+    venuesUnchanged: results.filter((r) => r.success && r.notModified).length,
+    failedVenueIds: failed.map((r) => r.configId),
+    ticketmasterEvents: ticketmasterCount,
+    publishedConcerts // null when the run short-circuited (published set unchanged)
+  };
+  await fs.mkdir(distDir, { recursive: true });
+  await fs.writeFile(path.join(distDir, 'status.json'), JSON.stringify(status, null, 2), 'utf-8');
+}
+
 async function main() {
   const scrapersDir = path.join(process.cwd(), 'scrapers');
   const distDir = path.join(process.cwd(), 'dist');
@@ -102,6 +130,7 @@ async function main() {
     //    every run), so any Ticketmaster results always count as "changed".
     const failureWithoutCache = results.some((r) => !r.success && !(cache[r.configId]?.concerts?.length));
     if (changedCount === 0 && ticketmasterCount === 0 && !failureWithoutCache) {
+      await writeStatus(distDir, results, changedCount, ticketmasterCount, null);
       console.log('[Orchestrator] No venue changed — skipping normalization, enrichment, and publish.');
       console.log(`[Orchestrator] Scrape complete (no-op). Failures logged: ${failures.length}.`);
       return;
@@ -142,6 +171,7 @@ async function main() {
     // 9. Write static API files to dist/
     console.log(`[Orchestrator] Publishing ${normalizedConcerts.length} concerts to ${distDir}...`);
     await publishConcerts(normalizedConcerts, distDir);
+    await writeStatus(distDir, results, changedCount, ticketmasterCount, normalizedConcerts.length);
 
     console.log(`[Orchestrator] Scrape complete. Successful scrapers: ${configs.length - failures.length}/${configs.length}.`);
     console.log(`[Orchestrator] Failed scrapers log saved to: ${failLogPath}`);
