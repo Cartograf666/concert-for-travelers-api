@@ -47,6 +47,15 @@ export async function publishConcerts(concerts: Concert[], outputDir: string): P
   await fs.mkdir(artistsDir, { recursive: true });
   await fs.mkdir(citiesDir, { recursive: true });
 
+  // Sort the list of concerts before publishing by: date ASC, then artist ASC, then city ASC.
+  concerts.sort((a, b) => {
+    const dateCompare = a.date.localeCompare(b.date);
+    if (dateCompare !== 0) return dateCompare;
+    const artistCompare = a.artist.localeCompare(b.artist);
+    if (artistCompare !== 0) return artistCompare;
+    return a.city.localeCompare(b.city);
+  });
+
   // 1. Group concerts by artist and city
   const concertsByArtist = new Map<string, Concert[]>();
   const concertsByCity = new Map<string, Concert[]>();
@@ -81,18 +90,22 @@ export async function publishConcerts(concerts: Concert[], outputDir: string): P
   // 2. Write master concert list: dist/concerts.json
   await fs.writeFile(
     path.join(outputDir, 'concerts.json'),
-    JSON.stringify(concerts, null, 2),
+    JSON.stringify(concerts),
     'utf-8'
   );
+
+  const writePromises: Promise<void>[] = [];
 
   // 3. Write individual artist files: dist/artists/{slug}.json
   for (const [artistSlug, artistConcerts] of concertsByArtist.entries()) {
     // Sort concerts by date ascending
     artistConcerts.sort((a, b) => a.date.localeCompare(b.date));
-    await fs.writeFile(
-      path.join(artistsDir, `${artistSlug}.json`),
-      JSON.stringify(artistConcerts, null, 2),
-      'utf-8'
+    writePromises.push(
+      fs.writeFile(
+        path.join(artistsDir, `${artistSlug}.json`),
+        JSON.stringify(artistConcerts),
+        'utf-8'
+      )
     );
   }
 
@@ -100,12 +113,16 @@ export async function publishConcerts(concerts: Concert[], outputDir: string): P
   for (const [citySlug, cityConcerts] of concertsByCity.entries()) {
     // Sort concerts by date ascending
     cityConcerts.sort((a, b) => a.date.localeCompare(b.date));
-    await fs.writeFile(
-      path.join(citiesDir, `${citySlug}.json`),
-      JSON.stringify(cityConcerts, null, 2),
-      'utf-8'
+    writePromises.push(
+      fs.writeFile(
+        path.join(citiesDir, `${citySlug}.json`),
+        JSON.stringify(cityConcerts),
+        'utf-8'
+      )
     );
   }
+
+  await Promise.all(writePromises);
 
   // 5. Create index metadata: dist/index.json
   const indexData: PublishIndex = {
@@ -121,7 +138,7 @@ export async function publishConcerts(concerts: Concert[], outputDir: string): P
 
   await fs.writeFile(
     path.join(outputDir, 'index.json'),
-    JSON.stringify(indexData, null, 2),
+    JSON.stringify(indexData),
     'utf-8'
   );
 

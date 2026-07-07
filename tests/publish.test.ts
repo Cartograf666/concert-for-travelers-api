@@ -104,3 +104,29 @@ test('Publisher - an empty concert list still produces a valid (zeroed) index.js
     assert.deepStrictEqual(master, []);
   });
 });
+
+test('Publisher - sorts concerts by date, then artist, then city, and writes compact JSON', async () => {
+  await withTempDir(async (dir) => {
+    const concerts = [
+      makeConcert({ artist: 'Rammstein', city: 'Paris', date: '2026-11-01' }),
+      makeConcert({ artist: 'The Cure', city: 'London', date: '2026-10-12' }),
+      makeConcert({ artist: 'The Cure', city: 'Berlin', date: '2026-10-12' }),
+      makeConcert({ artist: 'Aphex Twin', city: 'Berlin', date: '2026-10-12' })
+    ];
+
+    await publishConcerts(concerts, dir);
+
+    const masterRaw = await fs.readFile(path.join(dir, 'concerts.json'), 'utf-8');
+    assert.strictEqual(masterRaw.includes('\n'), false);
+
+    const master = JSON.parse(masterRaw);
+    assert.strictEqual(master.length, 4);
+    assert.strictEqual(master[0].artist, 'Aphex Twin');
+    assert.strictEqual(master[1].artist, 'The Cure');
+    assert.strictEqual(master[1].city, 'Berlin');
+    assert.strictEqual(master[2].artist, 'The Cure');
+    assert.strictEqual(master[2].city, 'London');
+    assert.strictEqual(master[3].artist, 'Rammstein');
+  });
+});
+
