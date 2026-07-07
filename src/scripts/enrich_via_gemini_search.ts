@@ -73,7 +73,11 @@ async function main() {
   const batchSize = 3; // small batches to ensure precise search for each artist
   const results: any[] = [];
   
-  const modelsToTry = ['gemini-2.5-flash', 'gemini-1.5-flash', 'gemini-1.5-pro'];
+  const modelsToTry = [
+    { name: 'gemini-2.5-flash', tool: { googleSearch: {} } },
+    { name: 'gemini-2.5-pro', tool: { googleSearch: {} } },
+    { name: 'gemini-3.5-flash', tool: { googleSearch: {} } }
+  ];
 
   for (let i = 0; i < pending.length; i += batchSize) {
     const batch = pending.slice(i, i + batchSize);
@@ -133,12 +137,13 @@ Be extremely truthful. Never invent a URL. Return null rather than guess. Output
     let success = false;
     let lastError: any = null;
 
-    for (const modelName of modelsToTry) {
+    for (const modelConfig of modelsToTry) {
+      const modelName = modelConfig.name;
       try {
         console.log(`[enrich-gemini-search] Attempting generation with model: ${modelName}`);
         const model = genAI.getGenerativeModel({
           model: modelName,
-          tools: [{ googleSearchRetrieval: {} } as any],
+          tools: [modelConfig.tool as any],
         });
 
         const response = await model.generateContent({
