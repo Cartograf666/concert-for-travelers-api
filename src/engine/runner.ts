@@ -2,12 +2,45 @@ import axios from 'axios';
 import * as cheerio from 'cheerio';
 import { chromium, type Browser } from 'playwright';
 import { circuitBreaker, ConsecutiveBreaker, BrokenCircuitError, handleWhen } from 'cockatiel';
-import { ScraperConfig, ScraperConfigSchema } from '../schemas/config.js';
+import { ScraperConfig, ScraperConfigSchema, isBlockedHost } from '../schemas/config.js';
 import { Concert } from '../schemas/concert.js';
 import { extractJsonLd } from './structured.js';
 import { VenueCache, ScrapeCache, hashConcerts } from './cache.js';
 import * as fs from 'fs/promises';
 import * as path from 'path';
+import * as http from 'http';
+import * as https from 'https';
+import * as dns from 'dns';
+
+// SSRF guard at CONNECT time: validate every resolved IP, not just the literal config.url.
+// This is what defends against a public host that 302-redirects to 169.254.169.254, a
+// DNS name that resolves to a private IP (rebinding), and integer/hex IP encodings the
+// static string check can't canonicalize -- axios follows redirects through these agents,
+// so each hop's resolved address is checked.
+// Escape hatch for the test suite, which scrapes mock servers on localhost. Prod (npm run
+// scrape / CI) never sets this, so real runs still block private/loopback/metadata targets.
+const ALLOW_LOCAL_HOSTS = process.env.SCRAPER_ALLOW_LOCAL_HOSTS === '1';
+function hostBlocked(h: string): boolean {
+  return !ALLOW_LOCAL_HOSTS && isBlockedHost(h);
+}
+
+function safeLookup(hostname: string, options: any, callback?: any): void {
+  const cb = typeof options === 'function' ? options : callback;
+  const opts = typeof options === 'function' ? {} : options;
+  dns.lookup(hostname, opts, (err: any, address: any, family: any) => {
+    if (err) return cb(err, address, family);
+    const list = Array.isArray(address) ? address : [{ address, family }];
+    for (const a of list) {
+      if (hostBlocked(String(a.address))) {
+        return cb(new Error(`Blocked SSRF target: ${hostname} -> ${a.address}`));
+      }
+    }
+    cb(err, address, family);
+  });
+}
+
+const ssrfHttpAgent = new http.Agent({ lookup: safeLookup as any });
+const ssrfHttpsAgent = new https.Agent({ lookup: safeLookup as any });
 
 const USER_AGENTS = [
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -361,6 +394,9 @@ async function fetchWithRetry(config: ScraperConfig, conditional?: { etag?: stri
       const response = await axios.get(config.url, {
         headers,
         timeout: 15000, // 15s timeout (some venue pages ship large SSR/Next.js payloads)
+        httpAgent: ssrfHttpAgent,
+        httpsAgent: ssrfHttpsAgent,
+        maxRedirects: 3, // follow a few, but every hop's resolved IP is SSRF-checked by the agents
         validateStatus: (s) => (s >= 200 && s < 300) || s === 304
       });
       return { status: response.status, data: response.data, headers: response.headers };
@@ -408,6 +444,13 @@ async function renderWithPlaywright(config: ScraperConfig): Promise<FetchRespons
   const browser = await getBrowser();
   const page = await browser.newPage({ userAgent: getRandomUserAgent() });
   try {
+    // SSRF guard for the browser: abort any main/sub-resource request to a private,
+    // loopback, link-local or metadata host (covers redirects and JS-issued fetches).
+    await page.route('**/*', (route) => {
+      let host = '';
+      try { host = new URL(route.request().url()).hostname; } catch { return route.abort(); }
+      return hostBlocked(host) ? route.abort() : route.continue();
+    });
     await page.goto(config.url, { waitUntil: 'networkidle', timeout: 20000 });
     const html = await page.content();
     return { status: 200, data: html, headers: {} };

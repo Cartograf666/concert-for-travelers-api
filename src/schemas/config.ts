@@ -8,9 +8,13 @@ import { z } from 'zod';
 // hosts are rejected outright. This is a static string check (no DNS resolution),
 // so it does not defend against DNS-rebinding; it covers the direct case of a
 // literal private IP or a localhost-style hostname in the config itself.
-function isBlockedHost(hostname: string): boolean {
+export function isBlockedHost(hostname: string): boolean {
   const h = hostname.toLowerCase().replace(/^\[|\]$/g, ''); // strip IPv6 brackets
   if (h === 'localhost' || h === '0.0.0.0' || h.endsWith('.localhost')) return true;
+
+  // IPv4-mapped IPv6 (e.g. ::ffff:169.254.169.254) — check the embedded v4 address.
+  const mapped = h.match(/^::ffff:(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})$/);
+  if (mapped) return isBlockedHost(mapped[1]);
 
   const ipv4 = h.match(/^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/);
   if (ipv4) {
@@ -23,6 +27,15 @@ function isBlockedHost(hostname: string): boolean {
     if (a === 0) return true;
     return false;
   }
+
+  // Non-standard integer / hex / leading-zero IP encodings that the OS resolver may still
+  // accept (http://2130706433 = 127.0.0.1, http://0x7f000001, http://0177.0.0.1). We can't
+  // safely canonicalize every form, so reject anything that looks like a numeric-literal
+  // host outright — a real DNS hostname never looks like this.
+  if (/^\d+$/.test(h)) return true;                       // bare decimal integer
+  if (/^0x[0-9a-f]+$/i.test(h)) return true;              // bare hex
+  if (/^(0x[0-9a-f]+|0[0-7]*|\d+)(\.(0x[0-9a-f]+|0[0-7]*|\d+)){1,3}$/i.test(h)
+      && /(^0x|\.0x|^0\d|\.0\d)/i.test(h)) return true;   // dotted form with a hex/octal octet
 
   if (h === '::1' || h === '::') return true; // IPv6 loopback/unspecified
   if (/^fe80:/.test(h)) return true; // IPv6 link-local
