@@ -1,0 +1,15 @@
+{
+  "id": "grandwest-arena-cape-town",
+  "domain": "suninternational.com",
+  "url": "https://www.suninternational.com/content/suninternational/properties/grandwest.allservices.date.asc.0.all.event.json",
+  "type": "json_api",
+  "selectors": {
+    "eventBlock": "0.all-service",
+    "artist": "offerTitle",
+    "date": "startDate",
+    "ticketUrl": "path",
+    "venueNameFallback": "GrandWest Grand Arena",
+    "cityNameFallback": "Cape Town",
+    "countryNameFallback": "ZA"
+  }
+}

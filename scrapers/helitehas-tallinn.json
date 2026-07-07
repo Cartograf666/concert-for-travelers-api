@@ -1,0 +1,15 @@
+{
+  "id": "helitehas-tallinn",
+  "domain": "helitehas.ee",
+  "url": "https://helitehas.ee/en/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.archive-event:has(.event_address:contains('Helitehas'))",
+    "artist": ".event_title",
+    "date": ".event_date",
+    "ticketUrl": "a[rel=bookmark]",
+    "venueNameFallback": "Helitehas",
+    "cityNameFallback": "Tallinn",
+    "countryNameFallback": "EE"
+  }
+}

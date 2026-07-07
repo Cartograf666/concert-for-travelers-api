@@ -1,0 +1,15 @@
+{
+  "id": "teatro-pablo-tobon-uribe-medellin",
+  "domain": "teatropablotobon.com",
+  "url": "https://teatropablotobon.com/eventos/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.card",
+    "artist": "h2.card__title",
+    "date": ".card__details > div:first-child strong",
+    "ticketUrl": "a.card__link",
+    "venueNameFallback": "Teatro Pablo Tobón Uribe",
+    "cityNameFallback": "Medellin",
+    "countryNameFallback": "CO"
+  }
+}

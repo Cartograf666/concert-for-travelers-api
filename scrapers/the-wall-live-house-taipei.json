@@ -1,0 +1,15 @@
+{
+  "id": "the-wall-live-house-taipei",
+  "domain": "thewalllivehouse.kktix.cc",
+  "url": "https://thewalllivehouse.kktix.cc/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "#event-list li.clearfix",
+    "artist": "h2 a",
+    "date": ".date",
+    "ticketUrl": "h2 a",
+    "venueNameFallback": "The Wall Live House",
+    "cityNameFallback": "Taipei",
+    "countryNameFallback": "TW"
+  }
+}

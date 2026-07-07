@@ -294,8 +294,36 @@ function parseDateUnchecked(dateStr: string, baseDateStr: string): string | null
     sep: '09', september: '09', septembar: '09',
     okt: '10', oktober: '10', oct: '10', october: '10', oktobar: '10',
     nov: '11', november: '11', novembar: '11',
-    dez: '12', dezember: '12', dec: '12', december: '12', decembar: '12'
+    dez: '12', dezember: '12', dec: '12', december: '12', decembar: '12',
+    // Spanish (Medellin/Barcelona/Mexico City/Cartagena/etc. all render dates
+    // this way, e.g. "8 de julio de 2026" -- see the dedicated pattern below).
+    ene: '01', enero: '01',
+    febrero: '02',
+    marzo: '03',
+    abr: '04', abril: '04',
+    mayo: '05',
+    junio: '06',
+    julio: '07',
+    ago: '08', agosto: '08',
+    septiembre: '09', setiembre: '09',
+    octubre: '10',
+    noviembre: '11',
+    dic: '12', diciembre: '12'
   };
+
+  // Spanish "D de Month de YYYY" / "D de Month" -- the connector words ("de")
+  // mean this doesn't fit the generic "D Month[ YYYY]" patterns below even once
+  // the month name itself is recognized, so it needs its own explicit branch.
+  const esWithYear = cleanStr.match(/^(\d{1,2})\s+de\s+([a-zà-ÿ]+)\s+de\s+(\d{4})$/);
+  if (esWithYear) {
+    const month = MONTHS[esWithYear[2]];
+    if (month) return `${esWithYear[3]}-${month}-${esWithYear[1].padStart(2, '0')}`;
+  }
+  const esNoYear = cleanStr.match(/^(\d{1,2})\s+de\s+([a-zà-ÿ]+)$/);
+  if (esNoYear) {
+    const month = MONTHS[esNoYear[2]];
+    if (month) return resolveYearless(month, esNoYear[1].padStart(2, '0'), baseDate);
+  }
 
   // 1. YYYY-MM-DD
   const isoMatch = cleanStr.match(/^(\d{4})-(\d{2})-(\d{2})$/);

@@ -1,0 +1,15 @@
+{
+  "id": "legacy-taipei-taipei",
+  "domain": "legacy.com.tw",
+  "url": "https://www.legacy.com.tw/page/programlist/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".program_search_list li:contains(\"演出場地： Legacy Taipei\")",
+    "artist": ".program_search_title a",
+    "date": "td:contains(\"演出日期：\")",
+    "ticketUrl": ".program_search_title a",
+    "venueNameFallback": "Legacy Taipei",
+    "cityNameFallback": "Taipei",
+    "countryNameFallback": "TW"
+  }
+}

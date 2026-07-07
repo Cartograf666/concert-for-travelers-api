@@ -98,6 +98,14 @@ test('Pipeline - parse date strings', () => {
   assert.strictEqual(parseDate('31.02.2026', baseDate), null); // Feb 31 doesn't exist
   assert.strictEqual(parseDate('2026-02-30', baseDate), null); // Feb 30 doesn't exist
 
+  // Spanish "D de Month de YYYY" -- real format from Medellin/Barcelona/Mexico
+  // City venue pages. The connector words mean this needs its own branch, not
+  // just Spanish month names in the lookup table (chrono-node's English-default
+  // parser also fails on this, confirmed empirically).
+  assert.strictEqual(parseDate('8 de julio de 2026', baseDate), '2026-07-08');
+  assert.strictEqual(parseDate('1 de agosto de 2026', baseDate), '2026-08-01');
+  assert.strictEqual(parseDate('25 de diciembre de 2026', baseDate), '2026-12-25');
+
   // Word-based dates with years (English/German)
   assert.strictEqual(parseDate('12. Okt 2026', baseDate), '2026-10-12');
   assert.strictEqual(parseDate('12 Oktober 2026', baseDate), '2026-10-12');

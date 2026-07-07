@@ -1,0 +1,15 @@
+{
+  "id": "hrvatski-dom-split-split",
+  "domain": "hdsplit.hr",
+  "url": "https://hdsplit.hr/en/program/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.repdiv",
+    "artist": "h4.ct-headline",
+    "date": ".ct-div-block:has(.ciklus-text) + .ct-div-block .ct-text-block",
+    "ticketUrl": "h4.ct-headline a",
+    "venueNameFallback": "Hrvatski Dom Split",
+    "cityNameFallback": "Split",
+    "countryNameFallback": "HR"
+  }
+}

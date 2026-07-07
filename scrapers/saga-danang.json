@@ -1,0 +1,16 @@
+{
+  "id": "saga-danang",
+  "domain": "sagadanang.com",
+  "url": "https://sagadanang.com/saga-events",
+  "type": "static_selectors",
+  "allowEmpty": true,
+  "selectors": {
+    "eventBlock": "article.mec-event-article",
+    "artist": ".mec-event-title a",
+    "date": ".mec-start-date-label",
+    "ticketUrl": ".mec-event-title a",
+    "venueNameFallback": "SAGA Da Nang",
+    "cityNameFallback": "Da Nang",
+    "countryNameFallback": "VN"
+  }
+}

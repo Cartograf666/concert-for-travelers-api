@@ -1,0 +1,15 @@
+{
+  "id": "alexela-concert-hall-tallinn",
+  "domain": "kontserdimaja.ee",
+  "url": "https://kontserdimaja.ee/en/uritused/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".km-next-events__event",
+    "artist": ".event__title",
+    "date": ".event__date-time",
+    "ticketUrl": ".sales__ticket a",
+    "venueNameFallback": "Alexela Kontserdimaja",
+    "cityNameFallback": "Tallinn",
+    "countryNameFallback": "EE"
+  }
+}
