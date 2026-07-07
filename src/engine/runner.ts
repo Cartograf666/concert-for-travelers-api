@@ -455,7 +455,10 @@ async function renderWithPlaywright(config: ScraperConfig): Promise<FetchRespons
       try { host = new URL(route.request().url()).hostname; } catch { return route.abort(); }
       return hostBlocked(host) ? route.abort() : route.continue();
     });
-    await page.goto(config.url, { waitUntil: 'networkidle', timeout: 20000 });
+    // domcontentloaded (not networkidle): many venue pages poll/stream forever so
+    // networkidle never settles and hangs the goto until timeout; the page.route SSRF
+    // guard + explicit selector waits elsewhere don't need a fully-idle network.
+    await page.goto(config.url, { waitUntil: 'domcontentloaded', timeout: 20000 });
     const html = await page.content();
     return { status: 200, data: html, headers: {} };
   } finally {
@@ -620,6 +623,32 @@ export async function runScraper(config: ScraperConfig, cached?: VenueCache): Pr
 /**
  * Runs a list of scraper configs concurrently, with a maximum concurrency limit.
  */
+// Hard wall-clock ceiling per scraper. runScraper has its own axios/goto timeouts, but a
+// wedged headless Chromium (e.g. 'networkidle' that never settles) can hang a worker
+// forever and stall the whole pool -- and daily-scrape.yml would then burn the full
+// Actions ceiling. Generous enough (90s) not to cut legitimate retries, tight enough to
+// guarantee the pool always drains.
+const SCRAPER_WALL_CLOCK_MS = 90000;
+
+async function runScraperBounded(config: ScraperConfig, cached?: VenueCache): Promise<ScraperResult> {
+  let timer: ReturnType<typeof setTimeout>;
+  const timeout = new Promise<ScraperResult>((resolve) => {
+    timer = setTimeout(() => resolve({
+      configId: config.id,
+      success: false,
+      concerts: [],
+      error: `Scraper exceeded ${SCRAPER_WALL_CLOCK_MS / 1000}s wall-clock timeout`,
+      reason: 'fetch_error',
+      scrapedAt: new Date().toISOString()
+    }), SCRAPER_WALL_CLOCK_MS);
+  });
+  try {
+    return await Promise.race([runScraper(config, cached), timeout]);
+  } finally {
+    clearTimeout(timer!);
+  }
+}
+
 export async function runAllScrapers(configs: ScraperConfig[], concurrency = 5, cache?: ScrapeCache): Promise<ScraperResult[]> {
   const results: ScraperResult[] = [];
   const remaining = [...configs];
@@ -631,7 +660,7 @@ export async function runAllScrapers(configs: ScraperConfig[], concurrency = 5, 
 
       console.log(`[Runner] Starting scraper: ${config.id} (${config.url})`);
       try {
-        const res = await runScraper(config, cache?.[config.id]);
+        const res = await runScraperBounded(config, cache?.[config.id]);
         results.push(res);
         if (res.success) {
           console.log(`[Runner] Success: ${config.id} extracted ${res.concerts.length} events.`);

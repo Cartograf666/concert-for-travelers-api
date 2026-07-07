@@ -9,6 +9,7 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  issues: write # open/update a dedup'd failure issue (see "Alert on failure" step)
 
 concurrency:
   group: 'pages'
@@ -20,6 +21,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    timeout-minutes: 30 # a wedged run must not sit on the 6h Actions default ceiling
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -211,3 +213,19 @@ jobs:
         if: steps.health-check.outputs.should_deploy == 'true'
         id: deployment
         uses: actions/deploy-pages@v4
+
+      # Turn a silent scheduled-run failure into a visible, deduplicated GitHub issue
+      # (GitHub only emails the workflow author, and mutes that after repeated failures).
+      - name: Alert on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          TITLE="🚨 Daily concert scrape failed"
+          num=$(gh issue list --state open --search "$TITLE in:title" --json number --jq '.[0].number // empty')
+          if [ -n "$num" ]; then
+            gh issue comment "$num" --body "Failed again on $(date -u '+%Y-%m-%d %H:%M UTC') — $RUN_URL"
+          else
+            gh issue create --title "$TITLE" --body "The daily scrape workflow failed. Logs: $RUN_URL"
+          fi

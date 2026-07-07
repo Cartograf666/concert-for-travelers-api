@@ -156,6 +156,18 @@ test('parseDate falls back to chrono for ordinal/natural formats', () => {
   assert.strictEqual(parseDate('October 3rd 2026', base), '2026-10-03');
 });
 
+test('parseDate drops fabricatable garbage instead of guessing a wrong date', () => {
+  const base = '2026-07-07T12:00:00';
+  // A bare time / lone fragment must NOT default to baseDate ("today at 8pm").
+  assert.strictEqual(parseDate('19:30', base), null);
+  assert.strictEqual(parseDate('doors 8pm', base), null);
+  // A foreign-language month chrono can't fully resolve must not fabricate a day/month.
+  assert.strictEqual(parseDate('12 marta 2026', base), null);
+  // Sanity: genuinely parseable dates still work.
+  assert.strictEqual(parseDate('2026-10-15', base), '2026-10-15');
+  assert.strictEqual(parseDate('October 3rd 2026', base), '2026-10-03');
+});
+
 test('parseDate keeps a just-passed year-less date in the current year (grace window)', () => {
   const base = '2026-07-07T12:00:00';
   // 3 July, seen on the 7th -> a few days late, stays 2026 (not rolled to 2027).

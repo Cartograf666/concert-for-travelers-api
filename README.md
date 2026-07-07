@@ -1,5 +1,7 @@
 # Resilient Self-Healing Concert Scraper & Metadata Enrichment Network
 
+[![Daily Concert Scrape](https://github.com/Cartograf666/concert-for-travelers-api/actions/workflows/daily-scrape.yml/badge.svg)](https://github.com/Cartograf666/concert-for-travelers-api/actions/workflows/daily-scrape.yml)
+
 A serverless, **fully autonomous** concert scraping and metadata enrichment network built with **Node.js**, **TypeScript**, **Cheerio/Playwright**, and **Zod**. It aggregates concert data across multiple venues, normalizes artist names and dates, performs JIT (Just-In-Time) social links extraction, and exposes the aggregated data as a free, highly-performant **Static JSON API**.
 
 This repo is backend/data-only — it has no frontend. A separate repository (`concerts-for-travelers`) consumes the published JSON API described below.
