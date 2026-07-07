@@ -6,6 +6,7 @@ import { Concert } from './schemas/concert.js';
 import { processConcerts } from './pipeline/process.js';
 import { enrichMissingArtistMetadata } from './pipeline/enrich.js';
 import { publishConcerts } from './generator/publish.js';
+import { fetchTicketmasterConcerts } from './engine/ticketmaster.js';
 
 async function main() {
   const scrapersDir = path.join(process.cwd(), 'scrapers');
@@ -64,6 +65,20 @@ async function main() {
     await saveCache(cachePath, cache);
     console.log(`[Orchestrator] ${changedCount}/${configs.length} venues changed since last run.`);
 
+    // 4b. Ticketmaster Discovery API sweep -- a broad additive source alongside the
+    // per-venue scrapers, covering many venues Ticketmaster itself already tracks
+    // in one paginated pass per country instead of one scraper config per venue.
+    // Goes through the same approved-artist whitelist filter as everything else.
+    let ticketmasterCount = 0;
+    const tmApiKey = process.env.TICKETMASTER_API_KEY;
+    if (tmApiKey) {
+      const tmConcerts = await fetchTicketmasterConcerts(tmApiKey);
+      ticketmasterCount = tmConcerts.length;
+      allScrapedConcerts.push(...tmConcerts);
+    } else {
+      console.log('[Orchestrator] TICKETMASTER_API_KEY not found. Skipping Ticketmaster sweep.');
+    }
+
     // 5. Always record failures for the separate self-healing run.
     const failures = results
       .filter((r) => !r.success)
@@ -80,8 +95,10 @@ async function main() {
     // 6. Short-circuit: if no venue changed (and no uncached venue needs publishing),
     //    the published output is already current — skip normalization, enrichment,
     //    and publish entirely so a daily run does nothing when nothing updated.
+    //    Ticketmaster has no per-item change-detection cache (it's a fresh sweep
+    //    every run), so any Ticketmaster results always count as "changed".
     const failureWithoutCache = results.some((r) => !r.success && !(cache[r.configId]?.concerts?.length));
-    if (changedCount === 0 && !failureWithoutCache) {
+    if (changedCount === 0 && ticketmasterCount === 0 && !failureWithoutCache) {
       console.log('[Orchestrator] No venue changed — skipping normalization, enrichment, and publish.');
       console.log(`[Orchestrator] Scrape complete (no-op). Failures logged: ${failures.length}.`);
       return;
