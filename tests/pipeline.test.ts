@@ -90,6 +90,14 @@ test('Pipeline - parse date strings', () => {
   assert.strictEqual(parseDate('09.17.2026', baseDate), '2026-09-17');
   assert.strictEqual(parseDate('12.25.2026', baseDate), '2026-12-25');
 
+  // Calendar-validity gate: a result that isn't a real calendar date must never
+  // reach ConcertSchema (whose date regex only checks digit shape, not validity).
+  // These cases the day/month swap heuristic can't resolve (both numbers >12, or
+  // an already-ISO date that's simply impossible) must return null, not garbage.
+  assert.strictEqual(parseDate('13.13.2026', baseDate), null);
+  assert.strictEqual(parseDate('31.02.2026', baseDate), null); // Feb 31 doesn't exist
+  assert.strictEqual(parseDate('2026-02-30', baseDate), null); // Feb 30 doesn't exist
+
   // Word-based dates with years (English/German)
   assert.strictEqual(parseDate('12. Okt 2026', baseDate), '2026-10-12');
   assert.strictEqual(parseDate('12 Oktober 2026', baseDate), '2026-10-12');

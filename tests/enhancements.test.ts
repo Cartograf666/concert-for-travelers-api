@@ -172,6 +172,19 @@ test('short approved names match only exactly, longer names match whole-word', (
   assert.strictEqual(match('Muse Tribute Night'), null, 'tribute filtered out');
 });
 
+test('substring matches require a minimum coverage of the cleaned string, not just a word-boundary hit', () => {
+  // Real cases found by auditing live scraped output: approved-artist entries
+  // that are also common dictionary words ("Darts", "Music", "Queer", "Mega")
+  // must not swallow unrelated non-music event titles that merely contain that
+  // word as a small fraction of a much longer title.
+  const match = buildApprovedMatcher(['Darts', 'Music', 'Queer', 'Mega', 'Muse']);
+  assert.strictEqual(match('World Series of Darts Finals'), null, 'a darts tournament is not a "Darts" concert');
+  assert.strictEqual(match('QUEER WRESTLING CIRCUS'), null, 'a wrestling show is not a "Queer" concert');
+  assert.strictEqual(match('WORLD PRIDE MUSIC FESTIVAL'), null, 'too little of the title is "Music" to be confident');
+  // But a normal, mostly-just-the-name listing still matches (coverage is high enough).
+  assert.strictEqual(match('Muse at the O2')?.name, 'Muse');
+});
+
 const CACHE_HTML = `<div class="event-card"><div class="artist-name">Muse</div><span class="event-date">2026-08-01</span></div>`;
 
 test('runScraper reports contentHash and detects unchanged content by hash', async () => {

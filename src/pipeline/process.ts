@@ -164,9 +164,21 @@ function buildSubstringRegex(name: string): RegExp {
  *      substring, so "Coverdale"/"Undercover" survive).
  *   3. Whole-word/whole-string substring match, longest approved name first — so
  *      a short generic entry ("alan") can never shadow a longer, more specific
- *      one ("Alan Walker") that also matches.
+ *      one ("Alan Walker") that also matches. Also requires the matched name to
+ *      cover a minimum fraction of the cleaned string (MIN_SUBSTRING_COVERAGE):
+ *      real approved-artist entries that are also common dictionary words
+ *      ("Music", "Band", "Live", "Darts", "Mega", "Queer" were all found live in
+ *      data/approved_artists.json) would otherwise match inside ANY unrelated
+ *      event title containing that word ("World Series of Darts Finals" ->
+ *      "Darts", "QUEER WRESTLING CIRCUS" -> "Queer") -- confirmed against real
+ *      scraped output, not hypothetical.
  *   4. Fuzzy fallback (edit-distance) for minor scraping noise tier 1-3 miss.
  */
+
+// A substring match only counts if the approved name makes up at least this
+// fraction of the cleaned string -- otherwise a short dictionary-word artist
+// name swallows unrelated non-music event titles that merely contain that word.
+const MIN_SUBSTRING_COVERAGE = 0.25;
 export function buildApprovedMatcher(approvedArtists: any[]): ApprovedMatcher {
   const entries = approvedArtists
     .map((approved) => {
@@ -204,7 +216,9 @@ export function buildApprovedMatcher(approvedArtists: any[]): ApprovedMatcher {
 
     // Tier 3: whole-word/whole-string substring match, most specific first.
     for (const e of bySubstring) {
-      if (e.regex.test(cleaned)) return toMatch(e);
+      if (e.regex.test(cleaned) && e.name.length / cleaned.length >= MIN_SUBSTRING_COVERAGE) {
+        return toMatch(e);
+      }
     }
 
     // Tier 4: fuzzy fallback for near-miss scraping noise.
@@ -232,7 +246,27 @@ export function matchApprovedArtist(scrapedName: string, approvedArtists: any[])
 /**
  * Parse date strings into standard ISO YYYY-MM-DD
  */
+/** True if a YYYY-MM-DD string represents a real calendar date (not e.g. the
+ * invalid-but-shape-valid "2026-17-09" a day/month mix-up could produce --
+ * ConcertSchema's own date regex only checks digit shape, not calendar validity). */
+function isCalendarValidIso(iso: string): boolean {
+  const m = iso.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!m) return false;
+  const [, y, mo, d] = m;
+  const roundtrip = new Date(Number(y), Number(mo) - 1, Number(d));
+  return roundtrip.getFullYear() === Number(y) && roundtrip.getMonth() === Number(mo) - 1 && roundtrip.getDate() === Number(d);
+}
+
 export function parseDate(dateStr: string, baseDateStr: string): string | null {
+  const result = parseDateUnchecked(dateStr, baseDateStr);
+  // Final safety net regardless of which branch below produced the result: a
+  // date that isn't a real calendar date must never reach ConcertSchema, which
+  // would accept it (its regex only checks digit shape, e.g. "2026-17-09" passes).
+  if (result !== null && !isCalendarValidIso(result)) return null;
+  return result;
+}
+
+function parseDateUnchecked(dateStr: string, baseDateStr: string): string | null {
   const cleanStr = dateStr.toLowerCase().trim().replace(/,/g, '').replace(/\//g, '.');
   const baseDate = new Date(baseDateStr);
   const baseYear = baseDate.getFullYear();
