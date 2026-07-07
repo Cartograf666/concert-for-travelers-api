@@ -1,0 +1,17 @@
+{
+  "id": "wuk-vienna",
+  "domain": "www.wuk.at",
+  "url": "https://www.wuk.at/en/wuk-music/",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": ".event-list-item",
+    "artist": "h2 a",
+    "date": ".event-list-item-meta-info",
+    "ticketUrl": "h2 a",
+    "venueNameFallback": "WUK",
+    "cityNameFallback": "Vienna",
+    "countryNameFallback": "AT",
+    "lat": 48.2237,
+    "lng": 16.3517
+  }
+}

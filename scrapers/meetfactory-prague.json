@@ -1,0 +1,15 @@
+{
+  "id": "meetfactory-prague",
+  "domain": "www.meetfactory.cz",
+  "url": "https://www.meetfactory.cz/en/program/hudba",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": "script[type=\"application/ld+json\"]",
+    "date": "startDate",
+    "venueNameFallback": "MeetFactory",
+    "cityNameFallback": "Prague",
+    "countryNameFallback": "CZ",
+    "lat": 50.0536,
+    "lng": 14.4099
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "akvarium-klub-budapest",
+  "domain": "akvariumklub.hu",
+  "url": "https://akvariumklub.hu/en/events/",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": "a.grid-item.m-card",
+    "artist": ".m-card__description .h5",
+    "date": ".m-card__date",
+    "ticketUrl": "a.grid-item.m-card",
+    "venueNameFallback": "Akvárium Klub",
+    "cityNameFallback": "Budapest",
+    "countryNameFallback": "HU",
+    "lat": 47.4985,
+    "lng": 19.0532
+  }
+}

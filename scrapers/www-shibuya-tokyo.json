@@ -1,0 +1,17 @@
+{
+  "id": "www-shibuya-tokyo",
+  "domain": "www-shibuya.jp",
+  "url": "https://www-shibuya.jp/schedule/",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": "#eventList article.column",
+    "artist": "h3.title",
+    "date": ".date .day",
+    "ticketUrl": "a.pageLink",
+    "venueNameFallback": "WWW / WWW X / WWWbeta Shibuya",
+    "cityNameFallback": "Tokyo",
+    "countryNameFallback": "JP",
+    "lat": 35.6616,
+    "lng": 139.6987
+  }
+}

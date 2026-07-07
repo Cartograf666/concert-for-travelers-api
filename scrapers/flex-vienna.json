@@ -1,0 +1,17 @@
+{
+  "id": "flex-vienna",
+  "domain": "flex.at",
+  "url": "https://flex.at/",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": ".ewpe-inner-wrapper",
+    "artist": ".ewpe-event-title",
+    "date": ".ewpe-events-schedule",
+    "ticketUrl": "a.event-link",
+    "venueNameFallback": "Flex",
+    "cityNameFallback": "Vienna",
+    "countryNameFallback": "AT",
+    "lat": 48.2184,
+    "lng": 16.3714
+  }
+}

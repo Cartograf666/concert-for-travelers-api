@@ -1,0 +1,17 @@
+{
+  "id": "lucerna-music-bar-prague",
+  "domain": "musicbar.cz",
+  "url": "https://musicbar.cz/en/program/",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": "a.program-item",
+    "artist": "p",
+    "date": "timestamp comment",
+    "ticketUrl": "a.program-item",
+    "venueNameFallback": "Lucerna Music Bar",
+    "cityNameFallback": "Prague",
+    "countryNameFallback": "CZ",
+    "lat": 50.081,
+    "lng": 14.4254
+  }
+}

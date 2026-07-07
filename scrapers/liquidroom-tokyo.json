@@ -1,0 +1,17 @@
+{
+  "id": "liquidroom-tokyo",
+  "domain": "www.liquidroom.net",
+  "url": "https://www.liquidroom.net/schedule",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": "article",
+    "artist": "h2",
+    "date": "event url YYYYMMDD",
+    "ticketUrl": "a.s_link",
+    "venueNameFallback": "LIQUIDROOM",
+    "cityNameFallback": "Tokyo",
+    "countryNameFallback": "JP",
+    "lat": 35.649,
+    "lng": 139.7101
+  }
+}

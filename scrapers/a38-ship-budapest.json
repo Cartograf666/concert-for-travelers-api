@@ -1,0 +1,17 @@
+{
+  "id": "a38-ship-budapest",
+  "domain": "www.a38.hu",
+  "url": "https://www.a38.hu/en/programs",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": "a.eventCard",
+    "artist": "[itemprop=\"name\"]",
+    "date": "meta[itemprop=\"startDate\"]",
+    "ticketUrl": "a.eventCard",
+    "venueNameFallback": "A38 Ship",
+    "cityNameFallback": "Budapest",
+    "countryNameFallback": "HU",
+    "lat": 47.4768,
+    "lng": 19.0628
+  }
+}
