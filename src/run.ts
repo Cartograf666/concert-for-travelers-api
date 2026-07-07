@@ -110,6 +110,23 @@ async function main() {
       console.log('[Orchestrator] TICKETMASTER_API_KEY not found. Skipping Ticketmaster sweep.');
     }
 
+    // 4c. Artist tour-page scrapers (scrapers/artists/*.json) run on their own,
+    // less-frequent schedule (see artist-scrape.yml) -- there can be hundreds of
+    // them, and re-fetching every one daily alongside venues + Ticketmaster would
+    // blow this job's time budget for little gain (tour dates don't change hour to
+    // hour). This job only READS whatever that job last cached, never scrapes
+    // artists/ itself, so artist-tour data still flows into today's publish even
+    // on a day the artist-scrape job didn't run.
+    const artistCache = await loadCache(path.join(reportsDir, 'artist-scrape-cache.json'));
+    let artistConcertCount = 0;
+    for (const entry of Object.values(artistCache)) {
+      allScrapedConcerts.push(...entry.concerts);
+      artistConcertCount += entry.concerts.length;
+    }
+    if (artistConcertCount > 0) {
+      console.log(`[Orchestrator] Loaded ${artistConcertCount} cached events from ${Object.keys(artistCache).length} artist tour-page scrapers.`);
+    }
+
     // 5. Always record failures for the separate self-healing run.
     const failures = results
       .filter((r) => !r.success)

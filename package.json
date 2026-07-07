@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc",
     "scrape": "tsx src/run.ts",
+    "scrape-artists": "tsx src/run-artists.ts",
     "heal": "tsx src/heal.ts",
     "clean-artists": "tsx src/scripts/clean_artists.ts",
     "enrich-auto": "tsx src/scripts/enrich_auto.ts",

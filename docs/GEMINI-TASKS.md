@@ -1,8 +1,9 @@
 # GEMINI WORK BRIEF — concert-for-travelers-api
 
 You are a fast worker on this TypeScript repo. You do **high-volume, mechanical**
-work: adding venue scraper configs, plus a short list of **exactly-specified** small
-code fixes. You do NOT do design, security, or anything needing judgment.
+work: adding artist tour-page scraper configs (Task C, current priority), venue scraper
+configs (Task A), plus a short list of **exactly-specified** small code fixes (Task B,
+already done). You do NOT do design, security, or anything needing judgment.
 
 ## GOLDEN RULES — never break these
 1. After EVERY change run BOTH: `npm test` and `npx tsc --noEmit`. Both must be green
@@ -20,7 +21,60 @@ code fixes. You do NOT do design, security, or anything needing judgment.
 
 ---
 
-## TASK A — add venue scrapers (MAIN JOB, do this most)
+## TASK C — add artist tour-page scrapers (NEW MAIN JOB — prioritize this over Task A)
+
+**Why this exists:** venue scrapers and the Ticketmaster sweep only cover markets/venues
+we already know about (mostly Europe/North America). A user noticed a real gap live: The
+Weeknd showed up for Singapore but not Japan, not because of a bug, but because neither
+data source has real presence in Japan. The actual fix for "give me every concert for MY
+artists, wherever they play" is a scraper keyed by ARTIST instead of by venue/country —
+their own official tour page, or (if their site embeds one) the public Bandsintown/
+Songkick widget on their site. That's a normal public webpage load, not a gated developer
+API — same legitimacy as scraping any other page in this repo.
+
+**The list:** `data/artist_scrape_targets.txt`, one artist/band name per line, ~1400
+entries (mix of English and Russian names — go through all of them, in order). Some
+entries are noise (genre tags, stray words like "билборды", not real artists) — if a name
+doesn't clearly identify a real touring act, SKIP it and note it, don't guess.
+
+**Config location is different from Task A:** artist configs go in `scrapers/artists/`
+(not the top-level `scrapers/` dir) — this is deliberate, they run on their own weekly
+schedule (`artist-scrape.yml`), not the daily one, so there's no time-budget pressure like
+Task A's venues have. `npm run test-config -- <id>` already checks both locations, no
+extra step needed.
+
+**Resumability:** each artist becomes exactly one file, `scrapers/artists/<artist-slug>-tour.json`.
+Before working an artist, check whether that file already exists — if so, skip it (already
+done, whether by you or a prior session). This makes the whole list safely resumable
+across sessions/restarts with no separate progress-tracking file needed.
+
+**Per artist:**
+1. Take the next artist from the list whose `scrapers/artists/<slug>-tour.json` doesn't
+   exist yet.
+2. Find their real official tour/dates page: try `<official-site>/tour`, `/shows`,
+   `/live`, `/events` first. If their own site has no tour listing but embeds a
+   Bandsintown or Songkick widget, that's a valid source too.
+3. Fetch it, choose `type` in the SAME preference order as Task A: `jsonld` > `next_data`
+   > `json_api` > `static_selectors` (last resort, if the page needs JS rendering to show
+   events, use `playwright_render` instead of giving up).
+4. Write `scrapers/artists/<artist-slug>-tour.json`. Same schema/template as Task A's
+   venue configs (see below) EXCEPT there is no fixed venue/city — if the tour page lists
+   multiple cities/venues across the artist's tour, that's fine, the engine handles
+   multiple events per scraper already; set `venueNameFallback`/`cityNameFallback` only if
+   the page doesn't reliably supply its own per-event venue/city (leave them off the
+   selectors and let the real page data flow through if it has it).
+5. Test: `npm run test-config -- <artist-slug>-tour` → must print `OK — N events` with
+   N≥1 and a real date. If it fails or the artist has no accessible public tour listing
+   anywhere (no official site, no widget, nothing) — SKIP and note it, do not fabricate a
+   config that doesn't actually work. (A fabricated scraper that always 0-events or
+   ENOTFOUNDs was already caught and removed once this session — don't repeat that.)
+6. `npm test && npx tsc --noEmit` green → commit `feat(scrapers): add <artist> tour page`.
+
+Work through the list in order. This is high-volume, same as Task A — keep going.
+
+---
+
+## TASK A — add venue scrapers (do this if Task C is fully worked through)
 
 Full recipe: `docs/ADD-VENUE-SCRAPERS.md`. Read it once. Then repeat this loop:
 
@@ -65,7 +119,7 @@ Keep going — this is your main output. Aim for many venues.
 
 ---
 
-## TASK B — safe small code fixes (do each ONCE, exactly as written)
+## TASK B — safe small code fixes (DONE — B1 through B5 all landed and verified, nothing left to do here)
 
 For EACH: make the change → add/adjust its test → `npm test && npx tsc --noEmit` green →
 commit. If the file/code doesn't look like the description, SKIP and note it.
@@ -111,6 +165,9 @@ then `city` before writing. Commit `perf: compact + parallel + deterministic pub
 ---
 
 ## DO NOT TOUCH — leave for a human / smart agent. Just list them in NOTES, do NOT attempt:
+- `src/run.ts`, `src/run-artists.ts`, `.github/workflows/artist-scrape.yml`,
+  `.github/workflows/daily-scrape.yml` (orchestration/CI plumbing, already wired up for Task C)
+- `data/artist_scrape_targets.txt` (read from it, never edit it)
 - `id` regex hardening / path-traversal in config.ts, repair.ts, heal.ts, runner.ts (SECURITY)
 - SSRF: redirects, IP encodings, Playwright host guard (SECURITY)
 - self-heal auto-merge verification / prompt fencing (SECURITY)
@@ -122,7 +179,7 @@ then `city` before writing. Commit `perf: compact + parallel + deterministic pub
 ---
 
 ## WHEN DONE — write a short report:
-- Venues added (ids).
-- Fixes applied (B1–B5) with commit hashes.
-- Anything skipped and why.
+- Artist tour scrapers added (ids) and how many of the ~1400 are left.
+- Venues added (ids), if you got to Task A.
+- Anything skipped and why (bad/no tour page, ambiguous non-artist entry, etc).
 - Anything that went red you couldn't fix.

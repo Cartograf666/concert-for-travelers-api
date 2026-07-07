@@ -84,6 +84,17 @@ jobs:
           restore-keys: |
             publish-stats-
 
+      # Read-only: owned and saved by artist-scrape.yml (its own, less-frequent
+      # workflow -- see there for why). This job only merges in whatever it last
+      # produced, never scrapes scrapers/artists/ itself, so it never saves this key.
+      - name: Restore artist scrape cache
+        uses: actions/cache/restore@v4
+        with:
+          path: reports/artist-scrape-cache.json
+          key: artist-scrape-cache-${{ github.run_id }}
+          restore-keys: |
+            artist-scrape-cache-
+
       - name: Run Scraper
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}

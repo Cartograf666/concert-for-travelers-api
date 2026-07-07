@@ -1,0 +1,74 @@
+name: Artist Tour-Page Scrape
+
+on:
+  schedule:
+    - cron: '0 4 * * 0' # Weekly, Sunday 04:00 UTC -- tour dates don't change hour to hour
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: 'artist-scrape'
+  cancel-in-progress: true
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90 # can cover hundreds/thousands of artist configs; a wedged run must still not run forever
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check for playwright_render scrapers
+        id: check-playwright
+        run: |
+          if grep -rl '"type"[[:space:]]*:[[:space:]]*"playwright_render"' scrapers/artists/*.json > /dev/null 2>&1; then
+            echo "needed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "needed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Install Playwright browser (chromium)
+        if: steps.check-playwright.outputs.needed == 'true'
+        run: npx playwright install --with-deps chromium
+
+      - name: Build project
+        run: npm run build
+
+      # Persisted across runs so an artist whose tour page didn't change can be
+      # skipped (conditional request / hash match), same pattern as the daily
+      # venue scrape cache.
+      - name: Restore artist scrape cache
+        uses: actions/cache/restore@v4
+        with:
+          path: reports/artist-scrape-cache.json
+          key: artist-scrape-cache-${{ github.run_id }}
+          restore-keys: |
+            artist-scrape-cache-
+
+      - name: Run artist tour-page scraper
+        run: npm run scrape-artists
+
+      - name: Save artist scrape cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: reports/artist-scrape-cache.json
+          key: artist-scrape-cache-${{ github.run_id }}
+
+      - name: Upload reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: artist-scrape-reports
+          path: reports/artist-scrape-cache.json
+          retention-days: 5
