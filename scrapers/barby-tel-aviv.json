@@ -1,0 +1,16 @@
+{
+  "id": "barby-tel-aviv",
+  "domain": "barby.co.il",
+  "url": "https://www.barby.co.il/show/history",
+  "type": "playwright_render",
+  "selectors": {
+    "eventBlock": "div.col-lg-3",
+    "artist": "div.item-title",
+    "date": "div.def_titel2A",
+    "venueNameFallback": "Barby",
+    "cityNameFallback": "Tel Aviv",
+    "countryNameFallback": "IL",
+    "lat": 32.0633,
+    "lng": 34.7697
+  }
+}
