@@ -1,0 +1,14 @@
+{
+  "id": "nalen-stockholm",
+  "domain": "nalen.com",
+  "url": "https://nalen.com/en",
+  "type": "next_data",
+  "selectors": {
+    "eventBlock": "props.pageProps.blocks.2.artists",
+    "artist": "artistName.content.0.content.0.text",
+    "date": "startDate",
+    "venueNameFallback": "Nalen",
+    "cityNameFallback": "Stockholm",
+    "countryNameFallback": "SE"
+  }
+}
