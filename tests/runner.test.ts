@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert';
 import { createServer, Server } from 'node:http';
-import { runScraper, runAllScrapers, loadConfigs, closeBrowser } from '../src/engine/runner.js';
+import { runScraper, runAllScrapers, loadConfigs, closeBrowser, isRetryableError } from '../src/engine/runner.js';
 import { ScraperConfig, ScraperConfigSchema } from '../src/schemas/config.js';
 import * as fs from 'fs/promises';
 import * as path from 'path';
@@ -530,4 +530,13 @@ test('Runner Engine - closeBrowser is idempotent and crash-safe', async () => {
   await closeBrowser();
   await closeBrowser();
 });
+
+test('Runner Engine - isRetryableError handles ENOTFOUND correctly', () => {
+  const dnsError = { code: 'ENOTFOUND' };
+  const timeoutError = { code: 'ETIMEDOUT' };
+  
+  assert.strictEqual(isRetryableError(dnsError), false);
+  assert.strictEqual(isRetryableError(timeoutError), true);
+});
+
 

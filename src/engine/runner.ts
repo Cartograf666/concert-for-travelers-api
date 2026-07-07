@@ -74,9 +74,9 @@ function getBreaker(domain: string): ReturnType<typeof circuitBreaker> {
 }
 
 /** True for transient failures worth retrying (network drop, timeout, 429, 5xx). */
-function isRetryableError(err: any): boolean {
+export function isRetryableError(err: any): boolean {
   if (!err) return false;
-  if (err.code === 'ECONNABORTED' || err.code === 'ECONNRESET' || err.code === 'ETIMEDOUT' || err.code === 'ENOTFOUND') {
+  if (err.code === 'ECONNABORTED' || err.code === 'ECONNRESET' || err.code === 'ETIMEDOUT') {
     return true;
   }
   const status = err.response?.status;
