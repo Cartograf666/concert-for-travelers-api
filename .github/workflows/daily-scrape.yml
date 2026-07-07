@@ -62,6 +62,16 @@ jobs:
           restore-keys: |
             scrape-cache-
 
+      # Per-country last-successful Ticketmaster results, so a transient failure on
+      # one country falls back to yesterday's data instead of contributing nothing.
+      - name: Restore Ticketmaster cache
+        uses: actions/cache/restore@v4
+        with:
+          path: reports/ticketmaster-cache.json
+          key: ticketmaster-cache-${{ github.run_id }}
+          restore-keys: |
+            ticketmaster-cache-
+
       # Baseline of the last successfully-deployed publish stats, so the health
       # gate below has something to compare a fresh totalConcerts against.
       - name: Restore last-good publish stats
@@ -84,6 +94,13 @@ jobs:
         with:
           path: reports/scrape-cache.json
           key: scrape-cache-${{ github.run_id }}
+
+      - name: Save Ticketmaster cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: reports/ticketmaster-cache.json
+          key: ticketmaster-cache-${{ github.run_id }}
 
       # Gate the deploy: publishConcerts has no built-in floor on how few concerts
       # it's willing to publish, so a scraper regression or mass venue failure could

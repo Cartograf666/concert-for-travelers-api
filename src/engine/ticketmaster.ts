@@ -1,4 +1,5 @@
 import axios from 'axios';
+import * as fs from 'fs/promises';
 import { Concert } from '../schemas/concert.js';
 
 const DISCOVERY_URL = 'https://app.ticketmaster.com/discovery/v2/events.json';
@@ -28,6 +29,25 @@ export const TICKETMASTER_COUNTRIES = [
   'US', 'CA', 'MX', 'GB', 'IE', 'DE', 'AT', 'CH', 'NL', 'BE', 'FR', 'ES', 'PT',
   'IT', 'PL', 'CZ', 'SE', 'NO', 'DK', 'FI', 'AU', 'NZ', 'ZA', 'AE', 'TR'
 ];
+
+export interface TicketmasterCache {
+  [countryCode: string]: {
+    fetchedAt: string;
+    concerts: Partial<Concert>[];
+  };
+}
+
+export async function loadTicketmasterCache(cachePath: string): Promise<TicketmasterCache> {
+  try {
+    return JSON.parse(await fs.readFile(cachePath, 'utf-8'));
+  } catch {
+    return {}; // missing or unreadable cache -> start fresh, no fallback available yet
+  }
+}
+
+export async function saveTicketmasterCache(cachePath: string, cache: TicketmasterCache): Promise<void> {
+  await fs.writeFile(cachePath, JSON.stringify(cache, null, 2), 'utf-8');
+}
 
 interface TmEvent {
   name?: string;
@@ -79,17 +99,28 @@ export function mapEventToConcert(event: TmEvent, scrapedAt: string): Partial<Co
  * countries. Feeds into the same processConcerts() pipeline as venue scrapers --
  * the approved-artist whitelist filter applies here too, so this is additive
  * coverage, not a bypass of the existing quality bar.
+ *
+ * `cache` (per-country last-successful raw results) is optional and mutated in
+ * place -- same "reuse last-good data on a transient failure" fallback venue
+ * scrapers already get via reports/scrape-cache.json, applied per-country here
+ * instead of per-venue. A network blip on one country no longer drops that
+ * country's concerts for the whole day; it falls back to the last successful
+ * sweep instead of contributing nothing.
  */
 export async function fetchTicketmasterConcerts(
   apiKey: string,
   countries: string[] = TICKETMASTER_COUNTRIES,
-  discoveryUrl: string = DISCOVERY_URL
+  discoveryUrl: string = DISCOVERY_URL,
+  cache: TicketmasterCache = {}
 ): Promise<Partial<Concert>[]> {
   const scrapedAt = new Date().toISOString();
   const concerts: Partial<Concert>[] = [];
   let requestCount = 0;
 
   for (const countryCode of countries) {
+    const countryConcerts: Partial<Concert>[] = [];
+    let countryFailed = false;
+
     for (let page = 0; page < MAX_PAGES_PER_COUNTRY; page++) {
       try {
         const response = await axios.get(discoveryUrl, {
@@ -108,7 +139,7 @@ export async function fetchTicketmasterConcerts(
         const events: TmEvent[] = response.data?._embedded?.events || [];
         for (const event of events) {
           const concert = mapEventToConcert(event, scrapedAt);
-          if (concert) concerts.push(concert);
+          if (concert) countryConcerts.push(concert);
         }
 
         const totalPages = response.data?.page?.totalPages ?? 0;
@@ -119,11 +150,31 @@ export async function fetchTicketmasterConcerts(
         const status = err.response?.status;
         if (status === 401 || status === 403) {
           console.error(`[Ticketmaster] Auth error (${status}) -- stopping sweep, check TICKETMASTER_API_KEY.`);
+          // Nothing more will succeed with a dead key -- fall back to cache for
+          // every remaining country (including this one) rather than returning
+          // only what was collected before the key was confirmed bad.
+          for (const remaining of countries.slice(countries.indexOf(countryCode))) {
+            if (cache[remaining]) concerts.push(...cache[remaining].concerts);
+          }
+          console.log(`[Ticketmaster] ${requestCount} requests across ${countries.length} countries -> ${concerts.length} raw events (cache fallback after auth error).`);
           return concerts;
         }
         console.warn(`[Ticketmaster] ${countryCode} page ${page} failed: ${err.message}`);
+        countryFailed = true;
         break;
       }
+    }
+
+    if (countryFailed && countryConcerts.length === 0 && cache[countryCode]) {
+      console.warn(`[Ticketmaster] ${countryCode} failed with no results this run -- reusing ${cache[countryCode].concerts.length} cached events from ${cache[countryCode].fetchedAt}.`);
+      concerts.push(...cache[countryCode].concerts);
+    } else if (!countryFailed) {
+      cache[countryCode] = { fetchedAt: scrapedAt, concerts: countryConcerts };
+      concerts.push(...countryConcerts);
+    } else {
+      // Failed partway through but got some results, or failed with nothing
+      // and no cache to fall back on -- use whatever was actually collected.
+      concerts.push(...countryConcerts);
     }
   }
 

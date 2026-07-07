@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert';
 import { createServer, Server } from 'node:http';
-import { fetchTicketmasterConcerts, mapEventToConcert } from '../src/engine/ticketmaster.js';
+import { fetchTicketmasterConcerts, mapEventToConcert, TicketmasterCache } from '../src/engine/ticketmaster.js';
 
 function startMockDiscoveryServer(port: number, pagesByCountry: Record<string, any[]>): Promise<Server> {
   return new Promise((resolve) => {
@@ -93,5 +93,41 @@ test('Ticketmaster - fetchTicketmasterConcerts stops the whole sweep on a 401/40
 
   const concerts = await fetchTicketmasterConcerts('bad-key', ['DE', 'FR'], `http://localhost:${PORT}/events.json`);
   assert.strictEqual(concerts.length, 0);
+  await new Promise<void>((r) => server.close(() => r()));
+});
+
+test('Ticketmaster - a country that fails falls back to its cached results instead of contributing nothing', async () => {
+  const PORT = 8343;
+  // DE always 500s; FR succeeds normally.
+  const server = createServer((req, res) => {
+    const url = new URL(req.url || '', `http://localhost:${PORT}`);
+    if (url.searchParams.get('countryCode') === 'DE') {
+      res.writeHead(500);
+      res.end('server error');
+      return;
+    }
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({
+      _embedded: { events: [{ name: 'Fresh FR Show', dates: { start: { localDate: '2026-09-05' } }, _embedded: { venues: [{ name: 'V3', city: { name: 'Paris' }, country: { countryCode: 'FR' } }], attractions: [{ name: 'Fresh Artist' }] } }] },
+      page: { size: 200, totalElements: 1, totalPages: 1, number: 0 }
+    }));
+  });
+  await new Promise<void>((r) => server.listen(PORT, () => r()));
+
+  const cache: TicketmasterCache = {
+    DE: {
+      fetchedAt: '2026-07-06T00:00:00.000Z',
+      concerts: [{ artist: 'Cached DE Artist', date: '2026-09-01', venue: 'V1', city: 'Berlin', country: 'DE', originalSource: 'ticketmaster.com', scrapedAt: '2026-07-06T00:00:00.000Z' }]
+    }
+  };
+
+  const concerts = await fetchTicketmasterConcerts('fake-key', ['DE', 'FR'], `http://localhost:${PORT}/events.json`, cache);
+
+  assert.deepStrictEqual(concerts.map((c) => c.artist).sort(), ['Cached DE Artist', 'Fresh Artist']);
+  // Cache for the country that actually succeeded must be refreshed with the new data.
+  assert.strictEqual(cache.FR.concerts[0].artist, 'Fresh Artist');
+  // Cache for the failed country must be left untouched (still the old entry, not wiped).
+  assert.strictEqual(cache.DE.concerts[0].artist, 'Cached DE Artist');
+
   await new Promise<void>((r) => server.close(() => r()));
 });

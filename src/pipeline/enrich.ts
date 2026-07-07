@@ -52,16 +52,33 @@ async function defaultGenerateEnrichment({ prompt, modelName, apiKey }: { prompt
   return result.response.text();
 }
 
+// Ordered by daily-quota generosity on the free tier (checked live against the
+// project's actual rate-limit dashboard), not capability -- this is a simple
+// factual lookup (does an artist have a known website/social link), not a task
+// that needs the strongest reasoning model. Gemma's free RPD is ~75x a Gemini
+// Flash tier's (1500 vs 20), so trying it first before ever touching the
+// Gemini-branded quota meaningfully cuts how often this cascade hits 429s at
+// all. gemini-1.5-flash/gemini-1.5-pro are deliberately absent: they no longer
+// appear in the project's model catalog at all (deprecated), so every batch
+// was wasting a guaranteed-fail attempt on them.
+export const DEFAULT_ENRICHMENT_MODELS = [
+  'gemma-4-26b', 'gemma-4-31b',
+  'gemini-3.1-flash-lite', 'gemini-3-flash',
+  'gemini-3.5-flash', 'gemini-2.5-flash', 'gemini-2.5-flash-lite'
+];
+
 /**
- * Batches and queries Gemini to enrich missing artist metadata. `generateFn` is
- * injectable (defaults to the real Gemini call) so the quota-exhaustion/early-exit
- * logic can be tested without hitting a real API.
+ * Batches and queries Gemini to enrich missing artist metadata. `generateFn` and
+ * `models` are both injectable (default to the real Gemini call / real model
+ * cascade) so the quota-exhaustion/early-exit logic can be tested without hitting
+ * a real API or depending on the exact current model lineup.
  */
 export async function enrichMissingArtistMetadata(
   artistsToEnrich: string[],
   approvedArtistsPath: string,
   apiKey: string,
-  generateFn: GenerateEnrichmentFn = defaultGenerateEnrichment
+  generateFn: GenerateEnrichmentFn = defaultGenerateEnrichment,
+  models: string[] = DEFAULT_ENRICHMENT_MODELS
 ): Promise<void> {
   if (artistsToEnrich.length === 0) {
     console.log('[Enricher] No artists to check for enrichment.');
@@ -99,11 +116,11 @@ export async function enrichMissingArtistMetadata(
   // Models confirmed quota-exhausted (401/403/429) THIS run. Free-tier daily quotas
   // are small (e.g. 20 requests/day per model) -- on a big enrichment run they can
   // exhaust within the first few batches, and without this the cascade would retry
-  // every dead model on every single remaining batch: N batches x 6 doomed attempts
-  // each, for no gain, real case observed with the Ticketmaster sweep surfacing far
-  // more never-before-seen artists than a typical run.
+  // every dead model on every single remaining batch: N batches x however-many
+  // doomed attempts each, for no gain -- real case observed with the Ticketmaster
+  // sweep surfacing far more never-before-seen artists than a typical run.
   const exhaustedModels = new Set<string>();
-  const modelsAvailable = ['gemini-3.5-flash', 'gemini-3.1-flash', 'gemini-2.5-flash', 'gemini-2.5-flash-lite', 'gemini-1.5-flash', 'gemini-1.5-pro'];
+  const modelsAvailable = models;
 
   for (let i = 0; i < missingArtists.length; i += batchSize) {
     if (exhaustedModels.size >= modelsAvailable.length) {

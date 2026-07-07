@@ -6,7 +6,7 @@ import { Concert } from './schemas/concert.js';
 import { processConcerts } from './pipeline/process.js';
 import { enrichMissingArtistMetadata } from './pipeline/enrich.js';
 import { publishConcerts } from './generator/publish.js';
-import { fetchTicketmasterConcerts } from './engine/ticketmaster.js';
+import { fetchTicketmasterConcerts, loadTicketmasterCache, saveTicketmasterCache } from './engine/ticketmaster.js';
 
 async function main() {
   const scrapersDir = path.join(process.cwd(), 'scrapers');
@@ -72,7 +72,10 @@ async function main() {
     let ticketmasterCount = 0;
     const tmApiKey = process.env.TICKETMASTER_API_KEY;
     if (tmApiKey) {
-      const tmConcerts = await fetchTicketmasterConcerts(tmApiKey);
+      const tmCachePath = path.join(reportsDir, 'ticketmaster-cache.json');
+      const tmCache = await loadTicketmasterCache(tmCachePath);
+      const tmConcerts = await fetchTicketmasterConcerts(tmApiKey, undefined, undefined, tmCache);
+      await saveTicketmasterCache(tmCachePath, tmCache);
       ticketmasterCount = tmConcerts.length;
       allScrapedConcerts.push(...tmConcerts);
     } else {

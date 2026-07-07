@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert';
-import { cleanAndParseSelectors, testSelectorsOnHtml, repairScraperConfig, GenerateSelectorsFn } from '../src/healing/repair.js';
+import { cleanAndParseSelectors, testSelectorsOnHtml, repairScraperConfig, GenerateSelectorsFn, DEFAULT_REPAIR_MODELS } from '../src/healing/repair.js';
 import { ScraperConfig } from '../src/schemas/config.js';
 import * as fs from 'fs/promises';
 import * as path from 'path';
@@ -105,9 +105,8 @@ test('Healing - repairScraperConfig end-to-end with mocked Gemini API', async ()
   // Inject a fake structured-output generator instead of hitting the real Gemini
   // API -- this exercises the exact same cascade/validation/save path as production,
   // just swapping out the network call.
-  const cascadeModels = ['gemini-3.5-flash', 'gemini-3.1-flash', 'gemini-2.5-flash', 'gemini-2.5-flash-lite', 'gemini-1.5-flash', 'gemini-1.5-pro'];
   const fakeGenerateSelectors: GenerateSelectorsFn = async ({ prompt, modelName }) => {
-    assert.ok(cascadeModels.includes(modelName), `Model ${modelName} should be in the cascade`);
+    assert.ok(DEFAULT_REPAIR_MODELS.includes(modelName), `Model ${modelName} should be in the cascade`);
     assert.ok(prompt.includes('broken-scraper'));
     assert.ok(prompt.includes('new-card-class'));
     return {

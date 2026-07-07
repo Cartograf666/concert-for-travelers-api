@@ -29,6 +29,14 @@ function isAuthOrQuotaError(err: any): boolean {
 
 export type GenerateSelectorsFn = (args: { prompt: string; modelName: string; apiKey: string }) => Promise<RepairedSelectors>;
 
+// Ordered by daily-quota generosity on the free tier (checked live against the
+// project's actual rate-limit dashboard) among models still in the current
+// catalog -- gemini-1.5-flash/gemini-1.5-pro are deliberately absent, they no
+// longer exist as callable models, so every repair was wasting a guaranteed-fail
+// attempt on them. No Gemma tier here (unlike enrich.ts's model list): this task
+// needs real reasoning about broken HTML/CSS, not a simple factual lookup.
+export const DEFAULT_REPAIR_MODELS = ['gemini-3.1-flash-lite', 'gemini-3-flash', 'gemini-3.5-flash', 'gemini-2.5-flash', 'gemini-2.5-flash-lite'];
+
 /** Calls Gemini via the Vercel AI SDK, enforcing the response shape at the API boundary
  * (rather than a bare JSON.parse) so a malformed/incomplete LLM response is rejected
  * before it ever reaches selector-testing or disk. */
@@ -154,8 +162,8 @@ export async function repairScraperConfig(
 
     console.log(`[Repair] Initiating LLM self-healing for: ${brokenConfig.id}`);
 
-    // 2. Query Gemini API with failover model cascade
-    const models = ['gemini-3.5-flash', 'gemini-3.1-flash', 'gemini-2.5-flash', 'gemini-2.5-flash-lite', 'gemini-1.5-flash', 'gemini-1.5-pro'];
+    // 2. Query Gemini API with failover model cascade -- see DEFAULT_REPAIR_MODELS above.
+    const models = DEFAULT_REPAIR_MODELS;
     let generated: RepairedSelectors | null = null;
     let lastError: any = null;
 
