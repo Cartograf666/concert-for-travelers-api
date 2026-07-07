@@ -1,0 +1,17 @@
+{
+  "id": "koko-london",
+  "domain": "koko.co.uk",
+  "url": "https://www.koko.co.uk/whats-on",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "a[href*=\"/events/\"]",
+    "artist": "div[class*=\"__title\"]",
+    "date": "div[class*=\"__date\"]",
+    "ticketUrl": "a",
+    "venueNameFallback": "KOKO",
+    "cityNameFallback": "London",
+    "countryNameFallback": "GB",
+    "lat": 51.534725,
+    "lng": -0.138478
+  }
+}
