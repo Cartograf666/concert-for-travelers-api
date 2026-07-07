@@ -1,0 +1,21 @@
+{
+  "id": "yugong-yishan-beijing",
+  "domain": "theatrebeijing.com",
+  "url": "https://theatrebeijing.com/whats_on/live/",
+  "type": "static_selectors",
+  "maxRetries": 3,
+  "requestDelayMs": 2000,
+  "allowEmpty": false,
+  "selectors": {
+    "eventBlock": "div.events",
+    "artist": "h2 a",
+    "date": "ul.eventsTag li:nth-child(2)",
+    "venue": "ul.eventsTag li:nth-child(3) a",
+    "ticketUrl": "h2 a",
+    "venueNameFallback": "Yugong Yishan",
+    "cityNameFallback": "Beijing",
+    "countryNameFallback": "CN",
+    "lat": 39.9356,
+    "lng": 116.4065
+  }
+}
