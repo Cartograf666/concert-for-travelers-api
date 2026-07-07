@@ -2,6 +2,7 @@ import axios from 'axios';
 import * as cheerio from 'cheerio';
 import { ScraperConfig, ScraperConfigSchema } from '../schemas/config.js';
 import { Concert } from '../schemas/concert.js';
+import { extractJsonLd } from './structured.js';
 import * as fs from 'fs/promises';
 import * as path from 'path';
 
@@ -17,37 +18,84 @@ function getRandomUserAgent(): string {
   return USER_AGENTS[Math.floor(Math.random() * USER_AGENTS.length)];
 }
 
+const DEFAULT_MAX_RETRIES = 2;
+const HTML_SAMPLE_LIMIT = 60000; // large enough to keep JSON-LD / hydration blocks intact for the healer
+
+/**
+ * Why a scrape produced no usable events. Lets the healer skip pages the LLM
+ * cannot fix (CSR shells, genuinely empty schedules) instead of burning calls.
+ */
+export type FailureReason = 'fetch_error' | 'csr_detected' | 'empty_schedule' | 'selectors_stale' | 'parse_error';
+
 export interface ScraperResult {
   configId: string;
   success: boolean;
   concerts: Partial<Concert>[];
   error?: string;
+  reason?: FailureReason;
   htmlSample?: string;
   scrapedAt: string;
+}
+
+// Per-domain last-access timestamps for polite request throttling.
+const lastAccessByDomain = new Map<string, number>();
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/** True for transient failures worth retrying (network drop, timeout, 429, 5xx). */
+function isRetryableError(err: any): boolean {
+  if (!err) return false;
+  if (err.code === 'ECONNABORTED' || err.code === 'ECONNRESET' || err.code === 'ETIMEDOUT' || err.code === 'ENOTFOUND') {
+    return true;
+  }
+  const status = err.response?.status;
+  if (typeof status === 'number') {
+    return status === 429 || status >= 500;
+  }
+  // No response at all (network layer error) -> retry.
+  return err.request !== undefined && err.response === undefined;
+}
+
+/**
+ * Heuristic: the fetched HTML is a client-side-rendered shell whose real content
+ * only appears after JS runs, so stale-selector healing would be pointless.
+ */
+function isLikelyCsr(html: string): boolean {
+  if (/id="__NEXT_DATA__"|__NUXT__|window\.__INITIAL_STATE__|data-reactroot/.test(html)) {
+    // Framework hydration markers with no extractable events -> browser-only content.
+    return true;
+  }
+  const emptyRoot = /<(div|main)[^>]*id="(root|app|__next|__nuxt)"[^>]*>\s*<\/(div|main)>/i.test(html);
+  return emptyRoot;
 }
 
 /**
  * Loads all scraper configurations from the given directory.
  */
 export async function loadConfigs(scrapersDir: string): Promise<ScraperConfig[]> {
+  let files: string[];
   try {
-    const files = await fs.readdir(scrapersDir);
-    const configs: ScraperConfig[] = [];
-
-    for (const file of files) {
-      if (file.endsWith('.json')) {
-        const filePath = path.join(scrapersDir, file);
-        const content = await fs.readFile(filePath, 'utf-8');
-        const parsed = JSON.parse(content);
-        
-        const validated = ScraperConfigSchema.parse(parsed);
-        configs.push(validated);
-      }
-    }
-    return configs;
+    files = await fs.readdir(scrapersDir);
   } catch (error: any) {
     throw new Error(`Failed to load scraper configurations: ${error.message}`);
   }
+
+  const configs: ScraperConfig[] = [];
+  for (const file of files) {
+    if (!file.endsWith('.json')) continue;
+    const filePath = path.join(scrapersDir, file);
+    try {
+      const content = await fs.readFile(filePath, 'utf-8');
+      const parsed = JSON.parse(content);
+      configs.push(ScraperConfigSchema.parse(parsed));
+    } catch (error: any) {
+      // Isolate a single malformed/invalid config so it can't abort the whole daily run.
+      console.warn(`[Runner] Skipping invalid scraper config ${file}: ${error.message}`);
+    }
+  }
+  return configs;
 }
 
 /**
@@ -60,17 +108,22 @@ async function runStaticScraper(config: ScraperConfig, html: string, scrapedAt: 
 
   const $ = cheerio.load(html);
   const concerts: Partial<Concert>[] = [];
-  const { eventBlock, artist, date, ticketUrl, venueNameFallback, cityNameFallback, countryNameFallback } = config.selectors;
+  const { eventBlock, artist, artistNameFallback, date, ticketUrl, venue, city, country, venueNameFallback, cityNameFallback, countryNameFallback } = config.selectors;
 
   $(eventBlock).each((_, element) => {
     const block = $(element);
-    
-    // Extract artist text
-    const artistText = block.find(artist).text().trim();
-    
+
+    // Extract artist text; single-artist tour pages carry no per-row name, use the fixed fallback
+    const artistText = (artist ? block.find(artist).text().trim() : '') || artistNameFallback || '';
+
     // Extract date text
     const dateText = block.find(date).text().trim();
-    
+
+    // Per-row venue/city/country (artist tour pages); empty when selector absent
+    const venueText = venue ? block.find(venue).text().trim() : '';
+    const cityText = city ? block.find(city).text().trim() : '';
+    const countryText = country ? block.find(country).text().trim() : '';
+
     // Extract ticket/info URL
     let absoluteTicketUrl: string | undefined;
     if (ticketUrl) {
@@ -97,9 +150,9 @@ async function runStaticScraper(config: ScraperConfig, html: string, scrapedAt: 
         artist: artistText,
         // We leave date normalization and validation to the pipeline
         date: dateText,
-        venue: venueNameFallback,
-        city: cityNameFallback,
-        country: countryNameFallback,
+        venue: venueText || venueNameFallback,
+        city: cityText || cityNameFallback,
+        country: countryText || countryNameFallback,
         ticketUrl: absoluteTicketUrl,
         originalSource: config.domain,
         scrapedAt
@@ -108,6 +161,90 @@ async function runStaticScraper(config: ScraperConfig, html: string, scrapedAt: 
   });
 
   return concerts;
+}
+
+/**
+ * Resolve a nested path supporting dots and array indices, e.g.
+ * "data.events", "props.pageProps.events[0].items", or "data.pages.0.events".
+ */
+function getByPath(obj: any, path: string): any {
+  if (!path) return obj;
+  // Normalize bracket indices (foo[0]) into dot segments (foo.0), then split.
+  const parts = path.replace(/\[(\d+)\]/g, '.$1').split('.').filter((p) => p.length > 0);
+  return parts.reduce((acc, part) => {
+    if (acc === null || acc === undefined) return undefined;
+    return acc[part];
+  }, obj);
+}
+
+/**
+ * Runs a single JSON API-based scraper.
+ */
+async function runJsonApiScraper(config: ScraperConfig, jsonData: any, scrapedAt: string): Promise<Partial<Concert>[]> {
+  if (!config.selectors) {
+    throw new Error(`Selectors are missing for JSON API scraper config: ${config.id}`);
+  }
+
+  const { eventBlock, artist, artistNameFallback, date, ticketUrl, venue, city, country, venueNameFallback, cityNameFallback, countryNameFallback } = config.selectors;
+
+  const events = getByPath(jsonData, eventBlock);
+  if (!events) {
+    throw new Error(`Could not find events array at path "${eventBlock}" in JSON response.`);
+  }
+
+  const eventsArray = Array.isArray(events) ? events : [events];
+  const concerts: Partial<Concert>[] = [];
+
+  for (const item of eventsArray) {
+    const artistText = (artist ? String(getByPath(item, artist) || '').trim() : '') || artistNameFallback || '';
+    const dateText = String(getByPath(item, date) || '').trim();
+    const venueText = venue ? String(getByPath(item, venue) || '').trim() : '';
+    const cityText = city ? String(getByPath(item, city) || '').trim() : '';
+    const countryText = country ? String(getByPath(item, country) || '').trim() : '';
+
+    let absoluteTicketUrl: string | undefined;
+    if (ticketUrl) {
+      const ticketLink = getByPath(item, ticketUrl);
+      if (ticketLink) {
+        const href = String(ticketLink).trim();
+        try {
+          absoluteTicketUrl = new URL(href, config.url).toString();
+        } catch {
+          absoluteTicketUrl = href;
+        }
+      }
+    }
+
+    if (artistText && dateText) {
+      concerts.push({
+        artist: artistText,
+        date: dateText,
+        venue: venueText || venueNameFallback,
+        city: cityText || cityNameFallback,
+        country: countryText || countryNameFallback,
+        ticketUrl: absoluteTicketUrl,
+        originalSource: config.domain,
+        scrapedAt
+      });
+    }
+  }
+
+  return concerts;
+}
+
+/**
+ * Runs a Next.js/Nuxt hydration-JSON scraper: reads the inline __NEXT_DATA__
+ * (or __NUXT_DATA__) blob and maps events out of it using the same dot/array
+ * path machinery as json_api. Generalizes bespoke per-venue custom modules.
+ */
+async function runNextDataScraper(config: ScraperConfig, html: string, scrapedAt: string): Promise<Partial<Concert>[]> {
+  const $ = cheerio.load(html);
+  const raw = $('#__NEXT_DATA__').html() || $('#__NUXT_DATA__').html();
+  if (!raw) {
+    throw new Error('No __NEXT_DATA__/__NUXT_DATA__ hydration script found in page.');
+  }
+  const data = JSON.parse(raw);
+  return runJsonApiScraper(config, data, scrapedAt);
 }
 
 /**
@@ -128,35 +265,112 @@ async function runCustomJsScraper(config: ScraperConfig, html: string, scrapedAt
 }
 
 /**
+ * Enforces the per-domain politeness delay. Reserves the next slot optimistically
+ * so concurrent workers hitting the same domain space themselves out.
+ */
+async function politeDelay(config: ScraperConfig): Promise<void> {
+  const minGap = config.requestDelayMs ?? 0;
+  if (minGap <= 0) return;
+  const now = Date.now();
+  const last = lastAccessByDomain.get(config.domain) ?? 0;
+  const scheduled = Math.max(now, last + minGap);
+  lastAccessByDomain.set(config.domain, scheduled);
+  const wait = scheduled - now;
+  if (wait > 0) await sleep(wait);
+}
+
+/**
+ * Fetches the target URL with exponential backoff + jitter on transient errors
+ * (network drop, timeout, 429, 5xx). Non-transient errors fail fast.
+ */
+async function fetchWithRetry(config: ScraperConfig): Promise<any> {
+  const maxRetries = config.maxRetries ?? DEFAULT_MAX_RETRIES;
+  let lastErr: any = null;
+
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    if (attempt > 0) {
+      const backoff = Math.min(15000, 500 * 2 ** (attempt - 1)) + Math.floor(Math.random() * 250);
+      console.warn(`[Runner] ${config.id}: transient fetch error, retry ${attempt}/${maxRetries} in ${backoff}ms`);
+      await sleep(backoff);
+    }
+    await politeDelay(config);
+    try {
+      const response = await axios.get(config.url, {
+        headers: {
+          'User-Agent': getRandomUserAgent(),
+          'Accept': 'text/html,application/xhtml+xml,application/xml,application/json;q=0.9,*/*;q=0.8',
+          'Accept-Language': 'en-US,en;q=0.5',
+        },
+        timeout: 15000 // 15s timeout (some venue pages ship large SSR/Next.js payloads)
+      });
+      return response.data;
+    } catch (err: any) {
+      lastErr = err;
+      if (!isRetryableError(err) || attempt === maxRetries) throw err;
+    }
+  }
+  throw lastErr;
+}
+
+/**
  * Runs a single scraper config.
  */
 export async function runScraper(config: ScraperConfig): Promise<ScraperResult> {
   const scrapedAt = new Date().toISOString();
-  let html = '';
+  let responseData: any = null;
   try {
-    const response = await axios.get(config.url, {
-      headers: {
-        'User-Agent': getRandomUserAgent(),
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-        'Accept-Language': 'en-US,en;q=0.5',
-      },
-      timeout: 10000 // 10s timeout
-    });
+    responseData = await fetchWithRetry(config);
 
-    html = response.data;
-    if (typeof html !== 'string') {
-      throw new Error(`Response data is not a string. Type: ${typeof html}`);
-    }
+    const expectString = () => {
+      if (typeof responseData !== 'string') {
+        throw new Error(`Response data is not a string. Type: ${typeof responseData}`);
+      }
+    };
 
     let concerts: Partial<Concert>[] = [];
+
     if (config.type === 'static_selectors') {
-      concerts = await runStaticScraper(config, html, scrapedAt);
+      expectString();
+      concerts = await runStaticScraper(config, responseData, scrapedAt);
+      // Free structured-data fallback: before declaring a break, try schema.org
+      // JSON-LD, which survives CSS/layout refactors that snap hashed selectors.
+      if (concerts.length === 0) {
+        const jsonLd = extractJsonLd(config, responseData, scrapedAt);
+        if (jsonLd.length > 0) {
+          console.log(`[Runner] ${config.id}: selectors matched 0, recovered ${jsonLd.length} via JSON-LD fallback.`);
+          concerts = jsonLd;
+        }
+      }
+    } else if (config.type === 'jsonld') {
+      expectString();
+      concerts = extractJsonLd(config, responseData, scrapedAt);
+    } else if (config.type === 'next_data') {
+      expectString();
+      concerts = await runNextDataScraper(config, responseData, scrapedAt);
+    } else if (config.type === 'json_api') {
+      const jsonData = typeof responseData === 'string' ? JSON.parse(responseData) : responseData;
+      concerts = await runJsonApiScraper(config, jsonData, scrapedAt);
     } else if (config.type === 'custom_js') {
-      concerts = await runCustomJsScraper(config, html, scrapedAt);
+      expectString();
+      concerts = await runCustomJsScraper(config, responseData, scrapedAt);
     }
 
     if (concerts.length === 0) {
-      throw new Error("Parsed 0 concerts. Website layout might have changed.");
+      // Classify why, so the healer can skip pages an LLM re-selector cannot fix.
+      const isCsr = typeof responseData === 'string' && isLikelyCsr(responseData);
+      const reason: FailureReason = isCsr ? 'csr_detected' : 'selectors_stale';
+      const htmlSample = typeof responseData === 'string' ? responseData.slice(0, HTML_SAMPLE_LIMIT) : undefined;
+      return {
+        configId: config.id,
+        success: false,
+        concerts: [],
+        error: isCsr
+          ? 'Parsed 0 concerts. Page appears client-side rendered (events absent from server HTML).'
+          : 'Parsed 0 concerts. Website layout might have changed.',
+        reason,
+        htmlSample,
+        scrapedAt
+      };
     }
 
     return {
@@ -166,13 +380,15 @@ export async function runScraper(config: ScraperConfig): Promise<ScraperResult> 
       scrapedAt
     };
   } catch (error: any) {
-    // Capture HTML sample for debugging/self-healing (first 10000 chars)
-    const htmlSample = html ? html.slice(0, 10000) : undefined;
+    // Capture HTML sample for debugging/self-healing (keep JSON-LD/hydration blocks intact).
+    const htmlSample = typeof responseData === 'string' ? responseData.slice(0, HTML_SAMPLE_LIMIT) : undefined;
+    const reason: FailureReason = responseData === null ? 'fetch_error' : 'parse_error';
     return {
       configId: config.id,
       success: false,
       concerts: [],
       error: error.message,
+      reason,
       htmlSample,
       scrapedAt
     };

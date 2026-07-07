@@ -35,8 +35,12 @@ async function main() {
     const allScrapedConcerts = results.flatMap((r) => r.concerts);
     console.log(`[Orchestrator] Gathered ${allScrapedConcerts.length} raw events before processing.`);
 
+    // Anchor both normalization passes to a single instant so relative/year-less
+    // dates and their dedupe keys stay identical even if the run crosses midnight.
+    const runDate = new Date().toISOString();
+
     // 5. First-pass normalization and deduplication
-    let normalizedConcerts = await processConcerts(allScrapedConcerts, approvedArtistsPath);
+    let normalizedConcerts = await processConcerts(allScrapedConcerts, approvedArtistsPath, runDate);
     console.log(`[Orchestrator] First pass: parsed ${normalizedConcerts.length} valid events.`);
 
     // 6. JIT Metadata Enrichment (if API Key is present)
@@ -45,9 +49,9 @@ async function main() {
       const touringArtists = Array.from(new Set(normalizedConcerts.map((c) => c.artist)));
       console.log(`[Orchestrator] Running JIT metadata enrichment for ${touringArtists.length} active artists...`);
       await enrichMissingArtistMetadata(touringArtists, approvedArtistsPath, apiKey);
-      
+
       // Re-run normalization to pick up updated website and social links from disk
-      normalizedConcerts = await processConcerts(allScrapedConcerts, approvedArtistsPath);
+      normalizedConcerts = await processConcerts(allScrapedConcerts, approvedArtistsPath, runDate);
       console.log(`[Orchestrator] Second pass (post-enrichment): loaded updated metadata.`);
     } else {
       console.log('[Orchestrator] GEMINI_API_KEY not found. Skipping JIT metadata enrichment.');
@@ -65,6 +69,7 @@ async function main() {
         id: r.configId,
         configPath: path.join(scrapersDir, `${r.configId}.json`),
         error: r.error,
+        reason: r.reason,
         htmlSample: r.htmlSample
       }));
 

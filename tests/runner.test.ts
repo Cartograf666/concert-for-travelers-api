@@ -12,7 +12,8 @@ function startMockServer(port: number, routes: Record<string, string>): Promise<
     const server = createServer((req, res) => {
       const path = req.url || '';
       if (routes[path]) {
-        res.writeHead(200, { 'Content-Type': 'text/html' });
+        const contentType = path.endsWith('.json') ? 'application/json' : 'text/html';
+        res.writeHead(200, { 'Content-Type': contentType });
         res.end(routes[path]);
       } else {
         res.writeHead(404);
@@ -152,5 +153,117 @@ test('Runner Engine - run all concurrently', async () => {
   assert.ok(results.every((r) => r.success));
   
   // Close the server
+  await new Promise<void>((resolve) => server.close(() => resolve()));
+});
+
+test('Runner Engine - artist tour page (per-row city/venue + artistNameFallback)', async () => {
+  const PORT = 8126;
+  // An artist's own tour page: rows carry date/city/venue but no per-row artist name.
+  const mockHtml = `
+    <html><body>
+      <div class="tour-date">
+        <span class="d">2026-09-01</span>
+        <span class="c">Berlin</span>
+        <span class="v">Waldbühne</span>
+        <a class="tix" href="/tickets/berlin">Tickets</a>
+      </div>
+      <div class="tour-date">
+        <span class="d">2026-09-04</span>
+        <span class="c">Paris</span>
+        <span class="v">Accor Arena</span>
+        <a class="tix" href="/tickets/paris">Tickets</a>
+      </div>
+    </body></html>
+  `;
+
+  const server = await startMockServer(PORT, { '/tour': mockHtml });
+
+  const config: ScraperConfig = {
+    id: 'artist-metallica',
+    domain: 'metallica.com',
+    url: `http://localhost:${PORT}/tour`,
+    type: 'static_selectors',
+    selectors: {
+      eventBlock: '.tour-date',
+      artistNameFallback: 'Metallica',
+      date: '.d',
+      city: '.c',
+      venue: '.v',
+      ticketUrl: '.tix',
+      venueNameFallback: '',
+      cityNameFallback: '',
+      countryNameFallback: 'DE'
+    }
+  };
+
+  const res = await runScraper(config);
+  assert.strictEqual(res.success, true);
+  assert.strictEqual(res.concerts.length, 2);
+
+  const [c1, c2] = res.concerts;
+  assert.strictEqual(c1.artist, 'Metallica');
+  assert.strictEqual(c1.city, 'Berlin');
+  assert.strictEqual(c1.venue, 'Waldbühne');
+  assert.strictEqual(c1.country, 'DE'); // per-row country absent -> fallback
+  assert.strictEqual(c1.ticketUrl, `http://localhost:${PORT}/tickets/berlin`);
+
+  assert.strictEqual(c2.artist, 'Metallica');
+  assert.strictEqual(c2.city, 'Paris');
+  assert.strictEqual(c2.venue, 'Accor Arena');
+
+  await new Promise<void>((resolve) => server.close(() => resolve()));
+});
+
+test('Runner Engine - scrape and parse json_api', async (t) => {
+  const PORT = 8125;
+  const mockJson = JSON.stringify({
+    success: true,
+    data: {
+      events: [
+        {
+          title: 'The Cure',
+          start_date: '2026-10-12',
+          ticket_link: 'https://example.com/tickets/cure'
+        },
+        {
+          title: 'Rammstein',
+          start_date: '2026-10-15',
+          ticket_link: 'https://example.com/tickets/rammstein'
+        }
+      ]
+    }
+  });
+
+  const server = await startMockServer(PORT, { '/events.json': mockJson });
+
+  const config: ScraperConfig = {
+    id: 'test-json-api',
+    domain: 'test-api.com',
+    url: `http://localhost:${PORT}/events.json`,
+    type: 'json_api',
+    selectors: {
+      eventBlock: 'data.events',
+      artist: 'title',
+      date: 'start_date',
+      ticketUrl: 'ticket_link',
+      venueNameFallback: 'JSON Venue',
+      cityNameFallback: 'Berlin',
+      countryNameFallback: 'DE'
+    }
+  };
+
+  const res = await runScraper(config);
+  assert.strictEqual(res.success, true);
+  assert.strictEqual(res.concerts.length, 2);
+
+  const [c1, c2] = res.concerts;
+  assert.strictEqual(c1.artist, 'The Cure');
+  assert.strictEqual(c1.date, '2026-10-12');
+  assert.strictEqual(c1.ticketUrl, 'https://example.com/tickets/cure');
+
+  assert.strictEqual(c2.artist, 'Rammstein');
+  assert.strictEqual(c2.date, '2026-10-15');
+  assert.strictEqual(c2.ticketUrl, 'https://example.com/tickets/rammstein');
+
   await new Promise<void>((resolve) => server.close(() => resolve()));
 });

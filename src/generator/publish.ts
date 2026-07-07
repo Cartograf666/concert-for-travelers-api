@@ -17,6 +17,25 @@ export interface PublishIndex {
 }
 
 /**
+ * Deletes {slug}.json files in a directory that are not part of the current run,
+ * so entities that stopped touring don't linger as fetchable ghost endpoints.
+ */
+async function pruneOrphans(dir: string, keepSlugs: Set<string>): Promise<void> {
+  let existing: string[];
+  try {
+    existing = await fs.readdir(dir);
+  } catch {
+    return; // Directory not created yet — nothing to prune.
+  }
+  for (const file of existing) {
+    if (!file.endsWith('.json')) continue;
+    if (!keepSlugs.has(file.slice(0, -'.json'.length))) {
+      await fs.rm(path.join(dir, file), { force: true });
+    }
+  }
+}
+
+/**
  * Publishes normalized concert data as split static JSON API endpoints in the output directory.
  */
 export async function publishConcerts(concerts: Concert[], outputDir: string): Promise<void> {
@@ -54,6 +73,10 @@ export async function publishConcerts(concerts: Concert[], outputDir: string): P
   // Sort lists for deterministic output
   const sortedArtists = Array.from(uniqueArtists).sort();
   const sortedCities = Array.from(uniqueCities).sort();
+
+  // Remove stale per-slug files from prior runs before writing the current set.
+  await pruneOrphans(artistsDir, new Set(concertsByArtist.keys()));
+  await pruneOrphans(citiesDir, new Set(concertsByCity.keys()));
 
   // 2. Write master concert list: dist/concerts.json
   await fs.writeFile(

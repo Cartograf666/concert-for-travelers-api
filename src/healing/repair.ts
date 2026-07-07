@@ -4,6 +4,7 @@ import * as fs from 'fs/promises';
 import * as path from 'path';
 import { ScraperConfig, ScraperConfigSchema } from '../schemas/config.js';
 import { Concert } from '../schemas/concert.js';
+import { extractJsonLd } from '../engine/structured.js';
 
 /**
  * Extracts and parses selectors from LLM text output.
@@ -101,6 +102,17 @@ export async function repairScraperConfig(
         success: false,
         error: `Scraper ${brokenConfig.id} is not a static_selectors scraper or is missing selectors.`
       };
+    }
+
+    // Pre-LLM probe: many "layout changed" breaks are on sites that embed stable
+    // schema.org JSON-LD. If so, switch to type 'jsonld' for free — no Gemini call,
+    // no rate-limit pressure, and a far more durable fix than a fresh hashed selector.
+    const jsonLdConcerts = extractJsonLd(brokenConfig, htmlSample, new Date().toISOString());
+    if (jsonLdConcerts.length > 0) {
+      const jsonLdConfig = ScraperConfigSchema.parse({ ...brokenConfig, type: 'jsonld' });
+      await fs.writeFile(configPath, JSON.stringify(jsonLdConfig, null, 2), 'utf-8');
+      console.log(`[Repair] Recovered ${jsonLdConcerts.length} events via JSON-LD; switched ${brokenConfig.id} to type 'jsonld' (no LLM used).`);
+      return { success: true, config: jsonLdConfig };
     }
 
     console.log(`[Repair] Initiating LLM self-healing for: ${brokenConfig.id}`);

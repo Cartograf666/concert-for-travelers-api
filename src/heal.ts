@@ -35,9 +35,17 @@ async function main() {
     const healedList: string[] = [];
 
     for (const failure of failures) {
-      const { id, configPath, error, htmlSample } = failure;
+      const { id, configPath, error, reason, htmlSample } = failure;
       console.log(`\n--- Healing ${id} ---`);
       console.log(`[Healer] Previous Error: ${error}`);
+
+      // Re-selecting can't fix a page whose events never reached the server HTML,
+      // nor a network failure. Skip these so we don't waste Gemini calls / risk
+      // overwriting a correct config with selectors guessed from an empty shell.
+      if (reason === 'csr_detected' || reason === 'fetch_error') {
+        console.warn(`[Healer] Skip: ${id} failed with reason "${reason}" — not fixable by re-selecting (needs a render/JSON path).`);
+        continue;
+      }
 
       if (!htmlSample) {
         console.warn(`[Healer] Skip: No HTML sample captured for scraper: ${id}`);

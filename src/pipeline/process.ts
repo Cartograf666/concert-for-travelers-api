@@ -1,6 +1,23 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
+import * as chrono from 'chrono-node';
 import { Concert, ConcertSchema } from '../schemas/concert.js';
+
+/** Format a Date as a timezone-safe YYYY-MM-DD using its local calendar fields. */
+function toLocalIso(d: Date): string {
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+
+/**
+ * Resolve a year-less date to its NEXT occurrence relative to baseDate: a "5 Jan"
+ * scraped in December belongs to next year, not the (past) current one.
+ */
+function resolveYearless(monthNum: string, day: string, baseDate: Date): string {
+  const baseYear = baseDate.getFullYear();
+  const baseIso = toLocalIso(baseDate);
+  const candidate = `${baseYear}-${monthNum}-${day}`;
+  return candidate < baseIso ? `${baseYear + 1}-${monthNum}-${day}` : candidate;
+}
 
 /**
  * Generates a slug for deduplication index keys (e.g. "The Cure" -> "the-cure")
@@ -85,20 +102,20 @@ export function parseDate(dateStr: string, baseDateStr: string): string | null {
     return tomorrow.toISOString().slice(0, 10);
   }
 
-  // Month mappings (English & German)
+  // Month mappings (English, German, Dutch, Serbian-Latin)
   const MONTHS: Record<string, string> = {
-    jan: '01', januar: '01', january: '01',
-    feb: '02', februar: '02', february: '02',
-    mrz: '03', märz: '03', mar: '03', march: '03',
+    jan: '01', januar: '01', january: '01', januari: '01',
+    feb: '02', februar: '02', february: '02', februari: '02',
+    mrz: '03', märz: '03', mar: '03', march: '03', mart: '03', maart: '03',
     apr: '04', april: '04',
-    mai: '05', may: '05',
+    mai: '05', may: '05', mei: '05', maj: '05',
     jun: '06', juni: '06', june: '06',
     jul: '07', juli: '07', july: '07',
-    aug: '08', august: '08',
-    sep: '09', september: '09',
-    okt: '10', oktober: '10', oct: '10', october: '10',
-    nov: '11', november: '11',
-    dez: '12', dezember: '12', dec: '12', december: '12'
+    aug: '08', august: '08', avgust: '08', augustus: '08',
+    sep: '09', september: '09', septembar: '09',
+    okt: '10', oktober: '10', oct: '10', october: '10', oktobar: '10',
+    nov: '11', november: '11', novembar: '11',
+    dez: '12', dezember: '12', dec: '12', december: '12', decembar: '12'
   };
 
   // 1. YYYY-MM-DD
@@ -125,7 +142,7 @@ export function parseDate(dateStr: string, baseDateStr: string): string | null {
     let [_, day, month] = dotNoYearMatch;
     day = day.padStart(2, '0');
     month = month.padStart(2, '0');
-    return `${baseYear}-${month}-${day}`;
+    return resolveYearless(month, day, baseDate);
   }
 
   // 4. DD Month YYYY (e.g. 12. Okt 2026 or 12 Oktober 2026 or 12 Oct 2026)
@@ -158,7 +175,7 @@ export function parseDate(dateStr: string, baseDateStr: string): string | null {
     const month = MONTHS[monthStr];
     if (month) {
       day = day.padStart(2, '0');
-      return `${baseYear}-${month}-${day}`;
+      return resolveYearless(month, day, baseDate);
     }
   }
 
@@ -169,11 +186,51 @@ export function parseDate(dateStr: string, baseDateStr: string): string | null {
     const month = MONTHS[monthStr];
     if (month) {
       day = day.padStart(2, '0');
-      return `${baseYear}-${month}-${day}`;
+      return resolveYearless(month, day, baseDate);
     }
   }
 
-  // Fallback try standard parser
+  // 8. Raw ISO datetime prefix (e.g. "2026-07-08 00:00:00" or "2026-07-06T21:00:00.000000Z").
+  // Handled as a plain string slice (not Date.parse) to avoid timezone-shift off-by-one errors.
+  const isoPrefixMatch = dateStr.match(/^(\d{4}-\d{2}-\d{2})/);
+  if (isoPrefixMatch) {
+    return isoPrefixMatch[1];
+  }
+
+  // 9. Loose extraction: find "D Month[ - D Month] YYYY" anywhere in noisy text (weekday name
+  // prefixes, trailing time/price suffixes, multi-day ranges) instead of requiring an exact match.
+  const looseWithYear = cleanStr.match(/(\d{1,2})\.?\s+([a-zäöüß]+)\.?(?:\s*-\s*\d{1,2}\.?\s+[a-zäöüß]+\.?)?\s+(\d{4})\b/);
+  if (looseWithYear) {
+    const month = MONTHS[looseWithYear[2]];
+    if (month) {
+      return `${looseWithYear[3]}-${month}-${looseWithYear[1].padStart(2, '0')}`;
+    }
+  }
+
+  // 10. Same as above but with no year present anywhere (rolls forward to next occurrence).
+  if (!/\d{4}/.test(cleanStr)) {
+    const looseNoYear = cleanStr.match(/(\d{1,2})(?:\s*-\s*\d{1,2})?\.?\s+([a-zäöüß]+)\b/);
+    if (looseNoYear) {
+      const month = MONTHS[looseNoYear[2]];
+      if (month) {
+        return resolveYearless(month, looseNoYear[1].padStart(2, '0'), baseDate);
+      }
+    }
+  }
+
+  // 11. chrono-node: multilingual/natural-language fallback for noisy formats the
+  // regex ladder misses (weekday prefixes, ordinals, ranges). forwardDate resolves
+  // a bare month/day into the future rather than the past.
+  try {
+    const results = chrono.parse(dateStr, baseDate, { forwardDate: true });
+    if (results.length > 0) {
+      return toLocalIso(results[0].start.date());
+    }
+  } catch {
+    // chrono failure is non-fatal; fall through.
+  }
+
+  // 12. Last resort: the platform date parser.
   const parsed = Date.parse(dateStr);
   if (!isNaN(parsed)) {
     return new Date(parsed).toISOString().slice(0, 10);
