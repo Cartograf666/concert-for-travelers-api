@@ -70,14 +70,10 @@ async function main() {
   console.log(`[enrich-gemini-search] Selected ${pending.length} artists: ${pending.join(', ')}`);
 
   const genAI = new GoogleGenerativeAI(apiKey);
-  // Using gemini-1.5-pro because of reasoning depth and support for search grounding tools
-  const model = genAI.getGenerativeModel({
-    model: 'gemini-1.5-pro',
-    tools: [{ googleSearchRetrieval: {} } as any],
-  });
-
   const batchSize = 3; // small batches to ensure precise search for each artist
   const results: any[] = [];
+  
+  const modelsToTry = ['gemini-2.5-flash', 'gemini-1.5-flash', 'gemini-1.5-pro'];
 
   for (let i = 0; i < pending.length; i += batchSize) {
     const batch = pending.slice(i, i + batchSize);
@@ -134,25 +130,43 @@ Your response must be a JSON object with a single key "results" containing an ar
 
 Be extremely truthful. Never invent a URL. Return null rather than guess. Output every artist exactly once, using the exact input name.`;
 
-    try {
-      const response = await model.generateContent({
-        contents: [{ role: 'user', parts: [{ text: prompt }] }],
-        generationConfig: {
-          responseMimeType: 'application/json',
-        },
-      });
+    let success = false;
+    let lastError: any = null;
 
-      const text = response.response.text();
-      const parsed = cleanAndParseJson(text);
+    for (const modelName of modelsToTry) {
+      try {
+        console.log(`[enrich-gemini-search] Attempting generation with model: ${modelName}`);
+        const model = genAI.getGenerativeModel({
+          model: modelName,
+          tools: [{ googleSearchRetrieval: {} } as any],
+        });
 
-      if (parsed && Array.isArray(parsed.results)) {
-        results.push(...parsed.results);
-        console.log(`[enrich-gemini-search] Successfully processed batch. Found websites: ${parsed.results.filter((r: any) => r.website).length}, tourUrls: ${parsed.results.filter((r: any) => r.tourUrl).length}`);
-      } else {
-        console.error(`[enrich-gemini-search] Invalid format returned for batch:`, text);
+        const response = await model.generateContent({
+          contents: [{ role: 'user', parts: [{ text: prompt }] }],
+          generationConfig: {
+            responseMimeType: 'application/json',
+          },
+        });
+
+        const text = response.response.text();
+        const parsed = cleanAndParseJson(text);
+
+        if (parsed && Array.isArray(parsed.results)) {
+          results.push(...parsed.results);
+          console.log(`[enrich-gemini-search] Successfully processed batch using ${modelName}. Found websites: ${parsed.results.filter((r: any) => r.website).length}, tourUrls: ${parsed.results.filter((r: any) => r.tourUrl).length}`);
+          success = true;
+          break; // Success! Break out of the model loop
+        } else {
+          console.error(`[enrich-gemini-search] Invalid format returned for batch:`, text);
+        }
+      } catch (err: any) {
+        console.warn(`[enrich-gemini-search] Model ${modelName} failed: ${err.message}`);
+        lastError = err;
       }
-    } catch (err: any) {
-      console.error(`[enrich-gemini-search] Error processing batch: ${err.message}`);
+    }
+
+    if (!success) {
+      console.error(`[enrich-gemini-search] Failed to process batch after trying all models. Last error: ${lastError?.message}`);
     }
 
     // Small delay between batches to respect rate limits
