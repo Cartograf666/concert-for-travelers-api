@@ -1,0 +1,13 @@
+{
+  "id": "vintazh-tour",
+  "domain": "annapletneva.ru",
+  "url": "https://annapletneva.ru",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": "custom",
+    "date": "custom",
+    "venueNameFallback": "Винтаж",
+    "cityNameFallback": "Москва",
+    "countryNameFallback": "RU"
+  }
+}
