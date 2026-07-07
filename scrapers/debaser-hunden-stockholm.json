@@ -1,0 +1,17 @@
+{
+  "id": "debaser-hunden-stockholm",
+  "domain": "debaser.se",
+  "url": "https://www.debaser.se/konserter",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".collection-item-20",
+    "artist": ".h3.calendar-mobile",
+    "date": ".event-text-white .event-date-hero.border .b1-data:nth-child(2), .event-text-white .event-date-hero.border .b1-data:nth-child(3), .event-text-white .event-date-hero.border .b1-data:nth-child(4)",
+    "ticketUrl": "a.ticket-new",
+    "venueNameFallback": "Debaser Hunden",
+    "cityNameFallback": "Stockholm",
+    "countryNameFallback": "SE",
+    "lat": 59.3102,
+    "lng": 18.0575
+  }
+}
