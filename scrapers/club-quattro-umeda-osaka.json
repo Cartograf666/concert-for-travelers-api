@@ -1,0 +1,15 @@
+{
+  "id": "club-quattro-umeda-osaka",
+  "domain": "club-quattro.com",
+  "url": "https://www.club-quattro.com/umeda/schedule/",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": "li.list-item",
+    "date": "data-event-date",
+    "venueNameFallback": "Club Quattro Umeda",
+    "cityNameFallback": "Osaka",
+    "countryNameFallback": "JP",
+    "lat": 34.7018,
+    "lng": 135.5031
+  }
+}
