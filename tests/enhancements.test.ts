@@ -201,6 +201,15 @@ test('substring matches reject a name with an attached capitalized neighbor word
   assert.strictEqual(match('Muse at the O2')?.name, 'Muse', 'lowercase neighbor ("at") does not trigger the guard');
 });
 
+test('phrase-connector words ("of"/"the") glued to a match reject the fragment', () => {
+  const match = buildApprovedMatcher(['Fire', 'Songs', 'Muse', 'The Cure']);
+  assert.strictEqual(match('Wall of Fire'), null, '"Fire" must not absorb "Wall of Fire"');
+  assert.strictEqual(match('Songs of Love'), null, '"Songs" must not absorb "Songs of Love"');
+  // Locational prepositions are NOT connectors -> real listings still match.
+  assert.strictEqual(match('Muse at the O2')?.name, 'Muse');
+  assert.strictEqual(match('The Cure in Berlin')?.name, 'The Cure');
+});
+
 test('substring/fuzzy tiers only consider the first " - "-delimited clause of the title', () => {
   // Real case: a genre tag trailing after a dash ("... - Alternative Rock")
   // wrongly matched an approved-artist entry that happens to also be a genre

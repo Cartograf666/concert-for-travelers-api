@@ -1,4 +1,5 @@
 import * as cheerio from 'cheerio';
+import { safeAbsoluteUrl } from './url.js';
 import { ScraperConfig } from '../schemas/config.js';
 import { Concert } from '../schemas/concert.js';
 
@@ -122,14 +123,7 @@ export function extractJsonLd(config: ScraperConfig, html: string, scrapedAt: st
     const offers = node.offers;
     const offerUrl = Array.isArray(offers) ? asText(offers.map((o: any) => o?.url).find(Boolean)) : asText(offers?.url);
     const rawUrl = offerUrl || asText(node.url);
-    let ticketUrl: string | undefined;
-    if (rawUrl) {
-      try {
-        ticketUrl = new URL(rawUrl, config.url).toString();
-      } catch {
-        ticketUrl = rawUrl;
-      }
-    }
+    const ticketUrl: string | undefined = rawUrl ? safeAbsoluteUrl(rawUrl, config.url) : undefined;
 
     concerts.push({
       artist,

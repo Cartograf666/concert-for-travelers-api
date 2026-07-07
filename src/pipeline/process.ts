@@ -172,6 +172,27 @@ function hasAttachedCapitalizedNeighbor(text: string, matchIndex: number, matchL
   return /^\s[A-Z]/.test(after);
 }
 
+// Phrase-joining words. A substring match glued to one of these is almost always a
+// fragment of a longer title, not the artist -- e.g. "Fire" in "Wall of Fire", "Love"
+// in "Songs of Love". Deliberately excludes locational prepositions (at/in/on) so a
+// legitimate "Artist at Venue" / "Artist in City" listing still matches.
+const PHRASE_CONNECTORS = new Set(['of', 'the', 'and', '&', 'vs', 'feat', 'feat.', 'featuring', 'ft', 'ft.', 'with', 'presents']);
+
+/**
+ * True if the match is directly glued to a phrase-connector word on either side
+ * ("... of <match>", "<match> of ..."), signalling it's a sub-phrase of a longer
+ * title rather than a standalone artist name.
+ */
+function hasAttachedConnectorNeighbor(text: string, matchIndex: number, matchLength: number): boolean {
+  const before = text.slice(0, matchIndex);
+  const after = text.slice(matchIndex + matchLength);
+  const beforeWord = before.match(/([A-Za-z.&']+)\s$/);
+  if (beforeWord && PHRASE_CONNECTORS.has(beforeWord[1].toLowerCase())) return true;
+  const afterWord = after.match(/^\s([A-Za-z.&']+)/);
+  if (afterWord && PHRASE_CONNECTORS.has(afterWord[1].toLowerCase())) return true;
+  return false;
+}
+
 /**
  * Precompile the approved-artist list into a fast reusable matcher. Regexes are
  * built ONCE here instead of once per scraped concert (the list is ~62k entries
@@ -304,7 +325,8 @@ export function buildApprovedMatcher(approvedArtists: any[]): ApprovedMatcher {
       if (
         match &&
         e.name.length / primaryClause.length >= MIN_SUBSTRING_COVERAGE &&
-        !hasAttachedCapitalizedNeighbor(primaryClause, match.index, match[0].length)
+        !hasAttachedCapitalizedNeighbor(primaryClause, match.index, match[0].length) &&
+        !hasAttachedConnectorNeighbor(primaryClause, match.index, match[0].length)
       ) {
         return toMatch(e);
       }
