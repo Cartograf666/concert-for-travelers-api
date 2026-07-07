@@ -1,0 +1,20 @@
+{
+  "id": "magazzini-generali-milan",
+  "domain": "magazzinigenerali.org",
+  "url": "https://www.magazzinigenerali.org/wp-json/tribe/events/v1/events",
+  "type": "json_api",
+  "maxRetries": 2,
+  "requestDelayMs": 500,
+  "allowEmpty": false,
+  "selectors": {
+    "eventBlock": "events",
+    "artist": "title",
+    "date": "start_date",
+    "ticketUrl": "url",
+    "venueNameFallback": "Magazzini Generali",
+    "cityNameFallback": "Milan",
+    "countryNameFallback": "IT",
+    "lat": 45.4743,
+    "lng": 9.1869
+  }
+}
