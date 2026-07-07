@@ -85,11 +85,24 @@ function classifyUrl(url: string): keyof Socials | 'website' | null {
 }
 
 async function httpGet(url: string, opts: { headers?: Record<string, string> } = {}): Promise<any> {
-  const res = await axios.get(url, {
-    headers: { 'User-Agent': MB_UA, Accept: 'application/json', ...opts.headers },
-    timeout: 15000
-  });
-  return res.data;
+  const maxAttempts = 3;
+  let lastErr: any;
+  for (let attempt = 0; attempt < maxAttempts; attempt++) {
+    if (attempt > 0) await sleep(1000 * attempt); // linear backoff; caller already paces base rate
+    try {
+      const res = await axios.get(url, {
+        headers: { 'User-Agent': MB_UA, Accept: 'application/json', ...opts.headers },
+        timeout: 15000
+      });
+      return res.data;
+    } catch (err: any) {
+      lastErr = err;
+      const status = err.response?.status;
+      const retryable = status === 429 || status === undefined || status >= 500;
+      if (!retryable || attempt === maxAttempts - 1) throw err;
+    }
+  }
+  throw lastErr;
 }
 
 // ---------------------------------------------------------------------------
