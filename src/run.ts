@@ -1,7 +1,7 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import { loadConfigs, runAllScrapers, ScraperResult, closeBrowser } from './engine/runner.js';
-import { loadCache, saveCache } from './engine/cache.js';
+import { loadCache, saveCache, shouldSkipPublish, isCacheStale } from './engine/cache.js';
 import { Concert } from './schemas/concert.js';
 import { processConcerts } from './pipeline/process.js';
 import { enrichMissingArtistMetadata } from './pipeline/enrich.js';
@@ -18,7 +18,8 @@ async function writeStatus(
   results: ScraperResult[],
   changedCount: number,
   ticketmasterCount: number,
-  publishedConcerts: number | null
+  publishedConcerts: number | null,
+  staleVenueIds: string[]
 ): Promise<void> {
   const failed = results.filter((r) => !r.success);
   const status = {
@@ -29,6 +30,9 @@ async function writeStatus(
     venuesChanged: changedCount,
     venuesUnchanged: results.filter((r) => r.success && r.notModified).length,
     failedVenueIds: failed.map((r) => r.configId),
+    // Venues whose events are being served from a cache older than the staleness
+    // bound — a scraper that broke weeks ago hiding behind the health gate.
+    staleVenues: staleVenueIds,
     ticketmasterEvents: ticketmasterCount,
     publishedConcerts // null when the run short-circuited (published set unchanged)
   };
@@ -145,9 +149,18 @@ async function main() {
     //    and publish entirely so a daily run does nothing when nothing updated.
     //    Ticketmaster has no per-item change-detection cache (it's a fresh sweep
     //    every run), so any Ticketmaster results always count as "changed".
-    const failureWithoutCache = results.some((r) => !r.success && !(cache[r.configId]?.concerts?.length));
-    if (changedCount === 0 && ticketmasterCount === 0 && !failureWithoutCache) {
-      await writeStatus(distDir, results, changedCount, ticketmasterCount, null);
+    // Venues whose events are served from a cache older than the staleness bound
+    // (a scraper that broke long ago still serving frozen shows) — surfaced in status.json.
+    const nowMs = Date.now();
+    const staleVenueIds = results
+      .filter((r) => isCacheStale(cache[r.configId], nowMs))
+      .map((r) => r.configId);
+    if (staleVenueIds.length) {
+      console.warn(`[Orchestrator] ${staleVenueIds.length} venue(s) served from stale cache: ${staleVenueIds.join(', ')}`);
+    }
+
+    if (shouldSkipPublish(results, cache, changedCount, ticketmasterCount)) {
+      await writeStatus(distDir, results, changedCount, ticketmasterCount, null, staleVenueIds);
       console.log('[Orchestrator] No venue changed — skipping normalization, enrichment, and publish.');
       console.log(`[Orchestrator] Scrape complete (no-op). Failures logged: ${failures.length}.`);
       return;
@@ -188,7 +201,7 @@ async function main() {
     // 9. Write static API files to dist/
     console.log(`[Orchestrator] Publishing ${normalizedConcerts.length} concerts to ${distDir}...`);
     await publishConcerts(normalizedConcerts, distDir);
-    await writeStatus(distDir, results, changedCount, ticketmasterCount, normalizedConcerts.length);
+    await writeStatus(distDir, results, changedCount, ticketmasterCount, normalizedConcerts.length, staleVenueIds);
 
     console.log(`[Orchestrator] Scrape complete. Successful scrapers: ${configs.length - failures.length}/${configs.length}.`);
     console.log(`[Orchestrator] Failed scrapers log saved to: ${failLogPath}`);
