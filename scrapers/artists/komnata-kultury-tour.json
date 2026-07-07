@@ -1,0 +1,14 @@
+{
+  "id": "komnata-kultury-tour",
+  "domain": "komnatakultury.ru",
+  "url": "https://komnatakultury.ru",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": "custom",
+    "date": "custom",
+    "artistNameFallback": "Комната культуры",
+    "venueNameFallback": "Unknown Venue",
+    "cityNameFallback": "Unknown City",
+    "countryNameFallback": "RU"
+  }
+}

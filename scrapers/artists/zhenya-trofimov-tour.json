@@ -1,0 +1,14 @@
+{
+  "id": "zhenya-trofimov-tour",
+  "domain": "komnatakultury.ru",
+  "url": "https://komnatakultury.ru",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": "custom",
+    "date": "custom",
+    "artistNameFallback": "Женя Трофимов",
+    "venueNameFallback": "Unknown Venue",
+    "cityNameFallback": "Unknown City",
+    "countryNameFallback": "RU"
+  }
+}
