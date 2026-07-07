@@ -31,7 +31,7 @@ jobs:
           if gh run download ${{ github.event.workflow_run.id }} --name scraper-reports --dir reports 2> download-error.log; then
             echo "downloaded=true" >> "$GITHUB_OUTPUT"
           else
-            if grep -qi "no artifacts found" download-error.log; then
+            if grep -qi "no valid artifacts found" download-error.log; then
               echo "No reports artifact found on the triggering run -- nothing to heal."
               echo "downloaded=false" >> "$GITHUB_OUTPUT"
             else
