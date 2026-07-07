@@ -1,0 +1,17 @@
+{
+  "id": "antoha-mc-tour",
+  "domain": "antoha-mc.ru",
+  "url": "http://antoha-mc.ru",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".t396__artboard:has([data-elem-id=\"1762508321256\"])",
+    "artistNameFallback": "Антоха МС",
+    "date": "[data-elem-id=\"1762508321256\"]",
+    "venue": "[data-elem-id=\"1762508321263\"]",
+    "city": "[data-elem-id=\"1762508321260\"]",
+    "ticketUrl": "[data-elem-id=\"1762508349918\"] a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "RU"
+  }
+}
