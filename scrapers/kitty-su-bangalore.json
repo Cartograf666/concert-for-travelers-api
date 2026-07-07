@@ -1,0 +1,17 @@
+{
+  "id": "kitty-su-bangalore",
+  "domain": "kittysu.com",
+  "url": "https://www.kittysu.com/events",
+  "type": "custom_js",
+  "requestDelayMs": 500,
+  "selectors": {
+    "eventBlock": "li",
+    "artist": "h3",
+    "date": "p",
+    "venueNameFallback": "Kitty Su",
+    "cityNameFallback": "Bangalore",
+    "countryNameFallback": "IN",
+    "lat": 12.9716,
+    "lng": 77.5946
+  }
+}
