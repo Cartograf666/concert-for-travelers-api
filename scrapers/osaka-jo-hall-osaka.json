@@ -1,0 +1,23 @@
+{
+  "id": "osaka-jo-hall-osaka",
+  "domain": "osaka-johall.com",
+  "url": "https://www.osaka-johall.com/event/",
+  "type": "static_selectors",
+  "maxRetries": 2,
+  "requestDelayMs": 0,
+  "allowEmpty": false,
+  "selectors": {
+    "eventBlock": "dl",
+    "artist": "dt.event-ttl a",
+    "artistNameFallback": "",
+    "date": "dt.event-genre span.date",
+    "datePattern": "",
+    "ticketUrl": "dt.event-ttl a",
+    "venue": "",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "Osaka-Jo Hall",
+    "cityNameFallback": "Osaka",
+    "countryNameFallback": "JP"
+  }
+}
