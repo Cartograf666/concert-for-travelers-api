@@ -1,0 +1,19 @@
+{
+  "id": "araneta-coliseum-manila",
+  "domain": "www.araneta.com.ph",
+  "url": "https://www.araneta.com.ph/events",
+  "type": "static_selectors",
+  "maxRetries": 3,
+  "requestDelayMs": 1500,
+  "selectors": {
+    "eventBlock": ".event, .event-card, .show, .concert, article[data-event-id], div[class*='event'], li.event-item",
+    "artist": "h2, h3, .title, .name, .artist, .performer, span[class*='title'], [itemprop='name']",
+    "date": ".date, .event-date, time[datetime], [itemprop='startDate'], .show-date, .date-time",
+    "ticketUrl": "a[href*='ticket'], a[href*='booking'], a.book-now, a[href*='reserve']",
+    "venueNameFallback": "Araneta Coliseum",
+    "cityNameFallback": "Manila",
+    "countryNameFallback": "PH",
+    "lat": 14.5994,
+    "lng": 121.0425
+  }
+}
