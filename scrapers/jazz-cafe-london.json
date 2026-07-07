@@ -1,0 +1,17 @@
+{
+  "id": "jazz-cafe-london",
+  "domain": "thejazzcafelondon.com",
+  "url": "https://thejazzcafelondon.com/whats-on/",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": "li.event",
+    "artist": "h2.event-title",
+    "date": ".event-date",
+    "ticketUrl": "a",
+    "venueNameFallback": "Jazz Cafe",
+    "cityNameFallback": "London",
+    "countryNameFallback": "GB",
+    "lat": 51.538415,
+    "lng": -0.142385
+  }
+}
