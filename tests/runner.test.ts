@@ -1,10 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert';
 import { createServer, Server } from 'node:http';
-import { runScraper, runAllScrapers, loadConfigs } from '../src/engine/runner.js';
-import { ScraperConfig } from '../src/schemas/config.js';
+import { runScraper, runAllScrapers, loadConfigs, closeBrowser } from '../src/engine/runner.js';
+import { ScraperConfig, ScraperConfigSchema } from '../src/schemas/config.js';
 import * as fs from 'fs/promises';
 import * as path from 'path';
+import * as os from 'os';
 
 // Helper to start a local HTTP server
 function startMockServer(port: number, routes: Record<string, string>): Promise<Server> {
@@ -266,4 +267,261 @@ test('Runner Engine - scrape and parse json_api', async (t) => {
   assert.strictEqual(c2.ticketUrl, 'https://example.com/tickets/rammstein');
 
   await new Promise<void>((resolve) => server.close(() => resolve()));
+});
+
+test('Runner Engine - allowEmpty treats 0 parsed events as a valid empty schedule', async () => {
+  const PORT = 8127;
+  const server = await startMockServer(PORT, { '/empty': '<html><body><div class="none-here"></div></body></html>' });
+
+  const config: ScraperConfig = {
+    id: 'sparse-venue',
+    domain: 'sparse-venue.test',
+    url: `http://localhost:${PORT}/empty`,
+    type: 'static_selectors',
+    allowEmpty: true,
+    selectors: {
+      eventBlock: '.event-card',
+      artist: '.artist-name',
+      date: '.event-date',
+      venueNameFallback: 'Sparse Venue',
+      cityNameFallback: 'Tbilisi',
+      countryNameFallback: 'GE'
+    }
+  };
+
+  const res = await runScraper(config);
+  assert.strictEqual(res.success, true);
+  assert.strictEqual(res.concerts.length, 0);
+  assert.strictEqual(res.reason, 'empty_schedule');
+
+  await new Promise<void>((resolve) => server.close(() => resolve()));
+});
+
+test('Runner Engine - unsupported scraper type fails with a clear error instead of silently parsing 0 events', async () => {
+  const PORT = 8128;
+  const server = await startMockServer(PORT, { '/x': '<html></html>' });
+
+  const config = {
+    id: 'future-type',
+    domain: 'future-type.test',
+    url: `http://localhost:${PORT}/x`,
+    type: 'graphql_api', // not a real, handled type -- exercises the runtime else-branch
+    selectors: {
+      eventBlock: '.e',
+      date: '.d',
+      venueNameFallback: 'V',
+      cityNameFallback: 'C',
+      countryNameFallback: 'DE'
+    }
+  } as unknown as ScraperConfig;
+
+  const res = await runScraper(config);
+  assert.strictEqual(res.success, false);
+  assert.match(res.error ?? '', /Unsupported scraper type/);
+
+  await new Promise<void>((resolve) => server.close(() => resolve()));
+});
+
+test('Runner Engine - circuit breaker opens after 3 consecutive failures on the same domain', async () => {
+  // Nothing listens on this port -- every attempt fails at the network layer.
+  const CLOSED_PORT = 8129;
+  const config: ScraperConfig = {
+    id: 'circuit-test',
+    domain: 'circuit-breaker-test.invalid',
+    url: `http://127.0.0.1:${CLOSED_PORT}/x`,
+    type: 'static_selectors',
+    maxRetries: 0,
+    selectors: {
+      eventBlock: '.e',
+      artist: '.a',
+      date: '.d',
+      venueNameFallback: 'V',
+      cityNameFallback: 'C',
+      countryNameFallback: 'DE'
+    }
+  };
+
+  for (let i = 0; i < 3; i++) {
+    const res = await runScraper(config);
+    assert.strictEqual(res.success, false);
+    assert.notStrictEqual(res.reason, 'circuit_open', `attempt ${i + 1} should fail normally, not via the breaker`);
+  }
+
+  // The breaker is now open: this call must be short-circuited without a real attempt.
+  const res = await runScraper(config);
+  assert.strictEqual(res.success, false);
+  assert.strictEqual(res.reason, 'circuit_open');
+});
+
+test('Schema - rejects localhost/private-network/link-local/metadata scraper URLs (SSRF guard)', () => {
+  const base = {
+    id: 'x',
+    domain: 'x.com',
+    selectors: { eventBlock: '.e', date: '.d', venueNameFallback: 'V', cityNameFallback: 'C', countryNameFallback: 'DE' }
+  };
+  const blocked = [
+    'http://169.254.169.254/latest/meta-data/', // cloud metadata
+    'http://localhost:1337/x',
+    'http://127.0.0.1/x',
+    'http://10.0.0.5/x',
+    'http://192.168.1.1/x',
+    'http://172.16.0.1/x',
+    'http://[::1]/x',
+    'file:///etc/passwd'
+  ];
+  for (const url of blocked) {
+    const result = ScraperConfigSchema.safeParse({ ...base, url });
+    assert.strictEqual(result.success, false, `${url} should be rejected`);
+  }
+
+  const allowed = ['https://www.melkweg.nl/en/agenda/', 'https://arenabeograd.com/wp-json/tribe/events/v1/events'];
+  for (const url of allowed) {
+    const result = ScraperConfigSchema.safeParse({ ...base, url });
+    assert.strictEqual(result.success, true, `${url} should be accepted`);
+  }
+});
+
+test('Runner Engine - loadConfigs skips a single malformed config instead of aborting the whole batch', async () => {
+  const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'scrapers-test-'));
+  try {
+    const valid: ScraperConfig = {
+      id: 'valid-one',
+      domain: 'valid-one.com',
+      url: 'https://valid-one.com/events',
+      type: 'static_selectors',
+      selectors: { eventBlock: '.e', date: '.d', venueNameFallback: 'V', cityNameFallback: 'C', countryNameFallback: 'DE' }
+    };
+    await fs.writeFile(path.join(dir, 'valid-one.json'), JSON.stringify(valid), 'utf-8');
+    // Malformed JSON (a real risk: a community PR with a typo'd config).
+    await fs.writeFile(path.join(dir, 'broken.json'), '{ not valid json', 'utf-8');
+    // Well-formed JSON that fails schema validation (SSRF-blocked host).
+    await fs.writeFile(path.join(dir, 'ssrf-attempt.json'), JSON.stringify({ ...valid, id: 'ssrf', url: 'http://169.254.169.254/x' }), 'utf-8');
+
+    const configs = await loadConfigs(dir);
+    assert.strictEqual(configs.length, 1);
+    assert.strictEqual(configs[0].id, 'valid-one');
+  } finally {
+    await fs.rm(dir, { recursive: true, force: true });
+  }
+});
+
+test('Runner Engine - playwright_render renders the page with a headless browser then reuses static CSS extraction', async (t) => {
+  const PORT = 8130;
+  // A page whose events are injected by client-side JS after load -- a plain
+  // axios GET would only ever see the empty shell, not the '.event-card' markup.
+  const server = await startMockServer(PORT, {
+    '/spa': `
+      <html><body>
+        <div id="root"></div>
+        <script>
+          document.getElementById('root').innerHTML =
+            '<div class="event-card"><h2 class="artist-name">The Cure</h2><span class="event-date">12. Okt 2026</span></div>';
+        </script>
+      </body></html>
+    `
+  });
+
+  const config: ScraperConfig = {
+    id: 'spa-venue',
+    domain: 'spa-venue.test',
+    url: `http://localhost:${PORT}/spa`,
+    type: 'playwright_render',
+    selectors: {
+      eventBlock: '.event-card',
+      artist: '.artist-name',
+      date: '.event-date',
+      venueNameFallback: 'SPA Venue',
+      cityNameFallback: 'Berlin',
+      countryNameFallback: 'DE'
+    }
+  };
+
+  try {
+    const res = await runScraper(config);
+    assert.strictEqual(res.success, true);
+    assert.strictEqual(res.concerts.length, 1);
+    assert.strictEqual(res.concerts[0].artist, 'The Cure');
+  } finally {
+    await closeBrowser();
+    await new Promise<void>((resolve) => server.close(() => resolve()));
+  }
+});
+
+test('Runner Engine - custom_js dispatches to a real custom module via dynamic import (melkweg-amsterdam)', async () => {
+  // Exercises the previously-untested custom_js branch end-to-end: runScraper's
+  // dynamic import of src/engine/custom/{id}.js, using the real melkweg-amsterdam
+  // module (not a fixture stand-in) against a synthetic __NEXT_DATA__ payload
+  // shaped like the real site's.
+  const PORT = 8131;
+  const nextData = {
+    props: {
+      pageProps: {
+        pageData: {
+          attributes: {
+            content: [
+              {
+                attributes: {
+                  layout: 'agenda',
+                  initialEvents: [
+                    { attributes: { name: 'Young Miko', startDate: '2026-07-06T21:00:00.000000Z', url: '/en/agenda/young-miko' } }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  };
+  const server = await startMockServer(PORT, {
+    '/agenda': `<html><body><script id="__NEXT_DATA__" type="application/json">${JSON.stringify(nextData)}</script></body></html>`
+  });
+
+  const config: ScraperConfig = {
+    id: 'melkweg-amsterdam',
+    domain: 'www.melkweg.nl',
+    url: `http://localhost:${PORT}/agenda`,
+    type: 'custom_js',
+    selectors: {
+      eventBlock: '__NEXT_DATA__',
+      artist: 'attributes.name',
+      date: 'attributes.startDate',
+      venueNameFallback: 'Melkweg',
+      cityNameFallback: 'Amsterdam',
+      countryNameFallback: 'NL'
+    }
+  };
+
+  try {
+    const res = await runScraper(config);
+    assert.strictEqual(res.success, true);
+    assert.strictEqual(res.concerts.length, 1);
+    assert.strictEqual(res.concerts[0].artist, 'Young Miko');
+    assert.strictEqual(res.concerts[0].date, '2026-07-06T21:00:00.000000Z');
+    // Resolved against config.url (the mock server), not the real melkweg.nl domain.
+    assert.strictEqual(res.concerts[0].ticketUrl, `http://localhost:${PORT}/en/agenda/young-miko`);
+  } finally {
+    await new Promise<void>((resolve) => server.close(() => resolve()));
+  }
+});
+
+test('Runner Engine - custom_js rejects a config missing selectors before even attempting the module', async () => {
+  const PORT = 8132;
+  const server = await startMockServer(PORT, { '/agenda': '<html></html>' });
+
+  const config = {
+    id: 'melkweg-amsterdam',
+    domain: 'www.melkweg.nl',
+    url: `http://localhost:${PORT}/agenda`,
+    type: 'custom_js'
+    // selectors intentionally omitted
+  } as unknown as ScraperConfig;
+
+  try {
+    const res = await runScraper(config);
+    assert.strictEqual(res.success, false);
+    assert.match(res.error ?? '', /Selectors are missing/);
+  } finally {
+    await new Promise<void>((resolve) => server.close(() => resolve()));
+  }
 });

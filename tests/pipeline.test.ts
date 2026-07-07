@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert';
-import { slugify, cleanArtistName, matchApprovedArtist, parseDate, processConcerts } from '../src/pipeline/process.js';
+import { slugify, cleanArtistName, matchApprovedArtist, parseDate, processConcerts, normalizeCountry } from '../src/pipeline/process.js';
 import { Concert } from '../src/schemas/concert.js';
 import * as path from 'path';
 
@@ -18,6 +18,9 @@ test('Pipeline - artist name cleaning', () => {
   assert.strictEqual(cleanArtistName('Coldplay - Special Guest: HER'), 'Coldplay');
   assert.strictEqual(cleanArtistName('Billie Eilish (Support)'), 'Billie Eilish');
   assert.strictEqual(cleanArtistName('Taylor Swift - Tour 2026'), 'Taylor Swift');
+  // A hyphenated stage name with no surrounding spaces must not be mistaken for a
+  // "- Live" suffix marker and truncated.
+  assert.strictEqual(cleanArtistName('J-Live'), 'J-Live');
 });
 
 test('Pipeline - match approved artists and detect cover bands', () => {
@@ -35,9 +38,32 @@ test('Pipeline - match approved artists and detect cover bands', () => {
   assert.strictEqual(matchApprovedArtist('The Cure Tribute Band', approved), null);
   assert.strictEqual(matchApprovedArtist('Rammstein Cover Band', approved), null);
   assert.strictEqual(matchApprovedArtist('Metallica Cover Show', approved), null);
-  
+
   // Non-approved artist (must return null)
   assert.strictEqual(matchApprovedArtist('Britney Spears', approved), null);
+});
+
+test('Pipeline - artist matching bug fixes: punctuation, shadowing, cover-substring, hyphenated names', () => {
+  // Name ending in punctuation: a naive \b...\b regex never matches at end-of-string here.
+  const withPunctuation = ['Against Me!', 'Rammstein'];
+  assert.deepStrictEqual(matchApprovedArtist('Against Me!', withPunctuation), { name: 'Against Me!' });
+
+  // A short generic entry must not shadow a longer, more specific one that also matches.
+  const shadowing = ['alan', 'Alan Walker'];
+  assert.deepStrictEqual(matchApprovedArtist('Alan Walker', shadowing), { name: 'Alan Walker' });
+
+  // "cover"/"tribute" as a substring of a real name must not trigger the cover-band filter.
+  const coverSubstring = ['David Coverdale', 'The Cure'];
+  assert.deepStrictEqual(matchApprovedArtist('David Coverdale', coverSubstring), { name: 'David Coverdale' });
+  // A real cover-band listing must still be rejected.
+  assert.strictEqual(matchApprovedArtist('The Cure Cover Band', coverSubstring), null);
+
+  // A hyphenated stage name with no surrounding spaces must survive cleanArtistName's
+  // "- Live" suffix-stripping (which only strips when the hyphen is preceded by a space).
+  const hyphenated = ['J-Live', 'Rammstein'];
+  assert.deepStrictEqual(matchApprovedArtist('J-Live', hyphenated), { name: 'J-Live' });
+  // A genuine "- Live" suffix (space before the hyphen) must still be stripped.
+  assert.deepStrictEqual(matchApprovedArtist('J-Live - Live at Blue Note', hyphenated), { name: 'J-Live' });
 });
 
 test('Pipeline - parse date strings', () => {
@@ -130,4 +156,27 @@ test('Pipeline - full concert processing & deduplication', async () => {
   assert.strictEqual(result.city, 'Berlin');
   assert.strictEqual(result.country, 'DE'); // Uppercased
   assert.strictEqual(result.ticketUrl, 'https://example.com/cure'); // Ticket URL retained
+});
+
+test('Pipeline - normalizeCountry accepts full country names (schema.org addressCountry) as well as codes', () => {
+  // Real-world case: an artist tour-page scraper's .addressCountry microdata
+  // renders the full country name, not a 2-letter code.
+  assert.strictEqual(normalizeCountry('Germany'), 'DE');
+  assert.strictEqual(normalizeCountry('Slovakia'), 'SK');
+  assert.strictEqual(normalizeCountry('Greece'), 'GR');
+  assert.strictEqual(normalizeCountry('United Kingdom'), 'GB');
+  assert.strictEqual(normalizeCountry('UK'), 'GB');
+  // Already a code: passed through unchanged (just uppercased).
+  assert.strictEqual(normalizeCountry('de'), 'DE');
+  assert.strictEqual(normalizeCountry('DE'), 'DE');
+  // Real-world case: Sabaton's tour page nests the city span inside the same
+  // element as the country text with no separator, so cheerio's .text() yields
+  // "Bulgaria, Plovdiv" (country + city concatenated) -- only the part before
+  // the comma is the country.
+  assert.strictEqual(normalizeCountry('Bulgaria, Plovdiv'), 'BG');
+  // Same page, more real cases: alternate/colloquial full names and a trailing
+  // parenthetical alternate name, both with the concatenated city suffix.
+  assert.strictEqual(normalizeCountry('The Netherlands, Rotterdam'), 'NL');
+  assert.strictEqual(normalizeCountry('Czech Republic, Prague'), 'CZ');
+  assert.strictEqual(normalizeCountry('Slovakia (Slovak Republic), Bratislava'), 'SK');
 });

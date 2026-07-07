@@ -1,10 +1,46 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { generateObject } from 'ai';
+import { createGoogleGenerativeAI } from '@ai-sdk/google';
+import { z } from 'zod';
 import * as cheerio from 'cheerio';
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import { ScraperConfig, ScraperConfigSchema } from '../schemas/config.js';
 import { Concert } from '../schemas/concert.js';
 import { extractJsonLd } from '../engine/structured.js';
+
+// What the LLM is actually allowed to generate. venueNameFallback/cityNameFallback/
+// countryNameFallback are deliberately excluded -- those are always overwritten with
+// the original config's trusted values below, so a prompt-injected value for them
+// (from attacker-controlled scraped HTML) can never reach the saved config.
+const RepairedSelectorsSchema = z.object({
+  eventBlock: z.string().min(1).describe('CSS selector matching the card or element containing a single concert event'),
+  artist: z.string().min(1).describe('CSS selector inside eventBlock to extract the artist name'),
+  date: z.string().min(1).describe('CSS selector inside eventBlock to extract the date string'),
+  datePattern: z.string().optional().describe('Regex/Format pattern to parse the date, e.g. DD.MM.YYYY'),
+  ticketUrl: z.string().optional().describe('CSS selector inside eventBlock or event link itself for tickets')
+});
+export type RepairedSelectors = z.infer<typeof RepairedSelectorsSchema>;
+
+/** True for auth/quota errors where retrying against a *different* model is pointless. */
+function isAuthOrQuotaError(err: any): boolean {
+  const status = err?.statusCode ?? err?.status ?? err?.response?.status;
+  return status === 401 || status === 403 || status === 429;
+}
+
+export type GenerateSelectorsFn = (args: { prompt: string; modelName: string; apiKey: string }) => Promise<RepairedSelectors>;
+
+/** Calls Gemini via the Vercel AI SDK, enforcing the response shape at the API boundary
+ * (rather than a bare JSON.parse) so a malformed/incomplete LLM response is rejected
+ * before it ever reaches selector-testing or disk. */
+async function defaultGenerateSelectors({ prompt, modelName, apiKey }: { prompt: string; modelName: string; apiKey: string }): Promise<RepairedSelectors> {
+  const google = createGoogleGenerativeAI({ apiKey });
+  const { object } = await generateObject({
+    model: google(modelName),
+    schema: RepairedSelectorsSchema,
+    prompt
+  });
+  return object;
+}
 
 /**
  * Extracts and parses selectors from LLM text output.
@@ -90,7 +126,8 @@ export function testSelectorsOnHtml(
 export async function repairScraperConfig(
   configPath: string,
   htmlSample: string,
-  apiKey: string
+  apiKey: string,
+  generateSelectors: GenerateSelectorsFn = defaultGenerateSelectors
 ): Promise<{ success: boolean; config?: ScraperConfig; error?: string }> {
   try {
     // 1. Read broken configuration
@@ -118,9 +155,8 @@ export async function repairScraperConfig(
     console.log(`[Repair] Initiating LLM self-healing for: ${brokenConfig.id}`);
 
     // 2. Query Gemini API with failover model cascade
-    const genAI = new GoogleGenerativeAI(apiKey);
     const models = ['gemini-3.5-flash', 'gemini-3.1-flash', 'gemini-2.5-flash', 'gemini-2.5-flash-lite', 'gemini-1.5-flash', 'gemini-1.5-pro'];
-    let result: any = null;
+    let generated: RepairedSelectors | null = null;
     let lastError: any = null;
 
     const prompt = `You are a professional self-healing web scraper AI assistant.
@@ -134,47 +170,38 @@ Here is a sample of the updated HTML from the website:
 ${htmlSample}
 \`\`\`
 
-Analyze the updated HTML and generate corrected selectors.
-The output must be a JSON object containing the "selectors" block matching the ScraperConfig selectors schema:
-{
-  "eventBlock": "CSS selector matching the card or element containing a single concert event",
-  "artist": "CSS selector inside eventBlock to extract the artist name",
-  "date": "CSS selector inside eventBlock to extract the date string",
-  "datePattern": "Regex/Format pattern to parse the date, e.g. DD.MM.YYYY (optional)",
-  "ticketUrl": "CSS selector inside eventBlock or event link itself for tickets (optional)",
-  "venueNameFallback": "Keep unchanged: ${brokenConfig.selectors.venueNameFallback}",
-  "cityNameFallback": "Keep unchanged: ${brokenConfig.selectors.cityNameFallback}",
-  "countryNameFallback": "Keep unchanged: ${brokenConfig.selectors.countryNameFallback}"
-}
-
-Respond with ONLY the JSON object. Do not include markdown code block syntax (like \`\`\`json), explanations, or notes. Ensure the selectors are valid CSS selectors compatible with Cheerio.`;
+Analyze the updated HTML and generate corrected selectors for eventBlock, artist, date, datePattern (optional),
+and ticketUrl (optional). Ensure the selectors are valid CSS selectors compatible with Cheerio.`;
 
     for (const modelName of models) {
       try {
         console.log(`[Repair] Attempting generation with model: ${modelName}`);
-        const model = genAI.getGenerativeModel({ model: modelName });
-        result = await model.generateContent(prompt);
+        generated = await generateSelectors({ prompt, modelName, apiKey });
         console.log(`[Repair] Model ${modelName} succeeded.`);
         break; // Success! Break out of loop
       } catch (err: any) {
-        console.warn(`[Repair] Warning: Failed with model ${modelName} - ${err.message}`);
         lastError = err;
+        if (isAuthOrQuotaError(err)) {
+          // An invalid/expired key or an exhausted quota fails identically on every
+          // model in the cascade -- stop instead of burning 5 more calls to find out.
+          console.error(`[Repair] Auth/quota error on ${modelName} (status ${err?.statusCode ?? err?.status}) — stopping cascade: ${err.message}`);
+          break;
+        }
+        console.warn(`[Repair] Warning: Failed with model ${modelName} - ${err.message}`);
       }
     }
 
-    if (!result) {
+    if (!generated) {
       throw new Error(`All Gemini models failed. Last error: ${lastError?.message}`);
     }
 
-    const responseText = result.response.text();
-
-    console.log(`[Repair] LLM response received. Parsing...`);
-    const newSelectors = cleanAndParseSelectors(responseText);
-
-    // Ensure fallback names are preserved
-    newSelectors.venueNameFallback = brokenConfig.selectors.venueNameFallback;
-    newSelectors.cityNameFallback = brokenConfig.selectors.cityNameFallback;
-    newSelectors.countryNameFallback = brokenConfig.selectors.countryNameFallback;
+    // Ensure fallback names are preserved (never LLM-controlled, see RepairedSelectorsSchema).
+    const newSelectors: any = {
+      ...generated,
+      venueNameFallback: brokenConfig.selectors.venueNameFallback,
+      cityNameFallback: brokenConfig.selectors.cityNameFallback,
+      countryNameFallback: brokenConfig.selectors.countryNameFallback
+    };
 
     // 3. Validate fixed selectors on the local HTML sample
     console.log(`[Repair] Testing new selectors on HTML sample...`);

@@ -1,5 +1,7 @@
 import axios from 'axios';
 import * as cheerio from 'cheerio';
+import { chromium, type Browser } from 'playwright';
+import { circuitBreaker, ConsecutiveBreaker, BrokenCircuitError, handleWhen } from 'cockatiel';
 import { ScraperConfig, ScraperConfigSchema } from '../schemas/config.js';
 import { Concert } from '../schemas/concert.js';
 import { extractJsonLd } from './structured.js';
@@ -26,7 +28,7 @@ const HTML_SAMPLE_LIMIT = 60000; // large enough to keep JSON-LD / hydration blo
  * Why a scrape produced no usable events. Lets the healer skip pages the LLM
  * cannot fix (CSR shells, genuinely empty schedules) instead of burning calls.
  */
-export type FailureReason = 'fetch_error' | 'csr_detected' | 'empty_schedule' | 'selectors_stale' | 'parse_error';
+export type FailureReason = 'fetch_error' | 'csr_detected' | 'empty_schedule' | 'selectors_stale' | 'parse_error' | 'circuit_open';
 
 export interface ScraperResult {
   configId: string;
@@ -48,6 +50,27 @@ const lastAccessByDomain = new Map<string, number>();
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+// Per-domain circuit breakers: after 3 consecutive full (post-retry) failures
+// against the same domain, stop hammering it for a cooldown period instead of
+// retrying into an active block (e.g. a site throttling/resetting connections
+// after repeated automated requests). Built lazily, one per domain, and reused
+// across the whole scrape run.
+const breakersByDomain = new Map<string, ReturnType<typeof circuitBreaker>>();
+const CIRCUIT_HALF_OPEN_AFTER_MS = 5 * 60_000;
+const CIRCUIT_CONSECUTIVE_FAILURES = 3;
+
+function getBreaker(domain: string): ReturnType<typeof circuitBreaker> {
+  let breaker = breakersByDomain.get(domain);
+  if (!breaker) {
+    breaker = circuitBreaker(handleWhen(() => true), {
+      halfOpenAfter: CIRCUIT_HALF_OPEN_AFTER_MS,
+      breaker: new ConsecutiveBreaker(CIRCUIT_CONSECUTIVE_FAILURES)
+    });
+    breakersByDomain.set(domain, breaker);
+  }
+  return breaker;
 }
 
 /** True for transient failures worth retrying (network drop, timeout, 429, 5xx). */
@@ -114,7 +137,7 @@ async function runStaticScraper(config: ScraperConfig, html: string, scrapedAt: 
 
   const $ = cheerio.load(html);
   const concerts: Partial<Concert>[] = [];
-  const { eventBlock, artist, artistNameFallback, date, ticketUrl, venue, city, country, venueNameFallback, cityNameFallback, countryNameFallback } = config.selectors;
+  const { eventBlock, artist, artistNameFallback, date, ticketUrl, venue, city, country, venueNameFallback, cityNameFallback, countryNameFallback, lat, lng } = config.selectors;
 
   $(eventBlock).each((_, element) => {
     const block = $(element);
@@ -135,7 +158,7 @@ async function runStaticScraper(config: ScraperConfig, html: string, scrapedAt: 
     if (ticketUrl) {
       const ticketEl = block.find(ticketUrl);
       let href = ticketEl.attr('href');
-      
+
       // Fallback: check if the block itself is an anchor tag and we selected it
       if (!href && block.is('a')) {
         href = block.attr('href');
@@ -159,6 +182,10 @@ async function runStaticScraper(config: ScraperConfig, html: string, scrapedAt: 
         venue: venueText || venueNameFallback,
         city: cityText || cityNameFallback,
         country: countryText || countryNameFallback,
+        // Only attach the geocoded coordinate when this row is at the scraper's own
+        // fixed venue -- a per-row tour-page venue (venueText set) has different,
+        // unknown coordinates, so lat/lng must not be carried over from the fallback.
+        ...(venueText ? {} : { lat, lng }),
         ticketUrl: absoluteTicketUrl,
         originalSource: config.domain,
         scrapedAt
@@ -191,7 +218,7 @@ async function runJsonApiScraper(config: ScraperConfig, jsonData: any, scrapedAt
     throw new Error(`Selectors are missing for JSON API scraper config: ${config.id}`);
   }
 
-  const { eventBlock, artist, artistNameFallback, date, ticketUrl, venue, city, country, venueNameFallback, cityNameFallback, countryNameFallback } = config.selectors;
+  const { eventBlock, artist, artistNameFallback, date, ticketUrl, venue, city, country, venueNameFallback, cityNameFallback, countryNameFallback, lat, lng } = config.selectors;
 
   const events = getByPath(jsonData, eventBlock);
   if (!events) {
@@ -228,6 +255,7 @@ async function runJsonApiScraper(config: ScraperConfig, jsonData: any, scrapedAt
         venue: venueText || venueNameFallback,
         city: cityText || cityNameFallback,
         country: countryText || countryNameFallback,
+        ...(venueText ? {} : { lat, lng }),
         ticketUrl: absoluteTicketUrl,
         originalSource: config.domain,
         scrapedAt
@@ -257,6 +285,13 @@ async function runNextDataScraper(config: ScraperConfig, html: string, scrapedAt
  * Runs a single custom JS scraper (looks for custom module under src/engine/custom/{id}.ts or js).
  */
 async function runCustomJsScraper(config: ScraperConfig, html: string, scrapedAt: string): Promise<Partial<Concert>[]> {
+  // Consistent with runStaticScraper/runJsonApiScraper: fail fast and loudly
+  // rather than letting a custom module silently produce undefined venue/city/
+  // country fields via optional chaining.
+  if (!config.selectors) {
+    throw new Error(`Selectors are missing for custom_js scraper config: ${config.id}`);
+  }
+
   // We dynamic import the custom implementation if it exists
   const customModulePath = `./custom/${config.id}.js`;
   try {
@@ -330,6 +365,50 @@ async function fetchWithRetry(config: ScraperConfig, conditional?: { etag?: stri
   throw lastErr;
 }
 
+// Shared headless browser for 'playwright_render' scrapers -- launched lazily on
+// first use and reused across the whole scrape run (launching Chromium per-config
+// would be far slower and heavier than necessary for a handful of JS-rendered SPA
+// venues). Stored as a Promise (not the resolved Browser) so concurrent callers
+// from runAllScrapers' worker pool all await the same in-flight launch instead of
+// each racing to start their own (assigning the promise happens synchronously,
+// before the first `await`, closing the race window). Call closeBrowser() once
+// the run is done to avoid leaking the browser process.
+let browserPromise: Promise<Browser> | null = null;
+
+function getBrowser(): Promise<Browser> {
+  if (!browserPromise) {
+    browserPromise = chromium.launch({ headless: true });
+  }
+  return browserPromise;
+}
+
+/** Closes the shared Playwright browser, if one was launched. Safe to call even
+ * if no 'playwright_render' scraper ran (no-op). Call once at the end of a run. */
+export async function closeBrowser(): Promise<void> {
+  if (browserPromise) {
+    const browser = await browserPromise;
+    browserPromise = null;
+    await browser.close();
+  }
+}
+
+/**
+ * Renders a page with a headless browser instead of a plain HTTP GET, for sites
+ * whose event data only exists after client-side JS runs (no static HTML, no
+ * discoverable JSON API/hydration blob for the next_data/json_api paths to use).
+ */
+async function renderWithPlaywright(config: ScraperConfig): Promise<FetchResponse> {
+  const browser = await getBrowser();
+  const page = await browser.newPage({ userAgent: getRandomUserAgent() });
+  try {
+    await page.goto(config.url, { waitUntil: 'networkidle', timeout: 20000 });
+    const html = await page.content();
+    return { status: 200, data: html, headers: {} };
+  } finally {
+    await page.close();
+  }
+}
+
 /**
  * Runs a single scraper config.
  */
@@ -337,7 +416,11 @@ export async function runScraper(config: ScraperConfig, cached?: VenueCache): Pr
   const scrapedAt = new Date().toISOString();
   let responseData: any = null;
   try {
-    const response = await fetchWithRetry(config, cached ? { etag: cached.etag, lastModified: cached.lastModified } : undefined);
+    const response = await getBreaker(config.domain).execute(() =>
+      config.type === 'playwright_render'
+        ? renderWithPlaywright(config)
+        : fetchWithRetry(config, cached ? { etag: cached.etag, lastModified: cached.lastModified } : undefined)
+    );
     const etag = typeof response.headers?.etag === 'string' ? response.headers.etag : undefined;
     const lastModified = typeof response.headers?.['last-modified'] === 'string' ? response.headers['last-modified'] : undefined;
 
@@ -390,9 +473,32 @@ export async function runScraper(config: ScraperConfig, cached?: VenueCache): Pr
     } else if (config.type === 'custom_js') {
       expectString();
       concerts = await runCustomJsScraper(config, responseData, scrapedAt);
+    } else if (config.type === 'playwright_render') {
+      // Same CSS-selector extraction as static_selectors, just against HTML that
+      // was rendered by a real browser instead of a plain HTTP GET.
+      expectString();
+      concerts = await runStaticScraper(config, responseData, scrapedAt);
+      if (concerts.length === 0) {
+        const jsonLd = extractJsonLd(config, responseData, scrapedAt);
+        if (jsonLd.length > 0) {
+          console.log(`[Runner] ${config.id}: selectors matched 0, recovered ${jsonLd.length} via JSON-LD fallback.`);
+          concerts = jsonLd;
+        }
+      }
+    } else {
+      // Guards against a schema/engine drift: a config.type the schema enum
+      // allows but no branch above handles would otherwise silently fall through
+      // with concerts=[] and get misreported as "layout might have changed".
+      throw new Error(`Unsupported scraper type: "${config.type}" has no matching branch in runScraper.`);
     }
 
     if (concerts.length === 0) {
+      if (config.allowEmpty) {
+        // This venue is known to have a genuinely sparse/seasonal schedule --
+        // 0 events is a valid result, not a broken-selector signal for the healer.
+        console.log(`[Runner] ${config.id}: 0 events, allowEmpty=true, treating as a valid empty schedule.`);
+        return { configId: config.id, success: true, concerts: [], reason: 'empty_schedule', scrapedAt };
+      }
       // Classify why, so the healer can skip pages an LLM re-selector cannot fix.
       const isCsr = typeof responseData === 'string' && isLikelyCsr(responseData);
       const reason: FailureReason = isCsr ? 'csr_detected' : 'selectors_stale';
@@ -427,6 +533,21 @@ export async function runScraper(config: ScraperConfig, cached?: VenueCache): Pr
       notModified
     };
   } catch (error: any) {
+    // Circuit open: we never attempted the request, so there's no HTML sample and
+    // nothing for the healer to act on -- this domain is being actively blocked,
+    // not broken, so skip straight past the generic fetch_error classification.
+    if (error instanceof BrokenCircuitError) {
+      console.warn(`[Runner] ${config.id}: circuit open for domain ${config.domain} after ${CIRCUIT_CONSECUTIVE_FAILURES} consecutive failures, skipping.`);
+      return {
+        configId: config.id,
+        success: false,
+        concerts: [],
+        error: `Circuit breaker open for domain ${config.domain}: ${error.message}`,
+        reason: 'circuit_open',
+        scrapedAt
+      };
+    }
+
     // Capture HTML sample for debugging/self-healing (keep JSON-LD/hydration blocks intact).
     const htmlSample = typeof responseData === 'string' ? responseData.slice(0, HTML_SAMPLE_LIMIT) : undefined;
     const reason: FailureReason = responseData === null ? 'fetch_error' : 'parse_error';

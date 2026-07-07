@@ -15,6 +15,8 @@ export const ConcertSchema = z.object({
   venue: z.string().min(1).describe("Name of the venue/club"),
   city: z.string().min(1).describe("City name"),
   country: z.string().min(2).max(2).describe("ISO 3166-1 alpha-2 country code"),
+  lat: z.number().min(-90).max(90).optional().describe("Venue latitude, when known"),
+  lng: z.number().min(-180).max(180).optional().describe("Venue longitude, when known"),
   ticketUrl: z.string().url().or(z.literal("")).optional().describe("URL to buy tickets or event info page, or empty string"),
   originalSource: z.string().describe("Domain name of the source site (e.g., club-arena.de)"),
   scrapedAt: z.string().datetime().describe("ISO datetime when data was extracted")

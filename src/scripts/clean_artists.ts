@@ -1,5 +1,6 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
+import { SEED_ARTISTS } from './seed_artists.js';
 
 async function main() {
   const approvedArtistsPath = path.join(process.cwd(), 'data', 'approved_artists.json');
@@ -13,12 +14,7 @@ async function main() {
   const cleanedMap = new Map<string, { name: string; website: string | null; socials?: any }>();
 
   // Whitelisted seeds to always preserve
-  const preserve = new Set([
-    "the cure", "rammstein", "metallica", "coldplay", "radiohead",
-    "billie eilish", "taylor swift", "daft punk", "depeche mode", "nirvana",
-    "system of a down", "linkin park", "massive attack", "portishead",
-    "aphex twin", "kraftwerk", "moderat"
-  ]);
+  const preserve = new Set(SEED_ARTISTS.map((name) => name.toLowerCase()));
 
   for (const entry of artists) {
     const name = entry.name.trim();

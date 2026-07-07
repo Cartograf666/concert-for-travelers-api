@@ -1,7 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert';
-import { GoogleGenerativeAI } from '@google/generative-ai';
-import { cleanAndParseSelectors, testSelectorsOnHtml, repairScraperConfig } from '../src/healing/repair.js';
+import { cleanAndParseSelectors, testSelectorsOnHtml, repairScraperConfig, GenerateSelectorsFn } from '../src/healing/repair.js';
 import { ScraperConfig } from '../src/schemas/config.js';
 import * as fs from 'fs/promises';
 import * as path from 'path';
@@ -81,7 +80,7 @@ test('Healing - repairScraperConfig end-to-end with mocked Gemini API', async ()
   const brokenConfig: ScraperConfig = {
     id: 'broken-scraper',
     domain: 'broken-scraper.de',
-    url: 'http://localhost:9999/broken',
+    url: 'https://test-fixture.example/broken',
     type: 'static_selectors',
     selectors: {
       eventBlock: '.old-card-class', // broken
@@ -103,40 +102,30 @@ test('Healing - repairScraperConfig end-to-end with mocked Gemini API', async ()
     </div>
   `;
 
-  // Mock Gemini client prototype getGenerativeModel
-  const originalGetGenerativeModel = GoogleGenerativeAI.prototype.getGenerativeModel;
-
-  GoogleGenerativeAI.prototype.getGenerativeModel = function (options: any) {
-    const cascadeModels = ['gemini-3.5-flash', 'gemini-3.1-flash', 'gemini-2.5-flash', 'gemini-2.5-flash-lite', 'gemini-1.5-flash', 'gemini-1.5-pro'];
-    assert.ok(cascadeModels.includes(options.model), `Model ${options.model} should be in the cascade`);
+  // Inject a fake structured-output generator instead of hitting the real Gemini
+  // API -- this exercises the exact same cascade/validation/save path as production,
+  // just swapping out the network call.
+  const cascadeModels = ['gemini-3.5-flash', 'gemini-3.1-flash', 'gemini-2.5-flash', 'gemini-2.5-flash-lite', 'gemini-1.5-flash', 'gemini-1.5-pro'];
+  const fakeGenerateSelectors: GenerateSelectorsFn = async ({ prompt, modelName }) => {
+    assert.ok(cascadeModels.includes(modelName), `Model ${modelName} should be in the cascade`);
+    assert.ok(prompt.includes('broken-scraper'));
+    assert.ok(prompt.includes('new-card-class'));
     return {
-      generateContent: async (prompt: string) => {
-        assert.ok(prompt.includes('broken-scraper'));
-        assert.ok(prompt.includes('new-card-class'));
-        
-        return {
-          response: {
-            text: () => JSON.stringify({
-              eventBlock: '.new-card-class',
-              artist: '.artist',
-              date: '.date',
-              ticketUrl: '.tickets',
-              venueNameFallback: 'Original Venue',
-              cityNameFallback: 'Original City',
-              countryNameFallback: 'DE'
-            })
-          }
-        };
-      }
-    } as any;
+      eventBlock: '.new-card-class',
+      artist: '.artist',
+      date: '.date',
+      ticketUrl: '.tickets'
+    };
   };
 
   try {
-    const res = await repairScraperConfig(tempConfigPath, updatedHtml, 'MOCK_API_KEY');
+    const res = await repairScraperConfig(tempConfigPath, updatedHtml, 'MOCK_API_KEY', fakeGenerateSelectors);
 
     assert.strictEqual(res.success, true);
     assert.ok(res.config);
     assert.strictEqual(res.config.selectors?.eventBlock, '.new-card-class');
+    // Fallback names must come from the trusted original config, not the "LLM" output.
+    assert.strictEqual(res.config.selectors?.venueNameFallback, 'Original Venue');
 
     // Read back config file to confirm update
     const savedContent = await fs.readFile(tempConfigPath, 'utf-8');
@@ -144,9 +133,46 @@ test('Healing - repairScraperConfig end-to-end with mocked Gemini API', async ()
     assert.strictEqual(savedConfig.selectors.eventBlock, '.new-card-class');
 
   } finally {
-    // Restore original prototype function
-    GoogleGenerativeAI.prototype.getGenerativeModel = originalGetGenerativeModel;
     // Cleanup temp files
+    await fs.rm(tempConfigDir, { recursive: true, force: true });
+  }
+});
+
+test('Healing - model cascade stops early on an auth/quota error instead of trying every model', async () => {
+  const tempConfigDir = path.join(process.cwd(), 'reports', 'temp_tests_auth');
+  await fs.mkdir(tempConfigDir, { recursive: true });
+  const tempConfigPath = path.join(tempConfigDir, 'broken-scraper.json');
+
+  const brokenConfig: ScraperConfig = {
+    id: 'broken-scraper',
+    domain: 'broken-scraper.de',
+    url: 'https://test-fixture.example/broken',
+    type: 'static_selectors',
+    selectors: {
+      eventBlock: '.old-card-class',
+      artist: '.artist',
+      date: '.date',
+      venueNameFallback: 'Original Venue',
+      cityNameFallback: 'Original City',
+      countryNameFallback: 'DE'
+    }
+  };
+  await fs.writeFile(tempConfigPath, JSON.stringify(brokenConfig, null, 2), 'utf-8');
+
+  let attempts = 0;
+  const authErrorGenerator: GenerateSelectorsFn = async () => {
+    attempts++;
+    const err: any = new Error('API key not valid');
+    err.statusCode = 401;
+    throw err;
+  };
+
+  try {
+    const res = await repairScraperConfig(tempConfigPath, '<div></div>', 'BAD_KEY', authErrorGenerator);
+    assert.strictEqual(res.success, false);
+    // Only the first model in the cascade should have been tried.
+    assert.strictEqual(attempts, 1);
+  } finally {
     await fs.rm(tempConfigDir, { recursive: true, force: true });
   }
 });

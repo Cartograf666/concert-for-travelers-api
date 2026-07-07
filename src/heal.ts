@@ -40,9 +40,10 @@ async function main() {
       console.log(`[Healer] Previous Error: ${error}`);
 
       // Re-selecting can't fix a page whose events never reached the server HTML,
-      // nor a network failure. Skip these so we don't waste Gemini calls / risk
-      // overwriting a correct config with selectors guessed from an empty shell.
-      if (reason === 'csr_detected' || reason === 'fetch_error') {
+      // a network failure, or a domain that's actively blocking us. Skip these so
+      // we don't waste Gemini calls / risk overwriting a correct config with
+      // selectors guessed from an empty shell.
+      if (reason === 'csr_detected' || reason === 'fetch_error' || reason === 'circuit_open') {
         console.warn(`[Healer] Skip: ${id} failed with reason "${reason}" — not fixable by re-selecting (needs a render/JSON path).`);
         continue;
       }

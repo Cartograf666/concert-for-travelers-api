@@ -12,7 +12,7 @@ Features an automated **Self-Healing Selector Repair** and a robust **Cascading 
 2. **JIT Artist Metadata & Socials Enrichment**: Automatically detects newly scraped touring artists with missing info and queries Gemini in batches to lookup their official website and social platforms (Spotify, Instagram, Facebook, YouTube, Telegram, and VK).
 3. **Resilient Cascading Failover Cascade**: To bypass API rate limits on free-tier keys, both enrichment and self-healing systems implement a fallback model list:
    `gemini-3.5-flash` ➡️ `gemini-3.1-flash` ➡️ `gemini-2.5-flash` ➡️ `gemini-2.5-flash-lite` ➡️ `gemini-1.5-flash` ➡️ `gemini-1.5-pro`
-4. **Wikipedia Artist Whitelist Database**: Employs a pre-downloaded, sanitized catalog of over **62,000+** artists to whitelist verified touring acts and automatically filters out local cover/tribute bands.
+4. **Artist Whitelist Database**: Employs a pre-downloaded, sanitized catalog of over **62,000+** artists (seeded from a community artist list, enriched via MusicBrainz/Wikidata/Gemini) to whitelist verified touring acts and automatically filters out local cover/tribute bands.
 5. **Self-Healing CSS Selectors**: If a scraper's CSS selector stops returning concerts, an automated flow queries Gemini to analyze the new HTML sample, repairs the selectors, validates them locally, and commits the fix back to the repository.
 6. **Strict Schema Verification**: Uses Zod schemas to validate scraper configurations and outputs before publishing, preventing malformed data from reaching the static endpoints.
 
@@ -42,8 +42,9 @@ Features an automated **Self-Healing Selector Repair** and a robust **Cascading 
 │   ├── healing/
 │   │   └── repair.ts           # Self-healing logic with model failover cascade
 │   ├── scripts/
-│   │   ├── download_artists.ts # Seed database downloader from Wikipedia
-│   │   └── clean_artists.ts    # Cleans Approved Artists from typographic noise/duplicates
+│   │   ├── download_artists.ts # Seed database downloader (community artist list)
+│   │   ├── clean_artists.ts    # Cleans Approved Artists from typographic noise/duplicates
+│   │   └── geocode_venues.ts   # One-off batch geocoder for venue lat/lng (Nominatim/OSM)
 │   ├── run.ts                  # Main entry point orchestrator for scraping
 │   └── heal.ts                 # Main entry point orchestrator for self-healing
 ├── tests/                      # Automated test suite (node --test)
@@ -87,9 +88,17 @@ npm run heal
 ```
 
 ### Clean Artist Database
-Cleans the raw approved artists list from typographic noise, case-insensitive duplicates, and invalid Wikipedia HTML tags.
+Cleans the raw approved artists list from typographic noise, case-insensitive duplicates, and invalid HTML tags.
 ```bash
 npm run clean-artists
+```
+
+### Geocode Venue Coordinates
+One-off batch script: geocodes each scraper's fixed venue (name + city + country) via the free OpenStreetMap/Nominatim provider and caches the resulting `lat`/`lng` in the scraper's own JSON config. Skips artist tour-page scrapers (per-row venue, no single fixed coordinate) and configs that already have coordinates.
+```bash
+# Set a real contact address -- Nominatim's usage policy requires one for automated use
+export NOMINATIM_EMAIL="you@example.com"
+npm run geocode-venues
 ```
 
 ### Run Unit Tests

@@ -1,26 +1,7 @@
 import axios from 'axios';
 import * as fs from 'fs/promises';
 import * as path from 'path';
-
-const OFFICIAL_WEBSITES: Record<string, string> = {
-  "the cure": "https://www.thecure.com",
-  "rammstein": "https://www.rammstein.de",
-  "metallica": "https://www.metallica.com",
-  "coldplay": "https://www.coldplay.com",
-  "radiohead": "https://www.radiohead.com",
-  "billie eilish": "https://www.billieeilish.com",
-  "taylor swift": "https://www.taylorimages.com",
-  "daft punk": "https://www.daftpunk.com",
-  "depeche mode": "https://www.depechemode.com",
-  "nirvana": "https://www.nirvana.com",
-  "system of a down": "https://www.systemofadown.com",
-  "linkin park": "https://www.linkinpark.com",
-  "massive attack": "https://www.massiveattack.co.uk",
-  "portishead": "https://www.portishead.co.uk",
-  "aphex twin": "https://aphextwin.warp.net",
-  "kraftwerk": "https://www.kraftwerk.com",
-  "moderat": "https://www.moderat.fm"
-};
+import { SEED_ARTISTS, SEED_ARTIST_WEBSITES as OFFICIAL_WEBSITES } from './seed_artists.js';
 
 async function run() {
   const url = 'https://raw.githubusercontent.com/bevacqua/artists/master/data.json';
@@ -74,14 +55,7 @@ async function run() {
     );
 
     // Merge original whitelisted artists to ensure they are always present
-    const originalApproved = [
-      "The Cure", "Rammstein", "Metallica", "Coldplay", "Radiohead",
-      "Billie Eilish", "Taylor Swift", "Daft Punk", "Depeche Mode", "Nirvana",
-      "System of a Down", "Linkin Park", "Massive Attack", "Portishead",
-      "Aphex Twin", "Kraftwerk", "Moderat"
-    ];
-
-    for (const artist of originalApproved) {
+    for (const artist of SEED_ARTISTS) {
       if (!cleanedNames.some(n => n.toLowerCase() === artist.toLowerCase())) {
         cleanedNames.push(artist);
       }

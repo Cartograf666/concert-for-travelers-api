@@ -1,6 +1,6 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
-import { loadConfigs, runAllScrapers, ScraperResult } from './engine/runner.js';
+import { loadConfigs, runAllScrapers, ScraperResult, closeBrowser } from './engine/runner.js';
 import { loadCache, saveCache } from './engine/cache.js';
 import { Concert } from './schemas/concert.js';
 import { processConcerts } from './pipeline/process.js';
@@ -120,6 +120,9 @@ async function main() {
   } catch (error: any) {
     console.error(`[Orchestrator] Critical error during scrape run: ${error.message}`);
     process.exit(1);
+  } finally {
+    // No-op if no 'playwright_render' scraper ran this run (browser never launched).
+    await closeBrowser();
   }
 }
 
