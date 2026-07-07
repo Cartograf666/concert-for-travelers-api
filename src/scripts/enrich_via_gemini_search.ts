@@ -148,9 +148,6 @@ Be extremely truthful. Never invent a URL. Return null rather than guess. Output
 
         const response = await model.generateContent({
           contents: [{ role: 'user', parts: [{ text: prompt }] }],
-          generationConfig: {
-            responseMimeType: 'application/json',
-          },
         });
 
         const text = response.response.text();
