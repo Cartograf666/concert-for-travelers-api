@@ -1,0 +1,15 @@
+{
+  "id": "lexington-london",
+  "domain": "thelexington.co.uk",
+  "url": "https://thelexington.co.uk/events.php",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".grid-item, .grid-item-club",
+    "artist": ".event-title",
+    "date": ".event-date",
+    "ticketUrl": "a.ticket-box",
+    "venueNameFallback": "The Lexington",
+    "cityNameFallback": "London",
+    "countryNameFallback": "GB"
+  }
+}
