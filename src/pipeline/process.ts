@@ -406,7 +406,7 @@ function parseDateUnchecked(dateStr: string, baseDateStr: string): string | null
     return tomorrow.toISOString().slice(0, 10);
   }
 
-  // Month mappings (English, German, Dutch, Serbian-Latin)
+  // Month mappings (English, German, Dutch, Serbian-Latin, and Russian)
   const MONTHS: Record<string, string> = {
     jan: '01', januar: '01', january: '01', januari: '01',
     feb: '02', februar: '02', february: '02', februari: '02',
@@ -420,8 +420,7 @@ function parseDateUnchecked(dateStr: string, baseDateStr: string): string | null
     okt: '10', oktober: '10', oct: '10', october: '10', oktobar: '10',
     nov: '11', november: '11', novembar: '11',
     dez: '12', dezember: '12', dec: '12', december: '12', decembar: '12',
-    // Spanish (Medellin/Barcelona/Mexico City/Cartagena/etc. all render dates
-    // this way, e.g. "8 de julio de 2026" -- see the dedicated pattern below).
+    // Spanish
     ene: '01', enero: '01',
     febrero: '02',
     marzo: '03',
@@ -434,13 +433,23 @@ function parseDateUnchecked(dateStr: string, baseDateStr: string): string | null
     octubre: '10',
     noviembre: '11',
     dic: '12', diciembre: '12',
-    // Croatian (genitive form, as used in dates like "21. srpnja 2026."). Two of
-    // these (veljače/ožujka) contain diacritics the month-regex charset below
-    // doesn't match, so they won't actually be reached in practice -- a known,
-    // narrower gap than the other 10, not fixed here.
+    // Croatian
     siječnja: '01', veljače: '02', ožujka: '03', travnja: '04', svibnja: '05',
     lipnja: '06', srpnja: '07', kolovoza: '08', rujna: '09', listopada: '10',
-    studenog: '11', studenoga: '11', prosinca: '12'
+    studenog: '11', studenoga: '11', prosinca: '12',
+    // Russian
+    январь: '01', января: '01',
+    февраль: '02', февраля: '02',
+    март: '03', марта: '03',
+    апрель: '04', апреля: '04',
+    май: '05', мая: '05',
+    июнь: '06', июня: '06',
+    июль: '07', июля: '07',
+    август: '08', августа: '08',
+    сентябрь: '09', сентября: '09',
+    октябрь: '10', октября: '10',
+    ноябрь: '11', ноября: '11',
+    декабрь: '12', декабря: '12'
   };
 
   // Spanish "D de Month de YYYY" / "D de Month" -- the connector words ("de")
@@ -495,7 +504,7 @@ function parseDateUnchecked(dateStr: string, baseDateStr: string): string | null
 
   // 4. DD Month YYYY (e.g. 12. Okt 2026 or 12 Oktober 2026 or 12 Oct 2026)
   const cleanSpaced = cleanStr.replace(/^(\d{1,2})\./, '$1');
-  const dMonthYMatch = cleanSpaced.match(/^(\d{1,2})\s+([a-zäöüß]+)\s+(\d{4})$/);
+  const dMonthYMatch = cleanSpaced.match(/^(\d{1,2})\s+([a-zа-яёäöüß]+)\s+(\d{4})$/);
   if (dMonthYMatch) {
     let [_, day, monthStr, year] = dMonthYMatch;
     const month = MONTHS[monthStr];
@@ -506,7 +515,7 @@ function parseDateUnchecked(dateStr: string, baseDateStr: string): string | null
   }
 
   // 5. Month DD YYYY (e.g. Oct 12 2026 or October 12 2026)
-  const monthDYMatch = cleanSpaced.match(/^([a-zäöüß]+)\s+(\d{1,2})\s+(\d{4})$/);
+  const monthDYMatch = cleanSpaced.match(/^([a-zа-яёäöüß]+)\s+(\d{1,2})\s+(\d{4})$/);
   if (monthDYMatch) {
     let [_, monthStr, day, year] = monthDYMatch;
     const month = MONTHS[monthStr];
@@ -517,7 +526,7 @@ function parseDateUnchecked(dateStr: string, baseDateStr: string): string | null
   }
 
   // 6. DD Month (No year, e.g. 12. Okt or 12 Oct)
-  const dMonthMatch = cleanSpaced.match(/^(\d{1,2})\s+([a-zäöüß]+)$/);
+  const dMonthMatch = cleanSpaced.match(/^(\d{1,2})\s+([a-zа-яёäöüß]+)$/);
   if (dMonthMatch) {
     let [_, day, monthStr] = dMonthMatch;
     const month = MONTHS[monthStr];
@@ -528,7 +537,7 @@ function parseDateUnchecked(dateStr: string, baseDateStr: string): string | null
   }
 
   // 7. Month DD (No year, e.g. Oct 12)
-  const monthDMatch = cleanSpaced.match(/^([a-zäöüß]+)\s+(\d{1,2})$/);
+  const monthDMatch = cleanSpaced.match(/^([a-zа-яёäöüß]+)\s+(\d{1,2})$/);
   if (monthDMatch) {
     let [_, monthStr, day] = monthDMatch;
     const month = MONTHS[monthStr];
@@ -547,7 +556,7 @@ function parseDateUnchecked(dateStr: string, baseDateStr: string): string | null
 
   // 9. Loose extraction: find "D Month[ - D Month] YYYY" anywhere in noisy text (weekday name
   // prefixes, trailing time/price suffixes, multi-day ranges) instead of requiring an exact match.
-  const looseWithYear = cleanStr.match(/(\d{1,2})\.?\s+([a-zäöüß]+)\.?(?:\s*-\s*\d{1,2}\.?\s+[a-zäöüß]+\.?)?\s+(\d{4})\b/);
+  const looseWithYear = cleanStr.match(/(\d{1,2})\.?\s+([a-zа-яёäöüß]+)\.?(?:\s*-\s*\d{1,2}\.?\s+[a-zа-яёäöüß]+\.?)?\s+(\d{4})\b/);
   if (looseWithYear) {
     const month = MONTHS[looseWithYear[2]];
     if (month) {
@@ -557,7 +566,7 @@ function parseDateUnchecked(dateStr: string, baseDateStr: string): string | null
 
   // 10. Same as above but with no year present anywhere (rolls forward to next occurrence).
   if (!/\d{4}/.test(cleanStr)) {
-    const looseNoYear = cleanStr.match(/(\d{1,2})(?:\s*-\s*\d{1,2})?\.?\s+([a-zäöüß]+)\b/);
+    const looseNoYear = cleanStr.match(/(\d{1,2})(?:\s*-\s*\d{1,2})?\.?\s+([a-zа-яёäöüß]+)\b/);
     if (looseNoYear) {
       const month = MONTHS[looseNoYear[2]];
       if (month) {

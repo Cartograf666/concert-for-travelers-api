@@ -1,0 +1,17 @@
+{
+  "id": "bravo-tour",
+  "domain": "www.bravogroup.ru",
+  "url": "http://www.bravogroup.ru/show_all.htm",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "ul.afishaTable li",
+    "artistNameFallback": "Браво",
+    "date": "div.date",
+    "venue": "div.name",
+    "city": "div.name",
+    "ticketUrl": "a.buyButton",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "RU"
+  }
+}
