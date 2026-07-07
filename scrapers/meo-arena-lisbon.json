@@ -1,0 +1,15 @@
+{
+  "id": "meo-arena-lisbon",
+  "domain": "arena.meo.pt",
+  "url": "https://arena.meo.pt/en/full-agenda",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.agendaDestaquesUn",
+    "artist": ".destaquesNome",
+    "date": ".data-abrev",
+    "ticketUrl": ".comprar",
+    "venueNameFallback": "MEO Arena",
+    "cityNameFallback": "Lisbon",
+    "countryNameFallback": "PT"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "sagres-campo-pequeno-lisbon",
+  "domain": "sagrescampopequeno.pt",
+  "url": "https://www.sagrescampopequeno.pt/en/calendar",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event",
+    "artist": ".card-title",
+    "date": ".date",
+    "ticketUrl": "a",
+    "venueNameFallback": "Sagres Campo Pequeno",
+    "cityNameFallback": "Lisbon",
+    "countryNameFallback": "PT"
+  }
+}

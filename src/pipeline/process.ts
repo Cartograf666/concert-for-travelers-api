@@ -269,10 +269,19 @@ export function parseDate(dateStr: string, baseDateStr: string): string | null {
     return `${isoMatch[1]}-${isoMatch[2]}-${isoMatch[3]}`;
   }
 
-  // 2. DD.MM.YYYY or DD.MM.YY
+  // 2. DD.MM.YYYY or DD.MM.YY (some sites, e.g. Sagres Campo Pequeno's calendar
+  // widget, actually render MM.DD.YYYY -- if the second number can't be a month
+  // (>12), swap positions rather than emit a garbage date like "2026-17-09" that
+  // still passes ConcertSchema's shape-only date regex).
   const dotMatch = cleanStr.match(/^(\d{1,2})\.(\d{1,2})\.(\d{2,4})$/);
   if (dotMatch) {
-    let [_, day, month, year] = dotMatch;
+    let [_, first, second, year] = dotMatch;
+    let day = first;
+    let month = second;
+    if (Number(second) > 12 && Number(first) <= 12) {
+      day = second;
+      month = first;
+    }
     day = day.padStart(2, '0');
     month = month.padStart(2, '0');
     if (year.length === 2) {

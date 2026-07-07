@@ -1,0 +1,17 @@
+{
+  "id": "uob-live-bangkok",
+  "domain": "uoblive.asia",
+  "url": "https://www.uoblive.asia/whats-on",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-list-content-item",
+    "artist": "h3[fs-list-field=\"title\"]",
+    "date": "div[fs-list-field=\"event-date\"]",
+    "ticketUrl": "a[data-resource-card]",
+    "venueNameFallback": "UOB LIVE",
+    "cityNameFallback": "Bangkok",
+    "countryNameFallback": "TH",
+    "lat": 13.7375,
+    "lng": 100.5807
+  }
+}

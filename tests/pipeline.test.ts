@@ -83,6 +83,13 @@ test('Pipeline - parse date strings', () => {
   assert.strictEqual(parseDate('12.10.26', baseDate), '2026-10-12');
   assert.strictEqual(parseDate('12.10.', baseDate), '2026-10-12'); // year fallback
 
+  // Real-world case: Sagres Campo Pequeno's calendar widget renders MM.DD.YYYY,
+  // not the usual DD.MM.YYYY -- when the second number can't be a valid month,
+  // swap positions instead of emitting an out-of-range month that would still
+  // pass ConcertSchema's shape-only date regex.
+  assert.strictEqual(parseDate('09.17.2026', baseDate), '2026-09-17');
+  assert.strictEqual(parseDate('12.25.2026', baseDate), '2026-12-25');
+
   // Word-based dates with years (English/German)
   assert.strictEqual(parseDate('12. Okt 2026', baseDate), '2026-10-12');
   assert.strictEqual(parseDate('12 Oktober 2026', baseDate), '2026-10-12');

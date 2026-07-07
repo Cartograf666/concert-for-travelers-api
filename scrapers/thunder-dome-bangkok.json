@@ -1,0 +1,17 @@
+{
+  "id": "thunder-dome-bangkok",
+  "domain": "thunderdome.biz",
+  "url": "https://www.thunderdome.biz/en/events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.jux-eventon.item.jux-loop-item",
+    "artist": ".jux-eventon-title a",
+    "date": ".jux-event-pickdate-ad .jux-eventon-date span",
+    "ticketUrl": ".jux-eventon-title a",
+    "venueNameFallback": "Thunder Dome",
+    "cityNameFallback": "Bangkok",
+    "countryNameFallback": "TH",
+    "lat": 13.9125,
+    "lng": 100.5507
+  }
+}
