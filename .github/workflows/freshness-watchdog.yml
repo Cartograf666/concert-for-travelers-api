@@ -1,0 +1,65 @@
+name: Freshness Watchdog
+
+# The daily scrape can stop producing fresh data in ways its own `if: failure()`
+# alert never catches: the scheduled trigger silently stops firing (GitHub disables
+# schedules on inactive repos), the job hangs past its timeout, or a run is skipped.
+# This independent watchdog checks that a *successful* daily run happened recently
+# and opens a deduplicated issue if not.
+
+on:
+  schedule:
+    - cron: '0 6 * * *' # 3h after the 03:00 UTC daily scrape
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  issues: write
+
+jobs:
+  watchdog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the daily scrape ran recently and succeeded
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          TITLE="🚨 Daily scrape stale or failing (watchdog)"
+
+          latest=$(gh run list --repo "$REPO" --workflow daily-scrape.yml --limit 1 \
+            --json conclusion,createdAt,url --jq '.[0] // {}')
+          conclusion=$(echo "$latest" | jq -r '.conclusion // "none"')
+          created=$(echo "$latest" | jq -r '.createdAt // ""')
+          url=$(echo "$latest" | jq -r '.url // ""')
+          echo "Latest daily-scrape: conclusion=$conclusion created=$created"
+
+          problem=""
+          if [ "$conclusion" != "success" ]; then
+            problem="latest daily-scrape run concluded '$conclusion' (expected 'success')"
+          elif [ -z "$created" ]; then
+            problem="could not find any daily-scrape run"
+          else
+            age=$(( $(date -u +%s) - $(date -u -d "$created" +%s) ))
+            if [ "$age" -gt 93600 ]; then # 26h
+              problem="last successful daily-scrape run is $(( age / 3600 ))h old (expected < 26h)"
+            fi
+          fi
+
+          num=$(gh issue list --repo "$REPO" --state open --search "$TITLE in:title" --json number --jq '.[0].number // empty')
+
+          if [ -z "$problem" ]; then
+            echo "Healthy."
+            if [ -n "$num" ]; then
+              gh issue close "$num" --comment "Recovered: latest daily-scrape succeeded at $created."
+            fi
+            exit 0
+          fi
+
+          echo "::warning::$problem"
+          if [ -n "$num" ]; then
+            gh issue comment "$num" --body "Still unhealthy on $(date -u '+%Y-%m-%d %H:%M UTC'): $problem — $url"
+          else
+            gh issue create --title "$TITLE" \
+              --body "$(printf 'The freshness watchdog detected a problem:\n\n- %s\n\nLatest run: %s' "$problem" "$url")"
+          fi

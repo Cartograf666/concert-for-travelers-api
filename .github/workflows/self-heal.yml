@@ -9,6 +9,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  issues: write # open/update a dedup'd failure issue (see "Alert on failure" step)
 
 jobs:
   heal:
@@ -124,3 +125,19 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh pr merge --squash --delete-branch "${{ steps.cpr.outputs.pull-request-number }}"
+
+      # A failing healer is itself a silent failure mode — surface it the same way
+      # the daily scrape does (deduplicated GitHub issue) instead of it dying quietly.
+      - name: Alert on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          TITLE="🚨 Self-heal pipeline failed"
+          num=$(gh issue list --state open --search "$TITLE in:title" --json number --jq '.[0].number // empty')
+          if [ -n "$num" ]; then
+            gh issue comment "$num" --body "Failed again on $(date -u '+%Y-%m-%d %H:%M UTC') — $RUN_URL"
+          else
+            gh issue create --title "$TITLE" --body "The self-heal workflow failed. Logs: $RUN_URL"
+          fi
