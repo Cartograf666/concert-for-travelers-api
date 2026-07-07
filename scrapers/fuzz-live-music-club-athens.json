@@ -1,0 +1,18 @@
+{
+  "id": "fuzz-live-music-club-athens",
+  "domain": "fuzzclub.gr",
+  "url": "https://www.fuzzclub.gr/events/list/",
+  "type": "static_selectors",
+  "maxRetries": 2,
+  "requestDelayMs": 0,
+  "allowEmpty": false,
+  "selectors": {
+    "eventBlock": "article.tribe-events-calendar-list__event",
+    "artist": "h4.tribe-events-calendar-list__event-title",
+    "date": "time.tribe-events-calendar-list__event-datetime",
+    "ticketUrl": "a.tribe-events-calendar-list__event-title-link",
+    "venueNameFallback": "Fuzz Live Music Club",
+    "cityNameFallback": "Athens",
+    "countryNameFallback": "GR"
+  }
+}
