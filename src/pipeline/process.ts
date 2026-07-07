@@ -217,6 +217,32 @@ const MIN_SUBSTRING_COVERAGE = 0.25;
 const FUZZY_SHORT_NAME_MAX = 7;
 const FUZZY_SHORT_NAME_MAX_EDIT_DISTANCE = 1;
 
+/** Bucket names by length so a length-windowed candidate lookup (see
+ * candidatesNearLength) is O(window) map lookups instead of an O(m) scan. */
+function bucketByLength(names: string[]): Map<number, string[]> {
+  const map = new Map<number, string[]>();
+  for (const n of names) {
+    const bucket = map.get(n.length);
+    if (bucket) bucket.push(n);
+    else map.set(n.length, [n]);
+  }
+  return map;
+}
+
+/** Edit distance can never be smaller than the two strings' length difference,
+ * so any candidate outside [len-maxDist, len+maxDist] can never be within
+ * maxDist -- collecting only those buckets is a lossless (zero false-negative)
+ * way to shrink didyoumean2's candidate list before it computes real Levenshtein
+ * distance against each one. */
+function candidatesNearLength(byLength: Map<number, string[]>, len: number, maxDist: number): string[] {
+  const out: string[] = [];
+  for (let l = len - maxDist; l <= len + maxDist; l++) {
+    const bucket = byLength.get(l);
+    if (bucket) out.push(...bucket);
+  }
+  return out;
+}
+
 export function buildApprovedMatcher(approvedArtists: any[]): ApprovedMatcher {
   const entries = approvedArtists
     .map((approved) => {
@@ -234,6 +260,9 @@ export function buildApprovedMatcher(approvedArtists: any[]): ApprovedMatcher {
     .sort((a, b) => b.name.length - a.name.length);
   const fuzzyNamesShort = longNames.filter((e) => e.name.length <= FUZZY_SHORT_NAME_MAX).map((e) => e.name);
   const fuzzyNamesLong = longNames.filter((e) => e.name.length > FUZZY_SHORT_NAME_MAX).map((e) => e.name);
+  // ~62k-entry approved list, precomputed once per matcher build (not per event).
+  const fuzzyShortByLength = bucketByLength(fuzzyNamesShort);
+  const fuzzyLongByLength = bucketByLength(fuzzyNamesLong);
 
   const toMatch = (e: { name: string; approved: any }): ArtistMatch =>
     typeof e.approved === 'string'
@@ -257,9 +286,19 @@ export function buildApprovedMatcher(approvedArtists: any[]): ApprovedMatcher {
     // clause is a subtitle/venue/genre tag, not the artist name (the same
     // assumption cleanArtistName's suffix-stripping already makes explicit).
     const primaryClause = cleaned.split(/\s-\s/)[0];
+    const lowerPrimaryClause = primaryClause.toLowerCase();
 
     // Tier 3: whole-word/whole-string substring match, most specific first.
     for (const e of bySubstring) {
+      // Cheap native substring pre-check before the costlier \b-anchored regex --
+      // provably safe: e.regex is just e's escaped text plus optional \b anchors,
+      // so if it matches, e.lower must also appear literally inside
+      // lowerPrimaryClause. At ~55k entries tested per event, .includes() (V8's
+      // optimized native scan) rejecting most candidates outright, instead of
+      // invoking the regex engine on every one, is the dominant cost of matching
+      // an unapproved event -- confirmed live on a run where Ticketmaster's
+      // broader raw-event volume made this stage take 15+ minutes.
+      if (!lowerPrimaryClause.includes(e.lower)) continue;
       const match = e.regex.exec(primaryClause);
       if (
         match &&
@@ -270,13 +309,22 @@ export function buildApprovedMatcher(approvedArtists: any[]): ApprovedMatcher {
       }
     }
 
-    // Tier 4: fuzzy fallback for near-miss scraping noise.
+    // Tier 4: fuzzy fallback for near-miss scraping noise. didyoumean2's default
+    // returnType computes a real Levenshtein distance for every single candidate
+    // with no length pruning of its own (checked its source) -- against the full
+    // ~55k-name lists that was the single biggest cost of matching any event not
+    // on the whitelist (the common case). candidatesNearLength shrinks that to
+    // only the length-plausible names first (see its docstring for why that's
+    // lossless), typically a few dozen names instead of tens of thousands.
+    const clauseLen = primaryClause.length;
+    const shortCandidates = candidatesNearLength(fuzzyShortByLength, clauseLen, FUZZY_SHORT_NAME_MAX_EDIT_DISTANCE);
+    const longCandidates = candidatesNearLength(fuzzyLongByLength, clauseLen, FUZZY_MAX_EDIT_DISTANCE);
     const fuzzyHit =
-      didYouMean(primaryClause, fuzzyNamesShort, {
+      didYouMean(primaryClause, shortCandidates, {
         threshold: FUZZY_SHORT_NAME_MAX_EDIT_DISTANCE,
         thresholdType: ThresholdTypeEnums.EDIT_DISTANCE
       }) ??
-      didYouMean(primaryClause, fuzzyNamesLong, {
+      didYouMean(primaryClause, longCandidates, {
         threshold: FUZZY_MAX_EDIT_DISTANCE,
         thresholdType: ThresholdTypeEnums.EDIT_DISTANCE
       });
@@ -566,7 +614,24 @@ export async function processConcerts(
   // ever publish a concert that's already happened.
   const todayIso = toLocalIso(new Date(baseDateStr));
 
+  // Periodic progress logging: whitelist-matching a big raw batch (e.g. a
+  // Ticketmaster-boosted run) against ~62k approved entries can take long enough
+  // that a CI job with no output in between looks hung rather than working --
+  // observed live. Time-based (not count-based) so it stays informative
+  // regardless of how the per-event cost changes.
+  const matchStart = Date.now();
+  let lastProgressLogAt = matchStart;
+  const total = rawConcerts.length;
+  let processed = 0;
+
   for (const raw of rawConcerts) {
+    processed++;
+    const now = Date.now();
+    if (now - lastProgressLogAt >= 5000) {
+      console.log(`[Pipeline] Matching progress: ${processed}/${total} raw events (${((now - matchStart) / 1000).toFixed(1)}s elapsed)...`);
+      lastProgressLogAt = now;
+    }
+
     if (!raw.artist || !raw.date || !raw.venue || !raw.city || !raw.country || !raw.originalSource || !raw.scrapedAt) {
       drops.incomplete++;
       continue;
