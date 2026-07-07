@@ -64,6 +64,15 @@ test('Pipeline - artist matching bug fixes: punctuation, shadowing, cover-substr
   assert.deepStrictEqual(matchApprovedArtist('J-Live', hyphenated), { name: 'J-Live' });
   // A genuine "- Live" suffix (space before the hyphen) must still be stripped.
   assert.deepStrictEqual(matchApprovedArtist('J-Live - Live at Blue Note', hyphenated), { name: 'J-Live' });
+
+  // "Live in <city>" (no leading hyphen -- a common tour-page template) must be
+  // stripped, and a bare "Live" (the real approved artist) left untouched.
+  // Real cases found live in published output: "AZ Live in Berlin" was wrongly
+  // matched to a "Berlin" whitelist entry (the band), because "Live in Berlin"
+  // never got stripped and the city name matched literally.
+  const liveInCity = ['AZ', 'Berlin', 'Live'];
+  assert.deepStrictEqual(matchApprovedArtist('AZ Live in Berlin', liveInCity), { name: 'AZ' });
+  assert.deepStrictEqual(matchApprovedArtist('Live', liveInCity), { name: 'Live' });
 });
 
 test('Pipeline - parse date strings', () => {

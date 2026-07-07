@@ -185,6 +185,47 @@ test('substring matches require a minimum coverage of the cleaned string, not ju
   assert.strictEqual(match('Muse at the O2')?.name, 'Muse');
 });
 
+test('substring matches reject a name with an attached capitalized neighbor word', () => {
+  // Real cases found auditing live published output (dist/concerts.json): a
+  // short/common approved name absorbing a fragment of a longer, different,
+  // NOT-approved artist's real name, because the fragment alone clears the
+  // coverage bar. The true artist in each case simply isn't in the approved
+  // list yet -- the correct behavior is to return null, not the fragment.
+  const match = buildApprovedMatcher(['Baby', 'Anonymous', 'Band', 'Live', 'Muse']);
+  assert.strictEqual(match('Baby Keem'), null, '"Baby" must not absorb "Baby Keem"');
+  assert.strictEqual(match('Joy Anonymous'), null, '"Anonymous" must not absorb "Joy Anonymous"');
+  assert.strictEqual(match('Gilla Band'), null, '"Band" must not absorb "Gilla Band"');
+  assert.strictEqual(match('Peter Kay Live 2026'), null, '"Live" must not absorb "Peter Kay Live 2026"');
+  // A standalone match with no attached capitalized word still works.
+  assert.strictEqual(match('Baby')?.name, 'Baby');
+  assert.strictEqual(match('Muse at the O2')?.name, 'Muse', 'lowercase neighbor ("at") does not trigger the guard');
+});
+
+test('substring/fuzzy tiers only consider the first " - "-delimited clause of the title', () => {
+  // Real case: a genre tag trailing after a dash ("... - Alternative Rock")
+  // wrongly matched an approved-artist entry that happens to also be a genre
+  // name, because it was searched across the whole title instead of just the
+  // artist-name clause.
+  const match = buildApprovedMatcher(['Alternative rock', 'Muse']);
+  assert.strictEqual(
+    match('Headless Party - The Home Of Core - Alternative Rock'),
+    null,
+    'a trailing genre-tag clause must not be searched for a match'
+  );
+});
+
+test('fuzzy fallback uses a tighter edit-distance tolerance for shorter names', () => {
+  // Real cases: "Battery" (7 chars) wrongly absorbed "Baskery" and "Ariola"
+  // (6 chars) wrongly absorbed "Akriila", both at edit distance 2 -- a much
+  // larger relative change for a short name than for a long one.
+  const match = buildApprovedMatcher(['Battery', 'Ariola', 'Rammstein']);
+  assert.strictEqual(match('Baskery'), null, '"Battery" must not fuzzy-absorb "Baskery"');
+  assert.strictEqual(match('Akriila'), null, '"Ariola" must not fuzzy-absorb "Akriila"');
+  // A common single-transposition typo on a longer name still matches --
+  // the tightened tolerance must not regress ordinary fuzzy noise handling.
+  assert.strictEqual(match('Rammstien')?.name, 'Rammstein');
+});
+
 const CACHE_HTML = `<div class="event-card"><div class="artist-name">Muse</div><span class="event-date">2026-08-01</span></div>`;
 
 test('runScraper reports contentHash and detects unchanged content by hash', async () => {

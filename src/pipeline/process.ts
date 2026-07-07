@@ -108,13 +108,17 @@ function escapeRegExp(string: string): string {
  * Clean common suffixes/prefixes from artist names. The hyphen-led suffixes
  * require at least one space before the hyphen ("Artist - Live" is a suffix
  * marker) so a hyphenated stage name with no surrounding spaces ("J-Live",
- * a real approved artist) isn't mistaken for one and truncated.
+ * a real approved artist) isn't mistaken for one and truncated. "Live in
+ * <city>" (no leading hyphen -- a common tour-page template, e.g. "AZ Live in
+ * Berlin") needs its own pattern since it isn't hyphen-led; requiring a space
+ * before "Live" means a bare "Live" (a real approved artist) is untouched.
  */
 export function cleanArtistName(name: string): string {
   return name
     .replace(/\s+-\s*sold\s*out\b/gi, '')
     .replace(/\s*\(sold\s*out\)/gi, '')
     .replace(/\s+-\s*live\b.*/gi, '')
+    .replace(/\s+live\s+in\s+.+$/gi, '')
     .replace(/\s+-\s*special\s*guest\b.*/gi, '')
     .replace(/\s+-\s*tour\b.*/gi, '')
     .replace(/\s*\(support\)/gi, '')
@@ -151,6 +155,23 @@ function buildSubstringRegex(name: string): RegExp {
 }
 
 /**
+ * True if the substring match at [matchIndex, matchIndex+matchLength) in `text`
+ * has another capitalized word directly attached via a single space on either
+ * side -- a strong signal the match is only a fragment of a longer, different
+ * proper-noun phrase, not a real standalone hit. Found live in production:
+ * "Baby" absorbing "Baby Keem", "Anonymous" absorbing "Joy Anonymous", "Band"
+ * absorbing "Gilla Band", "Live" absorbing "Peter Kay Live" -- in every case the
+ * true (longer, more specific) name simply wasn't itself in the approved list.
+ */
+function hasAttachedCapitalizedNeighbor(text: string, matchIndex: number, matchLength: number): boolean {
+  const before = text.slice(0, matchIndex);
+  const after = text.slice(matchIndex + matchLength);
+  const beforeWord = before.match(/([A-Za-z][\w']*)\s$/);
+  if (beforeWord && /^[A-Z]/.test(beforeWord[1])) return true;
+  return /^\s[A-Z]/.test(after);
+}
+
+/**
  * Precompile the approved-artist list into a fast reusable matcher. Regexes are
  * built ONCE here instead of once per scraped concert (the list is ~62k entries
  * and the pipeline runs twice), which is the bulk of the matching cost.
@@ -162,23 +183,40 @@ function buildSubstringRegex(name: string): RegExp {
  *      a fake tribute act.
  *   2. Whole-word cover/tribute-band filter (only rejects a literal word, not a
  *      substring, so "Coverdale"/"Undercover" survive).
- *   3. Whole-word/whole-string substring match, longest approved name first — so
- *      a short generic entry ("alan") can never shadow a longer, more specific
- *      one ("Alan Walker") that also matches. Also requires the matched name to
- *      cover a minimum fraction of the cleaned string (MIN_SUBSTRING_COVERAGE):
- *      real approved-artist entries that are also common dictionary words
- *      ("Music", "Band", "Live", "Darts", "Mega", "Queer" were all found live in
- *      data/approved_artists.json) would otherwise match inside ANY unrelated
- *      event title containing that word ("World Series of Darts Finals" ->
- *      "Darts", "QUEER WRESTLING CIRCUS" -> "Queer") -- confirmed against real
- *      scraped output, not hypothetical.
- *   4. Fuzzy fallback (edit-distance) for minor scraping noise tier 1-3 miss.
+ *   3. Whole-word/whole-string substring match against only the FIRST clause of
+ *      the title (split on " - ", the established artist-name-first convention
+ *      this codebase already assumes elsewhere -- see cleanArtistName's suffix
+ *      stripping), longest approved name first so a short generic entry ("alan")
+ *      can never shadow a longer, more specific one ("Alan Walker") that also
+ *      matches. Requires the matched name to cover a minimum fraction of that
+ *      clause (MIN_SUBSTRING_COVERAGE) and rejects a match with an attached
+ *      capitalized neighbor word (see hasAttachedCapitalizedNeighbor) -- real
+ *      approved-artist entries that are also common dictionary words ("Music",
+ *      "Band", "Live", "Darts", "Mega", "Queer", "Baby", "Anonymous", "Battery"
+ *      were all found live in data/approved_artists.json) would otherwise match
+ *      inside ANY unrelated event title or genre tag containing that word, or
+ *      absorb a fragment of a longer real artist name that isn't itself approved
+ *      -- confirmed against real scraped output, not hypothetical.
+ *   4. Fuzzy fallback (edit-distance) for minor scraping noise tier 1-3 miss,
+ *      scoped to the same first clause. Shorter names get a tighter tolerance --
+ *      an edit distance of 2 is a much larger relative change on a 7-character
+ *      name than a 15-character one ("Battery" wrongly absorbing "Baskery" was
+ *      found live at exactly that distance).
  */
 
 // A substring match only counts if the approved name makes up at least this
 // fraction of the cleaned string -- otherwise a short dictionary-word artist
 // name swallows unrelated non-music event titles that merely contain that word.
 const MIN_SUBSTRING_COVERAGE = 0.25;
+
+// Names at or under this length get the tighter tier-4 fuzzy tolerance. Kept
+// narrow enough that a common single-transposition typo on a well-known
+// 9-character name ("Rammstien" for "Rammstein", edit distance 2) still passes
+// at the default tolerance -- only shorter names, where distance 2 is a much
+// larger fraction of the string, get the stricter cutoff.
+const FUZZY_SHORT_NAME_MAX = 7;
+const FUZZY_SHORT_NAME_MAX_EDIT_DISTANCE = 1;
+
 export function buildApprovedMatcher(approvedArtists: any[]): ApprovedMatcher {
   const entries = approvedArtists
     .map((approved) => {
@@ -194,7 +232,8 @@ export function buildApprovedMatcher(approvedArtists: any[]): ApprovedMatcher {
   const bySubstring = longNames
     .map((e) => ({ ...e, regex: buildSubstringRegex(e.name) }))
     .sort((a, b) => b.name.length - a.name.length);
-  const fuzzyNames = longNames.map((e) => e.name);
+  const fuzzyNamesShort = longNames.filter((e) => e.name.length <= FUZZY_SHORT_NAME_MAX).map((e) => e.name);
+  const fuzzyNamesLong = longNames.filter((e) => e.name.length > FUZZY_SHORT_NAME_MAX).map((e) => e.name);
 
   const toMatch = (e: { name: string; approved: any }): ArtistMatch =>
     typeof e.approved === 'string'
@@ -214,18 +253,33 @@ export function buildApprovedMatcher(approvedArtists: any[]): ApprovedMatcher {
       return null;
     }
 
+    // Tiers 3-4 only look at the first " - "-delimited clause -- a trailing
+    // clause is a subtitle/venue/genre tag, not the artist name (the same
+    // assumption cleanArtistName's suffix-stripping already makes explicit).
+    const primaryClause = cleaned.split(/\s-\s/)[0];
+
     // Tier 3: whole-word/whole-string substring match, most specific first.
     for (const e of bySubstring) {
-      if (e.regex.test(cleaned) && e.name.length / cleaned.length >= MIN_SUBSTRING_COVERAGE) {
+      const match = e.regex.exec(primaryClause);
+      if (
+        match &&
+        e.name.length / primaryClause.length >= MIN_SUBSTRING_COVERAGE &&
+        !hasAttachedCapitalizedNeighbor(primaryClause, match.index, match[0].length)
+      ) {
         return toMatch(e);
       }
     }
 
     // Tier 4: fuzzy fallback for near-miss scraping noise.
-    const fuzzyHit = didYouMean(cleaned, fuzzyNames, {
-      threshold: FUZZY_MAX_EDIT_DISTANCE,
-      thresholdType: ThresholdTypeEnums.EDIT_DISTANCE
-    });
+    const fuzzyHit =
+      didYouMean(primaryClause, fuzzyNamesShort, {
+        threshold: FUZZY_SHORT_NAME_MAX_EDIT_DISTANCE,
+        thresholdType: ThresholdTypeEnums.EDIT_DISTANCE
+      }) ??
+      didYouMean(primaryClause, fuzzyNamesLong, {
+        threshold: FUZZY_MAX_EDIT_DISTANCE,
+        thresholdType: ThresholdTypeEnums.EDIT_DISTANCE
+      });
     if (typeof fuzzyHit === 'string') {
       const hit = exactByLower.get(fuzzyHit.toLowerCase());
       if (hit) return toMatch(hit);
