@@ -377,7 +377,14 @@ let browserPromise: Promise<Browser> | null = null;
 
 function getBrowser(): Promise<Browser> {
   if (!browserPromise) {
-    browserPromise = chromium.launch({ headless: true });
+    browserPromise = (async () => {
+      try {
+        return await chromium.launch({ headless: true });
+      } catch (err) {
+        await closeBrowser();
+        throw err;
+      }
+    })();
   }
   return browserPromise;
 }
@@ -386,9 +393,14 @@ function getBrowser(): Promise<Browser> {
  * if no 'playwright_render' scraper ran (no-op). Call once at the end of a run. */
 export async function closeBrowser(): Promise<void> {
   if (browserPromise) {
-    const browser = await browserPromise;
-    browserPromise = null;
-    await browser.close();
+    try {
+      const browser = await browserPromise;
+      browserPromise = null;
+      await browser.close();
+    } catch (err) {
+      console.error(`[Runner] Error closing shared browser: ${err}`);
+      browserPromise = null;
+    }
   }
 }
 

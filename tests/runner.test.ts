@@ -525,3 +525,9 @@ test('Runner Engine - custom_js rejects a config missing selectors before even a
     await new Promise<void>((resolve) => server.close(() => resolve()));
   }
 });
+
+test('Runner Engine - closeBrowser is idempotent and crash-safe', async () => {
+  await closeBrowser();
+  await closeBrowser();
+});
+
