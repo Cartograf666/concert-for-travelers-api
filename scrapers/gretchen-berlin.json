@@ -1,0 +1,17 @@
+{
+  "id": "gretchen-berlin",
+  "domain": "gretchen-club.de",
+  "url": "https://gretchen-club.de/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.gig",
+    "artist": ".gig_main span.title h2 a",
+    "date": ".gig_top span.date strong",
+    "ticketUrl": ".gig_main span.title h2 a",
+    "venueNameFallback": "Gretchen",
+    "cityNameFallback": "Berlin",
+    "countryNameFallback": "DE",
+    "lat": 52.497576,
+    "lng": 13.386241
+  }
+}
