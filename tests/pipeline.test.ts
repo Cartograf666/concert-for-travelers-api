@@ -9,6 +9,7 @@ test('Pipeline - slugify', () => {
   assert.strictEqual(slugify('Rammstein - Live in Berlin!'), 'rammstein-live-in-berlin');
   assert.strictEqual(slugify('  Coldplay  '), 'coldplay');
   assert.strictEqual(slugify('Aphex Twin'), 'aphex-twin');
+  assert.strictEqual(slugify('Zürich'), slugify('Zurich'));
 });
 
 test('Pipeline - artist name cleaning', () => {

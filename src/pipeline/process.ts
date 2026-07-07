@@ -91,6 +91,7 @@ function resolveYearless(monthNum: string, day: string, baseDate: Date): string 
 export function slugify(str: string): string {
   return str
     .toLowerCase()
+    .normalize('NFKD').replace(/[\u0300-\u036f]/g,'')
     .trim()
     .replace(/[^\w\s-]/g, '')
     .replace(/[\s_-]+/g, '-')
