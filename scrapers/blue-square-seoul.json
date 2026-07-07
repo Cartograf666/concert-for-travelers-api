@@ -1,0 +1,17 @@
+{
+  "id": "blue-square-seoul",
+  "domain": "bluesquare.kr",
+  "url": "https://www.bluesquare.kr/api/work2.php",
+  "type": "json_api",
+  "selectors": {
+    "eventBlock": "data",
+    "artist": "title",
+    "date": "start_date",
+    "ticketUrl": "ticket_link",
+    "venueNameFallback": "Blue Square Seoul",
+    "cityNameFallback": "Seoul",
+    "countryNameFallback": "KR",
+    "lat": 37.4828,
+    "lng": 127.0075
+  }
+}
