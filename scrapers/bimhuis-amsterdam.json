@@ -1,0 +1,17 @@
+{
+  "id": "bimhuis-amsterdam",
+  "domain": "bimhuis.nl",
+  "url": "https://www.bimhuis.nl/en/calendar/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.agenda-tile-overview__item",
+    "artist": ".agenda-tile__link h3",
+    "date": "time.agenda-tile__dates",
+    "ticketUrl": "a.agenda-tile__btn",
+    "venueNameFallback": "BIMHUIS",
+    "cityNameFallback": "Amsterdam",
+    "countryNameFallback": "NL",
+    "lat": 52.377926,
+    "lng": 4.914282
+  }
+}
