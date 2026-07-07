@@ -28,6 +28,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # tests/runner.test.ts unconditionally exercises the playwright_render code
+      # path -- without chromium installed, "Run Tests" below hangs/fails on it.
+      - name: Install Playwright browser (chromium)
+        run: npx playwright install --with-deps chromium
+
       - name: Build project
         run: npm run build
 

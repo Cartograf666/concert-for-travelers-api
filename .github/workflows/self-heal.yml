@@ -63,6 +63,14 @@ jobs:
         if: steps.check-failures.outputs.has_failures == 'true'
         run: npm ci
 
+      # tests/runner.test.ts unconditionally exercises the playwright_render code
+      # path (unlike daily-scrape.yml, this can't be gated on whether a
+      # playwright_render scraper currently exists) -- without chromium installed,
+      # "Verify Fixed Configs" below hangs/fails on that test.
+      - name: Install Playwright browser (chromium)
+        if: steps.check-failures.outputs.has_failures == 'true'
+        run: npx playwright install --with-deps chromium
+
       - name: Run Healer Script
         if: steps.check-failures.outputs.has_failures == 'true'
         env:
