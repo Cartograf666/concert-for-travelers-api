@@ -1,0 +1,38 @@
+name: Check Ticketmaster Coverage (diagnostic, one-off)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - name: Query Ticketmaster music-event counts per country
+        env:
+          TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
+        run: |
+          node -e "
+          const axios = require('axios');
+          (async () => {
+            const codes = ['JP','SG','KR','TH','HK','TW','MY','PH','ID','VN','IN','CN'];
+            for (const cc of codes) {
+              try {
+                const res = await axios.get('https://app.ticketmaster.com/discovery/v2/events.json', {
+                  params: { apikey: process.env.TICKETMASTER_API_KEY, countryCode: cc, classificationName: 'music', size: 3 }
+                });
+                const total = res.data.page ? res.data.page.totalElements : 0;
+                const sample = (res.data._embedded?.events || []).map(e => e.name).slice(0, 3);
+                console.log(cc + ': ' + total + ' total music events. Sample: ' + JSON.stringify(sample));
+              } catch (e) {
+                const status = e.response ? e.response.status : 'ERR';
+                const body = e.response ? JSON.stringify(e.response.data).slice(0, 200) : e.message;
+                console.log(cc + ': FAILED (' + status + ') ' + body);
+              }
+            }
+          })();
+          "
