@@ -34,10 +34,20 @@ async function main() {
     let healedCount = 0;
     const healedList: string[] = [];
 
+    const ID_RE = /^[a-z0-9][a-z0-9-]{0,80}$/;
+
     for (const failure of failures) {
-      const { id, configPath, error, reason, htmlSample } = failure;
+      const { id, error, reason, htmlSample } = failure;
       console.log(`\n--- Healing ${id} ---`);
       console.log(`[Healer] Previous Error: ${error}`);
+
+      // The fail-log is an untrusted CI artifact — validate the id and rebuild the config
+      // path ourselves so a tampered entry can't aim the healer at a file outside scrapers/.
+      if (typeof id !== 'string' || !ID_RE.test(id)) {
+        console.warn(`[Healer] Skip: invalid scraper id in fail-log: ${JSON.stringify(id)}`);
+        continue;
+      }
+      const configPath = path.join(process.cwd(), 'scrapers', `${id}.json`);
 
       // Re-selecting can't fix a page whose events never reached the server HTML,
       // a network failure, or a domain that's actively blocking us. Skip these so

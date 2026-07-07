@@ -148,15 +148,17 @@ export async function repairScraperConfig(
   configPath: string,
   htmlSample: string,
   apiKey: string,
-  generateSelectors: GenerateSelectorsFn = defaultGenerateSelectors
+  generateSelectors: GenerateSelectorsFn = defaultGenerateSelectors,
+  scrapersRoot: string = path.join(process.cwd(), 'scrapers')
 ): Promise<{ success: boolean; config?: ScraperConfig; error?: string }> {
   try {
     // Defense-in-depth: configPath arrives from the fail-log, which is an untrusted CI
-    // artifact. Refuse to read/write anything outside scrapers/ so a tampered path can
-    // never make the healer overwrite workflow files or read secrets.
-    const scrapersRoot = path.resolve(process.cwd(), 'scrapers');
+    // artifact. Refuse to read/write anything outside the scrapers root so a tampered path
+    // can never make the healer overwrite workflow files or read secrets. (scrapersRoot is
+    // injectable so unit tests can point it at a temp fixture dir.)
+    const scrapersRootAbs = path.resolve(scrapersRoot);
     const resolvedConfigPath = path.resolve(configPath);
-    if (resolvedConfigPath !== scrapersRoot && !resolvedConfigPath.startsWith(scrapersRoot + path.sep)) {
+    if (resolvedConfigPath !== scrapersRootAbs && !resolvedConfigPath.startsWith(scrapersRootAbs + path.sep)) {
       return { success: false, error: `Refusing to heal config outside scrapers/: ${configPath}` };
     }
 

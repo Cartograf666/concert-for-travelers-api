@@ -118,7 +118,7 @@ test('Healing - repairScraperConfig end-to-end with mocked Gemini API', async ()
   };
 
   try {
-    const res = await repairScraperConfig(tempConfigPath, updatedHtml, 'MOCK_API_KEY', fakeGenerateSelectors);
+    const res = await repairScraperConfig(tempConfigPath, updatedHtml, 'MOCK_API_KEY', fakeGenerateSelectors, path.dirname(tempConfigPath));
 
     assert.strictEqual(res.success, true);
     assert.ok(res.config);
@@ -167,7 +167,7 @@ test('Healing - model cascade stops early on an auth/quota error instead of tryi
   };
 
   try {
-    const res = await repairScraperConfig(tempConfigPath, '<div></div>', 'BAD_KEY', authErrorGenerator);
+    const res = await repairScraperConfig(tempConfigPath, '<div></div>', 'BAD_KEY', authErrorGenerator, path.dirname(tempConfigPath));
     assert.strictEqual(res.success, false);
     // Only the first model in the cascade should have been tried.
     assert.strictEqual(attempts, 1);
@@ -220,7 +220,7 @@ test('Healing - a 404 (unknown/deprecated model) skips just that model and conti
   };
 
   try {
-    const res = await repairScraperConfig(tempConfigPath, updatedHtml, 'MOCK_API_KEY', notFoundThenSucceedGenerator);
+    const res = await repairScraperConfig(tempConfigPath, updatedHtml, 'MOCK_API_KEY', notFoundThenSucceedGenerator, path.dirname(tempConfigPath));
 
     assert.strictEqual(res.success, true);
     // The cascade must move past the 404'd model instead of aborting like it does for a 401/403/429.

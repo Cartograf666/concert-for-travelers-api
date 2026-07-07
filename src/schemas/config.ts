@@ -51,7 +51,13 @@ export const ScraperSelectorsSchema = z.object({
 });
 
 export const ScraperConfigSchema = z.object({
-  id: z.string().describe("Unique identifier, e.g., club-arena-berlin"),
+  // Strict charset: `id` is interpolated into a filesystem path
+  // (path.join(scrapersDir, `${id}.json`) in run.ts, written by the self-healer) and
+  // into a dynamic module specifier (import(`./custom/${id}.js`) in runner.ts). Allowing
+  // `/`, `.` or `..` here would let a community-contributed config traverse out of
+  // scrapers/ (overwrite arbitrary repo files in CI) or load an arbitrary module during
+  // the unattended daily run. Lowercase alphanumerics + hyphens only closes both sinks.
+  id: z.string().regex(/^[a-z0-9][a-z0-9-]{0,80}$/, "id must be lowercase letters, digits and hyphens only (e.g. club-arena-berlin)").describe("Unique identifier, e.g., club-arena-berlin"),
   domain: z.string().describe("Site domain name, e.g., club-arena-berlin.de"),
   url: z.string().url().refine(
     (u) => {

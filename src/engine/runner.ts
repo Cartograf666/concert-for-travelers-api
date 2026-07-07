@@ -292,6 +292,13 @@ async function runCustomJsScraper(config: ScraperConfig, html: string, scrapedAt
     throw new Error(`Selectors are missing for custom_js scraper config: ${config.id}`);
   }
 
+  // Defense-in-depth: the schema already restricts `id` to [a-z0-9-], but re-check here
+  // before interpolating it into a dynamic import specifier so a config that reached this
+  // path unvalidated can never load a module outside src/engine/custom/.
+  if (!/^[a-z0-9][a-z0-9-]*$/.test(config.id)) {
+    throw new Error(`Refusing to load custom module for unsafe scraper id: ${config.id}`);
+  }
+
   // We dynamic import the custom implementation if it exists
   const customModulePath = `./custom/${config.id}.js`;
   try {
