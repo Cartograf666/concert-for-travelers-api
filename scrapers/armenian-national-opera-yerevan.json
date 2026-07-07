@@ -1,0 +1,15 @@
+{
+  "id": "armenian-national-opera-yerevan",
+  "domain": "opera.am",
+  "url": "https://www.opera.am/en/repertoire",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.repo-card",
+    "artist": "h5.repo-title a",
+    "date": ".repo-date",
+    "ticketUrl": "a.repo-image",
+    "venueNameFallback": "Armenian National Academic Theatre of Opera and Ballet",
+    "cityNameFallback": "Yerevan",
+    "countryNameFallback": "AM"
+  }
+}

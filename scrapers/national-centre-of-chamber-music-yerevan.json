@@ -1,0 +1,15 @@
+{
+  "id": "national-centre-of-chamber-music-yerevan",
+  "domain": "nccm.am",
+  "url": "https://nccm.am/en/events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.tickets-wide",
+    "artist": ".tickets-wide__title a",
+    "date": ".tickets-wide__label",
+    "ticketUrl": ".tickets-wide__title a",
+    "venueNameFallback": "National Centre of Chamber Music (Komitas Chamber Music House)",
+    "cityNameFallback": "Yerevan",
+    "countryNameFallback": "AM"
+  }
+}

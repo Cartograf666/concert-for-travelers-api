@@ -308,7 +308,14 @@ function parseDateUnchecked(dateStr: string, baseDateStr: string): string | null
     septiembre: '09', setiembre: '09',
     octubre: '10',
     noviembre: '11',
-    dic: '12', diciembre: '12'
+    dic: '12', diciembre: '12',
+    // Croatian (genitive form, as used in dates like "21. srpnja 2026."). Two of
+    // these (veljače/ožujka) contain diacritics the month-regex charset below
+    // doesn't match, so they won't actually be reached in practice -- a known,
+    // narrower gap than the other 10, not fixed here.
+    siječnja: '01', veljače: '02', ožujka: '03', travnja: '04', svibnja: '05',
+    lipnja: '06', srpnja: '07', kolovoza: '08', rujna: '09', listopada: '10',
+    studenog: '11', studenoga: '11', prosinca: '12'
   };
 
   // Spanish "D de Month de YYYY" / "D de Month" -- the connector words ("de")
@@ -437,9 +444,18 @@ function parseDateUnchecked(dateStr: string, baseDateStr: string): string | null
   // 11. chrono-node: multilingual/natural-language fallback for noisy formats the
   // regex ladder misses (weekday prefixes, ordinals, ranges). forwardDate resolves
   // a bare month/day into the future rather than the past.
+  //
+  // chrono is English-only, so on a genuinely foreign-language date (e.g. Croatian
+  // "21. srpnja 2026. u 20:00") it can't understand the date part at all -- but it
+  // WILL confidently latch onto a lone recognizable fragment like "20:00" and
+  // silently default the missing date to baseDate ("today at 8pm"), producing a
+  // plausible-looking but completely wrong result instead of failing. Require the
+  // matched fragment to cover a meaningful share of the input before trusting it,
+  // the same guard used for artist-name substring matches in matchApprovedArtist.
+  const CHRONO_MIN_COVERAGE = 0.4;
   try {
     const results = chrono.parse(dateStr, baseDate, { forwardDate: true });
-    if (results.length > 0) {
+    if (results.length > 0 && results[0].text.length / dateStr.trim().length >= CHRONO_MIN_COVERAGE) {
       return toLocalIso(results[0].start.date());
     }
   } catch {

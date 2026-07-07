@@ -1,0 +1,17 @@
+{
+  "id": "cartagena-festival-de-musica-cartagena",
+  "domain": "cartagenamusicfestival.com",
+  "url": "https://cartagenamusicfestival.com/programacion/?lang=en",
+  "type": "static_selectors",
+  "allowEmpty": true,
+  "selectors": {
+    "eventBlock": ".mkdf-event-list-item",
+    "artist": ".mkdf-eli-title",
+    "date": ".mkdf-el-date-separated",
+    "datePattern": "DD Month (no year present on page)",
+    "ticketUrl": ".mkdf-eli-read-more-holder a.mkdf-btn-solid",
+    "venueNameFallback": "Teatro Adolfo Mejia",
+    "cityNameFallback": "Cartagena",
+    "countryNameFallback": "CO"
+  }
+}

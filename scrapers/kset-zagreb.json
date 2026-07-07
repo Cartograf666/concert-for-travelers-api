@@ -1,0 +1,16 @@
+{
+  "id": "kset-zagreb",
+  "domain": "kset.org",
+  "url": "https://www.kset.org/arhiva/dogadaji/",
+  "type": "static_selectors",
+  "allowEmpty": true,
+  "selectors": {
+    "eventBlock": "tr:has(td.archive-title)",
+    "artist": "td.archive-title a",
+    "date": "td.archive-date",
+    "ticketUrl": "td.archive-title a",
+    "venueNameFallback": "KSET",
+    "cityNameFallback": "Zagreb",
+    "countryNameFallback": "HR"
+  }
+}

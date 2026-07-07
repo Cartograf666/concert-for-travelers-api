@@ -1,0 +1,15 @@
+{
+  "id": "casa-da-musica-porto",
+  "domain": "casadamusica.com",
+  "url": "https://casadamusica.com/en/agenda/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div[itemtype=\"https://schema.org/Event\"]",
+    "artist": "h2 a[itemprop=\"name\"]",
+    "date": "time.font-semibold",
+    "ticketUrl": "h2 a[itemprop=\"name\"]",
+    "venueNameFallback": "Casa da Música",
+    "cityNameFallback": "Porto",
+    "countryNameFallback": "PT"
+  }
+}

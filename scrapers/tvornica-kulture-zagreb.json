@@ -1,0 +1,15 @@
+{
+  "id": "tvornica-kulture-zagreb",
+  "domain": "tvornicakulture.com",
+  "url": "https://www.tvornicakulture.com/svi-dogadaji/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "[data-elementor-type=\"loop-item\"]",
+    "artist": ".elementor-heading-title",
+    "date": ".elementor-element-c6e41f0",
+    "ticketUrl": ".elementor-button",
+    "venueNameFallback": "Tvornica Kulture",
+    "cityNameFallback": "Zagreb",
+    "countryNameFallback": "HR"
+  }
+}

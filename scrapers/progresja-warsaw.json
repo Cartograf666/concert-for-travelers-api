@@ -1,0 +1,15 @@
+{
+  "id": "progresja-warsaw",
+  "domain": "progresja.com",
+  "url": "https://progresja.com/en/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.el-item",
+    "artist": "a.el-link",
+    "date": ".uk-grid-item-match.uk-flex-middle.uk-width-large\\@m",
+    "ticketUrl": "a.el-link",
+    "venueNameFallback": "Progresja",
+    "cityNameFallback": "Warsaw",
+    "countryNameFallback": "PL"
+  }
+}

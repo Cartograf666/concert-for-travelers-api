@@ -106,6 +106,17 @@ test('Pipeline - parse date strings', () => {
   assert.strictEqual(parseDate('1 de agosto de 2026', baseDate), '2026-08-01');
   assert.strictEqual(parseDate('25 de diciembre de 2026', baseDate), '2026-12-25');
 
+  // Croatian genitive month names -- real format from a Zagreb venue page.
+  assert.strictEqual(parseDate('21. srpnja 2026. u 20:00', baseDate), '2026-07-21');
+
+  // chrono-node coverage guard: chrono is English-only and, on a date it can't
+  // understand (e.g. genuinely foreign-language text with no recognizable month
+  // name), will still confidently latch onto a lone fragment like a bare time
+  // and silently default the rest to baseDate ("today at 8pm") instead of
+  // failing -- must return null instead of a plausible-looking wrong date.
+  assert.strictEqual(parseDate('01 lis, 26', baseDate), null); // Croatian abbreviation, not in the map
+  assert.strictEqual(parseDate('WE15JUL 2026', baseDate), null); // no separators, unparseable by design
+
   // Word-based dates with years (English/German)
   assert.strictEqual(parseDate('12. Okt 2026', baseDate), '2026-10-12');
   assert.strictEqual(parseDate('12 Oktober 2026', baseDate), '2026-10-12');

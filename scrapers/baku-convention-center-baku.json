@@ -1,0 +1,17 @@
+{
+  "id": "baku-convention-center-baku",
+  "domain": "bakuconventioncenter.com",
+  "url": "https://bakuconventioncenter.com/events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.event-box",
+    "artist": "h4.event-box__title",
+    "date": ".event-box__date",
+    "ticketUrl": "a.event-box__link",
+    "venueNameFallback": "Baku Convention Center",
+    "cityNameFallback": "Baku",
+    "countryNameFallback": "AZ",
+    "lat": 40.3775,
+    "lng": 49.853
+  }
+}
