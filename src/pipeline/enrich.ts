@@ -17,6 +17,16 @@ export interface ArtistEntry {
   socials?: ArtistSocials;
 }
 
+/** Matches repair.ts's check: a 401/403/429 means this key/model is out of quota or
+ * unauthorized, not a transient failure -- retrying it again this run is pointless.
+ * The old @google/generative-ai SDK doesn't structure errors as consistently as the
+ * Vercel AI SDK repair.ts uses, so this also falls back to sniffing the message. */
+function isAuthOrQuotaError(err: any): boolean {
+  const status = err?.statusCode ?? err?.status ?? err?.response?.status;
+  if (status === 401 || status === 403 || status === 429) return true;
+  return /\b(429|401|403)\b|quota|rate.?limit/i.test(err?.message || '');
+}
+
 /**
  * Strips markdown and parses the LLM output as JSON.
  */
@@ -33,13 +43,25 @@ function cleanAndParseArtistBatch(text: string): ArtistEntry[] {
   }
 }
 
+export type GenerateEnrichmentFn = (args: { prompt: string; modelName: string; apiKey: string }) => Promise<string>;
+
+async function defaultGenerateEnrichment({ prompt, modelName, apiKey }: { prompt: string; modelName: string; apiKey: string }): Promise<string> {
+  const genAI = new GoogleGenerativeAI(apiKey);
+  const model = genAI.getGenerativeModel({ model: modelName });
+  const result = await model.generateContent(prompt);
+  return result.response.text();
+}
+
 /**
- * Batches and queries Gemini to enrich missing artist metadata.
+ * Batches and queries Gemini to enrich missing artist metadata. `generateFn` is
+ * injectable (defaults to the real Gemini call) so the quota-exhaustion/early-exit
+ * logic can be tested without hitting a real API.
  */
 export async function enrichMissingArtistMetadata(
   artistsToEnrich: string[],
   approvedArtistsPath: string,
-  apiKey: string
+  apiKey: string,
+  generateFn: GenerateEnrichmentFn = defaultGenerateEnrichment
 ): Promise<void> {
   if (artistsToEnrich.length === 0) {
     console.log('[Enricher] No artists to check for enrichment.');
@@ -72,11 +94,25 @@ export async function enrichMissingArtistMetadata(
 
   // Batch artists to avoid overloading (e.g. 15 per batch)
   const batchSize = 15;
-  const genAI = new GoogleGenerativeAI(apiKey);
+  const totalBatches = Math.ceil(missingArtists.length / batchSize);
+
+  // Models confirmed quota-exhausted (401/403/429) THIS run. Free-tier daily quotas
+  // are small (e.g. 20 requests/day per model) -- on a big enrichment run they can
+  // exhaust within the first few batches, and without this the cascade would retry
+  // every dead model on every single remaining batch: N batches x 6 doomed attempts
+  // each, for no gain, real case observed with the Ticketmaster sweep surfacing far
+  // more never-before-seen artists than a typical run.
+  const exhaustedModels = new Set<string>();
+  const modelsAvailable = ['gemini-3.5-flash', 'gemini-3.1-flash', 'gemini-2.5-flash', 'gemini-2.5-flash-lite', 'gemini-1.5-flash', 'gemini-1.5-pro'];
 
   for (let i = 0; i < missingArtists.length; i += batchSize) {
+    if (exhaustedModels.size >= modelsAvailable.length) {
+      console.error(`[Enricher] All ${modelsAvailable.length} models are quota-exhausted for this run -- stopping early instead of grinding through the remaining ${missingArtists.length - i} artists. They'll be picked up on the next run.`);
+      break;
+    }
+
     const batch = missingArtists.slice(i, i + batchSize);
-    console.log(`[Enricher] Processing batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(missingArtists.length / batchSize)}: ${batch.join(', ')}`);
+    console.log(`[Enricher] Processing batch ${Math.floor(i / batchSize) + 1}/${totalBatches}: ${batch.join(', ')}`);
 
     const prompt = `You are a professional music database editor.
 Find the official website and official social media profiles (Spotify artist link, Instagram profile, Facebook page, YouTube channel, Telegram channel, and VK group) for the following artists/bands:
@@ -101,28 +137,30 @@ Your output must be a valid JSON array of objects conforming to this shape:
 Provide ONLY the raw JSON array. Do not include markdown code block backticks (\`\`\`json) or any explanations. If a URL is missing or cannot be found, set it to null.`;
 
     try {
-      let result: any = null;
+      let responseText: string | null = null;
       let lastError: any = null;
-      const models = ['gemini-3.5-flash', 'gemini-3.1-flash', 'gemini-2.5-flash', 'gemini-2.5-flash-lite', 'gemini-1.5-flash', 'gemini-1.5-pro'];
 
-      for (const modelName of models) {
+      for (const modelName of modelsAvailable) {
+        if (exhaustedModels.has(modelName)) continue;
         try {
           console.log(`[Enricher] Attempting generation with model: ${modelName}`);
-          const model = genAI.getGenerativeModel({ model: modelName });
-          result = await model.generateContent(prompt);
+          responseText = await generateFn({ prompt, modelName, apiKey });
           console.log(`[Enricher] Model ${modelName} succeeded.`);
           break; // Success! Break out of model loop
         } catch (err: any) {
           console.warn(`[Enricher] Warning: Failed with model ${modelName} - ${err.message}`);
           lastError = err;
+          if (isAuthOrQuotaError(err)) {
+            console.warn(`[Enricher] ${modelName} is quota-exhausted/unauthorized -- skipping it for the rest of this run.`);
+            exhaustedModels.add(modelName);
+          }
         }
       }
 
-      if (!result) {
-        throw new Error(`All Gemini models failed for batch enrichment. Last error: ${lastError?.message}`);
+      if (responseText === null) {
+        throw new Error(`All available Gemini models failed for batch enrichment. Last error: ${lastError?.message}`);
       }
 
-      const responseText = result.response.text();
       const enrichedEntries = cleanAndParseArtistBatch(responseText);
 
       // Apply the enriched metadata back to our database
@@ -157,14 +195,18 @@ Provide ONLY the raw JSON array. Do not include markdown code block backticks (\
     } catch (err: any) {
       console.error(`[Enricher] Failed to process batch: ${err.message}`);
     }
+
+    // Save after every batch, not just at the end -- a run that gets cancelled,
+    // times out, or hits the all-models-exhausted early-exit above would otherwise
+    // lose every batch's work done so far. Same reasoning as the early-exit itself:
+    // observed live on a run where quota ran out partway through a large batch list.
+    try {
+      approvedArtists.sort((a, b) => a.name.localeCompare(b.name));
+      await fs.writeFile(approvedArtistsPath, JSON.stringify(approvedArtists, null, 2), 'utf-8');
+    } catch (err: any) {
+      console.error(`[Enricher] Failed to save enriched database after batch: ${err.message}`);
+    }
   }
 
-  // 3. Save the updated list back to disk
-  try {
-    approvedArtists.sort((a, b) => a.name.localeCompare(b.name));
-    await fs.writeFile(approvedArtistsPath, JSON.stringify(approvedArtists, null, 2), 'utf-8');
-    console.log(`[Enricher] Saved enriched artist whitelist database to: ${approvedArtistsPath}`);
-  } catch (err: any) {
-    console.error(`[Enricher] Failed to save enriched database: ${err.message}`);
-  }
+  console.log(`[Enricher] Saved enriched artist whitelist database to: ${approvedArtistsPath}`);
 }
