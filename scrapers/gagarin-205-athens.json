@@ -1,0 +1,17 @@
+{
+  "id": "gagarin-205-athens",
+  "domain": "gagarin205.gr",
+  "url": "https://gagarin205.gr/events/",
+  "type": "jsonld",
+  "maxRetries": 2,
+  "requestDelayMs": 0,
+  "allowEmpty": false,
+  "selectors": {
+    "eventBlock": ".",
+    "artist": "name",
+    "date": "startDate",
+    "venueNameFallback": "Gagarin 205",
+    "cityNameFallback": "Athens",
+    "countryNameFallback": "GR"
+  }
+}
