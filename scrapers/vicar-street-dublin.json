@@ -1,0 +1,17 @@
+{
+  "id": "vicar-street-dublin",
+  "domain": "vicarstreet.com",
+  "url": "https://www.vicarstreet.com/all-shows-at-vicar-street.html",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.upcomingShowWrap",
+    "artist": "span.name_col strong",
+    "date": "span.date_col",
+    "ticketUrl": "a.btn.btn-success",
+    "venueNameFallback": "Vicar Street",
+    "cityNameFallback": "Dublin",
+    "countryNameFallback": "IE",
+    "lat": 53.3421,
+    "lng": -6.2788
+  }
+}

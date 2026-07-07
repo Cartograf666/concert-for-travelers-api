@@ -1,0 +1,16 @@
+{
+  "id": "atlantico-roma-rome",
+  "domain": "atlanticoliveroma.it",
+  "url": "https://www.atlanticoliveroma.it/calendario-eventi/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.elementor-col-20.elementor-inner-column",
+    "artist": "h2.elementor-heading-title",
+    "date": ".elementor-icon-list-text",
+    "venueNameFallback": "Atlantico Live Roma",
+    "cityNameFallback": "Rome",
+    "countryNameFallback": "IT",
+    "lat": 41.8171899,
+    "lng": 12.4630137
+  }
+}

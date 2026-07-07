@@ -1,0 +1,19 @@
+{
+  "id": "the-star-theatre-singapore",
+  "domain": "nac.gov.sg",
+  "url": "https://www.nac.gov.sg/resources/research/events",
+  "type": "static_selectors",
+  "maxRetries": 3,
+  "requestDelayMs": 500,
+  "selectors": {
+    "eventBlock": "div[class*='event'], article[class*='event'], li.event, .event-card, [data-event], .sfContentBlock",
+    "artist": "h3, h2, .artist, .artist-name, .event-title, .performer, a, [itemprop='name']",
+    "date": "time, .date, .event-date, [itemprop='startDate'], span[class*='date'], .when, p",
+    "ticketUrl": "a[href*='ticket'], a[href*='book'], .ticket-link, a.cta-button, [href*='ticketing'], a",
+    "venueNameFallback": "The Star Theatre",
+    "cityNameFallback": "Singapore",
+    "countryNameFallback": "SG",
+    "lat": 1.3521,
+    "lng": 103.8198
+  }
+}

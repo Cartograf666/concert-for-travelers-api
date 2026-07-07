@@ -1,0 +1,15 @@
+{
+  "id": "x-tra-zurich-zurich",
+  "domain": "x-tra.ch",
+  "url": "https://www.x-tra.ch/en/program/",
+  "type": "jsonld",
+  "selectors": {
+    "eventBlock": "script[type=\"application/ld+json\"]",
+    "date": "startDate",
+    "venueNameFallback": "X-TRA",
+    "cityNameFallback": "Zurich",
+    "countryNameFallback": "CH",
+    "lat": 47.3854607,
+    "lng": 8.528253
+  }
+}

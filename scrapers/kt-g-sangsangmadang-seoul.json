@@ -1,0 +1,16 @@
+{
+  "id": "kt-g-sangsangmadang-seoul",
+  "domain": "sangsangmadang.com",
+  "url": "https://www.sangsangmadang.com/calendar/list",
+  "type": "custom_js",
+  "requestDelayMs": 500,
+  "selectors": {
+    "eventBlock": "",
+    "date": "",
+    "venueNameFallback": "KT&G Sangsangmadang Seoul",
+    "cityNameFallback": "Seoul",
+    "countryNameFallback": "KR",
+    "lat": 37.5515,
+    "lng": 126.9256
+  }
+}

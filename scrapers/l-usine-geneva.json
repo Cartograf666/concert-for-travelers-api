@@ -1,0 +1,17 @@
+{
+  "id": "l-usine-geneva",
+  "domain": "usine.ch",
+  "url": "https://www.usine.ch/agenda",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.agenda_item",
+    "artist": ".agenda_h3",
+    "date": ".agenda_date",
+    "ticketUrl": "a.event_card",
+    "venueNameFallback": "L'Usine",
+    "cityNameFallback": "Geneva",
+    "countryNameFallback": "CH",
+    "lat": 46.2018,
+    "lng": 6.1466
+  }
+}

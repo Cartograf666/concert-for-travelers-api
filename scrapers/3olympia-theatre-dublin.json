@@ -1,0 +1,14 @@
+{
+  "id": "3olympia-theatre-dublin",
+  "domain": "3olympia.ie",
+  "url": "https://www.3olympia.ie/whats-on",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".whats-on__col .card",
+    "artist": ".card__heading",
+    "date": ".card__date",
+    "venueNameFallback": "3Olympia Theatre",
+    "cityNameFallback": "Dublin",
+    "countryNameFallback": "IE"
+  }
+}

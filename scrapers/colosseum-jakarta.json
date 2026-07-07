@@ -1,0 +1,14 @@
+{
+  "id": "colosseum-jakarta",
+  "domain": "colosseum.id",
+  "url": "https://colosseum.id/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-item",
+    "artist": "h5 a",
+    "date": "h6",
+    "venueNameFallback": "Colosseum",
+    "cityNameFallback": "Jakarta",
+    "countryNameFallback": "ID"
+  }
+}

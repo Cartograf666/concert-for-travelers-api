@@ -1,0 +1,17 @@
+{
+  "id": "orion-club-roma-rome",
+  "domain": "orionliveclub.com",
+  "url": "https://www.orionliveclub.com/tutti-gli-eventi/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.post_item",
+    "artist": ".post_item_title a",
+    "date": ".event_brick_date",
+    "ticketUrl": ".post_item_title a",
+    "venueNameFallback": "Orion Club",
+    "cityNameFallback": "Rome",
+    "countryNameFallback": "IT",
+    "lat": 41.7997,
+    "lng": 12.5975
+  }
+}
