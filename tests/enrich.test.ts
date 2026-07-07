@@ -17,6 +17,12 @@ function quotaError(): Error {
   return err;
 }
 
+function notFoundError(): Error {
+  const err: any = new Error('404 Not Found: model does not exist');
+  err.status = 404;
+  return err;
+}
+
 // Synthetic model names, independent of the real DEFAULT_ENRICHMENT_MODELS cascade
 // (which changes over time as models are added/deprecated) -- these tests exercise
 // the cascade MECHANISM, not any specific real model lineup.
@@ -63,6 +69,27 @@ test('Enrich - a model that already failed with a quota error is not retried on 
 
   assert.strictEqual(callsByModel['model-a'], 1, 'the quota-exhausted model should only be tried once across the whole run');
   assert.strictEqual(callsByModel['model-b'], 2, 'the working model should be tried once per batch (2 batches)');
+
+  await fs.unlink(file);
+});
+
+test('Enrich - a 404 (unknown/deprecated model) is treated the same as a quota error: skip it, do not retry', async () => {
+  // Real case this guards against: a stale model ID (e.g. a retired Gemini
+  // version) left in the cascade would 404 on every single call otherwise.
+  const artists = Array.from({ length: 15 }, (_, i) => `Artist ${i}`);
+  const file = await tempArtistsFile(artists.map((name) => ({ name, website: null })));
+
+  const callsByModel: Record<string, number> = {};
+  const generateFn: GenerateEnrichmentFn = async ({ modelName }) => {
+    callsByModel[modelName] = (callsByModel[modelName] || 0) + 1;
+    if (modelName === 'model-a') throw notFoundError();
+    return JSON.stringify([]);
+  };
+
+  await enrichMissingArtistMetadata(artists, file, 'fake-key', generateFn, TEST_MODELS);
+
+  assert.strictEqual(callsByModel['model-a'], 1, 'the 404 model should only be tried once, then skipped like a quota-exhausted one');
+  assert.strictEqual(callsByModel['model-b'], 1, 'the next model in the cascade should still be tried and succeed');
 
   await fs.unlink(file);
 });

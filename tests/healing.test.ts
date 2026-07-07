@@ -175,3 +175,58 @@ test('Healing - model cascade stops early on an auth/quota error instead of tryi
     await fs.rm(tempConfigDir, { recursive: true, force: true });
   }
 });
+
+test('Healing - a 404 (unknown/deprecated model) skips just that model and continues the cascade, unlike an auth/quota error', async () => {
+  const tempConfigDir = path.join(process.cwd(), 'reports', 'temp_tests_404');
+  await fs.mkdir(tempConfigDir, { recursive: true });
+  const tempConfigPath = path.join(tempConfigDir, 'broken-scraper.json');
+
+  const brokenConfig: ScraperConfig = {
+    id: 'broken-scraper',
+    domain: 'broken-scraper.de',
+    url: 'https://test-fixture.example/broken',
+    type: 'static_selectors',
+    selectors: {
+      eventBlock: '.old-card-class',
+      artist: '.artist',
+      date: '.date',
+      venueNameFallback: 'Original Venue',
+      cityNameFallback: 'Original City',
+      countryNameFallback: 'DE'
+    }
+  };
+  await fs.writeFile(tempConfigPath, JSON.stringify(brokenConfig, null, 2), 'utf-8');
+
+  const updatedHtml = `
+    <div class="new-card-class">
+      <h2 class="artist">The Cure</h2>
+      <span class="date">12. Okt 2026</span>
+    </div>
+  `;
+
+  const attemptedModels: string[] = [];
+  const notFoundThenSucceedGenerator: GenerateSelectorsFn = async ({ modelName }) => {
+    attemptedModels.push(modelName);
+    if (modelName === DEFAULT_REPAIR_MODELS[0]) {
+      const err: any = new Error('models/old-model is not found for API version v1');
+      err.statusCode = 404;
+      throw err;
+    }
+    return {
+      eventBlock: '.new-card-class',
+      artist: '.artist',
+      date: '.date'
+    };
+  };
+
+  try {
+    const res = await repairScraperConfig(tempConfigPath, updatedHtml, 'MOCK_API_KEY', notFoundThenSucceedGenerator);
+
+    assert.strictEqual(res.success, true);
+    // The cascade must move past the 404'd model instead of aborting like it does for a 401/403/429.
+    assert.deepStrictEqual(attemptedModels, [DEFAULT_REPAIR_MODELS[0], DEFAULT_REPAIR_MODELS[1]]);
+    assert.strictEqual(res.config?.selectors?.eventBlock, '.new-card-class');
+  } finally {
+    await fs.rm(tempConfigDir, { recursive: true, force: true });
+  }
+});

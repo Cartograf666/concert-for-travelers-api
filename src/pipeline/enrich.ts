@@ -17,14 +17,17 @@ export interface ArtistEntry {
   socials?: ArtistSocials;
 }
 
-/** Matches repair.ts's check: a 401/403/429 means this key/model is out of quota or
- * unauthorized, not a transient failure -- retrying it again this run is pointless.
- * The old @google/generative-ai SDK doesn't structure errors as consistently as the
+/** Matches repair.ts's check: 401/403/429 mean this key/model is unauthorized or
+ * out of quota; 404 means the model ID itself doesn't exist (e.g. a deprecated
+ * model still listed in the cascade). Every case is permanent for the rest of
+ * this run -- retrying the same model again is pointless either way, so both
+ * get treated identically ("skip this model, don't come back to it"). The old
+ * @google/generative-ai SDK doesn't structure errors as consistently as the
  * Vercel AI SDK repair.ts uses, so this also falls back to sniffing the message. */
 function isAuthOrQuotaError(err: any): boolean {
   const status = err?.statusCode ?? err?.status ?? err?.response?.status;
-  if (status === 401 || status === 403 || status === 429) return true;
-  return /\b(429|401|403)\b|quota|rate.?limit/i.test(err?.message || '');
+  if (status === 401 || status === 403 || status === 404 || status === 429) return true;
+  return /\b(401|403|404|429)\b|quota|rate.?limit|not found/i.test(err?.message || '');
 }
 
 /**
@@ -168,7 +171,7 @@ Provide ONLY the raw JSON array. Do not include markdown code block backticks (\
           console.warn(`[Enricher] Warning: Failed with model ${modelName} - ${err.message}`);
           lastError = err;
           if (isAuthOrQuotaError(err)) {
-            console.warn(`[Enricher] ${modelName} is quota-exhausted/unauthorized -- skipping it for the rest of this run.`);
+            console.warn(`[Enricher] ${modelName} is unavailable (quota/auth/not-found) -- skipping it for the rest of this run.`);
             exhaustedModels.add(modelName);
           }
         }

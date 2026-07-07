@@ -21,10 +21,23 @@ const RepairedSelectorsSchema = z.object({
 });
 export type RepairedSelectors = z.infer<typeof RepairedSelectorsSchema>;
 
-/** True for auth/quota errors where retrying against a *different* model is pointless. */
+/** True for auth/quota errors, which fail identically on every model in the
+ * cascade (same key) -- retrying a *different* model is pointless, stop the
+ * whole cascade. Deliberately excludes 404 (unknown model ID): that's specific
+ * to the one bad model name, not evidence the key/quota is broken, so it should
+ * only skip to the next model, not abort the cascade -- see isUnknownModelError. */
 function isAuthOrQuotaError(err: any): boolean {
   const status = err?.statusCode ?? err?.status ?? err?.response?.status;
   return status === 401 || status === 403 || status === 429;
+}
+
+/** True when the model ID itself doesn't exist (e.g. a deprecated model still
+ * listed in the cascade) -- only that one model is broken, so the caller should
+ * skip to the next model rather than aborting the whole cascade. */
+function isUnknownModelError(err: any): boolean {
+  const status = err?.statusCode ?? err?.status ?? err?.response?.status;
+  if (status === 404) return true;
+  return /not found|404/i.test(err?.message || '');
 }
 
 export type GenerateSelectorsFn = (args: { prompt: string; modelName: string; apiKey: string }) => Promise<RepairedSelectors>;
@@ -194,6 +207,12 @@ and ticketUrl (optional). Ensure the selectors are valid CSS selectors compatibl
           // model in the cascade -- stop instead of burning 5 more calls to find out.
           console.error(`[Repair] Auth/quota error on ${modelName} (status ${err?.statusCode ?? err?.status}) — stopping cascade: ${err.message}`);
           break;
+        }
+        if (isUnknownModelError(err)) {
+          // Only this specific model ID is invalid (e.g. deprecated) -- the rest
+          // of the cascade is unaffected, so just move on to the next model.
+          console.warn(`[Repair] ${modelName} is not a known model (404) -- trying the next one in the cascade.`);
+          continue;
         }
         console.warn(`[Repair] Warning: Failed with model ${modelName} - ${err.message}`);
       }
