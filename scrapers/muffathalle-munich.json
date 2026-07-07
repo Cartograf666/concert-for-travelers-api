@@ -1,0 +1,16 @@
+{
+  "id": "muffathalle-munich",
+  "domain": "muffatwerk.de",
+  "url": "https://www.muffatwerk.de/en/events/concert",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.entry.event",
+    "artist": "div.hover.hover-in div.entry-data.center span",
+    "date": "div.date",
+    "venueNameFallback": "Muffathalle",
+    "cityNameFallback": "Munich",
+    "countryNameFallback": "DE",
+    "lat": 48.13321,
+    "lng": 11.5875213
+  }
+}
