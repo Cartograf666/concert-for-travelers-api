@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert';
 import * as path from 'path';
 import { ScraperConfigSchema, isBlockedHost } from '../src/schemas/config.js';
-import { repairScraperConfig } from '../src/healing/repair.js';
+import { repairScraperConfig, testSelectorsOnHtml } from '../src/healing/repair.js';
+import { safeAbsoluteUrl } from '../src/engine/url.js';
 
 const BASE = {
   domain: 'x.com',
@@ -44,6 +45,22 @@ test('isBlockedHost blocks private/loopback/metadata incl. encodings + mapped IP
 
   const allowed = ['example.com', 'paradiso.nl', '8.8.8.8', '93.184.216.34'];
   for (const h of allowed) assert.strictEqual(isBlockedHost(h), false, `${h} must be allowed`);
+});
+
+test('ticketUrl drops dangerous schemes (javascript:/data:), keeps http(s)', () => {
+  assert.strictEqual(safeAbsoluteUrl('javascript:alert(1)', 'https://x.com'), undefined);
+  assert.strictEqual(safeAbsoluteUrl('data:text/html,x', 'https://x.com'), undefined);
+  assert.strictEqual(safeAbsoluteUrl('/tickets/x', 'https://x.com'), 'https://x.com/tickets/x');
+
+  const html = `<div class="e"><h3 class="a">The Cure</h3><span class="d">2026-10-12</span>` +
+    `<a class="t" href="javascript:alert(1)">buy</a></div>`;
+  const out = testSelectorsOnHtml(
+    { eventBlock: '.e', artist: '.a', date: '.d', ticketUrl: '.t', venueNameFallback: 'V', cityNameFallback: 'C', countryNameFallback: 'US' },
+    { id: 'x', domain: 'x.com', url: 'https://x.com', type: 'static_selectors' } as any,
+    html
+  );
+  assert.strictEqual(out.length, 1);
+  assert.strictEqual(out[0].ticketUrl, undefined, 'javascript: ticket href must be dropped');
 });
 
 test('config url rejects SSRF hosts (metadata / integer-encoded loopback)', () => {

@@ -5,6 +5,7 @@ import { circuitBreaker, ConsecutiveBreaker, BrokenCircuitError, handleWhen } fr
 import { ScraperConfig, ScraperConfigSchema, isBlockedHost } from '../schemas/config.js';
 import { Concert } from '../schemas/concert.js';
 import { extractJsonLd } from './structured.js';
+import { safeAbsoluteUrl } from './url.js';
 import { VenueCache, ScrapeCache, hashConcerts } from './cache.js';
 import * as fs from 'fs/promises';
 import * as path from 'path';
@@ -198,12 +199,7 @@ async function runStaticScraper(config: ScraperConfig, html: string, scrapedAt: 
       }
 
       if (href) {
-        try {
-          absoluteTicketUrl = new URL(href, config.url).toString();
-        } catch {
-          // If URL parsing fails, ignore or keep original
-          absoluteTicketUrl = href;
-        }
+        absoluteTicketUrl = safeAbsoluteUrl(href, config.url);
       }
     }
 
@@ -273,11 +269,7 @@ async function runJsonApiScraper(config: ScraperConfig, jsonData: any, scrapedAt
       const ticketLink = getByPath(item, ticketUrl);
       if (ticketLink) {
         const href = String(ticketLink).trim();
-        try {
-          absoluteTicketUrl = new URL(href, config.url).toString();
-        } catch {
-          absoluteTicketUrl = href;
-        }
+        absoluteTicketUrl = safeAbsoluteUrl(href, config.url);
       }
     }
 
