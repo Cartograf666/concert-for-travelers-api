@@ -1,0 +1,17 @@
+{
+  "id": "so36-berlin",
+  "domain": "so36.com",
+  "url": "https://www.so36.com/tickets.json",
+  "type": "json_api",
+  "selectors": {
+    "eventBlock": "products",
+    "artist": "title",
+    "date": "valid_start_on",
+    "ticketUrl": "url",
+    "venueNameFallback": "SO36",
+    "cityNameFallback": "Berlin",
+    "countryNameFallback": "DE",
+    "lat": 52.500248,
+    "lng": 13.419441
+  }
+}
