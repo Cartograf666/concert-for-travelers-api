@@ -3,6 +3,7 @@ import * as cheerio from 'cheerio';
 import { ScraperConfig, ScraperConfigSchema } from '../schemas/config.js';
 import { Concert } from '../schemas/concert.js';
 import { extractJsonLd } from './structured.js';
+import { VenueCache, ScrapeCache, hashConcerts } from './cache.js';
 import * as fs from 'fs/promises';
 import * as path from 'path';
 
@@ -35,6 +36,11 @@ export interface ScraperResult {
   reason?: FailureReason;
   htmlSample?: string;
   scrapedAt: string;
+  // Change-detection metadata for the per-venue cache:
+  etag?: string;
+  lastModified?: string;
+  contentHash?: string;
+  notModified?: boolean; // events identical to the cached run (304 or matching hash)
 }
 
 // Per-domain last-access timestamps for polite request throttling.
@@ -283,9 +289,24 @@ async function politeDelay(config: ScraperConfig): Promise<void> {
  * Fetches the target URL with exponential backoff + jitter on transient errors
  * (network drop, timeout, 429, 5xx). Non-transient errors fail fast.
  */
-async function fetchWithRetry(config: ScraperConfig): Promise<any> {
+interface FetchResponse {
+  status: number;
+  data: any;
+  headers: Record<string, any>;
+}
+
+async function fetchWithRetry(config: ScraperConfig, conditional?: { etag?: string; lastModified?: string }): Promise<FetchResponse> {
   const maxRetries = config.maxRetries ?? DEFAULT_MAX_RETRIES;
   let lastErr: any = null;
+
+  const headers: Record<string, string> = {
+    'User-Agent': getRandomUserAgent(),
+    'Accept': 'text/html,application/xhtml+xml,application/xml,application/json;q=0.9,*/*;q=0.8',
+    'Accept-Language': 'en-US,en;q=0.5',
+  };
+  // Conditional request: ask the server to answer 304 if nothing changed.
+  if (conditional?.etag) headers['If-None-Match'] = conditional.etag;
+  if (conditional?.lastModified) headers['If-Modified-Since'] = conditional.lastModified;
 
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
     if (attempt > 0) {
@@ -296,14 +317,11 @@ async function fetchWithRetry(config: ScraperConfig): Promise<any> {
     await politeDelay(config);
     try {
       const response = await axios.get(config.url, {
-        headers: {
-          'User-Agent': getRandomUserAgent(),
-          'Accept': 'text/html,application/xhtml+xml,application/xml,application/json;q=0.9,*/*;q=0.8',
-          'Accept-Language': 'en-US,en;q=0.5',
-        },
-        timeout: 15000 // 15s timeout (some venue pages ship large SSR/Next.js payloads)
+        headers,
+        timeout: 15000, // 15s timeout (some venue pages ship large SSR/Next.js payloads)
+        validateStatus: (s) => (s >= 200 && s < 300) || s === 304
       });
-      return response.data;
+      return { status: response.status, data: response.data, headers: response.headers };
     } catch (err: any) {
       lastErr = err;
       if (!isRetryableError(err) || attempt === maxRetries) throw err;
@@ -315,11 +333,30 @@ async function fetchWithRetry(config: ScraperConfig): Promise<any> {
 /**
  * Runs a single scraper config.
  */
-export async function runScraper(config: ScraperConfig): Promise<ScraperResult> {
+export async function runScraper(config: ScraperConfig, cached?: VenueCache): Promise<ScraperResult> {
   const scrapedAt = new Date().toISOString();
   let responseData: any = null;
   try {
-    responseData = await fetchWithRetry(config);
+    const response = await fetchWithRetry(config, cached ? { etag: cached.etag, lastModified: cached.lastModified } : undefined);
+    const etag = typeof response.headers?.etag === 'string' ? response.headers.etag : undefined;
+    const lastModified = typeof response.headers?.['last-modified'] === 'string' ? response.headers['last-modified'] : undefined;
+
+    // 304 Not Modified: the server confirms nothing changed — reuse cached events, skip parsing.
+    if (response.status === 304 && cached) {
+      console.log(`[Runner] ${config.id}: 304 Not Modified, reusing ${cached.concerts.length} cached events.`);
+      return {
+        configId: config.id,
+        success: true,
+        concerts: cached.concerts,
+        notModified: true,
+        etag: cached.etag,
+        lastModified: cached.lastModified,
+        contentHash: cached.contentHash,
+        scrapedAt: cached.scrapedAt
+      };
+    }
+
+    responseData = response.data;
 
     const expectString = () => {
       if (typeof responseData !== 'string') {
@@ -373,11 +410,21 @@ export async function runScraper(config: ScraperConfig): Promise<ScraperResult> 
       };
     }
 
+    const contentHash = hashConcerts(concerts);
+    const notModified = !!cached && cached.contentHash === contentHash;
+    if (notModified) {
+      console.log(`[Runner] ${config.id}: content unchanged (hash match), ${concerts.length} events.`);
+    }
+
     return {
       configId: config.id,
       success: true,
       concerts,
-      scrapedAt
+      scrapedAt,
+      etag,
+      lastModified,
+      contentHash,
+      notModified
     };
   } catch (error: any) {
     // Capture HTML sample for debugging/self-healing (keep JSON-LD/hydration blocks intact).
@@ -398,7 +445,7 @@ export async function runScraper(config: ScraperConfig): Promise<ScraperResult> 
 /**
  * Runs a list of scraper configs concurrently, with a maximum concurrency limit.
  */
-export async function runAllScrapers(configs: ScraperConfig[], concurrency = 5): Promise<ScraperResult[]> {
+export async function runAllScrapers(configs: ScraperConfig[], concurrency = 5, cache?: ScrapeCache): Promise<ScraperResult[]> {
   const results: ScraperResult[] = [];
   const remaining = [...configs];
 
@@ -409,7 +456,7 @@ export async function runAllScrapers(configs: ScraperConfig[], concurrency = 5):
 
       console.log(`[Runner] Starting scraper: ${config.id} (${config.url})`);
       try {
-        const res = await runScraper(config);
+        const res = await runScraper(config, cache?.[config.id]);
         results.push(res);
         if (res.success) {
           console.log(`[Runner] Success: ${config.id} extracted ${res.concerts.length} events.`);

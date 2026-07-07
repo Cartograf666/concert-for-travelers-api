@@ -155,3 +155,51 @@ test('parseDate falls back to chrono for ordinal/natural formats', () => {
   const base = '2026-01-01T12:00:00';
   assert.strictEqual(parseDate('October 3rd 2026', base), '2026-10-03');
 });
+
+const CACHE_HTML = `<div class="event-card"><div class="artist-name">Muse</div><span class="event-date">2026-08-01</span></div>`;
+
+test('runScraper reports contentHash and detects unchanged content by hash', async () => {
+  const PORT = 8241;
+  const server = await startMockServer(PORT, { '/e': CACHE_HTML });
+  const config: ScraperConfig = {
+    id: 'cache-hash', domain: 'v.de', url: `http://localhost:${PORT}/e`, type: 'static_selectors',
+    selectors: { eventBlock: '.event-card', artist: '.artist-name', date: '.event-date', venueNameFallback: 'V', cityNameFallback: 'C', countryNameFallback: 'DE' }
+  };
+  const r1 = await runScraper(config);
+  assert.strictEqual(r1.success, true);
+  assert.ok(r1.contentHash, 'contentHash present');
+  assert.ok(!r1.notModified);
+
+  const cache = { contentHash: r1.contentHash!, scrapedAt: r1.scrapedAt, concerts: r1.concerts };
+  const r2 = await runScraper(config, cache);
+  assert.strictEqual(r2.notModified, true, 'second run detects unchanged content');
+  await new Promise<void>((r) => server.close(() => r()));
+});
+
+test('runScraper reuses cached events on a 304 Not Modified', async () => {
+  const PORT = 8242;
+  const server = createServer((req, res) => {
+    if (req.headers['if-none-match'] === '"v1"') {
+      res.writeHead(304, { ETag: '"v1"' });
+      res.end();
+    } else {
+      res.writeHead(200, { 'Content-Type': 'text/html', ETag: '"v1"' });
+      res.end(CACHE_HTML);
+    }
+  });
+  await new Promise<void>((r) => server.listen(PORT, () => r()));
+
+  const config: ScraperConfig = {
+    id: 'cache-304', domain: 'v.de', url: `http://localhost:${PORT}/e`, type: 'static_selectors',
+    selectors: { eventBlock: '.event-card', artist: '.artist-name', date: '.event-date', venueNameFallback: 'V', cityNameFallback: 'C', countryNameFallback: 'DE' }
+  };
+  const r1 = await runScraper(config);
+  assert.strictEqual(r1.etag, '"v1"');
+  assert.strictEqual(r1.concerts.length, 1);
+
+  const cache = { etag: r1.etag, contentHash: r1.contentHash!, scrapedAt: r1.scrapedAt, concerts: r1.concerts };
+  const r2 = await runScraper(config, cache);
+  assert.strictEqual(r2.notModified, true, '304 -> notModified');
+  assert.strictEqual(r2.concerts.length, 1, 'cached events reused');
+  await new Promise<void>((r) => server.close(() => r()));
+});

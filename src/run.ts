@@ -1,6 +1,8 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import { loadConfigs, runAllScrapers, ScraperResult } from './engine/runner.js';
+import { loadCache, saveCache } from './engine/cache.js';
+import { Concert } from './schemas/concert.js';
 import { processConcerts } from './pipeline/process.js';
 import { enrichMissingArtistMetadata } from './pipeline/enrich.js';
 import { publishConcerts } from './generator/publish.js';
@@ -28,22 +30,74 @@ async function main() {
 
     console.log(`[Orchestrator] Loaded ${configs.length} scraper configurations.`);
 
-    // 3. Run scrapers concurrently
-    const results = await runAllScrapers(configs);
+    // 3. Load the per-venue cache and run scrapers with conditional requests + change detection
+    await fs.mkdir(reportsDir, { recursive: true });
+    const cachePath = path.join(reportsDir, 'scrape-cache.json');
+    const cache = await loadCache(cachePath);
 
-    // 4. Gather scraped concerts
-    const allScrapedConcerts = results.flatMap((r) => r.concerts);
+    const results = await runAllScrapers(configs, 5, cache);
+
+    // 4. Build the effective concert set and update the cache. Changed venues use
+    //    fresh events; unchanged (304/hash-match) and temporarily-failed venues reuse
+    //    their last-good cached events so they never vanish from the output.
+    let changedCount = 0;
+    const allScrapedConcerts: Partial<Concert>[] = [];
+    for (const r of results) {
+      if (r.success) {
+        if (!r.notModified) changedCount++;
+        allScrapedConcerts.push(...r.concerts);
+        cache[r.configId] = {
+          etag: r.etag,
+          lastModified: r.lastModified,
+          contentHash: r.contentHash ?? cache[r.configId]?.contentHash ?? '',
+          scrapedAt: r.scrapedAt,
+          concerts: r.concerts
+        };
+      } else {
+        const cached = cache[r.configId];
+        if (cached) {
+          console.warn(`[Orchestrator] ${r.configId} failed (${r.reason}); reusing ${cached.concerts.length} cached events.`);
+          allScrapedConcerts.push(...cached.concerts);
+        }
+      }
+    }
+    await saveCache(cachePath, cache);
+    console.log(`[Orchestrator] ${changedCount}/${configs.length} venues changed since last run.`);
+
+    // 5. Always record failures for the separate self-healing run.
+    const failures = results
+      .filter((r) => !r.success)
+      .map((r) => ({
+        id: r.configId,
+        configPath: path.join(scrapersDir, `${r.configId}.json`),
+        error: r.error,
+        reason: r.reason,
+        htmlSample: r.htmlSample
+      }));
+    const failLogPath = path.join(reportsDir, 'fail-log.json');
+    await fs.writeFile(failLogPath, JSON.stringify(failures, null, 2), 'utf-8');
+
+    // 6. Short-circuit: if no venue changed (and no uncached venue needs publishing),
+    //    the published output is already current — skip normalization, enrichment,
+    //    and publish entirely so a daily run does nothing when nothing updated.
+    const failureWithoutCache = results.some((r) => !r.success && !(cache[r.configId]?.concerts?.length));
+    if (changedCount === 0 && !failureWithoutCache) {
+      console.log('[Orchestrator] No venue changed — skipping normalization, enrichment, and publish.');
+      console.log(`[Orchestrator] Scrape complete (no-op). Failures logged: ${failures.length}.`);
+      return;
+    }
+
     console.log(`[Orchestrator] Gathered ${allScrapedConcerts.length} raw events before processing.`);
 
     // Anchor both normalization passes to a single instant so relative/year-less
     // dates and their dedupe keys stay identical even if the run crosses midnight.
     const runDate = new Date().toISOString();
 
-    // 5. First-pass normalization and deduplication
+    // 7. First-pass normalization and deduplication
     let normalizedConcerts = await processConcerts(allScrapedConcerts, approvedArtistsPath, runDate);
     console.log(`[Orchestrator] First pass: parsed ${normalizedConcerts.length} valid events.`);
 
-    // 6. JIT Metadata Enrichment (if API Key is present)
+    // 8. JIT Metadata Enrichment (if API Key is present)
     const apiKey = process.env.GEMINI_API_KEY;
     if (apiKey) {
       const touringArtists = Array.from(new Set(normalizedConcerts.map((c) => c.artist)));
@@ -57,28 +111,8 @@ async function main() {
       console.log('[Orchestrator] GEMINI_API_KEY not found. Skipping JIT metadata enrichment.');
     }
 
-    // 7. Write static API files to dist/
+    // 9. Write static API files to dist/
     await publishConcerts(normalizedConcerts, distDir);
-
-    // 7. Process failures & save to reports/fail-log.json for self-healing
-    await fs.mkdir(reportsDir, { recursive: true });
-    
-    const failures = results
-      .filter((r) => !r.success)
-      .map((r) => ({
-        id: r.configId,
-        configPath: path.join(scrapersDir, `${r.configId}.json`),
-        error: r.error,
-        reason: r.reason,
-        htmlSample: r.htmlSample
-      }));
-
-    const failLogPath = path.join(reportsDir, 'fail-log.json');
-    await fs.writeFile(
-      failLogPath,
-      JSON.stringify(failures, null, 2),
-      'utf-8'
-    );
 
     console.log(`[Orchestrator] Scrape complete. Successful scrapers: ${configs.length - failures.length}/${configs.length}.`);
     console.log(`[Orchestrator] Failed scrapers log saved to: ${failLogPath}`);
