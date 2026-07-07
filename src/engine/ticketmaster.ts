@@ -24,10 +24,15 @@ function sleep(ms: number): Promise<void> {
 
 // Countries where Ticketmaster (or its international brands) actually operates.
 // Sweeping a country with no real Ticketmaster presence just wastes request
-// budget on empty pages.
+// budget on empty pages. SG/PH confirmed live via a direct Discovery API query
+// (classificationName=music): SG had 66 events including The Weeknd and Post
+// Malone, PH had 4. The rest of Asia (JP, KR, TH, HK, TW, MY, ID, VN, IN, CN)
+// returned 0 in the same check -- Ticketmaster genuinely has little to no
+// presence there (Japan in particular runs on Pia/Zaiko, not Ticketmaster) --
+// so they're deliberately left out rather than added speculatively.
 export const TICKETMASTER_COUNTRIES = [
   'US', 'CA', 'MX', 'GB', 'IE', 'DE', 'AT', 'CH', 'NL', 'BE', 'FR', 'ES', 'PT',
-  'IT', 'PL', 'CZ', 'SE', 'NO', 'DK', 'FI', 'AU', 'NZ', 'ZA', 'AE', 'TR'
+  'IT', 'PL', 'CZ', 'SE', 'NO', 'DK', 'FI', 'AU', 'NZ', 'ZA', 'AE', 'TR', 'SG', 'PH'
 ];
 
 export interface TicketmasterCache {
