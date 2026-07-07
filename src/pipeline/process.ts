@@ -1,11 +1,68 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import * as chrono from 'chrono-node';
+import didYouMean, { ThresholdTypeEnums } from 'didyoumean2';
 import { Concert, ConcertSchema } from '../schemas/concert.js';
 
 /** Format a Date as a timezone-safe YYYY-MM-DD using its local calendar fields. */
 function toLocalIso(d: Date): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+
+// ISO 3166-1 alpha-2 codes for the touring markets this project actually scrapes
+// (Europe + the other major concert markets). Used to build a full-English-name ->
+// code reverse lookup below, since some sites (e.g. schema.org addressCountry
+// microdata on artist tour pages) render the country as a name ("Germany"), not
+// the 2-character code ConcertSchema requires.
+const KNOWN_COUNTRY_CODES = [
+  'AD', 'AT', 'AU', 'BA', 'BE', 'BG', 'BR', 'CA', 'CH', 'CY', 'CZ', 'DE', 'DK', 'EE',
+  'ES', 'FI', 'FR', 'GB', 'GE', 'GR', 'HR', 'HU', 'IE', 'IL', 'IS', 'IT', 'JP', 'LT',
+  'LU', 'LV', 'MC', 'MD', 'ME', 'MK', 'MT', 'MX', 'NL', 'NO', 'NZ', 'PL', 'PT', 'RO',
+  'RS', 'RU', 'SE', 'SG', 'SI', 'SK', 'TR', 'UA', 'US', 'ZA'
+];
+
+/** Reverse lookup: full English country name (lowercased) -> ISO alpha-2 code. */
+function buildCountryNameToCode(): Map<string, string> {
+  const map = new Map<string, string>();
+  try {
+    const displayNames = new Intl.DisplayNames(['en'], { type: 'region' });
+    for (const code of KNOWN_COUNTRY_CODES) {
+      const name = displayNames.of(code);
+      if (name) map.set(name.toLowerCase(), code);
+    }
+  } catch {
+    // Intl.DisplayNames unavailable (older runtime) -- country normalization
+    // just won't apply; raw 2-letter codes still pass through unaffected.
+  }
+  // A couple of common short/alternate forms Intl doesn't produce by default.
+  map.set('uk', 'GB');
+  map.set('the united kingdom', 'GB');
+  map.set('usa', 'US');
+  map.set('the united states', 'US');
+  map.set('the netherlands', 'NL');
+  map.set('czech republic', 'CZ');
+  return map;
+}
+const COUNTRY_NAME_TO_CODE = buildCountryNameToCode();
+
+/** Accepts either a 2-letter code or a full English country name (e.g. schema.org
+ * addressCountry microdata, which some sites render as a name, not a code). */
+export function normalizeCountry(raw: string): string {
+  // Some sites nest a city span inside the same element as the country text with
+  // no separating markup (e.g. Sabaton's tour page: a "tour-country-city" element
+  // whose cheerio .text() yields "Bulgaria, Plovdiv" once the nested city span's
+  // text is concatenated in) -- neither 2-letter codes nor country names contain a
+  // comma, so taking only the part before the first one recovers just the country.
+  // .trim() also strips a trailing non-breaking space from an &nbsp; entity.
+  // A trailing parenthetical alternate name ("Slovakia (Slovak Republic)") is
+  // dropped too -- the primary name before it is what the lookup below expects.
+  const cleaned = raw.split(',')[0].replace(/\s*\([^)]*\)\s*$/, '').trim();
+  // Check the name map first (case-insensitive) -- some informal 2-letter
+  // abbreviations ("UK") are not valid ISO codes themselves (the real code is
+  // "GB"), so a bare length check can't be trusted to mean "already a code".
+  const byName = COUNTRY_NAME_TO_CODE.get(cleaned.toLowerCase());
+  if (byName) return byName;
+  return cleaned.toUpperCase();
 }
 
 // A year-less date is only assumed to be next year once it is more than this many
@@ -48,15 +105,18 @@ function escapeRegExp(string: string): string {
 }
 
 /**
- * Clean common suffixes/prefixes from artist names
+ * Clean common suffixes/prefixes from artist names. The hyphen-led suffixes
+ * require at least one space before the hyphen ("Artist - Live" is a suffix
+ * marker) so a hyphenated stage name with no surrounding spaces ("J-Live",
+ * a real approved artist) isn't mistaken for one and truncated.
  */
 export function cleanArtistName(name: string): string {
   return name
-    .replace(/\s*-\s*sold\s*out\b/gi, '')
+    .replace(/\s+-\s*sold\s*out\b/gi, '')
     .replace(/\s*\(sold\s*out\)/gi, '')
-    .replace(/\s*-\s*live\b.*/gi, '')
-    .replace(/\s*-\s*special\s*guest\b.*/gi, '')
-    .replace(/\s*-\s*tour\b.*/gi, '')
+    .replace(/\s+-\s*live\b.*/gi, '')
+    .replace(/\s+-\s*special\s*guest\b.*/gi, '')
+    .replace(/\s+-\s*tour\b.*/gi, '')
     .replace(/\s*\(support\)/gi, '')
     .replace(/\s*\(live\)/gi, '')
     .trim();
@@ -66,45 +126,97 @@ export type ArtistMatch = { name: string; website?: string | null; socials?: any
 export type ApprovedMatcher = (scrapedName: string) => ArtistMatch | null;
 
 // Names this short are matched only by exact equality, never as a whole-word
-// substring — otherwise "10cc"/"M83"/two-letter names hit inside unrelated titles.
+// substring or fuzzy candidate — otherwise "10cc"/"M83"/two-letter names hit
+// inside unrelated titles, or absorb an unrelated short name within edit distance.
 const SHORT_NAME_MAX = 3;
+
+// Edit-distance-based fuzzy fallback (tier 4) is a last resort for minor scraping
+// noise (a dropped trailing "!", a stray accent). An absolute distance (not a
+// similarity ratio) keeps it tight regardless of name length -- "Unknown Artist"
+// must NOT fuzzy-match "Unknown Hinson" just because both are 14 characters.
+const FUZZY_MAX_EDIT_DISTANCE = 2;
+
+/**
+ * Builds a whole-word/whole-string boundary around an approved name, but only on
+ * the side(s) where the name itself starts/ends with a word character. A name
+ * ending in punctuation (e.g. "Against Me!") has no word character abutting the
+ * end of the string, so `\b` there would never fire — anchoring only where a real
+ * boundary can exist fixes that without weakening the check for ordinary names.
+ */
+function buildSubstringRegex(name: string): RegExp {
+  const escaped = escapeRegExp(name);
+  const left = /^\w/.test(name) ? '\\b' : '';
+  const right = /\w$/.test(name) ? '\\b' : '';
+  return new RegExp(`${left}${escaped}${right}`, 'i');
+}
 
 /**
  * Precompile the approved-artist list into a fast reusable matcher. Regexes are
  * built ONCE here instead of once per scraped concert (the list is ~62k entries
  * and the pipeline runs twice), which is the bulk of the matching cost.
+ *
+ * Matching is tiered so the most specific/trustworthy signal always wins:
+ *   1. Exact match (case-insensitive) — always accepted outright, even if the
+ *      name itself contains "cover"/"tribute" as a substring (David Coverdale,
+ *      Groove Coverage), since an exact hit against the approved list can't be
+ *      a fake tribute act.
+ *   2. Whole-word cover/tribute-band filter (only rejects a literal word, not a
+ *      substring, so "Coverdale"/"Undercover" survive).
+ *   3. Whole-word/whole-string substring match, longest approved name first — so
+ *      a short generic entry ("alan") can never shadow a longer, more specific
+ *      one ("Alan Walker") that also matches.
+ *   4. Fuzzy fallback (edit-distance) for minor scraping noise tier 1-3 miss.
  */
 export function buildApprovedMatcher(approvedArtists: any[]): ApprovedMatcher {
-  const compiled = approvedArtists.map((approved) => {
-    const name: string = typeof approved === 'string' ? approved : approved?.name ?? '';
-    const short = name.length <= SHORT_NAME_MAX;
-    return {
-      approved,
-      name,
-      lower: name.toLowerCase(),
-      // Whole-word match ("The Cure" matches "The Cure in Berlin" but not "The Cured").
-      regex: short ? null : new RegExp(`\\b${escapeRegExp(name)}\\b`, 'i')
-    };
-  });
+  const entries = approvedArtists
+    .map((approved) => {
+      const name: string = typeof approved === 'string' ? approved : approved?.name ?? '';
+      return { approved, name, lower: name.toLowerCase() };
+    })
+    .filter((e) => e.name);
+
+  const exactByLower = new Map(entries.map((e) => [e.lower, e]));
+
+  const longNames = entries.filter((e) => e.name.length > SHORT_NAME_MAX);
+  // Longest-first so a more specific match is tested (and wins) before a shorter one.
+  const bySubstring = longNames
+    .map((e) => ({ ...e, regex: buildSubstringRegex(e.name) }))
+    .sort((a, b) => b.name.length - a.name.length);
+  const fuzzyNames = longNames.map((e) => e.name);
+
+  const toMatch = (e: { name: string; approved: any }): ArtistMatch =>
+    typeof e.approved === 'string'
+      ? { name: e.name }
+      : { name: e.approved.name, website: e.approved.website, socials: e.approved.socials };
 
   return (scrapedName: string): ArtistMatch | null => {
     const cleaned = cleanArtistName(scrapedName);
     const lowerCleaned = cleaned.toLowerCase();
 
-    // Filter out cover bands / tribute nights.
-    if (lowerCleaned.includes('tribute') || lowerCleaned.includes('cover') || lowerCleaned.includes('soundalike')) {
+    // Tier 1: exact match wins outright, before the cover/tribute filter.
+    const exact = exactByLower.get(lowerCleaned);
+    if (exact) return toMatch(exact);
+
+    // Tier 2: whole-word cover/tribute-band filter.
+    if (/\b(tribute|cover|soundalike)\b/i.test(lowerCleaned)) {
       return null;
     }
 
-    for (const c of compiled) {
-      if (!c.name) continue;
-      const hit = c.regex ? c.regex.test(cleaned) : lowerCleaned === c.lower;
-      if (hit) {
-        return typeof c.approved === 'string'
-          ? { name: c.name }
-          : { name: c.approved.name, website: c.approved.website, socials: c.approved.socials };
-      }
+    // Tier 3: whole-word/whole-string substring match, most specific first.
+    for (const e of bySubstring) {
+      if (e.regex.test(cleaned)) return toMatch(e);
     }
+
+    // Tier 4: fuzzy fallback for near-miss scraping noise.
+    const fuzzyHit = didYouMean(cleaned, fuzzyNames, {
+      threshold: FUZZY_MAX_EDIT_DISTANCE,
+      thresholdType: ThresholdTypeEnums.EDIT_DISTANCE
+    });
+    if (typeof fuzzyHit === 'string') {
+      const hit = exactByLower.get(fuzzyHit.toLowerCase());
+      if (hit) return toMatch(hit);
+    }
+
     return null;
   };
 }
@@ -121,7 +233,7 @@ export function matchApprovedArtist(scrapedName: string, approvedArtists: any[])
  * Parse date strings into standard ISO YYYY-MM-DD
  */
 export function parseDate(dateStr: string, baseDateStr: string): string | null {
-  const cleanStr = dateStr.toLowerCase().trim().replace(/,/g, '');
+  const cleanStr = dateStr.toLowerCase().trim().replace(/,/g, '').replace(/\//g, '.');
   const baseDate = new Date(baseDateStr);
   const baseYear = baseDate.getFullYear();
 
@@ -337,7 +449,9 @@ export async function processConcerts(
       date: normalizedDate,
       venue: raw.venue.trim(),
       city: raw.city.trim(),
-      country: raw.country.trim().toUpperCase(),
+      country: normalizeCountry(raw.country),
+      lat: raw.lat,
+      lng: raw.lng,
       ticketUrl: raw.ticketUrl ? raw.ticketUrl.trim() : undefined,
       originalSource: raw.originalSource,
       scrapedAt: raw.scrapedAt
