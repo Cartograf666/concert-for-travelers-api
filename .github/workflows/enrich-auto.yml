@@ -41,40 +41,64 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run MusicBrainz Tier-0 enrichment
-        run: npm run enrich-auto -- ${{ github.event.inputs.chunk_size || '3000' }}
-
-      - name: Commit and push enriched metadata
+      # Run in small sub-chunks with a commit+push after each, instead of one
+      # 3000-artist call committed only at the very end. enrich_auto.ts is already
+      # resumable (marks each artist as it goes and re-reads the DB fresh on every
+      # invocation), so calling it repeatedly with a small N is a pure workflow-level
+      # change -- no script changes needed. A run that gets cancelled or times out
+      # (this job legitimately takes hours at MusicBrainz's ~1 req/s pace) now loses
+      # at most one sub-chunk's worth of work instead of everything back to the
+      # start, the same fix already applied to the Gemini JIT enrichment path.
+      - name: Run MusicBrainz Tier-0 enrichment (checkpointed)
         run: |
-          if git diff --quiet data/approved_artists.json; then
-            echo "No new artist metadata enriched this run."
-          else
-            git config --local user.email "github-actions[bot]@users.noreply.github.com"
-            git config --local user.name "github-actions[bot]"
-            git add data/approved_artists.json
-            git commit -m "auto: MusicBrainz Tier-0 enrichment [skip ci]"
+          set -eo pipefail
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
 
-            # main gets concurrent writes (daily-scrape, self-heal auto-merges,
-            # other enrich runs) -- retry with rebase instead of failing outright.
-            pushed=false
-            for i in 1 2 3 4 5; do
-              if git push; then
-                pushed=true
-                break
-              fi
-              echo "Push rejected (concurrent write), retrying with rebase ($i/5)..."
-              git fetch origin main
-              if ! git rebase origin/main; then
-                echo "::warning::Rebase conflict on data/approved_artists.json -- dropping this run's enrichment commit."
-                git rebase --abort
-                break
-              fi
-              sleep $((RANDOM % 5 + 2))
-            done
+          SUB_CHUNK=150
+          REMAINING=${{ github.event.inputs.chunk_size || '3000' }}
 
-            if [ "$pushed" = "true" ]; then
-              echo "Committed and pushed Tier-0 enrichment."
-            else
-              echo "::warning::Could not push Tier-0 enrichment after retries -- skipped for this run."
+          while [ "$REMAINING" -gt 0 ]; do
+            THIS_RUN=$SUB_CHUNK
+            if [ "$REMAINING" -lt "$SUB_CHUNK" ]; then THIS_RUN=$REMAINING; fi
+
+            npm run enrich-auto -- "$THIS_RUN" 2>&1 | tee /tmp/enrich-auto.log
+
+            if grep -q "Nothing pending for the auto tier" /tmp/enrich-auto.log; then
+              echo "Nothing left to process -- stopping the loop early."
+              break
             fi
-          fi
+
+            if git diff --quiet data/approved_artists.json; then
+              echo "Sub-chunk made no changes to commit."
+            else
+              git add data/approved_artists.json
+              git commit -m "auto: MusicBrainz Tier-0 enrichment [skip ci]"
+
+              # main gets concurrent writes (daily-scrape, self-heal auto-merges,
+              # other enrich runs) -- retry with rebase instead of failing outright.
+              pushed=false
+              for i in 1 2 3 4 5; do
+                if git push; then
+                  pushed=true
+                  break
+                fi
+                echo "Push rejected (concurrent write), retrying with rebase ($i/5)..."
+                git fetch origin main
+                if ! git rebase origin/main; then
+                  echo "::warning::Rebase conflict on data/approved_artists.json -- dropping this sub-chunk's commit."
+                  git rebase --abort
+                  break
+                fi
+                sleep $((RANDOM % 5 + 2))
+              done
+
+              if [ "$pushed" = "true" ]; then
+                echo "Committed and pushed this sub-chunk's Tier-0 enrichment."
+              else
+                echo "::warning::Could not push this sub-chunk after retries -- its work stays local and will be redone next run."
+              fi
+            fi
+
+            REMAINING=$((REMAINING - THIS_RUN))
+          done
