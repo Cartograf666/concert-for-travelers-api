@@ -151,8 +151,17 @@ export async function repairScraperConfig(
   generateSelectors: GenerateSelectorsFn = defaultGenerateSelectors
 ): Promise<{ success: boolean; config?: ScraperConfig; error?: string }> {
   try {
+    // Defense-in-depth: configPath arrives from the fail-log, which is an untrusted CI
+    // artifact. Refuse to read/write anything outside scrapers/ so a tampered path can
+    // never make the healer overwrite workflow files or read secrets.
+    const scrapersRoot = path.resolve(process.cwd(), 'scrapers');
+    const resolvedConfigPath = path.resolve(configPath);
+    if (resolvedConfigPath !== scrapersRoot && !resolvedConfigPath.startsWith(scrapersRoot + path.sep)) {
+      return { success: false, error: `Refusing to heal config outside scrapers/: ${configPath}` };
+    }
+
     // 1. Read broken configuration
-    const configContent = await fs.readFile(configPath, 'utf-8');
+    const configContent = await fs.readFile(resolvedConfigPath, 'utf-8');
     const brokenConfig = ScraperConfigSchema.parse(JSON.parse(configContent));
 
     if (brokenConfig.type !== 'static_selectors' || !brokenConfig.selectors) {
@@ -168,7 +177,7 @@ export async function repairScraperConfig(
     const jsonLdConcerts = extractJsonLd(brokenConfig, htmlSample, new Date().toISOString());
     if (jsonLdConcerts.length > 0) {
       const jsonLdConfig = ScraperConfigSchema.parse({ ...brokenConfig, type: 'jsonld' });
-      await fs.writeFile(configPath, JSON.stringify(jsonLdConfig, null, 2), 'utf-8');
+      await fs.writeFile(resolvedConfigPath, JSON.stringify(jsonLdConfig, null, 2), 'utf-8');
       console.log(`[Repair] Recovered ${jsonLdConcerts.length} events via JSON-LD; switched ${brokenConfig.id} to type 'jsonld' (no LLM used).`);
       return { success: true, config: jsonLdConfig };
     }
