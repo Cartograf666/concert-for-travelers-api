@@ -1,0 +1,19 @@
+{
+  "id": "esplanade-theatres-singapore-singapore",
+  "domain": "esplanade.com.sg",
+  "url": "https://www.esplanade.com.sg/whats-on",
+  "type": "static_selectors",
+  "maxRetries": 3,
+  "requestDelayMs": 1000,
+  "selectors": {
+    "eventBlock": "[itemtype*='Event'], article[data-event-id], .event-card, .show-item, li[data-show], div[class*='event-item']",
+    "artist": "[itemprop='name'], .show-title, .event-title, h2.title, h3.title",
+    "date": "[itemprop='startDate'], .event-date, .date-time, .show-date, time",
+    "ticketUrl": "[itemprop='url'], a[href*='ticket'], a[href*='booking'], .ticket-link",
+    "venueNameFallback": "Esplanade - Theatres on the Bay",
+    "cityNameFallback": "Singapore",
+    "countryNameFallback": "SG",
+    "lat": 1.2905,
+    "lng": 103.8597
+  }
+}
