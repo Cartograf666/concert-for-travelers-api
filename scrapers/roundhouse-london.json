@@ -1,0 +1,17 @@
+{
+  "id": "roundhouse-london",
+  "domain": "roundhouse.org.uk",
+  "url": "https://www.roundhouse.org.uk/whats-on/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-card, .featured-card",
+    "artist": ".event-card__title, .featured-card__title",
+    "date": ".event-card__date, .featured-card__date",
+    "ticketUrl": "a.event-card__link, a.featured-card",
+    "venueNameFallback": "Roundhouse",
+    "cityNameFallback": "London",
+    "countryNameFallback": "GB",
+    "lat": 51.543111,
+    "lng": -0.151752
+  }
+}
