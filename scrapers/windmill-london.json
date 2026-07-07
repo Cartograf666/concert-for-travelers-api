@@ -1,0 +1,15 @@
+{
+  "id": "windmill-london",
+  "domain": "windmillbrixton.co.uk",
+  "url": "https://www.windmillbrixton.co.uk/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "a.EventLink",
+    "artist": ".title.name",
+    "date": ".eventDate",
+    "ticketUrl": "a.EventLink",
+    "venueNameFallback": "The Windmill",
+    "cityNameFallback": "London",
+    "countryNameFallback": "GB"
+  }
+}
