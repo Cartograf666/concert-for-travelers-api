@@ -11,17 +11,24 @@ permissions:
   id-token: write
   issues: write # open/update a dedup'd failure issue (see "Alert on failure" step)
 
-concurrency:
-  group: 'pages'
-  cancel-in-progress: true
-
 jobs:
+  # Own concurrency group (shared with enrich-auto.yml/enrich-database.yml) because
+  # this job's own "Commit and Push Enriched Artist Metadata" step below writes the
+  # same data/approved_artists.json those workflows do. Previously this whole
+  # workflow only had the 'pages' group, so a same-file write here could run fully
+  # in parallel with an enrich-* run -- both racing to push, repeatedly hitting an
+  # unresolvable rebase conflict and dropping real enrichment work (observed live:
+  # 3 consecutive enrich-auto sub-chunks lost to this race in one run). Splitting
+  # deploy into its own job below is what lets this one join artist-db-write without
+  # losing the pages-specific cancel-in-progress behavior.
   scrape:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: artist-db-write
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 30 # a wedged run must not sit on the 6h Actions default ceiling
+    outputs:
+      should_deploy: ${{ steps.health-check.outputs.should_deploy }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -240,13 +247,45 @@ jobs:
         with:
           path: './dist'
 
+      # Turn a silent scheduled-run failure into a visible, deduplicated GitHub issue
+      # (GitHub only emails the workflow author, and mutes that after repeated failures).
+      - name: Alert on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          TITLE="🚨 Daily concert scrape failed"
+          num=$(gh issue list --state open --search "$TITLE in:title" --json number --jq '.[0].number // empty')
+          if [ -n "$num" ]; then
+            gh issue comment "$num" --body "Failed again on $(date -u '+%Y-%m-%d %H:%M UTC') — $RUN_URL"
+          else
+            gh issue create --title "$TITLE" --body "The daily scrape workflow failed. Logs: $RUN_URL"
+          fi
+
+  # Separate job (not just a step) so its 'pages' concurrency lock -- which cancels
+  # a stale in-progress deploy the moment a newer one starts -- only ever applies to
+  # the actual Pages deployment, never to the scrape/enrich job above (which needs
+  # to queue, not cancel, against enrich-auto/enrich-database instead; see the
+  # comment on the `scrape` job). `actions/deploy-pages` picks up the artifact
+  # `actions/upload-pages-artifact` uploaded in the `scrape` job automatically --
+  # no explicit download step needed since both jobs belong to the same workflow run.
+  deploy:
+    needs: scrape
+    if: needs.scrape.outputs.should_deploy == 'true'
+    concurrency:
+      group: pages
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
-        if: steps.health-check.outputs.should_deploy == 'true'
         id: deployment
         uses: actions/deploy-pages@v4
 
-      # Turn a silent scheduled-run failure into a visible, deduplicated GitHub issue
-      # (GitHub only emails the workflow author, and mutes that after repeated failures).
       - name: Alert on failure
         if: failure()
         env:

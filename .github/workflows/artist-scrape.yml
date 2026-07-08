@@ -2,7 +2,7 @@ name: Artist Tour-Page Scrape
 
 on:
   schedule:
-    - cron: '0 4 * * 0' # Weekly, Sunday 04:00 UTC -- tour dates don't change hour to hour
+    - cron: '0 4 * * *' # Daily, 04:00 UTC -- 2205 targets / 800-per-run cap cycles the full list every ~3 days
   workflow_dispatch:
 
 permissions:
