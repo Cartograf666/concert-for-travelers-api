@@ -94,6 +94,125 @@ export async function publishArtistCatalog(approvedArtists: any[], outputDir: st
   console.log(`[Publisher] Published artist catalog: ${catalog.length} artists -> dist/artists.json`);
 }
 
+const EARTH_RADIUS_KM = 6371;
+// How close two same-country venues must be (by geocoded lat/lng) to land in the
+// same city bucket. Chosen to comfortably cover the confirmed real case that
+// motivated this (Tokyo ward names -- Shibuya City/Koto City/Minato-ku/Ota-ku --
+// plus Tokorozawa ~30km out, all scraped under their own literal city string
+// instead of "Tokyo") with a little margin. A smaller radius would miss that
+// case; a much larger one risks merging genuinely distinct major cities that
+// happen to sit close together (e.g. Rotterdam/The Hague, Cologne/Düsseldorf) --
+// there's no radius that's globally perfect, this is the documented tradeoff.
+const CLUSTER_RADIUS_KM = 35;
+
+function haversineKm(lat1: number, lng1: number, lat2: number, lng2: number): number {
+  const toRad = (d: number) => (d * Math.PI) / 180;
+  const dLat = toRad(lat2 - lat1);
+  const dLng = toRad(lng2 - lng1);
+  const a = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng / 2) ** 2;
+  return 2 * EARTH_RADIUS_KM * Math.asin(Math.sqrt(a));
+}
+
+interface CityRep {
+  country: string;
+  city: string;
+  latSum: number;
+  lngSum: number;
+  geoCount: number;
+  totalCount: number;
+}
+
+/**
+ * Fixes city-name fragmentation (kanji vs romaji, ward vs metro, transliteration
+ * variants) by clustering same-country venues within CLUSTER_RADIUS_KM of each
+ * other -- using lat/lng already geocoded per-venue -- into one canonical city
+ * bucket, instead of trusting each source's raw scraped city string verbatim.
+ * A concert missing lat/lng can't be clustered and keeps its own raw city string
+ * as a singleton bucket (unchanged prior behavior for those).
+ *
+ * Returns a map from "country|rawCityString" -> canonical city name to
+ * group/display under.
+ */
+function buildCityCanonicalMap(concerts: Concert[]): Map<string, string> {
+  // One representative point per distinct (country, raw city string): centroid
+  // of whichever of its concerts have lat/lng, plus a concert count used to pick
+  // the canonical name later (most-represented raw string wins).
+  const reps = new Map<string, CityRep>();
+  for (const c of concerts) {
+    const key = `${c.country}|${c.city}`;
+    let rep = reps.get(key);
+    if (!rep) {
+      rep = { country: c.country, city: c.city, latSum: 0, lngSum: 0, geoCount: 0, totalCount: 0 };
+      reps.set(key, rep);
+    }
+    rep.totalCount++;
+    if (typeof c.lat === 'number' && typeof c.lng === 'number') {
+      rep.latSum += c.lat;
+      rep.lngSum += c.lng;
+      rep.geoCount++;
+    }
+  }
+
+  const repKeys = Array.from(reps.keys());
+  const repList = repKeys.map((key) => {
+    const r = reps.get(key)!;
+    return {
+      key,
+      country: r.country,
+      city: r.city,
+      totalCount: r.totalCount,
+      lat: r.geoCount > 0 ? r.latSum / r.geoCount : null,
+      lng: r.geoCount > 0 ? r.lngSum / r.geoCount : null,
+    };
+  });
+
+  // Union-find over reps that have a centroid, same country, within radius.
+  // Distinct (country, city) pairs are typically in the low thousands even for
+  // an 11k+ concert catalog, so the O(n^2) comparison here is negligible.
+  const parent = repList.map((_, i) => i);
+  function find(i: number): number {
+    while (parent[i] !== i) {
+      parent[i] = parent[parent[i]];
+      i = parent[i];
+    }
+    return i;
+  }
+  function union(i: number, j: number): void {
+    const ri = find(i);
+    const rj = find(j);
+    if (ri !== rj) parent[ri] = rj;
+  }
+
+  for (let i = 0; i < repList.length; i++) {
+    if (repList[i].lat === null) continue;
+    for (let j = i + 1; j < repList.length; j++) {
+      if (repList[j].lat === null || repList[i].country !== repList[j].country) continue;
+      if (haversineKm(repList[i].lat!, repList[i].lng!, repList[j].lat!, repList[j].lng!) <= CLUSTER_RADIUS_KM) {
+        union(i, j);
+      }
+    }
+  }
+
+  const clusters = new Map<number, typeof repList>();
+  for (let i = 0; i < repList.length; i++) {
+    const root = find(i);
+    if (!clusters.has(root)) clusters.set(root, []);
+    clusters.get(root)!.push(repList[i]);
+  }
+
+  const canonicalMap = new Map<string, string>();
+  for (const members of clusters.values()) {
+    const canonical = [...members].sort((a, b) => {
+      if (b.totalCount !== a.totalCount) return b.totalCount - a.totalCount;
+      if (b.city.length !== a.city.length) return b.city.length - a.city.length;
+      return a.city.localeCompare(b.city);
+    })[0].city;
+    for (const m of members) canonicalMap.set(m.key, canonical);
+  }
+
+  return canonicalMap;
+}
+
 /**
  * Deletes {slug}.json files in a directory that are not part of the current run,
  * so entities that stopped touring don't linger as fetchable ghost endpoints.
@@ -134,7 +253,10 @@ export async function publishConcerts(concerts: Concert[], outputDir: string): P
     return a.city.localeCompare(b.city);
   });
 
-  // 1. Group concerts by artist and city
+  // 1. Group concerts by artist and city (city grouping goes through the geo
+  // canonical map so ward/kanji/transliteration fragments of the same metro
+  // land in one bucket -- see buildCityCanonicalMap).
+  const cityCanonicalMap = buildCityCanonicalMap(concerts);
   const concertsByArtist = new Map<string, Concert[]>();
   const concertsByCity = new Map<string, Concert[]>();
   const uniqueArtists = new Set<string>();
@@ -142,7 +264,8 @@ export async function publishConcerts(concerts: Concert[], outputDir: string): P
 
   for (const concert of concerts) {
     uniqueArtists.add(concert.artist);
-    uniqueCities.add(concert.city);
+    const canonicalCity = cityCanonicalMap.get(`${concert.country}|${concert.city}`) ?? concert.city;
+    uniqueCities.add(canonicalCity);
 
     const artistSlug = slugify(concert.artist);
     if (!concertsByArtist.has(artistSlug)) {
@@ -150,7 +273,7 @@ export async function publishConcerts(concerts: Concert[], outputDir: string): P
     }
     concertsByArtist.get(artistSlug)!.push(concert);
 
-    const citySlug = slugify(concert.city);
+    const citySlug = slugify(canonicalCity);
     if (!concertsByCity.has(citySlug)) {
       concertsByCity.set(citySlug, []);
     }

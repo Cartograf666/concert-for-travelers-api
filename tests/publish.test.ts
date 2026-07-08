@@ -207,3 +207,50 @@ test('Publisher - artist catalog: a slug collision keeps the first entry, matchi
   });
 });
 
+test('Publisher - city grouping clusters nearby same-country venues (ward/kanji fragmentation) under one canonical bucket', async () => {
+  await withTempDir(async (dir) => {
+    // Tokorozawa (Belluna Dome) is a real ~30km-out Tokyo-metro venue that scraped
+    // sources report under its own literal city string -- the exact case that
+    // motivated geo-clustering (previously landed in its own dist/cities/*.json,
+    // invisible to anyone browsing "Tokyo").
+    const concerts = [
+      makeConcert({ artist: 'A', city: 'Tokyo', country: 'JP', lat: 35.6762, lng: 139.6503 }),
+      makeConcert({ artist: 'B', city: 'Tokyo', country: 'JP', lat: 35.6762, lng: 139.6503 }),
+      makeConcert({ artist: 'C', city: '所沢市', country: 'JP', lat: 35.7992, lng: 139.4690 }),
+      // Different country, same coordinates as nothing else here -- must not be
+      // pulled into the JP cluster just because a city string happens to match.
+      makeConcert({ artist: 'D', city: 'Paris', country: 'FR', lat: 48.8566, lng: 2.3522 })
+    ];
+
+    await publishConcerts(concerts, dir);
+
+    const cityFiles = (await fs.readdir(path.join(dir, 'cities'))).sort();
+    // "所沢市" merges into the more-represented "Tokyo" bucket instead of getting
+    // its own file; Paris (different country) stays separate.
+    assert.deepStrictEqual(cityFiles, ['paris.json', 'tokyo.json']);
+
+    const tokyo = JSON.parse(await fs.readFile(path.join(dir, 'cities', 'tokyo.json'), 'utf-8'));
+    assert.strictEqual(tokyo.length, 3);
+    assert.ok(tokyo.some((c: any) => c.artist === 'C'), 'the Tokorozawa concert must be included in the Tokyo bucket');
+
+    const index = JSON.parse(await fs.readFile(path.join(dir, 'index.json'), 'utf-8'));
+    assert.strictEqual(index.stats.uniqueCities, 2);
+  });
+});
+
+test('Publisher - city grouping falls back to the raw city string when lat/lng is missing (unclusterable)', async () => {
+  await withTempDir(async (dir) => {
+    const concerts = [
+      makeConcert({ artist: 'A', city: 'Tokyo', country: 'JP' }), // no lat/lng
+      makeConcert({ artist: 'B', city: '所沢市', country: 'JP' }) // no lat/lng
+    ];
+
+    await publishConcerts(concerts, dir);
+
+    // Without geocoding, each raw city string is its own singleton bucket -- same
+    // as before city-clustering existed.
+    const cityFiles = (await fs.readdir(path.join(dir, 'cities'))).sort();
+    assert.strictEqual(cityFiles.length, 2);
+  });
+});
+
