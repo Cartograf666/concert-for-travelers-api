@@ -41,10 +41,11 @@ jobs:
       - name: Rank candidates
         env:
           LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
+          TOP_N_INPUT: ${{ github.event.inputs.top_n }}
         run: |
-          npm run rank-scraper-candidates -- "${{ github.event.inputs.top_n }}" | tee /tmp/rank-output.log
+          npm run rank-scraper-candidates -- "$TOP_N_INPUT" | tee /tmp/rank-output.log
           {
-            echo '## Tour-page scraper candidates (top '"${{ github.event.inputs.top_n }}"' by Last.fm listeners)'
+            echo "## Tour-page scraper candidates (top $TOP_N_INPUT by Last.fm listeners)"
             echo ''
             echo '```'
             cat /tmp/rank-output.log

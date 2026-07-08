@@ -247,6 +247,11 @@ jobs:
               if ! git rebase origin/main; then
                 echo "::warning::Rebase conflict on data/artists/ -- dropping this run's enrichment commit."
                 git rebase --abort
+                # Resync to origin BEFORE the conflict-drop commit below -- otherwise that
+                # commit lands on the same stale base the push was just rejected against
+                # and is itself guaranteed to fail as a non-fast-forward.
+                git fetch origin main
+                git reset --hard origin/main
                 npm run record-conflict-drop -- daily-scrape || true
                 git add data/conflict-drops.json && git commit -m "chore: record conflict-drop metric [skip ci]" && git push || true
                 break
@@ -261,7 +266,15 @@ jobs:
             fi
           fi
 
+      # if: always() -- without it, this step (like every step below with no
+      # override) implicitly requires success(), so it gets skipped exactly when
+      # the health-check gate fails (0 concerts or a >50% drop). fail-log.json is
+      # already written to reports/ well before that gate runs, but self-heal.yml
+      # (triggered by this workflow completing) downloads this exact artifact --
+      # skipping the upload here meant self-heal silently treated "no artifact" as
+      # "nothing to heal" on precisely the runs where scraper breakage was worst.
       - name: Upload fail log report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: scraper-reports

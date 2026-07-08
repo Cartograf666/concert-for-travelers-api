@@ -14,6 +14,7 @@ permissions:
 jobs:
   heal:
     runs-on: ubuntu-latest
+    timeout-minutes: 60 # a wedged Playwright install/Gemini repair call/test run must not sit on the 6h Actions default ceiling
     # Run only if the triggering workflow succeeded or completed, and we have failures to check
     steps:
       - name: Checkout repository

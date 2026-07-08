@@ -28,6 +28,11 @@ concurrency:
 jobs:
   enrich:
     runs-on: ubuntu-latest
+    # Shares the artist-db-write concurrency lock (cancel-in-progress: false) with
+    # enrich-auto.yml, which caps itself at 165min specifically so a long run here
+    # doesn't block that workflow's 3h cron trigger for hours. This job had no cap
+    # at all (falling back to GitHub's 360min default) -- bounded to match.
+    timeout-minutes: 165
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -63,7 +68,10 @@ jobs:
       - name: Run Enrichment
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: npx tsx src/scripts/enrich_via_gemini_search.ts ${{ github.event.inputs.chunk_size }} /tmp/results.json ${{ github.event.inputs.batch_size }} ${{ github.event.inputs.delay_ms }}
+          CHUNK_SIZE_INPUT: ${{ github.event.inputs.chunk_size }}
+          BATCH_SIZE_INPUT: ${{ github.event.inputs.batch_size }}
+          DELAY_MS_INPUT: ${{ github.event.inputs.delay_ms }}
+        run: npx tsx src/scripts/enrich_via_gemini_search.ts "$CHUNK_SIZE_INPUT" /tmp/results.json "$BATCH_SIZE_INPUT" "$DELAY_MS_INPUT"
 
       - name: Apply Enrichment Results
         run: npm run enrich-sites apply /tmp/results.json
@@ -92,6 +100,11 @@ jobs:
               if ! git rebase origin/main; then
                 echo "::warning::Rebase conflict -- dropping this run's enrichment commit."
                 git rebase --abort
+                # Resync to origin BEFORE the conflict-drop commit below -- otherwise that
+                # commit lands on the same stale base the push was just rejected against
+                # and is itself guaranteed to fail as a non-fast-forward.
+                git fetch origin main
+                git reset --hard origin/main
                 npm run record-conflict-drop -- enrich-database || true
                 git add data/conflict-drops.json && git commit -m "chore: record conflict-drop metric [skip ci]" && git push || true
                 break

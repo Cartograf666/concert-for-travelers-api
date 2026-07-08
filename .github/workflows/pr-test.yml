@@ -12,9 +12,13 @@ on:
       - 'package.json'
       - 'tsconfig.json'
 
+permissions:
+  contents: read
+
 jobs:
   verify:
     runs-on: ubuntu-latest
+    timeout-minutes: 30 # a wedged run must not sit on the 6h Actions default ceiling
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
