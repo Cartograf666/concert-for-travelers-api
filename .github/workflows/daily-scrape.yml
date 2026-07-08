@@ -297,6 +297,7 @@ jobs:
         if: failure()
         uses: ./.github/actions/alert-on-failure
         with:
+          workflow-name: Daily concert scrape
           job-label: scrape
 
   # Separate job (not just a step) so its 'pages' concurrency lock -- which cancels
@@ -337,4 +338,5 @@ jobs:
         if: failure()
         uses: ./.github/actions/alert-on-failure
         with:
+          workflow-name: Daily concert scrape
           job-label: deploy

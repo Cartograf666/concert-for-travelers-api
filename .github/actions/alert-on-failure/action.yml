@@ -1,10 +1,13 @@
 name: 'Alert on failure'
 description: >-
   Opens or comments on a deduplicated GitHub issue when the calling job failed.
-  Shared by daily-scrape.yml's scrape and deploy jobs so the alerting logic
-  (issue search/comment/create) exists once, with a per-job label so the two
-  failure classes are distinguishable in the issue title.
+  Shared across every scheduled workflow in this repo so the alerting logic
+  (issue search/comment/create) exists once, with a per-workflow/per-job label
+  so each failure class is distinguishable in the issue title.
 inputs:
+  workflow-name:
+    description: 'Human-readable workflow name for the issue title (e.g. "Daily concert scrape", "Enrich Artists Tier-0")'
+    required: true
   job-label:
     description: 'Short label identifying which job failed (e.g. "scrape", "deploy"), used in the issue title'
     required: true
@@ -15,13 +18,14 @@ runs:
       shell: bash
       env:
         GH_TOKEN: ${{ github.token }}
+        WORKFLOW_NAME: ${{ inputs.workflow-name }}
         JOB_LABEL: ${{ inputs.job-label }}
       run: |
         RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-        TITLE="🚨 Daily concert scrape: ${JOB_LABEL} failed"
+        TITLE="🚨 ${WORKFLOW_NAME}: ${JOB_LABEL} failed"
         num=$(gh issue list --state open --search "$TITLE in:title" --json number --jq '.[0].number // empty')
         if [ -n "$num" ]; then
           gh issue comment "$num" --body "Failed again on $(date -u '+%Y-%m-%d %H:%M UTC') — $RUN_URL"
         else
-          gh issue create --title "$TITLE" --body "The daily concert scrape workflow's ${JOB_LABEL} job failed. Logs: $RUN_URL"
+          gh issue create --title "$TITLE" --body "The ${WORKFLOW_NAME} workflow's ${JOB_LABEL} job failed. Logs: $RUN_URL"
         fi

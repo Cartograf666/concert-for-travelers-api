@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  issues: write # open/update a dedup'd failure issue (see "Alert on failure" step)
 
 concurrency:
   group: 'discover-artists'
@@ -66,3 +67,11 @@ jobs:
             done
             [ "$pushed" = "true" ] && echo "Pushed new artists." || echo "::warning::Could not push after retries -- skipped."
           fi
+
+      # Turn a silent scheduled-run failure into a visible, deduplicated GitHub issue.
+      - name: Alert on failure
+        if: failure()
+        uses: ./.github/actions/alert-on-failure
+        with:
+          workflow-name: Discover Popular Artists
+          job-label: discover

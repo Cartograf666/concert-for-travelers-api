@@ -110,7 +110,10 @@ async function main() {
   const artists = await loadDb();
   const pending: string[] = [];
   for (const a of artists) {
-    if (!a.enrichedAt) pending.push(a.name);
+    // sitesTriedAt: this same tier already looked at this artist and found nothing
+    // (see enrich_sites.ts apply()) -- skip re-asking, but it's distinct from
+    // enrichedAt so a clean miss here doesn't strand the artist from other tiers.
+    if (!a.enrichedAt && !a.sitesTriedAt) pending.push(a.name);
     if (pending.length >= limit) break;
   }
 

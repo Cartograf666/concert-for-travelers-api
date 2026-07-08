@@ -35,6 +35,7 @@ interface ArtistEntry {
   tourUrl?: string | null;
   socials?: ArtistSocials;
   enrichedAt?: string;
+  sitesTriedAt?: string;
 }
 
 /** One artist as produced by a research agent. */
@@ -88,7 +89,11 @@ async function select(n: number, outFile?: string): Promise<void> {
   const artists = await loadDb();
   const pending: string[] = [];
   for (const a of artists) {
-    if (!a.enrichedAt) pending.push(a.name);
+    // enrichedAt: a genuine hit from ANY tier. sitesTriedAt: this tier specifically
+    // already looked and found nothing -- still skip re-selecting it (no point
+    // asking Gemini the same question again), but distinct from enrichedAt so a
+    // clean miss here doesn't strand the artist from every OTHER enrichment tier.
+    if (!a.enrichedAt && !a.sitesTriedAt) pending.push(a.name);
     if (pending.length >= n) break;
   }
   const json = JSON.stringify(pending, null, 2);
@@ -126,14 +131,24 @@ async function apply(resultsFile: string): Promise<void> {
     const entry = artists[idx];
     const website = r.website || entry.website || null;
     const tourUrl = r.tourUrl || entry.tourUrl || null;
+    const socials = normalizeSocials(r.socials ?? entry.socials);
+    // A genuine hit needs website/tourUrl, or a social that wasn't already there --
+    // NOT just "the agent responded" (every result gets sitesTriedAt regardless).
+    // Setting enrichedAt on a confident-but-empty response would strand the artist
+    // from every other enrichment tier forever (enrichedAt is the cross-tier marker
+    // every tier's `pending` filter checks), with no way to retry as a better model,
+    // a newly-added Wikidata page, or a future MusicBrainz entry comes online.
+    const foundSomethingNew = Boolean(website) || Boolean(tourUrl)
+      || Object.entries(socials).some(([k, v]) => v && !(entry.socials as any)?.[k]);
     artists[idx] = {
       ...entry,
       website,
       tourUrl,
-      socials: normalizeSocials(r.socials ?? entry.socials),
-      enrichedAt: now
+      socials,
+      sitesTriedAt: now,
+      ...(foundSomethingNew ? { enrichedAt: now } : {})
     };
-    enriched++;
+    if (foundSomethingNew) enriched++;
     if (website) websitesFound++;
     if (tourUrl) toursFound++;
 
@@ -179,13 +194,18 @@ async function stats(): Promise<void> {
   const enriched = artists.filter(a => a.enrichedAt).length;
   const websites = artists.filter(a => a.website).length;
   const tours = artists.filter(a => a.tourUrl).length;
+  // Matches select()'s actual pending filter: a clean miss (sitesTriedAt, no
+  // enrichedAt) isn't "enriched" but also isn't re-selectable by this tier.
+  const pending = artists.filter(a => !a.enrichedAt && !a.sitesTriedAt).length;
+  const cleanMisses = artists.filter(a => a.sitesTriedAt && !a.enrichedAt).length;
   const pct = ((enriched / total) * 100).toFixed(2);
   console.log(`[enrich-sites] catalog progress`);
   console.log(`  total artists : ${total}`);
   console.log(`  enriched      : ${enriched} (${pct}%)`);
   console.log(`  with website  : ${websites}`);
   console.log(`  with tourUrl  : ${tours}`);
-  console.log(`  remaining     : ${total - enriched}`);
+  console.log(`  tried, no hit : ${cleanMisses} (sitesTriedAt set, not re-selected, still eligible for other tiers)`);
+  console.log(`  remaining     : ${pending}`);
 }
 
 async function main() {
