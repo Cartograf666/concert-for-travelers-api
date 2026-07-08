@@ -715,7 +715,11 @@ function buildArtistSocials(socials: any): Concert['artistSocials'] {
 export async function processConcerts(
   rawConcerts: Partial<Concert>[],
   approvedArtistsPath: string,
-  baseDateStr: string = new Date().toISOString()
+  baseDateStr: string = new Date().toISOString(),
+  // Lets a caller that already needs the parsed whitelist for something else
+  // (e.g. publishArtistCatalog) capture it from this call instead of paying for
+  // its own separate read+parse of the same ~63k-entry file right afterward.
+  onApprovedArtistsLoaded?: (approvedArtists: any[]) => void
 ): Promise<Concert[]> {
   let approvedArtists: any[] = [];
   try {
@@ -724,6 +728,7 @@ export async function processConcerts(
   } catch (err: any) {
     console.warn(`[Pipeline] Could not load approved artists list. Proceeding with empty list: ${err.message}`);
   }
+  onApprovedArtistsLoaded?.(approvedArtists);
 
   // Compile the matcher once for the whole batch instead of per concert.
   const match = buildApprovedMatcher(approvedArtists);

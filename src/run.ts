@@ -192,8 +192,14 @@ async function main() {
     // many raw events came in) can take long enough on a big run to otherwise look
     // like the job hung between "Gathered N raw events" and the next line.
     console.log(`[Orchestrator] Matching ${allScrapedConcerts.length} raw events against the approved-artist whitelist...`);
+    // Captured from whichever processConcerts call below runs last (pass2 if JIT
+    // enrichment ran, else pass1) -- reused by the catalog step further down so it
+    // doesn't need its own separate read+parse of the same ~63k-entry file.
+    let approvedArtistsSnapshot: any[] = [];
+    const captureApprovedArtists = (a: any[]) => { approvedArtistsSnapshot = a; };
+
     let passStart = Date.now();
-    let normalizedConcerts = await processConcerts(allScrapedConcerts, approvedArtistsPath, runDate);
+    let normalizedConcerts = await processConcerts(allScrapedConcerts, approvedArtistsPath, runDate, captureApprovedArtists);
     console.log(`[Orchestrator] First pass: parsed ${normalizedConcerts.length} valid events (${((Date.now() - passStart) / 1000).toFixed(1)}s).`);
 
     // 8. JIT Metadata Enrichment (if any Gemini API key is present)
@@ -207,7 +213,7 @@ async function main() {
 
       // Re-run normalization to pick up updated website and social links from disk
       passStart = Date.now();
-      normalizedConcerts = await processConcerts(allScrapedConcerts, approvedArtistsPath, runDate);
+      normalizedConcerts = await processConcerts(allScrapedConcerts, approvedArtistsPath, runDate, captureApprovedArtists);
       console.log(`[Orchestrator] Second pass (post-enrichment): loaded updated metadata (${((Date.now() - passStart) / 1000).toFixed(1)}s).`);
     } else {
       console.log('[Orchestrator] No GEMINI_API_KEY found. Skipping JIT metadata enrichment.');
@@ -239,8 +245,7 @@ async function main() {
     // concert) -- the consumer app's autocomplete + ID-join source. Best-effort:
     // never let this fail the whole run.
     try {
-      const approvedArtistsRaw = await fs.readFile(approvedArtistsPath, 'utf-8');
-      await publishArtistCatalog(JSON.parse(approvedArtistsRaw), distDir);
+      await publishArtistCatalog(approvedArtistsSnapshot, distDir);
     } catch (err: any) {
       console.warn(`[Orchestrator] Skipped artist catalog publish: ${err.message}`);
     }

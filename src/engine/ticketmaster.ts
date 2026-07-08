@@ -105,7 +105,9 @@ export function mapEventToConcert(event: TmEvent, scrapedAt: string): Partial<Co
     lat: Number.isFinite(lat) ? lat : undefined,
     lng: Number.isFinite(lng) ? lng : undefined,
     festival: isMultiArtist && event.name ? { name: event.name, url: event.url } : undefined,
-    lineup: isMultiArtist ? attractions.map((a) => a.name).filter((n): n is string => !!n) : undefined,
+    // attractions[0] is already `artist` above -- exclude it so the headliner
+    // doesn't also show up as a "support act" in its own lineup.
+    lineup: isMultiArtist ? attractions.slice(1).map((a) => a.name).filter((n): n is string => !!n) : undefined,
     ticketUrl: event.url,
     originalSource: 'ticketmaster.com',
     scrapedAt

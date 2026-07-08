@@ -68,7 +68,8 @@ test('Ticketmaster - mapEventToConcert captures startTime and festival/lineup fo
   assert.strictEqual(concert?.artist, 'Muse', 'first attraction is treated as the headliner artist');
   assert.strictEqual(concert?.startTime, '18:30');
   assert.deepStrictEqual(concert?.festival, { name: 'Rock am Ring 2026', url: 'https://ticketmaster.com/event/festival' });
-  assert.deepStrictEqual(concert?.lineup, ['Muse', 'Rammstein', 'The Cure']);
+  // Muse is already `artist` -- must not also appear in its own lineup.
+  assert.deepStrictEqual(concert?.lineup, ['Rammstein', 'The Cure']);
 });
 
 test('Ticketmaster - a single-attraction event has no festival/lineup', () => {

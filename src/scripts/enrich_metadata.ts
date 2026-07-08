@@ -1,5 +1,4 @@
-import * as fs from 'fs/promises';
-import * as path from 'path';
+import { loadDb as loadDbShared, saveDb as saveDbShared, normName, sleep } from './enrich_wikidata_bulk.js';
 
 /**
  * Tier-2 artist metadata enrichment: genres/tags + popularity (Last.fm, needs a
@@ -46,24 +45,18 @@ interface ArtistEntry {
   [key: string]: any; // other fields (enrichedAt, tourUrl, ...) pass through untouched
 }
 
-const DB_PATH = path.join(process.cwd(), 'data', 'approved_artists.json');
-const TMP_PATH = DB_PATH + '.tmp';
 const FLUSH_EVERY = 25;
 
-const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
-
-function normName(s: string): string {
-  return s.toLowerCase().normalize('NFKD').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
-}
-
+// Thin type-adapting wrappers: enrich_wikidata_bulk.ts's loadDb/saveDb are typed
+// against its own (narrower) ArtistEntry, which doesn't know about this file's
+// genres/popularity/image/metaEnrichedAt/metaTriedAt fields -- reuse the actual
+// read/write/sort/atomic-rename logic instead of re-implementing it a second
+// time (see backfill_mbid.ts, which reuses the same exports directly).
 async function loadDb(): Promise<ArtistEntry[]> {
-  return JSON.parse(await fs.readFile(DB_PATH, 'utf-8'));
+  return (await loadDbShared()) as unknown as ArtistEntry[];
 }
-
 async function saveDb(artists: ArtistEntry[]): Promise<void> {
-  artists.sort((a, b) => a.name.localeCompare(b.name));
-  await fs.writeFile(TMP_PATH, JSON.stringify(artists, null, 2), 'utf-8');
-  await fs.rename(TMP_PATH, DB_PATH);
+  return saveDbShared(artists as any);
 }
 
 interface LastfmResult {

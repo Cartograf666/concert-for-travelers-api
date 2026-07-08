@@ -1,4 +1,22 @@
-import { loadDb, saveDb, queryBatch, normName, sleep } from './enrich_wikidata_bulk.js';
+import { loadDb, saveDb, queryBatch, normName, sleep, ArtistEntry, Resolved } from './enrich_wikidata_bulk.js';
+
+/**
+ * Applies one batch's SPARQL resolution to the DB rows in place, filling `mbid`
+ * only for a confident (non-ambiguous) match that actually carries an mbid.
+ * Extracted as its own function so this mapping -- not just the network/DB I/O
+ * around it -- has direct test coverage.
+ */
+export function applyResolvedBatch(batch: ArtistEntry[], resolved: Map<string, Resolved | 'ambiguous'>): number {
+  let hits = 0;
+  for (const entry of batch) {
+    const r = resolved.get(normName(entry.name));
+    if (r && r !== 'ambiguous' && r.mbid) {
+      entry.mbid = r.mbid;
+      hits++;
+    }
+  }
+  return hits;
+}
 
 /**
  * One-off backfill: fills `mbid` (MusicBrainz artist ID) for artists that already
@@ -39,14 +57,8 @@ async function main() {
       continue;
     }
 
-    for (const entry of batch) {
-      const r = resolved.get(normName(entry.name));
-      if (r && r !== 'ambiguous' && r.mbid) {
-        entry.mbid = r.mbid;
-        hits++;
-      }
-      processed++;
-    }
+    hits += applyResolvedBatch(batch, resolved);
+    processed += batch.length;
 
     await saveDb(artists);
     console.log(`[backfill-mbid] ...${processed}/${pending.length} (hits ${hits})`);
@@ -59,7 +71,12 @@ async function main() {
   console.log(`  misses    : ${processed - hits} (no confident Wikidata match -- still eligible for a future run or the per-artist MusicBrainz tier)`);
 }
 
-main().catch((err) => {
-  console.error(`[backfill-mbid] Fatal: ${err.message}`);
-  process.exit(1);
-});
+// Guard so tests can import applyResolvedBatch without triggering this file's
+// own CLI run (CommonJS output -- see enrich_wikidata_bulk.ts for why
+// require.main, not import.meta, is the right entrypoint check here).
+if (require.main === module) {
+  main().catch((err) => {
+    console.error(`[backfill-mbid] Fatal: ${err.message}`);
+    process.exit(1);
+  });
+}

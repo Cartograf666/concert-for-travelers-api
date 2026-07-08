@@ -60,10 +60,10 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   *Scope trim:* Ticketmaster-attraction-image fallback was skipped — Deezer's
   keyless artist search already covers the vast majority of real touring acts,
   and wiring TM's per-event image into a DB write from inside the daily scrape
-  run would add real coupling for little marginal coverage. Not yet wired into a
-  scheduled GitHub Action (unlike `enrich-auto`/`enrich-wd-bulk`) — run manually
-  via `npm run enrich-metadata [N]` until someone adds a workflow for it. →
-  `src/scripts/enrich_metadata.ts`.
+  run would add real coupling for little marginal coverage. Scheduled via
+  `.github/workflows/enrich-metadata.yml` (cron, checkpointed, same shape as
+  `enrich-auto.yml`), also runnable manually with `npm run enrich-metadata [N]`.
+  → `src/scripts/enrich_metadata.ts`.
 - **`dist/artists.json` full artist catalog.** Publishes the *entire* whitelist
   (not just artists with a current concert), keyed by the same slug the
   per-artist concert files use, with name/website/socials/spotifyId/mbid/genres/
@@ -88,25 +88,19 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   scraped page the way TM's attractions array gives for free; would need
   per-scraper-config additions, a separate and much larger piece of work. →
   `src/schemas/concert.ts`, `src/engine/ticketmaster.ts`, `src/pipeline/process.ts`.
+- **`slugify()` Unicode fix.** Pre-existing bug, surfaced by load-testing the new
+  `dist/artists.json` catalog against the real whitelist at full scale: a
+  non-Latin-only name (Cyrillic, CJK, ...) was stripped to an empty string by an
+  ASCII-only `\w` filter, colliding 91/63,490 artists into one file/slug (374
+  distinct collision groups, 758 names, once counting partial mangling too).
+  Now Unicode-aware (`\p{L}`/`\p{N}`) with a stable hash fallback for names with
+  no letters/digits at all. → `src/pipeline/process.ts` (`slugify`).
 
 ---
 
 ## 🚧 In progress
 
 _(nothing active)_
-
----
-
-## 🐛 Known issues (found during Tier 1–3 implementation, not on the roadmap above)
-
-- **`slugify()` drops non-Latin-only artist names to an empty string.** Affects
-  91/63,490 whitelisted artists today (all Cyrillic, e.g. "Алла Пугачёва") —
-  they'd collide into the same `dist/artists/{slug}.json` file / `dist/artists.json`
-  catalog entry if any two of them ever have a concert in the same run, silently
-  merging unrelated artists. Pre-existing bug, surfaced by testing the new
-  `dist/artists.json` catalog against the real whitelist at full scale — not
-  something this pass fixes (needs its own careful Unicode-aware slug fix +
-  regression coverage). Spawned as a separate follow-up task.
 
 ---
 
