@@ -1,0 +1,17 @@
+{
+  "id": "artist-heart",
+  "domain": "heart-music.com",
+  "url": "https://heart-music.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour-listing__item",
+    "artistNameFallback": "Heart",
+    "date": ".tour-listing__date",
+    "ticketUrl": ".tour-listing__button",
+    "venue": ".tour-listing__venue",
+    "city": ".tour-listing__city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

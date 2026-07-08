@@ -1,0 +1,16 @@
+{
+  "id": "artist-harley-flanagan",
+  "domain": "harleyflanagan.com",
+  "url": "https://harleyflanagan.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.list-item",
+    "artistNameFallback": "Harley Flanagan",
+    "date": "div.list-item__date",
+    "ticketUrl": "a.btn.btn-primary",
+    "city": "div.list-item__location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
