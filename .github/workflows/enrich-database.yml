@@ -46,6 +46,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # True job-elapsed-time reference for the soft-deadline check in the checkpointed
+      # Gemini loop below -- capturing it here (before the uncapped Wikidata-bulk/mbid-
+      # backfill steps) means the loop's budget accounts for their real duration too,
+      # not just its own step's.
+      - name: Record job start time
+        run: echo "JOB_START=$(date +%s)" >> "$GITHUB_ENV"
+
       # Tier-0: free structured enrichment (Wikidata SPARQL bulk, no LLM) sweeps the
       # whole catalog first so Gemini only spends calls on the remaining long tail.
       # Idempotent — already-tried artists are marked and skipped.
@@ -97,8 +104,18 @@ jobs:
           REMAINING=${CHUNK_SIZE_INPUT:-100}
           BATCH_SIZE=${BATCH_SIZE_INPUT:-15}
           DELAY_MS=${DELAY_MS_INPUT:-4000}
+          # timeout-minutes above is 165 -- stop 15min short so a truncated run exits
+          # 0 (success, picked up next run) instead of getting force-killed by GitHub
+          # Actions mid-sub-chunk and reported as a failure (which trips the alert-on-
+          # failure issue for what is actually just normal, expected backlog behavior).
+          SOFT_DEADLINE_SECS=$((150 * 60))
 
           while [ "$REMAINING" -gt 0 ]; do
+            if [ $(( $(date +%s) - JOB_START )) -ge "$SOFT_DEADLINE_SECS" ]; then
+              echo "Approaching this job's timeout-minutes budget -- stopping the loop early so the run finishes cleanly (success) instead of being force-killed mid-sub-chunk. Remaining artists pick up on the next scheduled run."
+              break
+            fi
+
             THIS_RUN=$SUB_CHUNK
             if [ "$REMAINING" -lt "$SUB_CHUNK" ]; then THIS_RUN=$REMAINING; fi
 

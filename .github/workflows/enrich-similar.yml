@@ -43,6 +43,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # True job-elapsed-time reference for the soft-deadline check below --
+      # capturing it here (not inside the loop step) means the budget accounts
+      # for every preceding step's real duration too, not just this step's own.
+      - name: Record job start time
+        run: echo "JOB_START=$(date +%s)" >> "$GITHUB_ENV"
+
       # Same checkpointed sub-chunk-and-commit shape as enrich-metadata.yml: a run
       # that gets cancelled or times out loses at most one sub-chunk's worth of
       # work instead of everything back to the start. enrich_similar_artists.ts is
@@ -59,8 +65,18 @@ jobs:
 
           SUB_CHUNK=150
           REMAINING=${CHUNK_SIZE_INPUT:-3000}
+          # timeout-minutes above is 330 -- stop 15min short so a truncated run exits
+          # 0 (success, picked up next run) instead of getting force-killed by GitHub
+          # Actions mid-sub-chunk and reported as a failure (which trips the alert-on-
+          # failure issue for what is actually just normal, expected backlog behavior).
+          SOFT_DEADLINE_SECS=$((315 * 60))
 
           while [ "$REMAINING" -gt 0 ]; do
+            if [ $(( $(date +%s) - JOB_START )) -ge "$SOFT_DEADLINE_SECS" ]; then
+              echo "Approaching this job's timeout-minutes budget -- stopping the loop early so the run finishes cleanly (success) instead of being force-killed mid-sub-chunk. Remaining artists pick up on the next scheduled run."
+              break
+            fi
+
             THIS_RUN=$SUB_CHUNK
             if [ "$REMAINING" -lt "$SUB_CHUNK" ]; then THIS_RUN=$REMAINING; fi
 
