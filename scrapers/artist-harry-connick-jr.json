@@ -1,0 +1,17 @@
+{
+  "id": "artist-harry-connick-jr",
+  "domain": "www.harryconnickjr.com",
+  "url": "https://www.harryconnickjr.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.tour-item",
+    "artistNameFallback": "Harry Connick, Jr.",
+    "date": ".date-wrap",
+    "ticketUrl": "a.ticket-link",
+    "venue": ".venue-name",
+    "city": ".city-state-country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
