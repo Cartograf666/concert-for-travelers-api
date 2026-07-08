@@ -1,0 +1,64 @@
+name: Discover Popular Artists
+
+on:
+  schedule:
+    - cron: '0 2 * * 6' # Saturday 02:00 UTC -- lands new names before Sunday's artist-scrape
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: 'discover-artists'
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Discover popular artists from charts
+        env:
+          # Optional: a free Last.fm key unlocks worldwide per-country coverage.
+          # Without it the script runs Deezer-only (keyless, but thinner/regional).
+          LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
+        run: npm run discover-artists
+
+      - name: Commit updated target list
+        run: |
+          if git diff --quiet data/artist_scrape_targets.txt; then
+            echo "No new artists discovered."
+          else
+            git config --local user.email "github-actions[bot]@users.noreply.github.com"
+            git config --local user.name "github-actions[bot]"
+            git add data/artist_scrape_targets.txt
+            git commit -m "auto: discover popular artists from charts [skip ci]"
+            # main is written concurrently; retry-with-rebase, and on an
+            # unresolvable conflict drop this run's commit (next week redoes it)
+            # rather than fail -- this is supplementary discovery data.
+            pushed=false
+            for i in 1 2 3 4 5; do
+              if git push; then pushed=true; break; fi
+              echo "Push rejected, retrying with rebase ($i/5)..."
+              git fetch origin main
+              if ! git rebase origin/main; then
+                echo "::warning::Rebase conflict on target list -- dropping this run's commit."
+                git rebase --abort
+                break
+              fi
+              sleep $((RANDOM % 5 + 2))
+            done
+            [ "$pushed" = "true" ] && echo "Pushed new artists." || echo "::warning::Could not push after retries -- skipped."
+          fi
