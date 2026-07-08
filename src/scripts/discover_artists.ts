@@ -35,9 +35,14 @@ function sleep(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms));
 }
 
+/** Strips secret-bearing query params before a URL ever reaches a thrown error/log line. */
+function redactUrl(url: string): string {
+  return url.replace(/([?&](?:api_key|client_id|client_secret)=)[^&]*/gi, '$1REDACTED');
+}
+
 async function getJson(url: string): Promise<any> {
   const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0' } });
-  if (!res.ok) throw new Error(`${res.status} ${res.statusText} for ${url}`);
+  if (!res.ok) throw new Error(`${res.status} ${res.statusText} for ${redactUrl(url)}`);
   return res.json();
 }
 
