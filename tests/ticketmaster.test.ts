@@ -48,6 +48,7 @@ test('Ticketmaster - mapEventToConcert prefers the attraction name over the raw 
     lng: 4.8837,
     festival: undefined,
     lineup: undefined,
+    priceRange: undefined,
     ticketUrl: 'https://ticketmaster.com/event/abc',
     originalSource: 'ticketmaster.com',
     scrapedAt: '2026-07-07T00:00:00.000Z'
@@ -84,6 +85,41 @@ test('Ticketmaster - a single-attraction event has no festival/lineup', () => {
   const concert = mapEventToConcert(event, '2026-01-01T00:00:00.000Z');
   assert.strictEqual(concert?.festival, undefined);
   assert.strictEqual(concert?.lineup, undefined);
+});
+
+test('Ticketmaster - mapEventToConcert extracts priceRange, collapsing multiple tiers to the overall min/max', () => {
+  const event = {
+    name: 'Muse at Nurburgring',
+    dates: { start: { localDate: '2026-06-05' } },
+    priceRanges: [
+      { type: 'standard', currency: 'EUR', min: 45, max: 90 },
+      { type: 'VIP', currency: 'EUR', min: 120, max: 250 }
+    ],
+    _embedded: {
+      venues: [{ name: 'Nurburgring', city: { name: 'Nurburg' }, country: { countryCode: 'DE' } }],
+      attractions: [{ name: 'Muse' }]
+    }
+  };
+  const concert = mapEventToConcert(event, '2026-01-01T00:00:00.000Z');
+  assert.deepStrictEqual(concert?.priceRange, { min: 45, max: 250, currency: 'EUR' });
+});
+
+test('Ticketmaster - mapEventToConcert omits priceRange when absent, empty, or missing numeric values', () => {
+  const base = {
+    name: 'Muse at Nurburgring',
+    dates: { start: { localDate: '2026-06-05' } },
+    _embedded: {
+      venues: [{ name: 'Nurburgring', city: { name: 'Nurburg' }, country: { countryCode: 'DE' } }],
+      attractions: [{ name: 'Muse' }]
+    }
+  };
+  assert.strictEqual(mapEventToConcert(base, 'now')?.priceRange, undefined, 'no priceRanges field at all');
+  assert.strictEqual(mapEventToConcert({ ...base, priceRanges: [] }, 'now')?.priceRange, undefined, 'empty priceRanges array');
+  assert.strictEqual(
+    mapEventToConcert({ ...base, priceRanges: [{ type: 'standard' }] }, 'now')?.priceRange,
+    undefined,
+    'priceRanges entry with no numeric min/max'
+  );
 });
 
 test('Ticketmaster - mapEventToConcert falls back to the event name when no attraction is listed', () => {

@@ -1,13 +1,10 @@
-import * as fs from 'fs/promises';
-import * as path from 'path';
 import { SEED_ARTISTS } from './seed_artists.js';
+import { loadApprovedArtists, saveApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from '../pipeline/artistDb.js';
 
 async function main() {
-  const approvedArtistsPath = path.join(process.cwd(), 'data', 'approved_artists.json');
   console.log('[Cleaner] Loading approved artists list...');
 
-  const data = await fs.readFile(approvedArtistsPath, 'utf-8');
-  const artists = JSON.parse(data);
+  const artists = await loadApprovedArtists(PRODUCTION_ARTIST_DB_DIR);
 
   console.log(`[Cleaner] Original count: ${artists.length}`);
 
@@ -62,9 +59,9 @@ async function main() {
     }
   }
 
-  const cleanedList = Array.from(cleanedMap.values()).sort((a, b) => a.name.localeCompare(b.name));
-  
-  await fs.writeFile(approvedArtistsPath, JSON.stringify(cleanedList, null, 2), 'utf-8');
+  const cleanedList = Array.from(cleanedMap.values());
+
+  await saveApprovedArtists(PRODUCTION_ARTIST_DB_DIR, cleanedList);
   console.log(`[Cleaner] Cleanup complete. Cleaned count: ${cleanedList.length}`);
 }
 

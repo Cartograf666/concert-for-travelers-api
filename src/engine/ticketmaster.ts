@@ -58,6 +58,7 @@ interface TmEvent {
   name?: string;
   url?: string;
   dates?: { start?: { localDate?: string; localTime?: string } };
+  priceRanges?: Array<{ min?: number; max?: number; currency?: string }>;
   _embedded?: {
     venues?: Array<{
       name?: string;
@@ -67,6 +68,19 @@ interface TmEvent {
     }>;
     attractions?: Array<{ name?: string }>;
   };
+}
+
+/** Ticketmaster's own priceRanges array can list more than one tier (e.g.
+ * "standard" + "VIP") -- collapse to the overall min/max across all of them.
+ * Returns undefined when the array is absent/empty or has no numeric values. */
+function extractPriceRange(priceRanges: TmEvent['priceRanges']): Concert['priceRange'] {
+  if (!priceRanges || priceRanges.length === 0) return undefined;
+  const mins = priceRanges.map((p) => p.min).filter((n): n is number => typeof n === 'number');
+  const maxes = priceRanges.map((p) => p.max).filter((n): n is number => typeof n === 'number');
+  if (mins.length === 0 || maxes.length === 0) return undefined;
+  const currency = priceRanges.find((p) => p.currency)?.currency;
+  if (!currency) return undefined;
+  return { min: Math.min(...mins), max: Math.max(...maxes), currency };
 }
 
 export function mapEventToConcert(event: TmEvent, scrapedAt: string): Partial<Concert> | null {
@@ -108,6 +122,7 @@ export function mapEventToConcert(event: TmEvent, scrapedAt: string): Partial<Co
     // attractions[0] is already `artist` above -- exclude it so the headliner
     // doesn't also show up as a "support act" in its own lineup.
     lineup: isMultiArtist ? attractions.slice(1).map((a) => a.name).filter((n): n is string => !!n) : undefined,
+    priceRange: extractPriceRange(event.priceRanges),
     ticketUrl: event.url,
     originalSource: 'ticketmaster.com',
     scrapedAt

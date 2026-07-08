@@ -9,7 +9,16 @@ export interface PublishStats {
   uniqueCities: number;
 }
 
+// Bump whenever the shape of a Concert object changes in a way a consumer
+// should know about (a field added, its meaning changed, or a field removed).
+// No fields have ever been removed/renamed yet -- purely additive changes are
+// backwards-compatible for a consumer that ignores unknown fields, so this
+// isn't a hard compatibility gate, just a cheap signal of "something changed,
+// go check src/schemas/concert.ts" for a consumer that wants to notice.
+export const CONCERT_SCHEMA_VERSION = 1;
+
 export interface PublishIndex {
+  schemaVersion: number;
   lastRun: string;
   stats: PublishStats;
   artists: string[];
@@ -195,6 +204,7 @@ export async function publishConcerts(concerts: Concert[], outputDir: string): P
 
   // 5. Create index metadata: dist/index.json
   const indexData: PublishIndex = {
+    schemaVersion: CONCERT_SCHEMA_VERSION,
     lastRun: new Date().toISOString(),
     stats: {
       totalConcerts: concerts.length,

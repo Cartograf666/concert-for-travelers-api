@@ -14,7 +14,7 @@ permissions:
 jobs:
   # Own concurrency group (shared with enrich-auto.yml/enrich-database.yml) because
   # this job's own "Commit and Push Enriched Artist Metadata" step below writes the
-  # same data/approved_artists.json those workflows do. Previously this whole
+  # same data/artists/ (sharded artist DB) those workflows do. Previously this whole
   # workflow only had the 'pages' group, so a same-file write here could run fully
   # in parallel with an enrich-* run -- both racing to push, repeatedly hitting an
   # unresolvable rebase conflict and dropping real enrichment work (observed live:
@@ -71,6 +71,17 @@ jobs:
           restore-keys: |
             scrape-cache-
 
+      # Which concerts were already known as of the last run, so dist/changes.json
+      # only reports genuinely new ones. Not git-tracked -- same cache mechanism as
+      # the scrape cache above, so it doesn't add another writer to the repo.
+      - name: Restore changelog cache
+        uses: actions/cache/restore@v4
+        with:
+          path: reports/changelog-cache.json
+          key: changelog-cache-${{ github.run_id }}
+          restore-keys: |
+            changelog-cache-
+
       # Per-country last-successful Ticketmaster results, so a transient failure on
       # one country falls back to yesterday's data instead of contributing nothing.
       - name: Restore Ticketmaster cache
@@ -112,9 +123,19 @@ jobs:
           restore-keys: |
             bandsintown-cache-
 
+      # Read-only, same as the two caches above: owned by artist-scrape.yml's
+      # Eventbrite sweep, merged into today's publish here.
+      - name: Restore Eventbrite cache
+        uses: actions/cache/restore@v4
+        with:
+          path: reports/eventbrite-cache.json
+          key: eventbrite-cache-${{ github.run_id }}
+          restore-keys: |
+            eventbrite-cache-
+
       # Sync the whitelist from the user's target list first: a name added to
-      # data/artist_scrape_targets.txt must be in approved_artists.json or its
-      # scraped/Bandsintown shows get dropped as "not approved". Idempotent (adds
+      # data/artist_scrape_targets.txt must be in the approved-artist DB (data/artists/)
+      # or its scraped/Bandsintown shows get dropped as "not approved". Idempotent (adds
       # only what's missing); the diff is committed by the enrich step below, so
       # editing the target list is all that's needed to cover a new artist.
       - name: Sync target artists into whitelist
@@ -134,6 +155,13 @@ jobs:
         with:
           path: reports/scrape-cache.json
           key: scrape-cache-${{ github.run_id }}
+
+      - name: Save changelog cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: reports/changelog-cache.json
+          key: changelog-cache-${{ github.run_id }}
 
       - name: Save Ticketmaster cache
         if: always()
@@ -193,20 +221,21 @@ jobs:
 
       - name: Commit and Push Enriched Artist Metadata
         run: |
-          if git diff --quiet data/approved_artists.json; then
+          if git diff --quiet -- data/artists/; then
             echo "No new artist metadata enriched."
           else
             git config --local user.email "github-actions[bot]@users.noreply.github.com"
             git config --local user.name "github-actions[bot]"
-            git add data/approved_artists.json
+            git add data/artists/
             git commit -m "auto: enrich artist websites and socials [skip ci]"
 
             # main is written to concurrently (self-heal auto-merges, the enrich-*
             # workflows, manual pushes) -- a bare push races and fails on any
             # concurrent write. Retry with rebase a few times before giving up;
-            # this file is supplementary enrichment data, so on an unresolvable
-            # conflict, drop this run's commit rather than fail the whole job --
-            # the next scheduled enrichment pass will redo the work.
+            # this data is supplementary enrichment data (and sharded, so two
+            # writers only actually conflict if they touched the same shard file),
+            # so on an unresolvable conflict, drop this run's commit rather than
+            # fail the whole job -- the next scheduled enrichment pass redoes it.
             pushed=false
             for i in 1 2 3 4 5; do
               if git push; then
@@ -216,8 +245,10 @@ jobs:
               echo "Push rejected (concurrent write), retrying with rebase ($i/5)..."
               git fetch origin main
               if ! git rebase origin/main; then
-                echo "::warning::Rebase conflict on data/approved_artists.json -- dropping this run's enrichment commit."
+                echo "::warning::Rebase conflict on data/artists/ -- dropping this run's enrichment commit."
                 git rebase --abort
+                npm run record-conflict-drop -- daily-scrape || true
+                git add data/conflict-drops.json && git commit -m "chore: record conflict-drop metric [skip ci]" && git push || true
                 break
               fi
               sleep $((RANDOM % 5 + 2))

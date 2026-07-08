@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 # Serialize with the MusicBrainz Tier-0 workflow so two writers never race on
-# data/approved_artists.json.
+# data/artists/ (the sharded artist DB).
 concurrency:
   group: artist-db-write
   cancel-in-progress: false
@@ -68,7 +68,7 @@ jobs:
           else
             git config --local user.email "github-actions[bot]@users.noreply.github.com"
             git config --local user.name "github-actions[bot]"
-            git add data/approved_artists.json scrapers/
+            git add data/artists/ scrapers/
             git commit -m "auto: enrich artist database chunk [skip ci]"
 
             # main gets concurrent writes (daily-scrape, self-heal auto-merges,
@@ -84,6 +84,8 @@ jobs:
               if ! git rebase origin/main; then
                 echo "::warning::Rebase conflict -- dropping this run's enrichment commit."
                 git rebase --abort
+                npm run record-conflict-drop -- enrich-database || true
+                git add data/conflict-drops.json && git commit -m "chore: record conflict-drop metric [skip ci]" && git push || true
                 break
               fi
               sleep $((RANDOM % 5 + 2))

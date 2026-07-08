@@ -8,13 +8,34 @@ import { enrichMissingArtistMetadata } from './pipeline/enrich.js';
 import { geocodeConcerts, loadGeocodeCache, saveGeocodeCache } from './pipeline/geocode.js';
 import { getGeminiKeys } from './engine/gemini_keys.js';
 import { publishConcerts, publishArtistCatalog } from './generator/publish.js';
+import { publishChangelog, loadChangelogCache, saveChangelogCache } from './generator/changelog.js';
 import { fetchTicketmasterConcerts, loadTicketmasterCache, saveTicketmasterCache } from './engine/ticketmaster.js';
+import { PRODUCTION_ARTIST_DB_DIR } from './pipeline/artistDb.js';
 
 /**
  * Writes dist/status.json — a small machine-readable health surface so a watchdog /
  * dashboard can tell whether the daily run is healthy or silently rotting (venues
  * failing, everything served from stale cache) without scraping the Actions logs.
  */
+/**
+ * Counts recent entries in data/conflict-drops.json (see
+ * src/scripts/record_conflict_drop.ts) -- a previously silent failure mode (a
+ * workflow's git-push retry loop giving up on an unresolvable rebase conflict,
+ * logged only as a `::warning::` annotation) surfaced here instead, so a rising
+ * count is visible on the dashboard rather than buried in Actions logs.
+ * Best-effort: a missing/unreadable file just means zero, not a failure.
+ */
+async function countRecentConflictDrops(days: number): Promise<number> {
+  try {
+    const raw = await fs.readFile(path.join(process.cwd(), 'data', 'conflict-drops.json'), 'utf-8');
+    const data: { events?: Array<{ at: string }> } = JSON.parse(raw);
+    const cutoffMs = Date.now() - days * 24 * 60 * 60 * 1000;
+    return (data.events ?? []).filter((e) => new Date(e.at).getTime() > cutoffMs).length;
+  } catch {
+    return 0;
+  }
+}
+
 async function writeStatus(
   distDir: string,
   results: ScraperResult[],
@@ -36,7 +57,8 @@ async function writeStatus(
     // bound — a scraper that broke weeks ago hiding behind the health gate.
     staleVenues: staleVenueIds,
     ticketmasterEvents: ticketmasterCount,
-    publishedConcerts // null when the run short-circuited (published set unchanged)
+    publishedConcerts, // null when the run short-circuited (published set unchanged)
+    conflictDropsLast7Days: await countRecentConflictDrops(7)
   };
   await fs.mkdir(distDir, { recursive: true });
   await fs.writeFile(path.join(distDir, 'status.json'), JSON.stringify(status, null, 2), 'utf-8');
@@ -46,7 +68,7 @@ async function main() {
   const scrapersDir = path.join(process.cwd(), 'scrapers');
   const distDir = path.join(process.cwd(), 'dist');
   const reportsDir = path.join(process.cwd(), 'reports');
-  const approvedArtistsPath = path.join(process.cwd(), 'data', 'approved_artists.json');
+  const approvedArtistsPath = PRODUCTION_ARTIST_DB_DIR;
 
   console.log('[Orchestrator] Starting Daily Concert Scrape...');
 
@@ -146,6 +168,18 @@ async function main() {
       console.log(`[Orchestrator] Loaded ${bitConcertCount} cached events from ${Object.keys(bitCache).length} Bandsintown artists.`);
     }
 
+    // 4e. Same read-only merge for the Eventbrite artist sweep cache (also owned
+    // and written by run-artists.ts / artist-scrape.yml, never by this daily job).
+    const ebCache = await loadCache(path.join(reportsDir, 'eventbrite-cache.json'));
+    let ebConcertCount = 0;
+    for (const entry of Object.values(ebCache)) {
+      allScrapedConcerts.push(...entry.concerts);
+      ebConcertCount += entry.concerts.length;
+    }
+    if (ebConcertCount > 0) {
+      console.log(`[Orchestrator] Loaded ${ebConcertCount} cached events from ${Object.keys(ebCache).length} Eventbrite artists.`);
+    }
+
     // 5. Always record failures for the separate self-healing run.
     const failures = results
       .filter((r) => !r.success)
@@ -239,6 +273,25 @@ async function main() {
     console.log(`[Orchestrator] Publishing ${normalizedConcerts.length} concerts to ${distDir}...`);
     await publishConcerts(normalizedConcerts, distDir);
     await writeStatus(distDir, results, changedCount, ticketmasterCount, normalizedConcerts.length, staleVenueIds);
+
+    // 9a. Publish dist/changes.json: concerts new since last run, so the consumer
+    // can show "N new concerts since your last visit" without diffing all of
+    // concerts.json itself. State isn't git-tracked -- same actions/cache
+    // mechanism as reports/scrape-cache.json, so it doesn't add another writer
+    // to data/approved_artists.json. Best-effort: never let this fail the run.
+    try {
+      const changelogCachePath = path.join(reportsDir, 'changelog-cache.json');
+      const changelogCache = await loadChangelogCache(changelogCachePath);
+      const changelogResult = await publishChangelog(normalizedConcerts, distDir, changelogCache);
+      await saveChangelogCache(changelogCachePath, changelogCache);
+      console.log(
+        changelogResult.coldStart
+          ? '[Orchestrator] Changelog: first-ever run, seeding known-concerts cache (nothing reported as new).'
+          : `[Orchestrator] Changelog: ${changelogResult.newCount} new concert(s) since last run.`
+      );
+    } catch (err: any) {
+      console.warn(`[Orchestrator] Skipped changelog publish: ${err.message}`);
+    }
 
     // 9b. Publish the full artist directory (name/aliases/genres/image/popularity/
     // socials/IDs for every whitelisted artist, not just those with a current
