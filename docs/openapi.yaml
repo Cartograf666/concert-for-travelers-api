@@ -14,7 +14,14 @@ paths:
   /index.json:
     get:
       summary: Retrieve API Index and Metadata
-      description: Returns API statistics, schema version, and lists of all available artist and city slugs.
+      description: >-
+        Returns API statistics, schema version, and lists of all artist and
+        city names currently represented in concerts.json. Note: these are
+        raw display names (e.g. "A$AP Rocky", "Detroit"), NOT slugs -- to
+        fetch a specific artist's or city's file, run the name through the
+        same slugify() logic the publisher uses (lowercase, strip diacritics,
+        hyphenate) before requesting /artists/{slug}.json or
+        /cities/{slug}.json.
       responses:
         '200':
           description: API index data
@@ -134,14 +141,16 @@ components:
           $ref: '#/components/schemas/PublishStats'
         artists:
           type: array
+          description: Raw artist display names, not slugs.
           items:
             type: string
-          example: ['radiohead', 'the-smile']
+          example: ['Radiohead', 'The Smile']
         cities:
           type: array
+          description: Raw city display names, not slugs.
           items:
             type: string
-          example: ['berlin', 'london']
+          example: ['Berlin', 'London']
     PublishStats:
       type: object
       required:

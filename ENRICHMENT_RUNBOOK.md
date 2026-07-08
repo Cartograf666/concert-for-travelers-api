@@ -229,11 +229,11 @@ This runbook outlines the list of secrets used in this repository and the proced
 
 ### Configured Secrets List
 1. **Gemini API Keys**:
-   - `GEMINI_API_KEY`: Primary API key used across `self-heal.yml`, `enrich-database.yml`, and `daily-scrape.yml`.
-   - `GEMINI_API_KEY_2` .. `GEMINI_API_KEY_5`: Reserve keys used by `enrich-database.yml`.
-   - `GEMINI_API_KEY_RESERV1`, `GEMINI_API_KEY_RESERV2`: Reserve keys used by `self-heal.yml`, `enrich-database.yml`, and `daily-scrape.yml`.
-   - `GEMINI_API_KEY_RESERV3`: Reserve key used by `enrich-database.yml`.
-   - `GEMINI_API_KEYS`: A space/comma-separated list of fallback Gemini API keys read by `enrich-database.yml`.
+   - `GEMINI_API_KEY`: Primary API key used across `self-heal.yml`, `enrich-database.yml`, `data-hygiene.yml`, and `daily-scrape.yml`.
+   - `GEMINI_API_KEY_2` .. `GEMINI_API_KEY_5`: Reserve keys used by `enrich-database.yml` and `data-hygiene.yml`.
+   - `GEMINI_API_KEY_RESERV1`, `GEMINI_API_KEY_RESERV2`: Reserve keys used by `self-heal.yml`, `enrich-database.yml`, `data-hygiene.yml`, and `daily-scrape.yml`.
+   - `GEMINI_API_KEY_RESERV3`: Reserve key used by `enrich-database.yml` and `data-hygiene.yml`.
+   - `GEMINI_API_KEYS`: A space/comma-separated list of fallback Gemini API keys read by `enrich-database.yml` and `data-hygiene.yml`.
 2. **Last.fm API Key**:
    - `LASTFM_API_KEY`: Read by `rank-scraper-candidates.yml`, `discover-artists.yml`, `enrich-similar.yml`, and `enrich-metadata.yml`.
 3. **Ticketmaster API Key**:
