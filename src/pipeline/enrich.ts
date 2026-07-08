@@ -1,7 +1,6 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import * as fs from 'fs/promises';
-import * as path from 'path';
 import { loadDenylistGuard } from './denylist.js';
+import { loadApprovedArtists, saveApprovedArtists } from './artistDb.js';
 
 export interface ArtistSocials {
   spotify?: string | null;
@@ -101,8 +100,7 @@ export async function enrichMissingArtistMetadata(
   // 1. Read existing whitelist
   let approvedArtists: ArtistEntry[] = [];
   try {
-    const data = await fs.readFile(approvedArtistsPath, 'utf-8');
-    approvedArtists = JSON.parse(data);
+    approvedArtists = await loadApprovedArtists(approvedArtistsPath);
   } catch (err: any) {
     console.error(`[Enricher] Could not load approved artists list for enrichment: ${err.message}`);
     return;
@@ -260,8 +258,7 @@ Provide ONLY the raw JSON array. Do not include markdown code block backticks (\
     // lose every batch's work done so far. Same reasoning as the early-exit itself:
     // observed live on a run where quota ran out partway through a large batch list.
     try {
-      approvedArtists.sort((a, b) => a.name.localeCompare(b.name));
-      await fs.writeFile(approvedArtistsPath, JSON.stringify(approvedArtists, null, 2), 'utf-8');
+      await saveApprovedArtists(approvedArtistsPath, approvedArtists);
     } catch (err: any) {
       console.error(`[Enricher] Failed to save enriched database after batch: ${err.message}`);
     }

@@ -96,6 +96,41 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   distinct collision groups, 758 names, once counting partial mangling too).
   Now Unicode-aware (`\p{L}`/`\p{N}`) with a stable hash fallback for names with
   no letters/digits at all. → `src/pipeline/process.ts` (`slugify`).
+- **`dist/changes.json` changelog feed.** Concerts new since the last run, so
+  the consumer can show "N new concerts since your last visit" without
+  diffing all of `concerts.json` itself. Identity reuses `processConcerts`'
+  own dedupe key (artist+date+city) — not a second definition of "same
+  concert". State (which concerts were already known) is deliberately *not*
+  git-tracked — persisted via the same `actions/cache` mechanism
+  `reports/scrape-cache.json` already uses, so it doesn't add another writer
+  to `data/approved_artists.json`'s contention. Cold-start (first-ever run)
+  reports zero changes rather than every concert at once. 30-day retention
+  window. → `src/generator/changelog.ts`, wired into `src/run.ts`.
+- **`priceRange`.** Best-effort ticket price (`{min, max, currency}`), from
+  Ticketmaster's own structured `priceRanges` only — collapses multiple
+  tiers (e.g. standard + VIP) to the overall min/max. Never guessed/parsed
+  from scraped free text; venue scrapers just don't get one. →
+  `src/schemas/concert.ts`, `src/engine/ticketmaster.ts`, `src/pipeline/process.ts`.
+- **Sharded artist whitelist storage (`data/artists/shard-0.json`..`shard-7.json`,
+  replacing the single 17MB `data/approved_artists.json`).** Root cause of a
+  real, repeatedly-observed failure mode: every enrichment workflow (enrich-auto,
+  enrich-database/wd-bulk, enrich-metadata, the daily scrape's own enrich step)
+  reads and rewrites the WHOLE artist file, so two writers landing close together
+  raced to push and one's work got dropped on an unresolvable rebase conflict —
+  serialized via `concurrency: artist-db-write` already, but that only prevents
+  parallel runs, not back-to-back runs close enough together to still collide on
+  the same giant file. Sharding by the artist name's first character (mod 8)
+  means two writers only actually conflict if they touched the *same* shard —
+  most of the time they don't, so most conflicts are now structurally impossible
+  rather than merely retried-and-hoped-to-resolve. New `src/pipeline/artistDb.ts`
+  centralizes every load/save behind `loadApprovedArtists()`/`saveApprovedArtists()`
+  (dual-mode: a `.json`-suffixed path is treated as the legacy single-file format
+  the test suite's temp fixtures still use; any other path is treated as the
+  sharded production directory), with a diff-before-write per shard so a save
+  that only touched a few artists doesn't rewrite every other shard's file too.
+  All 13 call sites that used to read/write `data/approved_artists.json` directly
+  (`pipeline/process.ts`, `pipeline/enrich.ts`, `run.ts`, and 10 `scripts/*.ts`)
+  now go through this module. → `src/pipeline/artistDb.ts`, `data/artists/`.
 - **Eventbrite as a 4th concert source (artist-keyed).** Eventbrite shut off its
   public multi-organizer events-search API for third parties in Dec 2019 (the
   v3 API only covers events you already know the id/venue/organization for) —
@@ -149,11 +184,18 @@ end passes):
    Bandsintown fetch slots for one real artist, since
    `fetchBandsintownConcerts`'s own de-dupe is case-sensitive). →
    `src/scripts/clean_scrape_targets.ts`, run against the live target list.
-3. ⬜ **Blocked on the user.** Point official tour-page scrapers
-   (`scrapers/artists/*.json` — more reliable than the public Bandsintown
-   widget feed, no rate-limit/block risk) at the artists users actually search
-   for most. Needs a top-N-by-query-volume list from the consumer app's own
-   usage data; not available in this repo.
+3. ✅ Point official tour-page scrapers (`scrapers/artists/*.json` — more
+   reliable than the public Bandsintown widget feed, no rate-limit/block
+   risk) at our highest-value targets. Deliberately *not* sourced from the
+   consumer app's own usage data (a user's saved-favorites list is a biased,
+   manually-maintained proxy) — ranked instead by actual Last.fm popularity
+   (`entry.popularity.listeners`, collected by `enrich_metadata.ts`, live
+   Last.fm lookup as a fallback) among artists already on our own target
+   list. `npm run rank-scraper-candidates [N]` / the manual-dispatch
+   `rank-scraper-candidates.yml` workflow (needs `LASTFM_API_KEY`, already a
+   repo secret) produces the ranked list; still needs a human to actually
+   author each artist's selector config from it. →
+   `src/scripts/rank_scraper_candidates.ts`.
 4. ⬜ **Needs real elapsed time.** Let the new daily cron run 1-2 real cycles
    (at least one 6-day freshness window) before re-measuring.
 5. ⬜ **Needs the client repo's tooling.** Re-run the consumer app's
@@ -192,9 +234,7 @@ _(done — see ✅ Done above)_
 _(done — see ✅ Done above)_
 
 ### Tier 3 — richer events
-- ✅ Event time, festival awareness, venue kind — see ✅ Done above.
-- 💡 **Price** — best-effort only. Add if a source exposes it cleanly
-  (Ticketmaster priceRanges); skip otherwise. Not a priority.
+- ✅ Event time, festival awareness, venue kind, price range — see ✅ Done above.
 
 ### Tier 4 — dropped
 - ❌ Nearest airport (IATA) — not needed.
@@ -204,10 +244,12 @@ _(done — see ✅ Done above)_
 
 ## 💡 Ideas / parking lot
 
-- 💡 Publish a lightweight changelog feed (`dist/changes.json`) so the consumer
-  can show "newly announced since your last visit".
-- 💡 Deduplicate the same show scraped from multiple sources (venue + Ticketmaster
-  + Bandsintown) into one canonical concert with merged ticket links.
+- ❌ Merge cross-source duplicates' ticket links into one canonical concert
+  (e.g. an array of purchase options across venue/Ticketmaster/Bandsintown).
+  Declined: exact-duplicate concerts (same artist+date+city) already merge
+  into one record today; this idea was specifically about *also* keeping
+  every source's ticket link instead of just one. Not wanted — surfacing
+  multiple ticket platforms isn't a goal here.
 - 💡 Currency-normalized price + affiliate ticket links.
 
 ---

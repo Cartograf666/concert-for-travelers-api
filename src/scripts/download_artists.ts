@@ -1,11 +1,9 @@
 import axios from 'axios';
-import * as fs from 'fs/promises';
-import * as path from 'path';
 import { SEED_ARTISTS, SEED_ARTIST_WEBSITES as OFFICIAL_WEBSITES } from './seed_artists.js';
+import { saveApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from '../pipeline/artistDb.js';
 
 async function run() {
   const url = 'https://raw.githubusercontent.com/bevacqua/artists/master/data.json';
-  const outputPath = path.join(process.cwd(), 'data', 'approved_artists.json');
 
   console.log(`[Downloader] Fetching data from: ${url}`);
   try {
@@ -75,16 +73,9 @@ async function run() {
 
     console.log(`[Downloader] Extracted and structured ${artistObjects.length} unique artists.`);
 
-    // Ensure output directory exists
-    await fs.mkdir(path.dirname(outputPath), { recursive: true });
+    await saveApprovedArtists(PRODUCTION_ARTIST_DB_DIR, artistObjects);
 
-    await fs.writeFile(
-      outputPath,
-      JSON.stringify(artistObjects, null, 2),
-      'utf-8'
-    );
-
-    console.log(`[Downloader] Saved ${artistObjects.length} approved artists to: ${outputPath}`);
+    console.log(`[Downloader] Saved ${artistObjects.length} approved artists to: ${PRODUCTION_ARTIST_DB_DIR}`);
 
   } catch (err: any) {
     console.error(`[Downloader] Error: ${err.message}`);

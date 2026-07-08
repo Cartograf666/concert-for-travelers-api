@@ -164,6 +164,11 @@ async function load() {
   if (failed) html += '<div><b class="err">Failing:</b><br>' + (status.failedVenueIds || []).map(id => `<span class="pill bad">${id}</span>`).join('') + '</div>';
   if (stale) html += '<div style="margin-top:8px"><b class="warn">Stale (serving old cache):</b><br>' + (status.staleVenues || []).map(id => `<span class="pill warn">${id}</span>`).join('') + '</div>';
   if (!failed && !stale) html += '<div class="pill ok" style="color:var(--ok);border-color:rgba(71,196,121,.35)">All parsers healthy ✓</div>';
+  // Enrichment writers (enrich-auto/enrich-database/daily-scrape) occasionally lose a
+  // sub-chunk to an unresolvable git rebase conflict on approved_artists.json -- not
+  // data loss (the affected artists just get retried next run), but worth watching
+  // if the count keeps climbing.
+  if (status.conflictDropsLast7Days) html += `<div style="margin-top:8px"><span class="pill warn">${fmt(status.conflictDropsLast7Days)} enrichment conflict-drop(s) in the last 7 days</span></div>`;
   hd.innerHTML = html;
 
   // Countries

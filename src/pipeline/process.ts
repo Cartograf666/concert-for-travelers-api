@@ -1,8 +1,8 @@
-import * as fs from 'fs/promises';
 import * as path from 'path';
 import * as chrono from 'chrono-node';
 import didYouMean, { ThresholdTypeEnums } from 'didyoumean2';
 import { Concert, ConcertSchema } from '../schemas/concert.js';
+import { loadApprovedArtists } from './artistDb.js';
 
 /** Format a Date as a timezone-safe YYYY-MM-DD using its local calendar fields. */
 function toLocalIso(d: Date): string {
@@ -723,8 +723,7 @@ export async function processConcerts(
 ): Promise<Concert[]> {
   let approvedArtists: any[] = [];
   try {
-    const data = await fs.readFile(approvedArtistsPath, 'utf-8');
-    approvedArtists = JSON.parse(data);
+    approvedArtists = await loadApprovedArtists(approvedArtistsPath);
   } catch (err: any) {
     console.warn(`[Pipeline] Could not load approved artists list. Proceeding with empty list: ${err.message}`);
   }
@@ -799,6 +798,7 @@ export async function processConcerts(
       lng: raw.lng,
       festival: raw.festival,
       lineup: raw.lineup,
+      priceRange: raw.priceRange,
       ticketUrl: raw.ticketUrl ? raw.ticketUrl.trim() : undefined,
       originalSource: raw.originalSource,
       scrapedAt: raw.scrapedAt

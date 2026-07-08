@@ -1,6 +1,5 @@
-import * as fs from 'fs/promises';
-import * as path from 'path';
 import { loadDenylistGuard } from '../pipeline/denylist.js';
+import { loadApprovedArtists, saveApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from '../pipeline/artistDb.js';
 
 /**
  * Removes genre/language/generic non-artist entries (data/artist_denylist.json) from
@@ -18,9 +17,8 @@ import { loadDenylistGuard } from '../pipeline/denylist.js';
  */
 async function main() {
   const root = process.cwd();
-  const approvedPath = path.join(root, 'data', 'approved_artists.json');
 
-  const approved: any[] = JSON.parse(await fs.readFile(approvedPath, 'utf-8'));
+  const approved: any[] = await loadApprovedArtists(PRODUCTION_ARTIST_DB_DIR);
   const guard = await loadDenylistGuard(root);
 
   const removed: string[] = [];
@@ -38,7 +36,7 @@ async function main() {
     return;
   }
 
-  await fs.writeFile(approvedPath, JSON.stringify(kept, null, 2), 'utf-8');
+  await saveApprovedArtists(PRODUCTION_ARTIST_DB_DIR, kept);
   console.log(`[CleanDenylist] Removed ${removed.length} non-artist entries (now ${kept.length}).`);
   console.log(`[CleanDenylist] Removed: ${removed.join(', ')}`);
 }

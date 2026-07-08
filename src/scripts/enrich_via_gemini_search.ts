@@ -1,12 +1,10 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import * as fs from 'fs/promises';
 import * as path from 'path';
-
-const DB_PATH = path.join(process.cwd(), 'data', 'approved_artists.json');
+import { loadApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from '../pipeline/artistDb.js';
 
 async function loadDb() {
-  const raw = await fs.readFile(DB_PATH, 'utf-8');
-  return JSON.parse(raw);
+  return loadApprovedArtists(PRODUCTION_ARTIST_DB_DIR);
 }
 
 function cleanAndParseJson(text: string): any {
