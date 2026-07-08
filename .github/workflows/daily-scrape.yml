@@ -275,7 +275,7 @@ jobs:
       # "nothing to heal" on precisely the runs where scraper breakage was worst.
       - name: Upload fail log report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: scraper-reports
           path: reports/
