@@ -3,6 +3,7 @@ import * as path from 'path';
 import { loadConfigs, runAllScrapers, closeBrowser } from './engine/runner.js';
 import { loadCache, saveCache } from './engine/cache.js';
 import { fetchBandsintownConcerts, loadBandsintownCache, saveBandsintownCache } from './engine/bandsintown.js';
+import { fetchEventbriteConcerts, loadEventbriteCache, saveEventbriteCache } from './engine/eventbrite.js';
 
 /** Reads the newline-delimited artist target list, dropping blanks/dupes. */
 async function loadArtistTargets(filePath: string): Promise<string[]> {
@@ -86,8 +87,20 @@ async function main() {
       const bitConcerts = await fetchBandsintownConcerts(artistTargets, { cache: bitCache, maxPerRun });
       await saveBandsintownCache(bitCachePath, bitCache);
       console.log(`[ArtistScrape] Bandsintown sweep done -> ${bitConcerts.length} raw events cached across ${Object.keys(bitCache).length} artists.`);
+
+      // Eventbrite public-discovery-page sweep -- see src/engine/eventbrite.ts for
+      // why this scrapes public search pages instead of calling an API (Eventbrite
+      // has none for third-party multi-organizer search), and the ToS-risk tradeoff
+      // that implies. Own cache, own (smaller/gentler) per-run cap.
+      const ebMaxPerRun = process.env.EVENTBRITE_MAX_PER_RUN ? parseInt(process.env.EVENTBRITE_MAX_PER_RUN, 10) : undefined;
+      const ebCachePath = path.join(reportsDir, 'eventbrite-cache.json');
+      const ebCache = await loadEventbriteCache(ebCachePath);
+      console.log(`[ArtistScrape] Starting Eventbrite sweep over ${artistTargets.length} artist targets...`);
+      const ebConcerts = await fetchEventbriteConcerts(artistTargets, { cache: ebCache, maxPerRun: ebMaxPerRun });
+      await saveEventbriteCache(ebCachePath, ebCache);
+      console.log(`[ArtistScrape] Eventbrite sweep done -> ${ebConcerts.length} raw events cached across ${Object.keys(ebCache).length} artists.`);
     } else {
-      console.log('[ArtistScrape] No artist targets found -- skipping Bandsintown sweep.');
+      console.log('[ArtistScrape] No artist targets found -- skipping Bandsintown/Eventbrite sweeps.');
     }
   } catch (error: any) {
     console.error(`[ArtistScrape] Critical error: ${error.message}`);

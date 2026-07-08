@@ -146,6 +146,18 @@ async function main() {
       console.log(`[Orchestrator] Loaded ${bitConcertCount} cached events from ${Object.keys(bitCache).length} Bandsintown artists.`);
     }
 
+    // 4e. Same read-only merge for the Eventbrite artist sweep cache (also owned
+    // and written by run-artists.ts / artist-scrape.yml, never by this daily job).
+    const ebCache = await loadCache(path.join(reportsDir, 'eventbrite-cache.json'));
+    let ebConcertCount = 0;
+    for (const entry of Object.values(ebCache)) {
+      allScrapedConcerts.push(...entry.concerts);
+      ebConcertCount += entry.concerts.length;
+    }
+    if (ebConcertCount > 0) {
+      console.log(`[Orchestrator] Loaded ${ebConcertCount} cached events from ${Object.keys(ebCache).length} Eventbrite artists.`);
+    }
+
     // 5. Always record failures for the separate self-healing run.
     const failures = results
       .filter((r) => !r.success)

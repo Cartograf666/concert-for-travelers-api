@@ -16,7 +16,8 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 ## ✅ Done
 
 - **Concert sources**: venue scrapers (91 configs), Ticketmaster (27 countries),
-  Bandsintown (artist-keyed, worldwide — covers Asia/Japan and RU artists).
+  Bandsintown (artist-keyed, worldwide — covers Asia/Japan and RU artists),
+  Eventbrite (artist-keyed, US discovery-page scrape).
 - **Static JSON API on GitHub Pages**: `concerts.json`, `artists/{slug}.json`,
   `cities/{slug}.json`, `index.json`, `status.json`, dashboard `index.html`.
 - **Per-concert data**: artist, artistWebsite, artistSocials (spotify/instagram/
@@ -95,6 +96,31 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   distinct collision groups, 758 names, once counting partial mangling too).
   Now Unicode-aware (`\p{L}`/`\p{N}`) with a stable hash fallback for names with
   no letters/digits at all. → `src/pipeline/process.ts` (`slugify`).
+- **Eventbrite as a 4th concert source (artist-keyed).** Eventbrite shut off its
+  public multi-organizer events-search API for third parties in Dec 2019 (the
+  v3 API only covers events you already know the id/venue/organization for) —
+  confirmed live, no newer public search product exists. The only remaining
+  route is scraping the public `/d/<location>/<query>/` discovery pages, which
+  embed a `window.__SERVER_DATA__` JSON blob with the same results the page
+  renders. **This explicitly violates Eventbrite's Terms of Service** (section
+  13.1 prohibits scraping) — a deliberate, accepted risk (same legal category
+  as any venue-site scraper here, but against a platform with an explicit,
+  prominent anti-scraping clause), kept low-volume/polite for that reason
+  (2.5s spacing, 300 artists/run cap — smaller and gentler than Bandsintown's).
+  Confirmed live that Eventbrite's `/d/` search is full-text over its ENTIRE
+  catalog, not a real per-artist lookup like Bandsintown's endpoint — e.g. a
+  "Dropkick Murphys" query surfaced hair-product workshops and golf outings
+  that merely contain the word "Murphy", and every first-page result for
+  "Metallica" was a tribute act. `mapEbResultToConcert` requires the queried
+  artist name to LEAD the result's title as a relevance pre-filter (trades
+  some recall for materially fewer false positives) before the shared
+  cover/tribute-band filter (`process.ts`) even sees it. Scoped to the
+  `united-states` location (Eventbrite's discovery UI has no "everywhere"
+  search — a scope trim, not full coverage; overridable via
+  `EVENTBRITE_LOCATION_SLUG`). Same batched/resumable/cache-fallback shape as
+  the Bandsintown sweep, sharing the same `data/artist_scrape_targets.txt`
+  target list. → `src/engine/eventbrite.ts`, `src/run-artists.ts`, `src/run.ts`,
+  `.github/workflows/artist-scrape.yml`, `.github/workflows/daily-scrape.yml`.
 
 ---
 
