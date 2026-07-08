@@ -8,7 +8,7 @@ async function main() {
 
   console.log(`[Cleaner] Original count: ${artists.length}`);
 
-  const cleanedMap = new Map<string, { name: string; website: string | null; socials?: any }>();
+  const cleanedMap = new Map<string, Record<string, any>>();
 
   // Whitelisted seeds to always preserve
   const preserve = new Set(SEED_ARTISTS.map((name) => name.toLowerCase()));
@@ -35,27 +35,27 @@ async function main() {
       continue;
     }
 
-    // 3. Deduplicate case-insensitively
+    // 3. Deduplicate case-insensitively, keeping every field (not just name/website/socials --
+    // dropping enrichedAt/tourUrl/wdBulkTriedAt/etc here would un-mark the whole catalog as
+    // pending and make every enrichment tier reprocess artists it already finished).
     if (cleanedMap.has(lowerName)) {
       const existing = cleanedMap.get(lowerName)!;
       // Prefer the version with more capital letters (usually indicates better casing)
       const existingCaps = (existing.name.match(/[A-Z]/g) || []).length;
       const currentCaps = (name.match(/[A-Z]/g) || []).length;
-      
-      const website = entry.website || existing.website;
-      const socials = entry.socials || existing.socials;
+      const preferCurrentCasing = currentCaps > existingCaps;
 
-      if (currentCaps > existingCaps) {
-        cleanedMap.set(lowerName, { name, website, socials });
-      } else {
-        cleanedMap.set(lowerName, { name: existing.name, website, socials });
-      }
-    } else {
       cleanedMap.set(lowerName, {
-        name,
-        website: entry.website,
-        socials: entry.socials
+        ...existing,
+        ...entry,
+        name: preferCurrentCasing ? name : existing.name,
+        website: entry.website || existing.website,
+        tourUrl: entry.tourUrl || existing.tourUrl,
+        socials: entry.socials || existing.socials,
+        enrichedAt: entry.enrichedAt || existing.enrichedAt
       });
+    } else {
+      cleanedMap.set(lowerName, { ...entry, name });
     }
   }
 

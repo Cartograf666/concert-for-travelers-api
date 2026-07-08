@@ -45,10 +45,22 @@ async function main() {
 
   const limitArg = process.argv[2] || '5';
   const outFileArg = process.argv[3] || '/tmp/results.json';
+  const batchSizeArg = process.argv[4] || '3';
+  const delayMsArg = process.argv[5] || '4000';
   const limit = parseInt(limitArg, 10);
+  const batchSize = parseInt(batchSizeArg, 10);
+  const delayMs = parseInt(delayMsArg, 10);
 
   if (isNaN(limit) || limit <= 0) {
     console.error('Error: Limit must be a positive integer.');
+    process.exit(1);
+  }
+  if (isNaN(batchSize) || batchSize <= 0) {
+    console.error('Error: batchSize must be a positive integer.');
+    process.exit(1);
+  }
+  if (isNaN(delayMs) || delayMs < 0) {
+    console.error('Error: delayMs must be a non-negative integer.');
     process.exit(1);
   }
 
@@ -68,7 +80,6 @@ async function main() {
   console.log(`[enrich-gemini-search] Selected ${pending.length} artists: ${pending.join(', ')}`);
 
   const genAI = new GoogleGenerativeAI(apiKey);
-  const batchSize = 3; // small batches to ensure precise search for each artist
   const results: any[] = [];
   
   const modelsToTry = [
@@ -169,8 +180,8 @@ Be extremely truthful. Never invent a URL. Return null rather than guess. Output
       console.error(`[enrich-gemini-search] Failed to process batch after trying all models. Last error: ${lastError?.message}`);
     }
 
-    // Small delay between batches to respect rate limits
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    // Delay between batches to respect free-tier RPM limits (tune via 5th CLI arg)
+    await new Promise((resolve) => setTimeout(resolve, delayMs));
   }
 
   // Ensure output directory exists

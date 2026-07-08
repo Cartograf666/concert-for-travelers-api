@@ -7,6 +7,14 @@ on:
         description: 'Number of artists to enrich in this run'
         required: true
         default: '100'
+      batch_size:
+        description: 'Artists per single Gemini request (higher = fewer requests, more risk of JSON/name mixups)'
+        required: false
+        default: '15'
+      delay_ms:
+        description: 'Delay between Gemini requests in ms (keep clear of free-tier RPM limit)'
+        required: false
+        default: '4000'
 
 permissions:
   contents: write
@@ -55,7 +63,7 @@ jobs:
       - name: Run Enrichment
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: npx tsx src/scripts/enrich_via_gemini_search.ts ${{ github.event.inputs.chunk_size }} /tmp/results.json
+        run: npx tsx src/scripts/enrich_via_gemini_search.ts ${{ github.event.inputs.chunk_size }} /tmp/results.json ${{ github.event.inputs.batch_size }} ${{ github.event.inputs.delay_ms }}
 
       - name: Apply Enrichment Results
         run: npm run enrich-sites apply /tmp/results.json
