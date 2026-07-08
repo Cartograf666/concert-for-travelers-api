@@ -128,11 +128,18 @@ end passes):
    Bandsintown fetch slots for one real artist, since
    `fetchBandsintownConcerts`'s own de-dupe is case-sensitive). →
    `src/scripts/clean_scrape_targets.ts`, run against the live target list.
-3. ⬜ **Blocked on the user.** Point official tour-page scrapers
-   (`scrapers/artists/*.json` — more reliable than the public Bandsintown
-   widget feed, no rate-limit/block risk) at the artists users actually search
-   for most. Needs a top-N-by-query-volume list from the consumer app's own
-   usage data; not available in this repo.
+3. ✅ Point official tour-page scrapers (`scrapers/artists/*.json` — more
+   reliable than the public Bandsintown widget feed, no rate-limit/block
+   risk) at our highest-value targets. Deliberately *not* sourced from the
+   consumer app's own usage data (a user's saved-favorites list is a biased,
+   manually-maintained proxy) — ranked instead by actual Last.fm popularity
+   (`entry.popularity.listeners`, collected by `enrich_metadata.ts`, live
+   Last.fm lookup as a fallback) among artists already on our own target
+   list. `npm run rank-scraper-candidates [N]` / the manual-dispatch
+   `rank-scraper-candidates.yml` workflow (needs `LASTFM_API_KEY`, already a
+   repo secret) produces the ranked list; still needs a human to actually
+   author each artist's selector config from it. →
+   `src/scripts/rank_scraper_candidates.ts`.
 4. ⬜ **Needs real elapsed time.** Let the new daily cron run 1-2 real cycles
    (at least one 6-day freshness window) before re-measuring.
 5. ⬜ **Needs the client repo's tooling.** Re-run the consumer app's

@@ -21,6 +21,7 @@
     "geocode-venues": "tsx src/scripts/geocode_venues.ts",
     "test-config": "tsx src/scripts/test_config.ts",
     "audit-gaps": "tsx src/scripts/audit_artist_gaps.ts",
+    "rank-scraper-candidates": "tsx src/scripts/rank_scraper_candidates.ts",
     "record-conflict-drop": "tsx src/scripts/record_conflict_drop.ts",
     "test": "SCRAPER_ALLOW_LOCAL_HOSTS=1 node --import tsx --test tests/*.test.ts"
   },
