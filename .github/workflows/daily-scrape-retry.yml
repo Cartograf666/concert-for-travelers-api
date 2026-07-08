@@ -12,24 +12,35 @@ permissions:
 jobs:
   retry:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'cancelled' && github.event.workflow_run.event == 'workflow_dispatch' }}
+    # All 3 guard conditions live here, not in the step below:
+    #   1. conclusion == 'cancelled' -- only a hard cancel, not a real failure.
+    #   2. event == 'workflow_dispatch' -- never auto-retry a cancelled cron;
+    #      tomorrow's 03:00 UTC schedule trigger recovers on its own, and
+    #      retrying a schedule cancellation risks compounding queue pressure
+    #      instead of relieving it.
+    #   3. !contains(display_title, '(auto-retry)') -- caps this at exactly
+    #      one retry per original dispatch. github.event.workflow_run does NOT
+    #      expose the triggering run's own workflow_dispatch inputs (the
+    #      GitHub REST "get a workflow run" API this event is built from has
+    #      no `.inputs` field at all -- confirmed live against this repo's
+    #      own run history, an earlier version of this workflow tried
+    #      `gh api .../runs/<id> --jq '.inputs.is_retry'` and it silently,
+    #      permanently resolved to "false", making this guard a no-op and
+    #      leaving nothing to stop an unbounded retry-of-a-retry loop).
+    #      `run-name:` on daily-scrape.yml is what actually survives into
+    #      `display_title` on this event, so that's what's checked instead.
+    if: >-
+      ${{
+        github.event.workflow_run.conclusion == 'cancelled' &&
+        github.event.workflow_run.event == 'workflow_dispatch' &&
+        !contains(github.event.workflow_run.display_title, '(auto-retry)')
+      }}
     steps:
       - name: Auto-retry cancelled Daily Concert Scrape
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -eo pipefail
-          RUN_ID="${{ github.event.workflow_run.id }}"
-          echo "Triggering workflow run ID: $RUN_ID"
-          
-          # Fetch the inputs from the triggering workflow run using GitHub API
-          IS_RETRY=$(gh api "repos/${{ github.repository }}/actions/runs/${RUN_ID}" --jq '.inputs.is_retry // "false"')
-          echo "is_retry value: $IS_RETRY"
-          
-          if [ "$IS_RETRY" = "true" ]; then
-            echo "Skipping auto-retry: The triggering run was already an auto-retry."
-          else
-            echo "The triggering run was not a retry. Retrying daily-scrape.yml..."
-            gh workflow run daily-scrape.yml -f is_retry=true
-            echo "Auto-retry dispatched successfully."
-          fi
+          echo "Triggering workflow run ID: ${{ github.event.workflow_run.id }} was cancelled (workflow_dispatch, not itself an auto-retry) -- dispatching one retry."
+          gh workflow run daily-scrape.yml -f is_retry=true
+          echo "Auto-retry dispatched successfully."

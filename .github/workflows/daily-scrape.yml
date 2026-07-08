@@ -1,5 +1,12 @@
 name: Daily Concert Scrape
 
+# The workflow_run event that daily-scrape-retry.yml listens on does NOT expose
+# this run's own workflow_dispatch inputs (GitHub's runs API has no `.inputs`
+# field) -- run-name is the one thing that DOES survive into that event's
+# `display_title`, so it's how the retry workflow tells a fresh manual dispatch
+# apart from one it already auto-retried, without needing any external state.
+run-name: ${{ (github.event.inputs.is_retry == 'true') && 'Daily Concert Scrape (auto-retry)' || 'Daily Concert Scrape' }}
+
 on:
   schedule:
     - cron: '0 3 * * *' # Daily at 03:00 UTC
