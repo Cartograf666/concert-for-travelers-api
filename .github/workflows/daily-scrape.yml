@@ -251,17 +251,9 @@ jobs:
       # (GitHub only emails the workflow author, and mutes that after repeated failures).
       - name: Alert on failure
         if: failure()
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          TITLE="🚨 Daily concert scrape failed"
-          num=$(gh issue list --state open --search "$TITLE in:title" --json number --jq '.[0].number // empty')
-          if [ -n "$num" ]; then
-            gh issue comment "$num" --body "Failed again on $(date -u '+%Y-%m-%d %H:%M UTC') — $RUN_URL"
-          else
-            gh issue create --title "$TITLE" --body "The daily scrape workflow failed. Logs: $RUN_URL"
-          fi
+        uses: ./.github/actions/alert-on-failure
+        with:
+          job-label: scrape
 
   # Separate job (not just a step) so its 'pages' concurrency lock -- which cancels
   # a stale in-progress deploy the moment a newer one starts -- only ever applies to
@@ -278,24 +270,27 @@ jobs:
       cancel-in-progress: true
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    # Narrower than the workflow-level permissions block: this job never pushes
+    # to the repo (that's the scrape job's git push), so no contents: write here.
+    permissions:
+      pages: write
+      id-token: write
+      issues: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # Needed to resolve the local ./.github/actions/alert-on-failure composite
+      # action below -- deploy-pages itself doesn't need a checkout.
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
 
       - name: Alert on failure
         if: failure()
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          TITLE="🚨 Daily concert scrape failed"
-          num=$(gh issue list --state open --search "$TITLE in:title" --json number --jq '.[0].number // empty')
-          if [ -n "$num" ]; then
-            gh issue comment "$num" --body "Failed again on $(date -u '+%Y-%m-%d %H:%M UTC') — $RUN_URL"
-          else
-            gh issue create --title "$TITLE" --body "The daily scrape workflow failed. Logs: $RUN_URL"
-          fi
+        uses: ./.github/actions/alert-on-failure
+        with:
+          job-label: deploy
