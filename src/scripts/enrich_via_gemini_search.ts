@@ -10,18 +10,25 @@ import { getGeminiKeys } from '../engine/gemini_keys.js';
  * gemini-2.0-flash/-lite and gemini-2.5-pro are 0 RPD on this tier -- skipped
  * entirely, trying them would just waste a guaranteed-429 call every batch.
  *
- * The dashboard's display names don't always match a real, callable v1beta model
- * ID -- gemini-3-flash, gemma-4-31b, and gemma-4-26b all 404 ("not found for API
- * version v1beta") in production despite showing quota on the dashboard, so
- * they've been removed here. gemini-3.1-flash-lite/gemini-3.5-flash are unverified
- * (not yet confirmed live) -- if they're also wrong, isDeadModelError below marks
- * them exhausted after one 404 instead of retrying every batch.
+ * The dashboard's display name isn't always the real, callable v1beta model ID --
+ * confirmed live via `models?key=...` (the "Debug Model IDs" step): "Gemini 3
+ * Flash" is actually `gemini-3-flash-preview`, "Gemma 4 31B"/"Gemma 4 26B" are
+ * `gemma-4-31b-it`/`gemma-4-26b-a4b-it`. Using the bare dashboard-style names
+ * (gemini-3-flash, gemma-4-31b, gemma-4-26b) 404s every time.
+ *
+ * The two Gemma models close the cascade: far more generous quota (1.5K RPD,
+ * unlimited TPM) but do NOT support the googleSearch grounding tool, so they
+ * can't verify a CURRENT tour date -- last-resort, no-search fallback only
+ * (still fine for "does this artist have a well-known official site").
  */
 const MODEL_CASCADE: { name: string; useSearch: boolean }[] = [
   { name: 'gemini-2.5-flash', useSearch: true },
   { name: 'gemini-2.5-flash-lite', useSearch: true },
+  { name: 'gemini-3-flash-preview', useSearch: true },
   { name: 'gemini-3.1-flash-lite', useSearch: true },
   { name: 'gemini-3.5-flash', useSearch: true },
+  { name: 'gemma-4-31b-it', useSearch: false },
+  { name: 'gemma-4-26b-a4b-it', useSearch: false },
 ];
 
 /** True for auth/quota errors -- the caller should mark this exact (key, model)
