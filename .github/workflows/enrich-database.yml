@@ -65,56 +65,82 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: npx tsx src/scripts/list_models.ts
 
-      - name: Run Enrichment
+      # Run in small sub-chunks with a commit+push after each, instead of one
+      # single Gemini call over the whole chunk_size committed only at the very
+      # end -- a run that gets cancelled/times out (this can legitimately take
+      # hours at 15 artists/request + a multi-second delay per request) now loses
+      # at most one sub-chunk's worth of Gemini calls instead of the entire run's,
+      # same checkpointing already used by enrich-auto/-metadata/-similar.yml.
+      - name: Run Gemini enrichment (checkpointed)
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           CHUNK_SIZE_INPUT: ${{ github.event.inputs.chunk_size }}
           BATCH_SIZE_INPUT: ${{ github.event.inputs.batch_size }}
           DELAY_MS_INPUT: ${{ github.event.inputs.delay_ms }}
-        run: npx tsx src/scripts/enrich_via_gemini_search.ts "$CHUNK_SIZE_INPUT" /tmp/results.json "$BATCH_SIZE_INPUT" "$DELAY_MS_INPUT"
-
-      - name: Apply Enrichment Results
-        run: npm run enrich-sites apply /tmp/results.json
-
-      - name: Commit and Push Changes
         run: |
-          git status --porcelain
-          if [ -z "$(git status --porcelain)" ]; then
-            echo "No changes to commit."
-          else
-            git config --local user.email "github-actions[bot]@users.noreply.github.com"
-            git config --local user.name "github-actions[bot]"
-            git add data/artists/ scrapers/
-            git commit -m "auto: enrich artist database chunk [skip ci]"
+          set -eo pipefail
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
 
-            # main gets concurrent writes (daily-scrape, self-heal auto-merges,
-            # other enrich runs) -- retry with rebase instead of failing outright.
-            pushed=false
-            for i in 1 2 3 4 5; do
-              if git push; then
-                pushed=true
-                break
-              fi
-              echo "Push rejected (concurrent write), retrying with rebase ($i/5)..."
-              git fetch origin main
-              if ! git rebase origin/main; then
-                echo "::warning::Rebase conflict -- dropping this run's enrichment commit."
-                git rebase --abort
-                # Resync to origin BEFORE the conflict-drop commit below -- otherwise that
-                # commit lands on the same stale base the push was just rejected against
-                # and is itself guaranteed to fail as a non-fast-forward.
-                git fetch origin main
-                git reset --hard origin/main
-                npm run record-conflict-drop -- enrich-database || true
-                git add data/conflict-drops.json && git commit -m "chore: record conflict-drop metric [skip ci]" && git push || true
-                break
-              fi
-              sleep $((RANDOM % 5 + 2))
-            done
+          SUB_CHUNK=300
+          REMAINING=${CHUNK_SIZE_INPUT:-100}
+          BATCH_SIZE=${BATCH_SIZE_INPUT:-15}
+          DELAY_MS=${DELAY_MS_INPUT:-4000}
 
-            if [ "$pushed" = "true" ]; then
-              echo "Successfully committed and pushed enriched database changes."
-            else
-              echo "::warning::Could not push enrichment changes after retries -- skipped for this run."
+          while [ "$REMAINING" -gt 0 ]; do
+            THIS_RUN=$SUB_CHUNK
+            if [ "$REMAINING" -lt "$SUB_CHUNK" ]; then THIS_RUN=$REMAINING; fi
+
+            npx tsx src/scripts/enrich_via_gemini_search.ts "$THIS_RUN" /tmp/results.json "$BATCH_SIZE" "$DELAY_MS" 2>&1 | tee /tmp/enrich-gemini.log
+
+            if grep -q "No pending artists found" /tmp/enrich-gemini.log; then
+              echo "Nothing left to process -- stopping the loop early."
+              break
             fi
-          fi
+
+            npm run enrich-sites apply /tmp/results.json
+
+            if git diff --quiet -- data/artists/ scrapers/; then
+              echo "Sub-chunk made no changes to commit."
+            else
+              git add data/artists/ scrapers/
+              git commit -m "auto: enrich artist database chunk [skip ci]"
+
+              # main gets concurrent writes (daily-scrape, self-heal auto-merges,
+              # other enrich runs) -- retry with rebase instead of failing outright.
+              # Sharding means two writers only actually conflict if they touched
+              # the SAME shard file; different shards rebase cleanly.
+              pushed=false
+              for i in 1 2 3 4 5; do
+                if git push; then
+                  pushed=true
+                  break
+                fi
+                echo "Push rejected (concurrent write), retrying with rebase ($i/5)..."
+                git fetch origin main
+                if ! git rebase origin/main; then
+                  echo "::warning::Rebase conflict -- dropping this sub-chunk's commit."
+                  git rebase --abort
+                  # Resync to origin BEFORE the conflict-drop commit below -- otherwise
+                  # that commit lands on the same stale base the push was just rejected
+                  # against and is itself guaranteed to fail as a non-fast-forward. Also
+                  # means the next sub-chunk starts from current state instead of
+                  # recomputing/dropping the identical work over and over until timeout.
+                  git fetch origin main
+                  git reset --hard origin/main
+                  npm run record-conflict-drop -- enrich-database || true
+                  git add data/conflict-drops.json && git commit -m "chore: record conflict-drop metric [skip ci]" && git push || true
+                  break
+                fi
+                sleep $((RANDOM % 5 + 2))
+              done
+
+              if [ "$pushed" = "true" ]; then
+                echo "Committed and pushed this sub-chunk's Gemini enrichment."
+              else
+                echo "::warning::Could not push this sub-chunk after retries -- its work stays local and will be redone next run."
+              fi
+            fi
+
+            REMAINING=$((REMAINING - THIS_RUN))
+          done
