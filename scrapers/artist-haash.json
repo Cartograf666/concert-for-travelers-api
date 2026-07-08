@@ -1,0 +1,18 @@
+{
+  "id": "artist-haash",
+  "domain": "ha-ash.com",
+  "url": "https://ha-ash.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-item",
+    "artistNameFallback": "Ha*Ash",
+    "date": "div.event-date p",
+    "ticketUrl": "a.event-tickets",
+    "venue": "span.event-venue",
+    "city": "span.event-city",
+    "country": "span.event-country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "MX"
+  }
+}
