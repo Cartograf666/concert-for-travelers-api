@@ -58945,7 +58945,15 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:59:09.827Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "english"
+    ],
+    "popularity": {
+      "listeners": 3902,
+      "playcount": 10384
+    },
+    "metaEnrichedAt": "2026-07-08T20:33:28.929Z"
   },
   {
     "name": "Patrick Hawes",
@@ -58961,7 +58969,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:59:12.383Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Classical",
+      "contemporary classical",
+      "composer",
+      "british",
+      "new age"
+    ],
+    "popularity": {
+      "listeners": 16687,
+      "playcount": 92662
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d0bbaea11f75096b42b26035d4d05a9a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:29.725Z"
   },
   {
     "name": "Patrick Hernandez",
@@ -58977,20 +58998,43 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:59:15.262Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Disco",
+      "70s",
+      "dance",
+      "pop",
+      "french"
+    ],
+    "popularity": {
+      "listeners": 367746,
+      "playcount": 1871346
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/653f366a84f6453228e83ca07292c434/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:30.406Z"
   },
   {
     "name": "Patrick Jonathan",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
-    "autoTriedAt": "2026-07-08T18:59:16.726Z"
+    "autoTriedAt": "2026-07-08T18:59:16.726Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 3
+    },
+    "metaEnrichedAt": "2026-07-08T20:33:31.196Z"
   },
   {
     "name": "Patrick Kearney",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
     "mbid": "62eb8fb5-7ffe-4ec6-8f4e-0d4b0cb8b5c6",
-    "autoTriedAt": "2026-07-08T18:59:19.724Z"
+    "autoTriedAt": "2026-07-08T18:59:19.724Z",
+    "popularity": {
+      "listeners": 295,
+      "playcount": 2546
+    },
+    "metaEnrichedAt": "2026-07-08T20:33:31.993Z"
   },
   {
     "name": "Patrick Keeler",
@@ -59006,7 +59050,8 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0cb67e93-6b5f-4433-971c-6d4adb60d3d8"
+    "mbid": "0cb67e93-6b5f-4433-971c-6d4adb60d3d8",
+    "metaTriedAt": "2026-07-08T20:33:32.642Z"
   },
   {
     "name": "Patrick Krief",
@@ -59022,14 +59067,26 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f34a1fbe-d313-4f1c-adb3-db47f0f823d2"
+    "mbid": "f34a1fbe-d313-4f1c-adb3-db47f0f823d2",
+    "genres": [
+      "indie",
+      "Canadian",
+      "songwriter"
+    ],
+    "popularity": {
+      "listeners": 1174,
+      "playcount": 5711
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3a2d3c02f87d18c684e2e86d5fe8623a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:33.388Z"
   },
   {
     "name": "Patrick Lachman",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
     "mbid": "3765096a-f340-4421-a754-1e04ff1322c4",
-    "autoTriedAt": "2026-07-08T18:59:22.229Z"
+    "autoTriedAt": "2026-07-08T18:59:22.229Z",
+    "metaTriedAt": "2026-07-08T20:33:34.041Z"
   },
   {
     "name": "Patrick Lindner",
@@ -59045,20 +59102,47 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b5641867-f2aa-441d-84d2-299253a46cd2"
+    "mbid": "b5641867-f2aa-441d-84d2-299253a46cd2",
+    "genres": [
+      "Schlager",
+      "Patrick Lindner",
+      "volksmusik",
+      "germany",
+      "true gay black metal"
+    ],
+    "popularity": {
+      "listeners": 16974,
+      "playcount": 132856
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/50b415792e99f1bb6f6992ddfe2efcba/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:34.778Z"
   },
   {
     "name": "Patrick Monahan",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
     "mbid": "7d9e3514-ecfb-41dd-a7f8-5819915b79a9",
-    "autoTriedAt": "2026-07-08T18:59:24.807Z"
+    "autoTriedAt": "2026-07-08T18:59:24.807Z",
+    "genres": [
+      "rock",
+      "singer-songwriter",
+      "soft rock",
+      "alternative rock",
+      "american"
+    ],
+    "popularity": {
+      "listeners": 75735,
+      "playcount": 636425
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:35.605Z"
   },
   {
     "name": "Patrick Montan",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
-    "autoTriedAt": "2026-07-08T18:59:26.052Z"
+    "autoTriedAt": "2026-07-08T18:59:26.052Z",
+    "metaTriedAt": "2026-07-08T20:33:36.287Z"
   },
   {
     "name": "Patrick Moraz",
@@ -59074,7 +59158,20 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c872ab10-fd12-41cc-a6a0-8d1ac7263125"
+    "mbid": "c872ab10-fd12-41cc-a6a0-8d1ac7263125",
+    "genres": [
+      "Progressive rock",
+      "art rock",
+      "keyboard virtuoso",
+      "piano",
+      "keyboards"
+    ],
+    "popularity": {
+      "listeners": 22583,
+      "playcount": 191996
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c8c6cf6150309ffa40f5f73d47a091d5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:37.039Z"
   },
   {
     "name": "Patrick Nunn",
@@ -59090,7 +59187,12 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:59:28.713Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 84,
+      "playcount": 763
+    },
+    "metaEnrichedAt": "2026-07-08T20:33:37.772Z"
   },
   {
     "name": "Patrick O'Hearn",
@@ -59106,7 +59208,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:59:33.124Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "new age",
+      "ambient",
+      "atmospheric",
+      "ethereal",
+      "deep ambient"
+    ],
+    "popularity": {
+      "listeners": 238104,
+      "playcount": 2309751
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/16e2c3e7cab82860877105a229e496aa/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:38.406Z"
   },
   {
     "name": "Patrick Park",
@@ -59122,20 +59237,43 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:59:36.643Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "singer-songwriter",
+      "folk",
+      "acoustic",
+      "indie",
+      "indie rock"
+    ],
+    "popularity": {
+      "listeners": 218431,
+      "playcount": 2680371
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f6de7015cb13c982988457262eb407b2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:39.213Z"
   },
   {
     "name": "Patrick Pentland",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
     "mbid": "577cfc42-e048-4de9-a7a7-d531d9e99201",
-    "autoTriedAt": "2026-07-08T18:59:39.592Z"
+    "autoTriedAt": "2026-07-08T18:59:39.592Z",
+    "popularity": {
+      "listeners": 48,
+      "playcount": 128
+    },
+    "metaEnrichedAt": "2026-07-08T20:33:39.886Z"
   },
   {
     "name": "Patrick Saint-Denis",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
-    "autoTriedAt": "2026-07-08T18:59:40.837Z"
+    "autoTriedAt": "2026-07-08T18:59:40.837Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 1
+    },
+    "metaEnrichedAt": "2026-07-08T20:33:40.627Z"
   },
   {
     "name": "Patrick Scales",
@@ -59151,7 +59289,12 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:59:43.416Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 11,
+      "playcount": 131
+    },
+    "metaEnrichedAt": "2026-07-08T20:33:41.441Z"
   },
   {
     "name": "Patrick Sky",
@@ -59167,20 +59310,51 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "3bcbe4a6-5e57-4aa5-bca4-d00b4815d99b"
+    "mbid": "3bcbe4a6-5e57-4aa5-bca4-d00b4815d99b",
+    "genres": [
+      "folk",
+      "greenwich village folk",
+      "under 2000 listeners",
+      "singer-songwriter",
+      "native american"
+    ],
+    "popularity": {
+      "listeners": 6846,
+      "playcount": 47919
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c5aa327fdb8fc0b1d12f7be44b32e043/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:42.219Z"
   },
   {
     "name": "Patrick Soon-Shiong",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
-    "autoTriedAt": "2026-07-08T18:59:44.802Z"
+    "autoTriedAt": "2026-07-08T18:59:44.802Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 2
+    },
+    "metaEnrichedAt": "2026-07-08T20:33:42.957Z"
   },
   {
     "name": "Patrick Street",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
     "mbid": "622b1e36-4d4e-4744-80b3-056d4484a1ae",
-    "autoTriedAt": "2026-07-08T18:59:47.457Z"
+    "autoTriedAt": "2026-07-08T18:59:47.457Z",
+    "genres": [
+      "celtic",
+      "irish",
+      "folk",
+      "Irish Folk",
+      "traditional"
+    ],
+    "popularity": {
+      "listeners": 69381,
+      "playcount": 389378
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cb2f5f9a4363fa259527c0e21086803f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:43.628Z"
   },
   {
     "name": "Patrick Stump",
@@ -59196,7 +59370,20 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "563abe5e-06b1-430d-99d4-7abf981c6e5a"
+    "mbid": "563abe5e-06b1-430d-99d4-7abf981c6e5a",
+    "genres": [
+      "pop rock",
+      "pop",
+      "rock",
+      "soul",
+      "fucking adorable"
+    ],
+    "popularity": {
+      "listeners": 247553,
+      "playcount": 6564847
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/11c2325d1d5838a05bf4a0a67916cd78/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:44.394Z"
   },
   {
     "name": "Patrick Swayze",
@@ -59212,14 +59399,32 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "295ab66f-31fe-4530-afb2-3b80613707ea"
+    "mbid": "295ab66f-31fe-4530-afb2-3b80613707ea",
+    "genres": [
+      "80s",
+      "pop",
+      "Soundtrack",
+      "dirty dancing",
+      "male vocalists"
+    ],
+    "popularity": {
+      "listeners": 316135,
+      "playcount": 1872264
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ef24ff85a2b678cf22c84fb93e31ef2a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:45.031Z"
   },
   {
     "name": "Patrick van Deurzen",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
     "mbid": "76ec00aa-91cc-4351-94c4-a5d3b414d04b",
-    "autoTriedAt": "2026-07-08T18:59:50.188Z"
+    "autoTriedAt": "2026-07-08T18:59:50.188Z",
+    "popularity": {
+      "listeners": 9,
+      "playcount": 19
+    },
+    "metaEnrichedAt": "2026-07-08T20:33:45.764Z"
   },
   {
     "name": "Patrick Verbeke",
@@ -59235,14 +59440,37 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:59:52.820Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "french",
+      "guitar",
+      "blues"
+    ],
+    "popularity": {
+      "listeners": 484,
+      "playcount": 3354
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d7592768dadfa593bc11393ff6215e6d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:46.702Z"
   },
   {
     "name": "Patrick Walden",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
     "mbid": "a289805c-4754-4c2b-942e-b3adc66149cb",
-    "autoTriedAt": "2026-07-08T18:59:57.013Z"
+    "autoTriedAt": "2026-07-08T18:59:57.013Z",
+    "genres": [
+      "indie",
+      "babyshambles",
+      "rock",
+      "british",
+      "walden"
+    ],
+    "popularity": {
+      "listeners": 54,
+      "playcount": 1448
+    },
+    "metaEnrichedAt": "2026-07-08T20:33:47.701Z"
   },
   {
     "name": "Patrick Watson",
@@ -59258,7 +59486,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:59:59.916Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "indie",
+      "singer-songwriter",
+      "folk",
+      "Canadian",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 1731839,
+      "playcount": 37653918
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/863956b94c995ea3a5260d03b97bd65e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:48.447Z"
   },
   {
     "name": "Patrick Williams",
@@ -59274,7 +59515,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:00:04.276Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "classic",
+      "Fusion",
+      "jazz fusion",
+      "fusion jazz"
+    ],
+    "popularity": {
+      "listeners": 4922,
+      "playcount": 35385
+    },
+    "metaEnrichedAt": "2026-07-08T20:33:49.164Z"
   },
   {
     "name": "Patrick Wilson",
@@ -59290,7 +59543,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:00:06.881Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Soundtrack",
+      "Broadway",
+      "geek rock",
+      "musical theater",
+      "male"
+    ],
+    "popularity": {
+      "listeners": 26317,
+      "playcount": 139769
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0166675389c5fe14bb2b502ee11f1b34/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:49.874Z"
   },
   {
     "name": "Patrick Wolf",
@@ -59306,7 +59572,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:00:09.598Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "indie",
+      "electronic",
+      "singer-songwriter",
+      "folk",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 717665,
+      "playcount": 37266864
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/457b9ab58ecc0fa3abab096caf04f781/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:50.518Z"
   },
   {
     "name": "Patrick Yandall",
@@ -59322,7 +59601,20 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "40c6a66f-e7f3-48b8-817c-0222c472861f"
+    "mbid": "40c6a66f-e7f3-48b8-817c-0222c472861f",
+    "genres": [
+      "blues",
+      "guitar",
+      "Smooth Jazz",
+      "jazz",
+      "blues rock"
+    ],
+    "popularity": {
+      "listeners": 11731,
+      "playcount": 83090
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a4e14fa58db520478e131e620f43d8d1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:51.238Z"
   },
   {
     "name": "Patrik Fitzgerald",
@@ -59338,7 +59630,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:00:15.155Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "punk",
+      "folk punk",
+      "singer-songwriter",
+      "folk",
+      "british"
+    ],
+    "popularity": {
+      "listeners": 15472,
+      "playcount": 178092
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c231708a29a8882f452893d67728b5e2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:51.905Z"
   },
   {
     "name": "Patrik Isaksson",
@@ -59354,14 +59659,28 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:00:17.976Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "swedish",
+      "pop",
+      "singer-songwriter",
+      "male vocalists",
+      "patrik isaksson"
+    ],
+    "popularity": {
+      "listeners": 42888,
+      "playcount": 499098
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f86badb380a8b8b94b33755fc77e78c7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:52.727Z"
   },
   {
     "name": "Patrik Jensen",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
     "mbid": "a0046b54-6b1d-4a14-b1ed-c03cb832ad42",
-    "autoTriedAt": "2026-07-08T19:00:21.695Z"
+    "autoTriedAt": "2026-07-08T19:00:21.695Z",
+    "metaTriedAt": "2026-07-08T20:33:53.329Z"
   },
   {
     "name": "Patrik Ringborg",
@@ -59377,20 +59696,40 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:00:24.243Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 6,
+      "playcount": 8
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f3a6c3cc5a53ce7d2af85677a39ef377/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:53.992Z"
   },
   {
     "name": "Patrizia",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
     "mbid": "812c6eb4-936a-49ca-a75a-8d68331ca047",
-    "autoTriedAt": "2026-07-08T19:00:26.850Z"
+    "autoTriedAt": "2026-07-08T19:00:26.850Z",
+    "genres": [
+      "classical crossover",
+      "female vocalists",
+      "opera",
+      "symphonic metal",
+      "patrizia"
+    ],
+    "popularity": {
+      "listeners": 1278,
+      "playcount": 8280
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/12e669809891e7cfcce1bb59484149d0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:54.741Z"
   },
   {
     "name": "Patrizia Di Paolo",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
-    "autoTriedAt": "2026-07-08T19:00:29.131Z"
+    "autoTriedAt": "2026-07-08T19:00:29.131Z",
+    "metaTriedAt": "2026-07-08T20:33:55.397Z"
   },
   {
     "name": "Patrizio Buanne",
@@ -59406,7 +59745,20 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "be8491e9-a443-4e57-a4e7-d2fc78ee6b7c"
+    "mbid": "be8491e9-a443-4e57-a4e7-d2fc78ee6b7c",
+    "genres": [
+      "italian",
+      "male vocalists",
+      "Patrizio Buanne",
+      "pop",
+      "Classical"
+    ],
+    "popularity": {
+      "listeners": 41032,
+      "playcount": 602232
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bc3e8afe0a7e195b483722805c657f54/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:56.108Z"
   },
   {
     "name": "Patrycja Markowska",
@@ -59422,20 +59774,47 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b428db12-a25d-4da3-a0be-cc7f0aa42cbf"
+    "mbid": "b428db12-a25d-4da3-a0be-cc7f0aa42cbf",
+    "genres": [
+      "polish",
+      "female vocalists",
+      "pop",
+      "pop rock",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 72161,
+      "playcount": 1195219
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7de90fe6e8d0088460aa7b87ec9cdd81/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:56.826Z"
   },
   {
     "name": "Patryk Dominik Sztyber",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
     "mbid": "81eb3be2-8617-4856-aa12-00504de27cb0",
-    "autoTriedAt": "2026-07-08T19:00:31.499Z"
+    "autoTriedAt": "2026-07-08T19:00:31.499Z",
+    "metaTriedAt": "2026-07-08T20:33:57.489Z"
   },
   {
     "name": "Patsy",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
-    "autoTriedAt": "2026-07-08T19:00:33.666Z"
+    "autoTriedAt": "2026-07-08T19:00:33.666Z",
+    "genres": [
+      "eurodance",
+      "90s",
+      "dance",
+      "french",
+      "download"
+    ],
+    "popularity": {
+      "listeners": 3861,
+      "playcount": 27233
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5e0735db4665713def3ded9b15b43d57/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:58.194Z"
   },
   {
     "name": "Patsy Cline",
@@ -59451,21 +59830,52 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ad82dd72-0df3-4a09-8d7a-1af9c9e80522"
+    "mbid": "ad82dd72-0df3-4a09-8d7a-1af9c9e80522",
+    "genres": [
+      "country",
+      "female vocalists",
+      "classic country",
+      "oldies",
+      "60s"
+    ],
+    "popularity": {
+      "listeners": 1037420,
+      "playcount": 12469587
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a3024f1b9f0235d68de05ddc02507e6d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:58.840Z"
   },
   {
     "name": "Patsy Gallant",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
     "mbid": "ba27017b-19ad-4f33-b7bf-8c9677593d33",
-    "autoTriedAt": "2026-07-08T19:00:36.308Z"
+    "autoTriedAt": "2026-07-08T19:00:36.308Z",
+    "genres": [
+      "Disco",
+      "70s",
+      "USA",
+      "dance",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 12990,
+      "playcount": 63291
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3c78d8e827ddeab062d9d5e2fff07c83/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:33:59.511Z"
   },
   {
     "name": "Patsy Kelly",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
     "mbid": "1330a019-fbaf-40dc-9b86-33d1d81c78fc",
-    "autoTriedAt": "2026-07-08T19:00:39.487Z"
+    "autoTriedAt": "2026-07-08T19:00:39.487Z",
+    "popularity": {
+      "listeners": 47,
+      "playcount": 286
+    },
+    "metaEnrichedAt": "2026-07-08T20:34:00.240Z"
   },
   {
     "name": "Patsy Montana",
@@ -59481,7 +59891,20 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "eb8f96cc-ecaa-4f6a-9224-0c828f772347"
+    "mbid": "eb8f96cc-ecaa-4f6a-9224-0c828f772347",
+    "genres": [
+      "country",
+      "All",
+      "USA",
+      "Female Voices",
+      "old timey"
+    ],
+    "popularity": {
+      "listeners": 21948,
+      "playcount": 102642
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e49746028bc97388152497eed8a2e287/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:00.977Z"
   },
   {
     "name": "Patsy Seddon",
@@ -59497,13 +59920,20 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f5879649-6366-4e56-9dbb-12f148d22a88"
+    "mbid": "f5879649-6366-4e56-9dbb-12f148d22a88",
+    "popularity": {
+      "listeners": 49,
+      "playcount": 88
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:02.237Z"
   },
   {
     "name": "Patsy Takemoto Mink",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
-    "autoTriedAt": "2026-07-08T19:00:40.736Z"
+    "autoTriedAt": "2026-07-08T19:00:40.736Z",
+    "metaTriedAt": "2026-07-08T20:34:02.866Z"
   },
   {
     "name": "Patsy Watchorn",
@@ -59519,7 +59949,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:00:45.511Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "irish",
+      "folk",
+      "celtic",
+      "Irish Folk",
+      "p watchorn"
+    ],
+    "popularity": {
+      "listeners": 11123,
+      "playcount": 57598
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c7ba98246a714be4bbf13cf9cd678a13/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:03.545Z"
   },
   {
     "name": "Pattern Is Movement",
@@ -59535,7 +59978,20 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "30ad9dee-b47f-4df6-ad1d-71e24e13dbf6"
+    "mbid": "30ad9dee-b47f-4df6-ad1d-71e24e13dbf6",
+    "genres": [
+      "math rock",
+      "indie",
+      "11",
+      "shoegaze",
+      "chamber pop"
+    ],
+    "popularity": {
+      "listeners": 27401,
+      "playcount": 288625
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/15ecc4537650039e8a450e034cd50a35/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:04.241Z"
   },
   {
     "name": "Patterns",
@@ -59551,7 +60007,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:00:51.700Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "synthpop",
+      "electropop",
+      "new wave",
+      "indie",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 63073,
+      "playcount": 868277
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e6e1452c895e7eaaeb85330db8823e91/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:05.125Z"
   },
   {
     "name": "Patti Austin",
@@ -59567,14 +60036,40 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e58ae396-5050-4640-a5d1-8826b5c4ba13"
+    "mbid": "e58ae396-5050-4640-a5d1-8826b5c4ba13",
+    "genres": [
+      "soul",
+      "female vocalists",
+      "jazz",
+      "Smooth Jazz",
+      "80s"
+    ],
+    "popularity": {
+      "listeners": 170019,
+      "playcount": 1083716
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/82b6ae0e8931934a18ec0d9cad5eb3d3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:05.977Z"
   },
   {
     "name": "Patti Boulaye",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
     "mbid": "0dce89fb-6f2a-47a4-b2e3-da07591255ee",
-    "autoTriedAt": "2026-07-08T19:00:58.498Z"
+    "autoTriedAt": "2026-07-08T19:00:58.498Z",
+    "genres": [
+      "pop",
+      "soul",
+      "female vocalists",
+      "british",
+      "nigerian"
+    ],
+    "popularity": {
+      "listeners": 321,
+      "playcount": 1504
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6cdec1f383334266ebd01e99ca831321/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:06.691Z"
   },
   {
     "name": "Patti Cohenour",
@@ -59590,7 +60085,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:01:16.288Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 1634,
+      "playcount": 9670
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4c4a311a9b0ed9326386e5c30415046a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:07.379Z"
   },
   {
     "name": "Patti Jannetta",
@@ -59606,7 +60107,12 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "390b7120-56a1-4dd4-9084-b5232a47aa78"
+    "mbid": "390b7120-56a1-4dd4-9084-b5232a47aa78",
+    "popularity": {
+      "listeners": 3,
+      "playcount": 3
+    },
+    "metaEnrichedAt": "2026-07-08T20:34:08.066Z"
   },
   {
     "name": "Patti LaBelle",
@@ -59622,7 +60128,20 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f319ec6a-9290-449b-baef-4244809c487a"
+    "mbid": "f319ec6a-9290-449b-baef-4244809c487a",
+    "genres": [
+      "soul",
+      "female vocalists",
+      "rnb",
+      "funk",
+      "70s"
+    ],
+    "popularity": {
+      "listeners": 456233,
+      "playcount": 3444965
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/33cfd487204f44bb136604abcc9e4023/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:08.783Z"
   },
   {
     "name": "Patti LuPone",
@@ -59638,7 +60157,20 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "508963b8-c4d4-489f-a03a-26e323cb0cf9"
+    "mbid": "508963b8-c4d4-489f-a03a-26e323cb0cf9",
+    "genres": [
+      "Broadway",
+      "musical",
+      "showtunes",
+      "musicals",
+      "patti lupone"
+    ],
+    "popularity": {
+      "listeners": 93983,
+      "playcount": 987796
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e446758874d02282d4850102c3642f64/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:09.515Z"
   },
   {
     "name": "Patti Page",
@@ -59654,7 +60186,20 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "46bd1529-4301-4d10-9124-17d9e858034e"
+    "mbid": "46bd1529-4301-4d10-9124-17d9e858034e",
+    "genres": [
+      "jazz",
+      "50s",
+      "female vocalists",
+      "oldies",
+      "easy listening"
+    ],
+    "popularity": {
+      "listeners": 375168,
+      "playcount": 2104907
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/86077c002db829fe99e25811808300c0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:10.171Z"
   },
   {
     "name": "Patti Rothberg",
@@ -59670,7 +60215,20 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5d9a7f2a-c5e7-4589-bd84-56432ff6c44d"
+    "mbid": "5d9a7f2a-c5e7-4589-bd84-56432ff6c44d",
+    "genres": [
+      "rock",
+      "female vocalists",
+      "singer-songwriter",
+      "indie",
+      "indie rock"
+    ],
+    "popularity": {
+      "listeners": 14330,
+      "playcount": 104995
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4769fdbde4f950c65a883832bd20728f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:10.882Z"
   },
   {
     "name": "Patti Russo",
@@ -59686,7 +60244,16 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c92529df-8696-4763-92e3-8354221868f2"
+    "mbid": "c92529df-8696-4763-92e3-8354221868f2",
+    "genres": [
+      "doo wop"
+    ],
+    "popularity": {
+      "listeners": 179,
+      "playcount": 2486
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:11.649Z"
   },
   {
     "name": "Patti Scialfa",
@@ -59702,7 +60269,20 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f09aa40c-b613-4ea2-a8cf-6056c2657a9a"
+    "mbid": "f09aa40c-b613-4ea2-a8cf-6056c2657a9a",
+    "genres": [
+      "female vocalists",
+      "singer-songwriter",
+      "rock",
+      "americana",
+      "classic rock"
+    ],
+    "popularity": {
+      "listeners": 55212,
+      "playcount": 393650
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/82368f6946d1a6035e363b25535079e6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:12.353Z"
   },
   {
     "name": "Patti Smith",
@@ -59718,14 +60298,39 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:01:29.915Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "punk",
+      "rock",
+      "female vocalists",
+      "singer-songwriter",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 1412889,
+      "playcount": 27841050
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b19f7c44b7b32a88466cc7a648474fdc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:13.066Z"
   },
   {
     "name": "Patti Smith Group",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
     "mbid": "26638df8-ef34-40d1-8d93-616836b72878",
-    "autoTriedAt": "2026-07-08T19:01:32.457Z"
+    "autoTriedAt": "2026-07-08T19:01:32.457Z",
+    "genres": [
+      "punk",
+      "rock",
+      "female vocalists",
+      "singer-songwriter",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 1412889,
+      "playcount": 27841050
+    },
+    "metaEnrichedAt": "2026-07-08T20:34:13.694Z"
   },
   {
     "name": "Patto",
@@ -59741,7 +60346,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:01:35.010Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Progressive rock",
+      "Jazz Rock",
+      "Psychedelic Rock",
+      "classic rock",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 42965,
+      "playcount": 272704
+    },
+    "metaEnrichedAt": "2026-07-08T20:34:14.434Z"
   },
   {
     "name": "Patty Brard",
@@ -59757,7 +60374,20 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "927e9d3c-af28-45c0-b5d5-01b69af7a680"
+    "mbid": "927e9d3c-af28-45c0-b5d5-01b69af7a680",
+    "genres": [
+      "sanremo",
+      "ibiza",
+      "Videoland",
+      "pittige tijden",
+      "ranking the stars"
+    ],
+    "popularity": {
+      "listeners": 1003,
+      "playcount": 7874
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c648fcaba06d366882703eec82c8611e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:15.230Z"
   },
   {
     "name": "Patty Donahue",
@@ -59773,7 +60403,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:01:37.553Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 11,
+      "playcount": 22
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:15.918Z"
   },
   {
     "name": "Patty Griffin",
@@ -59789,13 +60425,27 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6fddcfc3-20b6-48d0-87ba-8211eca3420c"
+    "mbid": "6fddcfc3-20b6-48d0-87ba-8211eca3420c",
+    "genres": [
+      "folk",
+      "singer-songwriter",
+      "female vocalists",
+      "Alt-country",
+      "americana"
+    ],
+    "popularity": {
+      "listeners": 373414,
+      "playcount": 5645973
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/267f408d64203fe30157d7eb52fbde84/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:16.791Z"
   },
   {
     "name": "Patty Kotero",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
-    "autoTriedAt": "2026-07-08T19:01:45.236Z"
+    "autoTriedAt": "2026-07-08T19:01:45.236Z",
+    "metaTriedAt": "2026-07-08T20:34:17.438Z"
   },
   {
     "name": "Patty Larkin",
@@ -59811,7 +60461,20 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2450c460-5a4f-44b0-a6d9-847f281599a1"
+    "mbid": "2450c460-5a4f-44b0-a6d9-847f281599a1",
+    "genres": [
+      "female vocalists",
+      "folk",
+      "singer-songwriter",
+      "folk rock",
+      "patty larkin"
+    ],
+    "popularity": {
+      "listeners": 41438,
+      "playcount": 332790
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/76ddb8b9bd2f5a78754559ad4ccc7d7a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:18.097Z"
   },
   {
     "name": "Patty Loveless",
@@ -59827,7 +60490,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:01:54.132Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "country",
+      "female vocalists",
+      "bluegrass",
+      "Patty Loveless",
+      "patti loveless"
+    ],
+    "popularity": {
+      "listeners": 165556,
+      "playcount": 1688422
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e886834627d4767eaf024d027b662f8b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:18.720Z"
   },
   {
     "name": "Patty Ryan",
@@ -59843,14 +60519,33 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4bdefa1f-ed75-4f99-ba20-c040d7d99600"
+    "mbid": "4bdefa1f-ed75-4f99-ba20-c040d7d99600",
+    "genres": [
+      "Disco",
+      "80s",
+      "Italo Disco",
+      "female vocalists",
+      "eurodisco"
+    ],
+    "popularity": {
+      "listeners": 31549,
+      "playcount": 213716
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7b34a083aeaeaa712c6aa110faac896a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:19.416Z"
   },
   {
     "name": "Patty Schemel",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
     "mbid": "b9d60819-a135-425f-bc2d-d12ca19ad945",
-    "autoTriedAt": "2026-07-08T19:02:06.450Z"
+    "autoTriedAt": "2026-07-08T19:02:06.450Z",
+    "popularity": {
+      "listeners": 6,
+      "playcount": 17
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:20.227Z"
   },
   {
     "name": "Patty Smyth",
@@ -59866,7 +60561,20 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b7bf6771-2552-4fc4-8c48-66f042f04198"
+    "mbid": "b7bf6771-2552-4fc4-8c48-66f042f04198",
+    "genres": [
+      "rock",
+      "female vocalists",
+      "pop",
+      "classic rock",
+      "female vocalist"
+    ],
+    "popularity": {
+      "listeners": 71951,
+      "playcount": 424014
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c29039fb7598f424eedd2dd25ea5457f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:20.888Z"
   },
   {
     "name": "Paty Cantú",
@@ -59882,7 +60590,20 @@
     },
     "enrichedAt": "2026-07-07T07:22:05.039Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "20dac54f-07a0-4418-b545-49d09813951c"
+    "mbid": "20dac54f-07a0-4418-b545-49d09813951c",
+    "genres": [
+      "pop",
+      "latin",
+      "female vocalists",
+      "latin pop",
+      "mexico"
+    ],
+    "popularity": {
+      "listeners": 140054,
+      "playcount": 3132465
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f7d0b12ffc14cee3f7cfb3811f5f5418/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:21.552Z"
   },
   {
     "name": "Paul",
@@ -59896,46 +60617,80 @@
       "telegram": null,
       "vk": null
     },
-    "autoTriedAt": "2026-07-08T19:02:07.703Z"
+    "autoTriedAt": "2026-07-08T19:02:07.703Z",
+    "genres": [
+      "VALERIE",
+      "House",
+      "electronic",
+      "hip hop",
+      "synth house"
+    ],
+    "popularity": {
+      "listeners": 35351,
+      "playcount": 323894
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d7d1817eebcfefb87fddfdd3441ecda5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:22.310Z"
   },
   {
     "name": "Paul 'Guigsy' McGuigan",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
-    "autoTriedAt": "2026-07-08T19:02:08.952Z"
+    "autoTriedAt": "2026-07-08T19:02:08.952Z",
+    "metaTriedAt": "2026-07-08T20:34:22.979Z"
   },
   {
     "name": "Paul \"Bonehead\" Arthurs",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
     "mbid": "17aa0ede-a4bc-4a18-a347-0ee843a38d84",
-    "autoTriedAt": "2026-07-08T19:02:10.201Z"
+    "autoTriedAt": "2026-07-08T19:02:10.201Z",
+    "metaTriedAt": "2026-07-08T20:34:23.851Z"
   },
   {
     "name": "Paul \"Oz\" Bach",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:05.039Z",
-    "autoTriedAt": "2026-07-08T19:02:17.535Z"
+    "autoTriedAt": "2026-07-08T19:02:17.535Z",
+    "metaTriedAt": "2026-07-08T20:34:24.494Z"
   },
   {
     "name": "Paul \"P.H.\" Naffah",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
-    "autoTriedAt": "2026-07-08T19:02:18.787Z"
+    "autoTriedAt": "2026-07-08T19:02:18.787Z",
+    "metaTriedAt": "2026-07-08T20:34:25.144Z"
   },
   {
     "name": "Paul \"Wine\" Jones",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "bbeb04d3-e58f-469d-a1d6-75446a0d62d9",
-    "autoTriedAt": "2026-07-08T19:02:34.180Z"
+    "autoTriedAt": "2026-07-08T19:02:34.180Z",
+    "genres": [
+      "blues",
+      "fat possum",
+      "garage blues",
+      "blues rock",
+      "Contemporary Blues"
+    ],
+    "popularity": {
+      "listeners": 1035,
+      "playcount": 9336
+    },
+    "metaEnrichedAt": "2026-07-08T20:34:25.846Z"
   },
   {
     "name": "Paul Abrahams",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "97f149e7-4821-4ef0-b731-f826b77995ae",
-    "autoTriedAt": "2026-07-08T19:02:43.047Z"
+    "autoTriedAt": "2026-07-08T19:02:43.047Z",
+    "popularity": {
+      "listeners": 253,
+      "playcount": 1177
+    },
+    "metaEnrichedAt": "2026-07-08T20:34:26.528Z"
   },
   {
     "name": "Paul Adams",
@@ -59951,7 +60706,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:02:56.498Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "new age",
+      "Meditation",
+      "relaxing",
+      "paul adams",
+      "classical guitar"
+    ],
+    "popularity": {
+      "listeners": 19316,
+      "playcount": 352854
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/31a34ce09efe9e5ad514f20201f53fdf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:27.249Z"
   },
   {
     "name": "Paul Allender",
@@ -59967,21 +60735,33 @@
     },
     "enrichedAt": "2026-07-07T07:22:06.874Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "fe871975-25ea-4bf9-a8f1-e44024f69b9b"
+    "mbid": "fe871975-25ea-4bf9-a8f1-e44024f69b9b",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 7
+    },
+    "metaEnrichedAt": "2026-07-08T20:34:27.890Z"
   },
   {
     "name": "Paul Ambrose",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "4f0ce296-5132-4666-a63d-c435862aa227",
-    "autoTriedAt": "2026-07-08T19:03:04.748Z"
+    "autoTriedAt": "2026-07-08T19:03:04.748Z",
+    "popularity": {
+      "listeners": 6,
+      "playcount": 10
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:28.596Z"
   },
   {
     "name": "Paul Amorese",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "6efa3665-f2d0-4d47-95cf-3404b4100a41",
-    "autoTriedAt": "2026-07-08T19:03:13.569Z"
+    "autoTriedAt": "2026-07-08T19:03:13.569Z",
+    "metaTriedAt": "2026-07-08T20:34:29.250Z"
   },
   {
     "name": "Paul Angerer",
@@ -59997,7 +60777,18 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:03:23.330Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Austria",
+      "Classical",
+      "austrian"
+    ],
+    "popularity": {
+      "listeners": 945,
+      "playcount": 4759
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c373dd7647577f3b9acd25c7bf22f7a7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:29.974Z"
   },
   {
     "name": "Paul Anka",
@@ -60013,21 +60804,44 @@
     },
     "enrichedAt": "2026-07-07T07:22:06.874Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "420c6768-0885-415a-bb59-d6a275121125"
+    "mbid": "420c6768-0885-415a-bb59-d6a275121125",
+    "genres": [
+      "jazz",
+      "swing",
+      "oldies",
+      "Canadian",
+      "easy listening"
+    ],
+    "popularity": {
+      "listeners": 1337338,
+      "playcount": 11938648
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f6dcffbfb3aed0cb69d11a893ac41013/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:30.634Z"
   },
   {
     "name": "Paul Arthurs",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "17aa0ede-a4bc-4a18-a347-0ee843a38d84",
-    "autoTriedAt": "2026-07-08T19:03:27.129Z"
+    "autoTriedAt": "2026-07-08T19:03:27.129Z",
+    "popularity": {
+      "listeners": 4,
+      "playcount": 9
+    },
+    "metaEnrichedAt": "2026-07-08T20:34:31.311Z"
   },
   {
     "name": "Paul Atkinson",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "c5244403-dc5a-48a1-a138-3853e96c1595",
-    "autoTriedAt": "2026-07-08T19:03:34.686Z"
+    "autoTriedAt": "2026-07-08T19:03:34.686Z",
+    "popularity": {
+      "listeners": 41,
+      "playcount": 728
+    },
+    "metaEnrichedAt": "2026-07-08T20:34:32.120Z"
   },
   {
     "name": "Paul Avgerinos",
@@ -60043,7 +60857,20 @@
     },
     "enrichedAt": "2026-07-07T07:22:06.874Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ce69efdf-234a-412e-8017-781f1214cff6"
+    "mbid": "ce69efdf-234a-412e-8017-781f1214cff6",
+    "genres": [
+      "ambient",
+      "new age",
+      "chillout",
+      "guitar",
+      "relaxing"
+    ],
+    "popularity": {
+      "listeners": 18636,
+      "playcount": 148274
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3c4e249cc24237cb3eb0547ca8960e1a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:32.808Z"
   },
   {
     "name": "Paul Badura-Skoda",
@@ -60059,7 +60886,20 @@
     },
     "enrichedAt": "2026-07-07T07:22:06.874Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ba7e4f58-e926-4b18-ab32-d36f8f08c2ff"
+    "mbid": "ba7e4f58-e926-4b18-ab32-d36f8f08c2ff",
+    "genres": [
+      "Classical",
+      "piano",
+      "Austria",
+      "instrumental",
+      "vienna"
+    ],
+    "popularity": {
+      "listeners": 6623,
+      "playcount": 44301
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f456f0a87d5f865074ea8422e90c11fd/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:33.544Z"
   },
   {
     "name": "Paul Baloche",
@@ -60075,7 +60915,20 @@
     },
     "enrichedAt": "2026-07-07T07:22:06.874Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e793cb09-28b8-4120-872f-109b2b8fb0bd"
+    "mbid": "e793cb09-28b8-4120-872f-109b2b8fb0bd",
+    "genres": [
+      "praise & worship",
+      "christian",
+      "worship",
+      "contemporary worship",
+      "gospel"
+    ],
+    "popularity": {
+      "listeners": 104605,
+      "playcount": 1143822
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fa58c3f274b72a12346c1432beb83f1e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:34.292Z"
   },
   {
     "name": "Paul Baloff",
@@ -60091,7 +60944,12 @@
     },
     "enrichedAt": "2026-07-07T07:22:06.874Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f2f42775-e47c-4d25-be51-9e0cb206eb54"
+    "mbid": "f2f42775-e47c-4d25-be51-9e0cb206eb54",
+    "popularity": {
+      "listeners": 3,
+      "playcount": 3
+    },
+    "metaEnrichedAt": "2026-07-08T20:34:35.001Z"
   },
   {
     "name": "Paul Banks",
@@ -60107,21 +60965,60 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:03:50.187Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "indie",
+      "singer-songwriter",
+      "rock",
+      "alternative",
+      "indie rock"
+    ],
+    "popularity": {
+      "listeners": 113877,
+      "playcount": 1938705
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1255de2a0a7cc83fc96fd8531e1be1ad/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:35.686Z"
   },
   {
     "name": "Paul Barbarin",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "644adb90-bc50-4990-bdba-31c2092c5ac5",
-    "autoTriedAt": "2026-07-08T19:03:58.798Z"
+    "autoTriedAt": "2026-07-08T19:03:58.798Z",
+    "genres": [
+      "drums",
+      "jazz",
+      "composer",
+      "Vibraphone",
+      "New Orleans"
+    ],
+    "popularity": {
+      "listeners": 1312,
+      "playcount": 4844
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e66157e59b384166c7b8a0c4ca4e75f5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:36.637Z"
   },
   {
     "name": "Paul Baribeau",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "b92a78c0-ee14-42e3-9c02-479512c79ccc",
-    "autoTriedAt": "2026-07-08T19:04:16.036Z"
+    "autoTriedAt": "2026-07-08T19:04:16.036Z",
+    "genres": [
+      "folk punk",
+      "folk",
+      "acoustic",
+      "singer-songwriter",
+      "plan-it-x"
+    ],
+    "popularity": {
+      "listeners": 143903,
+      "playcount": 5691107
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/70f35e0f534d2ba789b9f67993eb5bd5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:37.296Z"
   },
   {
     "name": "Paul Barker",
@@ -60137,41 +61034,106 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:04:18.624Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "industrial",
+      "alternative rock",
+      "industrial rock",
+      "electronic",
+      "experimental"
+    ],
+    "popularity": {
+      "listeners": 2477,
+      "playcount": 25005
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d5e9a3622b3f2ba7a2339cf5fae3d960/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:38.144Z"
   },
   {
     "name": "Paul Barrere",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
-    "autoTriedAt": "2026-07-08T19:04:19.874Z"
+    "autoTriedAt": "2026-07-08T19:04:19.874Z",
+    "genres": [
+      "live",
+      "blues",
+      "blue",
+      "the rolling stones",
+      "Captain Beefheart"
+    ],
+    "popularity": {
+      "listeners": 298,
+      "playcount": 1465
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/88cc6615d1fe5849eb4096ebe5978580/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:39.208Z"
   },
   {
     "name": "Paul Baumgartner",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "d4ca439f-f2ce-4720-9ca0-c6c43db77f90",
-    "autoTriedAt": "2026-07-08T19:04:22.412Z"
+    "autoTriedAt": "2026-07-08T19:04:22.412Z",
+    "genres": [
+      "piano",
+      "Classical"
+    ],
+    "popularity": {
+      "listeners": 57,
+      "playcount": 484
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c4a971660c31bedf6830b07ca9faee66/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:39.904Z"
   },
   {
     "name": "Paul Bazelaire",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "4f801860-73fe-423e-a188-32b2f5e35761",
-    "autoTriedAt": "2026-07-08T19:04:24.971Z"
+    "autoTriedAt": "2026-07-08T19:04:24.971Z",
+    "popularity": {
+      "listeners": 713,
+      "playcount": 2265
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:40.608Z"
   },
   {
     "name": "Paul Ben-Haim",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "67b1b0f2-3198-4cd3-8659-7f1c77e44d08",
-    "autoTriedAt": "2026-07-08T19:04:27.522Z"
+    "autoTriedAt": "2026-07-08T19:04:27.522Z",
+    "genres": [
+      "contemporary classical",
+      "composer",
+      "Classical",
+      "german",
+      "conductor"
+    ],
+    "popularity": {
+      "listeners": 2283,
+      "playcount": 9006
+    },
+    "metaEnrichedAt": "2026-07-08T20:34:41.303Z"
   },
   {
     "name": "Paul Black",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "d0c14258-ab26-4f5a-bd5a-6a3e7b7eace8",
-    "autoTriedAt": "2026-07-08T19:04:30.039Z"
+    "autoTriedAt": "2026-07-08T19:04:30.039Z",
+    "genres": [
+      "blues",
+      "guitar",
+      "blues rock"
+    ],
+    "popularity": {
+      "listeners": 1186,
+      "playcount": 5800
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/be67df688cde3f5caad866bbfdc72b08/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:42.367Z"
   },
   {
     "name": "Paul Bley",
@@ -60187,14 +61149,37 @@
     },
     "enrichedAt": "2026-07-07T07:22:06.874Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5ff0b393-1706-47ce-8bda-a0fd3fe9b98a"
+    "mbid": "5ff0b393-1706-47ce-8bda-a0fd3fe9b98a",
+    "genres": [
+      "jazz",
+      "piano",
+      "free jazz",
+      "jazz piano",
+      "ECM"
+    ],
+    "popularity": {
+      "listeners": 87021,
+      "playcount": 638899
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/21aee12e0ab109421aa579654b0e5945/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:43.110Z"
   },
   {
     "name": "Paul Bollenback",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "4b7e36b0-8f25-4f7b-84a4-9cdb4f00d692",
-    "autoTriedAt": "2026-07-08T19:04:32.593Z"
+    "autoTriedAt": "2026-07-08T19:04:32.593Z",
+    "genres": [
+      "jazz",
+      "guitar"
+    ],
+    "popularity": {
+      "listeners": 1252,
+      "playcount": 7617
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2875f44b52853abf2c43cea386c83e65/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:43.987Z"
   },
   {
     "name": "Paul Bostaph",
@@ -60210,7 +61195,13 @@
     },
     "enrichedAt": "2026-07-07T07:22:06.874Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "bf95a1f9-9252-4d59-83d5-9048f36f2952"
+    "mbid": "bf95a1f9-9252-4d59-83d5-9048f36f2952",
+    "popularity": {
+      "listeners": 11,
+      "playcount": 16
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:44.951Z"
   },
   {
     "name": "Paul Brady",
@@ -60226,7 +61217,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:04:41.487Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "irish",
+      "folk",
+      "celtic",
+      "singer-songwriter",
+      "paul brady"
+    ],
+    "popularity": {
+      "listeners": 73560,
+      "playcount": 524558
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/41114351ce74403fb2ebb20d09ff43b2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:46.324Z"
   },
   {
     "name": "Paul Brandt",
@@ -60242,7 +61246,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:04:55.224Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "country",
+      "Canadian",
+      "canada",
+      "canadian country",
+      "Alt-country"
+    ],
+    "popularity": {
+      "listeners": 39440,
+      "playcount": 644793
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4525bac581860ff71cbecd873da04113/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:47.379Z"
   },
   {
     "name": "Paul Brett",
@@ -60258,48 +61275,125 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:04:57.818Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Progressive",
+      "Progressive rock",
+      "UK",
+      "Prog Folk"
+    ],
+    "popularity": {
+      "listeners": 1518,
+      "playcount": 8631
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ee55227e1c460f3b4c678a06655c332d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:48.349Z"
   },
   {
     "name": "Paul Brunelle",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "f704c639-059b-4585-b16e-74cc24ec4af2",
-    "autoTriedAt": "2026-07-08T19:05:00.357Z"
+    "autoTriedAt": "2026-07-08T19:05:00.357Z",
+    "genres": [
+      "country",
+      "cajun",
+      "quebec",
+      "yodel",
+      "francophone"
+    ],
+    "popularity": {
+      "listeners": 580,
+      "playcount": 4010
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5a6cc2c4d070bdaf01316d97cfebb2bf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:49.304Z"
   },
   {
     "name": "Paul Buckmaster",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "98af25f6-6470-4925-87fc-48011aafa68b",
-    "autoTriedAt": "2026-07-08T19:05:12.543Z"
+    "autoTriedAt": "2026-07-08T19:05:12.543Z",
+    "genres": [
+      "Soundtrack",
+      "ambient",
+      "instrumental",
+      "Progressive rock",
+      "Classical"
+    ],
+    "popularity": {
+      "listeners": 10887,
+      "playcount": 166663
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:50.433Z"
   },
   {
     "name": "Paul Burlison",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "7eb86d55-a322-461b-b21f-905ffc98bfb0",
-    "autoTriedAt": "2026-07-08T19:05:15.065Z"
+    "autoTriedAt": "2026-07-08T19:05:15.065Z",
+    "genres": [
+      "rockabilly",
+      "Rock n' Roll",
+      "memphis",
+      "western swing",
+      "boogie woogie"
+    ],
+    "popularity": {
+      "listeners": 105,
+      "playcount": 910
+    },
+    "metaEnrichedAt": "2026-07-08T20:34:51.498Z"
   },
   {
     "name": "Paul Butterfield",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "4b21201d-6ee6-4164-9339-06997e2e808c",
-    "autoTriedAt": "2026-07-08T19:05:17.628Z"
+    "autoTriedAt": "2026-07-08T19:05:17.628Z",
+    "genres": [
+      "blues",
+      "harmonica blues",
+      "Chicago Blues",
+      "blues rock",
+      "harmonica"
+    ],
+    "popularity": {
+      "listeners": 21013,
+      "playcount": 145174
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6b7781debe781c13f00c1e4d108c91cf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:52.456Z"
   },
   {
     "name": "Paul Butterfield Blues Band",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
-    "autoTriedAt": "2026-07-08T19:05:18.879Z"
+    "autoTriedAt": "2026-07-08T19:05:18.879Z",
+    "genres": [
+      "blues",
+      "blues rock",
+      "Chicago Blues",
+      "harmonica blues",
+      "harmonica"
+    ],
+    "popularity": {
+      "listeners": 160699,
+      "playcount": 1248241
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cd12642fce88b8302a45620f1b00d166/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:53.339Z"
   },
   {
     "name": "Paul Caiafa",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "33951551-29ab-41f9-bf98-a1c618bc2dd9",
-    "autoTriedAt": "2026-07-08T19:05:33.817Z"
+    "autoTriedAt": "2026-07-08T19:05:33.817Z",
+    "metaTriedAt": "2026-07-08T20:34:54.315Z"
   },
   {
     "name": "Paul Cargnello",
@@ -60315,14 +61409,31 @@
     },
     "enrichedAt": "2026-07-07T07:22:06.874Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "aae6c03f-9417-45e0-839c-74127e943197"
+    "mbid": "aae6c03f-9417-45e0-839c-74127e943197",
+    "genres": [
+      "canada",
+      "montreal",
+      "quebec"
+    ],
+    "popularity": {
+      "listeners": 1685,
+      "playcount": 17746
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c414cd769022e6829552f58cf5edb0da/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:55.386Z"
   },
   {
     "name": "Paul Carpenter",
     "website": null,
     "wdBulkTriedAt": "2026-07-08T14:10:42.682Z",
     "mbid": "4d8c2fe3-f273-4843-8e45-ad44a0975b51",
-    "autoTriedAt": "2026-07-08T19:05:36.337Z"
+    "autoTriedAt": "2026-07-08T19:05:36.337Z",
+    "popularity": {
+      "listeners": 1756,
+      "playcount": 5937
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9784c08444f2b823b455c1ddd188f2b1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:56.486Z"
   },
   {
     "name": "Paul Carrack",
@@ -60338,7 +61449,20 @@
     },
     "enrichedAt": "2026-07-07T07:22:06.874Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "fe4658a6-bb37-473d-b6f0-f075dda8d31c"
+    "mbid": "fe4658a6-bb37-473d-b6f0-f075dda8d31c",
+    "genres": [
+      "singer-songwriter",
+      "soft rock",
+      "pop",
+      "soul",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 192028,
+      "playcount": 1746502
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/81796a23d3b797fe27e3e3360eae2363/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:58.045Z"
   },
   {
     "name": "Paul Chambers",
@@ -60354,7 +61478,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:05:38.898Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "bass",
+      "Hard Bop",
+      "jazz bass",
+      "bebop"
+    ],
+    "popularity": {
+      "listeners": 66464,
+      "playcount": 454675
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/48c9cfa0f938807be81c21c469430f3e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:34:58.959Z"
   },
   {
     "name": "Paul Clark",
@@ -60370,21 +61507,53 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:05:41.431Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Jazz Rock",
+      "rock",
+      "Jesus Movement",
+      "classic rock",
+      "70s"
+    ],
+    "popularity": {
+      "listeners": 8070,
+      "playcount": 35770
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/28c489bc23d3efde58d86d76ba8ca299/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:00.071Z"
   },
   {
     "name": "Paul Clayton",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "86e859ea-6cd1-410f-b12c-deb4829d6153",
-    "autoTriedAt": "2026-07-08T19:05:55.169Z"
+    "autoTriedAt": "2026-07-08T19:05:55.169Z",
+    "genres": [
+      "folk",
+      "sea shanties",
+      "americana",
+      "USA",
+      "american"
+    ],
+    "popularity": {
+      "listeners": 32512,
+      "playcount": 306634
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6789f8a3a33b538be46d2851f3687552/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:01.344Z"
   },
   {
     "name": "Paul Coletti",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "ac670761-acf1-47ff-847d-9e85de498ff9",
-    "autoTriedAt": "2026-07-08T19:05:57.749Z"
+    "autoTriedAt": "2026-07-08T19:05:57.749Z",
+    "popularity": {
+      "listeners": 56,
+      "playcount": 496
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ddeae3c31ffb43361c450f543c31f439/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:02.611Z"
   },
   {
     "name": "Paul Collins",
@@ -60400,7 +61569,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:06:21.165Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "ambient",
+      "ambientlive",
+      "Garage Rock",
+      "power pop",
+      "LA"
+    ],
+    "popularity": {
+      "listeners": 16667,
+      "playcount": 140455
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5ecb7fd11b00494b1cea807eb322d79e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:03.756Z"
   },
   {
     "name": "Paul Collins' Beat",
@@ -60416,7 +61598,20 @@
     },
     "enrichedAt": "2026-07-07T07:22:06.874Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e21f1b04-62ae-4ae0-a422-051719dbfb03"
+    "mbid": "e21f1b04-62ae-4ae0-a422-051719dbfb03",
+    "genres": [
+      "power pop",
+      "new wave",
+      "70s",
+      "rock",
+      "garage"
+    ],
+    "popularity": {
+      "listeners": 3756,
+      "playcount": 81177
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/46ade89314d3f476aad9f44f39e9ad2f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:04.773Z"
   },
   {
     "name": "Paul Colman",
@@ -60432,7 +61627,20 @@
     },
     "enrichedAt": "2026-07-07T07:22:06.874Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "feb072ca-1ba1-4881-9098-266d539d962b"
+    "mbid": "feb072ca-1ba1-4881-9098-266d539d962b",
+    "genres": [
+      "christian",
+      "acoustic",
+      "paul colman",
+      "australian",
+      "ccm"
+    ],
+    "popularity": {
+      "listeners": 13103,
+      "playcount": 146301
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3f2f0ef956f89c5587391d18c20d7032/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:05.814Z"
   },
   {
     "name": "Paul Colman Trio",
@@ -60448,21 +61656,60 @@
     },
     "enrichedAt": "2026-07-07T07:22:06.874Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5ec08a60-401c-4e61-8b86-025ff64e7204"
+    "mbid": "5ec08a60-401c-4e61-8b86-025ff64e7204",
+    "genres": [
+      "christian",
+      "worship",
+      "australian",
+      "acoustic",
+      "Paul colman trio"
+    ],
+    "popularity": {
+      "listeners": 18019,
+      "playcount": 194404
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c533df7debd588e919fb42ba82741b28/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:06.801Z"
   },
   {
     "name": "Paul Constantinescu",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "b361aa60-ba7d-400f-8cad-e3618b9faae8",
-    "autoTriedAt": "2026-07-08T19:06:23.931Z"
+    "autoTriedAt": "2026-07-08T19:06:23.931Z",
+    "genres": [
+      "Soundtrack",
+      "Classical",
+      "opera",
+      "film music",
+      "romanian folklore"
+    ],
+    "popularity": {
+      "listeners": 733,
+      "playcount": 2470
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ea72a84f568d9fe0af7e9dfc81fa9961/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:07.875Z"
   },
   {
     "name": "Paul Cook",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "0d352490-3cc7-43fc-b824-8aa8c9c855e1",
-    "autoTriedAt": "2026-07-08T19:06:26.731Z"
+    "autoTriedAt": "2026-07-08T19:06:26.731Z",
+    "genres": [
+      "Mellow",
+      "punk",
+      "70s",
+      "power pop",
+      "singer songwriter"
+    ],
+    "popularity": {
+      "listeners": 1663,
+      "playcount": 7632
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/31f310e7159cc64ba06f129083f877d1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:09.335Z"
   },
   {
     "name": "Paul Cornell",
@@ -60478,7 +61725,16 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:06:29.587Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "bigfinish",
+      "big finish"
+    ],
+    "popularity": {
+      "listeners": 78,
+      "playcount": 846
+    },
+    "metaEnrichedAt": "2026-07-08T20:35:10.432Z"
   },
   {
     "name": "Paul Cotton",
@@ -60494,7 +61750,16 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:06:32.243Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "country-rock"
+    ],
+    "popularity": {
+      "listeners": 750,
+      "playcount": 5001
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/21be8020b56c513f2d8b979a381b7842/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:11.533Z"
   },
   {
     "name": "Paul Craft",
@@ -60510,21 +61775,38 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:06:46.780Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 455,
+      "playcount": 1355
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3db0b14cc7e65f589f3a293449c90f8f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:12.555Z"
   },
   {
     "name": "Paul Crook",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "8ad098d3-d2dc-4ed4-ac67-97283be65f1b",
-    "autoTriedAt": "2026-07-08T19:06:49.300Z"
+    "autoTriedAt": "2026-07-08T19:06:49.300Z",
+    "popularity": {
+      "listeners": 59,
+      "playcount": 241
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e85d95a38318ce6ce8a846c10efd77d7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:13.676Z"
   },
   {
     "name": "Paul D. Hudson",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "25aea3a4-c594-4d3e-8759-7984c1a93820",
-    "autoTriedAt": "2026-07-08T19:07:06.205Z"
+    "autoTriedAt": "2026-07-08T19:07:06.205Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 1
+    },
+    "metaEnrichedAt": "2026-07-08T20:35:14.579Z"
   },
   {
     "name": "Paul D'Amour",
@@ -60540,7 +61822,13 @@
     },
     "enrichedAt": "2026-07-07T07:22:06.874Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2f4719c5-58c5-4d5d-b09c-b7c5fb1450da"
+    "mbid": "2f4719c5-58c5-4d5d-b09c-b7c5fb1450da",
+    "popularity": {
+      "listeners": 188,
+      "playcount": 1140
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/776092d6a5a9f5b521d37915b70a2926/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:15.503Z"
   },
   {
     "name": "Paul Davis",
@@ -60556,7 +61844,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:07:26.517Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "soft rock",
+      "80s",
+      "male vocalists",
+      "rock",
+      "yacht rock"
+    ],
+    "popularity": {
+      "listeners": 134486,
+      "playcount": 937615
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/67ce83a99ae0d9f6a974b3357f5699ea/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:16.613Z"
   },
   {
     "name": "Paul Day",
@@ -60572,7 +61873,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:08:02.396Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 16,
+      "playcount": 78
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/74d5503c1cbb129e1c9cc2a877952b75/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:17.677Z"
   },
   {
     "name": "Paul de Leeuw",
@@ -60588,7 +61895,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:08:09.198Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "dutch",
+      "Nederlandstalig",
+      "Nederpop",
+      "netherlands",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 56501,
+      "playcount": 860394
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fd94bce57c37d5e8590c7c4ec9a9c676/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:18.711Z"
   },
   {
     "name": "Paul de Maleingreau",
@@ -60604,20 +61924,37 @@
     },
     "enrichedAt": "2026-07-07T07:22:06.874Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b56ec522-21d7-47dc-9dd5-811ec1ba5801"
+    "mbid": "b56ec522-21d7-47dc-9dd5-811ec1ba5801",
+    "popularity": {
+      "listeners": 25,
+      "playcount": 186
+    },
+    "metaEnrichedAt": "2026-07-08T20:35:19.696Z"
   },
   {
     "name": "Paul Dean",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "79db0293-dd5b-4192-a65b-ea55ce795805",
-    "autoTriedAt": "2026-07-08T19:08:13.998Z"
+    "autoTriedAt": "2026-07-08T19:08:13.998Z",
+    "genres": [
+      "hard rock",
+      "AOR",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 785,
+      "playcount": 6049
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a18b29ca68327076f4d399ebb880fce7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:20.806Z"
   },
   {
     "name": "Paul Dean (clarinetist)",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
-    "autoTriedAt": "2026-07-08T19:08:15.247Z"
+    "autoTriedAt": "2026-07-08T19:08:15.247Z",
+    "metaTriedAt": "2026-07-08T20:35:21.759Z"
   },
   {
     "name": "Paul deLay",
@@ -60633,7 +61970,20 @@
     },
     "enrichedAt": "2026-07-07T07:22:06.874Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "852c261a-7724-44d3-94aa-cfadc2e603fd"
+    "mbid": "852c261a-7724-44d3-94aa-cfadc2e603fd",
+    "genres": [
+      "harmonica blues",
+      "blues",
+      "All",
+      "bluesrock",
+      "traditional blues"
+    ],
+    "popularity": {
+      "listeners": 1760,
+      "playcount": 9987
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/20e3510d699ea90bdffea3204f5076e4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:22.783Z"
   },
   {
     "name": "Paul DeMarinis",
@@ -60649,7 +61999,20 @@
     },
     "enrichedAt": "2026-07-07T07:22:06.874Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2ffbee26-39aa-473f-9103-2a4ffec51107"
+    "mbid": "2ffbee26-39aa-473f-9103-2a4ffec51107",
+    "genres": [
+      "electronic",
+      "contemporary classical",
+      "composer",
+      "american",
+      "Avant-Garde"
+    ],
+    "popularity": {
+      "listeners": 1284,
+      "playcount": 6441
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/51df788761e3e02621b72c089ab83e60/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:23.784Z"
   },
   {
     "name": "Paul Dempsey",
@@ -60665,7 +62028,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:08:34.068Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "australian",
+      "singer-songwriter",
+      "rock",
+      "acoustic",
+      "indie"
+    ],
+    "popularity": {
+      "listeners": 55310,
+      "playcount": 920528
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a626b8367d51b8e27140bf9088736677/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:24.779Z"
   },
   {
     "name": "Paul Desmond",
@@ -60681,14 +62057,40 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T19:08:37.856Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "cool jazz",
+      "saxophone",
+      "jazz saxophone",
+      "instrumental"
+    ],
+    "popularity": {
+      "listeners": 508844,
+      "playcount": 5552278
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7232a60c25bd6f89e19f07797c7bd24c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:25.621Z"
   },
   {
     "name": "Paul Dessau",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "518bcca1-2dcd-4bd5-858f-319f1f9fc002",
-    "autoTriedAt": "2026-07-08T19:08:40.496Z"
+    "autoTriedAt": "2026-07-08T19:08:40.496Z",
+    "genres": [
+      "contemporary classical",
+      "german",
+      "composer",
+      "Classical",
+      "conductor"
+    ],
+    "popularity": {
+      "listeners": 1749,
+      "playcount": 13761
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7ec24850c96dcd6134d14030e14d368b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:26.621Z"
   },
   {
     "name": "Paul Di Leo",
@@ -60704,7 +62106,12 @@
     },
     "enrichedAt": "2026-07-07T07:22:06.874Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6275e4d0-7a21-48fd-8875-90ec9c0dcab8"
+    "mbid": "6275e4d0-7a21-48fd-8875-90ec9c0dcab8",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 2
+    },
+    "metaEnrichedAt": "2026-07-08T20:35:27.683Z"
   },
   {
     "name": "Paul Di'Anno",
@@ -60720,27 +62127,59 @@
     },
     "enrichedAt": "2026-07-07T07:22:06.874Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "85994c53-062f-462e-95fd-3a521dd1fcd2"
+    "mbid": "85994c53-062f-462e-95fd-3a521dd1fcd2",
+    "genres": [
+      "heavy metal",
+      "NWOBHM",
+      "metal",
+      "british",
+      "hard rock"
+    ],
+    "popularity": {
+      "listeners": 66911,
+      "playcount": 470082
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/066e4da88f7f507f3d35e44ed1d4f104/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:28.449Z"
   },
   {
     "name": "Paul Doguereau",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
-    "autoTriedAt": "2026-07-08T19:08:41.981Z"
+    "autoTriedAt": "2026-07-08T19:08:41.981Z",
+    "metaTriedAt": "2026-07-08T20:35:29.085Z"
   },
   {
     "name": "Paul Doktor",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "9d29ddde-8912-455a-ab89-df8c6628ac79",
-    "autoTriedAt": "2026-07-08T19:09:00.785Z"
+    "autoTriedAt": "2026-07-08T19:09:00.785Z",
+    "popularity": {
+      "listeners": 12,
+      "playcount": 41
+    },
+    "metaEnrichedAt": "2026-07-08T20:35:30.040Z"
   },
   {
     "name": "Paul Dolden",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "6a5df42d-912f-4b98-a333-e1bbb5f539d6",
-    "autoTriedAt": "2026-07-08T19:09:03.390Z"
+    "autoTriedAt": "2026-07-08T19:09:03.390Z",
+    "genres": [
+      "composer",
+      "electroacoustic",
+      "acousmatique",
+      "contemporary classical",
+      "electro-acoustic"
+    ],
+    "popularity": {
+      "listeners": 1733,
+      "playcount": 12573
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/abc8db017b557d65a2323986e481b94c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:30.791Z"
   },
   {
     "name": "Paul Dombrecht",
@@ -60756,14 +62195,37 @@
     },
     "enrichedAt": "2026-07-07T07:22:06.874Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "9ff932eb-e8a7-44f1-aa71-36bcce1bde7e"
+    "mbid": "9ff932eb-e8a7-44f1-aa71-36bcce1bde7e",
+    "genres": [
+      "conductor",
+      "oboe",
+      "baroque",
+      "instrumental"
+    ],
+    "popularity": {
+      "listeners": 356,
+      "playcount": 7221
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bc1251e3c39ca48a7feaa3c33a2fa8c9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:31.536Z"
   },
   {
     "name": "Paul Doornbusch",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:22:06.874Z",
     "mbid": "4d24a38c-c60d-438d-a12c-be0468f2b2ba",
-    "autoTriedAt": "2026-07-08T19:09:05.928Z"
+    "autoTriedAt": "2026-07-08T19:09:05.928Z",
+    "genres": [
+      "x",
+      "gammarec",
+      "freepurp1e"
+    ],
+    "popularity": {
+      "listeners": 167,
+      "playcount": 472
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6ea0de79b214e0e31d47c86ac20c5b7d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:35:32.357Z"
   },
   {
     "name": "Paul Doucette",
