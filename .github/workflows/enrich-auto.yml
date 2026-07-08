@@ -98,6 +98,13 @@ jobs:
                   git rebase --abort
                   npm run record-conflict-drop -- enrich-auto || true
                   git add data/conflict-drops.json && git commit -m "chore: record conflict-drop metric [skip ci]" && git push || true
+                  # Resync to origin before the next sub-chunk. Without this the working
+                  # tree stays on the same stale base that just conflicted, so the next
+                  # iteration recomputes the identical pending artists, conflicts again,
+                  # and repeats until timeout (seen for 2+ hours across a schema migration --
+                  # every retry re-did the same 150 artists and dropped them all).
+                  git fetch origin main
+                  git reset --hard origin/main
                   break
                 fi
                 sleep $((RANDOM % 5 + 2))

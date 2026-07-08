@@ -92,6 +92,11 @@ jobs:
                   git rebase --abort
                   npm run record-conflict-drop -- enrich-metadata || true
                   git add data/conflict-drops.json && git commit -m "chore: record conflict-drop metric [skip ci]" && git push || true
+                  # Resync to origin before the next sub-chunk -- otherwise the working
+                  # tree stays on the same stale base that just conflicted and the loop
+                  # recomputes/drops the identical sub-chunk over and over until timeout.
+                  git fetch origin main
+                  git reset --hard origin/main
                   break
                 fi
                 sleep $((RANDOM % 5 + 2))
