@@ -35,6 +35,7 @@ export interface ArtistCatalogEntry {
   genres?: string[];
   popularity?: { listeners: number; playcount: number };
   image?: string;
+  similarArtists?: Array<{ name: string; slug: string; match: number }>;
 }
 
 /**
@@ -77,6 +78,12 @@ export async function publishArtistCatalog(approvedArtists: any[], outputDir: st
       if (Array.isArray(a.genres) && a.genres.length > 0) entry.genres = a.genres;
       if (a.popularity && typeof a.popularity.listeners === 'number') entry.popularity = a.popularity;
       if (a.image) entry.image = a.image;
+      if (Array.isArray(a.similarArtists)) {
+        const similar = a.similarArtists
+          .filter((s: any) => s?.name && s?.slug && typeof s?.match === 'number')
+          .map((s: any) => ({ name: s.name, slug: s.slug, match: s.match }));
+        if (similar.length > 0) entry.similarArtists = similar;
+      }
     }
     bySlug.set(slug, entry);
   }

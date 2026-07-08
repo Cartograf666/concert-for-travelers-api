@@ -17,6 +17,7 @@
     "enrich-wd-bulk": "tsx src/scripts/enrich_wikidata_bulk.ts",
     "backfill-mbid": "tsx src/scripts/backfill_mbid.ts",
     "enrich-metadata": "tsx src/scripts/enrich_metadata.ts",
+    "enrich-similar": "tsx src/scripts/enrich_similar_artists.ts",
     "enrich-sites": "tsx src/scripts/enrich_sites.ts",
     "geocode-venues": "tsx src/scripts/geocode_venues.ts",
     "test-config": "tsx src/scripts/test_config.ts",
