@@ -1,0 +1,52 @@
+name: Rank Tour-Page Scraper Candidates
+
+# On-demand decision-support report, not a recurring job: ranks artists already
+# on our own target list (data/artist_scrape_targets.txt) that don't yet have a
+# dedicated scrapers/artists/*.json config, by Last.fm popularity -- so which
+# artist gets a hand-built tour-page scraper next is picked from an objective,
+# always-fresh signal instead of a hand-curated list. Read-only: never writes
+# to data/approved_artists.json or any other tracked file.
+
+on:
+  workflow_dispatch:
+    inputs:
+      top_n:
+        description: 'How many top candidates to list'
+        required: true
+        default: '30'
+
+permissions:
+  contents: read
+
+jobs:
+  rank:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Rank candidates
+        env:
+          LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
+        run: |
+          npm run rank-scraper-candidates -- "${{ github.event.inputs.top_n }}" | tee /tmp/rank-output.log
+          {
+            echo '## Tour-page scraper candidates (top '"${{ github.event.inputs.top_n }}"' by Last.fm listeners)'
+            echo ''
+            echo '```'
+            cat /tmp/rank-output.log
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
