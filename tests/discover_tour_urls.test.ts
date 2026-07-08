@@ -195,6 +195,66 @@ test('discover_tour_urls - probeArtist integration with mock fetch', async () =>
   global.fetch = originalFetch;
 });
 
+test('discover_tour_urls - SSRF: a real 3xx redirect to a blocked host is refused, never fetched', async () => {
+  const fetchedUrls: string[] = [];
+
+  // Every hop is a REAL 3xx response with a Location header (unlike the other
+  // integration tests above, which simulate fetch()'s automatic redirect-follow
+  // by returning the already-resolved final URL in one 200 response) -- this is
+  // what actually exercises fetchHelper's manual redirect-following + per-hop
+  // isBlockedHost check.
+  global.fetch = (async (url: string) => {
+    fetchedUrls.push(url);
+    return {
+      status: 302,
+      url,
+      headers: { get: (h: string) => (h.toLowerCase() === 'location' ? 'http://169.254.169.254/latest/meta-data/' : null) },
+      text: async () => ''
+    } as any;
+  }) as any;
+
+  const result = await probeArtist({ name: 'Malicious Redirect Band', website: 'https://evil-tour-site.example' });
+
+  assert.strictEqual(result.tourUrl, null, 'a redirect to a blocked host must never be accepted as a hit');
+  assert.ok(
+    !fetchedUrls.some((u) => u.includes('169.254.169.254')),
+    `fetchHelper must refuse to follow the redirect at all -- it should never issue a request to the blocked target. Fetched: ${JSON.stringify(fetchedUrls)}`
+  );
+
+  global.fetch = originalFetch;
+});
+
+test('discover_tour_urls - a real 3xx redirect to a legitimate same-domain path is still followed', async () => {
+  global.fetch = (async (url: string) => {
+    if (url === 'https://happyband.com/tour') {
+      return {
+        status: 301,
+        url,
+        headers: { get: (h: string) => (h.toLowerCase() === 'location' ? '/tour/2026' : null) },
+        text: async () => ''
+      } as any;
+    }
+    if (url.endsWith('/tour/2026')) {
+      return {
+        status: 200,
+        url,
+        headers: { get: () => null },
+        text: async () => `
+          <h1>Tour 2026</h1>
+          <div>12. Oct 2026 - London - Tickets</div>
+          <div>15. Oct 2026 - Berlin - Tickets</div>
+        `
+      } as any;
+    }
+    return { status: 404, url, headers: { get: () => null } } as any;
+  }) as any;
+
+  const hit = await probeArtist({ name: 'Redirected Happy Band', website: 'https://happyband.com' });
+  assert.strictEqual(hit.tourUrl, 'https://happyband.com/tour/2026');
+
+  global.fetch = originalFetch;
+});
+
 test('discover_tour_urls - DB save & tried-vs-hit marker updates', async () => {
   const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), 'artist-db-test-'));
   const tempDbFile = path.join(tempDir, 'artists.json');

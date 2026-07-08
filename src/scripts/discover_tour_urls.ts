@@ -145,7 +145,31 @@ export function analyzeContent(html: string): { ok: boolean; score: number; reas
   return { ok, score, reason };
 }
 
-async function fetchHelper(url: string, method: 'GET' | 'HEAD', timeoutMs = 6000): Promise<{ status: number; url: string; body: string } | null> {
+const MAX_REDIRECTS = 5;
+
+/**
+ * SSRF guard at EVERY redirect hop, not just the literal probe URL. Using
+ * `redirect: 'follow'` would let a compromised/malicious site's /tour page
+ * 302 to an internal or cloud-metadata target (GitHub-hosted runners are on
+ * Azure -- 169.254.169.254 is a real, live target there, not theoretical --
+ * see isBlockedHost's own doc comment in schemas/config.ts, and the identical
+ * concern already solved for the main scraper engine via runner.ts's
+ * safeLookup-wrapped agents). `redirect: 'manual'` + validating each Location
+ * header's hostname before following it closes the same gap here without
+ * pulling in axios/a custom dns.lookup agent (this keeps the function's
+ * single-fetch-per-hop shape the existing tests already mock against).
+ */
+async function fetchHelper(url: string, method: 'GET' | 'HEAD', timeoutMs = 6000, redirectsLeft = MAX_REDIRECTS): Promise<{ status: number; url: string; body: string } | null> {
+  let hostname: string;
+  try {
+    hostname = new URL(url).hostname;
+  } catch {
+    return null;
+  }
+  if (isBlockedHost(hostname)) {
+    return null;
+  }
+
   const headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
@@ -157,16 +181,29 @@ async function fetchHelper(url: string, method: 'GET' | 'HEAD', timeoutMs = 6000
       method,
       headers,
       signal: AbortSignal.timeout(timeoutMs),
-      redirect: 'follow'
+      redirect: 'manual'
     });
-    
+
+    // Real (non-mocked) 3xx: validate the target host before ever fetching it.
+    if (res.status >= 300 && res.status < 400 && typeof (res as any).headers?.get === 'function') {
+      const location = (res as any).headers.get('location');
+      if (!location || redirectsLeft <= 0) return null;
+      let nextUrl: string;
+      try {
+        nextUrl = new URL(location, url).toString();
+      } catch {
+        return null;
+      }
+      return fetchHelper(nextUrl, method, timeoutMs, redirectsLeft - 1);
+    }
+
     let body = '';
     if (method === 'GET' && res.status === 200) {
       body = await res.text();
     }
     return {
       status: res.status,
-      url: res.url,
+      url: res.url || url,
       body
     };
   } catch {
