@@ -105,6 +105,14 @@ jobs:
           restore-keys: |
             bandsintown-cache-
 
+      # Sync the whitelist from the user's target list first: a name added to
+      # data/artist_scrape_targets.txt must be in approved_artists.json or its
+      # scraped/Bandsintown shows get dropped as "not approved". Idempotent (adds
+      # only what's missing); the diff is committed by the enrich step below, so
+      # editing the target list is all that's needed to cover a new artist.
+      - name: Sync target artists into whitelist
+        run: npm run add-targets
+
       - name: Run Scraper
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
