@@ -11,6 +11,7 @@
     "clean-artists": "tsx src/scripts/clean_artists.ts",
     "add-targets": "tsx src/scripts/add_targets_to_whitelist.ts",
     "clean-denylist": "tsx src/scripts/clean_denylist.ts",
+    "clean-scrape-targets": "tsx src/scripts/clean_scrape_targets.ts",
     "discover-artists": "tsx src/scripts/discover_artists.ts",
     "enrich-auto": "tsx src/scripts/enrich_auto.ts",
     "enrich-wd-bulk": "tsx src/scripts/enrich_wikidata_bulk.ts",
