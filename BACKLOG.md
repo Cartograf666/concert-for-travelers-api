@@ -221,9 +221,9 @@ end passes):
 
 Distinct axis from the data-richness roadmap below: pipeline reliability,
 safety, and dev tooling rather than product features. Last verified against
-live repo/CI state 2026-07-08 (commit hashes / `gh run` ids given as evidence
-below — re-check via `git log` / `gh run list` before assuming these are still
-current if much time has passed).
+live repo/CI state 2026-07-08, ~20:40 UTC (commit hashes / `gh run` ids given
+as evidence below — re-check via `git log` / `gh run list` before assuming
+these are still current if much time has passed).
 
 ### ✅ Done
 - **Stranded-artist bug in the Gemini identity tier.** `apply()` used to stamp
@@ -292,45 +292,85 @@ current if much time has passed).
 - **Docs/license cleanup.** `README.md`/`ENRICHMENT_RUNBOOK.md` no longer
   reference the deleted `data/approved_artists.json` path; added a Consumer
   Quickstart section to the README; added a root `LICENSE` (ISC).
+- **Graceful self-imposed soft-deadline in the 4 checkpointed enrich
+  workflows.** Each previously ran until GitHub Actions force-killed it at
+  its own `timeout-minutes`, reporting the whole run as failed and tripping
+  the "Alert on failure" issue — even on a completely normal, large-backlog
+  day. Each loop now tracks true job-elapsed time (captured in a "Record job
+  start time" step before any other work) and self-stops 15 minutes before
+  its own timeout, exiting success at a clean checkpoint boundary instead of
+  being force-killed mid-sub-chunk. →
+  `.github/workflows/{enrich-auto,enrich-metadata,enrich-database,enrich-similar}.yml`.
+- **Shared `ArtistEntrySchema`.** Unioned all 9 previously-diverging
+  `interface ArtistEntry` declarations into one canonical Zod schema (every
+  field optional except `name`), all 10 call sites now import it. Adversarial
+  review found zero dropped fields / no incorrectly-tightened requiredness;
+  `tsc`+`npm test` clean. → `src/schemas/artist.ts`.
+- **`enrich-database.yml` cron** (`0 5 * * *`, confirmed clear of every other
+  workflow's cron slot). **Test coverage tooling** (`c8`, `npm run
+  test:coverage`, `.c8rc.json`). **Dependabot** (npm + github-actions, weekly
+  — already opened its first PRs, see the new open item below re: the zod
+  major-version one). **Secrets rotation runbook** section in
+  `ENRICHMENT_RUNBOOK.md` (distinct from the existing multi-key
+  quota-*failover* docs).
+- **`freshness-watchdog.yml` now verifies the live deployed artifact**, not
+  just the CI run's own conclusion — fetches the real
+  `https://cartograf666.github.io/concert-for-travelers-api/index.json` and
+  checks HTTP 200 + valid JSON + `stats.totalConcerts > 0`, in addition to
+  the pre-existing run-recency check. → `.github/workflows/freshness-watchdog.yml`.
+- **Data-hygiene scripts wired into a workflow** (`prune_non_artists.ts`,
+  `clean_denylist.ts`, `audit_artist_gaps.ts`) — new
+  `.github/workflows/data-hygiene.yml`, deliberately `workflow_dispatch`-only
+  (no cron — both prune/clean write `data/artists/` via Gemini classification
+  with real false-positive risk, matches the existing human-review pattern).
+  Adversarially reviewed clean: correct concurrency group, correct
+  conflict-drop ordering, verified against a real git-conflict test harness.
+- **OpenAPI 3.0 contract** for the published static JSON shape (`concerts.json`,
+  `artists.json`, `artists/{slug}.json`, `cities/{slug}.json`, `index.json`,
+  `changes.json`, `status.json`). → `docs/openapi.yaml`.
+- **De-duplicated `sleep()`** (was reimplemented independently in 7 files,
+  now one `src/engine/sleep.ts`) **and `.env`-fallback Gemini-key loading**
+  (extracted to `loadDotEnvFallback()` in `src/engine/gemini_keys.ts`,
+  reused by `enrich_via_gemini_search.ts` and `list_models.ts`).
 
 ### ⬜ Open — critical
-- **`daily-scrape.yml` has not deployed since the geo-clustering fix landed.**
-  Fix commit `9215c33` (2026-07-08 17:00 UTC); no `daily-scrape.yml` run with
-  `conclusion=success` exists after that timestamp as of last check — one
-  dispatch attempt (`28963191211`, 17:39 UTC) got cancelled in the
-  `artist-db-write` concurrency queue before it ran a single step. Production
-  API is still serving pre-fix data (fragmented Japan city files, etc). Needs
-  a re-trigger once the concurrency group frees up.
-- **`artist-db-write` concurrency group silently cancels queued runs.**
-  Observed repeatedly (7 cancellations in the last 30 runs across
-  daily-scrape/enrich-auto/enrich-database) — GitHub hard-cancels an older
-  *pending* run when a newer one queues behind it in the same group,
-  regardless of `cancel-in-progress: false`. No metric distinguishes this
-  from a normal git-conflict drop (`record-conflict-drop` only fires from
-  inside a job that reached the rebase-conflict step, not a queue-cancel).
-  *A worktree `.claude/worktrees/fix-daily-scrape-concurrency` already
-  exists — check it's not already mid-fix in a parallel session before
-  starting here.*
-- **No shared `ArtistEntrySchema`.** 9 distinct `interface ArtistEntry { ... }`
-  declarations across `src/`, none importing a common definition. Explicitly
-  deferred — too risky to parallelize with other file-touching work; needs
-  its own dedicated pass.
+- **`daily-scrape.yml` still hasn't deployed the geo-clustering fix.**
+  Fix commit `9215c33` (2026-07-08 17:00 UTC). Two dispatch attempts since
+  (`28963191211` @ 17:39, `28971582156` @ 19:57) both got cancelled in the
+  `artist-db-write` concurrency queue — the second one by the exact live
+  annotation text `Canceling since a higher priority waiting request for
+  artist-db-write exists` (a scheduled enrich-auto cron re-entered the queue
+  and bumped it, since GitHub only keeps 1 running + 1 queued per group and
+  the newer entrant always wins the queued slot). A third dispatch
+  (`28973869993` @ 20:35) is queued as of this writing, behind
+  `enrich-metadata`'s still-in-progress run (started 17:50, pre-dates the
+  soft-deadline fix above so it'll run to its full 200min — expect it to free
+  the lock ~21:11 UTC). Production API is still serving pre-fix data
+  (fragmented Japan city files, missing `schemaVersion`/`artists.json`/
+  `changes.json` per a live curl check today).
+- **`artist-db-write` concurrency group still has no starvation metric.**
+  Now caught live twice with the exact GitHub annotation text (see above) —
+  confirms this is a real, recurring, reproducible failure mode, not a
+  one-off. Still no metric distinguishing a queue-supersede cancellation from
+  a normal git-conflict drop. *A worktree
+  `.claude/worktrees/fix-daily-scrape-concurrency` already exists — check
+  it's not already mid-fix in a parallel session before starting here.*
 
 ### ⬜ Open — high
 - **No ESLint/type-lint gate for `src/` TypeScript.** Only YAML/bash linting
   exists (`lint-workflows.yml` → actionlint); no `eslint` devDependency, no
-  config file.
-- **`enrich-database.yml` has no cron**, `workflow_dispatch` only — the
-  Gemini identity/socials tier still needs manual triggering.
-- **No test coverage tool** (c8/nyc) — `npm test` has no `--coverage` path.
+  config file. Deliberately kept out of the batch that shipped the items
+  above — autofix/reformatting would touch nearly every file those tasks
+  were also touching. Do this alone, next.
+- **GitHub Actions still pinned to floating version tags** (`@v4` etc), not
+  commit SHAs (except `reviewdog/action-actionlint@v1.27.0`). Same reason as
+  above — touches every workflow file, do it alone.
 
 ### ⬜ Open — medium
-- **Data-hygiene scripts not scheduled.** `prune_non_artists.ts`,
-  `clean_denylist.ts`, `audit_artist_gaps.ts` all exist but aren't referenced
-  by any workflow — manual-only.
-- **`freshness-watchdog.yml` only checks CI run conclusion**, not the actual
-  deployed JSON artifact — would not have caught the stale-deploy situation
-  above.
+- **Dependabot's first PR includes a zod major-version bump (3.25.76 →
+  4.4.3).** Needs a real breaking-change review before merging — zod v4
+  changed parts of its public API — don't treat this as an auto-mergeable
+  patch bump like the others in the same batch.
 - **`discover_tour_urls.ts` at 60/20,187 eligible artists.** Validated batch
   only; intentionally not cron'd yet per its own task spec until proven at
   scale. Next step: run larger batches, spot-check hits, then decide on
@@ -339,18 +379,17 @@ current if much time has passed).
   awaiting manual disambiguation (place name vs. real artist).
 
 ### ⬜ Open — low / roadmap
-- No OpenAPI/JSON-Schema contract describing the published JSON shape.
 - `concerts.json` and per-artist/city files are unpaginated full dumps.
 - No JSON 404 for an unknown artist/city slug (falls through to GitHub
   Pages' generic HTML 404).
-- No documented secrets-rotation runbook (only the multi-key *failover*
-  mechanism is documented, not a rotation/revocation procedure).
-- No Dependabot/Renovate; GitHub Actions pinned to floating version tags
-  (`@v4` etc), not commit SHAs (except `reviewdog/action-actionlint@v1.27.0`).
-- Minor duplicated helpers: `function sleep()` reimplemented independently
-  in 7 files; `.env`-fallback key-loading regex duplicated verbatim in
-  `enrich_via_gemini_search.ts` and `prune_non_artists.ts` instead of one
-  shared helper; `list_models.ts` skips `getGeminiKeys()` entirely.
+- `list_models.ts` now goes through `getGeminiKeys()` but only ever debugs
+  against the first configured key — doesn't actually iterate/report on
+  every configured key the way "multi-key" implies. Cosmetic gap, not a bug.
+- Two enrichment scripts (`enrich_metadata.ts`, `enrich_similar_artists.ts`)
+  lost their module-level design-rationale doc comments as scope creep during
+  the `ArtistEntrySchema` consolidation above — worth restoring if that
+  context turns out to matter, purely a documentation loss, not a behavior
+  change.
 
 ---
 
