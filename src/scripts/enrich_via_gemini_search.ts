@@ -216,6 +216,16 @@ Be extremely truthful. Never invent a URL. Return null rather than guess. Output
 
     if (!success) {
       console.error(`[enrich-gemini-search] Failed to process batch after trying all ${apiKeys.length} key(s) x ${MODEL_CASCADE.length} model(s). Last error: ${lastError?.message}`);
+
+      // Every (key, model) pair is a confirmed dead end -- no point burning the rest
+      // of this run's batches (and the calling workflow's remaining sub-chunks) on
+      // guaranteed-fail attempts. Stop now instead of looping to the end of `limit`
+      // doing nothing; the calling shell loop greps for this exact line to break its
+      // own outer loop early too (same pattern as the "nothing pending" early-exit).
+      if (exhausted.size >= apiKeys.length * MODEL_CASCADE.length) {
+        console.error('[enrich-gemini-search] All keys/models exhausted -- stopping early.');
+        break;
+      }
     }
 
     // Delay between batches to respect free-tier RPM limits (tune via 5th CLI arg)
