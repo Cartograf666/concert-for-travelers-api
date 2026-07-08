@@ -116,6 +116,8 @@ jobs:
       - name: Run Scraper
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_RESERV1: ${{ secrets.GEMINI_API_KEY_RESERV1 }}
+          GEMINI_API_KEY_RESERV2: ${{ secrets.GEMINI_API_KEY_RESERV2 }}
           TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
         run: npm run scrape
 

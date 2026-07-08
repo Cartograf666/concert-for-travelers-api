@@ -76,6 +76,8 @@ jobs:
         if: steps.check-failures.outputs.has_failures == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_RESERV1: ${{ secrets.GEMINI_API_KEY_RESERV1 }}
+          GEMINI_API_KEY_RESERV2: ${{ secrets.GEMINI_API_KEY_RESERV2 }}
         run: npm run heal
 
       - name: Verify Fixed Configs

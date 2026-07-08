@@ -5,6 +5,7 @@ import { loadCache, saveCache, shouldSkipPublish, isCacheStale } from './engine/
 import { Concert } from './schemas/concert.js';
 import { processConcerts } from './pipeline/process.js';
 import { enrichMissingArtistMetadata } from './pipeline/enrich.js';
+import { getGeminiKeys } from './engine/gemini_keys.js';
 import { publishConcerts } from './generator/publish.js';
 import { fetchTicketmasterConcerts, loadTicketmasterCache, saveTicketmasterCache } from './engine/ticketmaster.js';
 
@@ -194,13 +195,13 @@ async function main() {
     let normalizedConcerts = await processConcerts(allScrapedConcerts, approvedArtistsPath, runDate);
     console.log(`[Orchestrator] First pass: parsed ${normalizedConcerts.length} valid events (${((Date.now() - passStart) / 1000).toFixed(1)}s).`);
 
-    // 8. JIT Metadata Enrichment (if API Key is present)
-    const apiKey = process.env.GEMINI_API_KEY;
-    if (apiKey) {
+    // 8. JIT Metadata Enrichment (if any Gemini API key is present)
+    const geminiKeys = getGeminiKeys();
+    if (geminiKeys.length > 0) {
       const touringArtists = Array.from(new Set(normalizedConcerts.map((c) => c.artist)));
-      console.log(`[Orchestrator] Running JIT metadata enrichment for ${touringArtists.length} active artists (this calls Gemini per batch and can take a while)...`);
+      console.log(`[Orchestrator] Running JIT metadata enrichment for ${touringArtists.length} active artists across ${geminiKeys.length} key(s) (this calls Gemini per batch and can take a while)...`);
       passStart = Date.now();
-      await enrichMissingArtistMetadata(touringArtists, approvedArtistsPath, apiKey);
+      await enrichMissingArtistMetadata(touringArtists, approvedArtistsPath, geminiKeys);
       console.log(`[Orchestrator] Enrichment done (${((Date.now() - passStart) / 1000).toFixed(1)}s).`);
 
       // Re-run normalization to pick up updated website and social links from disk
@@ -208,7 +209,7 @@ async function main() {
       normalizedConcerts = await processConcerts(allScrapedConcerts, approvedArtistsPath, runDate);
       console.log(`[Orchestrator] Second pass (post-enrichment): loaded updated metadata (${((Date.now() - passStart) / 1000).toFixed(1)}s).`);
     } else {
-      console.log('[Orchestrator] GEMINI_API_KEY not found. Skipping JIT metadata enrichment.');
+      console.log('[Orchestrator] No GEMINI_API_KEY found. Skipping JIT metadata enrichment.');
     }
 
     // 9. Write static API files to dist/

@@ -1,17 +1,19 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import { repairScraperConfig } from './healing/repair.js';
+import { getGeminiKeys } from './engine/gemini_keys.js';
 
 async function main() {
   const failLogPath = path.join(process.cwd(), 'reports', 'fail-log.json');
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKeys = getGeminiKeys();
 
   console.log('[Healer] Starting Self-Healing process...');
 
-  if (!apiKey) {
-    console.error('[Healer] Error: GEMINI_API_KEY environment variable is not set.');
+  if (apiKeys.length === 0) {
+    console.error('[Healer] Error: no Gemini API key set (GEMINI_API_KEY[/_2/_3]).');
     process.exit(1);
   }
+  console.log(`[Healer] ${apiKeys.length} Gemini key(s) available for failover.`);
 
   try {
     // 1. Read fail log
@@ -63,7 +65,7 @@ async function main() {
         continue;
       }
 
-      const res = await repairScraperConfig(configPath, htmlSample, apiKey);
+      const res = await repairScraperConfig(configPath, htmlSample, apiKeys);
       if (res.success && res.config) {
         console.log(`[Healer] Successfully healed scraper config: ${id}`);
         healedCount++;

@@ -79,10 +79,19 @@ export const DEFAULT_ENRICHMENT_MODELS = [
 export async function enrichMissingArtistMetadata(
   artistsToEnrich: string[],
   approvedArtistsPath: string,
-  apiKey: string,
+  apiKeys: string | string[],
   generateFn: GenerateEnrichmentFn = defaultGenerateEnrichment,
   models: string[] = DEFAULT_ENRICHMENT_MODELS
 ): Promise<void> {
+  // Accept a single key (back-compat) or several; rotate to the next when every
+  // model on the current key is quota-exhausted, to multiply the small per-key
+  // free-tier daily budget.
+  const keys = (Array.isArray(apiKeys) ? apiKeys : [apiKeys]).filter(Boolean);
+  if (keys.length === 0) {
+    console.error('[Enricher] No Gemini API key provided. Skipping enrichment.');
+    return;
+  }
+
   if (artistsToEnrich.length === 0) {
     console.log('[Enricher] No artists to check for enrichment.');
     return;
@@ -124,10 +133,15 @@ export async function enrichMissingArtistMetadata(
   // sweep surfacing far more never-before-seen artists than a typical run.
   const exhaustedModels = new Set<string>();
   const modelsAvailable = models;
+  // Which key we're currently on; advances only when the current key's whole model
+  // list is exhausted. `allExhausted` short-circuits the remaining batches once every
+  // key has also run dry.
+  let currentKeyIdx = 0;
+  let allExhausted = false;
 
   for (let i = 0; i < missingArtists.length; i += batchSize) {
-    if (exhaustedModels.size >= modelsAvailable.length) {
-      console.error(`[Enricher] All ${modelsAvailable.length} models are quota-exhausted for this run -- stopping early instead of grinding through the remaining ${missingArtists.length - i} artists. They'll be picked up on the next run.`);
+    if (allExhausted) {
+      console.error(`[Enricher] All models across all ${keys.length} key(s) are quota-exhausted for this run -- stopping early instead of grinding through the remaining ${missingArtists.length - i} artists. They'll be picked up on the next run.`);
       break;
     }
 
@@ -160,25 +174,42 @@ Provide ONLY the raw JSON array. Do not include markdown code block backticks (\
       let responseText: string | null = null;
       let lastError: any = null;
 
-      for (const modelName of modelsAvailable) {
-        if (exhaustedModels.has(modelName)) continue;
-        try {
-          console.log(`[Enricher] Attempting generation with model: ${modelName}`);
-          responseText = await generateFn({ prompt, modelName, apiKey });
-          console.log(`[Enricher] Model ${modelName} succeeded.`);
-          break; // Success! Break out of model loop
-        } catch (err: any) {
-          console.warn(`[Enricher] Warning: Failed with model ${modelName} - ${err.message}`);
-          lastError = err;
-          if (isAuthOrQuotaError(err)) {
-            console.warn(`[Enricher] ${modelName} is unavailable (quota/auth/not-found) -- skipping it for the rest of this run.`);
-            exhaustedModels.add(modelName);
+      // Try every non-exhausted model on the current key; if they all exhaust,
+      // rotate to the next key (fresh quota, models reset) and try again. Only give
+      // up on the batch once no key has an available model left.
+      while (responseText === null) {
+        for (const modelName of modelsAvailable) {
+          if (exhaustedModels.has(modelName)) continue;
+          try {
+            console.log(`[Enricher] Attempting generation with model: ${modelName} (key ${currentKeyIdx + 1}/${keys.length})`);
+            responseText = await generateFn({ prompt, modelName, apiKey: keys[currentKeyIdx] });
+            console.log(`[Enricher] Model ${modelName} succeeded.`);
+            break; // Success! Break out of model loop
+          } catch (err: any) {
+            console.warn(`[Enricher] Warning: Failed with model ${modelName} - ${err.message}`);
+            lastError = err;
+            if (isAuthOrQuotaError(err)) {
+              console.warn(`[Enricher] ${modelName} is unavailable (quota/auth/not-found) on key ${currentKeyIdx + 1} -- skipping it for the rest of this key.`);
+              exhaustedModels.add(modelName);
+            }
           }
         }
+
+        if (responseText !== null) break;
+        // Every model on this key is exhausted -- rotate to the next key if any.
+        if (currentKeyIdx < keys.length - 1) {
+          currentKeyIdx++;
+          exhaustedModels.clear();
+          console.warn(`[Enricher] All models exhausted on the previous key -- rotating to key ${currentKeyIdx + 1}/${keys.length}.`);
+          continue;
+        }
+        // No keys left with any working model.
+        allExhausted = true;
+        break;
       }
 
       if (responseText === null) {
-        throw new Error(`All available Gemini models failed for batch enrichment. Last error: ${lastError?.message}`);
+        throw new Error(`All available Gemini models failed across all keys for batch enrichment. Last error: ${lastError?.message}`);
       }
 
       const enrichedEntries = cleanAndParseArtistBatch(responseText);

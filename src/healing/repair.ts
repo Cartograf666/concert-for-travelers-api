@@ -144,10 +144,17 @@ export function testSelectorsOnHtml(
 export async function repairScraperConfig(
   configPath: string,
   htmlSample: string,
-  apiKey: string,
+  apiKeys: string | string[],
   generateSelectors: GenerateSelectorsFn = defaultGenerateSelectors,
   scrapersRoot: string = path.join(process.cwd(), 'scrapers')
 ): Promise<{ success: boolean; config?: ScraperConfig; error?: string }> {
+  // Accept one key (back-compat) or several; on an auth/quota error (which fails
+  // identically across every model on that key) rotate to the next key rather than
+  // giving up, multiplying the small per-key free-tier budget.
+  const keys = (Array.isArray(apiKeys) ? apiKeys : [apiKeys]).filter(Boolean);
+  if (keys.length === 0) {
+    return { success: false, error: 'No Gemini API key provided for repair.' };
+  }
   try {
     // artifact. Refuse to read/write anything outside the scrapers root so a tampered path
     // can never make the healer overwrite workflow files or read secrets. (scrapersRoot is
@@ -204,32 +211,38 @@ Using only the structure of that HTML, generate corrected selectors for eventBlo
 date, datePattern (optional), and ticketUrl (optional). Ensure the selectors are valid CSS
 selectors compatible with Cheerio.`;
 
-    for (const modelName of models) {
-      try {
-        console.log(`[Repair] Attempting generation with model: ${modelName}`);
-        generated = await generateSelectors({ prompt, modelName, apiKey });
-        console.log(`[Repair] Model ${modelName} succeeded.`);
-        break; // Success! Break out of loop
-      } catch (err: any) {
-        lastError = err;
-        if (isAuthOrQuotaError(err)) {
-          // An invalid/expired key or an exhausted quota fails identically on every
-          // model in the cascade -- stop instead of burning 5 more calls to find out.
-          console.error(`[Repair] Auth/quota error on ${modelName} (status ${err?.statusCode ?? err?.status}) — stopping cascade: ${err.message}`);
-          break;
+    // Outer loop over keys: an auth/quota error exhausts the current key, so move on
+    // to the next one (fresh quota). Inner loop is the model cascade for that key.
+    keyLoop: for (let keyIdx = 0; keyIdx < keys.length; keyIdx++) {
+      const apiKey = keys[keyIdx];
+      for (const modelName of models) {
+        try {
+          console.log(`[Repair] Attempting generation with model: ${modelName} (key ${keyIdx + 1}/${keys.length})`);
+          generated = await generateSelectors({ prompt, modelName, apiKey });
+          console.log(`[Repair] Model ${modelName} succeeded.`);
+          break keyLoop; // Success!
+        } catch (err: any) {
+          lastError = err;
+          if (isAuthOrQuotaError(err)) {
+            // An invalid/expired key or an exhausted quota fails identically on every
+            // model on THIS key -- stop this key's cascade and try the next key (if
+            // any) instead of burning the rest of this key's models.
+            console.error(`[Repair] Auth/quota error on ${modelName} (key ${keyIdx + 1}, status ${err?.statusCode ?? err?.status}) — rotating to next key if available: ${err.message}`);
+            continue keyLoop;
+          }
+          if (isUnknownModelError(err)) {
+            // Only this specific model ID is invalid (e.g. deprecated) -- the rest
+            // of the cascade is unaffected, so just move on to the next model.
+            console.warn(`[Repair] ${modelName} is not a known model (404) -- trying the next one in the cascade.`);
+            continue;
+          }
+          console.warn(`[Repair] Warning: Failed with model ${modelName} - ${err.message}`);
         }
-        if (isUnknownModelError(err)) {
-          // Only this specific model ID is invalid (e.g. deprecated) -- the rest
-          // of the cascade is unaffected, so just move on to the next model.
-          console.warn(`[Repair] ${modelName} is not a known model (404) -- trying the next one in the cascade.`);
-          continue;
-        }
-        console.warn(`[Repair] Warning: Failed with model ${modelName} - ${err.message}`);
       }
     }
 
     if (!generated) {
-      throw new Error(`All Gemini models failed. Last error: ${lastError?.message}`);
+      throw new Error(`All Gemini models failed across all ${keys.length} key(s). Last error: ${lastError?.message}`);
     }
 
     // Ensure fallback names are preserved (never LLM-controlled, see RepairedSelectorsSchema).
