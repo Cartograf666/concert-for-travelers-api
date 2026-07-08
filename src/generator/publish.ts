@@ -1,7 +1,7 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import { Concert } from '../schemas/concert.js';
-import { slugify } from '../pipeline/process.js';
+import { slugify, parseSpotifyArtistId } from '../pipeline/process.js';
 
 export interface PublishStats {
   totalConcerts: number;
@@ -23,6 +23,68 @@ export interface PublishIndex {
   stats: PublishStats;
   artists: string[];
   cities: string[];
+}
+
+export interface ArtistCatalogEntry {
+  slug: string;
+  name: string;
+  website?: string;
+  socials?: Record<string, string>;
+  spotifyId?: string;
+  mbid?: string;
+  genres?: string[];
+  popularity?: { listeners: number; playcount: number };
+  image?: string;
+}
+
+/**
+ * Publishes the FULL approved-artist directory (not just artists with a current
+ * concert) as dist/artists.json, keyed by the same slug the per-artist concert
+ * files already use. Two jobs this unlocks for the consumer app:
+ *   1. A stable-enough join key (slug always present; spotifyId/mbid when known)
+ *      so it can load this once and join to concerts.json/artists/{slug}.json
+ *      without re-shipping name/socials/genres on every single concert.
+ *   2. A full "add the artists you love" autocomplete directory -- index.json
+ *      only lists artists that already have a scraped concert, which is far
+ *      fewer than the ~63k-entry whitelist a user might search for.
+ * A raw string entry (legacy shape, no metadata) still gets a minimal
+ * {slug, name} record so the directory is always complete.
+ */
+export async function publishArtistCatalog(approvedArtists: any[], outputDir: string): Promise<void> {
+  const bySlug = new Map<string, ArtistCatalogEntry>();
+
+  for (const a of approvedArtists) {
+    const name: string | undefined = typeof a === 'string' ? a : a?.name;
+    if (!name) continue;
+    const slug = slugify(name);
+    if (bySlug.has(slug)) continue; // first entry wins on a slug collision (same documented limitation as per-artist concert files)
+
+    const entry: ArtistCatalogEntry = { slug, name };
+    if (typeof a !== 'string') {
+      if (a.website) entry.website = a.website;
+      if (a.socials && typeof a.socials === 'object') {
+        const socials: Record<string, string> = {};
+        for (const [k, v] of Object.entries(a.socials)) {
+          if (typeof v === 'string' && v) socials[k] = v;
+        }
+        if (Object.keys(socials).length > 0) {
+          entry.socials = socials;
+          const spotifyId = parseSpotifyArtistId(socials.spotify);
+          if (spotifyId) entry.spotifyId = spotifyId;
+        }
+      }
+      if (a.mbid) entry.mbid = a.mbid;
+      if (Array.isArray(a.genres) && a.genres.length > 0) entry.genres = a.genres;
+      if (a.popularity && typeof a.popularity.listeners === 'number') entry.popularity = a.popularity;
+      if (a.image) entry.image = a.image;
+    }
+    bySlug.set(slug, entry);
+  }
+
+  const catalog = Array.from(bySlug.values()).sort((x, y) => x.name.localeCompare(y.name));
+  await fs.mkdir(outputDir, { recursive: true });
+  await fs.writeFile(path.join(outputDir, 'artists.json'), JSON.stringify(catalog), 'utf-8');
+  console.log(`[Publisher] Published artist catalog: ${catalog.length} artists -> dist/artists.json`);
 }
 
 /**

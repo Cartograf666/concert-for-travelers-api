@@ -19,19 +19,19 @@ artists I love are playing where I'll be, and when?"*
 
 ## Table of Contents
 
-- [Data Sources](#-data-sources)
-- [Key Features](#-key-features)
-- [Static API Outputs](#-static-api-outputs-dist)
-- [Directory Structure](#-directory-structure)
-- [Local Development & Commands](#️-local-development--commands)
-- [Enrichment & Self-Healing Flow](#-enrichment--self-healing-flow-detail)
+- [Data Sources](#data-sources)
+- [Key Features](#key-features)
+- [Static API Outputs](#static-api-outputs-dist)
+- [Directory Structure](#directory-structure)
+- [Local Development & Commands](#local-development--commands)
+- [Enrichment & Self-Healing Flow](#enrichment--self-healing-flow-detail)
 - [Known Limitations](#known-limitations)
-- [Roadmap](#️-roadmap)
+- [Roadmap](#roadmap)
 - [License](#license)
 
 ---
 
-## 🗺️ Data Sources
+## Data Sources
 
 | Source | Coverage | Cadence | Notes |
 |---|---|---|---|
@@ -42,12 +42,12 @@ artists I love are playing where I'll be, and when?"*
 | **`discover-artists`** | Deezer + Last.fm charts | Weekly | Self-growing target list: pulls live global + per-genre/per-country charts so the artists being tracked keep pace with what's actually popular, without a human curating it. |
 
 Every raw event — regardless of source — goes through the same
-[approved-artist whitelist](#-key-features), date normalization, and
+[approved-artist whitelist](#key-features), date normalization, and
 deduplication pipeline before publishing.
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
 1. **Zero-Ops, Fully Autonomous Architecture** — runs entirely inside GitHub Actions and deploys statically to GitHub Pages. No database, no server, no manual intervention in the normal case: scrape, discover, enrich, heal, and publish all run and self-correct on cron.
 2. **Layered, Free-First Artist Enrichment Cascade** — website + socials (Spotify/Instagram/Facebook/YouTube/Telegram/VK) are filled in via, in order of cost: a bulk Wikidata SPARQL sweep (~80 names/query), a per-artist MusicBrainz + Wikidata pass, and only then Gemini for the remaining long tail — so the vast majority of the ~63,000-artist whitelist gets enriched with zero LLM spend.
@@ -60,7 +60,7 @@ deduplication pipeline before publishing.
 
 ---
 
-## 📂 Static API Outputs (`dist/`)
+## Static API Outputs (`dist/`)
 
 Deployed to `https://cartograf666.github.io/concert-for-travelers-api/`:
 
@@ -74,7 +74,7 @@ Each concert object follows `src/schemas/concert.ts`: `artist`, `artistWebsite?`
 
 ---
 
-## 📁 Directory Structure
+## Directory Structure
 
 ```
 ├── .github/workflows/
@@ -128,7 +128,7 @@ Each concert object follows `src/schemas/concert.ts`: `artist`, `artistWebsite?`
 
 ---
 
-## 🛠️ Local Development & Commands
+## Local Development & Commands
 
 ### Prerequisites
 - Node.js v20+
@@ -177,8 +177,14 @@ npm run clean-artists       # typographic noise, case-insensitive dupes, invalid
 npm run clean-denylist      # removes genre/language/generic terms that slipped into the whitelist
 ```
 
+### Sync Target Artists Into the Whitelist
+A name added to `data/artist_scrape_targets.txt` must also be in `data/approved_artists.json` or its scraped/Bandsintown shows get dropped as "not approved" -- idempotent, only adds what's missing.
+```bash
+npm run add-targets
+```
+
 ### Geocode Venue Coordinates
-One-off batch script: geocodes each scraper's fixed venue (name + city + country) via the free OpenStreetMap/Nominatim provider and caches the resulting `lat`/`lng` in the scraper's own JSON config.
+One-off batch script: geocodes each scraper's fixed venue (name + city + country) via the free OpenStreetMap/Nominatim provider and caches the resulting `lat`/`lng` in the scraper's own JSON config. Skips artist tour-page scrapers (per-row venue, no single fixed coordinate) and configs that already have coordinates.
 ```bash
 export NOMINATIM_EMAIL="you@example.com" # Nominatim's usage policy requires a contact for automated use
 npm run geocode-venues
@@ -191,6 +197,12 @@ npm run enrich-wd-bulk       # Bulk Wikidata SPARQL enrichment pass
 npm run enrich-sites         # Swarm-harness commands (select/stats/apply) -- see ENRICHMENT_RUNBOOK.md
 ```
 
+### Audit Rejected Artist Names
+Reports raw artist names the scrape cache saw that didn't match the approved whitelist, so a genuinely-missing artist (vs. real noise) is easy to spot and add to the target list.
+```bash
+npm run audit-gaps
+```
+
 ### Test a Single Scraper Config
 Runs one scraper by id against the live site and prints what it extracted, without touching `/dist` or the approved-artist pipeline.
 ```bash
@@ -198,13 +210,14 @@ npm run test-config -- <scraper-id>
 ```
 
 ### Run Unit Tests
+Verifies HTML selector parsing, date normalization, artist matching, deduplication, health-gate logic, and mock LLM repairs:
 ```bash
 npm run test
 ```
 
 ---
 
-## 🧬 Enrichment & Self-Healing Flow Detail
+## Enrichment & Self-Healing Flow Detail
 
 1. **Daily Scrape**: runs every venue scraper + the Ticketmaster sweep, merges in the artist-scrape job's last cached results (tour-pages + Bandsintown), applies artist matching + date parsing + normalization + past-date filtering, and health-gates the result before publishing to `/dist` and deploying to GitHub Pages. A failed or empty-result scraper has its HTML sample and error logged to `reports/fail-log.json`.
 2. **Free-First Metadata Enrichment**: new artists are enriched in cost order — a bulk Wikidata SPARQL sweep first (fast, ~80 names/query), then a per-artist MusicBrainz + Wikidata pass every 3 hours, and only the remaining long tail goes to Gemini in batches for website + socials.
@@ -223,7 +236,7 @@ npm run test
 
 ---
 
-## 🗺️ Roadmap
+## Roadmap
 
 [`BACKLOG.md`](BACKLOG.md) is the living roadmap — what's shipped, what's in
 progress, and what's planned next, each item noting its touch-point files so

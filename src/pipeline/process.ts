@@ -86,16 +86,41 @@ function resolveYearless(monthNum: string, day: string, baseDate: Date): string 
 }
 
 /**
- * Generates a slug for deduplication index keys (e.g. "The Cure" -> "the-cure")
+ * Deterministic fallback for a name with no letters/digits at all (rare -- a
+ * purely symbolic stage name). A fixed placeholder would collide every such
+ * name into the same slug, exactly the bug this is a fallback FOR, so this
+ * hashes the original string instead -- distinct symbolic names still get
+ * distinct, stable slugs.
+ */
+function fallbackSlugHash(str: string): string {
+  let h = 0;
+  for (let i = 0; i < str.length; i++) {
+    h = (Math.imul(31, h) + str.charCodeAt(i)) | 0;
+  }
+  return (h >>> 0).toString(36);
+}
+
+/**
+ * Generates a slug for deduplication index keys and per-artist/city filenames
+ * (e.g. "The Cure" -> "the-cure"). Keeps any script's actual letters/digits
+ * (\p{L}/\p{N}, Unicode-aware) rather than only ASCII \w -- a name that's
+ * partially or entirely non-Latin (Cyrillic, CJK, etc.) used to have every
+ * such character silently stripped, which for a name with NO Latin characters
+ * at all collapsed to an empty string. Confirmed live against
+ * data/approved_artists.json: 374 distinct slug collisions (847 artist names)
+ * before this fix, 91 of them colliding into a literal empty slug (e.g. "\u0410\u043b\u043b\u0430
+ * \u041f\u0443\u0433\u0430\u0447\u0451\u0432\u0430", "\u0410\u043d\u0442\u043e\u0445\u0430 \u041c\u0421") -- real coverage gaps since Bandsintown's worldwide
+ * sweep specifically targets RU-market artists (see BACKLOG.md).
  */
 export function slugify(str: string): string {
-  return str
+  const slug = str
     .toLowerCase()
-    .normalize('NFKD').replace(/[\u0300-\u036f]/g,'')
+    .normalize('NFKD').replace(/[\u0300-\u036f]/g,'') // strip combining diacritics (Z\u00fcrich -> zurich)
     .trim()
-    .replace(/[^\w\s-]/g, '')
+    .replace(/[^\p{L}\p{N}\s-]/gu, '') // drop punctuation/symbols; keep letters/digits from ANY script
     .replace(/[\s_-]+/g, '-')
     .replace(/^-+|-+$/g, '');
+  return slug || `artist-${fallbackSlugHash(str)}`;
 }
 
 /**
@@ -127,7 +152,7 @@ export function cleanArtistName(name: string): string {
     .trim();
 }
 
-export type ArtistMatch = { name: string; website?: string | null; socials?: any };
+export type ArtistMatch = { name: string; website?: string | null; socials?: any; mbid?: string | null };
 export type ApprovedMatcher = (scrapedName: string) => ArtistMatch | null;
 
 // Names this short are matched only by exact equality, never as a whole-word
@@ -289,7 +314,7 @@ export function buildApprovedMatcher(approvedArtists: any[]): ApprovedMatcher {
   const toMatch = (e: { name: string; approved: any }): ArtistMatch =>
     typeof e.approved === 'string'
       ? { name: e.name }
-      : { name: e.approved.name, website: e.approved.website, socials: e.approved.socials };
+      : { name: e.approved.name, website: e.approved.website, socials: e.approved.socials, mbid: e.approved.mbid };
 
   return (scrapedName: string): ArtistMatch | null => {
     const cleaned = cleanArtistName(scrapedName);
@@ -613,6 +638,63 @@ function parseDateUnchecked(dateStr: string, baseDateStr: string): string | null
 }
 
 /**
+ * Extracts the Spotify artist ID from an `open.spotify.com/artist/<ID>` (or
+ * `/intl-xx/artist/<ID>`) URL, no Spotify API call needed -- the ID is already
+ * embedded in the social link enrichment already stores. Returns undefined for
+ * any other shape (playlist/track/album links, or not a Spotify URL at all).
+ */
+export function parseSpotifyArtistId(url: string | null | undefined): string | undefined {
+  if (!url) return undefined;
+  const match = url.match(/open\.spotify\.com\/(?:intl-[a-z]{2}\/)?artist\/([A-Za-z0-9]+)/);
+  return match?.[1];
+}
+
+/**
+ * Best-effort event start time (HH:MM), extracted only from an unambiguous ISO
+ * datetime embedded in the raw date string (e.g. JSON-LD's startDate,
+ * "2026-09-10T20:00:00"). Deliberately does NOT fall back to chrono-node here:
+ * unlike parseDate (which already pays that cost once per event as a last
+ * resort), running a second chrono pass over every single event just to grab a
+ * time would double parsing cost for comparatively little gain -- most scraped
+ * date strings without an embedded ISO time don't carry a reliably-attributable
+ * time elsewhere in the string either.
+ */
+export function extractTimeFromRawDate(dateStr: string): string | undefined {
+  const match = dateStr.match(/T(\d{2}):(\d{2})/);
+  if (!match) return undefined;
+  const h = parseInt(match[1], 10);
+  const m = parseInt(match[2], 10);
+  if (h > 23 || m > 59) return undefined;
+  return `${match[1]}:${match[2]}`;
+}
+
+// Keyword -> coarse venue category. Order matters: checked top-to-bottom, first
+// match wins, so more specific keywords (e.g. "amphitheatre") should stay ahead
+// of anything that could also loosely match a broader bucket.
+const VENUE_KIND_KEYWORDS: Array<[RegExp, Concert['venueKind']]> = [
+  [/\bstadium\b/i, 'stadium'],
+  [/\b(arena|amphitheatre|amphitheater)\b/i, 'arena'],
+  [/\b(open\s*air|festival\s*ground|park|beach)\b/i, 'open-air'],
+  [/\b(theatre|theater|opera|philharmonic)\b/i, 'theatre'],
+  [/\b(club|bar|pub|lounge)\b/i, 'club'],
+  [/\b(hall|hangar|centre|center|saal)\b/i, 'hall']
+];
+
+/**
+ * Infers a coarse venue category from the venue name's own text -- a cheap,
+ * always-available substitute for a full street address (which the north-star
+ * flow doesn't actually need; see BACKLOG.md Tier 3). Returns undefined rather
+ * than 'other' when nothing matches, so a genuinely unclassified venue doesn't
+ * masquerade as a confident "other" classification versus "we don't know".
+ */
+export function inferVenueKind(venueName: string): Concert['venueKind'] | undefined {
+  for (const [pattern, kind] of VENUE_KIND_KEYWORDS) {
+    if (pattern.test(venueName)) return kind;
+  }
+  return undefined;
+}
+
+/**
  * Build a consistent artistSocials object: keep only present links, drop empties,
  * and return undefined when there are none — so downstream consumers see one shape
  * (present keys only) rather than a mix of empty strings and omitted keys.
@@ -633,7 +715,11 @@ function buildArtistSocials(socials: any): Concert['artistSocials'] {
 export async function processConcerts(
   rawConcerts: Partial<Concert>[],
   approvedArtistsPath: string,
-  baseDateStr: string = new Date().toISOString()
+  baseDateStr: string = new Date().toISOString(),
+  // Lets a caller that already needs the parsed whitelist for something else
+  // (e.g. publishArtistCatalog) capture it from this call instead of paying for
+  // its own separate read+parse of the same ~63k-entry file right afterward.
+  onApprovedArtistsLoaded?: (approvedArtists: any[]) => void
 ): Promise<Concert[]> {
   let approvedArtists: any[] = [];
   try {
@@ -642,6 +728,7 @@ export async function processConcerts(
   } catch (err: any) {
     console.warn(`[Pipeline] Could not load approved artists list. Proceeding with empty list: ${err.message}`);
   }
+  onApprovedArtistsLoaded?.(approvedArtists);
 
   // Compile the matcher once for the whole batch instead of per concert.
   const match = buildApprovedMatcher(approvedArtists);
@@ -695,16 +782,23 @@ export async function processConcerts(
     }
 
     // Prepare full concert model
+    const artistSocials = buildArtistSocials(matched.socials);
     const concertData: Concert = {
       artist: matched.name,
       artistWebsite: matched.website || undefined,
-      artistSocials: buildArtistSocials(matched.socials),
+      artistSocials,
+      spotifyId: parseSpotifyArtistId(artistSocials?.spotify),
+      mbid: matched.mbid || undefined,
       date: normalizedDate,
+      startTime: raw.startTime || extractTimeFromRawDate(raw.date),
       venue: raw.venue.trim(),
+      venueKind: inferVenueKind(raw.venue),
       city: raw.city.trim(),
       country: normalizeCountry(raw.country),
       lat: raw.lat,
       lng: raw.lng,
+      festival: raw.festival,
+      lineup: raw.lineup,
       ticketUrl: raw.ticketUrl ? raw.ticketUrl.trim() : undefined,
       originalSource: raw.originalSource,
       scrapedAt: raw.scrapedAt

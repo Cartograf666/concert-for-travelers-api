@@ -31,29 +31,30 @@ interface Socials {
   vk: string | null;
 }
 
-interface ArtistEntry {
+export interface ArtistEntry {
   name: string;
   website: string | null;
   tourUrl?: string | null;
   socials?: Socials;
+  mbid?: string;
   enrichedAt?: string;
   enrichedBy?: string;
   autoTriedAt?: string;
   wdBulkTriedAt?: string;
 }
 
-const DB_PATH = path.join(process.cwd(), 'data', 'approved_artists.json');
+export const DB_PATH = path.join(process.cwd(), 'data', 'approved_artists.json');
 const TMP_PATH = DB_PATH + '.tmp';
 const UA = 'ConcertForTravelers/1.0 ( axell2479@gmail.com )'; // Wikidata requires an identifying UA
 const ENDPOINT = 'https://query.wikidata.org/sparql';
 
-const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+export const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-function emptySocials(): Socials {
+export function emptySocials(): Socials {
   return { spotify: null, instagram: null, facebook: null, youtube: null, telegram: null, vk: null };
 }
 
-function normName(s: string): string {
+export function normName(s: string): string {
   return s.toLowerCase().normalize('NFKD').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
 }
 
@@ -62,9 +63,9 @@ function sparqlLiteral(name: string): string {
   return '"' + name.replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/[\n\r\t]/g, ' ') + '"@en';
 }
 
-function buildQuery(names: string[]): string {
+export function buildQuery(names: string[]): string {
   const values = names.map(sparqlLiteral).join(' ');
-  return `SELECT ?name ?item ?website ?spotify ?instagram ?facebook ?youtube ?vk ?telegram WHERE {
+  return `SELECT ?name ?item ?website ?spotify ?instagram ?facebook ?youtube ?vk ?telegram ?mbid WHERE {
   VALUES ?name { ${values} }
   { ?item rdfs:label ?name } UNION { ?item skos:altLabel ?name }
   ?item wdt:P31 ?type .
@@ -76,20 +77,22 @@ function buildQuery(names: string[]): string {
   OPTIONAL { ?item wdt:P2397 ?youtube }
   OPTIONAL { ?item wdt:P3185 ?vk }
   OPTIONAL { ?item wdt:P3789 ?telegram }
+  OPTIONAL { ?item wdt:P434 ?mbid }
 }`;
 }
 
-interface Resolved {
+export interface Resolved {
   item: string;
   website: string | null;
   socials: Socials;
+  mbid: string | null;
 }
 
 /**
  * Run one SPARQL batch. Returns a map keyed by normalized name. A name that
  * resolves to more than one distinct entity is dropped as ambiguous.
  */
-async function queryBatch(names: string[]): Promise<Map<string, Resolved | 'ambiguous'>> {
+export async function queryBatch(names: string[]): Promise<Map<string, Resolved | 'ambiguous'>> {
   const query = buildQuery(names);
   let attempt = 0;
   let data: any;
@@ -124,7 +127,7 @@ async function queryBatch(names: string[]): Promise<Map<string, Resolved | 'ambi
       continue;
     }
 
-    const r: Resolved = existing ?? { item, website: null, socials: emptySocials() };
+    const r: Resolved = existing ?? { item, website: null, socials: emptySocials(), mbid: null };
     if (b.website?.value && !r.website) r.website = b.website.value;
     if (b.spotify?.value && !r.socials.spotify) r.socials.spotify = `https://open.spotify.com/artist/${b.spotify.value}`;
     if (b.instagram?.value && !r.socials.instagram) r.socials.instagram = `https://www.instagram.com/${String(b.instagram.value).replace(/^@/, '')}`;
@@ -132,23 +135,24 @@ async function queryBatch(names: string[]): Promise<Map<string, Resolved | 'ambi
     if (b.youtube?.value && !r.socials.youtube) r.socials.youtube = `https://www.youtube.com/channel/${b.youtube.value}`;
     if (b.vk?.value && !r.socials.vk) r.socials.vk = `https://vk.com/${b.vk.value}`;
     if (b.telegram?.value && !r.socials.telegram) r.socials.telegram = `https://t.me/${String(b.telegram.value).replace(/^@/, '')}`;
+    if (b.mbid?.value && !r.mbid) r.mbid = b.mbid.value;
     byName.set(nameKey, r);
   }
   return byName;
 }
 
-async function loadDb(): Promise<ArtistEntry[]> {
+export async function loadDb(): Promise<ArtistEntry[]> {
   return JSON.parse(await fs.readFile(DB_PATH, 'utf-8'));
 }
 
-async function saveDb(artists: ArtistEntry[]): Promise<void> {
+export async function saveDb(artists: ArtistEntry[]): Promise<void> {
   artists.sort((a, b) => a.name.localeCompare(b.name));
   await fs.writeFile(TMP_PATH, JSON.stringify(artists, null, 2), 'utf-8');
   await fs.rename(TMP_PATH, DB_PATH);
 }
 
-function hasData(website: string | null, socials: Socials): boolean {
-  return !!website || Object.values(socials).some(Boolean);
+function hasData(website: string | null, socials: Socials, mbid: string | null): boolean {
+  return !!website || !!mbid || Object.values(socials).some(Boolean);
 }
 
 async function main() {
@@ -189,7 +193,7 @@ async function main() {
       const key = normName(entry.name);
       const r = resolved.get(key);
       entry.wdBulkTriedAt = stamp; // processed this pass either way
-      if (r && r !== 'ambiguous' && hasData(r.website, r.socials)) {
+      if (r && r !== 'ambiguous' && hasData(r.website, r.socials, r.mbid)) {
         const merged = { ...emptySocials(), ...(entry.socials || {}) };
         for (const [k, v] of Object.entries(r.socials)) {
           const kk = k as keyof Socials;
@@ -197,6 +201,7 @@ async function main() {
         }
         entry.website = entry.website || r.website;
         entry.socials = merged;
+        entry.mbid = entry.mbid || r.mbid || undefined;
         entry.enrichedAt = stamp;
         entry.enrichedBy = entry.enrichedBy ? `${entry.enrichedBy}+wikidata-bulk` : 'wikidata-bulk';
         hits++;
@@ -215,7 +220,13 @@ async function main() {
   console.log(`  misses    : ${processed - hits} (marked wdBulkTriedAt, still pending for MB/Gemini)`);
 }
 
-main().catch((err) => {
-  console.error(`[wd-bulk] Fatal: ${err.message}`);
-  process.exit(1);
-});
+// Guard so backfill_mbid.ts can import this module's helpers (loadDb/saveDb/
+// queryBatch/normName/sleep) for reuse without triggering this file's own CLI run.
+// (CommonJS output -- no "type": "module" in package.json -- so require.main is
+// the right entrypoint check, not import.meta.)
+if (require.main === module) {
+  main().catch((err) => {
+    console.error(`[wd-bulk] Fatal: ${err.message}`);
+    process.exit(1);
+  });
+}

@@ -9,11 +9,25 @@ import * as path from 'path';
  * variant burns its own Bandsintown fetch slot for what is the same real
  * artist, wasting a chunk of the sweep's per-run cap on redundant fetches.
  *
- * Keeps whichever casing variant has the most uppercase letters (same
+ * Keeps whichever casing variant has more capitalized characters -- Unicode-
+ * aware (works for Cyrillic etc., not just ASCII A-Z), same intent as the
  * "probably better casing" heuristic clean_artists.ts already uses for the
- * approved-artist whitelist), first-seen order otherwise preserved.
+ * approved-artist whitelist -- first-seen order otherwise preserved.
  * Idempotent: safe to re-run (e.g. after discover_artists.ts appends more names).
  */
+
+/** Count of characters that differ from their own lowercase form -- true
+ * capitalization in ANY script with a case distinction (Cyrillic included),
+ * unlike a `/[A-Z]/` regex which only ever matches ASCII Latin letters and
+ * silently counts 0 for every other script. */
+function countCapitalized(s: string): number {
+  let n = 0;
+  for (const ch of s) {
+    if (ch !== ch.toLowerCase()) n++;
+  }
+  return n;
+}
+
 async function main() {
   const targetsPath = path.join(process.cwd(), 'data', 'artist_scrape_targets.txt');
   const raw = await fs.readFile(targetsPath, 'utf-8');
@@ -34,9 +48,7 @@ async function main() {
       bestByKey.set(key, name);
       continue;
     }
-    const existingCaps = (existing.match(/[A-Z]/g) || []).length;
-    const currentCaps = (name.match(/[A-Z]/g) || []).length;
-    if (currentCaps > existingCaps) bestByKey.set(key, name);
+    if (countCapitalized(name) > countCapitalized(existing)) bestByKey.set(key, name);
   }
 
   const deduped = order.map((k) => bestByKey.get(k)!);
