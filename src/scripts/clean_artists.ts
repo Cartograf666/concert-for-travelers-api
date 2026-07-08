@@ -38,14 +38,27 @@ async function main() {
     // 3. Deduplicate case-insensitively, keeping every field (not just name/website/socials --
     // dropping enrichedAt/tourUrl/wdBulkTriedAt/etc here would un-mark the whole catalog as
     // pending and make every enrichment tier reprocess artists it already finished).
-    if (cleanedMap.has(lowerName)) {
-      const existing = cleanedMap.get(lowerName)!;
-      // Prefer the version with more capital letters (usually indicates better casing)
+    //
+    // Also fold in the Wikipedia disambiguation-suffix case ("Hacktivist" vs "Hacktivist
+    // (band)"): the 2026-07 Wikipedia-list import (commit 9589d1e) added plenty of these
+    // as separate entries. Key on the name with a trailing "(band|musician|singer|...)"
+    // suffix stripped, so both variants land on the same dedup key and merge into one.
+    const dedupSuffix = /\s*\((band|musician|singer|artist|rapper|duo|group)\)\s*$/i;
+    const dedupKey = lowerName.replace(dedupSuffix, '');
+
+    if (cleanedMap.has(dedupKey)) {
+      const existing = cleanedMap.get(dedupKey)!;
+      // Prefer whichever name has no disambiguation suffix; else more capital letters
+      // (usually indicates better casing).
+      const existingHasSuffix = dedupSuffix.test(existing.name);
+      const currentHasSuffix = dedupSuffix.test(name);
       const existingCaps = (existing.name.match(/[A-Z]/g) || []).length;
       const currentCaps = (name.match(/[A-Z]/g) || []).length;
-      const preferCurrentCasing = currentCaps > existingCaps;
+      const preferCurrentCasing = existingHasSuffix !== currentHasSuffix
+        ? currentHasSuffix === false
+        : currentCaps > existingCaps;
 
-      cleanedMap.set(lowerName, {
+      cleanedMap.set(dedupKey, {
         ...existing,
         ...entry,
         name: preferCurrentCasing ? name : existing.name,
@@ -55,7 +68,7 @@ async function main() {
         enrichedAt: entry.enrichedAt || existing.enrichedAt
       });
     } else {
-      cleanedMap.set(lowerName, { ...entry, name });
+      cleanedMap.set(dedupKey, { ...entry, name });
     }
   }
 
