@@ -14,6 +14,8 @@
     "discover-artists": "tsx src/scripts/discover_artists.ts",
     "enrich-auto": "tsx src/scripts/enrich_auto.ts",
     "enrich-wd-bulk": "tsx src/scripts/enrich_wikidata_bulk.ts",
+    "backfill-mbid": "tsx src/scripts/backfill_mbid.ts",
+    "enrich-metadata": "tsx src/scripts/enrich_metadata.ts",
     "enrich-sites": "tsx src/scripts/enrich_sites.ts",
     "geocode-venues": "tsx src/scripts/geocode_venues.ts",
     "test-config": "tsx src/scripts/test_config.ts",

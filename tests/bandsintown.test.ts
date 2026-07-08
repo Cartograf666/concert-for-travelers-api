@@ -38,6 +38,7 @@ test('Bandsintown - mapBitEventToConcert prefers the queried name and slices the
   assert.deepStrictEqual(c, {
     artist: 'Metallica',
     date: '2026-09-10',
+    startTime: '20:00',
     venue: 'Sphere',
     city: 'Las Vegas',
     country: 'US',

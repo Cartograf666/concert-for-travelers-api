@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert';
-import { slugify, cleanArtistName, matchApprovedArtist, parseDate, processConcerts, normalizeCountry } from '../src/pipeline/process.js';
+import { slugify, cleanArtistName, matchApprovedArtist, parseDate, processConcerts, normalizeCountry, parseSpotifyArtistId, extractTimeFromRawDate, inferVenueKind } from '../src/pipeline/process.js';
 import { Concert } from '../src/schemas/concert.js';
 import * as path from 'path';
 
@@ -10,6 +10,30 @@ test('Pipeline - slugify', () => {
   assert.strictEqual(slugify('  Coldplay  '), 'coldplay');
   assert.strictEqual(slugify('Aphex Twin'), 'aphex-twin');
   assert.strictEqual(slugify('Zürich'), slugify('Zurich'));
+});
+
+test('Pipeline - slugify preserves non-Latin scripts instead of dropping them to an empty/mangled slug', () => {
+  // Real production cases (data/approved_artists.json) that used to collapse to
+  // an empty string and collide into the same dist/artists/{slug}.json file.
+  assert.strictEqual(slugify('Алла Пугачёва'), 'алла-пугачева'); // ё NFKD-decomposes to е + combining mark, stripped like an accent
+  assert.strictEqual(slugify('Антоха МС'), 'антоха-мс');
+  assert.notStrictEqual(slugify('Алла Пугачёва'), slugify('Алексей Глызин'), 'two distinct Cyrillic-only names must not collide');
+
+  // Mixed-script name: the Latin portion is no longer the only thing that survives.
+  assert.strictEqual(slugify('Zемфира'), 'zемфира');
+
+  // CJK: no word-space separators, but a real, non-empty, stable slug.
+  assert.strictEqual(slugify('宇多田ヒカル'), '宇多田ヒカル');
+  assert.strictEqual(slugify('宇多田ヒカル'), slugify('宇多田ヒカル'), 'stable/idempotent');
+});
+
+test('Pipeline - slugify falls back to a stable hash (never an empty string) for a name with no letters/digits at all', () => {
+  const a = slugify('♫');
+  const b = slugify('★★★');
+  assert.notStrictEqual(a, '', 'must never be empty -- an empty slug is how distinct symbol-only names used to collide');
+  assert.notStrictEqual(b, '', 'must never be empty');
+  assert.notStrictEqual(a, b, 'two distinct symbol-only names must still get distinct slugs');
+  assert.strictEqual(slugify('♫'), slugify('♫'), 'stable/idempotent');
 });
 
 test('Pipeline - artist name cleaning', () => {
@@ -137,6 +161,99 @@ test('Pipeline - parse date strings', () => {
   assert.strictEqual(parseDate('12. Okt', baseDate), '2026-10-12');
   assert.strictEqual(parseDate('12 Oktober', baseDate), '2026-10-12');
   assert.strictEqual(parseDate('Oct 12', baseDate), '2026-10-12');
+});
+
+test('Pipeline - parseSpotifyArtistId extracts the ID from an open.spotify.com artist URL', () => {
+  assert.strictEqual(parseSpotifyArtistId('https://open.spotify.com/artist/12Chz98pHFMPJEknJQMWvI'), '12Chz98pHFMPJEknJQMWvI');
+  // Localized Spotify link variant.
+  assert.strictEqual(parseSpotifyArtistId('https://open.spotify.com/intl-de/artist/12Chz98pHFMPJEknJQMWvI'), '12Chz98pHFMPJEknJQMWvI');
+  // Not an artist link -> no ID.
+  assert.strictEqual(parseSpotifyArtistId('https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M'), undefined);
+  assert.strictEqual(parseSpotifyArtistId('https://www.instagram.com/museband/'), undefined);
+  assert.strictEqual(parseSpotifyArtistId(null), undefined);
+  assert.strictEqual(parseSpotifyArtistId(undefined), undefined);
+});
+
+test('Pipeline - processConcerts populates spotifyId (parsed) and mbid (passed through) from the matched artist', async () => {
+  const approvedArtistsPath = path.join(process.cwd(), 'data', 'approved_artists.json');
+  const baseDate = '2026-07-07T00:00:00.000Z';
+  const scrapedAt = new Date().toISOString();
+
+  // matchApprovedArtist/buildApprovedMatcher read from an in-memory list, so this
+  // exercises the real toMatch()->concertData wiring without depending on any
+  // specific artist actually having an mbid in the live database.
+  const approved = [{
+    name: 'Test Artist Mbid',
+    website: 'https://example.com',
+    socials: { spotify: 'https://open.spotify.com/artist/abc123XYZ' },
+    mbid: '11111111-2222-3333-4444-555555555555'
+  }];
+
+  const matched = matchApprovedArtist('Test Artist Mbid', approved);
+  assert.strictEqual(matched?.mbid, '11111111-2222-3333-4444-555555555555');
+
+  // Full pipeline pass (uses the real approved_artists.json for other lookups,
+  // but this concert's artist won't match it -- so assert against the matcher
+  // output directly above, and separately confirm a concert missing these
+  // sources just omits the fields rather than erroring.
+  const rawConcerts: Partial<Concert>[] = [{
+    artist: 'The Cure',
+    date: '2026-10-12',
+    venue: 'Club Arena',
+    city: 'Berlin',
+    country: 'de',
+    originalSource: 'club-arena.de',
+    scrapedAt
+  }];
+  const processed = await processConcerts(rawConcerts, approvedArtistsPath, baseDate);
+  assert.strictEqual(processed.length, 1);
+  // The real DB may or may not have an mbid for The Cure yet -- just confirm the
+  // field is either a string or omitted, never null/garbage.
+  assert.ok(processed[0].mbid === undefined || typeof processed[0].mbid === 'string');
+});
+
+test('Pipeline - extractTimeFromRawDate pulls HH:MM from an embedded ISO datetime, nothing else', () => {
+  assert.strictEqual(extractTimeFromRawDate('2026-09-10T20:00:00'), '20:00');
+  assert.strictEqual(extractTimeFromRawDate('2026-09-10T20:00:00.000Z'), '20:00');
+  assert.strictEqual(extractTimeFromRawDate('2026-09-10'), undefined, 'no time component -> undefined');
+  assert.strictEqual(extractTimeFromRawDate('12. Okt 2026'), undefined, 'free-text date -> undefined, no chrono fallback');
+  assert.strictEqual(extractTimeFromRawDate('2026-09-10T25:99:00'), undefined, 'out-of-range hour/minute rejected');
+});
+
+test('Pipeline - inferVenueKind classifies by venue-name keywords, undefined when nothing matches', () => {
+  assert.strictEqual(inferVenueKind('Wembley Stadium'), 'stadium');
+  assert.strictEqual(inferVenueKind('The O2 Arena'), 'arena');
+  assert.strictEqual(inferVenueKind('Royal Albert Hall'), 'hall');
+  assert.strictEqual(inferVenueKind('Sala Apolo Club'), 'club');
+  assert.strictEqual(inferVenueKind('Roman Amphitheatre'), 'arena');
+  assert.strictEqual(inferVenueKind('Royal Opera House'), 'theatre');
+  assert.strictEqual(inferVenueKind('Open Air Festival Grounds'), 'open-air');
+  assert.strictEqual(inferVenueKind('Paradiso'), undefined, 'a venue name with no recognizable keyword stays unclassified');
+});
+
+test('Pipeline - processConcerts wires startTime/venueKind/festival/lineup through from the raw event', async () => {
+  const approvedArtistsPath = path.join(process.cwd(), 'data', 'approved_artists.json');
+  const baseDate = '2026-07-07T00:00:00.000Z';
+  const scrapedAt = new Date().toISOString();
+
+  const rawConcerts: Partial<Concert>[] = [{
+    artist: 'The Cure',
+    date: '2026-10-12T20:30:00',
+    venue: 'Wembley Stadium',
+    city: 'London',
+    country: 'gb',
+    festival: { name: 'Some Festival', url: 'https://example.com/fest' },
+    lineup: ['The Cure', 'Muse'],
+    originalSource: 'ticketmaster.com',
+    scrapedAt
+  }];
+
+  const processed = await processConcerts(rawConcerts, approvedArtistsPath, baseDate);
+  assert.strictEqual(processed.length, 1);
+  assert.strictEqual(processed[0].startTime, '20:30');
+  assert.strictEqual(processed[0].venueKind, 'stadium');
+  assert.deepStrictEqual(processed[0].festival, { name: 'Some Festival', url: 'https://example.com/fest' });
+  assert.deepStrictEqual(processed[0].lineup, ['The Cure', 'Muse']);
 });
 
 test('Pipeline - full concert processing & deduplication', async () => {

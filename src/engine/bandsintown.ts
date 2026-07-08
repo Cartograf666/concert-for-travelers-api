@@ -162,6 +162,9 @@ export function mapBitEventToConcert(event: BitEvent, queriedArtist: string, scr
   const artist = queriedArtist || event.artist?.name || event.lineup?.[0];
   const rawDate = event.starts_at || event.datetime;
   const date = rawDate ? rawDate.slice(0, 10) : undefined; // ISO datetime -> YYYY-MM-DD
+  // rawDate is "YYYY-MM-DDTHH:MM:SS" -- keep the time component ConcertSchema wants.
+  const startTimeMatch = rawDate?.match(/T(\d{2}:\d{2})/);
+  const startTime = startTimeMatch ? startTimeMatch[1] : undefined;
   const venue = event.venue;
   const country = bandsintownCountryToCode(venue?.country);
 
@@ -175,6 +178,7 @@ export function mapBitEventToConcert(event: BitEvent, queriedArtist: string, scr
   return {
     artist,
     date,
+    startTime,
     venue: venue.name,
     city: venue.city,
     country,

@@ -40,15 +40,49 @@ test('Ticketmaster - mapEventToConcert prefers the attraction name over the raw 
   assert.deepStrictEqual(concert, {
     artist: 'Radiohead',
     date: '2026-09-10',
+    startTime: undefined,
     venue: 'Paradiso',
     city: 'Amsterdam',
     country: 'NL',
     lat: 52.3641,
     lng: 4.8837,
+    festival: undefined,
+    lineup: undefined,
     ticketUrl: 'https://ticketmaster.com/event/abc',
     originalSource: 'ticketmaster.com',
     scrapedAt: '2026-07-07T00:00:00.000Z'
   });
+});
+
+test('Ticketmaster - mapEventToConcert captures startTime and festival/lineup for a multi-attraction event', () => {
+  const event = {
+    name: 'Rock am Ring 2026',
+    url: 'https://ticketmaster.com/event/festival',
+    dates: { start: { localDate: '2026-06-05', localTime: '18:30:00' } },
+    _embedded: {
+      venues: [{ name: 'Nurburgring', city: { name: 'Nurburg' }, country: { countryCode: 'DE' } }],
+      attractions: [{ name: 'Muse' }, { name: 'Rammstein' }, { name: 'The Cure' }]
+    }
+  };
+  const concert = mapEventToConcert(event, '2026-01-01T00:00:00.000Z');
+  assert.strictEqual(concert?.artist, 'Muse', 'first attraction is treated as the headliner artist');
+  assert.strictEqual(concert?.startTime, '18:30');
+  assert.deepStrictEqual(concert?.festival, { name: 'Rock am Ring 2026', url: 'https://ticketmaster.com/event/festival' });
+  assert.deepStrictEqual(concert?.lineup, ['Muse', 'Rammstein', 'The Cure']);
+});
+
+test('Ticketmaster - a single-attraction event has no festival/lineup', () => {
+  const event = {
+    name: 'Muse at Nurburgring',
+    dates: { start: { localDate: '2026-06-05' } },
+    _embedded: {
+      venues: [{ name: 'Nurburgring', city: { name: 'Nurburg' }, country: { countryCode: 'DE' } }],
+      attractions: [{ name: 'Muse' }]
+    }
+  };
+  const concert = mapEventToConcert(event, '2026-01-01T00:00:00.000Z');
+  assert.strictEqual(concert?.festival, undefined);
+  assert.strictEqual(concert?.lineup, undefined);
 });
 
 test('Ticketmaster - mapEventToConcert falls back to the event name when no attraction is listed', () => {

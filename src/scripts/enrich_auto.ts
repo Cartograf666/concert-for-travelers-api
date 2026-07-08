@@ -40,6 +40,7 @@ interface ArtistEntry {
   website: string | null;
   tourUrl?: string | null;
   socials?: Socials;
+  mbid?: string;
   enrichedAt?: string;
   enrichedBy?: string;
   autoTriedAt?: string;
@@ -51,6 +52,7 @@ interface Lookup {
   ok: boolean;
   website?: string | null;
   socials?: Partial<Socials>;
+  mbid?: string | null;
 }
 
 const DB_PATH = path.join(process.cwd(), 'data', 'approved_artists.json');
@@ -135,7 +137,7 @@ async function musicbrainz(name: string): Promise<Lookup> {
         socials[field] = url;
       }
     }
-    return { ok: true, website, socials };
+    return { ok: true, website, socials, mbid: best.id };
   } catch {
     return { ok: false };
   }
@@ -203,7 +205,9 @@ async function wikidata(name: string): Promise<Lookup> {
     const tg = claimString(claims.P3789?.[0]);
     if (tg) socials.telegram = `https://t.me/${tg.replace(/^@/, '')}`;
 
-    return { ok: true, website, socials };
+    const mbid = claimString(claims.P434?.[0]); // MusicBrainz artist ID
+
+    return { ok: true, website, socials, mbid };
   } catch {
     return { ok: false };
   }
@@ -252,6 +256,7 @@ async function main() {
   for (const entry of pending) {
     let websiteVal: string | null = entry.website || null;
     const socials = { ...emptySocials(), ...(entry.socials || {}) };
+    let mbidVal: string | undefined = entry.mbid;
     const contributors: string[] = [];
     let anyReached = false;
     let anyError = false;
@@ -274,8 +279,14 @@ async function main() {
         const key = k as keyof Socials;
         if (val && !socials[key]) { socials[key] = val; contributed = true; }
       }
+      if (res.mbid && !mbidVal) { mbidVal = res.mbid; contributed = true; }
       if (contributed) contributors.push(srcName);
     }
+
+    // Persisted regardless of which branch below fires: a confident MBID match can
+    // arrive even when the same source found no website/social links (e.g. a
+    // MusicBrainz artist entity with no url-rels attached yet).
+    if (mbidVal) entry.mbid = mbidVal;
 
     if (hasAny(websiteVal, socials)) {
       entry.website = websiteVal;

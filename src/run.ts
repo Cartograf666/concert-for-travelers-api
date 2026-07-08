@@ -5,8 +5,9 @@ import { loadCache, saveCache, shouldSkipPublish, isCacheStale } from './engine/
 import { Concert } from './schemas/concert.js';
 import { processConcerts } from './pipeline/process.js';
 import { enrichMissingArtistMetadata } from './pipeline/enrich.js';
+import { geocodeConcerts, loadGeocodeCache, saveGeocodeCache } from './pipeline/geocode.js';
 import { getGeminiKeys } from './engine/gemini_keys.js';
-import { publishConcerts } from './generator/publish.js';
+import { publishConcerts, publishArtistCatalog } from './generator/publish.js';
 import { fetchTicketmasterConcerts, loadTicketmasterCache, saveTicketmasterCache } from './engine/ticketmaster.js';
 
 /**
@@ -212,10 +213,37 @@ async function main() {
       console.log('[Orchestrator] No GEMINI_API_KEY found. Skipping JIT metadata enrichment.');
     }
 
+    // 8b. Guaranteed geocoding: fill lat/lng for every concert still missing them
+    // (per-row artist tour-page venues, or any source without coordinates yet), via
+    // a persistent cache keyed by venue+city+country so a repeat venue is geocoded
+    // at most once across the project's whole lifetime. Capped per run; the cache
+    // makes the pending set shrink permanently rather than being an all-or-nothing gate.
+    const geocodeCachePath = path.join(reportsDir, 'geocode-cache.json');
+    const geocodeCache = await loadGeocodeCache(geocodeCachePath);
+    passStart = Date.now();
+    const geoStats = await geocodeConcerts(normalizedConcerts, { cache: geocodeCache });
+    await saveGeocodeCache(geocodeCachePath, geocodeCache);
+    console.log(
+      `[Orchestrator] Geocoding: ${geoStats.geocoded} geocoded, ${geoStats.filledFromCache} from cache, ` +
+      `${geoStats.failed} failed/unresolved, ${geoStats.skippedCapped} deferred to next run ` +
+      `(${((Date.now() - passStart) / 1000).toFixed(1)}s).`
+    );
+
     // 9. Write static API files to dist/
     console.log(`[Orchestrator] Publishing ${normalizedConcerts.length} concerts to ${distDir}...`);
     await publishConcerts(normalizedConcerts, distDir);
     await writeStatus(distDir, results, changedCount, ticketmasterCount, normalizedConcerts.length, staleVenueIds);
+
+    // 9b. Publish the full artist directory (name/aliases/genres/image/popularity/
+    // socials/IDs for every whitelisted artist, not just those with a current
+    // concert) -- the consumer app's autocomplete + ID-join source. Best-effort:
+    // never let this fail the whole run.
+    try {
+      const approvedArtistsRaw = await fs.readFile(approvedArtistsPath, 'utf-8');
+      await publishArtistCatalog(JSON.parse(approvedArtistsRaw), distDir);
+    } catch (err: any) {
+      console.warn(`[Orchestrator] Skipped artist catalog publish: ${err.message}`);
+    }
 
     console.log(`[Orchestrator] Scrape complete. Successful scrapers: ${configs.length - failures.length}/${configs.length}.`);
     console.log(`[Orchestrator] Failed scrapers log saved to: ${failLogPath}`);

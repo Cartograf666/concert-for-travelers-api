@@ -3,7 +3,7 @@ import assert from 'node:assert';
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import * as os from 'os';
-import { publishConcerts } from '../src/generator/publish.js';
+import { publishConcerts, publishArtistCatalog } from '../src/generator/publish.js';
 import { Concert } from '../src/schemas/concert.js';
 
 function makeConcert(overrides: Partial<Concert>): Concert {
@@ -127,6 +127,55 @@ test('Publisher - sorts concerts by date, then artist, then city, and writes com
     assert.strictEqual(master[2].artist, 'The Cure');
     assert.strictEqual(master[2].city, 'London');
     assert.strictEqual(master[3].artist, 'Rammstein');
+  });
+});
+
+test('Publisher - artist catalog: publishes the FULL whitelist (not just artists with a current concert), keyed by slug', async () => {
+  await withTempDir(async (dir) => {
+    const approvedArtists = [
+      {
+        name: 'Muse',
+        website: 'https://www.muse.mu/',
+        socials: { spotify: 'https://open.spotify.com/artist/12Chz98pHFMPJEknJQMWvI', instagram: 'https://www.instagram.com/museband/' },
+        mbid: '9c9f1380-2516-4fc9-a3e6-f9f61941d090',
+        genres: ['rock', 'alternative'],
+        popularity: { listeners: 4500000, playcount: 900000000 },
+        image: 'https://cdn.example/muse.jpg'
+      },
+      { name: 'Some Untoured Artist', website: null }, // no current concert -- must still be published
+      'Legacy String Entry' // pre-metadata legacy shape
+    ];
+
+    await publishArtistCatalog(approvedArtists, dir);
+    const catalog = JSON.parse(await fs.readFile(path.join(dir, 'artists.json'), 'utf-8'));
+
+    assert.strictEqual(catalog.length, 3);
+    const muse = catalog.find((a: any) => a.slug === 'muse');
+    assert.strictEqual(muse.name, 'Muse');
+    assert.strictEqual(muse.spotifyId, '12Chz98pHFMPJEknJQMWvI', 'spotifyId parsed from socials.spotify');
+    assert.strictEqual(muse.mbid, '9c9f1380-2516-4fc9-a3e6-f9f61941d090');
+    assert.deepStrictEqual(muse.genres, ['rock', 'alternative']);
+    assert.deepStrictEqual(muse.popularity, { listeners: 4500000, playcount: 900000000 });
+    assert.strictEqual(muse.image, 'https://cdn.example/muse.jpg');
+
+    const untoured = catalog.find((a: any) => a.slug === 'some-untoured-artist');
+    assert.ok(untoured, 'an artist with no current concert must still appear in the full directory');
+
+    const legacy = catalog.find((a: any) => a.slug === 'legacy-string-entry');
+    assert.deepStrictEqual(legacy, { slug: 'legacy-string-entry', name: 'Legacy String Entry' });
+  });
+});
+
+test('Publisher - artist catalog: a slug collision keeps the first entry, matching the per-artist concert file behavior', async () => {
+  await withTempDir(async (dir) => {
+    const approvedArtists = [
+      { name: 'AC/DC', website: 'https://acdc.com' },
+      { name: 'ACDC', website: 'https://different.example' }
+    ];
+    await publishArtistCatalog(approvedArtists, dir);
+    const catalog = JSON.parse(await fs.readFile(path.join(dir, 'artists.json'), 'utf-8'));
+    assert.strictEqual(catalog.length, 1);
+    assert.strictEqual(catalog[0].website, 'https://acdc.com');
   });
 });
 
