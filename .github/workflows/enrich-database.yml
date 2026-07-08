@@ -39,6 +39,14 @@ jobs:
       - name: Run Wikidata bulk enrichment (Tier-0, no LLM)
         run: npm run enrich-wd-bulk -- 100000
 
+      # One-off (but idempotent/safe to re-run) backfill: retrofits `mbid` for
+      # artists that were already enriched by MusicBrainz/Wikidata before that
+      # field existed. Manual-dispatch-only like this whole workflow, not on a
+      # cron -- unlike the tiers above it has no "already tried, don't re-check"
+      # marker, so it re-queries every artist still missing an mbid each run.
+      - name: Backfill mbid for already-enriched artists
+        run: npm run backfill-mbid -- 100000
+
       - name: Debug Model IDs
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}

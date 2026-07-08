@@ -35,6 +35,66 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   (`GEMINI_API_KEY`, `_RESERV1/2`, `_2.._10`, `GEMINI_API_KEYS`) once every model
   on the current key is quota/auth-exhausted. Covers enrich + self-heal + run.
   → `src/engine/gemini_keys.ts`.
+- **Canonical artist IDs on every concert: `spotifyId` + `mbid`.** `spotifyId`
+  parsed from `artistSocials.spotify` (no Spotify API call); `mbid` captured from
+  MusicBrainz (`enrich_auto.ts`) and Wikidata's P434 claim (both per-artist and
+  the bulk SPARQL pass), plus a one-off `backfill_mbid.ts` that retrofits `mbid`
+  for artists already enriched before this field existed. →
+  `src/schemas/concert.ts`, `src/pipeline/process.ts`, `src/scripts/enrich_auto.ts`,
+  `src/scripts/enrich_wikidata_bulk.ts`, `src/scripts/backfill_mbid.ts`.
+- **Guaranteed geocoding.** `src/pipeline/geocode.ts`: fills lat/lng for any
+  concert missing them (mainly per-row artist tour-page venues), via a persistent
+  cache keyed by venue+city+country so a repeat venue costs one Nominatim lookup
+  ever, capped per run and deferring the rest to the next run. Deliberately kept
+  outside `processConcerts` (which stays network-free and unit-testable) — wired
+  into `run.ts` as its own best-effort step. Schema field stays optional by
+  design: a hard requirement would mean one unresolvable venue name breaks the
+  whole publish. → `src/pipeline/geocode.ts`, `src/run.ts`.
+- **Genres + popularity + artist image.** `src/scripts/enrich_metadata.ts`: one
+  Last.fm `artist.getInfo` call per artist yields both top tags (genres) and
+  listener/playcount stats (needs a free `LASTFM_API_KEY`, gracefully skipped
+  without one — same convention as `discover_artists.ts`); Deezer artist search
+  (keyless) supplies an image, only trusted on an exact normalized name match.
+  Own pending-gate (`metaEnrichedAt`/`metaTriedAt`), independent of the identity
+  enrichment tiers, since most of the whitelist is already `enrichedAt` there.
+  *Scope trim:* Ticketmaster-attraction-image fallback was skipped — Deezer's
+  keyless artist search already covers the vast majority of real touring acts,
+  and wiring TM's per-event image into a DB write from inside the daily scrape
+  run would add real coupling for little marginal coverage. Scheduled via
+  `.github/workflows/enrich-metadata.yml` (cron, checkpointed, same shape as
+  `enrich-auto.yml`), also runnable manually with `npm run enrich-metadata [N]`.
+  → `src/scripts/enrich_metadata.ts`.
+- **`dist/artists.json` full artist catalog.** Publishes the *entire* whitelist
+  (not just artists with a current concert), keyed by the same slug the
+  per-artist concert files use, with name/website/socials/spotifyId/mbid/genres/
+  popularity/image when known. Fixes the gap where `index.json` only listed
+  artists that already had a scraped concert, so the consumer app's "add artists
+  you love" autocomplete had no way to see the other ~60k whitelisted artists. →
+  `src/generator/publish.ts` (`publishArtistCatalog`), wired into `src/run.ts`.
+- **Event `startTime`.** HH:MM, populated from Ticketmaster's `localTime`,
+  Bandsintown's ISO datetime, and any source whose date string embeds an ISO
+  time (e.g. JSON-LD `startDate`). Deliberately does *not* add a second
+  chrono-node pass over free-text scraper dates (cost vs. benefit) — see the
+  docstring on `extractTimeFromRawDate`. → `src/schemas/concert.ts`,
+  `src/pipeline/process.ts`, `src/engine/ticketmaster.ts`, `src/engine/bandsintown.ts`.
+- **Venue kind.** Keyword-based classifier
+  (`stadium`/`arena`/`club`/`theatre`/`hall`/`open-air`/`other`) applied to every
+  concert's venue name uniformly across all sources, instead of per-source
+  special-casing. → `src/pipeline/process.ts` (`inferVenueKind`).
+- **Festival awareness.** Ticketmaster events with more than one
+  `_embedded.attractions` entry are treated as a multi-artist bill: `festival
+  {name, url}` + `lineup[]` (other acts on the bill). *Scope trim:* venue-scraper
+  festival detection wasn't attempted — there's no generic signal for it in a
+  scraped page the way TM's attractions array gives for free; would need
+  per-scraper-config additions, a separate and much larger piece of work. →
+  `src/schemas/concert.ts`, `src/engine/ticketmaster.ts`, `src/pipeline/process.ts`.
+- **`slugify()` Unicode fix.** Pre-existing bug, surfaced by load-testing the new
+  `dist/artists.json` catalog against the real whitelist at full scale: a
+  non-Latin-only name (Cyrillic, CJK, ...) was stripped to an empty string by an
+  ASCII-only `\w` filter, colliding 91/63,490 artists into one file/slug (374
+  distinct collision groups, 758 names, once counting partial mangling too).
+  Now Unicode-aware (`\p{L}`/`\p{N}`) with a stable hash fallback for names with
+  no letters/digits at all. → `src/pipeline/process.ts` (`slugify`).
 
 ---
 
@@ -84,45 +144,29 @@ Ordered by leverage on the north-star flow. **Constraint: free sources only —
 no Spotify API (paid tier unavailable).** Sourcing noted per item.
 
 ### Tier 0 — cleanup (quick)
-- ⬜ **Filter genre/place-name noise out of artist names.** `Alternative rock`,
-  `Amsterdam`, `Anonymous`, `Area` leak into the published artist index and
-  pollute matching. Extend `data/artist_denylist.json` + a stop-list guard.
+- ✅ **Denylist intake guard.** `data/artist_denylist.json` already covers real
+  genre/language noise (`Alternative rock`, `Afrikaans`, etc.) and none of it is
+  currently present in `data/approved_artists.json` (verified live). The 4 names
+  originally flagged here (`Amsterdam`, `Anonymous`, `Area`, plus `Berlin`/
+  `Chicago`/`Live` seen in the same audit) turned out on inspection to be real
+  touring acts with confirmed MusicBrainz/Wikidata/Spotify presence — denylisting
+  them would have deleted real coverage, so they're deliberately excluded (see
+  the `_comment` in `data/artist_denylist.json`). What *was* missing was a guard
+  on the intake side: `pipeline/enrich.ts`'s "add unrecognized artist from a
+  Gemini response" fallback could have silently re-added a denylisted term right
+  after `clean_denylist.ts` removed it. Fixed via a shared
+  `src/pipeline/denylist.ts` guard, applied at that intake point and reused by
+  `clean_denylist.ts`. → `src/pipeline/denylist.ts`, `src/pipeline/enrich.ts`,
+  `src/scripts/clean_denylist.ts`.
 
 ### Tier 1 — make matching work (identity)
-- ⬜ **Canonical artist IDs on every concert: `spotifyId` + `mbid`.**
-  *Highest-leverage item.* Neither needs a paid API:
-  - `spotifyId` — **parsed from the `socials.spotify` URL we already store**
-    (`open.spotify.com/artist/<ID>`). No Spotify API call.
-  - `mbid` — from the existing MusicBrainz enrichment.
-  Lets the consumer app match loved artists **by ID** instead of fragile strings.
-  → schema `src/schemas/concert.ts`, populate in `src/pipeline/process.ts`.
-- ⬜ **Guaranteed geocoding — lat/lng on every concert, not optional.**
-  "Near where I'll be" breaks when coordinates are missing. Geocode step with a
-  persistent cache (free geocoder). → `src/pipeline/process.ts`.
+_(done — see ✅ Done above)_
 
 ### Tier 2 — ranking & recommendations
-- ⬜ **Published artist metadata catalog: `dist/artists.json`** — keyed by artist
-  ID: name, aliases, genres, image, popularity, socials. Consumer loads it once
-  and joins to concerts by ID; keeps per-concert files lean. Also becomes the
-  full artist directory for the app's "add the artists you love" autocomplete
-  (today `index.json` only lists artists that already have concerts).
-- ⬜ **Genres/tags per artist** — "similar to what I love".
-  *Source:* Last.fm `artist.getTopTags` / `artist.getInfo` (connected) +
-  MusicBrainz tags. No Spotify.
-- ⬜ **Popularity signal** — rank many options.
-  *Source:* Last.fm `listeners` + `playcount` from `artist.getInfo`. No Spotify.
-- ⬜ **Artist image / thumbnail** — small preview for the consumer app UI.
-  *Source:* Deezer artist `picture_small/medium` (free, no key, already used for
-  discovery); Ticketmaster attraction image as fallback. (Last.fm images are
-  deprecated/placeholder — don't use.)
+_(done — see ✅ Done above)_
 
 ### Tier 3 — richer events
-- ⬜ **Event time** (doors/start), not just the date.
-- ⬜ **Festival awareness**: festival name **+ festival URL (name as a link)** +
-  lineup / support acts. One festival = many artists = one trip — big for
-  "I love 3 of these 30 acts".
-- ⬜ **Venue kind** instead of a full address: `stadium` / `arena` / `club` /
-  `open-air`, etc. Infer from venue-name keywords + Ticketmaster venue type.
+- ✅ Event time, festival awareness, venue kind — see ✅ Done above.
 - 💡 **Price** — best-effort only. Add if a source exposes it cleanly
   (Ticketmaster priceRanges); skip otherwise. Not a priority.
 

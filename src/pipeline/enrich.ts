@@ -1,6 +1,7 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import * as fs from 'fs/promises';
 import * as path from 'path';
+import { loadDenylistGuard } from './denylist.js';
 
 export interface ArtistSocials {
   spotify?: string | null;
@@ -121,6 +122,11 @@ export async function enrichMissingArtistMetadata(
 
   console.log(`[Enricher] Found ${missingArtists.length} active artists with missing metadata. Querying Gemini...`);
 
+  // Guards a Gemini response from ever (re-)introducing a genre/language/generic-descriptor
+  // term as a brand-new whitelist entry -- the exact leak clean_denylist.ts exists to clean
+  // up after (see src/pipeline/denylist.ts for the shared exemption rule).
+  const denylistGuard = await loadDenylistGuard();
+
   // Batch artists to avoid overloading (e.g. 15 per batch)
   const batchSize = 15;
   const totalBatches = Math.ceil(missingArtists.length / batchSize);
@@ -233,6 +239,8 @@ Provide ONLY the raw JSON array. Do not include markdown code block backticks (\
             }
           };
           console.log(`[Enricher] Enriched metadata for: ${entry.name}`);
+        } else if (denylistGuard.isDenylisted(entry.name)) {
+          console.warn(`[Enricher] Refusing to add "${entry.name}" as a new artist: it's a genre/language/generic-descriptor term on the denylist.`);
         } else {
           // If for some reason they weren't in the list, add them now
           approvedArtists.push({

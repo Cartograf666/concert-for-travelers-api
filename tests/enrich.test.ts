@@ -120,6 +120,24 @@ test('Enrich - saves progress after every batch, not only at the end', async () 
   await fs.unlink(file);
 });
 
+test('Enrich - refuses to add a brand-new artist that is on the denylist', async () => {
+  // Real production denylist term ("music", data/artist_denylist.json), not in
+  // data/artist_scrape_targets.txt -- confirms the intake guard from
+  // src/pipeline/denylist.ts fires against the actual repo denylist file.
+  const file = await tempArtistsFile([{ name: 'Some Other Artist', website: null }]);
+
+  const generateFn: GenerateEnrichmentFn = async () => {
+    return JSON.stringify([{ name: 'Music', website: null, socials: {} }]);
+  };
+
+  await enrichMissingArtistMetadata(['Some Other Artist'], file, 'fake-key', generateFn, TEST_MODELS);
+
+  const final = JSON.parse(await fs.readFile(file, 'utf-8'));
+  assert.strictEqual(final.find((a: any) => a.name.toLowerCase() === 'music'), undefined, 'denylisted term must not be added as a new artist');
+
+  await fs.unlink(file);
+});
+
 test('Enrich - preserves existing socials when not returned by LLM', async () => {
   const file = await tempArtistsFile([{
     name: 'Artist A',

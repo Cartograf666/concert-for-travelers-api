@@ -57,7 +57,7 @@ export async function saveTicketmasterCache(cachePath: string, cache: Ticketmast
 interface TmEvent {
   name?: string;
   url?: string;
-  dates?: { start?: { localDate?: string } };
+  dates?: { start?: { localDate?: string; localTime?: string } };
   _embedded?: {
     venues?: Array<{
       name?: string;
@@ -71,7 +71,8 @@ interface TmEvent {
 
 export function mapEventToConcert(event: TmEvent, scrapedAt: string): Partial<Concert> | null {
   const venue = event._embedded?.venues?.[0];
-  const attraction = event._embedded?.attractions?.[0];
+  const attractions = event._embedded?.attractions ?? [];
+  const attraction = attractions[0];
   // Prefer the classified attraction (performer) name over the raw event title --
   // the event name is often "Artist at Venue" or festival-branded text, while the
   // attraction name is the clean canonical artist name the whitelist expects.
@@ -85,14 +86,28 @@ export function mapEventToConcert(event: TmEvent, scrapedAt: string): Partial<Co
   const lat = venue.location?.latitude ? parseFloat(venue.location.latitude) : undefined;
   const lng = venue.location?.longitude ? parseFloat(venue.location.longitude) : undefined;
 
+  // localTime is "HH:MM:SS" -- ConcertSchema's startTime wants "HH:MM".
+  const localTime = event.dates?.start?.localTime;
+  const startTime = localTime && /^\d{2}:\d{2}/.test(localTime) ? localTime.slice(0, 5) : undefined;
+
+  // More than one attraction on the same event -- a multi-artist bill (festival or
+  // co-headline show), not a standalone gig. event.name is then the festival/event
+  // title (e.g. "Rock am Ring 2026"), and the other attractions are the lineup.
+  const isMultiArtist = attractions.length > 1;
+
   return {
     artist,
     date,
+    startTime,
     venue: venue.name,
     city: venue.city.name,
     country: venue.country.countryCode,
     lat: Number.isFinite(lat) ? lat : undefined,
     lng: Number.isFinite(lng) ? lng : undefined,
+    festival: isMultiArtist && event.name ? { name: event.name, url: event.url } : undefined,
+    // attractions[0] is already `artist` above -- exclude it so the headliner
+    // doesn't also show up as a "support act" in its own lineup.
+    lineup: isMultiArtist ? attractions.slice(1).map((a) => a.name).filter((n): n is string => !!n) : undefined,
     ticketUrl: event.url,
     originalSource: 'ticketmaster.com',
     scrapedAt
