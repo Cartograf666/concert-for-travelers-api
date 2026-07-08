@@ -1,0 +1,424 @@
+openapi: 3.0.3
+info:
+  title: Concerts for Travelers API
+  version: 1.0.0
+  description: |
+    This is a static-file JSON API hosted on GitHub Pages.
+    All endpoints represent static JSON files published under the base URL:
+    `https://cartograf666.github.io/concert-for-travelers-api/`.
+    There is no dynamic query support or request payload handling; consumers download these pre-generated static files.
+servers:
+  - url: https://cartograf666.github.io/concert-for-travelers-api
+    description: Production Static Hosting (GitHub Pages)
+paths:
+  /index.json:
+    get:
+      summary: Retrieve API Index and Metadata
+      description: Returns API statistics, schema version, and lists of all available artist and city slugs.
+      responses:
+        '200':
+          description: API index data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PublishIndex'
+  /concerts.json:
+    get:
+      summary: Retrieve All Concerts
+      description: Returns the full list of all active/future concerts sorted by date.
+      responses:
+        '200':
+          description: List of concerts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Concert'
+  /artists.json:
+    get:
+      summary: Retrieve Artist Catalog
+      description: Returns the full catalog of all whitelisted artists, including metadata (website, socials, genres, popularity) when known.
+      responses:
+        '200':
+          description: Full artist catalog
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ArtistCatalogEntry'
+  /status.json:
+    get:
+      summary: Retrieve Scraper Health Status
+      description: Returns run stats, scraper pass/fail counts, and diagnostic information from the last daily scrape execution.
+      responses:
+        '200':
+          description: Scraper run status
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+  /changes.json:
+    get:
+      summary: Retrieve Changelog
+      description: Returns the history of newly detected concerts within a 30-day retention window.
+      responses:
+        '200':
+          description: Changelog entries
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ChangeEntry'
+  /artists/{slug}.json:
+    get:
+      summary: Retrieve Concerts by Artist
+      description: Returns the list of concerts for a specific artist, matching the artist's URL-friendly slug.
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          description: URL-friendly artist slug (e.g., `radiohead`)
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of concerts for the artist
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Concert'
+  /cities/{slug}.json:
+    get:
+      summary: Retrieve Concerts by City
+      description: Returns the list of concerts in a specific city/geo-cluster, matching the city's URL-friendly slug.
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          description: URL-friendly city slug (e.g., `berlin`)
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of concerts in the city
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Concert'
+components:
+  schemas:
+    PublishIndex:
+      type: object
+      required:
+        - schemaVersion
+        - lastRun
+        - stats
+        - artists
+        - cities
+      properties:
+        schemaVersion:
+          type: integer
+          example: 1
+        lastRun:
+          type: string
+          format: date-time
+          example: '2026-07-08T03:00:00.000Z'
+        stats:
+          $ref: '#/components/schemas/PublishStats'
+        artists:
+          type: array
+          items:
+            type: string
+          example: ['radiohead', 'the-smile']
+        cities:
+          type: array
+          items:
+            type: string
+          example: ['berlin', 'london']
+    PublishStats:
+      type: object
+      required:
+        - totalConcerts
+        - uniqueArtists
+        - uniqueCities
+      properties:
+        totalConcerts:
+          type: integer
+          minimum: 0
+        uniqueArtists:
+          type: integer
+          minimum: 0
+        uniqueCities:
+          type: integer
+          minimum: 0
+    ArtistCatalogEntry:
+      type: object
+      required:
+        - slug
+        - name
+      properties:
+        slug:
+          type: string
+          example: 'radiohead'
+        name:
+          type: string
+          example: 'Radiohead'
+        website:
+          type: string
+          format: uri
+          nullable: true
+        socials:
+          type: object
+          additionalProperties:
+            type: string
+          example:
+            spotify: 'https://open.spotify.com/artist/4Z8W4fdv2fs2g504Z4gGSI'
+            instagram: 'https://www.instagram.com/radiohead'
+        spotifyId:
+          type: string
+          example: '4Z8W4fdv2fs2g504Z4gGSI'
+        mbid:
+          type: string
+          format: uuid
+          example: 'a74b1b7f-71a5-4011-9441-d0b5e4122d11'
+        genres:
+          type: array
+          items:
+            type: string
+          example: ['alternative rock', 'art rock']
+        popularity:
+          type: object
+          required:
+            - listeners
+            - playcount
+          properties:
+            listeners:
+              type: integer
+            playcount:
+              type: integer
+        image:
+          type: string
+          format: uri
+        similarArtists:
+          type: array
+          items:
+            $ref: '#/components/schemas/SimilarArtistRef'
+    SimilarArtistRef:
+      type: object
+      required:
+        - name
+        - slug
+        - match
+      properties:
+        name:
+          type: string
+        slug:
+          type: string
+        match:
+          type: number
+          minimum: 0
+          maximum: 1
+    Concert:
+      type: object
+      required:
+        - artist
+        - date
+        - venue
+        - city
+        - country
+        - originalSource
+        - scrapedAt
+      properties:
+        artist:
+          type: string
+          example: 'Radiohead'
+        artistWebsite:
+          type: string
+          format: uri
+          example: 'https://www.radiohead.com'
+        spotifyId:
+          type: string
+          example: '4Z8W4fdv2fs2g504Z4gGSI'
+        mbid:
+          type: string
+          format: uuid
+          example: 'a74b1b7f-71a5-4011-9441-d0b5e4122d11'
+        artistSocials:
+          type: object
+          properties:
+            spotify:
+              type: string
+              format: uri
+              nullable: true
+            instagram:
+              type: string
+              format: uri
+              nullable: true
+            facebook:
+              type: string
+              format: uri
+              nullable: true
+            youtube:
+              type: string
+              format: uri
+              nullable: true
+            telegram:
+              type: string
+              format: uri
+              nullable: true
+            vk:
+              type: string
+              format: uri
+              nullable: true
+        date:
+          type: string
+          pattern: '^\d{4}-\d{2}-\d{2}$'
+          example: '2026-10-15'
+        venue:
+          type: string
+          example: 'Wembley Stadium'
+        city:
+          type: string
+          example: 'London'
+        country:
+          type: string
+          minLength: 2
+          maxLength: 2
+          example: 'GB'
+        lat:
+          type: number
+          minimum: -90
+          maximum: 90
+          nullable: true
+        lng:
+          type: number
+          minimum: -180
+          maximum: 180
+          nullable: true
+        startTime:
+          type: string
+          pattern: '^([01]\d|2[0-3]):[0-5]\d$'
+          example: '20:00'
+        venueKind:
+          type: string
+          enum: [stadium, arena, club, theatre, hall, open-air, other]
+          example: 'stadium'
+        festival:
+          type: object
+          required:
+            - name
+          properties:
+            name:
+              type: string
+            url:
+              type: string
+              format: uri
+        lineup:
+          type: array
+          items:
+            type: string
+          example: ['The Smile', 'Jonny Greenwood']
+        priceRange:
+          type: object
+          required:
+            - min
+            - max
+            - currency
+          properties:
+            min:
+              type: number
+              minimum: 0
+            max:
+              type: number
+              minimum: 0
+            currency:
+              type: string
+              example: 'GBP'
+        ticketUrl:
+          type: string
+          format: uri
+        originalSource:
+          type: string
+          example: 'ticketmaster.co.uk'
+        scrapedAt:
+          type: string
+          format: date-time
+    Status:
+      type: object
+      required:
+        - generatedAt
+        - scrapersTotal
+        - scrapersOk
+        - scrapersFailed
+        - venuesChanged
+        - venuesUnchanged
+        - failedVenueIds
+        - staleVenues
+        - ticketmasterEvents
+        - publishedConcerts
+        - conflictDropsLast7Days
+      properties:
+        generatedAt:
+          type: string
+          format: date-time
+        scrapersTotal:
+          type: integer
+        scrapersOk:
+          type: integer
+        scrapersFailed:
+          type: integer
+        venuesChanged:
+          type: integer
+        venuesUnchanged:
+          type: integer
+        failedVenueIds:
+          type: array
+          items:
+            type: string
+        staleVenues:
+          type: array
+          items:
+            type: string
+        ticketmasterEvents:
+          type: integer
+        publishedConcerts:
+          type: integer
+          nullable: true
+        conflictDropsLast7Days:
+          type: integer
+    ChangeEntry:
+      type: object
+      required:
+        - concertId
+        - artist
+        - date
+        - venue
+        - city
+        - country
+        - detectedAt
+      properties:
+        concertId:
+          type: string
+        artist:
+          type: string
+        date:
+          type: string
+          pattern: '^\d{4}-\d{2}-\d{2}$'
+        venue:
+          type: string
+        city:
+          type: string
+        country:
+          type: string
+          minLength: 2
+          maxLength: 2
+        detectedAt:
+          type: string
+          format: date-time
