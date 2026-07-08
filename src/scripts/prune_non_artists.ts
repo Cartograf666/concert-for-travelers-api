@@ -2,6 +2,8 @@ import * as fs from 'fs/promises';
 import * as path from 'path';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { loadApprovedArtists, saveApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from '../pipeline/artistDb.js';
+import { z } from 'zod';
+import { getGeminiKeys } from '../engine/gemini_keys.js';
 
 interface ArtistEntry {
   name: string;
@@ -14,6 +16,33 @@ interface ClassificationResult {
   isArtist: boolean;
   confidence: 'high' | 'medium' | 'low';
   reason: string;
+}
+
+const classificationSchema = z.object({
+  name: z.string(),
+  isArtist: z.boolean(),
+  confidence: z.enum(['high', 'medium', 'low']),
+  reason: z.string()
+});
+
+const MODEL_CASCADE: { name: string; useSearch: boolean }[] = [
+  { name: 'gemini-2.5-flash', useSearch: true },
+  { name: 'gemini-2.5-flash-lite', useSearch: true },
+  { name: 'gemini-3-flash-preview', useSearch: true },
+  { name: 'gemini-3.1-flash-lite', useSearch: true },
+  { name: 'gemini-3.5-flash', useSearch: true },
+  { name: 'gemma-4-31b-it', useSearch: false },
+  { name: 'gemma-4-26b-a4b-it', useSearch: false },
+];
+
+function isQuotaOrAuthError(err: any): boolean {
+  const status = err?.status ?? err?.statusCode;
+  return status === 401 || status === 403 || status === 429;
+}
+
+function isUnknownModelError(err: any): boolean {
+  const status = err?.status ?? err?.statusCode;
+  return status === 404;
 }
 
 const CURATED_REGIONS = new Set([
@@ -108,26 +137,24 @@ function cleanAndParseJson(text: string): any {
   }
 }
 
-async function getApiKey(): Promise<string> {
-  let apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) {
-    try {
-      const dotenvContent = await fs.readFile(path.join(process.cwd(), '.env'), 'utf-8');
-      const match = dotenvContent.match(/^GEMINI_API_KEY\s*=\s*["']?(.*?)["']?$/m);
-      if (match) apiKey = match[1].trim();
-    } catch {}
+async function getApiKeys(): Promise<string[]> {
+  if (!process.env.GEMINI_API_KEY) {
+    for (const envPath of [path.join(process.cwd(), '.env'), path.join(process.env.HOME || '', '.env')]) {
+      try {
+        const dotenvContent = await fs.readFile(envPath, 'utf-8');
+        const match = dotenvContent.match(/^GEMINI_API_KEY\s*=\s*["']?(.*?)["']?$/m);
+        if (match) {
+          process.env.GEMINI_API_KEY = match[1].trim();
+          break;
+        }
+      } catch {}
+    }
   }
-  if (!apiKey) {
-    try {
-      const dotenvContent = await fs.readFile(path.join(process.env.HOME || '', '.env'), 'utf-8');
-      const match = dotenvContent.match(/^GEMINI_API_KEY\s*=\s*["']?(.*?)["']?$/m);
-      if (match) apiKey = match[1].trim();
-    } catch {}
-  }
-  if (!apiKey) {
+  const keys = getGeminiKeys();
+  if (keys.length === 0) {
     throw new Error('GEMINI_API_KEY environment variable is not set and could not be loaded from .env.');
   }
-  return apiKey;
+  return keys;
 }
 
 async function appendToJsonArrayFile(filePath: string, newItems: any[]): Promise<void> {
@@ -168,7 +195,7 @@ async function selectCandidates(n: number, outFile: string): Promise<void> {
 }
 
 async function classify(candidatesFile: string, resultsFile: string, batchSize: number, delayMs: number): Promise<void> {
-  const apiKey = await getApiKey();
+  const apiKeys = await getApiKeys();
   const content = await fs.readFile(candidatesFile, 'utf-8');
   const candidates: string[] = JSON.parse(content);
   
@@ -184,14 +211,8 @@ async function classify(candidatesFile: string, resultsFile: string, batchSize: 
   
   console.log(`[prune-non-artists] Classifying ${candidates.length} candidates in batches of ${batchSize} (delay ${delayMs}ms)...`);
   
-  const genAI = new GoogleGenerativeAI(apiKey);
   const results: ClassificationResult[] = [];
-  
-  const modelsToTry = [
-    { name: 'gemini-2.5-flash', tool: { googleSearch: {} } },
-    { name: 'gemini-2.5-pro', tool: { googleSearch: {} } },
-    { name: 'gemini-3.5-flash', tool: { googleSearch: {} } }
-  ];
+  const exhausted = new Set<string>();
   
   for (let i = 0; i < candidates.length; i += batchSize) {
     const batch = candidates.slice(i, i + batchSize);
@@ -216,68 +237,95 @@ Respond with a JSON object with a single key "results" containing an array of ob
 
 Use "high" confidence only when you found clear, verifiable evidence either way. Be extremely truthful. Never invent facts or URLs.`;
 
+    const noSearchNote = '\n\nNote: you do NOT have live web search for this request -- answer only from well-established training knowledge, and use confidence "low" for anything you are not highly certain of (especially tourUrl, which changes over time and you cannot verify live).';
+
     let success = false;
     let lastError: any = null;
     
-    for (const modelConfig of modelsToTry) {
-      const modelName = modelConfig.name;
-      try {
-        console.log(`[prune-non-artists] Attempting generation with model: ${modelName}`);
-        const model = genAI.getGenerativeModel({
-          model: modelName,
-          tools: [modelConfig.tool as any],
-        });
-        
-        let attempt = 0;
-        let batchSuccess = false;
-        while (attempt < 3 && !batchSuccess) {
-          try {
-            const response = await model.generateContent({
-              contents: [{ role: 'user', parts: [{ text: prompt }] }],
-            });
-            
-            const text = response.response.text();
-            const parsed = cleanAndParseJson(text);
-            
-            if (parsed && Array.isArray(parsed.results)) {
-              results.push(...parsed.results);
-              console.log(`[prune-non-artists] Successfully processed batch using ${modelName}.`);
-              success = true;
-              batchSuccess = true;
-              break; // Success!
-            } else {
-              console.error(`[prune-non-artists] Invalid format returned for batch:`, text);
-              break; // Don't retry parsing issues
-            }
-          } catch (err: any) {
-            const errStr = err.message || '';
-            const isRateLimit = errStr.includes('429') || errStr.includes('Quota exceeded') || errStr.includes('Too Many Requests');
-            if (isRateLimit && attempt < 2) {
-              attempt++;
-              let waitTime = 15000 * attempt;
-              // Try to parse "Please retry in X.Y s"
-              const match = errStr.match(/Please retry in (\d+(?:\.\d+)?)\s*s/i);
-              if (match) {
-                const seconds = parseFloat(match[1]);
-                waitTime = Math.ceil(seconds * 1000) + 1500; // wait extra 1.5s to be safe
+    outer: for (let keyIdx = 0; keyIdx < apiKeys.length; keyIdx++) {
+      const genAI = new GoogleGenerativeAI(apiKeys[keyIdx]);
+      for (const modelConfig of MODEL_CASCADE) {
+        const exhaustedKey = `${keyIdx}:${modelConfig.name}`;
+        if (exhausted.has(exhaustedKey)) continue;
+
+        const modelName = modelConfig.name;
+        try {
+          console.log(`[prune-non-artists] Attempting generation with model: ${modelName} (key ${keyIdx + 1}/${apiKeys.length}, search=${modelConfig.useSearch})`);
+          const model = genAI.getGenerativeModel({
+            model: modelName,
+            tools: modelConfig.useSearch ? [{ googleSearch: {} } as any] : undefined,
+          });
+          
+          let attempt = 0;
+          let batchSuccess = false;
+          while (attempt < 3 && !batchSuccess) {
+            try {
+              const response = await model.generateContent({
+                contents: [{ role: 'user', parts: [{ text: modelConfig.useSearch ? prompt : prompt + noSearchNote }] }],
+              });
+              
+              const text = response.response.text();
+              const parsed = cleanAndParseJson(text);
+              
+              if (parsed && Array.isArray(parsed.results)) {
+                for (const item of parsed.results) {
+                  const check = classificationSchema.safeParse(item);
+                  if (check.success) {
+                    results.push(check.data);
+                  } else {
+                    console.warn(`[prune-non-artists] Malformed result element skipped: ${JSON.stringify(item)}. Error: ${check.error.message}`);
+                  }
+                }
+                console.log(`[prune-non-artists] Successfully processed batch using ${modelName}.`);
+                success = true;
+                batchSuccess = true;
+                break outer; // Success! Done with keyIdx/modelConfig loop for this batch
+              } else {
+                console.error(`[prune-non-artists] Invalid format returned for batch:`, text);
+                break; // Don't retry parsing issues
               }
-              console.warn(`[prune-non-artists] Model ${modelName} hit 429 quota. Waiting ${waitTime / 1000}s to retry (attempt ${attempt}/3)...`);
-              await new Promise(resolve => setTimeout(resolve, waitTime));
-            } else {
-              console.warn(`[prune-non-artists] Model ${modelName} failed: ${err.message}`);
-              lastError = err;
-              break;
+            } catch (err: any) {
+              const errStr = err.message || '';
+              const isRateLimit = errStr.includes('429') || errStr.includes('Quota exceeded') || errStr.includes('Too Many Requests');
+              if (isRateLimit && attempt < 2) {
+                attempt++;
+                let waitTime = 15000 * attempt;
+                // Try to parse "Please retry in X.Y s"
+                const match = errStr.match(/Please retry in (\d+(?:\.\d+)?)\s*s/i);
+                if (match) {
+                  const seconds = parseFloat(match[1]);
+                  waitTime = Math.ceil(seconds * 1000) + 1500; // wait extra 1.5s to be safe
+                }
+                console.warn(`[prune-non-artists] Model ${modelName} hit 429 quota. Waiting ${waitTime / 1000}s to retry (attempt ${attempt}/3)...`);
+                await new Promise(resolve => setTimeout(resolve, waitTime));
+              } else {
+                if (isQuotaOrAuthError(err)) {
+                  console.warn(`[prune-non-artists] Auth/quota error on ${modelName} (key ${keyIdx + 1}, status ${err?.status ?? err?.statusCode}) -- marking exhausted, trying next model/key: ${err.message}`);
+                  exhausted.add(exhaustedKey);
+                } else if (isUnknownModelError(err)) {
+                  console.warn(`[prune-non-artists] ${modelName} doesn't exist for this API version (404) -- marking exhausted: ${err.message}`);
+                  exhausted.add(exhaustedKey);
+                } else {
+                  console.warn(`[prune-non-artists] Model ${modelName} failed: ${err.message}`);
+                }
+                lastError = err;
+                break;
+              }
             }
           }
+        } catch (err: any) {
+          console.warn(`[prune-non-artists] Model ${modelName} setup failed: ${err.message}`);
+          lastError = err;
         }
-        if (batchSuccess) break;
-      } catch (err: any) {
-        console.warn(`[prune-non-artists] Model ${modelName} setup failed: ${err.message}`);
-        lastError = err;
       }
     }
     
     if (!success) {
+      console.error(`[prune-non-artists] Failed to process batch after trying all ${apiKeys.length} key(s) x ${MODEL_CASCADE.length} model(s). Last error: ${lastError?.message}`);
+      if (exhausted.size >= apiKeys.length * MODEL_CASCADE.length) {
+        console.error('[prune-non-artists] All keys/models exhausted -- stopping early.');
+        break;
+      }
       throw new Error(`Failed to process batch after trying all models. Last error: ${lastError?.message}`);
     }
     
@@ -293,7 +341,21 @@ Use "high" confidence only when you found clear, verifiable evidence either way.
 
 async function apply(resultsFile: string): Promise<void> {
   const artists = await loadDb();
-  const results: ClassificationResult[] = JSON.parse(await fs.readFile(resultsFile, 'utf-8'));
+  const rawResults = JSON.parse(await fs.readFile(resultsFile, 'utf-8'));
+  
+  if (!Array.isArray(rawResults)) {
+    throw new Error('Results file must contain a JSON array');
+  }
+
+  const results: ClassificationResult[] = [];
+  for (const item of rawResults) {
+    const check = classificationSchema.safeParse(item);
+    if (check.success) {
+      results.push(check.data);
+    } else {
+      console.warn(`[prune-non-artists] Malformed result element in results file skipped: ${JSON.stringify(item)}. Error: ${check.error.message}`);
+    }
+  }
   
   const byName = new Map<string, number>();
   artists.forEach((a, i) => byName.set(a.name.toLowerCase(), i));
