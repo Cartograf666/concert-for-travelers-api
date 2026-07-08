@@ -1,0 +1,15 @@
+{
+  "id": "artist-hartford-symphony-orchestra",
+  "domain": "hartfordsymphony.org",
+  "url": "https://hartfordsymphony.org/calendar/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.elementor-post__card",
+    "artistNameFallback": "Hartford Symphony Orchestra",
+    "date": "div.elementor-post__card-date",
+    "ticketUrl": "a.elementor-post__read-more",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
