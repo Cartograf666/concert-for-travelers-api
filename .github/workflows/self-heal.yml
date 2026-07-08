@@ -106,7 +106,7 @@ jobs:
       - name: Open PR with repaired scrapers
         id: cpr
         if: steps.check-failures.outputs.has_failures == 'true' && steps.check-repaired.outputs.repaired == 'true'
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           commit-message: "auto: self-healed broken scrapers"
           branch: auto/self-heal-${{ github.event.workflow_run.id }}
