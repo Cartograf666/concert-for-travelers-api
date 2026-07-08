@@ -18023,7 +18023,8 @@
     "name": "Ahmed Agdamski",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:17.865Z",
-    "autoTriedAt": "2026-07-07T16:12:50.770Z"
+    "autoTriedAt": "2026-07-07T16:12:50.770Z",
+    "metaTriedAt": "2026-07-08T22:01:52.546Z"
   },
   {
     "name": "Ahmed Ali Butt",
@@ -18038,7 +18039,12 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T07:05:17.865Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "popularity": {
+      "listeners": 92,
+      "playcount": 525
+    },
+    "metaEnrichedAt": "2026-07-08T22:01:53.316Z"
   },
   {
     "name": "Ahmed Fakroun",
@@ -18054,21 +18060,58 @@
     },
     "enrichedAt": "2026-07-07T16:12:53.460Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "e71d25ac-af0c-47ef-8ead-48ef634e11d0"
+    "mbid": "e71d25ac-af0c-47ef-8ead-48ef634e11d0",
+    "genres": [
+      "libya",
+      "africa",
+      "World Music",
+      "Love",
+      "amor"
+    ],
+    "popularity": {
+      "listeners": 44598,
+      "playcount": 268334
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/50a3bda97c286c2eaca9fe489affbb71/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:01:54.117Z"
   },
   {
     "name": "Ahmed Ghulamali Chagla",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:17.865Z",
     "autoTriedAt": "2026-07-07T16:12:57.600Z",
-    "mbid": "9ca715df-b376-45eb-95c9-bdce2005bcaa"
+    "mbid": "9ca715df-b376-45eb-95c9-bdce2005bcaa",
+    "genres": [
+      "pakistan",
+      "pakistani",
+      "ottoman",
+      "military march"
+    ],
+    "popularity": {
+      "listeners": 198,
+      "playcount": 443
+    },
+    "metaEnrichedAt": "2026-07-08T22:01:54.858Z"
   },
   {
     "name": "Ahmed Jahanzeb",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:17.865Z",
     "autoTriedAt": "2026-07-07T16:13:17.720Z",
-    "mbid": "695864f2-085b-41ea-b224-d70373fed4a0"
+    "mbid": "695864f2-085b-41ea-b224-d70373fed4a0",
+    "genres": [
+      "pakistani",
+      "urdu",
+      "pakistan",
+      "lollywood",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 3872,
+      "playcount": 23189
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/74e74d4ad72548289e6564efa36b700b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:01:55.664Z"
   },
   {
     "name": "Ahmed Rushdi",
@@ -18083,7 +18126,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T16:13:20.365Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "pakistani",
+      "pakistan",
+      "filmi",
+      "Soundtrack",
+      "film"
+    ],
+    "popularity": {
+      "listeners": 2445,
+      "playcount": 12853
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/27b2cfe85358e5880a3e38b5121c7c35/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:01:56.384Z"
   },
   {
     "name": "Ahmet Ertegun",
@@ -18099,7 +18155,19 @@
     },
     "enrichedAt": "2026-07-07T16:13:22.920Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "f24331eb-da48-430b-ad7d-48796a5b6255"
+    "mbid": "f24331eb-da48-430b-ad7d-48796a5b6255",
+    "genres": [
+      "trance",
+      "Progressive House",
+      "dance",
+      "electronic",
+      "male vocalists"
+    ],
+    "popularity": {
+      "listeners": 14200,
+      "playcount": 60933
+    },
+    "metaEnrichedAt": "2026-07-08T22:01:57.095Z"
   },
   {
     "name": "Ahmet Kaya",
@@ -18114,7 +18182,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T16:13:28.161Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "turkish",
+      "folk",
+      "Protest",
+      "kurdish",
+      "political"
+    ],
+    "popularity": {
+      "listeners": 84074,
+      "playcount": 5053605
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f5ba578e789e470876984d5e0c894f5e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:01:57.839Z"
   },
   {
     "name": "Ahn Daniel",
@@ -18130,14 +18211,30 @@
     },
     "enrichedAt": "2026-07-07T07:05:17.865Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "cb6a71b9-f973-4401-aeef-aeb0ccfcada9"
+    "mbid": "cb6a71b9-f973-4401-aeef-aeb0ccfcada9",
+    "popularity": {
+      "listeners": 3,
+      "playcount": 12
+    },
+    "metaEnrichedAt": "2026-07-08T22:01:58.593Z"
   },
   {
     "name": "Ahn Eak-tai",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:17.865Z",
     "autoTriedAt": "2026-07-07T16:13:31.925Z",
-    "mbid": "6279b53f-c21f-4e4b-bee9-cbc78888b425"
+    "mbid": "6279b53f-c21f-4e4b-bee9-cbc78888b425",
+    "genres": [
+      "Classical",
+      "Korean",
+      "south korean",
+      "south korea"
+    ],
+    "popularity": {
+      "listeners": 11,
+      "playcount": 116
+    },
+    "metaEnrichedAt": "2026-07-08T22:01:59.320Z"
   },
   {
     "name": "Ahn Jae-wook",
@@ -18153,17 +18250,44 @@
     },
     "enrichedAt": "2026-07-07T07:05:17.865Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7585e897-a34a-4855-88bd-a1bb3f1b6377"
+    "mbid": "7585e897-a34a-4855-88bd-a1bb3f1b6377",
+    "genres": [
+      "Korean",
+      "Ballad",
+      "Kpop",
+      "k-pop",
+      "korena"
+    ],
+    "popularity": {
+      "listeners": 1093,
+      "playcount": 15099
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:00.054Z"
   },
   {
     "name": "Ahn Sohee",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:17.865Z",
-    "autoTriedAt": "2026-07-07T16:13:33.189Z"
+    "autoTriedAt": "2026-07-07T16:13:33.189Z",
+    "metaTriedAt": "2026-07-08T22:02:00.779Z"
   },
   {
     "name": "Ahti",
-    "website": null
+    "website": null,
+    "genres": [
+      "folk metal",
+      "rap",
+      "finland",
+      "Finnish rap",
+      "Suomirap"
+    ],
+    "popularity": {
+      "listeners": 18948,
+      "playcount": 980739
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/56a541501e75dd1b0e8a60497f38143a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:01.559Z"
   },
   {
     "name": "Ahwlee",
@@ -18177,7 +18301,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T19:55:26.241Z",
-    "enrichedBy": "musicbrainz+wikidata"
+    "enrichedBy": "musicbrainz+wikidata",
+    "genres": [
+      "beats",
+      "instrumental hip-hop",
+      "abstract hip-hop",
+      "underground hip-hop",
+      "hip hop"
+    ],
+    "popularity": {
+      "listeners": 40764,
+      "playcount": 358219
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c4e28bceff86807107fbdfc1cb18505c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:02.316Z"
   },
   {
     "name": "Ai Kago",
@@ -18193,7 +18330,19 @@
     },
     "enrichedAt": "2026-07-07T07:05:17.865Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "cc374fb0-8f1a-4802-bb9b-483992271a3a"
+    "mbid": "cc374fb0-8f1a-4802-bb9b-483992271a3a",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "Hello Project",
+      "aibon",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 2203,
+      "playcount": 79505
+    },
+    "metaEnrichedAt": "2026-07-08T22:02:03.095Z"
   },
   {
     "name": "Ai Kawashima",
@@ -18209,7 +18358,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:17.865Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6d7ef4a5-26c9-45e7-ad19-24ec48c50ed4"
+    "mbid": "6d7ef4a5-26c9-45e7-ad19-24ec48c50ed4",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "singer-songwriter",
+      "J-rock",
+      "spotify"
+    ],
+    "popularity": {
+      "listeners": 6191,
+      "playcount": 74261
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4fb45f5c094431eb8f4f5220df7b87b6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:04.229Z"
   },
   {
     "name": "Ai Otsuka",
@@ -18225,13 +18387,37 @@
     },
     "enrichedAt": "2026-07-07T07:05:17.865Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e476adc4-d5e7-427a-b86f-70ecc970b009"
+    "mbid": "e476adc4-d5e7-427a-b86f-70ecc970b009",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "female vocalists",
+      "JPop",
+      "Japanese music"
+    ],
+    "popularity": {
+      "listeners": 107147,
+      "playcount": 8893445
+    },
+    "metaEnrichedAt": "2026-07-08T22:02:04.883Z"
   },
   {
     "name": "Ai Takahashi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:17.865Z",
-    "autoTriedAt": "2026-07-07T16:13:34.459Z"
+    "autoTriedAt": "2026-07-07T16:13:34.459Z",
+    "genres": [
+      "j-pop",
+      "Hello Project",
+      "japanese",
+      "idol",
+      "Morning musume"
+    ],
+    "popularity": {
+      "listeners": 2371,
+      "playcount": 86448
+    },
+    "metaEnrichedAt": "2026-07-08T22:02:05.715Z"
   },
   {
     "name": "Ai-Girls",
@@ -18246,19 +18432,42 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T07:05:17.865Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "popularity": {
+      "listeners": 18,
+      "playcount": 150
+    },
+    "metaEnrichedAt": "2026-07-08T22:02:06.522Z"
   },
   {
     "name": "Aiba, Masaki",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:17.865Z",
-    "autoTriedAt": "2026-07-07T16:13:37.657Z"
+    "autoTriedAt": "2026-07-07T16:13:37.657Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 1
+    },
+    "metaEnrichedAt": "2026-07-08T22:02:07.315Z"
   },
   {
     "name": "Aice5",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:17.865Z",
-    "autoTriedAt": "2026-07-07T16:13:38.922Z"
+    "autoTriedAt": "2026-07-07T16:13:38.922Z",
+    "genres": [
+      "j-pop",
+      "anime",
+      "seiyuu",
+      "japanese",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 6763,
+      "playcount": 298336
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/df4cdf50d4c6a2b6453a7b81458ad5f6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:08.045Z"
   },
   {
     "name": "Aida Cuevas",
@@ -18274,7 +18483,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:17.865Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0f315d1c-8e91-44a7-b354-6c079ff726e1"
+    "mbid": "0f315d1c-8e91-44a7-b354-6c079ff726e1",
+    "genres": [
+      "mariachi",
+      "ranchera",
+      "latin",
+      "mexico",
+      "pura ranchera"
+    ],
+    "popularity": {
+      "listeners": 19862,
+      "playcount": 103690
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/75c3dc97e0cfdc9b1c1159a85f1358fe/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:08.759Z"
   },
   {
     "name": "Aida el Ayoubi",
@@ -18290,13 +18512,27 @@
     },
     "enrichedAt": "2026-07-07T07:05:17.865Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "caa93711-df55-4a50-b1a2-4cd3968774bc"
+    "mbid": "caa93711-df55-4a50-b1a2-4cd3968774bc",
+    "genres": [
+      "egyptian",
+      "arabic",
+      "easy listening",
+      "folk",
+      "female vocalist"
+    ],
+    "popularity": {
+      "listeners": 624,
+      "playcount": 9644
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fd9618a935c4f4ce8c4bbb19f4614387/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:09.401Z"
   },
   {
     "name": "Aida, Shoko",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:17.865Z",
-    "autoTriedAt": "2026-07-07T16:13:41.319Z"
+    "autoTriedAt": "2026-07-07T16:13:41.319Z",
+    "metaTriedAt": "2026-07-08T22:02:10.098Z"
   },
   {
     "name": "Aidan Baker",
@@ -18311,7 +18547,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T16:13:43.985Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "ambient",
+      "drone",
+      "experimental",
+      "dark ambient",
+      "electronic"
+    ],
+    "popularity": {
+      "listeners": 68226,
+      "playcount": 1361441
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fc3297e11c5ed447259dc9ba479e78c3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:10.880Z"
   },
   {
     "name": "Aidan Knight",
@@ -18327,7 +18576,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:17.865Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7a9b4732-ccd1-481c-a1ed-3c1ffb3f633e"
+    "mbid": "7a9b4732-ccd1-481c-a1ed-3c1ffb3f633e",
+    "genres": [
+      "Canadian",
+      "folk",
+      "singer-songwriter",
+      "canada",
+      "indie"
+    ],
+    "popularity": {
+      "listeners": 79382,
+      "playcount": 717125
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7d8f004f6773544bffec11d3992f27e0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:11.828Z"
   },
   {
     "name": "Aidan Moffat",
@@ -18343,7 +18605,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:17.865Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b40f3a6c-cb54-4d2e-a200-04e67ef15374"
+    "mbid": "b40f3a6c-cb54-4d2e-a200-04e67ef15374",
+    "genres": [
+      "folk",
+      "alternative",
+      "Scottish",
+      "beer",
+      "Arab Strap"
+    ],
+    "popularity": {
+      "listeners": 12840,
+      "playcount": 147597
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/383e51aa1ee3baf014e5430b181b3b3b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:12.585Z"
   },
   {
     "name": "Aiden",
@@ -18359,7 +18634,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:17.865Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d4f82967-4008-4481-953d-399d089753dd"
+    "mbid": "d4f82967-4008-4481-953d-399d089753dd",
+    "genres": [
+      "post-hardcore",
+      "emo",
+      "punk",
+      "screamo",
+      "emocore"
+    ],
+    "popularity": {
+      "listeners": 413662,
+      "playcount": 10423043
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/83ed8f485d9cced6cdf109aabf2d2076/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:13.304Z"
   },
   {
     "name": "Aidonia",
@@ -18375,13 +18663,38 @@
     },
     "enrichedAt": "2026-07-07T07:05:17.865Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f2280d79-264d-4b27-b11a-9a77097869ee"
+    "mbid": "f2280d79-264d-4b27-b11a-9a77097869ee",
+    "genres": [
+      "dancehall",
+      "reggae",
+      "ragga",
+      "jamaica",
+      "Aidonia"
+    ],
+    "popularity": {
+      "listeners": 108353,
+      "playcount": 1050984
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f63e333e74e6cbbbee16678e38114d9f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:14.054Z"
   },
   {
     "name": "AIDS",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:17.865Z",
-    "autoTriedAt": "2026-07-07T16:13:47.127Z"
+    "autoTriedAt": "2026-07-07T16:13:47.127Z",
+    "genres": [
+      "hardcore punk",
+      "japanese",
+      "grindcore",
+      "black metal",
+      "poland"
+    ],
+    "popularity": {
+      "listeners": 3295,
+      "playcount": 34544
+    },
+    "metaEnrichedAt": "2026-07-08T22:02:14.840Z"
   },
   {
     "name": "AIDS Wolf",
@@ -18397,7 +18710,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:17.865Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "03bf0d5a-0790-493e-b69f-57ec4b5977cf"
+    "mbid": "03bf0d5a-0790-493e-b69f-57ec4b5977cf",
+    "genres": [
+      "noise rock",
+      "experimental",
+      "noise",
+      "no wave",
+      "punk"
+    ],
+    "popularity": {
+      "listeners": 39331,
+      "playcount": 529710
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a629dc6c2f9006fcd82a41d4713704db/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:15.589Z"
   },
   {
     "name": "Aika Hirota",
@@ -18413,14 +18739,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:17.865Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f38bb673-b82c-4cc9-ac14-3f5323fe252f"
+    "mbid": "f38bb673-b82c-4cc9-ac14-3f5323fe252f",
+    "metaTriedAt": "2026-07-08T22:02:16.297Z"
   },
   {
     "name": "Aika Mitsui",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:17.865Z",
     "autoTriedAt": "2026-07-07T16:13:48.399Z",
-    "mbid": "5d0bbca4-bd38-4c9f-8d95-b71b64407118"
+    "mbid": "5d0bbca4-bd38-4c9f-8d95-b71b64407118",
+    "popularity": {
+      "listeners": 18,
+      "playcount": 262
+    },
+    "metaEnrichedAt": "2026-07-08T22:02:17.180Z"
   },
   {
     "name": "Aika Ota",
@@ -18436,7 +18768,12 @@
     },
     "enrichedAt": "2026-07-07T07:05:17.865Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "650a1e3b-1647-4c13-a694-f4de12b9c045"
+    "mbid": "650a1e3b-1647-4c13-a694-f4de12b9c045",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 3
+    },
+    "metaEnrichedAt": "2026-07-08T22:02:18.082Z"
   },
   {
     "name": "Aikakone",
@@ -18452,19 +18789,45 @@
     },
     "enrichedAt": "2026-07-07T07:05:17.865Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1c9a8777-e808-4ea3-a9a3-0358b454cf7b"
+    "mbid": "1c9a8777-e808-4ea3-a9a3-0358b454cf7b",
+    "genres": [
+      "finnish",
+      "pop",
+      "dance",
+      "90s",
+      "eurodance"
+    ],
+    "popularity": {
+      "listeners": 42697,
+      "playcount": 615954
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b91cc95eb644fa18c18e7888dc8c8105/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:19.133Z"
   },
   {
     "name": "Aikawa, Hiroki",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:17.865Z",
-    "autoTriedAt": "2026-07-07T16:13:49.661Z"
+    "autoTriedAt": "2026-07-07T16:13:49.661Z",
+    "metaTriedAt": "2026-07-08T22:02:19.834Z"
   },
   {
     "name": "Aikawa, Nanase",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:17.865Z",
-    "autoTriedAt": "2026-07-07T16:13:50.927Z"
+    "autoTriedAt": "2026-07-07T16:13:50.927Z",
+    "genres": [
+      "J-rock",
+      "j-pop",
+      "japanese",
+      "female vocalists",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 45591,
+      "playcount": 1113582
+    },
+    "metaEnrichedAt": "2026-07-08T22:02:20.597Z"
   },
   {
     "name": "Aiko",
@@ -18479,7 +18842,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T16:13:53.533Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "female vocalists",
+      "pop",
+      "JPop"
+    ],
+    "popularity": {
+      "listeners": 205803,
+      "playcount": 9780855
+    },
+    "metaEnrichedAt": "2026-07-08T22:02:21.260Z"
   },
   {
     "name": "Aile",
@@ -18495,7 +18870,20 @@
     },
     "enrichedAt": "2026-07-07T16:13:57.064Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "ae5eab6b-70b6-4970-aea0-3cd76e45867d"
+    "mbid": "ae5eab6b-70b6-4970-aea0-3cd76e45867d",
+    "genres": [
+      "oshare kei",
+      "J-rock",
+      "japanese",
+      "visual kei",
+      "jrock"
+    ],
+    "popularity": {
+      "listeners": 12013,
+      "playcount": 218107
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e23066163f21176a822b54001ee648a2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:22.064Z"
   },
   {
     "name": "Ailee",
@@ -18511,14 +18899,32 @@
     },
     "enrichedAt": "2026-07-07T07:05:17.865Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "cecc42fb-9657-4b54-ad2f-7b73eefaef12"
+    "mbid": "cecc42fb-9657-4b54-ad2f-7b73eefaef12",
+    "genres": [
+      "k-pop",
+      "Korean",
+      "female vocalists",
+      "Kpop",
+      "Ailee"
+    ],
+    "popularity": {
+      "listeners": 26939,
+      "playcount": 1846679
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/08d678a21b6763b5bccf23b7fd265649/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:22.899Z"
   },
   {
     "name": "Aim 4 More",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:17.865Z",
     "autoTriedAt": "2026-07-07T16:13:59.773Z",
-    "mbid": "bcdc98c4-0b73-4d8d-af35-c4388e371ef3"
+    "mbid": "bcdc98c4-0b73-4d8d-af35-c4388e371ef3",
+    "popularity": {
+      "listeners": 8,
+      "playcount": 22
+    },
+    "metaEnrichedAt": "2026-07-08T22:02:23.616Z"
   },
   {
     "name": "Aimee Allen",
@@ -18533,7 +18939,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T16:14:20.306Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "female vocalists",
+      "rock",
+      "pop",
+      "singer-songwriter",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 59656,
+      "playcount": 478259
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/658ac7541178881d4a2fe73570916744/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:24.358Z"
   },
   {
     "name": "Aimee Echo",
@@ -18548,7 +18967,12 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T16:14:24.663Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 16,
+      "playcount": 49
+    },
+    "metaEnrichedAt": "2026-07-08T22:02:25.048Z"
   },
   {
     "name": "Aimee Mann",
@@ -18564,13 +18988,32 @@
     },
     "enrichedAt": "2026-07-07T07:05:17.865Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "db3c0a20-bf05-4b30-ac22-f294aea24172"
+    "mbid": "db3c0a20-bf05-4b30-ac22-f294aea24172",
+    "genres": [
+      "female vocalists",
+      "singer-songwriter",
+      "indie",
+      "alternative",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 1018737,
+      "playcount": 22358384
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3a628f7bb6c0781f7eb523ca8f4755f2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:25.711Z"
   },
   {
     "name": "Aimee Nezhukumatathil",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:17.865Z",
-    "autoTriedAt": "2026-07-07T16:14:49.387Z"
+    "autoTriedAt": "2026-07-07T16:14:49.387Z",
+    "popularity": {
+      "listeners": 90,
+      "playcount": 227
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:26.486Z"
   },
   {
     "name": "Aimer",
@@ -18585,37 +19028,81 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T16:14:59.794Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "female vocalists",
+      "pop",
+      "JPop"
+    ],
+    "popularity": {
+      "listeners": 497494,
+      "playcount": 25435986
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/60df0d62b87e18b02ee6fabc50d129f5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:27.143Z"
   },
   {
     "name": "Aimi Kobayashi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:17.865Z",
-    "autoTriedAt": "2026-07-07T16:15:01.074Z"
+    "autoTriedAt": "2026-07-07T16:15:01.074Z",
+    "genres": [
+      "piano"
+    ],
+    "popularity": {
+      "listeners": 2534,
+      "playcount": 21772
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bac1efb48b3e0e09cc2a8c6bdacd1220/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:27.912Z"
   },
   {
     "name": "Ain't 2 Proud 2 Beg",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:17.865Z",
-    "autoTriedAt": "2026-07-07T16:15:08.212Z"
+    "autoTriedAt": "2026-07-07T16:15:08.212Z",
+    "popularity": {
+      "listeners": 11,
+      "playcount": 16
+    },
+    "metaEnrichedAt": "2026-07-08T22:02:28.642Z"
   },
   {
     "name": "Ain't No Mountain High Enough",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:17.865Z",
-    "autoTriedAt": "2026-07-07T16:15:09.635Z"
+    "autoTriedAt": "2026-07-07T16:15:09.635Z",
+    "popularity": {
+      "listeners": 1716,
+      "playcount": 4933
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a1b8f45b30e5caa1856de641135cf7b8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:29.429Z"
   },
   {
     "name": "Ain't No Way to Treat a Lady",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:19.526Z",
-    "autoTriedAt": "2026-07-07T16:15:11.229Z"
+    "autoTriedAt": "2026-07-07T16:15:11.229Z",
+    "popularity": {
+      "listeners": 3,
+      "playcount": 3
+    },
+    "metaEnrichedAt": "2026-07-08T22:02:30.177Z"
   },
   {
     "name": "Ain't Nobody",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:19.526Z",
-    "autoTriedAt": "2026-07-07T16:15:14.017Z"
+    "autoTriedAt": "2026-07-07T16:15:14.017Z",
+    "popularity": {
+      "listeners": 3239,
+      "playcount": 11149
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3562f430d4daccf2f028745f13f86e21/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:31.085Z"
   },
   {
     "name": "Aina",
@@ -18629,7 +19116,20 @@
       "youtube": null,
       "telegram": null,
       "vk": null
-    }
+    },
+    "genres": [
+      "Power metal",
+      "symphonic metal",
+      "metal opera",
+      "Progressive metal",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 93489,
+      "playcount": 1332989
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ebcf22e5c3a0eb3178b8a6f6bc1a5a6c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:31.877Z"
   },
   {
     "name": "Aina Hashimoto",
@@ -18645,7 +19145,8 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "9a06621f-9530-4b19-bf91-6719d06fba1b"
+    "mbid": "9a06621f-9530-4b19-bf91-6719d06fba1b",
+    "metaTriedAt": "2026-07-08T22:02:32.583Z"
   },
   {
     "name": "Aino Jawo",
@@ -18661,7 +19162,13 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8870ec41-3a85-4461-86bf-e2012307b30e"
+    "mbid": "8870ec41-3a85-4461-86bf-e2012307b30e",
+    "popularity": {
+      "listeners": 13,
+      "playcount": 80
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5f4e26dc899486887de0a45436aeeea6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:33.420Z"
   },
   {
     "name": "Ainslie Henderson",
@@ -18677,7 +19184,20 @@
     },
     "enrichedAt": "2026-07-07T16:15:37.603Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "675499a5-19f4-49a5-ba3d-19ba518d2606"
+    "mbid": "675499a5-19f4-49a5-ba3d-19ba518d2606",
+    "genres": [
+      "british",
+      "acoustic",
+      "indie",
+      "singer-songwriter",
+      "Scottish"
+    ],
+    "popularity": {
+      "listeners": 6553,
+      "playcount": 68607
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/20da94872354dbb371e28613f68216e9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:34.080Z"
   },
   {
     "name": "Aion",
@@ -18692,7 +19212,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T16:15:52.181Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "thrash metal",
+      "Gothic Metal",
+      "metal",
+      "polish",
+      "heavy metal"
+    ],
+    "popularity": {
+      "listeners": 10516,
+      "playcount": 327490
+    },
+    "metaEnrichedAt": "2026-07-08T22:02:35.061Z"
   },
   {
     "name": "Air Formation",
@@ -18708,7 +19240,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c712fd94-03f4-4b9b-b561-53e373399ab5"
+    "mbid": "c712fd94-03f4-4b9b-b561-53e373399ab5",
+    "genres": [
+      "shoegaze",
+      "dream pop",
+      "space rock",
+      "post-rock",
+      "ambient"
+    ],
+    "popularity": {
+      "listeners": 164351,
+      "playcount": 1929952
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e9ad06cfa9c12a965485c061566706a1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:35.713Z"
   },
   {
     "name": "Air France",
@@ -18724,7 +19269,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0d360231-f492-46ac-baf0-4f84ac6e8b17"
+    "mbid": "0d360231-f492-46ac-baf0-4f84ac6e8b17",
+    "genres": [
+      "electronic",
+      "swedish",
+      "indie",
+      "electronica",
+      "Dreamy"
+    ],
+    "popularity": {
+      "listeners": 191992,
+      "playcount": 4158000
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6e1ab92eff2d54a9dd85ccca4ccbf17f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:36.550Z"
   },
   {
     "name": "Air Miami",
@@ -18740,7 +19298,20 @@
     },
     "enrichedAt": "2026-07-07T16:15:54.764Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "fdc1eb7c-3ad2-4c4a-abf7-81b42f56b989"
+    "mbid": "fdc1eb7c-3ad2-4c4a-abf7-81b42f56b989",
+    "genres": [
+      "indie",
+      "indie rock",
+      "teenbeat",
+      "Lo-Fi",
+      "indie pop"
+    ],
+    "popularity": {
+      "listeners": 22532,
+      "playcount": 259478
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/04e761a790b36b991cc406c5761f9422/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:37.295Z"
   },
   {
     "name": "Air Supply",
@@ -18756,7 +19327,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "df9a1914-7fad-4900-bdd4-d7811712a2a8"
+    "mbid": "df9a1914-7fad-4900-bdd4-d7811712a2a8",
+    "genres": [
+      "80s",
+      "soft rock",
+      "pop",
+      "classic rock",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 989360,
+      "playcount": 12909162
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/14b0ca6fd924d2284593dd46d7dcb99a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:37.976Z"
   },
   {
     "name": "Air Traffic",
@@ -18772,7 +19356,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c8fb45c8-b3da-422d-a6db-73ac2ee56f77"
+    "mbid": "c8fb45c8-b3da-422d-a6db-73ac2ee56f77",
+    "genres": [
+      "indie",
+      "indie rock",
+      "british",
+      "alternative",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 403697,
+      "playcount": 5888501
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7278b4bf02f6a70538a1ab1abfb1ca50/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:38.764Z"
   },
   {
     "name": "Air Traffic Control",
@@ -18788,7 +19385,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "dd36385a-925e-4dd0-b19a-5c77f83fd04a"
+    "mbid": "dd36385a-925e-4dd0-b19a-5c77f83fd04a",
+    "genres": [
+      "post-grunge",
+      "power pop",
+      "canada",
+      "Canadian",
+      "Nova Scotia"
+    ],
+    "popularity": {
+      "listeners": 2431,
+      "playcount": 25652
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d429aa63e871623c5df93137098fd337/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:39.541Z"
   },
   {
     "name": "Aira Mitsuki",
@@ -18804,7 +19414,19 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "fb6f9e5f-4aa6-423f-ae66-cce03dec4d86"
+    "mbid": "fb6f9e5f-4aa6-423f-ae66-cce03dec4d86",
+    "genres": [
+      "electronic",
+      "j-pop",
+      "japanese",
+      "electropop",
+      "techno"
+    ],
+    "popularity": {
+      "listeners": 29825,
+      "playcount": 1756370
+    },
+    "metaEnrichedAt": "2026-07-08T22:02:40.876Z"
   },
   {
     "name": "Aira, Mitsuki",
@@ -18820,7 +19442,8 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "fb6f9e5f-4aa6-423f-ae66-cce03dec4d86"
+    "mbid": "fb6f9e5f-4aa6-423f-ae66-cce03dec4d86",
+    "metaTriedAt": "2026-07-08T22:02:41.612Z"
   },
   {
     "name": "Airat Ichmouratov",
@@ -18836,7 +19459,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ef6395f2-54b8-460e-9c5e-4fca2d1ceb94"
+    "mbid": "ef6395f2-54b8-460e-9c5e-4fca2d1ceb94",
+    "genres": [
+      "composer",
+      "contemporary classical",
+      "Classical",
+      "russian",
+      "Russia"
+    ],
+    "popularity": {
+      "listeners": 683,
+      "playcount": 2498
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a4680399490454b0a62f46adaadce8c2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:42.464Z"
   },
   {
     "name": "Airbag",
@@ -18851,7 +19487,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T16:16:09.888Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Progressive rock",
+      "rock",
+      "norwegian",
+      "punk rock",
+      "Progressive"
+    ],
+    "popularity": {
+      "listeners": 195730,
+      "playcount": 9888801
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/64818d4e251267ae54ac8e3a0908dd87/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:43.243Z"
   },
   {
     "name": "Airborne",
@@ -18867,7 +19516,19 @@
     },
     "enrichedAt": "2026-07-07T16:16:12.578Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "117d34a9-f86f-46ba-8310-43dac76e34e1"
+    "mbid": "117d34a9-f86f-46ba-8310-43dac76e34e1",
+    "genres": [
+      "jazz",
+      "heavy metal",
+      "All",
+      "swedish",
+      "world fusion"
+    ],
+    "popularity": {
+      "listeners": 8271,
+      "playcount": 53063
+    },
+    "metaEnrichedAt": "2026-07-08T22:02:44.071Z"
   },
   {
     "name": "Airbourne",
@@ -18883,7 +19544,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5365f55c-b1e1-48f9-b09f-078f7a14cb1f"
+    "mbid": "5365f55c-b1e1-48f9-b09f-078f7a14cb1f",
+    "genres": [
+      "hard rock",
+      "rock",
+      "australian",
+      "rock n roll",
+      "classic rock"
+    ],
+    "popularity": {
+      "listeners": 658970,
+      "playcount": 17132461
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a9969cd85e40acafa8ce82fded7e3b97/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:44.755Z"
   },
   {
     "name": "Airbus",
@@ -18898,7 +19572,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T16:16:15.206Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Psychedelic Rock",
+      "pop rock",
+      "ambient",
+      "jazz",
+      "70s"
+    ],
+    "popularity": {
+      "listeners": 1904,
+      "playcount": 14233
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c7aee011f6f502b46eaec3bca2a8d697/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:45.498Z"
   },
   {
     "name": "Airhead",
@@ -18914,7 +19601,20 @@
     },
     "enrichedAt": "2026-07-07T16:16:17.826Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "9b070bea-fedf-4ff5-8177-c18c663c2416"
+    "mbid": "9b070bea-fedf-4ff5-8177-c18c663c2416",
+    "genres": [
+      "dubstep",
+      "electronic",
+      "future garage",
+      "experimental",
+      "indie"
+    ],
+    "popularity": {
+      "listeners": 111916,
+      "playcount": 701923
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/72b70ec61f348f8e02a6fdd47ea77a1c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:46.294Z"
   },
   {
     "name": "Airi Furukawa",
@@ -18930,7 +19630,13 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e297c8bf-b3e1-40d0-999b-0e4e8aa1b57c"
+    "mbid": "e297c8bf-b3e1-40d0-999b-0e4e8aa1b57c",
+    "popularity": {
+      "listeners": 12,
+      "playcount": 43
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7dee4046c2abc2d9c7db4886a77d9496/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:47.069Z"
   },
   {
     "name": "Airi Matsui",
@@ -18946,13 +19652,23 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5d82c64f-1455-45d3-b5f2-4e2fb48bbd7b"
+    "mbid": "5d82c64f-1455-45d3-b5f2-4e2fb48bbd7b",
+    "metaTriedAt": "2026-07-08T22:02:47.769Z"
   },
   {
     "name": "Airi Suzuki",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:19.526Z",
-    "autoTriedAt": "2026-07-07T16:16:32.822Z"
+    "autoTriedAt": "2026-07-07T16:16:32.822Z",
+    "genres": [
+      "Suzuki Airi"
+    ],
+    "popularity": {
+      "listeners": 4171,
+      "playcount": 37845
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/94ffd186cb1dbcb219a83dc2c4e9802e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:48.523Z"
   },
   {
     "name": "Airi Tanigawa",
@@ -18967,7 +19683,8 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "metaTriedAt": "2026-07-08T22:02:49.223Z"
   },
   {
     "name": "Airiel",
@@ -18983,14 +19700,39 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a6bf1276-9150-40fc-a94e-6b14f377fe3d"
+    "mbid": "a6bf1276-9150-40fc-a94e-6b14f377fe3d",
+    "genres": [
+      "shoegaze",
+      "dream pop",
+      "indie",
+      "post-rock",
+      "dreampop"
+    ],
+    "popularity": {
+      "listeners": 326675,
+      "playcount": 5280249
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/eaa925d481cbfd216782ab13fd70917e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:50.033Z"
   },
   {
     "name": "Airport",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:19.526Z",
     "autoTriedAt": "2026-07-07T16:16:48.245Z",
-    "artistCheckedAt": "2026-07-08T15:08:23.603Z"
+    "artistCheckedAt": "2026-07-08T15:08:23.603Z",
+    "genres": [
+      "indie",
+      "rock",
+      "japanese",
+      "alternative",
+      "jpunk"
+    ],
+    "popularity": {
+      "listeners": 4669,
+      "playcount": 52740
+    },
+    "metaEnrichedAt": "2026-07-08T22:02:51.015Z"
   },
   {
     "name": "Airport 5",
@@ -19007,7 +19749,20 @@
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
     "mbid": "90ac4aae-bc9b-4127-9553-830d7048709a",
-    "artistCheckedAt": "2026-07-08T15:08:23.603Z"
+    "artistCheckedAt": "2026-07-08T15:08:23.603Z",
+    "genres": [
+      "Lo-Fi",
+      "indie rock",
+      "indie",
+      "alternative",
+      "Ohio"
+    ],
+    "popularity": {
+      "listeners": 4625,
+      "playcount": 98019
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cbff725d43916c69e17122944ddb12f0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:51.791Z"
   },
   {
     "name": "Airto Moreira",
@@ -19023,19 +19778,46 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "dd2abaa1-0b73-4ded-82ed-c80cce8d6378"
+    "mbid": "dd2abaa1-0b73-4ded-82ed-c80cce8d6378",
+    "genres": [
+      "jazz",
+      "brazilian",
+      "Fusion",
+      "latin",
+      "samba"
+    ],
+    "popularity": {
+      "listeners": 49149,
+      "playcount": 364300
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/81ba003ae74bdccd0c30b8b44ff2d0ad/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:52.565Z"
   },
   {
     "name": "Aisha",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:19.526Z",
-    "autoTriedAt": "2026-07-07T16:16:53.796Z"
+    "autoTriedAt": "2026-07-07T16:16:53.796Z",
+    "genres": [
+      "latvian",
+      "reggae",
+      "female vocalists",
+      "pop",
+      "Eurovision"
+    ],
+    "popularity": {
+      "listeners": 147941,
+      "playcount": 4285584
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/89b0943b03ca4be763c9444e6f902b62/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:53.295Z"
   },
   {
     "name": "Aiso, Haruhi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:19.526Z",
-    "autoTriedAt": "2026-07-07T16:16:55.090Z"
+    "autoTriedAt": "2026-07-07T16:16:55.090Z",
+    "metaTriedAt": "2026-07-08T22:02:53.998Z"
   },
   {
     "name": "Aistė Smilgevičiūtė",
@@ -19051,7 +19833,20 @@
     },
     "enrichedAt": "2026-07-07T16:16:58.459Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "a48ba32a-4945-4b58-862a-92b4ff6a3b4b"
+    "mbid": "a48ba32a-4945-4b58-862a-92b4ff6a3b4b",
+    "genres": [
+      "folk",
+      "lithuanian",
+      "neofolk",
+      "darkwave",
+      "ethnic"
+    ],
+    "popularity": {
+      "listeners": 969,
+      "playcount": 27759
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/32eca9ebf743f15d56e9ddb05d754c66/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:54.739Z"
   },
   {
     "name": "Aisu",
@@ -19063,7 +19858,17 @@
       "youtube": "https://www.youtube.com/@aisuwav",
       "telegram": null,
       "vk": null
-    }
+    },
+    "genres": [
+      "bubblegum pop",
+      "chinese"
+    ],
+    "popularity": {
+      "listeners": 21122,
+      "playcount": 1181315
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c9cf473f28faf9664be135ca12613354/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:55.646Z"
   },
   {
     "name": "Aitana",
@@ -19075,13 +19880,31 @@
       "youtube": "https://www.youtube.com/@AitanaMusic",
       "telegram": null,
       "vk": null
-    }
+    },
+    "genres": [
+      "spanish",
+      "pop",
+      "spain",
+      "female vocalists",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 258616,
+      "playcount": 15733261
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/41a75229e7fb63066c6b8be08ff0dbce/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:56.334Z"
   },
   {
     "name": "Aiuchi, Rina",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:19.526Z",
-    "autoTriedAt": "2026-07-07T16:17:13.621Z"
+    "autoTriedAt": "2026-07-07T16:17:13.621Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 20
+    },
+    "metaEnrichedAt": "2026-07-08T22:02:57.074Z"
   },
   {
     "name": "Aivaras Stepukonis",
@@ -19097,20 +19920,43 @@
     },
     "enrichedAt": "2026-07-07T16:17:18.428Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "d1f8f8d0-0c93-4a0e-b0ad-7f41495f8f24"
+    "mbid": "d1f8f8d0-0c93-4a0e-b0ad-7f41495f8f24",
+    "popularity": {
+      "listeners": 60,
+      "playcount": 270
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:02:57.855Z"
   },
   {
     "name": "Aivars Kalējs",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:19.526Z",
     "autoTriedAt": "2026-07-07T16:17:26.129Z",
-    "mbid": "9ab05c49-2df2-4d09-8cbc-390de278aab9"
+    "mbid": "9ab05c49-2df2-4d09-8cbc-390de278aab9",
+    "popularity": {
+      "listeners": 201,
+      "playcount": 368
+    },
+    "metaEnrichedAt": "2026-07-08T22:02:58.605Z"
   },
   {
     "name": "AJ",
     "website": null,
     "autoTriedAt": "2026-07-07T22:42:41.240Z",
-    "wdBulkTriedAt": "2026-07-08T14:10:35.329Z"
+    "wdBulkTriedAt": "2026-07-08T14:10:35.329Z",
+    "genres": [
+      "Korean",
+      "k-pop",
+      "rnb",
+      "Hip-Hop",
+      "Kpop"
+    ],
+    "popularity": {
+      "listeners": 52749,
+      "playcount": 674002
+    },
+    "metaEnrichedAt": "2026-07-08T22:02:59.358Z"
   },
   {
     "name": "AJ Michalka",
@@ -19126,13 +19972,32 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "58f2c830-462f-4dde-843e-9adea707b771"
+    "mbid": "58f2c830-462f-4dde-843e-9adea707b771",
+    "genres": [
+      "pop",
+      "singer-songwriter",
+      "Disney",
+      "USA",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 16903,
+      "playcount": 174994
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/da206a53e7e188754ab778d036f0ae3c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:00.050Z"
   },
   {
     "name": "AJ Tabaldo",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:19.526Z",
-    "autoTriedAt": "2026-07-07T16:17:44.490Z"
+    "autoTriedAt": "2026-07-07T16:17:44.490Z",
+    "popularity": {
+      "listeners": 316,
+      "playcount": 1975
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6bdd4b86783a92e122c9a46f363b52b6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:01.563Z"
   },
   {
     "name": "Aja Kim",
@@ -19147,19 +20012,38 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "popularity": {
+      "listeners": 16,
+      "playcount": 135
+    },
+    "metaEnrichedAt": "2026-07-08T22:03:02.352Z"
   },
   {
     "name": "Ajalon (band)",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:19.526Z",
-    "autoTriedAt": "2026-07-07T16:17:47.020Z"
+    "autoTriedAt": "2026-07-07T16:17:47.020Z",
+    "metaTriedAt": "2026-07-08T22:03:03.066Z"
   },
   {
     "name": "Ajamu",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:19.526Z",
-    "autoTriedAt": "2026-07-07T16:17:49.615Z"
+    "autoTriedAt": "2026-07-07T16:17:49.615Z",
+    "genres": [
+      "soca",
+      "reggae",
+      "calypso",
+      "caribbean",
+      "grenada"
+    ],
+    "popularity": {
+      "listeners": 1399,
+      "playcount": 7014
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d4e5d408e9a0e357513ac22934430c70/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:03.892Z"
   },
   {
     "name": "Ajattara",
@@ -19175,7 +20059,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a63d9089-482d-4689-9ef1-df4eab9a96ab"
+    "mbid": "a63d9089-482d-4689-9ef1-df4eab9a96ab",
+    "genres": [
+      "black metal",
+      "Dark metal",
+      "finnish",
+      "metal",
+      "finnish metal"
+    ],
+    "popularity": {
+      "listeners": 91241,
+      "playcount": 4375881
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6c09a4658795e1d7c1aed83f79790347/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:04.758Z"
   },
   {
     "name": "Ajax",
@@ -19190,7 +20087,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T16:18:07.343Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "hardcore punk",
+      "hardcore",
+      "punk",
+      "electronica",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 12594,
+      "playcount": 137565
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ffed3ad50e53f06902dea36a1b5de603/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:05.493Z"
   },
   {
     "name": "Ajay−Atul",
@@ -19205,7 +20115,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T16:18:25.150Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 8
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ec491fbeec98b7f794bb92e89dc7fac1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:06.327Z"
   },
   {
     "name": "Ajda Pekkan",
@@ -19221,7 +20137,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "838bdef5-4fb9-4465-82c6-e716e6590564"
+    "mbid": "838bdef5-4fb9-4465-82c6-e716e6590564",
+    "genres": [
+      "turkish",
+      "Turkish Pop",
+      "pop",
+      "female vocalists",
+      "turkey"
+    ],
+    "popularity": {
+      "listeners": 131367,
+      "playcount": 3683632
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0eb6285bff0fe71843971a6ce94f8404/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:07.039Z"
   },
   {
     "name": "Ajico",
@@ -19237,20 +20166,58 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1f245b43-f9ba-4d02-a70b-cd08a99cd1c9"
+    "mbid": "1f245b43-f9ba-4d02-a70b-cd08a99cd1c9",
+    "genres": [
+      "rock",
+      "japanese",
+      "female vocalists",
+      "J-rock",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 12023,
+      "playcount": 402717
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d5a64bae89d3ad72fae9d0ac248f822b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:07.838Z"
   },
   {
     "name": "Ajoo",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:19.526Z",
-    "autoTriedAt": "2026-07-07T16:18:29.508Z"
+    "autoTriedAt": "2026-07-07T16:18:29.508Z",
+    "genres": [
+      "k-pop",
+      "Korean",
+      "Kpop",
+      "pop",
+      "ajoo"
+    ],
+    "popularity": {
+      "listeners": 7215,
+      "playcount": 97657
+    },
+    "metaEnrichedAt": "2026-07-08T22:03:08.593Z"
   },
   {
     "name": "Ajs Nigrutin",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:19.526Z",
     "autoTriedAt": "2026-07-07T16:18:50.025Z",
-    "mbid": "81ef12a0-20e0-482f-87f3-6dc7572ab819"
+    "mbid": "81ef12a0-20e0-482f-87f3-6dc7572ab819",
+    "genres": [
+      "rap",
+      "Hip-Hop",
+      "Balkan hip-hop",
+      "serbian",
+      "coffee and a cigarette"
+    ],
+    "popularity": {
+      "listeners": 16399,
+      "playcount": 647979
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/85730b5cfedae4d2eb2ee844df1c2117/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:09.382Z"
   },
   {
     "name": "AK1200",
@@ -19266,7 +20233,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0067d7ca-578a-4524-9b5a-b9e947c43735"
+    "mbid": "0067d7ca-578a-4524-9b5a-b9e947c43735",
+    "genres": [
+      "Drum and bass",
+      "jungle",
+      "electronic",
+      "dnb",
+      "Drum n Bass"
+    ],
+    "popularity": {
+      "listeners": 33064,
+      "playcount": 263904
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a53bf76f444c3174ded352e682cfe6fc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:10.329Z"
   },
   {
     "name": "Aka Moon",
@@ -19282,7 +20262,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "3ae1ea83-e585-4318-8f67-2412276b5c7d"
+    "mbid": "3ae1ea83-e585-4318-8f67-2412276b5c7d",
+    "genres": [
+      "jazz",
+      "Fusion",
+      "belgian",
+      "jazz fusion",
+      "11"
+    ],
+    "popularity": {
+      "listeners": 5603,
+      "playcount": 81918
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fca445afb128dd6486c1936b6246b4fd/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:11.410Z"
   },
   {
     "name": "Akala",
@@ -19298,7 +20291,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "315856f7-2f28-4fb7-b2ac-cc019749da1d"
+    "mbid": "315856f7-2f28-4fb7-b2ac-cc019749da1d",
+    "genres": [
+      "Grime",
+      "Hip-Hop",
+      "UK hip-hop",
+      "rap",
+      "UK hip hop"
+    ],
+    "popularity": {
+      "listeners": 148531,
+      "playcount": 1785726
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/00f56ad5a6d1684c876738174c56ddc1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:12.129Z"
   },
   {
     "name": "Akane Takayanagi",
@@ -19314,19 +20320,37 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "19fb115d-dcf5-4dcf-8723-cb6451d3d35d"
+    "mbid": "19fb115d-dcf5-4dcf-8723-cb6451d3d35d",
+    "popularity": {
+      "listeners": 8,
+      "playcount": 10
+    },
+    "metaEnrichedAt": "2026-07-08T22:03:12.862Z"
   },
   {
     "name": "Akanishi Jin",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:19.526Z",
-    "autoTriedAt": "2026-07-07T16:18:54.977Z"
+    "autoTriedAt": "2026-07-07T16:18:54.977Z",
+    "genres": [
+      "j-pop",
+      "Johnnys entertainment",
+      "japanese",
+      "KAT-TUN",
+      "jin akanishi"
+    ],
+    "popularity": {
+      "listeners": 11182,
+      "playcount": 1599928
+    },
+    "metaEnrichedAt": "2026-07-08T22:03:13.923Z"
   },
   {
     "name": "Akanishi, Jin",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:19.526Z",
-    "autoTriedAt": "2026-07-07T16:18:58.548Z"
+    "autoTriedAt": "2026-07-07T16:18:58.548Z",
+    "metaTriedAt": "2026-07-08T22:03:14.626Z"
   },
   {
     "name": "Akari Kaida",
@@ -19342,7 +20366,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4be7d2b5-2aab-4f18-a833-1dd4b44a9963"
+    "mbid": "4be7d2b5-2aab-4f18-a833-1dd4b44a9963",
+    "genres": [
+      "video game music",
+      "Soundtrack",
+      "j-pop",
+      "japanese",
+      "composer"
+    ],
+    "popularity": {
+      "listeners": 3570,
+      "playcount": 83996
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:15.423Z"
   },
   {
     "name": "Akari Saho",
@@ -19358,19 +20395,35 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "26013a3e-5cf2-4e56-aa62-c3199229ed0f"
+    "mbid": "26013a3e-5cf2-4e56-aa62-c3199229ed0f",
+    "popularity": {
+      "listeners": 10,
+      "playcount": 60
+    },
+    "metaEnrichedAt": "2026-07-08T22:03:16.160Z"
   },
   {
     "name": "Akari Takeuchi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:19.526Z",
-    "autoTriedAt": "2026-07-07T16:19:00.008Z"
+    "autoTriedAt": "2026-07-07T16:19:00.008Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 1
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:16.963Z"
   },
   {
     "name": "Akari Yoshida",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:19.526Z",
-    "autoTriedAt": "2026-07-07T16:19:01.441Z"
+    "autoTriedAt": "2026-07-07T16:19:01.441Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 1
+    },
+    "metaEnrichedAt": "2026-07-08T22:03:17.682Z"
   },
   {
     "name": "Akash",
@@ -19385,13 +20438,27 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T16:19:13.428Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "heavy metal",
+      "hard rock",
+      "Colombia",
+      "Heavy Metal Colombia",
+      "colombian rock"
+    ],
+    "popularity": {
+      "listeners": 17048,
+      "playcount": 241768
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d41d8cd98f00b204e9800998ecf8427e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:18.398Z"
   },
   {
     "name": "Akashi, Momoka",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:19.526Z",
-    "autoTriedAt": "2026-07-07T16:19:14.694Z"
+    "autoTriedAt": "2026-07-07T16:19:14.694Z",
+    "metaTriedAt": "2026-07-08T22:03:19.105Z"
   },
   {
     "name": "AKB48",
@@ -19407,7 +20474,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "be547bca-8718-4762-bf1b-34a3bdb4938f"
+    "mbid": "be547bca-8718-4762-bf1b-34a3bdb4938f",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "idol",
+      "akb48",
+      "JPop"
+    ],
+    "popularity": {
+      "listeners": 196807,
+      "playcount": 26416857
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0f60caf9b17a83945989e74cc58f4a1b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:19.839Z"
   },
   {
     "name": "Akcent",
@@ -19422,13 +20502,38 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T16:19:26.074Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "dance",
+      "pop",
+      "electronic",
+      "Romanian",
+      "eurodance"
+    ],
+    "popularity": {
+      "listeners": 462357,
+      "playcount": 6124939
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2f77d61f7e3cdb7a01b56577faeb90b1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:20.520Z"
   },
   {
     "name": "Akdong Musician",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:19.526Z",
-    "autoTriedAt": "2026-07-07T16:19:27.337Z"
+    "autoTriedAt": "2026-07-07T16:19:27.337Z",
+    "genres": [
+      "k-pop",
+      "Korean",
+      "folk",
+      "duo",
+      "Kpop"
+    ],
+    "popularity": {
+      "listeners": 37737,
+      "playcount": 1075839
+    },
+    "metaEnrichedAt": "2026-07-08T22:03:21.304Z"
   },
   {
     "name": "Akeboshi",
@@ -19444,7 +20549,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "13487087-6297-467e-a96a-56ae35c5002e"
+    "mbid": "13487087-6297-467e-a96a-56ae35c5002e",
+    "genres": [
+      "japanese",
+      "folk",
+      "j-pop",
+      "anime",
+      "J-rock"
+    ],
+    "popularity": {
+      "listeners": 192765,
+      "playcount": 3441954
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9de951b266a85cc0e8b38dc95ffcd1b8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:22.063Z"
   },
   {
     "name": "Akercocke",
@@ -19460,7 +20578,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "fc1abced-ff90-4a42-9998-2e18cceef041"
+    "mbid": "fc1abced-ff90-4a42-9998-2e18cceef041",
+    "genres": [
+      "death metal",
+      "black metal",
+      "Blackened Death Metal",
+      "progressive death metal",
+      "Progressive metal"
+    ],
+    "popularity": {
+      "listeners": 82023,
+      "playcount": 3335230
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1ed4d9f9dd59957e6ea2f87b16c565fd/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:22.764Z"
   },
   {
     "name": "Aketo",
@@ -19476,7 +20607,17 @@
     },
     "enrichedAt": "2026-07-07T16:19:48.974Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "8602d379-ba9d-4814-a4f7-7455bcad6d48"
+    "mbid": "8602d379-ba9d-4814-a4f7-7455bcad6d48",
+    "genres": [
+      "All",
+      "spotify"
+    ],
+    "popularity": {
+      "listeners": 6457,
+      "playcount": 74802
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bdb54433c4eb129705c4def424a9af3d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:23.503Z"
   },
   {
     "name": "Akhenaton",
@@ -19491,7 +20632,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T16:20:00.533Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Hip-Hop",
+      "rap",
+      "french rap",
+      "french",
+      "rap francais"
+    ],
+    "popularity": {
+      "listeners": 81119,
+      "playcount": 1267166
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ca95b1dc5e2ee598e79b4a38aff876bb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:24.239Z"
   },
   {
     "name": "Aki Hata",
@@ -19507,7 +20661,19 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e73a7bda-c66a-4346-a74f-436c4a07b627"
+    "mbid": "e73a7bda-c66a-4346-a74f-436c4a07b627",
+    "genres": [
+      "Soundtrack",
+      "japanese",
+      "video game music",
+      "anime",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 2433,
+      "playcount": 29236
+    },
+    "metaEnrichedAt": "2026-07-08T22:03:24.992Z"
   },
   {
     "name": "Aki Misato",
@@ -19523,7 +20689,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0603e646-c1d2-464b-bcc2-435fe216d294"
+    "mbid": "0603e646-c1d2-464b-bcc2-435fe216d294",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "female vocalists",
+      "pop",
+      "japan"
+    ],
+    "popularity": {
+      "listeners": 8275,
+      "playcount": 145843
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e9a91296c9876dd5e395b44c6156f338/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:25.912Z"
   },
   {
     "name": "Aki Takajo",
@@ -19539,7 +20718,12 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "409b2653-085b-4c04-8108-2d77899ee185"
+    "mbid": "409b2653-085b-4c04-8108-2d77899ee185",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 16
+    },
+    "metaEnrichedAt": "2026-07-08T22:03:26.750Z"
   },
   {
     "name": "Aki Takajō",
@@ -19555,7 +20739,12 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "409b2653-085b-4c04-8108-2d77899ee185"
+    "mbid": "409b2653-085b-4c04-8108-2d77899ee185",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 1
+    },
+    "metaEnrichedAt": "2026-07-08T22:03:27.512Z"
   },
   {
     "name": "Aki Takase",
@@ -19571,19 +20760,50 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "48f8ee0c-8770-41ff-b458-bfb236e4d808"
+    "mbid": "48f8ee0c-8770-41ff-b458-bfb236e4d808",
+    "genres": [
+      "free jazz",
+      "piano",
+      "jazz",
+      "japanese",
+      "Avant-Garde"
+    ],
+    "popularity": {
+      "listeners": 6422,
+      "playcount": 67118
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d8e619a58913d34ee503292680050f13/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:28.325Z"
   },
   {
     "name": "Aki, Angela",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:19.526Z",
-    "autoTriedAt": "2026-07-07T16:20:07.553Z"
+    "autoTriedAt": "2026-07-07T16:20:07.553Z",
+    "popularity": {
+      "listeners": 48,
+      "playcount": 655
+    },
+    "metaEnrichedAt": "2026-07-08T22:03:29.074Z"
   },
   {
     "name": "aKido",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:19.526Z",
-    "autoTriedAt": "2026-07-07T16:20:10.167Z"
+    "autoTriedAt": "2026-07-07T16:20:10.167Z",
+    "genres": [
+      "electronic",
+      "idm",
+      "dubstep",
+      "Canadian",
+      "Psychedelic Rock"
+    ],
+    "popularity": {
+      "listeners": 6187,
+      "playcount": 129444
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ca692dcf819c1e8ad1edc5ccaf5c5536/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:29.877Z"
   },
   {
     "name": "Akihabara",
@@ -19598,14 +20818,35 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T16:20:12.709Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "trap",
+      "chillout",
+      "jp",
+      "Anime Trap",
+      "Electric City"
+    ],
+    "popularity": {
+      "listeners": 1059,
+      "playcount": 5035
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9e26ab99d5da5490c3b48261396f391f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:30.910Z"
   },
   {
     "name": "Akihiko Mori",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:19.526Z",
     "autoTriedAt": "2026-07-07T16:20:13.981Z",
-    "mbid": "47c104a0-fe3c-406a-9950-aa327c8581c0"
+    "mbid": "47c104a0-fe3c-406a-9950-aa327c8581c0",
+    "genres": [
+      "video game music"
+    ],
+    "popularity": {
+      "listeners": 420,
+      "playcount": 22446
+    },
+    "metaEnrichedAt": "2026-07-08T22:03:31.691Z"
   },
   {
     "name": "Akiko Matsuura",
@@ -19621,13 +20862,27 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b3dc761e-47b8-4ccf-bfda-8ddbe9ae10b0"
+    "mbid": "b3dc761e-47b8-4ccf-bfda-8ddbe9ae10b0",
+    "metaTriedAt": "2026-07-08T22:03:32.372Z"
   },
   {
     "name": "Akiko Shikata",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:19.526Z",
-    "autoTriedAt": "2026-07-07T16:20:15.407Z"
+    "autoTriedAt": "2026-07-07T16:20:15.407Z",
+    "genres": [
+      "medieval",
+      "celtic",
+      "pagan folk",
+      "japanese",
+      "neoclassical darkwave"
+    ],
+    "popularity": {
+      "listeners": 56892,
+      "playcount": 5519790
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/581c8c3a63285fe281b9a5946c99302d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:33.065Z"
   },
   {
     "name": "Akiko Suwanai",
@@ -19643,26 +20898,70 @@
     },
     "enrichedAt": "2026-07-07T07:05:19.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "adc8336a-93aa-4507-a436-c20468b1a0e9"
+    "mbid": "adc8336a-93aa-4507-a436-c20468b1a0e9",
+    "genres": [
+      "Classical",
+      "violin",
+      "violinist",
+      "japanese",
+      "female violinist"
+    ],
+    "popularity": {
+      "listeners": 7423,
+      "playcount": 108864
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cd00635c9553d4fae2ad1bc22f32b0ab/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:33.790Z"
   },
   {
     "name": "Akiko Tsuruga",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:19.526Z",
     "autoTriedAt": "2026-07-07T16:20:16.671Z",
-    "mbid": "ceabe89b-a75c-4fdc-9ba6-ec1b4f276628"
+    "mbid": "ceabe89b-a75c-4fdc-9ba6-ec1b4f276628",
+    "genres": [
+      "jazz",
+      "japanese",
+      "jazz fusion",
+      "J-jazz",
+      "hammond jazz"
+    ],
+    "popularity": {
+      "listeners": 2322,
+      "playcount": 21088
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/669a27ac8f5a13fab86a8142a5d14e7f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:34.553Z"
   },
   {
     "name": "Akiko Yano",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:21.101Z",
-    "autoTriedAt": "2026-07-07T16:20:17.942Z"
+    "autoTriedAt": "2026-07-07T16:20:17.942Z",
+    "genres": [
+      "japanese",
+      "j-pop",
+      "female vocalists",
+      "pop",
+      "piano"
+    ],
+    "popularity": {
+      "listeners": 30355,
+      "playcount": 1583449
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d923e0366236b667b88288e6ed1fbee4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:35.338Z"
   },
   {
     "name": "Akim Camara",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:21.101Z",
-    "autoTriedAt": "2026-07-07T16:20:22.661Z"
+    "autoTriedAt": "2026-07-07T16:20:22.661Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 5
+    },
+    "metaEnrichedAt": "2026-07-08T22:03:36.082Z"
   },
   {
     "name": "aKing",
@@ -19677,7 +20976,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T16:20:25.624Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "south african",
+      "rock",
+      "indie rock",
+      "alternative rock",
+      "south africa"
+    ],
+    "popularity": {
+      "listeners": 12006,
+      "playcount": 313373
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a62c218250c7dd5a6f6b28fb12240485/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:36.999Z"
   },
   {
     "name": "Akino Arai",
@@ -19693,7 +21005,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:21.101Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "fac271b8-b340-440a-9938-3d59d0f90b97"
+    "mbid": "fac271b8-b340-440a-9938-3d59d0f90b97",
+    "genres": [
+      "j-pop",
+      "female vocalists",
+      "japanese",
+      "anime",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 59802,
+      "playcount": 2369939
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0ab12f5a3f180711dfc2b2cc3be3a9e0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:37.726Z"
   },
   {
     "name": "Akinyele",
@@ -19709,7 +21034,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:21.101Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7b2f82b2-c096-43cd-9c6e-c170b9763afa"
+    "mbid": "7b2f82b2-c096-43cd-9c6e-c170b9763afa",
+    "genres": [
+      "Hip-Hop",
+      "rap",
+      "east coast rap",
+      "new york",
+      "dirty rap"
+    ],
+    "popularity": {
+      "listeners": 53527,
+      "playcount": 325627
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/12e549bfceff0270c5db037604567753/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:38.457Z"
   },
   {
     "name": "Akio Sasajima",
@@ -19725,7 +21063,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:21.101Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b23a9f19-db52-4f10-93f8-46f1428037a2"
+    "mbid": "b23a9f19-db52-4f10-93f8-46f1428037a2",
+    "genres": [
+      "jazz",
+      "guitar",
+      "japan",
+      "japanese",
+      "Asian"
+    ],
+    "popularity": {
+      "listeners": 447,
+      "playcount": 2044
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ce257a3318a0a0a16c63be581b3f5c0e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:39.215Z"
   },
   {
     "name": "Akir",
@@ -19741,7 +21092,19 @@
     },
     "enrichedAt": "2026-07-07T07:05:21.101Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "06c667d4-8cf1-49d3-8336-5879e5f1ab5c"
+    "mbid": "06c667d4-8cf1-49d3-8336-5879e5f1ab5c",
+    "genres": [
+      "Hip-Hop",
+      "underground hip-hop",
+      "political",
+      "hip hop",
+      "rap"
+    ],
+    "popularity": {
+      "listeners": 29869,
+      "playcount": 222108
+    },
+    "metaEnrichedAt": "2026-07-08T22:03:40.013Z"
   },
   {
     "name": "Akira Ifukube",
@@ -19757,7 +21120,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:21.101Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0ac212bb-c62c-4f33-a137-9f7ba8ba1fcb"
+    "mbid": "0ac212bb-c62c-4f33-a137-9f7ba8ba1fcb",
+    "genres": [
+      "japanese",
+      "Classical",
+      "Soundtrack",
+      "composer",
+      "contemporary classical"
+    ],
+    "popularity": {
+      "listeners": 8284,
+      "playcount": 268828
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5852b3d9498b0c91cf1af1f5246f3412/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:40.702Z"
   },
   {
     "name": "Akira Jimbo",
@@ -19773,7 +21149,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:21.101Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "48fcad40-6e64-4987-9f1b-c1dbef5e062e"
+    "mbid": "48fcad40-6e64-4987-9f1b-c1dbef5e062e",
+    "genres": [
+      "Fusion",
+      "jazz",
+      "japanese",
+      "instrumental",
+      "jazz fusion"
+    ],
+    "popularity": {
+      "listeners": 18231,
+      "playcount": 185737
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/77dc0bb21cd7a957a056109060dde6aa/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:41.393Z"
   },
   {
     "name": "Akira Kushida",
@@ -19789,7 +21178,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:21.101Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8a4e36b9-2c9a-42e3-853d-a30afb4f380d"
+    "mbid": "8a4e36b9-2c9a-42e3-853d-a30afb4f380d",
+    "genres": [
+      "tokusatsu",
+      "japanese",
+      "anime",
+      "j-pop",
+      "male vocalists"
+    ],
+    "popularity": {
+      "listeners": 9585,
+      "playcount": 271877
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/26e43e74c94dba37bc801ddace9e7cd0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:42.314Z"
   },
   {
     "name": "Akira Takasaki",
@@ -19805,7 +21207,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:21.101Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "455b3888-5ab3-4501-8103-9d4d59e7440a"
+    "mbid": "455b3888-5ab3-4501-8103-9d4d59e7440a",
+    "genres": [
+      "heavy metal",
+      "guitar virtuoso",
+      "hard rock",
+      "japanese",
+      "J-Metal"
+    ],
+    "popularity": {
+      "listeners": 1737,
+      "playcount": 66812
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9e8a101eeec9fd45750f956fcde14f29/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:43.229Z"
   },
   {
     "name": "Akira Yamaoka",
@@ -19820,7 +21235,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T16:20:28.387Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "ambient",
+      "Soundtrack",
+      "japanese",
+      "video game music",
+      "Silent Hill"
+    ],
+    "popularity": {
+      "listeners": 921470,
+      "playcount": 77832515
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/29897fcd96a49f51e0ba857d3588e184/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:43.921Z"
   },
   {
     "name": "Akissforjersey",
@@ -19836,20 +21264,47 @@
     },
     "enrichedAt": "2026-07-07T07:05:21.101Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e8c0243e-cc65-4573-9b03-f695edbcfe23"
+    "mbid": "e8c0243e-cc65-4573-9b03-f695edbcfe23",
+    "genres": [
+      "post-hardcore",
+      "screamo",
+      "christian",
+      "emo",
+      "emocore"
+    ],
+    "popularity": {
+      "listeners": 94979,
+      "playcount": 1840214
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fb4624e7a8bd07b6e0e360cdd69e1786/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:44.702Z"
   },
   {
     "name": "Akito Nakatsuka",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:21.101Z",
     "autoTriedAt": "2026-07-07T16:20:29.648Z",
-    "mbid": "3b287468-9552-469a-9a7e-3f7cd9df6cce"
+    "mbid": "3b287468-9552-469a-9a7e-3f7cd9df6cce",
+    "genres": [
+      "video game music",
+      "japanese",
+      "Soundtrack",
+      "Game Music",
+      "video game"
+    ],
+    "popularity": {
+      "listeners": 7265,
+      "playcount": 68211
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:45.408Z"
   },
   {
     "name": "Akiyama, Satoko",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:05:21.101Z",
-    "autoTriedAt": "2026-07-07T16:20:30.910Z"
+    "autoTriedAt": "2026-07-07T16:20:30.910Z",
+    "metaTriedAt": "2026-07-08T22:03:46.163Z"
   },
   {
     "name": "Akon",
@@ -19865,7 +21320,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:21.101Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1138a764-2212-4d0a-b02d-0dc14df91e08"
+    "mbid": "1138a764-2212-4d0a-b02d-0dc14df91e08",
+    "genres": [
+      "rnb",
+      "Hip-Hop",
+      "rap",
+      "pop",
+      "hip hop"
+    ],
+    "popularity": {
+      "listeners": 3810350,
+      "playcount": 63697715
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2b0f21d5b1c6d7a674d9a60d4a6207b2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:46.901Z"
   },
   {
     "name": "Akrobatik",
@@ -19881,7 +21349,20 @@
     },
     "enrichedAt": "2026-07-07T16:20:36.493Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "763d779c-29f9-4abb-b116-c9cbada60d36"
+    "mbid": "763d779c-29f9-4abb-b116-c9cbada60d36",
+    "genres": [
+      "Hip-Hop",
+      "underground hip-hop",
+      "rap",
+      "underground rap",
+      "hip hop"
+    ],
+    "popularity": {
+      "listeners": 56886,
+      "playcount": 554688
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/696c92f83381d61f158d03dbc4cafcc1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:47.752Z"
   },
   {
     "name": "Akron Symphony Orchestra",
@@ -19897,7 +21378,13 @@
     },
     "enrichedAt": "2026-07-07T16:20:42.762Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "fa408366-aee2-4664-8b4d-71ae339a12d9"
+    "mbid": "fa408366-aee2-4664-8b4d-71ae339a12d9",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 13
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0a4afbb159826ad67b1531d165aae1fa/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:48.556Z"
   },
   {
     "name": "Akron/Family",
@@ -19913,7 +21400,20 @@
     },
     "enrichedAt": "2026-07-07T07:05:21.101Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0f11d99e-88ba-48d2-b652-4ebe04c52d11"
+    "mbid": "0f11d99e-88ba-48d2-b652-4ebe04c52d11",
+    "genres": [
+      "folk",
+      "experimental",
+      "freak folk",
+      "indie",
+      "New Weird America"
+    ],
+    "popularity": {
+      "listeners": 324792,
+      "playcount": 6945708
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/dd1b3b91b12121f023a31aa256614890/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T22:03:49.412Z"
   },
   {
     "name": "Aksak Maboul",
