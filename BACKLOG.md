@@ -332,64 +332,100 @@ these are still current if much time has passed).
   now one `src/engine/sleep.ts`) **and `.env`-fallback Gemini-key loading**
   (extracted to `loadDotEnvFallback()` in `src/engine/gemini_keys.ts`,
   reused by `enrich_via_gemini_search.ts` and `list_models.ts`).
+- **`daily-scrape.yml` deployed the geo-clustering fix.** Third dispatch
+  (`28973869993`, 20:35 UTC) got through — live `index.json` now shows
+  `schemaVersion:1`, `artists.json`/`changes.json` return 200,
+  `uniqueCities` dropped 1964→971 (real evidence the Tokyo/所沢市-style
+  ward/kanji merges are live in production, not just tested).
+- **ESLint / type-lint gate for `src/`.** Narrow ruleset
+  (`no-floating-promises` type-aware, `no-unused-vars`,
+  `consistent-type-imports` — deliberately NOT a broad recommended/strict
+  preset, to avoid flooding a 60+-file codebase with pre-existing `any`
+  noise). Non-blocking in CI for now (`continue-on-error: true` in
+  `pr-test.yml`) until the existing-warning backlog is at zero. Fixed the 6
+  real floating-promise sites it found (`heal.ts`, `run.ts`, `run-artists.ts`,
+  `clean_artists.ts`, `download_artists.ts`, `geocode_venues.ts`) — double
+  adversarially reviewed, confirmed behavior-neutral (matches a pattern
+  already used in ~20 other entrypoints) and does **not** touch
+  `clean_artists.ts`'s dedupe/merge logic (the file with the earlier
+  data-loss bug this session). → `eslint.config.js`.
+- **GitHub Actions SHA-pinned.** Every `uses:` across all 12 workflow files +
+  the composite action now pins an immutable commit SHA (with the human
+  version kept in a trailing comment), replacing floating `@v4`-style tags.
+  *Caught and fixed during review*: the first pass pinned 4 actions
+  (`setup-node`, `upload-artifact`, `deploy-pages`,
+  `peter-evans/create-pull-request`) to their pre-Dependabot versions because
+  the branch hadn't yet incorporated that day's Dependabot merges — re-pinned
+  to the correct current versions during rebase. *Known maintenance cost*:
+  SHA-pinning and Dependabot are in mild tension — every Dependabot version
+  bump now needs a matching SHA re-pin, not just a tag edit; expect an
+  ongoing trickle of Dependabot PRs for this repo's actions (6 more opened
+  since, see Open/medium below) that each need this treatment.
+- **Auto-retry once when `daily-scrape.yml` is cancelled by concurrency
+  preemption.** New `.github/workflows/daily-scrape-retry.yml`, triggered on
+  `workflow_run` completion, re-dispatches exactly once when the triggering
+  run was `cancelled` AND was a manual `workflow_dispatch` (never retries a
+  cancelled `schedule`/cron trigger, to avoid compounding queue pressure).
+  *Caught and fixed during review*: the first version tried to detect
+  "already a retry" by reading `.inputs.is_retry` off the GitHub REST "get a
+  workflow run" API — that field doesn't exist on that endpoint (confirmed
+  live), so the guard always silently resolved to `false` and could never
+  stop a retry-of-a-retry, i.e. an unbounded auto-retry loop feeding the
+  exact concurrency contention this workflow exists to relieve. Fixed by
+  surfacing the flag into `run-name:` (the one thing that does survive into
+  `workflow_run`'s `display_title`) and gating on that instead. This
+  *mitigates* the daily-scrape-specific symptom of the concurrency-starvation
+  item below; the underlying starvation mechanism itself is still open.
+- **Doc-comment restoration, `list_models.ts` multi-key debug, static-404
+  docs.** Restored the two module-level doc comments lost as scope creep
+  during the `ArtistEntrySchema` consolidation
+  (`enrich_metadata.ts`/`enrich_similar_artists.ts`); `list_models.ts` now
+  iterates and labels every key `getGeminiKeys()` returns instead of only the
+  first; documented GitHub Pages' static-404 limitation in
+  `docs/openapi.yaml`/`README.md`. *Caught and fixed during review*: that
+  404-limitation note first said to check a requested slug directly against
+  `index.json`'s `artists`/`cities` arrays — those hold raw display names,
+  not slugs, so a direct comparison would almost never match; corrected to
+  tell consumers to `slugify()` each name first.
+- **Additive pagination for `concerts.json`.** `dist/concerts/page-N.json`
+  (500/page) alongside the existing, untouched full `concerts.json` dump;
+  `pageCount`/`pageSize` added to `index.json`. *Caught and fixed during
+  review*: orphan-page pruning matched any `*.json` in `dist/concerts/`
+  rather than the specific `page-N.json` pattern — harmless today since
+  nothing else writes there, but tightened to an exact regex so it can't
+  reach further than intended if that ever changes. →
+  `src/generator/publish.ts`.
 
 ### ⬜ Open — critical
-- **`daily-scrape.yml` still hasn't deployed the geo-clustering fix.**
-  Fix commit `9215c33` (2026-07-08 17:00 UTC). Two dispatch attempts since
-  (`28963191211` @ 17:39, `28971582156` @ 19:57) both got cancelled in the
-  `artist-db-write` concurrency queue — the second one by the exact live
-  annotation text `Canceling since a higher priority waiting request for
-  artist-db-write exists` (a scheduled enrich-auto cron re-entered the queue
-  and bumped it, since GitHub only keeps 1 running + 1 queued per group and
-  the newer entrant always wins the queued slot). A third dispatch
-  (`28973869993` @ 20:35) is queued as of this writing, behind
-  `enrich-metadata`'s still-in-progress run (started 17:50, pre-dates the
-  soft-deadline fix above so it'll run to its full 200min — expect it to free
-  the lock ~21:11 UTC). Production API is still serving pre-fix data
-  (fragmented Japan city files, missing `schemaVersion`/`artists.json`/
-  `changes.json` per a live curl check today).
-- **`artist-db-write` concurrency group still has no starvation metric.**
-  Now caught live twice with the exact GitHub annotation text (see above) —
-  confirms this is a real, recurring, reproducible failure mode, not a
-  one-off. Still no metric distinguishing a queue-supersede cancellation from
-  a normal git-conflict drop. *A worktree
-  `.claude/worktrees/fix-daily-scrape-concurrency` already exists — check
-  it's not already mid-fix in a parallel session before starting here.*
-
-### ⬜ Open — high
-- **No ESLint/type-lint gate for `src/` TypeScript.** Only YAML/bash linting
-  exists (`lint-workflows.yml` → actionlint); no `eslint` devDependency, no
-  config file. Deliberately kept out of the batch that shipped the items
-  above — autofix/reformatting would touch nearly every file those tasks
-  were also touching. Do this alone, next.
-- **GitHub Actions still pinned to floating version tags** (`@v4` etc), not
-  commit SHAs (except `reviewdog/action-actionlint@v1.27.0`). Same reason as
-  above — touches every workflow file, do it alone.
+- **`artist-db-write` concurrency group itself still has no starvation
+  metric.** Caught live twice today with the exact GitHub annotation
+  `Canceling since a higher priority waiting request for artist-db-write
+  exists`. The new auto-retry workflow above papers over this specifically
+  for `daily-scrape.yml`'s manual dispatches; `enrich-auto`/`enrich-database`/
+  `enrich-metadata`/`enrich-similar`'s *scheduled* triggers can still lose
+  their queued slot to each other with no visibility and no recovery. Still
+  no metric distinguishing a queue-supersede cancellation from a normal
+  git-conflict drop. *A worktree
+  `.claude/worktrees/fix-daily-scrape-concurrency` existed earlier this
+  session (deleted — confirmed fully merged, see git history) — if a new one
+  appears, check it's not already mid-fix in a parallel session first.*
 
 ### ⬜ Open — medium
-- **Dependabot's first PR includes a zod major-version bump (3.25.76 →
-  4.4.3).** Needs a real breaking-change review before merging — zod v4
-  changed parts of its public API — don't treat this as an auto-mergeable
-  patch bump like the others in the same batch.
+- **6 Dependabot PRs need triage** (as of 2026-07-08 ~21:15 UTC): zod
+  3.25.76→4.4.3 (major, real breaking-API-change review needed — do NOT
+  treat as auto-mergeable), typescript 5.9.3→7.0.2 (major), c8 10.1.3→11.0.0,
+  `actions/checkout` 4→7, `actions/configure-pages` 4→6,
+  `actions/github-script` 7→9, `reviewdog/action-actionlint` 1.27.0→1.72.0.
+  The 4 actions/typescript ones will each need a fresh SHA re-pin on merge
+  (see the SHA-pinning note above) — `@ai-sdk/google` PR #18 also needs a
+  Dependabot-rebase retry (hit a `package-lock.json` conflict earlier,
+  should auto-resolve once asked).
 - **`discover_tour_urls.ts` at 60/20,187 eligible artists.** Validated batch
   only; intentionally not cron'd yet per its own task spec until proven at
   scale. Next step: run larger batches, spot-check hits, then decide on
   wiring a workflow.
 - **2 entries in `data/artist-review-needed.json`** ("Airport", "Empire")
   awaiting manual disambiguation (place name vs. real artist).
-
-### ⬜ Open — low / roadmap
-- `concerts.json` and per-artist/city files are unpaginated full dumps.
-- No JSON 404 for an unknown artist/city slug (falls through to GitHub
-  Pages' generic HTML 404).
-- `list_models.ts` now goes through `getGeminiKeys()` but only ever debugs
-  against the first configured key — doesn't actually iterate/report on
-  every configured key the way "multi-key" implies. Cosmetic gap, not a bug.
-- Two enrichment scripts (`enrich_metadata.ts`, `enrich_similar_artists.ts`)
-  lost their module-level design-rationale doc comments as scope creep during
-  the `ArtistEntrySchema` consolidation above — worth restoring if that
-  context turns out to matter, purely a documentation loss, not a behavior
-  change.
 
 ---
 
