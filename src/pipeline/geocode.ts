@@ -1,6 +1,7 @@
 import * as fs from 'fs/promises';
 import getGeocoder from 'node-geocoder';
 import { Concert } from '../schemas/concert.js';
+import { sleep } from '../engine/sleep.js';
 
 /**
  * Fills lat/lng on every concert that's missing them, so "near where I'll be"
@@ -27,10 +28,6 @@ const NOMINATIM_RATE_LIMIT_MS = 1100;
 // and the Wikidata-bulk enrichment pass. The persistent cache means the pending
 // set shrinks permanently, run over run.
 const DEFAULT_MAX_PER_RUN = 400;
-
-function sleep(ms: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
 
 export interface GeocodeCacheEntry {
   lat: number | null; // null = tried, Nominatim had no result -- don't retry every run

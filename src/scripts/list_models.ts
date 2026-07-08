@@ -1,11 +1,14 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import { getGeminiKeys, loadDotEnvFallback } from '../engine/gemini_keys.js';
 
 async function main() {
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) {
-    console.error('Error: GEMINI_API_KEY is not set');
+  await loadDotEnvFallback();
+  const apiKeys = getGeminiKeys();
+  if (apiKeys.length === 0) {
+    console.error('Error: no Gemini API key set (GEMINI_API_KEY[/_2/_3/_RESERV1..]) and none could be loaded from .env.');
     process.exit(1);
   }
+  const apiKey = apiKeys[0];
 
   console.log('Fetching available models list via REST API...');
   try {

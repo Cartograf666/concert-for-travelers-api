@@ -1,6 +1,7 @@
 import axios from 'axios';
 import * as fs from 'fs/promises';
 import { Concert } from '../schemas/concert.js';
+import { sleep } from './sleep.js';
 
 const BIT_BASE = 'https://rest.bandsintown.com/artists';
 
@@ -32,9 +33,7 @@ const DEFAULT_FRESHNESS_DAYS = 6;
 // back to their cached events, same as a per-artist failure.
 const BLOCK_STREAK_LIMIT = 5;
 
-function sleep(ms: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
+
 
 // Full-English-name -> ISO 3166-1 alpha-2, built once from Intl over the complete
 // alpha-2 set (Bandsintown is worldwide, so unlike the venue path this can't assume

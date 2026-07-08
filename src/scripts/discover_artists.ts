@@ -1,5 +1,6 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
+import { sleep } from '../engine/sleep.js';
 
 /**
  * Grows data/artist_scrape_targets.txt from live popularity charts, so the set of
@@ -31,9 +32,7 @@ const LASTFM_COUNTRIES = [
   'Switzerland', 'Greece', 'Czech Republic', 'Hungary', 'Romania', 'South Africa'
 ];
 
-function sleep(ms: number): Promise<void> {
-  return new Promise((r) => setTimeout(r, ms));
-}
+
 
 /** Strips secret-bearing query params before a URL ever reaches a thrown error/log line. */
 function redactUrl(url: string): string {

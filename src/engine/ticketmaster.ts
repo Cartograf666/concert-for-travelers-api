@@ -1,6 +1,7 @@
 import axios from 'axios';
 import * as fs from 'fs/promises';
 import { Concert } from '../schemas/concert.js';
+import { sleep } from './sleep.js';
 
 const DISCOVERY_URL = 'https://app.ticketmaster.com/discovery/v2/events.json';
 
@@ -17,10 +18,6 @@ const PAGE_SIZE = 200;
 // is a few hundred requests -- comfortably inside both limits -- but the delay
 // still keeps individual request spacing polite and under the per-minute cap.
 const REQUEST_DELAY_MS = 700;
-
-function sleep(ms: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
 
 // Countries where Ticketmaster (or its international brands) actually operates.
 // Sweeping a country with no real Ticketmaster presence just wastes request

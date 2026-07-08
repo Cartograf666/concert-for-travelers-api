@@ -2,7 +2,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import { loadApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from '../pipeline/artistDb.js';
-import { getGeminiKeys } from '../engine/gemini_keys.js';
+import { getGeminiKeys, loadDotEnvFallback } from '../engine/gemini_keys.js';
 
 /**
  * Model cascade, ordered by free-tier daily-quota headroom (checked live against
@@ -63,20 +63,7 @@ function cleanAndParseJson(text: string): any {
 }
 
 async function main() {
-  // .env fallback (local runs) merges into process.env BEFORE getGeminiKeys() reads it,
-  // so GEMINI_API_KEY[_2../_RESERV..]/GEMINI_API_KEYS all still work whichever file they're in.
-  if (!process.env.GEMINI_API_KEY) {
-    for (const envPath of [path.join(process.cwd(), '.env'), path.join(process.env.HOME || '', '.env')]) {
-      try {
-        const dotenvContent = await fs.readFile(envPath, 'utf-8');
-        const match = dotenvContent.match(/^GEMINI_API_KEY\s*=\s*["']?(.*?)["']?$/m);
-        if (match) {
-          process.env.GEMINI_API_KEY = match[1].trim();
-          break;
-        }
-      } catch {}
-    }
-  }
+  await loadDotEnvFallback();
 
   const apiKeys = getGeminiKeys();
   if (apiKeys.length === 0) {

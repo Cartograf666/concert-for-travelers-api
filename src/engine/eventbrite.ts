@@ -1,6 +1,7 @@
 import axios from 'axios';
 import * as fs from 'fs/promises';
 import { Concert } from '../schemas/concert.js';
+import { sleep } from './sleep.js';
 
 /**
  * Artist-keyed concert sweep over Eventbrite's public discovery search pages.
@@ -51,13 +52,9 @@ const DEFAULT_MAX_ARTISTS_PER_RUN = 300;
 // Tour dates don't change hour to hour -- same freshness window as Bandsintown.
 const DEFAULT_FRESHNESS_DAYS = 6;
 
-// Stop the sweep after this many consecutive failures -- likely blocked/rate
 // limited; remaining artists fall back to their cached results.
 const BLOCK_STREAK_LIMIT = 5;
 
-function sleep(ms: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
 
 function escapeRegex(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

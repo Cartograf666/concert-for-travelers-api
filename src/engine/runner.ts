@@ -12,6 +12,7 @@ import * as path from 'path';
 import * as http from 'http';
 import * as https from 'https';
 import * as dns from 'dns';
+import { sleep } from './sleep.js';
 
 // SSRF guard at CONNECT time: validate every resolved IP, not just the literal config.url.
 // This is what defends against a public host that 302-redirects to 169.254.169.254, a
@@ -81,10 +82,6 @@ export interface ScraperResult {
 
 // Per-domain last-access timestamps for polite request throttling.
 const lastAccessByDomain = new Map<string, number>();
-
-function sleep(ms: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
 
 // Per-domain circuit breakers: after 3 consecutive full (post-retry) failures
 // against the same domain, stop hammering it for a cooldown period instead of

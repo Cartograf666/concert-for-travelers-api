@@ -2,14 +2,12 @@ import * as fs from 'fs/promises';
 import * as path from 'path';
 import getGeocoder from 'node-geocoder';
 import { ScraperConfigSchema } from '../schemas/config.js';
+import { sleep } from '../engine/sleep.js';
 
 // Nominatim's usage policy requires a max of 1 request/second and an identifying
 // contact (email query param or a descriptive User-Agent) for any bulk/automated use.
 const NOMINATIM_RATE_LIMIT_MS = 1100;
 
-function sleep(ms: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
 
 async function main() {
   const scrapersDir = path.join(process.cwd(), 'scrapers');
