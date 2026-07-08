@@ -1,0 +1,16 @@
+{
+  "id": "artist-hardline",
+  "domain": "www.hardlinerocks.com",
+  "url": "https://www.hardlinerocks.com/tour-dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-list-item",
+    "artistNameFallback": "Hardline",
+    "date": ".event-date",
+    "ticketUrl": ".button",
+    "venue": ".event-venue",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}
