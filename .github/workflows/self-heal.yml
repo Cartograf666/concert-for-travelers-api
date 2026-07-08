@@ -47,10 +47,10 @@ jobs:
         id: check-failures
         run: |
           if [ -f reports/fail-log.json ] && [ "$(jq '. | length' reports/fail-log.json)" -gt 0 ]; then
-            echo "has_failures=true" >> $GITHUB_OUTPUT
+            echo "has_failures=true" >> "$GITHUB_OUTPUT"
             echo "Found failed scrapers. Proceeding with self-healing."
           else
-            echo "has_failures=false" >> $GITHUB_OUTPUT
+            echo "has_failures=false" >> "$GITHUB_OUTPUT"
             echo "No failed scrapers found. Nothing to heal."
           fi
 
