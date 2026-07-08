@@ -15,6 +15,25 @@ import { fetchTicketmasterConcerts, loadTicketmasterCache, saveTicketmasterCache
  * dashboard can tell whether the daily run is healthy or silently rotting (venues
  * failing, everything served from stale cache) without scraping the Actions logs.
  */
+/**
+ * Counts recent entries in data/conflict-drops.json (see
+ * src/scripts/record_conflict_drop.ts) -- a previously silent failure mode (a
+ * workflow's git-push retry loop giving up on an unresolvable rebase conflict,
+ * logged only as a `::warning::` annotation) surfaced here instead, so a rising
+ * count is visible on the dashboard rather than buried in Actions logs.
+ * Best-effort: a missing/unreadable file just means zero, not a failure.
+ */
+async function countRecentConflictDrops(days: number): Promise<number> {
+  try {
+    const raw = await fs.readFile(path.join(process.cwd(), 'data', 'conflict-drops.json'), 'utf-8');
+    const data: { events?: Array<{ at: string }> } = JSON.parse(raw);
+    const cutoffMs = Date.now() - days * 24 * 60 * 60 * 1000;
+    return (data.events ?? []).filter((e) => new Date(e.at).getTime() > cutoffMs).length;
+  } catch {
+    return 0;
+  }
+}
+
 async function writeStatus(
   distDir: string,
   results: ScraperResult[],
@@ -36,7 +55,8 @@ async function writeStatus(
     // bound — a scraper that broke weeks ago hiding behind the health gate.
     staleVenues: staleVenueIds,
     ticketmasterEvents: ticketmasterCount,
-    publishedConcerts // null when the run short-circuited (published set unchanged)
+    publishedConcerts, // null when the run short-circuited (published set unchanged)
+    conflictDropsLast7Days: await countRecentConflictDrops(7)
   };
   await fs.mkdir(distDir, { recursive: true });
   await fs.writeFile(path.join(distDir, 'status.json'), JSON.stringify(status, null, 2), 'utf-8');
