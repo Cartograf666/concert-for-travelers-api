@@ -1,6 +1,5 @@
 import axios from 'axios';
-import * as fs from 'fs/promises';
-import * as path from 'path';
+import { loadApprovedArtists, saveApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from '../pipeline/artistDb.js';
 
 /**
  * Tier-0 deterministic artist enrichment: structured sources BEFORE any LLM.
@@ -55,8 +54,6 @@ interface Lookup {
   mbid?: string | null;
 }
 
-const DB_PATH = path.join(process.cwd(), 'data', 'approved_artists.json');
-const TMP_PATH = DB_PATH + '.tmp';
 const MB_UA = 'ConcertForTravelers/1.0 ( axell2479@gmail.com )'; // MusicBrainz requires an identifying UA
 const FLUSH_EVERY = 25; // periodic atomic checkpoint so a crash loses at most this many
 
@@ -227,13 +224,11 @@ function enough(website: string | null, socials: Socials): boolean {
 }
 
 async function loadDb(): Promise<ArtistEntry[]> {
-  return JSON.parse(await fs.readFile(DB_PATH, 'utf-8'));
+  return (await loadApprovedArtists(PRODUCTION_ARTIST_DB_DIR)) as ArtistEntry[];
 }
 
 async function saveDb(artists: ArtistEntry[]): Promise<void> {
-  artists.sort((a, b) => a.name.localeCompare(b.name));
-  await fs.writeFile(TMP_PATH, JSON.stringify(artists, null, 2), 'utf-8');
-  await fs.rename(TMP_PATH, DB_PATH); // atomic swap
+  await saveApprovedArtists(PRODUCTION_ARTIST_DB_DIR, artists);
 }
 
 async function main() {

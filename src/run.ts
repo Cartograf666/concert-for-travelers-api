@@ -10,6 +10,7 @@ import { getGeminiKeys } from './engine/gemini_keys.js';
 import { publishConcerts, publishArtistCatalog } from './generator/publish.js';
 import { publishChangelog, loadChangelogCache, saveChangelogCache } from './generator/changelog.js';
 import { fetchTicketmasterConcerts, loadTicketmasterCache, saveTicketmasterCache } from './engine/ticketmaster.js';
+import { PRODUCTION_ARTIST_DB_DIR } from './pipeline/artistDb.js';
 
 /**
  * Writes dist/status.json — a small machine-readable health surface so a watchdog /
@@ -67,7 +68,7 @@ async function main() {
   const scrapersDir = path.join(process.cwd(), 'scrapers');
   const distDir = path.join(process.cwd(), 'dist');
   const reportsDir = path.join(process.cwd(), 'reports');
-  const approvedArtistsPath = path.join(process.cwd(), 'data', 'approved_artists.json');
+  const approvedArtistsPath = PRODUCTION_ARTIST_DB_DIR;
 
   console.log('[Orchestrator] Starting Daily Concert Scrape...');
 

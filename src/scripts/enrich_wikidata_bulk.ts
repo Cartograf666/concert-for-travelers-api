@@ -1,6 +1,5 @@
 import axios from 'axios';
-import * as fs from 'fs/promises';
-import * as path from 'path';
+import { loadApprovedArtists, saveApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from '../pipeline/artistDb.js';
 
 /**
  * Fast Tier-0 accelerator: resolve MANY artists per Wikidata SPARQL query instead
@@ -43,8 +42,6 @@ export interface ArtistEntry {
   wdBulkTriedAt?: string;
 }
 
-export const DB_PATH = path.join(process.cwd(), 'data', 'approved_artists.json');
-const TMP_PATH = DB_PATH + '.tmp';
 const UA = 'ConcertForTravelers/1.0 ( axell2479@gmail.com )'; // Wikidata requires an identifying UA
 const ENDPOINT = 'https://query.wikidata.org/sparql';
 
@@ -142,13 +139,11 @@ export async function queryBatch(names: string[]): Promise<Map<string, Resolved 
 }
 
 export async function loadDb(): Promise<ArtistEntry[]> {
-  return JSON.parse(await fs.readFile(DB_PATH, 'utf-8'));
+  return (await loadApprovedArtists(PRODUCTION_ARTIST_DB_DIR)) as ArtistEntry[];
 }
 
 export async function saveDb(artists: ArtistEntry[]): Promise<void> {
-  artists.sort((a, b) => a.name.localeCompare(b.name));
-  await fs.writeFile(TMP_PATH, JSON.stringify(artists, null, 2), 'utf-8');
-  await fs.rename(TMP_PATH, DB_PATH);
+  await saveApprovedArtists(PRODUCTION_ARTIST_DB_DIR, artists);
 }
 
 function hasData(website: string | null, socials: Socials, mbid: string | null): boolean {

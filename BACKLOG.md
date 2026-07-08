@@ -110,6 +110,26 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   tiers (e.g. standard + VIP) to the overall min/max. Never guessed/parsed
   from scraped free text; venue scrapers just don't get one. →
   `src/schemas/concert.ts`, `src/engine/ticketmaster.ts`, `src/pipeline/process.ts`.
+- **Sharded artist whitelist storage (`data/artists/shard-0.json`..`shard-7.json`,
+  replacing the single 17MB `data/approved_artists.json`).** Root cause of a
+  real, repeatedly-observed failure mode: every enrichment workflow (enrich-auto,
+  enrich-database/wd-bulk, enrich-metadata, the daily scrape's own enrich step)
+  reads and rewrites the WHOLE artist file, so two writers landing close together
+  raced to push and one's work got dropped on an unresolvable rebase conflict —
+  serialized via `concurrency: artist-db-write` already, but that only prevents
+  parallel runs, not back-to-back runs close enough together to still collide on
+  the same giant file. Sharding by the artist name's first character (mod 8)
+  means two writers only actually conflict if they touched the *same* shard —
+  most of the time they don't, so most conflicts are now structurally impossible
+  rather than merely retried-and-hoped-to-resolve. New `src/pipeline/artistDb.ts`
+  centralizes every load/save behind `loadApprovedArtists()`/`saveApprovedArtists()`
+  (dual-mode: a `.json`-suffixed path is treated as the legacy single-file format
+  the test suite's temp fixtures still use; any other path is treated as the
+  sharded production directory), with a diff-before-write per shard so a save
+  that only touched a few artists doesn't rewrite every other shard's file too.
+  All 13 call sites that used to read/write `data/approved_artists.json` directly
+  (`pipeline/process.ts`, `pipeline/enrich.ts`, `run.ts`, and 10 `scripts/*.ts`)
+  now go through this module. → `src/pipeline/artistDb.ts`, `data/artists/`.
 
 ---
 

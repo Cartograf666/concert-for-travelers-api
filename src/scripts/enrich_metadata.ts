@@ -23,7 +23,7 @@ import { loadDb as loadDbShared, saveDb as saveDbShared, normName, sleep } from 
  *
  * Usage: enrich_metadata.ts [N]     process the next N pending artists (default 200)
  *
- * Resumable and idempotent. Do NOT run concurrently with another approved_artists.json
+ * Resumable and idempotent. Do NOT run concurrently with another artist-DB (data/artists/)
  * writer -- same single-writer-per-process convention as the other enrich_*.ts scripts.
  */
 

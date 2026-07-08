@@ -2,6 +2,7 @@ import * as fs from 'fs/promises';
 import * as path from 'path';
 import { slugify } from '../pipeline/process.js';
 import { ScraperConfigSchema } from '../schemas/config.js';
+import { loadApprovedArtists, saveApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from '../pipeline/artistDb.js';
 
 /**
  * Resumable artist-site enrichment harness.
@@ -15,8 +16,8 @@ import { ScraperConfigSchema } from '../schemas/config.js';
  *                          and emit per-artist scraper configs for parseable tour pages.
  *   stats                  Report progress across the whole 62k catalog.
  *
- * Keeping writes here (never in the agents) means the 3.6MB approved_artists.json is
- * only ever mutated by one process, so concurrent agents can never corrupt it.
+ * Keeping writes here (never in the agents) means the sharded artist DB (data/artists/)
+ * is only ever mutated by one process, so concurrent agents can never corrupt it.
  */
 
 interface ArtistSocials {
@@ -45,17 +46,14 @@ interface EnrichmentResult {
   scraper?: unknown; // best-effort ScraperConfig for the tour page; validated before writing
 }
 
-const DB_PATH = path.join(process.cwd(), 'data', 'approved_artists.json');
 const SCRAPERS_DIR = path.join(process.cwd(), 'scrapers');
 
 async function loadDb(): Promise<ArtistEntry[]> {
-  const raw = await fs.readFile(DB_PATH, 'utf-8');
-  return JSON.parse(raw);
+  return (await loadApprovedArtists(PRODUCTION_ARTIST_DB_DIR)) as ArtistEntry[];
 }
 
 async function saveDb(artists: ArtistEntry[]): Promise<void> {
-  artists.sort((a, b) => a.name.localeCompare(b.name));
-  await fs.writeFile(DB_PATH, JSON.stringify(artists, null, 2), 'utf-8');
+  await saveApprovedArtists(PRODUCTION_ARTIST_DB_DIR, artists);
 }
 
 /** Recursively drop null/undefined/empty-string leaves (keeps required "" fallbacks via caller intent). */

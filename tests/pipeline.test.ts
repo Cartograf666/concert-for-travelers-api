@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert';
 import { slugify, cleanArtistName, matchApprovedArtist, parseDate, processConcerts, normalizeCountry, parseSpotifyArtistId, extractTimeFromRawDate, inferVenueKind } from '../src/pipeline/process.js';
 import { Concert } from '../src/schemas/concert.js';
-import * as path from 'path';
+import { PRODUCTION_ARTIST_DB_DIR } from '../src/pipeline/artistDb.js';
 
 test('Pipeline - slugify', () => {
   assert.strictEqual(slugify('The Cure'), 'the-cure');
@@ -175,7 +175,7 @@ test('Pipeline - parseSpotifyArtistId extracts the ID from an open.spotify.com a
 });
 
 test('Pipeline - processConcerts populates spotifyId (parsed) and mbid (passed through) from the matched artist', async () => {
-  const approvedArtistsPath = path.join(process.cwd(), 'data', 'approved_artists.json');
+  const approvedArtistsPath = PRODUCTION_ARTIST_DB_DIR;
   const baseDate = '2026-07-07T00:00:00.000Z';
   const scrapedAt = new Date().toISOString();
 
@@ -232,7 +232,7 @@ test('Pipeline - inferVenueKind classifies by venue-name keywords, undefined whe
 });
 
 test('Pipeline - processConcerts wires startTime/venueKind/festival/lineup through from the raw event', async () => {
-  const approvedArtistsPath = path.join(process.cwd(), 'data', 'approved_artists.json');
+  const approvedArtistsPath = PRODUCTION_ARTIST_DB_DIR;
   const baseDate = '2026-07-07T00:00:00.000Z';
   const scrapedAt = new Date().toISOString();
 
@@ -259,7 +259,7 @@ test('Pipeline - processConcerts wires startTime/venueKind/festival/lineup throu
 });
 
 test('Pipeline - full concert processing & deduplication', async () => {
-  const approvedArtistsPath = path.join(process.cwd(), 'data', 'approved_artists.json');
+  const approvedArtistsPath = PRODUCTION_ARTIST_DB_DIR;
   const baseDate = '2026-07-07T00:00:00.000Z';
   const scrapedAt = new Date().toISOString();
 
@@ -326,7 +326,7 @@ test('Pipeline - drops concerts whose date has already passed', async () => {
   // shows alongside upcoming ones (an archive section the scraper's selector
   // also picks up), so a concert dated well before the scrape date was making
   // it all the way into dist/concerts.json with nothing to catch it.
-  const approvedArtistsPath = path.join(process.cwd(), 'data', 'approved_artists.json');
+  const approvedArtistsPath = PRODUCTION_ARTIST_DB_DIR;
   const baseDate = '2026-07-07T00:00:00.000Z';
   const scrapedAt = new Date().toISOString();
 

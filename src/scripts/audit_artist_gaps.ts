@@ -2,6 +2,7 @@ import * as fs from 'fs/promises';
 import * as path from 'path';
 import { loadCache } from '../engine/cache.js';
 import { buildApprovedMatcher, cleanArtistName } from '../pipeline/process.js';
+import { loadApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from '../pipeline/artistDb.js';
 
 // Below this many characters the "artist" is almost certainly a full event title
 // or sentence, not a name -- deprioritized in the report, not hidden, since it's
@@ -19,16 +20,15 @@ interface GapEntry {
  * Reruns the approved-artist match against the raw per-venue scrape cache and
  * reports every rejected raw artist name, ranked by how many distinct scrapers
  * produced it. A name seen across multiple venues is a much stronger signal of a
- * real touring artist missing from data/approved_artists.json than a one-off --
- * most one-off rejections are non-artist content (club nights, festivals, dance
- * classes) that a venue's own listing page mixes in alongside real concerts.
+ * real touring artist missing from the approved-artist whitelist (data/artists/) than
+ * a one-off -- most one-off rejections are non-artist content (club nights, festivals,
+ * dance classes) that a venue's own listing page mixes in alongside real concerts.
  *
- * This does NOT modify approved_artists.json -- it only reports candidates for a
- * human (or another agent) to verify and add.
+ * This does NOT modify the whitelist -- it only reports candidates for a human (or
+ * another agent) to verify and add.
  */
 async function main() {
   const cachePath = path.join(process.cwd(), 'reports', 'scrape-cache.json');
-  const approvedPath = path.join(process.cwd(), 'data', 'approved_artists.json');
   const outPath = path.join(process.cwd(), 'reports', 'artist-gap-report.json');
 
   const cache = await loadCache(cachePath);
@@ -42,7 +42,7 @@ async function main() {
     return;
   }
 
-  const approvedArtists = JSON.parse(await fs.readFile(approvedPath, 'utf-8'));
+  const approvedArtists = await loadApprovedArtists(PRODUCTION_ARTIST_DB_DIR);
   const match = buildApprovedMatcher(approvedArtists);
 
   const gaps = new Map<string, GapEntry>();
