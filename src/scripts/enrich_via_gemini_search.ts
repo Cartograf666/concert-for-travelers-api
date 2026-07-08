@@ -6,22 +6,22 @@ import { getGeminiKeys } from '../engine/gemini_keys.js';
 
 /**
  * Model cascade, ordered by free-tier daily-quota headroom (checked live against
- * this project's actual rate-limit dashboard, ai.google.dev -> Rate Limits):
+ * this project's actual rate-limit dashboard, ai.google.dev -> Rate Limits).
  * gemini-2.0-flash/-lite and gemini-2.5-pro are 0 RPD on this tier -- skipped
  * entirely, trying them would just waste a guaranteed-429 call every batch.
- * The two Gemma models close the cascade: far more generous (1.5K RPD, unlimited
- * TPM) but do NOT support the googleSearch grounding tool, so they can't verify
- * a CURRENT tour date -- only useful as a last-resort, no-search fallback (still
- * fine for "does this artist have a well-known official site" from training data).
+ *
+ * The dashboard's display names don't always match a real, callable v1beta model
+ * ID -- gemini-3-flash, gemma-4-31b, and gemma-4-26b all 404 ("not found for API
+ * version v1beta") in production despite showing quota on the dashboard, so
+ * they've been removed here. gemini-3.1-flash-lite/gemini-3.5-flash are unverified
+ * (not yet confirmed live) -- if they're also wrong, isDeadModelError below marks
+ * them exhausted after one 404 instead of retrying every batch.
  */
 const MODEL_CASCADE: { name: string; useSearch: boolean }[] = [
   { name: 'gemini-2.5-flash', useSearch: true },
   { name: 'gemini-2.5-flash-lite', useSearch: true },
-  { name: 'gemini-3-flash', useSearch: true },
   { name: 'gemini-3.1-flash-lite', useSearch: true },
   { name: 'gemini-3.5-flash', useSearch: true },
-  { name: 'gemma-4-31b', useSearch: false },
-  { name: 'gemma-4-26b', useSearch: false },
 ];
 
 /** True for auth/quota errors -- the caller should mark this exact (key, model)
@@ -29,6 +29,14 @@ const MODEL_CASCADE: { name: string; useSearch: boolean }[] = [
 function isQuotaOrAuthError(err: any): boolean {
   const status = err?.status ?? err?.statusCode;
   return status === 401 || status === 403 || status === 429;
+}
+
+/** True when the model ID itself doesn't exist/isn't callable (404) -- this is
+ * permanent for the whole run (not transient like a 503), so the caller should
+ * mark it exhausted just like a quota error rather than retrying it every batch. */
+function isUnknownModelError(err: any): boolean {
+  const status = err?.status ?? err?.statusCode;
+  return status === 404;
 }
 
 async function loadDb() {
@@ -206,7 +214,12 @@ Be extremely truthful. Never invent a URL. Return null rather than guess. Output
           if (isQuotaOrAuthError(err)) {
             console.warn(`[enrich-gemini-search] Auth/quota error on ${modelConfig.name} (key ${keyIdx + 1}, status ${err?.statusCode ?? err?.status}) -- marking exhausted, trying next model/key: ${err.message}`);
             exhausted.add(exhaustedKey);
+          } else if (isUnknownModelError(err)) {
+            console.warn(`[enrich-gemini-search] ${modelConfig.name} doesn't exist for this API version (404) -- marking exhausted so it isn't retried every batch: ${err.message}`);
+            exhausted.add(exhaustedKey);
           } else {
+            // Transient (e.g. 503 "high demand") -- worth retrying on a later batch,
+            // so deliberately NOT added to `exhausted`.
             console.warn(`[enrich-gemini-search] Model ${modelConfig.name} failed: ${err.message}`);
           }
           lastError = err;
