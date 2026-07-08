@@ -46,12 +46,35 @@ jobs:
             fi
           fi
 
+          if [ -z "$problem" ]; then
+            # Latest workflow run was successful and fresh. Now check live deployed artifact:
+            echo "Fetching live deployed index.json..."
+            live_index=$(curl -sS --fail "https://cartograf666.github.io/concert-for-travelers-api/index.json" || echo "")
+            if [ -z "$live_index" ]; then
+              problem="could not fetch live index.json or received non-200 status"
+            else
+              total_concerts=$(echo "$live_index" | jq -r '.stats.totalConcerts // empty')
+              last_run=$(echo "$live_index" | jq -r '.lastRun // empty')
+              
+              if [ -z "$total_concerts" ] || [ -z "$last_run" ]; then
+                problem="live index.json has missing stats.totalConcerts or lastRun fields"
+              elif [ "$total_concerts" -le 0 ]; then
+                problem="live index.json stats.totalConcerts is $total_concerts (expected > 0)"
+              else
+                live_age=$(( $(date -u +%s) - $(date -u -d "$last_run" +%s) ))
+                if [ "$live_age" -gt 93600 ]; then # 26h
+                  problem="live index.json lastRun timestamp ($last_run) is $(( live_age / 3600 ))h old (expected < 26h)"
+                fi
+              fi
+            fi
+          fi
+
           num=$(gh issue list --repo "$REPO" --state open --search "$TITLE in:title" --json number --jq '.[0].number // empty')
 
           if [ -z "$problem" ]; then
             echo "Healthy."
             if [ -n "$num" ]; then
-              gh issue close "$num" --comment "Recovered: latest daily-scrape succeeded at $created."
+              gh issue close "$num" --comment "Recovered: latest daily-scrape succeeded at $created and live index.json is fresh."
             fi
             exit 0
           fi
