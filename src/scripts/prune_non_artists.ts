@@ -326,7 +326,14 @@ Use "high" confidence only when you found clear, verifiable evidence either way.
         console.error('[prune-non-artists] All keys/models exhausted -- stopping early.');
         break;
       }
-      throw new Error(`Failed to process batch after trying all models. Last error: ${lastError?.message}`);
+      // Do NOT throw here: this batch failed for a non-exhaustion reason (e.g. every
+      // model in the cascade returned malformed JSON for these particular names,
+      // rather than a real quota/auth error) -- that's plausibly transient/batch-
+      // specific, not evidence every remaining batch will fail too. Throwing would
+      // abort the whole run and, since resultsFile is only written once at the very
+      // end, silently discard every prior batch's already-classified results. Log
+      // and move on to the next batch instead, matching enrich_via_gemini_search.ts.
+      console.warn('[prune-non-artists] Skipping this batch, continuing with the next one.');
     }
     
     if (i + batchSize < candidates.length) {
