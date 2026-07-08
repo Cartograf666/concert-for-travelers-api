@@ -1,0 +1,17 @@
+{
+  "id": "artist-hans-jurgen-buchner",
+  "domain": "www.haindling.de",
+  "url": "https://www.haindling.de/termine.htm",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table tr",
+    "artistNameFallback": "Haindling",
+    "date": "td:nth-child(1)",
+    "ticketUrl": "td:nth-child(4) a",
+    "venue": "td:nth-child(2)",
+    "city": "td:nth-child(3)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}

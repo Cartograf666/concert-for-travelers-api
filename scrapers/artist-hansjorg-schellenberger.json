@@ -1,0 +1,17 @@
+{
+  "id": "artist-hansjorg-schellenberger",
+  "domain": "www.hansjoergschellenberger.com",
+  "url": "https://www.hansjoergschellenberger.com/konzerte",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".sqs-block-content .eventlist-column-block",
+    "artistNameFallback": "Hansjorg Schellenberger",
+    "date": ".eventlist-datetag",
+    "ticketUrl": ".eventlist-button",
+    "venue": ".event-title",
+    "city": ".event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}

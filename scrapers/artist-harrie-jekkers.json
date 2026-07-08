@@ -1,0 +1,17 @@
+{
+  "id": "artist-harrie-jekkers",
+  "domain": "www.harriejekkers.nl",
+  "url": "https://www.harriejekkers.nl/agenda",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.list-group-item.row",
+    "artistNameFallback": "Harrie Jekkers",
+    "date": ".col-md-3",
+    "ticketUrl": ".col-md-4 a.btn",
+    "venue": ".col-md-5",
+    "city": ".col-md-4 a.btn",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "NL"
+  }
+}

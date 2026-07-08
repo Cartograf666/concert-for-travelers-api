@@ -1,0 +1,17 @@
+{
+  "id": "artist-harrison-potter",
+  "domain": "harrisonpotter.com",
+  "url": "https://harrisonpotter.com/performances",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.tour-list-item",
+    "artistNameFallback": "Harrison Potter",
+    "date": "div.tour-list-item-date",
+    "ticketUrl": "a.tour-list-item-button",
+    "venue": "div.tour-list-item-location-venue",
+    "city": "div.tour-list-item-location-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

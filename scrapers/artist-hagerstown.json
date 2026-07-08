@@ -1,0 +1,15 @@
+{
+  "id": "artist-hagerstown",
+  "domain": "www.hagerstownband.org",
+  "url": "https://www.hagerstownband.org/events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-item",
+    "artistNameFallback": "Hagerstown Municipal Band",
+    "date": ".event-item-date",
+    "ticketUrl": "a.event-ticket-link",
+    "venueNameFallback": "Hagerstown City Park Bandshell",
+    "cityNameFallback": "Hagerstown",
+    "countryNameFallback": "US"
+  }
+}

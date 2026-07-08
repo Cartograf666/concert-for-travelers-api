@@ -1,0 +1,17 @@
+{
+  "id": "artist-hans-zimmer",
+  "domain": "www.hanszimmer.com",
+  "url": "https://www.hanszimmer.com/live",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".single-gig",
+    "artistNameFallback": "Hans Zimmer",
+    "date": ".gig-date",
+    "ticketUrl": ".gig-tickets a",
+    "venue": ".gig-venue",
+    "city": ".gig-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

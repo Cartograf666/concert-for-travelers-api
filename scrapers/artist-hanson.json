@@ -1,0 +1,18 @@
+{
+  "id": "artist-hanson",
+  "domain": "hanson.net",
+  "url": "https://hanson.net/tour-dates",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour-item",
+    "artistNameFallback": "Hanson",
+    "date": ".date",
+    "ticketUrl": ".tickets a",
+    "venue": ".venue",
+    "city": ".city",
+    "country": ".country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

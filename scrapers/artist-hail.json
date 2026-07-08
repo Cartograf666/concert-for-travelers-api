@@ -1,0 +1,17 @@
+{
+  "id": "artist-hail",
+  "domain": "www.thehails.com",
+  "url": "https://www.thehails.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.tour-item",
+    "artistNameFallback": "The Hails",
+    "date": ".tour-item-date",
+    "ticketUrl": ".tour-item-tickets a",
+    "venue": ".tour-item-venue",
+    "city": ".tour-item-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-harold-jones",
+  "domain": "haroldjones.com",
+  "url": "http://haroldjones.com/tour-dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-block",
+    "artistNameFallback": "Harold Jones",
+    "date": ".event-date",
+    "ticketUrl": "a.tickets-link",
+    "venue": ".event-venue",
+    "city": ".event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

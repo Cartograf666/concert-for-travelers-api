@@ -1,0 +1,17 @@
+{
+  "id": "artist-hall-oates",
+  "domain": "www.hallandoates.com",
+  "url": "https://www.hallandoates.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour_date_row",
+    "artistNameFallback": "Hall & Oates",
+    "date": ".tour_date_date",
+    "ticketUrl": "a.tour_date_tickets",
+    "venue": ".tour_date_venue",
+    "city": ".tour_date_city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "artist-handel-choir-of-baltimore",
+  "domain": "handelchoir.org",
+  "url": "https://handelchoir.org/performances/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-card",
+    "artistNameFallback": "Handel Choir of Baltimore",
+    "date": ".event-card-date",
+    "ticketUrl": ".event-card-button a",
+    "venue": ".event-card-venue",
+    "venueNameFallback": "",
+    "cityNameFallback": "Baltimore",
+    "countryNameFallback": "US"
+  }
+}
