@@ -5,7 +5,7 @@
 [![Static API](https://img.shields.io/badge/API-static%20JSON-blue)](https://cartograf666.github.io/concert-for-travelers-api/)
 
 > A fully autonomous, self-healing pipeline that scrapes concerts from 90+
-> venues, Ticketmaster, and Bandsintown; matches them against a 63,000+
+> venues, Ticketmaster, Bandsintown, and Eventbrite; matches them against a 63,000+
 > artist whitelist; enriches artist metadata via free structured sources and
 > Gemini; and publishes it all as a free static JSON API. Zero servers,
 > zero manual intervention in the normal case.
@@ -37,7 +37,8 @@ artists I love are playing where I'll be, and when?"*
 |---|---|---|---|
 | **Venue scrapers** | 91 configs, per-venue | Daily | `static_selectors`, `json_api`, `custom_js`, `jsonld`, `next_data`, `playwright_render` — whichever fits the site; self-healing keeps them alive. |
 | **Ticketmaster Discovery API** | 27 countries | Daily | Broad additive sweep; also surfaces festivals (multi-attraction events). |
-| **Bandsintown** | Worldwide, artist-keyed | Weekly, batched | The only source with real reach into markets the others miss (Japan, Russia, ...). Public widget feed — polite pacing, cache-backed, self-throttles on any sign of blocking. |
+| **Bandsintown** | Worldwide, artist-keyed | Daily, batched | The only source with real reach into markets the others miss (Japan, Russia, ...). Public widget feed — polite pacing, cache-backed, self-throttles on any sign of blocking. |
+| **Eventbrite** | US, artist-keyed | Daily, batched | Public discovery-page scrape (no third-party events-search API exists anymore) — leading-name relevance filter cuts the noise of a full-text search. See [BACKLOG.md](BACKLOG.md) for the ToS-risk tradeoff this accepts. |
 | **Artist tour-page scrapers** | 5 configs today | Weekly | Official tour pages for specific artists — most reliable per-artist source, added by hand. |
 | **`discover-artists`** | Deezer + Last.fm charts | Weekly | Self-growing target list: pulls live global + per-genre/per-country charts so the artists being tracked keep pace with what's actually popular, without a human curating it. |
 
@@ -80,7 +81,7 @@ Each concert object follows `src/schemas/concert.ts`: `artist`, `artistWebsite?`
 ```
 ├── .github/workflows/
 │   ├── daily-scrape.yml        # Daily cron: scrapes venues + Ticketmaster, health-gates, publishes, deploys to Pages
-│   ├── artist-scrape.yml       # Weekly cron: artist tour-page configs + the Bandsintown sweep
+│   ├── artist-scrape.yml       # Daily cron: artist tour-page configs + the Bandsintown + Eventbrite sweeps
 │   ├── discover-artists.yml    # Weekly cron: grows the target list from live Deezer/Last.fm charts
 │   ├── self-heal.yml           # Triggered after daily-scrape: repairs + auto-merges broken selectors
 │   ├── enrich-auto.yml         # Every 3h: free MusicBrainz Tier-0 enrichment sweep
@@ -91,7 +92,7 @@ Each concert object follows `src/schemas/concert.ts`: `artist`, `artistWebsite?`
 │   └── artists/                # Artist tour-page scraper configs (5) -- see docs/ADD-VENUE-SCRAPERS.md
 ├── data/
 │   ├── approved_artists.json   # Approved artist whitelist (63,000+), normalization & socials
-│   ├── artist_scrape_targets.txt # Self-growing artist target list for discover-artists/Bandsintown
+│   ├── artist_scrape_targets.txt # Self-growing artist target list for discover-artists/Bandsintown/Eventbrite
 │   └── artist_denylist.json    # Genre/language/generic terms that must never whitelist-match
 ├── docs/
 │   ├── ADD-VENUE-SCRAPERS.md   # Convention for adding a new venue scraper
@@ -105,6 +106,7 @@ Each concert object follows `src/schemas/concert.ts`: `artist`, `artistWebsite?`
 │   │   │                       # playwright_render), circuit breaker, retries
 │   │   ├── ticketmaster.ts     # Ticketmaster Discovery API sweep (27 countries)
 │   │   ├── bandsintown.ts      # Bandsintown worldwide artist-keyed sweep
+│   │   ├── eventbrite.ts       # Eventbrite artist-keyed discovery-page scrape (US)
 │   │   ├── cache.ts            # Per-venue change-detection cache
 │   │   ├── structured.ts       # JSON-LD / __NEXT_DATA__ extraction helpers
 │   │   ├── gemini_keys.ts      # Multi-key Gemini rotation for enrichment + self-heal
@@ -118,7 +120,7 @@ Each concert object follows `src/schemas/concert.ts`: `artist`, `artistWebsite?`
 │   │   └── repair.ts           # Self-healing logic with model failover cascade (structured output)
 │   ├── scripts/                # One-off/batch maintenance scripts (see `npm run` commands below)
 │   ├── run.ts                  # Main entry point orchestrator: daily venue + Ticketmaster scrape
-│   ├── run-artists.ts          # Entry point orchestrator: artist tour-pages + Bandsintown sweep
+│   ├── run-artists.ts          # Entry point orchestrator: artist tour-pages + Bandsintown + Eventbrite sweeps
 │   └── heal.ts                 # Main entry point orchestrator for self-healing
 ├── tests/                      # Automated test suite (node --test)
 ├── BACKLOG.md                  # Living roadmap -- what's done, in progress, and planned
@@ -154,7 +156,7 @@ export GEMINI_API_KEY="your-gemini-key"
 npm run scrape
 ```
 
-### Run the Artist Tour-Page + Bandsintown Sweep
+### Run the Artist Tour-Page + Bandsintown + Eventbrite Sweep
 ```bash
 npm run scrape-artists
 ```
@@ -179,7 +181,7 @@ npm run clean-denylist      # removes genre/language/generic terms that slipped 
 ```
 
 ### Sync Target Artists Into the Whitelist
-A name added to `data/artist_scrape_targets.txt` must also be in `data/approved_artists.json` or its scraped/Bandsintown shows get dropped as "not approved" -- idempotent, only adds what's missing.
+A name added to `data/artist_scrape_targets.txt` must also be in `data/approved_artists.json` or its scraped/Bandsintown/Eventbrite shows get dropped as "not approved" -- idempotent, only adds what's missing.
 ```bash
 npm run add-targets
 ```
@@ -220,7 +222,7 @@ npm run test
 
 ## Enrichment & Self-Healing Flow Detail
 
-1. **Daily Scrape**: runs every venue scraper + the Ticketmaster sweep, merges in the artist-scrape job's last cached results (tour-pages + Bandsintown), applies artist matching + date parsing + normalization + past-date filtering, and health-gates the result before publishing to `/dist` and deploying to GitHub Pages. A failed or empty-result scraper has its HTML sample and error logged to `reports/fail-log.json`.
+1. **Daily Scrape**: runs every venue scraper + the Ticketmaster sweep, merges in the artist-scrape job's last cached results (tour-pages + Bandsintown + Eventbrite), applies artist matching + date parsing + normalization + past-date filtering, and health-gates the result before publishing to `/dist` and deploying to GitHub Pages. A failed or empty-result scraper has its HTML sample and error logged to `reports/fail-log.json`.
 2. **Free-First Metadata Enrichment**: new artists are enriched in cost order — a bulk Wikidata SPARQL sweep first (fast, ~80 names/query), then a per-artist MusicBrainz + Wikidata pass every 3 hours, and only the remaining long tail goes to Gemini in batches for website + socials.
 3. **Multi-Key, Multi-Model Failover**: enrichment and self-healing both rotate through every configured Gemini key and a Gemma/Gemini-Flash model cascade, moving to the next key only once every model on the current one is quota/auth-exhausted.
 4. **LLM Selector Repair**: once the Daily Scrape completes, the Self-Healing Pipeline downloads its fail-log artifact and, for each failure, asks Gemini (structured output, selector fields only) to analyze the broken selectors against the cached HTML.

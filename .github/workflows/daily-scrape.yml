@@ -123,6 +123,16 @@ jobs:
           restore-keys: |
             bandsintown-cache-
 
+      # Read-only, same as the two caches above: owned by artist-scrape.yml's
+      # Eventbrite sweep, merged into today's publish here.
+      - name: Restore Eventbrite cache
+        uses: actions/cache/restore@v4
+        with:
+          path: reports/eventbrite-cache.json
+          key: eventbrite-cache-${{ github.run_id }}
+          restore-keys: |
+            eventbrite-cache-
+
       # Sync the whitelist from the user's target list first: a name added to
       # data/artist_scrape_targets.txt must be in the approved-artist DB (data/artists/)
       # or its scraped/Bandsintown shows get dropped as "not approved". Idempotent (adds

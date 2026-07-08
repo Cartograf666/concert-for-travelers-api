@@ -68,7 +68,19 @@ jobs:
           restore-keys: |
             bandsintown-cache-
 
-      - name: Run artist tour-page + Bandsintown scraper
+      # Per-artist last-successful Eventbrite discovery-search results. Same
+      # batched/resumable pattern as the Bandsintown cache above. See
+      # src/engine/eventbrite.ts for why this scrapes public pages (no public
+      # multi-organizer search API exists) and the accepted ToS-risk tradeoff.
+      - name: Restore Eventbrite cache
+        uses: actions/cache/restore@v4
+        with:
+          path: reports/eventbrite-cache.json
+          key: eventbrite-cache-${{ github.run_id }}
+          restore-keys: |
+            eventbrite-cache-
+
+      - name: Run artist tour-page + Bandsintown + Eventbrite scraper
         env:
           # Optional: a real partner app_id if/when granted. Falls back to the public
           # widget app_id in code when unset. See src/engine/bandsintown.ts.
@@ -76,6 +88,8 @@ jobs:
           # Batch size per run -- keeps each run gentle on the public feed; the
           # cache makes successive runs advance through the full list.
           BANDSINTOWN_MAX_PER_RUN: '800'
+          # Smaller/gentler cap than Bandsintown -- see src/engine/eventbrite.ts.
+          EVENTBRITE_MAX_PER_RUN: '300'
         run: npm run scrape-artists
 
       - name: Save artist scrape cache
@@ -92,6 +106,13 @@ jobs:
           path: reports/bandsintown-cache.json
           key: bandsintown-cache-${{ github.run_id }}
 
+      - name: Save Eventbrite cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: reports/eventbrite-cache.json
+          key: eventbrite-cache-${{ github.run_id }}
+
       - name: Upload reports
         uses: actions/upload-artifact@v4
         with:
@@ -99,4 +120,5 @@ jobs:
           path: |
             reports/artist-scrape-cache.json
             reports/bandsintown-cache.json
+            reports/eventbrite-cache.json
           retention-days: 5
