@@ -217,6 +217,143 @@ end passes):
 
 ---
 
+## 🔧 Tech debt / infrastructure
+
+Distinct axis from the data-richness roadmap below: pipeline reliability,
+safety, and dev tooling rather than product features. Last verified against
+live repo/CI state 2026-07-08 (commit hashes / `gh run` ids given as evidence
+below — re-check via `git log` / `gh run list` before assuming these are still
+current if much time has passed).
+
+### ✅ Done
+- **Stranded-artist bug in the Gemini identity tier.** `apply()` used to stamp
+  `enrichedAt` on every processed artist even when website/tourUrl/socials all
+  came back empty — since `enrichedAt` is the cross-tier pending-filter
+  marker, a genuine miss permanently hid that artist from every other
+  enrichment tier. Added `sitesTriedAt` (tried) separate from `enrichedAt`
+  (hit); migrated 168 pre-existing stranded records. →
+  `src/scripts/enrich_sites.ts`.
+- **SSRF-safe tourUrl discovery tier (new, 6th enrichment tier, zero LLM
+  cost).** Probes common tour-page paths (`/tour`, `/shows`, ...) on the ~20k
+  website-having/tourUrl-lacking artists, with soft-404 scoring to reject
+  homepage-redirect false positives. `fetchHelper` originally only checked
+  `isBlockedHost()` against the initial URL and followed redirects natively —
+  a malicious/compromised site's `/tour` page could 302 to
+  `169.254.169.254` (real cloud-metadata target on GH-hosted Azure runners)
+  before any check ran. Fixed: `redirect:'manual'` + recursive per-hop
+  `isBlockedHost()` validation. Validated on a real 60-artist batch (5 hits,
+  manually curl-verified) and applied to production; **not** cron'd yet — see
+  Open/medium below. → `src/scripts/discover_tour_urls.ts`,
+  `tests/discover_tour_urls.test.ts`.
+- **Gemini model/key cascade correctness.** Wrong model IDs
+  (`gemini-3-flash`, `gemma-4-31b`, `gemma-4-26b`) 404'd forever without being
+  marked exhausted; fixed to real IDs (`gemini-3-flash-preview`,
+  `gemma-4-31b-it`, `gemma-4-26b-a4b-it`) and added 404 to the
+  exhaustion-tracking logic alongside 401/403/429. `enrich-database.yml`'s
+  `env:` block silently never wired the user's own
+  `GEMINI_API_KEY_RESERV1/2` secrets into the job — fixed. →
+  `src/scripts/enrich_via_gemini_search.ts`, `src/scripts/prune_non_artists.ts`,
+  `.github/workflows/enrich-database.yml`.
+- **`prune_non_artists.ts` hardening.** Added a Zod `classificationSchema`
+  gate on Gemini's classification output; switched to `getGeminiKeys()`
+  multi-key rotation; fixed a crash-on-single-batch-failure bug where an
+  unconditional `throw` on any non-exhaustion error discarded every prior
+  batch's already-classified results (the results file is written once, at
+  the very end). → `src/scripts/prune_non_artists.ts`.
+- **`backfill_mbid.ts` tried-marker.** Added `mbidBackfillTriedAt`, set on
+  every processed entry (hit or miss), so a permanent miss doesn't get
+  re-selected forever. → `src/scripts/backfill_mbid.ts`.
+- **Custom scraper test coverage.** 23/23 `src/engine/custom/*.ts` scrapers
+  now have fixture-driven tests (146 assertions) — previously untested;
+  tests-only change, no scraper parsing logic touched. →
+  `tests/custom-scrapers.test.ts`.
+- **Geo-clustering for fragmented city names.** Same city split across
+  ward/kanji/transliteration variants (e.g. Tokyo/所沢市) no longer produces
+  separate `cities/{slug}.json` files — union-find + haversine clustering
+  (35km radius) picks the most-represented raw string as canonical. Concerts
+  without lat/lng fall back to their own unclustered city string. →
+  `src/generator/publish.ts` (`buildCityCanonicalMap`), `tests/publish.test.ts`.
+- **Workflow infra cleanup.** Fixed an infinite-loop-on-git-conflict bug (5
+  workflows recomputed and dropped identical work forever after a rebase
+  abort — missing `git fetch/reset --hard origin/main` before retry);
+  retargeted `enrich-similar.yml` off the deleted
+  `data/approved_artists.json` (was silently no-op'ing every run since the
+  sharding migration); added `issues: write` + a deduped "Alert on failure"
+  step to 6 workflows (daily-scrape, enrich-auto, enrich-metadata,
+  enrich-similar, artist-scrape, discover-artists); fixed `daily-scrape.yml`'s
+  "Upload fail log report" step missing `if: always()` (self-heal's artifact
+  download was silently finding nothing on the exact runs where it mattered
+  most); added `lint-workflows.yml` (actionlint, pinned `@v1.27.0`); fixed a
+  shellcheck SC2086 (unquoted `$GITHUB_OUTPUT`) in `self-heal.yml`; added
+  `permissions: contents: read` + `timeout-minutes: 30` to `pr-test.yml` and
+  skip its `verify` job on `auto/self-heal-*` branches (was duplicating
+  self-heal's own test gate on every auto-merge PR). →
+  `.github/workflows/*.yml`, `.github/actions/alert-on-failure/action.yml`.
+- **Docs/license cleanup.** `README.md`/`ENRICHMENT_RUNBOOK.md` no longer
+  reference the deleted `data/approved_artists.json` path; added a Consumer
+  Quickstart section to the README; added a root `LICENSE` (ISC).
+
+### ⬜ Open — critical
+- **`daily-scrape.yml` has not deployed since the geo-clustering fix landed.**
+  Fix commit `9215c33` (2026-07-08 17:00 UTC); no `daily-scrape.yml` run with
+  `conclusion=success` exists after that timestamp as of last check — one
+  dispatch attempt (`28963191211`, 17:39 UTC) got cancelled in the
+  `artist-db-write` concurrency queue before it ran a single step. Production
+  API is still serving pre-fix data (fragmented Japan city files, etc). Needs
+  a re-trigger once the concurrency group frees up.
+- **`artist-db-write` concurrency group silently cancels queued runs.**
+  Observed repeatedly (7 cancellations in the last 30 runs across
+  daily-scrape/enrich-auto/enrich-database) — GitHub hard-cancels an older
+  *pending* run when a newer one queues behind it in the same group,
+  regardless of `cancel-in-progress: false`. No metric distinguishes this
+  from a normal git-conflict drop (`record-conflict-drop` only fires from
+  inside a job that reached the rebase-conflict step, not a queue-cancel).
+  *A worktree `.claude/worktrees/fix-daily-scrape-concurrency` already
+  exists — check it's not already mid-fix in a parallel session before
+  starting here.*
+- **No shared `ArtistEntrySchema`.** 9 distinct `interface ArtistEntry { ... }`
+  declarations across `src/`, none importing a common definition. Explicitly
+  deferred — too risky to parallelize with other file-touching work; needs
+  its own dedicated pass.
+
+### ⬜ Open — high
+- **No ESLint/type-lint gate for `src/` TypeScript.** Only YAML/bash linting
+  exists (`lint-workflows.yml` → actionlint); no `eslint` devDependency, no
+  config file.
+- **`enrich-database.yml` has no cron**, `workflow_dispatch` only — the
+  Gemini identity/socials tier still needs manual triggering.
+- **No test coverage tool** (c8/nyc) — `npm test` has no `--coverage` path.
+
+### ⬜ Open — medium
+- **Data-hygiene scripts not scheduled.** `prune_non_artists.ts`,
+  `clean_denylist.ts`, `audit_artist_gaps.ts` all exist but aren't referenced
+  by any workflow — manual-only.
+- **`freshness-watchdog.yml` only checks CI run conclusion**, not the actual
+  deployed JSON artifact — would not have caught the stale-deploy situation
+  above.
+- **`discover_tour_urls.ts` at 60/20,187 eligible artists.** Validated batch
+  only; intentionally not cron'd yet per its own task spec until proven at
+  scale. Next step: run larger batches, spot-check hits, then decide on
+  wiring a workflow.
+- **2 entries in `data/artist-review-needed.json`** ("Airport", "Empire")
+  awaiting manual disambiguation (place name vs. real artist).
+
+### ⬜ Open — low / roadmap
+- No OpenAPI/JSON-Schema contract describing the published JSON shape.
+- `concerts.json` and per-artist/city files are unpaginated full dumps.
+- No JSON 404 for an unknown artist/city slug (falls through to GitHub
+  Pages' generic HTML 404).
+- No documented secrets-rotation runbook (only the multi-key *failover*
+  mechanism is documented, not a rotation/revocation procedure).
+- No Dependabot/Renovate; GitHub Actions pinned to floating version tags
+  (`@v4` etc), not commit SHAs (except `reviewdog/action-actionlint@v1.27.0`).
+- Minor duplicated helpers: `function sleep()` reimplemented independently
+  in 7 files; `.env`-fallback key-loading regex duplicated verbatim in
+  `enrich_via_gemini_search.ts` and `prune_non_artists.ts` instead of one
+  shared helper; `list_models.ts` skips `getGeminiKeys()` entirely.
+
+---
+
 ## ⬜ Planned — data richness roadmap
 
 Ordered by leverage on the north-star flow. **Constraint: free sources only —
