@@ -19,6 +19,12 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     timeout-minutes: 30 # a wedged run must not sit on the 6h Actions default ceiling
+    # self-heal.yml already runs this exact test suite itself (npm ci + playwright
+    # install + npm test) to gate whether a repaired scraper config is good, then
+    # squash-merges the PR immediately without waiting on this workflow -- so this
+    # run has zero gating value on that branch and just pays for a second full
+    # chromium install + test run on every auto-merge. Skip it there.
+    if: ${{ !startsWith(github.head_ref, 'auto/self-heal-') }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
