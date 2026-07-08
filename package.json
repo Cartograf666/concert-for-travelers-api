@@ -25,7 +25,8 @@
     "rank-scraper-candidates": "tsx src/scripts/rank_scraper_candidates.ts",
     "record-conflict-drop": "tsx src/scripts/record_conflict_drop.ts",
     "prune-non-artists": "tsx src/scripts/prune_non_artists.ts",
-    "test": "SCRAPER_ALLOW_LOCAL_HOSTS=1 node --import tsx --test tests/*.test.ts"
+    "test": "SCRAPER_ALLOW_LOCAL_HOSTS=1 node --import tsx --test tests/*.test.ts",
+    "test:coverage": "SCRAPER_ALLOW_LOCAL_HOSTS=1 c8 node --import tsx --test tests/*.test.ts"
   },
   "keywords": [
     "concert",
@@ -51,6 +52,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.11.0",
+    "c8": "^10.1.2",
     "tsx": "^4.19.2",
     "typescript": "^5.3.3"
   }

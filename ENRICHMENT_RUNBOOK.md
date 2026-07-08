@@ -220,3 +220,38 @@ but a backup is cheap insurance.
 - `data/artists/` — the sharded approved artist database (shard-0..7.json).
 - `scrapers/artist-*.json` — generated per-artist scraper configs.
 - `tests/runner.test.ts` — includes the artist-tour-page test.
+
+---
+
+## 6. Secrets Rotation
+
+This runbook outlines the list of secrets used in this repository and the procedure for rotating them in case of compromise or expiration.
+
+### Configured Secrets List
+1. **Gemini API Keys**:
+   - `GEMINI_API_KEY`: Primary API key used across `self-heal.yml`, `enrich-database.yml`, and `daily-scrape.yml`.
+   - `GEMINI_API_KEY_2` .. `GEMINI_API_KEY_5`: Reserve keys used by `enrich-database.yml`.
+   - `GEMINI_API_KEY_RESERV1`, `GEMINI_API_KEY_RESERV2`: Reserve keys used by `self-heal.yml`, `enrich-database.yml`, and `daily-scrape.yml`.
+   - `GEMINI_API_KEY_RESERV3`: Reserve key used by `enrich-database.yml`.
+   - `GEMINI_API_KEYS`: A space/comma-separated list of fallback Gemini API keys read by `enrich-database.yml`.
+2. **Last.fm API Key**:
+   - `LASTFM_API_KEY`: Read by `rank-scraper-candidates.yml`, `discover-artists.yml`, `enrich-similar.yml`, and `enrich-metadata.yml`.
+3. **Ticketmaster API Key**:
+   - `TICKETMASTER_API_KEY`: Read by `daily-scrape.yml`.
+4. **Spotify API Credentials (Deprecated but in configs)**:
+   - `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET`: Referenced in `discover-artists.yml`.
+5. **Bandsintown App ID**:
+   - `BANDSINTOWN_APP_ID`: Referenced in `artist-scrape.yml`.
+
+### Rotation Procedure
+When a secret expires or is compromised:
+1. Regenerate the key/credentials inside the respective provider console (Google AI Studio, Last.fm, Ticketmaster, etc.).
+2. Set the new value in GitHub Secrets using the GitHub CLI:
+   ```bash
+   gh secret set SECRET_NAME --body "new-secret-value"
+   ```
+   *(Or navigate to GitHub repository settings -> Secrets and variables -> Actions -> Update)*.
+3. Verify the new secret works by triggering a manual `workflow_dispatch` run of a workflow that uses it.
+4. Once the new key is confirmed functional, revoke/deactivate the old key in the provider console.
+
+*Note: This rotation procedure is for security/expiration purposes. It is separate from the automated failover rotation logic in `src/engine/gemini_keys.ts`, which rotates through multiple keys to bypass free-tier rate limits.*
