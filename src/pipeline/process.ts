@@ -798,6 +798,7 @@ export async function processConcerts(
       lng: raw.lng,
       festival: raw.festival,
       lineup: raw.lineup,
+      priceRange: raw.priceRange,
       ticketUrl: raw.ticketUrl ? raw.ticketUrl.trim() : undefined,
       originalSource: raw.originalSource,
       scrapedAt: raw.scrapedAt

@@ -27,7 +27,13 @@ concurrency:
 jobs:
   enrich-auto:
     runs-on: ubuntu-latest
-    timeout-minutes: 330
+    # Must stay comfortably under the 3h cron interval above: cancel-in-progress
+    # is false on this workflow's concurrency group, so a run still going at the
+    # 3h mark doesn't get cancelled -- it just makes its own next scheduled
+    # trigger QUEUE and wait behind it, and the one after that, potentially
+    # compounding into a growing backlog. Previously 330 (5.5h), well past its
+    # own cadence -- tightened so a slow run truncates itself cleanly instead.
+    timeout-minutes: 165
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -90,6 +96,8 @@ jobs:
                 if ! git rebase origin/main; then
                   echo "::warning::Rebase conflict on data/artists/ -- dropping this sub-chunk's commit."
                   git rebase --abort
+                  npm run record-conflict-drop -- enrich-auto || true
+                  git add data/conflict-drops.json && git commit -m "chore: record conflict-drop metric [skip ci]" && git push || true
                   break
                 fi
                 sleep $((RANDOM % 5 + 2))

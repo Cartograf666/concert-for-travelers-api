@@ -244,6 +244,7 @@ test('Pipeline - processConcerts wires startTime/venueKind/festival/lineup throu
     country: 'gb',
     festival: { name: 'Some Festival', url: 'https://example.com/fest' },
     lineup: ['The Cure', 'Muse'],
+    priceRange: { min: 45, max: 250, currency: 'GBP' },
     originalSource: 'ticketmaster.com',
     scrapedAt
   }];
@@ -254,6 +255,7 @@ test('Pipeline - processConcerts wires startTime/venueKind/festival/lineup throu
   assert.strictEqual(processed[0].venueKind, 'stadium');
   assert.deepStrictEqual(processed[0].festival, { name: 'Some Festival', url: 'https://example.com/fest' });
   assert.deepStrictEqual(processed[0].lineup, ['The Cure', 'Muse']);
+  assert.deepStrictEqual(processed[0].priceRange, { min: 45, max: 250, currency: 'GBP' });
 });
 
 test('Pipeline - full concert processing & deduplication', async () => {

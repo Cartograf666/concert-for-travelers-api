@@ -71,6 +71,17 @@ jobs:
           restore-keys: |
             scrape-cache-
 
+      # Which concerts were already known as of the last run, so dist/changes.json
+      # only reports genuinely new ones. Not git-tracked -- same cache mechanism as
+      # the scrape cache above, so it doesn't add another writer to the repo.
+      - name: Restore changelog cache
+        uses: actions/cache/restore@v4
+        with:
+          path: reports/changelog-cache.json
+          key: changelog-cache-${{ github.run_id }}
+          restore-keys: |
+            changelog-cache-
+
       # Per-country last-successful Ticketmaster results, so a transient failure on
       # one country falls back to yesterday's data instead of contributing nothing.
       - name: Restore Ticketmaster cache
@@ -134,6 +145,13 @@ jobs:
         with:
           path: reports/scrape-cache.json
           key: scrape-cache-${{ github.run_id }}
+
+      - name: Save changelog cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: reports/changelog-cache.json
+          key: changelog-cache-${{ github.run_id }}
 
       - name: Save Ticketmaster cache
         if: always()
@@ -219,6 +237,8 @@ jobs:
               if ! git rebase origin/main; then
                 echo "::warning::Rebase conflict on data/artists/ -- dropping this run's enrichment commit."
                 git rebase --abort
+                npm run record-conflict-drop -- daily-scrape || true
+                git add data/conflict-drops.json && git commit -m "chore: record conflict-drop metric [skip ci]" && git push || true
                 break
               fi
               sleep $((RANDOM % 5 + 2))

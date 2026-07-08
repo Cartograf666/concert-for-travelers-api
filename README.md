@@ -25,6 +25,7 @@ artists I love are playing where I'll be, and when?"*
 - [Directory Structure](#directory-structure)
 - [Local Development & Commands](#local-development--commands)
 - [Enrichment & Self-Healing Flow](#enrichment--self-healing-flow-detail)
+- [Known Limitations](#known-limitations)
 - [Roadmap](#roadmap)
 - [License](#license)
 
@@ -63,13 +64,14 @@ deduplication pipeline before publishing.
 
 Deployed to `https://cartograf666.github.io/concert-for-travelers-api/`:
 
-- **`index.json`** — run metrics (`lastRun`, `stats.totalConcerts/uniqueArtists/uniqueCities`), the full unique artist list, and the full unique city list.
+- **`index.json`** — `schemaVersion` (bump on a Concert-shape change worth a consumer noticing), run metrics (`lastRun`, `stats.totalConcerts/uniqueArtists/uniqueCities`), the full unique artist list, and the full unique city list.
 - **`concerts.json`** — the complete master array of all upcoming (never past-dated) concerts.
 - **`artists/{artist-slug}.json`** — concerts for one artist (e.g. `artists/the-cure.json`), sorted by date.
 - **`cities/{city-slug}.json`** — concerts for one city (e.g. `cities/berlin.json`), sorted by date. Stale per-slug files for artists/cities no longer touring are pruned every run.
-- **`status.json`** — machine-readable health surface (scrapers ok/failed, stale venues, ticketmaster event count) for the dashboard and the freshness watchdog.
+- **`status.json`** — machine-readable health surface (scrapers ok/failed, stale venues, ticketmaster event count, `conflictDropsLast7Days` — see [Known limitations](#known-limitations)) for the dashboard and the freshness watchdog.
+- **`changes.json`** — concerts new since the last run (30-day rolling window), so the consumer can show "N new concerts since your last visit" without diffing all of `concerts.json` itself.
 
-Each concert object follows `src/schemas/concert.ts`: `artist`, `artistWebsite?`, `artistSocials?` (spotify/instagram/facebook/youtube/telegram/vk), `date` (`YYYY-MM-DD`), `venue`, `city`, `country` (ISO 3166-1 alpha-2), `lat?`/`lng?`, `ticketUrl?`, `originalSource`, `scrapedAt`.
+Each concert object follows `src/schemas/concert.ts`: `artist`, `artistWebsite?`, `spotifyId?`, `mbid?`, `artistSocials?` (spotify/instagram/facebook/youtube/telegram/vk), `date` (`YYYY-MM-DD`), `startTime?` (`HH:MM`), `venue`, `venueKind?` (stadium/arena/club/theatre/hall/open-air/other), `city`, `country` (ISO 3166-1 alpha-2), `lat?`/`lng?`, `festival?` (`{name, url?}`), `lineup?`, `priceRange?` (`{min, max, currency}`, Ticketmaster only), `ticketUrl?`, `originalSource`, `scrapedAt`.
 
 ---
 
@@ -225,6 +227,13 @@ npm run test
 5. **Self-Correction, Auto-Merged**: repaired selectors are tested against the cached HTML sample and the full test suite. If they pass, the venue's config is updated on a fresh branch, opened as a PR (for the audit trail), and **squash-merged immediately** — no manual review gate.
 6. **Freshness Watchdog**: independently verifies a successful daily run happened recently and opens a deduplicated GitHub issue if the schedule silently stopped firing, a run hung, or a run was skipped.
 7. **Concurrent-Write Safety**: `main` receives commits from several independent jobs (daily-scrape's own enrichment commit, both enrich-* workflows, self-heal's auto-merge). Every auto-commit step retries with a fetch+rebase on a push rejection instead of failing the whole job.
+
+---
+
+## Known Limitations
+
+- **`data/approved_artists.json` is a single shared file with multiple writers**, coordinated by git-push-retry rather than a real transaction. `enrich-auto`/`enrich-database`/`daily-scrape` share the `artist-db-write` concurrency group (GitHub queues them, so they don't literally run in parallel), but an unresolvable rebase conflict against some *other* push to `main` still occasionally makes a writer drop its own commit rather than fail the job. No data is lost (the affected artists just stay pending and get retried next run), but it's wasted API/compute for that attempt. Tracked in `data/conflict-drops.json` (via `npm run record-conflict-drop`) and surfaced as `status.json`'s `conflictDropsLast7Days` / the dashboard — watch for a climbing count.
+- **No hard schema-compatibility gate.** `index.json`'s `schemaVersion` is a signal ("something about the Concert shape changed, go check `src/schemas/concert.ts`"), not an enforced contract — every change so far has been additive, so an old consumer that ignores unknown fields is unaffected either way.
 
 ---
 
