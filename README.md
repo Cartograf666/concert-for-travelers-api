@@ -65,6 +65,7 @@ Deployed to `https://cartograf666.github.io/concert-for-travelers-api/`:
 
 - **`index.json`** — run metrics (`lastRun`, `stats.totalConcerts/uniqueArtists/uniqueCities`), the full unique artist list, and the full unique city list.
 - **`concerts.json`** — the complete master array of all upcoming (never past-dated) concerts.
+- **`artists.json`** — the FULL approved-artist directory (all ~63,000, not just artists with a current concert), keyed by the same slug as `artists/{slug}.json`: `slug`, `name`, `website?`, `socials?`, `spotifyId?`, `mbid?`, `genres?`, `popularity?` (`listeners`/`playcount`), `image?`, `similarArtists?` (up to 8 `{name, slug, match}` entries, Last.fm's `artist.getsimilar` cross-referenced against this same whitelist so every suggestion resolves to a real `artists/{slug}.json`).
 - **`artists/{artist-slug}.json`** — concerts for one artist (e.g. `artists/the-cure.json`), sorted by date.
 - **`cities/{city-slug}.json`** — concerts for one city (e.g. `cities/berlin.json`), sorted by date. Stale per-slug files for artists/cities no longer touring are pruned every run.
 - **`status.json`** — machine-readable health surface (scrapers ok/failed, stale venues, ticketmaster event count) for the dashboard and the freshness watchdog.

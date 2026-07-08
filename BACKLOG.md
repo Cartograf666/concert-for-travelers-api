@@ -95,6 +95,17 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   distinct collision groups, 758 names, once counting partial mangling too).
   Now Unicode-aware (`\p{L}`/`\p{N}`) with a stable hash fallback for names with
   no letters/digits at all. → `src/pipeline/process.ts` (`slugify`).
+- **"Similar artists" recommendations.** One Last.fm `artist.getsimilar` call per
+  artist, cross-referenced against our own ~63k whitelist so every suggestion
+  resolves to a real `artists/{slug}.json` -- a recommendation pointing outside
+  this catalog would be a dead end for the consumer app, not a feature. Up to 8
+  `{name, slug, match}` entries per artist, preserving Last.fm's match-descending
+  order. Own pending-gate (`similarEnrichedAt`/`similarTriedAt`), independent of
+  every other enrichment tier, same reasoning as the genres/popularity tier.
+  Scheduled via `.github/workflows/enrich-similar.yml` (cron, checkpointed, same
+  shape as `enrich-metadata.yml`), also runnable manually with
+  `npm run enrich-similar [N]`. → `src/scripts/enrich_similar_artists.ts`,
+  `src/generator/publish.ts` (`ArtistCatalogEntry.similarArtists`).
 
 ---
 

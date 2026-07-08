@@ -140,7 +140,8 @@ test('Publisher - artist catalog: publishes the FULL whitelist (not just artists
         mbid: '9c9f1380-2516-4fc9-a3e6-f9f61941d090',
         genres: ['rock', 'alternative'],
         popularity: { listeners: 4500000, playcount: 900000000 },
-        image: 'https://cdn.example/muse.jpg'
+        image: 'https://cdn.example/muse.jpg',
+        similarArtists: [{ name: 'Radiohead', slug: 'radiohead', match: 0.92 }]
       },
       { name: 'Some Untoured Artist', website: null }, // no current concert -- must still be published
       'Legacy String Entry' // pre-metadata legacy shape
@@ -157,12 +158,38 @@ test('Publisher - artist catalog: publishes the FULL whitelist (not just artists
     assert.deepStrictEqual(muse.genres, ['rock', 'alternative']);
     assert.deepStrictEqual(muse.popularity, { listeners: 4500000, playcount: 900000000 });
     assert.strictEqual(muse.image, 'https://cdn.example/muse.jpg');
+    assert.deepStrictEqual(muse.similarArtists, [{ name: 'Radiohead', slug: 'radiohead', match: 0.92 }]);
 
     const untoured = catalog.find((a: any) => a.slug === 'some-untoured-artist');
     assert.ok(untoured, 'an artist with no current concert must still appear in the full directory');
 
     const legacy = catalog.find((a: any) => a.slug === 'legacy-string-entry');
     assert.deepStrictEqual(legacy, { slug: 'legacy-string-entry', name: 'Legacy String Entry' });
+  });
+});
+
+test('Publisher - artist catalog: malformed similarArtists entries are dropped, and an all-malformed list omits the field entirely', async () => {
+  await withTempDir(async (dir) => {
+    const approvedArtists = [
+      {
+        name: 'Muse',
+        website: null,
+        similarArtists: [
+          { name: 'Radiohead', slug: 'radiohead', match: 0.9 },
+          { name: 'Missing Slug', match: 0.5 }, // malformed -- dropped
+          { slug: 'missing-name', match: 0.5 } // malformed -- dropped
+        ]
+      },
+      { name: 'All Malformed', website: null, similarArtists: [{ name: 'X' }] }
+    ];
+    await publishArtistCatalog(approvedArtists, dir);
+    const catalog = JSON.parse(await fs.readFile(path.join(dir, 'artists.json'), 'utf-8'));
+
+    const muse = catalog.find((a: any) => a.slug === 'muse');
+    assert.deepStrictEqual(muse.similarArtists, [{ name: 'Radiohead', slug: 'radiohead', match: 0.9 }]);
+
+    const allMalformed = catalog.find((a: any) => a.slug === 'all-malformed');
+    assert.strictEqual('similarArtists' in allMalformed, false, 'an entry with zero valid candidates should omit the field, not publish an empty array');
   });
 });
 
