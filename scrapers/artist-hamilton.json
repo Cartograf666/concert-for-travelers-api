@@ -1,0 +1,17 @@
+{
+  "id": "artist-hamilton",
+  "domain": "hamiltonmusical.com",
+  "url": "https://hamiltonmusical.com/tickets/upcoming-cities/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.tour-location",
+    "artistNameFallback": "Hamilton",
+    "date": "span.date",
+    "ticketUrl": "a.tickets",
+    "venue": "span.venue",
+    "city": "span.city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
