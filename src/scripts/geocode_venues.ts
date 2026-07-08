@@ -77,4 +77,7 @@ async function main() {
   console.log(`\n[Geocode] Done. Geocoded: ${geocoded}, skipped: ${skipped}, failed: ${failed}.`);
 }
 
-main();
+void main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

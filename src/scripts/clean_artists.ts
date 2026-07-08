@@ -78,4 +78,7 @@ async function main() {
   console.log(`[Cleaner] Cleanup complete. Cleaned count: ${cleanedList.length}`);
 }
 
-main();
+void main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

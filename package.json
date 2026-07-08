@@ -26,7 +26,8 @@
     "record-conflict-drop": "tsx src/scripts/record_conflict_drop.ts",
     "prune-non-artists": "tsx src/scripts/prune_non_artists.ts",
     "test": "SCRAPER_ALLOW_LOCAL_HOSTS=1 node --import tsx --test tests/*.test.ts",
-    "test:coverage": "SCRAPER_ALLOW_LOCAL_HOSTS=1 c8 node --import tsx --test tests/*.test.ts"
+    "test:coverage": "SCRAPER_ALLOW_LOCAL_HOSTS=1 c8 node --import tsx --test tests/*.test.ts",
+    "lint": "eslint src/ tests/"
   },
   "keywords": [
     "concert",
@@ -51,9 +52,12 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@types/node": "^26.1.1",
     "c8": "^10.1.2",
+    "eslint": "^10.6.0",
     "tsx": "^4.19.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "typescript-eslint": "^8.63.0"
   }
 }
