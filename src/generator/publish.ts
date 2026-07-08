@@ -7,7 +7,11 @@ export interface PublishStats {
   totalConcerts: number;
   uniqueArtists: number;
   uniqueCities: number;
+  pageCount: number;
+  pageSize: number;
 }
+
+export const CONCERTS_PAGE_SIZE = 500;
 
 // Bump whenever the shape of a Concert object changes in a way a consumer
 // should know about (a field added, its meaning changed, or a field removed).
@@ -323,6 +327,38 @@ export async function publishConcerts(concerts: Concert[], outputDir: string): P
     );
   }
 
+  // 4.5. Write additive paginated files under dist/concerts/page-{n}.json
+  const concertsDir = path.join(outputDir, 'concerts');
+  await fs.mkdir(concertsDir, { recursive: true });
+
+  const pageCount = Math.ceil(concerts.length / CONCERTS_PAGE_SIZE);
+  const keepPageFiles = new Set<string>();
+
+  for (let i = 0; i < pageCount; i++) {
+    const slice = concerts.slice(i * CONCERTS_PAGE_SIZE, (i + 1) * CONCERTS_PAGE_SIZE);
+    const fileName = `page-${i + 1}.json`;
+    keepPageFiles.add(fileName);
+    writePromises.push(
+      fs.writeFile(
+        path.join(concertsDir, fileName),
+        JSON.stringify(slice),
+        'utf-8'
+      )
+    );
+  }
+
+  // Prune orphan page files in dist/concerts/
+  try {
+    const existingFiles = await fs.readdir(concertsDir);
+    for (const file of existingFiles) {
+      if (file.endsWith('.json') && !keepPageFiles.has(file)) {
+        writePromises.push(fs.rm(path.join(concertsDir, file), { force: true }));
+      }
+    }
+  } catch (err: any) {
+    // fine if directory didn't exist or readdir failed
+  }
+
   await Promise.all(writePromises);
 
   // 5. Create index metadata: dist/index.json
@@ -332,7 +368,9 @@ export async function publishConcerts(concerts: Concert[], outputDir: string): P
     stats: {
       totalConcerts: concerts.length,
       uniqueArtists: uniqueArtists.size,
-      uniqueCities: uniqueCities.size
+      uniqueCities: uniqueCities.size,
+      pageCount,
+      pageSize: CONCERTS_PAGE_SIZE
     },
     artists: sortedArtists,
     cities: sortedCities

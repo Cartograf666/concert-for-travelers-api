@@ -42,6 +42,27 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Concert'
+  /concerts/page-{n}.json:
+    get:
+      summary: Retrieve Paginated Concerts
+      description: Returns a paginated chunk of the active/future concerts list. Stable page size is 500.
+      parameters:
+        - name: n
+          in: path
+          required: true
+          description: Page number (1-indexed)
+          schema:
+            type: integer
+            minimum: 1
+      responses:
+        '200':
+          description: A page slice of concerts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Concert'
   /artists.json:
     get:
       summary: Retrieve Artist Catalog
@@ -163,6 +184,8 @@ components:
         - totalConcerts
         - uniqueArtists
         - uniqueCities
+        - pageCount
+        - pageSize
       properties:
         totalConcerts:
           type: integer
@@ -173,6 +196,12 @@ components:
         uniqueCities:
           type: integer
           minimum: 0
+        pageCount:
+          type: integer
+          minimum: 0
+        pageSize:
+          type: integer
+          minimum: 1
     ArtistCatalogEntry:
       type: object
       required:

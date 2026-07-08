@@ -254,3 +254,38 @@ test('Publisher - city grouping falls back to the raw city string when lat/lng i
   });
 });
 
+test('Publisher - paginates concerts into 500-sized pages additively and prunes orphans', async () => {
+  await withTempDir(async (dir) => {
+    const concerts = Array.from({ length: 1002 }, (_, i) =>
+      makeConcert({ artist: `Artist ${String(i).padStart(4, '0')}`, date: '2026-10-12', city: 'Berlin' })
+    );
+
+    await publishConcerts(concerts, dir);
+
+    // 1. Verify index.json has pageCount and pageSize
+    const index = JSON.parse(await fs.readFile(path.join(dir, 'index.json'), 'utf-8'));
+    assert.strictEqual(index.stats.pageCount, 3);
+    assert.strictEqual(index.stats.pageSize, 500);
+
+    // 2. Verify all pages are written
+    const page1 = JSON.parse(await fs.readFile(path.join(dir, 'concerts', 'page-1.json'), 'utf-8'));
+    const page2 = JSON.parse(await fs.readFile(path.join(dir, 'concerts', 'page-2.json'), 'utf-8'));
+    const page3 = JSON.parse(await fs.readFile(path.join(dir, 'concerts', 'page-3.json'), 'utf-8'));
+
+    assert.strictEqual(page1.length, 500);
+    assert.strictEqual(page2.length, 500);
+    assert.strictEqual(page3.length, 2);
+
+    // 3. Verify they concatenate back to the master list
+    const master = JSON.parse(await fs.readFile(path.join(dir, 'concerts.json'), 'utf-8'));
+    const concatenated = [...page1, ...page2, ...page3];
+    assert.deepStrictEqual(concatenated, master);
+
+    // 4. Verify no extra pages exist (e.g. pruneOrphanFiles works)
+    await fs.writeFile(path.join(dir, 'concerts', 'page-4.json'), '[]');
+    await publishConcerts(concerts, dir);
+    const files = await fs.readdir(path.join(dir, 'concerts'));
+    assert.deepStrictEqual(files.sort(), ['page-1.json', 'page-2.json', 'page-3.json']);
+  });
+});
+
