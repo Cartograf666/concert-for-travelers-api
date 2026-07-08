@@ -19,10 +19,10 @@ jobs:
     timeout-minutes: 90 # can cover hundreds/thousands of artist configs; a wedged run must still not run forever
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
         with:
           node-version: 20
           cache: 'npm'
@@ -50,7 +50,7 @@ jobs:
       # skipped (conditional request / hash match), same pattern as the daily
       # venue scrape cache.
       - name: Restore artist scrape cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: reports/artist-scrape-cache.json
           key: artist-scrape-cache-${{ github.run_id }}
@@ -62,7 +62,7 @@ jobs:
       # same head of the list every run, and so a blocked/failed run falls back to
       # last-good data instead of dropping an artist's shows.
       - name: Restore Bandsintown cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: reports/bandsintown-cache.json
           key: bandsintown-cache-${{ github.run_id }}
@@ -74,7 +74,7 @@ jobs:
       # src/engine/eventbrite.ts for why this scrapes public pages (no public
       # multi-organizer search API exists) and the accepted ToS-risk tradeoff.
       - name: Restore Eventbrite cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: reports/eventbrite-cache.json
           key: eventbrite-cache-${{ github.run_id }}
@@ -95,27 +95,27 @@ jobs:
 
       - name: Save artist scrape cache
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: reports/artist-scrape-cache.json
           key: artist-scrape-cache-${{ github.run_id }}
 
       - name: Save Bandsintown cache
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: reports/bandsintown-cache.json
           key: bandsintown-cache-${{ github.run_id }}
 
       - name: Save Eventbrite cache
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: reports/eventbrite-cache.json
           key: eventbrite-cache-${{ github.run_id }}
 
       - name: Upload reports
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: artist-scrape-reports
           path: |

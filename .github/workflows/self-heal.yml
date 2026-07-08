@@ -18,7 +18,7 @@ jobs:
     # Run only if the triggering workflow succeeded or completed, and we have failures to check
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
       - name: Download fail log from triggering run
         id: download-reports
@@ -56,7 +56,7 @@ jobs:
 
       - name: Setup Node.js
         if: steps.check-failures.outputs.has_failures == 'true'
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
         with:
           node-version: 20
           cache: 'npm'
@@ -106,7 +106,7 @@ jobs:
       - name: Open PR with repaired scrapers
         id: cpr
         if: steps.check-failures.outputs.has_failures == 'true' && steps.check-repaired.outputs.repaired == 'true'
-        uses: peter-evans/create-pull-request@v8
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8
         with:
           commit-message: "auto: self-healed broken scrapers"
           branch: auto/self-heal-${{ github.event.workflow_run.id }}

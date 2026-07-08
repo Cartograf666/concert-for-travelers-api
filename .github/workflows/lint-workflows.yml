@@ -17,10 +17,10 @@ jobs:
     timeout-minutes: 5 # a wedged run must not sit on the 6h Actions default ceiling
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
       - name: Run actionlint
-        uses: reviewdog/action-actionlint@v1.27.0
+        uses: reviewdog/action-actionlint@12f228ecba8c567a103efafb3fb0bf5b60dc16b7 # v1.27.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-check

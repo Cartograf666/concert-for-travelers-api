@@ -31,10 +31,10 @@ jobs:
       should_deploy: ${{ steps.health-check.outputs.should_deploy }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
         with:
           node-version: 20
           cache: 'npm'
@@ -64,7 +64,7 @@ jobs:
       # the fresh checkout starts empty, every venue always looks "changed", and the
       # scraper's short-circuit never fires in CI.
       - name: Restore scrape cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: reports/scrape-cache.json
           key: scrape-cache-${{ github.run_id }}
@@ -75,7 +75,7 @@ jobs:
       # only reports genuinely new ones. Not git-tracked -- same cache mechanism as
       # the scrape cache above, so it doesn't add another writer to the repo.
       - name: Restore changelog cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: reports/changelog-cache.json
           key: changelog-cache-${{ github.run_id }}
@@ -85,7 +85,7 @@ jobs:
       # Per-country last-successful Ticketmaster results, so a transient failure on
       # one country falls back to yesterday's data instead of contributing nothing.
       - name: Restore Ticketmaster cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: reports/ticketmaster-cache.json
           key: ticketmaster-cache-${{ github.run_id }}
@@ -95,7 +95,7 @@ jobs:
       # Baseline of the last successfully-deployed publish stats, so the health
       # gate below has something to compare a fresh totalConcerts against.
       - name: Restore last-good publish stats
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: reports/last-good-stats.json
           key: publish-stats-${{ github.run_id }}
@@ -106,7 +106,7 @@ jobs:
       # workflow -- see there for why). This job only merges in whatever it last
       # produced, never scrapes scrapers/artists/ itself, so it never saves this key.
       - name: Restore artist scrape cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: reports/artist-scrape-cache.json
           key: artist-scrape-cache-${{ github.run_id }}
@@ -116,7 +116,7 @@ jobs:
       # Read-only, same as the artist tour-page cache above: owned by
       # artist-scrape.yml's Bandsintown sweep, merged into today's publish here.
       - name: Restore Bandsintown cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: reports/bandsintown-cache.json
           key: bandsintown-cache-${{ github.run_id }}
@@ -126,7 +126,7 @@ jobs:
       # Read-only, same as the two caches above: owned by artist-scrape.yml's
       # Eventbrite sweep, merged into today's publish here.
       - name: Restore Eventbrite cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: reports/eventbrite-cache.json
           key: eventbrite-cache-${{ github.run_id }}
@@ -151,21 +151,21 @@ jobs:
 
       - name: Save scrape cache
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: reports/scrape-cache.json
           key: scrape-cache-${{ github.run_id }}
 
       - name: Save changelog cache
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: reports/changelog-cache.json
           key: changelog-cache-${{ github.run_id }}
 
       - name: Save Ticketmaster cache
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: reports/ticketmaster-cache.json
           key: ticketmaster-cache-${{ github.run_id }}
@@ -177,7 +177,7 @@ jobs:
       # NOT a failure -- it just means there's nothing new to deploy.
       - name: Check publish health
         id: health-check
-        uses: actions/github-script@v7
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
         with:
           script: |
             const fs = require('fs');
@@ -214,7 +214,7 @@ jobs:
 
       - name: Save last-good publish stats
         if: steps.health-check.outputs.should_deploy == 'true'
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: reports/last-good-stats.json
           key: publish-stats-${{ github.run_id }}
@@ -275,7 +275,7 @@ jobs:
       # "nothing to heal" on precisely the runs where scraper breakage was worst.
       - name: Upload fail log report
         if: always()
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: scraper-reports
           path: reports/
@@ -283,11 +283,11 @@ jobs:
 
       - name: Setup Pages
         if: steps.health-check.outputs.should_deploy == 'true'
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@1f0c5cde4bc74cd7e1254d0cb4de8d49e9068c7d # v4
 
       - name: Upload Pages artifact
         if: steps.health-check.outputs.should_deploy == 'true'
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
         with:
           path: './dist'
 
@@ -328,11 +328,11 @@ jobs:
       # Needed to resolve the local ./.github/actions/alert-on-failure composite
       # action below -- deploy-pages itself doesn't need a checkout.
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5
 
       - name: Alert on failure
         if: failure()
