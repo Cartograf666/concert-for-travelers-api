@@ -1,14 +1,23 @@
 import { loadDb, saveDb, queryBatch, normName, sleep, ArtistEntry, Resolved } from './enrich_wikidata_bulk.js';
 
+export interface BackfillArtistEntry extends ArtistEntry {
+  mbidBackfillTriedAt?: string;
+}
+
 /**
  * Applies one batch's SPARQL resolution to the DB rows in place, filling `mbid`
  * only for a confident (non-ambiguous) match that actually carries an mbid.
  * Extracted as its own function so this mapping -- not just the network/DB I/O
  * around it -- has direct test coverage.
  */
-export function applyResolvedBatch(batch: ArtistEntry[], resolved: Map<string, Resolved | 'ambiguous'>): number {
+export function applyResolvedBatch(
+  batch: BackfillArtistEntry[],
+  resolved: Map<string, Resolved | 'ambiguous'>,
+  stamp: string = new Date().toISOString()
+): number {
   let hits = 0;
   for (const entry of batch) {
+    entry.mbidBackfillTriedAt = stamp;
     const r = resolved.get(normName(entry.name));
     if (r && r !== 'ambiguous' && r.mbid) {
       entry.mbid = r.mbid;
@@ -34,17 +43,18 @@ export function applyResolvedBatch(batch: ArtistEntry[], resolved: Map<string, R
 async function main() {
   const n = parseInt(process.argv[2] || '100000', 10);
   const batchSize = parseInt(process.argv[3] || '80', 10);
-  const artists = await loadDb();
+  const artists = await loadDb() as BackfillArtistEntry[];
 
-  const pending = artists.filter((a) => !a.mbid).slice(0, n);
+  const pending = artists.filter((a) => !a.mbid && !a.mbidBackfillTriedAt).slice(0, n);
   if (pending.length === 0) {
-    console.log('[backfill-mbid] Nothing pending -- every artist already has an mbid.');
+    console.log('[backfill-mbid] Nothing pending -- every artist already has an mbid or has been attempted.');
     return;
   }
   console.log(`[backfill-mbid] ${pending.length} artists missing mbid, batch ${batchSize} (${Math.ceil(pending.length / batchSize)} queries).`);
 
   let hits = 0;
   let processed = 0;
+  const stamp = new Date().toISOString();
 
   for (let i = 0; i < pending.length; i += batchSize) {
     const batch = pending.slice(i, i + batchSize);
@@ -57,7 +67,7 @@ async function main() {
       continue;
     }
 
-    hits += applyResolvedBatch(batch, resolved);
+    hits += applyResolvedBatch(batch, resolved, stamp);
     processed += batch.length;
 
     await saveDb(artists);
@@ -68,7 +78,7 @@ async function main() {
   console.log('[backfill-mbid] Done.');
   console.log(`  processed : ${processed}`);
   console.log(`  hits      : ${hits}`);
-  console.log(`  misses    : ${processed - hits} (no confident Wikidata match -- still eligible for a future run or the per-artist MusicBrainz tier)`);
+  console.log(`  misses    : ${processed - hits} (no confident Wikidata match -- marked tried, still eligible for the per-artist MusicBrainz tier)`);
 }
 
 // Guard so tests can import applyResolvedBatch without triggering this file's
