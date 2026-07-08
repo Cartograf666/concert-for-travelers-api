@@ -95,6 +95,11 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   distinct collision groups, 758 names, once counting partial mangling too).
   Now Unicode-aware (`\p{L}`/`\p{N}`) with a stable hash fallback for names with
   no letters/digits at all. → `src/pipeline/process.ts` (`slugify`).
+- **`priceRange`.** Best-effort ticket price (`{min, max, currency}`), from
+  Ticketmaster's own structured `priceRanges` only — collapses multiple
+  tiers (e.g. standard + VIP) to the overall min/max. Never guessed/parsed
+  from scraped free text; venue scrapers just don't get one. →
+  `src/schemas/concert.ts`, `src/engine/ticketmaster.ts`, `src/pipeline/process.ts`.
 
 ---
 
@@ -166,9 +171,7 @@ _(done — see ✅ Done above)_
 _(done — see ✅ Done above)_
 
 ### Tier 3 — richer events
-- ✅ Event time, festival awareness, venue kind — see ✅ Done above.
-- 💡 **Price** — best-effort only. Add if a source exposes it cleanly
-  (Ticketmaster priceRanges); skip otherwise. Not a priority.
+- ✅ Event time, festival awareness, venue kind, price range — see ✅ Done above.
 
 ### Tier 4 — dropped
 - ❌ Nearest airport (IATA) — not needed.
