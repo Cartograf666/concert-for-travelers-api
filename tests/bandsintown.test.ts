@@ -121,6 +121,26 @@ test('Bandsintown - a 404 is recorded as empty (not a block) and does not stop t
   assert.strictEqual(concerts.length, 1);
 });
 
+test('Bandsintown - a cluster of 401s (unresolvable names) does NOT trip the block guard', async () => {
+  // Real regression: a run of never-fetched niche names (odd punctuation) all 401'd
+  // consecutively and wrongly halted the whole sweep. 401 = "no data for this name",
+  // not throttling, so it must behave like 404: skip-empty and keep going.
+  let goodFetched = false;
+  const fetchFn: BitFetchFn = async (artist) => {
+    if (artist.startsWith('bad')) { const e: any = new Error('unauthorized'); e.response = { status: 401 }; throw e; }
+    goodFetched = true;
+    return [bitEvent({ artist: { name: artist }, venue: { name: 'V', city: 'C', country: 'US' } })];
+  };
+  const cache: BandsintownCache = {};
+  // 6 consecutive 401s (> the 5-streak limit) followed by a real artist.
+  const artists = ['bad1', 'bad2', 'bad3', 'bad4', 'bad5', 'bad6', 'Metallica'];
+  const concerts = await fetchBandsintownConcerts(artists, { cache, fetchFn, delayMs: 0 });
+
+  assert.ok(goodFetched, 'the sweep must reach the real artist after the 401 cluster');
+  assert.strictEqual(cache['Metallica'].concerts.length, 1);
+  assert.strictEqual(concerts.length, 1);
+});
+
 test('Bandsintown - a sustained failure streak stops the sweep (likely a block)', async () => {
   let calls = 0;
   const fetchFn: BitFetchFn = async () => { calls++; const e: any = new Error('rate limited'); e.response = { status: 429 }; throw e; };

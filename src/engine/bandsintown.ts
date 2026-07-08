@@ -274,9 +274,14 @@ export async function fetchBandsintownConcerts(
       await sleep(delayMs);
     } catch (err: any) {
       const status = err.response?.status;
-      // A 404 just means Bandsintown has no page for that exact name -- record an
-      // empty result so we don't retry it every run, and it's NOT a block signal.
-      if (status === 404) {
+      // 404 (no page for this name) and 401 both mean "no usable data for this exact
+      // artist", NOT that we're being throttled -- Bandsintown returns 401 for names
+      // it can't resolve (e.g. odd punctuation/quotes in niche names), while OTHER
+      // artists in the same run keep succeeding. Treat both as skip-empty so a run of
+      // such names can't false-trip the block guard (observed live: a cluster of
+      // never-fetched Russian names all 401'd in a row and wrongly halted the sweep).
+      // Real throttling shows up as 429, which still counts toward the block streak.
+      if (status === 404 || status === 401) {
         cache[artist] = { fetchedAt: scrapedAt, concerts: [] };
         blockStreak = 0;
         fetched++;
