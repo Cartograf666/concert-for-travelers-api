@@ -1,21 +1,7 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { loadDenylistGuard } from './denylist.js';
 import { loadApprovedArtists, saveApprovedArtists } from './artistDb.js';
-
-export interface ArtistSocials {
-  spotify?: string | null;
-  instagram?: string | null;
-  facebook?: string | null;
-  youtube?: string | null;
-  telegram?: string | null;
-  vk?: string | null;
-}
-
-export interface ArtistEntry {
-  name: string;
-  website: string | null;
-  socials?: ArtistSocials;
-}
+import { ArtistEntry, ArtistSocials } from '../schemas/artist.js';
 
 /** Matches repair.ts's check: 401/403/429 mean this key/model is unauthorized or
  * out of quota; 404 means the model ID itself doesn't exist (e.g. a deprecated

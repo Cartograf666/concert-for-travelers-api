@@ -3,6 +3,7 @@ import * as path from 'path';
 import { slugify } from '../pipeline/process.js';
 import { ScraperConfigSchema } from '../schemas/config.js';
 import { loadApprovedArtists, saveApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from '../pipeline/artistDb.js';
+import { ArtistEntry, ArtistSocials } from '../schemas/artist.js';
 
 /**
  * Resumable artist-site enrichment harness.
@@ -19,24 +20,6 @@ import { loadApprovedArtists, saveApprovedArtists, PRODUCTION_ARTIST_DB_DIR } fr
  * Keeping writes here (never in the agents) means the sharded artist DB (data/artists/)
  * is only ever mutated by one process, so concurrent agents can never corrupt it.
  */
-
-interface ArtistSocials {
-  spotify?: string | null;
-  instagram?: string | null;
-  facebook?: string | null;
-  youtube?: string | null;
-  telegram?: string | null;
-  vk?: string | null;
-}
-
-interface ArtistEntry {
-  name: string;
-  website: string | null;
-  tourUrl?: string | null;
-  socials?: ArtistSocials;
-  enrichedAt?: string;
-  sitesTriedAt?: string;
-}
 
 /** One artist as produced by a research agent. */
 interface EnrichmentResult {

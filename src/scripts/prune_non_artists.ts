@@ -3,13 +3,8 @@ import * as path from 'path';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { loadApprovedArtists, saveApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from '../pipeline/artistDb.js';
 import { z } from 'zod';
-import { getGeminiKeys } from '../engine/gemini_keys.js';
-
-interface ArtistEntry {
-  name: string;
-  artistCheckedAt?: string;
-  [key: string]: any;
-}
+import { getGeminiKeys, loadDotEnvFallback } from '../engine/gemini_keys.js';
+import { ArtistEntry } from '../schemas/artist.js';
 
 interface ClassificationResult {
   name: string;
@@ -138,18 +133,7 @@ function cleanAndParseJson(text: string): any {
 }
 
 async function getApiKeys(): Promise<string[]> {
-  if (!process.env.GEMINI_API_KEY) {
-    for (const envPath of [path.join(process.cwd(), '.env'), path.join(process.env.HOME || '', '.env')]) {
-      try {
-        const dotenvContent = await fs.readFile(envPath, 'utf-8');
-        const match = dotenvContent.match(/^GEMINI_API_KEY\s*=\s*["']?(.*?)["']?$/m);
-        if (match) {
-          process.env.GEMINI_API_KEY = match[1].trim();
-          break;
-        }
-      } catch {}
-    }
-  }
+  await loadDotEnvFallback();
   const keys = getGeminiKeys();
   if (keys.length === 0) {
     throw new Error('GEMINI_API_KEY environment variable is not set and could not be loaded from .env.');

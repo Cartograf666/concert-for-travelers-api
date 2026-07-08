@@ -2,14 +2,7 @@ import * as fs from 'fs/promises';
 import * as path from 'path';
 import { loadApprovedArtists, saveApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from '../pipeline/artistDb.js';
 import { isBlockedHost } from '../schemas/config.js';
-
-export interface ArtistEntry {
-  name: string;
-  website: string | null;
-  tourUrl?: string | null;
-  tourUrlProbeTriedAt?: string;
-  [key: string]: any;
-}
+import { ArtistEntry } from '../schemas/artist.js';
 
 export interface ProbeResult {
   name: string;

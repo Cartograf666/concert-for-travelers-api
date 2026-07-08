@@ -1,4 +1,5 @@
-import { loadDb, saveDb, queryBatch, normName, sleep, ArtistEntry, Resolved } from './enrich_wikidata_bulk.js';
+import { loadDb, saveDb, queryBatch, normName, sleep, Resolved } from './enrich_wikidata_bulk.js';
+import { ArtistEntry } from '../schemas/artist.js';
 
 export interface BackfillArtistEntry extends ArtistEntry {
   mbidBackfillTriedAt?: string;

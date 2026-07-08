@@ -1,6 +1,7 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import { lastfmArtistInfo } from './enrich_metadata.js';
+import { ArtistEntry } from '../schemas/artist.js';
 
 /**
  * Ranks candidates for a NEW dedicated tour-page scraper config
@@ -26,12 +27,7 @@ import { lastfmArtistInfo } from './enrich_metadata.js';
  * Usage: rank_scraper_candidates.ts [N]   default 20
  */
 
-interface ArtistEntry {
-  name: string;
-  website: string | null;
-  popularity?: { listeners: number; playcount: number };
-  [key: string]: any;
-}
+
 
 function normName(s: string): string {
   return s.trim().replace(/\s+/g, ' ').toLowerCase();

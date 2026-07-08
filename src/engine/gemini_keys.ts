@@ -11,6 +11,24 @@
  *   - GEMINI_API_KEYS: a single comma/space/newline-separated list (convenient for
  *     stuffing several keys into one secret)
  */
+import * as fs from 'fs/promises';
+import * as path from 'path';
+
+export async function loadDotEnvFallback(): Promise<void> {
+  if (!process.env.GEMINI_API_KEY) {
+    for (const envPath of [path.join(process.cwd(), '.env'), path.join(process.env.HOME || '', '.env')]) {
+      try {
+        const dotenvContent = await fs.readFile(envPath, 'utf-8');
+        const match = dotenvContent.match(/^GEMINI_API_KEY\s*=\s*["']?(.*?)["']?$/m);
+        if (match) {
+          process.env.GEMINI_API_KEY = match[1].trim();
+          break;
+        }
+      } catch {}
+    }
+  }
+}
+
 export function getGeminiKeys(env: NodeJS.ProcessEnv = process.env): string[] {
   const keys: string[] = [];
 

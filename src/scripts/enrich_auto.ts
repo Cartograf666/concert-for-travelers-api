@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { loadApprovedArtists, saveApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from '../pipeline/artistDb.js';
+import { ArtistEntry } from '../schemas/artist.js';
 
 /**
  * Tier-0 deterministic artist enrichment: structured sources BEFORE any LLM.
@@ -32,18 +33,6 @@ interface Socials {
   youtube: string | null;
   telegram: string | null;
   vk: string | null;
-}
-
-interface ArtistEntry {
-  name: string;
-  website: string | null;
-  tourUrl?: string | null;
-  socials?: Socials;
-  mbid?: string;
-  enrichedAt?: string;
-  enrichedBy?: string;
-  autoTriedAt?: string;
-  wdBulkTriedAt?: string;
 }
 
 /** A single source's contribution. `ok` = the server was reachable (not a network error). */

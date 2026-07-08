@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { loadApprovedArtists, saveApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from '../pipeline/artistDb.js';
+import { ArtistEntry } from '../schemas/artist.js';
 
 /**
  * Fast Tier-0 accelerator: resolve MANY artists per Wikidata SPARQL query instead
@@ -28,18 +29,6 @@ interface Socials {
   youtube: string | null;
   telegram: string | null;
   vk: string | null;
-}
-
-export interface ArtistEntry {
-  name: string;
-  website: string | null;
-  tourUrl?: string | null;
-  socials?: Socials;
-  mbid?: string;
-  enrichedAt?: string;
-  enrichedBy?: string;
-  autoTriedAt?: string;
-  wdBulkTriedAt?: string;
 }
 
 const UA = 'ConcertForTravelers/1.0 ( axell2479@gmail.com )'; // Wikidata requires an identifying UA
