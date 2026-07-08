@@ -3,7 +3,7 @@ import assert from 'node:assert';
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import * as os from 'os';
-import { publishConcerts } from '../src/generator/publish.js';
+import { publishConcerts, CONCERT_SCHEMA_VERSION } from '../src/generator/publish.js';
 import { Concert } from '../src/schemas/concert.js';
 
 function makeConcert(overrides: Partial<Concert>): Concert {
@@ -48,6 +48,7 @@ test('Publisher - writes concerts.json, per-artist/per-city files, and index.jso
     assert.strictEqual(berlin.length, 1);
 
     const index = JSON.parse(await fs.readFile(path.join(dir, 'index.json'), 'utf-8'));
+    assert.strictEqual(index.schemaVersion, CONCERT_SCHEMA_VERSION);
     assert.strictEqual(index.stats.totalConcerts, 2);
     assert.strictEqual(index.stats.uniqueArtists, 2);
     assert.strictEqual(index.stats.uniqueCities, 2);
