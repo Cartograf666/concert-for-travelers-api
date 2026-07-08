@@ -1,0 +1,17 @@
+{
+  "id": "artist-harald-lassen",
+  "domain": "www.haraldlassen.com",
+  "url": "https://www.haraldlassen.com/concerts",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.eventlist-event-column",
+    "artistNameFallback": "Harald Lassen",
+    "date": "time.event-date",
+    "ticketUrl": "a.event-tickets-url",
+    "venue": "span.event-venue",
+    "city": "span.event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "NO"
+  }
+}
