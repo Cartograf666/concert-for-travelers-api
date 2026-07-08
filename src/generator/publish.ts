@@ -347,11 +347,14 @@ export async function publishConcerts(concerts: Concert[], outputDir: string): P
     );
   }
 
-  // Prune orphan page files in dist/concerts/
+  // Prune orphan page files in dist/concerts/ -- matched strictly against the
+  // page-N.json pattern (not just "any .json") so this can never reach out and
+  // delete an unrelated file some other future writer drops in this directory.
+  const PAGE_FILE_PATTERN = /^page-\d+\.json$/;
   try {
     const existingFiles = await fs.readdir(concertsDir);
     for (const file of existingFiles) {
-      if (file.endsWith('.json') && !keepPageFiles.has(file)) {
+      if (PAGE_FILE_PATTERN.test(file) && !keepPageFiles.has(file)) {
         writePromises.push(fs.rm(path.join(concertsDir, file), { force: true }));
       }
     }
