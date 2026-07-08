@@ -65,6 +65,45 @@ deduplication pipeline before publishing.
 
 Deployed to `https://cartograf666.github.io/concert-for-travelers-api/`:
 
+### Consumer Quickstart
+
+To fetch the upcoming concerts array, simply issue a GET request to `concerts.json`:
+
+```javascript
+fetch('https://cartograf666.github.io/concert-for-travelers-api/concerts.json')
+  .then(response => response.json())
+  .then(concerts => console.log(`Loaded ${concerts.length} concerts`));
+```
+
+Example Concert JSON object structure:
+
+```json
+{
+  "artist": "The Cure",
+  "artistWebsite": "https://www.thecure.com/",
+  "spotifyId": "7bu3v4mR1rR2880r3W6y23",
+  "mbid": "cc197c19-090e-437c-9b41-f1b1967451c8",
+  "artistSocials": {
+    "spotify": "https://open.spotify.com/artist/7bu3v4mR1rR2880r3W6y23",
+    "instagram": "https://www.instagram.com/thecure/",
+    "facebook": "https://www.facebook.com/thecure",
+    "youtube": "https://www.youtube.com/user/TheCureVideography",
+    "telegram": null,
+    "vk": null
+  },
+  "date": "2026-11-01",
+  "startTime": "20:00",
+  "venue": "Hanns-Martin-Schleyer-Halle",
+  "city": "Stuttgart",
+  "country": "DE",
+  "lat": 48.7901,
+  "lng": 9.2241,
+  "ticketUrl": "https://www.ticketmaster.de/event/the-cure-tickets/12345",
+  "originalSource": "ticketmaster.de",
+  "scrapedAt": "2026-07-08T12:00:00.000Z"
+}
+```
+
 - **`index.json`** — `schemaVersion` (bump on a Concert-shape change worth a consumer noticing), run metrics (`lastRun`, `stats.totalConcerts/uniqueArtists/uniqueCities`), the full unique artist list, and the full unique city list.
 - **`concerts.json`** — the complete master array of all upcoming (never past-dated) concerts.
 - **`artists.json`** — the FULL approved-artist directory (all ~63,000, not just artists with a current concert), keyed by the same slug as `artists/{slug}.json`: `slug`, `name`, `website?`, `socials?`, `spotifyId?`, `mbid?`, `genres?`, `popularity?` (`listeners`/`playcount`), `image?`, `similarArtists?` (up to 8 `{name, slug, match}` entries, Last.fm's `artist.getsimilar` cross-referenced against this same whitelist so every suggestion resolves to a real `artists/{slug}.json`).
@@ -87,12 +126,15 @@ Each concert object follows `src/schemas/concert.ts`: `artist`, `artistWebsite?`
 │   ├── self-heal.yml           # Triggered after daily-scrape: repairs + auto-merges broken selectors
 │   ├── enrich-auto.yml         # Every 3h: free MusicBrainz Tier-0 enrichment sweep
 │   ├── enrich-database.yml     # Manual-only: Wikidata bulk pass + heavier Gemini-search enrichment
+│   ├── enrich-metadata.yml     # Every 4h: enriches artist metadata (genres/popularity/image)
+│   ├── enrich-similar.yml      # Every 6h: enriches artist similar-artists recommendations
 │   ├── freshness-watchdog.yml  # Independent check that a successful daily run happened recently
-│   └── pr-test.yml             # Validates PR code changes, build, and full test suite
+│   ├── pr-test.yml             # Validates PR code changes, build, and full test suite
+│   └── rank-scraper-candidates.yml # Manual-only: ranks target artists without tour scrapers by popularity
 ├── scrapers/                   # JSON config files for each venue scraper (91)
 │   └── artists/                # Artist tour-page scraper configs (5) -- see docs/ADD-VENUE-SCRAPERS.md
 ├── data/
-│   ├── approved_artists.json   # Approved artist whitelist (63,000+), normalization & socials
+│   ├── artists/                # Approved artist whitelist, sharded by name mod 8 (shard-0..7.json)
 │   ├── artist_scrape_targets.txt # Self-growing artist target list for discover-artists/Bandsintown/Eventbrite
 │   └── artist_denylist.json    # Genre/language/generic terms that must never whitelist-match
 ├── docs/
@@ -182,7 +224,7 @@ npm run clean-denylist      # removes genre/language/generic terms that slipped 
 ```
 
 ### Sync Target Artists Into the Whitelist
-A name added to `data/artist_scrape_targets.txt` must also be in `data/approved_artists.json` or its scraped/Bandsintown/Eventbrite shows get dropped as "not approved" -- idempotent, only adds what's missing.
+A name added to `data/artist_scrape_targets.txt` must also be in the sharded artist database in `data/artists/` or its scraped/Bandsintown/Eventbrite shows get dropped as "not approved" -- idempotent, only adds what's missing.
 ```bash
 npm run add-targets
 ```
@@ -235,7 +277,7 @@ npm run test
 
 ## Known Limitations
 
-- **`data/approved_artists.json` is a single shared file with multiple writers**, coordinated by git-push-retry rather than a real transaction. `enrich-auto`/`enrich-database`/`daily-scrape` share the `artist-db-write` concurrency group (GitHub queues them, so they don't literally run in parallel), but an unresolvable rebase conflict against some *other* push to `main` still occasionally makes a writer drop its own commit rather than fail the job. No data is lost (the affected artists just stay pending and get retried next run), but it's wasted API/compute for that attempt. Tracked in `data/conflict-drops.json` (via `npm run record-conflict-drop`) and surfaced as `status.json`'s `conflictDropsLast7Days` / the dashboard — watch for a climbing count.
+- **The sharded artist database in `data/artists/` has multiple writers**, coordinated by git-push-retry rather than a real transaction. While sharding prevents file conflicts for writers editing different shards, a conflict on the same shard can still occur. `enrich-auto`/`enrich-database`/`daily-scrape` share the `artist-db-write` concurrency group (GitHub queues them, so they don't literally run in parallel), but an unresolvable rebase conflict against some *other* push to `main` still occasionally makes a writer drop its own commit rather than fail the job. No data is lost (the affected artists just stay pending and get retried next run), but it's wasted API/compute for that attempt. Tracked in `data/conflict-drops.json` (via `npm run record-conflict-drop`) and surfaced as `status.json`'s `conflictDropsLast7Days` / the dashboard — watch for a climbing count.
 - **No hard schema-compatibility gate.** `index.json`'s `schemaVersion` is a signal ("something about the Concert shape changed, go check `src/schemas/concert.ts`"), not an enforced contract — every change so far has been additive, so an old consumer that ignores unknown fields is unaffected either way.
 
 ---
@@ -250,4 +292,4 @@ the history stays traceable.
 
 ## License
 
-ISC (see `package.json`). No formal `LICENSE` file yet.
+ISC (see the [LICENSE](LICENSE) file).

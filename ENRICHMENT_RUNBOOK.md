@@ -1,7 +1,7 @@
 # Artist Site Enrichment — Agent Runbook
 
 Hand this file to any coding agent (Claude Code / Agent SDK) to continue enriching
-`data/approved_artists.json` with each artist's official **website**, **tourUrl**
+the sharded approved artist database in `data/artists/` with each artist's official **website**, **tourUrl**
 (page listing current dates + cities), **socials**, and to emit per-artist scraper
 configs in `scrapers/artist-<slug>.json`.
 
@@ -178,7 +178,7 @@ Go back to Step 1 for the next chunk.
 ## 2. Optional: back up before each apply
 
 ```bash
-cp data/approved_artists.json /tmp/db.backup.$(date +%s).json
+cp -r data/artists/ /tmp/db.backup.$(date +%s)/
 ```
 
 `apply` only mutates entries named in the results file and is idempotent per name,
@@ -213,9 +213,10 @@ but a backup is cheap insurance.
 ## 5. Files involved
 
 - `src/scripts/enrich_sites.ts` — the harness (`npm run enrich-sites <select|apply|stats>`).
+- `src/pipeline/artistDb.ts` — manages approved artist database loading, saving, and transparent sharding layout.
 - `src/schemas/config.ts`, `src/engine/runner.ts` — engine extended for artist tour pages
   (optional `artist`, `artistNameFallback`, per-row `venue`/`city`/`country`; per-row wins,
   else fixed fallback). Backward-compatible with venue configs.
-- `data/approved_artists.json` — the 62k catalog being enriched.
+- `data/artists/` — the sharded approved artist database (shard-0..7.json).
 - `scrapers/artist-*.json` — generated per-artist scraper configs.
 - `tests/runner.test.ts` — includes the artist-tour-page test.
