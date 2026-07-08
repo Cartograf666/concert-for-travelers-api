@@ -95,6 +95,16 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   distinct collision groups, 758 names, once counting partial mangling too).
   Now Unicode-aware (`\p{L}`/`\p{N}`) with a stable hash fallback for names with
   no letters/digits at all. → `src/pipeline/process.ts` (`slugify`).
+- **`dist/changes.json` changelog feed.** Concerts new since the last run, so
+  the consumer can show "N new concerts since your last visit" without
+  diffing all of `concerts.json` itself. Identity reuses `processConcerts`'
+  own dedupe key (artist+date+city) — not a second definition of "same
+  concert". State (which concerts were already known) is deliberately *not*
+  git-tracked — persisted via the same `actions/cache` mechanism
+  `reports/scrape-cache.json` already uses, so it doesn't add another writer
+  to `data/approved_artists.json`'s contention. Cold-start (first-ever run)
+  reports zero changes rather than every concert at once. 30-day retention
+  window. → `src/generator/changelog.ts`, wired into `src/run.ts`.
 - **`priceRange`.** Best-effort ticket price (`{min, max, currency}`), from
   Ticketmaster's own structured `priceRanges` only — collapses multiple
   tiers (e.g. standard + VIP) to the overall min/max. Never guessed/parsed
@@ -188,10 +198,12 @@ _(done — see ✅ Done above)_
 
 ## 💡 Ideas / parking lot
 
-- 💡 Publish a lightweight changelog feed (`dist/changes.json`) so the consumer
-  can show "newly announced since your last visit".
-- 💡 Deduplicate the same show scraped from multiple sources (venue + Ticketmaster
-  + Bandsintown) into one canonical concert with merged ticket links.
+- ❌ Merge cross-source duplicates' ticket links into one canonical concert
+  (e.g. an array of purchase options across venue/Ticketmaster/Bandsintown).
+  Declined: exact-duplicate concerts (same artist+date+city) already merge
+  into one record today; this idea was specifically about *also* keeping
+  every source's ticket link instead of just one. Not wanted — surfacing
+  multiple ticket platforms isn't a goal here.
 - 💡 Currency-normalized price + affiliate ticket links.
 
 ---

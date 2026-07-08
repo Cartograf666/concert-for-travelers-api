@@ -8,6 +8,7 @@ import { enrichMissingArtistMetadata } from './pipeline/enrich.js';
 import { geocodeConcerts, loadGeocodeCache, saveGeocodeCache } from './pipeline/geocode.js';
 import { getGeminiKeys } from './engine/gemini_keys.js';
 import { publishConcerts, publishArtistCatalog } from './generator/publish.js';
+import { publishChangelog, loadChangelogCache, saveChangelogCache } from './generator/changelog.js';
 import { fetchTicketmasterConcerts, loadTicketmasterCache, saveTicketmasterCache } from './engine/ticketmaster.js';
 
 /**
@@ -259,6 +260,25 @@ async function main() {
     console.log(`[Orchestrator] Publishing ${normalizedConcerts.length} concerts to ${distDir}...`);
     await publishConcerts(normalizedConcerts, distDir);
     await writeStatus(distDir, results, changedCount, ticketmasterCount, normalizedConcerts.length, staleVenueIds);
+
+    // 9a. Publish dist/changes.json: concerts new since last run, so the consumer
+    // can show "N new concerts since your last visit" without diffing all of
+    // concerts.json itself. State isn't git-tracked -- same actions/cache
+    // mechanism as reports/scrape-cache.json, so it doesn't add another writer
+    // to data/approved_artists.json. Best-effort: never let this fail the run.
+    try {
+      const changelogCachePath = path.join(reportsDir, 'changelog-cache.json');
+      const changelogCache = await loadChangelogCache(changelogCachePath);
+      const changelogResult = await publishChangelog(normalizedConcerts, distDir, changelogCache);
+      await saveChangelogCache(changelogCachePath, changelogCache);
+      console.log(
+        changelogResult.coldStart
+          ? '[Orchestrator] Changelog: first-ever run, seeding known-concerts cache (nothing reported as new).'
+          : `[Orchestrator] Changelog: ${changelogResult.newCount} new concert(s) since last run.`
+      );
+    } catch (err: any) {
+      console.warn(`[Orchestrator] Skipped changelog publish: ${err.message}`);
+    }
 
     // 9b. Publish the full artist directory (name/aliases/genres/image/popularity/
     // socials/IDs for every whitelisted artist, not just those with a current

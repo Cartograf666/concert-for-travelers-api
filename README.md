@@ -69,6 +69,7 @@ Deployed to `https://cartograf666.github.io/concert-for-travelers-api/`:
 - **`artists/{artist-slug}.json`** — concerts for one artist (e.g. `artists/the-cure.json`), sorted by date.
 - **`cities/{city-slug}.json`** — concerts for one city (e.g. `cities/berlin.json`), sorted by date. Stale per-slug files for artists/cities no longer touring are pruned every run.
 - **`status.json`** — machine-readable health surface (scrapers ok/failed, stale venues, ticketmaster event count, `conflictDropsLast7Days` — see [Known limitations](#known-limitations)) for the dashboard and the freshness watchdog.
+- **`changes.json`** — concerts new since the last run (30-day rolling window), so the consumer can show "N new concerts since your last visit" without diffing all of `concerts.json` itself.
 
 Each concert object follows `src/schemas/concert.ts`: `artist`, `artistWebsite?`, `spotifyId?`, `mbid?`, `artistSocials?` (spotify/instagram/facebook/youtube/telegram/vk), `date` (`YYYY-MM-DD`), `startTime?` (`HH:MM`), `venue`, `venueKind?` (stadium/arena/club/theatre/hall/open-air/other), `city`, `country` (ISO 3166-1 alpha-2), `lat?`/`lng?`, `festival?` (`{name, url?}`), `lineup?`, `priceRange?` (`{min, max, currency}`, Ticketmaster only), `ticketUrl?`, `originalSource`, `scrapedAt`.
 
