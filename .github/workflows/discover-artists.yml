@@ -31,9 +31,13 @@ jobs:
 
       - name: Discover popular artists from charts
         env:
-          # Optional: a free Last.fm key unlocks worldwide per-country coverage.
-          # Without it the script runs Deezer-only (keyless, but thinner/regional).
+          # All optional -- each source activates only when its key is present. With
+          # none set, the script runs Deezer-only (keyless, thinner/regional).
+          # Last.fm: worldwide per-country top artists. Spotify: Top-50 + Viral-50
+          # (rising) per market + popularity.
           LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
         run: npm run discover-artists
 
       - name: Commit updated target list

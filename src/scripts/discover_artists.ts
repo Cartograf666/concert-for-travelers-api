@@ -108,6 +108,77 @@ async function fetchLastfmTopArtists(apiKey: string, limit = 100): Promise<strin
   return [...names];
 }
 
+// Markets to pull Spotify's editorial "Top 50 - <country>" and "Viral 50 - <country>"
+// charts for. Viral 50 is Spotify's rising/breaking signal specifically.
+const SPOTIFY_MARKETS = [
+  'Global', 'USA', 'United Kingdom', 'Germany', 'France', 'Spain', 'Italy',
+  'Netherlands', 'Sweden', 'Brazil', 'Mexico', 'Argentina', 'Canada', 'Australia',
+  'Japan', 'South Korea', 'India', 'Indonesia', 'Turkey', 'Poland', 'Portugal'
+];
+
+/** Popular + rising worldwide via Spotify's Top-50 / Viral-50 editorial playlists.
+ * Client-credentials flow (no user login). Playlists are DISCOVERED via search
+ * (owner must be Spotify) rather than hardcoded IDs, so a rotated chart id doesn't
+ * silently break it. Requires SPOTIFY_CLIENT_ID + SPOTIFY_CLIENT_SECRET; returns []
+ * (with a note) otherwise. */
+async function fetchSpotifyTopArtists(clientId: string, clientSecret: string): Promise<string[]> {
+  const names = new Set<string>();
+
+  // 1. client-credentials token
+  let token: string;
+  try {
+    const basic = Buffer.from(`${clientId}:${clientSecret}`).toString('base64');
+    const res = await fetch('https://accounts.spotify.com/api/token', {
+      method: 'POST',
+      headers: { Authorization: `Basic ${basic}`, 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: 'grant_type=client_credentials'
+    });
+    if (!res.ok) throw new Error(`token ${res.status}`);
+    token = ((await res.json()) as any).access_token;
+  } catch (e: any) {
+    console.warn(`[Discover] Spotify auth failed (${e.message}) -- skipping Spotify.`);
+    return [];
+  }
+  const auth = { Authorization: `Bearer ${token}` };
+
+  const artistsFromPlaylist = async (playlistId: string) => {
+    const url = `https://api.spotify.com/v1/playlists/${playlistId}/tracks?fields=items(track(artists(name)))&limit=100`;
+    const res = await fetch(url, { headers: auth });
+    if (!res.ok) return;
+    const json = (await res.json()) as any;
+    for (const item of json?.items ?? []) {
+      for (const a of item?.track?.artists ?? []) {
+        if (a?.name) names.add(a.name.trim());
+      }
+    }
+  };
+
+  const findPlaylist = async (query: string): Promise<string | null> => {
+    const url = `https://api.spotify.com/v1/search?q=${encodeURIComponent(query)}&type=playlist&limit=5`;
+    const res = await fetch(url, { headers: auth });
+    if (!res.ok) return null;
+    const json = (await res.json()) as any;
+    // Prefer the Spotify-owned editorial chart, and an exact-ish name match.
+    const items = json?.playlists?.items ?? [];
+    const owned = items.find((p: any) => p?.owner?.id === 'spotify' && p?.name?.toLowerCase().includes(query.toLowerCase().split(' - ')[0]));
+    return (owned ?? items[0])?.id ?? null;
+  };
+
+  for (const market of SPOTIFY_MARKETS) {
+    for (const kind of ['Top 50', 'Viral 50']) {
+      try {
+        const id = await findPlaylist(`${kind} - ${market}`);
+        if (id) await artistsFromPlaylist(id);
+      } catch (e: any) {
+        console.warn(`[Discover] Spotify ${kind} - ${market} failed: ${e.message}`);
+      }
+      await sleep(150);
+    }
+  }
+
+  return [...names];
+}
+
 async function main() {
   const targetsPath = path.join(process.cwd(), 'data', 'artist_scrape_targets.txt');
 
@@ -127,7 +198,17 @@ async function main() {
     lastfm.forEach((n) => discoveredSet.add(n));
     console.log(`[Discover] Last.fm returned ${lastfm.length} distinct chart artists across ${LASTFM_COUNTRIES.length} countries.`);
   } else {
-    console.log('[Discover] LASTFM_API_KEY not set -- skipping Last.fm (worldwide per-country) source. Deezer only.');
+    console.log('[Discover] LASTFM_API_KEY not set -- skipping Last.fm (worldwide per-country) source.');
+  }
+
+  const spotifyId = process.env.SPOTIFY_CLIENT_ID;
+  const spotifySecret = process.env.SPOTIFY_CLIENT_SECRET;
+  if (spotifyId && spotifySecret) {
+    const spotify = await fetchSpotifyTopArtists(spotifyId, spotifySecret);
+    spotify.forEach((n) => discoveredSet.add(n));
+    console.log(`[Discover] Spotify returned ${spotify.length} distinct chart artists (Top 50 + Viral 50 across ${SPOTIFY_MARKETS.length} markets).`);
+  } else {
+    console.log('[Discover] SPOTIFY_CLIENT_ID/SECRET not set -- skipping Spotify (popularity + rising) source.');
   }
   const discovered = [...discoveredSet];
 
