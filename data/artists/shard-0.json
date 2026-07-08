@@ -45452,7 +45452,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:26:10.958Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "composer",
+      "american",
+      "musical",
+      "Broadway",
+      "Musical Comedy"
+    ],
+    "popularity": {
+      "listeners": 109928,
+      "playcount": 845885
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8c7c30761583105ae3cc75d27924c473/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:26.936Z"
   },
   {
     "name": "Hunter Hayes",
@@ -45468,7 +45481,20 @@
     },
     "enrichedAt": "2026-07-07T07:13:56.620Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0c75ddc6-2b5d-4b01-8c99-3d9479a14683"
+    "mbid": "0c75ddc6-2b5d-4b01-8c99-3d9479a14683",
+    "genres": [
+      "country",
+      "male vocalists",
+      "Country-Pop",
+      "country rock",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 419985,
+      "playcount": 6824246
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/20f8e5037dafaaa52bfe72d73bb5c20e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:27.753Z"
   },
   {
     "name": "Hunter Parrish",
@@ -45484,7 +45510,20 @@
     },
     "enrichedAt": "2026-07-07T07:13:56.620Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "9b1c5bd1-929f-4574-ad4a-f8bf3c75ff50"
+    "mbid": "9b1c5bd1-929f-4574-ad4a-f8bf3c75ff50",
+    "genres": [
+      "Broadway",
+      "pop",
+      "american",
+      "amazing voices",
+      "male vocalists"
+    ],
+    "popularity": {
+      "listeners": 24363,
+      "playcount": 327829
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bb26f1933b20dd9faf6a8bee56cd61a9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:28.528Z"
   },
   {
     "name": "Hunter Valentine",
@@ -45500,7 +45539,20 @@
     },
     "enrichedAt": "2026-07-07T07:13:56.620Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7ca0cf1f-038d-4996-a73d-8cd34a056f77"
+    "mbid": "7ca0cf1f-038d-4996-a73d-8cd34a056f77",
+    "genres": [
+      "Canadian",
+      "female vocalists",
+      "indie rock",
+      "rock",
+      "indie"
+    ],
+    "popularity": {
+      "listeners": 18682,
+      "playcount": 274046
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e99aa22167ef30994ba0c6f7b5aaaa6a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:29.221Z"
   },
   {
     "name": "Hunters & Collectors",
@@ -45516,7 +45568,20 @@
     },
     "enrichedAt": "2026-07-07T07:13:56.620Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0fdd65ac-1b05-4043-b77f-24ec47f3657e"
+    "mbid": "0fdd65ac-1b05-4043-b77f-24ec47f3657e",
+    "genres": [
+      "australian",
+      "rock",
+      "80s",
+      "australia",
+      "Aussie"
+    ],
+    "popularity": {
+      "listeners": 109857,
+      "playcount": 1519549
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/efcfbe13da13a0ca675e18def5813b39/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:29.833Z"
   },
   {
     "name": "Hunters and Collectors",
@@ -45532,13 +45597,31 @@
     },
     "enrichedAt": "2026-07-07T07:13:56.620Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0fdd65ac-1b05-4043-b77f-24ec47f3657e"
+    "mbid": "0fdd65ac-1b05-4043-b77f-24ec47f3657e",
+    "genres": [
+      "australian",
+      "rock",
+      "80s",
+      "australia",
+      "Aussie"
+    ],
+    "popularity": {
+      "listeners": 109857,
+      "playcount": 1519549
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ed80f2822b4385e952ac0f19a1f75041/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:30.486Z"
   },
   {
     "name": "Huntington Beach",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:56.620Z",
-    "autoTriedAt": "2026-07-08T18:26:12.207Z"
+    "autoTriedAt": "2026-07-08T18:26:12.207Z",
+    "popularity": {
+      "listeners": 25,
+      "playcount": 26
+    },
+    "metaEnrichedAt": "2026-07-08T20:25:31.206Z"
   },
   {
     "name": "Huntsville Symphony Orchestra",
@@ -45553,33 +45636,55 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T07:13:56.620Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "metaTriedAt": "2026-07-08T20:25:31.868Z"
   },
   {
     "name": "Huping Ling",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:56.620Z",
-    "autoTriedAt": "2026-07-08T18:26:13.545Z"
+    "autoTriedAt": "2026-07-08T18:26:13.545Z",
+    "metaTriedAt": "2026-07-08T20:25:32.607Z"
   },
   {
     "name": "Hurby Azor",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:56.620Z",
     "mbid": "8115fe0f-2969-4a2f-96d7-a53dcd26b4c9",
-    "autoTriedAt": "2026-07-08T18:26:16.080Z"
+    "autoTriedAt": "2026-07-08T18:26:16.080Z",
+    "popularity": {
+      "listeners": 6,
+      "playcount": 23
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:33.402Z"
   },
   {
     "name": "Hurdy Gurdy",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:56.620Z",
     "mbid": "b21ff445-3a2f-405d-967d-1db5d8a5d17d",
-    "autoTriedAt": "2026-07-08T18:26:18.656Z"
+    "autoTriedAt": "2026-07-08T18:26:18.656Z",
+    "genres": [
+      "Progressive rock",
+      "classic rock",
+      "blues rock",
+      "rock",
+      "blues"
+    ],
+    "popularity": {
+      "listeners": 4131,
+      "playcount": 46016
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/98123ee44d2778c5010429e5e3f0ef14/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:34.141Z"
   },
   {
     "name": "Hurley, Earl",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:56.620Z",
-    "autoTriedAt": "2026-07-08T18:26:19.902Z"
+    "autoTriedAt": "2026-07-08T18:26:19.902Z",
+    "metaTriedAt": "2026-07-08T20:25:34.801Z"
   },
   {
     "name": "Huron",
@@ -45595,7 +45700,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:26:22.450Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "idm",
+      "ambient",
+      "electronic",
+      "glitch",
+      "electronica"
+    ],
+    "popularity": {
+      "listeners": 6461,
+      "playcount": 133807
+    },
+    "metaEnrichedAt": "2026-07-08T20:25:35.486Z"
   },
   {
     "name": "Hurray for the Riff Raff",
@@ -45611,7 +45728,20 @@
     },
     "enrichedAt": "2026-07-07T07:13:56.620Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b053efc9-e8ea-474a-981f-a3c6fffcc694"
+    "mbid": "b053efc9-e8ea-474a-981f-a3c6fffcc694",
+    "genres": [
+      "folk",
+      "americana",
+      "blues",
+      "female vocalist",
+      "New Orleans"
+    ],
+    "popularity": {
+      "listeners": 240677,
+      "playcount": 4171401
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1d5a8e0af38cb01fd13f7161840b24da/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:36.110Z"
   },
   {
     "name": "Hurricane",
@@ -45627,7 +45757,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:26:25.230Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "hard rock",
+      "hair metal",
+      "Glam Metal",
+      "80s",
+      "serbian"
+    ],
+    "popularity": {
+      "listeners": 86081,
+      "playcount": 1638242
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6b0171410fd46689db1314ae8a499818/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:36.999Z"
   },
   {
     "name": "Hurricane #1",
@@ -45643,7 +45786,20 @@
     },
     "enrichedAt": "2026-07-07T07:13:56.620Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "87788c91-a97e-40a8-860b-3d9a3956af5e"
+    "mbid": "87788c91-a97e-40a8-860b-3d9a3956af5e",
+    "genres": [
+      "britpop",
+      "indie rock",
+      "indie",
+      "rock",
+      "90s"
+    ],
+    "popularity": {
+      "listeners": 88974,
+      "playcount": 586703
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/807b7a2ecf1e40b55057cc586e81cefb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:37.657Z"
   },
   {
     "name": "Hurricane Chris",
@@ -45659,14 +45815,40 @@
     },
     "enrichedAt": "2026-07-07T07:13:56.620Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "686557c6-2be8-4c95-bde1-b4c567fc3448"
+    "mbid": "686557c6-2be8-4c95-bde1-b4c567fc3448",
+    "genres": [
+      "rap",
+      "Hip-Hop",
+      "Crunk",
+      "Dirty South",
+      "hip hop"
+    ],
+    "popularity": {
+      "listeners": 325267,
+      "playcount": 1369407
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/526e612baa2cd867024a0d220b26234c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:38.398Z"
   },
   {
     "name": "Hurricane G",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:56.620Z",
     "mbid": "5a03e6f8-a725-4638-9bc5-2e26555d1a4c",
-    "autoTriedAt": "2026-07-08T18:26:27.840Z"
+    "autoTriedAt": "2026-07-08T18:26:27.840Z",
+    "genres": [
+      "hip hop",
+      "rap",
+      "east coast rap",
+      "underground hip-hop",
+      "latin hip hop"
+    ],
+    "popularity": {
+      "listeners": 8490,
+      "playcount": 60729
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b0bc2b477c4948cf9230971966e2a813/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:39.120Z"
   },
   {
     "name": "Hurricane No. 1",
@@ -45682,7 +45864,19 @@
     },
     "enrichedAt": "2026-07-07T07:13:56.620Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "87788c91-a97e-40a8-860b-3d9a3956af5e"
+    "mbid": "87788c91-a97e-40a8-860b-3d9a3956af5e",
+    "genres": [
+      "britpop",
+      "indie rock",
+      "indie",
+      "rock",
+      "90s"
+    ],
+    "popularity": {
+      "listeners": 88974,
+      "playcount": 586703
+    },
+    "metaEnrichedAt": "2026-07-08T20:25:39.727Z"
   },
   {
     "name": "Hurricane#1",
@@ -45698,7 +45892,20 @@
     },
     "enrichedAt": "2026-07-07T07:13:56.620Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "87788c91-a97e-40a8-860b-3d9a3956af5e"
+    "mbid": "87788c91-a97e-40a8-860b-3d9a3956af5e",
+    "genres": [
+      "britpop",
+      "indie rock",
+      "indie",
+      "rock",
+      "90s"
+    ],
+    "popularity": {
+      "listeners": 88974,
+      "playcount": 586703
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/807b7a2ecf1e40b55057cc586e81cefb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:40.454Z"
   },
   {
     "name": "Hurriganes",
@@ -45714,7 +45921,20 @@
     },
     "enrichedAt": "2026-07-07T07:13:56.620Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1997642e-b202-426d-8fab-50e4c5dc095e"
+    "mbid": "1997642e-b202-426d-8fab-50e4c5dc095e",
+    "genres": [
+      "rock",
+      "finnish",
+      "classic rock",
+      "Rock and Roll",
+      "rock n roll"
+    ],
+    "popularity": {
+      "listeners": 75176,
+      "playcount": 1819517
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/27ba23b9946e1c3b4d13dba817903428/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:41.141Z"
   },
   {
     "name": "HURT",
@@ -45730,19 +45950,42 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:26:35.710Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "alternative rock",
+      "rock",
+      "alternative",
+      "polish",
+      "punk"
+    ],
+    "popularity": {
+      "listeners": 338511,
+      "playcount": 8500685
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/15950397e9c76771ea1fea653d4e7cf3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:41.863Z"
   },
   {
     "name": "Hurt So Bad",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:56.620Z",
-    "autoTriedAt": "2026-07-08T18:26:40.540Z"
+    "autoTriedAt": "2026-07-08T18:26:40.540Z",
+    "popularity": {
+      "listeners": 82,
+      "playcount": 107
+    },
+    "metaEnrichedAt": "2026-07-08T20:25:42.567Z"
   },
   {
     "name": "Hurting Each Other",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:56.620Z",
-    "autoTriedAt": "2026-07-08T18:26:44.428Z"
+    "autoTriedAt": "2026-07-08T18:26:44.428Z",
+    "popularity": {
+      "listeners": 15,
+      "playcount": 25
+    },
+    "metaEnrichedAt": "2026-07-08T20:25:43.459Z"
   },
   {
     "name": "Hurts",
@@ -45758,45 +46001,100 @@
     },
     "enrichedAt": "2026-07-07T07:13:56.620Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "fcd954c7-f327-446f-87a3-2c4b242c6f38"
+    "mbid": "fcd954c7-f327-446f-87a3-2c4b242c6f38",
+    "genres": [
+      "synthpop",
+      "electronic",
+      "british",
+      "new wave",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 903655,
+      "playcount": 37607268
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/af4c91ff60587e4b9f10464fd9d06639/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:44.142Z"
   },
   {
     "name": "Hurts to Be in Love",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:56.620Z",
-    "autoTriedAt": "2026-07-08T18:26:45.905Z"
+    "autoTriedAt": "2026-07-08T18:26:45.905Z",
+    "popularity": {
+      "listeners": 86,
+      "playcount": 210
+    },
+    "metaEnrichedAt": "2026-07-08T20:25:45.067Z"
   },
   {
     "name": "Húsakórið",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:56.620Z",
-    "autoTriedAt": "2026-07-08T18:26:47.200Z"
+    "autoTriedAt": "2026-07-08T18:26:47.200Z",
+    "popularity": {
+      "listeners": 103,
+      "playcount": 593
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/032714fb457b115c8e43b8b09e0922a2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:45.941Z"
   },
   {
     "name": "Husalah",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:56.620Z",
     "mbid": "4cd052cf-b074-4b11-b17f-f58f15a6078e",
-    "autoTriedAt": "2026-07-08T18:26:49.864Z"
+    "autoTriedAt": "2026-07-08T18:26:49.864Z",
+    "genres": [
+      "Bay Area",
+      "rap",
+      "Hip-Hop",
+      "West Coast Rap",
+      "hyphy"
+    ],
+    "popularity": {
+      "listeners": 49721,
+      "playcount": 377030
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f3050cc1f603424966738381f6f8767c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:46.756Z"
   },
   {
     "name": "Hüseyin Yalın",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:56.620Z",
-    "autoTriedAt": "2026-07-08T18:26:51.108Z"
+    "autoTriedAt": "2026-07-08T18:26:51.108Z",
+    "popularity": {
+      "listeners": 186,
+      "playcount": 1627
+    },
+    "metaEnrichedAt": "2026-07-08T20:25:47.516Z"
   },
   {
     "name": "Huseyngulu Sarabski",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:56.620Z",
-    "autoTriedAt": "2026-07-08T18:26:52.358Z"
+    "autoTriedAt": "2026-07-08T18:26:52.358Z",
+    "metaTriedAt": "2026-07-08T20:25:48.240Z"
   },
   {
     "name": "Hush",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:56.620Z",
     "mbid": "8c7d61cb-d6bd-4ca7-8d77-9f8bc347ca12",
-    "autoTriedAt": "2026-07-08T18:26:54.954Z"
+    "autoTriedAt": "2026-07-08T18:26:54.954Z",
+    "genres": [
+      "Hip-Hop",
+      "rap",
+      "Gangsta Rap",
+      "detroit",
+      "hip hop"
+    ],
+    "popularity": {
+      "listeners": 180791,
+      "playcount": 1414966
+    },
+    "metaEnrichedAt": "2026-07-08T20:25:48.953Z"
   },
   {
     "name": "Hush, Hush",
@@ -45812,7 +46110,12 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:26:58.170Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 13,
+      "playcount": 48
+    },
+    "metaEnrichedAt": "2026-07-08T20:25:49.725Z"
   },
   {
     "name": "husikk",
@@ -45827,7 +46130,16 @@
     },
     "wdBulkTriedAt": "2026-07-08T14:10:37.517Z",
     "mbid": "71a338fb-536c-46f3-8134-8ebe04a41ae3",
-    "autoTriedAt": "2026-07-08T18:27:00.942Z"
+    "autoTriedAt": "2026-07-08T18:27:00.942Z",
+    "genres": [
+      "tatar"
+    ],
+    "popularity": {
+      "listeners": 107,
+      "playcount": 448
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/71d03779cb2a971d85bdfb9d62f12578/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:50.544Z"
   },
   {
     "name": "Hüsker Dü",
@@ -45843,7 +46155,20 @@
     },
     "enrichedAt": "2026-07-07T07:13:56.620Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5c4c90a4-539f-4101-83cf-301bc6a94e06"
+    "mbid": "5c4c90a4-539f-4101-83cf-301bc6a94e06",
+    "genres": [
+      "punk",
+      "post-punk",
+      "hardcore punk",
+      "hardcore",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 607217,
+      "playcount": 19318836
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/646325ea572e1e4b581e543b94cb4027/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:51.154Z"
   },
   {
     "name": "Husking Bee",
@@ -45859,7 +46184,20 @@
     },
     "enrichedAt": "2026-07-07T07:13:56.620Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "41fd93c6-8f41-4b14-9968-0e13249fa340"
+    "mbid": "41fd93c6-8f41-4b14-9968-0e13249fa340",
+    "genres": [
+      "punk",
+      "J-rock",
+      "japanese",
+      "rock",
+      "indie"
+    ],
+    "popularity": {
+      "listeners": 33073,
+      "playcount": 905746
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f83ea7ff22433bec9a0b89c22d6fe113/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:51.826Z"
   },
   {
     "name": "Husky Rescue",
@@ -45875,13 +46213,38 @@
     },
     "enrichedAt": "2026-07-07T07:13:56.620Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0b6b5e56-9c72-4106-8285-60c4983af93f"
+    "mbid": "0b6b5e56-9c72-4106-8285-60c4983af93f",
+    "genres": [
+      "downtempo",
+      "chillout",
+      "electronic",
+      "indie",
+      "finnish"
+    ],
+    "popularity": {
+      "listeners": 344812,
+      "playcount": 7391055
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/68a2162bebe7a0af2da0a32c372c07ec/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:52.496Z"
   },
   {
     "name": "Hussain Al Jasmi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:56.620Z",
-    "autoTriedAt": "2026-07-08T18:27:02.406Z"
+    "autoTriedAt": "2026-07-08T18:27:02.406Z",
+    "genres": [
+      "arabic",
+      "emarati",
+      "arabic pop",
+      "shaabi",
+      "united arab emirates"
+    ],
+    "popularity": {
+      "listeners": 8737,
+      "playcount": 99440
+    },
+    "metaEnrichedAt": "2026-07-08T20:25:53.157Z"
   },
   {
     "name": "Hussam Al-Rassam",
@@ -45897,7 +46260,20 @@
     },
     "enrichedAt": "2026-07-07T07:13:56.620Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ccd797c1-2bc8-46c4-9569-ade353e53b15"
+    "mbid": "ccd797c1-2bc8-46c4-9569-ade353e53b15",
+    "genres": [
+      "iraq",
+      "arabic",
+      "iraqi",
+      "arab",
+      "عراقي"
+    ],
+    "popularity": {
+      "listeners": 212,
+      "playcount": 3845
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e289eb483cb52be60a62ed1880f28804/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:53.868Z"
   },
   {
     "name": "Hussein Fatal",
@@ -45913,7 +46289,20 @@
     },
     "enrichedAt": "2026-07-07T07:13:56.620Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2e15d1cb-8087-40b1-997c-51aaa497d4c5"
+    "mbid": "2e15d1cb-8087-40b1-997c-51aaa497d4c5",
+    "genres": [
+      "rap",
+      "Hip-Hop",
+      "Gangsta Rap",
+      "2pac",
+      "outlawz"
+    ],
+    "popularity": {
+      "listeners": 5644,
+      "playcount": 51578
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f463857a654ff50fccd849778a9772a6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:54.642Z"
   },
   {
     "name": "Huub van der Lubbe",
@@ -45929,7 +46318,20 @@
     },
     "enrichedAt": "2026-07-07T07:13:56.620Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "688d9018-8dd8-435c-aca2-c31d63390f49"
+    "mbid": "688d9018-8dd8-435c-aca2-c31d63390f49",
+    "genres": [
+      "dutch",
+      "the netherlands",
+      "Baantjer",
+      "mezz 2007",
+      "De Zevende Hemel"
+    ],
+    "popularity": {
+      "listeners": 8144,
+      "playcount": 99232
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/917e511123793d8439329b22fe8df133/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:55.330Z"
   },
   {
     "name": "Huun-Huur-Tu",
@@ -45945,7 +46347,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:27:05.311Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "throat singing",
+      "folk",
+      "tuva",
+      "world",
+      "tuvan"
+    ],
+    "popularity": {
+      "listeners": 81488,
+      "playcount": 1491795
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d71e3798c508a525e925dba9017b9152/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:56.349Z"
   },
   {
     "name": "Huw Lloyd-Langton",
@@ -45961,7 +46376,13 @@
     },
     "enrichedAt": "2026-07-07T07:13:56.620Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e6a68b2c-0e35-47f7-8992-9a2babb2ad1b"
+    "mbid": "e6a68b2c-0e35-47f7-8992-9a2babb2ad1b",
+    "popularity": {
+      "listeners": 2285,
+      "playcount": 8267
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/da3068c9e759d3785bc61cfa4567ce12/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:57.089Z"
   },
   {
     "name": "Huw Watkins",
@@ -45977,7 +46398,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:27:08.573Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "composer",
+      "pianist",
+      "contemporary classical",
+      "piano",
+      "Classical"
+    ],
+    "popularity": {
+      "listeners": 7399,
+      "playcount": 19758
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/27205c0b17cd0b113d6e3c0645482190/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:57.852Z"
   },
   {
     "name": "Huxley",
@@ -45993,7 +46427,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:27:11.429Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "House",
+      "deep house",
+      "electronic",
+      "minimal",
+      "UK Garage"
+    ],
+    "popularity": {
+      "listeners": 93909,
+      "playcount": 599325
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a9be2e32591439abdb17428b2dbe2ad9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:58.590Z"
   },
   {
     "name": "HVME",
@@ -46009,7 +46456,20 @@
     "mbid": "59376d42-9926-45c0-a1fd-bb9a837c788b",
     "wdBulkTriedAt": "2026-07-08T14:10:37.517Z",
     "enrichedAt": "2026-07-08T14:10:37.517Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "deep house",
+      "House",
+      "spain",
+      "Hip-Hop",
+      "future house"
+    ],
+    "popularity": {
+      "listeners": 221313,
+      "playcount": 1586441
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/13c932a9f3c23ccdf2e54620ca7e46ef/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:25:59.311Z"
   },
   {
     "name": "Hwang Chansung",
@@ -46025,7 +46485,12 @@
     },
     "enrichedAt": "2026-07-07T07:13:56.620Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "629bde24-cad3-4bc8-8262-2587ce2334ad"
+    "mbid": "629bde24-cad3-4bc8-8262-2587ce2334ad",
+    "popularity": {
+      "listeners": 67,
+      "playcount": 893
+    },
+    "metaEnrichedAt": "2026-07-08T20:25:59.992Z"
   },
   {
     "name": "Hwangbo",
@@ -46041,19 +46506,50 @@
     },
     "enrichedAt": "2026-07-07T07:13:56.620Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e43b0ba4-bfc4-47e0-9190-3c293ce66907"
+    "mbid": "e43b0ba4-bfc4-47e0-9190-3c293ce66907",
+    "popularity": {
+      "listeners": 230,
+      "playcount": 3374
+    },
+    "metaEnrichedAt": "2026-07-08T20:26:00.945Z"
   },
   {
     "name": "Hwanhee",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:56.620Z",
-    "autoTriedAt": "2026-07-08T18:27:12.800Z"
+    "autoTriedAt": "2026-07-08T18:27:12.800Z",
+    "genres": [
+      "k-pop",
+      "Korean",
+      "rnb",
+      "Ballad",
+      "Kpop"
+    ],
+    "popularity": {
+      "listeners": 12122,
+      "playcount": 236805
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ec60ead9dcd1f1961c74a429f6d45ce3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:01.998Z"
   },
   {
     "name": "Hwayobi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:56.620Z",
-    "autoTriedAt": "2026-07-08T18:27:14.048Z"
+    "autoTriedAt": "2026-07-08T18:27:14.048Z",
+    "genres": [
+      "Korean",
+      "k-pop",
+      "rnb",
+      "Ballad",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 11232,
+      "playcount": 303870
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/24b25cbf4181ad26cfb8018590ff09d8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:02.657Z"
   },
   {
     "name": "Hwyl Nofio",
@@ -46069,14 +46565,38 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:27:16.755Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Avant-Garde",
+      "experimental",
+      "ambient",
+      "noise",
+      "contemporary classical"
+    ],
+    "popularity": {
+      "listeners": 1533,
+      "playcount": 8887
+    },
+    "metaEnrichedAt": "2026-07-08T20:26:03.373Z"
   },
   {
     "name": "Hyacinthe Jadin",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:58.314Z",
     "mbid": "4834e0cf-b995-45f9-8453-68cc2dcc2c4a",
-    "autoTriedAt": "2026-07-08T18:27:19.384Z"
+    "autoTriedAt": "2026-07-08T18:27:19.384Z",
+    "genres": [
+      "french",
+      "france",
+      "romantic period",
+      "18th century",
+      "classical period"
+    ],
+    "popularity": {
+      "listeners": 1343,
+      "playcount": 6511
+    },
+    "metaEnrichedAt": "2026-07-08T20:26:04.362Z"
   },
   {
     "name": "Hyades",
@@ -46092,13 +46612,27 @@
     },
     "enrichedAt": "2026-07-07T07:13:58.314Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e8cdca5b-0720-4b8e-9111-f33e437fced0"
+    "mbid": "e8cdca5b-0720-4b8e-9111-f33e437fced0",
+    "genres": [
+      "thrash metal",
+      "metal",
+      "heavy metal",
+      "thrash",
+      "italian metal"
+    ],
+    "popularity": {
+      "listeners": 8212,
+      "playcount": 152753
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e0ad6f9745d742d2d7a069f4a5cc91ae/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:05.231Z"
   },
   {
     "name": "Hyattsville",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:58.314Z",
-    "autoTriedAt": "2026-07-08T18:27:20.733Z"
+    "autoTriedAt": "2026-07-08T18:27:20.733Z",
+    "metaTriedAt": "2026-07-08T20:26:05.879Z"
   },
   {
     "name": "Hybrid",
@@ -46114,7 +46648,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:27:24.912Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "electronic",
+      "breakbeat",
+      "trance",
+      "breaks",
+      "electronica"
+    ],
+    "popularity": {
+      "listeners": 419410,
+      "playcount": 9103320
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d014013bec9c3aaf5f04d6f548268ae4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:06.598Z"
   },
   {
     "name": "Hyde",
@@ -46130,20 +46677,55 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:27:27.464Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "J-rock",
+      "japanese",
+      "rock",
+      "Hyde",
+      "jrock"
+    ],
+    "popularity": {
+      "listeners": 192835,
+      "playcount": 7069591
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/dd9db764bad02c9ea3db40f3ace506a6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:07.323Z"
   },
   {
     "name": "Hydeout Productions",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:58.314Z",
-    "autoTriedAt": "2026-07-08T18:27:30.143Z"
+    "autoTriedAt": "2026-07-08T18:27:30.143Z",
+    "genres": [
+      "nujabes",
+      "pogochillselecta"
+    ],
+    "popularity": {
+      "listeners": 1976,
+      "playcount": 72387
+    },
+    "metaEnrichedAt": "2026-07-08T20:26:08.009Z"
   },
   {
     "name": "Hyderabad Brothers",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:58.314Z",
     "mbid": "54c34714-b0ca-4de0-82c4-8d4710b140ab",
-    "autoTriedAt": "2026-07-08T18:27:40.805Z"
+    "autoTriedAt": "2026-07-08T18:27:40.805Z",
+    "genres": [
+      "carnatic",
+      "india",
+      "indian classical",
+      "carnatic vocal",
+      "jonasmusik"
+    ],
+    "popularity": {
+      "listeners": 566,
+      "playcount": 1993
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f097da9209d5c97e62575b032d91456a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:08.703Z"
   },
   {
     "name": "Hydra",
@@ -46159,7 +46741,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:27:49.178Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "depressive black metal",
+      "black metal",
+      "Southern Rock",
+      "trance",
+      "doom metal"
+    ],
+    "popularity": {
+      "listeners": 84674,
+      "playcount": 1112917
+    },
+    "metaEnrichedAt": "2026-07-08T20:26:09.399Z"
   },
   {
     "name": "Hyejeong",
@@ -46175,7 +46769,12 @@
     },
     "enrichedAt": "2026-07-07T07:13:58.314Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ca16f369-5a97-455c-afc0-bfa79d84592b"
+    "mbid": "ca16f369-5a97-455c-afc0-bfa79d84592b",
+    "popularity": {
+      "listeners": 3,
+      "playcount": 14
+    },
+    "metaEnrichedAt": "2026-07-08T20:26:10.227Z"
   },
   {
     "name": "Hyelim",
@@ -46191,7 +46790,12 @@
     },
     "enrichedAt": "2026-07-07T07:13:58.314Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "09875e13-0b6f-48a1-853f-0c9f338a1da6"
+    "mbid": "09875e13-0b6f-48a1-853f-0c9f338a1da6",
+    "popularity": {
+      "listeners": 140,
+      "playcount": 416
+    },
+    "metaEnrichedAt": "2026-07-08T20:26:10.992Z"
   },
   {
     "name": "Hyeri",
@@ -46207,13 +46811,30 @@
     },
     "enrichedAt": "2026-07-07T07:13:58.314Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e5da9857-f734-4227-af3b-8e4e66d89017"
+    "mbid": "e5da9857-f734-4227-af3b-8e4e66d89017",
+    "popularity": {
+      "listeners": 7,
+      "playcount": 35
+    },
+    "metaEnrichedAt": "2026-07-08T20:26:11.758Z"
   },
   {
     "name": "Hylozoists",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:58.314Z",
-    "autoTriedAt": "2026-07-08T18:27:50.427Z"
+    "autoTriedAt": "2026-07-08T18:27:50.427Z",
+    "genres": [
+      "post-rock",
+      "instrumental",
+      "Canadian",
+      "indie",
+      "canada"
+    ],
+    "popularity": {
+      "listeners": 6276,
+      "playcount": 111244
+    },
+    "metaEnrichedAt": "2026-07-08T20:26:12.756Z"
   },
   {
     "name": "Hymnal",
@@ -46229,7 +46850,18 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:27:52.987Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "folk",
+      "indie",
+      "dream pop"
+    ],
+    "popularity": {
+      "listeners": 318,
+      "playcount": 2069
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e3dc63c4de296250a8e27be26e1cc0fe/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:13.784Z"
   },
   {
     "name": "Hymns",
@@ -46245,7 +46877,20 @@
     },
     "enrichedAt": "2026-07-07T07:13:58.314Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "59db1686-6ec2-4708-81dd-c21f7bea3bda"
+    "mbid": "59db1686-6ec2-4708-81dd-c21f7bea3bda",
+    "genres": [
+      "indie",
+      "london",
+      "House",
+      "black metal",
+      "deep house"
+    ],
+    "popularity": {
+      "listeners": 14310,
+      "playcount": 92881
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9b01b58183f95b593d323e5ce049cab6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:14.460Z"
   },
   {
     "name": "Hyolyn",
@@ -46261,7 +46906,20 @@
     },
     "enrichedAt": "2026-07-07T07:13:58.314Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "75aff57c-d397-4e6c-b5fc-1f32d7761512"
+    "mbid": "75aff57c-d397-4e6c-b5fc-1f32d7761512",
+    "genres": [
+      "k-pop",
+      "Korean",
+      "pop",
+      "Kpop",
+      "sistar"
+    ],
+    "popularity": {
+      "listeners": 350679,
+      "playcount": 8199731
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/91f12bee573d1bedf7e97374125ccbad/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:15.116Z"
   },
   {
     "name": "Hyomin",
@@ -46277,7 +46935,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:28:09.212Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "k-pop",
+      "Korean",
+      "Kpop",
+      "Korea",
+      "T-ara"
+    ],
+    "popularity": {
+      "listeners": 28747,
+      "playcount": 427284
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c8ed11c06e13b015ce2a426d9bf139f9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:15.833Z"
   },
   {
     "name": "Hyorin",
@@ -46293,19 +46964,48 @@
     },
     "enrichedAt": "2026-07-07T07:13:58.314Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "75aff57c-d397-4e6c-b5fc-1f32d7761512"
+    "mbid": "75aff57c-d397-4e6c-b5fc-1f32d7761512",
+    "genres": [
+      "k-pop",
+      "Korean",
+      "Kpop",
+      "pop",
+      "female singer"
+    ],
+    "popularity": {
+      "listeners": 4374,
+      "playcount": 77418
+    },
+    "metaEnrichedAt": "2026-07-08T20:26:16.563Z"
   },
   {
     "name": "Hyoseong",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:58.314Z",
-    "autoTriedAt": "2026-07-08T18:28:11.767Z"
+    "autoTriedAt": "2026-07-08T18:28:11.767Z",
+    "popularity": {
+      "listeners": 108,
+      "playcount": 1048
+    },
+    "metaEnrichedAt": "2026-07-08T20:26:17.277Z"
   },
   {
     "name": "Hyosung",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:58.314Z",
-    "autoTriedAt": "2026-07-08T18:28:13.014Z"
+    "autoTriedAt": "2026-07-08T18:28:13.014Z",
+    "genres": [
+      "secret",
+      "k-pop",
+      "Hyosung",
+      "sounds",
+      "motorrad"
+    ],
+    "popularity": {
+      "listeners": 603,
+      "playcount": 10887
+    },
+    "metaEnrichedAt": "2026-07-08T20:26:17.994Z"
   },
   {
     "name": "Hyoyeon",
@@ -46321,7 +47021,20 @@
     },
     "enrichedAt": "2026-07-07T07:13:58.314Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f2911ba4-9eaf-4ae2-b7a2-0f27b7a955be"
+    "mbid": "f2911ba4-9eaf-4ae2-b7a2-0f27b7a955be",
+    "genres": [
+      "k-pop",
+      "pop",
+      "rnb",
+      "hip hop",
+      "Kpop"
+    ],
+    "popularity": {
+      "listeners": 37286,
+      "playcount": 389277
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/91e550c8f69478291947dcc02eba4177/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:18.815Z"
   },
   {
     "name": "Hyper Crush",
@@ -46337,27 +47050,71 @@
     },
     "enrichedAt": "2026-07-07T07:13:58.314Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "cded13bc-c3da-4b14-9c87-79ac91b23efd"
+    "mbid": "cded13bc-c3da-4b14-9c87-79ac91b23efd",
+    "genres": [
+      "electronic",
+      "electro",
+      "Crunk",
+      "techno",
+      "Doo-Hop"
+    ],
+    "popularity": {
+      "listeners": 176985,
+      "playcount": 2458377
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3cbdce6d8ec1604afe6640f9e6c0e687/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:19.538Z"
   },
   {
     "name": "Hyper Static Union",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:58.314Z",
     "mbid": "b25cc490-75c5-463a-a5a0-81f04362b9e3",
-    "autoTriedAt": "2026-07-08T18:28:20.178Z"
+    "autoTriedAt": "2026-07-08T18:28:20.178Z",
+    "genres": [
+      "rock",
+      "groovy",
+      "Funk Rock",
+      "jazz",
+      "soul"
+    ],
+    "popularity": {
+      "listeners": 2794,
+      "playcount": 56617
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d3113ab7d18f5454a44be3ec1339764f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:20.236Z"
   },
   {
     "name": "Hyper V-Ball",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:58.314Z",
-    "autoTriedAt": "2026-07-08T18:28:21.426Z"
+    "autoTriedAt": "2026-07-08T18:28:21.426Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 1
+    },
+    "metaEnrichedAt": "2026-07-08T20:26:20.926Z"
   },
   {
     "name": "Hyperactive",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:58.314Z",
     "mbid": "be1bcca9-3c5b-48a1-9ba0-48fbd640e44b",
-    "autoTriedAt": "2026-07-08T18:28:28.305Z"
+    "autoTriedAt": "2026-07-08T18:28:28.305Z",
+    "genres": [
+      "happy hardcore",
+      "electronic",
+      "hardcore",
+      "psytrance",
+      "Rave"
+    ],
+    "popularity": {
+      "listeners": 2797,
+      "playcount": 11840
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b3d8a4a77d88534086798d8ae4e06867/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:21.702Z"
   },
   {
     "name": "Hyperbubble",
@@ -46373,7 +47130,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:28:40.871Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "synthpop",
+      "electropop",
+      "electronic",
+      "electro",
+      "candypop"
+    ],
+    "popularity": {
+      "listeners": 5784,
+      "playcount": 57026
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/63d54831fb701acc8bde3e8e70e39c46/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:22.440Z"
   },
   {
     "name": "Hypernova",
@@ -46389,7 +47159,19 @@
     },
     "enrichedAt": "2026-07-07T07:13:58.314Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2bf5998f-1f66-4036-bb07-ae49665d4f08"
+    "mbid": "2bf5998f-1f66-4036-bb07-ae49665d4f08",
+    "genres": [
+      "post-punk",
+      "indie rock",
+      "iran",
+      "rock",
+      "indie"
+    ],
+    "popularity": {
+      "listeners": 24819,
+      "playcount": 227433
+    },
+    "metaEnrichedAt": "2026-07-08T20:26:23.416Z"
   },
   {
     "name": "Hypnogaja",
@@ -46405,14 +47187,40 @@
     },
     "enrichedAt": "2026-07-07T07:13:58.314Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8877610e-66bd-4bb5-ba82-e3c255ad9903"
+    "mbid": "8877610e-66bd-4bb5-ba82-e3c255ad9903",
+    "genres": [
+      "alternative rock",
+      "hard rock",
+      "alternative metal",
+      "rock",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 132642,
+      "playcount": 3185937
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b3476632f8ef78befa2f63d3d176b62e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:24.053Z"
   },
   {
     "name": "Hypnolovewheel",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:58.314Z",
     "mbid": "e357dd70-6b7c-446d-94a9-e3c54ae40359",
-    "autoTriedAt": "2026-07-08T18:28:50.408Z"
+    "autoTriedAt": "2026-07-08T18:28:50.408Z",
+    "genres": [
+      "rock",
+      "alternative",
+      "indie rock",
+      "alternative rock",
+      "male vocalists"
+    ],
+    "popularity": {
+      "listeners": 2789,
+      "playcount": 17418
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7a5b24cc4cc8224880b25e7c3aea28e7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:24.760Z"
   },
   {
     "name": "Hypnotic Clambake",
@@ -46427,7 +47235,18 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T07:13:58.314Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "eclectic",
+      "cajun",
+      "klezmer"
+    ],
+    "popularity": {
+      "listeners": 652,
+      "playcount": 14969
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/170c654019945162876eb0e562cde658/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:25.447Z"
   },
   {
     "name": "Hypnotix",
@@ -46443,7 +47262,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:28:53.001Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "dub",
+      "electronic",
+      "reggae",
+      "Czech",
+      "Trance Dub"
+    ],
+    "popularity": {
+      "listeners": 4660,
+      "playcount": 70143
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/df527247a5d17e9bc0a15572d2e8d644/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:26.194Z"
   },
   {
     "name": "Hypocrisy",
@@ -46459,13 +47291,38 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:29:01.022Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "death metal",
+      "Melodic Death Metal",
+      "swedish",
+      "metal",
+      "Swedish Metal"
+    ],
+    "popularity": {
+      "listeners": 336913,
+      "playcount": 21174744
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/df1f14e9625f095557cf0942cce90199/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:26.909Z"
   },
   {
     "name": "Hyro Da Hero",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:58.314Z",
-    "autoTriedAt": "2026-07-08T18:29:08.723Z"
+    "autoTriedAt": "2026-07-08T18:29:08.723Z",
+    "genres": [
+      "Hip-Hop",
+      "rap",
+      "alternative",
+      "rap rock",
+      "rapcore"
+    ],
+    "popularity": {
+      "listeners": 10661,
+      "playcount": 200045
+    },
+    "metaEnrichedAt": "2026-07-08T20:26:28.204Z"
   },
   {
     "name": "Hysteric Blue",
@@ -46481,7 +47338,19 @@
     },
     "enrichedAt": "2026-07-07T07:13:58.314Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7608b400-c569-4eb8-acee-ab6dd73d7eaa"
+    "mbid": "7608b400-c569-4eb8-acee-ab6dd73d7eaa",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "female vocalists",
+      "J-rock",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 12447,
+      "playcount": 482295
+    },
+    "metaEnrichedAt": "2026-07-08T20:26:28.894Z"
   },
   {
     "name": "Hyukoh",
@@ -46497,7 +47366,20 @@
     },
     "enrichedAt": "2026-07-07T07:13:58.314Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8b64a68f-eb63-48dd-80d9-1c2abcdf1970"
+    "mbid": "8b64a68f-eb63-48dd-80d9-1c2abcdf1970",
+    "genres": [
+      "Korean",
+      "rock",
+      "indie",
+      "indie rock",
+      "k-indie"
+    ],
+    "popularity": {
+      "listeners": 307471,
+      "playcount": 8332607
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1b1d6aeaf80af67ea68034cf657e56aa/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:29.747Z"
   },
   {
     "name": "Hyun Bin",
@@ -46513,7 +47395,20 @@
     },
     "enrichedAt": "2026-07-07T07:13:58.314Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "02459ec2-e12e-4c05-aa01-d1b83a494154"
+    "mbid": "02459ec2-e12e-4c05-aa01-d1b83a494154",
+    "genres": [
+      "Korean",
+      "k-pop",
+      "male vocalists",
+      "Ballad",
+      "Kpop"
+    ],
+    "popularity": {
+      "listeners": 3942,
+      "playcount": 85027
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/75f3bb11f70c27f45e10a09a1aa124d8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:31.106Z"
   },
   {
     "name": "Hyun Young",
@@ -46529,7 +47424,19 @@
     },
     "enrichedAt": "2026-07-07T07:13:58.314Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "82e0737a-a1c8-4e38-adde-b90b94aa8647"
+    "mbid": "82e0737a-a1c8-4e38-adde-b90b94aa8647",
+    "genres": [
+      "k-pop",
+      "Korean",
+      "pop",
+      "female",
+      "Asian"
+    ],
+    "popularity": {
+      "listeners": 1333,
+      "playcount": 8391
+    },
+    "metaEnrichedAt": "2026-07-08T20:26:31.917Z"
   },
   {
     "name": "Hyuna",
@@ -46545,7 +47452,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:29:15.951Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "k-pop",
+      "Korean",
+      "female vocalists",
+      "pop",
+      "4minute"
+    ],
+    "popularity": {
+      "listeners": 57558,
+      "playcount": 3707099
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/47f897bddec1e3eed71f0b6fbc2100fc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:32.671Z"
   },
   {
     "name": "P Money",
@@ -46561,7 +47481,20 @@
     "wdBulkTriedAt": "2026-07-08T14:10:42.682Z",
     "mbid": "fa094e8e-ce2f-41f5-829f-a7f650b76084",
     "enrichedAt": "2026-07-08T14:10:42.682Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "Grime",
+      "Hip-Hop",
+      "UK",
+      "rap",
+      "All"
+    ],
+    "popularity": {
+      "listeners": 164353,
+      "playcount": 2050188
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e17d690321eaf6abcca4b2fa43143b04/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:33.364Z"
   },
   {
     "name": "P-Model",
@@ -46577,7 +47510,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:33.320Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "bcc5fb7c-e8c8-4c2e-8f64-c46f1ea2b974"
+    "mbid": "bcc5fb7c-e8c8-4c2e-8f64-c46f1ea2b974",
+    "genres": [
+      "new wave",
+      "electronic",
+      "japanese",
+      "post-punk",
+      "technopop"
+    ],
+    "popularity": {
+      "listeners": 32775,
+      "playcount": 2508064
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/185b1ffa23ab3d9d1d5893a7ac8995f2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:34.018Z"
   },
   {
     "name": "P-Money",
@@ -46593,7 +47539,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:33.320Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f8356d6d-8a31-4a0d-8488-37141330998c"
+    "mbid": "f8356d6d-8a31-4a0d-8488-37141330998c",
+    "genres": [
+      "Hip-Hop",
+      "Grime",
+      "electronic",
+      "New Zealand",
+      "rap"
+    ],
+    "popularity": {
+      "listeners": 53144,
+      "playcount": 419588
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/35d70af16a811b5d8487a5260726f3a9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:34.721Z"
   },
   {
     "name": "P-Square",
@@ -46609,13 +47568,31 @@
     },
     "enrichedAt": "2026-07-07T07:21:33.320Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "492a5dc7-184a-497b-a82d-b1e8085f3a0e"
+    "mbid": "492a5dc7-184a-497b-a82d-b1e8085f3a0e",
+    "genres": [
+      "nigeria",
+      "afro hip hop",
+      "naija",
+      "hip hop",
+      "nigerian"
+    ],
+    "popularity": {
+      "listeners": 103940,
+      "playcount": 1587254
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3d503052c299b130e288ade0391a0031/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:35.564Z"
   },
   {
     "name": "P-Vine Records",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:33.320Z",
-    "autoTriedAt": "2026-07-08T18:29:20.850Z"
+    "autoTriedAt": "2026-07-08T18:29:20.850Z",
+    "popularity": {
+      "listeners": 4,
+      "playcount": 48
+    },
+    "metaEnrichedAt": "2026-07-08T20:26:36.251Z"
   },
   {
     "name": "P:ano",
@@ -46631,7 +47608,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:29:30.896Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "indie pop",
+      "Canadian",
+      "indie",
+      "twee",
+      "chamber pop"
+    ],
+    "popularity": {
+      "listeners": 18707,
+      "playcount": 313626
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d3413c63ba46907c9a5e32c90848910f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:36.932Z"
   },
   {
     "name": "P!nk",
@@ -46647,14 +47637,33 @@
     },
     "enrichedAt": "2026-07-07T07:21:33.320Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f4d5cc07-3bc9-4836-9b15-88a08359bc63"
+    "mbid": "f4d5cc07-3bc9-4836-9b15-88a08359bc63",
+    "genres": [
+      "pop",
+      "pop rock",
+      "female vocalists",
+      "rock",
+      "female"
+    ],
+    "popularity": {
+      "listeners": 3843066,
+      "playcount": 125919552
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/429e67544862ed2b4c820a02acc24ad1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:37.590Z"
   },
   {
     "name": "P. B. Sreenivas",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:33.320Z",
     "mbid": "dd23e7fb-a5d7-4a5c-8d47-b5ead3b61b3a",
-    "autoTriedAt": "2026-07-08T18:29:36.330Z"
+    "autoTriedAt": "2026-07-08T18:29:36.330Z",
+    "popularity": {
+      "listeners": 3162,
+      "playcount": 36889
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/eec1a9dd429d478bf46a230b8128c07a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:38.419Z"
   },
   {
     "name": "P. F. Sloan",
@@ -46670,26 +47679,64 @@
     },
     "enrichedAt": "2026-07-07T07:21:33.320Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4a9b6d5d-cdaf-412b-8fa1-381f51b81a3f"
+    "mbid": "4a9b6d5d-cdaf-412b-8fa1-381f51b81a3f",
+    "genres": [
+      "singer-songwriter",
+      "folk",
+      "folk rock",
+      "rock",
+      "new york"
+    ],
+    "popularity": {
+      "listeners": 3751,
+      "playcount": 26549
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cfa0054f82a970cf92d29cb19313933a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:39.080Z"
   },
   {
     "name": "P. J. Proby",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:33.320Z",
-    "autoTriedAt": "2026-07-08T18:29:41.499Z"
+    "autoTriedAt": "2026-07-08T18:29:41.499Z",
+    "genres": [
+      "60s",
+      "rock",
+      "pop",
+      "singer-songwriter",
+      "male vocalists"
+    ],
+    "popularity": {
+      "listeners": 24522,
+      "playcount": 109847
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5e49af071390c645424814f6c08d92e5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:39.908Z"
   },
   {
     "name": "P. Kalinga Rao",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:33.320Z",
-    "autoTriedAt": "2026-07-08T18:29:42.806Z"
+    "autoTriedAt": "2026-07-08T18:29:42.806Z",
+    "popularity": {
+      "listeners": 17,
+      "playcount": 72
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/871f1efa23451f15b504eb2a5fe0ec49/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:40.893Z"
   },
   {
     "name": "P. Leela",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:33.320Z",
     "mbid": "be044867-c5ab-4e03-865c-165607d10326",
-    "autoTriedAt": "2026-07-08T18:29:46.951Z"
+    "autoTriedAt": "2026-07-08T18:29:46.951Z",
+    "popularity": {
+      "listeners": 1005,
+      "playcount": 8333
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7ccb322f2e9608db6341ca58cbd19ebe/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:41.631Z"
   },
   {
     "name": "P. Lion",
@@ -46705,20 +47752,40 @@
     },
     "enrichedAt": "2026-07-07T07:21:33.320Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d2d07d32-cbfb-43e3-b49b-5203baa13366"
+    "mbid": "d2d07d32-cbfb-43e3-b49b-5203baa13366",
+    "genres": [
+      "Italo Disco",
+      "80s",
+      "Disco",
+      "electronic",
+      "italian"
+    ],
+    "popularity": {
+      "listeners": 44909,
+      "playcount": 240445
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/745c4e3cc895e4819893670d3f20cd3a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:42.308Z"
   },
   {
     "name": "P. M. Dawn ft Boy George",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:33.320Z",
-    "autoTriedAt": "2026-07-08T18:29:48.226Z"
+    "autoTriedAt": "2026-07-08T18:29:48.226Z",
+    "metaTriedAt": "2026-07-08T20:26:43.208Z"
   },
   {
     "name": "P. Madhuri",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:33.320Z",
     "mbid": "9ef5cc97-ac72-46f1-b500-7fe83a2d9d7f",
-    "autoTriedAt": "2026-07-08T18:29:55.269Z"
+    "autoTriedAt": "2026-07-08T18:29:55.269Z",
+    "popularity": {
+      "listeners": 326,
+      "playcount": 2803
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/da13d4897ff042b0d0414bacc865f3c2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:43.981Z"
   },
   {
     "name": "P. Mobil",
@@ -46734,7 +47801,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:33.320Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ab4c1be6-af5d-4c38-9295-3a22822461c8"
+    "mbid": "ab4c1be6-af5d-4c38-9295-3a22822461c8",
+    "genres": [
+      "hard rock",
+      "hungarian",
+      "rock",
+      "classic rock",
+      "70s"
+    ],
+    "popularity": {
+      "listeners": 3785,
+      "playcount": 81651
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2c6fee8f77f16b6674dee90dbb52e1b4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:44.733Z"
   },
   {
     "name": "P. P. Arnold",
@@ -46750,7 +47830,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:33.320Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b8d00eb5-b12a-4e58-8d0a-0993752be2a3"
+    "mbid": "b8d00eb5-b12a-4e58-8d0a-0993752be2a3",
+    "genres": [
+      "soul",
+      "blues",
+      "pop",
+      "northern soul",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 4123,
+      "playcount": 21477
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2339aa50affb50ecd14159d98ee0af0e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:45.492Z"
   },
   {
     "name": "P. Ramlee",
@@ -46766,26 +47859,63 @@
     },
     "enrichedAt": "2026-07-07T07:21:33.320Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6b2f4412-a43f-4d3c-9ed2-43f6d4f153d0"
+    "mbid": "6b2f4412-a43f-4d3c-9ed2-43f6d4f153d0",
+    "genres": [
+      "All",
+      "malaysia",
+      "malaysian",
+      "Rating 3 stars - Dull",
+      "spotify"
+    ],
+    "popularity": {
+      "listeners": 2847,
+      "playcount": 44442
+    },
+    "metaEnrichedAt": "2026-07-08T20:26:46.243Z"
   },
   {
     "name": "P. Reign",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:33.320Z",
-    "autoTriedAt": "2026-07-08T18:29:56.527Z"
+    "autoTriedAt": "2026-07-08T18:29:56.527Z",
+    "genres": [
+      "rap",
+      "Hip-Hop",
+      "canada",
+      "Canadian",
+      "canadians"
+    ],
+    "popularity": {
+      "listeners": 8209,
+      "playcount": 90520
+    },
+    "metaEnrichedAt": "2026-07-08T20:26:47.044Z"
   },
   {
     "name": "P. S. Narayanaswamy",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:33.320Z",
     "mbid": "6919c98b-b487-4210-bb80-a147861d9c6b",
-    "autoTriedAt": "2026-07-08T18:30:00.570Z"
+    "autoTriedAt": "2026-07-08T18:30:00.570Z",
+    "genres": [
+      "carnatic"
+    ],
+    "popularity": {
+      "listeners": 282,
+      "playcount": 690
+    },
+    "metaEnrichedAt": "2026-07-08T20:26:47.796Z"
   },
   {
     "name": "P. S. Rung-Keller",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:33.320Z",
-    "autoTriedAt": "2026-07-08T18:30:02.457Z"
+    "autoTriedAt": "2026-07-08T18:30:02.457Z",
+    "popularity": {
+      "listeners": 4,
+      "playcount": 4
+    },
+    "metaEnrichedAt": "2026-07-08T20:26:48.458Z"
   },
   {
     "name": "P. Susheela",
@@ -46801,20 +47931,59 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:30:09.482Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "carnatic",
+      "vocals",
+      "india",
+      "All",
+      "indian film"
+    ],
+    "popularity": {
+      "listeners": 6112,
+      "playcount": 61710
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/11c698ea34b72907b69385aa7631b96b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:49.172Z"
   },
   {
     "name": "P. Unnikrishnan",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:33.320Z",
-    "autoTriedAt": "2026-07-08T18:30:15.686Z"
+    "autoTriedAt": "2026-07-08T18:30:15.686Z",
+    "genres": [
+      "carnatic",
+      "Indian",
+      "india",
+      "indian classical",
+      "Malayalam"
+    ],
+    "popularity": {
+      "listeners": 1470,
+      "playcount": 8954
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c5c7b6c3e87f5e9b6ca8b89f18e64159/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:49.899Z"
   },
   {
     "name": "P.A.",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:33.320Z",
     "mbid": "dc508bf2-b463-4055-9c80-338283751e59",
-    "autoTriedAt": "2026-07-08T18:30:16.946Z"
+    "autoTriedAt": "2026-07-08T18:30:16.946Z",
+    "genres": [
+      "Hip-Hop",
+      "Canadian",
+      "rap",
+      "hip hop",
+      "techno"
+    ],
+    "popularity": {
+      "listeners": 4509,
+      "playcount": 35324
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ae07cf015502440f6ab30bb6d4c8eee1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:50.660Z"
   },
   {
     "name": "P.F. Sloan",
@@ -46830,26 +47999,77 @@
     },
     "enrichedAt": "2026-07-07T07:21:33.320Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4a9b6d5d-cdaf-412b-8fa1-381f51b81a3f"
+    "mbid": "4a9b6d5d-cdaf-412b-8fa1-381f51b81a3f",
+    "genres": [
+      "singer-songwriter",
+      "folk",
+      "folk rock",
+      "rock",
+      "new york"
+    ],
+    "popularity": {
+      "listeners": 3751,
+      "playcount": 26549
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cfa0054f82a970cf92d29cb19313933a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:51.315Z"
   },
   {
     "name": "P.J. Harvey",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:33.320Z",
-    "autoTriedAt": "2026-07-08T18:30:18.413Z"
+    "autoTriedAt": "2026-07-08T18:30:18.413Z",
+    "genres": [
+      "female vocalists",
+      "alternative",
+      "singer-songwriter",
+      "rock",
+      "indie"
+    ],
+    "popularity": {
+      "listeners": 2197868,
+      "playcount": 106066990
+    },
+    "metaEnrichedAt": "2026-07-08T20:26:51.944Z"
   },
   {
     "name": "P.K. 14",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:33.320Z",
     "mbid": "05653c73-f8e9-44cf-8185-e569bc3274d4",
-    "autoTriedAt": "2026-07-08T18:30:25.302Z"
+    "autoTriedAt": "2026-07-08T18:30:25.302Z",
+    "genres": [
+      "post-punk",
+      "chinese",
+      "rock",
+      "indie rock",
+      "indie"
+    ],
+    "popularity": {
+      "listeners": 11041,
+      "playcount": 166082
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0eec41cb63f525cd5000499ce26b371c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:52.685Z"
   },
   {
     "name": "P.L.A.N.",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:33.320Z",
-    "autoTriedAt": "2026-07-08T18:30:26.560Z"
+    "autoTriedAt": "2026-07-08T18:30:26.560Z",
+    "genres": [
+      "Belarusian",
+      "rock",
+      "belarus",
+      "blues",
+      "belarusian rock"
+    ],
+    "popularity": {
+      "listeners": 1073,
+      "playcount": 8241
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f8ab89811f9e50ba12872e259ab3d94f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:53.436Z"
   },
   {
     "name": "P.M. Dawn",
@@ -46865,7 +48085,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:30:39.729Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Hip-Hop",
+      "soul",
+      "90s",
+      "rap",
+      "hip hop"
+    ],
+    "popularity": {
+      "listeners": 207705,
+      "playcount": 1622654
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/95a87c4d269f5d99761f4466ca57c002/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:54.066Z"
   },
   {
     "name": "P.O.D",
@@ -46881,7 +48114,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:33.320Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "57e79d57-b795-475e-9fa2-5dd9d5513b8c"
+    "mbid": "57e79d57-b795-475e-9fa2-5dd9d5513b8c",
+    "genres": [
+      "Nu Metal",
+      "rapcore",
+      "alternative",
+      "rock",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 1797154,
+      "playcount": 39492380
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/877ba08a7008d945ed8d44dfe8c0a942/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:55.024Z"
   },
   {
     "name": "P.O.D.",
@@ -46897,7 +48143,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:33.320Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "57e79d57-b795-475e-9fa2-5dd9d5513b8c"
+    "mbid": "57e79d57-b795-475e-9fa2-5dd9d5513b8c",
+    "genres": [
+      "Nu Metal",
+      "rapcore",
+      "alternative",
+      "rock",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 1797154,
+      "playcount": 39492380
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/877ba08a7008d945ed8d44dfe8c0a942/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:55.688Z"
   },
   {
     "name": "P.O.S",
@@ -46913,21 +48172,60 @@
     },
     "enrichedAt": "2026-07-07T07:21:33.320Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ca5daaf2-fbde-4935-ac6f-069cd20da0d1"
+    "mbid": "ca5daaf2-fbde-4935-ac6f-069cd20da0d1",
+    "genres": [
+      "Hip-Hop",
+      "underground hip-hop",
+      "rap",
+      "rhymesayers",
+      "Doomtree"
+    ],
+    "popularity": {
+      "listeners": 124368,
+      "playcount": 4429979
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9ff69093145b4f268712e2ad7c636b60/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:56.394Z"
   },
   {
     "name": "P.O.V.",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:33.320Z",
     "mbid": "5898ae6e-7d9b-4e11-ae5a-f41216d7aa4e",
-    "autoTriedAt": "2026-07-08T18:30:42.266Z"
+    "autoTriedAt": "2026-07-08T18:30:42.266Z",
+    "genres": [
+      "rnb",
+      "90s",
+      "urban",
+      "Rare",
+      "romantic ballads"
+    ],
+    "popularity": {
+      "listeners": 449,
+      "playcount": 3637
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9cc014af612e92ba20ebbf3b41851a28/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:57.600Z"
   },
   {
     "name": "P16.D4",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:33.320Z",
     "mbid": "859d546e-6915-43de-ad43-31b2548b35ed",
-    "autoTriedAt": "2026-07-08T18:30:44.812Z"
+    "autoTriedAt": "2026-07-08T18:30:44.812Z",
+    "genres": [
+      "industrial",
+      "noise",
+      "experimental",
+      "Avant-Garde",
+      "electronic"
+    ],
+    "popularity": {
+      "listeners": 3753,
+      "playcount": 73972
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:58.286Z"
   },
   {
     "name": "Paal Nilssen-Love",
@@ -46943,7 +48241,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:33.320Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7d4cfbc0-bd74-441c-b389-f68166bcf13a"
+    "mbid": "7d4cfbc0-bd74-441c-b389-f68166bcf13a",
+    "genres": [
+      "free jazz",
+      "drums",
+      "jazz",
+      "percussion",
+      "free improvisation"
+    ],
+    "popularity": {
+      "listeners": 3146,
+      "playcount": 22738
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3950e45ec37b198837b18b2fddbc9382/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:58.997Z"
   },
   {
     "name": "Paavo Berglund",
@@ -46959,7 +48270,18 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:30:51.524Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "conductor",
+      "orchestral conductor",
+      "p berglund"
+    ],
+    "popularity": {
+      "listeners": 3157,
+      "playcount": 16848
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c9276354430ecf5eefea61e6abdca1df/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:26:59.687Z"
   },
   {
     "name": "Paavo Lötjönen",
@@ -46975,7 +48297,13 @@
     },
     "enrichedAt": "2026-07-07T07:21:33.320Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "36a39ef2-5ca4-4e01-a83c-205a502856fb"
+    "mbid": "36a39ef2-5ca4-4e01-a83c-205a502856fb",
+    "popularity": {
+      "listeners": 19,
+      "playcount": 171
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:27:00.381Z"
   },
   {
     "name": "Paavoharju",
@@ -46991,7 +48319,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:33.320Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4859ffaf-ea83-41b5-83a7-8d72ea26ffe4"
+    "mbid": "4859ffaf-ea83-41b5-83a7-8d72ea26ffe4",
+    "genres": [
+      "experimental",
+      "folk",
+      "freak folk",
+      "finnish",
+      "electronic"
+    ],
+    "popularity": {
+      "listeners": 80317,
+      "playcount": 2658482
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a6331a8ed50c703b0d8b26350eec4fbf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:27:01.106Z"
   },
   {
     "name": "Pablo Alborán",
@@ -47007,13 +48348,38 @@
     },
     "enrichedAt": "2026-07-07T07:21:35.177Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c62936e1-7f2a-4c99-b09b-a5bc85d6c1f3"
+    "mbid": "c62936e1-7f2a-4c99-b09b-a5bc85d6c1f3",
+    "genres": [
+      "pop",
+      "spanish",
+      "latin",
+      "male vocalists",
+      "pop rock"
+    ],
+    "popularity": {
+      "listeners": 300038,
+      "playcount": 6807685
+    },
+    "metaEnrichedAt": "2026-07-08T20:27:01.981Z"
   },
   {
     "name": "Pablo Casals",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:35.177Z",
-    "autoTriedAt": "2026-07-08T18:30:52.783Z"
+    "autoTriedAt": "2026-07-08T18:30:52.783Z",
+    "genres": [
+      "cello",
+      "Classical",
+      "instrumental",
+      "cellist",
+      "Bach"
+    ],
+    "popularity": {
+      "listeners": 114836,
+      "playcount": 1098518
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/25357d28a36a3e636983db4ea27aef7e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:27:02.643Z"
   },
   {
     "name": "Pablo Cruise",
@@ -47029,7 +48395,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:35.177Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c24f87ef-72f9-4488-9dbd-63601322edba"
+    "mbid": "c24f87ef-72f9-4488-9dbd-63601322edba",
+    "genres": [
+      "soft rock",
+      "rock",
+      "70s",
+      "Classic Soft",
+      "classic rock"
+    ],
+    "popularity": {
+      "listeners": 102127,
+      "playcount": 632674
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5af1131fde730cff184c5a6c05029d79/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:27:03.267Z"
   },
   {
     "name": "Pablo Held",
@@ -47045,7 +48424,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:35.177Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f85a26af-8087-4218-b032-549d4b68e0f4"
+    "mbid": "f85a26af-8087-4218-b032-549d4b68e0f4",
+    "genres": [
+      "piano",
+      "jazz",
+      "german",
+      "instrumental",
+      "composer"
+    ],
+    "popularity": {
+      "listeners": 3775,
+      "playcount": 24031
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6074132a2ae73015df7f72ca89824295/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:27:04.062Z"
   },
   {
     "name": "Pablo Manavello",
@@ -47061,7 +48453,13 @@
     },
     "enrichedAt": "2026-07-07T07:21:35.177Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c194619c-cb6f-4e21-82ea-5dadb98610f8"
+    "mbid": "c194619c-cb6f-4e21-82ea-5dadb98610f8",
+    "popularity": {
+      "listeners": 63,
+      "playcount": 324
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:27:04.755Z"
   },
   {
     "name": "Pablo Márquez",
@@ -47077,14 +48475,31 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:31:05.877Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "classical guitar",
+      "Classical",
+      "guitar",
+      "baroque",
+      "90s"
+    ],
+    "popularity": {
+      "listeners": 545,
+      "playcount": 10462
+    },
+    "metaEnrichedAt": "2026-07-08T20:27:05.566Z"
   },
   {
     "name": "Pablo Martínez",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:35.177Z",
     "mbid": "82390efe-bb0b-4e0d-86b8-72728d2dd478",
-    "autoTriedAt": "2026-07-08T18:31:08.394Z"
+    "autoTriedAt": "2026-07-08T18:31:08.394Z",
+    "popularity": {
+      "listeners": 101,
+      "playcount": 839
+    },
+    "metaEnrichedAt": "2026-07-08T20:27:06.400Z"
   },
   {
     "name": "Pablo Milanés",
@@ -47100,14 +48515,40 @@
     },
     "enrichedAt": "2026-07-07T07:21:35.177Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d7437c1b-08fd-4903-9b3a-ec7be866c38d"
+    "mbid": "d7437c1b-08fd-4903-9b3a-ec7be866c38d",
+    "genres": [
+      "trova",
+      "cuba",
+      "cantautor",
+      "latin",
+      "singer-songwriter"
+    ],
+    "popularity": {
+      "listeners": 124226,
+      "playcount": 1068787
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6b5c586a740541e2ca6be4c844e7e6a3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:27:07.439Z"
   },
   {
     "name": "Pablo Montero",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:35.177Z",
     "mbid": "8a2e86ca-2153-4ba1-b2c2-2a525c2bd665",
-    "autoTriedAt": "2026-07-08T18:31:10.943Z"
+    "autoTriedAt": "2026-07-08T18:31:10.943Z",
+    "genres": [
+      "pablo montero",
+      "mexican",
+      "mexico",
+      "latin",
+      "ranchera"
+    ],
+    "popularity": {
+      "listeners": 29918,
+      "playcount": 163781
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/069246ec5e350c58bf643dc3831dec68/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:27:08.186Z"
   },
   {
     "name": "Pablo Moses",
@@ -47123,7 +48564,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:31:29.891Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "reggae",
+      "roots reggae",
+      "roots",
+      "dub",
+      "Rasta"
+    ],
+    "popularity": {
+      "listeners": 90561,
+      "playcount": 684841
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/950c819aa2e8eb7b4e8820b93078cff6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:27:08.867Z"
   },
   {
     "name": "Pablo Ruiz",
@@ -47139,7 +48593,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:31:51.148Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Pablito Ruiz",
+      "pop",
+      "latin pop",
+      "pop rock",
+      "argentina"
+    ],
+    "popularity": {
+      "listeners": 18814,
+      "playcount": 130264
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/667f21206987a9a55e03047c09334ae6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:27:09.677Z"
   },
   {
     "name": "Pablo Sciuto",
@@ -47155,7 +48622,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:35.177Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "04e52ce4-466e-4010-a6e4-b2a49d94bf82"
+    "mbid": "04e52ce4-466e-4010-a6e4-b2a49d94bf82",
+    "genres": [
+      "Vitor Ramil",
+      "juan luis guerra",
+      "standstill",
+      "Javier Alvarez",
+      "Javier Malosetti"
+    ],
+    "popularity": {
+      "listeners": 13813,
+      "playcount": 35599
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fcf62d2bcff7f6d05461498a83d9e7ba/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:27:10.396Z"
   },
   {
     "name": "Pablo Ziegler",
@@ -47171,7 +48651,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:35.177Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "37680311-bc1f-4ae4-83a9-d7856e950a23"
+    "mbid": "37680311-bc1f-4ae4-83a9-d7856e950a23",
+    "genres": [
+      "tango",
+      "jazz",
+      "piano",
+      "latin",
+      "latin jazz"
+    ],
+    "popularity": {
+      "listeners": 10464,
+      "playcount": 35647
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d9302d192961ddc25da7bc590474ab11/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:27:11.255Z"
   },
   {
     "name": "Pablopavo",
@@ -47187,7 +48680,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:35.177Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "fa7a2142-de79-498f-86ea-fd7616cec477"
+    "mbid": "fa7a2142-de79-498f-86ea-fd7616cec477",
+    "genres": [
+      "reggae",
+      "ragga",
+      "raggamuffin",
+      "dancehall",
+      "polish reggae"
+    ],
+    "popularity": {
+      "listeners": 23304,
+      "playcount": 585895
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/33ba1caf3aa4cfaf26b9722bad0ce9f9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:27:12.044Z"
   },
   {
     "name": "Pac Div",
@@ -47203,7 +48709,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:35.177Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d85161aa-0a2c-46bb-952f-a386979d808c"
+    "mbid": "d85161aa-0a2c-46bb-952f-a386979d808c",
+    "genres": [
+      "Hip-Hop",
+      "underground hip-hop",
+      "hip hop",
+      "los angeles",
+      "west coast"
+    ],
+    "popularity": {
+      "listeners": 241524,
+      "playcount": 1577377
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0dae0d31496eb0d48c75083b540e8a81/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:27:12.819Z"
   },
   {
     "name": "Pacewon",
@@ -47219,7 +48738,19 @@
     "mbid": "3524fa1e-30ce-462c-9284-729937db682c",
     "wdBulkTriedAt": "2026-07-08T14:10:42.682Z",
     "enrichedAt": "2026-07-08T14:10:42.682Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "Hip-Hop",
+      "underground hip-hop",
+      "rap",
+      "underground rap",
+      "american"
+    ],
+    "popularity": {
+      "listeners": 28429,
+      "playcount": 175127
+    },
+    "metaEnrichedAt": "2026-07-08T20:27:13.842Z"
   },
   {
     "name": "Pacific 231",
@@ -47235,7 +48766,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:31:53.690Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "industrial",
+      "noise",
+      "ambient",
+      "dark ambient",
+      "old school industrial"
+    ],
+    "popularity": {
+      "listeners": 4327,
+      "playcount": 42711
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cfc08fe8e4444b2a1452edba6ac80ce7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:27:14.708Z"
   },
   {
     "name": "Pacific Gas & Electric",
@@ -47251,7 +48795,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:35.177Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7a1268cc-33a6-4889-bbad-a47b9ffc8339"
+    "mbid": "7a1268cc-33a6-4889-bbad-a47b9ffc8339",
+    "genres": [
+      "classic rock",
+      "rock",
+      "blues rock",
+      "70s",
+      "blues"
+    ],
+    "popularity": {
+      "listeners": 98656,
+      "playcount": 450698
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4eeb2213ce59c585ec55feb5ee6332cc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:27:15.378Z"
   },
   {
     "name": "Pacific Ocean Fire",
@@ -47267,7 +48824,19 @@
     },
     "enrichedAt": "2026-07-07T07:21:35.177Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d519dad9-a902-43e6-bc5c-c7870c22c41d"
+    "mbid": "d519dad9-a902-43e6-bc5c-c7870c22c41d",
+    "genres": [
+      "classic rock",
+      "indie",
+      "spotify",
+      "Bossa Nova"
+    ],
+    "popularity": {
+      "listeners": 1871,
+      "playcount": 20644
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/56d36b4b86f4679f475eeb5fab3ddaab/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:27:16.101Z"
   },
   {
     "name": "Pacific Symphony",
@@ -47283,13 +48852,32 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:32:01.959Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 205,
+      "playcount": 4913
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/dd56859b272e1f1dfcdd9909a829b8fb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:27:16.893Z"
   },
   {
     "name": "Pacific theater",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:35.177Z",
-    "autoTriedAt": "2026-07-08T18:32:03.211Z"
+    "autoTriedAt": "2026-07-08T18:32:03.211Z",
+    "genres": [
+      "art rock",
+      "indie rock",
+      "rock",
+      "alternative",
+      "synth"
+    ],
+    "popularity": {
+      "listeners": 2241,
+      "playcount": 14590
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/28f4ba7c3c4f3f8ebbae19e6f556a48a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:27:17.677Z"
   },
   {
     "name": "Pacific UV",
@@ -47305,7 +48893,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:35.177Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f8e7b8de-4c5f-4ba1-a362-539d0bbe8a19"
+    "mbid": "f8e7b8de-4c5f-4ba1-a362-539d0bbe8a19",
+    "genres": [
+      "shoegaze",
+      "post-rock",
+      "dream pop",
+      "indie",
+      "indie rock"
+    ],
+    "popularity": {
+      "listeners": 21732,
+      "playcount": 226650
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c91bf2dd5ecfef619d8fd5baba35defd/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:27:18.467Z"
   },
   {
     "name": "Pacific!",
@@ -47321,7 +48922,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:32:05.736Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "swedish",
+      "electronic",
+      "synthpop",
+      "pop",
+      "electronica"
+    ],
+    "popularity": {
+      "listeners": 122203,
+      "playcount": 1036672
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fda1af295b3d4674ae728946aa7e8890/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:27:19.222Z"
   },
   {
     "name": "pacificUV",
@@ -47337,7 +48951,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:32:08.275Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "shoegaze",
+      "post-rock",
+      "dream pop",
+      "indie",
+      "indie rock"
+    ],
+    "popularity": {
+      "listeners": 21732,
+      "playcount": 226650
+    },
+    "metaEnrichedAt": "2026-07-08T20:27:19.870Z"
   },
   {
     "name": "Pacifier",
@@ -47353,7 +48979,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T18:32:13.325Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "rock",
+      "alternative rock",
+      "New Zealand",
+      "hard rock",
+      "techno"
+    ],
+    "popularity": {
+      "listeners": 12412,
+      "playcount": 161011
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e23066163f21176a822b54001ee648a2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-08T20:27:20.845Z"
   },
   {
     "name": "Pacifist",
