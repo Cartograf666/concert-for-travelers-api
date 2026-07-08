@@ -88,6 +88,8 @@ jobs:
                 if ! git rebase origin/main; then
                   echo "::warning::Rebase conflict on data/approved_artists.json -- dropping this sub-chunk's commit."
                   git rebase --abort
+                  npm run record-conflict-drop -- enrich-metadata || true
+                  git add data/conflict-drops.json && git commit -m "chore: record conflict-drop metric [skip ci]" && git push || true
                   break
                 fi
                 sleep $((RANDOM % 5 + 2))
