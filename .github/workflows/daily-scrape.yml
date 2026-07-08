@@ -14,7 +14,7 @@ permissions:
 jobs:
   # Own concurrency group (shared with enrich-auto.yml/enrich-database.yml) because
   # this job's own "Commit and Push Enriched Artist Metadata" step below writes the
-  # same data/approved_artists.json those workflows do. Previously this whole
+  # same data/artists/ (sharded artist DB) those workflows do. Previously this whole
   # workflow only had the 'pages' group, so a same-file write here could run fully
   # in parallel with an enrich-* run -- both racing to push, repeatedly hitting an
   # unresolvable rebase conflict and dropping real enrichment work (observed live:
@@ -113,8 +113,8 @@ jobs:
             bandsintown-cache-
 
       # Sync the whitelist from the user's target list first: a name added to
-      # data/artist_scrape_targets.txt must be in approved_artists.json or its
-      # scraped/Bandsintown shows get dropped as "not approved". Idempotent (adds
+      # data/artist_scrape_targets.txt must be in the approved-artist DB (data/artists/)
+      # or its scraped/Bandsintown shows get dropped as "not approved". Idempotent (adds
       # only what's missing); the diff is committed by the enrich step below, so
       # editing the target list is all that's needed to cover a new artist.
       - name: Sync target artists into whitelist
@@ -193,20 +193,21 @@ jobs:
 
       - name: Commit and Push Enriched Artist Metadata
         run: |
-          if git diff --quiet data/approved_artists.json; then
+          if git diff --quiet -- data/artists/; then
             echo "No new artist metadata enriched."
           else
             git config --local user.email "github-actions[bot]@users.noreply.github.com"
             git config --local user.name "github-actions[bot]"
-            git add data/approved_artists.json
+            git add data/artists/
             git commit -m "auto: enrich artist websites and socials [skip ci]"
 
             # main is written to concurrently (self-heal auto-merges, the enrich-*
             # workflows, manual pushes) -- a bare push races and fails on any
             # concurrent write. Retry with rebase a few times before giving up;
-            # this file is supplementary enrichment data, so on an unresolvable
-            # conflict, drop this run's commit rather than fail the whole job --
-            # the next scheduled enrichment pass will redo the work.
+            # this data is supplementary enrichment data (and sharded, so two
+            # writers only actually conflict if they touched the same shard file),
+            # so on an unresolvable conflict, drop this run's commit rather than
+            # fail the whole job -- the next scheduled enrichment pass redoes it.
             pushed=false
             for i in 1 2 3 4 5; do
               if git push; then
@@ -216,7 +217,7 @@ jobs:
               echo "Push rejected (concurrent write), retrying with rebase ($i/5)..."
               git fetch origin main
               if ! git rebase origin/main; then
-                echo "::warning::Rebase conflict on data/approved_artists.json -- dropping this run's enrichment commit."
+                echo "::warning::Rebase conflict on data/artists/ -- dropping this run's enrichment commit."
                 git rebase --abort
                 break
               fi
