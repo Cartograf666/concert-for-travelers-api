@@ -1,6 +1,32 @@
 import { loadDb as loadDbShared, saveDb as saveDbShared, normName, sleep } from './enrich_wikidata_bulk.js';
 import { ArtistEntry } from '../schemas/artist.js';
 
+/**
+ * Tier-2 artist metadata enrichment: genres/tags + popularity (Last.fm, needs a
+ * free LASTFM_API_KEY -- already used by discover_artists.ts) and an artist image
+ * (Deezer artist search, no key needed). Deliberately a SEPARATE pending-gate
+ * (metaEnrichedAt/metaTriedAt) from the identity enrichment tiers (enrich_auto.ts,
+ * enrich_wikidata_bulk.ts) -- most of the whitelist already has enrichedAt set from
+ * those, which would permanently exclude it from ever being visited again if this
+ * reused the same marker, even though genres/popularity/image are a wholly separate
+ * concern that hasn't been attempted yet for any of them.
+ *
+ * One Last.fm artist.getInfo call yields both genres (top user-applied tags) AND
+ * popularity (listeners/playcount stats) -- no need for two round-trips.
+ *
+ * Markers:
+ *   metaEnrichedAt   set when a source contributes at least one of genres/
+ *                    popularity/image.
+ *   metaTriedAt      set when every reachable source was queried and contributed
+ *                    nothing (or there was nothing to query, e.g. no API key and
+ *                    an image already present) -- won't be re-queried by this tier.
+ *   (network error)  entry left untouched so a later run retries it.
+ *
+ * Usage: enrich_metadata.ts [N]     process the next N pending artists (default 200)
+ *
+ * Resumable and idempotent. Do NOT run concurrently with another artist-DB (data/artists/)
+ * writer -- same single-writer-per-process convention as the other enrich_*.ts scripts.
+ */
 interface Popularity {
   listeners: number;
   playcount: number;

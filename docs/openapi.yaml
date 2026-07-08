@@ -82,7 +82,10 @@ paths:
   /artists/{slug}.json:
     get:
       summary: Retrieve Concerts by Artist
-      description: Returns the list of concerts for a specific artist, matching the artist's URL-friendly slug.
+      description: |
+        Returns the list of concerts for a specific artist, matching the artist's URL-friendly slug.
+
+        **Note (Static Hosting Limitation)**: Because this API is statically hosted on GitHub Pages, requests for non-existent artist slugs cannot return a JSON 404 response and instead fall through to standard HTML 404 pages. Consumers must check the requested slug against the `artists` list in `index.json` *before* making this query.
       parameters:
         - name: slug
           in: path
@@ -102,7 +105,10 @@ paths:
   /cities/{slug}.json:
     get:
       summary: Retrieve Concerts by City
-      description: Returns the list of concerts in a specific city/geo-cluster, matching the city's URL-friendly slug.
+      description: |
+        Returns the list of concerts in a specific city/geo-cluster, matching the city's URL-friendly slug.
+
+        **Note (Static Hosting Limitation)**: Because this API is statically hosted on GitHub Pages, requests for non-existent city slugs cannot return a JSON 404 response and instead fall through to standard HTML 404 pages. Consumers must check the requested slug against the `cities` list in `index.json` *before* making this query.
       parameters:
         - name: slug
           in: path

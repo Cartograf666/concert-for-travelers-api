@@ -2,6 +2,34 @@ import { loadDb as loadDbShared, saveDb as saveDbShared, normName, sleep } from 
 import { slugify } from '../pipeline/process.js';
 import { SimilarArtistRef, ArtistEntry } from '../schemas/artist.js';
 
+/**
+ * Tier-2 "similar artists" enrichment: one Last.fm `artist.getsimilar` call per
+ * artist, cross-referenced against our OWN ~63k whitelist so every recommendation
+ * is something the consumer app can actually link to (a suggestion pointing
+ * outside this catalog is a dead end, not a feature). Deliberately a SEPARATE
+ * pending-gate (similarEnrichedAt/similarTriedAt) from every other tier -- same
+ * reasoning as enrich_metadata.ts: reusing enrichedAt/metaEnrichedAt would
+ * permanently skip artists that already went through those tiers before this
+ * one existed.
+ *
+ * Feeds the north-star "rank the options" flow: once a user has a few artists
+ * saved, "if you like X, you might also like Y" (Y already in this catalog)
+ * is a concrete discovery path this repo can serve without any new source.
+ *
+ * Markers:
+ *   similarEnrichedAt   set when at least one Last.fm candidate resolved to a
+ *                       whitelist entry.
+ *   similarTriedAt      set when Last.fm was reachable but nothing resolved
+ *                       (no candidates, or none are in our own whitelist) --
+ *                       won't be re-queried by this tier.
+ *   (network error)     entry left untouched so a later run retries it.
+ *
+ * Usage: enrich_similar_artists.ts [N]   process the next N pending artists (default 200)
+ *
+ * Resumable and idempotent. Do NOT run concurrently with another
+ * approved_artists.json writer -- same single-writer-per-process convention as
+ * the other enrich_*.ts scripts.
+ */
 const FLUSH_EVERY = 25;
 // Published/stored list size -- a "you might also like" section, not a full graph dump.
 const MAX_SIMILAR = 8;
