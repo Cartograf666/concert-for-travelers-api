@@ -81,6 +81,9 @@ jobs:
           GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
           GEMINI_API_KEY_4: ${{ secrets.GEMINI_API_KEY_4 }}
           GEMINI_API_KEY_5: ${{ secrets.GEMINI_API_KEY_5 }}
+          GEMINI_API_KEY_RESERV1: ${{ secrets.GEMINI_API_KEY_RESERV1 }}
+          GEMINI_API_KEY_RESERV2: ${{ secrets.GEMINI_API_KEY_RESERV2 }}
+          GEMINI_API_KEY_RESERV3: ${{ secrets.GEMINI_API_KEY_RESERV3 }}
           GEMINI_API_KEYS: ${{ secrets.GEMINI_API_KEYS }}
           CHUNK_SIZE_INPUT: ${{ github.event.inputs.chunk_size }}
           BATCH_SIZE_INPUT: ${{ github.event.inputs.batch_size }}
