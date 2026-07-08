@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: '0 3 * * *' # Daily at 03:00 UTC
   workflow_dispatch: # Allow manual trigger
+    inputs:
+      is_retry:
+        description: "internal: set by the auto-retry workflow, don't set manually"
+        required: false
+        default: 'false'
+        type: string
 
 permissions:
   contents: write
