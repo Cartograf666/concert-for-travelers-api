@@ -2,6 +2,34 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import { loadApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from '../pipeline/artistDb.js';
+import { getGeminiKeys } from '../engine/gemini_keys.js';
+
+/**
+ * Model cascade, ordered by free-tier daily-quota headroom (checked live against
+ * this project's actual rate-limit dashboard, ai.google.dev -> Rate Limits):
+ * gemini-2.0-flash/-lite and gemini-2.5-pro are 0 RPD on this tier -- skipped
+ * entirely, trying them would just waste a guaranteed-429 call every batch.
+ * The two Gemma models close the cascade: far more generous (1.5K RPD, unlimited
+ * TPM) but do NOT support the googleSearch grounding tool, so they can't verify
+ * a CURRENT tour date -- only useful as a last-resort, no-search fallback (still
+ * fine for "does this artist have a well-known official site" from training data).
+ */
+const MODEL_CASCADE: { name: string; useSearch: boolean }[] = [
+  { name: 'gemini-2.5-flash', useSearch: true },
+  { name: 'gemini-2.5-flash-lite', useSearch: true },
+  { name: 'gemini-3-flash', useSearch: true },
+  { name: 'gemini-3.1-flash-lite', useSearch: true },
+  { name: 'gemini-3.5-flash', useSearch: true },
+  { name: 'gemma-4-31b', useSearch: false },
+  { name: 'gemma-4-26b', useSearch: false },
+];
+
+/** True for auth/quota errors -- the caller should mark this exact (key, model)
+ * pair exhausted and move on, rather than retrying it again this run. */
+function isQuotaOrAuthError(err: any): boolean {
+  const status = err?.status ?? err?.statusCode;
+  return status === 401 || status === 403 || status === 429;
+}
 
 async function loadDb() {
   return loadApprovedArtists(PRODUCTION_ARTIST_DB_DIR);
@@ -20,28 +48,27 @@ function cleanAndParseJson(text: string): any {
 }
 
 async function main() {
-  let apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) {
-    // Try loading from .env in project root
-    try {
-      const dotenvContent = await fs.readFile(path.join(process.cwd(), '.env'), 'utf-8');
-      const match = dotenvContent.match(/^GEMINI_API_KEY\s*=\s*["']?(.*?)["']?$/m);
-      if (match) apiKey = match[1].trim();
-    } catch {}
-  }
-  if (!apiKey) {
-    // Try loading from ~/.env
-    try {
-      const dotenvContent = await fs.readFile(path.join(process.env.HOME || '', '.env'), 'utf-8');
-      const match = dotenvContent.match(/^GEMINI_API_KEY\s*=\s*["']?(.*?)["']?$/m);
-      if (match) apiKey = match[1].trim();
-    } catch {}
+  // .env fallback (local runs) merges into process.env BEFORE getGeminiKeys() reads it,
+  // so GEMINI_API_KEY[_2../_RESERV..]/GEMINI_API_KEYS all still work whichever file they're in.
+  if (!process.env.GEMINI_API_KEY) {
+    for (const envPath of [path.join(process.cwd(), '.env'), path.join(process.env.HOME || '', '.env')]) {
+      try {
+        const dotenvContent = await fs.readFile(envPath, 'utf-8');
+        const match = dotenvContent.match(/^GEMINI_API_KEY\s*=\s*["']?(.*?)["']?$/m);
+        if (match) {
+          process.env.GEMINI_API_KEY = match[1].trim();
+          break;
+        }
+      } catch {}
+    }
   }
 
-  if (!apiKey) {
-    console.error('Error: GEMINI_API_KEY environment variable is not set and could not be loaded from .env.');
+  const apiKeys = getGeminiKeys();
+  if (apiKeys.length === 0) {
+    console.error('Error: no Gemini API key set (GEMINI_API_KEY[/_2/_3/_RESERV1..]) and none could be loaded from .env.');
     process.exit(1);
   }
+  console.log(`[enrich-gemini-search] ${apiKeys.length} Gemini key(s) available for failover.`);
 
   const limitArg = process.argv[2] || '5';
   const outFileArg = process.argv[3] || '/tmp/results.json';
@@ -79,14 +106,10 @@ async function main() {
 
   console.log(`[enrich-gemini-search] Selected ${pending.length} artists: ${pending.join(', ')}`);
 
-  const genAI = new GoogleGenerativeAI(apiKey);
   const results: any[] = [];
-  
-  const modelsToTry = [
-    { name: 'gemini-2.5-flash', tool: { googleSearch: {} } },
-    { name: 'gemini-2.5-pro', tool: { googleSearch: {} } },
-    { name: 'gemini-3.5-flash', tool: { googleSearch: {} } }
-  ];
+  // (key index, model name) pairs already confirmed exhausted/broken this run --
+  // skip retrying them on later batches instead of wasting a guaranteed-fail call.
+  const exhausted = new Set<string>();
 
   for (let i = 0; i < pending.length; i += batchSize) {
     const batch = pending.slice(i, i + batchSize);
@@ -143,41 +166,56 @@ Your response must be a JSON object with a single key "results" containing an ar
 
 Be extremely truthful. Never invent a URL. Return null rather than guess. Output every artist exactly once, using the exact input name.`;
 
+    const noSearchNote = '\n\nNote: you do NOT have live web search for this request -- answer only from well-established training knowledge, and use confidence "low" for anything you are not highly certain of (especially tourUrl, which changes over time and you cannot verify live).';
+
     let success = false;
     let lastError: any = null;
 
-    for (const modelConfig of modelsToTry) {
-      const modelName = modelConfig.name;
-      try {
-        console.log(`[enrich-gemini-search] Attempting generation with model: ${modelName}`);
-        const model = genAI.getGenerativeModel({
-          model: modelName,
-          tools: [modelConfig.tool as any],
-        });
+    // Outer loop over keys: an auth/quota error exhausts that (key, model) pair, not
+    // necessarily the whole key -- move to the next model first, and only actually
+    // advance to the next key once every model in the cascade has failed for this one.
+    outer: for (let keyIdx = 0; keyIdx < apiKeys.length; keyIdx++) {
+      const genAI = new GoogleGenerativeAI(apiKeys[keyIdx]);
+      for (const modelConfig of MODEL_CASCADE) {
+        const exhaustedKey = `${keyIdx}:${modelConfig.name}`;
+        if (exhausted.has(exhaustedKey)) continue;
 
-        const response = await model.generateContent({
-          contents: [{ role: 'user', parts: [{ text: prompt }] }],
-        });
+        try {
+          console.log(`[enrich-gemini-search] Attempting generation with model: ${modelConfig.name} (key ${keyIdx + 1}/${apiKeys.length}, search=${modelConfig.useSearch})`);
+          const model = genAI.getGenerativeModel({
+            model: modelConfig.name,
+            tools: modelConfig.useSearch ? [{ googleSearch: {} } as any] : undefined,
+          });
 
-        const text = response.response.text();
-        const parsed = cleanAndParseJson(text);
+          const response = await model.generateContent({
+            contents: [{ role: 'user', parts: [{ text: modelConfig.useSearch ? prompt : prompt + noSearchNote }] }],
+          });
 
-        if (parsed && Array.isArray(parsed.results)) {
-          results.push(...parsed.results);
-          console.log(`[enrich-gemini-search] Successfully processed batch using ${modelName}. Found websites: ${parsed.results.filter((r: any) => r.website).length}, tourUrls: ${parsed.results.filter((r: any) => r.tourUrl).length}`);
-          success = true;
-          break; // Success! Break out of the model loop
-        } else {
-          console.error(`[enrich-gemini-search] Invalid format returned for batch:`, text);
+          const text = response.response.text();
+          const parsed = cleanAndParseJson(text);
+
+          if (parsed && Array.isArray(parsed.results)) {
+            results.push(...parsed.results);
+            console.log(`[enrich-gemini-search] Successfully processed batch using ${modelConfig.name}. Found websites: ${parsed.results.filter((r: any) => r.website).length}, tourUrls: ${parsed.results.filter((r: any) => r.tourUrl).length}`);
+            success = true;
+            break outer;
+          } else {
+            console.error(`[enrich-gemini-search] Invalid format returned for batch:`, text);
+          }
+        } catch (err: any) {
+          if (isQuotaOrAuthError(err)) {
+            console.warn(`[enrich-gemini-search] Auth/quota error on ${modelConfig.name} (key ${keyIdx + 1}, status ${err?.statusCode ?? err?.status}) -- marking exhausted, trying next model/key: ${err.message}`);
+            exhausted.add(exhaustedKey);
+          } else {
+            console.warn(`[enrich-gemini-search] Model ${modelConfig.name} failed: ${err.message}`);
+          }
+          lastError = err;
         }
-      } catch (err: any) {
-        console.warn(`[enrich-gemini-search] Model ${modelName} failed: ${err.message}`);
-        lastError = err;
       }
     }
 
     if (!success) {
-      console.error(`[enrich-gemini-search] Failed to process batch after trying all models. Last error: ${lastError?.message}`);
+      console.error(`[enrich-gemini-search] Failed to process batch after trying all ${apiKeys.length} key(s) x ${MODEL_CASCADE.length} model(s). Last error: ${lastError?.message}`);
     }
 
     // Delay between batches to respect free-tier RPM limits (tune via 5th CLI arg)

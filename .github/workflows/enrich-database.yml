@@ -73,7 +73,15 @@ jobs:
       # same checkpointing already used by enrich-auto/-metadata/-similar.yml.
       - name: Run Gemini enrichment (checkpointed)
         env:
+          # Multi-key failover (src/engine/gemini_keys.ts): each secret set here is an
+          # independent free-tier project/quota bucket. Unset ones are just skipped --
+          # add GEMINI_API_KEY_2/_3/.../_RESERV1/... as repo secrets to add more.
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          GEMINI_API_KEY_4: ${{ secrets.GEMINI_API_KEY_4 }}
+          GEMINI_API_KEY_5: ${{ secrets.GEMINI_API_KEY_5 }}
+          GEMINI_API_KEYS: ${{ secrets.GEMINI_API_KEYS }}
           CHUNK_SIZE_INPUT: ${{ github.event.inputs.chunk_size }}
           BATCH_SIZE_INPUT: ${{ github.event.inputs.batch_size }}
           DELAY_MS_INPUT: ${{ github.event.inputs.delay_ms }}
