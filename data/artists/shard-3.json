@@ -23399,21 +23399,40 @@
     },
     "enrichedAt": "2026-07-07T23:52:19.608Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "c06cb96b-2a5c-439a-8171-fe3bd7d01ac3"
+    "mbid": "c06cb96b-2a5c-439a-8171-fe3bd7d01ac3",
+    "genres": [
+      "electronic",
+      "Electroclash",
+      "Canadian",
+      "new rave",
+      "chillwave"
+    ],
+    "popularity": {
+      "listeners": 411977,
+      "playcount": 5334754
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5a8ddfef61e906a2d8c34419fde04c89/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:21:41.678Z"
   },
   {
     "name": "CFMAs",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:31.220Z",
     "autoTriedAt": "2026-07-07T23:52:20.883Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "metaTriedAt": "2026-07-09T23:21:42.381Z"
   },
   {
     "name": "Ch'eng Mao-yün",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:31.220Z",
     "autoTriedAt": "2026-07-07T23:52:22.157Z",
-    "mbid": "1ac44a32-f9ef-43da-98de-aa149a0ebd2c"
+    "mbid": "1ac44a32-f9ef-43da-98de-aa149a0ebd2c",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 4
+    },
+    "metaEnrichedAt": "2026-07-09T23:21:43.029Z"
   },
   {
     "name": "Cha Burns",
@@ -23428,7 +23447,8 @@
       "youtube": null,
       "telegram": null,
       "vk": null
-    }
+    },
+    "metaTriedAt": "2026-07-09T23:21:43.794Z"
   },
   {
     "name": "Cha Tae-hyun",
@@ -23444,7 +23464,13 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6a9b1d40-b40f-4614-ba7d-e3100f5306bb"
+    "mbid": "6a9b1d40-b40f-4614-ba7d-e3100f5306bb",
+    "popularity": {
+      "listeners": 32,
+      "playcount": 228
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6037ff14971572541de0fb7b72949bb0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:21:44.563Z"
   },
   {
     "name": "Chaartaar",
@@ -23460,7 +23486,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7c2e500e-3bc7-4ea6-a9ac-2ee7b1a9e1ed"
+    "mbid": "7c2e500e-3bc7-4ea6-a9ac-2ee7b1a9e1ed",
+    "genres": [
+      "Persian",
+      "All",
+      "folk",
+      "electronic",
+      "lyrical"
+    ],
+    "popularity": {
+      "listeners": 6966,
+      "playcount": 436291
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5994e780f5d980b3fb103331d24868ec/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:21:45.284Z"
   },
   {
     "name": "Chaba",
@@ -23476,14 +23515,40 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2c6a434e-ccd3-4f9e-9376-7bf96a721af8"
+    "mbid": "2c6a434e-ccd3-4f9e-9376-7bf96a721af8",
+    "genres": [
+      "japanese",
+      "j-pop",
+      "folk",
+      "J-rock",
+      "anime"
+    ],
+    "popularity": {
+      "listeners": 25269,
+      "playcount": 365791
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4654ff1007202166f2747d5b90befd1e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:21:45.961Z"
   },
   {
     "name": "Chaba Fadela",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:31.220Z",
     "autoTriedAt": "2026-07-07T23:52:24.705Z",
-    "mbid": "6f2176ba-4696-4a11-8e5e-392b7a8688b2"
+    "mbid": "6f2176ba-4696-4a11-8e5e-392b7a8688b2",
+    "genres": [
+      "rai",
+      "algeria",
+      "arabic",
+      "folk",
+      "algerian"
+    ],
+    "popularity": {
+      "listeners": 3614,
+      "playcount": 16989
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c4932e4b1a730f13ae992990ce6ffdcf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:21:47.076Z"
   },
   {
     "name": "Chabuca Granda",
@@ -23499,7 +23564,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ad92ec10-7f8b-4f9a-a0a0-c02982722b6c"
+    "mbid": "ad92ec10-7f8b-4f9a-a0a0-c02982722b6c",
+    "genres": [
+      "Peru",
+      "folk",
+      "female vocalists",
+      "latin",
+      "vals criollo"
+    ],
+    "popularity": {
+      "listeners": 59485,
+      "playcount": 479232
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1dd0752625893976d740514d9131464e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:21:47.706Z"
   },
   {
     "name": "Chad & Jeremy",
@@ -23515,14 +23593,32 @@
     },
     "enrichedAt": "2026-07-07T23:52:27.412Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "60s",
+      "british",
+      "oldies",
+      "classic rock",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 173848,
+      "playcount": 973736
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/de4dfed3aca2d0e46ced04fa2af746eb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:21:48.322Z"
   },
   {
     "name": "Chad Allen",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:31.220Z",
     "autoTriedAt": "2026-07-07T23:52:28.691Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 155,
+      "playcount": 3273
+    },
+    "metaEnrichedAt": "2026-07-09T23:21:49.053Z"
   },
   {
     "name": "Chad Brock",
@@ -23538,7 +23634,20 @@
     },
     "enrichedAt": "2026-07-07T23:52:40.331Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "modern country",
+      "country",
+      "singer-songwriter",
+      "All",
+      "New Traditional Country"
+    ],
+    "popularity": {
+      "listeners": 19152,
+      "playcount": 150527
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/60498a3f553bca62b253d627d4460cbe/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:21:49.736Z"
   },
   {
     "name": "Chad Brownlee",
@@ -23554,14 +23663,32 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ee941f3a-bcb7-469e-95cd-cc6830b4da04"
+    "mbid": "ee941f3a-bcb7-469e-95cd-cc6830b4da04",
+    "genres": [
+      "All",
+      "country",
+      "alternative rock",
+      "Canadian",
+      "toronto"
+    ],
+    "popularity": {
+      "listeners": 16735,
+      "playcount": 227802
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a8cc2c5b5f4112b7e778b5241ccb8100/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:21:50.461Z"
   },
   {
     "name": "Chad Butler",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:31.220Z",
     "autoTriedAt": "2026-07-07T23:52:42.926Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 4,
+      "playcount": 6
+    },
+    "metaEnrichedAt": "2026-07-09T23:21:51.156Z"
   },
   {
     "name": "Chad Channing",
@@ -23577,14 +23704,24 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e2f28104-72bb-4c8f-b0f9-78d4eaf492fd"
+    "mbid": "e2f28104-72bb-4c8f-b0f9-78d4eaf492fd",
+    "popularity": {
+      "listeners": 13,
+      "playcount": 27
+    },
+    "metaEnrichedAt": "2026-07-09T23:21:51.783Z"
   },
   {
     "name": "Chad Clark",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:31.220Z",
     "autoTriedAt": "2026-07-07T23:52:45.534Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 89,
+      "playcount": 324
+    },
+    "metaEnrichedAt": "2026-07-09T23:21:52.459Z"
   },
   {
     "name": "Chad Gilbert",
@@ -23600,14 +23737,24 @@
     },
     "enrichedAt": "2026-07-07T23:52:48.124Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 466,
+      "playcount": 4822
+    },
+    "metaEnrichedAt": "2026-07-09T23:21:53.155Z"
   },
   {
     "name": "Chad Gracey",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:31.220Z",
     "autoTriedAt": "2026-07-07T23:52:50.683Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 2
+    },
+    "metaEnrichedAt": "2026-07-09T23:21:53.855Z"
   },
   {
     "name": "Chad Gray",
@@ -23623,7 +23770,13 @@
     },
     "enrichedAt": "2026-07-07T23:52:53.283Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 974,
+      "playcount": 3599
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7a9d671758ffd046aef0f77dcb8725af/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:21:54.487Z"
   },
   {
     "name": "Chad Hugo",
@@ -23639,7 +23792,13 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7c33a306-87ad-4cb6-9f69-bfdb8586b302"
+    "mbid": "7c33a306-87ad-4cb6-9f69-bfdb8586b302",
+    "popularity": {
+      "listeners": 3330,
+      "playcount": 11644
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f2e0ffc07530e6e004da0422af6f2c3d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:21:55.082Z"
   },
   {
     "name": "Chad I Ginsburg",
@@ -23655,7 +23814,12 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "fc66d435-cf54-4813-a066-c9e42ba16b6a"
+    "mbid": "fc66d435-cf54-4813-a066-c9e42ba16b6a",
+    "popularity": {
+      "listeners": 15,
+      "playcount": 238
+    },
+    "metaEnrichedAt": "2026-07-09T23:21:56.040Z"
   },
   {
     "name": "Chad Jones",
@@ -23671,14 +23835,35 @@
     },
     "enrichedAt": "2026-07-07T23:52:55.873Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "USA",
+      "r&b",
+      "Christian Rap"
+    ],
+    "popularity": {
+      "listeners": 680,
+      "playcount": 3562
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8a26542aa7cb8f3e121a19a6d02808c1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:21:56.763Z"
   },
   {
     "name": "Chad Kimball",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:31.220Z",
     "autoTriedAt": "2026-07-07T23:52:58.449Z",
-    "mbid": "577eadd9-2962-4278-b6ca-696164d6ed47"
+    "mbid": "577eadd9-2962-4278-b6ca-696164d6ed47",
+    "genres": [
+      "musical",
+      "USA"
+    ],
+    "popularity": {
+      "listeners": 10725,
+      "playcount": 54369
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/281d8b59a8462d34d200ef46f7717250/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:21:57.458Z"
   },
   {
     "name": "Chad Klinger",
@@ -23694,7 +23879,12 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 137,
+      "playcount": 2994
+    },
+    "metaEnrichedAt": "2026-07-09T23:21:58.452Z"
   },
   {
     "name": "Chad Kroeger",
@@ -23710,7 +23900,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a59edb65-fae2-4344-b77a-5232516d4d7a"
+    "mbid": "a59edb65-fae2-4344-b77a-5232516d4d7a",
+    "genres": [
+      "rock",
+      "alternative rock",
+      "Canadian",
+      "alternative",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 393419,
+      "playcount": 2520810
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a1ed0925b2eaa17812b44c86d47a80c5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:21:59.033Z"
   },
   {
     "name": "Chad Larson",
@@ -23726,7 +23929,12 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6477a9ac-d09d-4a6e-ac33-e17fc2564ed9"
+    "mbid": "6477a9ac-d09d-4a6e-ac33-e17fc2564ed9",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 6
+    },
+    "metaEnrichedAt": "2026-07-09T23:22:00.064Z"
   },
   {
     "name": "Chad Mitchell Trio",
@@ -23742,7 +23950,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "74304517-fb31-45b9-b3e9-16728fa66f7b"
+    "mbid": "74304517-fb31-45b9-b3e9-16728fa66f7b",
+    "genres": [
+      "folk",
+      "satire",
+      "political",
+      "acoustic",
+      "americana"
+    ],
+    "popularity": {
+      "listeners": 10966,
+      "playcount": 101644
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f1c53607d8a4f02f1322ffb0ede6060d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:00.731Z"
   },
   {
     "name": "Chad Smith",
@@ -23758,7 +23979,13 @@
     },
     "enrichedAt": "2026-07-07T23:53:01.039Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 2568,
+      "playcount": 10428
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d41d8cd98f00b204e9800998ecf8427e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:01.444Z"
   },
   {
     "name": "Chad Smith's Bombastic Meatbats",
@@ -23774,14 +24001,32 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ff63d922-1053-4e09-9ce3-ac41e44a4d47"
+    "mbid": "ff63d922-1053-4e09-9ce3-ac41e44a4d47",
+    "genres": [
+      "Progressive rock",
+      "funk",
+      "Fusion",
+      "Funk Rock",
+      "jazz-rock"
+    ],
+    "popularity": {
+      "listeners": 9846,
+      "playcount": 158955
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/51a6d8478dfe522a72e943fb838d946a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:02.750Z"
   },
   {
     "name": "Chad Stewart",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:31.220Z",
     "autoTriedAt": "2026-07-07T23:53:03.636Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 14,
+      "playcount": 38
+    },
+    "metaEnrichedAt": "2026-07-09T23:22:03.450Z"
   },
   {
     "name": "Chad Szeliga",
@@ -23797,7 +24042,12 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7e93ab2e-9352-4496-8bbb-4adc4728a2a0"
+    "mbid": "7e93ab2e-9352-4496-8bbb-4adc4728a2a0",
+    "popularity": {
+      "listeners": 3,
+      "playcount": 6
+    },
+    "metaEnrichedAt": "2026-07-09T23:22:04.393Z"
   },
   {
     "name": "Chad Urmston",
@@ -23813,7 +24063,12 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "23cc1e55-bfc4-4480-8806-c721fce01525"
+    "mbid": "23cc1e55-bfc4-4480-8806-c721fce01525",
+    "popularity": {
+      "listeners": 30,
+      "playcount": 818
+    },
+    "metaEnrichedAt": "2026-07-09T23:22:05.044Z"
   },
   {
     "name": "Chad VanGaalen",
@@ -23829,7 +24084,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d5c5c11b-153d-4f28-9525-db5ec1bfe0ad"
+    "mbid": "d5c5c11b-153d-4f28-9525-db5ec1bfe0ad",
+    "genres": [
+      "singer-songwriter",
+      "indie",
+      "Canadian",
+      "indie rock",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 360638,
+      "playcount": 7704169
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/35f4dca99f179419f284549db8afc020/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:05.621Z"
   },
   {
     "name": "Chad Wackerman",
@@ -23845,7 +24113,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c3d1bbce-b664-4487-922f-4b3bfb8f73b1"
+    "mbid": "c3d1bbce-b664-4487-922f-4b3bfb8f73b1",
+    "genres": [
+      "drums",
+      "Fusion",
+      "jazz fusion",
+      "Jazz Rock",
+      "instrumental"
+    ],
+    "popularity": {
+      "listeners": 13915,
+      "playcount": 138293
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4dde9a477cc104879b30f8867cb07b66/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:06.285Z"
   },
   {
     "name": "Chae Jung-an",
@@ -23861,7 +24142,12 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c7b82c06-487f-41c2-b19f-2d80c7b2d4cb"
+    "mbid": "c7b82c06-487f-41c2-b19f-2d80c7b2d4cb",
+    "popularity": {
+      "listeners": 6,
+      "playcount": 61
+    },
+    "metaEnrichedAt": "2026-07-09T23:22:06.967Z"
   },
   {
     "name": "Chae Yeon",
@@ -23877,14 +24163,33 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "96e5f3bc-27b8-4515-8b0e-a56508aa4713"
+    "mbid": "96e5f3bc-27b8-4515-8b0e-a56508aa4713",
+    "genres": [
+      "k-pop",
+      "Korean",
+      "dance",
+      "female vocalists",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 12431,
+      "playcount": 263490
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c45427123c72127bc79df99d8c52dddd/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:07.647Z"
   },
   {
     "name": "Chaerin Kim",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:31.220Z",
     "autoTriedAt": "2026-07-07T23:53:04.911Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 43,
+      "playcount": 177
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1519a9965561421b12049935bb844141/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:08.517Z"
   },
   {
     "name": "Chagall Guevara",
@@ -23900,7 +24205,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "77f31531-c0aa-49aa-bb51-0905641c73f7"
+    "mbid": "77f31531-c0aa-49aa-bb51-0905641c73f7",
+    "genres": [
+      "rock",
+      "alternative",
+      "christian",
+      "indie",
+      "do not blame"
+    ],
+    "popularity": {
+      "listeners": 5544,
+      "playcount": 65962
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/34346f4d5d7b365dd4ed4b2d79710bd4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:09.211Z"
   },
   {
     "name": "CHAGE and ASKA",
@@ -23916,14 +24234,38 @@
     },
     "enrichedAt": "2026-07-07T23:53:26.717Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "CHAGE and ASKA",
+      "90s",
+      "anime"
+    ],
+    "popularity": {
+      "listeners": 16346,
+      "playcount": 471557
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fe2ad263e25224721d7f03a0de3c7a87/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:09.836Z"
   },
   {
     "name": "Chaim Topol",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:31.220Z",
     "autoTriedAt": "2026-07-07T23:53:27.995Z",
-    "mbid": "e23e3e0e-7327-48ce-96a3-481896b26ca1"
+    "mbid": "e23e3e0e-7327-48ce-96a3-481896b26ca1",
+    "genres": [
+      "israeli",
+      "cabaret",
+      "boogiewoogieflu"
+    ],
+    "popularity": {
+      "listeners": 5366,
+      "playcount": 34697
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f7eb310753f71c84d89336aa8f7a56bc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:10.641Z"
   },
   {
     "name": "Chain Collector",
@@ -23939,7 +24281,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2c542a5a-b829-40c8-b334-c3f74c2e85a3"
+    "mbid": "2c542a5a-b829-40c8-b334-c3f74c2e85a3",
+    "genres": [
+      "Melodic Death Metal",
+      "death metal",
+      "norwegian",
+      "thrash metal",
+      "Norway"
+    ],
+    "popularity": {
+      "listeners": 3971,
+      "playcount": 55585
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a68bf59ef29d58f56d78292dd658f975/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:11.620Z"
   },
   {
     "name": "Chain of Strength",
@@ -23955,7 +24310,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "81a3c11e-ac20-4bb4-8614-06b157e802d8"
+    "mbid": "81a3c11e-ac20-4bb4-8614-06b157e802d8",
+    "genres": [
+      "hardcore",
+      "youth crew",
+      "Straight Edge",
+      "hardcore punk",
+      "straight edge hardcore"
+    ],
+    "popularity": {
+      "listeners": 35851,
+      "playcount": 930174
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1c12c0316f2d10a16b7fd75f0a162352/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:12.301Z"
   },
   {
     "name": "Chain Reaction",
@@ -23971,7 +24339,20 @@
     },
     "enrichedAt": "2026-07-07T23:53:30.585Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "thrash metal",
+      "hardcore",
+      "hardstyle",
+      "metal",
+      "polish"
+    ],
+    "popularity": {
+      "listeners": 58663,
+      "playcount": 411249
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6e443908ea64dd969271430d56ca6f1b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:13.034Z"
   },
   {
     "name": "Chainsaw",
@@ -23987,14 +24368,39 @@
     },
     "enrichedAt": "2026-07-07T23:53:33.225Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "heavy metal",
+      "thrash metal",
+      "polish",
+      "speed metal",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 22174,
+      "playcount": 366553
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c0d0a9573ea89ea728c807454f758ff6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:13.697Z"
   },
   {
     "name": "Chainz",
     "website": null,
     "autoTriedAt": "2026-07-07T23:53:35.407Z",
     "wdBulkTriedAt": "2026-07-08T14:10:35.329Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "Hip-Hop",
+      "rap",
+      "trap",
+      "Dirty South",
+      "southern rap"
+    ],
+    "popularity": {
+      "listeners": 1473396,
+      "playcount": 27319903
+    },
+    "metaEnrichedAt": "2026-07-09T23:22:14.405Z"
   },
   {
     "name": "Chairlift",
@@ -24011,7 +24417,20 @@
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
     "mbid": "a3cd61ef-7fd4-44af-a27f-99641a82b22b",
-    "autoTriedAt": "2026-07-07T23:53:36.682Z"
+    "autoTriedAt": "2026-07-07T23:53:36.682Z",
+    "genres": [
+      "electronic",
+      "indie pop",
+      "indie",
+      "female vocalists",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 889759,
+      "playcount": 17656001
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6d4393d1f2faf1b14912ca92bcf1c503/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:15.016Z"
   },
   {
     "name": "Chaitra H. G.",
@@ -24027,7 +24446,13 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "bc26f031-d90a-4d76-9232-7b860a8bd669"
+    "mbid": "bc26f031-d90a-4d76-9232-7b860a8bd669",
+    "popularity": {
+      "listeners": 36,
+      "playcount": 115
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3c8d4dc280896ea30611441497188444/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:15.755Z"
   },
   {
     "name": "Chaka Demus",
@@ -24043,7 +24468,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "af53fe4c-c4e9-4ce4-9a15-4e3bbbc821cb"
+    "mbid": "af53fe4c-c4e9-4ce4-9a15-4e3bbbc821cb",
+    "genres": [
+      "reggae",
+      "dancehall",
+      "jamaica",
+      "groove",
+      "roots reggae"
+    ],
+    "popularity": {
+      "listeners": 29790,
+      "playcount": 116831
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d44da20b267afccb57ca5ddb3bcd60ac/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:16.447Z"
   },
   {
     "name": "Chaka Demus & Pliers",
@@ -24059,7 +24497,20 @@
     },
     "enrichedAt": "2026-07-07T23:53:43.005Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "449f264b-1a94-4ef8-b601-2ffccbbedefa"
+    "mbid": "449f264b-1a94-4ef8-b601-2ffccbbedefa",
+    "genres": [
+      "reggae",
+      "dancehall",
+      "ragga",
+      "jamaica",
+      "jamaican"
+    ],
+    "popularity": {
+      "listeners": 405166,
+      "playcount": 2277665
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ba42b586c478203433f2fd40068438b2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:17.030Z"
   },
   {
     "name": "Chaka Khan",
@@ -24075,7 +24526,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "900e9144-019d-4043-86cb-ec0e127c39d0"
+    "mbid": "900e9144-019d-4043-86cb-ec0e127c39d0",
+    "genres": [
+      "soul",
+      "funk",
+      "female vocalists",
+      "80s",
+      "rnb"
+    ],
+    "popularity": {
+      "listeners": 1337224,
+      "playcount": 13136547
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b32d54f3027b2a63716ba515613ad7b9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:17.606Z"
   },
   {
     "name": "Chakk",
@@ -24090,7 +24554,19 @@
       "youtube": null,
       "telegram": null,
       "vk": null
-    }
+    },
+    "genres": [
+      "new wave",
+      "post-punk",
+      "funk",
+      "Industrial Funk",
+      "Sheffield"
+    ],
+    "popularity": {
+      "listeners": 1876,
+      "playcount": 21070
+    },
+    "metaEnrichedAt": "2026-07-09T23:22:18.631Z"
   },
   {
     "name": "Chakra",
@@ -24106,7 +24582,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7dd1a2f8-c88b-4ff7-b6cf-78793ad9043f"
+    "mbid": "7dd1a2f8-c88b-4ff7-b6cf-78793ad9043f",
+    "genres": [
+      "trance",
+      "psytrance",
+      "psychedelic trance",
+      "goa",
+      "rapcore"
+    ],
+    "popularity": {
+      "listeners": 74271,
+      "playcount": 821196
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e4868ba857ce9fa043c9068e79353af5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:19.359Z"
   },
   {
     "name": "Chakri",
@@ -24122,7 +24611,17 @@
     },
     "enrichedAt": "2026-07-07T23:53:51.140Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "0409d44c-673a-4b89-8bd9-93651ff1e79d"
+    "mbid": "0409d44c-673a-4b89-8bd9-93651ff1e79d",
+    "genres": [
+      "Indian",
+      "telugu",
+      "tollywood"
+    ],
+    "popularity": {
+      "listeners": 4404,
+      "playcount": 40070
+    },
+    "metaEnrichedAt": "2026-07-09T23:22:19.990Z"
   },
   {
     "name": "Chalee Tennison",
@@ -24138,7 +24637,20 @@
     },
     "enrichedAt": "2026-07-07T23:53:53.725Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "9fb0a37b-6c9f-41c8-8400-3d1db83b3af6"
+    "mbid": "9fb0a37b-6c9f-41c8-8400-3d1db83b3af6",
+    "genres": [
+      "country",
+      "female vocalists",
+      "country divas",
+      "Female country",
+      "00s country"
+    ],
+    "popularity": {
+      "listeners": 3448,
+      "playcount": 64963
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b7aba312f33cdc44cd6299a068c70a3a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:20.749Z"
   },
   {
     "name": "Chali 2na",
@@ -24154,14 +24666,40 @@
     },
     "enrichedAt": "2026-07-07T07:08:31.220Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "871c27c9-2121-4eb9-a072-e36a0e367642"
+    "mbid": "871c27c9-2121-4eb9-a072-e36a0e367642",
+    "genres": [
+      "Hip-Hop",
+      "rap",
+      "underground hip-hop",
+      "hip hop",
+      "jurassic 5"
+    ],
+    "popularity": {
+      "listeners": 144531,
+      "playcount": 1731048
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/75f7704b62ddb591e0e22540b5cb83c5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:21.413Z"
   },
   {
     "name": "Chalice",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:31.220Z",
     "autoTriedAt": "2026-07-07T23:53:56.326Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "Gothic Metal",
+      "doom metal",
+      "reggae",
+      "australian",
+      "Gothic Doom Metal"
+    ],
+    "popularity": {
+      "listeners": 26261,
+      "playcount": 637617
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ecda64571d6c45099b8a7af05fa2f4ba/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:22.492Z"
   },
   {
     "name": "Chalie Boy",
@@ -24177,7 +24715,20 @@
     },
     "enrichedAt": "2026-07-07T23:53:58.956Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "rap",
+      "southern rap",
+      "chopped and screwed",
+      "All",
+      "texas"
+    ],
+    "popularity": {
+      "listeners": 89856,
+      "playcount": 442386
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/16358a879751ff9bb13cb92e7544016f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:23.299Z"
   },
   {
     "name": "Chalk Circle",
@@ -24193,28 +24744,60 @@
     },
     "enrichedAt": "2026-07-07T23:54:01.567Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "punk",
+      "80s",
+      "new wave",
+      "Canadian",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 8772,
+      "playcount": 83926
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c1c9b94dd323921d2f0cf808b582fb80/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:23.977Z"
   },
   {
     "name": "Chalkdust",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:54:04.243Z",
-    "mbid": "d3cbddd3-50b8-45a7-8e97-ed22ae857b32"
+    "mbid": "d3cbddd3-50b8-45a7-8e97-ed22ae857b32",
+    "popularity": {
+      "listeners": 189,
+      "playcount": 1770
+    },
+    "metaEnrichedAt": "2026-07-09T23:22:24.735Z"
   },
   {
     "name": "Challapally Chitti Babu",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:54:05.519Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "metaTriedAt": "2026-07-09T23:22:25.449Z"
   },
   {
     "name": "Challenger",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:54:08.092Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "metalcore",
+      "melodic metalcore",
+      "post-hardcore",
+      "russian",
+      "heavy metal"
+    ],
+    "popularity": {
+      "listeners": 13705,
+      "playcount": 174809
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e6ce0739117ab0f45582661f162e71a6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:26.844Z"
   },
   {
     "name": "Cham",
@@ -24230,7 +24813,20 @@
     },
     "enrichedAt": "2026-07-07T23:54:10.765Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "dancehall",
+      "reggae",
+      "ragga",
+      "jamaica",
+      "All"
+    ],
+    "popularity": {
+      "listeners": 68827,
+      "playcount": 394476
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/442085b836db32bcad77c60817c8b10e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:27.478Z"
   },
   {
     "name": "Chambao",
@@ -24246,21 +24842,41 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b44eab39-900f-446f-af67-0512a88e54ec"
+    "mbid": "b44eab39-900f-446f-af67-0512a88e54ec",
+    "genres": [
+      "Flamenco",
+      "spanish",
+      "chillout",
+      "flamenco chill",
+      "Fusion"
+    ],
+    "popularity": {
+      "listeners": 233820,
+      "playcount": 4254412
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f56c57478054fd9a257b789f0c466a31/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:28.130Z"
   },
   {
     "name": "Chamber music",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:54:12.057Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 805,
+      "playcount": 8994
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4e9fdf611cc2d156ef8908abf6ee12c6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:28.861Z"
   },
   {
     "name": "chamber musician",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:54:13.341Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "metaTriedAt": "2026-07-09T23:22:29.532Z"
   },
   {
     "name": "Chamber Orchestra of New York",
@@ -24276,7 +24892,13 @@
     },
     "enrichedAt": "2026-07-07T23:54:15.943Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 1104,
+      "playcount": 2714
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3650ac64a4c27351b304d0716d1b5d7c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:30.221Z"
   },
   {
     "name": "Chamber Orchestra of Philadelphia",
@@ -24292,21 +24914,33 @@
     },
     "enrichedAt": "2026-07-07T23:54:18.559Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 403,
+      "playcount": 1862
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/498c125d0b63e8972145df1c490762ac/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:30.922Z"
   },
   {
     "name": "Chamber Philharmonic Taipei",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:54:19.840Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 1
+    },
+    "metaEnrichedAt": "2026-07-09T23:22:31.611Z"
   },
   {
     "name": "chamber-music",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:54:21.138Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "metaTriedAt": "2026-07-09T23:22:32.246Z"
   },
   {
     "name": "Chamberlain",
@@ -24322,14 +24956,28 @@
     },
     "enrichedAt": "2026-07-07T23:54:23.763Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "indie emo",
+      "emo",
+      "indie rock",
+      "alternative rock",
+      "punk rock"
+    ],
+    "popularity": {
+      "listeners": 27843,
+      "playcount": 382496
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/aeb2423f8e49bb5682b6b373d51569b6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:33.138Z"
   },
   {
     "name": "Chambers, Rivers",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:54:25.041Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "metaTriedAt": "2026-07-09T23:22:33.746Z"
   },
   {
     "name": "Chameleon",
@@ -24344,7 +24992,20 @@
       "telegram": null,
       "vk": null
     },
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "Drum and bass",
+      "electronic",
+      "techno",
+      "detroit techno",
+      "dnb"
+    ],
+    "popularity": {
+      "listeners": 37797,
+      "playcount": 156302
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3189694a3bd9d9b8d1926d21a8896f40/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:34.509Z"
   },
   {
     "name": "Chamillionaire",
@@ -24360,28 +25021,67 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4fbc55bb-61be-4eb7-b4b4-c08c68b4e060"
+    "mbid": "4fbc55bb-61be-4eb7-b4b4-c08c68b4e060",
+    "genres": [
+      "Hip-Hop",
+      "rap",
+      "Dirty South",
+      "southern rap",
+      "hip hop"
+    ],
+    "popularity": {
+      "listeners": 1175380,
+      "playcount": 14930910
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9afd9624a221e96ce66b8deb453e6056/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:35.175Z"
   },
   {
     "name": "Champaign Urbana Symphony Orchestra",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:54:29.124Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "metaTriedAt": "2026-07-09T23:22:35.800Z"
   },
   {
     "name": "Champion",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:54:30.410Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "hardcore",
+      "Straight Edge",
+      "hardcore punk",
+      "youth crew",
+      "oldschool hardcore"
+    ],
+    "popularity": {
+      "listeners": 256802,
+      "playcount": 5415509
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d2aaa4880b144747d5d49232f63b2c60/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:36.440Z"
   },
   {
     "name": "Champion Jack Dupree",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:54:33.073Z",
-    "mbid": "5849fa32-0283-4204-9d1b-507cfaf9d4a2"
+    "mbid": "5849fa32-0283-4204-9d1b-507cfaf9d4a2",
+    "genres": [
+      "blues",
+      "boogie woogie",
+      "piano blues",
+      "New Orleans",
+      "piano"
+    ],
+    "popularity": {
+      "listeners": 128854,
+      "playcount": 731336
+    },
+    "metaEnrichedAt": "2026-07-09T23:22:37.406Z"
   },
   {
     "name": "Champloose",
@@ -24397,21 +25097,49 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "folk",
+      "folk rock",
+      "traditional folk",
+      "progressive folk",
+      "world fusion"
+    ],
+    "popularity": {
+      "listeners": 146,
+      "playcount": 2791
+    },
+    "metaEnrichedAt": "2026-07-09T23:22:38.316Z"
   },
   {
     "name": "Chamsonyeo",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:54:34.349Z",
-    "mbid": "680cbe3a-aba8-4eb3-9bcd-ca09af633c21"
+    "mbid": "680cbe3a-aba8-4eb3-9bcd-ca09af633c21",
+    "genres": [
+      "k-pop",
+      "Korean",
+      "Kpop",
+      "under 100 listeners"
+    ],
+    "popularity": {
+      "listeners": 33,
+      "playcount": 308
+    },
+    "metaEnrichedAt": "2026-07-09T23:22:38.958Z"
   },
   {
     "name": "Chan Ka Nin",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:54:37.066Z",
-    "mbid": "683eba81-22ea-41c4-8691-c23b7fe2a2d6"
+    "mbid": "683eba81-22ea-41c4-8691-c23b7fe2a2d6",
+    "popularity": {
+      "listeners": 35,
+      "playcount": 100
+    },
+    "metaEnrichedAt": "2026-07-09T23:22:39.681Z"
   },
   {
     "name": "Chan Marshall",
@@ -24427,28 +25155,62 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "05755bf1-380c-487f-983f-d1a02401fa28"
+    "mbid": "05755bf1-380c-487f-983f-d1a02401fa28",
+    "genres": [
+      "indie",
+      "female vocalists",
+      "singer-songwriter",
+      "folk",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 2253104,
+      "playcount": 88770013
+    },
+    "metaEnrichedAt": "2026-07-09T23:22:40.371Z"
   },
   {
     "name": "Chan Wing-wah",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:54:38.484Z",
-    "mbid": "2c1d9551-bca6-4230-a3d9-9c1455e401f1"
+    "mbid": "2c1d9551-bca6-4230-a3d9-9c1455e401f1",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 3
+    },
+    "metaEnrichedAt": "2026-07-09T23:22:41.058Z"
   },
   {
     "name": "Chance",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:54:39.941Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "indie rock",
+      "post-punk",
+      "rock",
+      "Progressive rock",
+      "brazilian"
+    ],
+    "popularity": {
+      "listeners": 20783,
+      "playcount": 115660
+    },
+    "metaEnrichedAt": "2026-07-09T23:22:41.725Z"
   },
   {
     "name": "chance music",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:54:41.233Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 15,
+      "playcount": 17
+    },
+    "metaEnrichedAt": "2026-07-09T23:22:42.465Z"
   },
   {
     "name": "Chance the Rapper",
@@ -24464,7 +25226,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "373a4c98-a46b-48e4-86ec-f6ca65b4f438"
+    "mbid": "373a4c98-a46b-48e4-86ec-f6ca65b4f438",
+    "genres": [
+      "Hip-Hop",
+      "rap",
+      "hip hop",
+      "chicago",
+      "jazz rap"
+    ],
+    "popularity": {
+      "listeners": 1422519,
+      "playcount": 61721969
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9fd66f828f13b67130b01681b4758654/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:43.093Z"
   },
   {
     "name": "Chance Thomas",
@@ -24480,7 +25255,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e1fafcc8-5e45-4565-9ed2-a314886fe652"
+    "mbid": "e1fafcc8-5e45-4565-9ed2-a314886fe652",
+    "genres": [
+      "Soundtrack",
+      "video game music",
+      "composer",
+      "Tolkien",
+      "american"
+    ],
+    "popularity": {
+      "listeners": 76317,
+      "playcount": 580832
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0f5463bbf6dde5a502c714163e0ac95f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:43.846Z"
   },
   {
     "name": "Chancho en Piedra",
@@ -24496,7 +25284,20 @@
     },
     "enrichedAt": "2026-07-07T23:54:43.846Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "Funk Rock",
+      "funk",
+      "rock chileno",
+      "chile",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 76371,
+      "playcount": 3250478
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/74d1be3740e19be286007b309141d677/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:44.518Z"
   },
   {
     "name": "Chandra Wilson",
@@ -24512,7 +25313,12 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "217156c7-28fc-4d7f-8fed-8afb99b1cd63"
+    "mbid": "217156c7-28fc-4d7f-8fed-8afb99b1cd63",
+    "popularity": {
+      "listeners": 1004,
+      "playcount": 4183
+    },
+    "metaEnrichedAt": "2026-07-09T23:22:45.175Z"
   },
   {
     "name": "Chandrakant Sardeshmukh",
@@ -24528,14 +25334,28 @@
     },
     "enrichedAt": "2026-07-07T23:54:48.214Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "78a55af2-a542-4de6-a2bd-cfa2a49bc3f6"
+    "mbid": "78a55af2-a542-4de6-a2bd-cfa2a49bc3f6",
+    "popularity": {
+      "listeners": 6,
+      "playcount": 245
+    },
+    "metaEnrichedAt": "2026-07-09T23:22:45.835Z"
   },
   {
     "name": "Chandralekha Perera",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:54:49.494Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "sri lanka"
+    ],
+    "popularity": {
+      "listeners": 670,
+      "playcount": 6130
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a29196c06484a56657e894c726150555/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:46.541Z"
   },
   {
     "name": "Chanel Beads",
@@ -24550,7 +25370,20 @@
     },
     "enrichedAt": "2026-07-07T23:54:52.096Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "experimental",
+      "dream pop",
+      "indie pop",
+      "american",
+      "new york"
+    ],
+    "popularity": {
+      "listeners": 264444,
+      "playcount": 5329368
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a2ccf9da17f6cc0811f58a6223dea37b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:47.142Z"
   },
   {
     "name": "Chanel Cole",
@@ -24566,7 +25399,19 @@
     },
     "enrichedAt": "2026-07-07T23:54:54.716Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "6527e300-cc17-4fe4-a3b4-8b126f49c63f"
+    "mbid": "6527e300-cc17-4fe4-a3b4-8b126f49c63f",
+    "genres": [
+      "jazz",
+      "lounge",
+      "female vocalists",
+      "quirky",
+      "australian idol"
+    ],
+    "popularity": {
+      "listeners": 1705,
+      "playcount": 23857
+    },
+    "metaEnrichedAt": "2026-07-09T23:22:48.187Z"
   },
   {
     "name": "Chanel Iman",
@@ -24582,7 +25427,8 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "metaTriedAt": "2026-07-09T23:22:48.883Z"
   },
   {
     "name": "Chanel West Coast",
@@ -24598,14 +25444,28 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "750150b1-247d-4c47-8cd3-70e008106b09"
+    "mbid": "750150b1-247d-4c47-8cd3-70e008106b09",
+    "genres": [
+      "pop",
+      "Hip-Hop",
+      "r&b",
+      "female vocalists",
+      "rnb"
+    ],
+    "popularity": {
+      "listeners": 17480,
+      "playcount": 197867
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/88aa6e106374386e1e77bc3656a2b186/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:49.498Z"
   },
   {
     "name": "Chang and Eng Bunker",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:54:55.991Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "metaTriedAt": "2026-07-09T23:22:50.121Z"
   },
   {
     "name": "Chang Chen-yue",
@@ -24621,14 +25481,24 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6eba638e-ae15-405d-99ec-ec66ff3f0361"
+    "mbid": "6eba638e-ae15-405d-99ec-ec66ff3f0361",
+    "popularity": {
+      "listeners": 73,
+      "playcount": 270
+    },
+    "metaEnrichedAt": "2026-07-09T23:22:50.849Z"
   },
   {
     "name": "Chang Yu-sheng",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:54:57.270Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 83,
+      "playcount": 517
+    },
+    "metaEnrichedAt": "2026-07-09T23:22:51.508Z"
   },
   {
     "name": "Chang, Chen-yue",
@@ -24644,14 +25514,16 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6eba638e-ae15-405d-99ec-ec66ff3f0361"
+    "mbid": "6eba638e-ae15-405d-99ec-ec66ff3f0361",
+    "metaTriedAt": "2026-07-09T23:22:52.155Z"
   },
   {
     "name": "Chang, Yu-sheng",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:55:02.428Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "metaTriedAt": "2026-07-09T23:22:52.819Z"
   },
   {
     "name": "Change",
@@ -24667,21 +25539,60 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "9974d324-3d58-4f93-812b-41eb3ca75eed"
+    "mbid": "9974d324-3d58-4f93-812b-41eb3ca75eed",
+    "genres": [
+      "Disco",
+      "funk",
+      "soul",
+      "80s",
+      "80s groove"
+    ],
+    "popularity": {
+      "listeners": 203439,
+      "playcount": 1548515
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/edf16b5ec338001518f48106890743ad/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:53.392Z"
   },
   {
     "name": "Change of Heart",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:55:05.132Z",
-    "mbid": "ec523ea0-318a-4699-9653-bc5ff0a22fd8"
+    "mbid": "ec523ea0-318a-4699-9653-bc5ff0a22fd8",
+    "genres": [
+      "melodic rock",
+      "AOR",
+      "hard rock",
+      "metal",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 2551,
+      "playcount": 49397
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b5ef5b5efd8af7d2deb2601e86f48239/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:54.116Z"
   },
   {
     "name": "Change Your Life",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:55:06.410Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "fastcore",
+      "thrashcore",
+      "brazilian",
+      "hardcore",
+      "grindcore"
+    ],
+    "popularity": {
+      "listeners": 943,
+      "playcount": 5273
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4476201fceb389e327d384b528382014/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:55.257Z"
   },
   {
     "name": "Changer",
@@ -24697,7 +25608,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7f3f8055-a11f-4aa0-8633-3c50931f9b52"
+    "mbid": "7f3f8055-a11f-4aa0-8633-3c50931f9b52",
+    "genres": [
+      "trance",
+      "techno",
+      "ambient",
+      "Hard Trance",
+      "icelandic"
+    ],
+    "popularity": {
+      "listeners": 5146,
+      "playcount": 26579
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f2a49c177f23c7790755bce2121e33a9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:56.074Z"
   },
   {
     "name": "Changes",
@@ -24713,14 +25637,40 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "21fd9277-014e-442a-a19b-59c84d03eb08"
+    "mbid": "21fd9277-014e-442a-a19b-59c84d03eb08",
+    "genres": [
+      "hardcore",
+      "neofolk",
+      "russian hardcore",
+      "folk",
+      "apocalyptic folk"
+    ],
+    "popularity": {
+      "listeners": 42294,
+      "playcount": 743936
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ad1cb5ee6754a39e1398c14e3d8d1c48/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:56.732Z"
   },
   {
     "name": "Changin' My Life",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:55:09.015Z",
-    "mbid": "d72f5646-b3a8-4196-9e6b-55c40e1ac123"
+    "mbid": "d72f5646-b3a8-4196-9e6b-55c40e1ac123",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "female vocalists",
+      "anime",
+      "female vocalist"
+    ],
+    "popularity": {
+      "listeners": 22774,
+      "playcount": 549764
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/aee3ca9b6188fb097825d6ea2a1592cb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:57.320Z"
   },
   {
     "name": "Changing Faces",
@@ -24736,21 +25686,58 @@
     },
     "enrichedAt": "2026-07-07T23:55:11.667Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "rnb",
+      "female vocalists",
+      "90s",
+      "Girl Groups",
+      "soul"
+    ],
+    "popularity": {
+      "listeners": 165413,
+      "playcount": 980042
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3ddaf22b655080bc6b3137b9c59f811b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:22:58.037Z"
   },
   {
     "name": "Changmin",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:55:12.944Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "good",
+      "japanese",
+      "Kpop",
+      "Korean",
+      "Changmin"
+    ],
+    "popularity": {
+      "listeners": 1680,
+      "playcount": 19763
+    },
+    "metaEnrichedAt": "2026-07-09T23:22:58.768Z"
   },
   {
     "name": "Chango Family",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:55:14.240Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "french",
+      "Canadian",
+      "quebec",
+      "ska",
+      "quebecois"
+    ],
+    "popularity": {
+      "listeners": 591,
+      "playcount": 12697
+    },
+    "metaEnrichedAt": "2026-07-09T23:22:59.468Z"
   },
   {
     "name": "Chango Spasiuk",
@@ -24766,14 +25753,28 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d30615cd-2e8f-4169-a879-fffa8b17f362"
+    "mbid": "d30615cd-2e8f-4169-a879-fffa8b17f362",
+    "genres": [
+      "argentina",
+      "folk",
+      "accordion",
+      "latin",
+      "world"
+    ],
+    "popularity": {
+      "listeners": 23911,
+      "playcount": 180693
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fbfc342a207af688aa40929cc12a5381/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:00.212Z"
   },
   {
     "name": "Chanhassen",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:55:15.547Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "metaTriedAt": "2026-07-09T23:23:00.837Z"
   },
   {
     "name": "Channel 3",
@@ -24789,14 +25790,33 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7a692aac-96e6-42eb-bdc7-f3d337964b1d"
+    "mbid": "7a692aac-96e6-42eb-bdc7-f3d337964b1d",
+    "genres": [
+      "punk",
+      "hardcore punk",
+      "punk rock",
+      "hardcore",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 18810,
+      "playcount": 175602
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/87bdcfe9bee2b038815896e637ac2ad2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:01.527Z"
   },
   {
     "name": "Channel 7",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:55:18.121Z",
-    "mbid": "260c1a9e-f608-4f9f-a739-28de30c94ee8"
+    "mbid": "260c1a9e-f608-4f9f-a739-28de30c94ee8",
+    "popularity": {
+      "listeners": 556,
+      "playcount": 4602
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a0853a4c0e8535cfa7f27379e41f928c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:02.220Z"
   },
   {
     "name": "Channel Live",
@@ -24812,7 +25832,20 @@
     },
     "enrichedAt": "2026-07-07T23:55:20.889Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "87d20af6-c551-4f85-ac2f-7579d2e2f3db"
+    "mbid": "87d20af6-c551-4f85-ac2f-7579d2e2f3db",
+    "genres": [
+      "Hip-Hop",
+      "underground hip-hop",
+      "rap",
+      "hip hop",
+      "old school"
+    ],
+    "popularity": {
+      "listeners": 46263,
+      "playcount": 333328
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/25a64a78ff1757e772d1643074ec3804/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:02.991Z"
   },
   {
     "name": "Channel X",
@@ -24828,7 +25861,20 @@
     },
     "enrichedAt": "2026-07-07T23:55:23.513Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "techno",
+      "Rave",
+      "electronic",
+      "minimal",
+      "Hyper Techno"
+    ],
+    "popularity": {
+      "listeners": 36942,
+      "playcount": 202651
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/51dc669e3cafd8446c598ff162f86b63/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:03.703Z"
   },
   {
     "name": "Channel Zero",
@@ -24844,7 +25890,20 @@
     },
     "enrichedAt": "2026-07-07T23:55:26.137Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "thrash metal",
+      "metal",
+      "heavy metal",
+      "groove metal",
+      "belgian"
+    ],
+    "popularity": {
+      "listeners": 29940,
+      "playcount": 545644
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/40845ab0a964ffb7cec97ebf271f4202/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:04.435Z"
   },
   {
     "name": "Channels",
@@ -24860,21 +25919,60 @@
     },
     "enrichedAt": "2026-07-07T23:55:28.713Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "indie rock",
+      "post-punk",
+      "post-hardcore",
+      "dischord",
+      "DC"
+    ],
+    "popularity": {
+      "listeners": 15280,
+      "playcount": 175432
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d3d6de831cd25ed6e0080cd77b31f9ff/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:05.094Z"
   },
   {
     "name": "Channi Singh",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:55:31.309Z",
-    "mbid": "0c495280-627f-41ab-ae33-313e824d644a"
+    "mbid": "0c495280-627f-41ab-ae33-313e824d644a",
+    "genres": [
+      "Punjabi",
+      "Bhangra",
+      "punjabi bhangra",
+      "uk bhangra",
+      "doordoorwa1069"
+    ],
+    "popularity": {
+      "listeners": 262,
+      "playcount": 933
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d71c22f200400bdcf0bbcb8665191239/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:05.764Z"
   },
   {
     "name": "Chano Pozo",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:55:34.085Z",
-    "mbid": "505047e5-0398-426e-b22a-fb68a00bad70"
+    "mbid": "505047e5-0398-426e-b22a-fb68a00bad70",
+    "genres": [
+      "jazz",
+      "latin",
+      "latin jazz",
+      "mambo",
+      "Afro-Cuban Jazz"
+    ],
+    "popularity": {
+      "listeners": 10219,
+      "playcount": 38918
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6b0b70d9ca4080bfd00a52ca018ad744/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:06.511Z"
   },
   {
     "name": "Chanson",
@@ -24890,14 +25988,32 @@
     },
     "enrichedAt": "2026-07-07T23:55:46.678Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "4b9ff050-9c99-4e87-b708-f1abd9809642"
+    "mbid": "4b9ff050-9c99-4e87-b708-f1abd9809642",
+    "genres": [
+      "funk",
+      "Disco",
+      "french",
+      "funky",
+      "70s"
+    ],
+    "popularity": {
+      "listeners": 10510,
+      "playcount": 37414
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b72a144ec296ec51236c2d78e115ebd7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:07.188Z"
   },
   {
     "name": "chansonnier",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:55:47.953Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 1
+    },
+    "metaEnrichedAt": "2026-07-09T23:23:07.914Z"
   },
   {
     "name": "Chantal Chamandy",
@@ -24913,7 +26029,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7a906e8c-e9f5-4a7f-9611-0a720435b7ac"
+    "mbid": "7a906e8c-e9f5-4a7f-9611-0a720435b7ac",
+    "genres": [
+      "pop",
+      "Canadian",
+      "canada",
+      "canadians",
+      "Lebanon"
+    ],
+    "popularity": {
+      "listeners": 1389,
+      "playcount": 6447
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6f8533d05c2ee4201cdc8e42d497f38f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:08.486Z"
   },
   {
     "name": "Chantal Claret",
@@ -24929,14 +26058,37 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "43273fa3-d554-4d34-b29f-d35efe2ba7eb"
+    "mbid": "43273fa3-d554-4d34-b29f-d35efe2ba7eb",
+    "genres": [
+      "pop",
+      "indie pop",
+      "female vocalists",
+      "Need to Rate",
+      "female vocalist"
+    ],
+    "popularity": {
+      "listeners": 11043,
+      "playcount": 114452
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/47a39edf893b4105ed09425e66942421/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:09.688Z"
   },
   {
     "name": "Chantal Condor",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:55:49.228Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "pop",
+      "Canadian",
+      "canadians"
+    ],
+    "popularity": {
+      "listeners": 29,
+      "playcount": 521
+    },
+    "metaEnrichedAt": "2026-07-09T23:23:10.447Z"
   },
   {
     "name": "Chantal Goya",
@@ -24952,7 +26104,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e41aeab7-0371-4115-b83a-6500641221ba"
+    "mbid": "e41aeab7-0371-4115-b83a-6500641221ba",
+    "genres": [
+      "ye-ye",
+      "french",
+      "french pop",
+      "female vocalists",
+      "chanson francaise"
+    ],
+    "popularity": {
+      "listeners": 79695,
+      "playcount": 921790
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/796fd2a2d471c2d69a08a69753eee130/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:11.127Z"
   },
   {
     "name": "Chantal Kreviazuk",
@@ -24968,14 +26133,33 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "fd092d99-377f-414e-a63e-3dc849ad2cc9"
+    "mbid": "fd092d99-377f-414e-a63e-3dc849ad2cc9",
+    "genres": [
+      "female vocalists",
+      "singer-songwriter",
+      "pop",
+      "Canadian",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 329362,
+      "playcount": 3159077
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/06682b06e1a77aa42b70a5908df5d792/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:11.729Z"
   },
   {
     "name": "Chantal Renaud",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:55:51.838Z",
-    "mbid": "7a391025-33ad-4b69-bd9b-d5c50c63b2a9"
+    "mbid": "7a391025-33ad-4b69-bd9b-d5c50c63b2a9",
+    "popularity": {
+      "listeners": 539,
+      "playcount": 2853
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ddb30d186c00c09eb113cdd21ec4a870/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:12.417Z"
   },
   {
     "name": "Chantay Savage",
@@ -24991,7 +26175,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "00a75169-fcb3-44e8-8646-545935d41516"
+    "mbid": "00a75169-fcb3-44e8-8646-545935d41516",
+    "genres": [
+      "90s",
+      "soul",
+      "female vocalists",
+      "rnb",
+      "90s Rnb"
+    ],
+    "popularity": {
+      "listeners": 11934,
+      "playcount": 88801
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6d06ccd95c3d9e89035d4e7d83178fbe/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:13.771Z"
   },
   {
     "name": "Chante Moore",
@@ -25007,7 +26204,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "17e359d0-966e-4c2a-a632-3e5c7de0a1d4"
+    "mbid": "17e359d0-966e-4c2a-a632-3e5c7de0a1d4",
+    "genres": [
+      "rnb",
+      "soul",
+      "female vocalists",
+      "urban",
+      "quiet storm"
+    ],
+    "popularity": {
+      "listeners": 126312,
+      "playcount": 1092700
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1d389a405b0b0b48a5c01ecea66ea7bf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:14.405Z"
   },
   {
     "name": "Chanté Moore",
@@ -25023,7 +26233,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "17e359d0-966e-4c2a-a632-3e5c7de0a1d4"
+    "mbid": "17e359d0-966e-4c2a-a632-3e5c7de0a1d4",
+    "genres": [
+      "rnb",
+      "soul",
+      "female vocalists",
+      "urban",
+      "quiet storm"
+    ],
+    "popularity": {
+      "listeners": 126312,
+      "playcount": 1092700
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1d389a405b0b0b48a5c01ecea66ea7bf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:14.980Z"
   },
   {
     "name": "Chantel McGregor",
@@ -25039,7 +26262,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "blues",
+      "blues rock",
+      "female vocalists",
+      "guitar",
+      "Female Guitarist"
+    ],
+    "popularity": {
+      "listeners": 3897,
+      "playcount": 46026
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4079500105986ac6dc00322f09664260/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:15.623Z"
   },
   {
     "name": "Chanyeol",
@@ -25055,7 +26291,20 @@
     },
     "enrichedAt": "2026-07-07T23:55:54.449Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "k-pop",
+      "Korean",
+      "exo",
+      "Ballad",
+      "Kpop"
+    ],
+    "popularity": {
+      "listeners": 304036,
+      "playcount": 11392924
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a2356fd5306629c42f84bc4cd7b6aa9f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:16.299Z"
   },
   {
     "name": "Chaos Chaos",
@@ -25071,28 +26320,67 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "bc66a950-fc90-41a3-903e-b436e83c1e3c"
+    "mbid": "bc66a950-fc90-41a3-903e-b436e83c1e3c",
+    "genres": [
+      "indie pop",
+      "indie",
+      "pop",
+      "female vocalist",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 164518,
+      "playcount": 2221067
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5db597b4d66fedbfb641d0889d670ee5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:17.022Z"
   },
   {
     "name": "Chaos Kid",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:55:57.019Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "Hip-Hop",
+      "hip hop",
+      "Midwest",
+      "detroit",
+      "instrumental hip-hop"
+    ],
+    "popularity": {
+      "listeners": 982,
+      "playcount": 4220
+    },
+    "metaEnrichedAt": "2026-07-09T23:23:17.968Z"
   },
   {
     "name": "Chaos UK",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:55:59.653Z",
-    "mbid": "3b41164c-3a72-4b95-8bf4-5e1096cecc86"
+    "mbid": "3b41164c-3a72-4b95-8bf4-5e1096cecc86",
+    "genres": [
+      "hardcore punk",
+      "punk",
+      "punk rock",
+      "street punk",
+      "hardcore"
+    ],
+    "popularity": {
+      "listeners": 60099,
+      "playcount": 889377
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1fa0d5855cf55e6ee5413e93745281d4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:18.722Z"
   },
   {
     "name": "Chaos UK (Bristol)",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:33.189Z",
     "autoTriedAt": "2026-07-07T23:56:00.934Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "metaTriedAt": "2026-07-09T23:23:19.315Z"
   },
   {
     "name": "Chaotic Dischord",
@@ -25108,7 +26396,20 @@
     },
     "enrichedAt": "2026-07-07T23:56:03.562Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "1d6ef54a-ce04-4ab5-98b1-9a96f3846c36"
+    "mbid": "1d6ef54a-ce04-4ab5-98b1-9a96f3846c36",
+    "genres": [
+      "punk",
+      "punk rock",
+      "street punk",
+      "hardcore punk",
+      "Oi"
+    ],
+    "popularity": {
+      "listeners": 12486,
+      "playcount": 192631
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3c3b4d4d31a970bf8b420f5bf737acad/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:20.044Z"
   },
   {
     "name": "Chaotica",
@@ -25124,7 +26425,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:33.189Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ad7823b3-0c03-462d-8061-8b05d86f2633"
+    "mbid": "ad7823b3-0c03-462d-8061-8b05d86f2633",
+    "genres": [
+      "industrial rock",
+      "industrial",
+      "rock",
+      "electronic",
+      "industrial metal"
+    ],
+    "popularity": {
+      "listeners": 19787,
+      "playcount": 316214
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4a6cb3639bea6a47b4b3da26972f0121/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:20.762Z"
   },
   {
     "name": "Chapeaumelon",
@@ -25140,7 +26454,19 @@
     },
     "enrichedAt": "2026-07-07T07:08:35.476Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5d98f67f-3562-42ce-a779-f8b5d0ba75b1"
+    "mbid": "5d98f67f-3562-42ce-a779-f8b5d0ba75b1",
+    "genres": [
+      "rock",
+      "punk",
+      "french",
+      "Garage Rock",
+      "Canadian"
+    ],
+    "popularity": {
+      "listeners": 24040,
+      "playcount": 182702
+    },
+    "metaEnrichedAt": "2026-07-09T23:23:21.419Z"
   },
   {
     "name": "Chapel Club",
@@ -25156,21 +26482,45 @@
     },
     "enrichedAt": "2026-07-07T07:08:35.476Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ab729b59-92b1-4cda-95d3-173f4000faf8"
+    "mbid": "ab729b59-92b1-4cda-95d3-173f4000faf8",
+    "genres": [
+      "post-punk",
+      "indie",
+      "indie rock",
+      "alternative",
+      "british"
+    ],
+    "popularity": {
+      "listeners": 86215,
+      "playcount": 1230575
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4be3c3ec56dda21c839237352ec7f157/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:22.092Z"
   },
   {
     "name": "Chapel of Love",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:35.476Z",
     "autoTriedAt": "2026-07-07T23:56:06.068Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 277,
+      "playcount": 818
+    },
+    "metaEnrichedAt": "2026-07-09T23:23:22.819Z"
   },
   {
     "name": "Chapman Stick",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:35.476Z",
     "autoTriedAt": "2026-07-07T23:56:07.347Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 17,
+      "playcount": 66
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ab6f09c64ca400a6db4255a4da0092b2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:23.567Z"
   },
   {
     "name": "Chappell Roan",
@@ -25186,7 +26536,20 @@
     },
     "mbid": "56a55378-f155-48de-80a5-d80104221267",
     "enrichedAt": "2026-07-09T08:32:05.092Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "pop",
+      "indie pop",
+      "synthpop",
+      "queer",
+      "electropop"
+    ],
+    "popularity": {
+      "listeners": 2645844,
+      "playcount": 349000012
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/14ca3aea25950189f30efe0fa79ac4f9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:24.176Z"
   },
   {
     "name": "Chapter 24",
@@ -25202,7 +26565,20 @@
     },
     "enrichedAt": "2026-07-07T23:56:09.932Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "london",
+      "alternative",
+      "Greek",
+      "new wave",
+      "england"
+    ],
+    "popularity": {
+      "listeners": 4739,
+      "playcount": 25808
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/659aab41ca0aede91de025d2301807a7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:24.996Z"
   },
   {
     "name": "Chapter 8",
@@ -25218,7 +26594,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:35.476Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a5ef5e2b-4098-43c8-bfe3-55ceb5315074"
+    "mbid": "a5ef5e2b-4098-43c8-bfe3-55ceb5315074",
+    "genres": [
+      "soul",
+      "80s",
+      "70s",
+      "funk",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 12848,
+      "playcount": 76157
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9de09fe3a015006e8c111493bdfcd592/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:25.672Z"
   },
   {
     "name": "Chapterhouse",
@@ -25234,7 +26623,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:35.476Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c95d5fb3-03d4-4b5e-93da-a57bd7e26db0"
+    "mbid": "c95d5fb3-03d4-4b5e-93da-a57bd7e26db0",
+    "genres": [
+      "shoegaze",
+      "dream pop",
+      "indie",
+      "space rock",
+      "british"
+    ],
+    "popularity": {
+      "listeners": 371974,
+      "playcount": 5384762
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e3f4c32ab04146eb16e3e81d304bfbf8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:26.336Z"
   },
   {
     "name": "Chara",
@@ -25250,14 +26652,40 @@
     },
     "enrichedAt": "2026-07-07T07:08:35.476Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "94812064-a7c2-49d2-b6b0-b9e76289bf87"
+    "mbid": "94812064-a7c2-49d2-b6b0-b9e76289bf87",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "female vocalists",
+      "pop",
+      "90s"
+    ],
+    "popularity": {
+      "listeners": 100437,
+      "playcount": 5317063
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e0f5f74e229b80b4dd7887f91a4e3a5b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:27.019Z"
   },
   {
     "name": "Charalambides",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:08:35.476Z",
     "autoTriedAt": "2026-07-07T23:56:12.537Z",
-    "mbid": "e754303f-655e-41f4-9dbe-b11b5614bd3d"
+    "mbid": "e754303f-655e-41f4-9dbe-b11b5614bd3d",
+    "genres": [
+      "psychedelic",
+      "experimental",
+      "folk",
+      "New Weird America",
+      "psychedelic folk"
+    ],
+    "popularity": {
+      "listeners": 45226,
+      "playcount": 506792
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/58ef169c60f4cd9eb44c8bd11120d6b2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:27.714Z"
   },
   {
     "name": "Charcoal Filter",
@@ -25273,7 +26701,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:35.476Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8c8a7d58-5209-4d00-a919-cf85b8cfab03"
+    "mbid": "8c8a7d58-5209-4d00-a919-cf85b8cfab03",
+    "genres": [
+      "J-rock",
+      "japanese",
+      "rock",
+      "jrock",
+      "pop punk"
+    ],
+    "popularity": {
+      "listeners": 6679,
+      "playcount": 220655
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e368d3d3a876d4330062a776cd2fba18/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:28.364Z"
   },
   {
     "name": "Charged GBH",
@@ -25289,7 +26730,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:35.476Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "72f62c54-ffa6-4c67-a396-3aa890840fc7"
+    "mbid": "72f62c54-ffa6-4c67-a396-3aa890840fc7",
+    "genres": [
+      "punk",
+      "hardcore punk",
+      "street punk",
+      "punk rock",
+      "hardcore"
+    ],
+    "popularity": {
+      "listeners": 167087,
+      "playcount": 2670366
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/78a7340614e0aef1f769f665bf64bedc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:29.315Z"
   },
   {
     "name": "Charice",
@@ -25305,7 +26759,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:35.476Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2defacc1-46d0-432d-a01b-7f7d9c6d1d71"
+    "mbid": "2defacc1-46d0-432d-a01b-7f7d9c6d1d71",
+    "genres": [
+      "pop",
+      "rnb",
+      "female vocalists",
+      "soul",
+      "r&b"
+    ],
+    "popularity": {
+      "listeners": 155280,
+      "playcount": 2431118
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/449ce4e1ce64ebff846f35e1908935a4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:30.012Z"
   },
   {
     "name": "Charice Pempengco",
@@ -25321,7 +26788,20 @@
     },
     "enrichedAt": "2026-07-07T07:08:35.476Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2defacc1-46d0-432d-a01b-7f7d9c6d1d71"
+    "mbid": "2defacc1-46d0-432d-a01b-7f7d9c6d1d71",
+    "genres": [
+      "pop",
+      "rnb",
+      "female vocalists",
+      "soul",
+      "r&b"
+    ],
+    "popularity": {
+      "listeners": 155280,
+      "playcount": 2431118
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/785a88805ffbaaa002dcbfa85b156556/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T23:23:30.635Z"
   },
   {
     "name": "Charivari",
