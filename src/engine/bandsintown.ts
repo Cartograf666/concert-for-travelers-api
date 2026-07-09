@@ -154,6 +154,23 @@ interface BitEvent {
   };
 }
 
+// Bandsintown's public widget feed lets third-party ticket partners attach an
+// event to ANY artist's page with no verification against that artist's real
+// touring schedule -- observed live: a real, correctly-matched artist (Сплин,
+// who left the Russian touring market in 2022) had ~16 fabricated Russian-city
+// dates sitting on their public BIT page, none corroborated by the artist's own
+// site or any independent ticket vendor. These fakes share a tell: the venue
+// name is a generic "<Artist name> in/в <City>" template rather than a real,
+// named venue (contrast a genuine listing's "Урбан"/"Фабрика 3"/"Sphere"). This
+// is a cheap, artist-agnostic heuristic to drop that specific spam pattern --
+// it is NOT a general truth-detector for bogus listings, just this one
+// recurring shape.
+function isTemplatedArtistCityVenueName(venueName: string, artistName: string): boolean {
+  const escapedArtist = artistName.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  if (!escapedArtist) return false;
+  return new RegExp(`^${escapedArtist}\\s+(в|in)\\s+\\S`, 'iu').test(venueName.trim());
+}
+
 export function mapBitEventToConcert(event: BitEvent, queriedArtist: string, scrapedAt: string): Partial<Concert> | null {
   // Prefer the queried name (guaranteed to match a whitelist entry when the target
   // list overlaps the approved list) over Bandsintown's own spelling, which can
@@ -168,6 +185,10 @@ export function mapBitEventToConcert(event: BitEvent, queriedArtist: string, scr
   const country = bandsintownCountryToCode(venue?.country);
 
   if (!artist || !date || !venue?.name || !venue?.city || !country) {
+    return null;
+  }
+
+  if (isTemplatedArtistCityVenueName(venue.name, artist)) {
     return null;
   }
 

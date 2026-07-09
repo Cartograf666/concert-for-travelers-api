@@ -60,6 +60,34 @@ test('Bandsintown - mapBitEventToConcert rejects events missing required fields'
   assert.strictEqual(mapBitEventToConcert(bitEvent({ venue: { city: 'C', country: 'US' } }), 'X', 'now'), null); // no venue name
 });
 
+test('Bandsintown - mapBitEventToConcert rejects a templated "<artist> in/в <city>" venue name (spam-listing pattern)', () => {
+  // Observed live: real, correctly-matched artists can have fabricated events on
+  // Bandsintown's public feed with a generic "<Artist> в <City>"-style venue
+  // instead of a real named venue -- reject this specific shape.
+  const ru = mapBitEventToConcert(
+    bitEvent({ venue: { name: 'Сплин в Ижевске', city: 'Izhevsk', country: 'Russia' } }),
+    'Сплин',
+    'now'
+  );
+  assert.strictEqual(ru, null);
+
+  const en = mapBitEventToConcert(
+    bitEvent({ venue: { name: 'Metallica in Las Vegas', city: 'Las Vegas', country: 'United States' } }),
+    'Metallica',
+    'now'
+  );
+  assert.strictEqual(en, null);
+
+  // A real named venue that happens to contain the artist's name as a substring
+  // (not the templated "<artist> in/в <city>" prefix shape) must still pass.
+  const real = mapBitEventToConcert(
+    bitEvent({ venue: { name: 'Sphere', city: 'Las Vegas', country: 'United States' } }),
+    'Metallica',
+    'now'
+  );
+  assert.ok(real);
+});
+
 test('Bandsintown - sweep fetches all artists and maps their events', async () => {
   const byArtist: Record<string, any[]> = {
     Metallica: [bitEvent({ venue: { name: 'V1', city: 'London', country: 'United Kingdom' } })],
