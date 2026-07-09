@@ -1,0 +1,16 @@
+{
+  "id": "artist-heinrich-barth",
+  "domain": "www.barth.com",
+  "url": "https://www.barth.com/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".sqs-block-content .eventlist-column-block .eventlist-column",
+    "artistNameFallback": "Heinrich Barth",
+    "date": ".eventlist-meta-date",
+    "ticketUrl": ".event-ticket-link a",
+    "city": ".eventlist-meta-place",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "NL"
+  }
+}

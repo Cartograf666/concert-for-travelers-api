@@ -1,0 +1,17 @@
+{
+  "id": "artist-hata-motohiro",
+  "domain": "www.motohirohata.com",
+  "url": "https://www.motohirohata.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.schedule-list__item",
+    "artistNameFallback": "Hata, Motohiro",
+    "date": "p.schedule-list__item-date",
+    "ticketUrl": "dl:has(dt:contains(\"Tickets\")) dd a",
+    "venue": "dl:has(dt:contains(\"Venue\")) dd",
+    "city": "dl:has(dt:contains(\"Place\")) dd",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}
