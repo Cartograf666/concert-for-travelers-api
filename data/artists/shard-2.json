@@ -15689,7 +15689,12 @@
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:51.876Z",
     "autoTriedAt": "2026-07-07T19:51:46.513Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 2
+    },
+    "metaEnrichedAt": "2026-07-09T11:22:43.272Z"
   },
   {
     "name": "BBC Philharmonic",
@@ -15705,28 +15710,60 @@
     },
     "enrichedAt": "2026-07-07T07:06:51.876Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "92fc1517-7e49-44a0-9ca2-644e35b424c5"
+    "mbid": "92fc1517-7e49-44a0-9ca2-644e35b424c5",
+    "genres": [
+      "robertitus coleccion",
+      "Classical",
+      "clasciram"
+    ],
+    "popularity": {
+      "listeners": 6491,
+      "playcount": 41444
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0470fb1ecaf197105560222335f7dc82/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:22:43.952Z"
   },
   {
     "name": "BBC Radio Big Band",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:51.876Z",
     "autoTriedAt": "2026-07-07T19:51:49.156Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "swing",
+      "jazz",
+      "Big Band"
+    ],
+    "popularity": {
+      "listeners": 41,
+      "playcount": 472
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:22:44.660Z"
   },
   {
     "name": "BBC Radio Orchestra",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:51.876Z",
     "autoTriedAt": "2026-07-07T19:51:51.745Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 21,
+      "playcount": 72
+    },
+    "metaEnrichedAt": "2026-07-09T11:22:45.330Z"
   },
   {
     "name": "BBC Scottish Radio Orchestra",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:51.876Z",
     "autoTriedAt": "2026-07-07T19:51:54.351Z",
-    "mbid": "52a53c17-83a2-4093-8904-ae1e9e0647a8"
+    "mbid": "52a53c17-83a2-4093-8904-ae1e9e0647a8",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 8
+    },
+    "metaEnrichedAt": "2026-07-09T11:22:46.134Z"
   },
   {
     "name": "BBC Scottish Symphony Orchestra",
@@ -15742,7 +15779,20 @@
     },
     "enrichedAt": "2026-07-07T19:51:56.961Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "Classical",
+      "instrumental",
+      "Scottish",
+      "british",
+      "britain"
+    ],
+    "popularity": {
+      "listeners": 67670,
+      "playcount": 391606
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2cb334601af037afe1e90c0f6b7993b0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:22:46.922Z"
   },
   {
     "name": "BBC Symphony Orchestra",
@@ -15758,14 +15808,33 @@
     },
     "enrichedAt": "2026-07-07T19:51:59.570Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "Classical",
+      "orchestral",
+      "rule britannia",
+      "sonntag",
+      "b b c s orchestra"
+    ],
+    "popularity": {
+      "listeners": 24744,
+      "playcount": 141322
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4bbc322ef9c19f2af9fabbe9c07c3830/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:22:47.962Z"
   },
   {
     "name": "BBC Television Orchestra",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:51.876Z",
     "autoTriedAt": "2026-07-07T19:52:00.855Z",
-    "mbid": "2c3fc1ef-b8d6-41dc-8f8f-3492a7f28ca8"
+    "mbid": "2c3fc1ef-b8d6-41dc-8f8f-3492a7f28ca8",
+    "popularity": {
+      "listeners": 5,
+      "playcount": 8
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:22:48.671Z"
   },
   {
     "name": "BBMak",
@@ -15781,7 +15850,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:51.876Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0662fa9d-73b0-4f71-9576-c963a5a14f66"
+    "mbid": "0662fa9d-73b0-4f71-9576-c963a5a14f66",
+    "genres": [
+      "pop",
+      "british",
+      "boybands",
+      "rock",
+      "britpop"
+    ],
+    "popularity": {
+      "listeners": 175575,
+      "playcount": 1399336
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/48a4fd103085ce2be60a5a4a22758821/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:22:49.346Z"
   },
   {
     "name": "bbno$",
@@ -15796,7 +15878,20 @@
     },
     "enrichedAt": "2026-07-07T19:57:25.962Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "27638856-79a1-4495-b7da-1912899560c7"
+    "mbid": "27638856-79a1-4495-b7da-1912899560c7",
+    "genres": [
+      "rap",
+      "Hip-Hop",
+      "Canadian",
+      "hip hop",
+      "canada"
+    ],
+    "popularity": {
+      "listeners": 1569578,
+      "playcount": 73664011
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7305e2ff14b206fb9471124ee4e5a07c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:22:50.039Z"
   },
   {
     "name": "BBQ Chickens",
@@ -15812,7 +15907,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:51.876Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "90a6b6be-a539-48f9-9220-3f1265baeff7"
+    "mbid": "90a6b6be-a539-48f9-9220-3f1265baeff7",
+    "genres": [
+      "thrashcore",
+      "hardcore",
+      "japanese",
+      "fastcore",
+      "hardcore punk"
+    ],
+    "popularity": {
+      "listeners": 13198,
+      "playcount": 723492
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/203117aee0c370d4c44f1f18568c60dc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:22:50.721Z"
   },
   {
     "name": "Be Bop Deluxe",
@@ -15828,21 +15936,51 @@
     },
     "enrichedAt": "2026-07-07T19:52:17.993Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "96742ec2-b733-4ac6-b493-7e056a43b357"
+    "mbid": "96742ec2-b733-4ac6-b493-7e056a43b357",
+    "genres": [
+      "Progressive rock",
+      "art rock",
+      "rock",
+      "classic rock",
+      "british"
+    ],
+    "popularity": {
+      "listeners": 56750,
+      "playcount": 781516
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/97297bb1960c352e4078e099558dff97/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:22:51.420Z"
   },
   {
     "name": "Be Good Tanyas",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:51.876Z",
     "autoTriedAt": "2026-07-07T19:52:19.277Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "folk",
+      "Alt-country",
+      "female vocalists",
+      "Canadian",
+      "americana"
+    ],
+    "popularity": {
+      "listeners": 399213,
+      "playcount": 5084800
+    },
+    "metaEnrichedAt": "2026-07-09T11:22:52.097Z"
   },
   {
     "name": "Be My Baby",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:51.876Z",
     "autoTriedAt": "2026-07-07T19:52:36.887Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 3535,
+      "playcount": 8136
+    },
+    "metaEnrichedAt": "2026-07-09T11:22:52.779Z"
   },
   {
     "name": "Be The Bear",
@@ -15858,7 +15996,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:51.876Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "db105f8e-f36d-4a59-96ae-6777de341444"
+    "mbid": "db105f8e-f36d-4a59-96ae-6777de341444",
+    "genres": [
+      "indie",
+      "pop",
+      "female vocalists",
+      "swedish",
+      "electronica"
+    ],
+    "popularity": {
+      "listeners": 5003,
+      "playcount": 23655
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/01de9ad88ec33c598020d86372a2ee56/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:22:53.548Z"
   },
   {
     "name": "Be Your Own Pet",
@@ -15874,7 +16025,20 @@
     },
     "enrichedAt": "2026-07-07T19:52:39.529Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "4849dbcf-4192-434c-825b-077c9057c119"
+    "mbid": "4849dbcf-4192-434c-825b-077c9057c119",
+    "genres": [
+      "indie rock",
+      "indie",
+      "female vocalists",
+      "punk",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 446059,
+      "playcount": 9432972
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1bc87e72b364278835815154c64a3230/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:22:54.222Z"
   },
   {
     "name": "Be-Bop Deluxe",
@@ -15890,7 +16054,20 @@
     },
     "enrichedAt": "2026-07-07T19:53:00.041Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "96742ec2-b733-4ac6-b493-7e056a43b357"
+    "mbid": "96742ec2-b733-4ac6-b493-7e056a43b357",
+    "genres": [
+      "Progressive rock",
+      "art rock",
+      "rock",
+      "classic rock",
+      "british"
+    ],
+    "popularity": {
+      "listeners": 56750,
+      "playcount": 781516
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/97297bb1960c352e4078e099558dff97/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:22:54.903Z"
   },
   {
     "name": "Be'lakor",
@@ -15906,7 +16083,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:51.876Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "bc9ffd36-64be-4d41-8034-473f4b524159"
+    "mbid": "bc9ffd36-64be-4d41-8034-473f4b524159",
+    "genres": [
+      "Melodic Death Metal",
+      "progressive death metal",
+      "death metal",
+      "australian",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 132282,
+      "playcount": 6320630
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ba83ed8dd49bba54d79668879435f72e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:22:55.620Z"
   },
   {
     "name": "Bea Arthur",
@@ -15922,14 +16112,28 @@
     },
     "enrichedAt": "2026-07-07T07:06:51.876Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "81dca162-351f-424b-8dbb-f7595ec59415"
+    "mbid": "81dca162-351f-424b-8dbb-f7595ec59415",
+    "genres": [
+      "Broadway",
+      "funny",
+      "clever",
+      "humor",
+      "tv star"
+    ],
+    "popularity": {
+      "listeners": 2070,
+      "playcount": 37127
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/584167d3c621e86fc08114fddb8e85e0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:22:56.344Z"
   },
   {
     "name": "BEA Systems",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:51.876Z",
     "autoTriedAt": "2026-07-07T19:53:01.325Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "metaTriedAt": "2026-07-09T11:22:57.016Z"
   },
   {
     "name": "Beabadoobee",
@@ -15944,7 +16148,20 @@
     },
     "enrichedAt": "2026-07-07T19:53:04.272Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "88d17133-abbc-42db-9526-4e2c1db60336"
+    "mbid": "88d17133-abbc-42db-9526-4e2c1db60336",
+    "genres": [
+      "indie pop",
+      "indie rock",
+      "indie",
+      "bedroom pop",
+      "dream pop"
+    ],
+    "popularity": {
+      "listeners": 2732934,
+      "playcount": 342583241
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9a677342b08c4ce2ed2d75e8ebfd5b85/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:22:57.624Z"
   },
   {
     "name": "Beach Baby",
@@ -15960,7 +16177,20 @@
     },
     "enrichedAt": "2026-07-07T19:53:08.545Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "indie folk",
+      "acoustic",
+      "indie",
+      "experimental",
+      "singer-songwriter"
+    ],
+    "popularity": {
+      "listeners": 51527,
+      "playcount": 286092
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cf3352b7ef5e1ba1183fa8f66e8cdf2d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:22:58.310Z"
   },
   {
     "name": "Beach Boys",
@@ -15976,14 +16206,39 @@
     },
     "enrichedAt": "2026-07-07T07:06:51.876Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ebfc1398-8d96-47e3-82c3-f782abcdb13d"
+    "mbid": "ebfc1398-8d96-47e3-82c3-f782abcdb13d",
+    "genres": [
+      "classic rock",
+      "60s",
+      "pop",
+      "Surf",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 4177512,
+      "playcount": 168900356
+    },
+    "metaEnrichedAt": "2026-07-09T11:22:58.932Z"
   },
   {
     "name": "Beach Boys, The",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:51.876Z",
     "autoTriedAt": "2026-07-07T19:53:11.011Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "classic rock",
+      "60s",
+      "pop",
+      "Surf",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 4177512,
+      "playcount": 168900356
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/569bc18860d863dfbe09117d38b82a5f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:22:59.635Z"
   },
   {
     "name": "Beach Fossils",
@@ -15999,7 +16254,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:51.876Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "3df3818e-7984-4c62-bee3-81f95f8c6651"
+    "mbid": "3df3818e-7984-4c62-bee3-81f95f8c6651",
+    "genres": [
+      "Lo-Fi",
+      "indie",
+      "surf rock",
+      "Garage Rock",
+      "noise pop"
+    ],
+    "popularity": {
+      "listeners": 1147971,
+      "playcount": 33586431
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/980a142df9d3e7adb7a7c23caf23f979/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:00.217Z"
   },
   {
     "name": "Beach House",
@@ -16015,7 +16283,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:51.876Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d5cc67b8-1cc4-453b-96e8-44487acdebea"
+    "mbid": "d5cc67b8-1cc4-453b-96e8-44487acdebea",
+    "genres": [
+      "dream pop",
+      "indie pop",
+      "indie",
+      "Lo-Fi",
+      "Dreamy"
+    ],
+    "popularity": {
+      "listeners": 3610762,
+      "playcount": 251915207
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bab7f5aedc71370b598262e065d3a0ef/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:01.134Z"
   },
   {
     "name": "Beachbag",
@@ -16030,7 +16311,20 @@
     },
     "enrichedAt": "2026-07-07T22:43:56.208Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "german",
+      "electronica",
+      "germany",
+      "dance",
+      "deep house"
+    ],
+    "popularity": {
+      "listeners": 63799,
+      "playcount": 751942
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b55c18d5907e36ce39c0fa994dfe733f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:01.892Z"
   },
   {
     "name": "Beachwood Sparks",
@@ -16046,14 +16340,40 @@
     },
     "enrichedAt": "2026-07-07T07:06:51.876Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "afeb541c-b962-42d2-b0be-8b9c14d13ca6"
+    "mbid": "afeb541c-b962-42d2-b0be-8b9c14d13ca6",
+    "genres": [
+      "Alt-country",
+      "indie",
+      "indie pop",
+      "California",
+      "psychedelic"
+    ],
+    "popularity": {
+      "listeners": 201059,
+      "playcount": 1716580
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5bbfeafad441cc5701f81a0fb184f0c3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:02.500Z"
   },
   {
     "name": "Beacon Street Union",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:51.876Z",
     "autoTriedAt": "2026-07-07T19:53:14.139Z",
-    "mbid": "31e397ba-8de2-486f-9362-2dc5ee830102"
+    "mbid": "31e397ba-8de2-486f-9362-2dc5ee830102",
+    "genres": [
+      "Psychedelic Rock",
+      "psychedelic",
+      "rock",
+      "60s",
+      "bosstown sound"
+    ],
+    "popularity": {
+      "listeners": 4218,
+      "playcount": 59726
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b1a370cf150e0c3297d91fbe5a198980/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:03.440Z"
   },
   {
     "name": "Beady Eye",
@@ -16069,14 +16389,40 @@
     },
     "enrichedAt": "2026-07-07T07:06:51.876Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a0e10984-0eca-4920-a171-5fd7a62ee069"
+    "mbid": "a0e10984-0eca-4920-a171-5fd7a62ee069",
+    "genres": [
+      "britpop",
+      "british",
+      "rock",
+      "alternative rock",
+      "Liam Gallagher"
+    ],
+    "popularity": {
+      "listeners": 345645,
+      "playcount": 7368577
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9d8914d2e52cab711e8fa3861569deb4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:04.072Z"
   },
   {
     "name": "Beanbag",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:51.876Z",
     "autoTriedAt": "2026-07-07T19:53:19.839Z",
-    "mbid": "5e96ff3f-c29b-4e84-8346-48f7acdcfce1"
+    "mbid": "5e96ff3f-c29b-4e84-8346-48f7acdcfce1",
+    "genres": [
+      "christian rock",
+      "christian",
+      "rock",
+      "rapcore",
+      "crossover"
+    ],
+    "popularity": {
+      "listeners": 2872,
+      "playcount": 40537
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cfbc6ec273bfe436fb3240bfa3d4f1e7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:04.784Z"
   },
   {
     "name": "Beangrowers",
@@ -16092,7 +16438,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:51.876Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8655357b-2e9d-4cd8-b652-7cdd6e9a1faf"
+    "mbid": "8655357b-2e9d-4cd8-b652-7cdd6e9a1faf",
+    "genres": [
+      "indie rock",
+      "indie",
+      "malta",
+      "alternative",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 11524,
+      "playcount": 170971
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5cd5d331fed60ca6cea15c30c37c3878/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:05.479Z"
   },
   {
     "name": "Beanie Sigel",
@@ -16108,14 +16467,32 @@
     },
     "enrichedAt": "2026-07-07T07:06:51.876Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b544133a-b262-451e-84b6-7bea2e61ce60"
+    "mbid": "b544133a-b262-451e-84b6-7bea2e61ce60",
+    "genres": [
+      "Hip-Hop",
+      "rap",
+      "hip hop",
+      "Gangsta Rap",
+      "roc-a-fella"
+    ],
+    "popularity": {
+      "listeners": 405421,
+      "playcount": 2512556
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a9de86d02f8c64f09d63eb4c693d4469/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:06.059Z"
   },
   {
     "name": "Beanland",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:51.876Z",
     "autoTriedAt": "2026-07-07T19:53:24.740Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 124,
+      "playcount": 1531
+    },
+    "metaEnrichedAt": "2026-07-09T11:23:07.519Z"
   },
   {
     "name": "Beans",
@@ -16131,7 +16508,20 @@
     },
     "enrichedAt": "2026-07-07T19:53:28.187Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "Hip-Hop",
+      "streetpunk",
+      "street punk",
+      "punk",
+      "punk rock"
+    ],
+    "popularity": {
+      "listeners": 82022,
+      "playcount": 919939
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e56f60df6566724107c1e0c0eef60839/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:08.384Z"
   },
   {
     "name": "Bear Hands",
@@ -16147,7 +16537,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:51.876Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6e73e900-c27f-4893-a6db-32f23306a841"
+    "mbid": "6e73e900-c27f-4893-a6db-32f23306a841",
+    "genres": [
+      "post-punk",
+      "indie rock",
+      "indie",
+      "alternative",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 261953,
+      "playcount": 3146310
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6935489aa03ec3dbf85908f838d46a74/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:08.996Z"
   },
   {
     "name": "Bear in Heaven",
@@ -16163,7 +16566,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:51.876Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "56677704-9fa7-4150-9b18-a3b21ff72bc1"
+    "mbid": "56677704-9fa7-4150-9b18-a3b21ff72bc1",
+    "genres": [
+      "experimental",
+      "post-rock",
+      "indie rock",
+      "ambient",
+      "electronic"
+    ],
+    "popularity": {
+      "listeners": 324960,
+      "playcount": 5102054
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e77e8872eb10cc0cf062c54859ae5f2e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:09.690Z"
   },
   {
     "name": "Bear Mountain",
@@ -16179,7 +16595,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:51.876Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b5fbe258-52e6-4144-b012-83cce64427e4"
+    "mbid": "b5fbe258-52e6-4144-b012-83cce64427e4",
+    "genres": [
+      "indie",
+      "electronic",
+      "Dreamy",
+      "rock",
+      "indie electronic"
+    ],
+    "popularity": {
+      "listeners": 47507,
+      "playcount": 300990
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fa3c63238d2f7bebd19f8d6049f9bef2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:10.404Z"
   },
   {
     "name": "Beardfish",
@@ -16195,7 +16624,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:51.876Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "795038aa-212d-437f-b0c2-42f3e4b1ebb8"
+    "mbid": "795038aa-212d-437f-b0c2-42f3e4b1ebb8",
+    "genres": [
+      "Progressive rock",
+      "art rock",
+      "swedish",
+      "Progressive",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 66138,
+      "playcount": 1969084
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/74f5c689121239bc24a8f1c67f32fe5e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:11.053Z"
   },
   {
     "name": "Beardyman",
@@ -16211,7 +16653,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:51.876Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "cb9221fb-6e7c-4ae8-b8e5-8e35d11154a8"
+    "mbid": "cb9221fb-6e7c-4ae8-b8e5-8e35d11154a8",
+    "genres": [
+      "beatbox",
+      "Hip-Hop",
+      "electronic",
+      "dubstep",
+      "improvisation"
+    ],
+    "popularity": {
+      "listeners": 61902,
+      "playcount": 597197
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/25d56fc7e1410817659a2241bed6e9ed/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:11.725Z"
   },
   {
     "name": "Bearsuit",
@@ -16227,14 +16682,28 @@
     },
     "enrichedAt": "2026-07-07T07:06:51.876Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "30bb645e-7b3c-412c-8310-a117c5769f5a"
+    "mbid": "30bb645e-7b3c-412c-8310-a117c5769f5a",
+    "genres": [
+      "indie pop",
+      "twee",
+      "indie rock",
+      "indie",
+      "indiepop"
+    ],
+    "popularity": {
+      "listeners": 41760,
+      "playcount": 485196
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c24d84620245f2bce3c4dc35ac53195b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:12.324Z"
   },
   {
     "name": "Bearsville Records",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:51.876Z",
     "autoTriedAt": "2026-07-07T19:53:30.470Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "metaTriedAt": "2026-07-09T11:23:12.911Z"
   },
   {
     "name": "Beartooth",
@@ -16250,14 +16719,28 @@
     },
     "enrichedAt": "2026-07-07T07:06:51.876Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "98a1e0ab-35fa-40dd-b62c-9fda46fdb061"
+    "mbid": "98a1e0ab-35fa-40dd-b62c-9fda46fdb061",
+    "genres": [
+      "metalcore",
+      "post-hardcore",
+      "hardcore",
+      "metal",
+      "american"
+    ],
+    "popularity": {
+      "listeners": 426295,
+      "playcount": 22989556
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2bee3391656b303f94dc857a3a3b19b7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:13.746Z"
   },
   {
     "name": "Beasley, Sean",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:51.876Z",
     "autoTriedAt": "2026-07-07T19:53:32.690Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "metaTriedAt": "2026-07-09T11:23:14.411Z"
   },
   {
     "name": "BEAST",
@@ -16273,7 +16756,19 @@
     },
     "enrichedAt": "2026-07-07T19:53:36.444Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "k-pop",
+      "b2st",
+      "electronic",
+      "trip-hop",
+      "Korean"
+    ],
+    "popularity": {
+      "listeners": 249906,
+      "playcount": 7438636
+    },
+    "metaEnrichedAt": "2026-07-09T11:23:15.127Z"
   },
   {
     "name": "Beastie Boys",
@@ -16289,7 +16784,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:51.876Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "9beb62b2-88db-4cea-801e-162cd344ee53"
+    "mbid": "9beb62b2-88db-4cea-801e-162cd344ee53",
+    "genres": [
+      "Hip-Hop",
+      "rap",
+      "alternative",
+      "hip hop",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 3499321,
+      "playcount": 127423590
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3b406c3a4395492869c2328ca194086c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:15.778Z"
   },
   {
     "name": "Beastmilk",
@@ -16305,7 +16813,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:51.876Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0c71f174-5240-426b-8d43-66a3459c2f71"
+    "mbid": "0c71f174-5240-426b-8d43-66a3459c2f71",
+    "genres": [
+      "post-punk",
+      "deathrock",
+      "Gothic Rock",
+      "finnish",
+      "Blackwave"
+    ],
+    "popularity": {
+      "listeners": 51914,
+      "playcount": 1544720
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/addc5ef03893469b043ecd1b28caedac/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:16.579Z"
   },
   {
     "name": "Beastwars",
@@ -16321,7 +16842,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:51.876Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6d8943e5-9d52-4dfe-bbef-e2361fc0e040"
+    "mbid": "6d8943e5-9d52-4dfe-bbef-e2361fc0e040",
+    "genres": [
+      "Sludge",
+      "stoner metal",
+      "sludge metal",
+      "doom metal",
+      "Stoner Rock"
+    ],
+    "popularity": {
+      "listeners": 30500,
+      "playcount": 448884
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/24ebf46b1e652f141963312c6017bb74/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:17.285Z"
   },
   {
     "name": "Beat Brothers",
@@ -16337,7 +16871,19 @@
     },
     "enrichedAt": "2026-07-07T07:06:51.876Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "bb85b2d0-7c62-4389-8564-5eeadacd09bb"
+    "mbid": "bb85b2d0-7c62-4389-8564-5eeadacd09bb",
+    "genres": [
+      "rock",
+      "pop",
+      "rap",
+      "Hip-Hop",
+      "returners"
+    ],
+    "popularity": {
+      "listeners": 758,
+      "playcount": 3398
+    },
+    "metaEnrichedAt": "2026-07-09T11:23:18.295Z"
   },
   {
     "name": "Beat Circus",
@@ -16353,7 +16899,20 @@
     },
     "enrichedAt": "2026-07-07T19:53:39.047Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "dark cabaret",
+      "cabaret",
+      "circus",
+      "gothic americana",
+      "experimental"
+    ],
+    "popularity": {
+      "listeners": 25741,
+      "playcount": 265282
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/65d0ab048d960f60a7790cef220143ea/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:19.138Z"
   },
   {
     "name": "Beat Crusaders",
@@ -16369,7 +16928,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:51.876Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e8575463-1ef4-4fc7-8d63-b8b12fe3c13b"
+    "mbid": "e8575463-1ef4-4fc7-8d63-b8b12fe3c13b",
+    "genres": [
+      "J-rock",
+      "japanese",
+      "rock",
+      "anime",
+      "jrock"
+    ],
+    "popularity": {
+      "listeners": 171814,
+      "playcount": 7301925
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8f4e37f14149c1f562a0d6ca492aed71/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:20.062Z"
   },
   {
     "name": "Beat Happening",
@@ -16385,7 +16957,20 @@
     },
     "enrichedAt": "2026-07-07T19:53:43.423Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "Lo-Fi",
+      "indie pop",
+      "twee",
+      "indie",
+      "indie rock"
+    ],
+    "popularity": {
+      "listeners": 358590,
+      "playcount": 8514369
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/be31c3e3860cf7d57f56bbfa88902d4c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:20.649Z"
   },
   {
     "name": "Beat Junkies",
@@ -16401,28 +16986,63 @@
     },
     "enrichedAt": "2026-07-07T07:06:53.652Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "09e612dd-3013-4f9b-9148-f2cd7f30e808"
+    "mbid": "09e612dd-3013-4f9b-9148-f2cd7f30e808",
+    "genres": [
+      "turntablism",
+      "Hip-Hop",
+      "rap",
+      "hip hop",
+      "hiphop"
+    ],
+    "popularity": {
+      "listeners": 15308,
+      "playcount": 162348
+    },
+    "metaEnrichedAt": "2026-07-09T11:23:21.237Z"
   },
   {
     "name": "Beat Me Daddy, Eight to the Bar",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:53:46.722Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 53,
+      "playcount": 74
+    },
+    "metaEnrichedAt": "2026-07-09T11:23:22.024Z"
   },
   {
     "name": "Beatbox House",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:54:04.502Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 4,
+      "playcount": 5
+    },
+    "metaEnrichedAt": "2026-07-09T11:23:22.848Z"
   },
   {
     "name": "Beate S. Lech",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:54:06.305Z",
-    "mbid": "e50cfd0a-fed2-46a5-b734-9a54075aa7df"
+    "mbid": "e50cfd0a-fed2-46a5-b734-9a54075aa7df",
+    "genres": [
+      "folk",
+      "jazz",
+      "female vocalists",
+      "vocal",
+      "vocal jazz"
+    ],
+    "popularity": {
+      "listeners": 1042,
+      "playcount": 8696
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6baa7c3e3094f5aa1d5bb4635a2121d0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:23.510Z"
   },
   {
     "name": "Beaten by Them",
@@ -16438,7 +17058,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:53.652Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "67cd71d5-b82a-4f90-8fd1-929866d4c19e"
+    "mbid": "67cd71d5-b82a-4f90-8fd1-929866d4c19e",
+    "genres": [
+      "instrumental",
+      "post-rock",
+      "electronic",
+      "All",
+      "spotify"
+    ],
+    "popularity": {
+      "listeners": 1440,
+      "playcount": 9837
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/193851a170eb9d18e70cb246c48b8b68/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:24.270Z"
   },
   {
     "name": "Beatenberg",
@@ -16454,42 +17087,107 @@
     },
     "enrichedAt": "2026-07-07T19:54:09.069Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "539d794c-0a99-4d7a-82b8-451080725ca8"
+    "mbid": "539d794c-0a99-4d7a-82b8-451080725ca8",
+    "genres": [
+      "south african",
+      "indie pop",
+      "pop",
+      "indie rock",
+      "south africa"
+    ],
+    "popularity": {
+      "listeners": 66896,
+      "playcount": 889755
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e2a13d337eada9b6b37812d922fc96d9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:24.933Z"
   },
   {
     "name": "Beathoven",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:54:11.926Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "rock",
+      "trance",
+      "hardcore",
+      "power pop",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 25695,
+      "playcount": 954833
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6a85589840696292e61c9b81bc6ed2b2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:25.710Z"
   },
   {
     "name": "Beatlemania (musical)",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:54:13.400Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "metaTriedAt": "2026-07-09T11:23:26.346Z"
   },
   {
     "name": "Beatles",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:54:15.040Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "classic rock",
+      "rock",
+      "british",
+      "60s",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 6602883,
+      "playcount": 1124571744
+    },
+    "metaEnrichedAt": "2026-07-09T11:23:26.977Z"
   },
   {
     "name": "Beatmasters",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:54:17.796Z",
-    "mbid": "8e5e440c-cd14-47f0-a562-14a3796c50da"
+    "mbid": "8e5e440c-cd14-47f0-a562-14a3796c50da",
+    "genres": [
+      "House",
+      "dance",
+      "pop",
+      "techno",
+      "UK"
+    ],
+    "popularity": {
+      "listeners": 11024,
+      "playcount": 59997
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/42fc050b4dcafd67741617ad9479746d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:27.671Z"
   },
   {
     "name": "Beatnik Beatch",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:54:20.698Z",
-    "mbid": "917d4671-8459-424d-bf84-6c5011feeb1a"
+    "mbid": "917d4671-8459-424d-bf84-6c5011feeb1a",
+    "genres": [
+      "pop rock",
+      "new wave",
+      "power pop",
+      "80s",
+      "jangle pop"
+    ],
+    "popularity": {
+      "listeners": 962,
+      "playcount": 9873
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f4f8c8690a735b2e3f135e673a89d1cc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:28.519Z"
   },
   {
     "name": "Beatnik Filmstars",
@@ -16505,14 +17203,40 @@
     },
     "enrichedAt": "2026-07-07T07:06:53.652Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "faa32f1b-6269-41dd-80ad-1bcaff0c52c1"
+    "mbid": "faa32f1b-6269-41dd-80ad-1bcaff0c52c1",
+    "genres": [
+      "indie rock",
+      "Lo-Fi",
+      "shoegaze",
+      "noise",
+      "dream pop"
+    ],
+    "popularity": {
+      "listeners": 8300,
+      "playcount": 86371
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/300e7d3590db6d383078dc06d6e5a5f4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:29.214Z"
   },
   {
     "name": "Beatnik Termites",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:54:28.040Z",
-    "mbid": "252a4cf3-f20c-42ae-9341-10ef253b5a09"
+    "mbid": "252a4cf3-f20c-42ae-9341-10ef253b5a09",
+    "genres": [
+      "pop punk",
+      "punk",
+      "power pop",
+      "Surf",
+      "punk rock"
+    ],
+    "popularity": {
+      "listeners": 9792,
+      "playcount": 165851
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c93846206944f44982e3bd85f72fb14d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:29.862Z"
   },
   {
     "name": "Beatnik Turtle",
@@ -16528,28 +17252,72 @@
     },
     "enrichedAt": "2026-07-07T07:06:53.652Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d50ed1d9-f764-4881-9a35-756239040ae8"
+    "mbid": "d50ed1d9-f764-4881-9a35-756239040ae8",
+    "genres": [
+      "rock",
+      "crossover",
+      "geek rock",
+      "All",
+      "beatnik"
+    ],
+    "popularity": {
+      "listeners": 1533,
+      "playcount": 14500
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/67aa63327e20ab9d8bc52d396982e8f8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:30.517Z"
   },
   {
     "name": "Beatnuts",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:54:29.517Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "Hip-Hop",
+      "rap",
+      "hip hop",
+      "new york",
+      "underground hip-hop"
+    ],
+    "popularity": {
+      "listeners": 363529,
+      "playcount": 3584295
+    },
+    "metaEnrichedAt": "2026-07-09T11:23:31.222Z"
   },
   {
     "name": "Beatrice Harrison",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:54:33.450Z",
-    "mbid": "ba8d0d8b-abfc-45c5-8d50-8cb8be02484a"
+    "mbid": "ba8d0d8b-abfc-45c5-8d50-8cb8be02484a",
+    "popularity": {
+      "listeners": 198,
+      "playcount": 945
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5c5ca88ee3253d5086c49d995c0c3c8e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:32.035Z"
   },
   {
     "name": "Beatrice Lillie",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:57:28.589Z",
-    "mbid": "36900018-8e12-47c4-83dd-bc7659ee00c7"
+    "mbid": "36900018-8e12-47c4-83dd-bc7659ee00c7",
+    "genres": [
+      "30s",
+      "40s",
+      "female vocalist",
+      "showtunes",
+      "actress"
+    ],
+    "popularity": {
+      "listeners": 626,
+      "playcount": 2427
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7a0f62452e1996ac464834c4c63c29c3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:32.883Z"
   },
   {
     "name": "Béatrice Martin",
@@ -16565,21 +17333,51 @@
     },
     "enrichedAt": "2026-07-07T19:57:31.166Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "pop",
+      "Canadian",
+      "singer-songwriter",
+      "instrumental",
+      "pianist"
+    ],
+    "popularity": {
+      "listeners": 792,
+      "playcount": 35592
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3834072b9addedf858656e4534b8ab2a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:33.530Z"
   },
   {
     "name": "Beatrice Winde",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:57:32.442Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 5
+    },
+    "metaEnrichedAt": "2026-07-09T11:23:34.174Z"
   },
   {
     "name": "Beatriz da Conceição",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:57:35.039Z",
-    "mbid": "52a75d01-fd4d-4e46-9742-0bfe045d13b4"
+    "mbid": "52a75d01-fd4d-4e46-9742-0bfe045d13b4",
+    "genres": [
+      "fado",
+      "Portugal",
+      "portuguese",
+      "folk",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 1343,
+      "playcount": 6799
+    },
+    "metaEnrichedAt": "2026-07-09T11:23:34.858Z"
   },
   {
     "name": "Beatriz Luengo",
@@ -16595,14 +17393,39 @@
     },
     "enrichedAt": "2026-07-07T07:06:53.652Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "3e2828b0-1f46-4dfa-8b25-d4ced7fd691b"
+    "mbid": "3e2828b0-1f46-4dfa-8b25-d4ced7fd691b",
+    "genres": [
+      "pop",
+      "latin",
+      "spanish",
+      "female vocalists",
+      "spanish pop"
+    ],
+    "popularity": {
+      "listeners": 59799,
+      "playcount": 537224
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/149e843231d2f38a0367c86e6e99397a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:35.527Z"
   },
   {
     "name": "beats",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:57:36.321Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "trance",
+      "hip hop",
+      "vet",
+      "nucleator",
+      "CP31"
+    ],
+    "popularity": {
+      "listeners": 6986,
+      "playcount": 84143
+    },
+    "metaEnrichedAt": "2026-07-09T11:23:36.215Z"
   },
   {
     "name": "Beats Antique",
@@ -16618,7 +17441,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:53.652Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5eb38f71-96c3-48a3-9b69-2995cfb74982"
+    "mbid": "5eb38f71-96c3-48a3-9b69-2995cfb74982",
+    "genres": [
+      "tribal fusion",
+      "electronic",
+      "world",
+      "ambient",
+      "belly dance"
+    ],
+    "popularity": {
+      "listeners": 209599,
+      "playcount": 4061669
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e1e7579fc461a0644675023c3d57f314/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:36.806Z"
   },
   {
     "name": "Beats International",
@@ -16634,7 +17470,20 @@
     },
     "enrichedAt": "2026-07-07T19:57:44.565Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "65fe9ece-5a3f-442d-8d6d-34f58b1dce23"
+    "mbid": "65fe9ece-5a3f-442d-8d6d-34f58b1dce23",
+    "genres": [
+      "electronic",
+      "dance",
+      "dub",
+      "90s",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 166982,
+      "playcount": 861285
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d3bd08d25dfb7226209cb34444d515bb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:37.955Z"
   },
   {
     "name": "Beatsteaks",
@@ -16650,7 +17499,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:53.652Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a9b88ebb-83aa-4ef7-b674-fabeb572c14e"
+    "mbid": "a9b88ebb-83aa-4ef7-b674-fabeb572c14e",
+    "genres": [
+      "punk rock",
+      "rock",
+      "german",
+      "alternative",
+      "punk"
+    ],
+    "popularity": {
+      "listeners": 503106,
+      "playcount": 23720577
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a7898fd4f8ba2962e50b6df3d354f934/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:38.766Z"
   },
   {
     "name": "Beau Bokan",
@@ -16666,7 +17528,12 @@
     },
     "enrichedAt": "2026-07-07T07:06:53.652Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0745910f-dd5a-4874-8de5-062427e70060"
+    "mbid": "0745910f-dd5a-4874-8de5-062427e70060",
+    "popularity": {
+      "listeners": 8,
+      "playcount": 33
+    },
+    "metaEnrichedAt": "2026-07-09T11:23:39.474Z"
   },
   {
     "name": "Beau Bridges",
@@ -16682,14 +17549,25 @@
     },
     "enrichedAt": "2026-07-07T07:06:53.652Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c0b984ab-593a-4f62-8256-1ada14a85849"
+    "mbid": "c0b984ab-593a-4f62-8256-1ada14a85849",
+    "popularity": {
+      "listeners": 29,
+      "playcount": 56
+    },
+    "metaEnrichedAt": "2026-07-09T11:23:40.178Z"
   },
   {
     "name": "Beau Burchell",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:57:51.243Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 49,
+      "playcount": 162
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d7f01f0a9fc0f1dea6e122e6d15d1887/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:40.852Z"
   },
   {
     "name": "Beau Dommage",
@@ -16705,42 +17583,92 @@
     },
     "enrichedAt": "2026-07-07T07:06:53.652Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e563c040-4337-4fa5-b008-91ee78be85cf"
+    "mbid": "e563c040-4337-4fa5-b008-91ee78be85cf",
+    "genres": [
+      "quebecois",
+      "quebec",
+      "folk",
+      "Canadian",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 24551,
+      "playcount": 386160
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/262f3e78a85493822ae5f6a652a2f87d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:41.467Z"
   },
   {
     "name": "Beau Jocque",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:57:53.836Z",
-    "mbid": "a3357ecd-43e3-45e3-8421-3ba48aa40f4c"
+    "mbid": "a3357ecd-43e3-45e3-8421-3ba48aa40f4c",
+    "genres": [
+      "zydeco",
+      "cajun",
+      "louisiana",
+      "Accordeon",
+      "Beau Jocque"
+    ],
+    "popularity": {
+      "listeners": 9090,
+      "playcount": 38425
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c6a8835bb8f40033c1cd3a6006d195a6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:42.272Z"
   },
   {
     "name": "Beau Jocques",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:57:55.112Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 5,
+      "playcount": 17
+    },
+    "metaEnrichedAt": "2026-07-09T11:23:42.967Z"
   },
   {
     "name": "Beau Leisure",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:57:56.394Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 3,
+      "playcount": 6
+    },
+    "metaEnrichedAt": "2026-07-09T11:23:43.626Z"
   },
   {
     "name": "Beaufort Symphony Orchestra",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:57:57.680Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "metaTriedAt": "2026-07-09T11:23:44.587Z"
   },
   {
     "name": "Beaumont Hannant",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:58:01.550Z",
-    "mbid": "1e9d0019-92b3-4590-8cb8-3535bef8242e"
+    "mbid": "1e9d0019-92b3-4590-8cb8-3535bef8242e",
+    "genres": [
+      "idm",
+      "electronic",
+      "ambient",
+      "techno",
+      "electronica"
+    ],
+    "popularity": {
+      "listeners": 28388,
+      "playcount": 230171
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:45.270Z"
   },
   {
     "name": "BeauSoleil",
@@ -16756,7 +17684,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:53.652Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "143d190c-11e8-4ecd-adf7-a68a3ccdaab1"
+    "mbid": "143d190c-11e8-4ecd-adf7-a68a3ccdaab1",
+    "genres": [
+      "cajun",
+      "zydeco",
+      "folk",
+      "louisiana",
+      "New Orleans"
+    ],
+    "popularity": {
+      "listeners": 28274,
+      "playcount": 220447
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f05823c05eec6e025e83731ee68a96ba/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:45.926Z"
   },
   {
     "name": "Beautiful Creatures",
@@ -16772,7 +17713,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:53.652Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "260b0a6c-b464-4acd-bbd1-9dbb00703207"
+    "mbid": "260b0a6c-b464-4acd-bbd1-9dbb00703207",
+    "genres": [
+      "hard rock",
+      "sleaze rock",
+      "rock",
+      "metal",
+      "Glam Metal"
+    ],
+    "popularity": {
+      "listeners": 23119,
+      "playcount": 273826
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/942a9343e2801325fcbc6b1009980783/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:46.631Z"
   },
   {
     "name": "Beautiful Eulogy",
@@ -16788,14 +17742,32 @@
     },
     "enrichedAt": "2026-07-07T07:06:53.652Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c5fecde1-5221-45f9-9d79-64f69af3ad7d"
+    "mbid": "c5fecde1-5221-45f9-9d79-64f69af3ad7d",
+    "genres": [
+      "Hip-Hop",
+      "rap",
+      "christian",
+      "Christian Rap",
+      "gospel"
+    ],
+    "popularity": {
+      "listeners": 16457,
+      "playcount": 512569
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5a26cb11cfb86f0f80a7196a1d02df57/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:47.400Z"
   },
   {
     "name": "Beautiful in My Eyes",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:58:04.126Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 65,
+      "playcount": 366
+    },
+    "metaEnrichedAt": "2026-07-09T11:23:48.553Z"
   },
   {
     "name": "Beautiful Sin",
@@ -16811,14 +17783,39 @@
     },
     "enrichedAt": "2026-07-07T19:58:08.843Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "c4da2dd3-7e77-444b-9d6d-239aa382c3ad"
+    "mbid": "c4da2dd3-7e77-444b-9d6d-239aa382c3ad",
+    "genres": [
+      "Power metal",
+      "heavy metal",
+      "Female fronted metal",
+      "Progressive metal",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 22772,
+      "playcount": 377789
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cf01293350cba3d4e0da6cafdfd2b219/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:49.289Z"
   },
   {
     "name": "Beautiful Skin",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:58:11.431Z",
-    "mbid": "356947c5-b3fc-4041-bfc0-e8fc53723e63"
+    "mbid": "356947c5-b3fc-4041-bfc0-e8fc53723e63",
+    "genres": [
+      "synthpop",
+      "electronic",
+      "indie rock",
+      "post-punk",
+      "coldwave"
+    ],
+    "popularity": {
+      "listeners": 1949,
+      "playcount": 10894
+    },
+    "metaEnrichedAt": "2026-07-09T11:23:49.938Z"
   },
   {
     "name": "Beauty School",
@@ -16834,14 +17831,32 @@
     },
     "enrichedAt": "2026-07-07T19:58:16.254Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "british",
+      "pop punk",
+      "rock",
+      "indie",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 12333,
+      "playcount": 147189
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/28957a52b51149a55807f3677b114fe2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:50.684Z"
   },
   {
     "name": "Beauty4",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:58:17.531Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 127,
+      "playcount": 677
+    },
+    "metaEnrichedAt": "2026-07-09T11:23:51.417Z"
   },
   {
     "name": "Beaux Arts Trio",
@@ -16857,21 +17872,52 @@
     },
     "enrichedAt": "2026-07-07T19:58:20.114Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "Classical",
+      "piano",
+      "chamber music",
+      "piano trio",
+      "trio"
+    ],
+    "popularity": {
+      "listeners": 23569,
+      "playcount": 313870
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fb906aac09ec9a82f2f138c839252acb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:52.148Z"
   },
   {
     "name": "Beaver Harris",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:58:22.735Z",
-    "mbid": "d833ca14-1104-44b6-a90a-3b7d6ea5b139"
+    "mbid": "d833ca14-1104-44b6-a90a-3b7d6ea5b139",
+    "genres": [
+      "free jazz",
+      "jazz",
+      "Avant-Garde",
+      "experimental",
+      "gammarec"
+    ],
+    "popularity": {
+      "listeners": 835,
+      "playcount": 3723
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/540844eaf332101b0a8620d825d5d46b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:52.830Z"
   },
   {
     "name": "Beba Bidart",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:58:26.405Z",
-    "mbid": "01fced11-3239-4271-a8df-12887f74b798"
+    "mbid": "01fced11-3239-4271-a8df-12887f74b798",
+    "popularity": {
+      "listeners": 30,
+      "playcount": 100
+    },
+    "metaEnrichedAt": "2026-07-09T11:23:54.623Z"
   },
   {
     "name": "Bebe",
@@ -16887,7 +17933,19 @@
     },
     "enrichedAt": "2026-07-07T19:58:29.711Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "spanish",
+      "female vocalists",
+      "pop",
+      "latin",
+      "Espanol"
+    ],
+    "popularity": {
+      "listeners": 348057,
+      "playcount": 5541858
+    },
+    "metaEnrichedAt": "2026-07-09T11:23:55.235Z"
   },
   {
     "name": "BeBe & CeCe Winans",
@@ -16903,7 +17961,20 @@
     },
     "enrichedAt": "2026-07-07T19:58:32.657Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "471f35c4-5641-4f98-9108-afb841af5692"
+    "mbid": "471f35c4-5641-4f98-9108-afb841af5692",
+    "genres": [
+      "gospel",
+      "Bebe and Cece Winans",
+      "soul",
+      "christian",
+      "black gospel"
+    ],
+    "popularity": {
+      "listeners": 61665,
+      "playcount": 610161
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d6557b2ec81da69790476f0e6d9b88eb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:55.885Z"
   },
   {
     "name": "Bebe Buell",
@@ -16919,7 +17990,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:53.652Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "50da50ee-8947-4b23-8dee-1c75102f857c"
+    "mbid": "50da50ee-8947-4b23-8dee-1c75102f857c",
+    "genres": [
+      "rock",
+      "USA",
+      "classic rock",
+      "Garage Rock",
+      "punk"
+    ],
+    "popularity": {
+      "listeners": 1049,
+      "playcount": 6651
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2b39a96108e67b27251a1284db15b053/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:56.604Z"
   },
   {
     "name": "Bebe Cool",
@@ -16935,14 +18019,32 @@
     },
     "enrichedAt": "2026-07-07T19:58:37.757Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "26f887f1-a9e4-46c3-89e6-1e22aa931654"
+    "mbid": "26f887f1-a9e4-46c3-89e6-1e22aa931654",
+    "genres": [
+      "Uganda",
+      "Ugandan",
+      "pop",
+      "dancehall",
+      "male vocalists"
+    ],
+    "popularity": {
+      "listeners": 2707,
+      "playcount": 23998
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0c802fb55c8a150a339a63ee77ad317e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:57.584Z"
   },
   {
     "name": "BeBe K'Roche",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:58:40.304Z",
-    "mbid": "26526d60-a2cf-4f2c-ace9-786016b1c9c1"
+    "mbid": "26526d60-a2cf-4f2c-ace9-786016b1c9c1",
+    "popularity": {
+      "listeners": 97,
+      "playcount": 272
+    },
+    "metaEnrichedAt": "2026-07-09T11:23:58.214Z"
   },
   {
     "name": "Bebe Neuwirth",
@@ -16958,7 +18060,20 @@
     },
     "enrichedAt": "2026-07-07T19:58:48.914Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "c2386b28-3331-4ad0-935e-14d4b657f842"
+    "mbid": "c2386b28-3331-4ad0-935e-14d4b657f842",
+    "genres": [
+      "musical",
+      "Musical theatre",
+      "american",
+      "Soundtrack",
+      "Broadway"
+    ],
+    "popularity": {
+      "listeners": 34749,
+      "playcount": 239019
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2a0baa156e680c2fbf5e11c8e2456f90/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:58.877Z"
   },
   {
     "name": "Bebe Rexha",
@@ -16974,7 +18089,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:53.652Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "db8fad3a-e131-47a1-8782-c2ee93708cdd"
+    "mbid": "db8fad3a-e131-47a1-8782-c2ee93708cdd",
+    "genres": [
+      "pop",
+      "female vocalists",
+      "electronic",
+      "singer-songwriter",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 1542124,
+      "playcount": 41520752
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/315f8e20f0cd18735e6b9a9f5fd9adda/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:23:59.724Z"
   },
   {
     "name": "BeBe Winans",
@@ -16990,7 +18118,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:53.652Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8c86f18c-6703-473c-a1ca-482abd0cca27"
+    "mbid": "8c86f18c-6703-473c-a1ca-482abd0cca27",
+    "genres": [
+      "gospel",
+      "BeBe Winans",
+      "soul",
+      "black gospel",
+      "urban contemporary gospel"
+    ],
+    "popularity": {
+      "listeners": 33823,
+      "playcount": 300696
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/29a4b1d7669decbcfea5f6f3a781c4c0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:00.496Z"
   },
   {
     "name": "Bebel Gilberto",
@@ -17006,28 +18147,80 @@
     },
     "enrichedAt": "2026-07-07T07:06:53.652Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8777a849-fb4e-4430-9918-170f619c5286"
+    "mbid": "8777a849-fb4e-4430-9918-170f619c5286",
+    "genres": [
+      "Bossa Nova",
+      "brazilian",
+      "female vocalists",
+      "jazz",
+      "chillout"
+    ],
+    "popularity": {
+      "listeners": 634869,
+      "playcount": 8754230
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/30a46e8f3341ea89b6fbf21bb5290f1d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:01.137Z"
   },
   {
     "name": "Bebi Dol",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:59:07.294Z",
-    "mbid": "6a08becd-2b6a-47c2-82eb-600de7400ef1"
+    "mbid": "6a08becd-2b6a-47c2-82eb-600de7400ef1",
+    "genres": [
+      "pop",
+      "jazz",
+      "serbian",
+      "new wave",
+      "Eurovision"
+    ],
+    "popularity": {
+      "listeners": 7916,
+      "playcount": 126258
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9f62e8099df7d759aa881f88c3e776a5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:01.841Z"
   },
   {
     "name": "Bebo Valdés",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:59:09.978Z",
-    "mbid": "4034bdc9-e19d-4f70-8603-4c01aa2e89cb"
+    "mbid": "4034bdc9-e19d-4f70-8603-4c01aa2e89cb",
+    "genres": [
+      "jazz",
+      "latin jazz",
+      "piano",
+      "latin",
+      "cuba"
+    ],
+    "popularity": {
+      "listeners": 83249,
+      "playcount": 713923
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1cc42f7211f4cb168630f154afbcac4a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:02.584Z"
   },
   {
     "name": "Bebop",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:59:13.006Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "trance",
+      "electronic",
+      "progressive trance",
+      "Progressive",
+      "electronica"
+    ],
+    "popularity": {
+      "listeners": 4482,
+      "playcount": 27723
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/23202632d178eff256d2e159f212412a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:03.548Z"
   },
   {
     "name": "Beborn Beton",
@@ -17043,7 +18236,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:53.652Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b982e7e7-bbed-4c86-91c4-db5267e3cc9b"
+    "mbid": "b982e7e7-bbed-4c86-91c4-db5267e3cc9b",
+    "genres": [
+      "synthpop",
+      "ebm",
+      "futurepop",
+      "electronic",
+      "industrial"
+    ],
+    "popularity": {
+      "listeners": 72494,
+      "playcount": 1617439
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0307865d9a1bdd7056152afe391679b8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:04.361Z"
   },
   {
     "name": "Because of Ghosts",
@@ -17059,14 +18265,33 @@
     },
     "enrichedAt": "2026-07-07T19:59:22.645Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "77e96cb9-6e89-45ac-9551-fe33b8457f23"
+    "mbid": "77e96cb9-6e89-45ac-9551-fe33b8457f23",
+    "genres": [
+      "post-rock",
+      "instrumental",
+      "experimental",
+      "shoegaze",
+      "australian"
+    ],
+    "popularity": {
+      "listeners": 47647,
+      "playcount": 572996
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9c436fcac2ac36bfa4c77f20354e5d04/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:04.982Z"
   },
   {
     "name": "Because of You",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:59:23.927Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 2347,
+      "playcount": 9099
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/20fc4da0be6b43609cf925abcea159ff/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:05.730Z"
   },
   {
     "name": "Becca",
@@ -17082,14 +18307,36 @@
     },
     "enrichedAt": "2026-07-07T19:59:27.390Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "rock",
+      "female vocalists",
+      "pop",
+      "pop rock",
+      "dance"
+    ],
+    "popularity": {
+      "listeners": 95402,
+      "playcount": 895526
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2a32e59611ea2d4d411b5a644f75ede6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:06.514Z"
   },
   {
     "name": "Becca Bradley",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:59:46.316Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "christian"
+    ],
+    "popularity": {
+      "listeners": 1824,
+      "playcount": 8786
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1c393ef3ea4c32a5a9b8bb7d36e4afc7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:07.398Z"
   },
   {
     "name": "Beck",
@@ -17105,7 +18352,20 @@
     },
     "enrichedAt": "2026-07-07T19:59:49.655Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "alternative",
+      "indie",
+      "singer-songwriter",
+      "rock",
+      "indie rock"
+    ],
+    "popularity": {
+      "listeners": 4217058,
+      "playcount": 159504867
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f9671179c541bd92d6f93eb74861bd27/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:07.979Z"
   },
   {
     "name": "Beck, Bogert & Appice",
@@ -17121,7 +18381,20 @@
     },
     "enrichedAt": "2026-07-07T19:59:52.405Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "f16e80f0-8ee1-4bad-81d0-ff7c2893a250"
+    "mbid": "f16e80f0-8ee1-4bad-81d0-ff7c2893a250",
+    "genres": [
+      "blues rock",
+      "classic rock",
+      "hard rock",
+      "rock",
+      "blues"
+    ],
+    "popularity": {
+      "listeners": 20786,
+      "playcount": 273740
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cb90859c8eddd0e5461e61b1c7394f08/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:09.048Z"
   },
   {
     "name": "Beckah Shae",
@@ -17137,14 +18410,28 @@
     },
     "enrichedAt": "2026-07-07T07:06:53.652Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a240134e-0c87-4d9b-b66c-a4b85dbf83ca"
+    "mbid": "a240134e-0c87-4d9b-b66c-a4b85dbf83ca",
+    "genres": [
+      "christian",
+      "contemporary christian",
+      "pop",
+      "gospel",
+      "christian pop"
+    ],
+    "popularity": {
+      "listeners": 14881,
+      "playcount": 239507
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e38df38df230d11b198b8d8e49845338/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:09.770Z"
   },
   {
     "name": "Becki Clark",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:59:53.683Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "metaTriedAt": "2026-07-09T11:24:10.413Z"
   },
   {
     "name": "Becky G",
@@ -17160,7 +18447,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:53.652Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "eb90c8b8-d733-4c14-a293-105c3d1ba9b3"
+    "mbid": "eb90c8b8-d733-4c14-a293-105c3d1ba9b3",
+    "genres": [
+      "pop",
+      "female vocalists",
+      "rap",
+      "Hip-Hop",
+      "latin"
+    ],
+    "popularity": {
+      "listeners": 1518421,
+      "playcount": 26867296
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4592b032de9d1393fcd1c32780755372/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:11.068Z"
   },
   {
     "name": "Becky Hobbs",
@@ -17176,21 +18476,41 @@
     },
     "enrichedAt": "2026-07-07T07:06:53.652Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c0c5f350-8299-4e8f-909f-e822d4a3c48c"
+    "mbid": "c0c5f350-8299-4e8f-909f-e822d4a3c48c",
+    "genres": [
+      "country"
+    ],
+    "popularity": {
+      "listeners": 1453,
+      "playcount": 56774
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4291aae92815b023eb4a3642217bdca6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:11.713Z"
   },
   {
     "name": "Becky Lee",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T19:59:55.748Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 111,
+      "playcount": 324
+    },
+    "metaEnrichedAt": "2026-07-09T11:24:12.526Z"
   },
   {
     "name": "Becky Stark",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:53.652Z",
     "autoTriedAt": "2026-07-07T20:00:32.284Z",
-    "mbid": "3b14ac58-285e-4b79-897f-7119768c0588"
+    "mbid": "3b14ac58-285e-4b79-897f-7119768c0588",
+    "popularity": {
+      "listeners": 1929,
+      "playcount": 12027
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9af9dff50cb0692ce2fcb4ba0298e9a5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:13.278Z"
   },
   {
     "name": "Becky Taylor",
@@ -17206,7 +18526,20 @@
     },
     "enrichedAt": "2026-07-07T20:00:35.755Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "pop",
+      "celtic",
+      "musical",
+      "female vocal",
+      "check this out more"
+    ],
+    "popularity": {
+      "listeners": 2221,
+      "playcount": 20974
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a2793be07d5ecd4ef96fb855734c2084/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:14.014Z"
   },
   {
     "name": "Becoming the Archetype",
@@ -17222,7 +18555,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:53.652Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "66d8362f-4e4f-42be-a2ae-8b81eaa62ab9"
+    "mbid": "66d8362f-4e4f-42be-a2ae-8b81eaa62ab9",
+    "genres": [
+      "progressive death metal",
+      "metalcore",
+      "death metal",
+      "Melodic Death Metal",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 92420,
+      "playcount": 2464300
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/06fd01124a0ddb2228b94081b14dc031/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:14.915Z"
   },
   {
     "name": "Bedhead",
@@ -17238,7 +18584,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:53.652Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "07ea84a5-34aa-4766-b6d4-e9462a6220c2"
+    "mbid": "07ea84a5-34aa-4766-b6d4-e9462a6220c2",
+    "genres": [
+      "slowcore",
+      "indie rock",
+      "post-rock",
+      "indie",
+      "shoegaze"
+    ],
+    "popularity": {
+      "listeners": 218447,
+      "playcount": 4134768
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/dd2e77883ae21ba1c9c3010615044d4d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:15.717Z"
   },
   {
     "name": "Bednarek",
@@ -17254,7 +18613,19 @@
     },
     "enrichedAt": "2026-07-07T20:00:38.353Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "reggae",
+      "polish",
+      "dancehall",
+      "Star Guard Muffin",
+      "Mam talent"
+    ],
+    "popularity": {
+      "listeners": 18405,
+      "playcount": 634812
+    },
+    "metaEnrichedAt": "2026-07-09T11:24:16.842Z"
   },
   {
     "name": "Bedoes 2115",
@@ -17270,7 +18641,20 @@
     },
     "mbid": "3f92ce5d-daea-4347-8fec-8b66dd91c7da",
     "enrichedAt": "2026-07-09T08:32:03.543Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "polish",
+      "hip hop",
+      "rap",
+      "Hip-Hop",
+      "piotr krasko w swojej mazurskiej posiadlosci"
+    ],
+    "popularity": {
+      "listeners": 73265,
+      "playcount": 7432784
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4afc44cb844f55c24383da2fc01dcf4d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:17.990Z"
   },
   {
     "name": "Bedouin Soundclash",
@@ -17286,7 +18670,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:53.652Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e0036453-ce34-4095-af40-8c70ee07cef1"
+    "mbid": "e0036453-ce34-4095-af40-8c70ee07cef1",
+    "genres": [
+      "reggae",
+      "ska",
+      "Canadian",
+      "indie",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 399833,
+      "playcount": 7270188
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3e2a913adca2d142e20dfcbf418d6368/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:18.676Z"
   },
   {
     "name": "Bedřich Smetana",
@@ -17302,7 +18699,20 @@
     },
     "enrichedAt": "2026-07-07T20:00:41.067Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "Classical",
+      "romantic",
+      "Czech",
+      "composer",
+      "opera"
+    ],
+    "popularity": {
+      "listeners": 458038,
+      "playcount": 2447877
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6d8b49d5b0e1617b96e8103222b23ac2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:19.797Z"
   },
   {
     "name": "Bedřich Tylšar",
@@ -17318,7 +18728,12 @@
     },
     "enrichedAt": "2026-07-07T20:00:43.755Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "749f7b65-0c3f-4381-b1a3-2baaf139509f"
+    "mbid": "749f7b65-0c3f-4381-b1a3-2baaf139509f",
+    "popularity": {
+      "listeners": 33,
+      "playcount": 72
+    },
+    "metaEnrichedAt": "2026-07-09T11:24:20.545Z"
   },
   {
     "name": "Bedwetters",
@@ -17334,7 +18749,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:53.652Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ef77511e-1ef2-4fae-9b7a-bb2b288468f3"
+    "mbid": "ef77511e-1ef2-4fae-9b7a-bb2b288468f3",
+    "genres": [
+      "estonian",
+      "rock",
+      "pop punk",
+      "Eesti",
+      "punk"
+    ],
+    "popularity": {
+      "listeners": 12731,
+      "playcount": 365410
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f8c6ec1d6090c6abf59622ebcfca9886/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:21.276Z"
   },
   {
     "name": "Bee Gees",
@@ -17350,14 +18778,28 @@
     },
     "enrichedAt": "2026-07-07T07:06:55.416Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "bf0f7e29-dfe1-416c-b5c6-f9ebc19ea810"
+    "mbid": "bf0f7e29-dfe1-416c-b5c6-f9ebc19ea810",
+    "genres": [
+      "Disco",
+      "pop",
+      "70s",
+      "classic rock",
+      "oldies"
+    ],
+    "popularity": {
+      "listeners": 3533364,
+      "playcount": 72001306
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/561402d0ce91b933f86b61ce9050c913/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:21.871Z"
   },
   {
     "name": "Bee Ho Gray",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:55.416Z",
     "autoTriedAt": "2026-07-07T20:00:45.040Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "metaTriedAt": "2026-07-09T11:24:22.534Z"
   },
   {
     "name": "Beeb Birtles",
@@ -17373,7 +18815,13 @@
     },
     "enrichedAt": "2026-07-07T07:06:55.416Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2bb6d463-d6ec-42ed-bf21-193b6c42f696"
+    "mbid": "2bb6d463-d6ec-42ed-bf21-193b6c42f696",
+    "popularity": {
+      "listeners": 81,
+      "playcount": 686
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/66528425ef09ae284881aba8f2a08320/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:23.321Z"
   },
   {
     "name": "Beebs and Her Money Makers",
@@ -17389,7 +18837,18 @@
     },
     "enrichedAt": "2026-07-07T20:00:48.644Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "8d447ee5-b077-4cec-8b08-bcf4c3b23be4"
+    "mbid": "8d447ee5-b077-4cec-8b08-bcf4c3b23be4",
+    "genres": [
+      "ska",
+      "rock",
+      "fl"
+    ],
+    "popularity": {
+      "listeners": 2126,
+      "playcount": 25448
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fd4a02e5a381536678de0b5c539d1b16/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:23.993Z"
   },
   {
     "name": "Beecake",
@@ -17405,7 +18864,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:55.416Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "59a5031f-b33e-42f9-bcf4-c9e270161bcc"
+    "mbid": "59a5031f-b33e-42f9-bcf4-c9e270161bcc",
+    "genres": [
+      "alternative",
+      "Scottish",
+      "rock",
+      "british",
+      "Billy Boyd"
+    ],
+    "popularity": {
+      "listeners": 3442,
+      "playcount": 151278
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/49ba05243cfb2b62ddf69c231d6eb4f8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:24.731Z"
   },
   {
     "name": "Beecher",
@@ -17421,21 +18893,48 @@
     },
     "enrichedAt": "2026-07-07T07:06:55.416Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "382ab155-3452-40cb-bc39-b4b480cd7727"
+    "mbid": "382ab155-3452-40cb-bc39-b4b480cd7727",
+    "genres": [
+      "hardcore",
+      "mathcore",
+      "metalcore",
+      "post-hardcore",
+      "chaotic hardcore"
+    ],
+    "popularity": {
+      "listeners": 20848,
+      "playcount": 383432
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4ef7cebfe1b756b1fc4c05c827d46bd1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:25.664Z"
   },
   {
     "name": "Beefeater",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:55.416Z",
     "autoTriedAt": "2026-07-07T20:00:51.276Z",
-    "mbid": "8c016ef4-0d18-4795-86dd-35ec90a509c9"
+    "mbid": "8c016ef4-0d18-4795-86dd-35ec90a509c9",
+    "genres": [
+      "post-hardcore",
+      "hardcore",
+      "punk",
+      "dischord",
+      "hardcore punk"
+    ],
+    "popularity": {
+      "listeners": 14591,
+      "playcount": 148707
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/835b9654973820c642dc8352b68af599/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:26.635Z"
   },
   {
     "name": "Beefy Red",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:55.416Z",
     "autoTriedAt": "2026-07-07T20:00:52.555Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "metaTriedAt": "2026-07-09T11:24:27.282Z"
   },
   {
     "name": "Beegie Adair",
@@ -17451,7 +18950,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:55.416Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "08ded41b-4623-47ca-b70b-cbebfd2529ba"
+    "mbid": "08ded41b-4623-47ca-b70b-cbebfd2529ba",
+    "genres": [
+      "jazz",
+      "piano",
+      "lounge",
+      "easy listening",
+      "swing"
+    ],
+    "popularity": {
+      "listeners": 259948,
+      "playcount": 3107845
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d21cde91844ae735c0a283c6558eeb16/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:27.996Z"
   },
   {
     "name": "Beehive",
@@ -17467,7 +18979,19 @@
     },
     "enrichedAt": "2026-07-07T20:01:12.073Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "indie",
+      "indie rock",
+      "american",
+      "77davez-lib",
+      "77davez-artists"
+    ],
+    "popularity": {
+      "listeners": 1737,
+      "playcount": 12184
+    },
+    "metaEnrichedAt": "2026-07-09T11:24:28.905Z"
   },
   {
     "name": "Beekeeper",
@@ -17483,7 +19007,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:55.416Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "discovered at labtones",
+      "All",
+      "Female fronted metal",
+      "thrash metal",
+      "cesse ma brave"
+    ],
+    "popularity": {
+      "listeners": 1942,
+      "playcount": 23293
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/90f5a2b99a1418c2731ae2ff41fde448/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:29.634Z"
   },
   {
     "name": "Beelzebub",
@@ -17499,7 +19036,19 @@
     },
     "enrichedAt": "2026-07-07T20:01:14.657Z",
     "enrichedBy": "musicbrainz",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "black metal",
+      "norwegian",
+      "Norwegian Black Metal",
+      "doom metal",
+      "rockabilly"
+    ],
+    "popularity": {
+      "listeners": 1210,
+      "playcount": 10211
+    },
+    "metaEnrichedAt": "2026-07-09T11:24:30.362Z"
   },
   {
     "name": "Beenie Man",
@@ -17515,7 +19064,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:55.416Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0d85b9f2-802d-48bb-aa85-6a9668869053"
+    "mbid": "0d85b9f2-802d-48bb-aa85-6a9668869053",
+    "genres": [
+      "dancehall",
+      "reggae",
+      "ragga",
+      "jamaica",
+      "Hip-Hop"
+    ],
+    "popularity": {
+      "listeners": 497327,
+      "playcount": 4579603
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c631fe0f39db902e3ab5a13db7fdc3f8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:31.034Z"
   },
   {
     "name": "Beenzino",
@@ -17531,7 +19093,20 @@
     },
     "enrichedAt": "2026-07-07T07:06:55.416Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ff2f225e-a49e-47ee-866a-d4606c4e3fea"
+    "mbid": "ff2f225e-a49e-47ee-866a-d4606c4e3fea",
+    "genres": [
+      "Korean",
+      "Hip-Hop",
+      "k-hiphop",
+      "rap",
+      "Korean Hip-Hop"
+    ],
+    "popularity": {
+      "listeners": 78955,
+      "playcount": 1758430
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bddc9247a93961fd541103de1c26ae10/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:31.694Z"
   },
   {
     "name": "Beer7",
@@ -17547,28 +19122,58 @@
     },
     "enrichedAt": "2026-07-07T07:06:55.416Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "Punk-Rock",
+      "punk",
+      "Israel",
+      "blizky vychod",
+      "asie"
+    ],
+    "popularity": {
+      "listeners": 215,
+      "playcount": 5132
+    },
+    "metaEnrichedAt": "2026-07-09T11:24:32.454Z"
   },
   {
     "name": "Beersheba",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:55.416Z",
     "autoTriedAt": "2026-07-07T20:01:16.251Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "metaTriedAt": "2026-07-09T11:24:33.332Z"
   },
   {
     "name": "Beethoven",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:55.416Z",
     "autoTriedAt": "2026-07-07T20:01:17.710Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "Classical",
+      "instrumental",
+      "romantic",
+      "composers",
+      "classic"
+    ],
+    "popularity": {
+      "listeners": 2759792,
+      "playcount": 57358349
+    },
+    "metaEnrichedAt": "2026-07-09T11:24:33.941Z"
   },
   {
     "name": "Before and After",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:06:55.416Z",
     "autoTriedAt": "2026-07-07T20:01:18.992Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 274,
+      "playcount": 444
+    },
+    "metaEnrichedAt": "2026-07-09T11:24:34.640Z"
   },
   {
     "name": "Before Dark",
@@ -17584,7 +19189,20 @@
     },
     "enrichedAt": "2026-07-07T20:01:39.471Z",
     "enrichedBy": "musicbrainz",
-    "mbid": "fd0af2f8-13f0-4d74-b97f-aafdb9f2bdc9"
+    "mbid": "fd0af2f8-13f0-4d74-b97f-aafdb9f2bdc9",
+    "genres": [
+      "Girl Groups",
+      "pop",
+      "rnb",
+      "los angeles",
+      "underrated"
+    ],
+    "popularity": {
+      "listeners": 2705,
+      "playcount": 24451
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0d61c2eda7926b8c9d2f03277e3e8e9e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T11:24:35.446Z"
   },
   {
     "name": "Before the Dawn",
