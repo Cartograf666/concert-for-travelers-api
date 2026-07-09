@@ -30392,7 +30392,50 @@
       "listeners": 30,
       "playcount": 456
     },
-    "metaEnrichedAt": "2026-07-08T20:07:21.648Z"
+    "metaEnrichedAt": "2026-07-08T20:07:21.648Z",
+    "similarArtists": [
+      {
+        "name": "Minami Minegishi",
+        "slug": "minami-minegishi",
+        "match": 1
+      },
+      {
+        "name": "Not Yet",
+        "slug": "not-yet",
+        "match": 0.431581
+      },
+      {
+        "name": "Takahashi, Minami",
+        "slug": "takahashi-minami",
+        "match": 0.348702
+      },
+      {
+        "name": "French Kiss",
+        "slug": "french-kiss",
+        "match": 0.256995
+      },
+      {
+        "name": "Minami Takahashi",
+        "slug": "minami-takahashi",
+        "match": 0.200843
+      },
+      {
+        "name": "SDN48",
+        "slug": "sdn48",
+        "match": 0.137863
+      },
+      {
+        "name": "Queen & Elizabeth",
+        "slug": "queen-elizabeth",
+        "match": 0.107901
+      },
+      {
+        "name": "Yuki Kashiwagi",
+        "slug": "yuki-kashiwagi",
+        "match": 0.107267
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:03:59.764Z"
   },
   {
     "name": "Haruna, Luna",
@@ -30408,7 +30451,8 @@
       "vk": "https://vk.com/harunaluna_official"
     },
     "enrichedAt": "2026-07-08T17:09:58.588Z",
-    "metaTriedAt": "2026-07-08T20:07:24.907Z"
+    "metaTriedAt": "2026-07-08T20:07:24.907Z",
+    "similarTriedAt": "2026-07-09T05:04:00.066Z"
   },
   {
     "name": "Harutyun Hanesyan",
@@ -30425,7 +30469,8 @@
     },
     "sitesTriedAt": "2026-07-08T17:09:58.588Z",
     "autoTriedAt": "2026-07-08T18:50:35.393Z",
-    "metaTriedAt": "2026-07-08T20:07:25.542Z"
+    "metaTriedAt": "2026-07-08T20:07:25.542Z",
+    "similarTriedAt": "2026-07-09T05:04:00.365Z"
   },
   {
     "name": "Harvard Radcliffe Orchestra",
@@ -30446,7 +30491,8 @@
       "playcount": 32
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/4f6d9a0829119441bb385309d0ceec3e/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:26.316Z"
+    "metaEnrichedAt": "2026-07-08T20:07:26.316Z",
+    "similarTriedAt": "2026-07-09T05:04:00.706Z"
   },
   {
     "name": "Harve Presnell",
@@ -30468,7 +30514,25 @@
       "playcount": 15756
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/5deb6bd716b9ddd7779346b69d744360/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:27.084Z"
+    "metaEnrichedAt": "2026-07-08T20:07:27.084Z",
+    "similarArtists": [
+      {
+        "name": "Lee Marvin",
+        "slug": "lee-marvin",
+        "match": 0.019262
+      },
+      {
+        "name": "Gordon MacRae",
+        "slug": "gordon-macrae",
+        "match": 0.001585
+      },
+      {
+        "name": "Shirley Jones",
+        "slug": "shirley-jones",
+        "match": 0.001293
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:01.090Z"
   },
   {
     "name": "Harvest",
@@ -30497,7 +30561,40 @@
       "playcount": 744120
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/d743f8005fcbeba81019ef19b7797818/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:27.792Z"
+    "metaEnrichedAt": "2026-07-08T20:07:27.792Z",
+    "similarArtists": [
+      {
+        "name": "Prayer for Cleansing",
+        "slug": "prayer-for-cleansing",
+        "match": 0.890616
+      },
+      {
+        "name": "Earth Crisis",
+        "slug": "earth-crisis",
+        "match": 0.813064
+      },
+      {
+        "name": "Disembodied",
+        "slug": "disembodied",
+        "match": 0.776243
+      },
+      {
+        "name": "7 Angels 7 Plagues",
+        "slug": "7-angels-7-plagues",
+        "match": 0.707201
+      },
+      {
+        "name": "Skycamefalling",
+        "slug": "skycamefalling",
+        "match": 0.693199
+      },
+      {
+        "name": "Morning Again",
+        "slug": "morning-again",
+        "match": 0.688941
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:01.734Z"
   },
   {
     "name": "Harvey",
@@ -30526,7 +30623,20 @@
       "playcount": 101166
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/a56f2431e52486eb0a9ffb5217b93700/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:28.491Z"
+    "metaEnrichedAt": "2026-07-08T20:07:28.491Z",
+    "similarArtists": [
+      {
+        "name": "Richard Street",
+        "slug": "richard-street",
+        "match": 0.744534
+      },
+      {
+        "name": "Jonezetta",
+        "slug": "jonezetta",
+        "match": 0.587237
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:02.140Z"
   },
   {
     "name": "Harvey Andrews",
@@ -30555,7 +30665,35 @@
       "playcount": 32158
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/bcccf960fa4a4b07090f4739fdf4aa93/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:29.283Z"
+    "metaEnrichedAt": "2026-07-08T20:07:29.283Z",
+    "similarArtists": [
+      {
+        "name": "Eric Bogle",
+        "slug": "eric-bogle",
+        "match": 0.512523
+      },
+      {
+        "name": "The Albion Band",
+        "slug": "the-albion-band",
+        "match": 0.503275
+      },
+      {
+        "name": "Steve Tilston",
+        "slug": "steve-tilston",
+        "match": 0.47769
+      },
+      {
+        "name": "Jez Lowe",
+        "slug": "jez-lowe",
+        "match": 0.43267
+      },
+      {
+        "name": "John Tams",
+        "slug": "john-tams",
+        "match": 0.426749
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:02.606Z"
   },
   {
     "name": "Harvey Bainbridge",
@@ -30584,7 +30722,35 @@
       "playcount": 5528
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/3b5c784b247d29626de4d721d1d009ce/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:30.058Z"
+    "metaEnrichedAt": "2026-07-08T20:07:30.058Z",
+    "similarArtists": [
+      {
+        "name": "Dave Brock",
+        "slug": "dave-brock",
+        "match": 1
+      },
+      {
+        "name": "Spiral Realms",
+        "slug": "spiral-realms",
+        "match": 0.883822
+      },
+      {
+        "name": "Alan Davey",
+        "slug": "alan-davey",
+        "match": 0.62347
+      },
+      {
+        "name": "Spirits Burning",
+        "slug": "spirits-burning",
+        "match": 0.317358
+      },
+      {
+        "name": "Tim Blake",
+        "slug": "tim-blake",
+        "match": 0.207857
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:02.985Z"
   },
   {
     "name": "Harvey Bartlett Gaul",
@@ -30601,7 +30767,8 @@
       "vk": null
     },
     "enrichedAt": "2026-07-08T17:09:58.588Z",
-    "metaTriedAt": "2026-07-08T20:07:30.705Z"
+    "metaTriedAt": "2026-07-08T20:07:30.705Z",
+    "similarTriedAt": "2026-07-09T05:04:03.302Z"
   },
   {
     "name": "Harvey Brooks",
@@ -30627,7 +30794,25 @@
       "playcount": 490
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/ede2a3e7e4b8c952f7816bc848bd3a16/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:31.456Z"
+    "metaEnrichedAt": "2026-07-08T20:07:31.456Z",
+    "similarArtists": [
+      {
+        "name": "Magne Furuholmen",
+        "slug": "magne-furuholmen",
+        "match": 1
+      },
+      {
+        "name": "Elisabeth Lutyens",
+        "slug": "elisabeth-lutyens",
+        "match": 0.100676
+      },
+      {
+        "name": "Bette Davis",
+        "slug": "bette-davis",
+        "match": 0.08634
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:03.893Z"
   },
   {
     "name": "Harvey Danger",
@@ -30656,7 +30841,50 @@
       "playcount": 8064872
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/e829b5dc9062cc1845b2123b61c7acfb/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:32.166Z"
+    "metaEnrichedAt": "2026-07-08T20:07:32.166Z",
+    "similarArtists": [
+      {
+        "name": "That Dog",
+        "slug": "that-dog",
+        "match": 1
+      },
+      {
+        "name": "The Presidents of the United States of America",
+        "slug": "the-presidents-of-the-united-states-of-america",
+        "match": 0.786648
+      },
+      {
+        "name": "Marcy Playground",
+        "slug": "marcy-playground",
+        "match": 0.766349
+      },
+      {
+        "name": "Everclear",
+        "slug": "everclear",
+        "match": 0.71659
+      },
+      {
+        "name": "Ben Folds Five",
+        "slug": "ben-folds-five",
+        "match": 0.667167
+      },
+      {
+        "name": "Soul Coughing",
+        "slug": "soul-coughing",
+        "match": 0.608726
+      },
+      {
+        "name": "Cake",
+        "slug": "cake",
+        "match": 0.605709
+      },
+      {
+        "name": "Fastball",
+        "slug": "fastball",
+        "match": 0.605006
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:04.249Z"
   },
   {
     "name": "Harvey Fierstein",
@@ -30683,7 +30911,30 @@
       "playcount": 34097
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/9516d9385d8c24123609b4e400c1a225/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:33.005Z"
+    "metaEnrichedAt": "2026-07-08T20:07:33.005Z",
+    "similarArtists": [
+      {
+        "name": "Richard White",
+        "slug": "richard-white",
+        "match": 0.532432
+      },
+      {
+        "name": "Jonathan Freeman",
+        "slug": "jonathan-freeman",
+        "match": 0.496755
+      },
+      {
+        "name": "Ernie Sabella",
+        "slug": "ernie-sabella",
+        "match": 0.398744
+      },
+      {
+        "name": "Terry Gilkyson",
+        "slug": "terry-gilkyson",
+        "match": 0.144918
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:04.774Z"
   },
   {
     "name": "Harvey Fuqua",
@@ -30712,7 +30963,25 @@
       "playcount": 11146
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/79dae2ece04ad51fce1e7a5dac6198a1/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:33.664Z"
+    "metaEnrichedAt": "2026-07-08T20:07:33.664Z",
+    "similarArtists": [
+      {
+        "name": "Carleton Carpenter",
+        "slug": "carleton-carpenter",
+        "match": 0.733303
+      },
+      {
+        "name": "Mitty Collier",
+        "slug": "mitty-collier",
+        "match": 0.468238
+      },
+      {
+        "name": "Anna Gordy Gaye",
+        "slug": "anna-gordy-gaye",
+        "match": 0.436476
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:05.156Z"
   },
   {
     "name": "Harvey Mandel",
@@ -30741,7 +31010,50 @@
       "playcount": 235051
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/4b5f1979642059b93d7beb075cf02cfc/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:34.364Z"
+    "metaEnrichedAt": "2026-07-08T20:07:34.364Z",
+    "similarArtists": [
+      {
+        "name": "Roy Buchanan",
+        "slug": "roy-buchanan",
+        "match": 1
+      },
+      {
+        "name": "Savoy Brown",
+        "slug": "savoy-brown",
+        "match": 0.575447
+      },
+      {
+        "name": "Charlie Musselwhite",
+        "slug": "charlie-musselwhite",
+        "match": 0.458366
+      },
+      {
+        "name": "The Paul Butterfield Blues Band",
+        "slug": "the-paul-butterfield-blues-band",
+        "match": 0.435004
+      },
+      {
+        "name": "John Mayall",
+        "slug": "john-mayall",
+        "match": 0.432316
+      },
+      {
+        "name": "Peter Green",
+        "slug": "peter-green",
+        "match": 0.418999
+      },
+      {
+        "name": "Jack Bruce",
+        "slug": "jack-bruce",
+        "match": 0.411873
+      },
+      {
+        "name": "Canned Heat",
+        "slug": "canned-heat",
+        "match": 0.401356
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:05.528Z"
   },
   {
     "name": "Harvey Mason",
@@ -30769,7 +31081,50 @@
       "playcount": 278791
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/f1933f48e319d78482856f4839acc24d/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:35.057Z"
+    "metaEnrichedAt": "2026-07-08T20:07:35.057Z",
+    "similarArtists": [
+      {
+        "name": "George Duke",
+        "slug": "george-duke",
+        "match": 1
+      },
+      {
+        "name": "Lee Ritenour",
+        "slug": "lee-ritenour",
+        "match": 0.835599
+      },
+      {
+        "name": "The Crusaders",
+        "slug": "the-crusaders",
+        "match": 0.780633
+      },
+      {
+        "name": "Bob James",
+        "slug": "bob-james",
+        "match": 0.760048
+      },
+      {
+        "name": "Jeff Lorber",
+        "slug": "jeff-lorber",
+        "match": 0.726768
+      },
+      {
+        "name": "Charles Earland",
+        "slug": "charles-earland",
+        "match": 0.683384
+      },
+      {
+        "name": "Gary Bartz",
+        "slug": "gary-bartz",
+        "match": 0.681015
+      },
+      {
+        "name": "Roy Ayers",
+        "slug": "roy-ayers",
+        "match": 0.668403
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:05.927Z"
   },
   {
     "name": "Harvey Milk",
@@ -30797,7 +31152,50 @@
       "playcount": 1349973
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/96929977768dd45311e1feec19631d5a/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:35.821Z"
+    "metaEnrichedAt": "2026-07-08T20:07:35.821Z",
+    "similarArtists": [
+      {
+        "name": "Floor",
+        "slug": "floor",
+        "match": 1
+      },
+      {
+        "name": "Grief",
+        "slug": "grief",
+        "match": 0.714999
+      },
+      {
+        "name": "Melvins",
+        "slug": "melvins",
+        "match": 0.694406
+      },
+      {
+        "name": "Old Man Gloom",
+        "slug": "old-man-gloom",
+        "match": 0.667252
+      },
+      {
+        "name": "Zeni Geva",
+        "slug": "zeni-geva",
+        "match": 0.602517
+      },
+      {
+        "name": "Karp",
+        "slug": "karp",
+        "match": 0.576059
+      },
+      {
+        "name": "Torche",
+        "slug": "torche",
+        "match": 0.550925
+      },
+      {
+        "name": "Burning Witch",
+        "slug": "burning-witch",
+        "match": 0.527626
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:06.460Z"
   },
   {
     "name": "Harvey Phillips",
@@ -30818,7 +31216,8 @@
       "listeners": 17,
       "playcount": 3380
     },
-    "metaEnrichedAt": "2026-07-08T20:07:36.550Z"
+    "metaEnrichedAt": "2026-07-08T20:07:36.550Z",
+    "similarTriedAt": "2026-07-09T05:04:06.793Z"
   },
   {
     "name": "Harvey Scales",
@@ -30840,7 +31239,8 @@
       "playcount": 27035
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/0c8953aa96ff85c36ecc1affdbc3e18c/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:37.284Z"
+    "metaEnrichedAt": "2026-07-08T20:07:37.284Z",
+    "similarTriedAt": "2026-07-09T05:04:07.230Z"
   },
   {
     "name": "Harvey Sollberger",
@@ -30869,7 +31269,20 @@
       "playcount": 972
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/0338880d34b16c8c5cc86c78c5b19318/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:38.097Z"
+    "metaEnrichedAt": "2026-07-08T20:07:38.097Z",
+    "similarArtists": [
+      {
+        "name": "Michael Colgrass",
+        "slug": "michael-colgrass",
+        "match": 0.359696
+      },
+      {
+        "name": "Daniel Dorff",
+        "slug": "daniel-dorff",
+        "match": 0.283018
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:07.621Z"
   },
   {
     "name": "Has Anyone Ever Written Anything for You?",
@@ -30886,7 +31299,8 @@
     },
     "sitesTriedAt": "2026-07-08T17:09:58.588Z",
     "autoTriedAt": "2026-07-08T18:50:38.057Z",
-    "metaTriedAt": "2026-07-08T20:07:38.774Z"
+    "metaTriedAt": "2026-07-08T20:07:38.774Z",
+    "similarTriedAt": "2026-07-09T05:04:07.921Z"
   },
   {
     "name": "Hasaan Ibn Ali",
@@ -30915,7 +31329,50 @@
       "playcount": 10511
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/6c7cf3b922cc80c6058e3e8b8eb28d18/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:39.422Z"
+    "metaEnrichedAt": "2026-07-08T20:07:39.422Z",
+    "similarArtists": [
+      {
+        "name": "Matt Mitchell",
+        "slug": "matt-mitchell",
+        "match": 0.441711
+      },
+      {
+        "name": "Chico Freeman",
+        "slug": "chico-freeman",
+        "match": 0.42928
+      },
+      {
+        "name": "Steve Grossman",
+        "slug": "steve-grossman",
+        "match": 0.419942
+      },
+      {
+        "name": "Carmell Jones",
+        "slug": "carmell-jones",
+        "match": 0.417789
+      },
+      {
+        "name": "Orrin Evans",
+        "slug": "orrin-evans",
+        "match": 0.373791
+      },
+      {
+        "name": "Miles Okazaki",
+        "slug": "miles-okazaki",
+        "match": 0.312336
+      },
+      {
+        "name": "Kendrick Scott",
+        "slug": "kendrick-scott",
+        "match": 0.311899
+      },
+      {
+        "name": "Kenny Kirkland",
+        "slug": "kenny-kirkland",
+        "match": 0.293779
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:08.437Z"
   },
   {
     "name": "Hasan Enami Olya",
@@ -30932,7 +31389,8 @@
     },
     "sitesTriedAt": "2026-07-08T17:10:22.119Z",
     "autoTriedAt": "2026-07-08T18:50:39.312Z",
-    "metaTriedAt": "2026-07-08T20:07:40.079Z"
+    "metaTriedAt": "2026-07-08T20:07:40.079Z",
+    "similarTriedAt": "2026-07-09T05:04:08.748Z"
   },
   {
     "name": "Hasan Jahangir",
@@ -30960,7 +31418,50 @@
       "listeners": 264,
       "playcount": 1549
     },
-    "metaEnrichedAt": "2026-07-08T20:07:40.942Z"
+    "metaEnrichedAt": "2026-07-08T20:07:40.942Z",
+    "similarArtists": [
+      {
+        "name": "Shashwat Sachdev",
+        "slug": "shashwat-sachdev",
+        "match": 1
+      },
+      {
+        "name": "Asha Bhosle",
+        "slug": "asha-bhosle",
+        "match": 0.74057
+      },
+      {
+        "name": "Kishore Kumar",
+        "slug": "kishore-kumar",
+        "match": 0.673346
+      },
+      {
+        "name": "A.R.Rahman",
+        "slug": "arrahman",
+        "match": 0.661805
+      },
+      {
+        "name": "Arijit Singh",
+        "slug": "arijit-singh",
+        "match": 0.560639
+      },
+      {
+        "name": "Himesh Reshammiya",
+        "slug": "himesh-reshammiya",
+        "match": 0.54934
+      },
+      {
+        "name": "Udit Narayan",
+        "slug": "udit-narayan",
+        "match": 0.516433
+      },
+      {
+        "name": "Shreya Ghoshal",
+        "slug": "shreya-ghoshal",
+        "match": 0.482206
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:09.114Z"
   },
   {
     "name": "Hasan Rashid",
@@ -30981,7 +31482,8 @@
       "listeners": 1,
       "playcount": 3
     },
-    "metaEnrichedAt": "2026-07-08T20:07:41.807Z"
+    "metaEnrichedAt": "2026-07-08T20:07:41.807Z",
+    "similarTriedAt": "2026-07-09T05:04:09.469Z"
   },
   {
     "name": "Hasan Salaam",
@@ -31011,7 +31513,40 @@
       "playcount": 58549
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/2556dbfdb2162e75069a3e608f567be2/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:42.488Z"
+    "metaEnrichedAt": "2026-07-08T20:07:42.488Z",
+    "similarArtists": [
+      {
+        "name": "Akir",
+        "slug": "akir",
+        "match": 1
+      },
+      {
+        "name": "The Lost Children of Babylon",
+        "slug": "the-lost-children-of-babylon",
+        "match": 0.478619
+      },
+      {
+        "name": "Pumpkinhead",
+        "slug": "pumpkinhead",
+        "match": 0.4237
+      },
+      {
+        "name": "Jus Allah",
+        "slug": "jus-allah",
+        "match": 0.422916
+      },
+      {
+        "name": "Black Market Militia",
+        "slug": "black-market-militia",
+        "match": 0.372688
+      },
+      {
+        "name": "Reef the Lost Cauze",
+        "slug": "reef-the-lost-cauze",
+        "match": 0.304334
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:10.425Z"
   },
   {
     "name": "Hasan Zirak",
@@ -31040,7 +31575,30 @@
       "playcount": 3129
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/2f2bcda80730955af8f4a2f9a04f5487/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:43.528Z"
+    "metaEnrichedAt": "2026-07-08T20:07:43.528Z",
+    "similarArtists": [
+      {
+        "name": "Mohammad-Reza Shajarian",
+        "slug": "mohammad-reza-shajarian",
+        "match": 0.224112
+      },
+      {
+        "name": "Shahram Nazeri",
+        "slug": "shahram-nazeri",
+        "match": 0.190619
+      },
+      {
+        "name": "The Kamkars",
+        "slug": "the-kamkars",
+        "match": 0.110166
+      },
+      {
+        "name": "Marzieh",
+        "slug": "marzieh",
+        "match": 0.100917
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:10.805Z"
   },
   {
     "name": "Hashim",
@@ -31070,7 +31628,50 @@
       "playcount": 204735
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/185fa396ca127a77fbb184365ba9240c/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:44.318Z"
+    "metaEnrichedAt": "2026-07-08T20:07:44.318Z",
+    "similarArtists": [
+      {
+        "name": "Man Parrish",
+        "slug": "man-parrish",
+        "match": 1
+      },
+      {
+        "name": "Davy DMX",
+        "slug": "davy-dmx",
+        "match": 0.604463
+      },
+      {
+        "name": "Newcleus",
+        "slug": "newcleus",
+        "match": 0.394723
+      },
+      {
+        "name": "Mantronix",
+        "slug": "mantronix",
+        "match": 0.313343
+      },
+      {
+        "name": "Warp 9",
+        "slug": "warp-9",
+        "match": 0.186639
+      },
+      {
+        "name": "Whodini",
+        "slug": "whodini",
+        "match": 0.166366
+      },
+      {
+        "name": "Grandmaster Flash",
+        "slug": "grandmaster-flash",
+        "match": 0.163411
+      },
+      {
+        "name": "Afrika Bambaataa",
+        "slug": "afrika-bambaataa",
+        "match": 0.153801
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:11.355Z"
   },
   {
     "name": "Hasil Adkins",
@@ -31099,7 +31700,50 @@
       "playcount": 921871
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/1d0f86df49a15f6bfaf594e86ded41ad/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:45.003Z"
+    "metaEnrichedAt": "2026-07-08T20:07:45.003Z",
+    "similarArtists": [
+      {
+        "name": "Link Wray",
+        "slug": "link-wray",
+        "match": 0.592524
+      },
+      {
+        "name": "The Meteors",
+        "slug": "the-meteors",
+        "match": 0.551608
+      },
+      {
+        "name": "Flat Duo Jets",
+        "slug": "flat-duo-jets",
+        "match": 0.470138
+      },
+      {
+        "name": "Carl Perkins",
+        "slug": "carl-perkins",
+        "match": 0.463175
+      },
+      {
+        "name": "Demented Are Go",
+        "slug": "demented-are-go",
+        "match": 0.461734
+      },
+      {
+        "name": "The Cramps",
+        "slug": "the-cramps",
+        "match": 0.440051
+      },
+      {
+        "name": "Duane Eddy",
+        "slug": "duane-eddy",
+        "match": 0.415653
+      },
+      {
+        "name": "Gene Vincent",
+        "slug": "gene-vincent",
+        "match": 0.411004
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:11.718Z"
   },
   {
     "name": "Haskell Robert Sadler",
@@ -31121,7 +31765,8 @@
       "playcount": 38
     },
     "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:45.721Z"
+    "metaEnrichedAt": "2026-07-08T20:07:45.721Z",
+    "similarTriedAt": "2026-07-09T05:04:12.046Z"
   },
   {
     "name": "Hasland",
@@ -31138,7 +31783,8 @@
     },
     "sitesTriedAt": "2026-07-08T17:10:22.119Z",
     "autoTriedAt": "2026-07-08T18:50:49.388Z",
-    "metaTriedAt": "2026-07-08T20:07:46.364Z"
+    "metaTriedAt": "2026-07-08T20:07:46.364Z",
+    "similarTriedAt": "2026-07-09T05:04:12.377Z"
   },
   {
     "name": "Hasret Gültekin",
@@ -31167,7 +31813,15 @@
       "playcount": 137863
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/d9d43d5bc2b404567960ab5024f0884e/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:47.065Z"
+    "metaEnrichedAt": "2026-07-08T20:07:47.065Z",
+    "similarArtists": [
+      {
+        "name": "Ali Ekber Çiçek",
+        "slug": "ali-ekber-cicek",
+        "match": 0.890231
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:12.755Z"
   },
   {
     "name": "Hassan Attia",
@@ -31188,7 +31842,8 @@
       "listeners": 1,
       "playcount": 76
     },
-    "metaEnrichedAt": "2026-07-08T20:07:47.837Z"
+    "metaEnrichedAt": "2026-07-08T20:07:47.837Z",
+    "similarTriedAt": "2026-07-09T05:04:13.152Z"
   },
   {
     "name": "Hassan Kassai",
@@ -31216,7 +31871,35 @@
       "listeners": 538,
       "playcount": 3842
     },
-    "metaEnrichedAt": "2026-07-08T20:07:48.575Z"
+    "metaEnrichedAt": "2026-07-08T20:07:48.575Z",
+    "similarArtists": [
+      {
+        "name": "Mohammad-Reza Shajarian",
+        "slug": "mohammad-reza-shajarian",
+        "match": 1
+      },
+      {
+        "name": "Shahram Nazeri",
+        "slug": "shahram-nazeri",
+        "match": 0.762864
+      },
+      {
+        "name": "Hossein Behroozinia",
+        "slug": "hossein-behroozinia",
+        "match": 0.595524
+      },
+      {
+        "name": "Hossein Omoumi",
+        "slug": "hossein-omoumi",
+        "match": 0.508853
+      },
+      {
+        "name": "Mohammad Motamedi",
+        "slug": "mohammad-motamedi",
+        "match": 0.489181
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:13.537Z"
   },
   {
     "name": "Hassan Sattar",
@@ -31237,7 +31920,8 @@
       "listeners": 1,
       "playcount": 5
     },
-    "metaEnrichedAt": "2026-07-08T20:07:49.327Z"
+    "metaEnrichedAt": "2026-07-08T20:07:49.327Z",
+    "similarTriedAt": "2026-07-09T05:04:13.866Z"
   },
   {
     "name": "Hassan Shamaizadeh",
@@ -31266,7 +31950,20 @@
       "playcount": 81186
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/180834252f39645f68d67c885b136ab6/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:50.008Z"
+    "metaEnrichedAt": "2026-07-08T20:07:50.008Z",
+    "similarArtists": [
+      {
+        "name": "Nooshafarin",
+        "slug": "nooshafarin",
+        "match": 0.698822
+      },
+      {
+        "name": "Siavash",
+        "slug": "siavash",
+        "match": 0.636633
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:14.285Z"
   },
   {
     "name": "Hasse Fröberg and the Musical Companion",
@@ -31294,7 +31991,30 @@
       "listeners": 290,
       "playcount": 9578
     },
-    "metaEnrichedAt": "2026-07-08T20:07:50.769Z"
+    "metaEnrichedAt": "2026-07-08T20:07:50.769Z",
+    "similarArtists": [
+      {
+        "name": "Roine Stolt",
+        "slug": "roine-stolt",
+        "match": 0.673798
+      },
+      {
+        "name": "Comedy of Errors",
+        "slug": "comedy-of-errors",
+        "match": 0.396534
+      },
+      {
+        "name": "Sky Architect",
+        "slug": "sky-architect",
+        "match": 0.338218
+      },
+      {
+        "name": "Lifesigns",
+        "slug": "lifesigns",
+        "match": 0.323875
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:14.679Z"
   },
   {
     "name": "Hässelby",
@@ -31311,7 +32031,8 @@
     },
     "sitesTriedAt": "2026-07-08T17:10:22.119Z",
     "autoTriedAt": "2026-07-08T18:50:53.506Z",
-    "metaTriedAt": "2026-07-08T20:07:51.490Z"
+    "metaTriedAt": "2026-07-08T20:07:51.490Z",
+    "similarTriedAt": "2026-07-09T05:04:14.982Z"
   },
   {
     "name": "Hasselt",
@@ -31328,7 +32049,8 @@
     },
     "sitesTriedAt": "2026-07-08T17:10:22.119Z",
     "autoTriedAt": "2026-07-08T18:50:54.761Z",
-    "metaTriedAt": "2026-07-08T20:07:52.160Z"
+    "metaTriedAt": "2026-07-08T20:07:52.160Z",
+    "similarTriedAt": "2026-07-09T05:04:15.286Z"
   },
   {
     "name": "Hassisen Kone",
@@ -31359,7 +32081,50 @@
       "playcount": 1387012
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/6d8184587a7e1e42277e5aa5f22d4754/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:52.856Z"
+    "metaEnrichedAt": "2026-07-08T20:07:52.856Z",
+    "similarArtists": [
+      {
+        "name": "Ismo Alanko",
+        "slug": "ismo-alanko",
+        "match": 0.86971
+      },
+      {
+        "name": "Eppu Normaali",
+        "slug": "eppu-normaali",
+        "match": 0.65526
+      },
+      {
+        "name": "Juice Leskinen",
+        "slug": "juice-leskinen",
+        "match": 0.588473
+      },
+      {
+        "name": "Leevi and the Leavings",
+        "slug": "leevi-and-the-leavings",
+        "match": 0.547524
+      },
+      {
+        "name": "Tehosekoitin",
+        "slug": "tehosekoitin",
+        "match": 0.476445
+      },
+      {
+        "name": "Popeda",
+        "slug": "popeda",
+        "match": 0.42535
+      },
+      {
+        "name": "J. Karjalainen",
+        "slug": "j-karjalainen",
+        "match": 0.421259
+      },
+      {
+        "name": "Zen Café",
+        "slug": "zen-cafe",
+        "match": 0.386107
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:15.670Z"
   },
   {
     "name": "Haste",
@@ -31389,7 +32154,45 @@
       "playcount": 168547
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/8d28b3f4dc0fa6fe44d309d7da9e640f/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:53.547Z"
+    "metaEnrichedAt": "2026-07-08T20:07:53.547Z",
+    "similarArtists": [
+      {
+        "name": "The Gorgeous",
+        "slug": "the-gorgeous",
+        "match": 0.447436
+      },
+      {
+        "name": "Twelve Tribes",
+        "slug": "twelve-tribes",
+        "match": 0.445252
+      },
+      {
+        "name": "Alove for Enemies",
+        "slug": "alove-for-enemies",
+        "match": 0.409528
+      },
+      {
+        "name": "Beecher",
+        "slug": "beecher",
+        "match": 0.409216
+      },
+      {
+        "name": "Nodes of Ranvier",
+        "slug": "nodes-of-ranvier",
+        "match": 0.32993
+      },
+      {
+        "name": "Bloodlined Calligraphy",
+        "slug": "bloodlined-calligraphy",
+        "match": 0.310055
+      },
+      {
+        "name": "Scars of Tomorrow",
+        "slug": "scars-of-tomorrow",
+        "match": 0.298371
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:16.083Z"
   },
   {
     "name": "Haste the Day",
@@ -31418,14 +32221,58 @@
       "playcount": 13689440
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/7d1daa5175410c48c4d31d7288afa132/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:54.293Z"
+    "metaEnrichedAt": "2026-07-08T20:07:54.293Z",
+    "similarArtists": [
+      {
+        "name": "Still Remains",
+        "slug": "still-remains",
+        "match": 1
+      },
+      {
+        "name": "August Burns Red",
+        "slug": "august-burns-red",
+        "match": 0.929261
+      },
+      {
+        "name": "Oh, Sleeper",
+        "slug": "oh-sleeper",
+        "match": 0.912199
+      },
+      {
+        "name": "War of Ages",
+        "slug": "war-of-ages",
+        "match": 0.838664
+      },
+      {
+        "name": "Demon Hunter",
+        "slug": "demon-hunter",
+        "match": 0.832478
+      },
+      {
+        "name": "Destroy the Runner",
+        "slug": "destroy-the-runner",
+        "match": 0.812689
+      },
+      {
+        "name": "For Today",
+        "slug": "for-today",
+        "match": 0.810561
+      },
+      {
+        "name": "Becoming the Archetype",
+        "slug": "becoming-the-archetype",
+        "match": 0.783739
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:16.474Z"
   },
   {
     "name": "Hata, Motohiro",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:27.766Z",
     "autoTriedAt": "2026-07-08T17:24:23.951Z",
-    "metaTriedAt": "2026-07-08T20:07:54.994Z"
+    "metaTriedAt": "2026-07-08T20:07:54.994Z",
+    "similarTriedAt": "2026-07-09T05:04:16.775Z"
   },
   {
     "name": "Hatcha",
@@ -31454,7 +32301,8 @@
       "playcount": 217365
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/18192d68ea350455609f382882232174/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:55.675Z"
+    "metaEnrichedAt": "2026-07-08T20:07:55.675Z",
+    "similarTriedAt": "2026-07-09T05:04:17.183Z"
   },
   {
     "name": "Hatcham Social",
@@ -31483,7 +32331,25 @@
       "playcount": 482985
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/97a9a65ced29f730f6f27f46361d5fdd/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:56.415Z"
+    "metaEnrichedAt": "2026-07-08T20:07:56.415Z",
+    "similarArtists": [
+      {
+        "name": "Neils Children",
+        "slug": "neils-children",
+        "match": 0.932893
+      },
+      {
+        "name": "Ipso Facto",
+        "slug": "ipso-facto",
+        "match": 0.705393
+      },
+      {
+        "name": "The Violets",
+        "slug": "the-violets",
+        "match": 0.611133
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:17.580Z"
   },
   {
     "name": "Hate",
@@ -31510,7 +32376,50 @@
       "listeners": 97776,
       "playcount": 3382104
     },
-    "metaEnrichedAt": "2026-07-08T20:07:57.136Z"
+    "metaEnrichedAt": "2026-07-08T20:07:57.136Z",
+    "similarArtists": [
+      {
+        "name": "Vader",
+        "slug": "vader",
+        "match": 1
+      },
+      {
+        "name": "Belphegor",
+        "slug": "belphegor",
+        "match": 0.891797
+      },
+      {
+        "name": "Behemoth",
+        "slug": "behemoth",
+        "match": 0.879934
+      },
+      {
+        "name": "Azarath",
+        "slug": "azarath",
+        "match": 0.728652
+      },
+      {
+        "name": "Benediction",
+        "slug": "benediction",
+        "match": 0.710199
+      },
+      {
+        "name": "Kataklysm",
+        "slug": "kataklysm",
+        "match": 0.675135
+      },
+      {
+        "name": "Unleashed",
+        "slug": "unleashed",
+        "match": 0.654616
+      },
+      {
+        "name": "God Dethroned",
+        "slug": "god-dethroned",
+        "match": 0.617793
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:17.972Z"
   },
   {
     "name": "Hate Eternal",
@@ -31539,7 +32448,50 @@
       "playcount": 4242233
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/a89d2568c89d3967bcb1db9db3e3e9ec/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:57.813Z"
+    "metaEnrichedAt": "2026-07-08T20:07:57.813Z",
+    "similarArtists": [
+      {
+        "name": "Nile",
+        "slug": "nile",
+        "match": 1
+      },
+      {
+        "name": "Origin",
+        "slug": "origin",
+        "match": 0.895907
+      },
+      {
+        "name": "Malevolent Creation",
+        "slug": "malevolent-creation",
+        "match": 0.892158
+      },
+      {
+        "name": "Suffocation",
+        "slug": "suffocation",
+        "match": 0.890048
+      },
+      {
+        "name": "Immolation",
+        "slug": "immolation",
+        "match": 0.872575
+      },
+      {
+        "name": "Deeds of Flesh",
+        "slug": "deeds-of-flesh",
+        "match": 0.825769
+      },
+      {
+        "name": "Morbid Angel",
+        "slug": "morbid-angel",
+        "match": 0.822219
+      },
+      {
+        "name": "Vital Remains",
+        "slug": "vital-remains",
+        "match": 0.693263
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:18.370Z"
   },
   {
     "name": "Hate Forest",
@@ -31567,7 +32519,50 @@
       "listeners": 44053,
       "playcount": 1793536
     },
-    "metaEnrichedAt": "2026-07-08T20:07:58.551Z"
+    "metaEnrichedAt": "2026-07-08T20:07:58.551Z",
+    "similarArtists": [
+      {
+        "name": "Nokturnal Mortum",
+        "slug": "nokturnal-mortum",
+        "match": 1
+      },
+      {
+        "name": "Grand Belial's Key",
+        "slug": "grand-belials-key",
+        "match": 0.880256
+      },
+      {
+        "name": "Astrofaes",
+        "slug": "astrofaes",
+        "match": 0.755652
+      },
+      {
+        "name": "Clandestine Blaze",
+        "slug": "clandestine-blaze",
+        "match": 0.745404
+      },
+      {
+        "name": "Satanic Warmaster",
+        "slug": "satanic-warmaster",
+        "match": 0.715713
+      },
+      {
+        "name": "Peste Noire",
+        "slug": "peste-noire",
+        "match": 0.700155
+      },
+      {
+        "name": "Absurd",
+        "slug": "absurd",
+        "match": 0.665683
+      },
+      {
+        "name": "Moonblood",
+        "slug": "moonblood",
+        "match": 0.624614
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:18.810Z"
   },
   {
     "name": "Hatebeak",
@@ -31587,7 +32582,50 @@
       "playcount": 116425
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/6c14d0e508e25d3d36ffb4ce9964fbc8/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:59.292Z"
+    "metaEnrichedAt": "2026-07-08T20:07:59.292Z",
+    "similarArtists": [
+      {
+        "name": "Napalm Death",
+        "slug": "napalm-death",
+        "match": 1
+      },
+      {
+        "name": "Nasum",
+        "slug": "nasum",
+        "match": 0.997286
+      },
+      {
+        "name": "Terrorizer",
+        "slug": "terrorizer",
+        "match": 0.959115
+      },
+      {
+        "name": "Repulsion",
+        "slug": "repulsion",
+        "match": 0.947608
+      },
+      {
+        "name": "Carcass",
+        "slug": "carcass",
+        "match": 0.914934
+      },
+      {
+        "name": "Pig Destroyer",
+        "slug": "pig-destroyer",
+        "match": 0.912384
+      },
+      {
+        "name": "Brujeria",
+        "slug": "brujeria",
+        "match": 0.909863
+      },
+      {
+        "name": "Brutal Truth",
+        "slug": "brutal-truth",
+        "match": 0.896222
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:19.173Z"
   },
   {
     "name": "Hatebreed",
@@ -31616,7 +32654,50 @@
       "playcount": 35348625
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/ff0d95557968615eb7b4c2ba93f0d611/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:07:59.916Z"
+    "metaEnrichedAt": "2026-07-08T20:07:59.916Z",
+    "similarArtists": [
+      {
+        "name": "Terror",
+        "slug": "terror",
+        "match": 1
+      },
+      {
+        "name": "Merauder",
+        "slug": "merauder",
+        "match": 0.805827
+      },
+      {
+        "name": "100 Demons",
+        "slug": "100-demons",
+        "match": 0.783301
+      },
+      {
+        "name": "Madball",
+        "slug": "madball",
+        "match": 0.688642
+      },
+      {
+        "name": "Earth Crisis",
+        "slug": "earth-crisis",
+        "match": 0.650972
+      },
+      {
+        "name": "Trapped Under Ice",
+        "slug": "trapped-under-ice",
+        "match": 0.615536
+      },
+      {
+        "name": "Throwdown",
+        "slug": "throwdown",
+        "match": 0.592439
+      },
+      {
+        "name": "All Out War",
+        "slug": "all-out-war",
+        "match": 0.569408
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:19.530Z"
   },
   {
     "name": "Hater",
@@ -31645,7 +32726,50 @@
       "playcount": 578948
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/d4d5bb1166416a120bfaf5652536df09/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:00.589Z"
+    "metaEnrichedAt": "2026-07-08T20:08:00.589Z",
+    "similarArtists": [
+      {
+        "name": "Screaming Trees",
+        "slug": "screaming-trees",
+        "match": 1
+      },
+      {
+        "name": "Mudhoney",
+        "slug": "mudhoney",
+        "match": 0.93767
+      },
+      {
+        "name": "Truly",
+        "slug": "truly",
+        "match": 0.934231
+      },
+      {
+        "name": "Soundgarden",
+        "slug": "soundgarden",
+        "match": 0.884542
+      },
+      {
+        "name": "Green River",
+        "slug": "green-river",
+        "match": 0.815724
+      },
+      {
+        "name": "Love Battery",
+        "slug": "love-battery",
+        "match": 0.80704
+      },
+      {
+        "name": "Temple of the Dog",
+        "slug": "temple-of-the-dog",
+        "match": 0.763651
+      },
+      {
+        "name": "Mother Love Bone",
+        "slug": "mother-love-bone",
+        "match": 0.760308
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:20.168Z"
   },
   {
     "name": "Hatesphere",
@@ -31674,7 +32798,50 @@
       "playcount": 2413140
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/a49ff12529ab5222b1e986247b89930a/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:01.607Z"
+    "metaEnrichedAt": "2026-07-08T20:08:01.607Z",
+    "similarArtists": [
+      {
+        "name": "Carnal Forge",
+        "slug": "carnal-forge",
+        "match": 1
+      },
+      {
+        "name": "The Haunted",
+        "slug": "the-haunted",
+        "match": 0.900877
+      },
+      {
+        "name": "Legion of the Damned",
+        "slug": "legion-of-the-damned",
+        "match": 0.595708
+      },
+      {
+        "name": "Nightrage",
+        "slug": "nightrage",
+        "match": 0.582257
+      },
+      {
+        "name": "Illdisposed",
+        "slug": "illdisposed",
+        "match": 0.571937
+      },
+      {
+        "name": "Dimension Zero",
+        "slug": "dimension-zero",
+        "match": 0.567794
+      },
+      {
+        "name": "Darkane",
+        "slug": "darkane",
+        "match": 0.508213
+      },
+      {
+        "name": "Defleshed",
+        "slug": "defleshed",
+        "match": 0.505855
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:20.532Z"
   },
   {
     "name": "Hatfield and the North",
@@ -31703,7 +32870,50 @@
       "playcount": 748812
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/f58e9f7cc1aed515679e7d7cc20dd1fc/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:02.247Z"
+    "metaEnrichedAt": "2026-07-08T20:08:02.247Z",
+    "similarArtists": [
+      {
+        "name": "National Health",
+        "slug": "national-health",
+        "match": 1
+      },
+      {
+        "name": "Soft Machine",
+        "slug": "soft-machine",
+        "match": 0.715285
+      },
+      {
+        "name": "Caravan",
+        "slug": "caravan",
+        "match": 0.705323
+      },
+      {
+        "name": "Gilgamesh",
+        "slug": "gilgamesh",
+        "match": 0.599817
+      },
+      {
+        "name": "Matching Mole",
+        "slug": "matching-mole",
+        "match": 0.599243
+      },
+      {
+        "name": "Gong",
+        "slug": "gong",
+        "match": 0.524515
+      },
+      {
+        "name": "Henry Cow",
+        "slug": "henry-cow",
+        "match": 0.46613
+      },
+      {
+        "name": "Gentle Giant",
+        "slug": "gentle-giant",
+        "match": 0.40308
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:20.888Z"
   },
   {
     "name": "Hatsune Miku",
@@ -31731,7 +32941,15 @@
       "playcount": 8121564
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/a8ae1f81a330ec74a710150f315134ce/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:02.867Z"
+    "metaEnrichedAt": "2026-07-08T20:08:02.867Z",
+    "similarArtists": [
+      {
+        "name": "DECO*27",
+        "slug": "deco27",
+        "match": 0.386882
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:21.244Z"
   },
   {
     "name": "Hattie Hart",
@@ -31751,7 +32969,50 @@
       "playcount": 5961
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/68f6ee88683f37c7de8a971d869631c8/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:03.697Z"
+    "metaEnrichedAt": "2026-07-08T20:08:03.697Z",
+    "similarArtists": [
+      {
+        "name": "Sara Martin",
+        "slug": "sara-martin",
+        "match": 0.951681
+      },
+      {
+        "name": "Lottie Kimbrough",
+        "slug": "lottie-kimbrough",
+        "match": 0.886879
+      },
+      {
+        "name": "Bessie Tucker",
+        "slug": "bessie-tucker",
+        "match": 0.866142
+      },
+      {
+        "name": "Carl Martin",
+        "slug": "carl-martin",
+        "match": 0.792499
+      },
+      {
+        "name": "Irene Scruggs",
+        "slug": "irene-scruggs",
+        "match": 0.624425
+      },
+      {
+        "name": "Rosetta Howard",
+        "slug": "rosetta-howard",
+        "match": 0.583196
+      },
+      {
+        "name": "Mattie Delaney",
+        "slug": "mattie-delaney",
+        "match": 0.578221
+      },
+      {
+        "name": "Gus Cannon",
+        "slug": "gus-cannon",
+        "match": 0.460634
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:21.676Z"
   },
   {
     "name": "Hattie McDaniel",
@@ -31771,7 +33032,50 @@
       "playcount": 1155
     },
     "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:04.547Z"
+    "metaEnrichedAt": "2026-07-08T20:08:04.547Z",
+    "similarArtists": [
+      {
+        "name": "Lucille Hegamin",
+        "slug": "lucille-hegamin",
+        "match": 1
+      },
+      {
+        "name": "Esther Bigeou",
+        "slug": "esther-bigeou",
+        "match": 0.98203
+      },
+      {
+        "name": "Rosetta Howard",
+        "slug": "rosetta-howard",
+        "match": 0.888969
+      },
+      {
+        "name": "Merline Johnson",
+        "slug": "merline-johnson",
+        "match": 0.881048
+      },
+      {
+        "name": "Martha Copeland",
+        "slug": "martha-copeland",
+        "match": 0.575828
+      },
+      {
+        "name": "Clara Smith",
+        "slug": "clara-smith",
+        "match": 0.520384
+      },
+      {
+        "name": "Rosa Henderson",
+        "slug": "rosa-henderson",
+        "match": 0.503995
+      },
+      {
+        "name": "Georgia White",
+        "slug": "georgia-white",
+        "match": 0.496561
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:22.103Z"
   },
   {
     "name": "Hattie Winston",
@@ -31783,14 +33087,16 @@
       "playcount": 295
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/b35042fc4b75a780890405f675b6d914/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:05.286Z"
+    "metaEnrichedAt": "2026-07-08T20:08:05.286Z",
+    "similarTriedAt": "2026-07-09T05:04:22.456Z"
   },
   {
     "name": "Hattiesburg",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:27.766Z",
     "autoTriedAt": "2026-07-08T17:24:55.926Z",
-    "metaTriedAt": "2026-07-08T20:08:05.939Z"
+    "metaTriedAt": "2026-07-08T20:08:05.939Z",
+    "similarTriedAt": "2026-07-09T05:04:22.762Z"
   },
   {
     "name": "Haujobb",
@@ -31819,7 +33125,50 @@
       "playcount": 2499845
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/10dc8daaa96d918b25940588cfb710d6/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:06.845Z"
+    "metaEnrichedAt": "2026-07-08T20:08:06.845Z",
+    "similarArtists": [
+      {
+        "name": "Front Line Assembly",
+        "slug": "front-line-assembly",
+        "match": 1
+      },
+      {
+        "name": "X Marks the Pedwalk",
+        "slug": "x-marks-the-pedwalk",
+        "match": 0.864274
+      },
+      {
+        "name": "Noise Unit",
+        "slug": "noise-unit",
+        "match": 0.801011
+      },
+      {
+        "name": "Funker Vogt",
+        "slug": "funker-vogt",
+        "match": 0.758539
+      },
+      {
+        "name": "Architect",
+        "slug": "architect",
+        "match": 0.73298
+      },
+      {
+        "name": "Mentallo & the Fixer",
+        "slug": "mentallo-the-fixer",
+        "match": 0.720272
+      },
+      {
+        "name": "SITD",
+        "slug": "sitd",
+        "match": 0.714804
+      },
+      {
+        "name": "Velvet Acid Christ",
+        "slug": "velvet-acid-christ",
+        "match": 0.711573
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:23.119Z"
   },
   {
     "name": "Haunted Cologne",
@@ -31832,7 +33181,15 @@
       "playcount": 154
     },
     "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:07.580Z"
+    "metaEnrichedAt": "2026-07-08T20:08:07.580Z",
+    "similarArtists": [
+      {
+        "name": "The Radioactive Chicken Heads",
+        "slug": "the-radioactive-chicken-heads",
+        "match": 0.166507
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:23.552Z"
   },
   {
     "name": "Haunted Garage",
@@ -31861,7 +33218,40 @@
       "playcount": 9144
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/a8eb04dde2eda3300281afb286a0590b/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:08.254Z"
+    "metaEnrichedAt": "2026-07-08T20:08:08.254Z",
+    "similarArtists": [
+      {
+        "name": "Cerebral Fix",
+        "slug": "cerebral-fix",
+        "match": 0.69119
+      },
+      {
+        "name": "Attitude Adjustment",
+        "slug": "attitude-adjustment",
+        "match": 0.594281
+      },
+      {
+        "name": "Ludichrist",
+        "slug": "ludichrist",
+        "match": 0.514646
+      },
+      {
+        "name": "X-Cops",
+        "slug": "x-cops",
+        "match": 0.514324
+      },
+      {
+        "name": "Dead Horse",
+        "slug": "dead-horse",
+        "match": 0.449611
+      },
+      {
+        "name": "IronChrist",
+        "slug": "ironchrist",
+        "match": 0.444114
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:23.942Z"
   },
   {
     "name": "Havana 3am",
@@ -31880,7 +33270,50 @@
       "listeners": 2868,
       "playcount": 33508
     },
-    "metaEnrichedAt": "2026-07-08T20:08:09.007Z"
+    "metaEnrichedAt": "2026-07-08T20:08:09.007Z",
+    "similarArtists": [
+      {
+        "name": "Carbon/Silicon",
+        "slug": "carbonsilicon",
+        "match": 1
+      },
+      {
+        "name": "The Nips",
+        "slug": "the-nips",
+        "match": 0.130556
+      },
+      {
+        "name": "Steve Jones",
+        "slug": "steve-jones",
+        "match": 0.092804
+      },
+      {
+        "name": "D Generation",
+        "slug": "d-generation",
+        "match": 0.088081
+      },
+      {
+        "name": "Ranking Roger",
+        "slug": "ranking-roger",
+        "match": 0.069719
+      },
+      {
+        "name": "The Radiators from Space",
+        "slug": "the-radiators-from-space",
+        "match": 0.066516
+      },
+      {
+        "name": "Burning Sensations",
+        "slug": "burning-sensations",
+        "match": 0.064405
+      },
+      {
+        "name": "Dee Dee Ramone",
+        "slug": "dee-dee-ramone",
+        "match": 0.064132
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:24.335Z"
   },
   {
     "name": "Havana Brown",
@@ -31909,7 +33342,50 @@
       "playcount": 2105622
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/a531149a5950e8d7097079fdcb855b05/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:10.191Z"
+    "metaEnrichedAt": "2026-07-08T20:08:10.191Z",
+    "similarArtists": [
+      {
+        "name": "Nicole Scherzinger",
+        "slug": "nicole-scherzinger",
+        "match": 1
+      },
+      {
+        "name": "Ricki-Lee",
+        "slug": "ricki-lee",
+        "match": 0.941469
+      },
+      {
+        "name": "Inna",
+        "slug": "inna",
+        "match": 0.890452
+      },
+      {
+        "name": "Alexandra Stan",
+        "slug": "alexandra-stan",
+        "match": 0.858337
+      },
+      {
+        "name": "Kerli",
+        "slug": "kerli",
+        "match": 0.81771
+      },
+      {
+        "name": "Jessica Mauboy",
+        "slug": "jessica-mauboy",
+        "match": 0.783977
+      },
+      {
+        "name": "Kat DeLuna",
+        "slug": "kat-deluna",
+        "match": 0.703201
+      },
+      {
+        "name": "Alexandra Burke",
+        "slug": "alexandra-burke",
+        "match": 0.654771
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:24.717Z"
   },
   {
     "name": "Håvard Ellefsen",
@@ -31921,7 +33397,8 @@
       "listeners": 2,
       "playcount": 4
     },
-    "metaEnrichedAt": "2026-07-08T20:08:11.444Z"
+    "metaEnrichedAt": "2026-07-08T20:08:11.444Z",
+    "similarTriedAt": "2026-07-09T05:04:25.046Z"
   },
   {
     "name": "Håvard Fossum",
@@ -31934,7 +33411,8 @@
       "playcount": 1
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/08e749925f88f2cf8edaff071c2dcb6d/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:12.236Z"
+    "metaEnrichedAt": "2026-07-08T20:08:12.236Z",
+    "similarTriedAt": "2026-07-09T05:04:25.373Z"
   },
   {
     "name": "Håvard Lund",
@@ -31955,7 +33433,8 @@
       "listeners": 9,
       "playcount": 177
     },
-    "metaEnrichedAt": "2026-07-08T20:08:13.009Z"
+    "metaEnrichedAt": "2026-07-08T20:08:13.009Z",
+    "similarTriedAt": "2026-07-09T05:04:25.698Z"
   },
   {
     "name": "Håvard Stubø",
@@ -31976,7 +33455,8 @@
       "listeners": 18,
       "playcount": 101
     },
-    "metaEnrichedAt": "2026-07-08T20:08:13.710Z"
+    "metaEnrichedAt": "2026-07-08T20:08:13.710Z",
+    "similarTriedAt": "2026-07-09T05:04:26.073Z"
   },
   {
     "name": "Håvard Wiik",
@@ -31996,7 +33476,30 @@
       "playcount": 6238
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/464e7f9f950e68d8f9292890ca8a18fa/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:14.440Z"
+    "metaEnrichedAt": "2026-07-08T20:08:14.440Z",
+    "similarArtists": [
+      {
+        "name": "Maria Kannegaard",
+        "slug": "maria-kannegaard",
+        "match": 1
+      },
+      {
+        "name": "Solveig Slettahjell",
+        "slug": "solveig-slettahjell",
+        "match": 0.327372
+      },
+      {
+        "name": "Audun Kleive",
+        "slug": "audun-kleive",
+        "match": 0.297681
+      },
+      {
+        "name": "Håkon Kornstad",
+        "slug": "hakon-kornstad",
+        "match": 0.239372
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:26.828Z"
   },
   {
     "name": "Have a Cigar",
@@ -32021,7 +33524,15 @@
       "playcount": 38504
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/2c9af28c5a04df38bbcb93dfb448cf90/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:15.321Z"
+    "metaEnrichedAt": "2026-07-08T20:08:15.321Z",
+    "similarArtists": [
+      {
+        "name": "Devin Sarno",
+        "slug": "devin-sarno",
+        "match": 0.450675
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:27.230Z"
   },
   {
     "name": "Have a Nice Life",
@@ -32050,7 +33561,50 @@
       "playcount": 63027137
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/ac15da624a81711bbc173e15e73c3914/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:15.968Z"
+    "metaEnrichedAt": "2026-07-08T20:08:15.968Z",
+    "similarArtists": [
+      {
+        "name": "Planning for Burial",
+        "slug": "planning-for-burial",
+        "match": 0.511948
+      },
+      {
+        "name": "Duster",
+        "slug": "duster",
+        "match": 0.290349
+      },
+      {
+        "name": "Swans",
+        "slug": "swans",
+        "match": 0.239763
+      },
+      {
+        "name": "Slowdive",
+        "slug": "slowdive",
+        "match": 0.219043
+      },
+      {
+        "name": "Slint",
+        "slug": "slint",
+        "match": 0.205876
+      },
+      {
+        "name": "Godspeed You! Black Emperor",
+        "slug": "godspeed-you-black-emperor",
+        "match": 0.200761
+      },
+      {
+        "name": "A Silver Mt. Zion",
+        "slug": "a-silver-mt-zion",
+        "match": 0.19501
+      },
+      {
+        "name": "Whirr",
+        "slug": "whirr",
+        "match": 0.164809
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:27.581Z"
   },
   {
     "name": "Have Heart",
@@ -32079,7 +33633,50 @@
       "playcount": 16816415
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/9a1c9287a90e740a02ac051bab731927/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:16.737Z"
+    "metaEnrichedAt": "2026-07-08T20:08:16.737Z",
+    "similarArtists": [
+      {
+        "name": "Trapped Under Ice",
+        "slug": "trapped-under-ice",
+        "match": 1
+      },
+      {
+        "name": "Bane",
+        "slug": "bane",
+        "match": 0.851639
+      },
+      {
+        "name": "Earth Crisis",
+        "slug": "earth-crisis",
+        "match": 0.780945
+      },
+      {
+        "name": "Verse",
+        "slug": "verse",
+        "match": 0.743892
+      },
+      {
+        "name": "Terror",
+        "slug": "terror",
+        "match": 0.683687
+      },
+      {
+        "name": "Judge",
+        "slug": "judge",
+        "match": 0.660726
+      },
+      {
+        "name": "Gorilla Biscuits",
+        "slug": "gorilla-biscuits",
+        "match": 0.63786
+      },
+      {
+        "name": "Modern Life Is War",
+        "slug": "modern-life-is-war",
+        "match": 0.615861
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:27.935Z"
   },
   {
     "name": "Have I Told You Lately",
@@ -32090,7 +33687,20 @@
       "listeners": 377,
       "playcount": 931
     },
-    "metaEnrichedAt": "2026-07-08T20:08:17.460Z"
+    "metaEnrichedAt": "2026-07-08T20:08:17.460Z",
+    "similarArtists": [
+      {
+        "name": "For the First Time",
+        "slug": "for-the-first-time",
+        "match": 0.563127
+      },
+      {
+        "name": "Sleeping Child",
+        "slug": "sleeping-child",
+        "match": 0.503629
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:28.456Z"
   },
   {
     "name": "Have You Ever Really Loved a Woman?",
@@ -32101,7 +33711,8 @@
       "listeners": 16,
       "playcount": 28
     },
-    "metaEnrichedAt": "2026-07-08T20:08:18.132Z"
+    "metaEnrichedAt": "2026-07-08T20:08:18.132Z",
+    "similarTriedAt": "2026-07-09T05:04:28.782Z"
   },
   {
     "name": "Have You Never Been Mellow",
@@ -32112,7 +33723,20 @@
       "listeners": 91,
       "playcount": 189
     },
-    "metaEnrichedAt": "2026-07-08T20:08:18.824Z"
+    "metaEnrichedAt": "2026-07-08T20:08:18.824Z",
+    "similarArtists": [
+      {
+        "name": "Never Can Say Goodbye",
+        "slug": "never-can-say-goodbye",
+        "match": 0.555119
+      },
+      {
+        "name": "Please Mr. Postman",
+        "slug": "please-mr-postman",
+        "match": 0.152442
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:29.166Z"
   },
   {
     "name": "Haven",
@@ -32141,14 +33765,58 @@
       "playcount": 1174719
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/4d224af2ef8a74d937a308595b93a335/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:19.702Z"
+    "metaEnrichedAt": "2026-07-08T20:08:19.702Z",
+    "similarArtists": [
+      {
+        "name": "Delays",
+        "slug": "delays",
+        "match": 1
+      },
+      {
+        "name": "Chinchilla",
+        "slug": "chinchilla",
+        "match": 0.771031
+      },
+      {
+        "name": "The Coral",
+        "slug": "the-coral",
+        "match": 0.727773
+      },
+      {
+        "name": "Feeder",
+        "slug": "feeder",
+        "match": 0.726566
+      },
+      {
+        "name": "Idlewild",
+        "slug": "idlewild",
+        "match": 0.725552
+      },
+      {
+        "name": "Athlete",
+        "slug": "athlete",
+        "match": 0.701399
+      },
+      {
+        "name": "Travis",
+        "slug": "travis",
+        "match": 0.686323
+      },
+      {
+        "name": "The Zutons",
+        "slug": "the-zutons",
+        "match": 0.662551
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:29.539Z"
   },
   {
     "name": "Haverfordwest",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:29.405Z",
     "autoTriedAt": "2026-07-08T17:25:24.629Z",
-    "metaTriedAt": "2026-07-08T20:08:20.339Z"
+    "metaTriedAt": "2026-07-08T20:08:20.339Z",
+    "similarTriedAt": "2026-07-09T05:04:30.100Z"
   },
   {
     "name": "Havergal Brian",
@@ -32177,7 +33845,50 @@
       "playcount": 60715
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/930ac04d9dea89704247bed7aab74c77/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:21.320Z"
+    "metaEnrichedAt": "2026-07-08T20:08:21.320Z",
+    "similarArtists": [
+      {
+        "name": "Granville Bantock",
+        "slug": "granville-bantock",
+        "match": 0.894573
+      },
+      {
+        "name": "Alan Rawsthorne",
+        "slug": "alan-rawsthorne",
+        "match": 0.835942
+      },
+      {
+        "name": "Arnold Bax",
+        "slug": "arnold-bax",
+        "match": 0.740212
+      },
+      {
+        "name": "Louis Glass",
+        "slug": "louis-glass",
+        "match": 0.727059
+      },
+      {
+        "name": "Lennox Berkeley",
+        "slug": "lennox-berkeley",
+        "match": 0.722749
+      },
+      {
+        "name": "Roy Harris",
+        "slug": "roy-harris",
+        "match": 0.625962
+      },
+      {
+        "name": "Kalevi Aho",
+        "slug": "kalevi-aho",
+        "match": 0.585921
+      },
+      {
+        "name": "Edmund Rubbra",
+        "slug": "edmund-rubbra",
+        "match": 0.565274
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:30.472Z"
   },
   {
     "name": "Havoc",
@@ -32206,7 +33917,50 @@
       "playcount": 1115677
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/7aa1851c2bd7b8805382d49a86c87c5d/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:22.029Z"
+    "metaEnrichedAt": "2026-07-08T20:08:22.029Z",
+    "similarArtists": [
+      {
+        "name": "AZ",
+        "slug": "az",
+        "match": 1
+      },
+      {
+        "name": "Lloyd Banks",
+        "slug": "lloyd-banks",
+        "match": 0.946866
+      },
+      {
+        "name": "Cormega",
+        "slug": "cormega",
+        "match": 0.9087
+      },
+      {
+        "name": "Styles P",
+        "slug": "styles-p",
+        "match": 0.883491
+      },
+      {
+        "name": "Mobb Deep",
+        "slug": "mobb-deep",
+        "match": 0.820141
+      },
+      {
+        "name": "The Alchemist",
+        "slug": "the-alchemist",
+        "match": 0.776828
+      },
+      {
+        "name": "Big Noyd",
+        "slug": "big-noyd",
+        "match": 0.668551
+      },
+      {
+        "name": "Fabolous",
+        "slug": "fabolous",
+        "match": 0.647094
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:30.845Z"
   },
   {
     "name": "Havoc & Prodeje",
@@ -32226,7 +33980,50 @@
       "playcount": 105259
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/889f83d25443f5e4658cd4617455194e/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:23.201Z"
+    "metaEnrichedAt": "2026-07-08T20:08:23.201Z",
+    "similarArtists": [
+      {
+        "name": "Battlecat",
+        "slug": "battlecat",
+        "match": 1
+      },
+      {
+        "name": "Seagram",
+        "slug": "seagram",
+        "match": 0.791631
+      },
+      {
+        "name": "Lil' ½ Dead",
+        "slug": "lil-12-dead",
+        "match": 0.740802
+      },
+      {
+        "name": "Bad Azz",
+        "slug": "bad-azz",
+        "match": 0.721342
+      },
+      {
+        "name": "Kokane",
+        "slug": "kokane",
+        "match": 0.652697
+      },
+      {
+        "name": "Tweedy Bird Loc",
+        "slug": "tweedy-bird-loc",
+        "match": 0.642705
+      },
+      {
+        "name": "Ray Luv",
+        "slug": "ray-luv",
+        "match": 0.588226
+      },
+      {
+        "name": "Soopafly",
+        "slug": "soopafly",
+        "match": 0.558281
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:31.219Z"
   },
   {
     "name": "Havoc Unit",
@@ -32255,7 +34052,25 @@
       "playcount": 287615
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/c6db183abe3beae29225aec097a12847/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:23.897Z"
+    "metaEnrichedAt": "2026-07-08T20:08:23.897Z",
+    "similarArtists": [
+      {
+        "name": "Mezzerschmitt",
+        "slug": "mezzerschmitt",
+        "match": 0.548899
+      },
+      {
+        "name": "The Amenta",
+        "slug": "the-amenta",
+        "match": 0.450118
+      },
+      {
+        "name": "Spektr",
+        "slug": "spektr",
+        "match": 0.396437
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:31.619Z"
   },
   {
     "name": "Havok",
@@ -32284,7 +34099,50 @@
       "playcount": 4063181
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/266826b63efefa1381bd282791025583/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:24.656Z"
+    "metaEnrichedAt": "2026-07-08T20:08:24.656Z",
+    "similarArtists": [
+      {
+        "name": "Warbringer",
+        "slug": "warbringer",
+        "match": 1
+      },
+      {
+        "name": "Evile",
+        "slug": "evile",
+        "match": 0.857531
+      },
+      {
+        "name": "Exodus",
+        "slug": "exodus",
+        "match": 0.761397
+      },
+      {
+        "name": "Suicidal Angels",
+        "slug": "suicidal-angels",
+        "match": 0.758292
+      },
+      {
+        "name": "Death Angel",
+        "slug": "death-angel",
+        "match": 0.73031
+      },
+      {
+        "name": "Lazarus A.D.",
+        "slug": "lazarus-ad",
+        "match": 0.68022
+      },
+      {
+        "name": "Testament",
+        "slug": "testament",
+        "match": 0.650656
+      },
+      {
+        "name": "Toxic Holocaust",
+        "slug": "toxic-holocaust",
+        "match": 0.631893
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:31.992Z"
   },
   {
     "name": "Hawaii",
@@ -32304,14 +34162,28 @@
       "playcount": 86194
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/82f4a578664909cda3abadb3fc73cdfa/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:25.360Z"
+    "metaEnrichedAt": "2026-07-08T20:08:25.360Z",
+    "similarArtists": [
+      {
+        "name": "Chateaux",
+        "slug": "chateaux",
+        "match": 0.515954
+      },
+      {
+        "name": "X-Wild",
+        "slug": "x-wild",
+        "match": 0.489963
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:32.362Z"
   },
   {
     "name": "Hawaii Symphony Orchestra",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:29.405Z",
     "autoTriedAt": "2026-07-08T17:25:39.234Z",
-    "metaTriedAt": "2026-07-08T20:08:26.086Z"
+    "metaTriedAt": "2026-07-08T20:08:26.086Z",
+    "similarTriedAt": "2026-07-09T05:04:32.663Z"
   },
   {
     "name": "Hawick",
@@ -32322,7 +34194,8 @@
       "listeners": 4,
       "playcount": 5
     },
-    "metaEnrichedAt": "2026-07-08T20:08:26.771Z"
+    "metaEnrichedAt": "2026-07-08T20:08:26.771Z",
+    "similarTriedAt": "2026-07-09T05:04:33.022Z"
   },
   {
     "name": "Hawk",
@@ -32339,7 +34212,50 @@
       "playcount": 1500414
     },
     "metaEnrichedAt": "2026-07-08T21:22:25.507Z",
-    "autoTriedAt": "2026-07-08T22:32:45.500Z"
+    "autoTriedAt": "2026-07-08T22:32:45.500Z",
+    "similarArtists": [
+      {
+        "name": "Tyrant",
+        "slug": "tyrant",
+        "match": 1
+      },
+      {
+        "name": "Icon",
+        "slug": "icon",
+        "match": 0.865375
+      },
+      {
+        "name": "Cloven Hoof",
+        "slug": "cloven-hoof",
+        "match": 0.724708
+      },
+      {
+        "name": "Grim Reaper",
+        "slug": "grim-reaper",
+        "match": 0.69725
+      },
+      {
+        "name": "Stormwitch",
+        "slug": "stormwitch",
+        "match": 0.659537
+      },
+      {
+        "name": "Leatherwolf",
+        "slug": "leatherwolf",
+        "match": 0.60052
+      },
+      {
+        "name": "Dokken",
+        "slug": "dokken",
+        "match": 0.550263
+      },
+      {
+        "name": "Lizzy Borden",
+        "slug": "lizzy-borden",
+        "match": 0.549915
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:33.503Z"
   },
   {
     "name": "Hawk Eyes",
@@ -32368,7 +34284,30 @@
       "playcount": 102418
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/a97f57b95a494c79dce389f507137e54/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:27.659Z"
+    "metaEnrichedAt": "2026-07-08T20:08:27.659Z",
+    "similarArtists": [
+      {
+        "name": "Young Legionnaire",
+        "slug": "young-legionnaire",
+        "match": 0.331403
+      },
+      {
+        "name": "Freeze the Atlantic",
+        "slug": "freeze-the-atlantic",
+        "match": 0.297113
+      },
+      {
+        "name": "Sucioperro",
+        "slug": "sucioperro",
+        "match": 0.194171
+      },
+      {
+        "name": "Kerbdog",
+        "slug": "kerbdog",
+        "match": 0.183064
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:33.891Z"
   },
   {
     "name": "Hawk Littlejohn",
@@ -32389,7 +34328,8 @@
       "listeners": 1,
       "playcount": 371
     },
-    "metaEnrichedAt": "2026-07-08T20:08:28.356Z"
+    "metaEnrichedAt": "2026-07-08T20:08:28.356Z",
+    "similarTriedAt": "2026-07-09T05:04:34.235Z"
   },
   {
     "name": "Hawk Nelson",
@@ -32418,7 +34358,50 @@
       "playcount": 5591737
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/2bafa4d27a00632f57fa88bf98093aae/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:28.973Z"
+    "metaEnrichedAt": "2026-07-08T20:08:28.973Z",
+    "similarArtists": [
+      {
+        "name": "Stellar Kart",
+        "slug": "stellar-kart",
+        "match": 1
+      },
+      {
+        "name": "Kutless",
+        "slug": "kutless",
+        "match": 0.67044
+      },
+      {
+        "name": "Sanctus Real",
+        "slug": "sanctus-real",
+        "match": 0.6629
+      },
+      {
+        "name": "Relient K",
+        "slug": "relient-k",
+        "match": 0.63545
+      },
+      {
+        "name": "TobyMac",
+        "slug": "tobymac",
+        "match": 0.525955
+      },
+      {
+        "name": "The Afters",
+        "slug": "the-afters",
+        "match": 0.491245
+      },
+      {
+        "name": "Seventh Day Slumber",
+        "slug": "seventh-day-slumber",
+        "match": 0.478685
+      },
+      {
+        "name": "Josh Wilson",
+        "slug": "josh-wilson",
+        "match": 0.4786
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:34.590Z"
   },
   {
     "name": "Hawking",
@@ -32447,7 +34430,50 @@
       "playcount": 9227508
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/f407fdfe0b2b59f250aa71ca58e4e219/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:29.657Z"
+    "metaEnrichedAt": "2026-07-08T20:08:29.657Z",
+    "similarArtists": [
+      {
+        "name": "Robert Calvert",
+        "slug": "robert-calvert",
+        "match": 0.5175
+      },
+      {
+        "name": "Pink Fairies",
+        "slug": "pink-fairies",
+        "match": 0.486483
+      },
+      {
+        "name": "Gong",
+        "slug": "gong",
+        "match": 0.437525
+      },
+      {
+        "name": "Ozric Tentacles",
+        "slug": "ozric-tentacles",
+        "match": 0.41611
+      },
+      {
+        "name": "Steve Hillage",
+        "slug": "steve-hillage",
+        "match": 0.407899
+      },
+      {
+        "name": "Eloy",
+        "slug": "eloy",
+        "match": 0.395134
+      },
+      {
+        "name": "Amon Düül II",
+        "slug": "amon-duul-ii",
+        "match": 0.353011
+      },
+      {
+        "name": "Wishbone Ash",
+        "slug": "wishbone-ash",
+        "match": 0.331827
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:34.963Z"
   },
   {
     "name": "Hawks",
@@ -32478,7 +34504,15 @@
       "playcount": 83641
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/5bbe1784bdbe1b56da5d3a7c2e0b939d/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:30.365Z"
+    "metaEnrichedAt": "2026-07-08T20:08:30.365Z",
+    "similarArtists": [
+      {
+        "name": "The Heroine Sheiks",
+        "slug": "the-heroine-sheiks",
+        "match": 0.48048
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:35.337Z"
   },
   {
     "name": "Hawkshaw Hawkins",
@@ -32507,7 +34541,50 @@
       "playcount": 90416
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/eb63d3f6ef690dad535f64fb72ac1809/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:31.152Z"
+    "metaEnrichedAt": "2026-07-08T20:08:31.152Z",
+    "similarArtists": [
+      {
+        "name": "Cowboy Copas",
+        "slug": "cowboy-copas",
+        "match": 1
+      },
+      {
+        "name": "Claude King",
+        "slug": "claude-king",
+        "match": 0.812576
+      },
+      {
+        "name": "Little Jimmy Dickens",
+        "slug": "little-jimmy-dickens",
+        "match": 0.791315
+      },
+      {
+        "name": "Floyd Tillman",
+        "slug": "floyd-tillman",
+        "match": 0.748192
+      },
+      {
+        "name": "Charlie Walker",
+        "slug": "charlie-walker",
+        "match": 0.746525
+      },
+      {
+        "name": "David Houston",
+        "slug": "david-houston",
+        "match": 0.710009
+      },
+      {
+        "name": "Roy Drusky",
+        "slug": "roy-drusky",
+        "match": 0.674594
+      },
+      {
+        "name": "Jack Greene",
+        "slug": "jack-greene",
+        "match": 0.661381
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:35.702Z"
   },
   {
     "name": "Hawksley Workman",
@@ -32536,7 +34613,50 @@
       "playcount": 2219181
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/cbe463183a149fa248d1f0f6903c619f/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:32.458Z"
+    "metaEnrichedAt": "2026-07-08T20:08:32.458Z",
+    "similarArtists": [
+      {
+        "name": "Sarah Slean",
+        "slug": "sarah-slean",
+        "match": 1
+      },
+      {
+        "name": "Matthew Good Band",
+        "slug": "matthew-good-band",
+        "match": 0.920044
+      },
+      {
+        "name": "Sarah Harmer",
+        "slug": "sarah-harmer",
+        "match": 0.872863
+      },
+      {
+        "name": "Matthew Good",
+        "slug": "matthew-good",
+        "match": 0.831652
+      },
+      {
+        "name": "David Usher",
+        "slug": "david-usher",
+        "match": 0.735297
+      },
+      {
+        "name": "Odds",
+        "slug": "odds",
+        "match": 0.709402
+      },
+      {
+        "name": "Dan Mangan",
+        "slug": "dan-mangan",
+        "match": 0.677914
+      },
+      {
+        "name": "I Mother Earth",
+        "slug": "i-mother-earth",
+        "match": 0.640153
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:36.101Z"
   },
   {
     "name": "Hawkwind",
@@ -32564,7 +34684,50 @@
       "playcount": 9227508
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/88063fe8ed2fb999b1b8f309938b3738/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:33.305Z"
+    "metaEnrichedAt": "2026-07-08T20:08:33.305Z",
+    "similarArtists": [
+      {
+        "name": "Robert Calvert",
+        "slug": "robert-calvert",
+        "match": 0.5175
+      },
+      {
+        "name": "Pink Fairies",
+        "slug": "pink-fairies",
+        "match": 0.486483
+      },
+      {
+        "name": "Gong",
+        "slug": "gong",
+        "match": 0.437525
+      },
+      {
+        "name": "Ozric Tentacles",
+        "slug": "ozric-tentacles",
+        "match": 0.41611
+      },
+      {
+        "name": "Steve Hillage",
+        "slug": "steve-hillage",
+        "match": 0.407899
+      },
+      {
+        "name": "Eloy",
+        "slug": "eloy",
+        "match": 0.395134
+      },
+      {
+        "name": "Amon Düül II",
+        "slug": "amon-duul-ii",
+        "match": 0.353011
+      },
+      {
+        "name": "Wishbone Ash",
+        "slug": "wishbone-ash",
+        "match": 0.331827
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:36.452Z"
   },
   {
     "name": "Hawthorn",
@@ -32594,7 +34757,8 @@
       "playcount": 32275
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/5b2fcbd4eb9959677d7f3b66db4b7101/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:34.066Z"
+    "metaEnrichedAt": "2026-07-08T20:08:34.066Z",
+    "similarTriedAt": "2026-07-09T05:04:36.843Z"
   },
   {
     "name": "Hawthorne Heights",
@@ -32623,7 +34787,50 @@
       "playcount": 24236914
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/b4e1d7c874cafc30d9b9cda47cd728bc/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:34.764Z"
+    "metaEnrichedAt": "2026-07-08T20:08:34.764Z",
+    "similarArtists": [
+      {
+        "name": "Senses Fail",
+        "slug": "senses-fail",
+        "match": 1
+      },
+      {
+        "name": "Silverstein",
+        "slug": "silverstein",
+        "match": 0.963783
+      },
+      {
+        "name": "Armor for Sleep",
+        "slug": "armor-for-sleep",
+        "match": 0.791877
+      },
+      {
+        "name": "Taking Back Sunday",
+        "slug": "taking-back-sunday",
+        "match": 0.769415
+      },
+      {
+        "name": "From First to Last",
+        "slug": "from-first-to-last",
+        "match": 0.718467
+      },
+      {
+        "name": "Scary Kids Scaring Kids",
+        "slug": "scary-kids-scaring-kids",
+        "match": 0.706161
+      },
+      {
+        "name": "Chiodos",
+        "slug": "chiodos",
+        "match": 0.702718
+      },
+      {
+        "name": "The Used",
+        "slug": "the-used",
+        "match": 0.694392
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:37.208Z"
   },
   {
     "name": "Hayashi, Asuca",
@@ -32640,7 +34847,8 @@
     },
     "sitesTriedAt": "2026-07-08T17:01:05.188Z",
     "autoTriedAt": "2026-07-08T18:51:10.549Z",
-    "metaTriedAt": "2026-07-08T20:08:35.567Z"
+    "metaTriedAt": "2026-07-08T20:08:35.567Z",
+    "similarTriedAt": "2026-07-09T05:04:37.514Z"
   },
   {
     "name": "Hayashi, Nobutoshi",
@@ -32657,7 +34865,8 @@
     },
     "sitesTriedAt": "2026-07-08T17:01:05.188Z",
     "autoTriedAt": "2026-07-08T18:51:11.795Z",
-    "metaTriedAt": "2026-07-08T20:08:36.255Z"
+    "metaTriedAt": "2026-07-08T20:08:36.255Z",
+    "similarTriedAt": "2026-07-09T05:04:37.820Z"
   },
   {
     "name": "Hayashibara, Megumi",
@@ -32685,7 +34894,40 @@
       "listeners": 77173,
       "playcount": 2656638
     },
-    "metaEnrichedAt": "2026-07-08T20:08:37.013Z"
+    "metaEnrichedAt": "2026-07-08T20:08:37.013Z",
+    "similarArtists": [
+      {
+        "name": "Yoko Takahashi",
+        "slug": "yoko-takahashi",
+        "match": 0.98163
+      },
+      {
+        "name": "Two-Mix",
+        "slug": "two-mix",
+        "match": 0.646682
+      },
+      {
+        "name": "Kokia",
+        "slug": "kokia",
+        "match": 0.520176
+      },
+      {
+        "name": "See-Saw",
+        "slug": "see-saw",
+        "match": 0.463417
+      },
+      {
+        "name": "Angela",
+        "slug": "angela",
+        "match": 0.44077
+      },
+      {
+        "name": "Every Little Thing",
+        "slug": "every-little-thing",
+        "match": 0.397584
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:38.189Z"
   },
   {
     "name": "Haydain Neale",
@@ -32707,7 +34949,15 @@
       "playcount": 353
     },
     "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:37.696Z"
+    "metaEnrichedAt": "2026-07-08T20:08:37.696Z",
+    "similarArtists": [
+      {
+        "name": "Jacksoul",
+        "slug": "jacksoul",
+        "match": 1
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:38.563Z"
   },
   {
     "name": "Hayden",
@@ -32738,7 +34988,50 @@
       "playcount": 2473687
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/02d22e19c72d41b26dbd678b38376484/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:38.377Z"
+    "metaEnrichedAt": "2026-07-08T20:08:38.377Z",
+    "similarArtists": [
+      {
+        "name": "Wintersleep",
+        "slug": "wintersleep",
+        "match": 1
+      },
+      {
+        "name": "John Vanderslice",
+        "slug": "john-vanderslice",
+        "match": 0.966256
+      },
+      {
+        "name": "Matthew Good",
+        "slug": "matthew-good",
+        "match": 0.952208
+      },
+      {
+        "name": "Sarah Harmer",
+        "slug": "sarah-harmer",
+        "match": 0.88859
+      },
+      {
+        "name": "Dan Mangan",
+        "slug": "dan-mangan",
+        "match": 0.880961
+      },
+      {
+        "name": "Lou Barlow",
+        "slug": "lou-barlow",
+        "match": 0.805968
+      },
+      {
+        "name": "John K. Samson",
+        "slug": "john-k-samson",
+        "match": 0.739722
+      },
+      {
+        "name": "Sloan",
+        "slug": "sloan",
+        "match": 0.703427
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:38.930Z"
   },
   {
     "name": "Hayden Panettiere",
@@ -32767,7 +35060,30 @@
       "playcount": 937274
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/032bd3aaeab099937cd02e2f32d58905/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:39.025Z"
+    "metaEnrichedAt": "2026-07-08T20:08:39.025Z",
+    "similarArtists": [
+      {
+        "name": "Cheyenne Kimball",
+        "slug": "cheyenne-kimball",
+        "match": 0.585826
+      },
+      {
+        "name": "Haylie Duff",
+        "slug": "haylie-duff",
+        "match": 0.454825
+      },
+      {
+        "name": "Adrienne Bailon",
+        "slug": "adrienne-bailon",
+        "match": 0.28367
+      },
+      {
+        "name": "The Beu Sisters",
+        "slug": "the-beu-sisters",
+        "match": 0.281793
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:39.574Z"
   },
   {
     "name": "Hayden Powell",
@@ -32796,7 +35112,40 @@
       "playcount": 7772
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/fd8b0a35a80a09b75cea92f5f42af82f/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:40.325Z"
+    "metaEnrichedAt": "2026-07-08T20:08:40.325Z",
+    "similarArtists": [
+      {
+        "name": "Tore Johansen",
+        "slug": "tore-johansen",
+        "match": 1
+      },
+      {
+        "name": "Eyolf Dale",
+        "slug": "eyolf-dale",
+        "match": 0.605557
+      },
+      {
+        "name": "Ola Kvernberg",
+        "slug": "ola-kvernberg",
+        "match": 0.442773
+      },
+      {
+        "name": "Ole Edvard Antonsen",
+        "slug": "ole-edvard-antonsen",
+        "match": 0.294383
+      },
+      {
+        "name": "Espen Berg",
+        "slug": "espen-berg",
+        "match": 0.26295
+      },
+      {
+        "name": "Håkon Kornstad",
+        "slug": "hakon-kornstad",
+        "match": 0.227568
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:39.968Z"
   },
   {
     "name": "Hayedeh",
@@ -32824,7 +35173,50 @@
       "playcount": 669283
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/8c10486e0cc1aa0c0b93f5042f2f09da/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:41.242Z"
+    "metaEnrichedAt": "2026-07-08T20:08:41.242Z",
+    "similarArtists": [
+      {
+        "name": "Mahasti",
+        "slug": "mahasti",
+        "match": 1
+      },
+      {
+        "name": "Moein",
+        "slug": "moein",
+        "match": 0.953336
+      },
+      {
+        "name": "Googoosh",
+        "slug": "googoosh",
+        "match": 0.691509
+      },
+      {
+        "name": "Shahram Shabpareh",
+        "slug": "shahram-shabpareh",
+        "match": 0.521408
+      },
+      {
+        "name": "Shadmehr Aghili",
+        "slug": "shadmehr-aghili",
+        "match": 0.507435
+      },
+      {
+        "name": "Mohsen Chavoshi",
+        "slug": "mohsen-chavoshi",
+        "match": 0.464188
+      },
+      {
+        "name": "Faramarz Aslani",
+        "slug": "faramarz-aslani",
+        "match": 0.461741
+      },
+      {
+        "name": "Homayoun Shajarian",
+        "slug": "homayoun-shajarian",
+        "match": 0.442687
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:40.938Z"
   },
   {
     "name": "HaYehudim",
@@ -32843,7 +35235,8 @@
       "playcount": 437649
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/6993010ed11d2e099f92cb5acbeb7db9/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:41.893Z"
+    "metaEnrichedAt": "2026-07-08T20:08:41.893Z",
+    "similarTriedAt": "2026-07-09T05:04:41.377Z"
   },
   {
     "name": "Hayes Alvis",
@@ -32861,7 +35254,8 @@
     },
     "enrichedAt": "2026-07-08T17:01:05.188Z",
     "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:42.590Z"
+    "metaEnrichedAt": "2026-07-08T20:08:42.590Z",
+    "similarTriedAt": "2026-07-09T05:04:41.681Z"
   },
   {
     "name": "Hayes Carll",
@@ -32890,7 +35284,50 @@
       "playcount": 1917851
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/642b6e0b1bf3da1a1526d8e094e16bfd/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:43.334Z"
+    "metaEnrichedAt": "2026-07-08T20:08:43.334Z",
+    "similarArtists": [
+      {
+        "name": "James McMurtry",
+        "slug": "james-mcmurtry",
+        "match": 1
+      },
+      {
+        "name": "Ray Wylie Hubbard",
+        "slug": "ray-wylie-hubbard",
+        "match": 0.926152
+      },
+      {
+        "name": "Robert Earl Keen",
+        "slug": "robert-earl-keen",
+        "match": 0.879543
+      },
+      {
+        "name": "Todd Snider",
+        "slug": "todd-snider",
+        "match": 0.868626
+      },
+      {
+        "name": "Corb Lund",
+        "slug": "corb-lund",
+        "match": 0.714482
+      },
+      {
+        "name": "Ryan Bingham",
+        "slug": "ryan-bingham",
+        "match": 0.704485
+      },
+      {
+        "name": "Justin Townes Earle",
+        "slug": "justin-townes-earle",
+        "match": 0.627769
+      },
+      {
+        "name": "Chris Knight",
+        "slug": "chris-knight",
+        "match": 0.627072
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:42.264Z"
   },
   {
     "name": "Hayko Cepkin",
@@ -32919,7 +35356,50 @@
       "playcount": 5387940
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/450246fa5c528a31553bc5da2f0e4e0c/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:44.188Z"
+    "metaEnrichedAt": "2026-07-08T20:08:44.188Z",
+    "similarArtists": [
+      {
+        "name": "Pilli Bebek",
+        "slug": "pilli-bebek",
+        "match": 1
+      },
+      {
+        "name": "Mor ve Ötesi",
+        "slug": "mor-ve-otesi",
+        "match": 0.951899
+      },
+      {
+        "name": "Şebnem Ferah",
+        "slug": "sebnem-ferah",
+        "match": 0.929046
+      },
+      {
+        "name": "Duman",
+        "slug": "duman",
+        "match": 0.841565
+      },
+      {
+        "name": "Redd",
+        "slug": "redd",
+        "match": 0.790762
+      },
+      {
+        "name": "maNga",
+        "slug": "manga",
+        "match": 0.722155
+      },
+      {
+        "name": "Teoman",
+        "slug": "teoman",
+        "match": 0.634839
+      },
+      {
+        "name": "Adamlar",
+        "slug": "adamlar",
+        "match": 0.611341
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:42.746Z"
   },
   {
     "name": "Hayley Kiyoko",
@@ -32948,7 +35428,50 @@
       "playcount": 20219854
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/20246e49d10376ddcfef7b5da94d5e8b/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:44.810Z"
+    "metaEnrichedAt": "2026-07-08T20:08:44.810Z",
+    "similarArtists": [
+      {
+        "name": "Halsey",
+        "slug": "halsey",
+        "match": 0.417283
+      },
+      {
+        "name": "The Aces",
+        "slug": "the-aces",
+        "match": 0.410226
+      },
+      {
+        "name": "Tove Lo",
+        "slug": "tove-lo",
+        "match": 0.351651
+      },
+      {
+        "name": "Troye Sivan",
+        "slug": "troye-sivan",
+        "match": 0.303304
+      },
+      {
+        "name": "Bridgit Mendler",
+        "slug": "bridgit-mendler",
+        "match": 0.296282
+      },
+      {
+        "name": "Zella Day",
+        "slug": "zella-day",
+        "match": 0.295455
+      },
+      {
+        "name": "Echosmith",
+        "slug": "echosmith",
+        "match": 0.294636
+      },
+      {
+        "name": "Chappell Roan",
+        "slug": "chappell-roan",
+        "match": 0.287545
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:43.635Z"
   },
   {
     "name": "Hayley Mills",
@@ -32979,7 +35502,25 @@
       "playcount": 76192
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/eba31ae56aecc591ece799578e291a1f/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:45.678Z"
+    "metaEnrichedAt": "2026-07-08T20:08:45.678Z",
+    "similarArtists": [
+      {
+        "name": "Kirk Douglas",
+        "slug": "kirk-douglas",
+        "match": 0.748439
+      },
+      {
+        "name": "Sterling Holloway",
+        "slug": "sterling-holloway",
+        "match": 0.526676
+      },
+      {
+        "name": "Rene Auberjonois",
+        "slug": "rene-auberjonois",
+        "match": 0.452908
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:44.209Z"
   },
   {
     "name": "Hayley Westenra",
@@ -33008,7 +35549,50 @@
       "playcount": 3819676
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/a784a21c571a60bebca197384643f6fd/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:46.389Z"
+    "metaEnrichedAt": "2026-07-08T20:08:46.389Z",
+    "similarArtists": [
+      {
+        "name": "Katherine Jenkins",
+        "slug": "katherine-jenkins",
+        "match": 1
+      },
+      {
+        "name": "Secret Garden",
+        "slug": "secret-garden",
+        "match": 0.686339
+      },
+      {
+        "name": "Celtic Woman",
+        "slug": "celtic-woman",
+        "match": 0.513396
+      },
+      {
+        "name": "Charlotte Church",
+        "slug": "charlotte-church",
+        "match": 0.454072
+      },
+      {
+        "name": "Sarah Brightman",
+        "slug": "sarah-brightman",
+        "match": 0.351982
+      },
+      {
+        "name": "Moya Brennan",
+        "slug": "moya-brennan",
+        "match": 0.343115
+      },
+      {
+        "name": "Jackie Evancho",
+        "slug": "jackie-evancho",
+        "match": 0.338837
+      },
+      {
+        "name": "Russell Watson",
+        "slug": "russell-watson",
+        "match": 0.33134
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:44.593Z"
   },
   {
     "name": "Hayley Williams",
@@ -33036,7 +35620,50 @@
       "playcount": 61659904
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/5db2e7f4e82e0ceb93b1f475a29569ab/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:47.026Z"
+    "metaEnrichedAt": "2026-07-08T20:08:47.026Z",
+    "similarArtists": [
+      {
+        "name": "Paramore",
+        "slug": "paramore",
+        "match": 1
+      },
+      {
+        "name": "Zac Farro",
+        "slug": "zac-farro",
+        "match": 0.290817
+      },
+      {
+        "name": "Florence + the Machine",
+        "slug": "florence-the-machine",
+        "match": 0.216176
+      },
+      {
+        "name": "Wolf Alice",
+        "slug": "wolf-alice",
+        "match": 0.194789
+      },
+      {
+        "name": "PVRIS",
+        "slug": "pvris",
+        "match": 0.178906
+      },
+      {
+        "name": "Lily Allen",
+        "slug": "lily-allen",
+        "match": 0.162707
+      },
+      {
+        "name": "Halsey",
+        "slug": "halsey",
+        "match": 0.14491
+      },
+      {
+        "name": "HAIM",
+        "slug": "haim",
+        "match": 0.139367
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:45.420Z"
   },
   {
     "name": "Haylie Duff",
@@ -33065,14 +35692,33 @@
       "playcount": 80024
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/416de3ce88f3bf931e48e0cb1f289f37/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:47.907Z"
+    "metaEnrichedAt": "2026-07-08T20:08:47.907Z",
+    "similarArtists": [
+      {
+        "name": "The Beu Sisters",
+        "slug": "the-beu-sisters",
+        "match": 0.410082
+      },
+      {
+        "name": "Hayden Panettiere",
+        "slug": "hayden-panettiere",
+        "match": 0.360931
+      },
+      {
+        "name": "Nobody's Angel",
+        "slug": "nobodys-angel",
+        "match": 0.201031
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:45.861Z"
   },
   {
     "name": "Haymarket affair",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:29.405Z",
     "autoTriedAt": "2026-07-08T17:25:42.986Z",
-    "metaTriedAt": "2026-07-08T20:08:48.603Z"
+    "metaTriedAt": "2026-07-08T20:08:48.603Z",
+    "similarTriedAt": "2026-07-09T05:04:46.253Z"
   },
   {
     "name": "Hayseed Dixie",
@@ -33101,7 +35747,50 @@
       "playcount": 1905697
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/572a882ae19b73eff7bf938bc6859aad/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:49.251Z"
+    "metaEnrichedAt": "2026-07-08T20:08:49.251Z",
+    "similarArtists": [
+      {
+        "name": "Iron Horse",
+        "slug": "iron-horse",
+        "match": 0.864934
+      },
+      {
+        "name": "Old Crow Medicine Show",
+        "slug": "old-crow-medicine-show",
+        "match": 0.262413
+      },
+      {
+        "name": "The Nitty Gritty Dirt Band",
+        "slug": "the-nitty-gritty-dirt-band",
+        "match": 0.249685
+      },
+      {
+        "name": "Charlie Daniels Band",
+        "slug": "charlie-daniels-band",
+        "match": 0.225351
+      },
+      {
+        "name": "Trampled By Turtles",
+        "slug": "trampled-by-turtles",
+        "match": 0.22434
+      },
+      {
+        "name": "Alison Krauss",
+        "slug": "alison-krauss",
+        "match": 0.20762
+      },
+      {
+        "name": "Béla Fleck",
+        "slug": "bela-fleck",
+        "match": 0.207492
+      },
+      {
+        "name": "Steve Earle",
+        "slug": "steve-earle",
+        "match": 0.20626
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:46.666Z"
   },
   {
     "name": "Haysi Fantayzee",
@@ -33130,7 +35819,50 @@
       "playcount": 128036
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/f2121c327131ecbcdc6ca70335a3fd2e/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:50.069Z"
+    "metaEnrichedAt": "2026-07-08T20:08:50.069Z",
+    "similarArtists": [
+      {
+        "name": "Nick Kamen",
+        "slug": "nick-kamen",
+        "match": 1
+      },
+      {
+        "name": "Boy George",
+        "slug": "boy-george",
+        "match": 0.487613
+      },
+      {
+        "name": "Eighth Wonder",
+        "slug": "eighth-wonder",
+        "match": 0.477759
+      },
+      {
+        "name": "Dollar",
+        "slug": "dollar",
+        "match": 0.318165
+      },
+      {
+        "name": "Bow Wow Wow",
+        "slug": "bow-wow-wow",
+        "match": 0.266045
+      },
+      {
+        "name": "Thompson Twins",
+        "slug": "thompson-twins",
+        "match": 0.219527
+      },
+      {
+        "name": "The Belle Stars",
+        "slug": "the-belle-stars",
+        "match": 0.212631
+      },
+      {
+        "name": "Then Jerico",
+        "slug": "then-jerico",
+        "match": 0.201872
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:47.031Z"
   },
   {
     "name": "Haywire",
@@ -33159,7 +35891,50 @@
       "playcount": 135418
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/683d59c8fcb518b69dfcd2e0795569ef/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:50.750Z"
+    "metaEnrichedAt": "2026-07-08T20:08:50.750Z",
+    "similarArtists": [
+      {
+        "name": "Honeymoon Suite",
+        "slug": "honeymoon-suite",
+        "match": 1
+      },
+      {
+        "name": "Glass Tiger",
+        "slug": "glass-tiger",
+        "match": 0.774543
+      },
+      {
+        "name": "Aldo Nova",
+        "slug": "aldo-nova",
+        "match": 0.554685
+      },
+      {
+        "name": "Platinum Blonde",
+        "slug": "platinum-blonde",
+        "match": 0.529593
+      },
+      {
+        "name": "Loverboy",
+        "slug": "loverboy",
+        "match": 0.496841
+      },
+      {
+        "name": "Bad English",
+        "slug": "bad-english",
+        "match": 0.448618
+      },
+      {
+        "name": "Night Ranger",
+        "slug": "night-ranger",
+        "match": 0.393865
+      },
+      {
+        "name": "Harem Scarem",
+        "slug": "harem-scarem",
+        "match": 0.370932
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:47.755Z"
   },
   {
     "name": "Haywood Henry",
@@ -33172,7 +35947,30 @@
       "playcount": 578
     },
     "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:51.440Z"
+    "metaEnrichedAt": "2026-07-08T20:08:51.440Z",
+    "similarArtists": [
+      {
+        "name": "George Barnes",
+        "slug": "george-barnes",
+        "match": 0.033767
+      },
+      {
+        "name": "Plas Johnson",
+        "slug": "plas-johnson",
+        "match": 0.030276
+      },
+      {
+        "name": "Harvey",
+        "slug": "harvey",
+        "match": 0.025888
+      },
+      {
+        "name": "Nappy Brown",
+        "slug": "nappy-brown",
+        "match": 0.019422
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:48.149Z"
   },
   {
     "name": "Hazakim",
@@ -33201,7 +35999,50 @@
       "playcount": 35334
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/a1c44664791d16952d431c776831d2dc/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:52.206Z"
+    "metaEnrichedAt": "2026-07-08T20:08:52.206Z",
+    "similarArtists": [
+      {
+        "name": "Timothy Brindle",
+        "slug": "timothy-brindle",
+        "match": 1
+      },
+      {
+        "name": "Stephen the Levite",
+        "slug": "stephen-the-levite",
+        "match": 0.939443
+      },
+      {
+        "name": "Sho Baraka",
+        "slug": "sho-baraka",
+        "match": 0.317061
+      },
+      {
+        "name": "Beautiful Eulogy",
+        "slug": "beautiful-eulogy",
+        "match": 0.295487
+      },
+      {
+        "name": "S.O.",
+        "slug": "so",
+        "match": 0.29249
+      },
+      {
+        "name": "Json",
+        "slug": "json",
+        "match": 0.276827
+      },
+      {
+        "name": "Eshon Burgundy",
+        "slug": "eshon-burgundy",
+        "match": 0.254826
+      },
+      {
+        "name": "The Cross Movement",
+        "slug": "the-cross-movement",
+        "match": 0.213466
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:48.542Z"
   },
   {
     "name": "Hazard",
@@ -33230,7 +36071,35 @@
       "playcount": 169130
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/091d59bb49586725f996fe8d93713228/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:52.932Z"
+    "metaEnrichedAt": "2026-07-08T20:08:52.932Z",
+    "similarArtists": [
+      {
+        "name": "Cisfinitum",
+        "slug": "cisfinitum",
+        "match": 0.534873
+      },
+      {
+        "name": "Stratvm Terror",
+        "slug": "stratvm-terror",
+        "match": 0.487045
+      },
+      {
+        "name": "Necrophorus",
+        "slug": "necrophorus",
+        "match": 0.473454
+      },
+      {
+        "name": "False Mirror",
+        "slug": "false-mirror",
+        "match": 0.418556
+      },
+      {
+        "name": "Daniel Menche",
+        "slug": "daniel-menche",
+        "match": 0.41196
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:48.923Z"
   },
   {
     "name": "Haze",
@@ -33250,7 +36119,25 @@
       "playcount": 2748350
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/d41d8cd98f00b204e9800998ecf8427e/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:53.595Z"
+    "metaEnrichedAt": "2026-07-08T20:08:53.595Z",
+    "similarArtists": [
+      {
+        "name": "CANO",
+        "slug": "cano",
+        "match": 1
+      },
+      {
+        "name": "Lacazette",
+        "slug": "lacazette",
+        "match": 0.530707
+      },
+      {
+        "name": "JC Reyes",
+        "slug": "jc-reyes",
+        "match": 0.527163
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:49.295Z"
   },
   {
     "name": "Hazel",
@@ -33279,7 +36166,50 @@
       "playcount": 1377221
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/f564f05b898ba300e401dea72c75b91f/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:54.338Z"
+    "metaEnrichedAt": "2026-07-08T20:08:54.338Z",
+    "similarArtists": [
+      {
+        "name": "Seaweed",
+        "slug": "seaweed",
+        "match": 1
+      },
+      {
+        "name": "Love Battery",
+        "slug": "love-battery",
+        "match": 0.992341
+      },
+      {
+        "name": "Treepeople",
+        "slug": "treepeople",
+        "match": 0.887709
+      },
+      {
+        "name": "Dinosaur Jr.",
+        "slug": "dinosaur-jr",
+        "match": 0.663861
+      },
+      {
+        "name": "Gumball",
+        "slug": "gumball",
+        "match": 0.615709
+      },
+      {
+        "name": "Screaming Trees",
+        "slug": "screaming-trees",
+        "match": 0.563482
+      },
+      {
+        "name": "Tripping Daisy",
+        "slug": "tripping-daisy",
+        "match": 0.529023
+      },
+      {
+        "name": "Mother Love Bone",
+        "slug": "mother-love-bone",
+        "match": 0.51042
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:49.658Z"
   },
   {
     "name": "Hazel Dickens",
@@ -33299,7 +36229,50 @@
       "playcount": 211832
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/4d00ceadc8fa84a3b6839e7e481670d4/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:55.556Z"
+    "metaEnrichedAt": "2026-07-08T20:08:55.556Z",
+    "similarArtists": [
+      {
+        "name": "Roscoe Holcomb",
+        "slug": "roscoe-holcomb",
+        "match": 0.986147
+      },
+      {
+        "name": "Bill Monroe",
+        "slug": "bill-monroe",
+        "match": 0.882006
+      },
+      {
+        "name": "The Carter Family",
+        "slug": "the-carter-family",
+        "match": 0.655691
+      },
+      {
+        "name": "Doc Watson",
+        "slug": "doc-watson",
+        "match": 0.639645
+      },
+      {
+        "name": "Barbara Dane",
+        "slug": "barbara-dane",
+        "match": 0.627146
+      },
+      {
+        "name": "Pete Seeger",
+        "slug": "pete-seeger",
+        "match": 0.616528
+      },
+      {
+        "name": "Ola Belle Reed",
+        "slug": "ola-belle-reed",
+        "match": 0.608828
+      },
+      {
+        "name": "The Stanley Brothers",
+        "slug": "the-stanley-brothers",
+        "match": 0.571685
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:50.056Z"
   },
   {
     "name": "Hazel Meyers",
@@ -33319,7 +36292,50 @@
       "playcount": 2848
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/80d4b166a605be6c8998c1838505b3ad/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:56.231Z"
+    "metaEnrichedAt": "2026-07-08T20:08:56.231Z",
+    "similarArtists": [
+      {
+        "name": "Curtis Jones",
+        "slug": "curtis-jones",
+        "match": 1
+      },
+      {
+        "name": "Edna Hicks",
+        "slug": "edna-hicks",
+        "match": 0.942801
+      },
+      {
+        "name": "Sara Martin",
+        "slug": "sara-martin",
+        "match": 0.827121
+      },
+      {
+        "name": "Viola McCoy",
+        "slug": "viola-mccoy",
+        "match": 0.713401
+      },
+      {
+        "name": "Lil Green",
+        "slug": "lil-green",
+        "match": 0.681361
+      },
+      {
+        "name": "Lena Wilson",
+        "slug": "lena-wilson",
+        "match": 0.633773
+      },
+      {
+        "name": "Lucille Hegamin",
+        "slug": "lucille-hegamin",
+        "match": 0.565685
+      },
+      {
+        "name": "Lil Johnson",
+        "slug": "lil-johnson",
+        "match": 0.562168
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:50.435Z"
   },
   {
     "name": "Hazel O'Connor",
@@ -33348,7 +36364,50 @@
       "playcount": 428764
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/28892655199e3da0e593ce55406676fd/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:57.006Z"
+    "metaEnrichedAt": "2026-07-08T20:08:57.006Z",
+    "similarArtists": [
+      {
+        "name": "Toyah",
+        "slug": "toyah",
+        "match": 1
+      },
+      {
+        "name": "Madness",
+        "slug": "madness",
+        "match": 0.914334
+      },
+      {
+        "name": "The Housemartins",
+        "slug": "the-housemartins",
+        "match": 0.893764
+      },
+      {
+        "name": "Dollar",
+        "slug": "dollar",
+        "match": 0.859159
+      },
+      {
+        "name": "Fischer-Z",
+        "slug": "fischer-z",
+        "match": 0.815231
+      },
+      {
+        "name": "Adam and the Ants",
+        "slug": "adam-and-the-ants",
+        "match": 0.745476
+      },
+      {
+        "name": "Bow Wow Wow",
+        "slug": "bow-wow-wow",
+        "match": 0.733066
+      },
+      {
+        "name": "The Stranglers",
+        "slug": "the-stranglers",
+        "match": 0.687552
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:50.799Z"
   },
   {
     "name": "Hazel Scott",
@@ -33368,14 +36427,58 @@
       "playcount": 91162
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/9dda1d1c370f1e8a2585ef8f8e04d35b/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:57.705Z"
+    "metaEnrichedAt": "2026-07-08T20:08:57.705Z",
+    "similarArtists": [
+      {
+        "name": "Mary Lou Williams",
+        "slug": "mary-lou-williams",
+        "match": 1
+      },
+      {
+        "name": "Shirley Scott",
+        "slug": "shirley-scott",
+        "match": 0.387851
+      },
+      {
+        "name": "Erroll Garner",
+        "slug": "erroll-garner",
+        "match": 0.335316
+      },
+      {
+        "name": "Billy Taylor",
+        "slug": "billy-taylor",
+        "match": 0.289449
+      },
+      {
+        "name": "Oscar Peterson",
+        "slug": "oscar-peterson",
+        "match": 0.250347
+      },
+      {
+        "name": "Toshiko Akiyoshi",
+        "slug": "toshiko-akiyoshi",
+        "match": 0.243717
+      },
+      {
+        "name": "Ahmad Jamal",
+        "slug": "ahmad-jamal",
+        "match": 0.237257
+      },
+      {
+        "name": "Mose Allison",
+        "slug": "mose-allison",
+        "match": 0.227187
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:51.217Z"
   },
   {
     "name": "Hazel Ying Lee",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:13:29.405Z",
     "autoTriedAt": "2026-07-08T17:26:22.661Z",
-    "metaTriedAt": "2026-07-08T20:08:58.360Z"
+    "metaTriedAt": "2026-07-08T20:08:58.360Z",
+    "similarTriedAt": "2026-07-09T05:04:51.795Z"
   },
   {
     "name": "Hazeldine",
@@ -33404,7 +36507,50 @@
       "playcount": 30126
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/1a132f31ea26a9c21c5061f1349760e7/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:08:59.961Z"
+    "metaEnrichedAt": "2026-07-08T20:08:59.961Z",
+    "similarArtists": [
+      {
+        "name": "Caitlin Cary",
+        "slug": "caitlin-cary",
+        "match": 1
+      },
+      {
+        "name": "Waco Brothers",
+        "slug": "waco-brothers",
+        "match": 0.843711
+      },
+      {
+        "name": "Trailer Bride",
+        "slug": "trailer-bride",
+        "match": 0.710535
+      },
+      {
+        "name": "The Hangdogs",
+        "slug": "the-hangdogs",
+        "match": 0.694184
+      },
+      {
+        "name": "Cary Hudson",
+        "slug": "cary-hudson",
+        "match": 0.689842
+      },
+      {
+        "name": "Devil in a Woodpile",
+        "slug": "devil-in-a-woodpile",
+        "match": 0.686233
+      },
+      {
+        "name": "Chris Mills",
+        "slug": "chris-mills",
+        "match": 0.640655
+      },
+      {
+        "name": "Continental Drifters",
+        "slug": "continental-drifters",
+        "match": 0.591766
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:52.857Z"
   },
   {
     "name": "Hazell Dean",
@@ -33433,7 +36579,50 @@
       "playcount": 451721
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/18052060aecda116ef3884c114434ef4/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:09:00.868Z"
+    "metaEnrichedAt": "2026-07-08T20:09:00.868Z",
+    "similarArtists": [
+      {
+        "name": "Sinitta",
+        "slug": "sinitta",
+        "match": 1
+      },
+      {
+        "name": "Mel & Kim",
+        "slug": "mel-kim",
+        "match": 0.853901
+      },
+      {
+        "name": "Jason Donovan",
+        "slug": "jason-donovan",
+        "match": 0.759461
+      },
+      {
+        "name": "Lonnie Gordon",
+        "slug": "lonnie-gordon",
+        "match": 0.744445
+      },
+      {
+        "name": "Samantha Fox",
+        "slug": "samantha-fox",
+        "match": 0.68484
+      },
+      {
+        "name": "Kelly Marie",
+        "slug": "kelly-marie",
+        "match": 0.684134
+      },
+      {
+        "name": "Bananarama",
+        "slug": "bananarama",
+        "match": 0.60226
+      },
+      {
+        "name": "Kim Appleby",
+        "slug": "kim-appleby",
+        "match": 0.580305
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:53.245Z"
   },
   {
     "name": "Hazen Street",
@@ -33462,7 +36651,30 @@
       "playcount": 669944
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/df905e310274646cabff6151049de73d/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:09:01.526Z"
+    "metaEnrichedAt": "2026-07-08T20:09:01.526Z",
+    "similarArtists": [
+      {
+        "name": "International Superheroes of Hardcore",
+        "slug": "international-superheroes-of-hardcore",
+        "match": 0.768212
+      },
+      {
+        "name": "Icepick",
+        "slug": "icepick",
+        "match": 0.687332
+      },
+      {
+        "name": "No Redeeming Social Value",
+        "slug": "no-redeeming-social-value",
+        "match": 0.496658
+      },
+      {
+        "name": "Reach the Sky",
+        "slug": "reach-the-sky",
+        "match": 0.450639
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:53.627Z"
   },
   {
     "name": "HC Andersen",
@@ -33482,7 +36694,8 @@
       "playcount": 51161
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/989c056795fe3599b55d77017f385796/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:09:02.279Z"
+    "metaEnrichedAt": "2026-07-08T20:09:02.279Z",
+    "similarTriedAt": "2026-07-09T05:04:54.010Z"
   },
   {
     "name": "He Ain't Heavy, He's My Brother",
@@ -33493,7 +36706,25 @@
       "listeners": 110,
       "playcount": 250
     },
-    "metaEnrichedAt": "2026-07-08T20:09:02.933Z"
+    "metaEnrichedAt": "2026-07-08T20:09:02.933Z",
+    "similarArtists": [
+      {
+        "name": "Alone Again (Naturally)",
+        "slug": "alone-again-naturally",
+        "match": 1
+      },
+      {
+        "name": "A Horse with No Name",
+        "slug": "a-horse-with-no-name",
+        "match": 0.574134
+      },
+      {
+        "name": "I'm Not in Love",
+        "slug": "im-not-in-love",
+        "match": 0.174534
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:54.386Z"
   },
   {
     "name": "He Got You",
@@ -33504,7 +36735,8 @@
       "listeners": 4,
       "playcount": 4
     },
-    "metaEnrichedAt": "2026-07-08T20:09:03.663Z"
+    "metaEnrichedAt": "2026-07-08T20:09:03.663Z",
+    "similarTriedAt": "2026-07-09T05:04:54.720Z"
   },
   {
     "name": "He Is Legend",
@@ -33533,7 +36765,50 @@
       "playcount": 9438072
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/2c447e3dffdb737e22bd03fd0eda32f9/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:09:04.404Z"
+    "metaEnrichedAt": "2026-07-08T20:09:04.404Z",
+    "similarArtists": [
+      {
+        "name": "Maylene and the Sons of Disaster",
+        "slug": "maylene-and-the-sons-of-disaster",
+        "match": 1
+      },
+      {
+        "name": "Every Time I Die",
+        "slug": "every-time-i-die",
+        "match": 0.760898
+      },
+      {
+        "name": "Norma Jean",
+        "slug": "norma-jean",
+        "match": 0.590019
+      },
+      {
+        "name": "The Bled",
+        "slug": "the-bled",
+        "match": 0.470475
+      },
+      {
+        "name": "The Chariot",
+        "slug": "the-chariot",
+        "match": 0.453817
+      },
+      {
+        "name": "Underoath",
+        "slug": "underoath",
+        "match": 0.428912
+      },
+      {
+        "name": "Showbread",
+        "slug": "showbread",
+        "match": 0.420088
+      },
+      {
+        "name": "Emery",
+        "slug": "emery",
+        "match": 0.409706
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:55.101Z"
   },
   {
     "name": "He Is We",
@@ -33562,7 +36837,50 @@
       "playcount": 7668260
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/c78e855c519ebfb19e6207f6328a4f2a/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:09:05.144Z"
+    "metaEnrichedAt": "2026-07-08T20:09:05.144Z",
+    "similarArtists": [
+      {
+        "name": "Meg & Dia",
+        "slug": "meg-dia",
+        "match": 1
+      },
+      {
+        "name": "Secondhand Serenade",
+        "slug": "secondhand-serenade",
+        "match": 0.913362
+      },
+      {
+        "name": "Lauren Aquilina",
+        "slug": "lauren-aquilina",
+        "match": 0.810221
+      },
+      {
+        "name": "Rachel Platten",
+        "slug": "rachel-platten",
+        "match": 0.605898
+      },
+      {
+        "name": "Gabrielle Aplin",
+        "slug": "gabrielle-aplin",
+        "match": 0.603855
+      },
+      {
+        "name": "Christina Perri",
+        "slug": "christina-perri",
+        "match": 0.581019
+      },
+      {
+        "name": "Colbie Caillat",
+        "slug": "colbie-caillat",
+        "match": 0.573376
+      },
+      {
+        "name": "Plain White T's",
+        "slug": "plain-white-ts",
+        "match": 0.541309
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:55.451Z"
   },
   {
     "name": "He Yong",
@@ -33580,7 +36898,20 @@
       "listeners": 88,
       "playcount": 1227
     },
-    "metaEnrichedAt": "2026-07-08T20:09:06.125Z"
+    "metaEnrichedAt": "2026-07-08T20:09:06.125Z",
+    "similarArtists": [
+      {
+        "name": "Wang Feng",
+        "slug": "wang-feng",
+        "match": 0.376202
+      },
+      {
+        "name": "Chyi, Chin",
+        "slug": "chyi-chin",
+        "match": 0.168443
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:55.847Z"
   },
   {
     "name": "He's a Liar",
@@ -33591,7 +36922,8 @@
       "listeners": 1,
       "playcount": 1
     },
-    "metaEnrichedAt": "2026-07-08T20:09:06.894Z"
+    "metaEnrichedAt": "2026-07-08T20:09:06.894Z",
+    "similarTriedAt": "2026-07-09T05:04:56.177Z"
   },
   {
     "name": "He's a Rebel",
@@ -33602,7 +36934,40 @@
       "listeners": 260,
       "playcount": 439
     },
-    "metaEnrichedAt": "2026-07-08T20:09:07.560Z"
+    "metaEnrichedAt": "2026-07-08T20:09:07.560Z",
+    "similarArtists": [
+      {
+        "name": "Don't Make Me Over",
+        "slug": "dont-make-me-over",
+        "match": 1
+      },
+      {
+        "name": "He's So Fine",
+        "slug": "hes-so-fine",
+        "match": 0.930129
+      },
+      {
+        "name": "Will You Love Me Tomorrow",
+        "slug": "will-you-love-me-tomorrow",
+        "match": 0.527942
+      },
+      {
+        "name": "A Lover's Concerto",
+        "slug": "a-lovers-concerto",
+        "match": 0.462317
+      },
+      {
+        "name": "Da Doo Ron Ron",
+        "slug": "da-doo-ron-ron",
+        "match": 0.428446
+      },
+      {
+        "name": "Piece of My Heart",
+        "slug": "piece-of-my-heart",
+        "match": 0.351126
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:56.645Z"
   },
   {
     "name": "He's So Fine",
@@ -33613,7 +36978,45 @@
       "listeners": 218,
       "playcount": 477
     },
-    "metaEnrichedAt": "2026-07-08T20:09:08.410Z"
+    "metaEnrichedAt": "2026-07-08T20:09:08.410Z",
+    "similarArtists": [
+      {
+        "name": "Will You Love Me Tomorrow",
+        "slug": "will-you-love-me-tomorrow",
+        "match": 1
+      },
+      {
+        "name": "Don't Make Me Over",
+        "slug": "dont-make-me-over",
+        "match": 0.911056
+      },
+      {
+        "name": "Da Doo Ron Ron",
+        "slug": "da-doo-ron-ron",
+        "match": 0.900344
+      },
+      {
+        "name": "He's a Rebel",
+        "slug": "hes-a-rebel",
+        "match": 0.730976
+      },
+      {
+        "name": "Chapel of Love",
+        "slug": "chapel-of-love",
+        "match": 0.633792
+      },
+      {
+        "name": "A Lover's Concerto",
+        "slug": "a-lovers-concerto",
+        "match": 0.495221
+      },
+      {
+        "name": "My Boyfriend's Back",
+        "slug": "my-boyfriends-back",
+        "match": 0.398555
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:57.046Z"
   },
   {
     "name": "He's So Shy",
@@ -33624,7 +37027,8 @@
       "listeners": 28,
       "playcount": 64
     },
-    "metaEnrichedAt": "2026-07-08T20:09:09.078Z"
+    "metaEnrichedAt": "2026-07-08T20:09:09.078Z",
+    "similarTriedAt": "2026-07-09T05:04:57.615Z"
   },
   {
     "name": "Head",
@@ -33642,7 +37046,50 @@
       "listeners": 159345,
       "playcount": 1430636
     },
-    "metaEnrichedAt": "2026-07-08T20:09:09.776Z"
+    "metaEnrichedAt": "2026-07-08T20:09:09.776Z",
+    "similarArtists": [
+      {
+        "name": "Love and Death",
+        "slug": "love-and-death",
+        "match": 1
+      },
+      {
+        "name": "Jonathan Davis",
+        "slug": "jonathan-davis",
+        "match": 0.383448
+      },
+      {
+        "name": "Disciple",
+        "slug": "disciple",
+        "match": 0.379887
+      },
+      {
+        "name": "We as Human",
+        "slug": "we-as-human",
+        "match": 0.366768
+      },
+      {
+        "name": "Ill Niño",
+        "slug": "ill-nino",
+        "match": 0.295722
+      },
+      {
+        "name": "KoRn",
+        "slug": "korn",
+        "match": 0.274752
+      },
+      {
+        "name": "Mushroomhead",
+        "slug": "mushroomhead",
+        "match": 0.269713
+      },
+      {
+        "name": "Flaw",
+        "slug": "flaw",
+        "match": 0.264194
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:57.995Z"
   },
   {
     "name": "Head Automatica",
@@ -33671,7 +37118,50 @@
       "playcount": 9518575
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/d30dea5789781baf6cadb9b63fa7f15f/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:09:10.706Z"
+    "metaEnrichedAt": "2026-07-08T20:09:10.706Z",
+    "similarArtists": [
+      {
+        "name": "The Academy Is...",
+        "slug": "the-academy-is",
+        "match": 1
+      },
+      {
+        "name": "Taking Back Sunday",
+        "slug": "taking-back-sunday",
+        "match": 0.754273
+      },
+      {
+        "name": "Nightmare of You",
+        "slug": "nightmare-of-you",
+        "match": 0.747534
+      },
+      {
+        "name": "Armor for Sleep",
+        "slug": "armor-for-sleep",
+        "match": 0.714086
+      },
+      {
+        "name": "Say Anything",
+        "slug": "say-anything",
+        "match": 0.709869
+      },
+      {
+        "name": "Cobra Starship",
+        "slug": "cobra-starship",
+        "match": 0.704619
+      },
+      {
+        "name": "The Audition",
+        "slug": "the-audition",
+        "match": 0.674838
+      },
+      {
+        "name": "Cartel",
+        "slug": "cartel",
+        "match": 0.628808
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:58.354Z"
   },
   {
     "name": "Head Control System",
@@ -33700,7 +37190,40 @@
       "playcount": 835416
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/2c7201bf7b9ffd2fe322530148fdbb8e/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:09:11.418Z"
+    "metaEnrichedAt": "2026-07-08T20:09:11.418Z",
+    "similarArtists": [
+      {
+        "name": "Age of Silence",
+        "slug": "age-of-silence",
+        "match": 0.51713
+      },
+      {
+        "name": "Cronian",
+        "slug": "cronian",
+        "match": 0.296535
+      },
+      {
+        "name": "Dark Suns",
+        "slug": "dark-suns",
+        "match": 0.265025
+      },
+      {
+        "name": "ICS Vortex",
+        "slug": "ics-vortex",
+        "match": 0.256861
+      },
+      {
+        "name": "Sculptured",
+        "slug": "sculptured",
+        "match": 0.217571
+      },
+      {
+        "name": "Nahemah",
+        "slug": "nahemah",
+        "match": 0.145172
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:58.733Z"
   },
   {
     "name": "Head Hits Concrete",
@@ -33719,7 +37242,15 @@
       "listeners": 1183,
       "playcount": 29437
     },
-    "metaEnrichedAt": "2026-07-08T20:09:12.198Z"
+    "metaEnrichedAt": "2026-07-08T20:09:12.198Z",
+    "similarArtists": [
+      {
+        "name": "Swallowing Shit",
+        "slug": "swallowing-shit",
+        "match": 1
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:59.111Z"
   },
   {
     "name": "Head Like A Hole",
@@ -33748,7 +37279,50 @@
       "playcount": 137676
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/82f5d0b11db2cc89af12f9e4007c1b84/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:09:12.919Z"
+    "metaEnrichedAt": "2026-07-08T20:09:12.919Z",
+    "similarArtists": [
+      {
+        "name": "Weta",
+        "slug": "weta",
+        "match": 1
+      },
+      {
+        "name": "Tadpole",
+        "slug": "tadpole",
+        "match": 0.566164
+      },
+      {
+        "name": "Elemeno P",
+        "slug": "elemeno-p",
+        "match": 0.517355
+      },
+      {
+        "name": "Darcy Clay",
+        "slug": "darcy-clay",
+        "match": 0.505915
+      },
+      {
+        "name": "Fur Patrol",
+        "slug": "fur-patrol",
+        "match": 0.493881
+      },
+      {
+        "name": "The Feelers",
+        "slug": "the-feelers",
+        "match": 0.488558
+      },
+      {
+        "name": "Th' Dudes",
+        "slug": "th-dudes",
+        "match": 0.440667
+      },
+      {
+        "name": "Garageland",
+        "slug": "garageland",
+        "match": 0.43967
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:59.498Z"
   },
   {
     "name": "Head of David",
@@ -33767,7 +37341,50 @@
       "listeners": 5124,
       "playcount": 152242
     },
-    "metaEnrichedAt": "2026-07-08T20:09:13.665Z"
+    "metaEnrichedAt": "2026-07-08T20:09:13.665Z",
+    "similarArtists": [
+      {
+        "name": "Godflesh",
+        "slug": "godflesh",
+        "match": 0.519392
+      },
+      {
+        "name": "Cop Shoot Cop",
+        "slug": "cop-shoot-cop",
+        "match": 0.498432
+      },
+      {
+        "name": "Scorn",
+        "slug": "scorn",
+        "match": 0.333452
+      },
+      {
+        "name": "Pitchshifter",
+        "slug": "pitchshifter",
+        "match": 0.279273
+      },
+      {
+        "name": "Foetus",
+        "slug": "foetus",
+        "match": 0.275438
+      },
+      {
+        "name": "Killing Joke",
+        "slug": "killing-joke",
+        "match": 0.225563
+      },
+      {
+        "name": "Cable Regime",
+        "slug": "cable-regime",
+        "match": 0.221358
+      },
+      {
+        "name": "Fudge Tunnel",
+        "slug": "fudge-tunnel",
+        "match": 0.221234
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:04:59.896Z"
   },
   {
     "name": "Head On Collision",
@@ -33787,7 +37404,20 @@
       "playcount": 11391
     },
     "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:09:14.347Z"
+    "metaEnrichedAt": "2026-07-08T20:09:14.347Z",
+    "similarArtists": [
+      {
+        "name": "Merciless Death",
+        "slug": "merciless-death",
+        "match": 0.839036
+      },
+      {
+        "name": "Mantic Ritual",
+        "slug": "mantic-ritual",
+        "match": 0.601931
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:05:00.297Z"
   },
   {
     "name": "Head Phones President",
@@ -33816,7 +37446,20 @@
       "playcount": 629035
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/64774537832620ec5ce5a93e399365f9/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:09:15.064Z"
+    "metaEnrichedAt": "2026-07-08T20:09:15.064Z",
+    "similarArtists": [
+      {
+        "name": "Unsraw",
+        "slug": "unsraw",
+        "match": 0.513599
+      },
+      {
+        "name": "Zilch",
+        "slug": "zilch",
+        "match": 0.383765
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:05:01.010Z"
   },
   {
     "name": "Head Wound City",
@@ -33845,7 +37488,50 @@
       "playcount": 629059
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/b99b05df8f22efea401849b713625f46/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:09:15.768Z"
+    "metaEnrichedAt": "2026-07-08T20:09:15.768Z",
+    "similarArtists": [
+      {
+        "name": "The Blood Brothers",
+        "slug": "the-blood-brothers",
+        "match": 1
+      },
+      {
+        "name": "The Locust",
+        "slug": "the-locust",
+        "match": 0.664766
+      },
+      {
+        "name": "Some Girls",
+        "slug": "some-girls",
+        "match": 0.563058
+      },
+      {
+        "name": "An Albatross",
+        "slug": "an-albatross",
+        "match": 0.442401
+      },
+      {
+        "name": "United Nations",
+        "slug": "united-nations",
+        "match": 0.382797
+      },
+      {
+        "name": "XBXRX",
+        "slug": "xbxrx",
+        "match": 0.319391
+      },
+      {
+        "name": "Heavy Heavy Low Low",
+        "slug": "heavy-heavy-low-low",
+        "match": 0.263014
+      },
+      {
+        "name": "Swing Kids",
+        "slug": "swing-kids",
+        "match": 0.228437
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:05:01.402Z"
   },
   {
     "name": "Headband",
@@ -33874,7 +37560,20 @@
       "playcount": 35149
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/afdc45a91ce54adcaf6ebe32e56b3bc4/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:09:16.593Z"
+    "metaEnrichedAt": "2026-07-08T20:09:16.593Z",
+    "similarArtists": [
+      {
+        "name": "Fuzzy Duck",
+        "slug": "fuzzy-duck",
+        "match": 0.632165
+      },
+      {
+        "name": "Human Instinct",
+        "slug": "human-instinct",
+        "match": 0.4742
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:05:01.825Z"
   },
   {
     "name": "Headless Chickens",
@@ -33894,7 +37593,50 @@
       "playcount": 208382
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/aead9183ebf46663aae088b5f706c3be/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-08T20:09:17.344Z"
+    "metaEnrichedAt": "2026-07-08T20:09:17.344Z",
+    "similarArtists": [
+      {
+        "name": "Straitjacket Fits",
+        "slug": "straitjacket-fits",
+        "match": 1
+      },
+      {
+        "name": "The Mutton Birds",
+        "slug": "the-mutton-birds",
+        "match": 0.911843
+      },
+      {
+        "name": "Chris Knox",
+        "slug": "chris-knox",
+        "match": 0.612643
+      },
+      {
+        "name": "The Chills",
+        "slug": "the-chills",
+        "match": 0.597502
+      },
+      {
+        "name": "The Exponents",
+        "slug": "the-exponents",
+        "match": 0.564188
+      },
+      {
+        "name": "The Phoenix Foundation",
+        "slug": "the-phoenix-foundation",
+        "match": 0.499613
+      },
+      {
+        "name": "Supergroove",
+        "slug": "supergroove",
+        "match": 0.489804
+      },
+      {
+        "name": "Dave Dobbyn",
+        "slug": "dave-dobbyn",
+        "match": 0.441601
+      }
+    ],
+    "similarEnrichedAt": "2026-07-09T05:05:02.204Z"
   },
   {
     "name": "Headlights",
