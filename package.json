@@ -24,6 +24,7 @@
     "audit-gaps": "tsx src/scripts/audit_artist_gaps.ts",
     "rank-scraper-candidates": "tsx src/scripts/rank_scraper_candidates.ts",
     "record-conflict-drop": "tsx src/scripts/record_conflict_drop.ts",
+    "check-concurrency-drops": "tsx src/scripts/check_concurrency_drops.ts",
     "prune-non-artists": "tsx src/scripts/prune_non_artists.ts",
     "test": "SCRAPER_ALLOW_LOCAL_HOSTS=1 node --import tsx --test tests/*.test.ts",
     "test:coverage": "SCRAPER_ALLOW_LOCAL_HOSTS=1 c8 node --import tsx --test tests/*.test.ts",

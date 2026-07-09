@@ -1,0 +1,60 @@
+name: Concurrency Starvation Watchdog
+
+on:
+  schedule:
+    - cron: '20 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: write
+  issues: write
+
+jobs:
+  watchdog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run concurrency drops watchdog
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: npm run check-concurrency-drops
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain data/concurrency-drops.json)" ]; then
+            echo "Changes detected in data/concurrency-drops.json, committing..."
+            git add data/concurrency-drops.json
+            git commit -m "chore: record concurrency-preemption drops [skip ci]"
+            
+            # Retry loop in case of push races
+            pushed=false
+            for i in {1..5}; do
+              git fetch origin main
+              git rebase origin/main || { git rebase --abort; git reset --hard origin/main; continue; }
+              if git push; then
+                pushed=true
+                break
+              fi
+              sleep $((RANDOM % 5 + 2))
+            done
+            if [ "$pushed" = "false" ]; then
+              echo "::warning::Failed to push concurrency-drops.json after 5 attempts."
+            fi
+          else
+            echo "No changes in data/concurrency-drops.json"
+          fi
