@@ -396,30 +396,55 @@ these are still current if much time has passed).
   reach further than intended if that ever changes. →
   `src/generator/publish.ts`.
 
+- **`artist-db-write` concurrency-starvation watchdog.** New
+  `.github/workflows/concurrency-watchdog.yml` (every 6h) +
+  `src/scripts/check_concurrency_drops.ts`: scans recent runs of all 6
+  `artist-db-write`-group workflows for the exact
+  `Canceling since a higher priority waiting request` annotation, records
+  each to `data/concurrency-drops.json`, opens/updates a dedup'd issue past
+  a threshold. *Caught and fixed during review*: its push-retry loop did
+  `git reset --hard origin/main` + `continue` on a rebase conflict instead
+  of `break` + warn like every other writer in this repo — silently
+  discarded its own just-recorded drop and reported false success on the
+  next (no-op) push. Fixed to match convention; also added the
+  previously-missing `data-hygiene.yml` to its watch list.
+- **zod v3→v4** (4.4.3). Adversarially verified via a shadow v3 install and
+  side-by-side `.safeParse()` probing across every real schema in this repo
+  (Concert/Artist/Config/RepairedSelectors) — no behavioral change, only
+  cosmetic error-message wording. Safe.
+
 ### ⬜ Open — critical
-- **`artist-db-write` concurrency group itself still has no starvation
-  metric.** Caught live twice today with the exact GitHub annotation
-  `Canceling since a higher priority waiting request for artist-db-write
-  exists`. The new auto-retry workflow above papers over this specifically
-  for `daily-scrape.yml`'s manual dispatches; `enrich-auto`/`enrich-database`/
-  `enrich-metadata`/`enrich-similar`'s *scheduled* triggers can still lose
-  their queued slot to each other with no visibility and no recovery. Still
-  no metric distinguishing a queue-supersede cancellation from a normal
-  git-conflict drop. *A worktree
+- **`artist-db-write` concurrency group's actual queue-preemption is still
+  unfixed, only observed.** The watchdog above gives visibility; the
+  auto-retry workflow recovers `daily-scrape.yml`'s manual dispatches; the 5
+  scheduled enrich-* workflows can still lose their queued slot to each
+  other with no automatic recovery. *A worktree
   `.claude/worktrees/fix-daily-scrape-concurrency` existed earlier this
-  session (deleted — confirmed fully merged, see git history) — if a new one
-  appears, check it's not already mid-fix in a parallel session first.*
+  session (deleted — confirmed fully merged) — if a new one appears, check
+  it's not already mid-fix in a parallel session first.*
+
+### ⬜ Open — high
+- **TypeScript v7 migration attempted and reverted.** `typescript-eslint@8.63.0`
+  declares a peer dep of `typescript >=4.8.4 <6.1.0` — 7.0.2 is out of range
+  (`npm ls` reports it invalid). The attempted fix was an `eslint-patch.js`
+  monkeypatching `Module._resolveFilename` to silently redirect ESLint's
+  internal `require('typescript')` to a separately-installed `typescript-v5`
+  alias — meaning the type-aware `no-floating-promises` rule would've been
+  checked against TS5's type checker while the project actually builds on
+  TS7, a real (if narrow) silent-wrong-lint-results risk for no real
+  benefit. Reverted; back on `typescript@5.9.3`. Revisit once
+  `typescript-eslint` has real TS7 support — don't repeat the monkeypatch
+  approach.
 
 ### ⬜ Open — medium
-- **6 Dependabot PRs need triage** (as of 2026-07-08 ~21:15 UTC): zod
-  3.25.76→4.4.3 (major, real breaking-API-change review needed — do NOT
-  treat as auto-mergeable), typescript 5.9.3→7.0.2 (major), c8 10.1.3→11.0.0,
-  `actions/checkout` 4→7, `actions/configure-pages` 4→6,
-  `actions/github-script` 7→9, `reviewdog/action-actionlint` 1.27.0→1.72.0.
-  The 4 actions/typescript ones will each need a fresh SHA re-pin on merge
-  (see the SHA-pinning note above) — `@ai-sdk/google` PR #18 also needs a
-  Dependabot-rebase retry (hit a `package-lock.json` conflict earlier,
-  should auto-resolve once asked).
+- **5 Dependabot PRs still need triage**: typescript 5.9.3→7.0.2 (major —
+  blocked, see above, don't merge until typescript-eslint supports it), c8
+  10.1.3→11.0.0, `actions/checkout` 4→7, `actions/configure-pages` 4→6,
+  `actions/github-script` 7→9, `reviewdog/action-actionlint` 1.27.0→1.72.0
+  (each of the 4 actions ones needs a fresh SHA re-pin on merge). zod PR #20
+  is now redundant (4.4.3 already landed directly, see Done above) — close
+  it. `@ai-sdk/google` PR #18 needs a Dependabot-rebase retry (hit a
+  `package-lock.json` conflict earlier, should auto-resolve once asked).
 - **`discover_tour_urls.ts` at 60/20,187 eligible artists.** Validated batch
   only; intentionally not cron'd yet per its own task spec until proven at
   scale. Next step: run larger batches, spot-check hits, then decide on
