@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
         with:
           node-version: 20
           cache: 'npm'
@@ -41,19 +41,33 @@ jobs:
             git add data/concurrency-drops.json
             git commit -m "chore: record concurrency-preemption drops [skip ci]"
             
-            # Retry loop in case of push races
+            # main gets concurrent writes from every other workflow in this repo --
+            # retry with rebase instead of failing outright, same convention as every
+            # other data-writing workflow here. On an unresolvable rebase conflict,
+            # `break` (not `reset --hard` + `continue`) and leave pushed=false --
+            # resetting hard here would silently discard this run's own just-made
+            # commit (the drop data this workflow exists to record) and the NEXT
+            # loop iteration's push would then trivially succeed with nothing new to
+            # push, reporting false success while the recorded drop is gone.
             pushed=false
-            for i in {1..5}; do
-              git fetch origin main
-              git rebase origin/main || { git rebase --abort; git reset --hard origin/main; continue; }
+            for i in 1 2 3 4 5; do
               if git push; then
                 pushed=true
+                break
+              fi
+              echo "Push rejected (concurrent write), retrying with rebase ($i/5)..."
+              git fetch origin main
+              if ! git rebase origin/main; then
+                echo "::warning::Rebase conflict on data/concurrency-drops.json -- dropping this run's commit."
+                git rebase --abort
+                git fetch origin main
+                git reset --hard origin/main
                 break
               fi
               sleep $((RANDOM % 5 + 2))
             done
             if [ "$pushed" = "false" ]; then
-              echo "::warning::Failed to push concurrency-drops.json after 5 attempts."
+              echo "::warning::Failed to push concurrency-drops.json after retries -- this run's drop data was not recorded."
             fi
           else
             echo "No changes in data/concurrency-drops.json"
