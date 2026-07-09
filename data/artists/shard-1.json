@@ -110576,7 +110576,12 @@
     "name": "Infoshop",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:11.634Z",
-    "autoTriedAt": "2026-07-09T00:25:17.427Z"
+    "autoTriedAt": "2026-07-09T00:25:17.427Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 4
+    },
+    "metaEnrichedAt": "2026-07-09T08:05:25.664Z"
   },
   {
     "name": "Inga Jankauskaitė",
@@ -110592,7 +110597,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:25:28.178Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "female vocalists",
+      "pop",
+      "lithuanian",
+      "baltic",
+      "baltic pop"
+    ],
+    "popularity": {
+      "listeners": 1476,
+      "playcount": 17511
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3acdd5b8d803b20b647f4f0260c99876/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:26.365Z"
   },
   {
     "name": "Inga Scharf",
@@ -110608,14 +110626,33 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:25:34.026Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 24,
+      "playcount": 127
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/45b56f1b99ff62b41589a7d19c74172d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:27.035Z"
   },
   {
     "name": "Inga Swenson",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:11.634Z",
     "mbid": "234d8888-8925-421d-b9a9-db9193b4e327",
-    "autoTriedAt": "2026-07-09T00:25:43.535Z"
+    "autoTriedAt": "2026-07-09T00:25:43.535Z",
+    "genres": [
+      "musical",
+      "jazz",
+      "Broadway",
+      "Ballad",
+      "Big Band"
+    ],
+    "popularity": {
+      "listeners": 425,
+      "playcount": 2229
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/05d3981bff04f6bfd78e924148ef77b7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:27.726Z"
   },
   {
     "name": "Ingar Zach",
@@ -110631,20 +110668,44 @@
     },
     "enrichedAt": "2026-07-07T07:14:11.634Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "3784397a-cedc-4008-9ef1-89e9f06ae2ff"
+    "mbid": "3784397a-cedc-4008-9ef1-89e9f06ae2ff",
+    "genres": [
+      "free improvisation",
+      "jazz",
+      "Avant-Garde Jazz",
+      "experimental",
+      "norwegian"
+    ],
+    "popularity": {
+      "listeners": 765,
+      "playcount": 3343
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/db2d326f85cc22ada8f8319b6ef38a16/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:28.399Z"
   },
   {
     "name": "Ingco Crew",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:11.634Z",
     "mbid": "b309c932-324d-40b0-8c06-f64576b2ff82",
-    "autoTriedAt": "2026-07-09T00:25:46.102Z"
+    "autoTriedAt": "2026-07-09T00:25:46.102Z",
+    "genres": [
+      "spotify",
+      "All"
+    ],
+    "popularity": {
+      "listeners": 275,
+      "playcount": 1822
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9ce95a52477f2d490f910e3674c1dda0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:29.066Z"
   },
   {
     "name": "Ingeborg Anna",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:11.634Z",
-    "autoTriedAt": "2026-07-09T00:25:47.409Z"
+    "autoTriedAt": "2026-07-09T00:25:47.409Z",
+    "metaTriedAt": "2026-07-09T08:05:29.726Z"
   },
   {
     "name": "Ingebrigt Håker Flaten",
@@ -110660,7 +110721,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:11.634Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0a5cc06c-d135-4001-98a6-2868bdecf3e1"
+    "mbid": "0a5cc06c-d135-4001-98a6-2868bdecf3e1",
+    "genres": [
+      "free jazz",
+      "jazz",
+      "bass",
+      "free improvisation",
+      "double bass"
+    ],
+    "popularity": {
+      "listeners": 2033,
+      "playcount": 15292
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b3ae825b8fd4d08cae9c45a274c57a0b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:30.384Z"
   },
   {
     "name": "Inger Lorre",
@@ -110676,7 +110750,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:11.634Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "98c0a928-7bd9-4c5d-a3af-96eedd97247d"
+    "mbid": "98c0a928-7bd9-4c5d-a3af-96eedd97247d",
+    "genres": [
+      "alternative rock",
+      "Grunge",
+      "singer-songwriter",
+      "alternative",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 5660,
+      "playcount": 66601
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c508b2f888650feab9cf618384717e3f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:31.157Z"
   },
   {
     "name": "Ingested",
@@ -110692,26 +110779,63 @@
     },
     "enrichedAt": "2026-07-07T07:14:11.634Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5a92705b-5925-4616-b178-c3e60877aa24"
+    "mbid": "5a92705b-5925-4616-b178-c3e60877aa24",
+    "genres": [
+      "Brutal Death Metal",
+      "Slamming Brutal Death Metal",
+      "death metal",
+      "deathcore",
+      "slam death metal"
+    ],
+    "popularity": {
+      "listeners": 102743,
+      "playcount": 2931487
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4fa04619fd743033a1cb3d6724e0ab18/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:31.818Z"
   },
   {
     "name": "Ingfried Hoffmann",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:11.634Z",
     "mbid": "3b45bdea-fd97-4310-a2c1-789ab9ecf910",
-    "autoTriedAt": "2026-07-09T00:25:54.945Z"
+    "autoTriedAt": "2026-07-09T00:25:54.945Z",
+    "genres": [
+      "jazz",
+      "hammond organ",
+      "Bossa Nova",
+      "easy listening",
+      "german"
+    ],
+    "popularity": {
+      "listeners": 8940,
+      "playcount": 51512
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/921c3e10db13730be63bb3579f86cdbf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:32.486Z"
   },
   {
     "name": "Inglewood",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:11.634Z",
-    "autoTriedAt": "2026-07-09T00:25:56.227Z"
+    "autoTriedAt": "2026-07-09T00:25:56.227Z",
+    "popularity": {
+      "listeners": 73,
+      "playcount": 802
+    },
+    "metaEnrichedAt": "2026-07-09T08:05:33.273Z"
   },
   {
     "name": "Ingmar Lazar",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:11.634Z",
-    "autoTriedAt": "2026-07-09T00:25:57.513Z"
+    "autoTriedAt": "2026-07-09T00:25:57.513Z",
+    "popularity": {
+      "listeners": 14,
+      "playcount": 182
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5bbc3b8fa45eeff17296eb55feec77ea/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:34.002Z"
   },
   {
     "name": "Ingo Goritzki",
@@ -110727,42 +110851,82 @@
     },
     "enrichedAt": "2026-07-07T07:14:11.634Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "9874776d-f4f2-4020-8e3b-696772a83f2d"
+    "mbid": "9874776d-f4f2-4020-8e3b-696772a83f2d",
+    "genres": [
+      "Classical",
+      "oboe",
+      "cor anglais"
+    ],
+    "popularity": {
+      "listeners": 528,
+      "playcount": 3588
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e5e2ec3ce88c6a70345ba0f4453e1c1c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:34.699Z"
   },
   {
     "name": "Ingó og Veðurguðirnir",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:11.634Z",
     "mbid": "74fa65a2-9a09-4209-b24e-49092b68b892",
-    "autoTriedAt": "2026-07-09T00:26:00.101Z"
+    "autoTriedAt": "2026-07-09T00:26:00.101Z",
+    "popularity": {
+      "listeners": 194,
+      "playcount": 9006
+    },
+    "metaEnrichedAt": "2026-07-09T08:05:35.409Z"
   },
   {
     "name": "Ingo Schwichtenberg",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:11.634Z",
     "mbid": "c5c03ade-85ca-484c-a77d-25cbccd7f6d4",
-    "autoTriedAt": "2026-07-09T00:26:02.746Z"
+    "autoTriedAt": "2026-07-09T00:26:02.746Z",
+    "popularity": {
+      "listeners": 3,
+      "playcount": 19
+    },
+    "metaEnrichedAt": "2026-07-09T08:05:36.074Z"
   },
   {
     "name": "Ingolf Dahl",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:11.634Z",
     "mbid": "0b27b87a-d52c-4020-9a8a-7c8933ff01e9",
-    "autoTriedAt": "2026-07-09T00:26:05.396Z"
+    "autoTriedAt": "2026-07-09T00:26:05.396Z",
+    "genres": [
+      "swedish",
+      "german",
+      "composer",
+      "Classical",
+      "LGBT artists"
+    ],
+    "popularity": {
+      "listeners": 838,
+      "playcount": 7523
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5f2c7758d20d1412f9ec12b2817a42cf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:36.766Z"
   },
   {
     "name": "Ingolf Gabold",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:11.634Z",
     "mbid": "f7636fb8-80e7-41d2-a980-9e689c782320",
-    "autoTriedAt": "2026-07-09T00:26:07.971Z"
+    "autoTriedAt": "2026-07-09T00:26:07.971Z",
+    "metaTriedAt": "2026-07-09T08:05:37.395Z"
   },
   {
     "name": "Ingrid Croce",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:11.634Z",
     "mbid": "ed0efef5-8ee1-438a-8a06-0fc80ec515fe",
-    "autoTriedAt": "2026-07-09T00:26:10.592Z"
+    "autoTriedAt": "2026-07-09T00:26:10.592Z",
+    "popularity": {
+      "listeners": 52,
+      "playcount": 669
+    },
+    "metaEnrichedAt": "2026-07-09T08:05:38.017Z"
   },
   {
     "name": "Ingrid Fliter",
@@ -110778,7 +110942,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:11.634Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f4cab4cb-7c87-4c33-9a9b-a2ea334eb50f"
+    "mbid": "f4cab4cb-7c87-4c33-9a9b-a2ea334eb50f",
+    "genres": [
+      "piano",
+      "Classical",
+      "argentinian",
+      "pianist",
+      "classical piano"
+    ],
+    "popularity": {
+      "listeners": 8005,
+      "playcount": 69054
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/33913f69b2b9c2650b5cee6c6e7c3028/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:38.709Z"
   },
   {
     "name": "Ingrid Haebler",
@@ -110794,7 +110971,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:26:17.596Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Classical",
+      "piano",
+      "classical piano",
+      "Austria",
+      "austrian"
+    ],
+    "popularity": {
+      "listeners": 8054,
+      "playcount": 80307
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/140cfbfb02e25e84545fc792201cc199/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:39.391Z"
   },
   {
     "name": "Ingrid Jensen",
@@ -110810,7 +111000,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:11.634Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e0f80803-4a23-4db9-a849-39c3b6803f0e"
+    "mbid": "e0f80803-4a23-4db9-a849-39c3b6803f0e",
+    "genres": [
+      "jazz",
+      "trumpet",
+      "flugelhorn",
+      "instrumental",
+      "Vancouver"
+    ],
+    "popularity": {
+      "listeners": 3730,
+      "playcount": 22109
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9c98f6511c61aa85eccfcc4b7feb2938/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:40.049Z"
   },
   {
     "name": "Ingrid Michaelson",
@@ -110826,13 +111029,28 @@
     },
     "enrichedAt": "2026-07-07T07:14:11.634Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1fc494a1-9109-4081-a455-2d05bea9d2bf"
+    "mbid": "1fc494a1-9109-4081-a455-2d05bea9d2bf",
+    "genres": [
+      "female vocalists",
+      "singer-songwriter",
+      "indie",
+      "acoustic",
+      "indie pop"
+    ],
+    "popularity": {
+      "listeners": 1480266,
+      "playcount": 33034307
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/846bf32546535ee0e332da10cccc2d17/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:40.645Z"
   },
   {
     "name": "Ingrid Søfteland Neset",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:11.634Z",
-    "autoTriedAt": "2026-07-09T00:26:18.884Z"
+    "autoTriedAt": "2026-07-09T00:26:18.884Z",
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:41.273Z"
   },
   {
     "name": "Ingvar Lidholm",
@@ -110848,14 +111066,40 @@
     },
     "enrichedAt": "2026-07-07T07:14:11.634Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ad8bf51c-b490-4c36-9df4-0cc6d5caa077"
+    "mbid": "ad8bf51c-b490-4c36-9df4-0cc6d5caa077",
+    "genres": [
+      "composer",
+      "swedish",
+      "contemporary classical",
+      "Sweden",
+      "gammarec"
+    ],
+    "popularity": {
+      "listeners": 1045,
+      "playcount": 4904
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/422d2351f303f29063f1e814a8766b2c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:41.922Z"
   },
   {
     "name": "Inhabited",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:11.634Z",
     "mbid": "9913719e-de35-44d9-bfe0-d9e60494a87a",
-    "autoTriedAt": "2026-07-09T00:26:21.460Z"
+    "autoTriedAt": "2026-07-09T00:26:21.460Z",
+    "genres": [
+      "rock",
+      "alternative",
+      "christian rock",
+      "Female fronted metal",
+      "christian"
+    ],
+    "popularity": {
+      "listeners": 4906,
+      "playcount": 92215
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5410f219fef889e67c586e6871f82a77/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:42.876Z"
   },
   {
     "name": "Inhale",
@@ -110871,7 +111115,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:26:24.053Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "metalcore",
+      "japanese",
+      "experimental",
+      "metal",
+      "dark ambient"
+    ],
+    "popularity": {
+      "listeners": 7337,
+      "playcount": 98487
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bfc4c33a3c4c877e2643ba7525a76988/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:43.538Z"
   },
   {
     "name": "Inhale Exhale",
@@ -110887,7 +111144,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:26:30.266Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "metalcore",
+      "hardcore",
+      "christian",
+      "Christian Metalcore",
+      "screamo"
+    ],
+    "popularity": {
+      "listeners": 106336,
+      "playcount": 1817207
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a45bbefb4db1ac3a9ed9fd990201c045/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:44.263Z"
   },
   {
     "name": "Inhyeok Yeo",
@@ -110903,7 +111173,12 @@
     },
     "enrichedAt": "2026-07-07T07:14:11.634Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7bb4c00c-f878-4af8-b666-42135c84bf98"
+    "mbid": "7bb4c00c-f878-4af8-b666-42135c84bf98",
+    "popularity": {
+      "listeners": 83,
+      "playcount": 1305
+    },
+    "metaEnrichedAt": "2026-07-09T08:05:45.049Z"
   },
   {
     "name": "Ini Kamoze",
@@ -110919,14 +111194,33 @@
     },
     "enrichedAt": "2026-07-07T07:14:11.634Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ce29fa89-8aed-4f7b-8b3e-a34d0c9ed0c6"
+    "mbid": "ce29fa89-8aed-4f7b-8b3e-a34d0c9ed0c6",
+    "genres": [
+      "reggae",
+      "dancehall",
+      "jamaica",
+      "90s",
+      "ragga"
+    ],
+    "popularity": {
+      "listeners": 752029,
+      "playcount": 5077426
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/32ffa25c3a3eacbcea7cd30828cde6a8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:45.644Z"
   },
   {
     "name": "Inia Te Wiata",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:11.634Z",
     "mbid": "05ee9740-1481-4efe-a942-cdfda289e51d",
-    "autoTriedAt": "2026-07-09T00:26:32.878Z"
+    "autoTriedAt": "2026-07-09T00:26:32.878Z",
+    "popularity": {
+      "listeners": 106,
+      "playcount": 658
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bd2e5084accb9b6d36cf08faefa51a52/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:46.304Z"
   },
   {
     "name": "Ink Waruntorn",
@@ -110941,14 +111235,40 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:26:39.612Z",
-    "enrichedBy": "musicbrainz+wikidata"
+    "enrichedBy": "musicbrainz+wikidata",
+    "genres": [
+      "thailand",
+      "thai",
+      "t-pop",
+      "pop",
+      "thai pop"
+    ],
+    "popularity": {
+      "listeners": 18331,
+      "playcount": 579649
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5cb4dbb427123a1f4a1df912eeea97dc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:46.987Z"
   },
   {
     "name": "Inked In Blood",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
     "mbid": "0b89d2f5-f63c-4654-867e-647720e61f94",
-    "autoTriedAt": "2026-07-09T00:26:45.513Z"
+    "autoTriedAt": "2026-07-09T00:26:45.513Z",
+    "genres": [
+      "metalcore",
+      "hardcore",
+      "christian",
+      "Christian Metalcore",
+      "melodic hardcore"
+    ],
+    "popularity": {
+      "listeners": 18207,
+      "playcount": 259205
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/798e1a6103acb630ad9f82885a762c17/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:47.667Z"
   },
   {
     "name": "Inkubus Sukkubus",
@@ -110964,7 +111284,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "381178df-339f-447a-a68b-e4ef306b3da1"
+    "mbid": "381178df-339f-447a-a68b-e4ef306b3da1",
+    "genres": [
+      "Gothic Rock",
+      "Gothic",
+      "pagan rock",
+      "darkwave",
+      "Pagan"
+    ],
+    "popularity": {
+      "listeners": 173498,
+      "playcount": 4683355
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b6130525ffc69cd0c2929b0193f95f1b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:48.306Z"
   },
   {
     "name": "InMe",
@@ -110980,7 +111313,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f58561ff-1c86-4a65-870a-80cf5439e199"
+    "mbid": "f58561ff-1c86-4a65-870a-80cf5439e199",
+    "genres": [
+      "alternative rock",
+      "rock",
+      "alternative",
+      "metal",
+      "emo"
+    ],
+    "popularity": {
+      "listeners": 148251,
+      "playcount": 4035484
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4d4ee5467b0696b5b347fc96ccb74e01/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:48.933Z"
   },
   {
     "name": "Inna",
@@ -110995,20 +111341,51 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:26:45.513Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "dance",
+      "House",
+      "electronic",
+      "trance",
+      "Romanian"
+    ],
+    "popularity": {
+      "listeners": 1121197,
+      "playcount": 23882053
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1d11298e5b3e7629277f1bc81ca707fb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:49.640Z"
   },
   {
     "name": "Inna Heifetz",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
-    "autoTriedAt": "2026-07-09T00:26:46.798Z"
+    "autoTriedAt": "2026-07-09T00:26:46.798Z",
+    "popularity": {
+      "listeners": 9,
+      "playcount": 327
+    },
+    "metaEnrichedAt": "2026-07-09T08:05:50.306Z"
   },
   {
     "name": "Innaway",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
     "mbid": "d3fca62e-970b-4bbe-b1b7-6de32252c995",
-    "autoTriedAt": "2026-07-09T00:26:49.912Z"
+    "autoTriedAt": "2026-07-09T00:26:49.912Z",
+    "genres": [
+      "audiolith",
+      "psychedelic",
+      "indie",
+      "electronic",
+      "psytrance"
+    ],
+    "popularity": {
+      "listeners": 7348,
+      "playcount": 68558
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/66eec9fc6c0f2bbfa8b2864d19453926/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:51.056Z"
   },
   {
     "name": "Inner Circle",
@@ -111024,7 +111401,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0a5c92c7-4aa7-4324-82ab-8e8e733507cb"
+    "mbid": "0a5c92c7-4aa7-4324-82ab-8e8e733507cb",
+    "genres": [
+      "reggae",
+      "jamaican",
+      "ska",
+      "roots reggae",
+      "dancehall"
+    ],
+    "popularity": {
+      "listeners": 935754,
+      "playcount": 6618571
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/432705deb3151a8ab93881a432469454/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:51.652Z"
   },
   {
     "name": "Inner City",
@@ -111040,7 +111430,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "65a8e571-8a08-433f-a5bf-ead38c269ea6"
+    "mbid": "65a8e571-8a08-433f-a5bf-ead38c269ea6",
+    "genres": [
+      "House",
+      "dance",
+      "detroit techno",
+      "techno",
+      "detroit"
+    ],
+    "popularity": {
+      "listeners": 370090,
+      "playcount": 2401253
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e1e45630449d74d53da1260bbf2f163e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:52.282Z"
   },
   {
     "name": "Inner Life",
@@ -111056,7 +111459,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:26:52.552Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Disco",
+      "soul",
+      "funk",
+      "80s",
+      "salsoul"
+    ],
+    "popularity": {
+      "listeners": 50636,
+      "playcount": 257852
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cc76193959526d99ac6aca2f06689d64/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:53.017Z"
   },
   {
     "name": "Inner Terrestrials",
@@ -111072,20 +111488,52 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:26:55.240Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "punk",
+      "ska",
+      "ska punk",
+      "anarcho-punk",
+      "punk rock"
+    ],
+    "popularity": {
+      "listeners": 11377,
+      "playcount": 271550
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6b2b0d2852285054dc7e74898da727c0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:53.684Z"
   },
   {
     "name": "Innocent Vicars",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
-    "autoTriedAt": "2026-07-09T00:26:56.527Z"
+    "autoTriedAt": "2026-07-09T00:26:56.527Z",
+    "genres": [
+      "punk rock"
+    ],
+    "popularity": {
+      "listeners": 149,
+      "playcount": 395
+    },
+    "metaEnrichedAt": "2026-07-09T08:05:54.356Z"
   },
   {
     "name": "Innocentio Alberti",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
     "mbid": "6daa24a8-dfea-4276-bdd6-84ecba234052",
-    "autoTriedAt": "2026-07-09T00:27:01.831Z"
+    "autoTriedAt": "2026-07-09T00:27:01.831Z",
+    "genres": [
+      "italian",
+      "renaissance",
+      "16th century",
+      "Italy"
+    ],
+    "popularity": {
+      "listeners": 5231,
+      "playcount": 13602
+    },
+    "metaEnrichedAt": "2026-07-09T08:05:55.017Z"
   },
   {
     "name": "Innosense",
@@ -111101,20 +111549,44 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ec2c576a-cbc6-401b-add4-06f0cda5a1e4"
+    "mbid": "ec2c576a-cbc6-401b-add4-06f0cda5a1e4",
+    "genres": [
+      "Progressive metal",
+      "pop",
+      "metalcore",
+      "metal",
+      "brasil"
+    ],
+    "popularity": {
+      "listeners": 8301,
+      "playcount": 72908
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b1b3bf333483dd568c8c1764419511a1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:55.761Z"
   },
   {
     "name": "Innovaders",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
-    "autoTriedAt": "2026-07-09T00:27:03.111Z"
+    "autoTriedAt": "2026-07-09T00:27:03.111Z",
+    "popularity": {
+      "listeners": 10,
+      "playcount": 51
+    },
+    "metaEnrichedAt": "2026-07-09T08:05:56.425Z"
   },
   {
     "name": "Innu",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
     "mbid": "bedf9ed7-6acc-406f-8e4f-c8878b5aef24",
-    "autoTriedAt": "2026-07-09T00:27:10.007Z"
+    "autoTriedAt": "2026-07-09T00:27:10.007Z",
+    "popularity": {
+      "listeners": 518,
+      "playcount": 1394
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9ced3a888d3693f5ffe449e02feaba8d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:57.145Z"
   },
   {
     "name": "Inocentes",
@@ -111130,7 +111602,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "bf479f8a-dc2d-4549-8025-cee854805b4f"
+    "mbid": "bf479f8a-dc2d-4549-8025-cee854805b4f",
+    "genres": [
+      "punk rock",
+      "punk",
+      "brazilian punk",
+      "brazilian",
+      "brasil"
+    ],
+    "popularity": {
+      "listeners": 34224,
+      "playcount": 579068
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3a8c7b3d39b63c4081cb0b352c52e229/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:57.851Z"
   },
   {
     "name": "Inon Zur",
@@ -111146,7 +111631,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ba23bac1-2b00-43fb-95e5-c3c0fd286e7e"
+    "mbid": "ba23bac1-2b00-43fb-95e5-c3c0fd286e7e",
+    "genres": [
+      "Soundtrack",
+      "video game music",
+      "ambient",
+      "game soundtrack",
+      "Game Music"
+    ],
+    "popularity": {
+      "listeners": 296333,
+      "playcount": 7538467
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c315a2db9056b6c1bd0b9587347826cd/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:58.443Z"
   },
   {
     "name": "Inoran",
@@ -111162,7 +111660,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "cb83ad58-815c-435b-994a-34da0950c848"
+    "mbid": "cb83ad58-815c-435b-994a-34da0950c848",
+    "genres": [
+      "J-rock",
+      "japanese",
+      "alternative",
+      "rock",
+      "LUNA SEA"
+    ],
+    "popularity": {
+      "listeners": 10293,
+      "playcount": 1094705
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a04a4e374f58ba76efdd97f7e99d72e6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:05:59.113Z"
   },
   {
     "name": "Inoue Joe",
@@ -111178,19 +111689,37 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1d7ff2a5-25e0-4c84-8e5b-6069f80cd81d"
+    "mbid": "1d7ff2a5-25e0-4c84-8e5b-6069f80cd81d",
+    "genres": [
+      "J-rock",
+      "japanese",
+      "j-pop",
+      "anime",
+      "anime ost"
+    ],
+    "popularity": {
+      "listeners": 17607,
+      "playcount": 373085
+    },
+    "metaEnrichedAt": "2026-07-09T08:06:00.055Z"
   },
   {
     "name": "Inoue, Kazuhiko",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
-    "autoTriedAt": "2026-07-09T00:27:11.293Z"
+    "autoTriedAt": "2026-07-09T00:27:11.293Z",
+    "metaTriedAt": "2026-07-09T08:06:00.732Z"
   },
   {
     "name": "Inoue, Kikuko",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
-    "autoTriedAt": "2026-07-09T00:27:12.576Z"
+    "autoTriedAt": "2026-07-09T00:27:12.576Z",
+    "popularity": {
+      "listeners": 15,
+      "playcount": 172
+    },
+    "metaEnrichedAt": "2026-07-09T08:06:01.452Z"
   },
   {
     "name": "Inquinok",
@@ -111206,7 +111735,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "9d86479f-e6f1-49f0-82e6-93f68d35ecd8"
+    "mbid": "9d86479f-e6f1-49f0-82e6-93f68d35ecd8",
+    "genres": [
+      "Symphonic Black Metal",
+      "black metal",
+      "melodic black metal",
+      "american",
+      "symphonic metal"
+    ],
+    "popularity": {
+      "listeners": 2587,
+      "playcount": 37887
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/20f7597d0e7c915f3542365794ed6bb1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:02.130Z"
   },
   {
     "name": "Inquisition",
@@ -111222,7 +111764,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:27:19.340Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "black metal",
+      "raw black metal",
+      "USBM",
+      "colombian",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 86447,
+      "playcount": 6240766
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/284f5cf527aeec0e2d12e18156b874fa/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:02.940Z"
   },
   {
     "name": "Insane Clown Posse",
@@ -111238,7 +111793,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7a1eb805-2242-4daa-bd90-c1ed350e2e48"
+    "mbid": "7a1eb805-2242-4daa-bd90-c1ed350e2e48",
+    "genres": [
+      "Horrorcore",
+      "Hip-Hop",
+      "juggalo",
+      "rap",
+      "psychopathic"
+    ],
+    "popularity": {
+      "listeners": 893027,
+      "playcount": 43420054
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6b1dbf6c3c9526c76731eed9269f9539/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:03.519Z"
   },
   {
     "name": "Insane Poetry",
@@ -111254,14 +111822,39 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "75b87f7a-345b-4164-a1ae-7121414e90ab"
+    "mbid": "75b87f7a-345b-4164-a1ae-7121414e90ab",
+    "genres": [
+      "Horrorcore",
+      "underground rap",
+      "rapcore",
+      "Hip-Hop",
+      "rap"
+    ],
+    "popularity": {
+      "listeners": 19925,
+      "playcount": 239986
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/880873687accad0ae2f69ead7590fca9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:04.376Z"
   },
   {
     "name": "Insects",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
     "mbid": "b428927a-b1d6-45d6-9c95-a5af472ef1fe",
-    "autoTriedAt": "2026-07-09T00:27:21.941Z"
+    "autoTriedAt": "2026-07-09T00:27:21.941Z",
+    "genres": [
+      "underground rap",
+      "experimental",
+      "indie",
+      "Hip-Hop",
+      "UK"
+    ],
+    "popularity": {
+      "listeners": 31782,
+      "playcount": 197867
+    },
+    "metaEnrichedAt": "2026-07-09T08:06:05.122Z"
   },
   {
     "name": "Inside Out",
@@ -111277,7 +111870,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:27:24.584Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "hardcore",
+      "hardcore punk",
+      "Straight Edge",
+      "punk",
+      "oldschool hardcore"
+    ],
+    "popularity": {
+      "listeners": 50767,
+      "playcount": 617931
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6f475b4fc5d6c91c2614829e86f166d3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:05.876Z"
   },
   {
     "name": "Insideout",
@@ -111293,7 +111899,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:27:27.172Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "a cappella",
+      "LDS",
+      "a cappella covers",
+      "easy listening",
+      "indie"
+    ],
+    "popularity": {
+      "listeners": 7951,
+      "playcount": 56293
+    },
+    "metaEnrichedAt": "2026-07-09T08:06:06.576Z"
   },
   {
     "name": "Insight",
@@ -111309,7 +111927,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:27:35.558Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "underground hip-hop",
+      "Hip-Hop",
+      "hardcore",
+      "boston",
+      "rap"
+    ],
+    "popularity": {
+      "listeners": 31566,
+      "playcount": 347596
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/483e211ce0f3148e9ad8b6a3ec19e9cb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:07.317Z"
   },
   {
     "name": "Insision",
@@ -111325,7 +111956,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "363930ce-4c4e-4338-9a12-9a4bb9206419"
+    "mbid": "363930ce-4c4e-4338-9a12-9a4bb9206419",
+    "genres": [
+      "death metal",
+      "Brutal Death Metal",
+      "Technical Death Metal",
+      "swedish",
+      "Sweden"
+    ],
+    "popularity": {
+      "listeners": 12538,
+      "playcount": 322095
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/86aaf61fab1e9800ba376ad5b4ada8b7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:08.040Z"
   },
   {
     "name": "Insolence",
@@ -111341,14 +111985,39 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "27f88600-d066-4688-a895-1a671a9b395c"
+    "mbid": "27f88600-d066-4688-a895-1a671a9b395c",
+    "genres": [
+      "rapcore",
+      "Nu Metal",
+      "crossover",
+      "ragga",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 88828,
+      "playcount": 1168533
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1c3b44b833af68f9878bcb146b2d4ae6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:08.787Z"
   },
   {
     "name": "Insomnia",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
     "mbid": "e20b2ba9-84c2-403c-bda0-b429c4db71e5",
-    "autoTriedAt": "2026-07-09T00:27:38.151Z"
+    "autoTriedAt": "2026-07-09T00:27:38.151Z",
+    "genres": [
+      "full-on",
+      "psytrance",
+      "thrash metal",
+      "death metal",
+      "psychedelic trance"
+    ],
+    "popularity": {
+      "listeners": 21892,
+      "playcount": 139084
+    },
+    "metaEnrichedAt": "2026-07-09T08:06:09.562Z"
   },
   {
     "name": "Insomniac Folklore",
@@ -111364,7 +112033,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e6e79e21-521f-414b-97bc-3386b3bfcdf8"
+    "mbid": "e6e79e21-521f-414b-97bc-3386b3bfcdf8",
+    "genres": [
+      "portland",
+      "folk",
+      "tantrum folk",
+      "cabaret",
+      "americana"
+    ],
+    "popularity": {
+      "listeners": 994,
+      "playcount": 9619
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a8cef13e6350b4ec6c3463f8bffbd884/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:10.343Z"
   },
   {
     "name": "Insomnium",
@@ -111380,7 +112062,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c1f8e226-75ea-4fe6-83ce-59c122bcbca4"
+    "mbid": "c1f8e226-75ea-4fe6-83ce-59c122bcbca4",
+    "genres": [
+      "Melodic Death Metal",
+      "death metal",
+      "finnish",
+      "metal",
+      "finnish metal"
+    ],
+    "popularity": {
+      "listeners": 283557,
+      "playcount": 27231939
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/82a754c95e73dfc387c9e1f4f616e637/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:10.965Z"
   },
   {
     "name": "Insooni",
@@ -111396,7 +112091,19 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "eb386852-5a64-40fc-98dc-124ef80dd482"
+    "mbid": "eb386852-5a64-40fc-98dc-124ef80dd482",
+    "genres": [
+      "k-pop",
+      "Korean",
+      "korean rb",
+      "RB"
+    ],
+    "popularity": {
+      "listeners": 23156,
+      "playcount": 196669
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bb720125d794365f64d738573ea43a04/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:11.731Z"
   },
   {
     "name": "Inspectah Deck",
@@ -111412,7 +112119,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a6b90dc0-e22e-44e1-890b-87900bd9aca6"
+    "mbid": "a6b90dc0-e22e-44e1-890b-87900bd9aca6",
+    "genres": [
+      "Hip-Hop",
+      "wu-tang",
+      "rap",
+      "east coast rap",
+      "hip hop"
+    ],
+    "popularity": {
+      "listeners": 172711,
+      "playcount": 1700403
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8a33ed6825cc62da24d00e95dd5d011d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:12.404Z"
   },
   {
     "name": "Inspecter 7",
@@ -111428,7 +112148,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "999e3381-c121-40d6-8c2a-dae799b2d50a"
+    "mbid": "999e3381-c121-40d6-8c2a-dae799b2d50a",
+    "genres": [
+      "ska",
+      "skoi",
+      "StreetSka",
+      "ska punk",
+      "Need to Rate"
+    ],
+    "popularity": {
+      "listeners": 13123,
+      "playcount": 178806
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/94e8fe1887156125fbe145a8a50e751f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:13.113Z"
   },
   {
     "name": "Inspection 12",
@@ -111444,20 +112177,58 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e4253ee4-4090-49cb-96c5-58dc79ea59cc"
+    "mbid": "e4253ee4-4090-49cb-96c5-58dc79ea59cc",
+    "genres": [
+      "pop punk",
+      "punk",
+      "punk rock",
+      "rock",
+      "american"
+    ],
+    "popularity": {
+      "listeners": 9048,
+      "playcount": 221892
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6735dfef4c6ec76004fb4c66a87f11bf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:13.889Z"
   },
   {
     "name": "Inspector General",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
-    "autoTriedAt": "2026-07-09T00:27:47.097Z"
+    "autoTriedAt": "2026-07-09T00:27:47.097Z",
+    "genres": [
+      "new wave",
+      "unsigned",
+      "indie",
+      "electropop",
+      "synthpop"
+    ],
+    "popularity": {
+      "listeners": 55,
+      "playcount": 445
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:14.621Z"
   },
   {
     "name": "Inspell",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
     "mbid": "dde67cd3-a96c-4d64-8e1a-a5930c345ca7",
-    "autoTriedAt": "2026-07-09T00:27:59.995Z"
+    "autoTriedAt": "2026-07-09T00:27:59.995Z",
+    "genres": [
+      "black metal",
+      "Symphonic Black Metal",
+      "bulgarian",
+      "melodic black metal",
+      "deathrash"
+    ],
+    "popularity": {
+      "listeners": 620,
+      "playcount": 8274
+    },
+    "metaEnrichedAt": "2026-07-09T08:06:15.320Z"
   },
   {
     "name": "Inspiral Carpets",
@@ -111473,14 +112244,39 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:28:02.716Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "madchester",
+      "britpop",
+      "indie",
+      "Manchester",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 289898,
+      "playcount": 3264857
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/52ee2263cd9b9b97d023d61878ad33d5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:15.918Z"
   },
   {
     "name": "Instant Death",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
     "mbid": "f02319cf-9b49-4142-ae94-8c4bbe5ae163",
-    "autoTriedAt": "2026-07-09T00:28:05.331Z"
+    "autoTriedAt": "2026-07-09T00:28:05.331Z",
+    "genres": [
+      "punk",
+      "hardcore",
+      "skacore",
+      "thrash metal",
+      "crack rock steady"
+    ],
+    "popularity": {
+      "listeners": 348,
+      "playcount": 6962
+    },
+    "metaEnrichedAt": "2026-07-09T08:06:16.602Z"
   },
   {
     "name": "Instant Funk",
@@ -111496,7 +112292,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:28:08.061Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "funk",
+      "Disco",
+      "soul",
+      "70s",
+      "instant funk"
+    ],
+    "popularity": {
+      "listeners": 65237,
+      "playcount": 297117
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4ac8679cb3e287676a92dcc34bd9b7b3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:17.243Z"
   },
   {
     "name": "Instigators",
@@ -111512,7 +112321,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c229c92b-2e42-42b8-8dd0-015952e706b0"
+    "mbid": "c229c92b-2e42-42b8-8dd0-015952e706b0",
+    "genres": [
+      "punk",
+      "hardcore punk",
+      "punk rock",
+      "hardcore",
+      "anarcho punk"
+    ],
+    "popularity": {
+      "listeners": 4934,
+      "playcount": 39598
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/522a772c66f7fb82e1953ac6fc163ff5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:18.253Z"
   },
   {
     "name": "Institute",
@@ -111528,13 +112350,27 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "202d588f-f92b-49f3-b04a-8adb3d02d6b4"
+    "mbid": "202d588f-f92b-49f3-b04a-8adb3d02d6b4",
+    "genres": [
+      "alternative rock",
+      "post-grunge",
+      "rock",
+      "post-punk",
+      "Grunge"
+    ],
+    "popularity": {
+      "listeners": 173436,
+      "playcount": 2026514
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/eaeff86453d9a039c9522f20f24af1c2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:18.980Z"
   },
   {
     "name": "Institute for Defense Analyses",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
-    "autoTriedAt": "2026-07-09T00:28:09.343Z"
+    "autoTriedAt": "2026-07-09T00:28:09.343Z",
+    "metaTriedAt": "2026-07-09T08:06:19.607Z"
   },
   {
     "name": "instrumental",
@@ -111550,19 +112386,37 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:28:11.923Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "instrumental",
+      "Soundtrack",
+      "Classical",
+      "japanese",
+      "piano"
+    ],
+    "popularity": {
+      "listeners": 204774,
+      "playcount": 2159759
+    },
+    "metaEnrichedAt": "2026-07-09T08:06:20.274Z"
   },
   {
     "name": "instrumental prog rock",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
-    "autoTriedAt": "2026-07-09T00:28:13.207Z"
+    "autoTriedAt": "2026-07-09T00:28:13.207Z",
+    "metaTriedAt": "2026-07-09T08:06:20.891Z"
   },
   {
     "name": "instrumental works",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
-    "autoTriedAt": "2026-07-09T00:28:14.489Z"
+    "autoTriedAt": "2026-07-09T00:28:14.489Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 2
+    },
+    "metaEnrichedAt": "2026-07-09T08:06:21.584Z"
   },
   {
     "name": "Insurge",
@@ -111578,13 +112432,27 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e41ef90f-77fa-406c-82d7-8781452b7c2f"
+    "mbid": "e41ef90f-77fa-406c-82d7-8781452b7c2f",
+    "genres": [
+      "political",
+      "industrial rock",
+      "australian",
+      "synthpop",
+      "australia"
+    ],
+    "popularity": {
+      "listeners": 3600,
+      "playcount": 31374
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/50cdf24d669c68376444bed4372003e4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:22.651Z"
   },
   {
     "name": "Insurrectionary",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
-    "autoTriedAt": "2026-07-09T00:28:15.773Z"
+    "autoTriedAt": "2026-07-09T00:28:15.773Z",
+    "metaTriedAt": "2026-07-09T08:06:23.274Z"
   },
   {
     "name": "Intaferon",
@@ -111600,13 +112468,30 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:28:18.396Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "new wave",
+      "indie",
+      "synth pop",
+      "post-punk",
+      "AOTM April 2011"
+    ],
+    "popularity": {
+      "listeners": 3077,
+      "playcount": 17008
+    },
+    "metaEnrichedAt": "2026-07-09T08:06:23.941Z"
   },
   {
     "name": "Integrals",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
-    "autoTriedAt": "2026-07-09T00:28:19.677Z"
+    "autoTriedAt": "2026-07-09T00:28:19.677Z",
+    "popularity": {
+      "listeners": 35,
+      "playcount": 47
+    },
+    "metaEnrichedAt": "2026-07-09T08:06:24.774Z"
   },
   {
     "name": "Integrity",
@@ -111622,7 +112507,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f626335d-d234-408d-a67c-37a3c2c7e98a"
+    "mbid": "f626335d-d234-408d-a67c-37a3c2c7e98a",
+    "genres": [
+      "hardcore",
+      "metalcore",
+      "metallic hardcore",
+      "hardcore punk",
+      "holy terror"
+    ],
+    "popularity": {
+      "listeners": 110701,
+      "playcount": 5239054
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/52e807c35f66d371432a9d2c1e8f53b1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:25.653Z"
   },
   {
     "name": "Intelligency",
@@ -111638,7 +112536,20 @@
       "vk": "https://vk.com/public_intelligency_live"
     },
     "enrichedAt": "2026-07-08T14:10:37.517Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "techno",
+      "electronic",
+      "Belarusian",
+      "House",
+      "belarus"
+    ],
+    "popularity": {
+      "listeners": 103328,
+      "playcount": 1421009
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0f38886c3bc754b7c60d2876e78fde41/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:26.327Z"
   },
   {
     "name": "Intellivision",
@@ -111654,14 +112565,30 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:28:23.211Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "synthpop",
+      "italo-disco",
+      "roger gunnarsson"
+    ],
+    "popularity": {
+      "listeners": 448,
+      "playcount": 9097
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:27.014Z"
   },
   {
     "name": "Intense Method",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
     "mbid": "4e570ae7-a409-4f81-86fa-e9ab2b488b32",
-    "autoTriedAt": "2026-07-09T00:28:25.798Z"
+    "autoTriedAt": "2026-07-09T00:28:25.798Z",
+    "popularity": {
+      "listeners": 107,
+      "playcount": 265
+    },
+    "metaEnrichedAt": "2026-07-09T08:06:27.694Z"
   },
   {
     "name": "Interbellum",
@@ -111677,7 +112604,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:28:28.745Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "ambient",
+      "dark ambient",
+      "drone",
+      "netherlands",
+      "lebanese"
+    ],
+    "popularity": {
+      "listeners": 2033,
+      "playcount": 11663
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/14eabb794ccee1fe5b32c6adde4609d9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:28.398Z"
   },
   {
     "name": "Interface",
@@ -111693,7 +112633,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "11458104-22e7-4349-8a04-e3e66cd30a74"
+    "mbid": "11458104-22e7-4349-8a04-e3e66cd30a74",
+    "genres": [
+      "futurepop",
+      "ebm",
+      "electronic",
+      "synthpop",
+      "industrial"
+    ],
+    "popularity": {
+      "listeners": 36891,
+      "playcount": 300099
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5ee6f415339f826f457c4cf7e5ae7a09/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:29.112Z"
   },
   {
     "name": "Intergalactic Lovers",
@@ -111709,7 +112662,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "935c3435-bdb6-416d-b9d4-94d06ddb0108"
+    "mbid": "935c3435-bdb6-416d-b9d4-94d06ddb0108",
+    "genres": [
+      "belgian",
+      "indie",
+      "indie rock",
+      "alternative",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 91559,
+      "playcount": 1498239
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e2c563c3b73e5d600fcc69300eb45293/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:29.805Z"
   },
   {
     "name": "Interlock",
@@ -111725,14 +112691,40 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "cd1eb375-c454-4096-b182-3dc1c8109917"
+    "mbid": "cd1eb375-c454-4096-b182-3dc1c8109917",
+    "genres": [
+      "industrial metal",
+      "Cyber Metal",
+      "Female fronted metal",
+      "metal",
+      "Extreme Metal"
+    ],
+    "popularity": {
+      "listeners": 6731,
+      "playcount": 89272
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0ec8899a030ee4b0ad7a97c419dc1237/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:31.638Z"
   },
   {
     "name": "Intermix",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
     "mbid": "4c42fdbc-122f-4110-b466-c77d86156a5e",
-    "autoTriedAt": "2026-07-09T00:28:31.356Z"
+    "autoTriedAt": "2026-07-09T00:28:31.356Z",
+    "genres": [
+      "ambient",
+      "electronic",
+      "industrial",
+      "ebm",
+      "techno"
+    ],
+    "popularity": {
+      "listeners": 6214,
+      "playcount": 158098
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7cf4118fd8ccaf0867abc6cb3dabe2e6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:32.615Z"
   },
   {
     "name": "Internal Void",
@@ -111748,49 +112740,77 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "9d56900e-85b3-4705-92ed-dfcb05eb81b9"
+    "mbid": "9d56900e-85b3-4705-92ed-dfcb05eb81b9",
+    "genres": [
+      "doom metal",
+      "Traditional Doom Metal",
+      "heavy metal",
+      "Stoner Rock",
+      "Doom"
+    ],
+    "popularity": {
+      "listeners": 6773,
+      "playcount": 88974
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a9eb6f91cfd338ee24027496b0b23191/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:33.362Z"
   },
   {
     "name": "International Blues Challenge",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
-    "autoTriedAt": "2026-07-09T00:28:32.849Z"
+    "autoTriedAt": "2026-07-09T00:28:32.849Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 2
+    },
+    "metaEnrichedAt": "2026-07-09T08:06:34.021Z"
   },
   {
     "name": "International Conference of Rome",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
-    "autoTriedAt": "2026-07-09T00:28:34.279Z"
+    "autoTriedAt": "2026-07-09T00:28:34.279Z",
+    "metaTriedAt": "2026-07-09T08:06:34.657Z"
   },
   {
     "name": "international dialing code",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
-    "autoTriedAt": "2026-07-09T00:28:35.565Z"
+    "autoTriedAt": "2026-07-09T00:28:35.565Z",
+    "metaTriedAt": "2026-07-09T08:06:35.268Z"
   },
   {
     "name": "International Frédéric Chopin Piano Competition",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
-    "autoTriedAt": "2026-07-09T00:28:36.881Z"
+    "autoTriedAt": "2026-07-09T00:28:36.881Z",
+    "metaTriedAt": "2026-07-09T08:06:35.872Z"
   },
   {
     "name": "International Harp Contest in Israel",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
-    "autoTriedAt": "2026-07-09T00:28:38.166Z"
+    "autoTriedAt": "2026-07-09T00:28:38.166Z",
+    "metaTriedAt": "2026-07-09T08:06:36.500Z"
   },
   {
     "name": "International Jazz Festival",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
-    "autoTriedAt": "2026-07-09T00:28:39.448Z"
+    "autoTriedAt": "2026-07-09T00:28:39.448Z",
+    "metaTriedAt": "2026-07-09T08:06:37.472Z"
   },
   {
     "name": "International Music Festival",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
-    "autoTriedAt": "2026-07-09T00:28:40.729Z"
+    "autoTriedAt": "2026-07-09T00:28:40.729Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 24
+    },
+    "metaEnrichedAt": "2026-07-09T08:06:38.183Z"
   },
   {
     "name": "International Observer",
@@ -111806,21 +112826,45 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5f6bbd1b-7ce2-4f70-9fb9-45c476a16ddd"
+    "mbid": "5f6bbd1b-7ce2-4f70-9fb9-45c476a16ddd",
+    "genres": [
+      "dub",
+      "downtempo",
+      "ambient",
+      "chillout",
+      "psydub"
+    ],
+    "popularity": {
+      "listeners": 41707,
+      "playcount": 373152
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/87c4912c3253790c7c3a735fdd73ada1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:38.850Z"
   },
   {
     "name": "International Robot",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
     "mbid": "4b4637ad-0055-41c3-9f2e-a4f93d369b0e",
-    "autoTriedAt": "2026-07-09T00:28:43.631Z"
+    "autoTriedAt": "2026-07-09T00:28:43.631Z",
+    "popularity": {
+      "listeners": 31,
+      "playcount": 65
+    },
+    "metaEnrichedAt": "2026-07-09T08:06:39.657Z"
   },
   {
     "name": "International Space Station",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
     "mbid": "38441cbf-5901-4311-8d1d-92b57bcf232d",
-    "autoTriedAt": "2026-07-09T00:28:48.572Z"
+    "autoTriedAt": "2026-07-09T00:28:48.572Z",
+    "popularity": {
+      "listeners": 583,
+      "playcount": 1505
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:40.357Z"
   },
   {
     "name": "International Superheroes of Hardcore",
@@ -111836,25 +112880,45 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "fdc56106-156b-4767-86da-3f9c524b30f2"
+    "mbid": "fdc56106-156b-4767-86da-3f9c524b30f2",
+    "genres": [
+      "hardcore",
+      "hardcore punk",
+      "melodic hardcore",
+      "punk",
+      "Need to Rate"
+    ],
+    "popularity": {
+      "listeners": 44609,
+      "playcount": 1219381
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e1400f91b0d8bdb4ca06c8f32b4c5abf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:41.074Z"
   },
   {
     "name": "International Tchaikovsky Competition",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
-    "autoTriedAt": "2026-07-09T00:28:50.259Z"
+    "autoTriedAt": "2026-07-09T00:28:50.259Z",
+    "metaTriedAt": "2026-07-09T08:06:41.701Z"
   },
   {
     "name": "Internet celebrity",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
-    "autoTriedAt": "2026-07-09T00:28:51.883Z"
+    "autoTriedAt": "2026-07-09T00:28:51.883Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 8
+    },
+    "metaEnrichedAt": "2026-07-09T08:06:42.359Z"
   },
   {
     "name": "Internet Movie Database",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:13.299Z",
-    "autoTriedAt": "2026-07-09T00:28:56.172Z"
+    "autoTriedAt": "2026-07-09T00:28:56.172Z",
+    "metaTriedAt": "2026-07-09T08:06:42.980Z"
   },
   {
     "name": "Interpol",
@@ -111870,27 +112934,66 @@
     },
     "enrichedAt": "2026-07-07T07:14:13.299Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b23e8a63-8f47-4882-b55b-df2c92ef400e"
+    "mbid": "b23e8a63-8f47-4882-b55b-df2c92ef400e",
+    "genres": [
+      "post-punk",
+      "indie rock",
+      "indie",
+      "alternative",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 3226168,
+      "playcount": 205127265
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ca11e5724bfd7be68c0db67ee474bc9f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:43.565Z"
   },
   {
     "name": "Interrogate",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:15.055Z",
     "mbid": "1f08be3f-0574-4023-89b6-ef1f6f9f3d5a",
-    "autoTriedAt": "2026-07-09T00:28:59.532Z"
+    "autoTriedAt": "2026-07-09T00:28:59.532Z",
+    "genres": [
+      "Nu Metal",
+      "hard rock",
+      "rock",
+      "metal",
+      "hardcore"
+    ],
+    "popularity": {
+      "listeners": 487,
+      "playcount": 4055
+    },
+    "metaEnrichedAt": "2026-07-09T08:06:44.271Z"
   },
   {
     "name": "Interstate '82",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:15.055Z",
-    "autoTriedAt": "2026-07-09T00:29:00.977Z"
+    "autoTriedAt": "2026-07-09T00:29:00.977Z",
+    "popularity": {
+      "listeners": 18,
+      "playcount": 83
+    },
+    "metaEnrichedAt": "2026-07-09T08:06:44.947Z"
   },
   {
     "name": "Interstate 5",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:15.055Z",
     "mbid": "5b1ba790-5c52-45e6-9893-8cd85f2bb800",
-    "autoTriedAt": "2026-07-09T00:29:03.905Z"
+    "autoTriedAt": "2026-07-09T00:29:03.905Z",
+    "genres": [
+      "Hamburger Schule"
+    ],
+    "popularity": {
+      "listeners": 332,
+      "playcount": 1866
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/487ec98723b0b959379653f6a53fce5e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:45.751Z"
   },
   {
     "name": "Interview",
@@ -111906,13 +113009,31 @@
     },
     "enrichedAt": "2026-07-07T07:14:15.055Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "66f17823-e7c5-4e73-b6ff-0329c998ba88"
+    "mbid": "66f17823-e7c5-4e73-b6ff-0329c998ba88",
+    "genres": [
+      "new wave",
+      "power pop",
+      "interview",
+      "All",
+      "spoken word"
+    ],
+    "popularity": {
+      "listeners": 9435,
+      "playcount": 35845
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4e38b285c35725fb14a640ab9f127045/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:46.474Z"
   },
   {
     "name": "Interwar period",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:15.055Z",
-    "autoTriedAt": "2026-07-09T00:29:05.190Z"
+    "autoTriedAt": "2026-07-09T00:29:05.190Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 2
+    },
+    "metaEnrichedAt": "2026-07-09T08:06:47.530Z"
   },
   {
     "name": "Into Another",
@@ -111928,7 +113049,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:15.055Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c235e5fd-4144-4e53-95ff-b33dc5f239c8"
+    "mbid": "c235e5fd-4144-4e53-95ff-b33dc5f239c8",
+    "genres": [
+      "post-hardcore",
+      "alternative rock",
+      "headbangers ball",
+      "Grunge",
+      "post hardcore"
+    ],
+    "popularity": {
+      "listeners": 10959,
+      "playcount": 283247
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7294166ca4b4b329fd70dec068546488/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:48.557Z"
   },
   {
     "name": "Into Eternity",
@@ -111944,33 +113078,83 @@
     },
     "enrichedAt": "2026-07-07T07:14:15.055Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ced4c589-d194-4c12-9a96-398086940367"
+    "mbid": "ced4c589-d194-4c12-9a96-398086940367",
+    "genres": [
+      "Progressive metal",
+      "Melodic Death Metal",
+      "progressive death metal",
+      "death metal",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 77477,
+      "playcount": 2794372
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9096a061d6353d46044db5802b6edb72/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:49.343Z"
   },
   {
     "name": "Into the Groove",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:15.055Z",
-    "autoTriedAt": "2026-07-09T00:29:06.501Z"
+    "autoTriedAt": "2026-07-09T00:29:06.501Z",
+    "popularity": {
+      "listeners": 588,
+      "playcount": 1472
+    },
+    "metaEnrichedAt": "2026-07-09T08:06:50.083Z"
   },
   {
     "name": "Into The Moat",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:15.055Z",
     "mbid": "cb6c3202-a2cf-4c5d-bd4f-dad4adfe8e2b",
-    "autoTriedAt": "2026-07-09T00:29:09.148Z"
+    "autoTriedAt": "2026-07-09T00:29:09.148Z",
+    "genres": [
+      "mathcore",
+      "metalcore",
+      "Technical Metal",
+      "hardcore",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 52805,
+      "playcount": 774208
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c7e7a289dcc3dcf7374cff93d37a21c6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:50.730Z"
   },
   {
     "name": "Into the Mystic",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:15.055Z",
-    "autoTriedAt": "2026-07-09T00:29:10.431Z"
+    "autoTriedAt": "2026-07-09T00:29:10.431Z",
+    "popularity": {
+      "listeners": 331,
+      "playcount": 650
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ad1ebc4e61735d144f31938452819d26/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:51.429Z"
   },
   {
     "name": "Into the Night",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:15.055Z",
     "mbid": "60d103f3-68c3-46b1-af0e-7e954e1db266",
-    "autoTriedAt": "2026-07-09T00:29:13.051Z"
+    "autoTriedAt": "2026-07-09T00:29:13.051Z",
+    "genres": [
+      "rock",
+      "indie",
+      "death cab for cutie",
+      "hard rock",
+      "Johnny Cash"
+    ],
+    "popularity": {
+      "listeners": 1940,
+      "playcount": 7082
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8f8f756c0b4c9233d56d95ee920eb2dd/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:52.051Z"
   },
   {
     "name": "Intoxicados",
@@ -111985,13 +113169,27 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:29:17.055Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Rock Argentino",
+      "rock",
+      "argentina",
+      "rock nacional",
+      "spanish"
+    ],
+    "popularity": {
+      "listeners": 134626,
+      "playcount": 4258653
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4cd7fff51a93f19df09db14edf17e4ce/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:52.736Z"
   },
   {
     "name": "Intracranial aneurysm",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:15.055Z",
-    "autoTriedAt": "2026-07-09T00:29:19.178Z"
+    "autoTriedAt": "2026-07-09T00:29:19.178Z",
+    "metaTriedAt": "2026-07-09T08:06:53.354Z"
   },
   {
     "name": "Intro",
@@ -112007,7 +113205,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:29:25.381Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "rnb",
+      "soul",
+      "new jack swing",
+      "90s",
+      "new wave"
+    ],
+    "popularity": {
+      "listeners": 187650,
+      "playcount": 986943
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/69e94e764979c76c9fd96aaa019e74ae/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:54.034Z"
   },
   {
     "name": "Intro5pect",
@@ -112023,7 +113234,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:15.055Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d420c755-1d99-44d4-b47a-b298550296f5"
+    "mbid": "d420c755-1d99-44d4-b47a-b298550296f5",
+    "genres": [
+      "electropunk",
+      "punk",
+      "punk rock",
+      "Electro-Punk",
+      "experimental"
+    ],
+    "popularity": {
+      "listeners": 11912,
+      "playcount": 295580
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/69246eb93958d215b6695a90a60573b8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:54.762Z"
   },
   {
     "name": "Intronaut",
@@ -112039,7 +113263,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:15.055Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1f40816c-9b2a-4a79-85e0-842b4841f930"
+    "mbid": "1f40816c-9b2a-4a79-85e0-842b4841f930",
+    "genres": [
+      "Progressive metal",
+      "Sludge",
+      "Post-Metal",
+      "experimental",
+      "sludge metal"
+    ],
+    "popularity": {
+      "listeners": 131788,
+      "playcount": 3581115
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3f53751044bbf9cc944bf7707f41d3ad/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:55.716Z"
   },
   {
     "name": "Intruder",
@@ -112055,7 +113292,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:29:28.868Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "thrash metal",
+      "speed metal",
+      "hard techno",
+      "Industrial Techno",
+      "Technical Thrash Metal"
+    ],
+    "popularity": {
+      "listeners": 14857,
+      "playcount": 200909
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/43fa30f913b707737bdb4e24f9a653e8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:56.392Z"
   },
   {
     "name": "Inugami Circus-dan",
@@ -112071,14 +113321,39 @@
     },
     "enrichedAt": "2026-07-07T07:14:15.055Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4149fa5a-7b40-4dee-b7af-2f48a6f417de"
+    "mbid": "4149fa5a-7b40-4dee-b7af-2f48a6f417de",
+    "genres": [
+      "angura kei",
+      "japanese",
+      "eroguro",
+      "J-rock",
+      "visual kei"
+    ],
+    "popularity": {
+      "listeners": 4716,
+      "playcount": 347194
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3e6a529e88b6bbc94f64efddd56909fd/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:57.130Z"
   },
   {
     "name": "Inuit",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:15.055Z",
     "mbid": "05f309ad-8586-413e-8a39-7dd00846471e",
-    "autoTriedAt": "2026-07-09T00:29:32.479Z"
+    "autoTriedAt": "2026-07-09T00:29:32.479Z",
+    "genres": [
+      "greenland",
+      "americana",
+      "post-rock",
+      "experimental",
+      "tribal"
+    ],
+    "popularity": {
+      "listeners": 2503,
+      "playcount": 20900
+    },
+    "metaEnrichedAt": "2026-07-09T08:06:57.861Z"
   },
   {
     "name": "Inul Daratista",
@@ -112094,7 +113369,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:15.055Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a949122b-b65c-40ea-ab8b-1f194ede21c0"
+    "mbid": "a949122b-b65c-40ea-ab8b-1f194ede21c0",
+    "genres": [
+      "dangdut",
+      "female vocalists",
+      "indonesia",
+      "indonesian",
+      "Indonesian Pop"
+    ],
+    "popularity": {
+      "listeners": 3562,
+      "playcount": 22165
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/82fef9722f42d39578e38c388d45e232/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:58.632Z"
   },
   {
     "name": "Invaders",
@@ -112110,7 +113398,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:29:38.897Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "ska",
+      "third wave ska",
+      "alternative rock",
+      "experimental",
+      "Melodic Death Metal"
+    ],
+    "popularity": {
+      "listeners": 5928,
+      "playcount": 32509
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7189c0b74cbb58d28001f0cc21b5306f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:06:59.402Z"
   },
   {
     "name": "Invent, Animate",
@@ -112126,13 +113427,27 @@
     },
     "enrichedAt": "2026-07-07T07:14:15.055Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "af3fd27c-c59f-4eb7-9303-042ee3eef006"
+    "mbid": "af3fd27c-c59f-4eb7-9303-042ee3eef006",
+    "genres": [
+      "metalcore",
+      "Progressive Metalcore",
+      "post-hardcore",
+      "DJENT",
+      "electronic"
+    ],
+    "popularity": {
+      "listeners": 38976,
+      "playcount": 1661654
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/002aeaaf18236b42bb719365bdf7b87a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:07:00.034Z"
   },
   {
     "name": "Inveraray",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:15.055Z",
-    "autoTriedAt": "2026-07-09T00:29:40.183Z"
+    "autoTriedAt": "2026-07-09T00:29:40.183Z",
+    "metaTriedAt": "2026-07-09T08:07:00.677Z"
   },
   {
     "name": "Inveraray & District Pipe Band",
@@ -112148,7 +113463,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:29:45.735Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 102,
+      "playcount": 2191
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:07:01.344Z"
   },
   {
     "name": "Inverness",
@@ -112164,7 +113485,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:29:54.089Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "shoegaze",
+      "post-rock",
+      "dream pop",
+      "indie",
+      "chile"
+    ],
+    "popularity": {
+      "listeners": 65590,
+      "playcount": 713636
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e23066163f21176a822b54001ee648a2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:07:01.961Z"
   },
   {
     "name": "Invincible Overlord",
@@ -112179,7 +113513,12 @@
       "vk": null
     },
     "enrichedAt": "2026-07-07T07:14:15.055Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "popularity": {
+      "listeners": 400,
+      "playcount": 10623
+    },
+    "metaEnrichedAt": "2026-07-09T08:07:02.619Z"
   },
   {
     "name": "Inviolet Row",
@@ -112195,7 +113534,13 @@
     },
     "enrichedAt": "2026-07-07T07:14:15.055Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "18e447c9-c0a8-4c6b-bca7-dd8bbaf80747"
+    "mbid": "18e447c9-c0a8-4c6b-bca7-dd8bbaf80747",
+    "popularity": {
+      "listeners": 70,
+      "playcount": 394
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3ebda3ac188c58062abd0183a337a5a0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:07:03.305Z"
   },
   {
     "name": "Invisibl Skratch Piklz",
@@ -112211,14 +113556,40 @@
     },
     "enrichedAt": "2026-07-07T07:14:15.055Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2e915903-6cc0-42b4-a12b-78c4877be6df"
+    "mbid": "2e915903-6cc0-42b4-a12b-78c4877be6df",
+    "genres": [
+      "turntablism",
+      "Hip-Hop",
+      "scratch",
+      "instrumental hip-hop",
+      "hip hop"
+    ],
+    "popularity": {
+      "listeners": 16440,
+      "playcount": 156123
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bf8d8aa814d3b6409cb62b33e3536419/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:07:03.933Z"
   },
   {
     "name": "Inward Eye",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:15.055Z",
     "mbid": "885abd7f-3c2c-4442-8369-c21fc76cc123",
-    "autoTriedAt": "2026-07-09T00:29:56.691Z"
+    "autoTriedAt": "2026-07-09T00:29:56.691Z",
+    "genres": [
+      "rock",
+      "indie",
+      "Canadian rock",
+      "hard rock",
+      "Canadian"
+    ],
+    "popularity": {
+      "listeners": 7999,
+      "playcount": 87971
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3b48f37e83df59a3a89b966ce67113f3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:07:04.865Z"
   },
   {
     "name": "INXS",
@@ -112234,7 +113605,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:15.055Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "481bf5f9-2e7c-4c44-b08a-05b32bc7c00d"
+    "mbid": "481bf5f9-2e7c-4c44-b08a-05b32bc7c00d",
+    "genres": [
+      "rock",
+      "new wave",
+      "80s",
+      "australian",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 2078258,
+      "playcount": 40796580
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ba68100d802092f593f3ef54da1b858d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:07:05.490Z"
   },
   {
     "name": "Ioan Gyuri Pascu",
@@ -112250,14 +113634,35 @@
     },
     "enrichedAt": "2026-07-07T07:14:15.055Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6b342a50-7588-4d07-bd86-2c8c9f400586"
+    "mbid": "6b342a50-7588-4d07-bd86-2c8c9f400586",
+    "genres": [
+      "folk",
+      "reggae",
+      "genial",
+      "pop rock",
+      "male vocalists"
+    ],
+    "popularity": {
+      "listeners": 422,
+      "playcount": 4889
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:07:06.158Z"
   },
   {
     "name": "Ioan Luchian Mihalea",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:15.055Z",
     "mbid": "75c721e1-f248-47fa-8aae-1d6976925a32",
-    "autoTriedAt": "2026-07-09T00:30:03.207Z"
+    "autoTriedAt": "2026-07-09T00:30:03.207Z",
+    "genres": [
+      "folk"
+    ],
+    "popularity": {
+      "listeners": 93,
+      "playcount": 1871
+    },
+    "metaEnrichedAt": "2026-07-09T08:07:06.834Z"
   },
   {
     "name": "Ioana Maria Lupașcu",
@@ -112273,13 +113678,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:30:15.496Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "metaTriedAt": "2026-07-09T08:07:07.451Z"
   },
   {
     "name": "Ion Dacian",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:15.055Z",
-    "autoTriedAt": "2026-07-09T00:30:18.425Z"
+    "autoTriedAt": "2026-07-09T00:30:18.425Z",
+    "popularity": {
+      "listeners": 4,
+      "playcount": 23
+    },
+    "metaEnrichedAt": "2026-07-09T08:07:08.114Z"
   },
   {
     "name": "Ion Dissonance",
@@ -112295,28 +113706,70 @@
     },
     "enrichedAt": "2026-07-07T07:14:15.055Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c1c621a8-711e-4dbe-ac8c-87d1833d2671"
+    "mbid": "c1c621a8-711e-4dbe-ac8c-87d1833d2671",
+    "genres": [
+      "mathcore",
+      "metalcore",
+      "grindcore",
+      "hardcore",
+      "math metal"
+    ],
+    "popularity": {
+      "listeners": 106298,
+      "playcount": 3316255
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5a9bae230b526ced6d0984f5ee31d470/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:07:08.802Z"
   },
   {
     "name": "Ion Dolănescu",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:15.055Z",
     "mbid": "c3c6d33a-c8a9-487c-8848-382a82b7dff8",
-    "autoTriedAt": "2026-07-09T00:30:37.415Z"
+    "autoTriedAt": "2026-07-09T00:30:37.415Z",
+    "popularity": {
+      "listeners": 35,
+      "playcount": 424
+    },
+    "metaEnrichedAt": "2026-07-09T08:07:09.489Z"
   },
   {
     "name": "Ion Ivanovici",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:15.055Z",
     "mbid": "c0927293-b7c9-4f35-b99b-c2f5f05c1533",
-    "autoTriedAt": "2026-07-09T00:30:40.060Z"
+    "autoTriedAt": "2026-07-09T00:30:40.060Z",
+    "genres": [
+      "Classical",
+      "world",
+      "romania",
+      "Romanian",
+      "romantic period"
+    ],
+    "popularity": {
+      "listeners": 2041,
+      "playcount": 7336
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:07:10.143Z"
   },
   {
     "name": "Ion Miu",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:14:15.055Z",
     "mbid": "8e74b76b-79b2-4f16-b702-1dc28edce9c8",
-    "autoTriedAt": "2026-07-09T00:30:43.485Z"
+    "autoTriedAt": "2026-07-09T00:30:43.485Z",
+    "genres": [
+      "folklore",
+      "Romanian",
+      "cimbalon"
+    ],
+    "popularity": {
+      "listeners": 562,
+      "playcount": 2123
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bad9543f6e3e75b1a300bbecdb1816c5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:07:10.940Z"
   },
   {
     "name": "Ion Vein",
@@ -112332,7 +113785,20 @@
     },
     "enrichedAt": "2026-07-07T07:14:15.055Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "bcf0e93d-3981-4990-97db-7a34a7bb90cf"
+    "mbid": "bcf0e93d-3981-4990-97db-7a34a7bb90cf",
+    "genres": [
+      "Progressive metal",
+      "Power metal",
+      "heavy metal",
+      "USA",
+      "US MEtal"
+    ],
+    "popularity": {
+      "listeners": 3172,
+      "playcount": 21894
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4ae1ac29b0f8e28b5b1aa37d32445a55/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:07:11.645Z"
   },
   {
     "name": "Ion Voicu",
@@ -112348,7 +113814,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-09T00:30:46.317Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 257,
+      "playcount": 1031
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b99aebb04bf1b4ccc9ee7b071e46835c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-09T08:07:12.461Z"
   },
   {
     "name": "Iona",
