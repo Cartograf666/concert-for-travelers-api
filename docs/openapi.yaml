@@ -388,6 +388,12 @@ components:
         ticketUrl:
           type: string
           format: uri
+          description: >-
+            The artist's own official website when known, NOT a ticket-vendor/
+            aggregator purchase link -- those are frequently an unlabeled
+            widget page or a generic city-listing URL with no indication of
+            what it is. Falls back to the source's raw ticket/event link only
+            when the artist has no known website.
         originalSource:
           type: string
           example: 'ticketmaster.co.uk'

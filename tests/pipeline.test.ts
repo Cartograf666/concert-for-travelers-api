@@ -318,7 +318,31 @@ test('Pipeline - full concert processing & deduplication', async () => {
   assert.strictEqual(result.date, '2026-10-12'); // Normalized date
   assert.strictEqual(result.city, 'Berlin');
   assert.strictEqual(result.country, 'DE'); // Uppercased
-  assert.strictEqual(result.ticketUrl, 'https://example.com/cure'); // Ticket URL retained
+  assert.strictEqual(result.ticketUrl, 'https://www.thecure.com/'); // artist site preferred over the raw ticket link
+});
+
+test('Pipeline - ticketUrl falls back to the raw ticket link when the artist has no known website', async () => {
+  const approvedArtistsPath = PRODUCTION_ARTIST_DB_DIR;
+  const baseDate = '2026-07-07T00:00:00.000Z';
+  const scrapedAt = new Date().toISOString();
+
+  const rawConcerts: Partial<Concert>[] = [
+    {
+      artist: 'Airport',
+      date: '12. Okt 2026',
+      venue: 'Club Arena',
+      city: 'Berlin',
+      country: 'de',
+      ticketUrl: 'https://example.com/airport-tickets',
+      originalSource: 'club-arena.de',
+      scrapedAt
+    }
+  ];
+
+  const processed = await processConcerts(rawConcerts, approvedArtistsPath, baseDate);
+  assert.strictEqual(processed.length, 1);
+  assert.strictEqual(processed[0].artistWebsite, undefined); // fixture artist has no known site
+  assert.strictEqual(processed[0].ticketUrl, 'https://example.com/airport-tickets'); // falls back, not dropped
 });
 
 test('Pipeline - drops concerts whose date has already passed', async () => {

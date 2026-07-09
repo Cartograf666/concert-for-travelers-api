@@ -98,7 +98,7 @@ Example Concert JSON object structure:
   "country": "DE",
   "lat": 48.7901,
   "lng": 9.2241,
-  "ticketUrl": "https://www.ticketmaster.de/event/the-cure-tickets/12345",
+  "ticketUrl": "https://www.thecure.com/",
   "originalSource": "ticketmaster.de",
   "scrapedAt": "2026-07-08T12:00:00.000Z"
 }
@@ -112,7 +112,9 @@ Example Concert JSON object structure:
 - **`status.json`** — machine-readable health surface (scrapers ok/failed, stale venues, ticketmaster event count, `conflictDropsLast7Days` — see [Known limitations](#known-limitations)) for the dashboard and the freshness watchdog.
 - **`changes.json`** — concerts new since the last run (30-day rolling window), so the consumer can show "N new concerts since your last visit" without diffing all of `concerts.json` itself.
 
-Each concert object follows `src/schemas/concert.ts`: `artist`, `artistWebsite?`, `spotifyId?`, `mbid?`, `artistSocials?` (spotify/instagram/facebook/youtube/telegram/vk), `date` (`YYYY-MM-DD`), `startTime?` (`HH:MM`), `venue`, `venueKind?` (stadium/arena/club/theatre/hall/open-air/other), `city`, `country` (ISO 3166-1 alpha-2), `lat?`/`lng?`, `festival?` (`{name, url?}`), `lineup?`, `priceRange?` (`{min, max, currency}`, Ticketmaster only), `ticketUrl?`, `originalSource`, `scrapedAt`.
+Each concert object follows `src/schemas/concert.ts`: `artist`, `artistWebsite?`, `spotifyId?`, `mbid?`, `artistSocials?` (spotify/instagram/facebook/youtube/telegram/vk), `date` (`YYYY-MM-DD`), `startTime?` (`HH:MM`), `venue`, `venueKind?` (stadium/arena/club/theatre/hall/open-air/other), `city`, `country` (ISO 3166-1 alpha-2), `lat?`/`lng?`, `festival?` (`{name, url?}`), `lineup?`, `priceRange?` (`{min, max, currency}`, Ticketmaster only), `ticketUrl?` (the artist's own site when known, not a ticket-vendor link -- see below), `originalSource`, `scrapedAt`.
+
+**Note on `ticketUrl`**: despite the name, this is the artist's own official website when we know it, not a ticket-purchase page — source-specific ticket/aggregator links are frequently an unlabeled widget or a generic city-listing page with no indication of what it is. It only falls back to the raw source ticket link when no artist website is known for that artist.
 
 ---
 

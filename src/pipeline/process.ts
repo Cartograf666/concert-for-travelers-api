@@ -799,7 +799,12 @@ export async function processConcerts(
       festival: raw.festival,
       lineup: raw.lineup,
       priceRange: raw.priceRange,
-      ticketUrl: raw.ticketUrl ? raw.ticketUrl.trim() : undefined,
+      // Prefer the artist's own official site over a source-specific ticket/
+      // aggregator link -- those are frequently an unlabeled widget page or a
+      // generic city-listing URL with no indication of what it actually is.
+      // Falls back to the raw ticket link only when we don't know the
+      // artist's site at all, so a concert still isn't left with no link.
+      ticketUrl: matched.website || (raw.ticketUrl ? raw.ticketUrl.trim() : undefined),
       originalSource: raw.originalSource,
       scrapedAt: raw.scrapedAt
     };
