@@ -1,0 +1,18 @@
+{
+  "id": "artist-hell",
+  "domain": "www.hell-metal.com",
+  "url": "https://www.hell-metal.com/gigs/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.event",
+    "artistNameFallback": "Hell",
+    "date": "div.event-date",
+    "ticketUrl": "a.event-tickets",
+    "venue": "span.event-venue",
+    "city": "span.event-city",
+    "country": "span.event-country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-henry-myerscough",
+  "domain": "www.henrymyerscough.co.uk",
+  "url": "https://www.henrymyerscough.co.uk/gigs",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.list-group-item",
+    "artistNameFallback": "Henry Myerscough",
+    "date": ".col-md-3",
+    "ticketUrl": ".col-md-5 > a",
+    "venue": ".col-md-5 > p",
+    "city": ".col-md-4",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

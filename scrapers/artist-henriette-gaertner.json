@@ -1,0 +1,16 @@
+{
+  "id": "artist-henriette-gaertner",
+  "domain": "www.henriettegaertner.de",
+  "url": "http://www.henriettegaertner.de/konzerte-kurse.php",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.ce_text:has(h3)",
+    "artistNameFallback": "Henriette Gaertner",
+    "date": "h3",
+    "venue": "p:nth-of-type(2)",
+    "city": "p:last-of-type",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}

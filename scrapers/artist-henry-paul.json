@@ -1,0 +1,17 @@
+{
+  "id": "artist-henry-paul",
+  "domain": "henrypaul.com",
+  "url": "https://henrypaul.com/tour-dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event",
+    "artistNameFallback": "Henry Paul",
+    "date": ".event-date",
+    "ticketUrl": ".event-tickets a",
+    "venue": ".event-venue",
+    "city": ".event-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
