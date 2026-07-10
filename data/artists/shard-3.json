@@ -4,18 +4,30 @@
     "website": null,
     "wdBulkTriedAt": "2026-07-09T08:32:05.092Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "metaTriedAt": "2026-07-09T23:08:28.044Z"
+    "metaTriedAt": "2026-07-09T23:08:28.044Z",
+    "autoTriedAt": "2026-07-10T00:56:20.014Z"
   },
   {
     "name": "♫Ляпис Трубецкой",
-    "website": null,
+    "website": "http://lyapis.com/",
     "wdBulkTriedAt": "2026-07-09T08:32:05.092Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "popularity": {
       "listeners": 6314,
       "playcount": 18416
     },
-    "metaEnrichedAt": "2026-07-09T23:08:32.374Z"
+    "metaEnrichedAt": "2026-07-09T23:08:32.374Z",
+    "mbid": "452b56d2-c904-4030-ad12-6d4fbd498e1f",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/1PH7LtTLFyoZUEa7B64pws",
+      "instagram": null,
+      "facebook": "https://www.facebook.com/lyapis",
+      "youtube": "https://www.youtube.com/user/lyapisvideo",
+      "telegram": null,
+      "vk": "https://vk.com/club68389"
+    },
+    "enrichedAt": "2026-07-10T00:56:23.811Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "3 Colours Red",
@@ -3173,7 +3185,7 @@
   },
   {
     "name": "Calcutta",
-    "website": null,
+    "website": "https://calcuttasitodi.it/",
     "wdBulkTriedAt": "2026-07-09T08:32:05.092Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "genres": [
@@ -3188,7 +3200,18 @@
       "playcount": 6473996
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/072422028f10f51aa7aaa66298436b7b/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-09T23:10:13.504Z"
+    "metaEnrichedAt": "2026-07-09T23:10:13.504Z",
+    "mbid": "05eb3728-c462-43bd-97d8-86c52d0b347d",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/582KhTHEVOONNQLmQ5612r",
+      "instagram": "https://www.instagram.com/calcutta_foto_di/",
+      "facebook": "https://www.facebook.com/551656621523296",
+      "youtube": "https://www.youtube.com/channel/UCG6CF1dX1ZNFNbgLsbrW6CA",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:56:27.663Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Caldera",
@@ -3676,7 +3699,18 @@
       "listeners": 25909,
       "playcount": 2623555
     },
-    "metaEnrichedAt": "2026-07-09T23:10:34.446Z"
+    "metaEnrichedAt": "2026-07-09T23:10:34.446Z",
+    "mbid": "e9a43aa3-473b-45f9-824f-d05ad269fc51",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/5lEkQtWa3UKlI1hj7sktcd",
+      "instagram": "https://www.instagram.com/calinpan/",
+      "facebook": "https://www.facebook.com/calinpan",
+      "youtube": "https://www.youtube.com/channel/UCr42x6sv7UqR7xP0zmOQNzg",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:56:30.329Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Calinacho",
@@ -3703,7 +3737,10 @@
       "playcount": 1741297
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/2eed39c7d5f9a71f291d1a98d34089cd/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-09T23:10:35.081Z"
+    "metaEnrichedAt": "2026-07-09T23:10:35.081Z",
+    "mbid": "8280a7bd-83d7-4011-a575-25c4d18ee454",
+    "enrichedAt": "2026-07-10T00:56:33.002Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Calixa Lavallée",
@@ -6539,7 +6576,9 @@
       "playcount": 1313083
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/b429de13c05e85ed6f8e22b3bb506951/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-09T23:12:13.726Z"
+    "metaEnrichedAt": "2026-07-09T23:12:13.726Z",
+    "mbid": "de59e498-f0ce-4322-b0ea-814ea0d19523",
+    "autoTriedAt": "2026-07-10T00:56:35.556Z"
   },
   {
     "name": "Candye Kane",
@@ -18100,7 +18139,8 @@
       "playcount": 586
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/f690d7916879a68118cc079fbc9b6a2d/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-09T23:18:43.513Z"
+    "metaEnrichedAt": "2026-07-09T23:18:43.513Z",
+    "autoTriedAt": "2026-07-10T00:56:37.245Z"
   },
   {
     "name": "Cast Your Fate to the Wind",
@@ -23142,7 +23182,7 @@
   },
   {
     "name": "Cesare Cremonini",
-    "website": null,
+    "website": "http://www.cesarecremonini.it/",
     "wdBulkTriedAt": "2026-07-09T08:32:05.092Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "genres": [
@@ -23157,7 +23197,18 @@
       "playcount": 3238208
     },
     "image": "https://cdn-images.dzcdn.net/images/artist/6bc9be46fc129e7f5e2596390e691d23/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-09T23:21:31.596Z"
+    "metaEnrichedAt": "2026-07-09T23:21:31.596Z",
+    "mbid": "4b0e51ee-a024-4540-a6f4-abf4b5488647",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/396Jr76018oUMR6QBnqT8T",
+      "instagram": "https://www.instagram.com/cesarecremonini/",
+      "facebook": "https://www.facebook.com/cesarecremoniniufficiale",
+      "youtube": "https://www.youtube.com/channel/UCA_Eh4mNLQSZ-I3njCk2Hcg",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:56:39.842Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Cesare Siepi",
@@ -31611,7 +31662,9 @@
     "name": "Chico da Tina",
     "website": null,
     "wdBulkTriedAt": "2026-07-09T08:32:05.092Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "63879872-2e68-4586-9f30-fb5122999bbb",
+    "autoTriedAt": "2026-07-10T00:56:42.438Z"
   },
   {
     "name": "Chico DeBarge",
@@ -37888,7 +37941,8 @@
     "name": "Christopher",
     "website": null,
     "wdBulkTriedAt": "2026-07-09T08:32:05.092Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:56:44.010Z"
   },
   {
     "name": "Christopher Amott",
@@ -51592,17 +51646,20 @@
   },
   {
     "name": "CORTIS",
-    "website": null,
+    "website": "https://cortis-official.jp/",
     "socials": {
       "spotify": "https://open.spotify.com/artist/2n9p2Yy7k5Qz1Jz5fG2W6l",
       "instagram": "https://www.instagram.com/cortis_music",
-      "facebook": null,
+      "facebook": "https://www.facebook.com/cortis.bighit",
       "youtube": "https://www.youtube.com/@cortismusic",
       "telegram": null,
       "vk": null
     },
     "wdBulkTriedAt": "2026-07-09T08:32:05.092Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "d27808c8-d3a6-4bbe-acc2-22d5e19f3bca",
+    "enrichedAt": "2026-07-10T00:56:47.129Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Corvos",
@@ -54955,9 +55012,20 @@
   },
   {
     "name": "Cro",
-    "website": null,
+    "website": "https://cromusik.de/",
     "wdBulkTriedAt": "2026-07-09T08:32:05.092Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "b2ea6506-645e-4935-8d82-84c3a95fe7f0",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/3utZ2yeQk0Z3BCOBWP7Vlu",
+      "instagram": "https://www.instagram.com/thisiscro/",
+      "facebook": "https://www.facebook.com/cromusic",
+      "youtube": "https://www.youtube.com/channel/UCz1mQ-4_wui83UfT3ylqmpw",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:56:49.911Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Cro-Mags",
@@ -55772,7 +55840,8 @@
     "name": "Cruzzi",
     "website": null,
     "wdBulkTriedAt": "2026-07-09T08:32:05.092Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:56:51.186Z"
   },
   {
     "name": "Cry Cry",
@@ -58369,7 +58438,8 @@
     "name": "K car",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:57.725Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:56:52.473Z"
   },
   {
     "name": "K Dub Shine",
@@ -58391,37 +58461,82 @@
     "name": "K Foundation",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:57.725Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:56:53.750Z"
   },
   {
     "name": "K One",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:57.725Z",
-    "mbid": "109d0429-29ec-4747-be51-54adfbc754a0"
+    "mbid": "109d0429-29ec-4747-be51-54adfbc754a0",
+    "autoTriedAt": "2026-07-10T00:56:56.313Z"
   },
   {
     "name": "K S Makhan",
-    "website": null,
+    "website": "http://www.ksmakhan.com/",
     "wdBulkTriedAt": "2026-07-07T07:15:57.725Z",
-    "mbid": "61697747-dfa8-4ca3-bdbb-5ce81369bd58"
+    "mbid": "61697747-dfa8-4ca3-bdbb-5ce81369bd58",
+    "socials": {
+      "spotify": null,
+      "instagram": "https://www.instagram.com/ksmakhanofficial/",
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:56:58.899Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "K-Ci & JoJo",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:57.725Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "23d1dfc6-0281-488a-8e32-ef7ddc279fbc",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/05RZIdfz59ZW2FvFuwnmNK",
+      "instagram": null,
+      "facebook": "https://www.facebook.com/realkcijojo",
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:57:01.509Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "K-Dee",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "20a6bf3d-ae4f-49cd-a15c-345b6d2faa56",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/30QkXUegh8bIFOIwbbMDbR",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:57:04.087Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "K-Drama",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "c9c81461-d2ec-47b8-b030-a7cac6dbee03",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/1PXBwNCd6LaX8iJTDwdC30",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:57:07.070Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "K-Klass",
@@ -58443,7 +58558,9 @@
     "name": "K-Man",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "477fbb5d-9977-48a4-95d4-35e4e3e774ee",
+    "autoTriedAt": "2026-07-10T00:57:10.332Z"
   },
   {
     "name": "K-maro",
@@ -58465,7 +58582,8 @@
     "name": "K-Much",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:57:11.604Z"
   },
   {
     "name": "K-Narias",
@@ -58485,21 +58603,54 @@
   },
   {
     "name": "K-OS",
-    "website": null,
+    "website": "http://www.k-osmusic.com/",
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "3dfb71a2-2e06-4a69-8839-3e1fc07e92ea",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/3EZWlSBWlPsC8lCI2Y36Gl",
+      "instagram": "https://www.instagram.com/kostelevision/",
+      "facebook": "https://www.facebook.com/kosmusic",
+      "youtube": "https://www.youtube.com/user/koskhv",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:57:14.328Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "K-OTIC",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "0fbd035c-aada-4937-a8c9-c2be65c4b9ed",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/0dyJmRgb1c6Q8FiODm8KAb",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:57:16.908Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "K-Rab",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "19a22683-b8c9-4af6-a2b1-7dcaa0a31c1a",
+    "socials": {
+      "spotify": null,
+      "instagram": "https://www.instagram.com/k_rabondatrack/",
+      "facebook": "https://www.facebook.com/krabproductions1",
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:57:19.690Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "K-Solo",
@@ -58521,19 +58672,22 @@
     "name": "K. B. Sundarambal",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbid": "5bde4339-bd6d-4057-b714-73ef35261fb4"
+    "mbid": "5bde4339-bd6d-4057-b714-73ef35261fb4",
+    "autoTriedAt": "2026-07-10T00:57:22.648Z"
   },
   {
     "name": "K. Bhaskaran",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:57:23.921Z"
   },
   {
     "name": "K. Chakravarthy",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbid": "d13f0f72-8a7b-4486-9464-1df4339131de"
+    "mbid": "d13f0f72-8a7b-4486-9464-1df4339131de",
+    "autoTriedAt": "2026-07-10T00:57:26.779Z"
   },
   {
     "name": "K. J. Yesudas",
@@ -58553,9 +58707,20 @@
   },
   {
     "name": "K. JUNO",
-    "website": null,
+    "website": "http://www1.kcn.ne.jp/~juno/",
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "0841c178-508a-4bed-8524-3e5035bcef58",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": "https://www.facebook.com/kayjuno",
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:57:29.361Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "K. K. Downing",
@@ -58577,7 +58742,18 @@
     "name": "K. Kalyan",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "6b3f9833-968e-4a72-8f1b-a7eceff1beca",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/17YvXOgibJDZqBAFH0t0aZ",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:57:31.931Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "K. Michelle",
@@ -58615,13 +58791,25 @@
     "name": "K. S. Simon",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:57:33.205Z"
   },
   {
     "name": "K. Sparks",
-    "website": null,
+    "website": "http://www.kdotsparks.com/",
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "ac7b11e9-b6c9-446a-8147-bf0c2c451810",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/24wsTHZ4EsAzPrgG4qIf3Z",
+      "instagram": "https://www.instagram.com/ksparksmusic/",
+      "facebook": "https://www.facebook.com/KsparksMusic",
+      "youtube": "https://www.youtube.com/channel/UClU7RMxYCv4ty5VU7dXOjGQ",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:57:36.725Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "K. V. Krishna Prasad",
@@ -58643,19 +58831,22 @@
     "name": "K. V. Mahadevan",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbid": "591868ff-c9e9-45f2-a33b-d4b0398e27cf"
+    "mbid": "591868ff-c9e9-45f2-a33b-d4b0398e27cf",
+    "autoTriedAt": "2026-07-10T00:57:39.343Z"
   },
   {
     "name": "K. V. Narayanaswamy",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbid": "50b4f46a-77f8-4392-afff-6ef67c93b907"
+    "mbid": "50b4f46a-77f8-4392-afff-6ef67c93b907",
+    "autoTriedAt": "2026-07-10T00:57:40.619Z"
   },
   {
     "name": "K.A. Wieth-Knudsen",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:57:41.894Z"
   },
   {
     "name": "K.A.Z",
@@ -58725,7 +58916,8 @@
     "name": "K.I.M",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:57:43.174Z"
   },
   {
     "name": "K.I.Z",
@@ -58795,7 +58987,18 @@
     "name": "K.P. & Envyi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "42288b9b-8c11-4816-986a-7de8f2bce8e1",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2YNgNtNUJlJpCmWgz3kHh5",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:57:45.992Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "K.T. Oslin",
@@ -58831,21 +59034,44 @@
   },
   {
     "name": "K'Jon",
-    "website": null,
+    "website": "http://www.k-jon.com/",
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "2e0a5dda-7e8b-4945-952f-6a545cd6beeb",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/7KTMw4g3OqEh9Jz1HmF7bo",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:57:48.688Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "K'naan",
-    "website": null,
+    "website": "http://www.knaanmusic.com/",
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "ee421ee4-f861-405d-8730-29cb512dfdbd",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/7pGyQZx9thVa8GxMBeXscB",
+      "instagram": "https://www.instagram.com/knaanstagram/",
+      "facebook": "https://www.facebook.com/knaan",
+      "youtube": "https://www.youtube.com/user/knaan",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:57:51.414Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "K'Pop",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:57:52.691Z"
   },
   {
     "name": "K's Choice",
@@ -58875,19 +59101,25 @@
       "vk": null
     },
     "wdBulkTriedAt": "2026-07-08T14:10:39.673Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "326060b6-1ddd-44c8-8d52-3a5f56219036",
+    "enrichedAt": "2026-07-10T00:57:55.627Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Ka Ling Colleen Lee",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:57:56.900Z"
   },
   {
     "name": "Kaamos",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "9d269094-63b9-470a-afce-2e7e77083a47",
+    "autoTriedAt": "2026-07-10T00:57:59.842Z"
   },
   {
     "name": "Kaaos",
@@ -58941,7 +59173,8 @@
     "name": "Kaarle Viikate",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbid": "745004c9-8ae8-4a28-9d2e-bcc85c59b36b"
+    "mbid": "745004c9-8ae8-4a28-9d2e-bcc85c59b36b",
+    "autoTriedAt": "2026-07-10T00:58:02.791Z"
   },
   {
     "name": "Kabah",
@@ -58971,19 +59204,24 @@
       "telegram": null,
       "vk": null
     },
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "enrichedAt": "2026-07-10T00:58:02.791Z",
+    "enrichedBy": "auto"
   },
   {
     "name": "Kabelo Mabalane",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbid": "d091adf1-37d2-42a4-9a8a-296102794a95"
+    "mbid": "d091adf1-37d2-42a4-9a8a-296102794a95",
+    "autoTriedAt": "2026-07-10T00:58:07.640Z"
   },
   {
     "name": "Kaboom",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "f92ffb75-e3ff-4902-b681-0d2105fcad28",
+    "autoTriedAt": "2026-07-10T00:58:10.241Z"
   },
   {
     "name": "Kabul Dreams",
@@ -59037,7 +59275,8 @@
     "name": "Kadota \"Jaw\" Kouske",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:58:11.513Z"
   },
   {
     "name": "Kadri Gopalnath",
@@ -59057,35 +59296,42 @@
   },
   {
     "name": "Kaela",
-    "website": null,
+    "website": "http://www.kaelasmusic.com/",
     "socials": {
-      "spotify": null,
-      "instagram": null,
-      "facebook": null,
-      "youtube": null,
+      "spotify": "https://open.spotify.com/artist/15sAywRlhEXj0ZjoUbft5r",
+      "instagram": "https://www.instagram.com/kaelasmusic/",
+      "facebook": "https://www.facebook.com/kaela4real",
+      "youtube": "https://www.youtube.com/KaelaMusic",
       "telegram": null,
       "vk": null
     },
     "wdBulkTriedAt": "2026-07-08T14:10:39.673Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "2347ef0d-dbea-4e93-8ac2-940bf0da263a",
+    "enrichedAt": "2026-07-10T00:58:16.161Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Kaeun",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:58:17.436Z"
   },
   {
     "name": "Kafani",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "ebeae664-5d17-4b98-9995-199b7143a00a",
+    "autoTriedAt": "2026-07-10T00:58:20.002Z"
   },
   {
     "name": "Kafka",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:58:21.282Z"
   },
   {
     "name": "Kagerou",
@@ -59107,7 +59353,8 @@
     "name": "Kageyama, Hironobu",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:58:22.556Z"
   },
   {
     "name": "Kagrra",
@@ -59129,13 +59376,15 @@
     "name": "Kah Kyung Cho",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:58:23.838Z"
   },
   {
     "name": "Kahala, Tomomi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:58:25.115Z"
   },
   {
     "name": "Kahi",
@@ -59157,7 +59406,8 @@
     "name": "Kahi (entertainer)",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:58:26.392Z"
   },
   {
     "name": "Kahimi Karie",
@@ -59179,13 +59429,24 @@
     "name": "Kahitna",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbid": "d9190b3f-3888-4cf9-b60e-25af432e5450"
+    "mbid": "d9190b3f-3888-4cf9-b60e-25af432e5450",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2WhoMc7XqIzVXWbQqSoqe7",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:58:31.102Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Kai Aage Bruun",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:58:32.548Z"
   },
   {
     "name": "Kai Eckhardt",
@@ -59205,9 +59466,19 @@
   },
   {
     "name": "Kai Fagaschinski",
-    "website": null,
+    "website": "http://kylie.klingt.org/",
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbid": "1d065972-98f9-4b1d-9218-9d73e3707126"
+    "mbid": "1d065972-98f9-4b1d-9218-9d73e3707126",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:58:35.389Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Kai Hahto",
@@ -59229,13 +59500,25 @@
     "name": "Kai Hansen",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "73dcbc17-9c8b-435c-a2b2-4c20ce6ccefc",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/1jpvVuIxURdWfijigYFTch",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:58:38.173Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Kai Normann Andersen",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbid": "e1e32f79-f70f-47ca-bfaa-80dfd34decfa"
+    "mbid": "e1e32f79-f70f-47ca-bfaa-80dfd34decfa",
+    "autoTriedAt": "2026-07-10T00:58:40.761Z"
   },
   {
     "name": "Kai Winding",
@@ -59257,7 +59540,8 @@
     "name": "Kaia Wilson",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:58:42.037Z"
   },
   {
     "name": "Kaija Koo",
@@ -59327,7 +59611,8 @@
     "name": "Kailash-Naresh-Paresh",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:58:43.317Z"
   },
   {
     "name": "Kaïn",
@@ -59347,15 +59632,28 @@
   },
   {
     "name": "Kaipa",
-    "website": null,
+    "website": "http://www.kaipa.info/",
     "wdBulkTriedAt": "2026-07-07T07:15:59.439Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "6733eac6-aa38-43fd-bbb7-22121d5dbf5f",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2pD2PTwYf1XJQth2hSEmpa",
+      "instagram": null,
+      "facebook": "https://www.facebook.com/Kaipa.music",
+      "youtube": "https://music.youtube.com/channel/UCtfU9niqFZG2GsTt9hF009A",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:58:46.017Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Kairo",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "f6673814-b76a-4695-a5aa-61028478fe56",
+    "autoTriedAt": "2026-07-10T00:58:48.591Z"
   },
   {
     "name": "Kaisa Jouhki",
@@ -59393,13 +59691,15 @@
     "name": "Kaiser Marshall",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbid": "6106e466-15ff-4a6f-8ba4-9e7bf101e2d3"
+    "mbid": "6106e466-15ff-4a6f-8ba4-9e7bf101e2d3",
+    "autoTriedAt": "2026-07-10T00:58:52.134Z"
   },
   {
     "name": "Kaiserslautern",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:58:53.415Z"
   },
   {
     "name": "Kaitlyn Maher",
@@ -59419,15 +59719,25 @@
   },
   {
     "name": "KaitO",
-    "website": null,
+    "website": "http://www.hiroshiwatana.be/",
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbid": "29bf76f4-17e1-493c-ba0c-b28879f31b6d"
+    "mbid": "29bf76f4-17e1-493c-ba0c-b28879f31b6d",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/20ihiqkKAkvRddVMHkewy5",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:58:56.092Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Kaito Shoma",
     "website": null,
     "socials": {
-      "spotify": null,
+      "spotify": "https://open.spotify.com/artist/3Tv1UzQAvn0v0hKTxisXnR",
       "instagram": null,
       "facebook": null,
       "youtube": null,
@@ -59435,19 +59745,24 @@
       "vk": null
     },
     "wdBulkTriedAt": "2026-07-08T14:10:39.673Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "9f734092-1b6c-4645-93b8-009de1c82bdb",
+    "enrichedAt": "2026-07-10T00:58:58.657Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Kaity Tong",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:58:59.936Z"
   },
   {
     "name": "Kaizer Chiefs Football Club",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:59:01.234Z"
   },
   {
     "name": "Kaizers Orchestra",
@@ -59501,7 +59816,8 @@
     "name": "Kaji, Meiko",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:59:02.515Z"
   },
   {
     "name": "Kaki King",
@@ -59571,7 +59887,9 @@
     "name": "Kalaeloa",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "7b0d9462-a0eb-4d95-b165-73e9f5d7d214",
+    "autoTriedAt": "2026-07-10T00:59:05.092Z"
   },
   {
     "name": "Kalafina",
@@ -59591,9 +59909,20 @@
   },
   {
     "name": "Kalahari Surfers",
-    "website": null,
+    "website": "http://www.kalaharisurfers.co.za/",
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "d7729872-9b7f-4273-88c2-335ad0f61dda",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": "https://www.facebook.com/kalaharisurfers",
+      "youtube": "https://www.youtube.com/channel/UCNpnCZTLUnOoP9TxYC0R8iQ",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:59:08.121Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Kalamazoo Symphony Orchestra",
@@ -59631,19 +59960,32 @@
     "name": "Kalani",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "3841e142-b5df-4e48-9270-d1ccde729eeb",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/5dphlnWVRUXQx7LR1GgsZN",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:59:10.852Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Kalaparusha Maurice McIntyre",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbid": "935e1a99-e78e-4e93-a498-ed97b33a7d90"
+    "mbid": "935e1a99-e78e-4e93-a498-ed97b33a7d90",
+    "autoTriedAt": "2026-07-10T00:59:13.486Z"
   },
   {
     "name": "Kalapuya",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:59:14.761Z"
   },
   {
     "name": "Kalben",
@@ -59665,7 +60007,9 @@
     "name": "Kaleidoscope",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "8016001a-c269-4697-a4cf-ef4139e1deff",
+    "autoTriedAt": "2026-07-10T00:59:17.699Z"
   },
   {
     "name": "Kalenna Harper",
@@ -59695,19 +60039,42 @@
       "telegram": null,
       "vk": null
     },
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "enrichedAt": "2026-07-10T00:59:17.699Z",
+    "enrichedBy": "auto"
   },
   {
     "name": "Kalevi Aho",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "2660777f-3722-44ab-84a2-acdefc31020e",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2H8D4ju7R16n4IZD8TwUv9",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:59:20.402Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Kalevi Kiviniemi",
-    "website": null,
+    "website": "http://www.kalevikiviniemi.com/",
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbid": "59edfdba-55fa-4a32-ad7c-815be845c92a"
+    "mbid": "59edfdba-55fa-4a32-ad7c-815be845c92a",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/21CMKVQ1QYzJtpLLQDasyG",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:59:23.105Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Kali Uchis",
@@ -59729,7 +60096,17 @@
     "name": "Kaliber 44",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbid": "e08f0176-5de9-4452-8d39-00e5ab2429cc"
+    "mbid": "e08f0176-5de9-4452-8d39-00e5ab2429cc",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2UTeT9IOjc4x9MeQWA0Hrx",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:59:26.022Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Kalijuge",
@@ -59751,7 +60128,17 @@
     "name": "Kalima",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbid": "e828f97b-d4de-40d6-ab28-aec2bc367591"
+    "mbid": "e828f97b-d4de-40d6-ab28-aec2bc367591",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/6DqmU4fJ0QIMeHKr7bZPbe",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:59:28.637Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Kalimba",
@@ -59805,7 +60192,18 @@
     "name": "Kalma",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "460dd321-6dd0-44ab-b5b8-53fcce899653",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": "https://www.facebook.com/KalmaFinland",
+      "youtube": "https://www.youtube.com/channel/UCgpyhYFvqlL1fdwNvJbiTCA",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:59:31.316Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Kalmah",
@@ -59827,7 +60225,8 @@
     "name": "Kálmán Berkes",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbid": "4a96f61e-5b2c-42a6-9b0d-9947a67c90b3"
+    "mbid": "4a96f61e-5b2c-42a6-9b0d-9947a67c90b3",
+    "autoTriedAt": "2026-07-10T00:59:35.152Z"
   },
   {
     "name": "Kalomira",
@@ -59849,13 +60248,15 @@
     "name": "Kalpakam Swaminathan",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:59:36.429Z"
   },
   {
     "name": "Kalpana Chawla",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:59:37.702Z"
   },
   {
     "name": "Kalwi",
@@ -59869,19 +60270,42 @@
       "vk": null
     },
     "wdBulkTriedAt": "2026-07-08T14:10:39.673Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:59:40.268Z"
   },
   {
     "name": "Kalyanji Anandji",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "5316ee10-f6aa-412b-b2da-43115f7a5514",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/7pWXlTjky0KXWgbdZi9ebq",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:59:42.947Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Kalyanji-Anandji",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "5316ee10-f6aa-412b-b2da-43115f7a5514",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/7pWXlTjky0KXWgbdZi9ebq",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:59:45.608Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Kamagurka",
@@ -59903,13 +60327,25 @@
     "name": "Kamaitachi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "dc170788-4873-482b-a005-7d2258ba6dc0",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/1ISc8zhrqxd5WrJMkMMLSm",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:59:48.189Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Kamal Addararachchi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:59:49.466Z"
   },
   {
     "name": "Kamal Haasan",
@@ -59947,7 +60383,8 @@
     "name": "Kamal Khatri",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:59:50.756Z"
   },
   {
     "name": "Kamala Harris",
@@ -59969,19 +60406,32 @@
     "name": "Kamaladdin Heydarov",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbid": "2872eb76-1e2d-47f2-a07d-110b316f5103"
+    "mbid": "2872eb76-1e2d-47f2-a07d-110b316f5103",
+    "autoTriedAt": "2026-07-10T00:59:52.032Z"
   },
   {
     "name": "Kamau",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "96f7e3a0-75ff-42e0-abca-47235f62daf9",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2oB7m9exCPwJ8jwDgKWjho",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:59:54.617Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Kamel El-Remali",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:59:55.894Z"
   },
   {
     "name": "Kamelot",
@@ -60003,13 +60453,25 @@
     "name": "Kamen Joshi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T00:59:57.171Z"
   },
   {
     "name": "Kami",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "a4ab2092-0ff9-4914-bc95-27e13058a5e2",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/3BhngrEjaGAD0a8OzzFWlC",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T00:59:59.928Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Kami Kapnobatai",
@@ -60017,13 +60479,16 @@
     "socials": {
       "spotify": null,
       "instagram": null,
-      "facebook": null,
-      "youtube": null,
+      "facebook": "https://www.facebook.com/pages/Kami-Kapnobatai/108358215923449",
+      "youtube": "https://www.youtube.com/user/KamiKapnobatai",
       "telegram": null,
       "vk": null
     },
     "wdBulkTriedAt": "2026-07-08T14:10:39.673Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "2ad4571d-76ea-4915-bcfc-3412f1157579",
+    "enrichedAt": "2026-07-10T01:00:02.704Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Kamijo",
@@ -60045,13 +60510,15 @@
     "name": "Kamikaze Hearts",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbid": "5eeccbb7-3bee-4240-b33f-237c4a2a959b"
+    "mbid": "5eeccbb7-3bee-4240-b33f-237c4a2a959b",
+    "autoTriedAt": "2026-07-10T01:00:04.047Z"
   },
   {
     "name": "Kamiki, Aya",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T01:00:05.648Z"
   },
   {
     "name": "Kamil Bednarek",
@@ -60073,7 +60540,8 @@
     "name": "Kamil Drozd",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T01:00:06.922Z"
   },
   {
     "name": "Kamil Jalilov",
@@ -60111,7 +60579,8 @@
     "name": "Kamila Shamsie",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T01:00:08.851Z"
   },
   {
     "name": "Kamini",
@@ -60157,7 +60626,8 @@
       "vk": null
     },
     "wdBulkTriedAt": "2026-07-08T14:10:39.673Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T01:00:10.532Z"
   },
   {
     "name": "Kampfar",
@@ -60219,7 +60689,8 @@
       "vk": null
     },
     "wdBulkTriedAt": "2026-07-08T14:10:39.673Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T01:00:12.091Z"
   },
   {
     "name": "Kan Sawada",
@@ -60241,7 +60712,8 @@
     "name": "Kana Nakanishi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T01:00:13.377Z"
   },
   {
     "name": "Kana Nishino",
@@ -60263,7 +60735,8 @@
     "name": "Kana Ueda",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T01:00:15.190Z"
   },
   {
     "name": "Kanae Yoshii",
@@ -60285,7 +60758,8 @@
     "name": "Kanagawa Philharmonic Orchestra",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T01:00:16.472Z"
   },
   {
     "name": "Kanako Momota",
@@ -60307,7 +60781,8 @@
     "name": "Kanata Symphony Orchestra",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:01.116Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T01:00:17.913Z"
   },
   {
     "name": "Kandi",
@@ -60345,25 +60820,39 @@
     "name": "Kandia Kouyaté",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:02.866Z",
-    "mbid": "c33858a2-b9ca-4a0e-9f2e-227b0de57ab9"
+    "mbid": "c33858a2-b9ca-4a0e-9f2e-227b0de57ab9",
+    "autoTriedAt": "2026-07-10T01:00:20.621Z"
   },
   {
     "name": "Kandy Floss",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:02.866Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T01:00:21.901Z"
   },
   {
     "name": "KANE",
-    "website": null,
+    "website": "http://kane.nl/",
     "wdBulkTriedAt": "2026-07-07T07:16:02.866Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "bc3ead02-18f6-4b63-8214-638ffbb42a11",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/7rgKxnnBAsZ7Q04d6jICu6",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T01:00:25.543Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Kane and Abel",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:02.866Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T01:00:26.823Z"
   },
   {
     "name": "Kane Brown",
@@ -60401,7 +60890,8 @@
     "name": "Kang Ji-young",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:02.866Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T01:00:28.102Z"
   },
   {
     "name": "Kang Jiyoung",
@@ -60423,7 +60913,8 @@
     "name": "Kang Min-hyuk",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:02.866Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T01:00:29.382Z"
   },
   {
     "name": "Kang Seung-yoon",
@@ -60445,13 +60936,15 @@
     "name": "Kang Sung-hoon",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:02.866Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T01:00:31.896Z"
   },
   {
     "name": "Kanga Roo",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:02.866Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T01:00:33.335Z"
   },
   {
     "name": "Kangin",
@@ -60489,7 +60982,8 @@
     "name": "Kangol Kid",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:02.866Z",
-    "mbid": "8e4631a4-0237-4baf-a532-c90000369214"
+    "mbid": "8e4631a4-0237-4baf-a532-c90000369214",
+    "autoTriedAt": "2026-07-10T01:00:35.943Z"
   },
   {
     "name": "Kangta",
@@ -60543,7 +61037,8 @@
     "name": "Kanjani Eight",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:02.866Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T01:00:38.640Z"
   },
   {
     "name": "Kanna Arihara",
@@ -60581,7 +61076,8 @@
     "name": "Kannada",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:02.866Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T01:00:41.496Z"
   },
   {
     "name": "Kannivalism",
@@ -60603,7 +61099,8 @@
     "name": "Kanno, Yoko",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:02.866Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T01:00:44.330Z"
   },
   {
     "name": "Kano",
@@ -60617,7 +61114,9 @@
       "telegram": null,
       "vk": null
     },
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "enrichedAt": "2026-07-10T01:00:44.330Z",
+    "enrichedBy": "auto"
   },
   {
     "name": "Kanon Fukuda",
@@ -60655,7 +61154,8 @@
     "name": "Kanon Suzuki",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:02.866Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T01:00:45.605Z"
   },
   {
     "name": "Kanon Wakeshima",
@@ -60685,25 +61185,30 @@
       "telegram": null,
       "vk": null
     },
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "enrichedAt": "2026-07-10T01:00:45.605Z",
+    "enrichedBy": "auto"
   },
   {
     "name": "Kansas City",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:02.866Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T01:00:46.882Z"
   },
   {
     "name": "Kansas City Red",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:02.866Z",
-    "mbid": "6d10328a-bbca-4e23-b46e-f26611eebcd1"
+    "mbid": "6d10328a-bbca-4e23-b46e-f26611eebcd1",
+    "autoTriedAt": "2026-07-10T01:00:49.503Z"
   },
   {
     "name": "Kansas City Royals",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:02.866Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T01:00:50.782Z"
   },
   {
     "name": "Kansas City Symphony",
@@ -60725,7 +61230,17 @@
     "name": "Kansas Joe McCoy",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:02.866Z",
-    "mbid": "302886da-969c-44da-b6c5-3f4eea07ea49"
+    "mbid": "302886da-969c-44da-b6c5-3f4eea07ea49",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/3rTgStIOfOg2Q1Ewj2mrWU",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-10T01:00:54.667Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Kanth Kaler",
@@ -60779,19 +61294,23 @@
     "name": "Kaohsiung City Symphony Orchestra",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:02.866Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T01:00:57.084Z"
   },
   {
     "name": "Kaori Iida",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:02.866Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-10T01:00:58.361Z"
   },
   {
     "name": "Kaori Kobayashi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:16:02.866Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "f4bbfb85-9dad-417c-a3a0-d84c7c0fe694",
+    "autoTriedAt": "2026-07-10T01:01:01.187Z"
   },
   {
     "name": "Kaori Mochida",
