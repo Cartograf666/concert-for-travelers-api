@@ -43859,21 +43859,28 @@
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:42.337Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:08:43.367Z"
+    "autoTriedAt": "2026-07-11T11:08:43.367Z",
+    "popularity": {
+      "listeners": 241,
+      "playcount": 657
+    },
+    "metaEnrichedAt": "2026-07-11T18:16:06.938Z"
   },
   {
     "name": "Na Trads",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:42.337Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:08:44.589Z"
+    "autoTriedAt": "2026-07-11T11:08:44.589Z",
+    "metaTriedAt": "2026-07-11T18:16:07.639Z"
   },
   {
     "name": "Na, Ying",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:42.337Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:08:45.827Z"
+    "autoTriedAt": "2026-07-11T11:08:45.827Z",
+    "metaTriedAt": "2026-07-11T18:16:08.297Z"
   },
   {
     "name": "Näääk",
@@ -43889,7 +43896,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:08:48.301Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "swedish",
+      "stockholm",
+      "swedish hiphop",
+      "hiphop",
+      "rap"
+    ],
+    "popularity": {
+      "listeners": 14855,
+      "playcount": 317842
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2af2975a20a77ae9e396628f524d2d9b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:08.972Z"
   },
   {
     "name": "Naava Grey",
@@ -43897,7 +43917,16 @@
     "wdBulkTriedAt": "2026-07-07T07:19:42.337Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "ffefb9ed-4062-4d65-bd26-efb4c3b045c0",
-    "autoTriedAt": "2026-07-11T11:08:50.893Z"
+    "autoTriedAt": "2026-07-11T11:08:50.893Z",
+    "genres": [
+      "Uganda"
+    ],
+    "popularity": {
+      "listeners": 293,
+      "playcount": 2053
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/86f1687b4b15f0fae783a408644ed2c3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:09.700Z"
   },
   {
     "name": "Nabarlek",
@@ -43913,7 +43942,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:08:53.389Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "australia",
+      "folk",
+      "australian",
+      "traditional",
+      "spotify"
+    ],
+    "popularity": {
+      "listeners": 483,
+      "playcount": 2543
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f211b9f8f62a10d006bafef182c4d0b9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:10.540Z"
   },
   {
     "name": "Nabeel Shaukat Ali",
@@ -43929,7 +43971,19 @@
     },
     "enrichedAt": "2026-07-07T07:19:42.337Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2c99498a-f29e-430b-8434-bb150c4d4599"
+    "mbid": "2c99498a-f29e-430b-8434-bb150c4d4599",
+    "genres": [
+      "pakistani",
+      "pakistan",
+      "pakistani fusion",
+      "Born in lahore"
+    ],
+    "popularity": {
+      "listeners": 9488,
+      "playcount": 81935
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f13c9298fefca4158f96a575b851c07f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:11.168Z"
   },
   {
     "name": "Nabiha",
@@ -43945,7 +43999,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:42.337Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "18135a3b-e8e8-4ce5-8705-12475f545642"
+    "mbid": "18135a3b-e8e8-4ce5-8705-12475f545642",
+    "genres": [
+      "pop",
+      "danish",
+      "female vocalists",
+      "electronic",
+      "soul"
+    ],
+    "popularity": {
+      "listeners": 55419,
+      "playcount": 555848
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3c0106f2cbd78146bd15c801fee415f9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:11.854Z"
   },
   {
     "name": "Nabin K Bhattarai",
@@ -43961,14 +44028,24 @@
     },
     "enrichedAt": "2026-07-07T07:19:42.337Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "nepal"
+    ],
+    "popularity": {
+      "listeners": 1929,
+      "playcount": 36493
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/07927dbe4b0e1637f856b43b0513d2b5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:12.482Z"
   },
   {
     "name": "Nabokov, Nicholas",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:42.337Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:08:54.629Z"
+    "autoTriedAt": "2026-07-11T11:08:54.629Z",
+    "metaTriedAt": "2026-07-11T18:16:13.099Z"
   },
   {
     "name": "Nabyla Maan",
@@ -43984,7 +44061,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:42.337Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ba384dde-009a-4324-932b-4147ade6c3fe"
+    "mbid": "ba384dde-009a-4324-932b-4147ade6c3fe",
+    "genres": [
+      "moroccan",
+      "morocco",
+      "world",
+      "arabic",
+      "north africa"
+    ],
+    "popularity": {
+      "listeners": 9614,
+      "playcount": 70533
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/409ad0838140a88d28cdfe9d61d9855f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:13.718Z"
   },
   {
     "name": "Nação Zumbi",
@@ -44000,7 +44090,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:42.337Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e3954b21-0d05-45ea-a057-e8cc4c9b1ab5"
+    "mbid": "e3954b21-0d05-45ea-a057-e8cc4c9b1ab5",
+    "genres": [
+      "manguebeat",
+      "brazilian",
+      "brasil",
+      "alternative",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 177764,
+      "playcount": 4842263
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/003ed6aa04d70faceda955e5d967400b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:14.406Z"
   },
   {
     "name": "Nacha Pop",
@@ -44016,7 +44119,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:42.337Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c3fd37fe-2f09-47a7-bae2-4b86f6d70f59"
+    "mbid": "c3fd37fe-2f09-47a7-bae2-4b86f6d70f59",
+    "genres": [
+      "pop",
+      "spanish",
+      "80s",
+      "spanish pop",
+      "movida"
+    ],
+    "popularity": {
+      "listeners": 184958,
+      "playcount": 1714211
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3bf6de956f2420716a67757bc4cae502/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:15.143Z"
   },
   {
     "name": "Nachhatar Gill",
@@ -44032,21 +44148,52 @@
     },
     "enrichedAt": "2026-07-07T07:19:42.337Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f638c93c-c2c7-4bf5-be8d-e22a39f92718"
+    "mbid": "f638c93c-c2c7-4bf5-be8d-e22a39f92718",
+    "genres": [
+      "punjabi bhangra",
+      "Bhangra",
+      "desi",
+      "Punjabi",
+      "Desi Artist"
+    ],
+    "popularity": {
+      "listeners": 2498,
+      "playcount": 19612
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cfb1cab52ace70a574314848aac825ad/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:16.033Z"
   },
   {
     "name": "Nacho Cano",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:42.337Z",
     "mbid": "cfe9cb9e-7233-49ec-9d2b-28107a3713e0",
-    "autoTriedAt": "2026-07-11T11:08:57.608Z"
+    "autoTriedAt": "2026-07-11T11:08:57.608Z",
+    "genres": [
+      "pop",
+      "spanish",
+      "instrumental",
+      "electronic",
+      "spain"
+    ],
+    "popularity": {
+      "listeners": 24207,
+      "playcount": 223412
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/eeabdf30b3f7c495ddb76a37b371c353/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:16.788Z"
   },
   {
     "name": "Nacho Canut",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:42.337Z",
     "mbid": "295c70bf-9123-43f6-b011-5aa09883043f",
-    "autoTriedAt": "2026-07-11T11:09:00.235Z"
+    "autoTriedAt": "2026-07-11T11:09:00.235Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 4
+    },
+    "metaEnrichedAt": "2026-07-11T18:16:17.439Z"
   },
   {
     "name": "Nacht Und Nebel",
@@ -44063,7 +44210,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:09:02.748Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "black metal",
+      "new wave",
+      "nsbm",
+      "synthpop",
+      "post-punk"
+    ],
+    "popularity": {
+      "listeners": 19912,
+      "playcount": 106518
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/118358606da2bd1532be388e39d924ac/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:18.064Z"
   },
   {
     "name": "Nachtmahr",
@@ -44079,7 +44239,20 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T11:09:02.748Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "industrial",
+      "ebm",
+      "dark electro",
+      "german",
+      "black metal"
+    ],
+    "popularity": {
+      "listeners": 124147,
+      "playcount": 4935538
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/94c92d791112245deed58feaf58687c3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:18.754Z"
   },
   {
     "name": "Nachtmystium",
@@ -44095,7 +44268,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:42.337Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7b8d0768-7bef-4c01-ba61-1150e72b49bc"
+    "mbid": "7b8d0768-7bef-4c01-ba61-1150e72b49bc",
+    "genres": [
+      "black metal",
+      "psychedelic black metal",
+      "atmospheric black metal",
+      "psychedelic",
+      "USBM"
+    ],
+    "popularity": {
+      "listeners": 84785,
+      "playcount": 3469183
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6f82ac0450ab9e0c7065a959ef06e333/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:19.428Z"
   },
   {
     "name": "Nada",
@@ -44111,7 +44297,20 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T11:09:02.748Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "italian",
+      "ambient",
+      "pop",
+      "female vocalists",
+      "turkish"
+    ],
+    "popularity": {
+      "listeners": 185904,
+      "playcount": 1870608
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d41d8cd98f00b204e9800998ecf8427e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:20.120Z"
   },
   {
     "name": "Nada Surf",
@@ -44127,7 +44326,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:42.337Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b9a2a9a6-7a40-48a6-bcb1-8eff5b89ad5b"
+    "mbid": "b9a2a9a6-7a40-48a6-bcb1-8eff5b89ad5b",
+    "genres": [
+      "indie rock",
+      "indie",
+      "alternative",
+      "alternative rock",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 1185453,
+      "playcount": 28274576
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a95e61650c1f770cdac1a60ef714d9dd/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:20.897Z"
   },
   {
     "name": "Nadeea",
@@ -44143,7 +44355,12 @@
     },
     "enrichedAt": "2026-07-07T07:19:42.337Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 444,
+      "playcount": 1933
+    },
+    "metaEnrichedAt": "2026-07-11T18:16:21.587Z"
   },
   {
     "name": "Nadeeka Guruge",
@@ -44159,7 +44376,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:42.337Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "rock",
+      "ambient",
+      "folk",
+      "experimental",
+      "sri lanka"
+    ],
+    "popularity": {
+      "listeners": 66,
+      "playcount": 6137
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a54ab487b5477265e6d9bee48d58606c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:22.434Z"
   },
   {
     "name": "Nadeem-Shravan",
@@ -44176,7 +44406,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:09:05.303Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "bollywood",
+      "Indian",
+      "Hindi",
+      "india",
+      "filmi"
+    ],
+    "popularity": {
+      "listeners": 933,
+      "playcount": 14588
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/83f1494c5851a31e7f447ee8e2162493/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:23.097Z"
   },
   {
     "name": "Nadeem–Shravan",
@@ -44193,28 +44436,53 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:09:07.930Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 5,
+      "playcount": 154
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/83f1494c5851a31e7f447ee8e2162493/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:23.787Z"
   },
   {
     "name": "Nader Mashayekhi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:42.337Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:09:09.150Z"
+    "autoTriedAt": "2026-07-11T11:09:09.150Z",
+    "genres": [
+      "composer",
+      "Classical",
+      "world",
+      "orchestral",
+      "Contemporary"
+    ],
+    "popularity": {
+      "listeners": 73,
+      "playcount": 144
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/77b71c41e235a424ae2c69d5a19ea467/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:25.026Z"
   },
   {
     "name": "Nadezhda Repina",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:42.337Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:09:10.384Z"
+    "autoTriedAt": "2026-07-11T11:09:10.384Z",
+    "metaTriedAt": "2026-07-11T18:16:25.678Z"
   },
   {
     "name": "Nadezhda Zabela-Vrubel",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:42.337Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:09:11.613Z"
+    "autoTriedAt": "2026-07-11T11:09:11.613Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 8
+    },
+    "metaEnrichedAt": "2026-07-11T18:16:26.535Z"
   },
   {
     "name": "Nadhif Basalamah",
@@ -44230,7 +44498,17 @@
     },
     "mbid": "ccbc2142-b78c-4f52-b5a5-e4869910c123",
     "enrichedAt": "2026-07-09T08:32:12.140Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "indonesian",
+      "indonesia"
+    ],
+    "popularity": {
+      "listeners": 52500,
+      "playcount": 1180901
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cd2dd619e3dae4ad0a57e05b444025d9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:27.446Z"
   },
   {
     "name": "Nadia Ali",
@@ -44247,7 +44525,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:09:14.168Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "vocal trance",
+      "trance",
+      "female vocalists",
+      "dance",
+      "electronic"
+    ],
+    "popularity": {
+      "listeners": 297530,
+      "playcount": 2932250
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/625009936ca995c28b5c154cf731a2c4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:28.105Z"
   },
   {
     "name": "Nadia Azzi",
@@ -44263,7 +44554,12 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 1
+    },
+    "metaEnrichedAt": "2026-07-11T18:16:28.806Z"
   },
   {
     "name": "Nadia Boulanger",
@@ -44279,14 +44575,40 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b84d7c94-d171-4257-a57a-48dc5425323b"
+    "mbid": "b84d7c94-d171-4257-a57a-48dc5425323b",
+    "genres": [
+      "french",
+      "Classical",
+      "conductor",
+      "musicologist",
+      "composer"
+    ],
+    "popularity": {
+      "listeners": 83708,
+      "playcount": 234439
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bab31305889933c121a49a33890a5e2c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:29.475Z"
   },
   {
     "name": "Nadia Cassini",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbid": "d16cf16c-6600-421b-acdf-62b79cf39658",
-    "autoTriedAt": "2026-07-11T11:09:16.705Z"
+    "autoTriedAt": "2026-07-11T11:09:16.705Z",
+    "genres": [
+      "pop",
+      "Disco",
+      "electro",
+      "synth",
+      "soul"
+    ],
+    "popularity": {
+      "listeners": 602,
+      "playcount": 3714
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9c2028f61f27a71546ec8709094aea2d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:30.242Z"
   },
   {
     "name": "Nadia Sirota",
@@ -44303,7 +44625,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:09:19.647Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "contemporary classical",
+      "american",
+      "viola",
+      "Classical",
+      "Avant-Garde"
+    ],
+    "popularity": {
+      "listeners": 6839,
+      "playcount": 32901
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/41797be78daab5eb064aebfa17e06814/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:30.913Z"
   },
   {
     "name": "Nadin Amizah",
@@ -44319,7 +44654,20 @@
     },
     "mbid": "b123f290-a519-4618-a3b0-8ec03e53e027",
     "enrichedAt": "2026-07-09T08:32:12.140Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "indie pop",
+      "folk",
+      "indonesia",
+      "female vocalists",
+      "indonesian"
+    ],
+    "popularity": {
+      "listeners": 68688,
+      "playcount": 3083936
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/10a75e65ad84fcfadeca0b74d1a56d0c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:31.579Z"
   },
   {
     "name": "Nádine",
@@ -44335,7 +44683,19 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8c034b3f-a5c7-448e-939f-e7afcb630a85"
+    "mbid": "8c034b3f-a5c7-448e-939f-e7afcb630a85",
+    "genres": [
+      "Nadine",
+      "female vocalists",
+      "african",
+      "i",
+      "afrikaans"
+    ],
+    "popularity": {
+      "listeners": 726,
+      "playcount": 7195
+    },
+    "metaEnrichedAt": "2026-07-11T18:16:32.238Z"
   },
   {
     "name": "Nadine Coyle",
@@ -44351,7 +44711,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "98fcdfe5-fa66-46e1-9aa3-4bf27733744f"
+    "mbid": "98fcdfe5-fa66-46e1-9aa3-4bf27733744f",
+    "genres": [
+      "pop",
+      "female vocalists",
+      "british",
+      "irish",
+      "girls aloud"
+    ],
+    "popularity": {
+      "listeners": 44132,
+      "playcount": 1060337
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1754966529fed3d2267de7e021e022bb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:32.859Z"
   },
   {
     "name": "Nadirah Shakoor",
@@ -44368,14 +44741,39 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:09:22.152Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "soul",
+      "House",
+      "r&b",
+      "experimental",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 3663,
+      "playcount": 15009
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f9ea7b9beb6675fffd2ae4a9783a2e24/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:33.489Z"
   },
   {
     "name": "Nadiya",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:09:23.392Z"
+    "autoTriedAt": "2026-07-11T11:09:23.392Z",
+    "genres": [
+      "french",
+      "rnb",
+      "pop",
+      "female vocalists",
+      "dance"
+    ],
+    "popularity": {
+      "listeners": 58926,
+      "playcount": 488991
+    },
+    "metaEnrichedAt": "2026-07-11T18:16:34.158Z"
   },
   {
     "name": "Nadja",
@@ -44392,7 +44790,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:09:27.087Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "drone",
+      "ambient",
+      "drone doom",
+      "dark ambient",
+      "doom metal"
+    ],
+    "popularity": {
+      "listeners": 121233,
+      "playcount": 2478936
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fe92dffa58f5d8d3e5d1557a02ab4035/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:34.762Z"
   },
   {
     "name": "Naer Mataron",
@@ -44408,7 +44819,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "889caa13-858b-4691-9a27-1872432e6d6f"
+    "mbid": "889caa13-858b-4691-9a27-1872432e6d6f",
+    "genres": [
+      "black metal",
+      "Hellenic Black Metal",
+      "Greek Black Metal",
+      "Greek",
+      "melodic black metal"
+    ],
+    "popularity": {
+      "listeners": 7762,
+      "playcount": 188344
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3bee7ec1a29c9fc14cecba07f78d5512/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:35.419Z"
   },
   {
     "name": "Nafa Urbach",
@@ -44424,14 +44848,37 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a86dfc14-a60e-41cb-9c13-71baa7ab039f"
+    "mbid": "a86dfc14-a60e-41cb-9c13-71baa7ab039f",
+    "genres": [
+      "pop",
+      "90s",
+      "indonesia"
+    ],
+    "popularity": {
+      "listeners": 746,
+      "playcount": 4625
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8f95ee0c79c0ab095ed60a9b9c258781/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:36.038Z"
   },
   {
     "name": "Naftule Brandwein",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbid": "465c9697-ff9c-4651-9cc5-9db662ff3f1e",
-    "autoTriedAt": "2026-07-11T11:09:29.590Z"
+    "autoTriedAt": "2026-07-11T11:09:29.590Z",
+    "genres": [
+      "klezmer",
+      "jewish",
+      "clarinet",
+      "All",
+      "old klezmer"
+    ],
+    "popularity": {
+      "listeners": 8501,
+      "playcount": 61493
+    },
+    "metaEnrichedAt": "2026-07-11T18:16:36.733Z"
   },
   {
     "name": "Nagelfar",
@@ -44447,7 +44894,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c2707589-5231-4f9a-b029-5b758c355627"
+    "mbid": "c2707589-5231-4f9a-b029-5b758c355627",
+    "genres": [
+      "black metal",
+      "progressive black metal",
+      "german",
+      "German Black Metal",
+      "pagan black metal"
+    ],
+    "popularity": {
+      "listeners": 28543,
+      "playcount": 817995
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/deb331b5b5aabb4e6b63554917cf27c9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:37.360Z"
   },
   {
     "name": "Naghma",
@@ -44455,7 +44915,20 @@
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "c27e26b0-4d29-4cae-adc3-dd89eda7d649",
-    "autoTriedAt": "2026-07-11T11:09:32.076Z"
+    "autoTriedAt": "2026-07-11T11:09:32.076Z",
+    "genres": [
+      "afghanistan",
+      "singer-songwriter",
+      "world",
+      "afghan",
+      "folk"
+    ],
+    "popularity": {
+      "listeners": 1396,
+      "playcount": 6447
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cca99605f450e487982a7252aaede195/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:38.017Z"
   },
   {
     "name": "Nagi Yanagi",
@@ -44471,7 +44944,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "eeacda09-891d-4367-b9cc-c6371c96d4d9"
+    "mbid": "eeacda09-891d-4367-b9cc-c6371c96d4d9",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "female vocalists",
+      "anime",
+      "doujin"
+    ],
+    "popularity": {
+      "listeners": 41293,
+      "playcount": 2949387
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/de1277510995e597c2cc194aaa6af4ec/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:38.981Z"
   },
   {
     "name": "Nagisa ni te",
@@ -44487,7 +44973,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "25754da2-209e-426a-8f19-cccd9d7bc13b"
+    "mbid": "25754da2-209e-426a-8f19-cccd9d7bc13b",
+    "genres": [
+      "psychedelic",
+      "japanese",
+      "folk",
+      "psychedelic folk",
+      "indie pop"
+    ],
+    "popularity": {
+      "listeners": 47053,
+      "playcount": 461767
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2f730ec3f54e1986fb33bfd4d722eedb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:39.623Z"
   },
   {
     "name": "Naglfar",
@@ -44503,7 +45002,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "320112c6-9a63-4c2b-b0cc-d2b88fce290a"
+    "mbid": "320112c6-9a63-4c2b-b0cc-d2b88fce290a",
+    "genres": [
+      "black metal",
+      "melodic black metal",
+      "swedish",
+      "Blackened Death Metal",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 140035,
+      "playcount": 4297835
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5a941a85e5f9b54852c4adc408cde21c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:40.216Z"
   },
   {
     "name": "Nagoya",
@@ -44511,21 +45023,57 @@
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "3f5c7c71-e678-443a-b7ec-f1c78e6614ab",
-    "autoTriedAt": "2026-07-11T11:09:34.623Z"
+    "autoTriedAt": "2026-07-11T11:09:34.623Z",
+    "genres": [
+      "rock",
+      "swedish",
+      "swedish rock",
+      "80s",
+      "gavle"
+    ],
+    "popularity": {
+      "listeners": 221,
+      "playcount": 1042
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/df7e4a84cec24da3a10dd111353a1777/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:40.875Z"
   },
   {
     "name": "Nagoya Philharmonic Orchestra",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:09:35.871Z"
+    "autoTriedAt": "2026-07-11T11:09:35.871Z",
+    "genres": [
+      "japan",
+      "japanese"
+    ],
+    "popularity": {
+      "listeners": 150,
+      "playcount": 917
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f72c98987fc03b85d2fa679d24a3ce29/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:41.614Z"
   },
   {
     "name": "Naheed Akhtar",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:09:37.101Z"
+    "autoTriedAt": "2026-07-11T11:09:37.101Z",
+    "genres": [
+      "pakistani",
+      "lollywood",
+      "folk",
+      "lounge",
+      "world"
+    ],
+    "popularity": {
+      "listeners": 5406,
+      "playcount": 35053
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9e374cb0d94e664aa241401a14c3da24/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:42.964Z"
   },
   {
     "name": "Nahemah",
@@ -44542,14 +45090,28 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:09:39.622Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "progressive death metal",
+      "Progressive metal",
+      "Melodic Death Metal",
+      "death metal",
+      "spanish"
+    ],
+    "popularity": {
+      "listeners": 17260,
+      "playcount": 407396
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/62948b409e402e55a83b05c1d13a26cd/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:43.727Z"
   },
   {
     "name": "Nahreel",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:09:40.851Z"
+    "autoTriedAt": "2026-07-11T11:09:40.851Z",
+    "metaTriedAt": "2026-07-11T18:16:44.389Z"
   },
   {
     "name": "Naida Cole",
@@ -44557,7 +45119,18 @@
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "57a19bd7-3ff7-4e7f-a698-b0573ac1e001",
-    "autoTriedAt": "2026-07-11T11:09:43.340Z"
+    "autoTriedAt": "2026-07-11T11:09:43.340Z",
+    "genres": [
+      "piano",
+      "Classical",
+      "lesser known yet streamable artists"
+    ],
+    "popularity": {
+      "listeners": 583,
+      "playcount": 2791
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/58e37a17659b018c7db4dccfbd37d7bc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:45.138Z"
   },
   {
     "name": "Naif",
@@ -44573,7 +45146,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "bf0f7699-117a-4001-8295-ef47035c4e2a"
+    "mbid": "bf0f7699-117a-4001-8295-ef47035c4e2a",
+    "genres": [
+      "indonesian",
+      "Retro",
+      "retro pop",
+      "indie pop",
+      "indie"
+    ],
+    "popularity": {
+      "listeners": 59737,
+      "playcount": 2024577
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4baf96ef579001a8a547ab406fcd8f18/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:45.762Z"
   },
   {
     "name": "Naila Boss",
@@ -44589,7 +45175,16 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "9fd8a303-47ab-493e-8a3b-34102d972ada"
+    "mbid": "9fd8a303-47ab-493e-8a3b-34102d972ada",
+    "genres": [
+      "british"
+    ],
+    "popularity": {
+      "listeners": 373,
+      "playcount": 1051
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/356792acac588328cf52d17c1c2023e9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:46.451Z"
   },
   {
     "name": "Nailbomb",
@@ -44605,7 +45200,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "03d46d6b-adf7-4cd7-9b30-7c29063b06b3"
+    "mbid": "03d46d6b-adf7-4cd7-9b30-7c29063b06b3",
+    "genres": [
+      "thrash metal",
+      "industrial metal",
+      "hardcore",
+      "metal",
+      "groove metal"
+    ],
+    "popularity": {
+      "listeners": 205838,
+      "playcount": 3295746
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/24777beaeb10944602c60f835c0e02a3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:47.164Z"
   },
   {
     "name": "Naildown",
@@ -44621,7 +45229,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b5103ef0-12bc-49a2-89e7-6e9eac5f75ed"
+    "mbid": "b5103ef0-12bc-49a2-89e7-6e9eac5f75ed",
+    "genres": [
+      "Melodic Death Metal",
+      "finnish",
+      "death metal",
+      "metal",
+      "finnish metal"
+    ],
+    "popularity": {
+      "listeners": 45991,
+      "playcount": 773823
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/64e5f382a97972e3e411378949930850/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:47.918Z"
   },
   {
     "name": "Nailed Promise",
@@ -44637,14 +45258,28 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d59f629f-ece6-4e75-868b-ee14b5315924"
+    "mbid": "d59f629f-ece6-4e75-868b-ee14b5315924",
+    "genres": [
+      "All",
+      "Nu Metal",
+      "hardcore",
+      "metal",
+      "christian rock"
+    ],
+    "popularity": {
+      "listeners": 414,
+      "playcount": 4241
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:48.738Z"
   },
   {
     "name": "Nailor Azevedo",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:09:44.574Z"
+    "autoTriedAt": "2026-07-11T11:09:44.574Z",
+    "metaTriedAt": "2026-07-11T18:16:49.401Z"
   },
   {
     "name": "Nailpin",
@@ -44660,7 +45295,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b69eb5f3-1c0e-44fb-913b-809260402687"
+    "mbid": "b69eb5f3-1c0e-44fb-913b-809260402687",
+    "genres": [
+      "pop punk",
+      "punk rock",
+      "Belgium",
+      "rock",
+      "punk"
+    ],
+    "popularity": {
+      "listeners": 10370,
+      "playcount": 189368
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/af6cf229deda07d2b2cdb3e25be0144a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:50.328Z"
   },
   {
     "name": "Nails",
@@ -44676,14 +45324,33 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a7d9c5f6-751d-4ea5-bf6d-39f1751d44a1"
+    "mbid": "a7d9c5f6-751d-4ea5-bf6d-39f1751d44a1",
+    "genres": [
+      "grindcore",
+      "hardcore",
+      "powerviolence",
+      "Crust",
+      "hardcore punk"
+    ],
+    "popularity": {
+      "listeners": 244189,
+      "playcount": 11753931
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ac1c4625d145b584d0b0cbfd7f288808/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:50.953Z"
   },
   {
     "name": "Naim Popal",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:09:46.346Z"
+    "autoTriedAt": "2026-07-11T11:09:46.346Z",
+    "popularity": {
+      "listeners": 40,
+      "playcount": 462
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/df9a8225de80730f71869e52a5ddaa4e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:51.645Z"
   },
   {
     "name": "Naima Belkhiati",
@@ -44699,7 +45366,9 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:09:48.845Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:52.277Z"
   },
   {
     "name": "Nainawaz",
@@ -44715,7 +45384,12 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 9,
+      "playcount": 436
+    },
+    "metaEnrichedAt": "2026-07-11T18:16:53.019Z"
   },
   {
     "name": "Naio Ssaion",
@@ -44732,7 +45406,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:09:51.333Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "alternative metal",
+      "Gothic Metal",
+      "Female fronted metal",
+      "slovenian",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 16833,
+      "playcount": 204191
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e3887260c6cfc12a269698a2933aff2e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:53.720Z"
   },
   {
     "name": "Nairobi",
@@ -44749,7 +45436,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:09:53.820Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "metalcore",
+      "russian",
+      "dub",
+      "argentina",
+      "post-hardcore"
+    ],
+    "popularity": {
+      "listeners": 6926,
+      "playcount": 58866
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ed5b90ae67f56ffb20c37c768808c023/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:54.453Z"
   },
   {
     "name": "Najam Sheraz",
@@ -44765,7 +45465,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "dc6fd4de-092d-4c6f-9853-2e09f01dcf79"
+    "mbid": "dc6fd4de-092d-4c6f-9853-2e09f01dcf79",
+    "genres": [
+      "pakistan",
+      "world",
+      "pakistani",
+      "Hindi",
+      "paki"
+    ],
+    "popularity": {
+      "listeners": 2643,
+      "playcount": 9637
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3cebf7ec4ae52be626375ae0877f7d4c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:55.427Z"
   },
   {
     "name": "Najee",
@@ -44781,7 +45494,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f334f258-9740-47d8-a2fd-2baeab205340"
+    "mbid": "f334f258-9740-47d8-a2fd-2baeab205340",
+    "genres": [
+      "Smooth Jazz",
+      "jazz",
+      "saxophone",
+      "contemporary jazz",
+      "soul"
+    ],
+    "popularity": {
+      "listeners": 122264,
+      "playcount": 1193389
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/52b1031eae5dfb2a3507939a54c6d11a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:56.094Z"
   },
   {
     "name": "Naji Hakim",
@@ -44797,7 +45523,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d219c83a-a69d-4f6f-a02a-2b6234ab21b9"
+    "mbid": "d219c83a-a69d-4f6f-a02a-2b6234ab21b9",
+    "genres": [
+      "organ",
+      "Classical",
+      "pipe organ",
+      "composer",
+      "contemporary classical"
+    ],
+    "popularity": {
+      "listeners": 1396,
+      "playcount": 10070
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/dcb767138094f461e18cdf54ceb6c306/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:56.772Z"
   },
   {
     "name": "Najim",
@@ -44814,14 +45553,28 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:09:56.318Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "africa",
+      "Love",
+      "world",
+      "All",
+      "rai"
+    ],
+    "popularity": {
+      "listeners": 843,
+      "playcount": 6329
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ebfe4f2ec39e53623f9fc0ab75de509b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:58.195Z"
   },
   {
     "name": "Najla Jabor",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:09:57.547Z"
+    "autoTriedAt": "2026-07-11T11:09:57.547Z",
+    "metaTriedAt": "2026-07-11T18:16:58.800Z"
   },
   {
     "name": "Najwa Karam",
@@ -44837,7 +45590,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2674597f-6c40-47cc-b980-67f94725f7a7"
+    "mbid": "2674597f-6c40-47cc-b980-67f94725f7a7",
+    "genres": [
+      "arabic",
+      "lebanese",
+      "female vocalists",
+      "Lebanon",
+      "world"
+    ],
+    "popularity": {
+      "listeners": 45844,
+      "playcount": 546982
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/638481063ba87761abe9232d340604bb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:16:59.460Z"
   },
   {
     "name": "Najwa Nimri",
@@ -44853,70 +45619,116 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c15c1bc7-9157-4f48-94a4-ace062c213fe"
+    "mbid": "c15c1bc7-9157-4f48-94a4-ace062c213fe",
+    "genres": [
+      "trip-hop",
+      "electronic",
+      "female vocalists",
+      "spanish",
+      "downtempo"
+    ],
+    "popularity": {
+      "listeners": 69805,
+      "playcount": 1213437
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:00.141Z"
   },
   {
     "name": "Nakagawa, Shōko",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:09:58.780Z"
+    "autoTriedAt": "2026-07-11T11:09:58.780Z",
+    "metaTriedAt": "2026-07-11T18:17:00.763Z"
   },
   {
     "name": "Nakahara, Mai",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:10:00.008Z"
+    "autoTriedAt": "2026-07-11T11:10:00.008Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 1
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:02.006Z"
   },
   {
     "name": "Nakajima, Miyuki",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:10:01.444Z"
+    "autoTriedAt": "2026-07-11T11:10:01.444Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 10
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:03.069Z"
   },
   {
     "name": "Nakamori, Akina",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:10:02.674Z"
+    "autoTriedAt": "2026-07-11T11:10:02.674Z",
+    "popularity": {
+      "listeners": 5,
+      "playcount": 698
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:03.961Z"
   },
   {
     "name": "Nakanishi, Toshio",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:10:03.893Z"
+    "autoTriedAt": "2026-07-11T11:10:03.893Z",
+    "metaTriedAt": "2026-07-11T18:17:04.608Z"
   },
   {
     "name": "Nakano Fujo Sisters",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:10:06.144Z"
+    "autoTriedAt": "2026-07-11T11:10:06.144Z",
+    "popularity": {
+      "listeners": 8,
+      "playcount": 104
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:05.325Z"
   },
   {
     "name": "Nakashima, Mika",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:10:07.747Z"
+    "autoTriedAt": "2026-07-11T11:10:07.747Z",
+    "popularity": {
+      "listeners": 43,
+      "playcount": 1817
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:06.020Z"
   },
   {
     "name": "Nakayama, Miho",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:10:08.993Z"
+    "autoTriedAt": "2026-07-11T11:10:08.993Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 3
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:06.686Z"
   },
   {
     "name": "Nakayama, Uri",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:10:10.223Z"
+    "autoTriedAt": "2026-07-11T11:10:10.223Z",
+    "image": "https://cdn-images.dzcdn.net/images/artist/9a0b9930127d96d7df131ed6baefec75/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:07.318Z"
   },
   {
     "name": "Naked Aggression",
@@ -44932,21 +45744,58 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0598d02a-a759-4aed-8997-5e8c73e8d69b"
+    "mbid": "0598d02a-a759-4aed-8997-5e8c73e8d69b",
+    "genres": [
+      "anarcho-punk",
+      "punk",
+      "hardcore punk",
+      "hardcore",
+      "political"
+    ],
+    "popularity": {
+      "listeners": 14321,
+      "playcount": 180642
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f27ef00fb63742f8ba1a5b04c8a9f8a6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:08.384Z"
   },
   {
     "name": "Naked and Famous",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:10:11.470Z"
+    "autoTriedAt": "2026-07-11T11:10:11.470Z",
+    "genres": [
+      "indie",
+      "electronic",
+      "indie pop",
+      "Electro Pop",
+      "New Zealand"
+    ],
+    "popularity": {
+      "listeners": 1289039,
+      "playcount": 34527645
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:08.947Z"
   },
   {
     "name": "Naked and Famous, The",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:10:12.714Z"
+    "autoTriedAt": "2026-07-11T11:10:12.714Z",
+    "genres": [
+      "indie",
+      "electronic",
+      "indie pop",
+      "Electro Pop",
+      "New Zealand"
+    ],
+    "popularity": {
+      "listeners": 1289039,
+      "playcount": 34527645
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:09.694Z"
   },
   {
     "name": "Naked City",
@@ -44962,7 +45811,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "fc4dea85-3998-4130-a56e-907689160480"
+    "mbid": "fc4dea85-3998-4130-a56e-907689160480",
+    "genres": [
+      "Avant-Garde",
+      "jazz",
+      "experimental",
+      "grindcore",
+      "noise"
+    ],
+    "popularity": {
+      "listeners": 123665,
+      "playcount": 3663638
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cee0ee2763e1e6277284a4d6ffd25c08/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:10.343Z"
   },
   {
     "name": "Naked Eyes",
@@ -44978,7 +45840,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d5d477bc-97c5-410c-983b-ff541580566f"
+    "mbid": "d5d477bc-97c5-410c-983b-ff541580566f",
+    "genres": [
+      "new wave",
+      "80s",
+      "synth pop",
+      "pop",
+      "synthpop"
+    ],
+    "popularity": {
+      "listeners": 640647,
+      "playcount": 6115360
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/347313b703cac4628a00fcf2b2c36dbe/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:10.974Z"
   },
   {
     "name": "Naked Lunch",
@@ -44995,7 +45870,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:10:15.562Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "indie",
+      "austrian",
+      "alternative",
+      "minimal synth",
+      "alternative rock"
+    ],
+    "popularity": {
+      "listeners": 45338,
+      "playcount": 535231
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a0679674c1caf3f190da8fdaf5973eef/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:11.625Z"
   },
   {
     "name": "Naked Raygun",
@@ -45011,21 +45899,48 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "85d2e30c-92fd-4c7f-a2dc-f988a70e234d"
+    "mbid": "85d2e30c-92fd-4c7f-a2dc-f988a70e234d",
+    "genres": [
+      "punk",
+      "punk rock",
+      "chicago",
+      "post-punk",
+      "hardcore"
+    ],
+    "popularity": {
+      "listeners": 83870,
+      "playcount": 1389803
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f0c941f3dc1a6307b33de83f7b1347b7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:12.282Z"
   },
   {
     "name": "Naked Violence",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbid": "554747ef-c412-46de-823f-df1041e81b4e",
-    "autoTriedAt": "2026-07-11T11:10:18.044Z"
+    "autoTriedAt": "2026-07-11T11:10:18.044Z",
+    "genres": [
+      "punk",
+      "pop punk"
+    ],
+    "popularity": {
+      "listeners": 58,
+      "playcount": 615
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:12.922Z"
   },
   {
     "name": "Nakota",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:10:19.267Z"
+    "autoTriedAt": "2026-07-11T11:10:19.267Z",
+    "popularity": {
+      "listeners": 16,
+      "playcount": 57
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:13.635Z"
   },
   {
     "name": "Naldo",
@@ -45042,7 +45957,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:10:21.737Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "brazilian",
+      "funk",
+      "Naldo",
+      "Reggaeton",
+      "funk melody"
+    ],
+    "popularity": {
+      "listeners": 19471,
+      "playcount": 173101
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f4dffd0e072f2a5e0ddd44957cdde6d1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:14.625Z"
   },
   {
     "name": "Nalin Jayawardena",
@@ -45058,42 +45986,74 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "bedd1a24-828b-4eea-bce1-5a0cab8c1e6d"
+    "mbid": "bedd1a24-828b-4eea-bce1-5a0cab8c1e6d",
+    "popularity": {
+      "listeners": 9,
+      "playcount": 16
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5b764245e9dbeb738bce9a021f958403/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:15.329Z"
   },
   {
     "name": "Nalina Chitrakar",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:10:22.965Z"
+    "autoTriedAt": "2026-07-11T11:10:22.965Z",
+    "popularity": {
+      "listeners": 19,
+      "playcount": 70
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5234037c3d178534af17d2688ef9acc1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:16.055Z"
   },
   {
     "name": "Nam Gyuri",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:10:25.205Z"
+    "autoTriedAt": "2026-07-11T11:10:25.205Z",
+    "popularity": {
+      "listeners": 40,
+      "playcount": 522
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:16.707Z"
   },
   {
     "name": "Nam Hyun Joon",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:10:26.490Z"
+    "autoTriedAt": "2026-07-11T11:10:26.490Z",
+    "genres": [
+      "k-pop",
+      "poppin"
+    ],
+    "popularity": {
+      "listeners": 271,
+      "playcount": 5237
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:17.376Z"
   },
   {
     "name": "Nam Ji Hyun",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:10:27.722Z"
+    "autoTriedAt": "2026-07-11T11:10:27.722Z",
+    "metaTriedAt": "2026-07-11T18:17:17.991Z"
   },
   {
     "name": "Nam Ji-hyun",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:10:31.955Z"
+    "autoTriedAt": "2026-07-11T11:10:31.955Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 1
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:18.607Z"
   },
   {
     "name": "Nam June Paik",
@@ -45109,28 +46069,73 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "40d95b34-b523-48ff-bd61-fcf586ae3f58"
+    "mbid": "40d95b34-b523-48ff-bd61-fcf586ae3f58",
+    "genres": [
+      "fluxus",
+      "contemporary classical",
+      "Avant-Garde",
+      "experimental",
+      "musique concrete"
+    ],
+    "popularity": {
+      "listeners": 10292,
+      "playcount": 28247
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a5837a31925673a934c8d67b813a811f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:19.240Z"
   },
   {
     "name": "Nam Woo-hyun",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:10:33.216Z"
+    "autoTriedAt": "2026-07-11T11:10:33.216Z",
+    "genres": [
+      "infinite",
+      "k-pop",
+      "Kpop",
+      "Korean",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 15694,
+      "playcount": 339945
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5bd5a14929510e0891f62e31aede82e7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:20.741Z"
   },
   {
     "name": "Namagiripettai Krishnan",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbid": "8f755df8-79ad-480c-b320-948e72d12883",
-    "autoTriedAt": "2026-07-11T11:10:35.720Z"
+    "autoTriedAt": "2026-07-11T11:10:35.720Z",
+    "genres": [
+      "carnatic",
+      "raga",
+      "india",
+      "indian classical",
+      "Nadhaswaram"
+    ],
+    "popularity": {
+      "listeners": 907,
+      "playcount": 2881
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/769b535ff2fedb25a1716971ffbd99d4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:21.614Z"
   },
   {
     "name": "Namal Udugama",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:10:36.951Z"
+    "autoTriedAt": "2026-07-11T11:10:36.951Z",
+    "popularity": {
+      "listeners": 220,
+      "playcount": 4548
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9bac3d6bb2633406d112887115015145/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:22.334Z"
   },
   {
     "name": "NAMAs",
@@ -45147,7 +46152,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:10:39.439Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "french",
+      "hip hop",
+      "electronic",
+      "bass"
+    ],
+    "popularity": {
+      "listeners": 2714,
+      "playcount": 10383
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:23.035Z"
   },
   {
     "name": "Name Taken",
@@ -45163,7 +46180,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:10:41.912Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "pop punk",
+      "emo",
+      "rock",
+      "alternative rock",
+      "indie"
+    ],
+    "popularity": {
+      "listeners": 94685,
+      "playcount": 1311757
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7eac82b00c07587cb614a1d1d811b7ff/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:23.696Z"
   },
   {
     "name": "Nami",
@@ -45180,7 +46210,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:10:44.413Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Progressive metal",
+      "progressive death metal",
+      "Melodic Death Metal",
+      "andorrian",
+      "andorra"
+    ],
+    "popularity": {
+      "listeners": 52481,
+      "playcount": 553114
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7e34235631a08f25395e9c489d1802fa/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:24.398Z"
   },
   {
     "name": "Nami Tamaki",
@@ -45196,7 +46239,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f4380e07-44ad-4e45-9445-6419b2f05516"
+    "mbid": "f4380e07-44ad-4e45-9445-6419b2f05516",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "female vocalists",
+      "anime",
+      "JPop"
+    ],
+    "popularity": {
+      "listeners": 62097,
+      "playcount": 2127907
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/df5ba8d507cc83f9d240adb01d89a846/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:25.055Z"
   },
   {
     "name": "Namie Amuro",
@@ -45212,7 +46268,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "888994e5-6f53-4f53-bced-b20482aea42a"
+    "mbid": "888994e5-6f53-4f53-bced-b20482aea42a",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "female vocalists",
+      "pop",
+      "JPop"
+    ],
+    "popularity": {
+      "listeners": 145650,
+      "playcount": 29420488
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d41d8cd98f00b204e9800998ecf8427e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:25.662Z"
   },
   {
     "name": "NamNamBulu",
@@ -45228,7 +46297,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "aff48c86-899b-490f-b5e4-39e80d43465c"
+    "mbid": "aff48c86-899b-490f-b5e4-39e80d43465c",
+    "genres": [
+      "futurepop",
+      "synthpop",
+      "ebm",
+      "electronic",
+      "industrial"
+    ],
+    "popularity": {
+      "listeners": 58578,
+      "playcount": 1106030
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/afd603e610a8e82aa49de90cdd1c2822/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:26.306Z"
   },
   {
     "name": "Namosh",
@@ -45244,7 +46326,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:44.171Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a0b6f6a8-a8cf-48d1-ae9b-ddebc4068a6b"
+    "mbid": "a0b6f6a8-a8cf-48d1-ae9b-ddebc4068a6b",
+    "genres": [
+      "electronic",
+      "homosexual intifada",
+      "Avantgarde Pop",
+      "Electro Wave",
+      "ortsa"
+    ],
+    "popularity": {
+      "listeners": 5092,
+      "playcount": 60328
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/015fb2007df17dcbfddc0f963219ff39/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:27.091Z"
   },
   {
     "name": "Namur",
@@ -45252,7 +46347,19 @@
     "wdBulkTriedAt": "2026-07-07T07:19:44.171Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "26cc948c-8095-436c-9718-a1659203237c",
-    "autoTriedAt": "2026-07-11T11:10:47.007Z"
+    "autoTriedAt": "2026-07-11T11:10:47.007Z",
+    "genres": [
+      "swedish",
+      "indie",
+      "dream-pop",
+      "alternative",
+      "what would jesus listen to"
+    ],
+    "popularity": {
+      "listeners": 1213,
+      "playcount": 19972
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:27.818Z"
   },
   {
     "name": "Nan Quan Mama",
@@ -45268,14 +46375,38 @@
     },
     "enrichedAt": "2026-07-07T07:19:46.085Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d5828706-66ee-4251-8ff5-46ac5669adc5"
+    "mbid": "d5828706-66ee-4251-8ff5-46ac5669adc5",
+    "genres": [
+      "chinese",
+      "pop",
+      "C-pop",
+      "cpop",
+      "taiwanese"
+    ],
+    "popularity": {
+      "listeners": 15815,
+      "playcount": 601589
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:28.470Z"
   },
   {
     "name": "Nana",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:46.085Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:10:48.240Z"
+    "autoTriedAt": "2026-07-11T11:10:48.240Z",
+    "genres": [
+      "rap",
+      "Hip-Hop",
+      "90s",
+      "german",
+      "dance"
+    ],
+    "popularity": {
+      "listeners": 229196,
+      "playcount": 2602667
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:29.074Z"
   },
   {
     "name": "Nana April Jun",
@@ -45291,7 +46422,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:46.085Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a77341b4-f9f5-454f-9c53-d28b3777f757"
+    "mbid": "a77341b4-f9f5-454f-9c53-d28b3777f757",
+    "genres": [
+      "noise",
+      "dark ambient",
+      "drone",
+      "electronic",
+      "touch"
+    ],
+    "popularity": {
+      "listeners": 1290,
+      "playcount": 8878
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ac60c854a74a16f27836a5614a738a91/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:29.753Z"
   },
   {
     "name": "Nana Kitade",
@@ -45307,14 +46451,40 @@
     },
     "enrichedAt": "2026-07-07T07:19:46.085Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d374d29c-8ed0-44f2-8cda-f5f4e792637e"
+    "mbid": "d374d29c-8ed0-44f2-8cda-f5f4e792637e",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "J-rock",
+      "female vocalists",
+      "anime"
+    ],
+    "popularity": {
+      "listeners": 55098,
+      "playcount": 1405790
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4b21663dc6faf19dccc52bd00ea2043c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:30.370Z"
   },
   {
     "name": "Nana Mizuki",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:46.085Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:10:49.471Z"
+    "autoTriedAt": "2026-07-11T11:10:49.471Z",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "anime",
+      "seiyuu",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 66089,
+      "playcount": 15031481
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f996ed5f75490820ca5423485aa4ee14/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:31.043Z"
   },
   {
     "name": "Nana Mouskouri",
@@ -45330,7 +46500,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:46.085Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "09b8609a-ca39-4f34-a2f6-5b81afc2c32d"
+    "mbid": "09b8609a-ca39-4f34-a2f6-5b81afc2c32d",
+    "genres": [
+      "female vocalists",
+      "Greek",
+      "pop",
+      "jazz",
+      "Nana Mouskouri"
+    ],
+    "popularity": {
+      "listeners": 197663,
+      "playcount": 2092448
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1b696ea311ccbd6081d1c7bb25eae3b8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:31.777Z"
   },
   {
     "name": "Nana Vasconcelos",
@@ -45346,7 +46529,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:46.085Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e64fe830-fb77-462d-85d2-1d3265ae6ade"
+    "mbid": "e64fe830-fb77-462d-85d2-1d3265ae6ade",
+    "genres": [
+      "jazz",
+      "percussion",
+      "brazil",
+      "world",
+      "ECM"
+    ],
+    "popularity": {
+      "listeners": 12678,
+      "playcount": 72843
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/386cb665f72892820efdf1b27e42aba1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:32.399Z"
   },
   {
     "name": "Naná Vasconcelos",
@@ -45362,7 +46558,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:46.085Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e64fe830-fb77-462d-85d2-1d3265ae6ade"
+    "mbid": "e64fe830-fb77-462d-85d2-1d3265ae6ade",
+    "genres": [
+      "percussion",
+      "jazz",
+      "instrumental",
+      "brazil",
+      "latin"
+    ],
+    "popularity": {
+      "listeners": 25193,
+      "playcount": 183471
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/386cb665f72892820efdf1b27e42aba1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:33.112Z"
   },
   {
     "name": "Nana Yamada",
@@ -45378,7 +46587,12 @@
     },
     "enrichedAt": "2026-07-07T07:19:46.085Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "fed00f64-21ce-4df2-9684-caacb7c68aaa"
+    "mbid": "fed00f64-21ce-4df2-9684-caacb7c68aaa",
+    "popularity": {
+      "listeners": 14,
+      "playcount": 48
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:33.871Z"
   },
   {
     "name": "Nanami Hashimoto",
@@ -45394,7 +46608,12 @@
     },
     "enrichedAt": "2026-07-07T07:19:46.085Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 1
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:35.521Z"
   },
   {
     "name": "Nanami Sakuraba",
@@ -45410,7 +46629,8 @@
     },
     "enrichedAt": "2026-07-07T07:19:46.085Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7d1eb780-a9fc-4f38-87de-78919b382ba5"
+    "mbid": "7d1eb780-a9fc-4f38-87de-78919b382ba5",
+    "metaTriedAt": "2026-07-11T18:17:36.369Z"
   },
   {
     "name": "Nanase Aikawa",
@@ -45426,7 +46646,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:46.085Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e3fc3ee6-bbdc-490d-b916-a498ec6245c6"
+    "mbid": "e3fc3ee6-bbdc-490d-b916-a498ec6245c6",
+    "genres": [
+      "J-rock",
+      "j-pop",
+      "japanese",
+      "female vocalists",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 45602,
+      "playcount": 1113739
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:37.596Z"
   },
   {
     "name": "Nanase Nishino",
@@ -45442,7 +46675,12 @@
     },
     "enrichedAt": "2026-07-07T07:19:46.085Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c0add37c-8b0b-4928-a7ec-05b2f54f1b7b"
+    "mbid": "c0add37c-8b0b-4928-a7ec-05b2f54f1b7b",
+    "popularity": {
+      "listeners": 4,
+      "playcount": 5
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:38.314Z"
   },
   {
     "name": "Nanci Griffith",
@@ -45458,7 +46696,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:46.085Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b9ffd0e7-7f95-46db-bc1c-8094d459f084"
+    "mbid": "b9ffd0e7-7f95-46db-bc1c-8094d459f084",
+    "genres": [
+      "country",
+      "folk",
+      "female vocalists",
+      "singer-songwriter",
+      "americana"
+    ],
+    "popularity": {
+      "listeners": 176188,
+      "playcount": 2283484
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4e0bd398036b29e31d4042e52e3ac89e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:38.997Z"
   },
   {
     "name": "Nancy Ajaj",
@@ -45474,7 +46725,12 @@
     },
     "enrichedAt": "2026-07-07T07:19:46.085Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 25,
+      "playcount": 1759
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:40.202Z"
   },
   {
     "name": "Nancy Ajram",
@@ -45490,7 +46746,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:46.085Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c5fb9677-b013-4cd7-b89b-bb6e73ad851b"
+    "mbid": "c5fb9677-b013-4cd7-b89b-bb6e73ad851b",
+    "genres": [
+      "arabic",
+      "lebanese",
+      "pop",
+      "world",
+      "Lebanon"
+    ],
+    "popularity": {
+      "listeners": 212438,
+      "playcount": 4770402
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bf5875dc299803458f0d7743c42f9693/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:40.845Z"
   },
   {
     "name": "Nancy Alexiadi",
@@ -45506,7 +46775,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:46.085Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0f3308dc-b2dc-48fb-8a09-47791d70a504"
+    "mbid": "0f3308dc-b2dc-48fb-8a09-47791d70a504",
+    "genres": [
+      "greece",
+      "pop",
+      "Greek Pop",
+      "Greek",
+      "greek artist"
+    ],
+    "popularity": {
+      "listeners": 242,
+      "playcount": 2201
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8c0cf83c2c315e8ead9142d587282490/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:41.548Z"
   },
   {
     "name": "Nancy Allen",
@@ -45514,21 +46796,42 @@
     "wdBulkTriedAt": "2026-07-07T07:19:46.085Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "5ce35341-dd3a-41dd-8013-0cb7a8289ee4",
-    "autoTriedAt": "2026-07-11T11:10:52.029Z"
+    "autoTriedAt": "2026-07-11T11:10:52.029Z",
+    "genres": [
+      "Classical Harp",
+      "Classical"
+    ],
+    "popularity": {
+      "listeners": 1208,
+      "playcount": 9211
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/40e09832a37edc728f2cdc671faadc4f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:42.431Z"
   },
   {
     "name": "Nancy Allen (harpist)",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:46.085Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:10:53.264Z"
+    "autoTriedAt": "2026-07-11T11:10:53.264Z",
+    "metaTriedAt": "2026-07-11T18:17:43.042Z"
   },
   {
     "name": "Nancy Dalberg",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:46.085Z",
     "mbid": "4520bbd1-1969-46b8-975f-904d5b0a5f4b",
-    "autoTriedAt": "2026-07-11T11:10:55.764Z"
+    "autoTriedAt": "2026-07-11T11:10:55.764Z",
+    "genres": [
+      "art song",
+      "Classical",
+      "20th century romantic"
+    ],
+    "popularity": {
+      "listeners": 5663,
+      "playcount": 14903
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:43.748Z"
   },
   {
     "name": "Nancy Dussault",
@@ -45536,7 +46839,13 @@
     "wdBulkTriedAt": "2026-07-07T07:19:46.085Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "8a5f3fd4-d980-4d14-9391-3d44a7930a67",
-    "autoTriedAt": "2026-07-11T11:10:58.260Z"
+    "autoTriedAt": "2026-07-11T11:10:58.260Z",
+    "popularity": {
+      "listeners": 270,
+      "playcount": 786
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7bc7d3e4734c857ece33eaa0267469c1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:44.468Z"
   },
   {
     "name": "Nancy Kerr",
@@ -45553,7 +46862,17 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:11:00.762Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "female vocalist",
+      "folk and folk plus"
+    ],
+    "popularity": {
+      "listeners": 3357,
+      "playcount": 40389
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d93dfc5ff021377fbd709f6127ef523e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:45.367Z"
   },
   {
     "name": "Nancy Kwan",
@@ -45569,7 +46888,12 @@
     },
     "enrichedAt": "2026-07-07T07:19:46.085Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "82f97142-737f-4034-9487-c7e62baff6e6"
+    "mbid": "82f97142-737f-4034-9487-c7e62baff6e6",
+    "popularity": {
+      "listeners": 644,
+      "playcount": 2093
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:46.052Z"
   },
   {
     "name": "Nancy Martinez",
@@ -45586,7 +46910,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:11:04.058Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "freestyle",
+      "classic freestyle",
+      "pop",
+      "female vocalists",
+      "eighties"
+    ],
+    "popularity": {
+      "listeners": 6530,
+      "playcount": 38080
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7f8cc0c48c7b03a93d0dce64c92b560c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:46.804Z"
   },
   {
     "name": "Nancy Nash",
@@ -45594,7 +46931,12 @@
     "wdBulkTriedAt": "2026-07-07T07:19:46.085Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "a4b838f4-1645-4888-8eaf-0cfdcdcafce1",
-    "autoTriedAt": "2026-07-11T11:11:06.612Z"
+    "autoTriedAt": "2026-07-11T11:11:06.612Z",
+    "popularity": {
+      "listeners": 18,
+      "playcount": 202
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:47.546Z"
   },
   {
     "name": "Nancy Rumbel",
@@ -45602,7 +46944,20 @@
     "wdBulkTriedAt": "2026-07-07T07:19:46.085Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "89da72ac-30be-4950-9b59-ecdf2a9e772d",
-    "autoTriedAt": "2026-07-11T11:11:09.091Z"
+    "autoTriedAt": "2026-07-11T11:11:09.091Z",
+    "genres": [
+      "new age",
+      "ambient",
+      "piano",
+      "nancy rumbel",
+      "spa music"
+    ],
+    "popularity": {
+      "listeners": 9634,
+      "playcount": 45308
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b6a0f57f655331202803df0d2f868913/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:48.173Z"
   },
   {
     "name": "Nancy Sinatra",
@@ -45619,7 +46974,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:11:11.709Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "60s",
+      "female vocalists",
+      "pop",
+      "oldies",
+      "classic rock"
+    ],
+    "popularity": {
+      "listeners": 1934796,
+      "playcount": 23552431
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/deb7a7184dec3090ed1af205f692bb85/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:48.799Z"
   },
   {
     "name": "Nancy Walker",
@@ -45627,14 +46995,28 @@
     "wdBulkTriedAt": "2026-07-07T07:19:46.085Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "7c4fa39a-493c-4675-a37b-5cfdb1f58950",
-    "autoTriedAt": "2026-07-11T11:11:14.218Z"
+    "autoTriedAt": "2026-07-11T11:11:14.218Z",
+    "genres": [
+      "All",
+      "comedy",
+      "vaudeville",
+      "disambig",
+      "spotify"
+    ],
+    "popularity": {
+      "listeners": 1849,
+      "playcount": 9035
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/accdf39d73038d18da2633a968868538/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:49.603Z"
   },
   {
     "name": "Nancy Weir",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:46.085Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:11:15.450Z"
+    "autoTriedAt": "2026-07-11T11:11:15.450Z",
+    "metaTriedAt": "2026-07-11T18:17:50.348Z"
   },
   {
     "name": "Nancy Whiskey",
@@ -45650,7 +47032,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:11:17.966Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 4949,
+      "playcount": 22135
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c33a5ad5ca1626f31a16fbce12b39f60/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:51.151Z"
   },
   {
     "name": "Nancy White",
@@ -45658,7 +47046,17 @@
     "wdBulkTriedAt": "2026-07-07T07:19:46.085Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "cb614061-91c1-4168-b3c1-e7891839a4f7",
-    "autoTriedAt": "2026-07-11T11:11:20.512Z"
+    "autoTriedAt": "2026-07-11T11:11:20.512Z",
+    "genres": [
+      "Canadian",
+      "singer-songwriter",
+      "musical satirist"
+    ],
+    "popularity": {
+      "listeners": 854,
+      "playcount": 4601
+    },
+    "metaEnrichedAt": "2026-07-11T18:17:51.866Z"
   },
   {
     "name": "Nancy Wilson",
@@ -45675,7 +47073,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:11:23.078Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "female vocalists",
+      "soul",
+      "vocal jazz",
+      "jazz vocal"
+    ],
+    "popularity": {
+      "listeners": 727009,
+      "playcount": 5101702
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/91c668425c06b7fa17e3b00e864c6f3c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:52.510Z"
   },
   {
     "name": "Nancy Zeltsman",
@@ -45683,14 +47094,33 @@
     "wdBulkTriedAt": "2026-07-07T07:19:46.085Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "77a4ec96-5cc1-4a8f-a5af-2afadc20efd9",
-    "autoTriedAt": "2026-07-11T11:11:25.608Z"
+    "autoTriedAt": "2026-07-11T11:11:25.608Z",
+    "genres": [
+      "Marimba"
+    ],
+    "popularity": {
+      "listeners": 609,
+      "playcount": 8842
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bda0c000c3f794fd489b74b4cd40b5a6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:53.179Z"
   },
   {
     "name": "Nanda Malini",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:46.085Z",
     "mbid": "006617dd-f171-4af6-820a-c5917fa0e40f",
-    "autoTriedAt": "2026-07-11T11:11:28.635Z"
+    "autoTriedAt": "2026-07-11T11:11:28.635Z",
+    "genres": [
+      "sri lanka",
+      "sinhalese"
+    ],
+    "popularity": {
+      "listeners": 681,
+      "playcount": 19406
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/14b6e5c3d38602d46d94bca1af7799fa/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:54.105Z"
   },
   {
     "name": "NandaTsunami",
@@ -45707,7 +47137,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:11:31.107Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Better than Nicki Minaj",
+      "brazilian",
+      "NandaTsunami",
+      "better than selena gomez",
+      "DJ Caio Santos"
+    ],
+    "popularity": {
+      "listeners": 244145,
+      "playcount": 12553283
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/285c7290151cb2610ef5d3afaf62ce1a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:54.797Z"
   },
   {
     "name": "Nanditha",
@@ -45723,7 +47166,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:11:34.590Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 336,
+      "playcount": 1360
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/68167b0e2f4a4c9fac8c4361583737e1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:55.560Z"
   },
   {
     "name": "Nando Boom",
@@ -45739,7 +47188,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:11:37.102Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Panama",
+      "reggae",
+      "dancehall",
+      "Reggaeton",
+      "latin"
+    ],
+    "popularity": {
+      "listeners": 4887,
+      "playcount": 21725
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6370034255d1200497a8ec9b6bc2e557/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:56.223Z"
   },
   {
     "name": "Nando Reis",
@@ -45755,14 +47217,37 @@
     },
     "enrichedAt": "2026-07-07T07:19:46.085Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "cda86e8a-a26a-4b3a-959c-bc9f8a88a1c1"
+    "mbid": "cda86e8a-a26a-4b3a-959c-bc9f8a88a1c1",
+    "genres": [
+      "mpb",
+      "rock",
+      "brazilian",
+      "brasil",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 487910,
+      "playcount": 11880962
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/983a8c93b33713a41c0539df99456131/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:56.838Z"
   },
   {
     "name": "Nanette Fabray",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:46.085Z",
     "mbid": "19f53887-d19a-4b04-b9fa-2d7484afa289",
-    "autoTriedAt": "2026-07-11T11:11:39.682Z"
+    "autoTriedAt": "2026-07-11T11:11:39.682Z",
+    "genres": [
+      "oldies",
+      "Soundtrack"
+    ],
+    "popularity": {
+      "listeners": 416,
+      "playcount": 1477
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8e7eeb51af93c48f37fab1f84a5ff2eb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:17:57.526Z"
   },
   {
     "name": "Nanette Maxine",
