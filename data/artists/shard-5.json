@@ -60780,7 +60780,9 @@
     "name": "Matthew Gee",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:38.674Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "2d30b78a-3e0a-4065-928e-31cc0bac0122",
+    "autoTriedAt": "2026-07-11T08:30:56.678Z"
   },
   {
     "name": "Matthew Good",
@@ -60794,7 +60796,9 @@
       "telegram": null,
       "vk": null
     },
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "enrichedAt": "2026-07-11T08:30:56.678Z",
+    "enrichedBy": "auto"
   },
   {
     "name": "Matthew Good Band",
@@ -60846,9 +60850,20 @@
   },
   {
     "name": "Matthew Jones",
-    "website": null,
+    "website": "http://www.matthewjonesmusic.guru/",
     "wdBulkTriedAt": "2026-07-07T07:18:38.674Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "2b7fd096-3651-4892-aa5c-e3830465edc9",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:30:59.380Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Matthew Koma",
@@ -60870,13 +60885,17 @@
     "name": "Matthew Leone",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:38.674Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "50311144-c3de-4ddf-9c65-431003f52f9c",
+    "autoTriedAt": "2026-07-11T08:31:02.131Z"
   },
   {
     "name": "Matthew McDonough",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:38.674Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "107d79b1-8e6c-465d-8f4a-37d98e5a479a",
+    "autoTriedAt": "2026-07-11T08:31:04.933Z"
   },
   {
     "name": "Matthew Mole",
@@ -60896,15 +60915,28 @@
   },
   {
     "name": "Matthew Morrison",
-    "website": null,
+    "website": "http://www.matthewmorrison.net/",
     "wdBulkTriedAt": "2026-07-07T07:18:38.674Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "5b758e33-eb65-4ce4-8892-c6c18fd0df56",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/3Fx1vJHj530oWC2AxnZq5z",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:31:07.946Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Matthew Nelson",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:38.674Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "5d802231-610f-4695-bc5c-9c1e74db88b5",
+    "autoTriedAt": "2026-07-11T08:31:10.520Z"
   },
   {
     "name": "Matthew Perryman Jones",
@@ -60924,9 +60956,20 @@
   },
   {
     "name": "Matthew Ryan",
-    "website": null,
+    "website": "http://www.matthewryanonline.com/",
     "wdBulkTriedAt": "2026-07-07T07:18:38.674Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "4a438422-be3a-4359-98de-4d1d62ae1860",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2tKdhceBIPAabG1BMuVhpa",
+      "instagram": null,
+      "facebook": "https://www.facebook.com/matthewryan101",
+      "youtube": "https://www.youtube.com/user/MRVSS",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:31:13.619Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Matthew Shipp",
@@ -60946,45 +60989,92 @@
   },
   {
     "name": "Matthew Shlomowitz",
-    "website": null,
+    "website": "http://shlom.com/",
     "wdBulkTriedAt": "2026-07-07T07:18:38.674Z",
-    "mbid": "f8fdba5c-6e6f-4496-b818-d86397e8f206"
+    "mbid": "f8fdba5c-6e6f-4496-b818-d86397e8f206",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:31:16.183Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Matthew Sweet",
-    "website": null,
+    "website": "http://matthewsweet.com/",
     "wdBulkTriedAt": "2026-07-07T07:18:38.674Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "3fbcd2d3-3d78-470f-9e47-8f4d66da2474",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2idymNTKUdnTxforkb12Mw",
+      "instagram": null,
+      "facebook": "https://www.facebook.com/iammatthewsweet",
+      "youtube": "https://music.youtube.com/channel/UCeb5GqT8m8zpqlcyQJZUbUQ",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:31:18.940Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Matthew Taylor",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:38.674Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "30af2ad2-5522-4b61-87e9-2f539ea938dc",
+    "autoTriedAt": "2026-07-11T08:31:21.513Z"
   },
   {
     "name": "Matthew Thiessen",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:38.674Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:31:22.781Z"
   },
   {
     "name": "Matthew Thiessen and the Earthquakes",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:38.674Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:31:24.057Z"
   },
   {
     "name": "Matthew Tuck",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:38.674Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "519a2aae-01a9-4aff-ac48-50da5d6b190a",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/7Bc1NWOGaffeejzrvi9G28",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:31:26.641Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Matthew Ward",
-    "website": null,
+    "website": "http://www.matthewward.com/",
     "wdBulkTriedAt": "2026-07-07T07:18:38.674Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "362d3c4c-356f-46c7-94cd-5bb7daeabb52",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:31:29.333Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Matthew Wilder",
@@ -61022,25 +61112,47 @@
     "name": "Matthews, Wright & King",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:38.674Z",
-    "mbid": "a76bbdbf-7eb1-4479-9214-2a8de2083434"
+    "mbid": "a76bbdbf-7eb1-4479-9214-2a8de2083434",
+    "autoTriedAt": "2026-07-11T08:31:31.993Z"
   },
   {
     "name": "Matthias Durst",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:38.674Z",
-    "mbid": "2780d54f-17de-4152-9ac5-8d6f48829bdf"
+    "mbid": "2780d54f-17de-4152-9ac5-8d6f48829bdf",
+    "autoTriedAt": "2026-07-11T08:31:34.678Z"
   },
   {
     "name": "Matthias Eisenberg",
-    "website": null,
+    "website": "http://www.matthias-eisenberg.de/",
     "wdBulkTriedAt": "2026-07-07T07:18:38.674Z",
-    "mbid": "903b235a-9118-4dae-82d2-dcaf721f4314"
+    "mbid": "903b235a-9118-4dae-82d2-dcaf721f4314",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/1S5sN3oogyPnFq1ZwNuhe1",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:31:37.270Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Matthias Höfs",
-    "website": null,
+    "website": "http://matthiashoefs.de/",
     "wdBulkTriedAt": "2026-07-07T07:18:38.674Z",
-    "mbid": "514f7abb-77ea-49f6-bf10-004407a5643e"
+    "mbid": "514f7abb-77ea-49f6-bf10-004407a5643e",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:31:39.843Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Matthias Jabs",
@@ -61060,9 +61172,20 @@
   },
   {
     "name": "Matthias Lupri",
-    "website": null,
+    "website": "https://www.lupri.com/",
     "wdBulkTriedAt": "2026-07-07T07:18:38.674Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "53d51398-9552-412c-b54b-20ec72f6124a",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:31:42.452Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Matthias Reim",
@@ -61084,13 +61207,34 @@
     "name": "Matthias Ziegler",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "8a8b49a2-822c-4b17-aacd-948bf593f855",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/0BJA103k5TtODCqNU9Aac5",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:31:45.192Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Matthijs Vermeulen",
-    "website": null,
+    "website": "http://www.matthijsvermeulen.nl/",
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbid": "1454fa0e-e2a9-49f9-a883-1450176646af"
+    "mbid": "1454fa0e-e2a9-49f9-a883-1450176646af",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:31:47.794Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Matthijs Verschoor",
@@ -61142,39 +61286,67 @@
   },
   {
     "name": "Matti Nykänen",
-    "website": null,
+    "website": "http://www.mattinykanen.info/",
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "ce0681a1-3b72-4a49-8353-c531bdd5cee7",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2MEWgRS9kjwxFXxbFBTnPO",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:31:50.441Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Matti Pellonpää",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "72161983-4e74-4e08-adef-2980398cf7fa",
+    "autoTriedAt": "2026-07-11T08:31:53.119Z"
   },
   {
     "name": "Matti Rantanen",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "04175b8f-95c7-409b-a7ff-f9662bad1a21",
+    "autoTriedAt": "2026-07-11T08:31:55.858Z"
   },
   {
     "name": "Mattias \"IA\" Eklundh",
-    "website": null,
+    "website": "http://www.freakguitar.com/",
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "f9142b56-bbee-4cf9-aabc-3d8b1b939c23",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/22upwnTo7nckdSAMI8CrZa",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:31:58.781Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Mattias Eklundh",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbid": "f9142b56-bbee-4cf9-aabc-3d8b1b939c23"
+    "mbid": "f9142b56-bbee-4cf9-aabc-3d8b1b939c23",
+    "autoTriedAt": "2026-07-11T08:32:00.073Z"
   },
   {
     "name": "Mattias Jacobsson",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:32:01.352Z"
   },
   {
     "name": "Mattias Lindblom",
@@ -61196,43 +61368,63 @@
     "name": "Mattias Marklund",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "5a7f0ca3-8d30-47c6-a7a3-225a09402e8a",
+    "autoTriedAt": "2026-07-11T08:32:03.937Z"
   },
   {
     "name": "Mattias Olsson",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "f2a768e9-0093-49be-979a-561285462f37",
+    "autoTriedAt": "2026-07-11T08:32:06.529Z"
   },
   {
     "name": "Mattie Delaney",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbid": "4272a14a-71ee-4235-ab63-b0d7591f8964"
+    "mbid": "4272a14a-71ee-4235-ab63-b0d7591f8964",
+    "autoTriedAt": "2026-07-11T08:32:09.097Z"
   },
   {
     "name": "Mattie Hite",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "8a4b772f-c833-4411-a5bb-a985c7cf8b37",
+    "autoTriedAt": "2026-07-11T08:32:11.665Z"
   },
   {
     "name": "Mattie Moss Clark",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "3eca5414-05d9-43b4-a0d4-bc670abbfcee",
+    "autoTriedAt": "2026-07-11T08:32:14.268Z"
   },
   {
     "name": "Mattin",
-    "website": null,
+    "website": "http://www.mattin.org/",
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbid": "d98d95e8-563d-4591-aeac-0fa0a6a53002"
+    "mbid": "d98d95e8-563d-4591-aeac-0fa0a6a53002",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:32:16.910Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Matty Lewis",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbid": "c6917471-5788-465d-8e3b-7372771cf41e"
+    "mbid": "c6917471-5788-465d-8e3b-7372771cf41e",
+    "autoTriedAt": "2026-07-11T08:32:19.513Z"
   },
   {
     "name": "Matuê",
@@ -61270,49 +61462,68 @@
     "name": "Mátyás Seiber",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbid": "f35af0aa-f3a3-414a-bceb-b7c308d794eb"
+    "mbid": "f35af0aa-f3a3-414a-bceb-b7c308d794eb",
+    "autoTriedAt": "2026-07-11T08:32:22.150Z"
   },
   {
     "name": "Matz Robert Eriksson",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbid": "4ab7d48e-b6e6-4871-b39e-774ed0a0c047"
+    "mbid": "4ab7d48e-b6e6-4871-b39e-774ed0a0c047",
+    "autoTriedAt": "2026-07-11T08:32:23.427Z"
   },
   {
     "name": "Mau Maus",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "02047daf-eb4d-4503-91ef-9e582f437e40",
+    "autoTriedAt": "2026-07-11T08:32:25.983Z"
   },
   {
     "name": "mau5trap",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:32:27.256Z"
   },
   {
     "name": "Mauá",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:32:28.621Z"
   },
   {
     "name": "Maud",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:32:29.893Z"
   },
   {
     "name": "Maud Meyer",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:32:31.166Z"
   },
   {
     "name": "Maudlin of the Well",
-    "website": null,
+    "website": "https://maudlinofthewell.net/",
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "084caf07-2959-4c3f-9374-6b2f2845660e",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/4qwv0DPSYiEZvWwclqubKE",
+      "instagram": null,
+      "facebook": "https://www.facebook.com/maudlinoftheWell",
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:32:33.978Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Maudy Ayunda",
@@ -61334,7 +61545,17 @@
     "name": "Maukka Perusjätkä",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbid": "331fd209-53f6-44ab-87bd-3762d56b2f27"
+    "mbid": "331fd209-53f6-44ab-87bd-3762d56b2f27",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2Wd5wWFS8a6ALy887YflcP",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:32:36.574Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Maulik Pancholy",
@@ -61356,25 +61577,58 @@
     "name": "Mauno Järvelä",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbid": "f80a272a-23b8-454b-a379-a0c497a29120"
+    "mbid": "f80a272a-23b8-454b-a379-a0c497a29120",
+    "autoTriedAt": "2026-07-11T08:32:39.177Z"
   },
   {
     "name": "Maura Davis",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "e469d437-f45b-4f93-8a32-a95535ce5b5c",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/4Yo4pCuV2LqDZPF5gY0cwM",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:32:41.790Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Maura O'Connell",
-    "website": null,
+    "website": "http://www.mauraoconnell.com/",
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "522f9070-ab8a-42d0-8f0a-f2f35dcf40d4",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2WkDGNlrAN48YIOi18jpEE",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:32:44.422Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Maureen Forrester",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbid": "c855d631-15c7-4731-9cfd-397796c78416"
+    "mbid": "c855d631-15c7-4731-9cfd-397796c78416",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/6qSsYTbt6l80JYki1i4SlA",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:32:47.029Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Maureen McGovern",
@@ -61396,13 +61650,17 @@
     "name": "Maureen Moore",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "81a932f8-dc71-43c9-b47f-fde8418fc5d3",
+    "autoTriedAt": "2026-07-11T08:32:50.239Z"
   },
   {
     "name": "Maureen O'Hara",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "db23909e-7c44-4232-b8fc-a2261cf16a33",
+    "autoTriedAt": "2026-07-11T08:32:52.806Z"
   },
   {
     "name": "Maureen Tucker",
@@ -61424,31 +61682,57 @@
     "name": "Maurice \"Mobetta\" Brown",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbid": "71f1a4fb-7e65-4e50-b3cf-5fffc7df2669"
+    "mbid": "71f1a4fb-7e65-4e50-b3cf-5fffc7df2669",
+    "autoTriedAt": "2026-07-11T08:32:54.378Z"
   },
   {
     "name": "Maurice Allard",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "b9342f0a-74e3-4c75-9bd7-4ef0d33ed11f",
+    "autoTriedAt": "2026-07-11T08:32:57.041Z"
   },
   {
     "name": "Maurice André",
-    "website": null,
+    "website": "http://www.maurice-andre.com/",
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "24568d6a-34bb-44a0-8379-423709aa8ef0",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/12LdOpXPkvTuU6nauFBh41",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:32:59.676Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Maurice Bolyer",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:33:00.979Z"
   },
   {
     "name": "Maurice Chevalier",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "e0371cd0-a5f8-420e-be17-bd980adc7393",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/3QXjI80udwDSEfxK5BjUXc",
+      "instagram": null,
+      "facebook": null,
+      "youtube": "https://www.youtube.com/channel/UC6YjAsjzKShkQdag6UAz3Tg",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:33:03.608Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Maurice Duruflé",
@@ -61470,19 +61754,23 @@
     "name": "Maurice Eisenberg",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbid": "a2d4cb30-1429-4e70-bbae-35c62bf208a2"
+    "mbid": "a2d4cb30-1429-4e70-bbae-35c62bf208a2",
+    "autoTriedAt": "2026-07-11T08:33:06.195Z"
   },
   {
     "name": "Maurice Evans",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "75377645-f5e2-47fd-a0ae-d0ec7f63a992",
+    "autoTriedAt": "2026-07-11T08:33:08.889Z"
   },
   {
     "name": "Maurice Gendron",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbid": "b671fcf8-b5b3-40ee-a58e-c4a396a00eac"
+    "mbid": "b671fcf8-b5b3-40ee-a58e-c4a396a00eac",
+    "autoTriedAt": "2026-07-11T08:33:11.614Z"
   },
   {
     "name": "Maurice Gibb",
@@ -61504,7 +61792,8 @@
     "name": "Maurice Hines",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbid": "bdb7a513-2e3e-43f2-9491-4f8d5575f388"
+    "mbid": "bdb7a513-2e3e-43f2-9491-4f8d5575f388",
+    "autoTriedAt": "2026-07-11T08:33:14.226Z"
   },
   {
     "name": "Maurice Jarre",
@@ -61526,7 +61815,8 @@
     "name": "Maurice Journeau",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbid": "89c90ece-787a-4715-872d-e3ea64682699"
+    "mbid": "89c90ece-787a-4715-872d-e3ea64682699",
+    "autoTriedAt": "2026-07-11T08:33:16.800Z"
   },
   {
     "name": "Maurice Kirya",
@@ -61548,55 +61838,85 @@
     "name": "Maurice Murphy",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "9e31c60e-fd05-40b6-96bc-f12dc309a756",
+    "autoTriedAt": "2026-07-11T08:33:19.449Z"
   },
   {
     "name": "Maurice Purtill",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbid": "6133242a-9744-4c0c-84d8-352a0b3bed61"
+    "mbid": "6133242a-9744-4c0c-84d8-352a0b3bed61",
+    "autoTriedAt": "2026-07-11T08:33:22.067Z"
   },
   {
     "name": "Maurice Ravel",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "6fdd3b3e-1ea6-4da9-8d6f-8f8de01c133a",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/17hR0sYHpx7VYTMRfFUOmY",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:33:24.903Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Maurice Rocco",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbid": "f0d1d9fb-b6e0-438e-b846-a4690285784c"
+    "mbid": "f0d1d9fb-b6e0-438e-b846-a4690285784c",
+    "autoTriedAt": "2026-07-11T08:33:27.526Z"
   },
   {
     "name": "Maurice Vieux",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbid": "c51ecd6b-1694-4f9e-98eb-bb8bde26df72"
+    "mbid": "c51ecd6b-1694-4f9e-98eb-bb8bde26df72",
+    "autoTriedAt": "2026-07-11T08:33:30.232Z"
   },
   {
     "name": "Maurice White",
-    "website": null,
+    "website": "http://www.mauricewhite.com/",
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "e16cc224-7803-46cb-8615-ccf9068199a1",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/6T46cZo3M8wXq5eOoXbZBx",
+      "instagram": null,
+      "facebook": "https://www.facebook.com/MauriceWhiteEWF",
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:33:33.048Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Maurice Williams and the Zodiacs",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbid": "b19a1b3a-d3fb-4d2c-bb5d-b4cf3d2fb008"
+    "mbid": "b19a1b3a-d3fb-4d2c-bb5d-b4cf3d2fb008",
+    "autoTriedAt": "2026-07-11T08:33:34.323Z"
   },
   {
     "name": "Maurice Zbriger",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:33:35.600Z"
   },
   {
     "name": "Maurizio Bensaude",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:33:36.869Z"
   },
   {
     "name": "Maurizio Bianchi",
@@ -61618,13 +61938,34 @@
     "name": "Maurizio Cazzati",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbid": "ff7f2578-6511-4661-bbdb-cdc258b54a66"
+    "mbid": "ff7f2578-6511-4661-bbdb-cdc258b54a66",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/0RmIi9D8DWjiyivNnp0IPW",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:33:39.457Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Maurizio Pisati",
-    "website": null,
+    "website": "http://www.mauriziopisati.com/",
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "e7acd88c-404b-4c20-b171-755c2400006c",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:33:42.156Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Maurizio Pollini",
@@ -61662,13 +62003,16 @@
     "name": "Mauro Malavasi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbid": "eb37a469-ad68-44f2-a3e3-520cfd3653a8"
+    "mbid": "eb37a469-ad68-44f2-a3e3-520cfd3653a8",
+    "autoTriedAt": "2026-07-11T08:33:44.768Z"
   },
   {
     "name": "Mauro Maur",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "c8056454-c602-4890-a083-0ac62ef6565b",
+    "autoTriedAt": "2026-07-11T08:33:47.573Z"
   },
   {
     "name": "Mauro Pawlowski",
@@ -61690,7 +62034,8 @@
     "name": "Mauro Pezzente",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbid": "90987962-01af-475a-a134-e286c7c0069d"
+    "mbid": "90987962-01af-475a-a134-e286c7c0069d",
+    "autoTriedAt": "2026-07-11T08:33:50.142Z"
   },
   {
     "name": "Mauro Picotto",
@@ -61712,31 +62057,56 @@
     "name": "Maury Finney",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "550351c0-325f-4ddd-9709-f81ccef3d90a",
+    "autoTriedAt": "2026-07-11T08:33:52.715Z"
   },
   {
     "name": "Maury Muehleisen",
-    "website": null,
+    "website": "http://www.maurymuehleisen.com/",
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbid": "09e278d4-bdd2-4997-b62e-dc76de40c2bd"
+    "mbid": "09e278d4-bdd2-4997-b62e-dc76de40c2bd",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:33:55.603Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Mausami Gurung",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:33:56.879Z"
   },
   {
     "name": "Mauthausen Orchestra",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbid": "c599059c-de87-4ba1-b165-a16151895fcb"
+    "mbid": "c599059c-de87-4ba1-b165-a16151895fcb",
+    "autoTriedAt": "2026-07-11T08:33:59.447Z"
   },
   {
     "name": "Mauvais Djo",
     "website": null,
     "wdBulkTriedAt": "2026-07-09T08:32:10.022Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "e5a28249-66b4-4349-8052-4884fb2d6961",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/51OKuyM4BiiYxFm8Mi6fa9",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:34:02.028Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Mavado",
@@ -61758,19 +62128,32 @@
     "name": "Mavelikkara Velukkutty Nair",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:34:03.299Z"
   },
   {
     "name": "Maverick",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "2d0463e8-35fb-47ce-9b8c-7cf624672248",
+    "socials": {
+      "spotify": null,
+      "instagram": "https://www.instagram.com/maverickbandofficial/",
+      "facebook": "https://www.facebook.com/MaverickBelfastuk",
+      "youtube": "https://www.youtube.com/maverickbelfast",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:34:05.902Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Mavis Chloe Rivers",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbid": "a41f36d7-50c1-47bc-aa2a-ddb384259c35"
+    "mbid": "a41f36d7-50c1-47bc-aa2a-ddb384259c35",
+    "autoTriedAt": "2026-07-11T08:34:07.173Z"
   },
   {
     "name": "Mavis Fan",
@@ -61824,19 +62207,22 @@
     "name": "Maw, Nicholas",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:34:08.455Z"
   },
   {
     "name": "Mawatari, Matsuko",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:34:09.725Z"
   },
   {
     "name": "Max and Harvey",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:34:11.033Z"
   },
   {
     "name": "Max B",
@@ -61858,7 +62244,9 @@
     "name": "Max Bacon",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "80aff579-8968-4272-aaf8-524837db63f2",
+    "autoTriedAt": "2026-07-11T08:34:13.612Z"
   },
   {
     "name": "Max Bemis",
@@ -61878,7 +62266,7 @@
   },
   {
     "name": "Max Bennett",
-    "website": null,
+    "website": "http://maxbennett.com/",
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "socials": {
       "spotify": "https://open.spotify.com/artist/0FqD1eJ5F2o3Y7G9L3I7kH",
@@ -61888,13 +62276,18 @@
       "telegram": null,
       "vk": null
     },
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "08212320-efca-4a86-9778-4ee51a12c6eb",
+    "enrichedAt": "2026-07-11T08:34:16.242Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Max Brod",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "25f48f11-e5e3-4d35-888b-1c362a56e659",
+    "autoTriedAt": "2026-07-11T08:34:18.806Z"
   },
   {
     "name": "Max Bruch",
@@ -61916,19 +62309,40 @@
     "name": "Max Butting",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbid": "69a4f151-d9a1-4078-b68f-6ed34836d0dc"
+    "mbid": "69a4f151-d9a1-4078-b68f-6ed34836d0dc",
+    "autoTriedAt": "2026-07-11T08:34:21.392Z"
   },
   {
     "name": "Max Bygraves",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbid": "5140b8a0-767d-4eec-a46e-701758996b8a"
+    "mbid": "5140b8a0-767d-4eec-a46e-701758996b8a",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/7Cm4VBm1trDn5A3CWbzDVl",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:34:24.002Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Max Casella",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbid": "4d375c26-7599-47ae-b69b-7569851232c7"
+    "mbid": "4d375c26-7599-47ae-b69b-7569851232c7",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/6ZpL3BxODab84CTGSL7UO8",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:34:26.590Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Max Cavalera",
@@ -61950,7 +62364,18 @@
     "name": "Max Collins",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "c23c1eab-9ce1-41b3-bb18-c2dc90c189e9",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/0JP3kmkFK32jTcsDEnYYAr",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:34:29.201Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Max Coveri",
@@ -61988,67 +62413,128 @@
     "name": "Max Crumm",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbid": "43056a65-37a2-40c1-859e-fe22ec6c3f04"
+    "mbid": "43056a65-37a2-40c1-859e-fe22ec6c3f04",
+    "autoTriedAt": "2026-07-11T08:34:31.783Z"
   },
   {
     "name": "Max Dimoff",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:34:33.055Z"
   },
   {
     "name": "Max Frost and the Troopers",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbid": "a0e47ac3-ed1a-456a-adb8-9b478d5576a8"
+    "mbid": "a0e47ac3-ed1a-456a-adb8-9b478d5576a8",
+    "autoTriedAt": "2026-07-11T08:34:34.340Z"
   },
   {
     "name": "Max Graham",
-    "website": null,
+    "website": "http://www.maxgraham.com/",
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "9b0996d8-ce15-4e37-834c-b6c43cb8bf14",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/4kGt8nIQNBkCRusp4sJ3RX",
+      "instagram": "https://www.instagram.com/maxgraham/",
+      "facebook": "https://www.facebook.com/djmaxgraham",
+      "youtube": "https://www.youtube.com/user/maxgraham",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:34:37.001Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Max Green",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "73b64c2c-48bd-4121-946a-8928a8a8e3f3",
+    "autoTriedAt": "2026-07-11T08:34:39.561Z"
   },
   {
     "name": "Max Hess",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:34:40.834Z"
   },
   {
     "name": "Max Kaluza",
     "website": null,
     "wdBulkTriedAt": "2026-07-08T14:10:41.155Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "d9d7dcf3-170d-498c-9fc2-6a3b18d346d0",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/6lNLgymfWudNsbC0Vio7Qi",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:34:43.398Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Max Koffler",
-    "website": null,
+    "website": "http://www.maxkoffler.com/",
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbid": "e87b4bae-1fdb-404c-ac1b-77af8654f6e9"
+    "mbid": "e87b4bae-1fdb-404c-ac1b-77af8654f6e9",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:34:46.049Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Max Lilja",
-    "website": null,
+    "website": "http://www.maxthecello.com/",
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "fc6c07b0-e05d-4fa8-a29b-1f49184efdab",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": "https://www.facebook.com/maxlilja.page",
+      "youtube": "https://www.youtube.com/user/maxthecello",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:34:48.918Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Max Martin",
-    "website": null,
+    "website": "http://www.maratone.se/",
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "6622a50e-5206-44d0-9ad5-96047a726dcf",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/1rjeVTt9Ra1ldvN7SpeK0G",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:34:51.510Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Max Méreaux",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:34:52.794Z"
   },
   {
     "name": "Max Merritt",
@@ -62068,27 +62554,62 @@
   },
   {
     "name": "Max Miller",
-    "website": null,
+    "website": "http://www.maxmiller.org/",
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "be46a537-0e7f-4bae-8d0c-2121647f6426",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:34:55.393Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Max Mutzke",
-    "website": null,
+    "website": "https://www.maxmutzke.de/",
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "6f2bfbc7-187a-4b02-8fde-77635d95e099",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2XTN4g2qnzFw0TG2NHuQxl",
+      "instagram": null,
+      "facebook": "https://www.facebook.com/pages/Max-Mutzke/202675697353",
+      "youtube": "https://www.youtube.com/channel/UCEsey9fxmrUtFGSwzc--QPw",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:34:57.980Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Max Neuhaus",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "6a5d9ecb-7160-4831-9d90-1536279084f4",
+    "autoTriedAt": "2026-07-11T08:35:00.598Z"
   },
   {
     "name": "Max On The Rox",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "ffb40b47-eae8-400e-b4d6-ec33e6cfdbb5",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/5BQHuaatR2s1ciPhSuoHCC",
+      "instagram": null,
+      "facebook": "https://www.facebook.com/MaxOnTheRox",
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:35:03.190Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Max Pezzali",
@@ -62126,19 +62647,33 @@
     "name": "Max Rebo Band",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "3316add6-5fbe-495c-9ba2-8e15b8283194",
+    "autoTriedAt": "2026-07-11T08:35:05.745Z"
   },
   {
     "name": "Max Reger",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "51f5d4c3-c69a-4203-9281-d585e32aa7ef",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2qpchAUtJNY45rG7auwQgz",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:35:08.495Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Max Richards",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:35:09.775Z"
   },
   {
     "name": "Max Richter",
@@ -62152,7 +62687,9 @@
       "telegram": null,
       "vk": null
     },
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "enrichedAt": "2026-07-11T08:35:09.775Z",
+    "enrichedBy": "auto"
   },
   {
     "name": "Max Roach",
@@ -62190,7 +62727,8 @@
     "name": "Max Rostal",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbid": "0e335e27-d13c-4ee0-9de3-ce3141b48ac2"
+    "mbid": "0e335e27-d13c-4ee0-9de3-ce3141b48ac2",
+    "autoTriedAt": "2026-07-11T08:35:12.653Z"
   },
   {
     "name": "Max Santos",
@@ -62212,7 +62750,9 @@
     "name": "Max Splodge",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "07b59750-7c11-4082-abd5-acd60b7483e7",
+    "autoTriedAt": "2026-07-11T08:35:15.223Z"
   },
   {
     "name": "Max Stalling",
@@ -62234,55 +62774,95 @@
     "name": "Max Stern",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "68b4c97a-ff63-4bff-abea-6fb60be7dc35",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2ZJgZXMUJho98Wje2TpZZv",
+      "instagram": null,
+      "facebook": "https://www.facebook.com/OfficialMaxStern",
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:35:17.831Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Max Stirner",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbid": "c212ea48-8f94-45b1-8062-d480e3ea5f3c"
+    "mbid": "c212ea48-8f94-45b1-8062-d480e3ea5f3c",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/0VKb92Pb63ZbPJzb6Ktro9",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:35:20.528Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Max Trapp",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbid": "377b003b-7c4d-4b3e-b25a-4c971c1340bf"
+    "mbid": "377b003b-7c4d-4b3e-b25a-4c971c1340bf",
+    "autoTriedAt": "2026-07-11T08:35:23.108Z"
   },
   {
     "name": "Max von Essen",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "54ec9e4d-8798-4cb1-845c-499339d4eb74",
+    "autoTriedAt": "2026-07-11T08:35:25.682Z"
   },
   {
     "name": "Max Wagenknecht",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbid": "19050164-0fb6-4378-904f-6c94b8074a74"
+    "mbid": "19050164-0fb6-4378-904f-6c94b8074a74",
+    "autoTriedAt": "2026-07-11T08:35:28.257Z"
   },
   {
     "name": "Max Wall",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbid": "48ebabe9-363b-4b0f-834f-a50f51adf801"
+    "mbid": "48ebabe9-363b-4b0f-834f-a50f51adf801",
+    "autoTriedAt": "2026-07-11T08:35:30.846Z"
   },
   {
     "name": "Max Webster",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "76fe1f52-d059-46e4-b683-b1512d2fd5f4",
+    "autoTriedAt": "2026-07-11T08:35:33.559Z"
   },
   {
     "name": "Max Weinberg",
-    "website": null,
+    "website": "http://www.maxweinberg.com/",
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "2566ca73-1dfd-49e7-ab20-dfa5697b360e",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:35:36.152Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Max-Him",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbid": "62ffb89e-7611-4981-8873-29d963a83cc6"
+    "mbid": "62ffb89e-7611-4981-8873-29d963a83cc6",
+    "autoTriedAt": "2026-07-11T08:35:38.730Z"
   },
   {
     "name": "Maxeen",
@@ -62416,7 +62996,9 @@
     "name": "Maxim's Trash",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "7a5e9a0d-da53-4410-828e-760874a83ba7",
+    "autoTriedAt": "2026-07-11T08:35:41.451Z"
   },
   {
     "name": "Maxime Le Forestier",
@@ -62438,7 +63020,8 @@
     "name": "Maximiano de Sousa (Max)",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:35:42.722Z"
   },
   {
     "name": "Maximilian Hecker",
@@ -62460,19 +63043,22 @@
     "name": "Maximilian Steinberg",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbid": "5b4484d2-ebd3-41c6-a57d-bb7e447c7d86"
+    "mbid": "5b4484d2-ebd3-41c6-a57d-bb7e447c7d86",
+    "autoTriedAt": "2026-07-11T08:35:43.994Z"
   },
   {
     "name": "Máximo Arrates Boza",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:35:45.642Z"
   },
   {
     "name": "Máximo Diego Pujol",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbid": "bf988160-ddae-4bfd-8b1a-0379d2c3466b"
+    "mbid": "bf988160-ddae-4bfd-8b1a-0379d2c3466b",
+    "autoTriedAt": "2026-07-11T08:35:48.399Z"
   },
   {
     "name": "Maximo Park",
@@ -62526,31 +63112,55 @@
     "name": "Maximum The Hormone",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:35:49.673Z"
   },
   {
     "name": "Maximus Dan",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbid": "1b0a82c8-80ec-4a00-99e9-2a771b1fd85a"
+    "mbid": "1b0a82c8-80ec-4a00-99e9-2a771b1fd85a",
+    "socials": {
+      "spotify": null,
+      "instagram": "https://www.instagram.com/mxprime/",
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:35:52.250Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Maxine Brown",
-    "website": null,
+    "website": "http://www.maxinebrown.com/",
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "6635d23d-b809-49cb-990d-e6a2748e6a89",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/1kCqTUSrWJEHZm2GSpRuMV",
+      "instagram": null,
+      "facebook": null,
+      "youtube": "https://music.youtube.com/channel/UCdi88RWxdm8TH9vOc-75WPA",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:35:54.874Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Maxine Daniels",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbid": "3cc53c50-cc5c-4c5f-a0ed-9322786e45f6"
+    "mbid": "3cc53c50-cc5c-4c5f-a0ed-9322786e45f6",
+    "autoTriedAt": "2026-07-11T08:35:57.433Z"
   },
   {
     "name": "Maxine Hong Kingston",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:35:58.911Z"
   },
   {
     "name": "Maxine Nightingale",
@@ -62572,13 +63182,25 @@
     "name": "Maxine Sullivan",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "813de8c0-1cec-485b-989c-7ed17e998e65",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/0tEpMx1r2UhJNf6yMvVBLG",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:36:01.497Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "MaxNormal.TV",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
-    "mbid": "787d291b-de02-4df6-8dc7-2ac5658ff684"
+    "mbid": "787d291b-de02-4df6-8dc7-2ac5658ff684",
+    "autoTriedAt": "2026-07-11T08:36:04.063Z"
   },
   {
     "name": "Maxsta",
@@ -62600,7 +63222,18 @@
     "name": "Maxville",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "770edd1b-f829-4a7f-8c80-7f1b4e605f55",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/0kjg3mdMKG9zsgsrqeXCTt",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:36:06.691Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Maxwell",
@@ -62614,85 +63247,132 @@
       "telegram": null,
       "vk": null
     },
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "enrichedAt": "2026-07-11T08:36:06.691Z",
+    "enrichedBy": "auto"
   },
   {
     "name": "Maxwell McCabe-Lokos",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
-    "mbid": "b2743c96-8df7-44e6-ba51-9d4bb59588ab"
+    "mbid": "b2743c96-8df7-44e6-ba51-9d4bb59588ab",
+    "autoTriedAt": "2026-07-11T08:36:07.962Z"
   },
   {
     "name": "Maxwell Street",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "3c025033-f7af-48dc-91a2-ccc9d4d543ff",
+    "autoTriedAt": "2026-07-11T08:36:10.550Z"
   },
   {
     "name": "Maxwell Street Jimmy Davis",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
-    "mbid": "c5e5a539-c40d-4a26-a77e-871a33edc9a4"
+    "mbid": "c5e5a539-c40d-4a26-a77e-871a33edc9a4",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2Ddm2vik5ykV0RzSjVDoHo",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:36:13.158Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Maxx",
-    "website": null,
+    "website": "http://maxxmusic90s.com/",
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "24410e2a-1024-4662-8f47-f48b14b5d991",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/6zkbUEItDv8gNXeO5WkkNX",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:36:15.774Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Maxx Frank",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
-    "mbid": "0d608f78-be76-4f70-9fe1-006dbead1ff2"
+    "mbid": "0d608f78-be76-4f70-9fe1-006dbead1ff2",
+    "autoTriedAt": "2026-07-11T08:36:18.348Z"
   },
   {
     "name": "Maxx Klaxon",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "05009b9f-ff38-4644-ad3b-bfb0f16e8504",
+    "autoTriedAt": "2026-07-11T08:36:20.924Z"
   },
   {
     "name": "May (or Mary) Hannah Brahe",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:36:22.197Z"
   },
   {
     "name": "May 1968",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:36:23.472Z"
   },
   {
     "name": "May Blitz",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "7210493e-b497-4d4b-bfbc-561bec4ed0f4",
+    "autoTriedAt": "2026-07-11T08:36:26.070Z"
   },
   {
     "name": "May Brahe",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
-    "mbid": "f7674786-5828-4317-a5e0-d518efa7822d"
+    "mbid": "f7674786-5828-4317-a5e0-d518efa7822d",
+    "autoTriedAt": "2026-07-11T08:36:28.662Z"
   },
   {
     "name": "May Day",
-    "website": null,
+    "website": "http://www.may-day.ch/",
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "9ff3fddf-40e4-4327-a2c5-04986d2f7299",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T08:36:31.319Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "May Howlett",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T08:36:32.591Z"
   },
   {
     "name": "May Irwin",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
-    "mbid": "30658d0a-3974-44c3-9a99-f9ed266a2568"
+    "mbid": "30658d0a-3974-44c3-9a99-f9ed266a2568",
+    "autoTriedAt": "2026-07-11T08:36:35.613Z"
   },
   {
     "name": "May J.",
@@ -62746,7 +63426,9 @@
     "name": "Maya",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "1c33b814-08f3-4d33-bcfe-494fd44e46f8",
+    "autoTriedAt": "2026-07-11T08:36:38.169Z"
   },
   {
     "name": "Maya Beiser",
