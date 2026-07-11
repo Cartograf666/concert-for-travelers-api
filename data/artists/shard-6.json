@@ -7320,45 +7320,82 @@
   },
   {
     "name": "Filipa Sousa",
-    "website": null,
+    "website": "https://filipasousa.com/",
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "bf3e11da-b517-45bf-835e-e9d021ea2d3e",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/0QduYsk47at8gQ09Fmsye0",
+      "instagram": "https://www.instagram.com/filipasousamusic/",
+      "facebook": "https://www.facebook.com/FilipaSousaCantora",
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T09:58:56.876Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Filipe Pinto",
-    "website": null,
+    "website": "http://www.filipepintooficial.com/",
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "44777690-90d9-4814-9f09-4cd218b5ea7c",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": "https://www.facebook.com/FilipePintOficial",
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T09:58:59.510Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Filippo Amadei",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "7ceb0afe-531c-4fb6-a553-c70a31488044",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/5foQWCB6pdl057d2W6tF2w",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T09:59:02.107Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Filippo Azzaiolo",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbid": "cff068af-84b6-4504-9d62-02347c7bda0e"
+    "mbid": "cff068af-84b6-4504-9d62-02347c7bda0e",
+    "autoTriedAt": "2026-07-11T09:59:04.707Z"
   },
   {
     "name": "Filippo Capocci",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbid": "0f2e64cb-fc2a-4a9f-85d6-bab8c3ed9533"
+    "mbid": "0f2e64cb-fc2a-4a9f-85d6-bab8c3ed9533",
+    "autoTriedAt": "2026-07-11T09:59:07.449Z"
   },
   {
     "name": "Filippo de Lurano",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbid": "be6ca3f2-5abf-4cf8-8f66-0cd2d1c7e25c"
+    "mbid": "be6ca3f2-5abf-4cf8-8f66-0cd2d1c7e25c",
+    "autoTriedAt": "2026-07-11T09:59:10.073Z"
   },
   {
     "name": "Filippo Tommaso Marinetti",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbid": "e9b99e65-a8de-4d07-8e2e-5bec9b72fb6f"
+    "mbid": "e9b99e65-a8de-4d07-8e2e-5bec9b72fb6f",
+    "autoTriedAt": "2026-07-11T09:59:12.697Z"
   },
   {
     "name": "Filippos Pliatsikas",
@@ -7380,19 +7417,22 @@
     "name": "Fille Mutoni",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbid": "0d42fdf3-886a-42c4-bd90-eeef600c81fa"
+    "mbid": "0d42fdf3-886a-42c4-bd90-eeef600c81fa",
+    "autoTriedAt": "2026-07-11T09:59:13.975Z"
   },
   {
     "name": "Film directors",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T09:59:15.253Z"
   },
   {
     "name": "film music",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T09:59:16.568Z"
   },
   {
     "name": "Film School",
@@ -7414,25 +7454,48 @@
     "name": "film scores",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T09:59:17.841Z"
   },
   {
     "name": "film-score",
-    "website": null,
+    "website": "https://www.filmscore.jp/",
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "3d82feb5-572f-429b-9784-3f48dc083aa0",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T09:59:20.435Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Filmi pop",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T09:59:21.725Z"
   },
   {
     "name": "Films",
-    "website": null,
+    "website": "https://www.films-music.com/",
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbid": "7d996843-7827-4fc1-b50d-a76314b26679"
+    "mbid": "7d996843-7827-4fc1-b50d-a76314b26679",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T09:59:24.314Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Filo & Peri",
@@ -7478,7 +7541,9 @@
       "youtube": "https://www.youtube.com/channel/UC-T3Wz1l2e5D8fN4VqZJ7wA",
       "telegram": null,
       "vk": null
-    }
+    },
+    "enrichedAt": "2026-07-11T09:59:24.314Z",
+    "enrichedBy": "auto"
   },
   {
     "name": "Filthy Thieving Bastards",
@@ -7500,7 +7565,17 @@
     "name": "Fimbulwinter",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbid": "bdc55afb-02ae-43cc-86cc-818be6d42917"
+    "mbid": "bdc55afb-02ae-43cc-86cc-818be6d42917",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/3YYskFTMYr6W1zo9tO5tEo",
+      "instagram": null,
+      "facebook": null,
+      "youtube": "https://music.youtube.com/channel/UCg7tnDnegQ_YSQLrpjXQWFQ",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T09:59:27.104Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Fimiguerrero",
@@ -7514,19 +7589,33 @@
       "vk": "https://vk.com/fimiguerrero"
     },
     "wdBulkTriedAt": "2026-07-08T14:10:37.517Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "c733243e-8a91-4a2c-8fd6-4c7a164efc0c",
+    "enrichedAt": "2026-07-11T09:59:29.683Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Fin.K.L",
-    "website": null,
+    "website": "http://finkl.dspenter.com/",
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbid": "9c85e09b-7eed-43af-bc05-e6a726c9451a"
+    "mbid": "9c85e09b-7eed-43af-bc05-e6a726c9451a",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2aRLyjYp7WPr4EkjkI1gvS",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T09:59:32.508Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Fin.K.L.",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbid": "9c85e09b-7eed-43af-bc05-e6a726c9451a"
+    "mbid": "9c85e09b-7eed-43af-bc05-e6a726c9451a",
+    "autoTriedAt": "2026-07-11T09:59:33.806Z"
   },
   {
     "name": "Final",
@@ -7580,37 +7669,54 @@
     "name": "Final Fantasy Versus XIII",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T09:59:35.087Z"
   },
   {
     "name": "Finally Found",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T09:59:36.374Z"
   },
   {
     "name": "Finally Punk",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbid": "d3fbd605-f2e0-4b3b-aaf8-bbc110631da8"
+    "mbid": "d3fbd605-f2e0-4b3b-aaf8-bbc110631da8",
+    "autoTriedAt": "2026-07-11T09:59:39.133Z"
   },
   {
     "name": "Finbarr Dwyer",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbid": "0f9397e3-7127-49cf-a4a0-61a2d312731c"
+    "mbid": "0f9397e3-7127-49cf-a4a0-61a2d312731c",
+    "autoTriedAt": "2026-07-11T09:59:41.944Z"
   },
   {
     "name": "Finch",
-    "website": null,
+    "website": "http://www.zombiefinch.com/",
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "746737be-e792-42bb-b18c-fb46d7935d7a",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/528t5c0zyuG9beehtth4Za",
+      "instagram": "https://www.instagram.com/officialfinch/",
+      "facebook": "https://www.facebook.com/officialofficialfinch",
+      "youtube": "https://www.youtube.com/channel/UCVLtMskws242vLTodYIvGQg",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T09:59:44.760Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Finchley",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "2a655350-56d7-41c8-8e8f-37592ab9d784",
+    "autoTriedAt": "2026-07-11T09:59:47.320Z"
   },
   {
     "name": "Findlay Napier",
@@ -7646,15 +7752,36 @@
   },
   {
     "name": "Fine Arts Quartet",
-    "website": null,
+    "website": "http://www.fineartsquartet.org/",
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "12f726b5-d570-4ce7-90b6-f620d58eacd4",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/0nTkbCsLXquVd1Dqtn1uBl",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T09:59:50.464Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Fine China",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbid": "e70ed227-a144-45dc-b211-6ad67514ed31"
+    "mbid": "e70ed227-a144-45dc-b211-6ad67514ed31",
+    "socials": {
+      "spotify": null,
+      "instagram": "https://www.instagram.com/finechinatheband/",
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T09:59:53.234Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Fine Young Cannibals",
@@ -7690,9 +7817,19 @@
   },
   {
     "name": "Fingathing",
-    "website": null,
+    "website": "http://www.fingathing.com/",
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbid": "3cccfcf3-9911-43b4-98b5-dc49d8e32371"
+    "mbid": "3cccfcf3-9911-43b4-98b5-dc49d8e32371",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T09:59:55.938Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Fingazz",
@@ -7730,7 +7867,9 @@
     "name": "Fingerprintz",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "fe033bc0-7f42-4150-a70d-b3ec9be9daeb",
+    "autoTriedAt": "2026-07-11T09:59:58.657Z"
   },
   {
     "name": "Fingertips",
@@ -7752,7 +7891,17 @@
     "name": "Fini Henriques",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbid": "9977608c-97c3-47ad-b5e7-6576c9b53ff9"
+    "mbid": "9977608c-97c3-47ad-b5e7-6576c9b53ff9",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/5fV4hnvd8A46mgBNd2VuXe",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:00:01.295Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Finite Automata",
@@ -7782,7 +7931,9 @@
       "telegram": null,
       "vk": null
     },
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "enrichedAt": "2026-07-11T10:00:01.295Z",
+    "enrichedBy": "auto"
   },
   {
     "name": "Fink and John Legend",
@@ -7796,37 +7947,64 @@
       "vk": null
     },
     "wdBulkTriedAt": "2026-07-08T14:10:37.517Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:00:02.592Z"
   },
   {
     "name": "Finke, Fritz",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:00:03.872Z"
   },
   {
     "name": "Finland",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "812752ab-9f64-461d-a457-2f13df4d9f67",
+    "autoTriedAt": "2026-07-11T10:00:06.954Z"
   },
   {
     "name": "Finlay",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:00:08.243Z"
   },
   {
     "name": "Finlay MacDonald",
-    "website": null,
+    "website": "https://finlaymacdonaldmusic.co.uk/",
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "c1cbecdc-6f6c-4475-8503-b6f9bed136c6",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:00:11.564Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Finley",
-    "website": null,
+    "website": "http://www.finley.it/",
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "74924591-31e9-486b-bfc1-f788f8d0f045",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": null,
+      "youtube": "https://www.youtube.com/user/Finley",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:00:15.311Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Finley Quaye",
@@ -7864,37 +8042,53 @@
     "name": "Finn Guttormsen",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbid": "7674d520-5c32-4da1-9fc9-4bc066381b59"
+    "mbid": "7674d520-5c32-4da1-9fc9-4bc066381b59",
+    "autoTriedAt": "2026-07-11T10:00:19.001Z"
   },
   {
     "name": "Finn Høffding",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbid": "2d62398c-e791-4737-8bff-5ea3deeb07d9"
+    "mbid": "2d62398c-e791-4737-8bff-5ea3deeb07d9",
+    "autoTriedAt": "2026-07-11T10:00:23.770Z"
   },
   {
     "name": "Finn Peters",
-    "website": null,
+    "website": "http://www.finnpeters.com/",
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "ef45e0ac-00ea-43b9-9a8b-aaba34e5d641",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/4epjP7JQGUv2Hy1wjALrYw",
+      "instagram": null,
+      "facebook": null,
+      "youtube": "https://www.youtube.com/user/finnpeters",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:00:29.495Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Finnegan, Sean",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:00:30.787Z"
   },
   {
     "name": "Finnforest",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbid": "4f97f0a5-d9ee-4265-b3f1-d5c83fa95e82"
+    "mbid": "4f97f0a5-d9ee-4265-b3f1-d5c83fa95e82",
+    "autoTriedAt": "2026-07-11T10:00:34.258Z"
   },
   {
     "name": "Finnish Radio Symphony Orchestra",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:00:36.063Z"
   },
   {
     "name": "Finntroll",
@@ -7980,7 +8174,9 @@
     "name": "Fiona Campbell",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "d462d9d3-9f5b-484f-a89d-24bb12f92cb4",
+    "autoTriedAt": "2026-07-11T10:00:41.027Z"
   },
   {
     "name": "Fiona J. Mackenzie",
@@ -8018,7 +8214,9 @@
     "name": "Fiona McDonald",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "5d08a539-b932-4d86-8ee8-153d0ed85c1c",
+    "autoTriedAt": "2026-07-11T10:00:46.073Z"
   },
   {
     "name": "Fiona Sit",
@@ -8040,7 +8238,8 @@
     "name": "Fiona Thompson",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:00:47.362Z"
   },
   {
     "name": "Fionn Regan",
@@ -8062,7 +8261,8 @@
     "name": "Fiorenzo Carpi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbid": "57158c49-eb31-45ba-a138-de5dabff28d9"
+    "mbid": "57158c49-eb31-45ba-a138-de5dabff28d9",
+    "autoTriedAt": "2026-07-11T10:00:50.413Z"
   },
   {
     "name": "Fire",
@@ -8076,31 +8276,36 @@
       "telegram": null,
       "vk": null
     },
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:00:51.706Z"
   },
   {
     "name": "Fire and Rain",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:00:53.371Z"
   },
   {
     "name": "Fire Bomber",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbid": "c1350f79-7426-412c-b7e6-b2839c510c59"
+    "mbid": "c1350f79-7426-412c-b7e6-b2839c510c59",
+    "autoTriedAt": "2026-07-11T10:01:00.300Z"
   },
   {
     "name": "Fire Party",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbid": "430d9771-8feb-4b81-ba2d-c33ddcd0c8c1"
+    "mbid": "430d9771-8feb-4b81-ba2d-c33ddcd0c8c1",
+    "autoTriedAt": "2026-07-11T10:01:03.257Z"
   },
   {
     "name": "Fire Pro Wrestling Returns",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:01:04.566Z"
   },
   {
     "name": "Fire Through the Window",
@@ -8184,15 +8389,27 @@
   },
   {
     "name": "Fireflight",
-    "website": null,
+    "website": "http://www.fireflightrock.com/",
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "d921e76e-0877-47a4-b7e2-42332afa62c2",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/5v6wlK6GCKVovWMbPqSHNy",
+      "instagram": null,
+      "facebook": "https://www.facebook.com/fireflightrock",
+      "youtube": "https://www.youtube.com/channel/UC4on2yvGl72VIqnRas-yR-g",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:01:07.547Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Firehose",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbid": "33e09dd8-a998-4e1a-9e69-1a6567a3803d"
+    "mbid": "33e09dd8-a998-4e1a-9e69-1a6567a3803d",
+    "autoTriedAt": "2026-07-11T10:01:10.138Z"
   },
   {
     "name": "FireHouse",
@@ -8262,7 +8479,18 @@
     "name": "Fireworks",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "7a7b70f3-1d6f-40f1-8c55-f75a376bee87",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": "https://www.facebook.com/WeAreFireworks",
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:01:13.097Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "First Aid Kit",
@@ -8284,19 +8512,22 @@
     "name": "first album",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:01:14.778Z"
   },
   {
     "name": "First Arsch",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbid": "19bc68b6-d423-4630-911e-a74287495bb7"
+    "mbid": "19bc68b6-d423-4630-911e-a74287495bb7",
+    "autoTriedAt": "2026-07-11T10:01:17.405Z"
   },
   {
     "name": "First Base",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbid": "f8e72a0c-2273-4112-92cf-7c65a6274491"
+    "mbid": "f8e72a0c-2273-4112-92cf-7c65a6274491",
+    "autoTriedAt": "2026-07-11T10:01:20.012Z"
   },
   {
     "name": "First Blood",
@@ -8334,25 +8565,40 @@
     "name": "First Choice",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "bd1510da-7c76-4be3-a71e-9f5c71273176",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/20v3nhzoeaO2WvDSCdY0f4",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:01:23.407Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "First Degree",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "ed202e5b-1bf3-4a0b-9b89-fbdb57bb104e",
+    "autoTriedAt": "2026-07-11T10:01:26.082Z"
   },
   {
     "name": "First Lieutenant",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:01:27.374Z"
   },
   {
     "name": "first rock and roll record",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:01:28.729Z"
   },
   {
     "name": "First State",
@@ -8374,13 +8620,15 @@
     "name": "First Words",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbid": "ba952f87-7021-4566-bd8c-1896ecec67ce"
+    "mbid": "ba952f87-7021-4566-bd8c-1896ecec67ce",
+    "autoTriedAt": "2026-07-11T10:01:31.335Z"
   },
   {
     "name": "First You Get the Sugar",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:01:32.616Z"
   },
   {
     "name": "Fischer-Z",
@@ -8400,21 +8648,53 @@
   },
   {
     "name": "Fischerspooner",
-    "website": null,
+    "website": "http://www.fischerspooner.com/",
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "a4f54716-24d9-4c6b-8ba7-1d7e7a5173d0",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/5R7K1GezC0jy24v1R2n4x3",
+      "instagram": "https://www.instagram.com/fischerspooner/",
+      "facebook": "https://www.facebook.com/22430220222",
+      "youtube": "https://www.youtube.com/channel/UCH_fpKusEQIEojPir1y5t6Q",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:01:35.381Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Fischmob",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbid": "50f2bd7d-3403-46de-a2c7-f20f9aa23c6b"
+    "mbid": "50f2bd7d-3403-46de-a2c7-f20f9aa23c6b",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/6OqgIRmdNbYzWX1r3KeiB1",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:01:38.392Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Fish",
-    "website": null,
+    "website": "https://fishmusic.scot/",
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "7c687bbb-ba1a-496d-919a-f322530739e4",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/6bQfVk5fSJSp3JtGiQZGNI",
+      "instagram": "https://www.instagram.com/fishderekdick/",
+      "facebook": "https://www.facebook.com/derek.dick",
+      "youtube": "https://music.youtube.com/channel/UCM1ZIsopFP_lslGGNnTTz2A",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:01:41.529Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Fish Leong",
@@ -8450,9 +8730,20 @@
   },
   {
     "name": "Fishboy",
-    "website": null,
+    "website": "http://yofishboy.com/",
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "d09ef6e9-321b-4715-9a93-b7392032f8be",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/3DqjxAZT3erDZ3umxm4zK9",
+      "instagram": null,
+      "facebook": "https://www.facebook.com/yofishboy",
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:01:45.026Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Fisher",
@@ -8466,13 +8757,16 @@
       "telegram": null,
       "vk": null
     },
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "enrichedAt": "2026-07-11T10:01:45.026Z",
+    "enrichedBy": "auto"
   },
   {
     "name": "Fisher, Jason",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:01:47.045Z"
   },
   {
     "name": "Fisherman's Friends",
@@ -8510,13 +8804,16 @@
     "name": "Fission",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbid": "22f5c8ac-7bdc-4b3a-9c24-a87e6705c930"
+    "mbid": "22f5c8ac-7bdc-4b3a-9c24-a87e6705c930",
+    "autoTriedAt": "2026-07-11T10:01:50.959Z"
   },
   {
     "name": "Fist",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "2664e065-014d-44be-894b-228181415c62",
+    "autoTriedAt": "2026-07-11T10:01:54.806Z"
   },
   {
     "name": "Fit for a King",
@@ -8618,7 +8915,8 @@
     "name": "Fito Paez",
     "website": null,
     "wdBulkTriedAt": "2026-07-09T08:32:10.022Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:01:57.013Z"
   },
   {
     "name": "Fito Páez",
@@ -8640,13 +8938,16 @@
     "name": "Fito y los Fitipaldis",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:01:58.945Z"
   },
   {
     "name": "fitterkarma",
     "website": null,
     "wdBulkTriedAt": "2026-07-09T08:32:10.022Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "5e937345-5394-462f-ae8c-27a86da9d5b9",
+    "autoTriedAt": "2026-07-11T10:02:01.811Z"
   },
   {
     "name": "Fitz & the Tantrums",
@@ -8666,9 +8967,20 @@
   },
   {
     "name": "Fitz and The Tantrums",
-    "website": null,
+    "website": "http://www.fitzandthetantrums.com/",
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "8560d4e8-05e2-4c20-980b-ad2db445dd5d",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/4AcHt3JxKy59IX7JNNlZn4",
+      "instagram": "https://www.instagram.com/fitzandthetantrums/",
+      "facebook": "https://www.facebook.com/fitzandthetantrums",
+      "youtube": "https://www.youtube.com/channel/UCey2z8VZ7Mc0R1M5QiBU4EA",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:02:04.766Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Fitz of Depression",
@@ -8690,19 +9002,22 @@
     "name": "Fitzroy Crossing",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:02:06.042Z"
   },
   {
     "name": "Fitzroy Xpress",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbid": "02760916-8700-4cd9-9dd7-e1a8c3654790"
+    "mbid": "02760916-8700-4cd9-9dd7-e1a8c3654790",
+    "autoTriedAt": "2026-07-11T10:02:08.647Z"
   },
   {
     "name": "Fitzwallace",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:02:09.926Z"
   },
   {
     "name": "Five",
@@ -8724,13 +9039,15 @@
     "name": "Five Americans",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbid": "19ce9c2c-b685-49cb-afed-f6b6ed720646"
+    "mbid": "19ce9c2c-b685-49cb-afed-f6b6ed720646",
+    "autoTriedAt": "2026-07-11T10:02:11.216Z"
   },
   {
     "name": "Five Blind Boys of Mississippi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:55.455Z",
-    "mbid": "f415080a-7726-4485-9b77-a2fccc973036"
+    "mbid": "f415080a-7726-4485-9b77-a2fccc973036",
+    "autoTriedAt": "2026-07-11T10:02:12.542Z"
   },
   {
     "name": "Five Finger Death Punch",
@@ -8768,7 +9085,8 @@
     "name": "Five Hand Reel",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbid": "bb373358-0684-4842-9a96-39f5b3ff5b9f"
+    "mbid": "bb373358-0684-4842-9a96-39f5b3ff5b9f",
+    "autoTriedAt": "2026-07-11T10:02:15.159Z"
   },
   {
     "name": "Five Horse Johnson",
@@ -8822,7 +9140,9 @@
     "name": "Five Peace Band",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "7e5fd719-c158-4219-9ac4-fbe1ad794f42",
+    "autoTriedAt": "2026-07-11T10:02:17.761Z"
   },
   {
     "name": "Five Star",
@@ -8860,13 +9180,26 @@
     "name": "Fjodor",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "4553bd2b-267e-47a4-be7c-06917785fb47",
+    "autoTriedAt": "2026-07-11T10:02:20.342Z"
   },
   {
     "name": "FKA Twigs",
-    "website": null,
+    "website": "https://www.fkatwigsofficial.com/",
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "1e4e9db7-5068-4a9c-bdd0-5777e47172c8",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/6nB0iY1cjSY1KyhYyuIIKH",
+      "instagram": "https://www.instagram.com/fkatwigs/",
+      "facebook": "https://www.facebook.com/fkatwigs",
+      "youtube": "https://www.youtube.com/channel/UCXwsBnDQtx1i2qbgcHoQWNA",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:02:23.229Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Flaco Jimenez",
@@ -8888,31 +9221,35 @@
     "name": "Flag",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:02:24.513Z"
   },
   {
     "name": "Flag of Convenience",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbid": "0af2283d-fdb1-4dce-8b79-3ebe2e659df5"
+    "mbid": "0af2283d-fdb1-4dce-8b79-3ebe2e659df5",
+    "autoTriedAt": "2026-07-11T10:02:27.096Z"
   },
   {
     "name": "flag officer",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:02:28.380Z"
   },
   {
     "name": "Flagstaff Symphony Orchestra",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:02:29.749Z"
   },
   {
     "name": "Flairs",
     "website": null,
     "socials": {
-      "spotify": null,
+      "spotify": "https://open.spotify.com/artist/16smQXF8SXah8PZD6jBsu1",
       "instagram": null,
       "facebook": null,
       "youtube": null,
@@ -8920,33 +9257,51 @@
       "vk": null
     },
     "wdBulkTriedAt": "2026-07-08T14:10:37.517Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "b4f43e1c-4d00-41bb-b947-e1e2e307f2b5",
+    "enrichedAt": "2026-07-11T10:02:32.357Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Fláithrí Ó Corcrán",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:02:33.650Z"
   },
   {
     "name": "Flake Music",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
-  },
-  {
-    "name": "fLako",
-    "website": null,
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "6d438cc5-ffb9-44e4-bb2e-09f438f3be6b",
     "socials": {
-      "spotify": null,
+      "spotify": "https://open.spotify.com/artist/6hBY5Lh8jDraauB9148Ub5",
       "instagram": null,
       "facebook": null,
       "youtube": null,
       "telegram": null,
       "vk": null
     },
+    "enrichedAt": "2026-07-11T10:02:36.232Z",
+    "enrichedBy": "musicbrainz"
+  },
+  {
+    "name": "fLako",
+    "website": "http://www.natureboyflako.com/",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/4gYKVizj3uSquuZvokYgZm",
+      "instagram": "https://www.instagram.com/natureboyflix/",
+      "facebook": "https://www.facebook.com/natureboyposts",
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
     "wdBulkTriedAt": "2026-07-08T14:10:37.517Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "b8ed4de1-1eb5-4f71-af31-9323ea50d7b1",
+    "enrichedAt": "2026-07-11T10:02:38.861Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "FLAME",
@@ -8968,7 +9323,8 @@
     "name": "Flamengo",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbid": "7d686004-dd68-444f-a240-422a4259dfd0"
+    "mbid": "7d686004-dd68-444f-a240-422a4259dfd0",
+    "autoTriedAt": "2026-07-11T10:02:41.447Z"
   },
   {
     "name": "Flamin' Groovies",
@@ -8990,31 +9346,38 @@
     "name": "Flaming Youth",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "0038f532-bd6e-45df-8acd-b517a2baeb76",
+    "autoTriedAt": "2026-07-11T10:02:44.051Z"
   },
   {
     "name": "Flamingo 50",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbid": "a063591a-c744-4e77-8c86-6d45a8092207"
+    "mbid": "a063591a-c744-4e77-8c86-6d45a8092207",
+    "autoTriedAt": "2026-07-11T10:02:46.625Z"
   },
   {
     "name": "Flanagan and Allen",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbid": "b1a25185-3dac-4876-ae0c-13385b32dcff"
+    "mbid": "b1a25185-3dac-4876-ae0c-13385b32dcff",
+    "autoTriedAt": "2026-07-11T10:02:49.296Z"
   },
   {
     "name": "Flanders and Swann",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:02:50.616Z"
   },
   {
     "name": "Flannel Jimmy",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "05cd53e9-f258-40ef-bbe7-3ffa272ce611",
+    "autoTriedAt": "2026-07-11T10:02:53.215Z"
   },
   {
     "name": "Flans",
@@ -9034,27 +9397,42 @@
   },
   {
     "name": "Flash",
-    "website": null,
+    "website": "http://www.psychosync.info/",
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "a497b759-12b7-4867-ae3d-75f33e789ae0",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:02:55.810Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Flash and the Pan",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbid": "411ac9fd-15a2-4366-9ced-c15fee3d93e9"
+    "mbid": "411ac9fd-15a2-4366-9ced-c15fee3d93e9",
+    "autoTriedAt": "2026-07-11T10:02:58.715Z"
   },
   {
     "name": "Flashbulb",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:03:01.029Z"
   },
   {
     "name": "Flashing Lights",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "081aa11d-f4dd-4e79-bb91-0b878556db48",
+    "autoTriedAt": "2026-07-11T10:03:03.606Z"
   },
   {
     "name": "Flashlight Brown",
@@ -9076,7 +9454,8 @@
     "name": "Flat Duo Jets",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbid": "ee3c663d-1949-4544-ad52-aa00f9854e87"
+    "mbid": "ee3c663d-1949-4544-ad52-aa00f9854e87",
+    "autoTriedAt": "2026-07-11T10:03:06.439Z"
   },
   {
     "name": "Flat Earth Society",
@@ -9178,13 +9557,16 @@
     "name": "Flattus Maximus",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "86290a08-e32f-4501-93a2-b2cc73b02b10",
+    "autoTriedAt": "2026-07-11T10:03:09.027Z"
   },
   {
     "name": "flautist",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:03:10.313Z"
   },
   {
     "name": "Flavio Boltro",
@@ -9206,7 +9588,8 @@
     "name": "Flavio Emilio Scogna",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbid": "f732baad-e8fb-4523-b93f-3af2e476f3a1"
+    "mbid": "f732baad-e8fb-4523-b93f-3af2e476f3a1",
+    "autoTriedAt": "2026-07-11T10:03:11.597Z"
   },
   {
     "name": "Flávio José",
@@ -9228,13 +9611,25 @@
     "name": "Flavio Rodrigues",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:03:12.888Z"
   },
   {
     "name": "Flavio Sala",
-    "website": null,
+    "website": "http://www.flaviosala.com/",
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "8f752928-6e78-4902-abb5-517205a78fb1",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:03:15.515Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Flavor Flav",
@@ -9288,7 +9683,9 @@
     "name": "flea market",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "1a578d58-8307-4039-94cd-2d2ba1840c66",
+    "autoTriedAt": "2026-07-11T10:03:18.101Z"
   },
   {
     "name": "Fleas and Lice",
@@ -9310,7 +9707,17 @@
     "name": "Flee the Seen",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbid": "f75c00be-1b76-4e2f-a419-8637413fe7f2"
+    "mbid": "f75c00be-1b76-4e2f-a419-8637413fe7f2",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2LxdUCd3lVjL8lpTjEIuT0",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:03:20.712Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Fleet Foxes",
@@ -9348,7 +9755,8 @@
     "name": "Fleisher, Leon",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:03:22.007Z"
   },
   {
     "name": "Flema",
@@ -9386,19 +9794,23 @@
     "name": "Fleming Brown",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbid": "0c007940-33a8-4490-9870-000f6359bce9"
+    "mbid": "0c007940-33a8-4490-9870-000f6359bce9",
+    "autoTriedAt": "2026-07-11T10:03:24.732Z"
   },
   {
     "name": "Fleming McWilliams",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "98270fde-ac8a-464a-a62b-8413caa6d574",
+    "autoTriedAt": "2026-07-11T10:03:27.410Z"
   },
   {
     "name": "Flemming Weis",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbid": "13c5bb23-8ddd-461d-9897-2a4ee6eb80c4"
+    "mbid": "13c5bb23-8ddd-461d-9897-2a4ee6eb80c4",
+    "autoTriedAt": "2026-07-11T10:03:30.011Z"
   },
   {
     "name": "Fler",
@@ -9420,7 +9832,8 @@
     "name": "Flesh Eaters, The",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:03:31.315Z"
   },
   {
     "name": "Flesh Field",
@@ -9506,19 +9919,51 @@
     "name": "Fletch Cadillac",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "195cec96-f81d-4429-a1f4-676dec21684d",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": "https://www.facebook.com/fletchcadillacofficial",
+      "youtube": "https://www.youtube.com/user/fletchcadillac",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:03:33.904Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Fletcher Henderson",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbid": "f47d1c94-c3e3-4c84-a42a-6c33e0032839"
+    "mbid": "f47d1c94-c3e3-4c84-a42a-6c33e0032839",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2ovJLSejirvJybNers2YG6",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:03:36.599Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Fleurety",
-    "website": null,
+    "website": "http://folk.uio.no/sveineh/fleurety/",
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "540fe555-251f-4567-a5ab-f0d05cfbabdb",
+    "socials": {
+      "spotify": null,
+      "instagram": "https://www.instagram.com/thetruefleurety/",
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:03:39.188Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Fleurie",
@@ -9572,19 +10017,51 @@
     "name": "Flies Inside The Sun",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "378bfa4c-af10-4471-8c41-88d4d09c7dc3",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/7pBTL0KUry82nUrEreAOyD",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:03:41.778Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Flight 180",
-    "website": null,
+    "website": "https://web.archive.org/web/20001018064412/http://www.flight180.net/",
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbid": "34e36bb1-c943-4754-85ea-d8b2de24558e"
+    "mbid": "34e36bb1-c943-4754-85ea-d8b2de24558e",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": "https://www.facebook.com/Flight180band",
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:03:44.463Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Flight of the Conchords",
-    "website": null,
+    "website": "http://flightoftheconchords.co.nz/",
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "1f574ab1-a46d-4586-9331-f0ded23e0411",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2lRyvAihjwylPfhGqydQbC",
+      "instagram": null,
+      "facebook": "https://www.facebook.com/FlightoftheConchords",
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:03:47.091Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Flinch",
@@ -9606,13 +10083,24 @@
     "name": "Flint",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:03:48.372Z"
   },
   {
     "name": "Flip & Fill",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbid": "8a9a6aa2-dc27-449f-abeb-d160f3bff04f"
+    "mbid": "8a9a6aa2-dc27-449f-abeb-d160f3bff04f",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/0g202lpdrAgQdN4Z8wVrkV",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:03:50.961Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Flip Kowlier",
@@ -9634,31 +10122,65 @@
     "name": "Flip Phillips",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:57.086Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "6bd29ee5-9609-426c-b110-e77e75b12178",
+    "autoTriedAt": "2026-07-11T10:03:53.633Z"
   },
   {
     "name": "Fliper",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:58.757Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:03:55.238Z"
   },
   {
     "name": "Flipmode Squad",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:58.757Z",
-    "mbid": "a10ad454-cfc7-40b2-bcdf-2c707abe306b"
+    "mbid": "a10ad454-cfc7-40b2-bcdf-2c707abe306b",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/7JXCJDLGh1k9cg6JbYCpYl",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:03:57.857Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Flipper",
-    "website": null,
+    "website": "http://www.flipperrules.com/",
     "wdBulkTriedAt": "2026-07-07T07:11:58.757Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "4e99b3a5-654b-43ee-a9bf-c55c155c0495",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/20VDXslLsXlLgSF765m1Ug",
+      "instagram": null,
+      "facebook": "https://www.facebook.com/pages/Flipper/32047285459",
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:04:00.451Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Flipper's Guitar",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:58.757Z",
-    "mbid": "9f06d736-81b9-4cc5-b101-caed4e1ef9b8"
+    "mbid": "9f06d736-81b9-4cc5-b101-caed4e1ef9b8",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/5fkHPXDNaqz3GrYYhO8APB",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:04:03.058Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Flipron",
@@ -9680,7 +10202,9 @@
     "name": "Flipside",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:58.757Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "fe6b5eca-f40d-4ee3-ad7b-a2de9113f905",
+    "autoTriedAt": "2026-07-11T10:04:05.626Z"
   },
   {
     "name": "Flipsyde",
@@ -9702,13 +10226,17 @@
     "name": "Fljóta",
     "website": null,
     "wdBulkTriedAt": "2026-07-08T14:10:37.517Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "80bd451f-3206-441a-9afa-6a7c1476afc4",
+    "autoTriedAt": "2026-07-11T10:04:08.198Z"
   },
   {
     "name": "Flo & Eddie",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:58.757Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "e109348d-9b67-4421-8ff8-b2d95c5540a8",
+    "autoTriedAt": "2026-07-11T10:04:10.880Z"
   },
   {
     "name": "Flo Rida",
@@ -9730,7 +10258,9 @@
     "name": "Floanne",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:58.757Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "5bfdb8d7-35d8-40fc-9ff8-602ce88e7417",
+    "autoTriedAt": "2026-07-11T10:04:13.437Z"
   },
   {
     "name": "Floating Me",
@@ -9816,7 +10346,18 @@
     "name": "Floor",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:58.757Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "6dd5961a-16e7-4f03-8385-b251e12f9698",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": "https://www.facebook.com/floorofficial",
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:04:16.026Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Floor Jansen",
@@ -9830,7 +10371,9 @@
       "telegram": null,
       "vk": null
     },
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "enrichedAt": "2026-07-11T10:04:16.026Z",
+    "enrichedBy": "auto"
   },
   {
     "name": "Flop",
@@ -9844,7 +10387,10 @@
       "telegram": null,
       "vk": null
     },
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "57ca4472-9fc1-46ad-99a0-91384c411d05",
+    "enrichedAt": "2026-07-11T10:04:18.659Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Flor",
@@ -9858,7 +10404,9 @@
       "telegram": null,
       "vk": null
     },
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "enrichedAt": "2026-07-11T10:04:18.659Z",
+    "enrichedBy": "auto"
   },
   {
     "name": "Flora Purim",
@@ -9896,7 +10444,8 @@
     "name": "Florence & the Machine",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:58.757Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:04:19.942Z"
   },
   {
     "name": "Florence + the Machine",
@@ -9910,7 +10459,9 @@
       "telegram": null,
       "vk": "https://vk.com/florenceandthemachine"
     },
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "enrichedAt": "2026-07-11T10:04:19.942Z",
+    "enrichedBy": "auto"
   },
   {
     "name": "Florence and the Machine",
@@ -9924,13 +10475,16 @@
       "telegram": null,
       "vk": "https://vk.com/florenceandthemachine"
     },
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "enrichedAt": "2026-07-11T10:04:19.942Z",
+    "enrichedBy": "auto"
   },
   {
     "name": "Florence Ballard",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:58.757Z",
-    "mbid": "16bc6335-efa5-43ee-9b2d-08c743a995c2"
+    "mbid": "16bc6335-efa5-43ee-9b2d-08c743a995c2",
+    "autoTriedAt": "2026-07-11T10:04:23.580Z"
   },
   {
     "name": "Florence Henderson",
@@ -9968,19 +10522,23 @@
     "name": "Florence Kirsch Du Brul",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:58.757Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:04:24.877Z"
   },
   {
     "name": "Florence Maude Ewart",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:58.757Z",
-    "mbid": "02df8bb6-0b12-4d62-915d-9d6ba470af82"
+    "mbid": "02df8bb6-0b12-4d62-915d-9d6ba470af82",
+    "autoTriedAt": "2026-07-11T10:04:28.515Z"
   },
   {
     "name": "Florence Mills",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:58.757Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "11b0f0b6-c23c-4ecb-b327-2dbe99924e3b",
+    "autoTriedAt": "2026-07-11T10:04:31.142Z"
   },
   {
     "name": "Florence Welch",
@@ -10018,7 +10576,8 @@
     "name": "Florent Charpentier",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:58.757Z",
-    "mbid": "6486eeab-33e8-4d4f-bea6-a124b073d8a5"
+    "mbid": "6486eeab-33e8-4d4f-bea6-a124b073d8a5",
+    "autoTriedAt": "2026-07-11T10:04:33.739Z"
   },
   {
     "name": "Florent Pagny",
@@ -10072,13 +10631,15 @@
     "name": "Florestan Club",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:58.757Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:04:35.031Z"
   },
   {
     "name": "Florian Havemann",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:58.757Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "autoTriedAt": "2026-07-11T10:04:36.348Z"
   },
   {
     "name": "Florian Hecker",
@@ -10100,13 +10661,24 @@
     "name": "Florian Leopold Gassmann",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:58.757Z",
-    "mbid": "ee99e304-e349-4db9-b36d-c5c865028a93"
+    "mbid": "ee99e304-e349-4db9-b36d-c5c865028a93",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/1hCfkEQfoSnVOj9T21iBlE",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:04:38.972Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Florian Pilkington-Miksa",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:58.757Z",
-    "mbid": "85fed7b7-a85b-43b6-a37e-d2bf16e15d3d"
+    "mbid": "85fed7b7-a85b-43b6-a37e-d2bf16e15d3d",
+    "autoTriedAt": "2026-07-11T10:04:41.578Z"
   },
   {
     "name": "Florian Pittiș",
@@ -10126,9 +10698,20 @@
   },
   {
     "name": "Florian Ross",
-    "website": null,
+    "website": "http://www.florianross.de/",
     "wdBulkTriedAt": "2026-07-07T07:11:58.757Z",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "mbid": "293ac468-2e5f-4701-ba3d-560b37e4e9ca",
+    "socials": {
+      "spotify": null,
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-07-11T10:04:44.210Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Florian Schneider",
