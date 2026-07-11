@@ -3171,42 +3171,52 @@
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:56.029Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:27:06.197Z"
+    "autoTriedAt": "2026-07-10T23:27:06.197Z",
+    "metaTriedAt": "2026-07-11T06:51:45.344Z"
   },
   {
     "name": "Eastern Band Cherokee",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:27:07.478Z"
+    "autoTriedAt": "2026-07-10T23:27:07.478Z",
+    "metaTriedAt": "2026-07-11T06:51:46.114Z"
   },
   {
     "name": "Eastern Cherokee",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:27:08.726Z"
+    "autoTriedAt": "2026-07-10T23:27:08.726Z",
+    "metaTriedAt": "2026-07-11T06:51:46.831Z"
   },
   {
     "name": "eastern Kentucky's",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:27:10.067Z"
+    "autoTriedAt": "2026-07-10T23:27:10.067Z",
+    "metaTriedAt": "2026-07-11T06:51:47.529Z"
   },
   {
     "name": "Eastern Orthodox",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:27:11.336Z"
+    "autoTriedAt": "2026-07-10T23:27:11.336Z",
+    "popularity": {
+      "listeners": 23,
+      "playcount": 30
+    },
+    "metaEnrichedAt": "2026-07-11T06:51:48.560Z"
   },
   {
     "name": "Eastern United States Pipe Band Association",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:27:12.737Z"
+    "autoTriedAt": "2026-07-10T23:27:12.737Z",
+    "metaTriedAt": "2026-07-11T06:51:49.227Z"
   },
   {
     "name": "Eastern Youth",
@@ -3222,7 +3232,20 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d87faf16-56c5-4f31-8d92-2f0e64956de9"
+    "mbid": "d87faf16-56c5-4f31-8d92-2f0e64956de9",
+    "genres": [
+      "japanese",
+      "punk",
+      "emo",
+      "rock",
+      "indie"
+    ],
+    "popularity": {
+      "listeners": 56030,
+      "playcount": 1810502
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0a42096268bf59c9f8ca5e9be2d5d194/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:51:49.898Z"
   },
   {
     "name": "Eastman School of Music",
@@ -3230,7 +3253,12 @@
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "90871632-9231-4a46-adb3-4c6bbe9c9871",
-    "autoTriedAt": "2026-07-10T23:27:15.328Z"
+    "autoTriedAt": "2026-07-10T23:27:15.328Z",
+    "popularity": {
+      "listeners": 61,
+      "playcount": 1264
+    },
+    "metaEnrichedAt": "2026-07-11T06:51:50.586Z"
   },
   {
     "name": "Easton Corbin",
@@ -3246,7 +3274,20 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c6ada25c-8590-4b75-8013-883a8df55882"
+    "mbid": "c6ada25c-8590-4b75-8013-883a8df55882",
+    "genres": [
+      "country",
+      "modern country",
+      "new country",
+      "contemporary country",
+      "male vocalists"
+    ],
+    "popularity": {
+      "listeners": 365001,
+      "playcount": 3047174
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7e8216f29728d7840a814ee2f5c80971/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:51:51.220Z"
   },
   {
     "name": "Easy Action",
@@ -3262,14 +3303,39 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "69b8383c-23f5-4ead-b3fb-c218242ca772"
+    "mbid": "69b8383c-23f5-4ead-b3fb-c218242ca772",
+    "genres": [
+      "Glam Metal",
+      "rock",
+      "swedish",
+      "punk",
+      "hard rock"
+    ],
+    "popularity": {
+      "listeners": 5363,
+      "playcount": 66133
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/059d9b6a5eb52237b1c6f17ef917d15f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:51:51.902Z"
   },
   {
     "name": "Easy Cure",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbid": "e85b76d2-5771-4a50-bd1a-2d127373eeb1",
-    "autoTriedAt": "2026-07-10T23:27:16.613Z"
+    "autoTriedAt": "2026-07-10T23:27:16.613Z",
+    "genres": [
+      "post-punk",
+      "new wave",
+      "alternative",
+      "80s",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 5627811,
+      "playcount": 406048814
+    },
+    "metaEnrichedAt": "2026-07-11T06:51:52.604Z"
   },
   {
     "name": "Easy Mo Bee",
@@ -3285,7 +3351,20 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ddac1a2e-3fb5-4af6-adf0-f6008c7ddfb5"
+    "mbid": "ddac1a2e-3fb5-4af6-adf0-f6008c7ddfb5",
+    "genres": [
+      "underground hip-hop",
+      "rap",
+      "east coast rap",
+      "producer",
+      "new york"
+    ],
+    "popularity": {
+      "listeners": 3217,
+      "playcount": 22486
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/185c75cdd93ecba4bb278f7c1609f6e5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:51:53.316Z"
   },
   {
     "name": "Easy Star All-Stars",
@@ -3301,7 +3380,20 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0cee95e3-a61d-4cd1-a39c-75464a05b606"
+    "mbid": "0cee95e3-a61d-4cd1-a39c-75464a05b606",
+    "genres": [
+      "reggae",
+      "dub",
+      "covers",
+      "electronic",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 415561,
+      "playcount": 7784038
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fd4e3d67e2f80e4d59b7f56306df0bb1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:51:53.986Z"
   },
   {
     "name": "Easy Star All*Stars",
@@ -3317,14 +3409,32 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0cee95e3-a61d-4cd1-a39c-75464a05b606"
+    "mbid": "0cee95e3-a61d-4cd1-a39c-75464a05b606",
+    "genres": [
+      "reggae",
+      "dub",
+      "covers",
+      "electronic",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 415561,
+      "playcount": 7784038
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fd4e3d67e2f80e4d59b7f56306df0bb1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:51:54.727Z"
   },
   {
     "name": "Eat Drink Man Woman",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:27:17.959Z"
+    "autoTriedAt": "2026-07-10T23:27:17.959Z",
+    "popularity": {
+      "listeners": 10,
+      "playcount": 15
+    },
+    "metaEnrichedAt": "2026-07-11T06:51:55.437Z"
   },
   {
     "name": "Eater",
@@ -3340,7 +3450,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-10T23:27:20.628Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "punk",
+      "punk rock",
+      "British Punk",
+      "77 punk",
+      "77 style punk"
+    ],
+    "popularity": {
+      "listeners": 54300,
+      "playcount": 487260
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fc8c9230582b5218ab403ca389e0a6f3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:51:56.108Z"
   },
   {
     "name": "Eazy E",
@@ -3356,7 +3479,20 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c3009d7a-51ac-4c9c-888a-04f5c3c4be0c"
+    "mbid": "c3009d7a-51ac-4c9c-888a-04f5c3c4be0c",
+    "genres": [
+      "Gangsta Rap",
+      "Hip-Hop",
+      "rap",
+      "west coast",
+      "hip hop"
+    ],
+    "popularity": {
+      "listeners": 1360509,
+      "playcount": 17318811
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2bc1657460a1572de977106fcdc1d2c1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:51:56.766Z"
   },
   {
     "name": "Eazy-E",
@@ -3372,14 +3508,28 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c3009d7a-51ac-4c9c-888a-04f5c3c4be0c"
+    "mbid": "c3009d7a-51ac-4c9c-888a-04f5c3c4be0c",
+    "genres": [
+      "Gangsta Rap",
+      "Hip-Hop",
+      "rap",
+      "west coast",
+      "hip hop"
+    ],
+    "popularity": {
+      "listeners": 1360509,
+      "playcount": 17318811
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2bc1657460a1572de977106fcdc1d2c1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:51:57.440Z"
   },
   {
     "name": "Ebba d'Aubert",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:27:22.031Z"
+    "autoTriedAt": "2026-07-10T23:27:22.031Z",
+    "metaTriedAt": "2026-07-11T06:51:58.123Z"
   },
   {
     "name": "Ebba Grön",
@@ -3395,7 +3545,20 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4a41bce5-f225-4e0e-91d8-bf49ebbd83c2"
+    "mbid": "4a41bce5-f225-4e0e-91d8-bf49ebbd83c2",
+    "genres": [
+      "punk",
+      "swedish",
+      "Swedish Punk",
+      "punk rock",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 119132,
+      "playcount": 4705655
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1176f3677d28ee20a9057b7eeb4476dd/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:51:58.758Z"
   },
   {
     "name": "Ebbe Grims-land",
@@ -3411,21 +3574,51 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "aaf7a465-9178-48e8-b14e-764dcf24c0f0"
+    "mbid": "aaf7a465-9178-48e8-b14e-764dcf24c0f0",
+    "popularity": {
+      "listeners": 6,
+      "playcount": 6
+    },
+    "metaEnrichedAt": "2026-07-11T06:51:59.504Z"
   },
   {
     "name": "Ebbe Hamerik",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbid": "22a63be6-68e9-4d3d-a815-0bcb50416034",
-    "autoTriedAt": "2026-07-10T23:27:24.757Z"
+    "autoTriedAt": "2026-07-10T23:27:24.757Z",
+    "genres": [
+      "denmark",
+      "Classical",
+      "danish",
+      "danmark",
+      "gammarec"
+    ],
+    "popularity": {
+      "listeners": 20,
+      "playcount": 107
+    },
+    "metaEnrichedAt": "2026-07-11T06:52:00.211Z"
   },
   {
     "name": "Ebenezer Obey",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbid": "2e975c3a-0ab1-45f6-9e21-2eb60388015b",
-    "autoTriedAt": "2026-07-10T23:27:27.365Z"
+    "autoTriedAt": "2026-07-10T23:27:27.365Z",
+    "genres": [
+      "nigeria",
+      "africa",
+      "juju",
+      "african",
+      "nigerian"
+    ],
+    "popularity": {
+      "listeners": 4918,
+      "playcount": 42831
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2bd6f7eeb743fe59e3fc4b638e1ec41f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:00.932Z"
   },
   {
     "name": "Eberhard Weber",
@@ -3442,7 +3635,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-10T23:27:29.905Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "bass",
+      "ECM",
+      "experimental",
+      "contemporary jazz"
+    ],
+    "popularity": {
+      "listeners": 115008,
+      "playcount": 1000321
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e0e052617816e97246953f1f5db2b401/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:01.596Z"
   },
   {
     "name": "Ebichu",
@@ -3458,7 +3664,12 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f13e929f-6836-4f02-8175-b86c31bb91ec"
+    "mbid": "f13e929f-6836-4f02-8175-b86c31bb91ec",
+    "popularity": {
+      "listeners": 247,
+      "playcount": 1775
+    },
+    "metaEnrichedAt": "2026-07-11T06:52:02.373Z"
   },
   {
     "name": "Ebiet G Ade",
@@ -3475,14 +3686,40 @@
       "vk": null
     },
     "enrichedAt": "2026-07-10T23:27:32.870Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "indonesian",
+      "folk",
+      "pop",
+      "Ballad",
+      "indonesia"
+    ],
+    "popularity": {
+      "listeners": 13014,
+      "playcount": 235315
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d3eac889be126ba09cc60fd23b7aca00/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:03.553Z"
   },
   {
     "name": "EBN-OZN",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:27:34.159Z"
+    "autoTriedAt": "2026-07-10T23:27:34.159Z",
+    "genres": [
+      "new wave",
+      "80s",
+      "american",
+      "spoken word",
+      "Swedish Pop"
+    ],
+    "popularity": {
+      "listeners": 5613,
+      "playcount": 27710
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ee5c09701b937733fda9ec7161122c6e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:04.288Z"
   },
   {
     "name": "Ebony",
@@ -3499,7 +3736,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-10T23:27:36.771Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "brazil",
+      "rap",
+      "brasil",
+      "hip hop",
+      "ghana"
+    ],
+    "popularity": {
+      "listeners": 323684,
+      "playcount": 28141919
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9cfe1657469b675da7224f2089e966fc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:04.957Z"
   },
   {
     "name": "Ebony Bones",
@@ -3515,7 +3765,20 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "eb1d668e-b705-4b7a-8317-303462f993e0"
+    "mbid": "eb1d668e-b705-4b7a-8317-303462f993e0",
+    "genres": [
+      "electronic",
+      "female vocalists",
+      "british",
+      "indie",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 31701,
+      "playcount": 391310
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/65e2e1aa5195894f50099584eab7b2c3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:05.841Z"
   },
   {
     "name": "Ebony Tears",
@@ -3531,7 +3794,20 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "316e6087-8d7e-4e6d-89c8-ffe724e36ba3"
+    "mbid": "316e6087-8d7e-4e6d-89c8-ffe724e36ba3",
+    "genres": [
+      "Melodic Death Metal",
+      "thrash metal",
+      "death metal",
+      "swedish",
+      "Sweden"
+    ],
+    "popularity": {
+      "listeners": 9473,
+      "playcount": 214736
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a47927641b3be2277afabe034edb2cc7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:06.575Z"
   },
   {
     "name": "Ebru Gündeş",
@@ -3547,7 +3823,20 @@
     },
     "mbid": "4f827ca0-0f46-4b83-8081-db6a177d819e",
     "enrichedAt": "2026-07-09T08:32:08.465Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "turkish",
+      "female vocalists",
+      "arabesk",
+      "pop",
+      "turkish pop history"
+    ],
+    "popularity": {
+      "listeners": 69221,
+      "playcount": 1898165
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f8b25e2db6bb1da6a82a41574e6c632e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:07.222Z"
   },
   {
     "name": "Ebu Gogo",
@@ -3555,7 +3844,19 @@
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "fc0d3580-bc5f-4703-8993-c51c5a6e07bf",
-    "autoTriedAt": "2026-07-10T23:27:39.318Z"
+    "autoTriedAt": "2026-07-10T23:27:39.318Z",
+    "genres": [
+      "Progressive rock",
+      "experimental",
+      "Avant-Garde",
+      "Progressive",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 2941,
+      "playcount": 87538
+    },
+    "metaEnrichedAt": "2026-07-11T06:52:08.007Z"
   },
   {
     "name": "Eccodek",
@@ -3571,7 +3872,20 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "world fusion",
+      "chillout",
+      "ambient",
+      "downtempo",
+      "chill906"
+    ],
+    "popularity": {
+      "listeners": 25256,
+      "playcount": 470191
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/be2698c222b38d4a1eb31f9e0c065b48/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:09.625Z"
   },
   {
     "name": "Echo",
@@ -3587,7 +3901,20 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-10T23:27:40.710Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "Hip-Hop",
+      "indie",
+      "Drum and bass",
+      "rap",
+      "taiwan"
+    ],
+    "popularity": {
+      "listeners": 115248,
+      "playcount": 1034796
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5492b3c5706473bd1ffb8c845cdf597f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:10.371Z"
   },
   {
     "name": "Echo & the Bunnymen",
@@ -3604,21 +3931,59 @@
       "vk": null
     },
     "enrichedAt": "2026-07-10T23:27:43.375Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "post-punk",
+      "new wave",
+      "80s",
+      "alternative",
+      "indie"
+    ],
+    "popularity": {
+      "listeners": 1640251,
+      "playcount": 33025611
+    },
+    "metaEnrichedAt": "2026-07-11T06:52:10.988Z"
   },
   {
     "name": "Echo and the Bunnymen",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:27:44.656Z"
+    "autoTriedAt": "2026-07-10T23:27:44.656Z",
+    "genres": [
+      "post-punk",
+      "new wave",
+      "80s",
+      "alternative",
+      "indie"
+    ],
+    "popularity": {
+      "listeners": 1640251,
+      "playcount": 33025611
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/484b109058cfd0d50c69add180cd8250/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:11.629Z"
   },
   {
     "name": "Echo Hollow",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbid": "53ee9999-6d0c-4c13-ba93-c66ac0df6e23",
-    "autoTriedAt": "2026-07-10T23:27:47.205Z"
+    "autoTriedAt": "2026-07-10T23:27:47.205Z",
+    "genres": [
+      "Progressive metal",
+      "metal",
+      "rock",
+      "covers",
+      "christian rock"
+    ],
+    "popularity": {
+      "listeners": 504,
+      "playcount": 5478
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d59538fe0ce6139b92968c600cd99bcc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:12.345Z"
   },
   {
     "name": "Echo Image",
@@ -3634,7 +3999,20 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "13a94709-996a-48ab-a4bf-94e1f804ea04"
+    "mbid": "13a94709-996a-48ab-a4bf-94e1f804ea04",
+    "genres": [
+      "synthpop",
+      "electronic",
+      "futurepop",
+      "ebm",
+      "norwegian"
+    ],
+    "popularity": {
+      "listeners": 24552,
+      "playcount": 284540
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/862ca70cd2f32fc23e2d7764f6be28b8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:13.027Z"
   },
   {
     "name": "Echo Movement",
@@ -3650,7 +4028,20 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "11f0415f-5689-4f3b-83a5-eec2a448e5d1"
+    "mbid": "11f0415f-5689-4f3b-83a5-eec2a448e5d1",
+    "genres": [
+      "reggae",
+      "ska",
+      "Surf",
+      "new jersey",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 47214,
+      "playcount": 334013
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/620a3e2ea7e54d8c90406adb1ef59a2e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:13.739Z"
   },
   {
     "name": "Echo Orbiter",
@@ -3666,7 +4057,20 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b064b6f2-3592-48d8-a51e-36a664b53951"
+    "mbid": "b064b6f2-3592-48d8-a51e-36a664b53951",
+    "genres": [
+      "indie",
+      "New Weird America",
+      "Lo-Fi",
+      "shoegaze",
+      "Philadelphia"
+    ],
+    "popularity": {
+      "listeners": 2536,
+      "playcount": 16542
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/31137bf78a642cf0170a3a3ade30a13d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:14.423Z"
   },
   {
     "name": "Echobelly",
@@ -3682,7 +4086,20 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "9a1e8414-d32a-4058-bab0-c1b36934d39e"
+    "mbid": "9a1e8414-d32a-4058-bab0-c1b36934d39e",
+    "genres": [
+      "britpop",
+      "indie",
+      "female vocalists",
+      "british",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 170673,
+      "playcount": 1638399
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/dac94effb21fc3597824ac9e248b220d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:15.057Z"
   },
   {
     "name": "Echobrain",
@@ -3698,7 +4115,20 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c4086bf2-35a5-41e4-965b-d501250c58b2"
+    "mbid": "c4086bf2-35a5-41e4-965b-d501250c58b2",
+    "genres": [
+      "alternative rock",
+      "rock",
+      "Progressive rock",
+      "alternative",
+      "Jason Newsted"
+    ],
+    "popularity": {
+      "listeners": 14185,
+      "playcount": 197718
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c51eb68562ebf41830d9443912e426c6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:15.933Z"
   },
   {
     "name": "Echoes and Signals",
@@ -3715,7 +4145,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-10T23:27:50.217Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Progressive rock",
+      "post-rock",
+      "instrumental",
+      "post rock",
+      "russian"
+    ],
+    "popularity": {
+      "listeners": 3050,
+      "playcount": 34662
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/579a7c21624a953db3d7c85a85b9cf8b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:16.644Z"
   },
   {
     "name": "Echoes of Eternity",
@@ -3731,7 +4174,20 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ad00a0a1-5a42-414a-a743-59de7d18668c"
+    "mbid": "ad00a0a1-5a42-414a-a743-59de7d18668c",
+    "genres": [
+      "Progressive metal",
+      "Gothic Metal",
+      "symphonic metal",
+      "Female fronted metal",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 62394,
+      "playcount": 620487
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0cd32defbcad90f8b171d84bcb7f6cfb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:17.379Z"
   },
   {
     "name": "Echoing Angels",
@@ -3747,7 +4203,20 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a24711d7-64d4-4fa0-9785-c53e451498f6"
+    "mbid": "a24711d7-64d4-4fa0-9785-c53e451498f6",
+    "genres": [
+      "christian rock",
+      "christian",
+      "rock",
+      "alternative",
+      "contemporary christian"
+    ],
+    "popularity": {
+      "listeners": 12688,
+      "playcount": 84139
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b52f09c29ffc68c4f94744089d0ff29e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:18.035Z"
   },
   {
     "name": "Echolyn",
@@ -3763,7 +4232,20 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2407d0c3-884e-4f01-ad00-11ca97469189"
+    "mbid": "2407d0c3-884e-4f01-ad00-11ca97469189",
+    "genres": [
+      "Progressive rock",
+      "symphonic prog",
+      "Neo-prog",
+      "rock",
+      "Progressive"
+    ],
+    "popularity": {
+      "listeners": 31849,
+      "playcount": 628766
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ed19340372c109d2075a2d5bff4ac791/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:18.712Z"
   },
   {
     "name": "Echosmith",
@@ -3779,7 +4261,20 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "53317371-09a4-4bf4-a832-22a9c6704be2"
+    "mbid": "53317371-09a4-4bf4-a832-22a9c6704be2",
+    "genres": [
+      "indie",
+      "indie pop",
+      "pop",
+      "alternative",
+      "american"
+    ],
+    "popularity": {
+      "listeners": 1119765,
+      "playcount": 12453442
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7af30248241795dc18227a6e4056fbe5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:19.437Z"
   },
   {
     "name": "Echoterra",
@@ -3795,28 +4290,68 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2f6ff7e4-616c-4c30-95a6-ff916134e711"
+    "mbid": "2f6ff7e4-616c-4c30-95a6-ff916134e711",
+    "genres": [
+      "symphonic metal",
+      "Female fronted metal",
+      "Gothic Metal",
+      "Power metal",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 4846,
+      "playcount": 75535
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/351a1b3400201654793faa3b07a1d120/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:20.146Z"
   },
   {
     "name": "Eck Robertson",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbid": "043177dd-a46a-48e6-91fa-1e7d7c199a71",
-    "autoTriedAt": "2026-07-10T23:27:52.811Z"
+    "autoTriedAt": "2026-07-10T23:27:52.811Z",
+    "genres": [
+      "folk",
+      "country",
+      "old-time",
+      "All",
+      "old timey"
+    ],
+    "popularity": {
+      "listeners": 11791,
+      "playcount": 33685
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a7074078d6055a30c962963fbb18a5ca/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:20.834Z"
   },
   {
     "name": "Eclection",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbid": "14a82daf-2b80-4317-9e84-99f92f0a96b4",
-    "autoTriedAt": "2026-07-10T23:27:55.359Z"
+    "autoTriedAt": "2026-07-10T23:27:55.359Z",
+    "genres": [
+      "13",
+      "Psychedelic Rock",
+      "UK",
+      "folk rock",
+      "classic rock"
+    ],
+    "popularity": {
+      "listeners": 3797,
+      "playcount": 28587
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b61aa70eae50a905067ba51274afdb8d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:21.547Z"
   },
   {
     "name": "ECMAs",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:27:56.660Z"
+    "autoTriedAt": "2026-07-10T23:27:56.660Z",
+    "metaTriedAt": "2026-07-11T06:52:22.756Z"
   },
   {
     "name": "Ecomoni",
@@ -3832,14 +4367,39 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1a311e86-bd54-4ad4-84ea-3d3de3c83853"
+    "mbid": "1a311e86-bd54-4ad4-84ea-3d3de3c83853",
+    "genres": [
+      "Hello Project",
+      "j-pop",
+      "japanese",
+      "JPop",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 591,
+      "playcount": 4578
+    },
+    "metaEnrichedAt": "2026-07-11T06:52:23.498Z"
   },
   {
     "name": "Econochrist",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbid": "bcaa3d82-4ac7-4977-a202-af30cc22c12a",
-    "autoTriedAt": "2026-07-10T23:27:59.166Z"
+    "autoTriedAt": "2026-07-10T23:27:59.166Z",
+    "genres": [
+      "punk",
+      "hardcore",
+      "anarcho-punk",
+      "hardcore punk",
+      "anarcho punk"
+    ],
+    "popularity": {
+      "listeners": 5007,
+      "playcount": 101524
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b434e33410b9366212b17a42337e2401/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:24.176Z"
   },
   {
     "name": "Econoline Crush",
@@ -3855,28 +4415,48 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c00a611d-81a4-4062-bd98-ac8f91c1795a"
+    "mbid": "c00a611d-81a4-4062-bd98-ac8f91c1795a",
+    "genres": [
+      "industrial",
+      "alternative rock",
+      "alternative",
+      "Canadian",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 50840,
+      "playcount": 804160
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3a071221654bfd790ec9e10e5501b286/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:24.827Z"
   },
   {
     "name": "Economic democracy",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:28:00.423Z"
+    "autoTriedAt": "2026-07-10T23:28:00.423Z",
+    "metaTriedAt": "2026-07-11T06:52:25.488Z"
   },
   {
     "name": "Economic secession",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:28:01.692Z"
+    "autoTriedAt": "2026-07-10T23:28:01.692Z",
+    "metaTriedAt": "2026-07-11T06:52:26.167Z"
   },
   {
     "name": "Economists",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:28:03.045Z"
+    "autoTriedAt": "2026-07-10T23:28:03.045Z",
+    "popularity": {
+      "listeners": 6,
+      "playcount": 30
+    },
+    "metaEnrichedAt": "2026-07-11T06:52:26.946Z"
   },
   {
     "name": "Ecstasy of Saint Theresa",
@@ -3892,28 +4472,72 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "96b07e37-6c19-4241-920e-834496b1f263"
+    "mbid": "96b07e37-6c19-4241-920e-834496b1f263",
+    "genres": [
+      "shoegaze",
+      "electronic",
+      "trip-hop",
+      "Czech",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 41570,
+      "playcount": 797464
+    },
+    "metaEnrichedAt": "2026-07-11T06:52:27.660Z"
   },
   {
     "name": "Ecuador",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:28:04.321Z"
+    "autoTriedAt": "2026-07-10T23:28:04.321Z",
+    "popularity": {
+      "listeners": 906,
+      "playcount": 3898
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a07d45d2ea7bd74eb49aacfcde7011e9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:28.373Z"
   },
   {
     "name": "Ed Ames",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbid": "6a55061b-9742-4059-94b1-a5ea1bd42dce",
-    "autoTriedAt": "2026-07-10T23:28:07.470Z"
+    "autoTriedAt": "2026-07-10T23:28:07.470Z",
+    "genres": [
+      "60s",
+      "easy listening",
+      "pop",
+      "vocal",
+      "crooner"
+    ],
+    "popularity": {
+      "listeners": 24383,
+      "playcount": 122683
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0ac7d0343bd32d38e546c822cd176948/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:29.121Z"
   },
   {
     "name": "Ed Ball",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:28:08.740Z"
+    "autoTriedAt": "2026-07-10T23:28:08.740Z",
+    "genres": [
+      "britpop",
+      "80s",
+      "rock",
+      "pop",
+      "indie pop"
+    ],
+    "popularity": {
+      "listeners": 2402,
+      "playcount": 18158
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5cb54293bb70439774eb8ac01845dfc3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:29.886Z"
   },
   {
     "name": "Ed Banger",
@@ -3921,21 +4545,60 @@
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "f4774541-6830-42ed-8781-d9914240d687",
-    "autoTriedAt": "2026-07-10T23:28:11.310Z"
+    "autoTriedAt": "2026-07-10T23:28:11.310Z",
+    "genres": [
+      "french",
+      "electronic",
+      "electro",
+      "House",
+      "new rave"
+    ],
+    "popularity": {
+      "listeners": 6552,
+      "playcount": 40510
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/50285c2a5da58f6c5b2e369839fafc33/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:30.603Z"
   },
   {
     "name": "Ed Banger and The Nosebleeds",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:28:12.610Z"
+    "autoTriedAt": "2026-07-10T23:28:12.610Z",
+    "genres": [
+      "punk rock",
+      "punk",
+      "Manchester",
+      "Punk 77",
+      "77 style punk"
+    ],
+    "popularity": {
+      "listeners": 6024,
+      "playcount": 20865
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/633d0efce0cfc86d6cd2dece83fefe45/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:31.329Z"
   },
   {
     "name": "Ed Banger Records",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:28:13.852Z"
+    "autoTriedAt": "2026-07-10T23:28:13.852Z",
+    "genres": [
+      "electro",
+      "electronic",
+      "french",
+      "ed banger",
+      "minimal techno"
+    ],
+    "popularity": {
+      "listeners": 13118,
+      "playcount": 106512
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:31.975Z"
   },
   {
     "name": "Ed Bell",
@@ -3943,14 +4606,40 @@
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "8d972d5a-f316-43d5-acf5-0db87fd1e943",
-    "autoTriedAt": "2026-07-10T23:28:17.511Z"
+    "autoTriedAt": "2026-07-10T23:28:17.511Z",
+    "genres": [
+      "blues",
+      "delta blues",
+      "country blues",
+      "All",
+      "roots"
+    ],
+    "popularity": {
+      "listeners": 3441,
+      "playcount": 15538
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/85a1feb9d3456acf6d9a90ac4160525e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:32.679Z"
   },
   {
     "name": "Ed Bickert",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbid": "d7b3f76e-e591-4ffa-9484-0cd73906451d",
-    "autoTriedAt": "2026-07-10T23:28:20.270Z"
+    "autoTriedAt": "2026-07-10T23:28:20.270Z",
+    "genres": [
+      "jazz",
+      "guitar",
+      "cool jazz",
+      "Canadian",
+      "canada"
+    ],
+    "popularity": {
+      "listeners": 4770,
+      "playcount": 44720
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ee90c58035adcea3c9a5e5c8b7dc9b70/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:33.361Z"
   },
   {
     "name": "Ed Blackwell",
@@ -3966,7 +4655,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-10T23:28:22.852Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "free jazz",
+      "jazz",
+      "drums",
+      "Avant-Garde Jazz",
+      "Avant-Garde"
+    ],
+    "popularity": {
+      "listeners": 1163,
+      "playcount": 6179
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4e995685606ca7c5e82b5f0f8b8455ed/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:34.055Z"
   },
   {
     "name": "Ed Bruce",
@@ -3982,7 +4684,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-10T23:28:25.534Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "country",
+      "classic country",
+      "country rock",
+      "rockabilly",
+      "arkansas"
+    ],
+    "popularity": {
+      "listeners": 54176,
+      "playcount": 429831
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c099adeb725b57db4e53dec6cb01024d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:34.750Z"
   },
   {
     "name": "Ed Burleson",
@@ -3990,14 +4705,29 @@
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "f97b5c35-af32-4b08-b2b7-a4a5b18b8013",
-    "autoTriedAt": "2026-07-10T23:28:28.102Z"
+    "autoTriedAt": "2026-07-10T23:28:28.102Z",
+    "genres": [
+      "realrealcountry",
+      "country"
+    ],
+    "popularity": {
+      "listeners": 2834,
+      "playcount": 20577
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/10d5c416f6a7b871b6d146fdfa1dda3c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:35.449Z"
   },
   {
     "name": "Ed Cassidy",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbid": "f727790e-00e3-4ea3-a0e6-6f0eee5506b1",
-    "autoTriedAt": "2026-07-10T23:28:29.377Z"
+    "autoTriedAt": "2026-07-10T23:28:29.377Z",
+    "popularity": {
+      "listeners": 4,
+      "playcount": 13
+    },
+    "metaEnrichedAt": "2026-07-11T06:52:36.175Z"
   },
   {
     "name": "Ed Deane",
@@ -4013,21 +4743,37 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "db4ac79c-c36d-445a-a183-7698569b6dd6"
+    "mbid": "db4ac79c-c36d-445a-a183-7698569b6dd6",
+    "popularity": {
+      "listeners": 89,
+      "playcount": 1642
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2cea907fb9d092dc016d858a887c5de3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:37.006Z"
   },
   {
     "name": "Ed Gagliardi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbid": "d665e1d4-e006-4e52-b994-06b6465fc945",
-    "autoTriedAt": "2026-07-10T23:28:32.011Z"
+    "autoTriedAt": "2026-07-10T23:28:32.011Z",
+    "popularity": {
+      "listeners": 4,
+      "playcount": 15
+    },
+    "metaEnrichedAt": "2026-07-11T06:52:37.782Z"
   },
   {
     "name": "Ed Garland",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbid": "efa7b810-1b45-47a0-8c2c-cc488c54bd12",
-    "autoTriedAt": "2026-07-10T23:28:35.761Z"
+    "autoTriedAt": "2026-07-10T23:28:35.761Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 3
+    },
+    "metaEnrichedAt": "2026-07-11T06:52:38.493Z"
   },
   {
     "name": "Ed Graham",
@@ -4035,7 +4781,12 @@
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "33346745-d080-47ae-b6d1-b7b007e867f9",
-    "autoTriedAt": "2026-07-10T23:28:38.525Z"
+    "autoTriedAt": "2026-07-10T23:28:38.525Z",
+    "popularity": {
+      "listeners": 6,
+      "playcount": 24
+    },
+    "metaEnrichedAt": "2026-07-11T06:52:39.162Z"
   },
   {
     "name": "Ed Harcourt",
@@ -4051,7 +4802,20 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0cda9358-1def-49aa-a0ff-10320f40522f"
+    "mbid": "0cda9358-1def-49aa-a0ff-10320f40522f",
+    "genres": [
+      "singer-songwriter",
+      "indie",
+      "british",
+      "alternative",
+      "indie rock"
+    ],
+    "popularity": {
+      "listeners": 314917,
+      "playcount": 4354035
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6b896fe0b344863992a6f4b3c3e1aa0f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:39.858Z"
   },
   {
     "name": "Ed Helms",
@@ -4067,7 +4831,20 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ccceab95-54c4-4cc5-b2a4-8a8cc19f3732"
+    "mbid": "ccceab95-54c4-4cc5-b2a4-8a8cc19f3732",
+    "genres": [
+      "comedy",
+      "Soundtrack",
+      "piano",
+      "00s",
+      "Need to Rate"
+    ],
+    "popularity": {
+      "listeners": 299873,
+      "playcount": 2163099
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3a04e8420d216994ca0c3d9a92c85956/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:41.054Z"
   },
   {
     "name": "Ed King",
@@ -4075,7 +4852,13 @@
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "c2566277-e680-41bf-8e9d-6936d1fa4b0e",
-    "autoTriedAt": "2026-07-10T23:28:41.135Z"
+    "autoTriedAt": "2026-07-10T23:28:41.135Z",
+    "popularity": {
+      "listeners": 202,
+      "playcount": 595
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f79257395306d8a51dee403167423f25/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:41.748Z"
   },
   {
     "name": "Ed Lincoln",
@@ -4091,28 +4874,56 @@
       "vk": null
     },
     "enrichedAt": "2026-07-10T23:28:43.739Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Bossa Nova",
+      "latin",
+      "brazilian",
+      "brazil",
+      "mpb"
+    ],
+    "popularity": {
+      "listeners": 77166,
+      "playcount": 439187
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9ade729f139013cd846281110390e10a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:42.435Z"
   },
   {
     "name": "Ed Lu",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:28:45.454Z"
+    "autoTriedAt": "2026-07-10T23:28:45.454Z",
+    "metaTriedAt": "2026-07-11T06:52:43.139Z"
   },
   {
     "name": "Ed McCurdy",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbid": "aedf7026-33a4-4cac-900c-994eceb7e53e",
-    "autoTriedAt": "2026-07-10T23:28:48.152Z"
+    "autoTriedAt": "2026-07-10T23:28:48.152Z",
+    "genres": [
+      "folk",
+      "americana",
+      "Need to Rate",
+      "greenwich village folk",
+      "under 2000 listeners"
+    ],
+    "popularity": {
+      "listeners": 9351,
+      "playcount": 48034
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/24d18a2fdd982df1bd973988338d230f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:44.017Z"
   },
   {
     "name": "Ed McTaggart",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:57.868Z",
     "mbid": "cd754f36-dec2-410a-b22e-dd514fd97f40",
-    "autoTriedAt": "2026-07-10T23:28:50.682Z"
+    "autoTriedAt": "2026-07-10T23:28:50.682Z",
+    "metaTriedAt": "2026-07-11T06:52:44.668Z"
   },
   {
     "name": "Ed Motta",
@@ -4128,14 +4939,33 @@
     },
     "enrichedAt": "2026-07-07T07:10:57.868Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ffdf7f27-a12c-40fe-8ae3-050b46fc2f79"
+    "mbid": "ffdf7f27-a12c-40fe-8ae3-050b46fc2f79",
+    "genres": [
+      "soul",
+      "jazz",
+      "funk",
+      "brazilian",
+      "mpb"
+    ],
+    "popularity": {
+      "listeners": 175659,
+      "playcount": 3054911
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/836f5678a89faee6301ae7871ec5ec42/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:45.347Z"
   },
   {
     "name": "Ed Neumeister",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbid": "4676ca08-a129-4d9b-9245-66f4f041c86b",
-    "autoTriedAt": "2026-07-10T23:28:51.984Z"
+    "autoTriedAt": "2026-07-10T23:28:51.984Z",
+    "popularity": {
+      "listeners": 681,
+      "playcount": 1974
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e0eb86cee0d38ca01db9739eab60bd12/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:46.098Z"
   },
   {
     "name": "Ed O.G.",
@@ -4151,7 +4981,20 @@
     },
     "enrichedAt": "2026-07-07T07:10:59.487Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "62b29e5c-d717-4586-87bc-ade74a6a9fe8"
+    "mbid": "62b29e5c-d717-4586-87bc-ade74a6a9fe8",
+    "genres": [
+      "Hip-Hop",
+      "boston",
+      "rap",
+      "underground hip-hop",
+      "hip hop"
+    ],
+    "popularity": {
+      "listeners": 37205,
+      "playcount": 247967
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/539537948c29e9a6c41c6f918432b71b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:46.868Z"
   },
   {
     "name": "Ed O'Brien",
@@ -4167,7 +5010,20 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-10T23:28:51.984Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "ambient",
+      "electronic",
+      "radiohead",
+      "indie rock",
+      "art rock"
+    ],
+    "popularity": {
+      "listeners": 36733,
+      "playcount": 223055
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7b30803dc39a239821a06ff149d5a502/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:47.499Z"
   },
   {
     "name": "Ed Robertson",
@@ -4175,7 +5031,12 @@
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "ac560686-5bdc-4101-aa97-6f4f4993edaa",
-    "autoTriedAt": "2026-07-10T23:28:54.596Z"
+    "autoTriedAt": "2026-07-10T23:28:54.596Z",
+    "popularity": {
+      "listeners": 257,
+      "playcount": 2867
+    },
+    "metaEnrichedAt": "2026-07-11T06:52:48.185Z"
   },
   {
     "name": "Ed Roland",
@@ -4191,7 +5052,19 @@
     },
     "enrichedAt": "2026-07-07T07:10:59.487Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7d513c18-bb32-4ff3-ba0b-90ad11545289"
+    "mbid": "7d513c18-bb32-4ff3-ba0b-90ad11545289",
+    "genres": [
+      "singer-songwriter",
+      "rock",
+      "georgia",
+      "solo",
+      "melodic rock"
+    ],
+    "popularity": {
+      "listeners": 848,
+      "playcount": 4222
+    },
+    "metaEnrichedAt": "2026-07-11T06:52:48.925Z"
   },
   {
     "name": "Ed Shaughnessy",
@@ -4207,7 +5080,16 @@
     },
     "enrichedAt": "2026-07-07T07:10:59.487Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2e72161b-b77a-4cdf-b238-db503a0c6f26"
+    "mbid": "2e72161b-b77a-4cdf-b238-db503a0c6f26",
+    "genres": [
+      "bebop"
+    ],
+    "popularity": {
+      "listeners": 440,
+      "playcount": 1525
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:49.665Z"
   },
   {
     "name": "Ed Sheeran",
@@ -4223,21 +5105,46 @@
     },
     "enrichedAt": "2026-07-07T07:10:59.487Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b8a7c51f-362c-4dcb-a259-bc6e0095f0a6"
+    "mbid": "b8a7c51f-362c-4dcb-a259-bc6e0095f0a6",
+    "genres": [
+      "acoustic",
+      "british",
+      "singer-songwriter",
+      "pop",
+      "easy-listening"
+    ],
+    "popularity": {
+      "listeners": 4295705,
+      "playcount": 260970596
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d6bb84390641d8ae9118228d9544e53d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:50.315Z"
   },
   {
     "name": "Ed Soph",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbid": "e8ac8dc6-988a-4cd8-8796-0ae3515d2613",
-    "autoTriedAt": "2026-07-10T23:28:57.194Z"
+    "autoTriedAt": "2026-07-10T23:28:57.194Z",
+    "popularity": {
+      "listeners": 23,
+      "playcount": 47
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b60c3fe201c4168313b5130b3f83a70f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:51.017Z"
   },
   {
     "name": "Ed Summerlin",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbid": "2078c955-5f11-4e01-a450-0d9c995d15d9",
-    "autoTriedAt": "2026-07-10T23:28:59.923Z"
+    "autoTriedAt": "2026-07-10T23:28:59.923Z",
+    "popularity": {
+      "listeners": 11,
+      "playcount": 41
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:51.715Z"
   },
   {
     "name": "Ed Thigpen",
@@ -4253,14 +5160,32 @@
     },
     "enrichedAt": "2026-07-07T07:10:59.487Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6a970d7f-f2e6-472f-990e-2f68aa161e00"
+    "mbid": "6a970d7f-f2e6-472f-990e-2f68aa161e00",
+    "genres": [
+      "jazz",
+      "drums",
+      "percussion",
+      "cool jazz",
+      "american"
+    ],
+    "popularity": {
+      "listeners": 18155,
+      "playcount": 57575
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b0571e244c1b0cb1e6e698b93e04aea3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:52.446Z"
   },
   {
     "name": "Ed Wang",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:29:01.213Z"
+    "autoTriedAt": "2026-07-10T23:29:01.213Z",
+    "popularity": {
+      "listeners": 9,
+      "playcount": 29
+    },
+    "metaEnrichedAt": "2026-07-11T06:52:53.184Z"
   },
   {
     "name": "Ed Warby",
@@ -4276,21 +5201,29 @@
     },
     "enrichedAt": "2026-07-07T07:10:59.487Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6c2f7dc2-8f47-4d9a-b636-8b771d7331a4"
+    "mbid": "6c2f7dc2-8f47-4d9a-b636-8b771d7331a4",
+    "metaTriedAt": "2026-07-11T06:52:53.860Z"
   },
   {
     "name": "Ed Wiley, Jr.",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbid": "b9a41781-62d1-431b-a803-b311b5277dc2",
-    "autoTriedAt": "2026-07-10T23:29:03.917Z"
+    "autoTriedAt": "2026-07-10T23:29:03.917Z",
+    "popularity": {
+      "listeners": 126,
+      "playcount": 694
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/50533ba6bf1aedac25ccce822c10642d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:54.535Z"
   },
   {
     "name": "Ed Wool and the Nomads/Wool",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:29:05.246Z"
+    "autoTriedAt": "2026-07-10T23:29:05.246Z",
+    "metaTriedAt": "2026-07-11T06:52:55.194Z"
   },
   {
     "name": "Ed Wynn",
@@ -4306,7 +5239,16 @@
       "vk": null
     },
     "enrichedAt": "2026-07-10T23:29:08.045Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Disney"
+    ],
+    "popularity": {
+      "listeners": 3017,
+      "playcount": 8164
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/32098b2370981c1cd8dfeaf1980031b2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:55.920Z"
   },
   {
     "name": "Ed Zandy",
@@ -4314,7 +5256,8 @@
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "808caf68-6091-4d68-8261-5e4c857e4683",
-    "autoTriedAt": "2026-07-10T23:29:10.829Z"
+    "autoTriedAt": "2026-07-10T23:29:10.829Z",
+    "metaTriedAt": "2026-07-11T06:52:56.582Z"
   },
   {
     "name": "Edane",
@@ -4330,14 +5273,36 @@
     },
     "enrichedAt": "2026-07-07T07:10:59.487Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0ce8c0f9-ee4e-489a-88e4-53f793078ff2"
+    "mbid": "0ce8c0f9-ee4e-489a-88e4-53f793078ff2",
+    "genres": [
+      "heavy metal",
+      "hard rock",
+      "rock",
+      "metal",
+      "indonesia"
+    ],
+    "popularity": {
+      "listeners": 7373,
+      "playcount": 160445
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/90deb8630cf4a534af52b71351379dc8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:57.325Z"
   },
   {
     "name": "Edd Byrnes",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbid": "41789b2d-5633-4a72-be88-fc89b3fdd57d",
-    "autoTriedAt": "2026-07-10T23:29:13.515Z"
+    "autoTriedAt": "2026-07-10T23:29:13.515Z",
+    "genres": [
+      "rockabilly"
+    ],
+    "popularity": {
+      "listeners": 3311,
+      "playcount": 11732
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1e70f4e4b7037298c71ce0507c8dda81/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:58.080Z"
   },
   {
     "name": "Eddi Reader",
@@ -4353,42 +5318,93 @@
     },
     "enrichedAt": "2026-07-07T07:10:59.487Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ea2a48b2-0969-4496-9635-4ee206f3ffc5"
+    "mbid": "ea2a48b2-0969-4496-9635-4ee206f3ffc5",
+    "genres": [
+      "folk",
+      "female vocalists",
+      "Scottish",
+      "singer-songwriter",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 61768,
+      "playcount": 890057
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/32cf5d075d91b303aeeb94ff4614a795/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:59.270Z"
   },
   {
     "name": "Eddie \"Bongo\" Brown",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbid": "01e3764c-a758-4a40-8c03-f62d6027d19b",
-    "autoTriedAt": "2026-07-10T23:29:16.189Z"
+    "autoTriedAt": "2026-07-10T23:29:16.189Z",
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:52:59.931Z"
   },
   {
     "name": "Eddie \"Chank\" Willis",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:29:17.459Z"
+    "autoTriedAt": "2026-07-10T23:29:17.459Z",
+    "metaTriedAt": "2026-07-11T06:53:00.592Z"
   },
   {
     "name": "Eddie \"Cleanhead\" Vinson",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbid": "08d57baf-b8a9-4bc3-ac1c-5fe3b5367bb9",
-    "autoTriedAt": "2026-07-10T23:29:20.126Z"
+    "autoTriedAt": "2026-07-10T23:29:20.126Z",
+    "genres": [
+      "blues",
+      "jazz",
+      "saxophone",
+      "jump blues",
+      "rhythm and blues"
+    ],
+    "popularity": {
+      "listeners": 23176,
+      "playcount": 87291
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3adcb8db142aa6e685131d1b68e59b1a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:01.395Z"
   },
   {
     "name": "Eddie \"Guitar Slim\" Jones",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:29:21.435Z"
+    "autoTriedAt": "2026-07-10T23:29:21.435Z",
+    "genres": [
+      "rhythm and blues",
+      "blues",
+      "blues guitar",
+      "Classic Blues",
+      "New Orleans Blues"
+    ],
+    "popularity": {
+      "listeners": 398,
+      "playcount": 1962
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cc2b16a5bfffff9b5e00ac51641172bd/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:02.042Z"
   },
   {
     "name": "Eddie \"Guitar\" Burns",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbid": "e57dc2a6-d32e-48f3-bec9-5a7014ee4f53",
-    "autoTriedAt": "2026-07-10T23:29:22.710Z"
+    "autoTriedAt": "2026-07-10T23:29:22.710Z",
+    "genres": [
+      "blues"
+    ],
+    "popularity": {
+      "listeners": 407,
+      "playcount": 1428
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:02.757Z"
   },
   {
     "name": "Eddie \"Lockjaw\" Davis",
@@ -4404,35 +5420,86 @@
       "vk": null
     },
     "enrichedAt": "2026-07-10T23:29:25.356Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "saxophone",
+      "Hard Bop",
+      "Tenor Sax",
+      "soul jazz"
+    ],
+    "popularity": {
+      "listeners": 31641,
+      "playcount": 164105
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/33ad4e4eaeb9f6bdb64fda855b1e44b1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:03.435Z"
   },
   {
     "name": "Eddie & Ernie",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbid": "c6e16896-9f6f-45cf-95db-31538a07a1c8",
-    "autoTriedAt": "2026-07-10T23:29:27.998Z"
+    "autoTriedAt": "2026-07-10T23:29:27.998Z",
+    "genres": [
+      "oldies",
+      "soul",
+      "Southern Soul",
+      "northern soul",
+      "my other stuff"
+    ],
+    "popularity": {
+      "listeners": 8499,
+      "playcount": 47520
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b823319ed165c3069f061229c9eee4cb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:04.177Z"
   },
   {
     "name": "Eddie & the Showmen",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbid": "3aa415f6-6ba1-4907-81e1-50be9d5151f1",
-    "autoTriedAt": "2026-07-10T23:29:30.723Z"
+    "autoTriedAt": "2026-07-10T23:29:30.723Z",
+    "genres": [
+      "Surf",
+      "surf rock",
+      "psychobilly",
+      "the vitamin b12",
+      "blank and the blanks"
+    ],
+    "popularity": {
+      "listeners": 10413,
+      "playcount": 51907
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bbb632fd1ba47b7461149c56ec89bb74/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:04.956Z"
   },
   {
     "name": "Eddie Adam's photograph",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:29:32.041Z"
+    "autoTriedAt": "2026-07-10T23:29:32.041Z",
+    "metaTriedAt": "2026-07-11T06:53:05.602Z"
   },
   {
     "name": "Eddie Adcock",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbid": "8bbf05e4-68c9-412c-b940-b373b87ddb19",
-    "autoTriedAt": "2026-07-10T23:29:34.742Z"
+    "autoTriedAt": "2026-07-10T23:29:34.742Z",
+    "genres": [
+      "bluegrass",
+      "USA",
+      "1726"
+    ],
+    "popularity": {
+      "listeners": 4505,
+      "playcount": 19393
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/51aa6e0c20182643fe8c42131eb0e178/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:06.353Z"
   },
   {
     "name": "Eddie Albert",
@@ -4448,7 +5515,17 @@
     },
     "enrichedAt": "2026-07-07T07:10:59.487Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "10ed4a09-6506-4dc1-a6f9-1c8bb4448d8a"
+    "mbid": "10ed4a09-6506-4dc1-a6f9-1c8bb4448d8a",
+    "genres": [
+      "unicornmeat",
+      "country"
+    ],
+    "popularity": {
+      "listeners": 1173,
+      "playcount": 3743
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/934078284558f3199a5eee022aba9cf5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:07.140Z"
   },
   {
     "name": "Eddie Allen",
@@ -4456,7 +5533,13 @@
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "cf32310c-bf3d-408a-b445-3287ab15af60",
-    "autoTriedAt": "2026-07-10T23:29:37.375Z"
+    "autoTriedAt": "2026-07-10T23:29:37.375Z",
+    "popularity": {
+      "listeners": 376,
+      "playcount": 1574
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b7ad71a27033f676282ad358939cfb37/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:07.845Z"
   },
   {
     "name": "Eddie Amador",
@@ -4472,14 +5555,40 @@
     },
     "enrichedAt": "2026-07-07T07:10:59.487Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "9322c0b4-9b07-45f8-8314-4ff483b77456"
+    "mbid": "9322c0b4-9b07-45f8-8314-4ff483b77456",
+    "genres": [
+      "House",
+      "dance",
+      "electronic",
+      "funky house",
+      "funky-house"
+    ],
+    "popularity": {
+      "listeners": 49251,
+      "playcount": 185472
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4132538ff61c7d5e722ff88f80bf42de/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:08.608Z"
   },
   {
     "name": "Eddie and the Cruisers",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:29:42.040Z"
+    "autoTriedAt": "2026-07-10T23:29:42.040Z",
+    "genres": [
+      "Soundtrack",
+      "saxophone",
+      "sax",
+      "jersey shore",
+      "sax solo"
+    ],
+    "popularity": {
+      "listeners": 2095,
+      "playcount": 14657
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:09.321Z"
   },
   {
     "name": "Eddie and the Hot Rods",
@@ -4495,7 +5604,20 @@
     },
     "enrichedAt": "2026-07-07T07:10:59.487Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e062ce8b-19cc-4308-b37b-f62b7adfb6c2"
+    "mbid": "e062ce8b-19cc-4308-b37b-f62b7adfb6c2",
+    "genres": [
+      "punk",
+      "punk rock",
+      "pub rock",
+      "new wave",
+      "power pop"
+    ],
+    "popularity": {
+      "listeners": 105356,
+      "playcount": 700693
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/535b51bc8f3e28ccb273bd0f90e0db18/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:09.987Z"
   },
   {
     "name": "Eddie and the Tide",
@@ -4512,7 +5634,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-10T23:29:44.607Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "rock",
+      "AOR",
+      "United States",
+      "USA",
+      "melodic rock"
+    ],
+    "popularity": {
+      "listeners": 9506,
+      "playcount": 34598
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:10.674Z"
   },
   {
     "name": "Eddie Barefield",
@@ -4520,21 +5655,44 @@
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "10576bcc-58bd-4830-9c6a-7e67860d5f9a",
-    "autoTriedAt": "2026-07-10T23:29:47.219Z"
+    "autoTriedAt": "2026-07-10T23:29:47.219Z",
+    "popularity": {
+      "listeners": 20,
+      "playcount": 56
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:11.379Z"
   },
   {
     "name": "Eddie Bert",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbid": "caa00104-97c0-4eb0-bd0b-8ded21778264",
-    "autoTriedAt": "2026-07-10T23:29:49.792Z"
+    "autoTriedAt": "2026-07-10T23:29:49.792Z",
+    "genres": [
+      "jazz",
+      "trombone",
+      "interesting"
+    ],
+    "popularity": {
+      "listeners": 955,
+      "playcount": 4483
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e8441381e1a98891ec8cb3836fdc2aa2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:12.314Z"
   },
   {
     "name": "Eddie Blazonczyk",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbid": "c3ba176f-0330-417f-8864-35b1a2196014",
-    "autoTriedAt": "2026-07-10T23:29:52.370Z"
+    "autoTriedAt": "2026-07-10T23:29:52.370Z",
+    "popularity": {
+      "listeners": 532,
+      "playcount": 5751
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ebf821073215e2b220bd99f6893c5513/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:13.616Z"
   },
   {
     "name": "Eddie Bo",
@@ -4550,14 +5708,40 @@
     },
     "enrichedAt": "2026-07-07T07:10:59.487Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "10317c4b-4543-43a1-83fd-083ad3e60831"
+    "mbid": "10317c4b-4543-43a1-83fd-083ad3e60831",
+    "genres": [
+      "funk",
+      "soul",
+      "New Orleans",
+      "rhythm and blues",
+      "New Orleans Funk"
+    ],
+    "popularity": {
+      "listeners": 68924,
+      "playcount": 370844
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/90f91fd664deeab93486c776afce2f9b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:14.390Z"
   },
   {
     "name": "Eddie Bond",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbid": "707ee220-95a9-4a32-9b34-cfd495f9f344",
-    "autoTriedAt": "2026-07-10T23:29:54.977Z"
+    "autoTriedAt": "2026-07-10T23:29:54.977Z",
+    "genres": [
+      "rockabilly",
+      "50s",
+      "Rock and Roll",
+      "All",
+      "Need to Rate"
+    ],
+    "popularity": {
+      "listeners": 23993,
+      "playcount": 124352
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9324589bd655f7d07e605832903b1dfa/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:15.129Z"
   },
   {
     "name": "Eddie Boyd",
@@ -4574,14 +5758,32 @@
       "vk": null
     },
     "enrichedAt": "2026-07-10T23:29:57.787Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "blues",
+      "rhythm and blues",
+      "piano",
+      "american",
+      "electric blues"
+    ],
+    "popularity": {
+      "listeners": 61810,
+      "playcount": 308168
+    },
+    "metaEnrichedAt": "2026-07-11T06:53:15.896Z"
   },
   {
     "name": "Eddie Bracken",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbid": "bfb2f505-1f83-4c3f-ac87-2b0f18c54c71",
-    "autoTriedAt": "2026-07-10T23:30:00.386Z"
+    "autoTriedAt": "2026-07-10T23:30:00.386Z",
+    "popularity": {
+      "listeners": 9,
+      "playcount": 20
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5b1a5de3a9aad567efd628536c5dc109/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:16.572Z"
   },
   {
     "name": "Eddie Breckenridge",
@@ -4598,7 +5800,12 @@
       "vk": null
     },
     "enrichedAt": "2026-07-10T23:30:02.933Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 1
+    },
+    "metaEnrichedAt": "2026-07-11T06:53:17.212Z"
   },
   {
     "name": "Eddie C. Campbell",
@@ -4614,21 +5821,49 @@
       "vk": null
     },
     "enrichedAt": "2026-07-10T23:30:05.599Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "blues",
+      "delta blues",
+      "Chicago Blues",
+      "bluesrock",
+      "chicago bluezzz"
+    ],
+    "popularity": {
+      "listeners": 5149,
+      "playcount": 27986
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b6e59771ee79fe0d153bd39bb2aff528/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:18.377Z"
   },
   {
     "name": "Eddie Calhoun",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbid": "aae20d2f-7d0e-4879-928a-08bae3cfdac1",
-    "autoTriedAt": "2026-07-10T23:30:08.209Z"
+    "autoTriedAt": "2026-07-10T23:30:08.209Z",
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:19.023Z"
   },
   {
     "name": "Eddie Calvert",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbid": "cfc840a4-dfdc-40b9-9ed8-c8ec72739406",
-    "autoTriedAt": "2026-07-10T23:30:10.812Z"
+    "autoTriedAt": "2026-07-10T23:30:10.812Z",
+    "genres": [
+      "60s",
+      "jazz",
+      "instrumental",
+      "Eddie Calvert",
+      "easy listening"
+    ],
+    "popularity": {
+      "listeners": 17409,
+      "playcount": 95880
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b23f48d076268b7636e0e0f46245ac39/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:19.736Z"
   },
   {
     "name": "Eddie Cantor",
@@ -4644,7 +5879,20 @@
     },
     "enrichedAt": "2026-07-07T07:10:59.487Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0e04e04c-bdfe-4a0e-a311-a2190bd6d72c"
+    "mbid": "0e04e04c-bdfe-4a0e-a311-a2190bd6d72c",
+    "genres": [
+      "swing",
+      "jazz",
+      "1920s",
+      "All",
+      "music hall"
+    ],
+    "popularity": {
+      "listeners": 49095,
+      "playcount": 194352
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d2999bd1686a1bba6dae1ff246539748/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:20.433Z"
   },
   {
     "name": "Eddie Cochran",
@@ -4660,7 +5908,20 @@
     },
     "enrichedAt": "2026-07-07T07:10:59.487Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "17995d1c-5b3c-4ee9-98f5-105ee3b4ada1"
+    "mbid": "17995d1c-5b3c-4ee9-98f5-105ee3b4ada1",
+    "genres": [
+      "rockabilly",
+      "Rock and Roll",
+      "50s",
+      "rock n roll",
+      "oldies"
+    ],
+    "popularity": {
+      "listeners": 616797,
+      "playcount": 5030070
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4f7d80a1748077a30afa7b923dc24cb7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:21.145Z"
   },
   {
     "name": "Eddie Collins",
@@ -4677,28 +5938,69 @@
       "vk": null
     },
     "enrichedAt": "2026-07-10T23:30:13.577Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 299,
+      "playcount": 5832
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1b5c374fa3a5f524a7515ed044ff6448/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:22.257Z"
   },
   {
     "name": "Eddie Condon",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbid": "2382bcb9-0f05-492e-b10c-2d6067a1955c",
-    "autoTriedAt": "2026-07-10T23:30:16.369Z"
+    "autoTriedAt": "2026-07-10T23:30:16.369Z",
+    "genres": [
+      "jazz",
+      "dixieland",
+      "swing",
+      "Indiana",
+      "dixieland jazz"
+    ],
+    "popularity": {
+      "listeners": 78845,
+      "playcount": 316268
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/628b68069b6672860af6523963b58d50/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:22.975Z"
   },
   {
     "name": "Eddie Costa",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbid": "dec69a6d-ac24-4fa6-95ef-246e7aa47458",
-    "autoTriedAt": "2026-07-10T23:30:19.000Z"
+    "autoTriedAt": "2026-07-10T23:30:19.000Z",
+    "genres": [
+      "jazz",
+      "piano",
+      "jazz piano",
+      "american",
+      "Vibraphone"
+    ],
+    "popularity": {
+      "listeners": 4292,
+      "playcount": 32290
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f402a70aa22e3c7c9a893e76d81f9d56/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:23.644Z"
   },
   {
     "name": "Eddie Cusic",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbid": "048ce248-992e-4a13-b926-2589a25e4258",
-    "autoTriedAt": "2026-07-10T23:30:21.798Z"
+    "autoTriedAt": "2026-07-10T23:30:21.798Z",
+    "genres": [
+      "blues"
+    ],
+    "popularity": {
+      "listeners": 544,
+      "playcount": 2462
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f98ae33ee9c34c81a70309577f41a63d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:24.887Z"
   },
   {
     "name": "Eddie Daniels",
@@ -4715,7 +6017,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-10T23:30:24.382Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "clarinet",
+      "Classical",
+      "swing",
+      "flute"
+    ],
+    "popularity": {
+      "listeners": 56182,
+      "playcount": 236968
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c852f0b0caf550d02dfed8e2412ab508/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:25.607Z"
   },
   {
     "name": "Eddie Dean",
@@ -4723,7 +6038,20 @@
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "ac8757fd-cf78-4cfe-8b48-8881757d6f96",
-    "autoTriedAt": "2026-07-10T23:30:27.075Z"
+    "autoTriedAt": "2026-07-10T23:30:27.075Z",
+    "genres": [
+      "rockabilly",
+      "metal",
+      "rock",
+      "country",
+      "cowboy"
+    ],
+    "popularity": {
+      "listeners": 958,
+      "playcount": 4530
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/44fa2c1584af12918e59aaaeb3fc399e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:26.265Z"
   },
   {
     "name": "Eddie Dowling",
@@ -4731,7 +6059,12 @@
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "40d6a6f8-1fe1-42af-9773-9d5bff0e369a",
-    "autoTriedAt": "2026-07-10T23:30:29.613Z"
+    "autoTriedAt": "2026-07-10T23:30:29.613Z",
+    "popularity": {
+      "listeners": 3,
+      "playcount": 3
+    },
+    "metaEnrichedAt": "2026-07-11T06:53:27.017Z"
   },
   {
     "name": "Eddie Duffy",
@@ -4739,21 +6072,41 @@
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "dd1c3916-48eb-4f16-9074-9beb0ee31ff4",
-    "autoTriedAt": "2026-07-10T23:30:32.347Z"
+    "autoTriedAt": "2026-07-10T23:30:32.347Z",
+    "metaTriedAt": "2026-07-11T06:53:27.667Z"
   },
   {
     "name": "Eddie Durham",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbid": "216b558a-3909-4ea5-9364-7c7c1f9e965d",
-    "autoTriedAt": "2026-07-10T23:30:35.000Z"
+    "autoTriedAt": "2026-07-10T23:30:35.000Z",
+    "genres": [
+      "All",
+      "jazz",
+      "swing",
+      "Big Band",
+      "1930s"
+    ],
+    "popularity": {
+      "listeners": 1696,
+      "playcount": 5611
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a7ad9b55431604a1e782cd1fffd4cc01/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:28.338Z"
   },
   {
     "name": "Eddie Eastman",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbid": "7e0584f8-31e1-42fd-aeed-44f7aff96961",
-    "autoTriedAt": "2026-07-10T23:30:37.722Z"
+    "autoTriedAt": "2026-07-10T23:30:37.722Z",
+    "popularity": {
+      "listeners": 53,
+      "playcount": 178
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/54b0652309a0d3052ce79d51ff423551/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:29.152Z"
   },
   {
     "name": "Eddie Edwards",
@@ -4761,7 +6114,20 @@
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "ecaaeb10-910f-492f-b76a-7ea5a2348c0d",
-    "autoTriedAt": "2026-07-10T23:30:40.271Z"
+    "autoTriedAt": "2026-07-10T23:30:40.271Z",
+    "genres": [
+      "metal",
+      "heavy metal",
+      "UK",
+      "alternative metal",
+      "wrestling"
+    ],
+    "popularity": {
+      "listeners": 989,
+      "playcount": 8606
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/125d6fbc3aac2ea968b8c62eb8e728b5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:29.908Z"
   },
   {
     "name": "Eddie Fisher",
@@ -4769,7 +6135,20 @@
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "86831539-fa31-4248-9977-d4c6c0716a52",
-    "autoTriedAt": "2026-07-10T23:30:42.924Z"
+    "autoTriedAt": "2026-07-10T23:30:42.924Z",
+    "genres": [
+      "50s",
+      "jazz",
+      "easy listening",
+      "Eddie Fisher",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 98715,
+      "playcount": 438498
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cf45f4518fcf64c93055ec301288a551/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:30.594Z"
   },
   {
     "name": "Eddie Floyd",
@@ -4785,14 +6164,32 @@
     },
     "enrichedAt": "2026-07-07T07:10:59.487Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "484e8d72-ad54-43cf-bceb-283529ac2b62"
+    "mbid": "484e8d72-ad54-43cf-bceb-283529ac2b62",
+    "genres": [
+      "soul",
+      "rhythm and blues",
+      "funk",
+      "stax",
+      "oldies"
+    ],
+    "popularity": {
+      "listeners": 395880,
+      "playcount": 1954328
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b38f17f8d9f9ccc6d9a9cb38549bd69a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:31.226Z"
   },
   {
     "name": "Eddie Foy",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:30:44.200Z"
+    "autoTriedAt": "2026-07-10T23:30:44.200Z",
+    "popularity": {
+      "listeners": 51,
+      "playcount": 119
+    },
+    "metaEnrichedAt": "2026-07-11T06:53:32.066Z"
   },
   {
     "name": "Eddie Foy Jr.",
@@ -4800,7 +6197,13 @@
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "de40c40b-bc13-487d-aa0e-336709d5fce8",
-    "autoTriedAt": "2026-07-10T23:30:47.239Z"
+    "autoTriedAt": "2026-07-10T23:30:47.239Z",
+    "popularity": {
+      "listeners": 91,
+      "playcount": 515
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8978edc8c3a744e3ae19233f0b521924/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:32.780Z"
   },
   {
     "name": "Eddie from Ohio",
@@ -4816,7 +6219,20 @@
     },
     "enrichedAt": "2026-07-07T07:10:59.487Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "fe0321d3-3243-435d-a62c-1b861a9ca85e"
+    "mbid": "fe0321d3-3243-435d-a62c-1b861a9ca85e",
+    "genres": [
+      "folk",
+      "acoustic",
+      "gospel",
+      "USA",
+      "american"
+    ],
+    "popularity": {
+      "listeners": 11876,
+      "playcount": 225052
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/60431799e1e6a5db4959270793eee2ec/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:33.426Z"
   },
   {
     "name": "Eddie Gibbs",
@@ -4824,14 +6240,28 @@
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "68061f11-2d9b-46d2-8ac6-720a7900ec7e",
-    "autoTriedAt": "2026-07-10T23:30:49.810Z"
+    "autoTriedAt": "2026-07-10T23:30:49.810Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 1
+    },
+    "metaEnrichedAt": "2026-07-11T06:53:34.114Z"
   },
   {
     "name": "Eddie Gómez",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:10:59.487Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-10T23:30:51.126Z"
+    "autoTriedAt": "2026-07-10T23:30:51.126Z",
+    "genres": [
+      "bass",
+      "jazz"
+    ],
+    "popularity": {
+      "listeners": 1099,
+      "playcount": 3855
+    },
+    "metaEnrichedAt": "2026-07-11T06:53:34.855Z"
   },
   {
     "name": "Eddie Hardin",
@@ -4847,7 +6277,19 @@
     },
     "enrichedAt": "2026-07-07T07:10:59.487Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7c5691d1-2322-4b6e-a8d4-115b93ffceff"
+    "mbid": "7c5691d1-2322-4b6e-a8d4-115b93ffceff",
+    "genres": [
+      "classic rock",
+      "rock",
+      "keyboards",
+      "piano"
+    ],
+    "popularity": {
+      "listeners": 1672,
+      "playcount": 10340
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4131e08b0492554a56c55614f176605b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:35.613Z"
   },
   {
     "name": "Eddie Harris",
@@ -4864,7 +6306,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-10T23:30:53.829Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "funk",
+      "saxophone",
+      "jazz-funk",
+      "soul"
+    ],
+    "popularity": {
+      "listeners": 134778,
+      "playcount": 764217
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2fe651276341b8ba644fc7b7e0c04561/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T06:53:36.383Z"
   },
   {
     "name": "Eddie Hazel",
