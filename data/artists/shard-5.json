@@ -65467,14 +65467,24 @@
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:13.115Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:31:12.637Z"
+    "autoTriedAt": "2026-07-11T00:31:12.637Z",
+    "popularity": {
+      "listeners": 28,
+      "playcount": 363
+    },
+    "metaEnrichedAt": "2026-07-11T10:32:49.073Z"
   },
   {
     "name": "Marcie Jones and the Cookies",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:13.115Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:31:13.877Z"
+    "autoTriedAt": "2026-07-11T00:31:13.877Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 236
+    },
+    "metaEnrichedAt": "2026-07-11T10:32:49.823Z"
   },
   {
     "name": "Marcin Dylla",
@@ -65490,7 +65500,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:13.115Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "206b1456-fa61-4605-a7c3-66b482d554ba"
+    "mbid": "206b1456-fa61-4605-a7c3-66b482d554ba",
+    "genres": [
+      "classical guitar",
+      "guitar",
+      "instrumental",
+      "guitar virtuoso",
+      "spanish guitar"
+    ],
+    "popularity": {
+      "listeners": 768,
+      "playcount": 8890
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c1699d5bf9bf0ea59a73d330777ed0e0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:32:50.642Z"
   },
   {
     "name": "Marcin Jahr",
@@ -65506,7 +65529,8 @@
     },
     "enrichedAt": "2026-07-07T07:18:13.115Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e3d6096a-867f-48de-a28d-d41589a12160"
+    "mbid": "e3d6096a-867f-48de-a28d-d41589a12160",
+    "metaTriedAt": "2026-07-11T10:32:51.285Z"
   },
   {
     "name": "Marcin Rozynek",
@@ -65522,14 +65546,39 @@
     },
     "enrichedAt": "2026-07-07T07:18:13.115Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "06b4d49d-0307-4f0b-94aa-25de30b5912d"
+    "mbid": "06b4d49d-0307-4f0b-94aa-25de30b5912d",
+    "genres": [
+      "polish",
+      "rock",
+      "alternative",
+      "pop",
+      "polskie"
+    ],
+    "popularity": {
+      "listeners": 30188,
+      "playcount": 451006
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f43f0726ff81ec405d364f8168d757e4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:32:51.920Z"
   },
   {
     "name": "Marcin Świetlicki",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:13.115Z",
     "mbid": "deb4f38a-cc09-4a2c-be9d-d921df73401a",
-    "autoTriedAt": "2026-07-11T00:31:16.391Z"
+    "autoTriedAt": "2026-07-11T00:31:16.391Z",
+    "genres": [
+      "polish",
+      "poland",
+      "poetry",
+      "polskie",
+      "poezja śpiewana"
+    ],
+    "popularity": {
+      "listeners": 397,
+      "playcount": 4422
+    },
+    "metaEnrichedAt": "2026-07-11T10:32:52.796Z"
   },
   {
     "name": "Marcin Wasilewski",
@@ -65546,7 +65595,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:31:26.282Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "contemporary jazz",
+      "jazz",
+      "piano",
+      "polish jazz",
+      "polish"
+    ],
+    "popularity": {
+      "listeners": 45230,
+      "playcount": 209331
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c66e432d3532224ee48271de78617c20/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:32:53.527Z"
   },
   {
     "name": "Márcio Faraco",
@@ -65562,7 +65624,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:13.115Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "53254544-ed75-49d6-952c-5acf495afdbc"
+    "mbid": "53254544-ed75-49d6-952c-5acf495afdbc",
+    "genres": [
+      "Bossa Nova",
+      "brasil",
+      "brazil",
+      "world",
+      "mpb"
+    ],
+    "popularity": {
+      "listeners": 55322,
+      "playcount": 336479
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/52bd2b230758260cb01d8bc621fe9a58/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:32:54.168Z"
   },
   {
     "name": "Marco Ambrosini",
@@ -65578,7 +65653,17 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "28dd6c96-42f2-46d3-8446-88f9983a4053"
+    "mbid": "28dd6c96-42f2-46d3-8446-88f9983a4053",
+    "genres": [
+      "italian",
+      "Classical"
+    ],
+    "popularity": {
+      "listeners": 516,
+      "playcount": 2053
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/67f3bd5c0f8606ec48209d47a9ff638b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:32:55.128Z"
   },
   {
     "name": "Marco Antonio Cavazzoni",
@@ -65594,7 +65679,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:31:28.896Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "renaissance",
+      "italian",
+      "early music",
+      "Classical",
+      "16th century"
+    ],
+    "popularity": {
+      "listeners": 199,
+      "playcount": 998
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:32:55.768Z"
   },
   {
     "name": "Marco Antonio Mazzini",
@@ -65610,7 +65708,13 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "93ed65af-d5d4-4b45-9f27-a19acde11683"
+    "mbid": "93ed65af-d5d4-4b45-9f27-a19acde11683",
+    "popularity": {
+      "listeners": 11,
+      "playcount": 25
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:32:56.426Z"
   },
   {
     "name": "Marco Antonio Muñiz",
@@ -65627,7 +65731,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:31:37.787Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "boleros",
+      "bolero",
+      "romantico",
+      "latin",
+      "spanish"
+    ],
+    "popularity": {
+      "listeners": 22408,
+      "playcount": 156040
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3dc52d471aed44d5acfceb5ee4ec900d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:32:57.183Z"
   },
   {
     "name": "Marco Antonio Solís",
@@ -65643,14 +65760,33 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "006631f4-5214-49ff-a386-a064853d1a1e"
+    "mbid": "006631f4-5214-49ff-a386-a064853d1a1e",
+    "genres": [
+      "Marco Antonio Solis",
+      "mexico",
+      "spanish",
+      "Romantica",
+      "mexican"
+    ],
+    "popularity": {
+      "listeners": 301461,
+      "playcount": 4326845
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8320630f67423d0bc2c8274a6c942214/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:32:57.848Z"
   },
   {
     "name": "Marco Aurelio Zani de Ferranti",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:14.841Z",
     "mbid": "8484e097-dbbf-45c6-8b06-3605dd2f3eb8",
-    "autoTriedAt": "2026-07-11T00:31:40.598Z"
+    "autoTriedAt": "2026-07-11T00:31:40.598Z",
+    "popularity": {
+      "listeners": 122,
+      "playcount": 314
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:32:58.660Z"
   },
   {
     "name": "Marco Barrientos",
@@ -65666,7 +65802,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "alabanza",
+      "Cristiano",
+      "adoracion",
+      "christian",
+      "Musica Cristiana"
+    ],
+    "popularity": {
+      "listeners": 32503,
+      "playcount": 822522
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c8efc84bfc6c5e6c2faa8a6125ef78a5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:32:59.327Z"
   },
   {
     "name": "Marco Benevento",
@@ -65683,14 +65832,36 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:31:43.305Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "piano",
+      "experimental",
+      "organ",
+      "Avant Jazz"
+    ],
+    "popularity": {
+      "listeners": 43582,
+      "playcount": 345596
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/66b9d84baba06f475c8a160abfca1e6b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:32:59.940Z"
   },
   {
     "name": "Marco Betta",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:14.841Z",
     "mbid": "cd63b302-688f-4f98-ae30-f19237d49248",
-    "autoTriedAt": "2026-07-11T00:31:45.951Z"
+    "autoTriedAt": "2026-07-11T00:31:45.951Z",
+    "genres": [
+      "Classical"
+    ],
+    "popularity": {
+      "listeners": 396,
+      "playcount": 5422
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/84d478e0d9f2fe9552b9852d383bfa8b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:00.588Z"
   },
   {
     "name": "Marco Blaauw",
@@ -65706,7 +65877,18 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e59d22a7-9f7b-44c7-840c-8fdd0a726025"
+    "mbid": "e59d22a7-9f7b-44c7-840c-8fdd0a726025",
+    "genres": [
+      "trumpet",
+      "contemporary classical",
+      "western classical music"
+    ],
+    "popularity": {
+      "listeners": 103,
+      "playcount": 611
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5242d8ed47396fd917092e56e7c90d79/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:01.294Z"
   },
   {
     "name": "Marco Borsato",
@@ -65722,7 +65904,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f07b0d13-ef03-4537-a5b4-9474e71a578f"
+    "mbid": "f07b0d13-ef03-4537-a5b4-9474e71a578f",
+    "genres": [
+      "pop",
+      "dutch",
+      "Nederlandstalig",
+      "Nederpop",
+      "nederlands"
+    ],
+    "popularity": {
+      "listeners": 149488,
+      "playcount": 4913449
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/50be7f82f9babac56c6a12f718d8d8a3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:02.025Z"
   },
   {
     "name": "Marco Castillo",
@@ -65738,14 +65933,39 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T00:31:45.951Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "brazil",
+      "jazz",
+      "singer songwriter",
+      "brazilian"
+    ],
+    "popularity": {
+      "listeners": 38,
+      "playcount": 593
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/dadfba6daabfe52de62236e6d1079a0d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:02.956Z"
   },
   {
     "name": "Marco da Gagliano",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:14.841Z",
     "mbid": "35b656fd-8604-4194-ae34-147c506fc8bd",
-    "autoTriedAt": "2026-07-11T00:31:48.548Z"
+    "autoTriedAt": "2026-07-11T00:31:48.548Z",
+    "genres": [
+      "italian",
+      "Classical",
+      "early baroque",
+      "renaissance",
+      "baroque"
+    ],
+    "popularity": {
+      "listeners": 508,
+      "playcount": 3656
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:03.631Z"
   },
   {
     "name": "Marco Dall'Aquila",
@@ -65761,7 +65981,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:31:51.080Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "renaissance",
+      "early music",
+      "lute",
+      "Classical",
+      "italian"
+    ],
+    "popularity": {
+      "listeners": 9573,
+      "playcount": 53736
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/88d59229c6ed3360db8e880c6cead197/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:04.280Z"
   },
   {
     "name": "Marco Di Meco",
@@ -65777,7 +66010,19 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8694f329-c352-4240-abaf-5359ff17907f"
+    "mbid": "8694f329-c352-4240-abaf-5359ff17907f",
+    "genres": [
+      "funk",
+      "jazz",
+      "Bossa Nova",
+      "flute",
+      "against capitalism"
+    ],
+    "popularity": {
+      "listeners": 8,
+      "playcount": 59
+    },
+    "metaEnrichedAt": "2026-07-11T10:33:04.967Z"
   },
   {
     "name": "Marco Enrico Bossi",
@@ -65793,7 +66038,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:31:53.961Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "contemporary classical",
+      "organ",
+      "composer",
+      "Classical",
+      "Italy"
+    ],
+    "popularity": {
+      "listeners": 2719,
+      "playcount": 8357
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b585b9353dfed86a78c5a1be8527b3d6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:05.633Z"
   },
   {
     "name": "Marco Hietala",
@@ -65809,14 +66067,28 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7244f99c-e056-412c-836d-b3933bb51229"
+    "mbid": "7244f99c-e056-412c-836d-b3933bb51229",
+    "genres": [
+      "finnish",
+      "metal",
+      "singer",
+      "male vocalists",
+      "tarot"
+    ],
+    "popularity": {
+      "listeners": 12999,
+      "playcount": 112083
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/69849737ebf1bf215009c23a4746bd07/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:06.224Z"
   },
   {
     "name": "Marco I. Benevento",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:14.841Z",
     "mbid": "777dbd71-9ec8-4ae7-b5b6-784b74589d0a",
-    "autoTriedAt": "2026-07-11T00:31:55.219Z"
+    "autoTriedAt": "2026-07-11T00:31:55.219Z",
+    "metaTriedAt": "2026-07-11T10:33:07.337Z"
   },
   {
     "name": "Marco Lo Muscio",
@@ -65833,7 +66105,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:31:57.763Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "piano",
+      "instrumental",
+      "Soundtrack",
+      "Progressive rock",
+      "Tolkien"
+    ],
+    "popularity": {
+      "listeners": 1455,
+      "playcount": 13264
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3fee971e2f687a6b7435623768e7fcf8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:08.036Z"
   },
   {
     "name": "Marco Marinangeli",
@@ -65849,7 +66134,16 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a51defd7-7ecd-4e44-bdfa-7b5a86710fa7"
+    "mbid": "a51defd7-7ecd-4e44-bdfa-7b5a86710fa7",
+    "genres": [
+      "Disney"
+    ],
+    "popularity": {
+      "listeners": 5835,
+      "playcount": 18649
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fbd9615a092d163b47fd8371923ba773/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:08.695Z"
   },
   {
     "name": "Marco Matias",
@@ -65866,7 +66160,16 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:32:01.214Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Schlager"
+    ],
+    "popularity": {
+      "listeners": 42,
+      "playcount": 218
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bafbb12d5ac313c723df43190d9b14b4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:09.557Z"
   },
   {
     "name": "Marco Mendoza",
@@ -65882,7 +66185,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7d1ebc92-1be4-4d3e-a939-c7a59025ff40"
+    "mbid": "7d1ebc92-1be4-4d3e-a939-c7a59025ff40",
+    "genres": [
+      "hard rock",
+      "Progressive",
+      "melodic hard rock",
+      "funk-rock",
+      "bandcamp com"
+    ],
+    "popularity": {
+      "listeners": 4630,
+      "playcount": 33596
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/68b766ee668316c683092dc3930113e0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:10.302Z"
   },
   {
     "name": "Marco Minnemann",
@@ -65898,7 +66214,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b375056c-efc8-4d23-871f-9b7a02e2970e"
+    "mbid": "b375056c-efc8-4d23-871f-9b7a02e2970e",
+    "genres": [
+      "Fusion",
+      "Progressive rock",
+      "drums",
+      "jazz",
+      "drummer"
+    ],
+    "popularity": {
+      "listeners": 8539,
+      "playcount": 131583
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d9f86c1fd7a416a87bac961636b44b1e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:10.984Z"
   },
   {
     "name": "Marco Pereira",
@@ -65915,14 +66244,33 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:32:13.904Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "guitar",
+      "instrumental",
+      "choro",
+      "classical guitar",
+      "brasil"
+    ],
+    "popularity": {
+      "listeners": 21241,
+      "playcount": 121438
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/36441aec7af8f6d22f5e3d8e4ca1854f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:11.694Z"
   },
   {
     "name": "Marco Restrepo",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:14.841Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:32:15.160Z"
+    "autoTriedAt": "2026-07-11T00:32:15.160Z",
+    "popularity": {
+      "listeners": 29,
+      "playcount": 112
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/52f765770416dc590437868b924d26ac/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:12.528Z"
   },
   {
     "name": "Marco Sfogli",
@@ -65938,7 +66286,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "352c7ae2-8fe5-4de5-8e58-6904a6720184"
+    "mbid": "352c7ae2-8fe5-4de5-8e58-6904a6720184",
+    "genres": [
+      "guitar virtuoso",
+      "Progressive metal",
+      "instrumental",
+      "guitar",
+      "experimental"
+    ],
+    "popularity": {
+      "listeners": 24279,
+      "playcount": 426160
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f4b5759352e7ad5b637875bbaf2cb8b9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:13.320Z"
   },
   {
     "name": "Marco Stroppa",
@@ -65954,7 +66315,19 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8ae01228-6c76-47b7-bc50-1a5d8a3ffa96"
+    "mbid": "8ae01228-6c76-47b7-bc50-1a5d8a3ffa96",
+    "genres": [
+      "contemporary classical",
+      "composer",
+      "italian",
+      "spectral",
+      "Spectralism"
+    ],
+    "popularity": {
+      "listeners": 950,
+      "playcount": 6426
+    },
+    "metaEnrichedAt": "2026-07-11T10:33:13.962Z"
   },
   {
     "name": "Marco Uccellini",
@@ -65970,7 +66343,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:32:20.078Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "baroque",
+      "italian",
+      "Classical",
+      "composer",
+      "italian baroque"
+    ],
+    "popularity": {
+      "listeners": 3295,
+      "playcount": 21360
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:14.697Z"
   },
   {
     "name": "Marconi Union",
@@ -65986,7 +66372,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "3f9b5837-ed1c-413e-bfef-ca4f892dcc59"
+    "mbid": "3f9b5837-ed1c-413e-bfef-ca4f892dcc59",
+    "genres": [
+      "ambient",
+      "downtempo",
+      "post-rock",
+      "chillout",
+      "electronic"
+    ],
+    "popularity": {
+      "listeners": 298222,
+      "playcount": 7143560
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4edfb016cfe3ce2f81a6613f33c10845/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:15.346Z"
   },
   {
     "name": "Marcos Balter",
@@ -66002,14 +66401,31 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:32:24.594Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "contemporary classical",
+      "composer",
+      "rio de janeiro",
+      "instrumental",
+      "brazil"
+    ],
+    "popularity": {
+      "listeners": 8016,
+      "playcount": 36942
+    },
+    "metaEnrichedAt": "2026-07-11T10:33:15.985Z"
   },
   {
     "name": "Marcos Curiel",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:14.841Z",
     "mbid": "786c3287-900f-4368-8aaa-b7545e873903",
-    "autoTriedAt": "2026-07-11T00:32:30.200Z"
+    "autoTriedAt": "2026-07-11T00:32:30.200Z",
+    "popularity": {
+      "listeners": 353,
+      "playcount": 1010
+    },
+    "metaEnrichedAt": "2026-07-11T10:33:16.695Z"
   },
   {
     "name": "Marcos Llunas",
@@ -66025,7 +66441,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "450f09cf-355a-4c18-bbbb-cb742df35121"
+    "mbid": "450f09cf-355a-4c18-bbbb-cb742df35121",
+    "genres": [
+      "Eurovision",
+      "spain",
+      "pop",
+      "latin",
+      "spanish"
+    ],
+    "popularity": {
+      "listeners": 16238,
+      "playcount": 116394
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c6849db208a0d22e78dcde4e9262f3e4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:17.386Z"
   },
   {
     "name": "Marcos Witt",
@@ -66041,7 +66470,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c8c2fc75-802f-455d-9c01-41161de24181"
+    "mbid": "c8c2fc75-802f-455d-9c01-41161de24181",
+    "genres": [
+      "gospel",
+      "Musica Cristiana",
+      "jesus",
+      "christian",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 40433,
+      "playcount": 1438617
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/375a78d2d2eeb34d63426aefeaad1c09/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:18.017Z"
   },
   {
     "name": "Marcus Adoro",
@@ -66057,7 +66499,12 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "77e43c1f-36f8-4549-926d-36ae17138f8e"
+    "mbid": "77e43c1f-36f8-4549-926d-36ae17138f8e",
+    "popularity": {
+      "listeners": 8,
+      "playcount": 170
+    },
+    "metaEnrichedAt": "2026-07-11T10:33:18.692Z"
   },
   {
     "name": "Marcus Belgrave",
@@ -66073,7 +66520,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1dc2a712-9f1a-4485-be39-92519a2af013"
+    "mbid": "1dc2a712-9f1a-4485-be39-92519a2af013",
+    "genres": [
+      "jazz",
+      "trumpet",
+      "detroit",
+      "free jazz",
+      "jazz fusion"
+    ],
+    "popularity": {
+      "listeners": 7463,
+      "playcount": 30776
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/441ebe15c6ac6f01938d90fe1449129b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:19.717Z"
   },
   {
     "name": "Marcus Canty",
@@ -66089,7 +66549,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "872e8a9c-c753-48c1-a880-a4018c0c48d6"
+    "mbid": "872e8a9c-c753-48c1-a880-a4018c0c48d6",
+    "genres": [
+      "rnb",
+      "soul",
+      "X factor",
+      "male vocalists",
+      "r&b"
+    ],
+    "popularity": {
+      "listeners": 12494,
+      "playcount": 65619
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/faeffea2f38cdc6561c7ce4d0f9f5d1f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:20.382Z"
   },
   {
     "name": "Marcus Cole",
@@ -66097,7 +66570,18 @@
     "wdBulkTriedAt": "2026-07-07T07:18:14.841Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "57235cee-9fac-4d6c-be30-66b8a1f6d10a",
-    "autoTriedAt": "2026-07-11T00:32:41.054Z"
+    "autoTriedAt": "2026-07-11T00:32:41.054Z",
+    "genres": [
+      "gospel",
+      "soul",
+      "male vocalists",
+      "I like the beat to this song"
+    ],
+    "popularity": {
+      "listeners": 1753,
+      "playcount": 12869
+    },
+    "metaEnrichedAt": "2026-07-11T10:33:21.065Z"
   },
   {
     "name": "Marcus Cooper",
@@ -66105,7 +66589,12 @@
     "wdBulkTriedAt": "2026-07-07T07:18:14.841Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "aa6b3a5a-a0bb-4fe3-aa31-f54dc332d60b",
-    "autoTriedAt": "2026-07-11T00:32:48.489Z"
+    "autoTriedAt": "2026-07-11T00:32:48.489Z",
+    "popularity": {
+      "listeners": 139,
+      "playcount": 660
+    },
+    "metaEnrichedAt": "2026-07-11T10:33:21.732Z"
   },
   {
     "name": "Marcus Dahlström",
@@ -66113,14 +66602,27 @@
     "wdBulkTriedAt": "2026-07-07T07:18:14.841Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "ad4d8651-3a79-406d-804f-7065291a9ca7",
-    "autoTriedAt": "2026-07-11T00:32:51.410Z"
+    "autoTriedAt": "2026-07-11T00:32:51.410Z",
+    "genres": [
+      "Blindside"
+    ],
+    "popularity": {
+      "listeners": 2,
+      "playcount": 4
+    },
+    "metaEnrichedAt": "2026-07-11T10:33:22.354Z"
   },
   {
     "name": "Marcus Eoin",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:14.841Z",
     "mbid": "74edfdf2-4e76-4031-ae9b-16f1c7b4ba06",
-    "autoTriedAt": "2026-07-11T00:32:53.976Z"
+    "autoTriedAt": "2026-07-11T00:32:53.976Z",
+    "popularity": {
+      "listeners": 39,
+      "playcount": 193
+    },
+    "metaEnrichedAt": "2026-07-11T10:33:23.057Z"
   },
   {
     "name": "Marcus Hummon",
@@ -66136,7 +66638,13 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "3f12a151-46d1-4814-bb14-4d1b05e6a30c"
+    "mbid": "3f12a151-46d1-4814-bb14-4d1b05e6a30c",
+    "popularity": {
+      "listeners": 1381,
+      "playcount": 7080
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ba50a13a148f21ea0d5959c6f25f0bca/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:23.972Z"
   },
   {
     "name": "Marcus Miller",
@@ -66152,7 +66660,20 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T00:32:54.377Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "jazz",
+      "bass",
+      "funk",
+      "Fusion",
+      "jazz fusion"
+    ],
+    "popularity": {
+      "listeners": 303794,
+      "playcount": 4457223
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ebd4d6d39b53ec2c267e803222bc227b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:24.580Z"
   },
   {
     "name": "Marcus Mumford",
@@ -66169,7 +66690,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:32:56.951Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "folk",
+      "indie",
+      "folk rock",
+      "singer-songwriter",
+      "indie folk"
+    ],
+    "popularity": {
+      "listeners": 142352,
+      "playcount": 1231805
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6a7b47de407b14652518822e388940e9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:25.705Z"
   },
   {
     "name": "Marcus Reeves",
@@ -66185,7 +66719,13 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 244,
+      "playcount": 1025
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8d3a1284b05bf84cc84672fc57bf74f9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:26.460Z"
   },
   {
     "name": "Marcus Roberts",
@@ -66202,7 +66742,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:32:59.720Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "piano",
+      "jazz piano",
+      "contemporary mainstream jazz piano",
+      "piano jazz"
+    ],
+    "popularity": {
+      "listeners": 74565,
+      "playcount": 310612
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d6a96380f674ce280fab1c17b5ae412f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:27.138Z"
   },
   {
     "name": "Marcus Schmickler",
@@ -66218,14 +66771,32 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0629b862-cc45-4d4f-90ca-8e85c5908376"
+    "mbid": "0629b862-cc45-4d4f-90ca-8e85c5908376",
+    "genres": [
+      "experimental",
+      "electroacoustic",
+      "soundscape",
+      "ambient",
+      "drone"
+    ],
+    "popularity": {
+      "listeners": 4751,
+      "playcount": 29944
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9959be6b4f6a77fd296fc0519105cba3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:27.862Z"
   },
   {
     "name": "Marcus Siepen",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:14.841Z",
     "mbid": "6522116e-916d-4c9c-9249-a976ef4713a6",
-    "autoTriedAt": "2026-07-11T00:33:02.298Z"
+    "autoTriedAt": "2026-07-11T00:33:02.298Z",
+    "popularity": {
+      "listeners": 18,
+      "playcount": 136
+    },
+    "metaEnrichedAt": "2026-07-11T10:33:28.587Z"
   },
   {
     "name": "Marcus Thompson",
@@ -66242,7 +66813,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:33:09.941Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "chillout",
+      "electronic",
+      "American classical viola damore players",
+      "ksd"
+    ],
+    "popularity": {
+      "listeners": 274,
+      "playcount": 1587
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/96b270ce9bf9f4156148b590e8379b8c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:29.250Z"
   },
   {
     "name": "Marcus Turner",
@@ -66250,14 +66833,22 @@
     "wdBulkTriedAt": "2026-07-07T07:18:14.841Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "decf67f1-c1fe-474e-8f9a-9380e9b2391d",
-    "autoTriedAt": "2026-07-11T00:33:12.474Z"
+    "autoTriedAt": "2026-07-11T00:33:12.474Z",
+    "popularity": {
+      "listeners": 23,
+      "playcount": 361
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/82d06b173f07803d07d615f3f0a57816/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:29.993Z"
   },
   {
     "name": "Marcus Wibberley",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:14.841Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:33:13.712Z"
+    "autoTriedAt": "2026-07-11T00:33:13.712Z",
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:30.601Z"
   },
   {
     "name": "Marcy Marxer",
@@ -66265,7 +66856,13 @@
     "wdBulkTriedAt": "2026-07-07T07:18:14.841Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "2f35fb55-8f24-4a8d-9d36-84ef9968754c",
-    "autoTriedAt": "2026-07-11T00:33:16.256Z"
+    "autoTriedAt": "2026-07-11T00:33:16.256Z",
+    "popularity": {
+      "listeners": 1502,
+      "playcount": 4839
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/57d8bd080253d301f091d1fdff6dbc90/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:31.310Z"
   },
   {
     "name": "Marcy Playground",
@@ -66281,7 +66878,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "64cdc08f-ba6f-41fe-94be-452dc6d5108e"
+    "mbid": "64cdc08f-ba6f-41fe-94be-452dc6d5108e",
+    "genres": [
+      "alternative rock",
+      "alternative",
+      "rock",
+      "90s",
+      "indie"
+    ],
+    "popularity": {
+      "listeners": 1199939,
+      "playcount": 13066993
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4c776f3d93cab555659193aca24c66f0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:31.882Z"
   },
   {
     "name": "Marduk",
@@ -66297,7 +66907,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b7dc7c76-53f1-49ac-8dc2-d469ed7f8e65"
+    "mbid": "b7dc7c76-53f1-49ac-8dc2-d469ed7f8e65",
+    "genres": [
+      "black metal",
+      "swedish black metal",
+      "swedish",
+      "death metal",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 280627,
+      "playcount": 18665070
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b843d6f6c2cf5ca26d4bf4aed8bc0dac/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:32.491Z"
   },
   {
     "name": "Mare",
@@ -66314,7 +66937,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:33:18.780Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "black metal",
+      "Sludge",
+      "experimental",
+      "doom metal",
+      "Norwegian Black Metal"
+    ],
+    "popularity": {
+      "listeners": 62803,
+      "playcount": 680568
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f0b7f40954b3e43f4ea585c1ecdeaf19/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:33.125Z"
   },
   {
     "name": "Marea",
@@ -66331,7 +66967,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:33:27.281Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "rock",
+      "Spanish Rock",
+      "Rock Urbano",
+      "spanish",
+      "hard rock"
+    ],
+    "popularity": {
+      "listeners": 124650,
+      "playcount": 5181847
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/eae7f8533321a24d4944f85c16fb5c23/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:33.725Z"
   },
   {
     "name": "Marek Grechuta",
@@ -66348,7 +66997,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:33:35.820Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "polish",
+      "poetry",
+      "poezja spiewana",
+      "singer-songwriter",
+      "poezja śpiewana"
+    ],
+    "popularity": {
+      "listeners": 198391,
+      "playcount": 7229812
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9e29dd2dd3ad94102a3623d806582093/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:34.365Z"
   },
   {
     "name": "Marek Napiórkowski",
@@ -66364,7 +67026,19 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "36de1ab2-9ea8-405c-9cf4-d55d2ed55b80"
+    "mbid": "36de1ab2-9ea8-405c-9cf4-d55d2ed55b80",
+    "genres": [
+      "jazz",
+      "polish",
+      "guitar",
+      "acoustic",
+      "Smooth Jazz"
+    ],
+    "popularity": {
+      "listeners": 3489,
+      "playcount": 45980
+    },
+    "metaEnrichedAt": "2026-07-11T10:33:34.985Z"
   },
   {
     "name": "Maren Morris",
@@ -66380,7 +67054,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "109357f0-eb37-4672-9697-dca8c83a61b5"
+    "mbid": "109357f0-eb37-4672-9697-dca8c83a61b5",
+    "genres": [
+      "country",
+      "singer-songwriter",
+      "female vocalists",
+      "country pop",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 533619,
+      "playcount": 9349712
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bf7ea8528075987ec917ad785c36d3cb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:35.663Z"
   },
   {
     "name": "Maren Ord",
@@ -66396,7 +67083,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e69d78ea-91f7-4682-aa17-9d977fea382f"
+    "mbid": "e69d78ea-91f7-4682-aa17-9d977fea382f",
+    "genres": [
+      "female vocalists",
+      "Canadian",
+      "pop",
+      "folk",
+      "LDS"
+    ],
+    "popularity": {
+      "listeners": 11455,
+      "playcount": 87764
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/128a4ea52d144976415945427987cd40/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:36.364Z"
   },
   {
     "name": "Marga Bult",
@@ -66412,14 +67112,32 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5e5a2c99-1224-4781-a9ef-dc820cfe35f8"
+    "mbid": "5e5a2c99-1224-4781-a9ef-dc820cfe35f8",
+    "genres": [
+      "dutch",
+      "netherlands",
+      "female vocalists",
+      "Nederlandstalig",
+      "Eurovision"
+    ],
+    "popularity": {
+      "listeners": 439,
+      "playcount": 2344
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d31866f5e06f6983205233ba2f58a3bd/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:37.109Z"
   },
   {
     "name": "Marga Scheide",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:14.841Z",
     "mbid": "b8d94fd8-e508-4b5a-936d-46050bd16a8d",
-    "autoTriedAt": "2026-07-11T00:33:38.348Z"
+    "autoTriedAt": "2026-07-11T00:33:38.348Z",
+    "popularity": {
+      "listeners": 4,
+      "playcount": 319
+    },
+    "metaEnrichedAt": "2026-07-11T10:33:37.799Z"
   },
   {
     "name": "Margalit Tzan'ani",
@@ -66435,14 +67153,28 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "997569ef-56b7-4a46-b00c-352a335501d4"
+    "mbid": "997569ef-56b7-4a46-b00c-352a335501d4",
+    "genres": [
+      "yemen",
+      "pop",
+      "Israel",
+      "israeli",
+      "mizrahit"
+    ],
+    "popularity": {
+      "listeners": 4638,
+      "playcount": 81884
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2ed9f9de1df1ffd3ecc0467f08df388e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:38.559Z"
   },
   {
     "name": "Margaret Ada Sutherland",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:14.841Z",
     "mbid": "00e64be4-b486-492e-8b7f-08dabb187c7f",
-    "autoTriedAt": "2026-07-11T00:33:39.600Z"
+    "autoTriedAt": "2026-07-11T00:33:39.600Z",
+    "metaTriedAt": "2026-07-11T10:33:39.178Z"
   },
   {
     "name": "Margaret Barry",
@@ -66450,7 +67182,20 @@
     "wdBulkTriedAt": "2026-07-07T07:18:14.841Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "c5c99997-eadb-4318-a0f4-0b1421100972",
-    "autoTriedAt": "2026-07-11T00:33:42.153Z"
+    "autoTriedAt": "2026-07-11T00:33:42.153Z",
+    "genres": [
+      "celtic",
+      "folk",
+      "ireland",
+      "irish",
+      "margaret barry"
+    ],
+    "popularity": {
+      "listeners": 3851,
+      "playcount": 21421
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/750dcf356412d22e84f5a54cbc22ad47/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:39.818Z"
   },
   {
     "name": "Margaret Berger",
@@ -66467,7 +67212,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:33:56.255Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "pop",
+      "norwegian",
+      "electronic",
+      "female vocalists",
+      "electropop"
+    ],
+    "popularity": {
+      "listeners": 79964,
+      "playcount": 1165991
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1b8c4fa0dfeb9f6d7a58b77435e1f33d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:40.518Z"
   },
   {
     "name": "Margaret Cho",
@@ -66484,7 +67242,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:33:58.876Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "comedy",
+      "stand-up",
+      "female vocalists",
+      "funny",
+      "stand-up comedy"
+    ],
+    "popularity": {
+      "listeners": 36313,
+      "playcount": 411742
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/be439d3197e19d95c07abef7cffd37a2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:41.499Z"
   },
   {
     "name": "Margaret Durante",
@@ -66500,7 +67271,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "9e111c99-af67-4ac6-bdd6-77f8179b3810"
+    "mbid": "9e111c99-af67-4ac6-bdd6-77f8179b3810",
+    "genres": [
+      "Disney",
+      "country",
+      "american",
+      "female vocal",
+      "disney shake it up"
+    ],
+    "popularity": {
+      "listeners": 13837,
+      "playcount": 71370
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a9f78cf453f87dba78a0ca97cb1aebd2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:42.280Z"
   },
   {
     "name": "Margaret Fingerhut",
@@ -66516,14 +67300,27 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:34:07.042Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "piano",
+      "Classical",
+      "pianiste",
+      "british"
+    ],
+    "popularity": {
+      "listeners": 466,
+      "playcount": 7868
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9d6faf90ac3bb1073966c20fd318e5f5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:43.370Z"
   },
   {
     "name": "Margaret Hamerik",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:14.841Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:34:08.298Z"
+    "autoTriedAt": "2026-07-11T00:34:08.298Z",
+    "metaTriedAt": "2026-07-11T10:33:43.995Z"
   },
   {
     "name": "Margaret Healy",
@@ -66531,7 +67328,12 @@
     "wdBulkTriedAt": "2026-07-07T07:18:14.841Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "a24ee5be-75c8-4b0b-b099-84e9b78a6770",
-    "autoTriedAt": "2026-07-11T00:34:10.806Z"
+    "autoTriedAt": "2026-07-11T00:34:10.806Z",
+    "popularity": {
+      "listeners": 67,
+      "playcount": 353
+    },
+    "metaEnrichedAt": "2026-07-11T10:33:44.644Z"
   },
   {
     "name": "Margaret MacArthur",
@@ -66539,14 +67341,29 @@
     "wdBulkTriedAt": "2026-07-07T07:18:14.841Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "eeae29bd-855e-48d7-9338-9fdf17a79e8b",
-    "autoTriedAt": "2026-07-11T00:34:13.379Z"
+    "autoTriedAt": "2026-07-11T00:34:13.379Z",
+    "genres": [
+      "folk",
+      "NEFFA Festival"
+    ],
+    "popularity": {
+      "listeners": 457,
+      "playcount": 2896
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ab524aefd760c4676a9d4df6706451ab/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:45.692Z"
   },
   {
     "name": "Margaret Matzenauer",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:14.841Z",
     "mbid": "3c73f9b7-6e89-422e-af12-6888ef4c9e93",
-    "autoTriedAt": "2026-07-11T00:34:22.248Z"
+    "autoTriedAt": "2026-07-11T00:34:22.248Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 4
+    },
+    "metaEnrichedAt": "2026-07-11T10:33:46.361Z"
   },
   {
     "name": "Margaret Singana",
@@ -66562,7 +67379,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "3eca8abe-c803-4fa2-91be-fe0a4bb9a587"
+    "mbid": "3eca8abe-c803-4fa2-91be-fe0a4bb9a587",
+    "genres": [
+      "gospel",
+      "All",
+      "Home collection",
+      "south africa",
+      "world"
+    ],
+    "popularity": {
+      "listeners": 8916,
+      "playcount": 39236
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/503eb0c07b67d3fe1c75404f270aec1a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:46.970Z"
   },
   {
     "name": "Margaret Sutherland",
@@ -66579,7 +67409,17 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:34:24.809Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Classical",
+      "modern classical",
+      "-"
+    ],
+    "popularity": {
+      "listeners": 159,
+      "playcount": 1235
+    },
+    "metaEnrichedAt": "2026-07-11T10:33:47.655Z"
   },
   {
     "name": "Margaret Urlich",
@@ -66595,7 +67435,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1431b6c7-b224-4ab2-aaa6-e3545a8afa3f"
+    "mbid": "1431b6c7-b224-4ab2-aaa6-e3545a8afa3f",
+    "genres": [
+      "soul",
+      "New Zealand",
+      "pop",
+      "female vocalists",
+      "1990"
+    ],
+    "popularity": {
+      "listeners": 4555,
+      "playcount": 40627
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a45a163cfdd1d4fe40700d3771ff4b7b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:48.313Z"
   },
   {
     "name": "Margaret Whiting",
@@ -66612,7 +67465,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:34:38.998Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "40s",
+      "female vocalists",
+      "swing",
+      "50s"
+    ],
+    "popularity": {
+      "listeners": 196249,
+      "playcount": 2161235
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ec95513732e3df7c49e107edbc82d6c6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:49.170Z"
   },
   {
     "name": "Margareta Pâslaru",
@@ -66628,7 +67494,18 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "40a22aae-b76d-4232-bddb-dd01c34852e0"
+    "mbid": "40a22aae-b76d-4232-bddb-dd01c34852e0",
+    "genres": [
+      "1958",
+      "romanian oldies",
+      "Serious Range",
+      "unicef"
+    ],
+    "popularity": {
+      "listeners": 195,
+      "playcount": 1549
+    },
+    "metaEnrichedAt": "2026-07-11T10:33:49.787Z"
   },
   {
     "name": "Margareth Menezes",
@@ -66644,7 +67521,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ada1a988-1510-45e8-9cb2-268a36d19d5a"
+    "mbid": "ada1a988-1510-45e8-9cb2-268a36d19d5a",
+    "genres": [
+      "pop",
+      "latin",
+      "Angelique Kidjo",
+      "world",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 75820,
+      "playcount": 667360
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/276ba1433144173366f669db92a709b6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:50.427Z"
   },
   {
     "name": "Margarita Rosa de Francisco",
@@ -66660,7 +67550,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "fb754318-7696-42b3-8b9d-972980703a86"
+    "mbid": "fb754318-7696-42b3-8b9d-972980703a86",
+    "genres": [
+      "Colombia",
+      "latin pop",
+      "vocal",
+      "Fusion",
+      "jazz"
+    ],
+    "popularity": {
+      "listeners": 3540,
+      "playcount": 51990
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cbaccb84a3b6dbe20a1eb8a97f7ab206/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:51.095Z"
   },
   {
     "name": "Margaux Avril",
@@ -66676,14 +67579,39 @@
     },
     "enrichedAt": "2026-07-07T07:18:14.841Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5c082d68-93f2-4d1c-bed6-e7b24ef5fe95"
+    "mbid": "5c082d68-93f2-4d1c-bed6-e7b24ef5fe95",
+    "genres": [
+      "french",
+      "pop",
+      "female vocalists",
+      "france",
+      "Avril"
+    ],
+    "popularity": {
+      "listeners": 10187,
+      "playcount": 92998
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7169cf4e5d51c6c2ef79d73179a1658e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:51.842Z"
   },
   {
     "name": "Marge Champion",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbid": "8639b12a-72e9-43fe-9f01-9ea77b2bca80",
-    "autoTriedAt": "2026-07-11T00:34:41.658Z"
+    "autoTriedAt": "2026-07-11T00:34:41.658Z",
+    "genres": [
+      "Broadway",
+      "dance",
+      "Soundtrack",
+      "comedy",
+      "film"
+    ],
+    "popularity": {
+      "listeners": 193,
+      "playcount": 531
+    },
+    "metaEnrichedAt": "2026-07-11T10:33:52.570Z"
   },
   {
     "name": "Margie Evans",
@@ -66699,14 +67627,29 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:34:44.446Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "blues"
+    ],
+    "popularity": {
+      "listeners": 469,
+      "playcount": 2129
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c202ec820604afd126d1d48b229d9494/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:53.213Z"
   },
   {
     "name": "Margie Hyams",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbid": "0296aafa-86d3-4371-8874-caa8601c3c2c",
-    "autoTriedAt": "2026-07-11T00:34:46.094Z"
+    "autoTriedAt": "2026-07-11T00:34:46.094Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 2
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:53.841Z"
   },
   {
     "name": "Margie Singleton",
@@ -66722,7 +67665,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:34:55.844Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "country",
+      "All",
+      "spotify",
+      "Hot Rockin Girl"
+    ],
+    "popularity": {
+      "listeners": 1217,
+      "playcount": 4652
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8420513486064b44c8e78be78eb405b1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:54.602Z"
   },
   {
     "name": "Marginal Prophets",
@@ -66730,21 +67685,49 @@
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "efa9006a-a452-45a3-a47c-94768726ac42",
-    "autoTriedAt": "2026-07-11T00:35:13.516Z"
+    "autoTriedAt": "2026-07-11T00:35:13.516Z",
+    "genres": [
+      "indie hip-hop",
+      "Keith knight"
+    ],
+    "popularity": {
+      "listeners": 648,
+      "playcount": 3534
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d2837802c8e8397ab7eb856a08e4281d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:55.303Z"
   },
   {
     "name": "Margita Stefanović",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbid": "999ee43c-eb06-4817-b15b-99c0e1cc9dd5",
-    "autoTriedAt": "2026-07-11T00:35:23.343Z"
+    "autoTriedAt": "2026-07-11T00:35:23.343Z",
+    "popularity": {
+      "listeners": 6,
+      "playcount": 38
+    },
+    "metaEnrichedAt": "2026-07-11T10:33:55.945Z"
   },
   {
     "name": "Margo Smith",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbid": "db72b99d-5c6d-45db-ad72-117b679e689e",
-    "autoTriedAt": "2026-07-11T00:35:25.979Z"
+    "autoTriedAt": "2026-07-11T00:35:25.979Z",
+    "genres": [
+      "country",
+      "Uplifting",
+      "gospel",
+      "USA",
+      "inspirational"
+    ],
+    "popularity": {
+      "listeners": 2237,
+      "playcount": 12615
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/01b2af085d12380f1a7ea8f8876a6740/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:56.635Z"
   },
   {
     "name": "Margo Timmins",
@@ -66760,7 +67743,18 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:35:28.577Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "female vocalists",
+      "Lo-Fi",
+      "best ever"
+    ],
+    "popularity": {
+      "listeners": 576,
+      "playcount": 10611
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4827a8052d64de4be5a8fc4f881c55f3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:57.291Z"
   },
   {
     "name": "Margot",
@@ -66777,7 +67771,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:35:31.147Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "electronic",
+      "techno",
+      "House",
+      "minimal",
+      "Italy"
+    ],
+    "popularity": {
+      "listeners": 30819,
+      "playcount": 164523
+    },
+    "metaEnrichedAt": "2026-07-11T10:33:57.981Z"
   },
   {
     "name": "Margot Eskens",
@@ -66793,7 +67799,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:16.665Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "31f7407b-5bb7-462c-8862-3d56ba9cabed"
+    "mbid": "31f7407b-5bb7-462c-8862-3d56ba9cabed",
+    "genres": [
+      "margot eskens",
+      "60s",
+      "schlageroldies",
+      "Schlager",
+      "deutsch"
+    ],
+    "popularity": {
+      "listeners": 11453,
+      "playcount": 92427
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/77fa06ebe321bd924a374510532d7931/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:58.668Z"
   },
   {
     "name": "Margot Leverett",
@@ -66801,21 +67820,41 @@
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "179e7702-172a-4838-8af0-a30fe077031f",
-    "autoTriedAt": "2026-07-11T00:35:33.733Z"
+    "autoTriedAt": "2026-07-11T00:35:33.733Z",
+    "genres": [
+      "world",
+      "folk",
+      "clarinet",
+      "klezmer",
+      "m leverett"
+    ],
+    "popularity": {
+      "listeners": 1049,
+      "playcount": 8480
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:33:59.272Z"
   },
   {
     "name": "Margriet Ehlen",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:35:41.486Z"
+    "autoTriedAt": "2026-07-11T00:35:41.486Z",
+    "metaTriedAt": "2026-07-11T10:33:59.879Z"
   },
   {
     "name": "Marguerite Long",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbid": "ccc6d27d-1d18-477e-8e99-5085cb8ac7d7",
-    "autoTriedAt": "2026-07-11T00:35:50.535Z"
+    "autoTriedAt": "2026-07-11T00:35:50.535Z",
+    "popularity": {
+      "listeners": 159,
+      "playcount": 770
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9f06134d7b27895cbedf0edb900b0701/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:01.063Z"
   },
   {
     "name": "Mari Boine",
@@ -66831,7 +67870,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:16.665Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "01a21615-7fdf-4fa5-afbd-dbc58c766977"
+    "mbid": "01a21615-7fdf-4fa5-afbd-dbc58c766977",
+    "genres": [
+      "folk",
+      "norwegian",
+      "Sami",
+      "female vocalists",
+      "world"
+    ],
+    "popularity": {
+      "listeners": 123526,
+      "playcount": 1383134
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b49680daf18ec1baa773f5fc3692bccc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:01.690Z"
   },
   {
     "name": "Mari Iijima",
@@ -66847,7 +67899,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:16.665Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "668f86c0-53c5-432a-bf7b-8cba488da4ee"
+    "mbid": "668f86c0-53c5-432a-bf7b-8cba488da4ee",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "anime",
+      "JPop",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 28409,
+      "playcount": 397697
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/357bb1cef0d02fa6a1762e4f7bb7e3f0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:02.372Z"
   },
   {
     "name": "Mari Kodama",
@@ -66863,7 +67928,16 @@
     },
     "enrichedAt": "2026-07-07T07:18:16.665Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "88bccfe6-547e-4175-a82e-5df1212ed926"
+    "mbid": "88bccfe6-547e-4175-a82e-5df1212ed926",
+    "genres": [
+      "piano"
+    ],
+    "popularity": {
+      "listeners": 3958,
+      "playcount": 48097
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a2c4b146bc5f06fa0c353b4aecbf6bf5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:03.054Z"
   },
   {
     "name": "Mari Kvien Brunvoll",
@@ -66879,7 +67953,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:35:53.901Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "folktronica",
+      "jazz",
+      "vocal jazz",
+      "experimental",
+      "electronic"
+    ],
+    "popularity": {
+      "listeners": 27613,
+      "playcount": 150270
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b36870132928f5dcb923c9a946a35afa/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:03.701Z"
   },
   {
     "name": "Mari Wilson",
@@ -66895,7 +67982,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:16.665Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "40742c41-b47e-457e-8961-e609b0ad5208"
+    "mbid": "40742c41-b47e-457e-8961-e609b0ad5208",
+    "genres": [
+      "pop",
+      "british",
+      "english",
+      "cabaret",
+      "alternative pop"
+    ],
+    "popularity": {
+      "listeners": 14271,
+      "playcount": 128261
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e3896b49fa21b4cfa28f9d5d874c2b89/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:04.386Z"
   },
   {
     "name": "Mari Yaguchi",
@@ -66911,28 +68011,58 @@
     },
     "enrichedAt": "2026-07-07T07:18:16.665Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "216ae41a-e16e-4363-98d7-e4bbd6be102a"
+    "mbid": "216ae41a-e16e-4363-98d7-e4bbd6be102a",
+    "genres": [
+      "j-pop",
+      "Hello Project",
+      "japanese",
+      "female vocalists",
+      "idol"
+    ],
+    "popularity": {
+      "listeners": 2326,
+      "playcount": 32871
+    },
+    "metaEnrichedAt": "2026-07-11T10:34:05.355Z"
   },
   {
     "name": "Mari Youngblood",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbid": "c2456873-5248-404c-acd9-bdb164862b56",
-    "autoTriedAt": "2026-07-11T00:35:56.599Z"
+    "autoTriedAt": "2026-07-11T00:35:56.599Z",
+    "popularity": {
+      "listeners": 5,
+      "playcount": 46
+    },
+    "metaEnrichedAt": "2026-07-11T10:34:06.011Z"
   },
   {
     "name": "Maria",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:35:57.846Z"
+    "autoTriedAt": "2026-07-11T00:35:57.846Z",
+    "genres": [
+      "j-pop",
+      "female vocalists",
+      "japanese",
+      "pop",
+      "J-rock"
+    ],
+    "popularity": {
+      "listeners": 129811,
+      "playcount": 1348487
+    },
+    "metaEnrichedAt": "2026-07-11T10:34:06.778Z"
   },
   {
     "name": "Maria Arkhipova \"Masha Scream\"",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:35:59.087Z"
+    "autoTriedAt": "2026-07-11T00:35:59.087Z",
+    "metaTriedAt": "2026-07-11T10:34:07.379Z"
   },
   {
     "name": "Maria Armanda",
@@ -66940,21 +68070,52 @@
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "8fa2385d-c88c-4430-bb0a-b0924b306849",
-    "autoTriedAt": "2026-07-11T00:36:01.628Z"
+    "autoTriedAt": "2026-07-11T00:36:01.628Z",
+    "genres": [
+      "fado",
+      "All",
+      "Portugal",
+      "female vocalist",
+      "portuguese folk"
+    ],
+    "popularity": {
+      "listeners": 1332,
+      "playcount": 5771
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/611dad7d02ceb1fca9695972caa5225f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:08.102Z"
   },
   {
     "name": "Maria Ayar",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:36:02.871Z"
+    "autoTriedAt": "2026-07-11T00:36:02.871Z",
+    "popularity": {
+      "listeners": 5,
+      "playcount": 26
+    },
+    "metaEnrichedAt": "2026-07-11T10:34:08.861Z"
   },
   {
     "name": "Maria Becerra",
     "website": null,
     "wdBulkTriedAt": "2026-07-09T08:32:10.022Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:36:10.227Z"
+    "autoTriedAt": "2026-07-11T00:36:10.227Z",
+    "genres": [
+      "argentina",
+      "Reggaeton",
+      "dancehall",
+      "pop",
+      "trap"
+    ],
+    "popularity": {
+      "listeners": 266072,
+      "playcount": 11858731
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/022b53ec2020238407549a708e068e86/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:09.452Z"
   },
   {
     "name": "Maria Bethânia",
@@ -66970,14 +68131,28 @@
     },
     "enrichedAt": "2026-07-07T07:18:16.665Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b3998c06-04e6-4b1d-bd2a-d5b83572ae7b"
+    "mbid": "b3998c06-04e6-4b1d-bd2a-d5b83572ae7b",
+    "genres": [
+      "mpb",
+      "Bossa Nova",
+      "female vocalists",
+      "brasil",
+      "brazilian"
+    ],
+    "popularity": {
+      "listeners": 589494,
+      "playcount": 28215876
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ff4c673a3d8b6b5edd5f2b6733bd8b00/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:10.295Z"
   },
   {
     "name": "Maria Breon",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbid": "fcfc0cdd-9a48-4a95-8219-68ab0e495ce7",
-    "autoTriedAt": "2026-07-11T00:36:13.320Z"
+    "autoTriedAt": "2026-07-11T00:36:13.320Z",
+    "metaTriedAt": "2026-07-11T10:34:10.975Z"
   },
   {
     "name": "Maria Brink",
@@ -66994,21 +68169,52 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:36:15.872Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "heavy metal",
+      "hard rock",
+      "alternative metal",
+      "alternative rock",
+      "industrial metal"
+    ],
+    "popularity": {
+      "listeners": 13975,
+      "playcount": 58139
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/389988aeb87fcf21c4d00b0c8c184370/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:11.628Z"
   },
   {
     "name": "Maria Cebotari",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbid": "7f9cbd6f-8864-4de4-bcf8-b25f98831c49",
-    "autoTriedAt": "2026-07-11T00:36:24.552Z"
+    "autoTriedAt": "2026-07-11T00:36:24.552Z",
+    "genres": [
+      "soprano",
+      "opera",
+      "Classical",
+      "vocal",
+      "40s"
+    ],
+    "popularity": {
+      "listeners": 545,
+      "playcount": 1791
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ea040e77ac8931876cff7d6764064692/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:12.330Z"
   },
   {
     "name": "Maria Clara Alonso",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:36:30.976Z"
+    "autoTriedAt": "2026-07-11T00:36:30.976Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 2
+    },
+    "metaEnrichedAt": "2026-07-11T10:34:13.149Z"
   },
   {
     "name": "Maria Cristina Kiehr",
@@ -67024,7 +68230,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:16.665Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "66409de3-747d-4f4d-acac-7f6eb01646ee"
+    "mbid": "66409de3-747d-4f4d-acac-7f6eb01646ee",
+    "genres": [
+      "baroque",
+      "vocal",
+      "argentina",
+      "soprano",
+      "m c kiehr"
+    ],
+    "popularity": {
+      "listeners": 1739,
+      "playcount": 6922
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e8482e4c7aa9fbdca6e428fb7703cbb4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:13.917Z"
   },
   {
     "name": "Maria D'Luz",
@@ -67040,21 +68259,52 @@
     },
     "enrichedAt": "2026-07-07T07:18:16.665Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4d3f7566-6eb5-49de-8653-60193b50f11e"
+    "mbid": "4d3f7566-6eb5-49de-8653-60193b50f11e",
+    "popularity": {
+      "listeners": 10,
+      "playcount": 103
+    },
+    "metaEnrichedAt": "2026-07-11T10:34:14.579Z"
   },
   {
     "name": "Maria da Fe",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbid": "bdcad484-36d9-426c-8ab4-d91205f85cc1",
-    "autoTriedAt": "2026-07-11T00:36:43.950Z"
+    "autoTriedAt": "2026-07-11T00:36:43.950Z",
+    "genres": [
+      "fado",
+      "portuguese",
+      "female vocalists",
+      "world",
+      "All"
+    ],
+    "popularity": {
+      "listeners": 18211,
+      "playcount": 71134
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d81daeb971ccde032bbe21d978dfb963/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:15.305Z"
   },
   {
     "name": "Maria Daniela y su Sonido Lasser",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:36:45.220Z"
+    "autoTriedAt": "2026-07-11T00:36:45.220Z",
+    "genres": [
+      "electropop",
+      "mexico",
+      "electro",
+      "electronic",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 117324,
+      "playcount": 2467410
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ec29002b9d92092bf37c71f78c9ffe53/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:16.016Z"
   },
   {
     "name": "María de la Fuente",
@@ -67062,21 +68312,44 @@
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "9bf01077-d354-4ba8-82ab-0100132a72bd",
-    "autoTriedAt": "2026-07-11T00:36:48.640Z"
+    "autoTriedAt": "2026-07-11T00:36:48.640Z",
+    "popularity": {
+      "listeners": 73,
+      "playcount": 261
+    },
+    "metaEnrichedAt": "2026-07-11T10:34:16.673Z"
   },
   {
     "name": "Maria del Mar",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:36:49.909Z"
+    "autoTriedAt": "2026-07-11T00:36:49.909Z",
+    "popularity": {
+      "listeners": 53,
+      "playcount": 164
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/caa86361327663ce561f7ed7dfa6f34f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:17.409Z"
   },
   {
     "name": "María del Mar Bonet",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:36:51.539Z"
+    "autoTriedAt": "2026-07-11T00:36:51.539Z",
+    "genres": [
+      "españa",
+      "folk",
+      "spain",
+      "cantautor",
+      "Maria del Mar Bonet"
+    ],
+    "popularity": {
+      "listeners": 855,
+      "playcount": 7071
+    },
+    "metaEnrichedAt": "2026-07-11T10:34:18.095Z"
   },
   {
     "name": "María Dolores Pradera",
@@ -67092,35 +68365,79 @@
     },
     "enrichedAt": "2026-07-07T07:18:16.665Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "209775df-4c76-4a74-be67-f0f425186dea"
+    "mbid": "209775df-4c76-4a74-be67-f0f425186dea",
+    "genres": [
+      "spanish",
+      "latin",
+      "spain",
+      "folk",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 7801,
+      "playcount": 108796
+    },
+    "metaEnrichedAt": "2026-07-11T10:34:19.364Z"
   },
   {
     "name": "María Elena Walsh",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbid": "0059d0f1-8d04-4363-a2b2-d79f8b9a29b8",
-    "autoTriedAt": "2026-07-11T00:36:54.132Z"
+    "autoTriedAt": "2026-07-11T00:36:54.132Z",
+    "genres": [
+      "argentina",
+      "folk",
+      "pop",
+      "female vocalist",
+      "kids"
+    ],
+    "popularity": {
+      "listeners": 17293,
+      "playcount": 394551
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f96c9282506f907ac791d9bb9ef9cc34/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:20.067Z"
   },
   {
     "name": "Maria Eugenia Suarez",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:36:55.369Z"
+    "autoTriedAt": "2026-07-11T00:36:55.369Z",
+    "popularity": {
+      "listeners": 10,
+      "playcount": 186
+    },
+    "metaEnrichedAt": "2026-07-11T10:34:20.730Z"
   },
   {
     "name": "Maria Fernanda Neil",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:36:56.615Z"
+    "autoTriedAt": "2026-07-11T00:36:56.615Z",
+    "metaTriedAt": "2026-07-11T10:34:21.349Z"
   },
   {
     "name": "Maria Friedman",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbid": "e7fc9b70-d2b3-4eaf-ba6f-ab04620de9d1",
-    "autoTriedAt": "2026-07-11T00:36:59.414Z"
+    "autoTriedAt": "2026-07-11T00:36:59.414Z",
+    "genres": [
+      "Soundtrack",
+      "Musical theatre",
+      "musicals",
+      "musical",
+      "Soundtracks"
+    ],
+    "popularity": {
+      "listeners": 4472,
+      "playcount": 30933
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/19f25ef760d6a478e3c8b46d05fb330c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:22.293Z"
   },
   {
     "name": "Maria Grenfell",
@@ -67136,35 +68453,89 @@
     },
     "enrichedAt": "2026-07-07T07:18:16.665Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a8ab805f-9247-4937-8d50-107a5f84cdf5"
+    "mbid": "a8ab805f-9247-4937-8d50-107a5f84cdf5",
+    "genres": [
+      "contemporary classical",
+      "New Zealand"
+    ],
+    "popularity": {
+      "listeners": 186,
+      "playcount": 704
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:22.901Z"
   },
   {
     "name": "María Grever",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbid": "fbd20a33-1e13-4685-a91a-2f02aacdd92b",
-    "autoTriedAt": "2026-07-11T00:37:04.638Z"
+    "autoTriedAt": "2026-07-11T00:37:04.638Z",
+    "genres": [
+      "oldies",
+      "All"
+    ],
+    "popularity": {
+      "listeners": 2410,
+      "playcount": 8000
+    },
+    "metaEnrichedAt": "2026-07-11T10:34:23.545Z"
   },
   {
     "name": "Maria Grinberg",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:37:05.875Z"
+    "autoTriedAt": "2026-07-11T00:37:05.875Z",
+    "genres": [
+      "piano",
+      "beethoven",
+      "m grinberg"
+    ],
+    "popularity": {
+      "listeners": 342,
+      "playcount": 6281
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/eb94da31af1952bcf5de1e9ed210a9ff/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:24.203Z"
   },
   {
     "name": "Maria Guinot",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbid": "968ac4a0-f534-4423-9b66-f8d32fc5aa60",
-    "autoTriedAt": "2026-07-11T00:37:11.456Z"
+    "autoTriedAt": "2026-07-11T00:37:11.456Z",
+    "genres": [
+      "Eurovision",
+      "female vocalists",
+      "Eurovision Song Contest",
+      "portuguese",
+      "ESC"
+    ],
+    "popularity": {
+      "listeners": 612,
+      "playcount": 3630
+    },
+    "metaEnrichedAt": "2026-07-11T10:34:24.867Z"
   },
   {
     "name": "Maria Helena Rosas Fernandes",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:37:12.696Z"
+    "autoTriedAt": "2026-07-11T00:37:12.696Z",
+    "genres": [
+      "20th Century",
+      "female",
+      "Female Composer",
+      "brazilian",
+      "20th"
+    ],
+    "popularity": {
+      "listeners": 330,
+      "playcount": 955
+    },
+    "metaEnrichedAt": "2026-07-11T10:34:25.529Z"
   },
   {
     "name": "María Isabel",
@@ -67172,7 +68543,20 @@
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "03f2f28f-53ab-4d88-a659-0b8dfa0bfd70",
-    "autoTriedAt": "2026-07-11T00:37:15.271Z"
+    "autoTriedAt": "2026-07-11T00:37:15.271Z",
+    "genres": [
+      "pop",
+      "spanish",
+      "latin",
+      "flamenco pop",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 115550,
+      "playcount": 1034818
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/10611975e5795794937a93f603e4484a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:26.252Z"
   },
   {
     "name": "María Isabel Siewers",
@@ -67188,7 +68572,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:37:23.721Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Classical",
+      "guitar",
+      "argentina",
+      "classical guitar",
+      "argentine"
+    ],
+    "popularity": {
+      "listeners": 265,
+      "playcount": 1929
+    },
+    "metaEnrichedAt": "2026-07-11T10:34:26.884Z"
   },
   {
     "name": "María Jiménez",
@@ -67196,7 +68592,19 @@
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "9beb3dae-2bc8-4d05-afb7-2c9ddb06fe52",
-    "autoTriedAt": "2026-07-11T00:37:28.710Z"
+    "autoTriedAt": "2026-07-11T00:37:28.710Z",
+    "genres": [
+      "spanish",
+      "female vocalists",
+      "spain",
+      "Flamenco",
+      "rumba"
+    ],
+    "popularity": {
+      "listeners": 16103,
+      "playcount": 143682
+    },
+    "metaEnrichedAt": "2026-07-11T10:34:27.541Z"
   },
   {
     "name": "Maria João",
@@ -67212,7 +68620,20 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T00:37:28.710Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "jazz",
+      "female vocalists",
+      "portuguese",
+      "Portugal",
+      "1ja"
+    ],
+    "popularity": {
+      "listeners": 7139,
+      "playcount": 60190
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/dbb674312815c9cf83e960de16f13d0a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:28.246Z"
   },
   {
     "name": "Maria João Pires",
@@ -67229,14 +68650,28 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:37:31.306Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "piano",
+      "Classical",
+      "classical piano",
+      "instrumental",
+      "portuguese"
+    ],
+    "popularity": {
+      "listeners": 60770,
+      "playcount": 713659
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5b4a9066a4c97d2106ac77e8e23beba4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:28.921Z"
   },
   {
     "name": "Maria Johansdotter",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:37:32.549Z"
+    "autoTriedAt": "2026-07-11T00:37:32.549Z",
+    "metaTriedAt": "2026-07-11T10:34:29.549Z"
   },
   {
     "name": "Maria Kalaniemi",
@@ -67252,14 +68687,33 @@
     },
     "enrichedAt": "2026-07-07T07:18:16.665Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e7690ab6-3c3e-4425-a790-9e805440e4bf"
+    "mbid": "e7690ab6-3c3e-4425-a790-9e805440e4bf",
+    "genres": [
+      "accordion",
+      "folk",
+      "finnish",
+      "Finnish Folk",
+      "world"
+    ],
+    "popularity": {
+      "listeners": 11286,
+      "playcount": 95629
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3a9625f211f8935f080776436b138b85/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:30.197Z"
   },
   {
     "name": "Maria Kämmerling",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:37:33.786Z"
+    "autoTriedAt": "2026-07-11T00:37:33.786Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 15
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e2f0562efc7f919178ed065b07e8a754/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:30.856Z"
   },
   {
     "name": "Maria Kannegaard",
@@ -67275,14 +68729,33 @@
     },
     "enrichedAt": "2026-07-07T07:18:16.665Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "70a77f0e-4866-41d3-b351-3dce9ec55ab3"
+    "mbid": "70a77f0e-4866-41d3-b351-3dce9ec55ab3",
+    "genres": [
+      "jazz",
+      "jazz piano",
+      "free jazz",
+      "piano",
+      "danish"
+    ],
+    "popularity": {
+      "listeners": 3453,
+      "playcount": 16787
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/add6921907d8aff43797d8638a35bf12/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:31.503Z"
   },
   {
     "name": "Maria Karnilova",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbid": "8c3917d0-82e5-45e6-9b04-dfdafee5ad85",
-    "autoTriedAt": "2026-07-11T00:37:36.386Z"
+    "autoTriedAt": "2026-07-11T00:37:36.386Z",
+    "popularity": {
+      "listeners": 302,
+      "playcount": 789
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d4b8f31cf294017bfe04edf63d3c67cf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:32.247Z"
   },
   {
     "name": "Maria Kliegel",
@@ -67298,21 +68771,52 @@
     },
     "enrichedAt": "2026-07-07T07:18:16.665Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b8079656-af91-4aa7-a2a3-d59e7343b69c"
+    "mbid": "b8079656-af91-4aa7-a2a3-d59e7343b69c",
+    "genres": [
+      "cello",
+      "contemporary classical",
+      "Classical",
+      "Violoncello",
+      "spotify"
+    ],
+    "popularity": {
+      "listeners": 11323,
+      "playcount": 70727
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/59b8cf8ddf36d5e4b5cb93d4be04fc1a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:33.482Z"
   },
   {
     "name": "Maria Korchinska",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbid": "a2690511-572d-470e-9108-08e6d88993c1",
-    "autoTriedAt": "2026-07-11T00:37:39.036Z"
+    "autoTriedAt": "2026-07-11T00:37:39.036Z",
+    "popularity": {
+      "listeners": 3,
+      "playcount": 4
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/83c3e8c374f8383896a0cb0a816c140b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:34.152Z"
   },
   {
     "name": "María Luisa Anido",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:16.665Z",
     "mbid": "42232eed-8b45-4acc-9865-bb98671837f4",
-    "autoTriedAt": "2026-07-11T00:37:44.951Z"
+    "autoTriedAt": "2026-07-11T00:37:44.951Z",
+    "genres": [
+      "argentina",
+      "guitar",
+      "composer",
+      "Classical",
+      "latin america"
+    ],
+    "popularity": {
+      "listeners": 674,
+      "playcount": 4332
+    },
+    "metaEnrichedAt": "2026-07-11T10:34:34.804Z"
   },
   {
     "name": "Maria Martha Serra Lima",
@@ -67328,7 +68832,19 @@
     },
     "enrichedAt": "2026-07-07T07:18:16.665Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "622d7be2-3eba-4295-8071-a7f23772bfb8"
+    "mbid": "622d7be2-3eba-4295-8071-a7f23772bfb8",
+    "genres": [
+      "argentina",
+      "All",
+      "balada",
+      "bolero",
+      "spotify"
+    ],
+    "popularity": {
+      "listeners": 5262,
+      "playcount": 30935
+    },
+    "metaEnrichedAt": "2026-07-11T10:34:35.472Z"
   },
   {
     "name": "Maria McKee",
@@ -67344,7 +68860,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:16.665Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f8276a46-0c87-4d2f-a0d3-f22900f9cbfe"
+    "mbid": "f8276a46-0c87-4d2f-a0d3-f22900f9cbfe",
+    "genres": [
+      "country",
+      "female vocalists",
+      "singer-songwriter",
+      "rock",
+      "Alt-country"
+    ],
+    "popularity": {
+      "listeners": 307151,
+      "playcount": 1709871
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0ac8bb49c7ddb8a6a2efbe64277a0c11/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:34:36.125Z"
   },
   {
     "name": "Maria Mena",
