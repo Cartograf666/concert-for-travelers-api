@@ -4331,7 +4331,19 @@
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:25.017Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:11:35.003Z"
+    "autoTriedAt": "2026-07-11T12:11:35.003Z",
+    "genres": [
+      "Classical",
+      "contemporary classical",
+      "azerbaijan",
+      "azeri",
+      "composer"
+    ],
+    "popularity": {
+      "listeners": 279,
+      "playcount": 1834
+    },
+    "metaEnrichedAt": "2026-07-11T21:26:59.827Z"
   },
   {
     "name": "Garage A Trois",
@@ -4347,28 +4359,64 @@
     },
     "enrichedAt": "2026-07-07T07:12:25.017Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1002a330-c6eb-4a8e-bafd-bb8e612c3a57"
+    "mbid": "1002a330-c6eb-4a8e-bafd-bb8e612c3a57",
+    "genres": [
+      "jazz",
+      "funk",
+      "Fusion",
+      "experimental",
+      "New Orleans"
+    ],
+    "popularity": {
+      "listeners": 23873,
+      "playcount": 340915
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b1083ed01ae605ca6dfa1c7ce94271a0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:00.473Z"
   },
   {
     "name": "Garage punk",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:25.017Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:11:36.250Z"
+    "autoTriedAt": "2026-07-11T12:11:36.250Z",
+    "popularity": {
+      "listeners": 5,
+      "playcount": 35
+    },
+    "metaEnrichedAt": "2026-07-11T21:27:01.200Z"
   },
   {
     "name": "garage rock",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:25.017Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:11:37.477Z"
+    "autoTriedAt": "2026-07-11T12:11:37.477Z",
+    "popularity": {
+      "listeners": 78,
+      "playcount": 691
+    },
+    "metaEnrichedAt": "2026-07-11T21:27:01.905Z"
   },
   {
     "name": "Garageland",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:25.017Z",
     "mbid": "50d14de8-d225-491b-864a-2b1eb9cb0a8e",
-    "autoTriedAt": "2026-07-11T12:11:39.940Z"
+    "autoTriedAt": "2026-07-11T12:11:39.940Z",
+    "genres": [
+      "New Zealand",
+      "indie rock",
+      "indie pop",
+      "indie",
+      "NZ Music"
+    ],
+    "popularity": {
+      "listeners": 12845,
+      "playcount": 148139
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5dff27e13c04a2b4a3aa94b54f2a9e25/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:02.496Z"
   },
   {
     "name": "Garaj Mahal",
@@ -4384,7 +4432,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:11:42.709Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "funk",
+      "Fusion",
+      "jazz",
+      "jazz fusion",
+      "jazz-funk"
+    ],
+    "popularity": {
+      "listeners": 19366,
+      "playcount": 150810
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e6811aa0cad002664a7b57dee22132f4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:03.120Z"
   },
   {
     "name": "Garasi",
@@ -4392,7 +4453,19 @@
     "wdBulkTriedAt": "2026-07-07T07:12:25.017Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "4c29cbdc-8c16-495b-9976-041bb12e81c5",
-    "autoTriedAt": "2026-07-11T12:11:45.169Z"
+    "autoTriedAt": "2026-07-11T12:11:45.169Z",
+    "genres": [
+      "indonesia",
+      "rock",
+      "All",
+      "indie",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 7841,
+      "playcount": 113638
+    },
+    "metaEnrichedAt": "2026-07-11T21:27:03.782Z"
   },
   {
     "name": "Garavi Sokak",
@@ -4408,7 +4481,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:11:47.699Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "vojvodina",
+      "serbian",
+      "ex-yu",
+      "bane",
+      "smor-kor"
+    ],
+    "popularity": {
+      "listeners": 3043,
+      "playcount": 56964
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2d608b07280f1b5ce86716477ff7608e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:04.471Z"
   },
   {
     "name": "Garbage",
@@ -4424,7 +4510,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f9ef7a22-4262-4596-a2a8-1d19345b8e50"
+    "mbid": "f9ef7a22-4262-4596-a2a8-1d19345b8e50",
+    "genres": [
+      "rock",
+      "alternative",
+      "alternative rock",
+      "female vocalists",
+      "indie"
+    ],
+    "popularity": {
+      "listeners": 2324158,
+      "playcount": 74744049
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/073c14fd21b2d360a04f877f132d4153/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:05.064Z"
   },
   {
     "name": "Gard Nilssen",
@@ -4440,7 +4539,12 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1f4ccba6-ce7b-47d2-bfc7-44bb11aec21e"
+    "mbid": "1f4ccba6-ce7b-47d2-bfc7-44bb11aec21e",
+    "popularity": {
+      "listeners": 56,
+      "playcount": 192
+    },
+    "metaEnrichedAt": "2026-07-11T21:27:05.746Z"
   },
   {
     "name": "Garden City Movement",
@@ -4456,14 +4560,32 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "480ed4c4-a771-401b-bff6-e1d7164f95a5"
+    "mbid": "480ed4c4-a771-401b-bff6-e1d7164f95a5",
+    "genres": [
+      "chillwave",
+      "electronic",
+      "downtempo",
+      "indie",
+      "israeli"
+    ],
+    "popularity": {
+      "listeners": 147094,
+      "playcount": 1290780
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/db6d5054fc9a999a5f177f1591e16b41/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:06.389Z"
   },
   {
     "name": "Garden Grove",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:11:48.932Z"
+    "autoTriedAt": "2026-07-11T12:11:48.932Z",
+    "popularity": {
+      "listeners": 193,
+      "playcount": 450
+    },
+    "metaEnrichedAt": "2026-07-11T21:27:07.110Z"
   },
   {
     "name": "Garden Variety",
@@ -4479,7 +4601,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:11:51.418Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "emo",
+      "post-hardcore",
+      "midwest emo",
+      "punk",
+      "emocore"
+    ],
+    "popularity": {
+      "listeners": 11873,
+      "playcount": 154420
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/41b83e6df1b4fa593d3d59f1d921bc07/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:07.830Z"
   },
   {
     "name": "Gardenian",
@@ -4495,7 +4630,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ff6b03b8-116b-4a15-9185-0630a15e7b75"
+    "mbid": "ff6b03b8-116b-4a15-9185-0630a15e7b75",
+    "genres": [
+      "Melodic Death Metal",
+      "death metal",
+      "swedish",
+      "metal",
+      "Swedish Metal"
+    ],
+    "popularity": {
+      "listeners": 37445,
+      "playcount": 581245
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/35cba53d61d9bf3a55c2e32deb95469e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:08.555Z"
   },
   {
     "name": "Gardens",
@@ -4512,7 +4660,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:11:53.933Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "hardcore",
+      "Garage Rock",
+      "indie",
+      "shoegaze",
+      "Psychedelic Rock"
+    ],
+    "popularity": {
+      "listeners": 13123,
+      "playcount": 87729
+    },
+    "metaEnrichedAt": "2026-07-11T21:27:09.239Z"
   },
   {
     "name": "Gareth Davies",
@@ -4529,7 +4689,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:11:56.433Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 300,
+      "playcount": 1813
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9bff72d36338aecb13a3d05aef167f83/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:09.960Z"
   },
   {
     "name": "Gareth Emery",
@@ -4546,7 +4712,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:11:59.005Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "trance",
+      "progressive trance",
+      "melodic trance",
+      "Progressive House",
+      "vocal trance"
+    ],
+    "popularity": {
+      "listeners": 357150,
+      "playcount": 7626964
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f70bcbd84e37aa637784d27743f9a173/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:10.553Z"
   },
   {
     "name": "Gareth Gates",
@@ -4562,14 +4741,33 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "32b81271-e4e7-4ee0-a095-63c7bdac69b8"
+    "mbid": "32b81271-e4e7-4ee0-a095-63c7bdac69b8",
+    "genres": [
+      "pop",
+      "british",
+      "male vocalists",
+      "singer-songwriter",
+      "teen pop"
+    ],
+    "popularity": {
+      "listeners": 161513,
+      "playcount": 1335199
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/403ac6e95b9dc7d1b592abf36564104a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:11.212Z"
   },
   {
     "name": "Gareth Koch",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbid": "b1809104-8e15-4dd0-ba36-528a8f5a3e84",
-    "autoTriedAt": "2026-07-11T12:12:01.505Z"
+    "autoTriedAt": "2026-07-11T12:12:01.505Z",
+    "popularity": {
+      "listeners": 2534,
+      "playcount": 9585
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/31336ddca21189dda03dbfe7cfc73779/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:11.893Z"
   },
   {
     "name": "Gareth McLearnon",
@@ -4585,7 +4783,13 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 27,
+      "playcount": 107
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/559ba90eccb0d8f2320ece8ed6ac98be/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:12.515Z"
   },
   {
     "name": "Gareth Morris",
@@ -4593,14 +4797,33 @@
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "8c00467b-82ba-4803-b4fa-88d80affac0a",
-    "autoTriedAt": "2026-07-11T12:12:04.125Z"
+    "autoTriedAt": "2026-07-11T12:12:04.125Z",
+    "popularity": {
+      "listeners": 1417,
+      "playcount": 7075
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fc9feafd921d076b45a653024431aa0b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:13.187Z"
   },
   {
     "name": "Gareth Sager",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbid": "4e1b2f27-22d3-497b-babd-fe7f1955faee",
-    "autoTriedAt": "2026-07-11T12:12:06.658Z"
+    "autoTriedAt": "2026-07-11T12:12:06.658Z",
+    "genres": [
+      "Post punk",
+      "instrumental",
+      "bristol",
+      "new classical",
+      "br1STol"
+    ],
+    "popularity": {
+      "listeners": 805,
+      "playcount": 7858
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bdd3afeb668ae4599ed5e0dc03d74f99/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:13.847Z"
   },
   {
     "name": "Gareth.T",
@@ -4616,21 +4839,56 @@
     "wdBulkTriedAt": "2026-07-09T08:32:12.140Z",
     "mbid": "e5eadc96-78c3-4630-bd2a-f1b9d9eb91aa",
     "enrichedAt": "2026-07-09T08:32:12.140Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "rnb",
+      "indie pop",
+      "alternative rnb",
+      "chinese",
+      "C-pop"
+    ],
+    "popularity": {
+      "listeners": 82245,
+      "playcount": 1920173
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6b11d03d773a8da28b40d73efb14da80/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:14.513Z"
   },
   {
     "name": "Gari",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:12:07.890Z"
+    "autoTriedAt": "2026-07-11T12:12:07.890Z",
+    "genres": [
+      "rock",
+      "electronic",
+      "J-rock",
+      "japanese",
+      "catalan"
+    ],
+    "popularity": {
+      "listeners": 5755,
+      "playcount": 129288
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/769ae7c24da4271da9365afe66665e5f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:15.329Z"
   },
   {
     "name": "Garifuna",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:12:09.141Z"
+    "autoTriedAt": "2026-07-11T12:12:09.141Z",
+    "genres": [
+      "traditional folk",
+      "World Music"
+    ],
+    "popularity": {
+      "listeners": 186,
+      "playcount": 434
+    },
+    "metaEnrichedAt": "2026-07-11T21:27:16.181Z"
   },
   {
     "name": "Garland Wilson",
@@ -4638,7 +4896,20 @@
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "04129444-7d7b-4d87-ac56-d0a5684f4ce4",
-    "autoTriedAt": "2026-07-11T12:12:11.654Z"
+    "autoTriedAt": "2026-07-11T12:12:11.654Z",
+    "genres": [
+      "piano",
+      "jazz",
+      "pianist",
+      "boogie",
+      "jazz in pari"
+    ],
+    "popularity": {
+      "listeners": 2093,
+      "playcount": 6584
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/918f3759a926d63945e1f3564007845d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:17.367Z"
   },
   {
     "name": "Garlic Boys",
@@ -4654,7 +4925,19 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "71d40215-afd5-4b12-9fa2-716f112eff79"
+    "mbid": "71d40215-afd5-4b12-9fa2-716f112eff79",
+    "genres": [
+      "japanese",
+      "punk",
+      "hardcore",
+      "hardcore punk",
+      "J-rock"
+    ],
+    "popularity": {
+      "listeners": 3137,
+      "playcount": 118105
+    },
+    "metaEnrichedAt": "2026-07-11T21:27:18.043Z"
   },
   {
     "name": "Garmarna",
@@ -4670,7 +4953,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a1db6190-4f83-482e-a794-0088b2b4136d"
+    "mbid": "a1db6190-4f83-482e-a794-0088b2b4136d",
+    "genres": [
+      "folk",
+      "swedish",
+      "medieval",
+      "Scandinavian folk",
+      "folk rock"
+    ],
+    "popularity": {
+      "listeners": 154856,
+      "playcount": 3524801
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/276fce3052858e54e7301370699809e8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:18.700Z"
   },
   {
     "name": "Garnet Crow",
@@ -4686,14 +4982,39 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a624cc1c-5f25-4e7d-987f-3eb6383f7984"
+    "mbid": "a624cc1c-5f25-4e7d-987f-3eb6383f7984",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "female vocalists",
+      "J-rock",
+      "JPop"
+    ],
+    "popularity": {
+      "listeners": 36579,
+      "playcount": 3850768
+    },
+    "metaEnrichedAt": "2026-07-11T21:27:19.339Z"
   },
   {
     "name": "Garnet Mimms",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbid": "a848949b-8f26-467a-85e1-8e3feffc9d27",
-    "autoTriedAt": "2026-07-11T12:12:14.387Z"
+    "autoTriedAt": "2026-07-11T12:12:14.387Z",
+    "genres": [
+      "soul",
+      "northern soul",
+      "rhythm and blues",
+      "Deep Soul",
+      "oldies"
+    ],
+    "popularity": {
+      "listeners": 35682,
+      "playcount": 180999
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b65a6bf9f2a2d0850032d1e8aa1c3cf2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:19.978Z"
   },
   {
     "name": "Garnet Rogers",
@@ -4709,14 +5030,32 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "783d57a0-25af-4993-ba94-e63dcb0cb88d"
+    "mbid": "783d57a0-25af-4993-ba94-e63dcb0cb88d",
+    "genres": [
+      "folk",
+      "Canadian",
+      "singer-songwriter",
+      "All",
+      "under 2000 listeners"
+    ],
+    "popularity": {
+      "listeners": 2761,
+      "playcount": 39351
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4600e321e74fd5f3630d1f5841f09735/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:20.606Z"
   },
   {
     "name": "Garnett Brown",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbid": "81e95612-d940-488e-8f6a-66c4e70bb0ac",
-    "autoTriedAt": "2026-07-11T12:12:16.914Z"
+    "autoTriedAt": "2026-07-11T12:12:16.914Z",
+    "popularity": {
+      "listeners": 59,
+      "playcount": 213
+    },
+    "metaEnrichedAt": "2026-07-11T21:27:21.289Z"
   },
   {
     "name": "Garnett Silk",
@@ -4732,7 +5071,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:12:19.815Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "reggae",
+      "dancehall",
+      "roots",
+      "Rasta",
+      "roots reggae"
+    ],
+    "popularity": {
+      "listeners": 83446,
+      "playcount": 565250
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/102add6c2a23ce8ee69209447953e4d4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:21.996Z"
   },
   {
     "name": "Garo",
@@ -4749,7 +5101,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:12:22.681Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "experimental hip-hop",
+      "underground hip-hop",
+      "acoustic japanese rock",
+      "insrumental hip-hop",
+      "folk"
+    ],
+    "popularity": {
+      "listeners": 11780,
+      "playcount": 60901
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/145236914b229b996d658887b1042208/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:22.626Z"
   },
   {
     "name": "Garolou",
@@ -4765,7 +5130,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d73406e7-3788-48ed-9e74-14f6f15ffeb8"
+    "mbid": "d73406e7-3788-48ed-9e74-14f6f15ffeb8",
+    "genres": [
+      "quebec",
+      "folk rock",
+      "rock",
+      "Canadian",
+      "folk"
+    ],
+    "popularity": {
+      "listeners": 2065,
+      "playcount": 25681
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/43054799311c72e745f28fb2eb058d46/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:24.015Z"
   },
   {
     "name": "Garotos Podres",
@@ -4781,7 +5159,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "3213d371-83f3-4469-8f24-72564f1640e1"
+    "mbid": "3213d371-83f3-4469-8f24-72564f1640e1",
+    "genres": [
+      "punk rock",
+      "punk",
+      "Oi",
+      "hardcore",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 114077,
+      "playcount": 2317817
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7ba216f8e18b287f85bea71606c17567/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:24.649Z"
   },
   {
     "name": "Garou",
@@ -4797,7 +5188,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "76f88542-fd2f-47a1-9be0-5d55df793aab"
+    "mbid": "76f88542-fd2f-47a1-9be0-5d55df793aab",
+    "genres": [
+      "french",
+      "pop",
+      "soft rock",
+      "male vocalists",
+      "Canadian"
+    ],
+    "popularity": {
+      "listeners": 153496,
+      "playcount": 2560215
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c7a85a87e3ec068025dea28669132ec8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:25.282Z"
   },
   {
     "name": "Garrett Morris",
@@ -4805,7 +5209,13 @@
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "999ed987-c845-443e-89c0-5350f43f7aef",
-    "autoTriedAt": "2026-07-11T12:12:25.328Z"
+    "autoTriedAt": "2026-07-11T12:12:25.328Z",
+    "popularity": {
+      "listeners": 105,
+      "playcount": 385
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/af97577a6769db11f12f79e9068ac10d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:25.924Z"
   },
   {
     "name": "Garrett Wang",
@@ -4821,7 +5231,8 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b67ca254-c8dd-4a5e-b2ac-dfd949265c9a"
+    "mbid": "b67ca254-c8dd-4a5e-b2ac-dfd949265c9a",
+    "metaTriedAt": "2026-07-11T21:27:26.574Z"
   },
   {
     "name": "Garrick Ohlsson",
@@ -4837,21 +5248,44 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1b2c79e2-113b-4e74-91d4-af085b8a11b0"
+    "mbid": "1b2c79e2-113b-4e74-91d4-af085b8a11b0",
+    "genres": [
+      "piano",
+      "Classical",
+      "Chopin",
+      "classic",
+      "classical  piano"
+    ],
+    "popularity": {
+      "listeners": 13821,
+      "playcount": 305074
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4d228a2a932f2ba83b3425ecae23f322/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:27.270Z"
   },
   {
     "name": "Garry \"Magpie\" Bowler",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:12:26.586Z"
+    "autoTriedAt": "2026-07-11T12:12:26.586Z",
+    "metaTriedAt": "2026-07-11T21:27:27.909Z"
   },
   {
     "name": "Garry Bradbury",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbid": "ca57924c-3d48-4bb5-90b5-a0717e665175",
-    "autoTriedAt": "2026-07-11T12:12:29.561Z"
+    "autoTriedAt": "2026-07-11T12:12:29.561Z",
+    "genres": [
+      "experimental",
+      "electronic"
+    ],
+    "popularity": {
+      "listeners": 307,
+      "playcount": 13523
+    },
+    "metaEnrichedAt": "2026-07-11T21:27:28.540Z"
   },
   {
     "name": "Garry Gary Beers",
@@ -4867,7 +5301,13 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2a01113c-4661-45e8-b9f0-9fb393f524b4"
+    "mbid": "2a01113c-4661-45e8-b9f0-9fb393f524b4",
+    "popularity": {
+      "listeners": 3,
+      "playcount": 4
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:29.181Z"
   },
   {
     "name": "Garry Sandhu",
@@ -4883,7 +5323,18 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "Indian",
+      "Bhangra",
+      "born in India"
+    ],
+    "popularity": {
+      "listeners": 40381,
+      "playcount": 476461
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ef569ddf3773c8e3f60600eda9cd90e9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:29.746Z"
   },
   {
     "name": "Garry Schyman",
@@ -4899,14 +5350,37 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d343fad6-199e-4fad-93b5-df683d7d50a6"
+    "mbid": "d343fad6-199e-4fad-93b5-df683d7d50a6",
+    "genres": [
+      "Soundtrack",
+      "video game music",
+      "orchestral",
+      "composer",
+      "bioshock"
+    ],
+    "popularity": {
+      "listeners": 88950,
+      "playcount": 1724008
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5f05b9577fd34464a5883832e418b1eb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:30.401Z"
   },
   {
     "name": "Garry Shider",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbid": "66611c93-eece-44c8-91b3-3792a1a6cd64",
-    "autoTriedAt": "2026-07-11T12:12:32.074Z"
+    "autoTriedAt": "2026-07-11T12:12:32.074Z",
+    "genres": [
+      "p-funk",
+      "funk",
+      "Black Rock"
+    ],
+    "popularity": {
+      "listeners": 52,
+      "playcount": 359
+    },
+    "metaEnrichedAt": "2026-07-11T21:27:31.095Z"
   },
   {
     "name": "Garry Tallent",
@@ -4922,7 +5396,17 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "42b42dd1-9263-4eae-91cd-4014a5b5d39f"
+    "mbid": "42b42dd1-9263-4eae-91cd-4014a5b5d39f",
+    "genres": [
+      "rock",
+      "USA"
+    ],
+    "popularity": {
+      "listeners": 382,
+      "playcount": 4208
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/491a7fed33946d372f3535620f90273d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:31.752Z"
   },
   {
     "name": "Garth Brooks",
@@ -4938,14 +5422,33 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b76645c5-78b0-4e4c-8f95-003f40013a45"
+    "mbid": "b76645c5-78b0-4e4c-8f95-003f40013a45",
+    "genres": [
+      "country",
+      "garth brooks",
+      "90s",
+      "singer-songwriter",
+      "male vocalists"
+    ],
+    "popularity": {
+      "listeners": 619912,
+      "playcount": 10415203
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4645d092e3066c047484d74e7d6c3d3b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:32.370Z"
   },
   {
     "name": "Garth Edmundson",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbid": "04d7a8ff-315a-4604-9623-8553d7f9efdb",
-    "autoTriedAt": "2026-07-11T12:12:34.596Z"
+    "autoTriedAt": "2026-07-11T12:12:34.596Z",
+    "popularity": {
+      "listeners": 130,
+      "playcount": 1386
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:33.120Z"
   },
   {
     "name": "Garth Hudson",
@@ -4962,7 +5465,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:12:37.138Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Progressive",
+      "Canadian",
+      "keyboardist",
+      "organist"
+    ],
+    "popularity": {
+      "listeners": 2473,
+      "playcount": 12385
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/15d6e0269edfc93349def630fdec3df0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:33.808Z"
   },
   {
     "name": "Garth Knox",
@@ -4978,14 +5493,33 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "88fbe0e1-7d49-4966-9e49-f618d267303a"
+    "mbid": "88fbe0e1-7d49-4966-9e49-f618d267303a",
+    "genres": [
+      "contemporary classical",
+      "spotify",
+      "Classical",
+      "All",
+      "viola"
+    ],
+    "popularity": {
+      "listeners": 2941,
+      "playcount": 20031
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/331ba05004ed714ba2a85ece5dbce1cf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:35.021Z"
   },
   {
     "name": "Garvin Bushell",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbid": "5ccc84ff-788f-4b89-9b3c-904560235ad7",
-    "autoTriedAt": "2026-07-11T12:12:39.641Z"
+    "autoTriedAt": "2026-07-11T12:12:39.641Z",
+    "popularity": {
+      "listeners": 62,
+      "playcount": 236
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c411ef64576ea9559072ecd9805258af/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:35.681Z"
   },
   {
     "name": "Gary",
@@ -5001,14 +5535,27 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T12:12:40.879Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "indie",
+      "german",
+      "rnb",
+      "alternative",
+      "Korean"
+    ],
+    "popularity": {
+      "listeners": 26907,
+      "playcount": 279907
+    },
+    "metaEnrichedAt": "2026-07-11T21:27:36.334Z"
   },
   {
     "name": "Gary (Argentine singer)",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:12:42.102Z"
+    "autoTriedAt": "2026-07-11T12:12:42.102Z",
+    "metaTriedAt": "2026-07-11T21:27:36.949Z"
   },
   {
     "name": "Gary Allan",
@@ -5024,21 +5571,53 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T12:12:42.102Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "country",
+      "rock",
+      "alternative rock",
+      "contemporary country",
+      "gary allan"
+    ],
+    "popularity": {
+      "listeners": 499458,
+      "playcount": 5572253
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/01195e7f40f01735f5ce23acc67047c7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:37.632Z"
   },
   {
     "name": "Gary Arbuthnot",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:12:43.338Z"
+    "autoTriedAt": "2026-07-11T12:12:43.338Z",
+    "popularity": {
+      "listeners": 217,
+      "playcount": 786
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0688c0a0a652180b023c59e1b73f31d5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:38.459Z"
   },
   {
     "name": "Gary B.B. Coleman",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbid": "643fe6d8-25d6-4a4a-99cb-5b71b483dd9d",
-    "autoTriedAt": "2026-07-11T12:12:45.853Z"
+    "autoTriedAt": "2026-07-11T12:12:45.853Z",
+    "genres": [
+      "blues",
+      "electric blues",
+      "bluesrock",
+      "USA",
+      "Contemporary Blues"
+    ],
+    "popularity": {
+      "listeners": 19760,
+      "playcount": 90326
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3f2eb4a0a75a25da098b14d800c0c77a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:39.095Z"
   },
   {
     "name": "Gary Barlow",
@@ -5055,7 +5634,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:12:49.208Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "pop",
+      "british",
+      "singer-songwriter",
+      "male vocalists",
+      "90s"
+    ],
+    "popularity": {
+      "listeners": 162398,
+      "playcount": 1606429
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ee2e4afa71a46c740d9a567d27020978/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:39.825Z"
   },
   {
     "name": "Gary Bartz",
@@ -5071,7 +5663,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d2cdb3df-783b-472e-91ab-70630fc6a4ad"
+    "mbid": "d2cdb3df-783b-472e-91ab-70630fc6a4ad",
+    "genres": [
+      "jazz",
+      "funk",
+      "soul",
+      "Fusion",
+      "saxophone"
+    ],
+    "popularity": {
+      "listeners": 101242,
+      "playcount": 575995
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9597ce5a93018f98b59dc74bcd94960d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:40.549Z"
   },
   {
     "name": "Gary Beach",
@@ -5087,7 +5692,17 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "dd1f9e75-3f6c-418e-8cad-557c28fc7380"
+    "mbid": "dd1f9e75-3f6c-418e-8cad-557c28fc7380",
+    "genres": [
+      "Musical theatre",
+      "USA"
+    ],
+    "popularity": {
+      "listeners": 18751,
+      "playcount": 95911
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d263cff0cb13041ce1d2113a906215d5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:41.227Z"
   },
   {
     "name": "Gary Beals",
@@ -5104,7 +5719,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:12:52.034Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Canadian",
+      "rnb",
+      "Canadian Idol",
+      "my boys",
+      "funk_add_to_lidarr_batch_10"
+    ],
+    "popularity": {
+      "listeners": 2622,
+      "playcount": 7774
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0cb7e149d807c1d6580755d3abaffa69/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:42.023Z"
   },
   {
     "name": "Gary Bertini",
@@ -5120,7 +5748,18 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "805b5926-d204-4096-8fc4-de8f5efd0dac"
+    "mbid": "805b5926-d204-4096-8fc4-de8f5efd0dac",
+    "genres": [
+      "gustav mahler",
+      "conductor",
+      "g bertini"
+    ],
+    "popularity": {
+      "listeners": 395,
+      "playcount": 4947
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9d219e52ca6622b3bfb4dc79a438d3e2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:42.691Z"
   },
   {
     "name": "Gary Brooker",
@@ -5136,7 +5775,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "160eff18-7d6e-4000-a1d4-fe4c2e7a66ca"
+    "mbid": "160eff18-7d6e-4000-a1d4-fe4c2e7a66ca",
+    "genres": [
+      "rock",
+      "60s",
+      "singer-songwriters",
+      "80s",
+      "Home collection"
+    ],
+    "popularity": {
+      "listeners": 11902,
+      "playcount": 67368
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ba1fc01ad4354aede757b2c6a2cf025b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:43.441Z"
   },
   {
     "name": "Gary Brunotte",
@@ -5144,7 +5796,13 @@
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "35f1406a-25cc-4745-af24-6d980d861682",
-    "autoTriedAt": "2026-07-11T12:12:54.510Z"
+    "autoTriedAt": "2026-07-11T12:12:54.510Z",
+    "popularity": {
+      "listeners": 425,
+      "playcount": 1514
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e333b3a5147682627dc87f7685429481/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:44.095Z"
   },
   {
     "name": "Gary Burton",
@@ -5161,7 +5819,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:12:57.168Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "Vibraphone",
+      "instrumental",
+      "jazz vibraphone",
+      "vibes"
+    ],
+    "popularity": {
+      "listeners": 178139,
+      "playcount": 1278847
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/07d4bd8dfabafb834c051ccaa15b8785/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:44.690Z"
   },
   {
     "name": "Gary Chapman",
@@ -5169,7 +5840,20 @@
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "4b8e610c-83b4-4d4c-b762-4d34631b6d9f",
-    "autoTriedAt": "2026-07-11T12:12:59.797Z"
+    "autoTriedAt": "2026-07-11T12:12:59.797Z",
+    "genres": [
+      "contemporary christian",
+      "singer-songwriter",
+      "worship",
+      "christian",
+      "singer-songwriters"
+    ],
+    "popularity": {
+      "listeners": 13262,
+      "playcount": 109047
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/050befb2ba8c933e8a362e704ba718a8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:45.286Z"
   },
   {
     "name": "Gary Chaw",
@@ -5185,7 +5869,19 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c6e4c1a5-695e-4f7a-a69f-55081cf2e170"
+    "mbid": "c6e4c1a5-695e-4f7a-a69f-55081cf2e170",
+    "genres": [
+      "malaysian",
+      "pop",
+      "rnb",
+      "singer-songwriter",
+      "male vocalists"
+    ],
+    "popularity": {
+      "listeners": 11886,
+      "playcount": 126256
+    },
+    "metaEnrichedAt": "2026-07-11T21:27:46.076Z"
   },
   {
     "name": "Gary Cherone",
@@ -5201,14 +5897,28 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0419ad44-a0b9-44cd-bedc-a593fe4cec3d"
+    "mbid": "0419ad44-a0b9-44cd-bedc-a593fe4cec3d",
+    "genres": [
+      "american"
+    ],
+    "popularity": {
+      "listeners": 499,
+      "playcount": 3684
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ecaa4f065ebd85d208a83dc9cef91ebc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:46.719Z"
   },
   {
     "name": "Gary Chester",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbid": "f0e6121e-3382-42e3-8f39-04610dd56425",
-    "autoTriedAt": "2026-07-11T12:13:02.292Z"
+    "autoTriedAt": "2026-07-11T12:13:02.292Z",
+    "popularity": {
+      "listeners": 58,
+      "playcount": 567
+    },
+    "metaEnrichedAt": "2026-07-11T21:27:47.436Z"
   },
   {
     "name": "Gary Clail",
@@ -5224,7 +5934,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "831d1fa3-4ba8-4f7b-bfc2-5950fa5ec207"
+    "mbid": "831d1fa3-4ba8-4f7b-bfc2-5950fa5ec207",
+    "genres": [
+      "dub",
+      "electronic",
+      "On-U Sound",
+      "english",
+      "UK"
+    ],
+    "popularity": {
+      "listeners": 8729,
+      "playcount": 49331
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c5187bec31ff7de68221cf5ef8c9a337/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:48.111Z"
   },
   {
     "name": "Gary Clark",
@@ -5241,7 +5964,18 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:13:04.829Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "pop",
+      "singer-songwriter",
+      "dundee"
+    ],
+    "popularity": {
+      "listeners": 8236,
+      "playcount": 61829
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1cb4f48032d21dc26796bed22e791f6b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:48.765Z"
   },
   {
     "name": "Gary Clark, Jr.",
@@ -5257,7 +5991,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c733c4e6-22a2-499d-ace7-17b832356aff"
+    "mbid": "c733c4e6-22a2-499d-ace7-17b832356aff",
+    "genres": [
+      "blues rock",
+      "blues",
+      "soul",
+      "guitar",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 528238,
+      "playcount": 7925011
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ace55ab2709f6277c4769f867dd36f78/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:49.435Z"
   },
   {
     "name": "Gary Cooper",
@@ -5274,7 +6021,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:13:07.416Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "piano",
+      "Classical",
+      "eurobeat",
+      "21st century classical"
+    ],
+    "popularity": {
+      "listeners": 1177,
+      "playcount": 7771
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/54249bc2495804a3a981f28c701b2ad0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:50.033Z"
   },
   {
     "name": "Gary Crosby",
@@ -5282,14 +6041,29 @@
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "5bdb0a68-2531-473e-97a5-9495407c9b90",
-    "autoTriedAt": "2026-07-11T12:13:10.352Z"
+    "autoTriedAt": "2026-07-11T12:13:10.352Z",
+    "genres": [
+      "Gary Crosby"
+    ],
+    "popularity": {
+      "listeners": 1113,
+      "playcount": 2926
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2dd7a9e05cd334aadfd259ab19a70a69/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:50.689Z"
   },
   {
     "name": "Gary Driscoll",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbid": "6d4cade7-2769-4d54-ba81-3f875f0bcd8c",
-    "autoTriedAt": "2026-07-11T12:13:12.886Z"
+    "autoTriedAt": "2026-07-11T12:13:12.886Z",
+    "popularity": {
+      "listeners": 376,
+      "playcount": 801
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a2ddf0663d250de0df1b1cfb2c6180ec/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:51.327Z"
   },
   {
     "name": "Gary Duncan",
@@ -5297,7 +6071,13 @@
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "5d8cc5db-56e0-463c-b609-7488b9ac4ae8",
-    "autoTriedAt": "2026-07-11T12:13:15.393Z"
+    "autoTriedAt": "2026-07-11T12:13:15.393Z",
+    "popularity": {
+      "listeners": 92,
+      "playcount": 363
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/12c4a96782e1d76588784a9a524043c9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:52.471Z"
   },
   {
     "name": "Gary Foster",
@@ -5305,7 +6085,20 @@
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "32d44439-8e82-46f7-978b-e4a16f501fdd",
-    "autoTriedAt": "2026-07-11T12:13:17.962Z"
+    "autoTriedAt": "2026-07-11T12:13:17.962Z",
+    "genres": [
+      "saxophone",
+      "jazz",
+      "spotify",
+      "All",
+      "Gary Foster"
+    ],
+    "popularity": {
+      "listeners": 2018,
+      "playcount": 6915
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c18f8525751b2a01d539188037866f4f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:53.283Z"
   },
   {
     "name": "Gary Glitter",
@@ -5321,7 +6114,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5e05d900-51e0-4dda-81e2-f4c0bd7ed5e6"
+    "mbid": "5e05d900-51e0-4dda-81e2-f4c0bd7ed5e6",
+    "genres": [
+      "glam rock",
+      "classic rock",
+      "70s",
+      "rock",
+      "glam"
+    ],
+    "popularity": {
+      "listeners": 316769,
+      "playcount": 2178055
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1bb966a51d565258c8f5d6662158e416/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:53.901Z"
   },
   {
     "name": "Gary Graffman",
@@ -5337,7 +6143,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "97816210-708e-4792-ac23-34d10c671e5d"
+    "mbid": "97816210-708e-4792-ac23-34d10c671e5d",
+    "genres": [
+      "Classical",
+      "piano",
+      "composer",
+      "american",
+      "g graffman"
+    ],
+    "popularity": {
+      "listeners": 5655,
+      "playcount": 51953
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1566a9aacf045c25d97c074905510a29/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:54.804Z"
   },
   {
     "name": "Gary Grainger",
@@ -5345,7 +6164,13 @@
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "8342b868-698c-472d-b268-3fbf52739edd",
-    "autoTriedAt": "2026-07-11T12:13:20.458Z"
+    "autoTriedAt": "2026-07-11T12:13:20.458Z",
+    "popularity": {
+      "listeners": 22,
+      "playcount": 97
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0e1ef7a5b207e1d3000798927377da6e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:55.486Z"
   },
   {
     "name": "Gary Green",
@@ -5362,7 +6187,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:13:23.033Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "rock",
+      "Progressive rock",
+      "blues",
+      "guitar",
+      "Progressive"
+    ],
+    "popularity": {
+      "listeners": 2333,
+      "playcount": 6208
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9bae6436d42818210f7f79d15040122b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:56.186Z"
   },
   {
     "name": "Gary Griffiths",
@@ -5378,14 +6216,21 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 19,
+      "playcount": 284
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8227c87285309654c9d7039c96e9fa21/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:56.823Z"
   },
   {
     "name": "Gary Havoc & The Hurricanes",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:13:24.270Z"
+    "autoTriedAt": "2026-07-11T12:13:24.270Z",
+    "metaTriedAt": "2026-07-11T21:27:57.421Z"
   },
   {
     "name": "Gary Hoey",
@@ -5401,7 +6246,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:26.703Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1144f22d-fb1f-41a7-9822-05dab5edff25"
+    "mbid": "1144f22d-fb1f-41a7-9822-05dab5edff25",
+    "genres": [
+      "guitar virtuoso",
+      "instrumental",
+      "hard rock",
+      "rock",
+      "guitar"
+    ],
+    "popularity": {
+      "listeners": 66497,
+      "playcount": 680407
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2436f4f6179f2789226192b30f98d3cb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:27:58.062Z"
   },
   {
     "name": "Gary Holland",
@@ -5409,7 +6267,12 @@
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "91a77aa0-e1c8-4811-bc31-7fe78e27f757",
-    "autoTriedAt": "2026-07-11T12:13:27.208Z"
+    "autoTriedAt": "2026-07-11T12:13:27.208Z",
+    "popularity": {
+      "listeners": 7,
+      "playcount": 23
+    },
+    "metaEnrichedAt": "2026-07-11T21:27:58.759Z"
   },
   {
     "name": "Gary Holt",
@@ -5426,7 +6289,12 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:13:29.728Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 95,
+      "playcount": 354
+    },
+    "metaEnrichedAt": "2026-07-11T21:27:59.729Z"
   },
   {
     "name": "Gary Holton",
@@ -5434,7 +6302,20 @@
     "wdBulkTriedAt": "2026-07-07T07:12:26.703Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "dda0ffef-ba10-445e-91b1-987bd1d6e1a9",
-    "autoTriedAt": "2026-07-11T12:13:32.225Z"
+    "autoTriedAt": "2026-07-11T12:13:32.225Z",
+    "genres": [
+      "classic rock",
+      "rock",
+      "punk",
+      "london",
+      "pop rock"
+    ],
+    "popularity": {
+      "listeners": 1929,
+      "playcount": 12691
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4aeb0716eb77e76f729ddd3b67e32dc9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:00.439Z"
   },
   {
     "name": "Gary Hughes",
@@ -5451,7 +6332,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:13:34.719Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "hard rock",
+      "AOR",
+      "melodic rock",
+      "rock opera",
+      "heavy metal"
+    ],
+    "popularity": {
+      "listeners": 5082,
+      "playcount": 121771
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7cbe0311606260745468591839b3ab01/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:01.148Z"
   },
   {
     "name": "Gary Husband",
@@ -5467,7 +6361,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:28.398Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "32cdc38f-bf64-4951-8585-54483e57080e"
+    "mbid": "32cdc38f-bf64-4951-8585-54483e57080e",
+    "genres": [
+      "jazz fusion",
+      "jazz",
+      "instrumental",
+      "london",
+      "english"
+    ],
+    "popularity": {
+      "listeners": 2643,
+      "playcount": 33615
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/42ed8958b84426adb12acd0446391f75/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:01.771Z"
   },
   {
     "name": "Gary Innes",
@@ -5475,7 +6382,17 @@
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "d83a33a6-5d22-422b-a3cd-3e65119ebc4b",
-    "autoTriedAt": "2026-07-11T12:13:37.206Z"
+    "autoTriedAt": "2026-07-11T12:13:37.206Z",
+    "genres": [
+      "United Kingdom",
+      "Scottish"
+    ],
+    "popularity": {
+      "listeners": 2148,
+      "playcount": 17838
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2d2097889c50503274bf7eb53b0de2e4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:02.709Z"
   },
   {
     "name": "Gary Jules",
@@ -5491,7 +6408,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:28.398Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "3d65bead-6eae-4012-8665-d5f593ea4a62"
+    "mbid": "3d65bead-6eae-4012-8665-d5f593ea4a62",
+    "genres": [
+      "singer-songwriter",
+      "indie",
+      "acoustic",
+      "alternative",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 1033201,
+      "playcount": 11021859
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/298ec68819138594f287517b0213eac8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:03.474Z"
   },
   {
     "name": "Gary Karr",
@@ -5508,7 +6438,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:13:39.725Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "double bass",
+      "Classical",
+      "contrebasse",
+      "bass",
+      "clasicram"
+    ],
+    "popularity": {
+      "listeners": 3370,
+      "playcount": 32076
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/eead6457915c57da2e212b13e8520b74/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:04.147Z"
   },
   {
     "name": "Gary Keller",
@@ -5516,7 +6459,13 @@
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "e4d97176-513a-4560-a3ec-544ffdd48990",
-    "autoTriedAt": "2026-07-11T12:13:42.237Z"
+    "autoTriedAt": "2026-07-11T12:13:42.237Z",
+    "popularity": {
+      "listeners": 72,
+      "playcount": 2091
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/20f6e2ec4765492367e062b6f38807d6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:04.879Z"
   },
   {
     "name": "Gary Kemp",
@@ -5533,7 +6482,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:13:44.772Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Spandau Ballet",
+      "pop rock",
+      "AOR",
+      "westcoast",
+      "Little Bruises"
+    ],
+    "popularity": {
+      "listeners": 3168,
+      "playcount": 29482
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a68d046071e3524b7159596fb150b580/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:05.737Z"
   },
   {
     "name": "Gary King",
@@ -5541,7 +6503,16 @@
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "688987fb-31a5-46dc-a1ba-5d1756cfc4dd",
-    "autoTriedAt": "2026-07-11T12:13:47.335Z"
+    "autoTriedAt": "2026-07-11T12:13:47.335Z",
+    "genres": [
+      "blues"
+    ],
+    "popularity": {
+      "listeners": 567,
+      "playcount": 2647
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cea06f43dc95f2580979ed5554c55191/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:06.617Z"
   },
   {
     "name": "Gary Kirkpatrick",
@@ -5549,14 +6520,21 @@
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "c03ffbc6-a25e-4c8c-9164-c320841efcba",
-    "autoTriedAt": "2026-07-11T12:13:49.818Z"
+    "autoTriedAt": "2026-07-11T12:13:49.818Z",
+    "image": "https://cdn-images.dzcdn.net/images/artist/8514db5804527cc60d15accbb317f2ff/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:07.213Z"
   },
   {
     "name": "Gary Koftinoff",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:13:51.098Z"
+    "autoTriedAt": "2026-07-11T12:13:51.098Z",
+    "popularity": {
+      "listeners": 35,
+      "playcount": 3756
+    },
+    "metaEnrichedAt": "2026-07-11T21:28:07.835Z"
   },
   {
     "name": "Gary Kulesha",
@@ -5572,7 +6550,16 @@
     },
     "enrichedAt": "2026-07-07T07:12:28.398Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f23776f3-15c7-43cb-8214-ef43d3044ad2"
+    "mbid": "f23776f3-15c7-43cb-8214-ef43d3044ad2",
+    "genres": [
+      "canada",
+      "Canadian"
+    ],
+    "popularity": {
+      "listeners": 107,
+      "playcount": 384
+    },
+    "metaEnrichedAt": "2026-07-11T21:28:08.451Z"
   },
   {
     "name": "Gary Lee Conner",
@@ -5588,7 +6575,18 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:13:53.792Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Psychedelic Rock",
+      "alternative rock",
+      "USA"
+    ],
+    "popularity": {
+      "listeners": 531,
+      "playcount": 9794
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/94b298ac1d43955fd2646b831e77bfc7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:09.054Z"
   },
   {
     "name": "Gary LeVox",
@@ -5604,7 +6602,13 @@
     },
     "enrichedAt": "2026-07-07T07:12:28.398Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ced4f725-1773-4566-92a5-75df7de91411"
+    "mbid": "ced4f725-1773-4566-92a5-75df7de91411",
+    "popularity": {
+      "listeners": 7690,
+      "playcount": 31266
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fe851c29bb263d41f62ee65e6428a29d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:09.686Z"
   },
   {
     "name": "Gary Lightbody",
@@ -5620,7 +6624,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:28.398Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4365b045-388b-42a5-91b5-b860dbcbf9f7"
+    "mbid": "4365b045-388b-42a5-91b5-b860dbcbf9f7",
+    "genres": [
+      "Snow Patrol",
+      "indie",
+      "ireland",
+      "britpop",
+      "The Reindeer Section"
+    ],
+    "popularity": {
+      "listeners": 13465,
+      "playcount": 67250
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/77240524fb34401a7fbb3cb8e248fd47/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:10.827Z"
   },
   {
     "name": "Gary Locke",
@@ -5628,14 +6645,20 @@
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "9ba3a9ed-419b-4b53-b4d0-220767a1d308",
-    "autoTriedAt": "2026-07-11T12:13:56.269Z"
+    "autoTriedAt": "2026-07-11T12:13:56.269Z",
+    "popularity": {
+      "listeners": 22,
+      "playcount": 25
+    },
+    "metaEnrichedAt": "2026-07-11T21:28:11.554Z"
   },
   {
     "name": "Gary Loizzo",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbid": "6e5a755a-c587-41b3-a8cb-a190553e2924",
-    "autoTriedAt": "2026-07-11T12:13:58.746Z"
+    "autoTriedAt": "2026-07-11T12:13:58.746Z",
+    "metaTriedAt": "2026-07-11T21:28:12.273Z"
   },
   {
     "name": "Gary Louris",
@@ -5651,7 +6674,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:28.398Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "dd3e4c5c-b2fa-4614-9351-28362e31d015"
+    "mbid": "dd3e4c5c-b2fa-4614-9351-28362e31d015",
+    "genres": [
+      "Alt-country",
+      "post hitching post",
+      "post folk core",
+      "singer-songwriter",
+      "post amoeba"
+    ],
+    "popularity": {
+      "listeners": 20726,
+      "playcount": 167905
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5411f34dfe06d3a5411f89a8b9a4be72/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:13.100Z"
   },
   {
     "name": "Gary Low",
@@ -5667,14 +6703,40 @@
     },
     "enrichedAt": "2026-07-07T07:12:28.398Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5827a0a1-7e72-427a-8f75-0eb920986f3a"
+    "mbid": "5827a0a1-7e72-427a-8f75-0eb920986f3a",
+    "genres": [
+      "Italo Disco",
+      "80s",
+      "dance",
+      "electronic",
+      "Italy"
+    ],
+    "popularity": {
+      "listeners": 24676,
+      "playcount": 114928
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5a0d41aa2a98434941f49622f1e602be/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:13.741Z"
   },
   {
     "name": "Gary McFarland",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbid": "feb5e34c-7e3d-4d36-81b2-c12683d6e3ca",
-    "autoTriedAt": "2026-07-11T12:14:01.509Z"
+    "autoTriedAt": "2026-07-11T12:14:01.509Z",
+    "genres": [
+      "jazz",
+      "Bossa Nova",
+      "Vibraphone",
+      "easy listening",
+      "lounge"
+    ],
+    "popularity": {
+      "listeners": 28496,
+      "playcount": 157296
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cb43eca6a31faeb805cb1fe2c1036c88/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:14.386Z"
   },
   {
     "name": "Gary Moore",
@@ -5691,7 +6753,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:14:04.110Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "blues rock",
+      "blues",
+      "hard rock",
+      "rock",
+      "classic rock"
+    ],
+    "popularity": {
+      "listeners": 1012599,
+      "playcount": 18341436
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ace1cac32e6c087bdf6498189968e091/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:14.967Z"
   },
   {
     "name": "Gary Morris",
@@ -5707,7 +6782,19 @@
     },
     "enrichedAt": "2026-07-07T07:12:28.398Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b557566c-3987-4548-846a-a685ac096db7"
+    "mbid": "b557566c-3987-4548-846a-a685ac096db7",
+    "genres": [
+      "country",
+      "cdbaby",
+      "My Country Selection",
+      "80s country"
+    ],
+    "popularity": {
+      "listeners": 10447,
+      "playcount": 182094
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9a47cef19a148526b66729e970743e3b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:15.621Z"
   },
   {
     "name": "Gary Mounfield",
@@ -5723,7 +6810,9 @@
     },
     "enrichedAt": "2026-07-07T07:12:28.398Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5d58f893-5734-4229-9580-f068e623d843"
+    "mbid": "5d58f893-5734-4229-9580-f068e623d843",
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:16.252Z"
   },
   {
     "name": "Gary Myrick",
@@ -5740,7 +6829,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:14:06.737Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "new wave",
+      "blues",
+      "bluesrock",
+      "guitar rock",
+      "guitar blues"
+    ],
+    "popularity": {
+      "listeners": 7995,
+      "playcount": 25868
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5f6e710b4c03e42baa1414955c328ad8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:16.891Z"
   },
   {
     "name": "Gary Newman",
@@ -5748,7 +6850,19 @@
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "f834228d-af4d-4c4b-81d0-33b50c006a64",
-    "autoTriedAt": "2026-07-11T12:14:09.256Z"
+    "autoTriedAt": "2026-07-11T12:14:09.256Z",
+    "genres": [
+      "new wave",
+      "synthpop",
+      "electronic",
+      "80s",
+      "industrial"
+    ],
+    "popularity": {
+      "listeners": 1086600,
+      "playcount": 19825865
+    },
+    "metaEnrichedAt": "2026-07-11T21:28:17.523Z"
   },
   {
     "name": "Gary Nichols",
@@ -5764,7 +6878,18 @@
     },
     "enrichedAt": "2026-07-07T07:12:28.398Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6e6d0a84-632a-4107-af76-cdf18fe317cb"
+    "mbid": "6e6d0a84-632a-4107-af76-cdf18fe317cb",
+    "genres": [
+      "country",
+      "USA",
+      "muscle shoals"
+    ],
+    "popularity": {
+      "listeners": 3968,
+      "playcount": 28867
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f8a3de8912886830527c28e070340e36/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:18.348Z"
   },
   {
     "name": "Gary Numan",
@@ -5780,7 +6905,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:28.398Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6cb79cb2-9087-44d4-828b-5c6fdff2c957"
+    "mbid": "6cb79cb2-9087-44d4-828b-5c6fdff2c957",
+    "genres": [
+      "new wave",
+      "synthpop",
+      "electronic",
+      "80s",
+      "industrial"
+    ],
+    "popularity": {
+      "listeners": 1086600,
+      "playcount": 19825865
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ea009164b9d44ecc6e25d64ffb41433c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:18.946Z"
   },
   {
     "name": "Gary Peacock",
@@ -5796,7 +6934,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:14:11.932Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "bass",
+      "ECM",
+      "contemporary jazz",
+      "jazz bass"
+    ],
+    "popularity": {
+      "listeners": 27093,
+      "playcount": 158769
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/db53b0bea86fd96e5b2e2ca17bd941b1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:19.571Z"
   },
   {
     "name": "Gary Pig Gold",
@@ -5812,7 +6963,12 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:14:14.459Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 119,
+      "playcount": 374
+    },
+    "metaEnrichedAt": "2026-07-11T21:28:20.200Z"
   },
   {
     "name": "Gary Powell",
@@ -5829,7 +6985,16 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:14:16.981Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "met"
+    ],
+    "popularity": {
+      "listeners": 2817,
+      "playcount": 10437
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c78bb23c4b1e46f1061faa3a010f2fe1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:20.827Z"
   },
   {
     "name": "Gary Primich",
@@ -5845,14 +7010,28 @@
     },
     "enrichedAt": "2026-07-07T07:12:28.398Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "98a4310b-c7bf-4676-8c0a-167cac1499cd"
+    "mbid": "98a4310b-c7bf-4676-8c0a-167cac1499cd",
+    "genres": [
+      "blues",
+      "harmonica",
+      "harmonica blues",
+      "rhythm and blues",
+      "All"
+    ],
+    "popularity": {
+      "listeners": 6592,
+      "playcount": 45958
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c1b7514223ebf2b228eac0889afc0cc5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:21.471Z"
   },
   {
     "name": "Gary R. Mar",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:14:18.211Z"
+    "autoTriedAt": "2026-07-11T12:14:18.211Z",
+    "metaTriedAt": "2026-07-11T21:28:22.085Z"
   },
   {
     "name": "Gary Raynor",
@@ -5860,14 +7039,21 @@
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "e7431675-0ecd-4e1a-aa4e-1063775a6833",
-    "autoTriedAt": "2026-07-11T12:14:20.673Z"
+    "autoTriedAt": "2026-07-11T12:14:20.673Z",
+    "metaTriedAt": "2026-07-11T21:28:22.741Z"
   },
   {
     "name": "Gary Richrath",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbid": "b88309d9-8407-40e5-8ee0-af39975e623d",
-    "autoTriedAt": "2026-07-11T12:14:23.163Z"
+    "autoTriedAt": "2026-07-11T12:14:23.163Z",
+    "popularity": {
+      "listeners": 24,
+      "playcount": 52
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:23.352Z"
   },
   {
     "name": "Gary Rossington",
@@ -5883,14 +7069,25 @@
     },
     "enrichedAt": "2026-07-07T07:12:28.398Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "15a5032b-70f2-4c00-bab9-5072b6fbba02"
+    "mbid": "15a5032b-70f2-4c00-bab9-5072b6fbba02",
+    "popularity": {
+      "listeners": 53,
+      "playcount": 217
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:23.969Z"
   },
   {
     "name": "Gary Ruley",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:14:24.403Z"
+    "autoTriedAt": "2026-07-11T12:14:24.403Z",
+    "popularity": {
+      "listeners": 5,
+      "playcount": 66
+    },
+    "metaEnrichedAt": "2026-07-11T21:28:24.728Z"
   },
   {
     "name": "Gary S. Paxton",
@@ -5906,14 +7103,36 @@
     },
     "enrichedAt": "2026-07-07T07:12:28.398Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4320b104-036c-4055-b0a7-f8930354ae20"
+    "mbid": "4320b104-036c-4055-b0a7-f8930354ae20",
+    "genres": [
+      "spotify",
+      "All"
+    ],
+    "popularity": {
+      "listeners": 13246,
+      "playcount": 33973
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/46ed08be0e3e01dad5ef7e8f2f672675/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:25.406Z"
   },
   {
     "name": "Gary Schocker",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbid": "e88fa7b1-9c26-43fb-80e4-54f5888d6b8f",
-    "autoTriedAt": "2026-07-11T12:14:27.397Z"
+    "autoTriedAt": "2026-07-11T12:14:27.397Z",
+    "genres": [
+      "flute",
+      "Classical",
+      "american",
+      "us"
+    ],
+    "popularity": {
+      "listeners": 2821,
+      "playcount": 17822
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ed5138cdefb20e6cc230c98ab4c9a507/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:26.708Z"
   },
   {
     "name": "Gary Shearston",
@@ -5929,7 +7148,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:14:29.887Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "folk",
+      "psychedelic",
+      "70s",
+      "country",
+      "oldies"
+    ],
+    "popularity": {
+      "listeners": 11142,
+      "playcount": 76816
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/378616d679e34f38c120091439cc8b21/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:27.371Z"
   },
   {
     "name": "Gary Smith",
@@ -5946,7 +7178,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:14:32.455Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "blues",
+      "harmonica blues",
+      "USA",
+      "jazz",
+      "harmonica"
+    ],
+    "popularity": {
+      "listeners": 55536,
+      "playcount": 192507
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/316c18fa7d00c9100c12174ac218b780/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:28.728Z"
   },
   {
     "name": "Gary Smulyan",
@@ -5962,7 +7207,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:28.398Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c0ebf40c-4ff0-4206-be7a-b32b0a0b6ac4"
+    "mbid": "c0ebf40c-4ff0-4206-be7a-b32b0a0b6ac4",
+    "genres": [
+      "jazz",
+      "saxophone",
+      "baritone saxophone",
+      "USA",
+      "Gary Smulyan"
+    ],
+    "popularity": {
+      "listeners": 4002,
+      "playcount": 18329
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c48a4ba6142ef73bee906d92ea9f5d5f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:29.425Z"
   },
   {
     "name": "Gary Stadler",
@@ -5979,7 +7237,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:14:34.948Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "new age",
+      "piano",
+      "ambient",
+      "neo-classical",
+      "Gary Stadler"
+    ],
+    "popularity": {
+      "listeners": 57544,
+      "playcount": 841641
+    },
+    "metaEnrichedAt": "2026-07-11T21:28:30.068Z"
   },
   {
     "name": "Gary Stewart",
@@ -5996,14 +7266,28 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:14:37.462Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "country",
+      "Honky Tonk",
+      "gary stewart",
+      "outlaw country",
+      "Alt-country"
+    ],
+    "popularity": {
+      "listeners": 76422,
+      "playcount": 832804
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ded0a27686ed0fdc70888619c5036951/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:30.732Z"
   },
   {
     "name": "Gary Stonadge",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbid": "b5ef4078-2b50-4629-8707-442e836ebdc0",
-    "autoTriedAt": "2026-07-11T12:14:39.939Z"
+    "autoTriedAt": "2026-07-11T12:14:39.939Z",
+    "metaTriedAt": "2026-07-11T21:28:31.337Z"
   },
   {
     "name": "Gary Taylor",
@@ -6020,14 +7304,32 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:14:42.475Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "easy listening",
+      "country",
+      "rnb",
+      "soul",
+      "urban"
+    ],
+    "popularity": {
+      "listeners": 3758,
+      "playcount": 101798
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/87bc53ecb517e4a9e14b1e4b25547fc1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:31.986Z"
   },
   {
     "name": "Gary Thain",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbid": "9ee465b6-ba68-4100-9b04-1df615f70b7c",
-    "autoTriedAt": "2026-07-11T12:14:45.038Z"
+    "autoTriedAt": "2026-07-11T12:14:45.038Z",
+    "popularity": {
+      "listeners": 7,
+      "playcount": 8
+    },
+    "metaEnrichedAt": "2026-07-11T21:28:32.639Z"
   },
   {
     "name": "Gary Thomas",
@@ -6035,21 +7337,53 @@
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "05b1f3ab-ebe1-49f3-bf99-462544887130",
-    "autoTriedAt": "2026-07-11T12:14:47.545Z"
+    "autoTriedAt": "2026-07-11T12:14:47.545Z",
+    "genres": [
+      "didgeridoo",
+      "jazz",
+      "saxophone",
+      "M-Base",
+      "free jazz"
+    ],
+    "popularity": {
+      "listeners": 6145,
+      "playcount": 41639
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/063321025b8a7436c995336401e6b572/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:33.270Z"
   },
   {
     "name": "Gary Tibbs",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbid": "827680e3-3d11-44ff-a460-896e11dcf82c",
-    "autoTriedAt": "2026-07-11T12:14:50.235Z"
+    "autoTriedAt": "2026-07-11T12:14:50.235Z",
+    "popularity": {
+      "listeners": 29,
+      "playcount": 124
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6843f2cdc35b7c41e1c474892146f097/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:33.941Z"
   },
   {
     "name": "Gary Usher",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbid": "bc97c42e-0a22-4820-ab28-860a0a5147db",
-    "autoTriedAt": "2026-07-11T12:14:52.774Z"
+    "autoTriedAt": "2026-07-11T12:14:52.774Z",
+    "genres": [
+      "pop",
+      "Surf",
+      "surf rock",
+      "baroque pop",
+      "sunshine pop"
+    ],
+    "popularity": {
+      "listeners": 5564,
+      "playcount": 34078
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9bfe9b31a628abd196dad82f77d75136/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:34.672Z"
   },
   {
     "name": "Gary Valenciano",
@@ -6065,7 +7399,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:28.398Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d712724c-a14c-4713-8f6b-f04e1fa18929"
+    "mbid": "d712724c-a14c-4713-8f6b-f04e1fa18929",
+    "genres": [
+      "OPM",
+      "pop",
+      "soul",
+      "philippines",
+      "Gary Valenciano"
+    ],
+    "popularity": {
+      "listeners": 46343,
+      "playcount": 568375
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f56398fb585781af76befbdd8b4d9cce/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:35.362Z"
   },
   {
     "name": "Gary Valente",
@@ -6073,7 +7420,13 @@
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "7783995e-7c80-4916-9f61-640e199aba96",
-    "autoTriedAt": "2026-07-11T12:14:55.288Z"
+    "autoTriedAt": "2026-07-11T12:14:55.288Z",
+    "popularity": {
+      "listeners": 28,
+      "playcount": 38
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a1018065b0264f10a210021529408f24/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:36.100Z"
   },
   {
     "name": "Gary Wallis",
@@ -6081,7 +7434,8 @@
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "ba088587-1cd8-4c5b-8353-753244c8bd66",
-    "autoTriedAt": "2026-07-11T12:14:57.770Z"
+    "autoTriedAt": "2026-07-11T12:14:57.770Z",
+    "metaTriedAt": "2026-07-11T21:28:36.743Z"
   },
   {
     "name": "Gary Wehrkamp",
@@ -6089,7 +7443,13 @@
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "66d4cc9c-2e80-4a44-9f8a-3f5c35365eee",
-    "autoTriedAt": "2026-07-11T12:15:00.237Z"
+    "autoTriedAt": "2026-07-11T12:15:00.237Z",
+    "popularity": {
+      "listeners": 71,
+      "playcount": 99
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/692ce93084e2105922128569d34fbdbb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:37.402Z"
   },
   {
     "name": "Gary Willis",
@@ -6105,7 +7465,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:28.398Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "021ddda0-ee1e-4740-9ead-052bfa8285a8"
+    "mbid": "021ddda0-ee1e-4740-9ead-052bfa8285a8",
+    "genres": [
+      "bass",
+      "jazz",
+      "Fusion",
+      "jazz fusion",
+      "jazz bass"
+    ],
+    "popularity": {
+      "listeners": 27196,
+      "playcount": 183357
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/41b6e759f3bc61c54dccaf321559f42e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:38.090Z"
   },
   {
     "name": "Gary's Gang",
@@ -6121,14 +7494,32 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:15:03.149Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Disco",
+      "funk",
+      "70s",
+      "soul",
+      "male vocalists"
+    ],
+    "popularity": {
+      "listeners": 50191,
+      "playcount": 184780
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/76c45ec3c0def0e35c2c14bfc6ae2029/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:38.739Z"
   },
   {
     "name": "Gas 0095",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:15:04.384Z"
+    "autoTriedAt": "2026-07-11T12:15:04.384Z",
+    "popularity": {
+      "listeners": 32,
+      "playcount": 278
+    },
+    "metaEnrichedAt": "2026-07-11T21:28:39.771Z"
   },
   {
     "name": "Gas Huffer",
@@ -6144,14 +7535,39 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:15:07.216Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Garage Punk",
+      "punk",
+      "punk rock",
+      "Grunge",
+      "rockabilly"
+    ],
+    "popularity": {
+      "listeners": 28425,
+      "playcount": 218937
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/387c1a0d7d90d0226a440fb73257855f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:40.574Z"
   },
   {
     "name": "Gaslight Anthem",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:15:08.464Z"
+    "autoTriedAt": "2026-07-11T12:15:08.464Z",
+    "genres": [
+      "punk rock",
+      "rock",
+      "punk",
+      "folk punk",
+      "indie"
+    ],
+    "popularity": {
+      "listeners": 723472,
+      "playcount": 47925097
+    },
+    "metaEnrichedAt": "2026-07-11T21:28:41.330Z"
   },
   {
     "name": "Gasolin'",
@@ -6168,7 +7584,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:15:11.003Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "rock",
+      "danish",
+      "classic rock",
+      "dansk",
+      "70s"
+    ],
+    "popularity": {
+      "listeners": 59197,
+      "playcount": 1085403
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7a2b1213d4268b5ffc574af3a6f5536a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:42.020Z"
   },
   {
     "name": "Gasoline",
@@ -6185,7 +7614,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:15:13.643Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "abstract hip-hop",
+      "Hip-Hop",
+      "french",
+      "punk",
+      "hip hop"
+    ],
+    "popularity": {
+      "listeners": 51853,
+      "playcount": 568437
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d50f6e5e35970a52195eb827c83d8691/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:42.622Z"
   },
   {
     "name": "Gaspar Cassadó",
@@ -6201,28 +7643,76 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:15:16.193Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "composer",
+      "cello",
+      "modern classical",
+      "contemporary classical",
+      "spanish"
+    ],
+    "popularity": {
+      "listeners": 5718,
+      "playcount": 23452
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d6d4a785385e1aa253aa33720191151f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:43.270Z"
   },
   {
     "name": "Gaspar Sanz",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbid": "e1975032-7d64-417c-80c8-c9b7e95c3e07",
-    "autoTriedAt": "2026-07-11T12:15:18.816Z"
+    "autoTriedAt": "2026-07-11T12:15:18.816Z",
+    "genres": [
+      "baroque",
+      "classical guitar",
+      "spanish",
+      "Classical",
+      "spanish guitar"
+    ],
+    "popularity": {
+      "listeners": 30254,
+      "playcount": 163695
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8e2329ec6c651672ab582501154caa69/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:43.921Z"
   },
   {
     "name": "Gaspare Spontini",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbid": "50df6bce-7325-4d81-8581-47a31dac29a8",
-    "autoTriedAt": "2026-07-11T12:15:21.415Z"
+    "autoTriedAt": "2026-07-11T12:15:21.415Z",
+    "genres": [
+      "opera",
+      "Classical",
+      "composer",
+      "19th century",
+      "italian"
+    ],
+    "popularity": {
+      "listeners": 3134,
+      "playcount": 22379
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ac9bb9dd81cb828b833c746ca8c195d8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:28:44.557Z"
   },
   {
     "name": "Gasparo Alberti",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:28.398Z",
     "mbid": "f2a3bcf9-3e4e-4812-8c23-d8ab84413741",
-    "autoTriedAt": "2026-07-11T12:15:24.018Z"
+    "autoTriedAt": "2026-07-11T12:15:24.018Z",
+    "genres": [
+      "16th century",
+      "italian"
+    ],
+    "popularity": {
+      "listeners": 9,
+      "playcount": 21
+    },
+    "metaEnrichedAt": "2026-07-11T21:28:45.197Z"
   },
   {
     "name": "Gasparo Pratoneri",
