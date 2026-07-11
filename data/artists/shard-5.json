@@ -92679,7 +92679,8 @@
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T08:33:36.869Z"
+    "autoTriedAt": "2026-07-11T08:33:36.869Z",
+    "metaTriedAt": "2026-07-11T13:51:23.819Z"
   },
   {
     "name": "Maurizio Bianchi",
@@ -92695,7 +92696,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:40.360Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "57bd7b0e-a1be-4a9d-a0e3-e7980f156728"
+    "mbid": "57bd7b0e-a1be-4a9d-a0e3-e7980f156728",
+    "genres": [
+      "noise",
+      "industrial",
+      "experimental",
+      "dark ambient",
+      "Avant-Garde"
+    ],
+    "popularity": {
+      "listeners": 12908,
+      "playcount": 189209
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7cf5fb1b06facfae80cf77660d2e9389/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:24.550Z"
   },
   {
     "name": "Maurizio Cazzati",
@@ -92711,7 +92725,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:33:39.457Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "baroque",
+      "italian",
+      "composer",
+      "Classical",
+      "barocco italiano"
+    ],
+    "popularity": {
+      "listeners": 2465,
+      "playcount": 12048
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/221d512d78418d68114fc1837cfe2ab0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:25.489Z"
   },
   {
     "name": "Maurizio Pisati",
@@ -92728,7 +92755,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:33:42.156Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "contemporary classical",
+      "composer",
+      "italian",
+      "experimental"
+    ],
+    "popularity": {
+      "listeners": 1131,
+      "playcount": 2404
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:26.147Z"
   },
   {
     "name": "Maurizio Pollini",
@@ -92744,7 +92783,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:40.360Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "afdfd1f3-e3c2-47e7-b861-465678a3dbc2"
+    "mbid": "afdfd1f3-e3c2-47e7-b861-465678a3dbc2",
+    "genres": [
+      "Classical",
+      "piano",
+      "classical piano",
+      "pianist",
+      "Chopin"
+    ],
+    "popularity": {
+      "listeners": 101662,
+      "playcount": 1899987
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e169320819d7ce1442ca5d5306b94115/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:26.793Z"
   },
   {
     "name": "Mauro Giuliani",
@@ -92760,14 +92812,33 @@
     },
     "enrichedAt": "2026-07-07T07:18:40.360Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "fc6a0ffa-4780-4924-a263-0b41a1911057"
+    "mbid": "fc6a0ffa-4780-4924-a263-0b41a1911057",
+    "genres": [
+      "classical guitar",
+      "Classical",
+      "guitar",
+      "italian",
+      "Italy"
+    ],
+    "popularity": {
+      "listeners": 29948,
+      "playcount": 172500
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a19271081c4473ae059efe73c0c7f633/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:27.448Z"
   },
   {
     "name": "Mauro Malavasi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
     "mbid": "eb37a469-ad68-44f2-a3e3-520cfd3653a8",
-    "autoTriedAt": "2026-07-11T08:33:44.768Z"
+    "autoTriedAt": "2026-07-11T08:33:44.768Z",
+    "popularity": {
+      "listeners": 2788,
+      "playcount": 10536
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:28.100Z"
   },
   {
     "name": "Mauro Maur",
@@ -92775,7 +92846,13 @@
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "c8056454-c602-4890-a083-0ac62ef6565b",
-    "autoTriedAt": "2026-07-11T08:33:47.573Z"
+    "autoTriedAt": "2026-07-11T08:33:47.573Z",
+    "popularity": {
+      "listeners": 86,
+      "playcount": 253
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d8895ca4025be4fe813742a04b5e1bc8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:28.821Z"
   },
   {
     "name": "Mauro Pawlowski",
@@ -92791,14 +92868,32 @@
     },
     "enrichedAt": "2026-07-07T07:18:40.360Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "804d0c3e-b434-40b5-b7ad-910be8692cf4"
+    "mbid": "804d0c3e-b434-40b5-b7ad-910be8692cf4",
+    "genres": [
+      "Belgium",
+      "indie",
+      "singer-songwriter",
+      "alternative",
+      "All"
+    ],
+    "popularity": {
+      "listeners": 8464,
+      "playcount": 64510
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/baddcea589f3ad248784e6c75e8744f2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:29.466Z"
   },
   {
     "name": "Mauro Pezzente",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
     "mbid": "90987962-01af-475a-a134-e286c7c0069d",
-    "autoTriedAt": "2026-07-11T08:33:50.142Z"
+    "autoTriedAt": "2026-07-11T08:33:50.142Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 3
+    },
+    "metaEnrichedAt": "2026-07-11T13:51:30.117Z"
   },
   {
     "name": "Mauro Picotto",
@@ -92814,7 +92909,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:40.360Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0eb89e0b-adee-4175-b1f0-55a3531937be"
+    "mbid": "0eb89e0b-adee-4175-b1f0-55a3531937be",
+    "genres": [
+      "trance",
+      "techno",
+      "electronic",
+      "dance",
+      "progressive trance"
+    ],
+    "popularity": {
+      "listeners": 341081,
+      "playcount": 2859003
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5ee8e678504dd9d28af7863ce08da61e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:30.732Z"
   },
   {
     "name": "Maury Finney",
@@ -92822,7 +92930,13 @@
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "550351c0-325f-4ddd-9709-f81ccef3d90a",
-    "autoTriedAt": "2026-07-11T08:33:52.715Z"
+    "autoTriedAt": "2026-07-11T08:33:52.715Z",
+    "popularity": {
+      "listeners": 42,
+      "playcount": 229
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/45ce45c6fcdf35adf97fdb61ba4ceae5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:31.374Z"
   },
   {
     "name": "Maury Muehleisen",
@@ -92838,21 +92952,52 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:33:55.603Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 165,
+      "playcount": 4097
+    },
+    "metaEnrichedAt": "2026-07-11T13:51:32.024Z"
   },
   {
     "name": "Mausami Gurung",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T08:33:56.879Z"
+    "autoTriedAt": "2026-07-11T08:33:56.879Z",
+    "genres": [
+      "pop",
+      "folk",
+      "india",
+      "Hindi",
+      "nepal"
+    ],
+    "popularity": {
+      "listeners": 19,
+      "playcount": 32
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ffc4a85ad626dfbe6daf69f273de5b92/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:32.728Z"
   },
   {
     "name": "Mauthausen Orchestra",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
     "mbid": "c599059c-de87-4ba1-b165-a16151895fcb",
-    "autoTriedAt": "2026-07-11T08:33:59.447Z"
+    "autoTriedAt": "2026-07-11T08:33:59.447Z",
+    "genres": [
+      "power electronics",
+      "noise",
+      "industrial",
+      "italian",
+      "death industrial"
+    ],
+    "popularity": {
+      "listeners": 2261,
+      "playcount": 38637
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:33.385Z"
   },
   {
     "name": "Mauvais Djo",
@@ -92869,7 +93014,16 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:34:02.028Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "congo"
+    ],
+    "popularity": {
+      "listeners": 44751,
+      "playcount": 481775
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b62591e004636c54c8a72f938820398d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:33.963Z"
   },
   {
     "name": "Mavado",
@@ -92885,14 +93039,28 @@
     },
     "enrichedAt": "2026-07-07T07:18:40.360Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "82705f22-a8ec-499c-8f41-8ee6b47a9459"
+    "mbid": "82705f22-a8ec-499c-8f41-8ee6b47a9459",
+    "genres": [
+      "dancehall",
+      "reggae",
+      "jamaican",
+      "Bashment",
+      "gangsta"
+    ],
+    "popularity": {
+      "listeners": 232969,
+      "playcount": 2654419
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d9f0013c9d9f1d0afca9c3c1ed8f4cee/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:34.607Z"
   },
   {
     "name": "Mavelikkara Velukkutty Nair",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:40.360Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T08:34:03.299Z"
+    "autoTriedAt": "2026-07-11T08:34:03.299Z",
+    "metaTriedAt": "2026-07-11T13:51:35.241Z"
   },
   {
     "name": "Maverick",
@@ -92909,14 +93077,27 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:34:05.902Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "visual kei",
+      "hard rock",
+      "heavy metal",
+      "Power metal",
+      "japanese"
+    ],
+    "popularity": {
+      "listeners": 54292,
+      "playcount": 393614
+    },
+    "metaEnrichedAt": "2026-07-11T13:51:36.006Z"
   },
   {
     "name": "Mavis Chloe Rivers",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbid": "a41f36d7-50c1-47bc-aa2a-ddb384259c35",
-    "autoTriedAt": "2026-07-11T08:34:07.173Z"
+    "autoTriedAt": "2026-07-11T08:34:07.173Z",
+    "metaTriedAt": "2026-07-11T13:51:36.615Z"
   },
   {
     "name": "Mavis Fan",
@@ -92932,7 +93113,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "535bde95-bf8b-45ad-add7-2b1c77acad6c"
+    "mbid": "535bde95-bf8b-45ad-add7-2b1c77acad6c",
+    "genres": [
+      "taiwan",
+      "indie",
+      "taiwanese",
+      "jazz",
+      "chinese"
+    ],
+    "popularity": {
+      "listeners": 12847,
+      "playcount": 287790
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/19cfd64cda30c3228cffdf4ae1fdb35d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:37.323Z"
   },
   {
     "name": "Mavis Hee",
@@ -92948,7 +93142,18 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a92ec581-ecf5-4a31-a23f-bf09ba8ef2a6"
+    "mbid": "a92ec581-ecf5-4a31-a23f-bf09ba8ef2a6",
+    "genres": [
+      "singapore",
+      "C-pop",
+      "singaporean chinese",
+      "Singaporean"
+    ],
+    "popularity": {
+      "listeners": 11124,
+      "playcount": 139141
+    },
+    "metaEnrichedAt": "2026-07-11T13:51:37.985Z"
   },
   {
     "name": "Mavis Staples",
@@ -92964,28 +93169,60 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "04f57a2d-2449-400e-8fff-5b1c5af9560b"
+    "mbid": "04f57a2d-2449-400e-8fff-5b1c5af9560b",
+    "genres": [
+      "soul",
+      "gospel",
+      "blues",
+      "female vocalists",
+      "rhythm and blues"
+    ],
+    "popularity": {
+      "listeners": 269776,
+      "playcount": 2341504
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/102e6cfe18ca4b780482a27c7fc917aa/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:38.782Z"
   },
   {
     "name": "Maw, Nicholas",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T08:34:08.455Z"
+    "autoTriedAt": "2026-07-11T08:34:08.455Z",
+    "popularity": {
+      "listeners": 43,
+      "playcount": 278
+    },
+    "metaEnrichedAt": "2026-07-11T13:51:39.542Z"
   },
   {
     "name": "Mawatari, Matsuko",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T08:34:09.725Z"
+    "autoTriedAt": "2026-07-11T08:34:09.725Z",
+    "metaTriedAt": "2026-07-11T13:51:40.166Z"
   },
   {
     "name": "Max and Harvey",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T08:34:11.033Z"
+    "autoTriedAt": "2026-07-11T08:34:11.033Z",
+    "genres": [
+      "ninja tune",
+      "electronica",
+      "chillout",
+      "dub",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 27425,
+      "playcount": 172441
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8a53993ffbf45e9c6e7d5c254d443534/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:41.485Z"
   },
   {
     "name": "Max B",
@@ -93001,7 +93238,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "372119b0-2350-455f-acd8-6371bc947531"
+    "mbid": "372119b0-2350-455f-acd8-6371bc947531",
+    "genres": [
+      "rap",
+      "Hip-Hop",
+      "wavy",
+      "east coast rap",
+      "new york"
+    ],
+    "popularity": {
+      "listeners": 200037,
+      "playcount": 2762085
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/38af02554ac08a21a79f4ba735c632f3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:42.114Z"
   },
   {
     "name": "Max Bacon",
@@ -93009,7 +93259,20 @@
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "80aff579-8968-4272-aaf8-524837db63f2",
-    "autoTriedAt": "2026-07-11T08:34:13.612Z"
+    "autoTriedAt": "2026-07-11T08:34:13.612Z",
+    "genres": [
+      "Progressive rock",
+      "classic rock",
+      "asia",
+      "AOR",
+      "prog AOR"
+    ],
+    "popularity": {
+      "listeners": 418,
+      "playcount": 3909
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/79d50aa325483433d9ef66e3ea9d8f24/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:42.943Z"
   },
   {
     "name": "Max Bemis",
@@ -93025,7 +93288,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b3e2c240-9ed1-4c98-b3c0-073f3f840cd4"
+    "mbid": "b3e2c240-9ed1-4c98-b3c0-073f3f840cd4",
+    "genres": [
+      "acoustic",
+      "rock",
+      "new york",
+      "New York City",
+      "1984-04-06"
+    ],
+    "popularity": {
+      "listeners": 3390,
+      "playcount": 61030
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/64733c977bea8ce7f912b1bd0f554143/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:43.830Z"
   },
   {
     "name": "Max Bennett",
@@ -93042,7 +93318,18 @@
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "08212320-efca-4a86-9778-4ee51a12c6eb",
     "enrichedAt": "2026-07-11T08:34:16.242Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "bass",
+      "jazz",
+      "jazz bass"
+    ],
+    "popularity": {
+      "listeners": 445,
+      "playcount": 4988
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/25cd663bef3bd8d5a5a037b3cb257525/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:44.607Z"
   },
   {
     "name": "Max Brod",
@@ -93050,7 +93337,12 @@
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "25f48f11-e5e3-4d35-888b-1c362a56e659",
-    "autoTriedAt": "2026-07-11T08:34:18.806Z"
+    "autoTriedAt": "2026-07-11T08:34:18.806Z",
+    "popularity": {
+      "listeners": 42,
+      "playcount": 118
+    },
+    "metaEnrichedAt": "2026-07-11T13:51:45.312Z"
   },
   {
     "name": "Max Bruch",
@@ -93066,14 +93358,39 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e3d5cfcd-e42b-411d-add2-716a5029f59b"
+    "mbid": "e3d5cfcd-e42b-411d-add2-716a5029f59b",
+    "genres": [
+      "Classical",
+      "romantic",
+      "german",
+      "composers",
+      "classic"
+    ],
+    "popularity": {
+      "listeners": 285694,
+      "playcount": 1429817
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d80af250dde96e50fd549b49b2d0c940/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:45.959Z"
   },
   {
     "name": "Max Butting",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbid": "69a4f151-d9a1-4078-b68f-6ed34836d0dc",
-    "autoTriedAt": "2026-07-11T08:34:21.392Z"
+    "autoTriedAt": "2026-07-11T08:34:21.392Z",
+    "genres": [
+      "german",
+      "instrumental",
+      "contemporary classical",
+      "Classical",
+      "composer"
+    ],
+    "popularity": {
+      "listeners": 35,
+      "playcount": 202
+    },
+    "metaEnrichedAt": "2026-07-11T13:51:46.694Z"
   },
   {
     "name": "Max Bygraves",
@@ -93089,7 +93406,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:34:24.002Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "oldies",
+      "male vocalists",
+      "All",
+      "Need to Rate"
+    ],
+    "popularity": {
+      "listeners": 24628,
+      "playcount": 127302
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/51adba1ed20cec8b85336fdc645cb91f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:47.613Z"
   },
   {
     "name": "Max Casella",
@@ -93105,7 +93435,17 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:34:26.590Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "The Little Mermaid II",
+      "Broadway"
+    ],
+    "popularity": {
+      "listeners": 17842,
+      "playcount": 57315
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/85a6635e748e25a509577c061a527656/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:48.267Z"
   },
   {
     "name": "Max Cavalera",
@@ -93121,7 +93461,19 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5970bee1-1713-4970-be17-a801b863a273"
+    "mbid": "5970bee1-1713-4970-be17-a801b863a273",
+    "genres": [
+      "rock",
+      "thrash metal",
+      "god",
+      "brazilian",
+      "Punk-Rock"
+    ],
+    "popularity": {
+      "listeners": 2183,
+      "playcount": 8034
+    },
+    "metaEnrichedAt": "2026-07-11T13:51:48.901Z"
   },
   {
     "name": "Max Collins",
@@ -93138,7 +93490,16 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:34:29.201Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "United States"
+    ],
+    "popularity": {
+      "listeners": 720,
+      "playcount": 11717
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7596ba684ac7624b648faf7dfa05fc57/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:49.778Z"
   },
   {
     "name": "Max Coveri",
@@ -93154,7 +93515,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1167fbcc-d46e-48d3-8341-555e8ca60d47"
+    "mbid": "1167fbcc-d46e-48d3-8341-555e8ca60d47",
+    "genres": [
+      "eurobeat",
+      "electronic",
+      "Initial D",
+      "ytmnd",
+      "anime"
+    ],
+    "popularity": {
+      "listeners": 316048,
+      "playcount": 3149588
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/afa1ff4e868b8296658f681a884897f0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:50.475Z"
   },
   {
     "name": "Max Creek",
@@ -93170,28 +93544,57 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "75f27492-3018-4b1e-aa04-60c31059a5c5"
+    "mbid": "75f27492-3018-4b1e-aa04-60c31059a5c5",
+    "genres": [
+      "CT Music",
+      "jamband"
+    ],
+    "popularity": {
+      "listeners": 1438,
+      "playcount": 24354
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/031a255cac12bf54a2c583100d53b0c4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:51.288Z"
   },
   {
     "name": "Max Crumm",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbid": "43056a65-37a2-40c1-859e-fe22ec6c3f04",
-    "autoTriedAt": "2026-07-11T08:34:31.783Z"
+    "autoTriedAt": "2026-07-11T08:34:31.783Z",
+    "popularity": {
+      "listeners": 3015,
+      "playcount": 24988
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1813bd8a961ab66b6466a21edb75da84/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:52.035Z"
   },
   {
     "name": "Max Dimoff",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T08:34:33.055Z"
+    "autoTriedAt": "2026-07-11T08:34:33.055Z",
+    "metaTriedAt": "2026-07-11T13:51:52.725Z"
   },
   {
     "name": "Max Frost and the Troopers",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbid": "a0e47ac3-ed1a-456a-adb8-9b478d5576a8",
-    "autoTriedAt": "2026-07-11T08:34:34.340Z"
+    "autoTriedAt": "2026-07-11T08:34:34.340Z",
+    "genres": [
+      "Garage Rock",
+      "Psychedelic Rock",
+      "psychedelic",
+      "60s",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 17911,
+      "playcount": 65653
+    },
+    "metaEnrichedAt": "2026-07-11T13:51:53.363Z"
   },
   {
     "name": "Max Graham",
@@ -93208,7 +93611,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:34:37.001Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "trance",
+      "electronic",
+      "House",
+      "Progressive House",
+      "progressive trance"
+    ],
+    "popularity": {
+      "listeners": 121321,
+      "playcount": 786378
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/db6803c8c9941c44b09cd19af4f2fe91/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:54.034Z"
   },
   {
     "name": "Max Green",
@@ -93216,14 +93632,32 @@
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "73b64c2c-48bd-4121-946a-8928a8a8e3f3",
-    "autoTriedAt": "2026-07-11T08:34:39.561Z"
+    "autoTriedAt": "2026-07-11T08:34:39.561Z",
+    "genres": [
+      "indie",
+      "Canadian",
+      "screamo",
+      "singer-songwriter",
+      "indie folk"
+    ],
+    "popularity": {
+      "listeners": 464,
+      "playcount": 1442
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0d909f186eb51ee4ee1463c9c1283bba/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:54.803Z"
   },
   {
     "name": "Max Hess",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T08:34:40.834Z"
+    "autoTriedAt": "2026-07-11T08:34:40.834Z",
+    "popularity": {
+      "listeners": 15,
+      "playcount": 50
+    },
+    "metaEnrichedAt": "2026-07-11T13:51:55.500Z"
   },
   {
     "name": "Max Kaluza",
@@ -93240,7 +93674,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:34:43.398Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 2293,
+      "playcount": 5770
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b4d7fc0c7a2d05278e5555f5b0dc5a2d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:56.179Z"
   },
   {
     "name": "Max Koffler",
@@ -93256,7 +93696,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:34:46.049Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "rock",
+      "blues",
+      "alternative pop",
+      "pop",
+      "singer songwriter"
+    ],
+    "popularity": {
+      "listeners": 542,
+      "playcount": 8054
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9d41b345fbb4e108cb3e30a0a3fca22e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:56.869Z"
   },
   {
     "name": "Max Lilja",
@@ -93273,7 +93726,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:34:48.918Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "acoustic",
+      "experimental",
+      "electronica",
+      "various",
+      "adm"
+    ],
+    "popularity": {
+      "listeners": 2637,
+      "playcount": 27343
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8581026c8ba8056fd086a3e9f738b8ba/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:57.784Z"
   },
   {
     "name": "Max Martin",
@@ -93290,14 +93756,21 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:34:51.510Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 3893,
+      "playcount": 10905
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cd13de9e31ddc0612d95e3cb351b491f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:51:58.420Z"
   },
   {
     "name": "Max Méreaux",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T08:34:52.794Z"
+    "autoTriedAt": "2026-07-11T08:34:52.794Z",
+    "metaTriedAt": "2026-07-11T13:51:59.078Z"
   },
   {
     "name": "Max Merritt",
@@ -93313,7 +93786,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f814fd23-f51a-49ab-8d5f-ac250c18b661"
+    "mbid": "f814fd23-f51a-49ab-8d5f-ac250c18b661",
+    "genres": [
+      "New Zealand",
+      "music",
+      "everything",
+      "All",
+      "Max Merritt"
+    ],
+    "popularity": {
+      "listeners": 3055,
+      "playcount": 15931
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/92dc212ce1a57f59d4aef86ddb73b04d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:00.308Z"
   },
   {
     "name": "Max Miller",
@@ -93330,7 +93816,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:34:55.393Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "rock",
+      "All",
+      "alt rock",
+      "Grunge",
+      "folk"
+    ],
+    "popularity": {
+      "listeners": 2701,
+      "playcount": 13792
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:01.126Z"
   },
   {
     "name": "Max Mutzke",
@@ -93347,7 +93845,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:34:57.980Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "german",
+      "soul",
+      "pop",
+      "deutsch",
+      "german artists"
+    ],
+    "popularity": {
+      "listeners": 69328,
+      "playcount": 647074
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/858c86caac4abe0c3c530ad6c3768123/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:01.737Z"
   },
   {
     "name": "Max Neuhaus",
@@ -93355,7 +93866,20 @@
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "6a5d9ecb-7160-4831-9d90-1536279084f4",
-    "autoTriedAt": "2026-07-11T08:35:00.598Z"
+    "autoTriedAt": "2026-07-11T08:35:00.598Z",
+    "genres": [
+      "contemporary classical",
+      "Avant-Garde",
+      "noise",
+      "experimental",
+      "percussion"
+    ],
+    "popularity": {
+      "listeners": 651,
+      "playcount": 3558
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/235a75dff8a058ffbcc7db6b096a99ea/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:02.405Z"
   },
   {
     "name": "Max On The Rox",
@@ -93372,7 +93896,18 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:35:03.190Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "rock",
+      "blues",
+      "blues rock",
+      "finland"
+    ],
+    "popularity": {
+      "listeners": 83,
+      "playcount": 2628
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:03.074Z"
   },
   {
     "name": "Max Pezzali",
@@ -93388,7 +93923,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b76f7323-183e-4b90-83b1-5111d04d6665"
+    "mbid": "b76f7323-183e-4b90-83b1-5111d04d6665",
+    "genres": [
+      "italian",
+      "pop",
+      "singer-songwriter",
+      "italian pop",
+      "italiana"
+    ],
+    "popularity": {
+      "listeners": 95010,
+      "playcount": 1151475
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1dc580241fac6bb5934cf5100a12a3c7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:03.840Z"
   },
   {
     "name": "Max Raabe",
@@ -93404,7 +93952,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7930faec-582a-480b-9398-8cb83f39d79c"
+    "mbid": "7930faec-582a-480b-9398-8cb83f39d79c",
+    "genres": [
+      "cabaret",
+      "swing",
+      "german",
+      "humour",
+      "deutsch"
+    ],
+    "popularity": {
+      "listeners": 33367,
+      "playcount": 318457
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7918f1e5f8500d7ee9c82afdd09d6d75/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:04.493Z"
   },
   {
     "name": "Max Rebo Band",
@@ -93412,7 +93973,19 @@
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "3316add6-5fbe-495c-9ba2-8e15b8283194",
-    "autoTriedAt": "2026-07-11T08:35:05.745Z"
+    "autoTriedAt": "2026-07-11T08:35:05.745Z",
+    "genres": [
+      "Star Wars",
+      "comedy",
+      "John Williams",
+      "vader",
+      "Movies"
+    ],
+    "popularity": {
+      "listeners": 476,
+      "playcount": 2803
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:05.333Z"
   },
   {
     "name": "Max Reger",
@@ -93429,14 +94002,32 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:35:08.495Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Classical",
+      "organ",
+      "romantic",
+      "german",
+      "neo-baroque"
+    ],
+    "popularity": {
+      "listeners": 56593,
+      "playcount": 329424
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/452de07c8d09d37ada1169ad3a1963ed/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:06.054Z"
   },
   {
     "name": "Max Richards",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T08:35:09.775Z"
+    "autoTriedAt": "2026-07-11T08:35:09.775Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 2
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:06.773Z"
   },
   {
     "name": "Max Richter",
@@ -93452,7 +94043,20 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T08:35:09.775Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "ambient",
+      "contemporary classical",
+      "neoclassical",
+      "Classical",
+      "electronic"
+    ],
+    "popularity": {
+      "listeners": 1537461,
+      "playcount": 65665381
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5fb82c9b42f1200c5b2dffed432cf6dc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:07.388Z"
   },
   {
     "name": "Max Roach",
@@ -93468,7 +94072,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0b6aea55-d855-4a33-ae08-b0280dd28684"
+    "mbid": "0b6aea55-d855-4a33-ae08-b0280dd28684",
+    "genres": [
+      "jazz",
+      "Hard Bop",
+      "drums",
+      "free jazz",
+      "modern jazz"
+    ],
+    "popularity": {
+      "listeners": 180995,
+      "playcount": 1314316
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4cfd19d19081e3f053f0f3897378a6ae/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:08.006Z"
   },
   {
     "name": "Max Romeo",
@@ -93484,14 +94101,33 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d82e9822-521a-4e20-bb22-9e944374cd40"
+    "mbid": "d82e9822-521a-4e20-bb22-9e944374cd40",
+    "genres": [
+      "reggae",
+      "roots reggae",
+      "dub",
+      "roots",
+      "Rasta"
+    ],
+    "popularity": {
+      "listeners": 595385,
+      "playcount": 4770687
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ea0d22628ea24bfab70270222e3b5a14/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:08.644Z"
   },
   {
     "name": "Max Rostal",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbid": "0e335e27-d13c-4ee0-9de3-ce3141b48ac2",
-    "autoTriedAt": "2026-07-11T08:35:12.653Z"
+    "autoTriedAt": "2026-07-11T08:35:12.653Z",
+    "popularity": {
+      "listeners": 37,
+      "playcount": 395
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2bbfc7635eb9684bb36b7d97e8a6982c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:09.429Z"
   },
   {
     "name": "Max Santos",
@@ -93507,7 +94143,13 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8fd6c9a7-7064-40bc-93b9-5cdea4f75530"
+    "mbid": "8fd6c9a7-7064-40bc-93b9-5cdea4f75530",
+    "popularity": {
+      "listeners": 10,
+      "playcount": 17
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0821c5e532334fa1f92bd0d14503edc4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:10.187Z"
   },
   {
     "name": "Max Splodge",
@@ -93515,7 +94157,15 @@
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "07b59750-7c11-4082-abd5-acd60b7483e7",
-    "autoTriedAt": "2026-07-11T08:35:15.223Z"
+    "autoTriedAt": "2026-07-11T08:35:15.223Z",
+    "genres": [
+      "punk"
+    ],
+    "popularity": {
+      "listeners": 388,
+      "playcount": 1044
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:11.008Z"
   },
   {
     "name": "Max Stalling",
@@ -93531,7 +94181,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1f6b79ad-afab-4ef6-8706-5493411bd0c2"
+    "mbid": "1f6b79ad-afab-4ef6-8706-5493411bd0c2",
+    "genres": [
+      "All",
+      "country",
+      "Texas music",
+      "texas",
+      "americana"
+    ],
+    "popularity": {
+      "listeners": 11279,
+      "playcount": 154027
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/47ddf518fe2400774b796609d4b2981a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:11.702Z"
   },
   {
     "name": "Max Stern",
@@ -93548,7 +94211,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:35:17.831Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "singer-songwriter",
+      "punk",
+      "Ohio",
+      "pop punk"
+    ],
+    "popularity": {
+      "listeners": 434,
+      "playcount": 10085
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e7681db7772f22abe83131acae8732d4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:12.458Z"
   },
   {
     "name": "Max Stirner",
@@ -93564,14 +94239,30 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:35:20.528Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "spooks",
+      "spooky",
+      "PURE IDEOLOGY",
+      "spoopy"
+    ],
+    "popularity": {
+      "listeners": 177,
+      "playcount": 761
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:13.162Z"
   },
   {
     "name": "Max Trapp",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbid": "377b003b-7c4d-4b3e-b25a-4c971c1340bf",
-    "autoTriedAt": "2026-07-11T08:35:23.108Z"
+    "autoTriedAt": "2026-07-11T08:35:23.108Z",
+    "popularity": {
+      "listeners": 7,
+      "playcount": 23
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:13.924Z"
   },
   {
     "name": "Max von Essen",
@@ -93579,21 +94270,49 @@
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "54ec9e4d-8798-4cb1-845c-499339d4eb74",
-    "autoTriedAt": "2026-07-11T08:35:25.682Z"
+    "autoTriedAt": "2026-07-11T08:35:25.682Z",
+    "genres": [
+      "Musical theatre",
+      "Broadway",
+      "male vocalists",
+      "The Broadway Prince Party"
+    ],
+    "popularity": {
+      "listeners": 6516,
+      "playcount": 35315
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/534b4da0c83152dcccf274c1f1716acd/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:14.626Z"
   },
   {
     "name": "Max Wagenknecht",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbid": "19050164-0fb6-4378-904f-6c94b8074a74",
-    "autoTriedAt": "2026-07-11T08:35:28.257Z"
+    "autoTriedAt": "2026-07-11T08:35:28.257Z",
+    "popularity": {
+      "listeners": 14,
+      "playcount": 20
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:15.257Z"
   },
   {
     "name": "Max Wall",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbid": "48ebabe9-363b-4b0f-834f-a50f51adf801",
-    "autoTriedAt": "2026-07-11T08:35:30.846Z"
+    "autoTriedAt": "2026-07-11T08:35:30.846Z",
+    "genres": [
+      "comedy",
+      "humour",
+      "music hall"
+    ],
+    "popularity": {
+      "listeners": 2333,
+      "playcount": 5876
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:15.996Z"
   },
   {
     "name": "Max Webster",
@@ -93601,7 +94320,20 @@
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "76fe1f52-d059-46e4-b683-b1512d2fd5f4",
-    "autoTriedAt": "2026-07-11T08:35:33.559Z"
+    "autoTriedAt": "2026-07-11T08:35:33.559Z",
+    "genres": [
+      "Canadian",
+      "hard rock",
+      "Progressive rock",
+      "rock",
+      "classic rock"
+    ],
+    "popularity": {
+      "listeners": 15530,
+      "playcount": 226278
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0f61131745b295f87c43943b348d24aa/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:16.706Z"
   },
   {
     "name": "Max Weinberg",
@@ -93618,14 +94350,31 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:35:36.152Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 78,
+      "playcount": 841
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:17.329Z"
   },
   {
     "name": "Max-Him",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbid": "62ffb89e-7611-4981-8873-29d963a83cc6",
-    "autoTriedAt": "2026-07-11T08:35:38.730Z"
+    "autoTriedAt": "2026-07-11T08:35:38.730Z",
+    "genres": [
+      "Italo Disco",
+      "italo-disco",
+      "80s",
+      "italian",
+      "Disco"
+    ],
+    "popularity": {
+      "listeners": 19782,
+      "playcount": 133453
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:18.581Z"
   },
   {
     "name": "Maxeen",
@@ -93641,7 +94390,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "86b7b48f-2514-454c-a96c-afb52c7f1455"
+    "mbid": "86b7b48f-2514-454c-a96c-afb52c7f1455",
+    "genres": [
+      "pop punk",
+      "rock",
+      "punk",
+      "indie",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 72931,
+      "playcount": 498711
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/69d4625ac0922181984592e4fc29d0ce/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:19.259Z"
   },
   {
     "name": "Maxence Larrieu",
@@ -93657,7 +94419,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c5656f24-24ce-4842-a1b2-f7b569207626"
+    "mbid": "c5656f24-24ce-4842-a1b2-f7b569207626",
+    "genres": [
+      "Classical",
+      "flute",
+      "maxence larrieu",
+      "bois",
+      "vents"
+    ],
+    "popularity": {
+      "listeners": 3579,
+      "playcount": 20050
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/deefc184cdca61350b4b7bfe5e040d6b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:20.034Z"
   },
   {
     "name": "Maxi Jazz",
@@ -93673,7 +94448,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "debd408d-72b3-4c14-a0eb-dd4fe526e240"
+    "mbid": "debd408d-72b3-4c14-a0eb-dd4fe526e240",
+    "genres": [
+      "hip hop",
+      "electronic",
+      "UK",
+      "90s",
+      "electronica"
+    ],
+    "popularity": {
+      "listeners": 3353,
+      "playcount": 25158
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5b9753f46dc8e73a641be303bdb641e1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:20.700Z"
   },
   {
     "name": "Maxi Nil",
@@ -93689,7 +94477,18 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c6cc9155-c45c-4d8c-bbb4-7b9d95104b7f"
+    "mbid": "c6cc9155-c45c-4d8c-bbb4-7b9d95104b7f",
+    "genres": [
+      "amazing voice",
+      "female vocalist",
+      "beautiful",
+      "singer-singwriter"
+    ],
+    "popularity": {
+      "listeners": 277,
+      "playcount": 1094
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:21.474Z"
   },
   {
     "name": "Maxi Priest",
@@ -93705,7 +94504,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "fc6548d9-cc7e-4311-bd6c-6eba9c0cd06f"
+    "mbid": "fc6548d9-cc7e-4311-bd6c-6eba9c0cd06f",
+    "genres": [
+      "reggae",
+      "pop",
+      "smooth reggae",
+      "lovers rock",
+      "rnb"
+    ],
+    "popularity": {
+      "listeners": 256536,
+      "playcount": 1514801
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8b083b9e72cc4c78779f345cd4b73715/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:22.045Z"
   },
   {
     "name": "Maxim Ludwig & The Santa Fe Seven",
@@ -93721,7 +94533,19 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d8885568-edfe-4856-8d9c-fce4285a63d6"
+    "mbid": "d8885568-edfe-4856-8d9c-fce4285a63d6",
+    "genres": [
+      "rock",
+      "Alt-country",
+      "americana",
+      "roots rock",
+      "Stagecoach 2009"
+    ],
+    "popularity": {
+      "listeners": 736,
+      "playcount": 3327
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:22.694Z"
   },
   {
     "name": "Maxim Rysanov",
@@ -93737,7 +94561,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5fbe2df2-ac70-4931-8482-3b70366c80c4"
+    "mbid": "5fbe2df2-ac70-4931-8482-3b70366c80c4",
+    "genres": [
+      "viola",
+      "Classical",
+      "contemporary classical",
+      "russian",
+      "Russia"
+    ],
+    "popularity": {
+      "listeners": 1708,
+      "playcount": 17059
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ba97330eae8060a7a259f3a7aba70c9c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:23.354Z"
   },
   {
     "name": "Maxim Vengerov",
@@ -93753,7 +94590,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e7aa41e4-23c2-48ef-a89c-89296edabf41"
+    "mbid": "e7aa41e4-23c2-48ef-a89c-89296edabf41",
+    "genres": [
+      "violin",
+      "Classical",
+      "violinist",
+      "russian",
+      "Russia"
+    ],
+    "popularity": {
+      "listeners": 38554,
+      "playcount": 207037
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f43372409dc6fcb481af1b97d7b8803b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:24.029Z"
   },
   {
     "name": "Maxim's Trash",
@@ -93761,7 +94611,12 @@
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "7a5e9a0d-da53-4410-828e-760874a83ba7",
-    "autoTriedAt": "2026-07-11T08:35:41.451Z"
+    "autoTriedAt": "2026-07-11T08:35:41.451Z",
+    "popularity": {
+      "listeners": 5,
+      "playcount": 13
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:24.680Z"
   },
   {
     "name": "Maxime Le Forestier",
@@ -93777,14 +94632,32 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2927facc-d327-4bd4-a7d6-4a4363ddd904"
+    "mbid": "2927facc-d327-4bd4-a7d6-4a4363ddd904",
+    "genres": [
+      "chanson francaise",
+      "french",
+      "folk",
+      "singer-songwriter",
+      "70s"
+    ],
+    "popularity": {
+      "listeners": 105795,
+      "playcount": 1059050
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d17fadff617caf23bf8e11fc854057b1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:25.272Z"
   },
   {
     "name": "Maximiano de Sousa (Max)",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T08:35:42.722Z"
+    "autoTriedAt": "2026-07-11T08:35:42.722Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 2
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:25.902Z"
   },
   {
     "name": "Maximilian Hecker",
@@ -93800,28 +94673,60 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "256f09e5-43f4-4b3d-836c-2cc9283d22c0"
+    "mbid": "256f09e5-43f4-4b3d-836c-2cc9283d22c0",
+    "genres": [
+      "singer-songwriter",
+      "indie",
+      "german",
+      "indie pop",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 105750,
+      "playcount": 1610877
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5f71913f9f78aecdec18fcff43f5b6a0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:26.615Z"
   },
   {
     "name": "Maximilian Steinberg",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbid": "5b4484d2-ebd3-41c6-a57d-bb7e447c7d86",
-    "autoTriedAt": "2026-07-11T08:35:43.994Z"
+    "autoTriedAt": "2026-07-11T08:35:43.994Z",
+    "genres": [
+      "lithuanian",
+      "Classical",
+      "latvia",
+      "Post-Romantic",
+      "soviet composers"
+    ],
+    "popularity": {
+      "listeners": 2022,
+      "playcount": 7604
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:27.310Z"
   },
   {
     "name": "Máximo Arrates Boza",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T08:35:45.642Z"
+    "autoTriedAt": "2026-07-11T08:35:45.642Z",
+    "metaTriedAt": "2026-07-11T13:52:27.923Z"
   },
   {
     "name": "Máximo Diego Pujol",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbid": "bf988160-ddae-4bfd-8b1a-0379d2c3466b",
-    "autoTriedAt": "2026-07-11T08:35:48.399Z"
+    "autoTriedAt": "2026-07-11T08:35:48.399Z",
+    "popularity": {
+      "listeners": 140,
+      "playcount": 1876
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:28.627Z"
   },
   {
     "name": "Maximo Park",
@@ -93837,7 +94742,19 @@
     "mbid": "92e634a7-6023-4be8-be15-ebba822f5b34",
     "wdBulkTriedAt": "2026-07-08T14:10:41.155Z",
     "enrichedAt": "2026-07-08T14:10:41.155Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "indie rock",
+      "indie",
+      "british",
+      "alternative",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 792541,
+      "playcount": 19848873
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:29.249Z"
   },
   {
     "name": "Maxïmo Park",
@@ -93853,7 +94770,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "92e634a7-6023-4be8-be15-ebba822f5b34"
+    "mbid": "92e634a7-6023-4be8-be15-ebba822f5b34",
+    "genres": [
+      "indie rock",
+      "indie",
+      "british",
+      "alternative",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 792541,
+      "playcount": 19848873
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/decbb146d7bd7e19a02b9c1d6b275a0a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:29.862Z"
   },
   {
     "name": "Maximum Joy",
@@ -93869,14 +94799,40 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d6d718da-f5c1-46ef-b0b9-159f11b9a7e7"
+    "mbid": "d6d718da-f5c1-46ef-b0b9-159f11b9a7e7",
+    "genres": [
+      "post-punk",
+      "new wave",
+      "funk",
+      "bristol",
+      "Post punk"
+    ],
+    "popularity": {
+      "listeners": 53616,
+      "playcount": 349528
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2e69a2142e6e33056a0d6ff57d937b6e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:30.534Z"
   },
   {
     "name": "Maximum The Hormone",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T08:35:49.673Z"
+    "autoTriedAt": "2026-07-11T08:35:49.673Z",
+    "genres": [
+      "J-rock",
+      "hardcore",
+      "japanese",
+      "J-Metal",
+      "punk"
+    ],
+    "popularity": {
+      "listeners": 593266,
+      "playcount": 23600000
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7d18aa5814cb05670e123a08e990cdc2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:31.307Z"
   },
   {
     "name": "Maximus Dan",
@@ -93892,7 +94848,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:35:52.250Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "soca",
+      "reggae",
+      "trinidad",
+      "trinidad and tobago",
+      "caribbean"
+    ],
+    "popularity": {
+      "listeners": 6858,
+      "playcount": 33105
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/77657e26906a93e96bec86be5635d542/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:32.025Z"
   },
   {
     "name": "Maxine Brown",
@@ -93909,21 +94878,46 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:35:54.874Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "soul",
+      "female vocalists",
+      "60s",
+      "northern soul",
+      "rhythm and blues"
+    ],
+    "popularity": {
+      "listeners": 55607,
+      "playcount": 250931
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5064b56e13ca5e8958db9313516b0508/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:32.674Z"
   },
   {
     "name": "Maxine Daniels",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbid": "3cc53c50-cc5c-4c5f-a0ed-9322786e45f6",
-    "autoTriedAt": "2026-07-11T08:35:57.433Z"
+    "autoTriedAt": "2026-07-11T08:35:57.433Z",
+    "popularity": {
+      "listeners": 296,
+      "playcount": 792
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/757b10f26a40f54126bf133fa312eb54/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:33.381Z"
   },
   {
     "name": "Maxine Hong Kingston",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:42.308Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T08:35:58.911Z"
+    "autoTriedAt": "2026-07-11T08:35:58.911Z",
+    "popularity": {
+      "listeners": 48,
+      "playcount": 57
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:34.041Z"
   },
   {
     "name": "Maxine Nightingale",
@@ -93939,7 +94933,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:42.308Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0d8da158-389d-4b58-a62e-a6b5870fc3a4"
+    "mbid": "0d8da158-389d-4b58-a62e-a6b5870fc3a4",
+    "genres": [
+      "Disco",
+      "soul",
+      "70s",
+      "pop",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 343901,
+      "playcount": 2138237
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9d06bf424dc9b8344a0290d579032936/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:34.638Z"
   },
   {
     "name": "Maxine Sullivan",
@@ -93956,14 +94963,40 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:36:01.497Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "female vocalists",
+      "jazz vocal",
+      "50s",
+      "vocal jazz"
+    ],
+    "popularity": {
+      "listeners": 53246,
+      "playcount": 315643
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5a851a4855042d55a9a3e1ef082038f3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:35.806Z"
   },
   {
     "name": "MaxNormal.TV",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
     "mbid": "787d291b-de02-4df6-8dc7-2ac5658ff684",
-    "autoTriedAt": "2026-07-11T08:36:04.063Z"
+    "autoTriedAt": "2026-07-11T08:36:04.063Z",
+    "genres": [
+      "Hip-Hop",
+      "rap",
+      "afrikaans",
+      "hip hop",
+      "south african"
+    ],
+    "popularity": {
+      "listeners": 26621,
+      "playcount": 276296
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:36.436Z"
   },
   {
     "name": "Maxsta",
@@ -93979,7 +95012,19 @@
     "mbid": "10507b30-26fb-420e-b79a-3ff6a3b270cf",
     "wdBulkTriedAt": "2026-07-08T14:10:41.155Z",
     "enrichedAt": "2026-07-08T14:10:41.155Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "Grime",
+      "Hip-Hop",
+      "UK Grime",
+      "UK hip-hop",
+      "spotify"
+    ],
+    "popularity": {
+      "listeners": 22707,
+      "playcount": 198231
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:37.166Z"
   },
   {
     "name": "Maxville",
@@ -93996,7 +95041,12 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:36:06.691Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 24,
+      "playcount": 99
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:37.850Z"
   },
   {
     "name": "Maxwell",
@@ -94012,14 +95062,28 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T08:36:06.691Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "soul",
+      "Neo-Soul",
+      "rnb",
+      "Neo Soul",
+      "urban"
+    ],
+    "popularity": {
+      "listeners": 847095,
+      "playcount": 12267512
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4d38377ac0fb0a0c301c6ad8a98f39b5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:38.428Z"
   },
   {
     "name": "Maxwell McCabe-Lokos",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
     "mbid": "b2743c96-8df7-44e6-ba51-9d4bb59588ab",
-    "autoTriedAt": "2026-07-11T08:36:07.962Z"
+    "autoTriedAt": "2026-07-11T08:36:07.962Z",
+    "metaTriedAt": "2026-07-11T13:52:39.028Z"
   },
   {
     "name": "Maxwell Street",
@@ -94027,7 +95091,13 @@
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "3c025033-f7af-48dc-91a2-ccc9d4d543ff",
-    "autoTriedAt": "2026-07-11T08:36:10.550Z"
+    "autoTriedAt": "2026-07-11T08:36:10.550Z",
+    "popularity": {
+      "listeners": 84,
+      "playcount": 493
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a18222d4928eefa6505ceefc51851f4a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:39.736Z"
   },
   {
     "name": "Maxwell Street Jimmy Davis",
@@ -94043,7 +95113,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:36:13.158Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "delta blues",
+      "blues",
+      "folk",
+      "guitar",
+      "Chicago Blues"
+    ],
+    "popularity": {
+      "listeners": 1306,
+      "playcount": 4113
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a07607b61232593cc0edb116659098f8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:40.469Z"
   },
   {
     "name": "Maxx",
@@ -94060,14 +95143,28 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:36:15.774Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "eurodance",
+      "90s",
+      "dance",
+      "german",
+      "electronic"
+    ],
+    "popularity": {
+      "listeners": 247932,
+      "playcount": 1839630
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5543726187c16bab88638747d51cbf4d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:41.181Z"
   },
   {
     "name": "Maxx Frank",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
     "mbid": "0d608f78-be76-4f70-9fe1-006dbead1ff2",
-    "autoTriedAt": "2026-07-11T08:36:18.348Z"
+    "autoTriedAt": "2026-07-11T08:36:18.348Z",
+    "metaTriedAt": "2026-07-11T13:52:41.908Z"
   },
   {
     "name": "Maxx Klaxon",
@@ -94075,21 +95172,39 @@
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "05009b9f-ff38-4644-ad3b-bfb0f16e8504",
-    "autoTriedAt": "2026-07-11T08:36:20.924Z"
+    "autoTriedAt": "2026-07-11T08:36:20.924Z",
+    "genres": [
+      "pop",
+      "political",
+      "electro",
+      "Electroclash",
+      "new wave"
+    ],
+    "popularity": {
+      "listeners": 1244,
+      "playcount": 6502
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:42.756Z"
   },
   {
     "name": "May (or Mary) Hannah Brahe",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T08:36:22.197Z"
+    "autoTriedAt": "2026-07-11T08:36:22.197Z",
+    "metaTriedAt": "2026-07-11T13:52:43.364Z"
   },
   {
     "name": "May 1968",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T08:36:23.472Z"
+    "autoTriedAt": "2026-07-11T08:36:23.472Z",
+    "popularity": {
+      "listeners": 5,
+      "playcount": 9
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:44.057Z"
   },
   {
     "name": "May Blitz",
@@ -94097,14 +95212,32 @@
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "7210493e-b497-4d4b-bfbc-561bec4ed0f4",
-    "autoTriedAt": "2026-07-11T08:36:26.070Z"
+    "autoTriedAt": "2026-07-11T08:36:26.070Z",
+    "genres": [
+      "Psychedelic Rock",
+      "Progressive rock",
+      "hard rock",
+      "classic rock",
+      "psychedelic"
+    ],
+    "popularity": {
+      "listeners": 24763,
+      "playcount": 224433
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d5df2e404a2cded0cb5919ecb3dfdebc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:44.797Z"
   },
   {
     "name": "May Brahe",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
     "mbid": "f7674786-5828-4317-a5e0-d518efa7822d",
-    "autoTriedAt": "2026-07-11T08:36:28.662Z"
+    "autoTriedAt": "2026-07-11T08:36:28.662Z",
+    "popularity": {
+      "listeners": 188,
+      "playcount": 463
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:45.524Z"
   },
   {
     "name": "May Day",
@@ -94121,21 +95254,46 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:36:31.319Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Swiss Rock",
+      "90s",
+      "rock",
+      "hard rock",
+      "alternative pop"
+    ],
+    "popularity": {
+      "listeners": 2170,
+      "playcount": 23123
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:46.196Z"
   },
   {
     "name": "May Howlett",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T08:36:32.591Z"
+    "autoTriedAt": "2026-07-11T08:36:32.591Z",
+    "popularity": {
+      "listeners": 17,
+      "playcount": 150
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:47.711Z"
   },
   {
     "name": "May Irwin",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
     "mbid": "30658d0a-3974-44c3-9a99-f9ed266a2568",
-    "autoTriedAt": "2026-07-11T08:36:35.613Z"
+    "autoTriedAt": "2026-07-11T08:36:35.613Z",
+    "genres": [
+      "All"
+    ],
+    "popularity": {
+      "listeners": 311,
+      "playcount": 841
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:48.400Z"
   },
   {
     "name": "May J.",
@@ -94151,7 +95309,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:44.234Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ec7e4f26-cddb-4e91-9f08-5f2f12da5f36"
+    "mbid": "ec7e4f26-cddb-4e91-9f08-5f2f12da5f36",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "female vocalists",
+      "j-urban",
+      "j-rnb"
+    ],
+    "popularity": {
+      "listeners": 34921,
+      "playcount": 748103
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c58074641c3e2808413b40f99c50b181/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:49.291Z"
   },
   {
     "name": "May'n",
@@ -94167,7 +95338,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:44.234Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "990ebd8c-34f1-4083-adaa-475ce7a9a4bf"
+    "mbid": "990ebd8c-34f1-4083-adaa-475ce7a9a4bf",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "anime",
+      "female vocalists",
+      "JPop"
+    ],
+    "popularity": {
+      "listeners": 68829,
+      "playcount": 2364824
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/92e88a1402f50d365254787a7f594a28/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:50.007Z"
   },
   {
     "name": "May7ven",
@@ -94183,7 +95367,19 @@
     },
     "enrichedAt": "2026-07-07T07:18:44.234Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "51720b5e-ec6e-4fdc-9b77-d5a3ccd354ed"
+    "mbid": "51720b5e-ec6e-4fdc-9b77-d5a3ccd354ed",
+    "genres": [
+      "Hip-Hop",
+      "rnb",
+      "urban",
+      "nigeria"
+    ],
+    "popularity": {
+      "listeners": 486,
+      "playcount": 1670
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0b0d3fa5378907e74b7bf2082abb0488/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:50.750Z"
   },
   {
     "name": "Maya",
@@ -94191,7 +95387,19 @@
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "1c33b814-08f3-4d33-bcfe-494fd44e46f8",
-    "autoTriedAt": "2026-07-11T08:36:38.169Z"
+    "autoTriedAt": "2026-07-11T08:36:38.169Z",
+    "genres": [
+      "jazz",
+      "ambient",
+      "female vocalists",
+      "pop",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 88094,
+      "playcount": 665177
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:51.437Z"
   },
   {
     "name": "Maya Beiser",
@@ -94207,21 +95415,40 @@
     },
     "enrichedAt": "2026-07-07T07:18:44.234Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "838f60ad-bed1-467c-ac23-302d12440fa4"
+    "mbid": "838f60ad-bed1-467c-ac23-302d12440fa4",
+    "genres": [
+      "cello",
+      "contemporary classical",
+      "Classical",
+      "solo cello",
+      "Israel"
+    ],
+    "popularity": {
+      "listeners": 17851,
+      "playcount": 98160
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4550e9f00237730d739c1d0c7880de29/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:52.083Z"
   },
   {
     "name": "Maya Bond",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
     "mbid": "92d68bcf-8b78-4bf6-8818-7a042515c588",
-    "autoTriedAt": "2026-07-11T08:36:44.633Z"
+    "autoTriedAt": "2026-07-11T08:36:44.633Z",
+    "popularity": {
+      "listeners": 626,
+      "playcount": 2930
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:53.190Z"
   },
   {
     "name": "Maya Ford",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
     "mbid": "d594e736-0964-4cc4-9d04-a9095801642c",
-    "autoTriedAt": "2026-07-11T08:36:47.230Z"
+    "autoTriedAt": "2026-07-11T08:36:47.230Z",
+    "metaTriedAt": "2026-07-11T13:52:53.854Z"
   },
   {
     "name": "Maya Lin",
@@ -94237,14 +95464,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:44.234Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 4,
+      "playcount": 4
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:55.181Z"
   },
   {
     "name": "Maya Matievich",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T08:36:48.501Z"
+    "autoTriedAt": "2026-07-11T08:36:48.501Z",
+    "metaTriedAt": "2026-07-11T13:52:55.797Z"
   },
   {
     "name": "Maya Nasri",
@@ -94260,14 +95493,28 @@
     },
     "enrichedAt": "2026-07-07T07:18:44.234Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8945aabc-6f78-4a04-9464-43a9805e7559"
+    "mbid": "8945aabc-6f78-4a04-9464-43a9805e7559",
+    "genres": [
+      "arabic",
+      "lebanese",
+      "female vocalists",
+      "arabic pop",
+      "World Music"
+    ],
+    "popularity": {
+      "listeners": 27504,
+      "playcount": 158295
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a2d8c04827adcc8e9aba1824195d0682/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:56.438Z"
   },
   {
     "name": "Maya Santos",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T08:36:49.778Z"
+    "autoTriedAt": "2026-07-11T08:36:49.778Z",
+    "metaTriedAt": "2026-07-11T13:52:57.099Z"
   },
   {
     "name": "MaYaN",
@@ -94284,28 +95531,60 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:36:52.385Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "symphonic metal",
+      "death metal",
+      "symphonic death metal",
+      "Melodic Death Metal",
+      "Progressive metal"
+    ],
+    "popularity": {
+      "listeners": 35549,
+      "playcount": 886267
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/30fd6bce269e6017d7672856686bb125/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:57.804Z"
   },
   {
     "name": "Mayavaram Saraswathi Ammal",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T08:36:54.112Z"
+    "autoTriedAt": "2026-07-11T08:36:54.112Z",
+    "metaTriedAt": "2026-07-11T13:52:58.444Z"
   },
   {
     "name": "Maybe I'm Amazed",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T08:36:55.388Z"
+    "autoTriedAt": "2026-07-11T08:36:55.388Z",
+    "popularity": {
+      "listeners": 471,
+      "playcount": 1057
+    },
+    "metaEnrichedAt": "2026-07-11T13:52:59.128Z"
   },
   {
     "name": "Maybe Monday",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
     "mbid": "00a6aa25-c3c5-4942-89c3-ae2fae5c44ad",
-    "autoTriedAt": "2026-07-11T08:36:57.964Z"
+    "autoTriedAt": "2026-07-11T08:36:57.964Z",
+    "genres": [
+      "guitar",
+      "jazz",
+      "improv",
+      "instrumental",
+      "Avant-Garde"
+    ],
+    "popularity": {
+      "listeners": 241,
+      "playcount": 1276
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4fead93ed75c12c44bec5c8b78c450d2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:52:59.806Z"
   },
   {
     "name": "Maybe Smith",
@@ -94321,14 +95600,39 @@
     },
     "enrichedAt": "2026-07-07T07:18:44.234Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "24307c67-64cc-4811-bddc-806743b8dcef"
+    "mbid": "24307c67-64cc-4811-bddc-806743b8dcef",
+    "genres": [
+      "Canadian",
+      "saskatoon",
+      "indie pop",
+      "indie",
+      "electropop"
+    ],
+    "popularity": {
+      "listeners": 2115,
+      "playcount": 30227
+    },
+    "metaEnrichedAt": "2026-07-11T13:53:00.473Z"
   },
   {
     "name": "Maybelle Carter",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
     "mbid": "da24eb92-2dc3-420f-8989-eb98ad57e984",
-    "autoTriedAt": "2026-07-11T08:36:59.250Z"
+    "autoTriedAt": "2026-07-11T08:36:59.250Z",
+    "genres": [
+      "folk",
+      "country",
+      "americana",
+      "acoustic",
+      "oldies"
+    ],
+    "popularity": {
+      "listeners": 4659,
+      "playcount": 18337
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0fafe5b2f2e02fcc2ff4951355ecd0b7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:53:01.190Z"
   },
   {
     "name": "Maybeshewill",
@@ -94344,7 +95648,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:44.234Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "62495254-237e-4e9e-8ffb-31fede562cfd"
+    "mbid": "62495254-237e-4e9e-8ffb-31fede562cfd",
+    "genres": [
+      "post-rock",
+      "instrumental",
+      "experimental",
+      "math rock",
+      "electronic"
+    ],
+    "popularity": {
+      "listeners": 371064,
+      "playcount": 15492173
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/46acf0ee0adc45a6b1ebaf3978e02a6d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:53:01.824Z"
   },
   {
     "name": "Mayday",
@@ -94360,7 +95677,20 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T08:36:59.250Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "indie",
+      "hardcore",
+      "indie rock",
+      "taiwanese",
+      "metallic hardcore"
+    ],
+    "popularity": {
+      "listeners": 121492,
+      "playcount": 2816034
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ed383ae86173a998b5ccefd4f3646323/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:53:02.479Z"
   },
   {
     "name": "Mayday Parade",
@@ -94377,7 +95707,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T08:37:01.919Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "pop punk",
+      "alternative rock",
+      "rock",
+      "emo",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 1241244,
+      "playcount": 55888498
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8dc38d92ea68f1004aa0209bc07d3a4a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:53:03.096Z"
   },
   {
     "name": "Mayer Hawthorne",
@@ -94393,7 +95736,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:44.234Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "029fbb43-ea37-47a0-8c68-803d69abfa5e"
+    "mbid": "029fbb43-ea37-47a0-8c68-803d69abfa5e",
+    "genres": [
+      "soul",
+      "Neo-Soul",
+      "funk",
+      "Stones throw",
+      "hip hop"
+    ],
+    "popularity": {
+      "listeners": 604139,
+      "playcount": 12093089
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a7b07686374c3e8684f86747e1979b8e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:53:03.675Z"
   },
   {
     "name": "Mayeus Lafleur",
@@ -94401,7 +95757,12 @@
     "wdBulkTriedAt": "2026-07-07T07:18:44.234Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "d197201c-aa47-4bd0-ac0e-67103783af89",
-    "autoTriedAt": "2026-07-11T08:37:04.511Z"
+    "autoTriedAt": "2026-07-11T08:37:04.511Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 2
+    },
+    "metaEnrichedAt": "2026-07-11T13:53:04.311Z"
   },
   {
     "name": "Mayfly",
@@ -94417,7 +95778,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:44.234Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "3d828068-1379-40b5-94a1-88abcd3e1bbb"
+    "mbid": "3d828068-1379-40b5-94a1-88abcd3e1bbb",
+    "genres": [
+      "folk",
+      "rock",
+      "70s",
+      "hard rock",
+      "dutch"
+    ],
+    "popularity": {
+      "listeners": 11257,
+      "playcount": 74014
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/da530f06aef03b2f98551ec18d4c3533/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:53:05.051Z"
   },
   {
     "name": "Mayhem",
@@ -94433,7 +95807,20 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T08:37:04.511Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "black metal",
+      "Norwegian Black Metal",
+      "norwegian",
+      "true black metal",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 595894,
+      "playcount": 25466536
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/692740363a69140523824a0f28bc2ab6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:53:05.909Z"
   },
   {
     "name": "Maylee Todd",
@@ -94449,7 +95836,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:44.234Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "394cf2f9-9031-42e4-9e2e-c14c98886d68"
+    "mbid": "394cf2f9-9031-42e4-9e2e-c14c98886d68",
+    "genres": [
+      "funk",
+      "indie",
+      "female vocalists",
+      "singer-songwriter",
+      "Canadian"
+    ],
+    "popularity": {
+      "listeners": 14030,
+      "playcount": 108732
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/dfda187172234649992f78de08eb8c18/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:53:06.600Z"
   },
   {
     "name": "Maylene and the Sons of Disaster",
@@ -94465,7 +95865,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:44.234Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2ffdc2cd-d25c-44e3-9b85-65a26c0d9bb0"
+    "mbid": "2ffdc2cd-d25c-44e3-9b85-65a26c0d9bb0",
+    "genres": [
+      "Southern Rock",
+      "metalcore",
+      "hardcore",
+      "southern hardcore",
+      "christian"
+    ],
+    "popularity": {
+      "listeners": 115229,
+      "playcount": 3868419
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6b7dbbe44598a25844daae38a3edb2f6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:53:07.224Z"
   },
   {
     "name": "Maynard Ferguson",
@@ -94481,7 +95894,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:44.234Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "625f1d57-8bac-4a3a-97af-f407f2967755"
+    "mbid": "625f1d57-8bac-4a3a-97af-f407f2967755",
+    "genres": [
+      "jazz",
+      "trumpet",
+      "Big Band",
+      "jazz trumpet",
+      "big band jazz"
+    ],
+    "popularity": {
+      "listeners": 132166,
+      "playcount": 1300878
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f070d0fb42eaef51ca1cd22e7973092d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:53:07.848Z"
   },
   {
     "name": "Maynard James Keenan",
@@ -94497,7 +95923,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:44.234Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a1b61d0f-2333-44f5-afee-cc0c2eab71a4"
+    "mbid": "a1b61d0f-2333-44f5-afee-cc0c2eab71a4",
+    "genres": [
+      "god",
+      "vocalist",
+      "tool",
+      "Progressive",
+      "Progressive rock"
+    ],
+    "popularity": {
+      "listeners": 3348,
+      "playcount": 22896
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/634ec8698368ff2dcbd15924fd25747a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:53:08.544Z"
   },
   {
     "name": "Mayra Veronica",
@@ -94513,7 +95952,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:44.234Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "3e53fbd5-cab9-4a63-8997-9244cc4cd1ec"
+    "mbid": "3e53fbd5-cab9-4a63-8997-9244cc4cd1ec",
+    "genres": [
+      "pop",
+      "sexy",
+      "great shapely butt",
+      "cuba",
+      "do not blame"
+    ],
+    "popularity": {
+      "listeners": 11271,
+      "playcount": 57881
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ea0f540051a239e1f0dde87620e2ad2c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:53:09.225Z"
   },
   {
     "name": "Mayra Verónica",
@@ -94529,7 +95981,12 @@
     },
     "enrichedAt": "2026-07-07T07:18:44.234Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "3e53fbd5-cab9-4a63-8997-9244cc4cd1ec"
+    "mbid": "3e53fbd5-cab9-4a63-8997-9244cc4cd1ec",
+    "popularity": {
+      "listeners": 261,
+      "playcount": 1594
+    },
+    "metaEnrichedAt": "2026-07-11T13:53:09.842Z"
   },
   {
     "name": "Mayré Martínez",
@@ -94545,7 +96002,19 @@
     },
     "enrichedAt": "2026-07-07T07:18:44.234Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f4df322b-a47a-4f55-bd11-a46a0d302b1e"
+    "mbid": "f4df322b-a47a-4f55-bd11-a46a0d302b1e",
+    "genres": [
+      "pop",
+      "venezuela",
+      "venezuelan",
+      "latin american idol",
+      "MAYRE MARTINEZ"
+    ],
+    "popularity": {
+      "listeners": 1938,
+      "playcount": 30561
+    },
+    "metaEnrichedAt": "2026-07-11T13:53:10.510Z"
   },
   {
     "name": "Maysa",
@@ -94561,7 +96030,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:44.234Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "Bossa Nova",
+      "female vocalists",
+      "jazz",
+      "mpb",
+      "soul"
+    ],
+    "popularity": {
+      "listeners": 211350,
+      "playcount": 2718625
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a369b9233bb3fc2adb0d750e36cba1da/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T13:53:11.153Z"
   },
   {
     "name": "Maysa Leak",
