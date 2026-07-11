@@ -50612,7 +50612,12 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:14:42.803Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 4,
+      "playcount": 7
+    },
+    "metaEnrichedAt": "2026-07-11T18:19:51.028Z"
   },
   {
     "name": "Nate Query",
@@ -50620,7 +50625,8 @@
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "24881d66-79db-46d2-bb6f-2c3b4b1fe0c9",
-    "autoTriedAt": "2026-07-11T11:14:45.310Z"
+    "autoTriedAt": "2026-07-11T11:14:45.310Z",
+    "metaTriedAt": "2026-07-11T18:19:51.654Z"
   },
   {
     "name": "Nate Ruess",
@@ -50636,7 +50642,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:49.624Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a049a513-f794-4b8d-8c3a-f106cfd22841"
+    "mbid": "a049a513-f794-4b8d-8c3a-f106cfd22841",
+    "genres": [
+      "pop",
+      "indie",
+      "indie pop",
+      "All",
+      "male vocalists"
+    ],
+    "popularity": {
+      "listeners": 139413,
+      "playcount": 1261026
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/433ef89e050518b7440e06c12e16c66d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:19:52.344Z"
   },
   {
     "name": "Nateman",
@@ -50652,7 +50671,19 @@
     },
     "mbid": "f5e5bfb9-22a3-4b67-8be0-90ae4ad2992b",
     "enrichedAt": "2026-07-09T08:32:12.140Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "OPM",
+      "pinoy rap",
+      "pinoy hip-hop",
+      "pinoy hip hop"
+    ],
+    "popularity": {
+      "listeners": 59550,
+      "playcount": 1358963
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/79b5cf7ee9b9d6e37144a56ad473c17b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:19:53.010Z"
   },
   {
     "name": "Natesan Ramani",
@@ -50660,7 +50691,12 @@
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "3a1df93e-ea62-4ec5-8130-acc8d92b84c6",
-    "autoTriedAt": "2026-07-11T11:14:47.777Z"
+    "autoTriedAt": "2026-07-11T11:14:47.777Z",
+    "popularity": {
+      "listeners": 4,
+      "playcount": 55
+    },
+    "metaEnrichedAt": "2026-07-11T18:19:53.875Z"
   },
   {
     "name": "Nathalie Loriers",
@@ -50676,7 +50712,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:49.624Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1c0b91b8-0926-4430-b982-95bf7ef3ab97"
+    "mbid": "1c0b91b8-0926-4430-b982-95bf7ef3ab97",
+    "genres": [
+      "contemporary jazz",
+      "jazz",
+      "piano",
+      "belgian",
+      "jazz piano"
+    ],
+    "popularity": {
+      "listeners": 4701,
+      "playcount": 17358
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9136ae58b845e0c56a95ebedfb90826e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:19:54.481Z"
   },
   {
     "name": "Nathalie Simard",
@@ -50693,7 +50742,16 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:14:51.383Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Canadian"
+    ],
+    "popularity": {
+      "listeners": 1488,
+      "playcount": 13356
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/85b066d326a2940c35601b99075db615/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:19:55.163Z"
   },
   {
     "name": "Nathalie Stutzmann",
@@ -50709,28 +50767,72 @@
     },
     "enrichedAt": "2026-07-07T07:19:49.624Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5a72ac1b-4d16-4d91-97c7-e67da8be36c8"
+    "mbid": "5a72ac1b-4d16-4d91-97c7-e67da8be36c8",
+    "genres": [
+      "opera",
+      "contralto",
+      "Classical",
+      "female vocalists",
+      "contraltos"
+    ],
+    "popularity": {
+      "listeners": 4913,
+      "playcount": 39609
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ffc0c7465cf208776ea9b01c3e7151a5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:19:55.859Z"
   },
   {
     "name": "Nathan",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:14:52.626Z"
+    "autoTriedAt": "2026-07-11T11:14:52.626Z",
+    "genres": [
+      "rnb",
+      "Canadian",
+      "Alt-country",
+      "folk",
+      "r and b"
+    ],
+    "popularity": {
+      "listeners": 53376,
+      "playcount": 533949
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5baf2e30a8c87f54c7412a30a7311f48/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:19:56.535Z"
   },
   {
     "name": "Nathan Abshire",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbid": "077db366-c0bc-49c1-a6a9-556572cc7c34",
-    "autoTriedAt": "2026-07-11T11:14:55.294Z"
+    "autoTriedAt": "2026-07-11T11:14:55.294Z",
+    "genres": [
+      "cajun",
+      "All",
+      "folk",
+      "accordion",
+      "Accordeon"
+    ],
+    "popularity": {
+      "listeners": 8462,
+      "playcount": 42632
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3341cefb2df13c39580bfee12f84a8ea/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:19:57.234Z"
   },
   {
     "name": "Nathan Abshire and the Pinegrove Boys",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:14:56.789Z"
+    "autoTriedAt": "2026-07-11T11:14:56.789Z",
+    "popularity": {
+      "listeners": 9,
+      "playcount": 85
+    },
+    "metaEnrichedAt": "2026-07-11T18:19:57.871Z"
   },
   {
     "name": "Nathan Bell",
@@ -50738,7 +50840,19 @@
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "b00a5223-e0c4-4ffd-90c2-d610b396af53",
-    "autoTriedAt": "2026-07-11T11:15:00.891Z"
+    "autoTriedAt": "2026-07-11T11:15:00.891Z",
+    "genres": [
+      "instrumental",
+      "banjo",
+      "soundscapes",
+      "psych folk"
+    ],
+    "popularity": {
+      "listeners": 1506,
+      "playcount": 19522
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/11935451348e135ad4473db4259c673a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:19:58.668Z"
   },
   {
     "name": "Nathan Cavaleri",
@@ -50754,7 +50868,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:49.624Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "efa5d7a7-298b-48e7-a326-d89f8a605a4c"
+    "mbid": "efa5d7a7-298b-48e7-a326-d89f8a605a4c",
+    "genres": [
+      "LITTLE STAR",
+      "australian",
+      "treble",
+      "under 300 l",
+      "under 300 listeners"
+    ],
+    "popularity": {
+      "listeners": 5074,
+      "playcount": 36866
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4187aa625da476d03793c481035e296c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:19:59.260Z"
   },
   {
     "name": "Nathan Connolly",
@@ -50762,7 +50889,13 @@
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "d50c67c7-c135-4100-929f-0903c668fb9c",
-    "autoTriedAt": "2026-07-11T11:15:03.597Z"
+    "autoTriedAt": "2026-07-11T11:15:03.597Z",
+    "popularity": {
+      "listeners": 681,
+      "playcount": 3143
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9e759b4199384bb96c5a807d4cce353c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:19:59.851Z"
   },
   {
     "name": "Nathan Davis",
@@ -50779,7 +50912,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:15:06.247Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "saxophone",
+      "Hard Bop",
+      "flute",
+      "Fusion"
+    ],
+    "popularity": {
+      "listeners": 25363,
+      "playcount": 108751
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f2ce4fdcb683710843dbcf3c15bac8f0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:00.601Z"
   },
   {
     "name": "Nathan East",
@@ -50795,7 +50941,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:49.624Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "aa82f6eb-ded9-4c0b-951d-2e638ca25c76"
+    "mbid": "aa82f6eb-ded9-4c0b-951d-2e638ca25c76",
+    "genres": [
+      "jazz",
+      "Smooth Jazz",
+      "bass",
+      "soul",
+      "Jazz Rock"
+    ],
+    "popularity": {
+      "listeners": 39042,
+      "playcount": 253502
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0f5fc1eb7e2721509008afece476b856/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:01.251Z"
   },
   {
     "name": "Nathan Fake",
@@ -50811,7 +50970,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:49.624Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a77f6f2f-19a2-4648-9018-3ad3aa4c1b9b"
+    "mbid": "a77f6f2f-19a2-4648-9018-3ad3aa4c1b9b",
+    "genres": [
+      "minimal",
+      "electronic",
+      "techno",
+      "idm",
+      "electronica"
+    ],
+    "popularity": {
+      "listeners": 383293,
+      "playcount": 5701651
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3ee50c8b1799836ea49bba934e1507e7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:01.836Z"
   },
   {
     "name": "Nathan Haines",
@@ -50828,7 +51000,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:15:08.798Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "acid jazz",
+      "nu jazz",
+      "lounge",
+      "nu-jazz"
+    ],
+    "popularity": {
+      "listeners": 95184,
+      "playcount": 507759
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/842b8bfa6aebe51cfe5af33c543ef849/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:02.472Z"
   },
   {
     "name": "Nathan King",
@@ -50845,7 +51030,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:15:11.418Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 1327,
+      "playcount": 24283
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c1dfaf85c6cd0ade24cbe24740b220ad/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:03.166Z"
   },
   {
     "name": "Nathan Lane",
@@ -50862,21 +51053,51 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:15:14.117Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Soundtrack",
+      "Broadway",
+      "Disney",
+      "musical",
+      "male vocalists"
+    ],
+    "popularity": {
+      "listeners": 355918,
+      "playcount": 1568232
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4f7d17e1b2042dec2deafd54541ed1de/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:03.803Z"
   },
   {
     "name": "Nathan Lawr",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbid": "184e6ab8-c6d2-445e-b98c-90dafbdecc2b",
-    "autoTriedAt": "2026-07-11T11:15:16.640Z"
+    "autoTriedAt": "2026-07-11T11:15:16.640Z",
+    "genres": [
+      "folk",
+      "Canadian",
+      "alexenthean",
+      "All",
+      "indie folk"
+    ],
+    "popularity": {
+      "listeners": 792,
+      "playcount": 11453
+    },
+    "metaEnrichedAt": "2026-07-11T18:20:04.454Z"
   },
   {
     "name": "Nathan Leone",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbid": "bc267acb-3a0d-4cf4-969f-3ecda6d02dd8",
-    "autoTriedAt": "2026-07-11T11:15:20.316Z"
+    "autoTriedAt": "2026-07-11T11:15:20.316Z",
+    "popularity": {
+      "listeners": 13,
+      "playcount": 123
+    },
+    "metaEnrichedAt": "2026-07-11T18:20:05.101Z"
   },
   {
     "name": "Nathan Mahl",
@@ -50892,7 +51113,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:49.624Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "df349b5c-e261-44ac-904e-51d7f44895ce"
+    "mbid": "df349b5c-e261-44ac-904e-51d7f44895ce",
+    "genres": [
+      "Progressive rock",
+      "Canadian",
+      "Jazz Rock",
+      "Fusion",
+      "canadian progressive rock"
+    ],
+    "popularity": {
+      "listeners": 1644,
+      "playcount": 17023
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cc58078177ac0de385bd42727240dea4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:05.783Z"
   },
   {
     "name": "Nathan McCree",
@@ -50908,7 +51142,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:15:22.929Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "video game music",
+      "Soundtrack",
+      "instrumental",
+      "british",
+      "Game Music"
+    ],
+    "popularity": {
+      "listeners": 6725,
+      "playcount": 196250
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d305d58ba50314d3fdb8e39f2ed423f7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:06.411Z"
   },
   {
     "name": "Nathan Moore",
@@ -50925,7 +51172,18 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:15:25.410Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "folk",
+      "acoustic",
+      "singer-songwriter"
+    ],
+    "popularity": {
+      "listeners": 2136,
+      "playcount": 52252
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/24cf3e2874f92a2f72012a1874102fe5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:07.059Z"
   },
   {
     "name": "Nathan Rogers",
@@ -50942,7 +51200,18 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:15:27.918Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "folk",
+      "Canadian",
+      "Winnipeg"
+    ],
+    "popularity": {
+      "listeners": 1693,
+      "playcount": 30241
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9fcec0e44d730699f06d6e8393fb6820/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:08.294Z"
   },
   {
     "name": "Nathan Waks",
@@ -50950,28 +51219,56 @@
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "b2c94667-3553-4230-a783-e9d89790569a",
-    "autoTriedAt": "2026-07-11T11:15:30.592Z"
+    "autoTriedAt": "2026-07-11T11:15:30.592Z",
+    "popularity": {
+      "listeners": 202,
+      "playcount": 854
+    },
+    "metaEnrichedAt": "2026-07-11T18:20:09.046Z"
   },
   {
     "name": "Nathan Watts",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbid": "8b223d69-191c-49be-a9d9-64e4d5f80854",
-    "autoTriedAt": "2026-07-11T11:15:33.077Z"
+    "autoTriedAt": "2026-07-11T11:15:33.077Z",
+    "genres": [
+      "asciiecho"
+    ],
+    "popularity": {
+      "listeners": 85,
+      "playcount": 238
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f6f225d8ff5ea5851f5e3428818fe2c8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:09.735Z"
   },
   {
     "name": "Nathanael Diesel",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:15:34.464Z"
+    "autoTriedAt": "2026-07-11T11:15:34.464Z",
+    "genres": [
+      "danish",
+      "18th century"
+    ],
+    "popularity": {
+      "listeners": 2,
+      "playcount": 25
+    },
+    "metaEnrichedAt": "2026-07-11T18:20:10.412Z"
   },
   {
     "name": "Nathaniel Gow",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbid": "46a65450-2a17-47f6-8441-34cf10dff34a",
-    "autoTriedAt": "2026-07-11T11:15:37.079Z"
+    "autoTriedAt": "2026-07-11T11:15:37.079Z",
+    "popularity": {
+      "listeners": 203,
+      "playcount": 701
+    },
+    "metaEnrichedAt": "2026-07-11T18:20:11.122Z"
   },
   {
     "name": "Nathaniel Rosen",
@@ -50987,14 +51284,25 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:15:39.912Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 328,
+      "playcount": 5382
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/47495dd54fe940cfbbde41287c6d1aa0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:11.799Z"
   },
   {
     "name": "Nati Kaji",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:15:41.139Z"
+    "autoTriedAt": "2026-07-11T11:15:41.139Z",
+    "popularity": {
+      "listeners": 17,
+      "playcount": 34
+    },
+    "metaEnrichedAt": "2026-07-11T18:20:12.610Z"
   },
   {
     "name": "Natina Reed",
@@ -51010,14 +51318,33 @@
     },
     "enrichedAt": "2026-07-07T07:19:49.624Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e9162580-ed92-41f2-845c-2c6c977846d8"
+    "mbid": "e9162580-ed92-41f2-845c-2c6c977846d8",
+    "popularity": {
+      "listeners": 4,
+      "playcount": 12
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:13.234Z"
   },
   {
     "name": "Nation of Ulysses",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:15:42.421Z"
+    "autoTriedAt": "2026-07-11T11:15:42.421Z",
+    "genres": [
+      "post-hardcore",
+      "post-punk",
+      "punk",
+      "hardcore",
+      "dischord"
+    ],
+    "popularity": {
+      "listeners": 58536,
+      "playcount": 935360
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8198bc1bd92ee3866358ea4262a6668c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:13.857Z"
   },
   {
     "name": "National",
@@ -51033,14 +51360,27 @@
     },
     "enrichedAt": "2026-07-07T07:19:49.624Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "664c3e0e-42d8-48c1-b209-1efca19c0325"
+    "mbid": "664c3e0e-42d8-48c1-b209-1efca19c0325",
+    "genres": [
+      "indie rock",
+      "indie",
+      "alternative",
+      "alternative rock",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 2541347,
+      "playcount": 222103148
+    },
+    "metaEnrichedAt": "2026-07-11T18:20:14.541Z"
   },
   {
     "name": "National Academy of Performing Arts",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:15:43.666Z"
+    "autoTriedAt": "2026-07-11T11:15:43.666Z",
+    "metaTriedAt": "2026-07-11T18:20:15.171Z"
   },
   {
     "name": "national anthem",
@@ -51048,7 +51388,20 @@
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "9ee80106-a7d8-4694-a3ce-969e39c2d652",
-    "autoTriedAt": "2026-07-11T11:15:46.164Z"
+    "autoTriedAt": "2026-07-11T11:15:46.164Z",
+    "genres": [
+      "national",
+      "instrumental",
+      "Classical",
+      "Patriotic",
+      "epic"
+    ],
+    "popularity": {
+      "listeners": 55052,
+      "playcount": 233965
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d0fea9ca129a6a8928992d4486444339/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:15.822Z"
   },
   {
     "name": "National Arts Centre Orchestra",
@@ -51065,7 +51418,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:15:48.691Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 143,
+      "playcount": 1830
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/56d3e345c716000d1fe99fa903fd2ed6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:16.694Z"
   },
   {
     "name": "National Ballet of China Symphony Orchestra",
@@ -51073,49 +51432,72 @@
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "5206bee0-4292-4999-b9ab-9b2c70ea6c33",
-    "autoTriedAt": "2026-07-11T11:15:51.217Z"
+    "autoTriedAt": "2026-07-11T11:15:51.217Z",
+    "popularity": {
+      "listeners": 190,
+      "playcount": 3269
+    },
+    "metaEnrichedAt": "2026-07-11T18:20:17.343Z"
   },
   {
     "name": "National Broadcast Orchestra",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:15:52.473Z"
+    "autoTriedAt": "2026-07-11T11:15:52.473Z",
+    "metaTriedAt": "2026-07-11T18:20:17.980Z"
   },
   {
     "name": "National Chinese Orchestra Taiwan",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:15:53.812Z"
+    "autoTriedAt": "2026-07-11T11:15:53.812Z",
+    "popularity": {
+      "listeners": 4,
+      "playcount": 49
+    },
+    "metaEnrichedAt": "2026-07-11T18:20:18.638Z"
   },
   {
     "name": "National Conservatoire",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:15:55.045Z"
+    "autoTriedAt": "2026-07-11T11:15:55.045Z",
+    "metaTriedAt": "2026-07-11T18:20:19.317Z"
   },
   {
     "name": "National Film and Sound Archive",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:15:59.343Z"
+    "autoTriedAt": "2026-07-11T11:15:59.343Z",
+    "metaTriedAt": "2026-07-11T18:20:19.939Z"
   },
   {
     "name": "National Film Board of Canada",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:16:00.604Z"
+    "autoTriedAt": "2026-07-11T11:16:00.604Z",
+    "popularity": {
+      "listeners": 27,
+      "playcount": 324
+    },
+    "metaEnrichedAt": "2026-07-11T18:20:20.593Z"
   },
   {
     "name": "National Football League",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:16:01.849Z"
+    "autoTriedAt": "2026-07-11T11:16:01.849Z",
+    "popularity": {
+      "listeners": 27,
+      "playcount": 177
+    },
+    "metaEnrichedAt": "2026-07-11T18:20:21.209Z"
   },
   {
     "name": "National Health",
@@ -51131,21 +51513,44 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:16:04.380Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Progressive rock",
+      "Canterbury Scene",
+      "Canterbury",
+      "Jazz Rock",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 18374,
+      "playcount": 322692
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b890f075c61fb9b22dfb877e3390de1a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:21.833Z"
   },
   {
     "name": "National Lampoon Radio Hour",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:16:05.606Z"
+    "autoTriedAt": "2026-07-11T11:16:05.606Z",
+    "popularity": {
+      "listeners": 65,
+      "playcount": 333
+    },
+    "metaEnrichedAt": "2026-07-11T18:20:22.549Z"
   },
   {
     "name": "National Library of Australia",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:16:06.831Z"
+    "autoTriedAt": "2026-07-11T11:16:06.831Z",
+    "popularity": {
+      "listeners": 5,
+      "playcount": 36
+    },
+    "metaEnrichedAt": "2026-07-11T18:20:23.239Z"
   },
   {
     "name": "National Napalm Syndicate",
@@ -51161,28 +51566,58 @@
     },
     "enrichedAt": "2026-07-07T07:19:49.624Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "9afe0882-0cbc-4f97-ac93-03a9205d0f0b"
+    "mbid": "9afe0882-0cbc-4f97-ac93-03a9205d0f0b",
+    "genres": [
+      "thrash metal",
+      "finnish",
+      "finnish metal",
+      "metal",
+      "old school thrash metal"
+    ],
+    "popularity": {
+      "listeners": 1775,
+      "playcount": 24683
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/364191d0652f855fbc4315d56511897d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:23.906Z"
   },
   {
     "name": "National Orchestra",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:16:08.100Z"
+    "autoTriedAt": "2026-07-11T11:16:08.100Z",
+    "genres": [
+      "orchestral",
+      "Classical"
+    ],
+    "popularity": {
+      "listeners": 4174,
+      "playcount": 13702
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7604fa80a38b34532868d1d2eff44632/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:24.645Z"
   },
   {
     "name": "National Piping Centre",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:49.624Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:16:09.330Z"
+    "autoTriedAt": "2026-07-11T11:16:09.330Z",
+    "metaTriedAt": "2026-07-11T18:20:25.816Z"
   },
   {
     "name": "National Radio Orchestra of Romania",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:16:10.555Z"
+    "autoTriedAt": "2026-07-11T11:16:10.555Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 63
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7e95895ae0f8ba55fce6fbcbc5049b21/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:26.504Z"
   },
   {
     "name": "National Razor",
@@ -51190,21 +51625,36 @@
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "7e8be533-3dbe-4c0e-97b4-5f76305d5a2e",
-    "autoTriedAt": "2026-07-11T11:16:13.065Z"
+    "autoTriedAt": "2026-07-11T11:16:13.065Z",
+    "genres": [
+      "Gothic Rock",
+      "darkwave",
+      "goth rock",
+      "goth",
+      "4"
+    ],
+    "popularity": {
+      "listeners": 775,
+      "playcount": 8047
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c37fcff7deec76b913226a4b8fa25936/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:27.191Z"
   },
   {
     "name": "National Register",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:16:14.410Z"
+    "autoTriedAt": "2026-07-11T11:16:14.410Z",
+    "metaTriedAt": "2026-07-11T18:20:27.816Z"
   },
   {
     "name": "National Revolutionary Army",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:16:15.646Z"
+    "autoTriedAt": "2026-07-11T11:16:15.646Z",
+    "metaTriedAt": "2026-07-11T18:20:28.412Z"
   },
   {
     "name": "National Skyline",
@@ -51220,7 +51670,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:51.289Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a28b4755-16a8-4a8a-92a2-14616fb7d427"
+    "mbid": "a28b4755-16a8-4a8a-92a2-14616fb7d427",
+    "genres": [
+      "indie",
+      "indie rock",
+      "space rock",
+      "rock",
+      "electronic"
+    ],
+    "popularity": {
+      "listeners": 17103,
+      "playcount": 323965
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/354bef9a500e0fa0b111d5e0c3ea9a6a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:29.070Z"
   },
   {
     "name": "National Symphony Orchestra",
@@ -51237,35 +51700,61 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:16:18.248Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "contemporary classical",
+      "musical",
+      "orchestral",
+      "modern classical"
+    ],
+    "popularity": {
+      "listeners": 4696,
+      "playcount": 34180
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4e3c5511a4b36aa150a2e858478143db/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:29.775Z"
   },
   {
     "name": "National Symphony Orchestra Ghana",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:16:19.609Z"
+    "autoTriedAt": "2026-07-11T11:16:19.609Z",
+    "metaTriedAt": "2026-07-11T18:20:30.394Z"
   },
   {
     "name": "National Symphony Orchestra of Colombia",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:16:20.840Z"
+    "autoTriedAt": "2026-07-11T11:16:20.840Z",
+    "metaTriedAt": "2026-07-11T18:20:31.017Z"
   },
   {
     "name": "National Symphony Orchestra of Cuba",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:16:22.066Z"
+    "autoTriedAt": "2026-07-11T11:16:22.066Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 8
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/42813a3d493216a75ef07b7a8974575d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:31.779Z"
   },
   {
     "name": "National Taiwan Symphony Orchestra",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:16:23.297Z"
+    "autoTriedAt": "2026-07-11T11:16:23.297Z",
+    "popularity": {
+      "listeners": 14,
+      "playcount": 67
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:32.440Z"
   },
   {
     "name": "National Velvet",
@@ -51273,14 +51762,32 @@
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "48c7678e-e07d-4cf0-b052-585b9a0da5ab",
-    "autoTriedAt": "2026-07-11T11:16:25.816Z"
+    "autoTriedAt": "2026-07-11T11:16:25.816Z",
+    "genres": [
+      "alternative",
+      "hard rock",
+      "Gothic Rock",
+      "rock",
+      "toronto"
+    ],
+    "popularity": {
+      "listeners": 545,
+      "playcount": 6034
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:33.076Z"
   },
   {
     "name": "Nationalism",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:16:27.040Z"
+    "autoTriedAt": "2026-07-11T11:16:27.040Z",
+    "popularity": {
+      "listeners": 62,
+      "playcount": 197
+    },
+    "metaEnrichedAt": "2026-07-11T18:20:33.797Z"
   },
   {
     "name": "Nationalteatern",
@@ -51296,14 +51803,39 @@
     },
     "enrichedAt": "2026-07-07T07:19:51.289Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7d144ee5-7f90-468c-8c83-c25fa17ef25d"
+    "mbid": "7d144ee5-7f90-468c-8c83-c25fa17ef25d",
+    "genres": [
+      "progg",
+      "swedish",
+      "rock",
+      "political",
+      "svenskt"
+    ],
+    "popularity": {
+      "listeners": 70251,
+      "playcount": 2355702
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a27555d79a6e88be2f66c8a0781124c9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:34.480Z"
   },
   {
     "name": "Nationwide Rip Ridaz",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:16:28.268Z"
+    "autoTriedAt": "2026-07-11T11:16:28.268Z",
+    "genres": [
+      "west coast",
+      "Gangsta Rap",
+      "California",
+      "los angeles",
+      "West Coast Rap"
+    ],
+    "popularity": {
+      "listeners": 604,
+      "playcount": 22125
+    },
+    "metaEnrichedAt": "2026-07-11T18:20:35.567Z"
   },
   {
     "name": "Natiruts",
@@ -51319,14 +51851,28 @@
     },
     "enrichedAt": "2026-07-07T07:19:51.289Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "917e448b-fbed-4062-b563-67566a3b3bb1"
+    "mbid": "917e448b-fbed-4062-b563-67566a3b3bb1",
+    "genres": [
+      "reggae",
+      "brazilian",
+      "reggae brasileiro",
+      "brasil",
+      "Natiruts"
+    ],
+    "popularity": {
+      "listeners": 571031,
+      "playcount": 19737473
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/302b31cfcd8892378409bd6e04575032/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:36.179Z"
   },
   {
     "name": "Native American composers",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:16:29.501Z"
+    "autoTriedAt": "2026-07-11T11:16:29.501Z",
+    "metaTriedAt": "2026-07-11T18:20:36.838Z"
   },
   {
     "name": "Native American flute",
@@ -51334,14 +51880,38 @@
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "4edcde33-fe32-4547-ac00-a5ed4c1c5ac8",
-    "autoTriedAt": "2026-07-11T11:16:32.059Z"
+    "autoTriedAt": "2026-07-11T11:16:32.059Z",
+    "genres": [
+      "native american",
+      "flute",
+      "relax",
+      "native american flutes"
+    ],
+    "popularity": {
+      "listeners": 23215,
+      "playcount": 991818
+    },
+    "metaEnrichedAt": "2026-07-11T18:20:37.654Z"
   },
   {
     "name": "Native American music",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:16:33.316Z"
+    "autoTriedAt": "2026-07-11T11:16:33.316Z",
+    "genres": [
+      "americana",
+      "folk",
+      "new age",
+      "ethnic",
+      "tribal"
+    ],
+    "popularity": {
+      "listeners": 474,
+      "playcount": 4378
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1d2cf074da77269343009f7d1cff779e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:38.398Z"
   },
   {
     "name": "Native Deen",
@@ -51357,7 +51927,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:51.289Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c57255aa-8deb-455f-9f1b-0adc365b5b83"
+    "mbid": "c57255aa-8deb-455f-9f1b-0adc365b5b83",
+    "genres": [
+      "nasheed",
+      "Muslim",
+      "islamic",
+      "Hip-Hop",
+      "rap"
+    ],
+    "popularity": {
+      "listeners": 5541,
+      "playcount": 84383
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b6f64ca02c44ed5b2b5a349bdbb357eb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:39.066Z"
   },
   {
     "name": "Native Korean Rock",
@@ -51373,14 +51956,31 @@
     },
     "enrichedAt": "2026-07-07T07:19:51.289Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "female vocalists",
+      "Lo-Fi",
+      "indie",
+      "Mellow",
+      "karen o"
+    ],
+    "popularity": {
+      "listeners": 2177,
+      "playcount": 58555
+    },
+    "metaEnrichedAt": "2026-07-11T18:20:39.722Z"
   },
   {
     "name": "Native Love (Step By Step)",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:16:34.583Z"
+    "autoTriedAt": "2026-07-11T11:16:34.583Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 2
+    },
+    "metaEnrichedAt": "2026-07-11T18:20:40.460Z"
   },
   {
     "name": "Native Nod",
@@ -51396,35 +51996,71 @@
     },
     "enrichedAt": "2026-07-07T07:19:51.289Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6736a620-fe7e-45b8-8845-d5ac66ad21ae"
+    "mbid": "6736a620-fe7e-45b8-8845-d5ac66ad21ae",
+    "genres": [
+      "emo",
+      "post-hardcore",
+      "hardcore",
+      "emocore",
+      "screamo"
+    ],
+    "popularity": {
+      "listeners": 33390,
+      "playcount": 431696
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a9854c9ef839ad455465b27e0c62ac59/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:41.171Z"
   },
   {
     "name": "Native Ryme Syndicate",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbid": "c1275732-bd31-4531-8523-6fdf0412f914",
-    "autoTriedAt": "2026-07-11T11:16:37.209Z"
+    "autoTriedAt": "2026-07-11T11:16:37.209Z",
+    "metaTriedAt": "2026-07-11T18:20:41.769Z"
   },
   {
     "name": "Native Tongues",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbid": "01c43958-e345-4aff-a6e2-b025423ac326",
-    "autoTriedAt": "2026-07-11T11:16:40.217Z"
+    "autoTriedAt": "2026-07-11T11:16:40.217Z",
+    "genres": [
+      "sampling",
+      "rap",
+      "true school",
+      "native tongues"
+    ],
+    "popularity": {
+      "listeners": 462,
+      "playcount": 2354
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/14620777daa9dfb7c34053c271b66e5b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:42.399Z"
   },
   {
     "name": "Natsukawa, Rimi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:16:41.440Z"
+    "autoTriedAt": "2026-07-11T11:16:41.440Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 2
+    },
+    "metaEnrichedAt": "2026-07-11T18:20:43.622Z"
   },
   {
     "name": "Natsuki Mizu",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:16:42.663Z"
+    "autoTriedAt": "2026-07-11T11:16:42.663Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 4
+    },
+    "metaEnrichedAt": "2026-07-11T18:20:44.340Z"
   },
   {
     "name": "Natsumi Abe",
@@ -51440,7 +52076,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:51.289Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0003fd17-b083-41fe-83a9-d550bd4f00a1"
+    "mbid": "0003fd17-b083-41fe-83a9-d550bd4f00a1",
+    "genres": [
+      "j-pop",
+      "Hello Project",
+      "female vocalists",
+      "japanese",
+      "idol"
+    ],
+    "popularity": {
+      "listeners": 13081,
+      "playcount": 399503
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f8f9e286a2ae8c233b27435b7ea60c8e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:44.977Z"
   },
   {
     "name": "Nattefrost",
@@ -51457,14 +52106,33 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:16:45.214Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "black metal",
+      "Norwegian Black Metal",
+      "norwegian",
+      "True Norwegian Black Metal",
+      "Black n Roll"
+    ],
+    "popularity": {
+      "listeners": 105639,
+      "playcount": 1912931
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/30eb1a83e2fa4e42a2675e6cd4437add/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:45.588Z"
   },
   {
     "name": "Natty Dominique",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbid": "2d295931-4e91-4547-a056-059f8061c751",
-    "autoTriedAt": "2026-07-11T11:16:47.749Z"
+    "autoTriedAt": "2026-07-11T11:16:47.749Z",
+    "popularity": {
+      "listeners": 56,
+      "playcount": 124
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4b08b439ffd3d08a2570aa800c913e3e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:46.228Z"
   },
   {
     "name": "Natty Nation",
@@ -51480,7 +52148,17 @@
     },
     "enrichedAt": "2026-07-07T07:19:51.289Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "832a4f79-1ce3-49ca-bbcd-7b213ae3dbf1"
+    "mbid": "832a4f79-1ce3-49ca-bbcd-7b213ae3dbf1",
+    "genres": [
+      "reggae",
+      "dub"
+    ],
+    "popularity": {
+      "listeners": 1492,
+      "playcount": 10457
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bccc21b6202cc13370d03abe20116081/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:46.961Z"
   },
   {
     "name": "Natural Black",
@@ -51496,14 +52174,28 @@
     },
     "enrichedAt": "2026-07-07T07:19:51.289Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "145a23a7-d8dc-402a-b4b4-b0f99fd3a1cb"
+    "mbid": "145a23a7-d8dc-402a-b4b4-b0f99fd3a1cb",
+    "genres": [
+      "reggae",
+      "dancehall",
+      "concious reggae",
+      "ragga",
+      "jamaica"
+    ],
+    "popularity": {
+      "listeners": 85917,
+      "playcount": 550254
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5281a11b28f24905290b6610f54a1f70/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:47.585Z"
   },
   {
     "name": "natural horn",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:16:48.995Z"
+    "autoTriedAt": "2026-07-11T11:16:48.995Z",
+    "metaTriedAt": "2026-07-11T18:20:48.245Z"
   },
   {
     "name": "Natural Snow Buildings",
@@ -51519,7 +52211,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:16:51.517Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "drone",
+      "ambient",
+      "experimental",
+      "post-rock",
+      "psychedelic"
+    ],
+    "popularity": {
+      "listeners": 116098,
+      "playcount": 4809002
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ab2f80b31157b37680c1204e4c66907d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:48.817Z"
   },
   {
     "name": "Naturally",
@@ -51527,7 +52232,13 @@
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "6498c045-c8b4-47fb-b528-85198cbba637",
-    "autoTriedAt": "2026-07-11T11:16:54.041Z"
+    "autoTriedAt": "2026-07-11T11:16:54.041Z",
+    "popularity": {
+      "listeners": 616,
+      "playcount": 3214
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/27f3cdd2da1f5737131ff46a5d79f919/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:49.521Z"
   },
   {
     "name": "Naturally 7",
@@ -51543,7 +52254,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:51.289Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "bd81c05a-71a9-4c95-a64c-a4351c9e21a5"
+    "mbid": "bd81c05a-71a9-4c95-a64c-a4351c9e21a5",
+    "genres": [
+      "rnb",
+      "a capella",
+      "beat box",
+      "soul",
+      "vocal play"
+    ],
+    "popularity": {
+      "listeners": 38824,
+      "playcount": 437308
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e0bd0cf5f9089c818ea12f69d006f59a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:50.148Z"
   },
   {
     "name": "Nature",
@@ -51560,7 +52284,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:16:56.585Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Hip-Hop",
+      "rap",
+      "Queensbridge",
+      "k-pop",
+      "new york"
+    ],
+    "popularity": {
+      "listeners": 397187,
+      "playcount": 9238751
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ec6056a5ff2a5bdadbebf3e06b3baf3e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:50.827Z"
   },
   {
     "name": "Naturi Naughton",
@@ -51576,14 +52313,32 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:16:59.103Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "pop",
+      "female vocalists",
+      "rnb",
+      "dance",
+      "singer-songwriter"
+    ],
+    "popularity": {
+      "listeners": 38425,
+      "playcount": 354031
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f8df25a04fea90013d619e4dd9fd4158/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:51.468Z"
   },
   {
     "name": "Naturist",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:17:00.346Z"
+    "autoTriedAt": "2026-07-11T11:17:00.346Z",
+    "popularity": {
+      "listeners": 5,
+      "playcount": 25
+    },
+    "metaEnrichedAt": "2026-07-11T18:20:52.203Z"
   },
   {
     "name": "Naty Botero",
@@ -51599,7 +52354,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:51.289Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c90ffc0a-5c6d-47bf-959f-04f69e38e426"
+    "mbid": "c90ffc0a-5c6d-47bf-959f-04f69e38e426",
+    "genres": [
+      "Colombia",
+      "pop",
+      "latin",
+      "spanish",
+      "Fusion"
+    ],
+    "popularity": {
+      "listeners": 16908,
+      "playcount": 192921
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/313efb094fdbfef428de6a002e4fa462/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:52.824Z"
   },
   {
     "name": "Naughty by Nature",
@@ -51615,21 +52383,48 @@
     },
     "enrichedAt": "2026-07-07T07:19:51.289Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "3bdcd49d-212e-4f4f-877a-eac1e4a2bddc"
+    "mbid": "3bdcd49d-212e-4f4f-877a-eac1e4a2bddc",
+    "genres": [
+      "Hip-Hop",
+      "rap",
+      "old school",
+      "east coast rap",
+      "hip hop"
+    ],
+    "popularity": {
+      "listeners": 817783,
+      "playcount": 7041504
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fa783cbb689109710792db5441c15cbe/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:53.523Z"
   },
   {
     "name": "Naumburg International Piano Competition",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:17:01.577Z"
+    "autoTriedAt": "2026-07-11T11:17:01.577Z",
+    "metaTriedAt": "2026-07-11T18:20:54.128Z"
   },
   {
     "name": "Nausea",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:17:02.925Z"
+    "autoTriedAt": "2026-07-11T11:17:02.925Z",
+    "genres": [
+      "Crust",
+      "crust punk",
+      "anarcho-punk",
+      "punk",
+      "grindcore"
+    ],
+    "popularity": {
+      "listeners": 82147,
+      "playcount": 1955792
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/802e5d37cae2c50fc96ee6c8aace6166/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:54.737Z"
   },
   {
     "name": "Naushad Ali",
@@ -51637,14 +52432,32 @@
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "379fdbdc-0533-4007-8bd9-bb601ad01aba",
-    "autoTriedAt": "2026-07-11T11:17:05.425Z"
+    "autoTriedAt": "2026-07-11T11:17:05.425Z",
+    "popularity": {
+      "listeners": 123,
+      "playcount": 604
+    },
+    "metaEnrichedAt": "2026-07-11T18:20:55.397Z"
   },
   {
     "name": "Nautical Almanac",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbid": "94a43456-17d1-4812-91bb-b554951736e0",
-    "autoTriedAt": "2026-07-11T11:17:07.940Z"
+    "autoTriedAt": "2026-07-11T11:17:07.940Z",
+    "genres": [
+      "noise",
+      "experimental",
+      "noise rock",
+      "everything",
+      "met"
+    ],
+    "popularity": {
+      "listeners": 2811,
+      "playcount": 20571
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/697393b0774c4f1d5c4e02c7c67db94a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:56.062Z"
   },
   {
     "name": "Nautilus Pompilius",
@@ -51661,7 +52474,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:17:10.429Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "russian rock",
+      "rock",
+      "russian",
+      "art rock",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 178717,
+      "playcount": 8438877
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/59d128511cce802b7f94490c0b3e20b2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:56.775Z"
   },
   {
     "name": "Navajo",
@@ -51669,7 +52495,20 @@
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "0030ee79-6a67-4030-8e1f-08c8187d92f6",
-    "autoTriedAt": "2026-07-11T11:17:12.950Z"
+    "autoTriedAt": "2026-07-11T11:17:12.950Z",
+    "genres": [
+      "native american",
+      "Navajo",
+      "psytrance",
+      "electronica",
+      "psychedelic"
+    ],
+    "popularity": {
+      "listeners": 6116,
+      "playcount": 51007
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d41d8cd98f00b204e9800998ecf8427e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:57.432Z"
   },
   {
     "name": "Navarone",
@@ -51685,7 +52524,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:51.289Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "478db734-a2f3-43cc-b8c2-59cb85d967fb"
+    "mbid": "478db734-a2f3-43cc-b8c2-59cb85d967fb",
+    "genres": [
+      "rock",
+      "dutch",
+      "Psychedelic Rock",
+      "hard rock",
+      "Nijmegen"
+    ],
+    "popularity": {
+      "listeners": 15660,
+      "playcount": 226127
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d5580633f9c7599de109b34e99b58e03/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:58.189Z"
   },
   {
     "name": "Naveen Kumar",
@@ -51702,7 +52554,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:17:15.461Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 2744,
+      "playcount": 15855
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3e216facd628c83d07670099cf27e415/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:20:59.004Z"
   },
   {
     "name": "Navene-k",
@@ -51719,7 +52577,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:17:17.946Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "dubstep",
+      "electronic",
+      "electro",
+      "american",
+      "dj"
+    ],
+    "popularity": {
+      "listeners": 708,
+      "playcount": 12864
+    },
+    "metaEnrichedAt": "2026-07-11T18:20:59.757Z"
   },
   {
     "name": "Navet Confit",
@@ -51735,21 +52605,41 @@
     },
     "enrichedAt": "2026-07-07T07:19:51.289Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e07dea81-e7bb-4983-a71c-f651a27d7be5"
+    "mbid": "e07dea81-e7bb-4983-a71c-f651a27d7be5",
+    "genres": [
+      "indie",
+      "psychedelic",
+      "indie rock",
+      "All",
+      "quebecois"
+    ],
+    "popularity": {
+      "listeners": 4039,
+      "playcount": 72651
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a05c0812db1ff4e151f44fa03ceaaba8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:00.974Z"
   },
   {
     "name": "Navi Rawat",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:17:20.180Z"
+    "autoTriedAt": "2026-07-11T11:17:20.180Z",
+    "metaTriedAt": "2026-07-11T18:21:01.565Z"
   },
   {
     "name": "Navin Prabhakar",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:17:21.405Z"
+    "autoTriedAt": "2026-07-11T11:17:21.405Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 3
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:02.334Z"
   },
   {
     "name": "Navio",
@@ -51765,28 +52655,59 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:17:23.882Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "mathcore",
+      "post-hardcore",
+      "alternative",
+      "experimental",
+      "downtempo"
+    ],
+    "popularity": {
+      "listeners": 957,
+      "playcount": 8561
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f17c770751beeae4d5d37280f63e75ab/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:03.015Z"
   },
   {
     "name": "Navy Cross",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:17:25.115Z"
+    "autoTriedAt": "2026-07-11T11:17:25.115Z",
+    "metaTriedAt": "2026-07-11T18:21:03.669Z"
   },
   {
     "name": "Navy SEAL",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:17:26.554Z"
+    "autoTriedAt": "2026-07-11T11:17:26.554Z",
+    "popularity": {
+      "listeners": 134,
+      "playcount": 316
+    },
+    "metaEnrichedAt": "2026-07-11T18:21:04.311Z"
   },
   {
     "name": "Nawal Al Zoghbi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:17:27.807Z"
+    "autoTriedAt": "2026-07-11T11:17:27.807Z",
+    "genres": [
+      "arabic",
+      "lebanese",
+      "arabic pop",
+      "female vocalists",
+      "world"
+    ],
+    "popularity": {
+      "listeners": 36130,
+      "playcount": 367645
+    },
+    "metaEnrichedAt": "2026-07-11T18:21:04.907Z"
   },
   {
     "name": "Nawal El Kuwaitia",
@@ -51802,7 +52723,17 @@
     },
     "enrichedAt": "2026-07-07T07:19:51.289Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "74ffbe50-23ce-4a19-892a-9d946261f6ca"
+    "mbid": "74ffbe50-23ce-4a19-892a-9d946261f6ca",
+    "genres": [
+      "khaliji",
+      "kuwait"
+    ],
+    "popularity": {
+      "listeners": 1647,
+      "playcount": 25716
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/69688bbb26263040f94d1ce9e1212b11/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:05.645Z"
   },
   {
     "name": "Nawawe",
@@ -51818,7 +52749,12 @@
     },
     "enrichedAt": "2026-07-07T07:19:51.289Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1323b1c1-27b1-4313-9eaf-7faa20e91bc6"
+    "mbid": "1323b1c1-27b1-4313-9eaf-7faa20e91bc6",
+    "popularity": {
+      "listeners": 10,
+      "playcount": 57
+    },
+    "metaEnrichedAt": "2026-07-11T18:21:06.372Z"
   },
   {
     "name": "Naya Rivera",
@@ -51834,14 +52770,40 @@
     },
     "enrichedAt": "2026-07-07T07:19:51.289Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1e2c7f08-f996-4c6d-8706-9234662618da"
+    "mbid": "1e2c7f08-f996-4c6d-8706-9234662618da",
+    "genres": [
+      "female vocalists",
+      "glee",
+      "pop",
+      "female vocalist",
+      "Glee Cast"
+    ],
+    "popularity": {
+      "listeners": 34232,
+      "playcount": 543841
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bc3da1b9c94b497e0019e7eb2b029599/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:07.002Z"
   },
   {
     "name": "Nayanka Bell",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbid": "a4b33cdb-8bc0-4ad0-a356-b110962e64ba",
-    "autoTriedAt": "2026-07-11T11:17:30.817Z"
+    "autoTriedAt": "2026-07-11T11:17:30.817Z",
+    "genres": [
+      "zouk",
+      "world",
+      "Ivory Coast",
+      "west african",
+      "cote d ivoire"
+    ],
+    "popularity": {
+      "listeners": 1389,
+      "playcount": 6013
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f5d64a54aa1bedb512826e930fc7cfd7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:07.696Z"
   },
   {
     "name": "Nayden Todorov",
@@ -51857,14 +52819,33 @@
     },
     "enrichedAt": "2026-07-07T07:19:51.289Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2ebaede7-6ed0-4ffe-b575-9ec38827e042"
+    "mbid": "2ebaede7-6ed0-4ffe-b575-9ec38827e042",
+    "popularity": {
+      "listeners": 163,
+      "playcount": 4678
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/29455db76d60b5ecaa6d7e54cb9b2773/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:08.355Z"
   },
   {
     "name": "Nayekhovichi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:17:32.039Z"
+    "autoTriedAt": "2026-07-11T11:17:32.039Z",
+    "genres": [
+      "klezmer",
+      "jewish",
+      "klezmer-rock",
+      "russian",
+      "radical klezmer"
+    ],
+    "popularity": {
+      "listeners": 1618,
+      "playcount": 21432
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:08.978Z"
   },
   {
     "name": "Naykilla",
@@ -51880,7 +52861,19 @@
     },
     "mbid": "06c095fd-512a-4bcd-9c0c-1bda68b29848",
     "enrichedAt": "2026-07-09T08:32:12.140Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "indonesian",
+      "Hipdut",
+      "rnb",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 28029,
+      "playcount": 668789
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/12e601b18bd5ea7740c7df01e009eecc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:09.644Z"
   },
   {
     "name": "Nayt",
@@ -51896,14 +52889,40 @@
     "wdBulkTriedAt": "2026-07-09T08:32:12.140Z",
     "mbid": "1d2982b9-90d2-46a7-abc2-90d90b2300db",
     "enrichedAt": "2026-07-09T08:32:12.140Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "rap",
+      "Hip-Hop",
+      "italian",
+      "hip hop",
+      "Conscious Hip Hop"
+    ],
+    "popularity": {
+      "listeners": 47660,
+      "playcount": 9314977
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c8f3db1bc8859086128b09729538df03/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:10.228Z"
   },
   {
     "name": "Nayyara Noor",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbid": "5bb3702f-8225-42ad-be86-9782ad90557b",
-    "autoTriedAt": "2026-07-11T11:17:34.589Z"
+    "autoTriedAt": "2026-07-11T11:17:34.589Z",
+    "genres": [
+      "Ghazal",
+      "pakistani",
+      "pakistan",
+      "world",
+      "Queen of Ghazals"
+    ],
+    "popularity": {
+      "listeners": 7784,
+      "playcount": 102963
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/34cef892fab9f22a71a6f3b0361222bc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:10.846Z"
   },
   {
     "name": "Nazan Öncel",
@@ -51919,7 +52938,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:51.289Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "244186bf-0cc8-40d9-a671-c39df90b9efd"
+    "mbid": "244186bf-0cc8-40d9-a671-c39df90b9efd",
+    "genres": [
+      "Turkish Pop",
+      "turkish",
+      "female vocalists",
+      "pop",
+      "Nazan Oncel"
+    ],
+    "popularity": {
+      "listeners": 92749,
+      "playcount": 1735525
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f102760bf9a561359bced4fad6b1941c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:11.446Z"
   },
   {
     "name": "Nazarenes",
@@ -51927,7 +52959,20 @@
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "8b4b21c9-6328-4581-974c-9e1ad618bacc",
-    "autoTriedAt": "2026-07-11T11:17:37.062Z"
+    "autoTriedAt": "2026-07-11T11:17:37.062Z",
+    "genres": [
+      "Rastas persecuted by Muslims and Marxists in Ethiopia",
+      "based in Sweden",
+      "reggae after 2000",
+      "roots reggae",
+      "roots reggae singers"
+    ],
+    "popularity": {
+      "listeners": 5222,
+      "playcount": 42360
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/41e0565e8aa8413ef07facf7a8866368/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:12.262Z"
   },
   {
     "name": "Nazareth",
@@ -51943,7 +52988,20 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T11:17:37.062Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "hard rock",
+      "classic rock",
+      "rock",
+      "70s",
+      "heavy metal"
+    ],
+    "popularity": {
+      "listeners": 976349,
+      "playcount": 12601769
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/161d4d23e23d4143c82ec5276a2873f5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:12.924Z"
   },
   {
     "name": "Nazgûl",
@@ -51960,14 +53018,31 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:17:39.553Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "black metal",
+      "epic black metal",
+      "Symphonic Black Metal",
+      "Folk Black Metal",
+      "italian"
+    ],
+    "popularity": {
+      "listeners": 6858,
+      "playcount": 183613
+    },
+    "metaEnrichedAt": "2026-07-11T18:21:13.609Z"
   },
   {
     "name": "Nazia and Zoheb",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:17:40.788Z"
+    "autoTriedAt": "2026-07-11T11:17:40.788Z",
+    "popularity": {
+      "listeners": 29,
+      "playcount": 243
+    },
+    "metaEnrichedAt": "2026-07-11T18:21:14.281Z"
   },
   {
     "name": "Nazia Hassan",
@@ -51983,21 +53058,51 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:17:43.360Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "pakistani pop",
+      "bollywood",
+      "pakistani",
+      "pakistan",
+      "urdu"
+    ],
+    "popularity": {
+      "listeners": 48063,
+      "playcount": 330205
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/049a97fd25eea9eb88d828339be9709e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:15.047Z"
   },
   {
     "name": "Nazia Iqbal",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:17:44.581Z"
+    "autoTriedAt": "2026-07-11T11:17:44.581Z",
+    "genres": [
+      "Pashto",
+      "afghanistan",
+      "afghan",
+      "female vocalist"
+    ],
+    "popularity": {
+      "listeners": 1005,
+      "playcount": 8884
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3364e2243aed6da583b265b9b65eb194/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:15.729Z"
   },
   {
     "name": "Nazism",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:17:45.804Z"
+    "autoTriedAt": "2026-07-11T11:17:45.804Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 1
+    },
+    "metaEnrichedAt": "2026-07-11T18:21:16.413Z"
   },
   {
     "name": "Nazxul",
@@ -52013,7 +53118,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:51.289Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c496d4a5-d861-45e4-a64a-6ca1a2295957"
+    "mbid": "c496d4a5-d861-45e4-a64a-6ca1a2295957",
+    "genres": [
+      "black metal",
+      "Symphonic Black Metal",
+      "australian",
+      "australian black metal",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 10036,
+      "playcount": 294120
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/35ed6edd58d9a0072bf6a311e0a770e3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:17.103Z"
   },
   {
     "name": "Nazz",
@@ -52029,7 +53147,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:17:48.352Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Garage Rock",
+      "Psychedelic Rock",
+      "60s",
+      "psychedelic",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 54982,
+      "playcount": 505997
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6ec77c97ce124eb28f906b2147cc5b20/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:18.290Z"
   },
   {
     "name": "NB Ridaz",
@@ -52045,21 +53176,51 @@
     },
     "enrichedAt": "2026-07-07T07:19:51.289Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0adbea00-e0da-4de9-8caf-4d80f76a7828"
+    "mbid": "0adbea00-e0da-4de9-8caf-4d80f76a7828",
+    "genres": [
+      "MC MAGIC",
+      "westcoast",
+      "nb ridaz",
+      "Chicano Rap",
+      "talkbox"
+    ],
+    "popularity": {
+      "listeners": 86233,
+      "playcount": 782938
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ac212d9bcd27b32a088aa11097b055e2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:19.004Z"
   },
   {
     "name": "NBC News",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:17:49.588Z"
+    "autoTriedAt": "2026-07-11T11:17:49.588Z",
+    "genres": [
+      "Podcasts",
+      "podcast",
+      "reporting",
+      "News",
+      "news reports"
+    ],
+    "popularity": {
+      "listeners": 8315,
+      "playcount": 34185
+    },
+    "metaEnrichedAt": "2026-07-11T18:21:19.674Z"
   },
   {
     "name": "NBC Nightly News with Brian Williams",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:17:50.836Z"
+    "autoTriedAt": "2026-07-11T11:17:50.836Z",
+    "popularity": {
+      "listeners": 8,
+      "playcount": 19
+    },
+    "metaEnrichedAt": "2026-07-11T18:21:20.309Z"
   },
   {
     "name": "NBC Symphony Orchestra",
@@ -52067,7 +53228,19 @@
     "wdBulkTriedAt": "2026-07-07T07:19:51.289Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "229d5a97-b8e1-4195-a696-d74bc8db90ed",
-    "autoTriedAt": "2026-07-11T11:17:53.562Z"
+    "autoTriedAt": "2026-07-11T11:17:53.562Z",
+    "genres": [
+      "Classical",
+      "instrumental",
+      "orchestral",
+      "n b c s orchestra"
+    ],
+    "popularity": {
+      "listeners": 4186,
+      "playcount": 19491
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/45504f0bd014bbf2d775a0f444c7dc11/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:21.172Z"
   },
   {
     "name": "NC.A",
@@ -52083,14 +53256,31 @@
     },
     "enrichedAt": "2026-07-07T07:19:53.930Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "97e19ac9-7918-4ad9-ae7c-fce23cc42777"
+    "mbid": "97e19ac9-7918-4ad9-ae7c-fce23cc42777",
+    "genres": [
+      "k-pop",
+      "Korean",
+      "Kpop",
+      "pop",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 11864,
+      "playcount": 142612
+    },
+    "metaEnrichedAt": "2026-07-11T18:21:21.823Z"
   },
   {
     "name": "NCAA",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:53.930Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:17:54.801Z"
+    "autoTriedAt": "2026-07-11T11:17:54.801Z",
+    "popularity": {
+      "listeners": 93,
+      "playcount": 658
+    },
+    "metaEnrichedAt": "2026-07-11T18:21:22.594Z"
   },
   {
     "name": "NDR Radiophilharmonie",
@@ -52107,7 +53297,16 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:17:57.329Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "clasicram"
+    ],
+    "popularity": {
+      "listeners": 2225,
+      "playcount": 11891
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e52fe09ccac99ec4eaa33933703a2158/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:23.348Z"
   },
   {
     "name": "NDR Symphony Orchestra",
@@ -52123,7 +53322,13 @@
     },
     "enrichedAt": "2026-07-07T07:19:53.930Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2688f91d-dfdd-4d67-94df-0f1a02140c62"
+    "mbid": "2688f91d-dfdd-4d67-94df-0f1a02140c62",
+    "popularity": {
+      "listeners": 201,
+      "playcount": 1631
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/370597571888b9ade72f0e5a0041d446/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:24.051Z"
   },
   {
     "name": "Ne Obliviscaris",
@@ -52140,7 +53345,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:17:59.919Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "progressive black metal",
+      "Progressive metal",
+      "black metal",
+      "melodic black metal",
+      "australian"
+    ],
+    "popularity": {
+      "listeners": 150007,
+      "playcount": 6669292
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f89bd7502fa89c7e672413f7575e11b0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:24.611Z"
   },
   {
     "name": "Ne-Yo",
@@ -52156,7 +53374,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:53.930Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a4a01f5d-18e7-4571-8c3a-76ec0e24e2d7"
+    "mbid": "a4a01f5d-18e7-4571-8c3a-76ec0e24e2d7",
+    "genres": [
+      "rnb",
+      "soul",
+      "Hip-Hop",
+      "pop",
+      "Ne-Yo"
+    ],
+    "popularity": {
+      "listeners": 3437010,
+      "playcount": 66739177
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cc3aabafca2130a5415489d85bb0e26d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:25.195Z"
   },
   {
     "name": "Neal Coty",
@@ -52164,14 +53395,31 @@
     "wdBulkTriedAt": "2026-07-07T07:19:53.930Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "89c0c004-ac63-4455-8095-797c78e8cc5d",
-    "autoTriedAt": "2026-07-11T11:18:02.413Z"
+    "autoTriedAt": "2026-07-11T11:18:02.413Z",
+    "genres": [
+      "Southern Rock",
+      "country rock",
+      "modern country"
+    ],
+    "popularity": {
+      "listeners": 1094,
+      "playcount": 26471
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c3321ecf594e09f731c57db7b9e8f30c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:25.927Z"
   },
   {
     "name": "Neal Doughty",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:53.930Z",
     "mbid": "de6cf287-e9d9-4d25-872f-74b555aad70d",
-    "autoTriedAt": "2026-07-11T11:18:04.930Z"
+    "autoTriedAt": "2026-07-11T11:18:04.930Z",
+    "popularity": {
+      "listeners": 5,
+      "playcount": 75
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:26.641Z"
   },
   {
     "name": "Neal McCoy",
@@ -52188,7 +53436,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:18:07.454Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "country",
+      "All",
+      "classic country",
+      "american",
+      "new traditionalist country"
+    ],
+    "popularity": {
+      "listeners": 104493,
+      "playcount": 705325
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/de8fba6c985bd36087336f69e303da87/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:27.312Z"
   },
   {
     "name": "Neal Morse",
@@ -52204,21 +53465,53 @@
     },
     "enrichedAt": "2026-07-07T07:19:53.930Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c0926f5d-098c-4f29-a463-5489b43a273a"
+    "mbid": "c0926f5d-098c-4f29-a463-5489b43a273a",
+    "genres": [
+      "Progressive rock",
+      "christian",
+      "Progressive metal",
+      "Progressive",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 85703,
+      "playcount": 2709869
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fa1f9002b6a5939dde16d71771969e47/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:27.974Z"
   },
   {
     "name": "Neal Pattman",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:53.930Z",
     "mbid": "5d01a89c-b4d2-4412-8d65-9a4c80679f36",
-    "autoTriedAt": "2026-07-11T11:18:09.950Z"
+    "autoTriedAt": "2026-07-11T11:18:09.950Z",
+    "genres": [
+      "georgia",
+      "Dead",
+      "acoustic blues",
+      "country blues",
+      "harmonica blues"
+    ],
+    "popularity": {
+      "listeners": 1305,
+      "playcount": 5144
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1445965b144d11b840694b5fb5111c88/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:28.690Z"
   },
   {
     "name": "Neal Peres Da Costa",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:53.930Z",
     "mbid": "2b82dd30-9395-4099-9721-0d16649b0d93",
-    "autoTriedAt": "2026-07-11T11:18:12.504Z"
+    "autoTriedAt": "2026-07-11T11:18:12.504Z",
+    "popularity": {
+      "listeners": 82,
+      "playcount": 390
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c61b5b61aba7032f6d304650a9d9ee34/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:29.332Z"
   },
   {
     "name": "Neal Schon",
@@ -52234,7 +53527,20 @@
     },
     "enrichedAt": "2026-07-07T07:19:53.930Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "58325670-9323-464a-8b20-3e8d7b26df60"
+    "mbid": "58325670-9323-464a-8b20-3e8d7b26df60",
+    "genres": [
+      "guitar virtuoso",
+      "guitar",
+      "instrumental",
+      "melodic rock",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 36064,
+      "playcount": 448232
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9858b36d5ef07686374f7cca060d8ad8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:29.941Z"
   },
   {
     "name": "Neal Smith",
@@ -52251,7 +53557,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:18:15.048Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "rock",
+      "drums",
+      "piano",
+      "Alice Cooper"
+    ],
+    "popularity": {
+      "listeners": 383,
+      "playcount": 3910
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/609bf0edfdac6b80b6a2046c476498f4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:30.616Z"
   },
   {
     "name": "Neal Starkey",
@@ -52259,7 +53578,13 @@
     "wdBulkTriedAt": "2026-07-07T07:19:53.930Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "b3fa59d4-f0e5-454b-9a1a-ce15d8320fe0",
-    "autoTriedAt": "2026-07-11T11:18:17.507Z"
+    "autoTriedAt": "2026-07-11T11:18:17.507Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 4
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:31.266Z"
   },
   {
     "name": "Neal Stephenson",
@@ -52275,21 +53600,33 @@
     },
     "enrichedAt": "2026-07-07T07:19:53.930Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "55aa45e9-6f8c-495f-a5a1-868a085b96e9"
+    "mbid": "55aa45e9-6f8c-495f-a5a1-868a085b96e9",
+    "popularity": {
+      "listeners": 3405,
+      "playcount": 100430
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/937f580685295ada4eb945cf542d9e67/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:31.937Z"
   },
   {
     "name": "Near You",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:53.930Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:18:18.781Z"
+    "autoTriedAt": "2026-07-11T11:18:18.781Z",
+    "popularity": {
+      "listeners": 26,
+      "playcount": 70
+    },
+    "metaEnrichedAt": "2026-07-11T18:21:32.688Z"
   },
   {
     "name": "Nebojša Todorović",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:19:53.930Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:18:20.493Z"
+    "autoTriedAt": "2026-07-11T11:18:20.493Z",
+    "metaTriedAt": "2026-07-11T18:21:33.295Z"
   },
   {
     "name": "Nebula",
@@ -52306,7 +53643,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:18:23.247Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Stoner Rock",
+      "desert rock",
+      "psychedelic",
+      "stoner",
+      "Psychedelic Rock"
+    ],
+    "popularity": {
+      "listeners": 184801,
+      "playcount": 2645579
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8bb92acf89cf4e9ffb1bd5138234ef70/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T18:21:33.911Z"
   },
   {
     "name": "Necare",
@@ -52322,7 +53672,19 @@
     },
     "enrichedAt": "2026-07-07T07:19:53.930Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f3d5d506-e40d-4ca6-9e08-6a7a6d575382"
+    "mbid": "f3d5d506-e40d-4ca6-9e08-6a7a6d575382",
+    "genres": [
+      "doom metal",
+      "Death Doom Metal",
+      "death metal",
+      "death-doom metal",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 4283,
+      "playcount": 95025
+    },
+    "metaEnrichedAt": "2026-07-11T18:21:34.575Z"
   },
   {
     "name": "Nechama Hendel",
