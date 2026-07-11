@@ -1,0 +1,14 @@
+{
+  "id": "artist-heresy",
+  "domain": "www.heresy.us",
+  "url": "http://www.heresy.us",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.et_pb_text_inner ul li",
+    "artistNameFallback": "Heresy",
+    "date": "span strong",
+    "venueNameFallback": "SOUSA BANDSHELL, Sunset Park",
+    "cityNameFallback": "Port Washington, NY",
+    "countryNameFallback": "US"
+  }
+}

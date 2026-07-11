@@ -1,0 +1,17 @@
+{
+  "id": "artist-hey-nineteen",
+  "domain": "www.hey19band.com",
+  "url": "http://www.hey19band.com/fans",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".gigpress-row",
+    "artistNameFallback": "Hey Nineteen",
+    "date": ".gigpress-date",
+    "ticketUrl": ".gigpress-tickets a",
+    "venue": ".gigpress-venue",
+    "city": ".gigpress-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

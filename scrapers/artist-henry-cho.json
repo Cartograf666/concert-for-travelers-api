@@ -1,0 +1,17 @@
+{
+  "id": "artist-henry-cho",
+  "domain": "www.henrychocomedy.com",
+  "url": "https://www.henrychocomedy.com/tour-dates",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.tour-date-row",
+    "artistNameFallback": "Henry Cho",
+    "date": ".tour-date-date",
+    "ticketUrl": ".tour-date-tickets a",
+    "venue": ".tour-date-venue",
+    "city": ".tour-date-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
