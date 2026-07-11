@@ -101184,7 +101184,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:57.509Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ebe42a0b-6a6f-4eb6-b436-5c0f351d96f3"
+    "mbid": "ebe42a0b-6a6f-4eb6-b436-5c0f351d96f3",
+    "genres": [
+      "singer-songwriter",
+      "russian",
+      "folk",
+      "acoustic",
+      "liszaj radio"
+    ],
+    "popularity": {
+      "listeners": 16121,
+      "playcount": 360035
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/322fdcaae97353bc0c6382b6c48c66de/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:23.245Z"
   },
   {
     "name": "Vladislav Delay",
@@ -101200,14 +101213,39 @@
     },
     "enrichedAt": "2026-07-07T07:28:57.509Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "039cafb3-4f3d-44a9-b956-7705323f025b"
+    "mbid": "039cafb3-4f3d-44a9-b956-7705323f025b",
+    "genres": [
+      "ambient",
+      "glitch",
+      "minimal",
+      "idm",
+      "electronic"
+    ],
+    "popularity": {
+      "listeners": 146478,
+      "playcount": 2035136
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e1f1d0277bfcfc0b7b2c46644fb13611/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:23.851Z"
   },
   {
     "name": "Vladislav Zolotaryov",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbid": "e68a2f4f-f2b7-4575-9205-ea15df15b969",
-    "autoTriedAt": "2026-07-11T12:05:37.926Z"
+    "autoTriedAt": "2026-07-11T12:05:37.926Z",
+    "genres": [
+      "russian",
+      "Classical",
+      "Russia",
+      "composer",
+      "siberian"
+    ],
+    "popularity": {
+      "listeners": 190,
+      "playcount": 1851
+    },
+    "metaEnrichedAt": "2026-07-11T21:23:24.482Z"
   },
   {
     "name": "Vlado Kreslin",
@@ -101224,7 +101262,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:05:40.567Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "slovenian",
+      "slovenia",
+      "rock",
+      "folk",
+      "singer-songwriter"
+    ],
+    "popularity": {
+      "listeners": 7053,
+      "playcount": 259578
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/33f66b0c7652720daaaa3e8715a0aedc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:25.139Z"
   },
   {
     "name": "Vlado Perlemuter",
@@ -101240,7 +101291,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:57.509Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a21d548e-d582-49e0-87d4-a9e3cb099224"
+    "mbid": "a21d548e-d582-49e0-87d4-a9e3cb099224",
+    "genres": [
+      "piano",
+      "Classical",
+      "pianist",
+      "french",
+      "classic"
+    ],
+    "popularity": {
+      "listeners": 6746,
+      "playcount": 69622
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/95aeeab0dbf90f4a5d39951db4412afe/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:25.829Z"
   },
   {
     "name": "Vlatko Stefanovski",
@@ -101256,14 +101320,28 @@
     },
     "enrichedAt": "2026-07-07T07:28:57.509Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e9d87fc2-2961-4e12-a56e-67fe1f8be2b9"
+    "mbid": "e9d87fc2-2961-4e12-a56e-67fe1f8be2b9",
+    "genres": [
+      "guitar",
+      "balkan",
+      "Macedonian",
+      "macedonia",
+      "world"
+    ],
+    "popularity": {
+      "listeners": 20803,
+      "playcount": 161754
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/240d8d8c7042ca115db18f0d4e260ab1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:26.520Z"
   },
   {
     "name": "Vlax Romani",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:05:41.967Z"
+    "autoTriedAt": "2026-07-11T12:05:41.967Z",
+    "metaTriedAt": "2026-07-11T21:23:27.164Z"
   },
   {
     "name": "VNV Nation",
@@ -101279,35 +101357,73 @@
     },
     "enrichedAt": "2026-07-07T07:28:57.509Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8385f26a-f374-4a04-9aad-4442ce24db2b"
+    "mbid": "8385f26a-f374-4a04-9aad-4442ce24db2b",
+    "genres": [
+      "futurepop",
+      "ebm",
+      "electronic",
+      "industrial",
+      "synthpop"
+    ],
+    "popularity": {
+      "listeners": 401751,
+      "playcount": 23256050
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b61038d0656196b685cf6ae0132b2820/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:27.743Z"
   },
   {
     "name": "vocal",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:05:43.400Z"
+    "autoTriedAt": "2026-07-11T12:05:43.400Z",
+    "genres": [
+      "german",
+      "rap",
+      "Nu-metal",
+      "alternative rap",
+      "german rap"
+    ],
+    "popularity": {
+      "listeners": 6027,
+      "playcount": 107682
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e482083042c0369bce779ad2386e21e2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:28.495Z"
   },
   {
     "name": "vocal music",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:05:44.626Z"
+    "autoTriedAt": "2026-07-11T12:05:44.626Z",
+    "popularity": {
+      "listeners": 10,
+      "playcount": 142
+    },
+    "metaEnrichedAt": "2026-07-11T21:23:29.187Z"
   },
   {
     "name": "Vocalion Records",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:05:45.863Z"
+    "autoTriedAt": "2026-07-11T12:05:45.863Z",
+    "metaTriedAt": "2026-07-11T21:23:30.838Z"
   },
   {
     "name": "vocalist",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:05:47.232Z"
+    "autoTriedAt": "2026-07-11T12:05:47.232Z",
+    "popularity": {
+      "listeners": 89,
+      "playcount": 541
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a2431c041fcb2a2788d1df8218caa530/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:31.575Z"
   },
   {
     "name": "Vocaloid",
@@ -101324,42 +101440,88 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:05:49.843Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "vocaloid",
+      "j-pop",
+      "electronic",
+      "japan",
+      "J-rock"
+    ],
+    "popularity": {
+      "listeners": 20777,
+      "playcount": 1680998
+    },
+    "metaEnrichedAt": "2026-07-11T21:23:32.157Z"
   },
   {
     "name": "vocals",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:05:51.079Z"
+    "autoTriedAt": "2026-07-11T12:05:51.079Z",
+    "popularity": {
+      "listeners": 615,
+      "playcount": 6794
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/99c076a72101d63a044d62d9c3a56265/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:33.132Z"
   },
   {
     "name": "Vodka Collins",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbid": "b53a265c-a2a4-494e-97ba-d8c8c0a846e7",
-    "autoTriedAt": "2026-07-11T12:05:53.766Z"
+    "autoTriedAt": "2026-07-11T12:05:53.766Z",
+    "genres": [
+      "glam rock",
+      "japanese",
+      "proto punk",
+      "punk",
+      "glam punk"
+    ],
+    "popularity": {
+      "listeners": 1139,
+      "playcount": 11035
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/af18ff8536348aa4dd384a78666775f2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:33.798Z"
   },
   {
     "name": "Voggue",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbid": "ee95c8c1-aae3-41d1-9227-59b744972e23",
-    "autoTriedAt": "2026-07-11T12:05:56.420Z"
+    "autoTriedAt": "2026-07-11T12:05:56.420Z",
+    "genres": [
+      "female vocalists",
+      "Disco",
+      "Home collection",
+      "80s",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 8326,
+      "playcount": 31725
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5b9513639d888ba636859d4df02bb95a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:34.516Z"
   },
   {
     "name": "Vogue Records",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:05:57.661Z"
+    "autoTriedAt": "2026-07-11T12:05:57.661Z",
+    "metaTriedAt": "2026-07-11T21:23:35.113Z"
   },
   {
     "name": "Voice classification in non-classical music",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:05:58.893Z"
+    "autoTriedAt": "2026-07-11T12:05:58.893Z",
+    "metaTriedAt": "2026-07-11T21:23:35.723Z"
   },
   {
     "name": "Voice Crack",
@@ -101376,7 +101538,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:06:01.748Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "noise",
+      "experimental",
+      "free improvisation",
+      "Avant-Garde",
+      "eai"
+    ],
+    "popularity": {
+      "listeners": 2544,
+      "playcount": 20859
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/aea615c2ab0c544ee8050b9143db6496/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:36.395Z"
   },
   {
     "name": "Voice Farm",
@@ -101392,21 +101567,59 @@
     },
     "enrichedAt": "2026-07-07T07:28:57.509Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "fdba444d-105a-4824-b73f-6fb3a75ea2f0"
+    "mbid": "fdba444d-105a-4824-b73f-6fb3a75ea2f0",
+    "genres": [
+      "synthpop",
+      "new wave",
+      "80s",
+      "electro-pop",
+      "minimal synth"
+    ],
+    "popularity": {
+      "listeners": 5391,
+      "playcount": 43628
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/453b2c087d3b8e8e77fdcc5f2a948bdf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:37.223Z"
   },
   {
     "name": "Voice Industrie",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbid": "b5ca960a-5cb8-4878-a532-a7e6138f2076",
-    "autoTriedAt": "2026-07-11T12:06:04.635Z"
+    "autoTriedAt": "2026-07-11T12:06:04.635Z",
+    "genres": [
+      "futurepop",
+      "Canadian",
+      "canada",
+      "industrial",
+      "0 plays"
+    ],
+    "popularity": {
+      "listeners": 1260,
+      "playcount": 13973
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/278c85297c6830ea9c24a981b29b2b20/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:37.841Z"
   },
   {
     "name": "Voice Mail",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbid": "978e4d3f-282b-47ea-90f3-1056c0f675c4",
-    "autoTriedAt": "2026-07-11T12:06:07.352Z"
+    "autoTriedAt": "2026-07-11T12:06:07.352Z",
+    "genres": [
+      "dancehall",
+      "ragga",
+      "reggae",
+      "All",
+      "spotify"
+    ],
+    "popularity": {
+      "listeners": 13440,
+      "playcount": 57408
+    },
+    "metaEnrichedAt": "2026-07-11T21:23:38.509Z"
   },
   {
     "name": "Voice Male",
@@ -101422,7 +101635,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:57.509Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "fa8c9155-ef88-4424-97f7-050112f8a401"
+    "mbid": "fa8c9155-ef88-4424-97f7-050112f8a401",
+    "genres": [
+      "a cappella",
+      "a cappella covers",
+      "a capella",
+      "Acapella",
+      "male vocalist"
+    ],
+    "popularity": {
+      "listeners": 14142,
+      "playcount": 147865
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/85e32afad46100d3f76e6f2d3cdf047d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:39.240Z"
   },
   {
     "name": "Voice of Eye",
@@ -101438,7 +101664,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:06:10.513Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "dark ambient",
+      "ritual ambient",
+      "ambient",
+      "tribal ambient",
+      "experimental"
+    ],
+    "popularity": {
+      "listeners": 7731,
+      "playcount": 171443
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/768357b39aefc3e1786ed31863ac0332/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:39.911Z"
   },
   {
     "name": "Voice of the Beehive",
@@ -101455,21 +101694,36 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:06:13.174Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "pop",
+      "female vocalists",
+      "80s",
+      "alternative",
+      "girl bands"
+    ],
+    "popularity": {
+      "listeners": 50605,
+      "playcount": 487854
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c70ab3ed455d9a2c99624763210f1e7d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:40.500Z"
   },
   {
     "name": "voice procedure",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:06:14.408Z"
+    "autoTriedAt": "2026-07-11T12:06:14.408Z",
+    "metaTriedAt": "2026-07-11T21:23:41.646Z"
   },
   {
     "name": "Voice type",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:06:15.648Z"
+    "autoTriedAt": "2026-07-11T12:06:15.648Z",
+    "metaTriedAt": "2026-07-11T21:23:42.247Z"
   },
   {
     "name": "Voicemail",
@@ -101486,28 +101740,69 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:06:18.256Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "dancehall",
+      "reggae",
+      "voicemail",
+      "ragga",
+      "Bashment"
+    ],
+    "popularity": {
+      "listeners": 69728,
+      "playcount": 346611
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3d85696cbcc3b00623aa829cc031f105/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:42.920Z"
   },
   {
     "name": "Voices",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:06:19.500Z"
+    "autoTriedAt": "2026-07-11T12:06:19.500Z",
+    "genres": [
+      "black metal",
+      "Blackened Death Metal",
+      "death metal",
+      "experimental",
+      "gospel"
+    ],
+    "popularity": {
+      "listeners": 34557,
+      "playcount": 535903
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/aeeca64293dfe724a63c6894dd583786/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:43.633Z"
   },
   {
     "name": "Voices of Theory",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbid": "bd3cb1fe-4e68-4e71-a6a9-246f20a7b801",
-    "autoTriedAt": "2026-07-11T12:06:22.221Z"
+    "autoTriedAt": "2026-07-11T12:06:22.221Z",
+    "popularity": {
+      "listeners": 9617,
+      "playcount": 64382
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6f5c1008747ca090ba108070a36bf994/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:44.415Z"
   },
   {
     "name": "Voices on the Verge",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbid": "7a0edcf6-6a42-4088-90ef-faf007febdda",
-    "autoTriedAt": "2026-07-11T12:06:24.779Z"
+    "autoTriedAt": "2026-07-11T12:06:24.779Z",
+    "genres": [
+      "folk"
+    ],
+    "popularity": {
+      "listeners": 993,
+      "playcount": 15634
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3700394e87db70044cfdfd19cf9d7692/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:45.095Z"
   },
   {
     "name": "Voicst",
@@ -101523,7 +101818,20 @@
     "mbid": "b0f475fe-ad28-4cf8-92f0-b5ca978004b1",
     "wdBulkTriedAt": "2026-07-08T14:10:46.260Z",
     "enrichedAt": "2026-07-08T14:10:46.260Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "indie",
+      "dutch",
+      "indie rock",
+      "rock",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 69182,
+      "playcount": 1269743
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7a49aef43ce9aacfc80a477964731d9d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:45.738Z"
   },
   {
     "name": "Void",
@@ -101540,7 +101848,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:06:27.339Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "hardcore punk",
+      "hardcore",
+      "punk",
+      "psytrance",
+      "black metal"
+    ],
+    "popularity": {
+      "listeners": 553832,
+      "playcount": 8864362
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4e082710799d9cf75116bab64fca629b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:46.396Z"
   },
   {
     "name": "Void of Silence",
@@ -101556,7 +101877,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:57.509Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8ac603ea-ebce-4054-a17a-0784217dd9d2"
+    "mbid": "8ac603ea-ebce-4054-a17a-0784217dd9d2",
+    "genres": [
+      "doom metal",
+      "atmospheric doom metal",
+      "funeral doom metal",
+      "Experimental Doom Metal",
+      "italian"
+    ],
+    "popularity": {
+      "listeners": 16750,
+      "playcount": 355810
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c16f002ad02c3eed335b9e83148a96e5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:47.022Z"
   },
   {
     "name": "Voivod",
@@ -101572,14 +101906,32 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T12:06:27.339Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "thrash metal",
+      "Progressive metal",
+      "progressive thrash metal",
+      "Canadian",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 212464,
+      "playcount": 7406711
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/24cbf35636e54cba526b8a4c5c117463/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:47.644Z"
   },
   {
     "name": "Vojvodina",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:06:28.642Z"
+    "autoTriedAt": "2026-07-11T12:06:28.642Z",
+    "popularity": {
+      "listeners": 13,
+      "playcount": 140
+    },
+    "metaEnrichedAt": "2026-07-11T21:23:48.310Z"
   },
   {
     "name": "VoKee",
@@ -101595,7 +101947,19 @@
     },
     "enrichedAt": "2026-07-07T07:28:57.509Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "Progressive rock",
+      "crossover",
+      "alternative",
+      "alternative progressive rock"
+    ],
+    "popularity": {
+      "listeners": 344,
+      "playcount": 10286
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/86e0f76fbad8d4336ad6389d42c206fa/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:48.988Z"
   },
   {
     "name": "Vola and the Oriental Machine",
@@ -101611,7 +101975,19 @@
     },
     "enrichedAt": "2026-07-07T07:28:57.509Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "dafcf61a-b256-406e-b5fa-b2e4d3c89e22"
+    "mbid": "dafcf61a-b256-406e-b5fa-b2e4d3c89e22",
+    "genres": [
+      "new wave",
+      "post-punk",
+      "japanese",
+      "J-rock",
+      "indie"
+    ],
+    "popularity": {
+      "listeners": 7537,
+      "playcount": 772532
+    },
+    "metaEnrichedAt": "2026-07-11T21:23:49.621Z"
   },
   {
     "name": "Volbeat",
@@ -101627,7 +102003,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:57.509Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4753fcb7-9270-493a-974d-8daca4e49125"
+    "mbid": "4753fcb7-9270-493a-974d-8daca4e49125",
+    "genres": [
+      "heavy metal",
+      "metal",
+      "rockabilly",
+      "elvis metal",
+      "danish"
+    ],
+    "popularity": {
+      "listeners": 995206,
+      "playcount": 56949770
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b45c1b7d356c4cb8c5b5998f314d1d76/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:50.236Z"
   },
   {
     "name": "Volcano Suns",
@@ -101643,7 +102032,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:57.509Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4837e8d3-a13f-4670-9684-82970411f4bc"
+    "mbid": "4837e8d3-a13f-4670-9684-82970411f4bc",
+    "genres": [
+      "indie rock",
+      "post-hardcore",
+      "post-punk",
+      "alternative rock",
+      "Post punk"
+    ],
+    "popularity": {
+      "listeners": 13553,
+      "playcount": 176835
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f107cf7453510bb456327a639c6cf815/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:50.886Z"
   },
   {
     "name": "Volcano The Bear",
@@ -101660,7 +102062,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:06:31.340Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "experimental",
+      "Avant-Garde",
+      "psychedelic",
+      "free jazz",
+      "avantgarde"
+    ],
+    "popularity": {
+      "listeners": 16163,
+      "playcount": 221249
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fe305a8c292a1d9eba87341bc320cbc6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:51.471Z"
   },
   {
     "name": "Volin",
@@ -101677,7 +102092,16 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:06:33.961Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "french"
+    ],
+    "popularity": {
+      "listeners": 704,
+      "playcount": 4925
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/097368f2167859fc2185eb712fa61729/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:52.149Z"
   },
   {
     "name": "Volker David Kirchner",
@@ -101693,7 +102117,19 @@
     },
     "enrichedAt": "2026-07-07T07:28:57.509Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "52a3e4e3-d3d0-4223-bcc0-92127a324143"
+    "mbid": "52a3e4e3-d3d0-4223-bcc0-92127a324143",
+    "genres": [
+      "contemporary classical",
+      "german",
+      "composer",
+      "gammarec",
+      "freepurp1e"
+    ],
+    "popularity": {
+      "listeners": 152,
+      "playcount": 1047
+    },
+    "metaEnrichedAt": "2026-07-11T21:23:52.758Z"
   },
   {
     "name": "Volker Goetze",
@@ -101709,21 +102145,45 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:06:36.556Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 2063,
+      "playcount": 5215
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/89dd48cfff7612272fa0a4d97af29d3b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:53.397Z"
   },
   {
     "name": "Volker Kriegel",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbid": "e1f52e5b-7f77-4d5d-b6bb-58f60c5e92ef",
-    "autoTriedAt": "2026-07-11T12:06:39.202Z"
+    "autoTriedAt": "2026-07-11T12:06:39.202Z",
+    "genres": [
+      "jazz",
+      "Fusion",
+      "guitar",
+      "german",
+      "jazzrock"
+    ],
+    "popularity": {
+      "listeners": 28172,
+      "playcount": 148226
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7578dafa3566bae6c65a022fee70f627/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:54.088Z"
   },
   {
     "name": "Volkmar Busch",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:06:40.914Z"
+    "autoTriedAt": "2026-07-11T12:06:40.914Z",
+    "popularity": {
+      "listeners": 3,
+      "playcount": 17
+    },
+    "metaEnrichedAt": "2026-07-11T21:23:54.708Z"
   },
   {
     "name": "Volodja Balžalorsky",
@@ -101739,7 +102199,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:06:43.475Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Classical",
+      "violin",
+      "romantic",
+      "Volodja Balzalorsky",
+      "mistagged"
+    ],
+    "popularity": {
+      "listeners": 15380,
+      "playcount": 42709
+    },
+    "metaEnrichedAt": "2026-07-11T21:23:55.330Z"
   },
   {
     "name": "Volt & State",
@@ -101756,14 +102228,36 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:06:45.970Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "netherlands"
+    ],
+    "popularity": {
+      "listeners": 17701,
+      "playcount": 91848
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b8d1eaede831858a9354b194b6073a89/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:56.012Z"
   },
   {
     "name": "Voltaire",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:06:47.220Z"
+    "autoTriedAt": "2026-07-11T12:06:47.220Z",
+    "genres": [
+      "dark cabaret",
+      "Gothic",
+      "folk",
+      "darkwave",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 140272,
+      "playcount": 5432562
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/396525bd3a529efe95f28232cfac266d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:56.660Z"
   },
   {
     "name": "Voltaj",
@@ -101779,7 +102273,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:57.509Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "9f2da0ae-e499-4912-9baa-3ea6ef9e0f20"
+    "mbid": "9f2da0ae-e499-4912-9baa-3ea6ef9e0f20",
+    "genres": [
+      "Romanian",
+      "rock",
+      "Eurovision",
+      "heavy metal",
+      "romania"
+    ],
+    "popularity": {
+      "listeners": 31029,
+      "playcount": 405012
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b9aed5901877534643a1a7a6bcd8bc56/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:57.344Z"
   },
   {
     "name": "Voltio",
@@ -101795,7 +102302,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:57.509Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c842457c-8087-433d-a895-ec58e7f14ca0"
+    "mbid": "c842457c-8087-433d-a895-ec58e7f14ca0",
+    "genres": [
+      "Reggaeton",
+      "puerto rico",
+      "latin",
+      "spanish",
+      "chill906"
+    ],
+    "popularity": {
+      "listeners": 98412,
+      "playcount": 587416
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3a21a15c92215681c228cf9016729355/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:58.556Z"
   },
   {
     "name": "Volume 10",
@@ -101812,7 +102332,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:06:49.886Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Hip-Hop",
+      "west coast",
+      "rap",
+      "underground hip-hop",
+      "West Coast Rap"
+    ],
+    "popularity": {
+      "listeners": 10600,
+      "playcount": 80312
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1b6cfeb57d01dbb6c830537fabfab5e5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:59.174Z"
   },
   {
     "name": "Volumes",
@@ -101828,21 +102361,51 @@
     },
     "enrichedAt": "2026-07-07T07:28:57.509Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "9d397404-907d-4355-b5d6-299bae93f6d9"
+    "mbid": "9d397404-907d-4355-b5d6-299bae93f6d9",
+    "genres": [
+      "DJENT",
+      "Progressive metal",
+      "math metal",
+      "groove metal",
+      "metalcore"
+    ],
+    "popularity": {
+      "listeners": 211874,
+      "playcount": 8192655
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/422a3f6f4bf96a53c23e6aaa350cb3e8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:23:59.761Z"
   },
   {
     "name": "Vomit Pigs",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbid": "a8300632-6c9e-4080-bd64-751ee685f30f",
-    "autoTriedAt": "2026-07-11T12:06:51.174Z"
+    "autoTriedAt": "2026-07-11T12:06:51.174Z",
+    "genres": [
+      "punk",
+      "punk rock",
+      "texas punk",
+      "kbd",
+      "70s punk rock"
+    ],
+    "popularity": {
+      "listeners": 1690,
+      "playcount": 19216
+    },
+    "metaEnrichedAt": "2026-07-11T21:24:00.459Z"
   },
   {
     "name": "Vomit Thrower",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbid": "1ad8ab5f-39f1-4466-aebe-47d268031927",
-    "autoTriedAt": "2026-07-11T12:06:53.745Z"
+    "autoTriedAt": "2026-07-11T12:06:53.745Z",
+    "popularity": {
+      "listeners": 20,
+      "playcount": 276
+    },
+    "metaEnrichedAt": "2026-07-11T21:24:01.288Z"
   },
   {
     "name": "Vomito Negro",
@@ -101858,7 +102421,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:57.509Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "33eb6a1e-f76f-47df-a12a-bbd7c7316ac5"
+    "mbid": "33eb6a1e-f76f-47df-a12a-bbd7c7316ac5",
+    "genres": [
+      "ebm",
+      "industrial",
+      "Old school EBM",
+      "electro-industrial",
+      "electronic"
+    ],
+    "popularity": {
+      "listeners": 19034,
+      "playcount": 348211
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8e28e9d6f0a98efa76e75dad84ff4755/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:01.881Z"
   },
   {
     "name": "Vomitory",
@@ -101875,7 +102451,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:06:56.298Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "death metal",
+      "Brutal Death Metal",
+      "old school death metal",
+      "swedish",
+      "Swedish Death Metal"
+    ],
+    "popularity": {
+      "listeners": 78001,
+      "playcount": 3107687
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2422e6dee479bb3b270b0c5f228da3a8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:02.578Z"
   },
   {
     "name": "Von Freeman",
@@ -101891,7 +102480,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:06:58.913Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "saxophone",
+      "jazz",
+      "chicago",
+      "Hard Bop",
+      "SOLOMUSIKA-Jazz"
+    ],
+    "popularity": {
+      "listeners": 3761,
+      "playcount": 17506
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6db7d430bdcc067abb958ad8e27dedf4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:03.249Z"
   },
   {
     "name": "Von Hertzen Brothers",
@@ -101907,7 +102509,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:57.509Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "298c6d13-4757-437d-a3a6-07d0b3255e5b"
+    "mbid": "298c6d13-4757-437d-a3a6-07d0b3255e5b",
+    "genres": [
+      "Progressive rock",
+      "finnish",
+      "rock",
+      "Progressive",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 70784,
+      "playcount": 2107780
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3a9bf5a9a06b8557ee3b413d24e25ac3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:04.129Z"
   },
   {
     "name": "Von Iva",
@@ -101923,7 +102538,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:57.509Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "47c25078-30fd-414d-8d3d-33eda85aac32"
+    "mbid": "47c25078-30fd-414d-8d3d-33eda85aac32",
+    "genres": [
+      "indie rock",
+      "female vocalists",
+      "indie",
+      "electronic",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 17178,
+      "playcount": 175966
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/893483fe3a8a29662714b122fdc18ec8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:04.818Z"
   },
   {
     "name": "Von Lmo",
@@ -101931,14 +102559,38 @@
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "00acdb34-e215-40e2-a767-320a31c830f1",
-    "autoTriedAt": "2026-07-11T12:07:01.378Z"
+    "autoTriedAt": "2026-07-11T12:07:01.378Z",
+    "genres": [
+      "no wave",
+      "post-punk",
+      "new wave",
+      "experimental",
+      "art punk"
+    ],
+    "popularity": {
+      "listeners": 4610,
+      "playcount": 47884
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:05.460Z"
   },
   {
     "name": "von Trapp",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:57.509Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:07:03.175Z"
+    "autoTriedAt": "2026-07-11T12:07:03.175Z",
+    "genres": [
+      "hardcore",
+      "black metal",
+      "finland",
+      "finnish"
+    ],
+    "popularity": {
+      "listeners": 90,
+      "playcount": 346
+    },
+    "metaEnrichedAt": "2026-07-11T21:24:06.314Z"
   },
   {
     "name": "Vonda Shepard",
@@ -101954,7 +102606,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:57.509Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "31e82ae9-f414-4a68-a0bf-d2719368166d"
+    "mbid": "31e82ae9-f414-4a68-a0bf-d2719368166d",
+    "genres": [
+      "female vocalists",
+      "pop",
+      "singer-songwriter",
+      "soul",
+      "Soundtrack"
+    ],
+    "popularity": {
+      "listeners": 158198,
+      "playcount": 1913980
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/93ff5849f89c20c279e09e03cd8998de/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:06.946Z"
   },
   {
     "name": "Vondelpark",
@@ -101970,7 +102635,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:57.509Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b7206c0a-d703-49d4-90c5-cdc7d4f07874"
+    "mbid": "b7206c0a-d703-49d4-90c5-cdc7d4f07874",
+    "genres": [
+      "electronic",
+      "chillwave",
+      "indie",
+      "electronic post-punk",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 128595,
+      "playcount": 1340256
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b797efeb44d75b764522ae9bf9b97aed/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:07.619Z"
   },
   {
     "name": "Vondur",
@@ -101986,7 +102664,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:57.509Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "cdbef7fc-a9d5-4b9b-9694-0eff4bcd4aac"
+    "mbid": "cdbef7fc-a9d5-4b9b-9694-0eff4bcd4aac",
+    "genres": [
+      "black metal",
+      "swedish",
+      "swedish black metal",
+      "raw black metal",
+      "Black n Roll"
+    ],
+    "popularity": {
+      "listeners": 3870,
+      "playcount": 65304
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4033a40aaab1540ab8bf7a55090e0417/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:08.393Z"
   },
   {
     "name": "Voo Voo",
@@ -102002,7 +102693,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:59.233Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5bfbc038-223a-4ff2-80ae-982fb06bf673"
+    "mbid": "5bfbc038-223a-4ff2-80ae-982fb06bf673",
+    "genres": [
+      "polish",
+      "alternative",
+      "jazz",
+      "rock",
+      "experimental"
+    ],
+    "popularity": {
+      "listeners": 104576,
+      "playcount": 2686470
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d6e49a111a0f6c83a624ca14c023ae36/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:09.014Z"
   },
   {
     "name": "Voodoo",
@@ -102018,7 +102722,19 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T12:07:04.405Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "rock",
+      "heavy metal",
+      "Deutschrap",
+      "german hiphop",
+      "deutsch"
+    ],
+    "popularity": {
+      "listeners": 17546,
+      "playcount": 153099
+    },
+    "metaEnrichedAt": "2026-07-11T21:24:09.682Z"
   },
   {
     "name": "Voodoo Glow Skulls",
@@ -102035,7 +102751,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:07:07.043Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "ska punk",
+      "ska",
+      "skacore",
+      "punk",
+      "punk rock"
+    ],
+    "popularity": {
+      "listeners": 212564,
+      "playcount": 3248750
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0ec20257887b44df3f55a53ef00d03c7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:10.258Z"
   },
   {
     "name": "Voodoo Gods",
@@ -102052,14 +102781,40 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:07:09.832Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "death metal",
+      "extended range metal",
+      "thrash metal",
+      "Extreme Metal",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 2157,
+      "playcount": 30827
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5a3a614d9c0c6f106511fccf008a8558/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:10.896Z"
   },
   {
     "name": "Voodoo Queens",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:59.233Z",
     "mbid": "1f745f08-fc2f-4c1e-bde7-8dd0e437d11e",
-    "autoTriedAt": "2026-07-11T12:07:12.331Z"
+    "autoTriedAt": "2026-07-11T12:07:12.331Z",
+    "genres": [
+      "riot grrrl",
+      "indie rock",
+      "rock",
+      "female vocalists",
+      "spotify"
+    ],
+    "popularity": {
+      "listeners": 17959,
+      "playcount": 88841
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1b7eb08b9935149e207ec805d8cdd8e5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:11.833Z"
   },
   {
     "name": "Voodoocult",
@@ -102076,7 +102831,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:07:14.901Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "thrash metal",
+      "german",
+      "germany",
+      "deutschland",
+      "Deutsche"
+    ],
+    "popularity": {
+      "listeners": 7618,
+      "playcount": 131091
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5ce2101d6fb43711a3894074e1078446/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:12.464Z"
   },
   {
     "name": "Voorhees",
@@ -102084,7 +102852,20 @@
     "wdBulkTriedAt": "2026-07-07T07:28:59.233Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "1204f1c8-780e-4eef-ae11-cc535afc3cb5",
-    "autoTriedAt": "2026-07-11T12:07:17.436Z"
+    "autoTriedAt": "2026-07-11T12:07:17.436Z",
+    "genres": [
+      "hardcore",
+      "hardcore punk",
+      "thrashcore",
+      "british",
+      "death metal"
+    ],
+    "popularity": {
+      "listeners": 7628,
+      "playcount": 173673
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3a0a081f50f415e45ab4e9a3546bf23c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:13.121Z"
   },
   {
     "name": "Vorkreist",
@@ -102100,21 +102881,44 @@
     },
     "enrichedAt": "2026-07-07T07:28:59.233Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "aaf9a498-b289-4279-a8a8-10a6c63cee4c"
+    "mbid": "aaf9a498-b289-4279-a8a8-10a6c63cee4c",
+    "genres": [
+      "black metal",
+      "Blackened Death Metal",
+      "death metal",
+      "french",
+      "black death metal"
+    ],
+    "popularity": {
+      "listeners": 3992,
+      "playcount": 87902
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2e48a7ab6d0923755dabb45a8a94fb6e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:13.779Z"
   },
   {
     "name": "Voronezh",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:59.233Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:07:18.682Z"
+    "autoTriedAt": "2026-07-11T12:07:18.682Z",
+    "popularity": {
+      "listeners": 36,
+      "playcount": 137
+    },
+    "metaEnrichedAt": "2026-07-11T21:24:14.517Z"
   },
   {
     "name": "Vorph",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:59.233Z",
     "mbid": "e7a42004-17cd-46a7-87d7-93112cf39428",
-    "autoTriedAt": "2026-07-11T12:07:21.170Z"
+    "autoTriedAt": "2026-07-11T12:07:21.170Z",
+    "popularity": {
+      "listeners": 13,
+      "playcount": 22
+    },
+    "metaEnrichedAt": "2026-07-11T21:24:15.163Z"
   },
   {
     "name": "VOTA",
@@ -102130,7 +102934,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:59.233Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "10a07b6f-2e0c-4ec2-a0c5-c6cf2db86a1f"
+    "mbid": "10a07b6f-2e0c-4ec2-a0c5-c6cf2db86a1f",
+    "genres": [
+      "christian rock",
+      "christian",
+      "rock",
+      "alternative rock",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 18918,
+      "playcount": 163084
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a4dc2345024acb752e619e93149db538/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:16.297Z"
   },
   {
     "name": "Voxtrot",
@@ -102146,7 +102963,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:59.233Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c163f6f1-84c0-48fa-81c5-8129739b6c3c"
+    "mbid": "c163f6f1-84c0-48fa-81c5-8129739b6c3c",
+    "genres": [
+      "indie",
+      "indie pop",
+      "indie rock",
+      "twee",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 592574,
+      "playcount": 11245223
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0279a15676fb4fd62981f06fa30638f6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:16.900Z"
   },
   {
     "name": "Voyage",
@@ -102163,7 +102993,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:07:23.749Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Disco",
+      "funk",
+      "symphonic metal",
+      "70s",
+      "Gothic Metal"
+    ],
+    "popularity": {
+      "listeners": 221448,
+      "playcount": 4371325
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/650a4ae06cafeafa7d620417182db120/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:17.585Z"
   },
   {
     "name": "Voyager",
@@ -102179,7 +103022,20 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T12:07:23.749Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "Progressive metal",
+      "Post-Metal",
+      "Power metal",
+      "Sludge",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 271060,
+      "playcount": 4267420
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/749a03ad8f13244227819b0371d29229/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:18.242Z"
   },
   {
     "name": "Voyager One",
@@ -102195,7 +103051,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:59.233Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2b8cfa10-cc42-4ae4-b0d3-5937e03dd239"
+    "mbid": "2b8cfa10-cc42-4ae4-b0d3-5937e03dd239",
+    "genres": [
+      "shoegaze",
+      "dream pop",
+      "indie rock",
+      "seattle",
+      "slowcore"
+    ],
+    "popularity": {
+      "listeners": 12819,
+      "playcount": 112514
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d7d36098dbd5c668ba5033c63d460663/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:19.375Z"
   },
   {
     "name": "Voz Veis",
@@ -102211,7 +103080,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:59.233Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4ea9c321-92b1-4ed1-90a3-1d5116ab454b"
+    "mbid": "4ea9c321-92b1-4ed1-90a3-1d5116ab454b",
+    "genres": [
+      "latin",
+      "pop",
+      "venezuela",
+      "spanish",
+      "a capella"
+    ],
+    "popularity": {
+      "listeners": 21764,
+      "playcount": 369134
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3dd18c3d9f2eb44fba870e830d67d593/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:20.029Z"
   },
   {
     "name": "Vreid",
@@ -102227,7 +103109,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:59.233Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "cc35096c-fce2-4c1e-aa07-a223f612de67"
+    "mbid": "cc35096c-fce2-4c1e-aa07-a223f612de67",
+    "genres": [
+      "black metal",
+      "melodic black metal",
+      "norwegian",
+      "Norwegian Black Metal",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 71298,
+      "playcount": 2497450
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/aef758d06e2488bd8530a7d7ea4c41bc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:20.655Z"
   },
   {
     "name": "VSEMOJNO",
@@ -102244,7 +103139,20 @@
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "21c9acea-842a-43ef-ab1d-1ca692c69416",
     "enrichedAt": "2026-07-11T12:07:26.302Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "rock",
+      "metal",
+      "rap",
+      "rock n roll",
+      "Metall"
+    ],
+    "popularity": {
+      "listeners": 1383,
+      "playcount": 17469
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8d79479f6a99c098a633fe3c49e366e5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:21.277Z"
   },
   {
     "name": "Vulcain",
@@ -102260,7 +103168,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:59.233Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "af0f252d-bfab-434c-809f-209e783f3d9f"
+    "mbid": "af0f252d-bfab-434c-809f-209e783f3d9f",
+    "genres": [
+      "heavy metal",
+      "speed metal",
+      "hard rock",
+      "french",
+      "french heavy metal"
+    ],
+    "popularity": {
+      "listeners": 3730,
+      "playcount": 90760
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7ba236d3740270d9860b1950bfb01a5e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:22.009Z"
   },
   {
     "name": "Vulcano",
@@ -102277,7 +103198,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:07:28.799Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "thrash metal",
+      "black metal",
+      "death metal",
+      "brazilian",
+      "blackened thrash metal"
+    ],
+    "popularity": {
+      "listeners": 27911,
+      "playcount": 535284
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/aa69cb104af9312f48ae155dd88f1eb6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:22.654Z"
   },
   {
     "name": "Vulfpeck",
@@ -102293,7 +103227,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:59.233Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7d0e8067-10b9-4069-95dc-1110a0fbb877"
+    "mbid": "7d0e8067-10b9-4069-95dc-1110a0fbb877",
+    "genres": [
+      "funk",
+      "soul",
+      "jazz",
+      "jazz pop",
+      "blues"
+    ],
+    "popularity": {
+      "listeners": 601859,
+      "playcount": 23985905
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3ec38d89f48b85df7795eead1ef5c86f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:23.223Z"
   },
   {
     "name": "Vulgaires Machins",
@@ -102309,7 +103256,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:59.233Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e5b1d871-be9f-46c9-a0d4-5e05399f379f"
+    "mbid": "e5b1d871-be9f-46c9-a0d4-5e05399f379f",
+    "genres": [
+      "punk rock",
+      "punk",
+      "quebecois",
+      "rock",
+      "quebec"
+    ],
+    "popularity": {
+      "listeners": 20615,
+      "playcount": 699499
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/33f4c78a258e9ed24f00dfb79502f262/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:23.834Z"
   },
   {
     "name": "Vulpes",
@@ -102325,7 +103285,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:59.233Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "aa4bc520-93b0-4492-b446-a121efedcc3c"
+    "mbid": "aa4bc520-93b0-4492-b446-a121efedcc3c",
+    "genres": [
+      "punk",
+      "punk rock",
+      "spanish",
+      "electronic",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 16265,
+      "playcount": 138974
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8899b4012368c469374bac8a34fe42d1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:24.503Z"
   },
   {
     "name": "Vulva",
@@ -102333,7 +103306,20 @@
     "wdBulkTriedAt": "2026-07-07T07:28:59.233Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "f8cf9ab7-3c05-4c47-8f8a-c21e539a5a17",
-    "autoTriedAt": "2026-07-11T12:07:31.300Z"
+    "autoTriedAt": "2026-07-11T12:07:31.300Z",
+    "genres": [
+      "idm",
+      "electronic",
+      "braindance",
+      "Acid",
+      "Rephlex"
+    ],
+    "popularity": {
+      "listeners": 6784,
+      "playcount": 45442
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e3809415c4c37e520fa9bad3f1c22669/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:25.168Z"
   },
   {
     "name": "Vuokko Hovatta",
@@ -102349,7 +103335,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:59.233Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8176e890-f666-43ca-91a4-3b9fc1cddd00"
+    "mbid": "8176e890-f666-43ca-91a4-3b9fc1cddd00",
+    "genres": [
+      "finnish",
+      "female vocalists",
+      "pop",
+      "Suomi",
+      "finland"
+    ],
+    "popularity": {
+      "listeners": 15599,
+      "playcount": 305310
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e825259cd7c1b2a75b424905d1f1de33/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:25.788Z"
   },
   {
     "name": "Vusi Mahlasela",
@@ -102365,7 +103364,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:59.233Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "bba868d4-974d-4b3b-a09f-ceef888da5b8"
+    "mbid": "bba868d4-974d-4b3b-a09f-ceef888da5b8",
+    "genres": [
+      "african",
+      "south african",
+      "south africa",
+      "world",
+      "folk"
+    ],
+    "popularity": {
+      "listeners": 39497,
+      "playcount": 249782
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ae494d01d8d52f3634fb4db198af01ec/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:26.469Z"
   },
   {
     "name": "VV Brown",
@@ -102382,28 +103394,68 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:07:33.915Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "indie",
+      "female vocalists",
+      "alternative",
+      "pop",
+      "british"
+    ],
+    "popularity": {
+      "listeners": 141332,
+      "playcount": 1994434
+    },
+    "metaEnrichedAt": "2026-07-11T21:24:27.080Z"
   },
   {
     "name": "Vyacheslav Artyomov",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:59.233Z",
     "mbid": "579bb907-9c75-4072-8859-3376060af5d1",
-    "autoTriedAt": "2026-07-11T12:07:35.140Z"
+    "autoTriedAt": "2026-07-11T12:07:35.140Z",
+    "genres": [
+      "contemporary classical",
+      "Classical",
+      "russian",
+      "composer",
+      "Russia"
+    ],
+    "popularity": {
+      "listeners": 2654,
+      "playcount": 8662
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cb15efac0d1568f689c122145c6a7cdc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:27.728Z"
   },
   {
     "name": "Vyacheslav Nagovitsin",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:59.233Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:07:36.364Z"
+    "autoTriedAt": "2026-07-11T12:07:36.364Z",
+    "genres": [
+      "Russia",
+      "russian"
+    ],
+    "popularity": {
+      "listeners": 2,
+      "playcount": 10
+    },
+    "metaEnrichedAt": "2026-07-11T21:24:28.362Z"
   },
   {
     "name": "Vyacheslav Polozov",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:59.233Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:07:37.596Z"
+    "autoTriedAt": "2026-07-11T12:07:37.596Z",
+    "popularity": {
+      "listeners": 7,
+      "playcount": 7
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:29.008Z"
   },
   {
     "name": "Vybz Kartel",
@@ -102419,21 +103471,59 @@
     },
     "enrichedAt": "2026-07-07T07:28:59.233Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7cc385f3-333c-48de-b341-3d728de74973"
+    "mbid": "7cc385f3-333c-48de-b341-3d728de74973",
+    "genres": [
+      "dancehall",
+      "reggae",
+      "jamaica",
+      "ragga",
+      "dancehall reggae"
+    ],
+    "popularity": {
+      "listeners": 383309,
+      "playcount": 7941893
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f7b3120a56baee2381d61054658d6077/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:29.715Z"
   },
   {
     "name": "Vytas Brenner",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:59.233Z",
     "mbid": "f4a62f08-b830-4e3b-bc5b-8ccc74f373a1",
-    "autoTriedAt": "2026-07-11T12:07:40.183Z"
+    "autoTriedAt": "2026-07-11T12:07:40.183Z",
+    "genres": [
+      "Progressive rock",
+      "venezuela",
+      "eclectic prog",
+      "Progressive",
+      "latin jazz"
+    ],
+    "popularity": {
+      "listeners": 6845,
+      "playcount": 78621
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a77b73794ab8a4070171b0d3dfc72f57/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:30.565Z"
   },
   {
     "name": "Vytautas Juozapaitis",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:28:59.233Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:07:41.417Z"
+    "autoTriedAt": "2026-07-11T12:07:41.417Z",
+    "genres": [
+      "lithuanian",
+      "opera",
+      "classical music",
+      "operos"
+    ],
+    "popularity": {
+      "listeners": 103,
+      "playcount": 742
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:31.230Z"
   },
   {
     "name": "Vyvienne Long",
@@ -102449,7 +103539,20 @@
     },
     "enrichedAt": "2026-07-07T07:28:59.233Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e5bda626-1c32-44d4-8d7b-3cd2c14695c6"
+    "mbid": "e5bda626-1c32-44d4-8d7b-3cd2c14695c6",
+    "genres": [
+      "cello",
+      "irish",
+      "female vocalists",
+      "singer-songwriter",
+      "kgrl"
+    ],
+    "popularity": {
+      "listeners": 10581,
+      "playcount": 92328
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6783b68080d330f3ced6b3d6aafe93a8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:31.861Z"
   },
   {
     "name": "vzs",
@@ -102466,7 +103569,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:07:43.988Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 5106,
+      "playcount": 307704
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/faf932a4732a92c421e818d65e1528fa/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:32.485Z"
   },
   {
     "name": "Женя Трофимов",
@@ -102483,7 +103592,20 @@
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "b548880e-682a-4934-82a2-112cf070e72f",
     "enrichedAt": "2026-07-11T12:07:46.528Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "indie pop",
+      "singer-songwriter",
+      "pop rock",
+      "russian rock",
+      "i have seen live"
+    ],
+    "popularity": {
+      "listeners": 20065,
+      "playcount": 455816
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/90e8fe03643773de6106eb1dded1573d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:33.625Z"
   },
   {
     "name": "Обстоятельства",
@@ -102500,14 +103622,32 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:07:49.129Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "indie pop",
+      "rock",
+      "indie rock",
+      "alternative",
+      "3"
+    ],
+    "popularity": {
+      "listeners": 11992,
+      "playcount": 395001
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2fe88af5e761552d33a712224d1256d5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:34.257Z"
   },
   {
     "name": "Опера Сосницкого",
     "website": null,
     "wdBulkTriedAt": "2026-07-08T14:10:57.781Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:07:50.485Z"
+    "autoTriedAt": "2026-07-11T12:07:50.485Z",
+    "popularity": {
+      "listeners": 303,
+      "playcount": 1408
+    },
+    "metaEnrichedAt": "2026-07-11T21:24:34.891Z"
   },
   {
     "name": "Юлия Коган",
@@ -102524,28 +103664,61 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:07:53.067Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "russian"
+    ],
+    "popularity": {
+      "listeners": 8428,
+      "playcount": 62958
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fe34e9e62754acbc3c70db2bd8d07bda/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:35.483Z"
   },
   {
     "name": "Юля Коган",
     "website": null,
     "wdBulkTriedAt": "2026-07-08T14:10:59.288Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:07:54.836Z"
+    "autoTriedAt": "2026-07-11T12:07:54.836Z",
+    "popularity": {
+      "listeners": 193,
+      "playcount": 876
+    },
+    "metaEnrichedAt": "2026-07-11T21:24:36.160Z"
   },
   {
     "name": "ブルーノ・マーズ",
     "website": null,
     "wdBulkTriedAt": "2026-07-09T08:32:12.140Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:07:56.063Z"
+    "autoTriedAt": "2026-07-11T12:07:56.063Z",
+    "genres": [
+      "US Pop"
+    ],
+    "popularity": {
+      "listeners": 16255,
+      "playcount": 478614
+    },
+    "metaEnrichedAt": "2026-07-11T21:24:36.800Z"
   },
   {
     "name": "マイケル・ジャクソン",
     "website": null,
     "wdBulkTriedAt": "2026-07-09T08:32:12.140Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:07:57.376Z"
+    "autoTriedAt": "2026-07-11T12:07:57.376Z",
+    "genres": [
+      "pop",
+      "rock",
+      "soul",
+      "funk"
+    ],
+    "popularity": {
+      "listeners": 13706,
+      "playcount": 385293
+    },
+    "metaEnrichedAt": "2026-07-11T21:24:37.471Z"
   },
   {
     "name": "マカロニえんぴつ",
@@ -102562,7 +103735,16 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:07:59.966Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "macaroni enpitsu",
+      "japanese"
+    ],
+    "popularity": {
+      "listeners": 7652,
+      "playcount": 447445
+    },
+    "metaEnrichedAt": "2026-07-11T21:24:38.046Z"
   },
   {
     "name": "椎名林檎",
@@ -102579,7 +103761,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:08:02.690Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "japanese",
+      "J-rock",
+      "j-pop",
+      "rock",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 154433,
+      "playcount": 19814403
+    },
+    "metaEnrichedAt": "2026-07-11T21:24:38.632Z"
   },
   {
     "name": "陶喆",
@@ -102596,6 +103790,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:08:05.545Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "chinese",
+      "C-pop",
+      "taiwan",
+      "pop",
+      "r&b"
+    ],
+    "popularity": {
+      "listeners": 65300,
+      "playcount": 2126867
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c0d3108132485bdbcdbf415e50348dd2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:24:39.204Z"
   }
 ]
