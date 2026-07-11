@@ -9794,7 +9794,12 @@
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbid": "eb2eab4f-7bad-46b3-8062-345e32bf6f8d",
-    "autoTriedAt": "2026-07-11T09:54:44.821Z"
+    "autoTriedAt": "2026-07-11T09:54:44.821Z",
+    "popularity": {
+      "listeners": 4,
+      "playcount": 8
+    },
+    "metaEnrichedAt": "2026-07-11T17:57:00.326Z"
   },
   {
     "name": "Felix Cartal",
@@ -9810,7 +9815,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:50.272Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7208d210-66d4-413a-90c3-167b2e6bd4fb"
+    "mbid": "7208d210-66d4-413a-90c3-167b2e6bd4fb",
+    "genres": [
+      "electro",
+      "electronic",
+      "Canadian",
+      "dirty electro",
+      "House"
+    ],
+    "popularity": {
+      "listeners": 335567,
+      "playcount": 3187037
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0d1fda614846c4447e153876f9b5c4a0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:00.979Z"
   },
   {
     "name": "Felix da Housecat",
@@ -9826,7 +9844,19 @@
     },
     "enrichedAt": "2026-07-07T07:11:50.272Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b004d3c7-5402-4034-be67-13eeccc7b1af"
+    "mbid": "b004d3c7-5402-4034-be67-13eeccc7b1af",
+    "genres": [
+      "House",
+      "electronic",
+      "Electroclash",
+      "electro",
+      "electronica"
+    ],
+    "popularity": {
+      "listeners": 588109,
+      "playcount": 6526577
+    },
+    "metaEnrichedAt": "2026-07-11T17:57:01.578Z"
   },
   {
     "name": "Felix de Laet",
@@ -9834,7 +9864,12 @@
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "b5dc6ea6-5f8b-4c66-a1ba-3e3f18d1e3b3",
-    "autoTriedAt": "2026-07-11T09:54:47.442Z"
+    "autoTriedAt": "2026-07-11T09:54:47.442Z",
+    "popularity": {
+      "listeners": 3,
+      "playcount": 41
+    },
+    "metaEnrichedAt": "2026-07-11T17:57:02.200Z"
   },
   {
     "name": "Felix Draeseke",
@@ -9850,14 +9885,31 @@
     },
     "enrichedAt": "2026-07-07T07:11:50.272Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8a37c609-68e0-4c19-8499-dd63ee70fbbf"
+    "mbid": "8a37c609-68e0-4c19-8499-dd63ee70fbbf",
+    "genres": [
+      "romantic era",
+      "german",
+      "composer",
+      "Classical",
+      "romantic"
+    ],
+    "popularity": {
+      "listeners": 999,
+      "playcount": 6417
+    },
+    "metaEnrichedAt": "2026-07-11T17:57:02.852Z"
   },
   {
     "name": "Felix Fox",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:54:49.142Z"
+    "autoTriedAt": "2026-07-11T09:54:49.142Z",
+    "popularity": {
+      "listeners": 277,
+      "playcount": 4173
+    },
+    "metaEnrichedAt": "2026-07-11T17:57:03.688Z"
   },
   {
     "name": "Félix Godefroid",
@@ -9873,7 +9925,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:54:51.845Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 99,
+      "playcount": 519
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c77cbce1c31608635017a95dfc5369ab/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:04.345Z"
   },
   {
     "name": "Felix Hell",
@@ -9889,7 +9947,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:50.272Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "69f2341a-5a31-455f-a408-b75b4c54e8fb"
+    "mbid": "69f2341a-5a31-455f-a408-b75b4c54e8fb",
+    "genres": [
+      "organ",
+      "Classical",
+      "Orgel",
+      "pipe organ",
+      "orgue"
+    ],
+    "popularity": {
+      "listeners": 1364,
+      "playcount": 6860
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0c55a8ed9db1640b5a0a172ce0b602be/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:05.056Z"
   },
   {
     "name": "Felix Laband",
@@ -9905,14 +9976,39 @@
     },
     "enrichedAt": "2026-07-07T07:11:50.272Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a36e9173-2c46-42c6-b319-e9a4155ef2aa"
+    "mbid": "a36e9173-2c46-42c6-b319-e9a4155ef2aa",
+    "genres": [
+      "ambient",
+      "electronic",
+      "chillout",
+      "south african",
+      "downtempo"
+    ],
+    "popularity": {
+      "listeners": 134450,
+      "playcount": 1490615
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6edce108f2983178f2dbef0f2ad1a5bf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:05.677Z"
   },
   {
     "name": "Félix Leclerc",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbid": "1fcb9a2b-b872-4d52-aad2-afa59b9a8c6b",
-    "autoTriedAt": "2026-07-11T09:54:54.691Z"
+    "autoTriedAt": "2026-07-11T09:54:54.691Z",
+    "genres": [
+      "quebec",
+      "folk",
+      "chanson francophone",
+      "quebecois",
+      "poete"
+    ],
+    "popularity": {
+      "listeners": 8198,
+      "playcount": 103573
+    },
+    "metaEnrichedAt": "2026-07-11T17:57:06.379Z"
   },
   {
     "name": "Felix Mendelssohn",
@@ -9929,7 +10025,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:54:57.438Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Classical",
+      "romantic",
+      "german",
+      "composers",
+      "piano"
+    ],
+    "popularity": {
+      "listeners": 1107144,
+      "playcount": 10846190
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/eb0c15f917ef195946d046084d7c14e5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:07.229Z"
   },
   {
     "name": "Felix Mottl",
@@ -9937,14 +10046,29 @@
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "ec48a500-423f-4c07-aedc-9beec3016944",
-    "autoTriedAt": "2026-07-11T09:55:00.140Z"
+    "autoTriedAt": "2026-07-11T09:55:00.140Z",
+    "genres": [
+      "composer",
+      "austrian",
+      "conductor"
+    ],
+    "popularity": {
+      "listeners": 9,
+      "playcount": 53
+    },
+    "metaEnrichedAt": "2026-07-11T17:57:07.897Z"
   },
   {
     "name": "Felix Otto Dessoff",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbid": "73e69b43-c501-40cb-9e17-0a30da03e0e3",
-    "autoTriedAt": "2026-07-11T09:55:03.044Z"
+    "autoTriedAt": "2026-07-11T09:55:03.044Z",
+    "popularity": {
+      "listeners": 12,
+      "playcount": 60
+    },
+    "metaEnrichedAt": "2026-07-11T17:57:08.558Z"
   },
   {
     "name": "Felix Pappalardi",
@@ -9960,21 +10084,53 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:55:05.636Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "blues",
+      "jazz",
+      "funk",
+      "Progressive rock",
+      "prog"
+    ],
+    "popularity": {
+      "listeners": 149,
+      "playcount": 1522
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9d49ea0a66636851d13ecb54f0d86170/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:09.267Z"
   },
   {
     "name": "Felix Salmond",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbid": "4b8c9806-5a0b-43c0-830b-40570b435333",
-    "autoTriedAt": "2026-07-11T09:55:08.379Z"
+    "autoTriedAt": "2026-07-11T09:55:08.379Z",
+    "genres": [
+      "cello",
+      "Classical"
+    ],
+    "popularity": {
+      "listeners": 31,
+      "playcount": 118
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5b7c01ad85b0c9d1cb6c483eec28e87f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:10.066Z"
   },
   {
     "name": "Felix Skowronek",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbid": "342e0d10-df4a-4e56-9045-0fb5b2c262be",
-    "autoTriedAt": "2026-07-11T09:55:11.054Z"
+    "autoTriedAt": "2026-07-11T09:55:11.054Z",
+    "genres": [
+      "American classical flautists"
+    ],
+    "popularity": {
+      "listeners": 3,
+      "playcount": 3
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9f75d47b053c45690a2619f2259b8abf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:10.754Z"
   },
   {
     "name": "Felix Weingartner",
@@ -9990,7 +10146,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:55:13.691Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "conductor",
+      "Classical",
+      "austrian",
+      "composer",
+      "pianist"
+    ],
+    "popularity": {
+      "listeners": 788,
+      "playcount": 8354
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b66867e75360bc9733663f3aef419c9c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:11.720Z"
   },
   {
     "name": "Felix Werder",
@@ -9998,14 +10167,23 @@
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "8ca59619-4247-4f06-b263-a6dba03efcfa",
-    "autoTriedAt": "2026-07-11T09:55:16.275Z"
+    "autoTriedAt": "2026-07-11T09:55:16.275Z",
+    "genres": [
+      "australia"
+    ],
+    "popularity": {
+      "listeners": 155,
+      "playcount": 3582
+    },
+    "metaEnrichedAt": "2026-07-11T17:57:12.485Z"
   },
   {
     "name": "Félixes",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:55:17.554Z"
+    "autoTriedAt": "2026-07-11T09:55:17.554Z",
+    "metaTriedAt": "2026-07-11T17:57:13.179Z"
   },
   {
     "name": "Fellini",
@@ -10021,7 +10199,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:50.272Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0c2abe3c-05d3-4df1-8dfb-757f8fa5ad20"
+    "mbid": "0c2abe3c-05d3-4df1-8dfb-757f8fa5ad20",
+    "genres": [
+      "post-punk",
+      "brazilian",
+      "brazilian post-punk",
+      "rock",
+      "brazil"
+    ],
+    "popularity": {
+      "listeners": 25558,
+      "playcount": 569895
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f173b0b390a22578611a5a689afdf2e3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:14.008Z"
   },
   {
     "name": "Fellsilent",
@@ -10037,7 +10228,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:50.272Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "326b5270-ae05-4660-a1e9-c602d8c0a66d"
+    "mbid": "326b5270-ae05-4660-a1e9-c602d8c0a66d",
+    "genres": [
+      "math metal",
+      "Progressive metal",
+      "mathcore",
+      "DJENT",
+      "experimental"
+    ],
+    "popularity": {
+      "listeners": 57127,
+      "playcount": 1055495
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/dbed35b0db62cf12605693c965a93676/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:14.632Z"
   },
   {
     "name": "Felony",
@@ -10045,7 +10249,20 @@
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "89c02ade-7403-4577-a73a-1c079bc85733",
-    "autoTriedAt": "2026-07-11T09:55:20.242Z"
+    "autoTriedAt": "2026-07-11T09:55:20.242Z",
+    "genres": [
+      "Power metal",
+      "new wave",
+      "melodic metal",
+      "heavy metal",
+      "symphonic metal"
+    ],
+    "popularity": {
+      "listeners": 13381,
+      "playcount": 78171
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a5d79883bdf94296eb89157eb5d9fe0a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:15.369Z"
   },
   {
     "name": "Felt",
@@ -10062,21 +10279,59 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:55:22.996Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "post-punk",
+      "indie pop",
+      "Hip-Hop",
+      "indie",
+      "80s"
+    ],
+    "popularity": {
+      "listeners": 466802,
+      "playcount": 8480332
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7813f642f77cbc7377bda8f3a367165a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:16.063Z"
   },
   {
     "name": "Fem2fem",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:55:24.295Z"
+    "autoTriedAt": "2026-07-11T09:55:24.295Z",
+    "genres": [
+      "Girl Groups",
+      "dance",
+      "queer",
+      "90s",
+      "lesbian"
+    ],
+    "popularity": {
+      "listeners": 978,
+      "playcount": 8291
+    },
+    "metaEnrichedAt": "2026-07-11T17:57:16.743Z"
   },
   {
     "name": "FemBots",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbid": "14275ff2-b1cb-4652-a5d4-2d26b71cf259",
-    "autoTriedAt": "2026-07-11T09:55:26.972Z"
+    "autoTriedAt": "2026-07-11T09:55:26.972Z",
+    "genres": [
+      "Canadian",
+      "rock",
+      "indie",
+      "Garage Rock",
+      "paper bag records"
+    ],
+    "popularity": {
+      "listeners": 11745,
+      "playcount": 103642
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/63d584bf4fe5d1edcc3e2e48d7e80729/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:17.644Z"
   },
   {
     "name": "Femi Kuti",
@@ -10092,7 +10347,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:50.272Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "702d2b90-eef0-4354-b2c4-6366eba92b7f"
+    "mbid": "702d2b90-eef0-4354-b2c4-6366eba92b7f",
+    "genres": [
+      "afrobeat",
+      "african",
+      "world",
+      "jazz",
+      "nigeria"
+    ],
+    "popularity": {
+      "listeners": 149729,
+      "playcount": 1233721
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4b1c09108dbfa0c21c92bde572c39701/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:18.992Z"
   },
   {
     "name": "Feminist",
@@ -10100,7 +10368,12 @@
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "2f414760-1ea8-44e1-ba60-5bd9779903d9",
-    "autoTriedAt": "2026-07-11T09:55:29.633Z"
+    "autoTriedAt": "2026-07-11T09:55:29.633Z",
+    "popularity": {
+      "listeners": 620,
+      "playcount": 1074
+    },
+    "metaEnrichedAt": "2026-07-11T17:57:19.704Z"
   },
   {
     "name": "Feminist Improvising Group",
@@ -10116,7 +10389,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:50.272Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f5402536-5876-48e2-84b9-2ff4460517b3"
+    "mbid": "f5402536-5876-48e2-84b9-2ff4460517b3",
+    "genres": [
+      "free improvisation",
+      "free jazz",
+      "experimental",
+      "Canterbury",
+      "performance art"
+    ],
+    "popularity": {
+      "listeners": 292,
+      "playcount": 1447
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:20.488Z"
   },
   {
     "name": "Feminnem",
@@ -10132,7 +10418,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:50.272Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b56e022b-23de-45fc-8f00-52fb3ab80b0c"
+    "mbid": "b56e022b-23de-45fc-8f00-52fb3ab80b0c",
+    "genres": [
+      "croatian",
+      "pop",
+      "Eurovision",
+      "Bosnian",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 18259,
+      "playcount": 175599
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7dfd776e20ba0863d5e92dd997110d41/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:21.519Z"
   },
   {
     "name": "Femme Fatale",
@@ -10149,21 +10448,40 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:55:32.306Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "noise rock",
+      "hard rock",
+      "hair metal",
+      "post-punk",
+      "hardcore"
+    ],
+    "popularity": {
+      "listeners": 94048,
+      "playcount": 1850755
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/610aa71d0f9579366ee7f32eb60d8be3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:22.183Z"
   },
   {
     "name": "Fender Musical Instruments Corporation",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:55:33.603Z"
+    "autoTriedAt": "2026-07-11T09:55:33.603Z",
+    "metaTriedAt": "2026-07-11T17:57:22.834Z"
   },
   {
     "name": "Fender Stratocaster",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:55:34.887Z"
+    "autoTriedAt": "2026-07-11T09:55:34.887Z",
+    "popularity": {
+      "listeners": 49,
+      "playcount": 78
+    },
+    "metaEnrichedAt": "2026-07-11T17:57:23.492Z"
   },
   {
     "name": "Fenech-Soler",
@@ -10179,7 +10497,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:50.272Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5b234e2f-f1fc-45f9-9cba-e69d230fd37a"
+    "mbid": "5b234e2f-f1fc-45f9-9cba-e69d230fd37a",
+    "genres": [
+      "electronic",
+      "indie",
+      "british",
+      "electro",
+      "dance"
+    ],
+    "popularity": {
+      "listeners": 295948,
+      "playcount": 3929009
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b41b44a47f6cfac0b8f2cade567ea9e3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:24.107Z"
   },
   {
     "name": "Fenix TX",
@@ -10195,14 +10526,40 @@
     },
     "enrichedAt": "2026-07-07T07:11:50.272Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "cec8cd6a-e3e6-464d-a3e1-ed4ab9953c9a"
+    "mbid": "cec8cd6a-e3e6-464d-a3e1-ed4ab9953c9a",
+    "genres": [
+      "pop punk",
+      "punk rock",
+      "punk",
+      "rock",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 313796,
+      "playcount": 3328099
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6e68781d71ce9ab9649869ca4b80352b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:24.724Z"
   },
   {
     "name": "Fenn O'Berg",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbid": "d8ab2ea3-8a89-485a-b5dc-45ac6851fcb6",
-    "autoTriedAt": "2026-07-11T09:55:37.504Z"
+    "autoTriedAt": "2026-07-11T09:55:37.504Z",
+    "genres": [
+      "experimental",
+      "ambient",
+      "electronic",
+      "electronica",
+      "electro-acoustic"
+    ],
+    "popularity": {
+      "listeners": 4722,
+      "playcount": 63910
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/17f7f13160f9dea850ae34cfae782176/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:25.362Z"
   },
   {
     "name": "Fennesz",
@@ -10218,35 +10575,96 @@
     },
     "enrichedAt": "2026-07-07T07:11:50.272Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a6f8d42d-d3ff-4268-8d39-ee01341733bb"
+    "mbid": "a6f8d42d-d3ff-4268-8d39-ee01341733bb",
+    "genres": [
+      "ambient",
+      "glitch",
+      "experimental",
+      "electronic",
+      "electronica"
+    ],
+    "popularity": {
+      "listeners": 392254,
+      "playcount": 8131753
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4d0d973d31076d9b181b6fa79ac66009/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:25.968Z"
   },
   {
     "name": "Fenriz",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbid": "beeaac75-8fd7-4aee-adb2-4eacf54c4f49",
-    "autoTriedAt": "2026-07-11T09:55:40.085Z"
+    "autoTriedAt": "2026-07-11T09:55:40.085Z",
+    "genres": [
+      "black metal",
+      "Norwegian Black Metal",
+      "true black metal",
+      "black metal icon",
+      "polish"
+    ],
+    "popularity": {
+      "listeners": 627,
+      "playcount": 5298
+    },
+    "metaEnrichedAt": "2026-07-11T17:57:26.653Z"
   },
   {
     "name": "Fenton Robinson",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbid": "1b943e67-ed8d-4b5c-b86c-45cc3095c77e",
-    "autoTriedAt": "2026-07-11T09:55:42.693Z"
+    "autoTriedAt": "2026-07-11T09:55:42.693Z",
+    "genres": [
+      "blues",
+      "Classic Blues",
+      "acoustic",
+      "guitar",
+      "acoustic blues"
+    ],
+    "popularity": {
+      "listeners": 126800,
+      "playcount": 715402
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ba2eacfd2d72aeb5bcd1355e9a0b2b02/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:27.279Z"
   },
   {
     "name": "Fenwick Smith",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbid": "49184ea1-68ef-4abf-b388-47211d3d8b44",
-    "autoTriedAt": "2026-07-11T09:55:45.354Z"
+    "autoTriedAt": "2026-07-11T09:55:45.354Z",
+    "genres": [
+      "flute",
+      "American classical flautists"
+    ],
+    "popularity": {
+      "listeners": 173,
+      "playcount": 1405
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e367fcd9a577ba3a365e49e896e43b00/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:28.039Z"
   },
   {
     "name": "Feodor Chaliapin",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbid": "0ffcc552-fc9d-4b79-a6d5-b78912a7cdfb",
-    "autoTriedAt": "2026-07-11T09:55:46.632Z"
+    "autoTriedAt": "2026-07-11T09:55:46.632Z",
+    "genres": [
+      "opera",
+      "Classical",
+      "vocal",
+      "russian",
+      "bass"
+    ],
+    "popularity": {
+      "listeners": 2552,
+      "playcount": 15942
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a0f4de1970137621f72a8591cc090113/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:28.941Z"
   },
   {
     "name": "Ferdi Bolland",
@@ -10262,7 +10680,17 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:55:49.244Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "beste zangers 2022",
+      "nationaal songfestival songwriters"
+    ],
+    "popularity": {
+      "listeners": 1008,
+      "playcount": 4129
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b468cf3d6b26b291cefd1079f9983269/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:29.596Z"
   },
   {
     "name": "Ferdinand Büchner",
@@ -10278,7 +10706,16 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:55:51.851Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "romantic period"
+    ],
+    "popularity": {
+      "listeners": 33,
+      "playcount": 199
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/096715a390a117f06479fe420b9792ee/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:30.269Z"
   },
   {
     "name": "Ferdinand David",
@@ -10286,7 +10723,20 @@
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "81d88460-9470-41a7-af2c-0a6ff9a52121",
-    "autoTriedAt": "2026-07-11T09:55:54.467Z"
+    "autoTriedAt": "2026-07-11T09:55:54.467Z",
+    "genres": [
+      "composer",
+      "german",
+      "romantic",
+      "germany",
+      "romanticism"
+    ],
+    "popularity": {
+      "listeners": 2409,
+      "playcount": 13274
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/eebbfc721a420dee495ca3b12b79ed83/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:31.022Z"
   },
   {
     "name": "Ferdinand Hérold",
@@ -10303,7 +10753,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:55:57.048Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "french",
+      "composer",
+      "romanticism",
+      "Klassik",
+      "schellack-schatz"
+    ],
+    "popularity": {
+      "listeners": 11433,
+      "playcount": 43896
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/df542aacd437434b127c01e0a9ae432c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:31.740Z"
   },
   {
     "name": "Ferdinand Hiller",
@@ -10320,28 +10783,48 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:55:59.955Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "composer",
+      "german",
+      "germany",
+      "Classical",
+      "romanticism"
+    ],
+    "popularity": {
+      "listeners": 1192,
+      "playcount": 6263
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/72568e9b86cf399394adba7a8bdf982c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:32.420Z"
   },
   {
     "name": "Ferdinand I, Holy Roman Emperor",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:56:01.584Z"
+    "autoTriedAt": "2026-07-11T09:56:01.584Z",
+    "metaTriedAt": "2026-07-11T17:57:33.030Z"
   },
   {
     "name": "Ferdinand Joseph La Menthe",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:56:02.868Z"
+    "autoTriedAt": "2026-07-11T09:56:02.868Z",
+    "metaTriedAt": "2026-07-11T17:57:33.633Z"
   },
   {
     "name": "Ferdinand Küchler",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbid": "335479ea-eb93-401a-a86a-f5132870398f",
-    "autoTriedAt": "2026-07-11T09:56:05.461Z"
+    "autoTriedAt": "2026-07-11T09:56:05.461Z",
+    "popularity": {
+      "listeners": 675,
+      "playcount": 4692
+    },
+    "metaEnrichedAt": "2026-07-11T17:57:34.286Z"
   },
   {
     "name": "Ferdinand Ries",
@@ -10357,7 +10840,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:50.272Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ba4a674d-57f0-440b-82f9-798965c05dd9"
+    "mbid": "ba4a674d-57f0-440b-82f9-798965c05dd9",
+    "genres": [
+      "Classical",
+      "german",
+      "romantic",
+      "acoustic",
+      "piano"
+    ],
+    "popularity": {
+      "listeners": 9833,
+      "playcount": 62129
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ce86b7fc81f5b70a4a1b81bf7413d166/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:35.071Z"
   },
   {
     "name": "Ferdinando Bertoni",
@@ -10373,7 +10869,16 @@
     },
     "enrichedAt": "2026-07-07T07:11:50.272Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c3e81891-5454-4eee-9c57-513afcb606c4"
+    "mbid": "c3e81891-5454-4eee-9c57-513afcb606c4",
+    "genres": [
+      "italian",
+      "18th century"
+    ],
+    "popularity": {
+      "listeners": 200,
+      "playcount": 1420
+    },
+    "metaEnrichedAt": "2026-07-11T17:57:35.749Z"
   },
   {
     "name": "Ferdinando Carulli",
@@ -10389,14 +10894,28 @@
     },
     "enrichedAt": "2026-07-07T07:11:50.272Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d6127833-8fdc-420d-9f39-39dbdee0c1e7"
+    "mbid": "d6127833-8fdc-420d-9f39-39dbdee0c1e7",
+    "genres": [
+      "Classical",
+      "classical guitar",
+      "guitar",
+      "composer",
+      "romantic"
+    ],
+    "popularity": {
+      "listeners": 16933,
+      "playcount": 81204
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bd4412dc611b425e771abd5641992430/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:37.374Z"
   },
   {
     "name": "Ferdinando de Cristofaro",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:56:06.746Z"
+    "autoTriedAt": "2026-07-11T09:56:06.746Z",
+    "metaTriedAt": "2026-07-11T17:57:37.971Z"
   },
   {
     "name": "Ferdinando Orlandi",
@@ -10404,7 +10923,8 @@
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "3469e07b-629f-4b62-852e-1bd8702f2397",
-    "autoTriedAt": "2026-07-11T09:56:09.372Z"
+    "autoTriedAt": "2026-07-11T09:56:09.372Z",
+    "metaTriedAt": "2026-07-11T17:57:38.648Z"
   },
   {
     "name": "Ferdinando Paer",
@@ -10420,28 +10940,52 @@
     },
     "enrichedAt": "2026-07-07T07:11:50.272Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d2d093f6-eeb1-435c-8258-e370235b0b1e"
+    "mbid": "d2d093f6-eeb1-435c-8258-e370235b0b1e",
+    "genres": [
+      "composer",
+      "opera",
+      "Italy",
+      "romantic period",
+      "19th C"
+    ],
+    "popularity": {
+      "listeners": 187,
+      "playcount": 1414
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/40c0b8a12385450f693052ad010065cb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:39.298Z"
   },
   {
     "name": "Fereidoun Farrokhzad",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:56:10.651Z"
+    "autoTriedAt": "2026-07-11T09:56:10.651Z",
+    "popularity": {
+      "listeners": 37,
+      "playcount": 233
+    },
+    "metaEnrichedAt": "2026-07-11T17:57:40.348Z"
   },
   {
     "name": "Fereidoun Farzaneh",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:56:11.930Z"
+    "autoTriedAt": "2026-07-11T09:56:11.930Z",
+    "metaTriedAt": "2026-07-11T17:57:40.942Z"
   },
   {
     "name": "Fereshta Samah",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:50.272Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:56:13.204Z"
+    "autoTriedAt": "2026-07-11T09:56:13.204Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 1
+    },
+    "metaEnrichedAt": "2026-07-11T17:57:41.596Z"
   },
   {
     "name": "Fergie",
@@ -10458,7 +11002,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:56:16.022Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "pop",
+      "rnb",
+      "female vocalists",
+      "Hip-Hop",
+      "dance"
+    ],
+    "popularity": {
+      "listeners": 3530530,
+      "playcount": 53132261
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8c7eeb690f1d616aff8a6a952260224f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:42.254Z"
   },
   {
     "name": "Fergie Frederiksen",
@@ -10474,14 +11031,40 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1164e7c8-733a-40ba-aa69-a70cbe46aaaf"
+    "mbid": "1164e7c8-733a-40ba-aa69-a70cbe46aaaf",
+    "genres": [
+      "melodic rock",
+      "AOR",
+      "rock",
+      "hard rock",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 2365,
+      "playcount": 44760
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7a10a91344d423b8d4b7f428e9a2fb50/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:42.921Z"
   },
   {
     "name": "Fergus O'Byrne",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbid": "a8114d1c-7a74-4509-8a65-e1db25ee28c1",
-    "autoTriedAt": "2026-07-11T09:56:18.667Z"
+    "autoTriedAt": "2026-07-11T09:56:18.667Z",
+    "genres": [
+      "canada",
+      "folk",
+      "newfoundland",
+      "traditional",
+      "under 2000 listeners"
+    ],
+    "popularity": {
+      "listeners": 51,
+      "playcount": 311
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:44.365Z"
   },
   {
     "name": "Ferlin Husky",
@@ -10497,7 +11080,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c2348d06-40cc-4a29-953a-5fb753905844"
+    "mbid": "c2348d06-40cc-4a29-953a-5fb753905844",
+    "genres": [
+      "country",
+      "classic country",
+      "Ferlin Husky",
+      "All",
+      "oldies"
+    ],
+    "popularity": {
+      "listeners": 115233,
+      "playcount": 559623
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4da708008eb2f7c0be7283d72b608076/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:44.973Z"
   },
   {
     "name": "Ferlyn Wong",
@@ -10513,7 +11109,8 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "metaTriedAt": "2026-07-11T17:57:45.589Z"
   },
   {
     "name": "Fermata",
@@ -10530,35 +11127,87 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:56:21.732Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Progressive rock",
+      "Jazz Rock",
+      "Fusion",
+      "slovakia",
+      "slovak"
+    ],
+    "popularity": {
+      "listeners": 4282,
+      "playcount": 71616
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/28054aead1bcc3d0014613bd9d970209/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:46.301Z"
   },
   {
     "name": "Fermo Dante Marchetti",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbid": "de7e2d87-8c05-421e-a47a-31a6728ef996",
-    "autoTriedAt": "2026-07-11T09:56:24.448Z"
+    "autoTriedAt": "2026-07-11T09:56:24.448Z",
+    "genres": [
+      "Post-Romantic"
+    ],
+    "popularity": {
+      "listeners": 1136,
+      "playcount": 3100
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:46.941Z"
   },
   {
     "name": "Fern",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:56:25.727Z"
+    "autoTriedAt": "2026-07-11T09:56:25.727Z",
+    "genres": [
+      "electronic",
+      "ambient",
+      "polish",
+      "germany",
+      "under 2000 listeners"
+    ],
+    "popularity": {
+      "listeners": 88771,
+      "playcount": 650556
+    },
+    "metaEnrichedAt": "2026-07-11T17:57:47.858Z"
   },
   {
     "name": "Fern Kinney",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbid": "b97d3b5f-f939-4559-9782-5890a9b64963",
-    "autoTriedAt": "2026-07-11T09:56:28.405Z"
+    "autoTriedAt": "2026-07-11T09:56:28.405Z",
+    "genres": [
+      "Disco",
+      "soul",
+      "female vocalists",
+      "space disco",
+      "80s"
+    ],
+    "popularity": {
+      "listeners": 62458,
+      "playcount": 340949
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7fef695546b5daca9afd4644a8f4b0b6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:48.540Z"
   },
   {
     "name": "Fernand Gillet",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbid": "4ceef804-052c-4f60-8d9b-868f1c6faee6",
-    "autoTriedAt": "2026-07-11T09:56:31.052Z"
+    "autoTriedAt": "2026-07-11T09:56:31.052Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 1
+    },
+    "metaEnrichedAt": "2026-07-11T17:57:49.207Z"
   },
   {
     "name": "Fernanda Abreu",
@@ -10575,7 +11224,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:56:33.655Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "mpb",
+      "brazilian",
+      "female vocalists",
+      "brazil",
+      "brasil"
+    ],
+    "popularity": {
+      "listeners": 123696,
+      "playcount": 1962283
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6cc254b52f40d0e9ff5063763a3b9c94/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:49.856Z"
   },
   {
     "name": "Fernanda Brum",
@@ -10592,7 +11254,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:56:36.325Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "gospel",
+      "fernanda brum",
+      "adoracao",
+      "espirito santo",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 62196,
+      "playcount": 2414767
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e40c8b93c90046227d25f14217eab758/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:50.441Z"
   },
   {
     "name": "Fernanda Porto",
@@ -10609,7 +11284,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:56:38.995Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Bossa Nova",
+      "Drum and bass",
+      "brazilian",
+      "brasil",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 83047,
+      "playcount": 544481
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/93fcd992d23fc85753949382c0615947/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:51.109Z"
   },
   {
     "name": "Fernando Arbex",
@@ -10625,7 +11313,16 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "cec0e8fc-6214-40e0-8e27-930c364e9c7b"
+    "mbid": "cec0e8fc-6214-40e0-8e27-930c364e9c7b",
+    "genres": [
+      "Smooth Jazz",
+      "new age"
+    ],
+    "popularity": {
+      "listeners": 579,
+      "playcount": 1821
+    },
+    "metaEnrichedAt": "2026-07-11T17:57:51.731Z"
   },
   {
     "name": "Fernando De Luca",
@@ -10641,7 +11338,16 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:56:41.586Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "baroque"
+    ],
+    "popularity": {
+      "listeners": 238,
+      "playcount": 6000
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bdbf4673438c7f45bba0b456cf330792/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:52.417Z"
   },
   {
     "name": "Fernando Delgadillo",
@@ -10657,35 +11363,93 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "80027de3-3b27-423c-b963-46d8c987202e"
+    "mbid": "80027de3-3b27-423c-b963-46d8c987202e",
+    "genres": [
+      "trova",
+      "cantautor",
+      "trova mexicana",
+      "mexico",
+      "singer-songwriter"
+    ],
+    "popularity": {
+      "listeners": 84107,
+      "playcount": 1953203
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e0653dfa9f24c477dd40c01c21b2cfae/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:53.144Z"
   },
   {
     "name": "Fernando e Sorocaba",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:56:42.874Z"
+    "autoTriedAt": "2026-07-11T09:56:42.874Z",
+    "genres": [
+      "sertanejo",
+      "brazilian",
+      "country",
+      "Sertanejo Universitario",
+      "fernando e sorocaba"
+    ],
+    "popularity": {
+      "listeners": 182061,
+      "playcount": 3100433
+    },
+    "metaEnrichedAt": "2026-07-11T17:57:53.818Z"
   },
   {
     "name": "Fernando Germani",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbid": "dd5f8608-7ca2-4f9c-9ce8-d679fd3f829a",
-    "autoTriedAt": "2026-07-11T09:56:45.490Z"
+    "autoTriedAt": "2026-07-11T09:56:45.490Z",
+    "genres": [
+      "pipe organ"
+    ],
+    "popularity": {
+      "listeners": 893,
+      "playcount": 3528
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/04abf71c0dc47367218fca390b4874aa/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:54.465Z"
   },
   {
     "name": "Fernando Lamas",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbid": "ce40579c-4888-499f-baa1-d13e9833a3bb",
-    "autoTriedAt": "2026-07-11T09:56:48.325Z"
+    "autoTriedAt": "2026-07-11T09:56:48.325Z",
+    "genres": [
+      "oldies",
+      "Soundtrack",
+      "All"
+    ],
+    "popularity": {
+      "listeners": 238,
+      "playcount": 859
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/35df23e67e922ca710b083eef0fec515/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:55.772Z"
   },
   {
     "name": "Fernando Machado Soares",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbid": "63985298-cb4e-418d-b131-00e3bf920419",
-    "autoTriedAt": "2026-07-11T09:56:51.096Z"
+    "autoTriedAt": "2026-07-11T09:56:51.096Z",
+    "genres": [
+      "fado",
+      "fado de coimbra",
+      "world",
+      "portuguese",
+      "Portuguese music"
+    ],
+    "popularity": {
+      "listeners": 1567,
+      "playcount": 11377
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5bef67cc4f3b215db9838d6baeeaeacd/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:56.521Z"
   },
   {
     "name": "Fernando Maurício",
@@ -10701,7 +11465,15 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:56:53.889Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "fado"
+    ],
+    "popularity": {
+      "listeners": 1122,
+      "playcount": 5572
+    },
+    "metaEnrichedAt": "2026-07-11T17:57:57.341Z"
   },
   {
     "name": "Fernando Ortega",
@@ -10718,7 +11490,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:56:56.638Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "christian",
+      "worship",
+      "contemporary christian",
+      "gospel",
+      "piano"
+    ],
+    "popularity": {
+      "listeners": 61504,
+      "playcount": 1171232
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b5ba05a2cdbf68c2bcdb631cc4c02785/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:58.238Z"
   },
   {
     "name": "Fernando Saunders",
@@ -10734,7 +11519,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "639b7de5-b412-4f79-9e08-7abd0b0d4267"
+    "mbid": "639b7de5-b412-4f79-9e08-7abd0b0d4267",
+    "genres": [
+      "soul",
+      "rock",
+      "pop",
+      "alternative",
+      "r&b"
+    ],
+    "popularity": {
+      "listeners": 725,
+      "playcount": 4782
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/49ea291cf5d86664a05b5606d20b2a55/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:58.910Z"
   },
   {
     "name": "Fernando Sor",
@@ -10750,21 +11548,55 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8ff25779-eb1d-4d24-bf91-3118bdfb4225"
+    "mbid": "8ff25779-eb1d-4d24-bf91-3118bdfb4225",
+    "genres": [
+      "classical guitar",
+      "Classical",
+      "guitar",
+      "spanish guitar",
+      "spanish"
+    ],
+    "popularity": {
+      "listeners": 94426,
+      "playcount": 656084
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c3c7349b9eff2de3966d49311b7c43b3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:57:59.602Z"
   },
   {
     "name": "Fernando Tordo",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbid": "5255e848-0b99-4b9d-8a32-77edaa9af257",
-    "autoTriedAt": "2026-07-11T09:57:00.271Z"
+    "autoTriedAt": "2026-07-11T09:57:00.271Z",
+    "genres": [
+      "Portugal",
+      "pop",
+      "portuguese",
+      "All"
+    ],
+    "popularity": {
+      "listeners": 7930,
+      "playcount": 43185
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fcd6382b9e0fa831707b9b336e00637c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:00.242Z"
   },
   {
     "name": "Fernando Valenti",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbid": "511cc3e6-44f5-43bf-8de5-262ec98d5b17",
-    "autoTriedAt": "2026-07-11T09:57:02.931Z"
+    "autoTriedAt": "2026-07-11T09:57:02.931Z",
+    "genres": [
+      "baroque"
+    ],
+    "popularity": {
+      "listeners": 489,
+      "playcount": 5452
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ac2cf0a2fcba8d627cac3c18aef3fda6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:00.906Z"
   },
   {
     "name": "Fernando Villalona",
@@ -10780,7 +11612,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e44ef12c-b530-40f6-bda8-185c575fa4a8"
+    "mbid": "e44ef12c-b530-40f6-bda8-185c575fa4a8",
+    "genres": [
+      "merengue",
+      "dominican republic",
+      "spanish",
+      "bailable",
+      "gatowope"
+    ],
+    "popularity": {
+      "listeners": 25744,
+      "playcount": 182077
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d211a187d2a5688e636218777cdc8187/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:01.519Z"
   },
   {
     "name": "Fernhill",
@@ -10796,14 +11641,28 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "26685d03-3772-4495-baef-8fe76ea89cf5"
+    "mbid": "26685d03-3772-4495-baef-8fe76ea89cf5",
+    "genres": [
+      "folk",
+      "celtic",
+      "welsh",
+      "wales",
+      "celtic folk"
+    ],
+    "popularity": {
+      "listeners": 5485,
+      "playcount": 47279
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/899a3f6cf5fdeac6f621e2f966ad8077/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:02.409Z"
   },
   {
     "name": "Ferrara, Tom",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:57:04.250Z"
+    "autoTriedAt": "2026-07-11T09:57:04.250Z",
+    "metaTriedAt": "2026-07-11T17:58:03.130Z"
   },
   {
     "name": "Ferron",
@@ -10819,7 +11678,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1d281f61-60ce-4a04-aca5-e68e789f228e"
+    "mbid": "1d281f61-60ce-4a04-aca5-e68e789f228e",
+    "genres": [
+      "female vocalists",
+      "Canadian",
+      "folk",
+      "singer-songwriter",
+      "folk rock"
+    ],
+    "popularity": {
+      "listeners": 11776,
+      "playcount": 100921
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/91b3506d3655caf1e274d4d390c33460/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:03.793Z"
   },
   {
     "name": "Ferruccio Busoni",
@@ -10835,7 +11707,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "cab67e98-340d-424e-baf1-b127902c200b"
+    "mbid": "cab67e98-340d-424e-baf1-b127902c200b",
+    "genres": [
+      "Classical",
+      "piano",
+      "composer",
+      "italian",
+      "romantic"
+    ],
+    "popularity": {
+      "listeners": 39840,
+      "playcount": 227425
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f3864eefebbc33d9e495db01eb0c2134/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:04.624Z"
   },
   {
     "name": "Ferry Corsten",
@@ -10851,14 +11736,36 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "47347cb8-ac34-4916-84b6-d85d4e5e5384"
+    "mbid": "47347cb8-ac34-4916-84b6-d85d4e5e5384",
+    "genres": [
+      "trance",
+      "progressive trance",
+      "electronic",
+      "dance",
+      "techno"
+    ],
+    "popularity": {
+      "listeners": 719572,
+      "playcount": 10673841
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/89503cc6ddc44650ca182f83fe2abba6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:05.238Z"
   },
   {
     "name": "Fess Williams",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbid": "7fb8205f-5756-4408-92ae-9cc6a5d3c63b",
-    "autoTriedAt": "2026-07-11T09:57:07.016Z"
+    "autoTriedAt": "2026-07-11T09:57:07.016Z",
+    "genres": [
+      "All"
+    ],
+    "popularity": {
+      "listeners": 926,
+      "playcount": 3751
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/974af8e2caab978fc3228ec273d4a491/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:05.965Z"
   },
   {
     "name": "Fettes Brot",
@@ -10874,7 +11781,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "733e7372-5400-4c79-9059-33e2b2262d01"
+    "mbid": "733e7372-5400-4c79-9059-33e2b2262d01",
+    "genres": [
+      "hip hop",
+      "german",
+      "Hip-Hop",
+      "deutsch",
+      "german hiphop"
+    ],
+    "popularity": {
+      "listeners": 437749,
+      "playcount": 10336169
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/777db193da79bd37780c73b301447f7a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:06.569Z"
   },
   {
     "name": "Fetty Wap",
@@ -10890,7 +11810,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e3492ea0-5997-4241-a7bf-2fd7fb1bfad1"
+    "mbid": "e3492ea0-5997-4241-a7bf-2fd7fb1bfad1",
+    "genres": [
+      "Hip-Hop",
+      "rap",
+      "trap",
+      "rnb",
+      "hip hop"
+    ],
+    "popularity": {
+      "listeners": 1787888,
+      "playcount": 36166945
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6554aa6290d0d53a74f0b3a1112bbe1f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:07.176Z"
   },
   {
     "name": "Feuermusik",
@@ -10906,7 +11839,12 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:57:09.716Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 454,
+      "playcount": 3334
+    },
+    "metaEnrichedAt": "2026-07-11T17:58:07.891Z"
   },
   {
     "name": "Fever Ray",
@@ -10923,14 +11861,40 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:57:12.529Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "electronic",
+      "ambient",
+      "swedish",
+      "female vocalists",
+      "experimental"
+    ],
+    "popularity": {
+      "listeners": 1121989,
+      "playcount": 35404047
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c42b40f31a6e05449ac7d39ae0667b18/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:08.501Z"
   },
   {
     "name": "Fever Tree",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbid": "1045cf96-0316-4d4e-9b17-d2066c83ad18",
-    "autoTriedAt": "2026-07-11T09:57:15.108Z"
+    "autoTriedAt": "2026-07-11T09:57:15.108Z",
+    "genres": [
+      "Psychedelic Rock",
+      "psychedelic",
+      "60s",
+      "classic rock",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 47084,
+      "playcount": 260340
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/15bb57709431a89110eb01168775b0f7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:09.163Z"
   },
   {
     "name": "Few Left Standing",
@@ -10946,7 +11910,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d7a985e4-baf4-482f-82ab-27cc06ae6ffa"
+    "mbid": "d7a985e4-baf4-482f-82ab-27cc06ae6ffa",
+    "genres": [
+      "hardcore",
+      "metalcore",
+      "christian",
+      "metal",
+      "Christian Hardcore"
+    ],
+    "popularity": {
+      "listeners": 3718,
+      "playcount": 46901
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d4484052d52a7954a3ff80ef75c7d383/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:09.950Z"
   },
   {
     "name": "FF.C",
@@ -10962,7 +11939,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:57:17.674Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Hip-Hop",
+      "greek hip-hop",
+      "hip hop",
+      "Greek",
+      "greece"
+    ],
+    "popularity": {
+      "listeners": 3211,
+      "playcount": 93155
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/042a69d9611d123408a1047bbef74100/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:10.913Z"
   },
   {
     "name": "Fher",
@@ -10970,7 +11960,16 @@
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "2043e2d2-1e10-4634-9fc7-9a46dc4701fd",
-    "autoTriedAt": "2026-07-11T09:57:20.342Z"
+    "autoTriedAt": "2026-07-11T09:57:20.342Z",
+    "genres": [
+      "progressive trance",
+      "trance"
+    ],
+    "popularity": {
+      "listeners": 363,
+      "playcount": 1317
+    },
+    "metaEnrichedAt": "2026-07-11T17:58:11.737Z"
   },
   {
     "name": "Fher Olvera",
@@ -10978,7 +11977,12 @@
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "6e4ade31-1181-4083-aeaa-1a326eda715f",
-    "autoTriedAt": "2026-07-11T09:57:23.106Z"
+    "autoTriedAt": "2026-07-11T09:57:23.106Z",
+    "popularity": {
+      "listeners": 38,
+      "playcount": 147
+    },
+    "metaEnrichedAt": "2026-07-11T17:58:12.681Z"
   },
   {
     "name": "Fiachra Trench",
@@ -10994,7 +11998,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:57:26.014Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 305,
+      "playcount": 2882
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f1bec691002eab22f84387926386fca6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:13.315Z"
   },
   {
     "name": "fiance",
@@ -11011,7 +12021,12 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:57:28.666Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 655,
+      "playcount": 2864
+    },
+    "metaEnrichedAt": "2026-07-11T17:58:14.550Z"
   },
   {
     "name": "Fiasco",
@@ -11027,7 +12042,19 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ae5fbfe3-0ff7-43f6-b794-e5d4b31ca2a5"
+    "mbid": "ae5fbfe3-0ff7-43f6-b794-e5d4b31ca2a5",
+    "genres": [
+      "math rock",
+      "alternative",
+      "punk",
+      "indie",
+      "fiascoesque"
+    ],
+    "popularity": {
+      "listeners": 7360,
+      "playcount": 51003
+    },
+    "metaEnrichedAt": "2026-07-11T17:58:15.243Z"
   },
   {
     "name": "Fiat Lux",
@@ -11044,7 +12071,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:57:31.356Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "new wave",
+      "synthpop",
+      "80s",
+      "electronic",
+      "UK"
+    ],
+    "popularity": {
+      "listeners": 6809,
+      "playcount": 60580
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/28e863892c717eb6d41eaf8486a35770/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:15.952Z"
   },
   {
     "name": "Fibes, Oh Fibes",
@@ -11061,7 +12101,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:57:34.066Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "swedish",
+      "pop",
+      "soul",
+      "indie",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 39597,
+      "playcount": 613336
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/dc91c10dc5c2b1549f843edba8010180/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:16.666Z"
   },
   {
     "name": "Fiction Factory",
@@ -11077,7 +12130,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "379811c5-4db9-4a78-b5ff-06ebe8723e39"
+    "mbid": "379811c5-4db9-4a78-b5ff-06ebe8723e39",
+    "genres": [
+      "new wave",
+      "80s",
+      "synthpop",
+      "pop",
+      "british"
+    ],
+    "popularity": {
+      "listeners": 268527,
+      "playcount": 1669782
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a6314e814bf2b53c313fc0e3ab2d67fb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:17.523Z"
   },
   {
     "name": "Fiction Plane",
@@ -11085,7 +12151,20 @@
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "1c370378-c599-4639-9492-e221895c8c42",
-    "autoTriedAt": "2026-07-11T09:57:36.772Z"
+    "autoTriedAt": "2026-07-11T09:57:36.772Z",
+    "genres": [
+      "alternative rock",
+      "rock",
+      "alternative",
+      "indie rock",
+      "british"
+    ],
+    "popularity": {
+      "listeners": 53610,
+      "playcount": 1135098
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a4c407de1fc15f969b71faa8d705eb22/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:18.354Z"
   },
   {
     "name": "Fictional character",
@@ -11093,21 +12172,46 @@
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "83cefded-e3d4-43c0-bda2-7545aa229948",
-    "autoTriedAt": "2026-07-11T09:57:39.382Z"
+    "autoTriedAt": "2026-07-11T09:57:39.382Z",
+    "genres": [
+      "ambient",
+      "instrumental",
+      "post-rock",
+      "Post-Metal",
+      "singapore"
+    ],
+    "popularity": {
+      "listeners": 461,
+      "playcount": 1386
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ef8ee60915b60f9cbddb680aaf161044/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:19.549Z"
   },
   {
     "name": "Fictional characters",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:57:40.667Z"
+    "autoTriedAt": "2026-07-11T09:57:40.667Z",
+    "genres": [
+      "indonesia",
+      "pop punk",
+      "jakarta"
+    ],
+    "popularity": {
+      "listeners": 21,
+      "playcount": 91
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b6343873c54ef36c88e309157cf23283/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:20.267Z"
   },
   {
     "name": "Fictional characters portal",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:57:42.082Z"
+    "autoTriedAt": "2026-07-11T09:57:42.082Z",
+    "metaTriedAt": "2026-07-11T17:58:20.882Z"
   },
   {
     "name": "FictionJunction",
@@ -11123,7 +12227,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "741a8da6-9b87-4b49-acda-6cc6d9f579ac"
+    "mbid": "741a8da6-9b87-4b49-acda-6cc6d9f579ac",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "female vocalists",
+      "anime",
+      "Yuki Kajiura"
+    ],
+    "popularity": {
+      "listeners": 88684,
+      "playcount": 2171819
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/719de3e241524922e1395f79dbd781e5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:21.526Z"
   },
   {
     "name": "FictionJunction Yuuka",
@@ -11139,28 +12256,62 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "3b19d629-6d4a-4426-974b-aeb1dbbf0782"
+    "mbid": "3b19d629-6d4a-4426-974b-aeb1dbbf0782",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "female vocalists",
+      "anime",
+      "JPop"
+    ],
+    "popularity": {
+      "listeners": 55006,
+      "playcount": 2247137
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a0c1b5957707a3b354e745967dc984f6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:22.155Z"
   },
   {
     "name": "Fidan Gasimova",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbid": "5eb7a2b5-5eee-4c40-b31b-4f01dad8975b",
-    "autoTriedAt": "2026-07-11T09:57:43.367Z"
+    "autoTriedAt": "2026-07-11T09:57:43.367Z",
+    "metaTriedAt": "2026-07-11T17:58:23.032Z"
   },
   {
     "name": "Fiddler",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:57:44.659Z"
+    "autoTriedAt": "2026-07-11T09:57:44.659Z",
+    "genres": [
+      "vecanoid cool",
+      "Progressive House"
+    ],
+    "popularity": {
+      "listeners": 965,
+      "playcount": 6600
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/479fd2b68a86abbc0fbc2cd6ff127f8b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:23.774Z"
   },
   {
     "name": "Fiddler's Dram",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbid": "76aa1f42-93dc-4a7d-ad2b-26861b1e83b9",
-    "autoTriedAt": "2026-07-11T09:57:47.372Z"
+    "autoTriedAt": "2026-07-11T09:57:47.372Z",
+    "genres": [
+      "english folk",
+      "folk"
+    ],
+    "popularity": {
+      "listeners": 2087,
+      "playcount": 9308
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8fa05edde5e1a471a37e00787ede52d4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:24.428Z"
   },
   {
     "name": "Fiddler's Green",
@@ -11176,7 +12327,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "03eb47c4-61a5-4334-bf03-1efc1e75dfb3"
+    "mbid": "03eb47c4-61a5-4334-bf03-1efc1e75dfb3",
+    "genres": [
+      "folk rock",
+      "Irish Folk",
+      "folk",
+      "german",
+      "irish independent speedfolk"
+    ],
+    "popularity": {
+      "listeners": 163844,
+      "playcount": 5524516
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9380bbfe106aac97dd2f9adaebaf9722/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:26.651Z"
   },
   {
     "name": "Fidel Nadal",
@@ -11192,7 +12356,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7b7147d3-83a3-4c98-9ebf-bac6ccbb19fb"
+    "mbid": "7b7147d3-83a3-4c98-9ebf-bac6ccbb19fb",
+    "genres": [
+      "reggae",
+      "argentina",
+      "roots reggae",
+      "dub",
+      "Rock Argentino"
+    ],
+    "popularity": {
+      "listeners": 66108,
+      "playcount": 662697
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e2e7178a19e3cd0be11503dfe2ccb222/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:27.334Z"
   },
   {
     "name": "FIDLAR",
@@ -11208,21 +12385,56 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6910222b-74c2-48fc-8c13-a6b88cc28fc0"
+    "mbid": "6910222b-74c2-48fc-8c13-a6b88cc28fc0",
+    "genres": [
+      "Garage Rock",
+      "punk",
+      "Lo-Fi",
+      "skate punk",
+      "Surf"
+    ],
+    "popularity": {
+      "listeners": 538632,
+      "playcount": 16718771
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c5952cf38ea2e213a4e8a8a3758ef0b0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:27.917Z"
   },
   {
     "name": "Field Day",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbid": "1fc5c8a3-9a0e-4184-99da-90c013d433f0",
-    "autoTriedAt": "2026-07-11T09:57:50.126Z"
+    "autoTriedAt": "2026-07-11T09:57:50.126Z",
+    "genres": [
+      "Canadian",
+      "punk",
+      "90s",
+      "punk rock",
+      "Calgary"
+    ],
+    "popularity": {
+      "listeners": 1260,
+      "playcount": 12197
+    },
+    "metaEnrichedAt": "2026-07-11T17:58:28.758Z"
   },
   {
     "name": "Field Marshal Montgomery Pipe Band",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:57:51.517Z"
+    "autoTriedAt": "2026-07-11T09:57:51.517Z",
+    "genres": [
+      "great highland bagpipes",
+      "pipe band"
+    ],
+    "popularity": {
+      "listeners": 757,
+      "playcount": 13542
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fc22366b10bd291b63f4f5b7f8a58199/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:29.919Z"
   },
   {
     "name": "Field Mob",
@@ -11238,7 +12450,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "70634dab-0220-4fce-b4b0-5ea37e7f0e12"
+    "mbid": "70634dab-0220-4fce-b4b0-5ea37e7f0e12",
+    "genres": [
+      "Hip-Hop",
+      "rap",
+      "Dirty South",
+      "hip hop",
+      "USA"
+    ],
+    "popularity": {
+      "listeners": 123078,
+      "playcount": 790216
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/030b9fb5ab56d8c4e920c8ee239683bf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:30.545Z"
   },
   {
     "name": "Field Music",
@@ -11254,7 +12479,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a9ae7a19-be18-4737-8eb1-af560eb177de"
+    "mbid": "a9ae7a19-be18-4737-8eb1-af560eb177de",
+    "genres": [
+      "indie pop",
+      "indie",
+      "british",
+      "indie rock",
+      "chamber pop"
+    ],
+    "popularity": {
+      "listeners": 255652,
+      "playcount": 4052966
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/331cac96dfd5c6439af76f1b48911cf1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:31.323Z"
   },
   {
     "name": "Field of View",
@@ -11270,21 +12508,52 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7a0fb9d4-1e6e-4975-9c8c-36e1a890dbeb"
+    "mbid": "7a0fb9d4-1e6e-4975-9c8c-36e1a890dbeb",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "anime",
+      "J-rock",
+      "90s"
+    ],
+    "popularity": {
+      "listeners": 18639,
+      "playcount": 550315
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/522c54c9658e0f69ac49285fe1b5a7b5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:32.104Z"
   },
   {
     "name": "Fields",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:57:52.798Z"
+    "autoTriedAt": "2026-07-11T09:57:52.798Z",
+    "genres": [
+      "Progressive rock",
+      "indie",
+      "folk",
+      "indie rock",
+      "british"
+    ],
+    "popularity": {
+      "listeners": 77074,
+      "playcount": 865513
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9bf4197a5d134e414cde1f6cf2bf2f05/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:32.861Z"
   },
   {
     "name": "Fields Medal",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:57:54.096Z"
+    "autoTriedAt": "2026-07-11T09:57:54.096Z",
+    "popularity": {
+      "listeners": 10,
+      "playcount": 12
+    },
+    "metaEnrichedAt": "2026-07-11T17:58:33.498Z"
   },
   {
     "name": "Fields of the Nephilim",
@@ -11301,21 +12570,48 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:57:57.154Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Gothic Rock",
+      "Gothic",
+      "goth rock",
+      "goth",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 266724,
+      "playcount": 8401918
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6da5f479b898e11de88e63afee58014b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:34.067Z"
   },
   {
     "name": "Fields, Mickey",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:57:58.466Z"
+    "autoTriedAt": "2026-07-11T09:57:58.466Z",
+    "metaTriedAt": "2026-07-11T17:58:35.318Z"
   },
   {
     "name": "Fielfraz",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbid": "5df73a0e-16e2-4a2b-915e-93d3c41058c7",
-    "autoTriedAt": "2026-07-11T09:58:01.131Z"
+    "autoTriedAt": "2026-07-11T09:58:01.131Z",
+    "genres": [
+      "rock",
+      "pop",
+      "danish",
+      "alternative",
+      "denmark"
+    ],
+    "popularity": {
+      "listeners": 1386,
+      "playcount": 12420
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0e0521fbedb03a788ff6cf841ad89866/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:35.966Z"
   },
   {
     "name": "Fiend",
@@ -11331,7 +12627,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f1b5b1b2-e3f2-41f2-8e31-7e9107d9789e"
+    "mbid": "f1b5b1b2-e3f2-41f2-8e31-7e9107d9789e",
+    "genres": [
+      "Melodic Death Metal",
+      "russian",
+      "rap",
+      "grindcore",
+      "black metal"
+    ],
+    "popularity": {
+      "listeners": 49058,
+      "playcount": 508462
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0c86f53950044239f643c58aedf53c5a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:36.657Z"
   },
   {
     "name": "Fierce Ruling Diva",
@@ -11347,7 +12656,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "386075b2-1fcb-4274-b9a3-398b61ee1ea4"
+    "mbid": "386075b2-1fcb-4274-b9a3-398b61ee1ea4",
+    "genres": [
+      "House",
+      "techno",
+      "Rave",
+      "netherlands",
+      "electronic"
+    ],
+    "popularity": {
+      "listeners": 15476,
+      "playcount": 67454
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3fa3db58b0828ccd113fdb675b7f2458/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:37.331Z"
   },
   {
     "name": "Fiestar",
@@ -11364,7 +12686,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:58:03.743Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "k-pop",
+      "Korean",
+      "female vocalists",
+      "pop",
+      "girl group"
+    ],
+    "popularity": {
+      "listeners": 91618,
+      "playcount": 2597738
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/78020c4941de4c5513b2392b31561873/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:38.000Z"
   },
   {
     "name": "Fife",
@@ -11372,14 +12707,30 @@
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "4d2aa220-d965-45b3-a62e-9ac3f26d44ff",
-    "autoTriedAt": "2026-07-11T09:58:06.424Z"
+    "autoTriedAt": "2026-07-11T09:58:06.424Z",
+    "genres": [
+      "melodic",
+      "punk rock",
+      "pop punk"
+    ],
+    "popularity": {
+      "listeners": 131,
+      "playcount": 621
+    },
+    "metaEnrichedAt": "2026-07-11T17:58:39.035Z"
   },
   {
     "name": "Fifi D'Orsay",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:58:07.803Z"
+    "autoTriedAt": "2026-07-11T09:58:07.803Z",
+    "popularity": {
+      "listeners": 927,
+      "playcount": 2445
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5c3ed100965b6427770ac64067a7d66d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:39.712Z"
   },
   {
     "name": "Fifteen",
@@ -11395,7 +12746,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "51cb9a1a-cc3f-48e6-85c4-b0843fc7b697"
+    "mbid": "51cb9a1a-cc3f-48e6-85c4-b0843fc7b697",
+    "genres": [
+      "punk",
+      "punk rock",
+      "pop punk",
+      "political",
+      "Political Punk Rock"
+    ],
+    "popularity": {
+      "listeners": 30219,
+      "playcount": 637139
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b245b8fcd1aa404aa75b6b21a35d84f8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:40.421Z"
   },
   {
     "name": "Fifth Angel",
@@ -11411,14 +12775,40 @@
     },
     "enrichedAt": "2026-07-07T07:11:52.117Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5be4aa0b-438a-4c6c-b050-a002a54a812d"
+    "mbid": "5be4aa0b-438a-4c6c-b050-a002a54a812d",
+    "genres": [
+      "heavy metal",
+      "Power metal",
+      "US Power Metal",
+      "hard rock",
+      "american"
+    ],
+    "popularity": {
+      "listeners": 18292,
+      "playcount": 356861
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/604ad11c0b736b0017e4db26c372564a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:41.080Z"
   },
   {
     "name": "Fifth Column",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbid": "fedb1e5c-b673-4e93-9e56-cd871792715e",
-    "autoTriedAt": "2026-07-11T09:58:10.433Z"
+    "autoTriedAt": "2026-07-11T09:58:10.433Z",
+    "genres": [
+      "post-punk",
+      "Canadian",
+      "riot grrrl",
+      "punk",
+      "kill rock stars"
+    ],
+    "popularity": {
+      "listeners": 4330,
+      "playcount": 29213
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3907c653c1e7d5148ef93eee53768588/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:41.788Z"
   },
   {
     "name": "Fifth Harmony",
@@ -11435,21 +12825,52 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:58:13.106Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "pop",
+      "female vocalists",
+      "X factor",
+      "american",
+      "rnb"
+    ],
+    "popularity": {
+      "listeners": 1744676,
+      "playcount": 51420524
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/77c245632646ec9245f6233e61d78da2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:42.378Z"
   },
   {
     "name": "Fifth on the Floor",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbid": "1402fea7-6a85-4989-b210-056a80623ce4",
-    "autoTriedAt": "2026-07-11T09:58:15.697Z"
+    "autoTriedAt": "2026-07-11T09:58:15.697Z",
+    "genres": [
+      "Southern Rock",
+      "Alt-country",
+      "americana",
+      "alt country",
+      "kentucky"
+    ],
+    "popularity": {
+      "listeners": 5894,
+      "playcount": 49653
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2710841e714d0ad479f428c5c198664c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:43.125Z"
   },
   {
     "name": "fifth symphony",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:52.117Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:58:17.010Z"
+    "autoTriedAt": "2026-07-11T09:58:17.010Z",
+    "popularity": {
+      "listeners": 3,
+      "playcount": 14
+    },
+    "metaEnrichedAt": "2026-07-11T17:58:43.826Z"
   },
   {
     "name": "Fifths of Seven",
@@ -11465,14 +12886,32 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:58:19.892Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "post-rock",
+      "instrumental",
+      "piano",
+      "experimental",
+      "contemporary classical"
+    ],
+    "popularity": {
+      "listeners": 4082,
+      "playcount": 90586
+    },
+    "metaEnrichedAt": "2026-07-11T17:58:44.487Z"
   },
   {
     "name": "Fifty Fantastics",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:58:21.175Z"
+    "autoTriedAt": "2026-07-11T09:58:21.175Z",
+    "popularity": {
+      "listeners": 82,
+      "playcount": 280
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c14081634810d5849665c3f611560171/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:45.143Z"
   },
   {
     "name": "Fifty Foot Hose",
@@ -11488,7 +12927,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T09:58:24.964Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Psychedelic Rock",
+      "psychedelic",
+      "experimental",
+      "60s",
+      "12"
+    ],
+    "popularity": {
+      "listeners": 44102,
+      "playcount": 348502
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/de56bd02bd1c10436e58961b39aa6106/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:45.839Z"
   },
   {
     "name": "Fig 4.0",
@@ -11504,7 +12956,19 @@
     },
     "enrichedAt": "2026-07-07T07:11:53.747Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "02906cfc-65a4-4bad-8201-374f78c31419"
+    "mbid": "02906cfc-65a4-4bad-8201-374f78c31419",
+    "genres": [
+      "Need to Rate",
+      "hardcore",
+      "fast",
+      "punk rock",
+      "UKHC"
+    ],
+    "popularity": {
+      "listeners": 1183,
+      "playcount": 17459
+    },
+    "metaEnrichedAt": "2026-07-11T17:58:46.571Z"
   },
   {
     "name": "Fig.4.0",
@@ -11520,14 +12984,39 @@
     },
     "enrichedAt": "2026-07-07T07:11:53.747Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "02906cfc-65a4-4bad-8201-374f78c31419"
+    "mbid": "02906cfc-65a4-4bad-8201-374f78c31419",
+    "genres": [
+      "Need to Rate",
+      "hardcore",
+      "fast",
+      "punk rock",
+      "UKHC"
+    ],
+    "popularity": {
+      "listeners": 1183,
+      "playcount": 17459
+    },
+    "metaEnrichedAt": "2026-07-11T17:58:47.237Z"
   },
   {
     "name": "Figgy Duff",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
     "mbid": "bcb1abcb-a116-4379-ae37-ef18af22d48d",
-    "autoTriedAt": "2026-07-11T09:58:27.716Z"
+    "autoTriedAt": "2026-07-11T09:58:27.716Z",
+    "genres": [
+      "Canadian",
+      "folk",
+      "ballads",
+      "canada",
+      "newfoundland"
+    ],
+    "popularity": {
+      "listeners": 3765,
+      "playcount": 29104
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/42f53c960ef3d6696cd394fe106cefd2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:47.916Z"
   },
   {
     "name": "Fight",
@@ -11543,7 +13032,19 @@
     },
     "enrichedAt": "2026-07-07T07:11:53.747Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e61ce7e2-f78d-4fee-ac56-ef1a784c87fa"
+    "mbid": "e61ce7e2-f78d-4fee-ac56-ef1a784c87fa",
+    "genres": [
+      "heavy metal",
+      "thrash metal",
+      "metal",
+      "groove metal",
+      "hard rock"
+    ],
+    "popularity": {
+      "listeners": 58295,
+      "playcount": 795728
+    },
+    "metaEnrichedAt": "2026-07-11T17:58:48.548Z"
   },
   {
     "name": "Fight Fair",
@@ -11559,7 +13060,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:53.747Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "963e881a-c5e3-4f6e-862d-a412d2db4ce2"
+    "mbid": "963e881a-c5e3-4f6e-862d-a412d2db4ce2",
+    "genres": [
+      "pop punk",
+      "moshpop",
+      "hardcore",
+      "popcore",
+      "Easycore"
+    ],
+    "popularity": {
+      "listeners": 32982,
+      "playcount": 617856
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/24b2d62674404748545aff21ef4ee080/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:49.278Z"
   },
   {
     "name": "Fight Like Apes",
@@ -11575,21 +13089,44 @@
     },
     "enrichedAt": "2026-07-07T07:11:53.747Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1cc5e789-3486-4a1b-8a38-fa2b59f4634e"
+    "mbid": "1cc5e789-3486-4a1b-8a38-fa2b59f4634e",
+    "genres": [
+      "indie rock",
+      "irish",
+      "indie",
+      "electronic",
+      "art rock"
+    ],
+    "popularity": {
+      "listeners": 64449,
+      "playcount": 1491334
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7aef5f41d87ffb025753231947729331/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:49.905Z"
   },
   {
     "name": "fighter ace",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:58:28.993Z"
+    "autoTriedAt": "2026-07-11T09:58:28.993Z",
+    "metaTriedAt": "2026-07-11T17:58:50.515Z"
   },
   {
     "name": "fighter pilot",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:11:53.747Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T09:58:30.287Z"
+    "autoTriedAt": "2026-07-11T09:58:30.287Z",
+    "genres": [
+      "alternative rock"
+    ],
+    "popularity": {
+      "listeners": 494,
+      "playcount": 2831
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/426d12352018c28fe3915945cad2bcbd/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:51.202Z"
   },
   {
     "name": "Fighting Instinct",
@@ -11605,7 +13142,20 @@
     },
     "enrichedAt": "2026-07-07T07:11:53.747Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "alternative rock",
+      "rock",
+      "christian rock",
+      "modern rock",
+      "christian"
+    ],
+    "popularity": {
+      "listeners": 11228,
+      "playcount": 85571
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0c9d50b8eb86b3e8502fa89767698b41/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T17:58:51.823Z"
   },
   {
     "name": "Fighting Jacks",
