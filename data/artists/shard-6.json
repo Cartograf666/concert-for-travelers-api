@@ -74102,7 +74102,13 @@
     "wdBulkTriedAt": "2026-07-07T07:20:36.240Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "77e5572d-69dc-4925-b7f5-5c0309f9272d",
-    "autoTriedAt": "2026-07-11T11:37:59.349Z"
+    "autoTriedAt": "2026-07-11T11:37:59.349Z",
+    "popularity": {
+      "listeners": 3938,
+      "playcount": 14254
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/16c953252a7f6005023fa3b38237aaf1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:34.688Z"
   },
   {
     "name": "Noah Carter",
@@ -74119,7 +74125,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:38:02.016Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "rap",
+      "hiphop",
+      "danish",
+      "trollerier"
+    ],
+    "popularity": {
+      "listeners": 32390,
+      "playcount": 1921095
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b4f143d8132a2adfcce93e58f1b330d3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:35.401Z"
   },
   {
     "name": "Noah Gundersen",
@@ -74135,14 +74153,32 @@
     },
     "enrichedAt": "2026-07-07T07:20:36.240Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c7162e23-1c2b-488b-b77a-f65824bfb24f"
+    "mbid": "c7162e23-1c2b-488b-b77a-f65824bfb24f",
+    "genres": [
+      "folk",
+      "acoustic",
+      "indie",
+      "american",
+      "singer-songwriter"
+    ],
+    "popularity": {
+      "listeners": 264339,
+      "playcount": 4190489
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b44c623a0dc2e19c45863920618925a0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:36.018Z"
   },
   {
     "name": "Noah Gundersen and the Courage",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:36.240Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:38:03.334Z"
+    "autoTriedAt": "2026-07-11T11:38:03.334Z",
+    "popularity": {
+      "listeners": 651,
+      "playcount": 8534
+    },
+    "metaEnrichedAt": "2026-07-11T21:08:36.676Z"
   },
   {
     "name": "Noah Kahan",
@@ -74158,7 +74194,20 @@
     "wdBulkTriedAt": "2026-07-09T08:32:12.140Z",
     "mbid": "a2a3f910-b188-43e7-81d0-f1ac2a2f3e12",
     "enrichedAt": "2026-07-09T08:32:12.140Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "indie",
+      "folk",
+      "singer-songwriter",
+      "acoustic",
+      "indie folk"
+    ],
+    "popularity": {
+      "listeners": 1676189,
+      "playcount": 213365240
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e43ae0c4354a6afe58ae0b0cfad05f19/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:37.284Z"
   },
   {
     "name": "Noah Lewis",
@@ -74166,7 +74215,20 @@
     "wdBulkTriedAt": "2026-07-07T07:20:36.240Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "e93966d0-eede-4210-9887-b071e6bf593b",
-    "autoTriedAt": "2026-07-11T11:38:05.852Z"
+    "autoTriedAt": "2026-07-11T11:38:05.852Z",
+    "genres": [
+      "blues",
+      "harmonica blues",
+      "harmonica",
+      "oldies",
+      "jug band"
+    ],
+    "popularity": {
+      "listeners": 2738,
+      "playcount": 7592
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/48c19ee2ba29070cc306934c93159880/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:37.978Z"
   },
   {
     "name": "Noah Preminger",
@@ -74182,7 +74244,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:36.240Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5f607976-9618-4430-9174-f734109c92d0"
+    "mbid": "5f607976-9618-4430-9174-f734109c92d0",
+    "genres": [
+      "jazz",
+      "saxophone",
+      "composer",
+      "instrumental",
+      "american"
+    ],
+    "popularity": {
+      "listeners": 3694,
+      "playcount": 26162
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/542f7682450245aa076de43be42a1c71/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:38.680Z"
   },
   {
     "name": "Noam Chomsky",
@@ -74198,7 +74273,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:36.240Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7d83b9be-b7a4-40f3-b682-a83934a0e8ab"
+    "mbid": "7d83b9be-b7a4-40f3-b682-a83934a0e8ab",
+    "genres": [
+      "spoken word",
+      "political",
+      "ANChomsky",
+      "nchomsky",
+      "noam chomsky"
+    ],
+    "popularity": {
+      "listeners": 23894,
+      "playcount": 526118
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/76ba696172748dc6bf455e0227d44947/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:39.342Z"
   },
   {
     "name": "Noam Jacobson",
@@ -74214,7 +74302,12 @@
     },
     "enrichedAt": "2026-07-07T07:20:36.240Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "bd030511-78de-4cac-b41a-1a99d9a22bc4"
+    "mbid": "bd030511-78de-4cac-b41a-1a99d9a22bc4",
+    "popularity": {
+      "listeners": 3,
+      "playcount": 32
+    },
+    "metaEnrichedAt": "2026-07-11T21:08:40.083Z"
   },
   {
     "name": "Noam Pikelny",
@@ -74230,7 +74323,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:36.240Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "87469db6-d67d-45e1-996f-c406596f8cbe"
+    "mbid": "87469db6-d67d-45e1-996f-c406596f8cbe",
+    "genres": [
+      "bluegrass",
+      "banjo",
+      "folk",
+      "vocal",
+      "americana"
+    ],
+    "popularity": {
+      "listeners": 26031,
+      "playcount": 193320
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/69f2cb4653e7941292eb59c968f31419/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:40.836Z"
   },
   {
     "name": "Noam Sheriff",
@@ -74246,7 +74352,13 @@
     },
     "enrichedAt": "2026-07-07T07:20:36.240Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e32fef29-ff82-456e-8270-775f212c2573"
+    "mbid": "e32fef29-ff82-456e-8270-775f212c2573",
+    "popularity": {
+      "listeners": 66,
+      "playcount": 151
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/af7a493816e70e11c043f3aa792322e2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:41.476Z"
   },
   {
     "name": "Noami",
@@ -74254,21 +74366,38 @@
     "wdBulkTriedAt": "2026-07-07T07:20:36.240Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "7e5830c9-f7c1-4d07-b1fe-337fabcec3cd",
-    "autoTriedAt": "2026-07-11T11:38:08.308Z"
+    "autoTriedAt": "2026-07-11T11:38:08.308Z",
+    "popularity": {
+      "listeners": 25,
+      "playcount": 156
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3cc9f9e1441eb762744d27a71a244518/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:42.180Z"
   },
   {
     "name": "Nobesuthu Mbadu",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:36.240Z",
     "mbid": "497951e4-daad-40e6-bd41-9b0c1046f976",
-    "autoTriedAt": "2026-07-11T11:38:10.815Z"
+    "autoTriedAt": "2026-07-11T11:38:10.815Z",
+    "metaTriedAt": "2026-07-11T21:08:42.782Z"
   },
   {
     "name": "Noble \"Thin Man\" Watts",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:36.240Z",
     "mbid": "2f49cd1e-1fbf-40e4-b4a7-fa8f2376906a",
-    "autoTriedAt": "2026-07-11T11:38:12.067Z"
+    "autoTriedAt": "2026-07-11T11:38:12.067Z",
+    "genres": [
+      "blues",
+      "jazz"
+    ],
+    "popularity": {
+      "listeners": 1668,
+      "playcount": 4284
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8403c4361e5cdaffedcd5371a6c89247/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:43.448Z"
   },
   {
     "name": "Nobody",
@@ -74285,7 +74414,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:38:15.684Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "electronic",
+      "trip-hop",
+      "Hip-Hop",
+      "electronica",
+      "downtempo"
+    ],
+    "popularity": {
+      "listeners": 137826,
+      "playcount": 1442792
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d41d8cd98f00b204e9800998ecf8427e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:44.090Z"
   },
   {
     "name": "Nobody Special",
@@ -74293,7 +74435,13 @@
     "wdBulkTriedAt": "2026-07-07T07:20:36.240Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "cc0f71e7-1ee5-40aa-9cb7-63efb8f99c72",
-    "autoTriedAt": "2026-07-11T11:38:18.246Z"
+    "autoTriedAt": "2026-07-11T11:38:18.246Z",
+    "popularity": {
+      "listeners": 1391,
+      "playcount": 7321
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3ca2d8ea05ef07e942a8f09a9286e1f0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:44.778Z"
   },
   {
     "name": "Nobody's Angel",
@@ -74310,7 +74458,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:38:20.774Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "pop",
+      "Girl Groups",
+      "Disney",
+      "female vocalists",
+      "girl band"
+    ],
+    "popularity": {
+      "listeners": 14712,
+      "playcount": 85532
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f4366962b1f70ca01d0ddf655cfd4ab8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:45.422Z"
   },
   {
     "name": "Nobodyknows",
@@ -74326,7 +74487,19 @@
     },
     "enrichedAt": "2026-07-07T07:20:36.240Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7d120305-ad04-41e9-b482-dc669d89cf0a"
+    "mbid": "7d120305-ad04-41e9-b482-dc669d89cf0a",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "japan",
+      "JPop",
+      "Irish Folk"
+    ],
+    "popularity": {
+      "listeners": 6234,
+      "playcount": 53983
+    },
+    "metaEnrichedAt": "2026-07-11T21:08:46.074Z"
   },
   {
     "name": "Nobodyknows+",
@@ -74342,21 +74515,28 @@
     },
     "enrichedAt": "2026-07-07T07:20:36.240Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7d120305-ad04-41e9-b482-dc669d89cf0a"
+    "mbid": "7d120305-ad04-41e9-b482-dc669d89cf0a",
+    "popularity": {
+      "listeners": 8,
+      "playcount": 34
+    },
+    "metaEnrichedAt": "2026-07-11T21:08:46.699Z"
   },
   {
     "name": "Nobu McCarthy",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:36.240Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:38:22.022Z"
+    "autoTriedAt": "2026-07-11T11:38:22.022Z",
+    "metaTriedAt": "2026-07-11T21:08:47.299Z"
   },
   {
     "name": "Nobuaki Iwatake",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:36.240Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:38:23.272Z"
+    "autoTriedAt": "2026-07-11T11:38:23.272Z",
+    "metaTriedAt": "2026-07-11T21:08:47.936Z"
   },
   {
     "name": "Nobukazu Takemura",
@@ -74372,14 +74552,40 @@
     },
     "enrichedAt": "2026-07-07T07:20:36.240Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e60957f9-56fd-49f1-823f-e8d15f2b0eec"
+    "mbid": "e60957f9-56fd-49f1-823f-e8d15f2b0eec",
+    "genres": [
+      "japanese",
+      "electronic",
+      "ambient",
+      "experimental",
+      "idm"
+    ],
+    "popularity": {
+      "listeners": 97227,
+      "playcount": 989978
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/32f1f3859d3cd3399f1209668d00b4da/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:48.582Z"
   },
   {
     "name": "Nobuko Imai",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:36.240Z",
     "mbid": "4063cf21-166f-413a-a371-a9a50c02156c",
-    "autoTriedAt": "2026-07-11T11:38:24.790Z"
+    "autoTriedAt": "2026-07-11T11:38:24.790Z",
+    "genres": [
+      "viola",
+      "Classical",
+      "japanese",
+      "violist",
+      "classical musician"
+    ],
+    "popularity": {
+      "listeners": 5285,
+      "playcount": 32604
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/29997be51d68411efd44e4681fa66e02/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:49.252Z"
   },
   {
     "name": "Nobunny",
@@ -74395,7 +74601,19 @@
     },
     "enrichedAt": "2026-07-07T07:20:36.240Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f22a6369-8942-471b-8b9f-522dec4479e0"
+    "mbid": "f22a6369-8942-471b-8b9f-522dec4479e0",
+    "genres": [
+      "Garage Rock",
+      "Lo-Fi",
+      "Garage Punk",
+      "punk",
+      "punk rock"
+    ],
+    "popularity": {
+      "listeners": 76876,
+      "playcount": 1745512
+    },
+    "metaEnrichedAt": "2026-07-11T21:08:50.013Z"
   },
   {
     "name": "Nobuo Uematsu",
@@ -74411,7 +74629,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:36.240Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "92bb085a-2924-4479-b627-181a1835d2f5"
+    "mbid": "92bb085a-2924-4479-b627-181a1835d2f5",
+    "genres": [
+      "video game music",
+      "Soundtrack",
+      "japanese",
+      "final fantasy",
+      "Game Music"
+    ],
+    "popularity": {
+      "listeners": 262842,
+      "playcount": 24947827
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/25c14d9bdc82eb8bbc60078284de811e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:50.633Z"
   },
   {
     "name": "Nobuo Yamada",
@@ -74428,14 +74659,33 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:38:27.405Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "field recordings",
+      "japanese",
+      "saint seiya",
+      "noise",
+      "male vocalists"
+    ],
+    "popularity": {
+      "listeners": 841,
+      "playcount": 13437
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a4f04108b75b3573dfbcac96dbddff67/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:51.849Z"
   },
   {
     "name": "Nobuteru Maeda",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:36.240Z",
     "mbid": "ff0ffd29-1a07-489e-b0f3-c154c6cd7fc2",
-    "autoTriedAt": "2026-07-11T11:38:28.834Z"
+    "autoTriedAt": "2026-07-11T11:38:28.834Z",
+    "popularity": {
+      "listeners": 83,
+      "playcount": 599
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cb24bc106a157adf9f4db6ca45ffe434/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:52.655Z"
   },
   {
     "name": "Nobuyoshi Sano",
@@ -74451,21 +74701,58 @@
     },
     "enrichedAt": "2026-07-07T07:20:36.240Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "43b586a3-3c8e-4194-aad9-26e66a8f1c0b"
+    "mbid": "43b586a3-3c8e-4194-aad9-26e66a8f1c0b",
+    "genres": [
+      "video game music",
+      "japanese",
+      "Soundtrack",
+      "electronic",
+      "composer"
+    ],
+    "popularity": {
+      "listeners": 4859,
+      "playcount": 151355
+    },
+    "metaEnrichedAt": "2026-07-11T21:08:53.285Z"
   },
   {
     "name": "Nobuyuki Tsujii",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:36.240Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:38:30.084Z"
+    "autoTriedAt": "2026-07-11T11:38:30.084Z",
+    "genres": [
+      "Classical",
+      "japanese",
+      "piano",
+      "contemporary classical",
+      "japan"
+    ],
+    "popularity": {
+      "listeners": 12343,
+      "playcount": 90347
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/afcf213cbddd6a268b0db8a674f7890a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:53.887Z"
   },
   {
     "name": "Nochiura Natsumi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:36.240Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:38:31.344Z"
+    "autoTriedAt": "2026-07-11T11:38:31.344Z",
+    "genres": [
+      "Hello Project",
+      "j-pop",
+      "Hello! Project",
+      "japanese",
+      "idol"
+    ],
+    "popularity": {
+      "listeners": 1635,
+      "playcount": 24458
+    },
+    "metaEnrichedAt": "2026-07-11T21:08:54.520Z"
   },
   {
     "name": "NoClue",
@@ -74481,7 +74768,19 @@
     },
     "enrichedAt": "2026-07-07T07:20:36.240Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "rap",
+      "Hip-Hop",
+      "USA",
+      "westcoast"
+    ],
+    "popularity": {
+      "listeners": 5632,
+      "playcount": 33451
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d9f21b5a8679650bbc7f4d2d0e64952d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:55.539Z"
   },
   {
     "name": "Noctuary",
@@ -74497,7 +74796,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:36.240Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e7845806-a071-480b-982c-cf59d641ba45"
+    "mbid": "e7845806-a071-480b-982c-cf59d641ba45",
+    "genres": [
+      "black metal",
+      "death metal",
+      "black death metal",
+      "USA",
+      "male vocalists"
+    ],
+    "popularity": {
+      "listeners": 4513,
+      "playcount": 24130
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9bb89a94a56cd590a2f0af78ced702c2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:56.242Z"
   },
   {
     "name": "Nocturnal Breed",
@@ -74513,7 +74825,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:36.240Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "00eb303d-e2e7-4a6f-9518-f267a071bb23"
+    "mbid": "00eb303d-e2e7-4a6f-9518-f267a071bb23",
+    "genres": [
+      "thrash metal",
+      "black metal",
+      "blackened thrash metal",
+      "norwegian",
+      "black Thrash metal"
+    ],
+    "popularity": {
+      "listeners": 14442,
+      "playcount": 387098
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8fdaaea4caa62a6956fc0b2f807e39c5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:56.921Z"
   },
   {
     "name": "Nocturnal Emissions",
@@ -74529,14 +74854,40 @@
     },
     "enrichedAt": "2026-07-07T07:20:36.240Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "76c0b2da-a2ab-45a5-8166-889feadcb9a7"
+    "mbid": "76c0b2da-a2ab-45a5-8166-889feadcb9a7",
+    "genres": [
+      "industrial",
+      "experimental",
+      "dark ambient",
+      "ambient",
+      "noise"
+    ],
+    "popularity": {
+      "listeners": 38230,
+      "playcount": 575666
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8f0ab187b08eec90f91370183b684147/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:57.548Z"
   },
   {
     "name": "Nocturnal Projections",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:36.240Z",
     "mbid": "9be17cfd-8415-4283-85b6-49dffd592f32",
-    "autoTriedAt": "2026-07-11T11:38:33.892Z"
+    "autoTriedAt": "2026-07-11T11:38:33.892Z",
+    "genres": [
+      "post-punk",
+      "New Zealand",
+      "Gothic Rock",
+      "80s",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 5891,
+      "playcount": 77652
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d5f5ab5aaf5ea5036ba2e9a5dd411066/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:58.268Z"
   },
   {
     "name": "Nocturnal Rites",
@@ -74552,7 +74903,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:36.240Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2b510a30-f989-411b-bb23-b3c42ae3e522"
+    "mbid": "2b510a30-f989-411b-bb23-b3c42ae3e522",
+    "genres": [
+      "Power metal",
+      "heavy metal",
+      "swedish",
+      "metal",
+      "melodic metal"
+    ],
+    "popularity": {
+      "listeners": 131770,
+      "playcount": 3421083
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ffd9bc228c57b90ddbde32e6cd708e18/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:58.885Z"
   },
   {
     "name": "Nocturne",
@@ -74569,14 +74933,40 @@
     },
     "mbid": "94225cef-c3e2-48d8-a71d-07b4b5ebd9ca",
     "enrichedAt": "2026-07-11T11:38:36.484Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "industrial",
+      "black metal",
+      "industrial metal",
+      "noise",
+      "french"
+    ],
+    "popularity": {
+      "listeners": 26542,
+      "playcount": 232233
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/051fb5800d874c561504831329f15727/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:08:59.582Z"
   },
   {
     "name": "Nocturno Culto",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:36.240Z",
     "mbid": "1a362783-ace7-40db-997b-d0b417796214",
-    "autoTriedAt": "2026-07-11T11:38:39.139Z"
+    "autoTriedAt": "2026-07-11T11:38:39.139Z",
+    "genres": [
+      "dark ambient",
+      "ambient",
+      "experimental",
+      "Soundtrack",
+      "black metal"
+    ],
+    "popularity": {
+      "listeners": 2620,
+      "playcount": 25186
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cfc412fb91af7e789ca5d666a5454faf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:00.215Z"
   },
   {
     "name": "Nocturnus",
@@ -74592,7 +74982,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:36.240Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "aad4ed41-4f1c-4388-a82d-dd7f03807d72"
+    "mbid": "aad4ed41-4f1c-4388-a82d-dd7f03807d72",
+    "genres": [
+      "death metal",
+      "Technical Death Metal",
+      "progressive death metal",
+      "old school death metal",
+      "atmospheric death metal"
+    ],
+    "popularity": {
+      "listeners": 66681,
+      "playcount": 1426598
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c9693249876661a6c444df0ce4bbdddf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:00.893Z"
   },
   {
     "name": "Noddy Holder",
@@ -74608,7 +75011,17 @@
     },
     "enrichedAt": "2026-07-07T07:20:36.240Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f80f697c-823a-4f23-901e-90769c660ee3"
+    "mbid": "f80f697c-823a-4f23-901e-90769c660ee3",
+    "genres": [
+      "classic rock",
+      "United Kingdom"
+    ],
+    "popularity": {
+      "listeners": 23471,
+      "playcount": 65654
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:01.517Z"
   },
   {
     "name": "Nodes of Ranvier",
@@ -74624,7 +75037,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:36.240Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0eac5ca2-60e4-4f5f-ac99-1c262d9c43ea"
+    "mbid": "0eac5ca2-60e4-4f5f-ac99-1c262d9c43ea",
+    "genres": [
+      "metalcore",
+      "hardcore",
+      "christian",
+      "Christian Metalcore",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 45480,
+      "playcount": 785339
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/49c795f84f44742f99e526bc7be482af/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:02.156Z"
   },
   {
     "name": "Noé Willer",
@@ -74640,7 +75066,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:38:41.722Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "80s",
+      "french",
+      "oldies",
+      "chanson",
+      "Italo Disco"
+    ],
+    "popularity": {
+      "listeners": 2231,
+      "playcount": 8138
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9cb8b17b985a6168a0614b6fb603c751/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:02.928Z"
   },
   {
     "name": "Noël Coward",
@@ -74656,14 +75095,32 @@
     },
     "enrichedAt": "2026-07-07T07:20:36.240Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6aa4bb26-36f8-4a96-8328-4810a4e9a617"
+    "mbid": "6aa4bb26-36f8-4a96-8328-4810a4e9a617",
+    "genres": [
+      "comedy",
+      "male vocalists",
+      "british",
+      "jazz",
+      "oldies"
+    ],
+    "popularity": {
+      "listeners": 21269,
+      "playcount": 143324
+    },
+    "metaEnrichedAt": "2026-07-11T21:09:03.555Z"
   },
   {
     "name": "Noel Estrada",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:36.240Z",
     "mbid": "45831f52-b19d-477d-9089-fa4bfb496ec1",
-    "autoTriedAt": "2026-07-11T11:38:44.371Z"
+    "autoTriedAt": "2026-07-11T11:38:44.371Z",
+    "popularity": {
+      "listeners": 326,
+      "playcount": 1807
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1375f92780776900eadc2b5dbebcce49/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:04.626Z"
   },
   {
     "name": "Noel Gallagher",
@@ -74680,7 +75137,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:38:46.954Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "britpop",
+      "rock",
+      "acoustic",
+      "alternative",
+      "legend"
+    ],
+    "popularity": {
+      "listeners": 225282,
+      "playcount": 4162832
+    },
+    "metaEnrichedAt": "2026-07-11T21:09:05.254Z"
   },
   {
     "name": "Noel Gallagher's High Flying Birds",
@@ -74696,7 +75165,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:36.240Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d5f54887-117b-42a1-9aee-8780b84ebaba"
+    "mbid": "d5f54887-117b-42a1-9aee-8780b84ebaba",
+    "genres": [
+      "britpop",
+      "rock",
+      "british",
+      "singer-songwriter",
+      "god"
+    ],
+    "popularity": {
+      "listeners": 684523,
+      "playcount": 25908707
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f68a24ba8cd75cfb477b08802a169f81/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:05.880Z"
   },
   {
     "name": "Noel Gourdin",
@@ -74712,7 +75194,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:36.240Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "rnb",
+      "soul",
+      "Neo-Soul",
+      "Neo Soul",
+      "male vocalists"
+    ],
+    "popularity": {
+      "listeners": 22485,
+      "playcount": 163099
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f7710882a070a900cd376d83a29541b8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:06.486Z"
   },
   {
     "name": "Noel Haggard",
@@ -74729,7 +75224,12 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:38:50.514Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 64,
+      "playcount": 1198
+    },
+    "metaEnrichedAt": "2026-07-11T21:09:07.158Z"
   },
   {
     "name": "Noel Harrison",
@@ -74746,14 +75246,32 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:38:53.717Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "pop",
+      "60s",
+      "folk",
+      "acoustic",
+      "male vocalists"
+    ],
+    "popularity": {
+      "listeners": 44454,
+      "playcount": 270753
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c057cb7ca40d29a24e5ab2f80a350f6d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:07.906Z"
   },
   {
     "name": "Noel Mewton-Wood",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:36.240Z",
     "mbid": "1e751961-5b15-4400-95be-76b779eab0d1",
-    "autoTriedAt": "2026-07-11T11:38:56.399Z"
+    "autoTriedAt": "2026-07-11T11:38:56.399Z",
+    "popularity": {
+      "listeners": 72,
+      "playcount": 1412
+    },
+    "metaEnrichedAt": "2026-07-11T21:09:08.593Z"
   },
   {
     "name": "Noel Paul Stookey",
@@ -74769,7 +75287,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:36.240Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "50986f3f-f7f3-42bb-b14f-17e8c6bab222"
+    "mbid": "50986f3f-f7f3-42bb-b14f-17e8c6bab222",
+    "genres": [
+      "folk",
+      "singer-songwriter",
+      "folk rock",
+      "rock",
+      "american"
+    ],
+    "popularity": {
+      "listeners": 14183,
+      "playcount": 67472
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/65231d2c98f44193c6fd32cac5fff0c7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:09.715Z"
   },
   {
     "name": "Noel Pointer",
@@ -74785,28 +75316,75 @@
     },
     "enrichedAt": "2026-07-07T07:20:36.240Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7cf8a532-02e8-4d90-af31-59c4a90d098f"
+    "mbid": "7cf8a532-02e8-4d90-af31-59c4a90d098f",
+    "genres": [
+      "funk",
+      "jazz",
+      "Smooth Jazz",
+      "70s",
+      "jazz-funk"
+    ],
+    "popularity": {
+      "listeners": 17882,
+      "playcount": 75178
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c3ffa91cced13cf0856aa30510c9cd43/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:10.406Z"
   },
   {
     "name": "Noel Rawsthorne",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:36.240Z",
     "mbid": "7ec26b1b-99dc-4b8a-b706-11b43ed3ee5b",
-    "autoTriedAt": "2026-07-11T11:38:58.981Z"
+    "autoTriedAt": "2026-07-11T11:38:58.981Z",
+    "genres": [
+      "pipe organ"
+    ],
+    "popularity": {
+      "listeners": 931,
+      "playcount": 3848
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e644b369074e01b921e7f87524a9345d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:11.076Z"
   },
   {
     "name": "Noel Redding",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:36.240Z",
     "mbid": "32e805d4-d6da-4388-b1ad-60d234ce6122",
-    "autoTriedAt": "2026-07-11T11:39:01.594Z"
+    "autoTriedAt": "2026-07-11T11:39:01.594Z",
+    "genres": [
+      "classic rock",
+      "blues rock",
+      "rock",
+      "psychedelic",
+      "blues"
+    ],
+    "popularity": {
+      "listeners": 81894,
+      "playcount": 258757
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5c3b9f67a34c96909cd87aa59f881b36/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:11.657Z"
   },
   {
     "name": "Noel Rosa",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:36.240Z",
     "mbid": "7ac94b2b-1f0e-439c-b6af-2b710e44d6d3",
-    "autoTriedAt": "2026-07-11T11:39:04.329Z"
+    "autoTriedAt": "2026-07-11T11:39:04.329Z",
+    "genres": [
+      "samba",
+      "mpb",
+      "chorinho",
+      "brazilian",
+      "choro"
+    ],
+    "popularity": {
+      "listeners": 58411,
+      "playcount": 676015
+    },
+    "metaEnrichedAt": "2026-07-11T21:09:12.319Z"
   },
   {
     "name": "Noel Webb",
@@ -74814,7 +75392,13 @@
     "wdBulkTriedAt": "2026-07-07T07:20:36.240Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "c9877535-ddd3-4a2c-8b9e-f587f495bf78",
-    "autoTriedAt": "2026-07-11T11:39:06.849Z"
+    "autoTriedAt": "2026-07-11T11:39:06.849Z",
+    "popularity": {
+      "listeners": 649,
+      "playcount": 2527
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d2cad774e836700c2cafde708e17bce1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:13.071Z"
   },
   {
     "name": "Noelia",
@@ -74830,14 +75414,32 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e0fcca65-eb75-4f17-b01c-8e5008d4dc3f"
+    "mbid": "e0fcca65-eb75-4f17-b01c-8e5008d4dc3f",
+    "genres": [
+      "pop",
+      "latin",
+      "latin pop",
+      "female vocalists",
+      "puerto rico"
+    ],
+    "popularity": {
+      "listeners": 88978,
+      "playcount": 507126
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2b5955041de7965d2458c7a17c69a24f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:13.720Z"
   },
   {
     "name": "Nofel Izz",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:39:08.097Z"
+    "autoTriedAt": "2026-07-11T11:39:08.097Z",
+    "popularity": {
+      "listeners": 7,
+      "playcount": 17
+    },
+    "metaEnrichedAt": "2026-07-11T21:09:14.370Z"
   },
   {
     "name": "NOFX",
@@ -74853,14 +75455,40 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "dcaa4f81-bfb7-44eb-8594-4e74f004b6e4"
+    "mbid": "dcaa4f81-bfb7-44eb-8594-4e74f004b6e4",
+    "genres": [
+      "punk rock",
+      "punk",
+      "ska punk",
+      "ska",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 1424033,
+      "playcount": 90119951
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2b7fdd20aa9ea0b9b574f288af485bff/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:14.962Z"
   },
   {
     "name": "Nogizaka46",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:39:09.316Z"
+    "autoTriedAt": "2026-07-11T11:39:09.316Z",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "japan",
+      "JPop",
+      "idol"
+    ],
+    "popularity": {
+      "listeners": 91694,
+      "playcount": 4236237
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3039466f12f8fa607d320695e2f02e97/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:15.611Z"
   },
   {
     "name": "Nogod",
@@ -74876,7 +75504,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "9a826bc4-323f-4362-9525-4a246f4b5328"
+    "mbid": "9a826bc4-323f-4362-9525-4a246f4b5328",
+    "genres": [
+      "visual kei",
+      "J-rock",
+      "japanese",
+      "heavy metal",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 20575,
+      "playcount": 634951
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b2c078251aed505bc737709ef91d2bf0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:16.428Z"
   },
   {
     "name": "Noir Désir",
@@ -74893,7 +75534,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:39:11.938Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "french",
+      "rock",
+      "alternative",
+      "rock francais",
+      "French rock"
+    ],
+    "popularity": {
+      "listeners": 423000,
+      "playcount": 10783888
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/097cc24347a4a421ff4d3b0d4e18d36b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:17.089Z"
   },
   {
     "name": "Nóirín Ní Riain",
@@ -74909,7 +75563,19 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "16541341-7c00-427e-8ed8-b6ce72b92f3d"
+    "mbid": "16541341-7c00-427e-8ed8-b6ce72b92f3d",
+    "genres": [
+      "celtic",
+      "folk",
+      "Irish Folk",
+      "irish",
+      "heavenly voices"
+    ],
+    "popularity": {
+      "listeners": 3484,
+      "playcount": 31082
+    },
+    "metaEnrichedAt": "2026-07-11T21:09:17.757Z"
   },
   {
     "name": "Noise Addict",
@@ -74925,7 +75591,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:39:14.453Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "alternative",
+      "indie",
+      "rock",
+      "twee",
+      "Lo-Fi"
+    ],
+    "popularity": {
+      "listeners": 11668,
+      "playcount": 129176
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a5365ded92af6bf6b1c2d0039444fc68/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:18.410Z"
   },
   {
     "name": "Noise Annoys",
@@ -74933,7 +75612,19 @@
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "42a29771-34bf-4991-8a79-ad4a67ce65d4",
-    "autoTriedAt": "2026-07-11T11:39:17.065Z"
+    "autoTriedAt": "2026-07-11T11:39:17.065Z",
+    "genres": [
+      "punk rock",
+      "punk",
+      "german",
+      "post-punk",
+      "Old School Pop Punk"
+    ],
+    "popularity": {
+      "listeners": 415,
+      "playcount": 4222
+    },
+    "metaEnrichedAt": "2026-07-11T21:09:19.082Z"
   },
   {
     "name": "Noise By Numbers",
@@ -74949,7 +75640,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d2240419-702c-4407-9e9f-84e0db38e004"
+    "mbid": "d2240419-702c-4407-9e9f-84e0db38e004",
+    "genres": [
+      "pop punk",
+      "punk",
+      "american",
+      "punk rock",
+      "chicago"
+    ],
+    "popularity": {
+      "listeners": 3551,
+      "playcount": 47717
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/27dd4bf615716b073c54274b940871c4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:19.744Z"
   },
   {
     "name": "Noise music",
@@ -74957,7 +75661,13 @@
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "0bb0b346-a346-4186-b361-6fb57da3fb19",
-    "autoTriedAt": "2026-07-11T11:39:19.610Z"
+    "autoTriedAt": "2026-07-11T11:39:19.610Z",
+    "popularity": {
+      "listeners": 32,
+      "playcount": 279
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5b0407af7838ef3bc73070ed6d934c70/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:20.647Z"
   },
   {
     "name": "Noise Ratchet",
@@ -74973,21 +75683,52 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:39:22.184Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "pop punk",
+      "emo",
+      "alternative",
+      "punk",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 56366,
+      "playcount": 304492
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/07934a3956abcc8efd589ce35be1965d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:21.305Z"
   },
   {
     "name": "Noise Records",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:39:23.405Z"
+    "autoTriedAt": "2026-07-11T11:39:23.405Z",
+    "genres": [
+      "metal",
+      "german",
+      "heavy metal",
+      "Power metal",
+      "speed metal"
+    ],
+    "popularity": {
+      "listeners": 275,
+      "playcount": 1209
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/977237bbb0ddd0b6d0ef8d572334f40d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:22.013Z"
   },
   {
     "name": "noise rock",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:39:24.655Z"
+    "autoTriedAt": "2026-07-11T11:39:24.655Z",
+    "popularity": {
+      "listeners": 7,
+      "playcount": 27
+    },
+    "metaEnrichedAt": "2026-07-11T21:09:22.919Z"
   },
   {
     "name": "Noise Unit",
@@ -75004,28 +75745,60 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:39:27.154Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "industrial",
+      "ebm",
+      "electro-industrial",
+      "dark electro",
+      "electronic"
+    ],
+    "popularity": {
+      "listeners": 48127,
+      "playcount": 873985
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/dfdef58bb867f1b752181e7122475e12/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:23.607Z"
   },
   {
     "name": "noise-rock",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:39:28.400Z"
+    "autoTriedAt": "2026-07-11T11:39:28.400Z",
+    "metaTriedAt": "2026-07-11T21:09:24.324Z"
   },
   {
     "name": "noisecore",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:39:29.627Z"
+    "autoTriedAt": "2026-07-11T11:39:29.627Z",
+    "popularity": {
+      "listeners": 23,
+      "playcount": 550
+    },
+    "metaEnrichedAt": "2026-07-11T21:09:25.830Z"
   },
   {
     "name": "Noisegate",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbid": "c94eac57-27c1-41a6-a13d-4a84ffbf487a",
-    "autoTriedAt": "2026-07-11T11:39:32.110Z"
+    "autoTriedAt": "2026-07-11T11:39:32.110Z",
+    "genres": [
+      "noise",
+      "experimental",
+      "drone",
+      "industrial",
+      "Gabber"
+    ],
+    "popularity": {
+      "listeners": 1661,
+      "playcount": 6527
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/225701ee7e1f2925d536c0e9cc2cada3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:26.528Z"
   },
   {
     "name": "Noiserv",
@@ -75041,7 +75814,20 @@
     "mbid": "79705997-4d5b-49e5-81ec-0b31679bacb4",
     "wdBulkTriedAt": "2026-07-08T14:10:41.155Z",
     "enrichedAt": "2026-07-08T14:10:41.155Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "indie",
+      "experimental",
+      "portuguese",
+      "acoustic",
+      "Portugal"
+    ],
+    "popularity": {
+      "listeners": 32384,
+      "playcount": 645970
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2beceb57110c6cdd78c23c7fd6284757/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:27.154Z"
   },
   {
     "name": "Noisettes",
@@ -75057,7 +75843,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5221de81-b3cb-48d6-8e60-7c04b5daf02a"
+    "mbid": "5221de81-b3cb-48d6-8e60-7c04b5daf02a",
+    "genres": [
+      "indie",
+      "indie rock",
+      "female vocalists",
+      "british",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 581064,
+      "playcount": 7958053
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ea99b9b3c596512d5248152c8f6c5bbb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:28.275Z"
   },
   {
     "name": "Noisex",
@@ -75073,7 +75872,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:39:34.669Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "industrial",
+      "Rhythmic Noise",
+      "noise",
+      "ebm",
+      "powernoise"
+    ],
+    "popularity": {
+      "listeners": 17134,
+      "playcount": 261629
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6e2e4dffc40eeb77848228343ce1e60c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:28.931Z"
   },
   {
     "name": "Noisia",
@@ -75089,7 +75901,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ec22a32b-acab-432e-a88c-ffe6ae68fa16"
+    "mbid": "ec22a32b-acab-432e-a88c-ffe6ae68fa16",
+    "genres": [
+      "neurofunk",
+      "Drum and bass",
+      "techstep",
+      "mix",
+      "halftime"
+    ],
+    "popularity": {
+      "listeners": 611974,
+      "playcount": 15164528
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/665fc51fb4d3b85ff42651d92b7f89d6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:29.549Z"
   },
   {
     "name": "Noisuf-X",
@@ -75106,7 +75931,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:39:37.148Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "industrial",
+      "ebm",
+      "dark electro",
+      "powernoise",
+      "noise"
+    ],
+    "popularity": {
+      "listeners": 147458,
+      "playcount": 3930915
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8535af30f841741b0a987a0d10ac885f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:30.192Z"
   },
   {
     "name": "Noize MC",
@@ -75122,7 +75960,20 @@
     "mbid": "a0c5737e-da6d-468f-a78e-19146494f1db",
     "wdBulkTriedAt": "2026-07-08T14:10:42.682Z",
     "enrichedAt": "2026-07-08T14:10:42.682Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "Hip-Hop",
+      "rapcore",
+      "rap",
+      "russian",
+      "russian rap"
+    ],
+    "popularity": {
+      "listeners": 334637,
+      "playcount": 32550192
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c5817a0f990dce906409808ee9ca8fcb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:30.819Z"
   },
   {
     "name": "Nokie Edwards",
@@ -75138,7 +75989,18 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5af261e2-bc86-425d-811a-4fbc5bcf59ea"
+    "mbid": "5af261e2-bc86-425d-811a-4fbc5bcf59ea",
+    "genres": [
+      "Rock and Roll",
+      "guitar",
+      "All"
+    ],
+    "popularity": {
+      "listeners": 798,
+      "playcount": 5014
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/66c7c62bda17e33b6dbf2092c5cce962/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:31.898Z"
   },
   {
     "name": "Nokturnal Mortum",
@@ -75154,7 +76016,19 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "656a7ed6-fb23-4bc3-a7f2-90406ca86fc9"
+    "mbid": "656a7ed6-fb23-4bc3-a7f2-90406ca86fc9",
+    "genres": [
+      "black metal",
+      "pagan metal",
+      "folk metal",
+      "nsbm",
+      "Folk Black Metal"
+    ],
+    "popularity": {
+      "listeners": 76773,
+      "playcount": 5179045
+    },
+    "metaEnrichedAt": "2026-07-11T21:09:32.532Z"
   },
   {
     "name": "NoKTuRNL",
@@ -75162,7 +76036,20 @@
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "de97d045-f367-4888-87a2-cc26a6fcba39",
-    "autoTriedAt": "2026-07-11T11:39:39.620Z"
+    "autoTriedAt": "2026-07-11T11:39:39.620Z",
+    "genres": [
+      "alternative metal",
+      "australia",
+      "rapcore",
+      "Aussie",
+      "spotify"
+    ],
+    "popularity": {
+      "listeners": 1133,
+      "playcount": 9838
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c00a345530b36fa7f13c66f1824caef3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:33.222Z"
   },
   {
     "name": "Nokuthula Ngwenyama",
@@ -75178,14 +76065,39 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d5cab1d0-2f38-4f44-87e7-9496f3c6d38a"
+    "mbid": "d5cab1d0-2f38-4f44-87e7-9496f3c6d38a",
+    "genres": [
+      "composer",
+      "Classical",
+      "viola",
+      "violon"
+    ],
+    "popularity": {
+      "listeners": 294,
+      "playcount": 2200
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c83da1d887813ee6f767b405e49989df/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:33.916Z"
   },
   {
     "name": "Nolan Strong & The Diablos",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:39:40.904Z"
+    "autoTriedAt": "2026-07-11T11:39:40.904Z",
+    "genres": [
+      "doo wop",
+      "rhythm and blues",
+      "Rock 'n' Roll",
+      "Rock and Roll",
+      "blank and the blanks"
+    ],
+    "popularity": {
+      "listeners": 3590,
+      "playcount": 40286
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9756302b1186c2c96198def3e84bcb64/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:34.624Z"
   },
   {
     "name": "Nolwenn Leroy",
@@ -75201,7 +76113,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "3575a514-ef96-41a0-adc2-c5ed5827d8e7"
+    "mbid": "3575a514-ef96-41a0-adc2-c5ed5827d8e7",
+    "genres": [
+      "french",
+      "pop",
+      "female vocalists",
+      "chanson francaise",
+      "french pop"
+    ],
+    "popularity": {
+      "listeners": 101273,
+      "playcount": 2040415
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7b3ddc549875b70d4d572c7a6597df67/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:35.266Z"
   },
   {
     "name": "Nomad",
@@ -75218,14 +76143,39 @@
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "5c5a6130-d7a0-437a-9b43-2936028fdd07",
     "enrichedAt": "2026-07-11T11:39:43.518Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "death metal",
+      "polish",
+      "Brutal Death Metal",
+      "House",
+      "Hip-Hop"
+    ],
+    "popularity": {
+      "listeners": 116218,
+      "playcount": 1257950
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/75348e819c21a9e119a3f1fd4cf30162/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:36.040Z"
   },
   {
     "name": "Nomataras",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:39:44.751Z"
+    "autoTriedAt": "2026-07-11T11:39:44.751Z",
+    "genres": [
+      "punk rock",
+      "punk",
+      "ska punk",
+      "Berlin",
+      "garage"
+    ],
+    "popularity": {
+      "listeners": 2645,
+      "playcount": 7902
+    },
+    "metaEnrichedAt": "2026-07-11T21:09:36.679Z"
   },
   {
     "name": "Nomeansno",
@@ -75241,14 +76191,32 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "37e9d7b2-7779-41b2-b2eb-3685351caad3"
+    "mbid": "37e9d7b2-7779-41b2-b2eb-3685351caad3",
+    "genres": [
+      "punk",
+      "hardcore",
+      "punk rock",
+      "jazzcore",
+      "post-hardcore"
+    ],
+    "popularity": {
+      "listeners": 143066,
+      "playcount": 4185147
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/be2e8f2c844b42eb365286db0395ee30/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:37.267Z"
   },
   {
     "name": "Nomiya, Maki",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:39:46.460Z"
+    "autoTriedAt": "2026-07-11T11:39:46.460Z",
+    "popularity": {
+      "listeners": 4,
+      "playcount": 38
+    },
+    "metaEnrichedAt": "2026-07-11T21:09:37.970Z"
   },
   {
     "name": "Nomy Lamm",
@@ -75264,7 +76232,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:39:48.938Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "queercore",
+      "punk",
+      "feminist",
+      "spoken word",
+      "riot grrrl"
+    ],
+    "popularity": {
+      "listeners": 287,
+      "playcount": 13791
+    },
+    "metaEnrichedAt": "2026-07-11T21:09:38.579Z"
   },
   {
     "name": "Non Phixion",
@@ -75280,28 +76260,80 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:39:51.435Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Hip-Hop",
+      "underground hip-hop",
+      "rap",
+      "underground rap",
+      "hardcore rap"
+    ],
+    "popularity": {
+      "listeners": 200197,
+      "playcount": 2792482
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4aece65f25e8356dbcbb7213aa35549a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:39.197Z"
   },
   {
     "name": "Non-Aggression Pact",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbid": "e7363416-a09c-4261-8f83-31c1e46a6bda",
-    "autoTriedAt": "2026-07-11T11:39:53.963Z"
+    "autoTriedAt": "2026-07-11T11:39:53.963Z",
+    "genres": [
+      "ebm",
+      "industrial",
+      "electro-industrial",
+      "synthcore",
+      "political rap"
+    ],
+    "popularity": {
+      "listeners": 1260,
+      "playcount": 20528
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f4be4204dad685f08517235d174e37a2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:39.846Z"
   },
   {
     "name": "Non-Prophets",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbid": "b4046b7c-cb7a-4090-b9a2-859359bd7415",
-    "autoTriedAt": "2026-07-11T11:39:56.754Z"
+    "autoTriedAt": "2026-07-11T11:39:56.754Z",
+    "genres": [
+      "Hip-Hop",
+      "underground hip-hop",
+      "rap",
+      "hip hop",
+      "underground hip hop"
+    ],
+    "popularity": {
+      "listeners": 82496,
+      "playcount": 882103
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2d2703b43638adf72f5efb7e0e9834d2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:40.462Z"
   },
   {
     "name": "Nona Gaye",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbid": "c62ba11f-0628-4349-82ee-32467a5100ac",
-    "autoTriedAt": "2026-07-11T11:39:59.478Z"
+    "autoTriedAt": "2026-07-11T11:39:59.478Z",
+    "genres": [
+      "unsung and sophomoreless",
+      "soul",
+      "female vocalists",
+      "90s",
+      "prince"
+    ],
+    "popularity": {
+      "listeners": 2550,
+      "playcount": 13098
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c3af8eac016c9749def8db10ce09c454/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:41.150Z"
   },
   {
     "name": "Nona Hendryx",
@@ -75317,7 +76349,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "af78c8ec-0d33-4082-98f5-23281b65b109"
+    "mbid": "af78c8ec-0d33-4082-98f5-23281b65b109",
+    "genres": [
+      "pop",
+      "female vocalists",
+      "soul",
+      "80s",
+      "rnb"
+    ],
+    "popularity": {
+      "listeners": 18914,
+      "playcount": 109556
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/67b0edd9ba5d297bbf8f9d5b053bb355/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:41.848Z"
   },
   {
     "name": "Noname",
@@ -75333,14 +76378,40 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T11:39:59.478Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "rap",
+      "Hip-Hop",
+      "hip hop",
+      "Ghetto Sage",
+      "jazz rap"
+    ],
+    "popularity": {
+      "listeners": 581084,
+      "playcount": 18192942
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b597b9be662b3fbaa7f09927fa8fe152/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:42.429Z"
   },
   {
     "name": "Nonchalant",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbid": "ac803aef-e8f9-401f-bcd1-d255ab8d4df8",
-    "autoTriedAt": "2026-07-11T11:40:02.035Z"
+    "autoTriedAt": "2026-07-11T11:40:02.035Z",
+    "genres": [
+      "rap",
+      "Hip-Hop",
+      "female vocalist",
+      "hip hop",
+      "Punkrock Boys Records"
+    ],
+    "popularity": {
+      "listeners": 11555,
+      "playcount": 69284
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2669a3af88d26988e7c204f22871113a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:43.126Z"
   },
   {
     "name": "None More Black",
@@ -75356,14 +76427,32 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a1f28c75-e6aa-4d63-9b01-3be42c599fab"
+    "mbid": "a1f28c75-e6aa-4d63-9b01-3be42c599fab",
+    "genres": [
+      "punk rock",
+      "punk",
+      "melodic hardcore",
+      "Need to Rate",
+      "melodic punk"
+    ],
+    "popularity": {
+      "listeners": 109847,
+      "playcount": 2669021
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8adbfaa76ddd1514107610152a367f2a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:43.709Z"
   },
   {
     "name": "Noni Răzvan Ene",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbid": "c2e01071-44f9-4a34-a012-5c2e74af4bd4",
-    "autoTriedAt": "2026-07-11T11:40:03.292Z"
+    "autoTriedAt": "2026-07-11T11:40:03.292Z",
+    "popularity": {
+      "listeners": 27,
+      "playcount": 129
+    },
+    "metaEnrichedAt": "2026-07-11T21:09:44.537Z"
   },
   {
     "name": "Nono La Grinta",
@@ -75380,7 +76469,20 @@
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "ef57061a-5919-4c3c-8905-ceb7615eb874",
     "enrichedAt": "2026-07-11T11:40:05.785Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "french",
+      "rap",
+      "paris",
+      "france",
+      "parisian"
+    ],
+    "popularity": {
+      "listeners": 57159,
+      "playcount": 1602879
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/56e556e44611ea9ed6e054f43b00463a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:45.707Z"
   },
   {
     "name": "Nonpoint",
@@ -75396,7 +76498,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f10177e4-b7f7-4e63-92b6-c805c6cc54d6"
+    "mbid": "f10177e4-b7f7-4e63-92b6-c805c6cc54d6",
+    "genres": [
+      "Nu Metal",
+      "hard rock",
+      "metal",
+      "rock",
+      "Nu-metal"
+    ],
+    "popularity": {
+      "listeners": 681860,
+      "playcount": 11823124
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f548916a606113ed7451ad5fb9124899/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:46.382Z"
   },
   {
     "name": "Nonsens",
@@ -75413,7 +76528,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:40:08.327Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Brostep",
+      "punk",
+      "punk rock",
+      "electronic",
+      "future bass"
+    ],
+    "popularity": {
+      "listeners": 50643,
+      "playcount": 360951
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2f022709eb6adb654321e9bb5c9e0f14/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:47.047Z"
   },
   {
     "name": "Nonstop",
@@ -75430,7 +76558,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:40:10.826Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "hip hop",
+      "pop",
+      "Eurovision",
+      "female vocalists",
+      "experimental"
+    ],
+    "popularity": {
+      "listeners": 13760,
+      "playcount": 134864
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b2001f6423f04c13deb51ef8d693dc71/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:47.702Z"
   },
   {
     "name": "Nont Tanont",
@@ -75446,7 +76587,16 @@
     },
     "mbid": "e3f72c7c-dd70-438a-a410-c6c86f5319ec",
     "enrichedAt": "2026-07-09T08:32:12.140Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "thai"
+    ],
+    "popularity": {
+      "listeners": 25114,
+      "playcount": 943689
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b5d352c1dd32d42a73f0d2a5d2cb2997/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:48.299Z"
   },
   {
     "name": "Noodle",
@@ -75454,7 +76604,19 @@
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "2d521429-fb0e-4c19-95c5-ebdd68907047",
-    "autoTriedAt": "2026-07-11T11:40:13.323Z"
+    "autoTriedAt": "2026-07-11T11:40:13.323Z",
+    "genres": [
+      "Beef",
+      "noodle",
+      "onion",
+      "corn",
+      "soy sauce"
+    ],
+    "popularity": {
+      "listeners": 5564,
+      "playcount": 34851
+    },
+    "metaEnrichedAt": "2026-07-11T21:09:48.976Z"
   },
   {
     "name": "Noodles",
@@ -75471,7 +76633,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:40:15.859Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "J-rock",
+      "indie",
+      "japanese",
+      "rock",
+      "J-Indie"
+    ],
+    "popularity": {
+      "listeners": 34670,
+      "playcount": 817708
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1df56550f34202933e4eb58e788ce68e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:50.500Z"
   },
   {
     "name": "Nookicky",
@@ -75487,7 +76662,19 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4ca28522-3ba5-4565-b63a-fe4fb0576cc7"
+    "mbid": "4ca28522-3ba5-4565-b63a-fe4fb0576cc7",
+    "genres": [
+      "angura kei",
+      "japanese",
+      "visual kei",
+      "experimental",
+      "J-rock"
+    ],
+    "popularity": {
+      "listeners": 1886,
+      "playcount": 126018
+    },
+    "metaEnrichedAt": "2026-07-11T21:09:51.103Z"
   },
   {
     "name": "Noor Jehan",
@@ -75504,7 +76691,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:40:18.358Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "pakistani",
+      "Ghazal",
+      "pakistan",
+      "world",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 20053,
+      "playcount": 195322
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/88c696aedbda00a96de331e5cb56f681/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:51.789Z"
   },
   {
     "name": "Noora Noor",
@@ -75520,7 +76720,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "274e5eda-d5be-4f33-bf49-bdd44349100b"
+    "mbid": "274e5eda-d5be-4f33-bf49-bdd44349100b",
+    "genres": [
+      "soul",
+      "jazz",
+      "blues",
+      "female vocalist",
+      "Norway"
+    ],
+    "popularity": {
+      "listeners": 24233,
+      "playcount": 192160
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/96d872938fb551e3e336b26a86ef53af/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:52.576Z"
   },
   {
     "name": "Noordkaap",
@@ -75536,7 +76749,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "13e7b7a6-ac07-416d-89bf-6b97f7a5ebad"
+    "mbid": "13e7b7a6-ac07-416d-89bf-6b97f7a5ebad",
+    "genres": [
+      "rock",
+      "belgian",
+      "Belgium",
+      "Nederlandstalig",
+      "Vlaams"
+    ],
+    "popularity": {
+      "listeners": 27253,
+      "playcount": 418228
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8df7154acbe7b8a46a232192d31ae8be/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:53.209Z"
   },
   {
     "name": "Noori",
@@ -75552,14 +76778,32 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T11:40:18.358Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "pakistani",
+      "urdu",
+      "rock",
+      "soft rock",
+      "pakistani rock"
+    ],
+    "popularity": {
+      "listeners": 9517,
+      "playcount": 164546
+    },
+    "metaEnrichedAt": "2026-07-11T21:09:53.880Z"
   },
   {
     "name": "Noosha Fox",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbid": "1c17583f-0d84-4fb7-8fa9-bb7cccce71e2",
-    "autoTriedAt": "2026-07-11T11:40:20.859Z"
+    "autoTriedAt": "2026-07-11T11:40:20.859Z",
+    "popularity": {
+      "listeners": 655,
+      "playcount": 6650
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/dba5cd5e656c2c88ebf64d5a4b781f0d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:54.694Z"
   },
   {
     "name": "Nooshafarin",
@@ -75575,7 +76819,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "66d9c31d-efe1-4cb0-89b4-1ce3deb4b765"
+    "mbid": "66d9c31d-efe1-4cb0-89b4-1ce3deb4b765",
+    "genres": [
+      "Iranian",
+      "pop",
+      "Persian",
+      "female vocalist",
+      "iran"
+    ],
+    "popularity": {
+      "listeners": 9184,
+      "playcount": 71871
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f5ac9dd7b1daab9675b9e81b1f5e5ed6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:55.640Z"
   },
   {
     "name": "Nopsajalka",
@@ -75591,21 +76848,59 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:40:23.455Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "reggae",
+      "finnish",
+      "dancehall",
+      "fi-reggae",
+      "Finnish reggae"
+    ],
+    "popularity": {
+      "listeners": 36670,
+      "playcount": 1144377
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/70be136c2a9eb67b226c8e84e4561f95/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:56.352Z"
   },
   {
     "name": "Nora",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:40:24.702Z"
+    "autoTriedAt": "2026-07-11T11:40:24.702Z",
+    "genres": [
+      "hardcore",
+      "metalcore",
+      "Drum and bass",
+      "hip hop",
+      "Juke"
+    ],
+    "popularity": {
+      "listeners": 44860,
+      "playcount": 453177
+    },
+    "metaEnrichedAt": "2026-07-11T21:09:57.068Z"
   },
   {
     "name": "Nora Bayes",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbid": "a80c921e-32e1-4387-b427-d9bbb4bf7915",
-    "autoTriedAt": "2026-07-11T11:40:27.276Z"
+    "autoTriedAt": "2026-07-11T11:40:27.276Z",
+    "genres": [
+      "20s",
+      "All",
+      "vaudeville",
+      "female vocalists",
+      "10s"
+    ],
+    "popularity": {
+      "listeners": 5814,
+      "playcount": 23543
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/dc6c8cc9d62d6d23ac73aa4a8dcb149b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:57.725Z"
   },
   {
     "name": "Nora Brockstedt",
@@ -75621,14 +76916,40 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "cff396b0-1592-470b-a233-0e340aec3db5"
+    "mbid": "cff396b0-1592-470b-a233-0e340aec3db5",
+    "genres": [
+      "Eurovision",
+      "norwegian",
+      "Norway",
+      "pop",
+      "1960"
+    ],
+    "popularity": {
+      "listeners": 15302,
+      "playcount": 114410
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/78e683a6272d0337c532c70a093cdbba/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:59.162Z"
   },
   {
     "name": "Nora Dean",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbid": "bf85e897-d8bd-4182-b652-518a941f2557",
-    "autoTriedAt": "2026-07-11T11:40:29.822Z"
+    "autoTriedAt": "2026-07-11T11:40:29.822Z",
+    "genres": [
+      "reggae",
+      "rocksteady",
+      "calypso",
+      "jamaica",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 66360,
+      "playcount": 266081
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c918a6e0e00cb614538a5a94f6de3299/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:09:59.776Z"
   },
   {
     "name": "Nora Jean Bruso",
@@ -75644,14 +76965,32 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "blues",
+      "female vocalists",
+      "soul",
+      "jazz",
+      "genialne:D"
+    ],
+    "popularity": {
+      "listeners": 684,
+      "playcount": 11230
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/16c1238ea4f9d26737d5bd421772caaa/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:10:00.567Z"
   },
   {
     "name": "Nora Lum",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:40:32.117Z"
+    "autoTriedAt": "2026-07-11T11:40:32.117Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 1
+    },
+    "metaEnrichedAt": "2026-07-11T21:10:01.304Z"
   },
   {
     "name": "Nora O'Connor",
@@ -75667,7 +77006,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:40:35.614Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "chicago",
+      "female vocalists",
+      "rock",
+      "Alt-country",
+      "folk"
+    ],
+    "popularity": {
+      "listeners": 4659,
+      "playcount": 28623
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/445f5ea5c4789d524c8f7183516c506b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:10:01.983Z"
   },
   {
     "name": "Norah Jones",
@@ -75683,7 +77035,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "985c709c-7771-4de3-9024-7bda29ebe3f9"
+    "mbid": "985c709c-7771-4de3-9024-7bda29ebe3f9",
+    "genres": [
+      "jazz",
+      "female vocalists",
+      "blues",
+      "singer-songwriter",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 3013758,
+      "playcount": 104018368
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6b1cf17dca8178a7e25e00149080dd7b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:10:02.634Z"
   },
   {
     "name": "Norazia",
@@ -75691,7 +77056,20 @@
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "d9342d34-9c57-49e5-a147-343394d09d88",
-    "autoTriedAt": "2026-07-11T11:40:38.117Z"
+    "autoTriedAt": "2026-07-11T11:40:38.117Z",
+    "genres": [
+      "french",
+      "pop",
+      "vocal",
+      "electronic",
+      "paris"
+    ],
+    "popularity": {
+      "listeners": 149,
+      "playcount": 1189
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4e5f37ba35de12291ebad9bf299599e0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:10:03.331Z"
   },
   {
     "name": "Norazo",
@@ -75707,14 +77085,33 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "3ae31133-5f36-43a2-a3cd-cec2c0c5d092"
+    "mbid": "3ae31133-5f36-43a2-a3cd-cec2c0c5d092",
+    "genres": [
+      "k-pop",
+      "Korean",
+      "Trot",
+      "male vocalists",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 3426,
+      "playcount": 110426
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8a47842e40297289cec69551388ace93/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:10:04.191Z"
   },
   {
     "name": "Norbert Brainin",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbid": "18666cca-2c37-4371-ae98-700d8a01d0ab",
-    "autoTriedAt": "2026-07-11T11:40:40.645Z"
+    "autoTriedAt": "2026-07-11T11:40:40.645Z",
+    "popularity": {
+      "listeners": 77,
+      "playcount": 338
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/80ba254d80e134929a3c88afca13347d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:10:05.745Z"
   },
   {
     "name": "Norbert Burgmüller",
@@ -75730,7 +77127,17 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:40:43.618Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Classical",
+      "romantic period"
+    ],
+    "popularity": {
+      "listeners": 468,
+      "playcount": 3540
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d30bac06a4f12f07e183acd062a67de9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:10:06.422Z"
   },
   {
     "name": "Norbert Kraft",
@@ -75746,7 +77153,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:40:46.110Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Classical",
+      "guitar",
+      "classical guitar",
+      "All",
+      "spotify"
+    ],
+    "popularity": {
+      "listeners": 22628,
+      "playcount": 192830
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f5d4ce617545ffbf4fb471b27e64611f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:10:07.046Z"
   },
   {
     "name": "Norbert Krief",
@@ -75762,7 +77182,12 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e6dd7089-2606-496f-995b-4c434a330797"
+    "mbid": "e6dd7089-2606-496f-995b-4c434a330797",
+    "popularity": {
+      "listeners": 44,
+      "playcount": 444
+    },
+    "metaEnrichedAt": "2026-07-11T21:10:07.679Z"
   },
   {
     "name": "Norbert Leo Butz",
@@ -75778,14 +77203,33 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:40:48.815Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Broadway",
+      "musical theater",
+      "musicals",
+      "showtunes",
+      "Wicked"
+    ],
+    "popularity": {
+      "listeners": 67842,
+      "playcount": 587799
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3df2cabe7f3dae7f1110694ac5a343e1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:10:08.538Z"
   },
   {
     "name": "Norbert Wissing",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:40:50.060Z"
+    "autoTriedAt": "2026-07-11T11:40:50.060Z",
+    "popularity": {
+      "listeners": 15,
+      "playcount": 66
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/238597bae7a615c80f85e29af3fa340c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:10:09.191Z"
   },
   {
     "name": "Nordafrost",
@@ -75801,7 +77245,19 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "42231992-58de-4bce-8cb5-ec9baeeef5b5"
+    "mbid": "42231992-58de-4bce-8cb5-ec9baeeef5b5",
+    "genres": [
+      "black metal",
+      "german",
+      "German Black Metal",
+      "death metal",
+      "pagan black metal"
+    ],
+    "popularity": {
+      "listeners": 2290,
+      "playcount": 42451
+    },
+    "metaEnrichedAt": "2026-07-11T21:10:09.878Z"
   },
   {
     "name": "Nordvargr",
@@ -75817,7 +77273,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5ab93447-6cda-4d78-b21b-0a8abd2940ad"
+    "mbid": "5ab93447-6cda-4d78-b21b-0a8abd2940ad",
+    "genres": [
+      "dark ambient",
+      "industrial",
+      "ambient",
+      "black ambient",
+      "swedish"
+    ],
+    "popularity": {
+      "listeners": 23230,
+      "playcount": 483265
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a19a80ed207262fcffc2e445d89fe338/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:10:10.645Z"
   },
   {
     "name": "Norihiko Hibino",
@@ -75833,7 +77302,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "fceb79b8-0518-4d5a-a166-1fcade1cb622"
+    "mbid": "fceb79b8-0518-4d5a-a166-1fcade1cb622",
+    "genres": [
+      "video game music",
+      "Soundtrack",
+      "instrumental",
+      "japanese",
+      "electronic"
+    ],
+    "popularity": {
+      "listeners": 63649,
+      "playcount": 663799
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a35e3bf077225eadf8436cc7e85c8dd9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:10:11.266Z"
   },
   {
     "name": "Noriko Hidaka",
@@ -75849,14 +77331,40 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7628d3ba-d8a7-4132-93d3-4baaeeedbcc6"
+    "mbid": "7628d3ba-d8a7-4132-93d3-4baaeeedbcc6",
+    "genres": [
+      "anime",
+      "japanese",
+      "Soundtrack",
+      "j-pop",
+      "japan"
+    ],
+    "popularity": {
+      "listeners": 2126,
+      "playcount": 17921
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d7a65ed24f5caa2b37afc9ce61949964/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:10:11.952Z"
   },
   {
     "name": "Noriko Matsueda",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbid": "53d04451-2c65-4480-9bb9-f4090249e715",
-    "autoTriedAt": "2026-07-11T11:40:51.280Z"
+    "autoTriedAt": "2026-07-11T11:40:51.280Z",
+    "genres": [
+      "video game music",
+      "Soundtrack",
+      "japanese",
+      "instrumental",
+      "composer"
+    ],
+    "popularity": {
+      "listeners": 22277,
+      "playcount": 170826
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:10:12.620Z"
   },
   {
     "name": "Noriyuki Asakura",
@@ -75872,7 +77380,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6bd5a27a-7278-4ec3-8846-1ae2d43297e6"
+    "mbid": "6bd5a27a-7278-4ec3-8846-1ae2d43297e6",
+    "genres": [
+      "japanese",
+      "Soundtrack",
+      "anime",
+      "instrumental",
+      "composer"
+    ],
+    "popularity": {
+      "listeners": 11384,
+      "playcount": 944380
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ed0ecc386d6aab411fa73280b5251b7f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:10:13.278Z"
   },
   {
     "name": "Noriyuki Iwadare",
@@ -75888,7 +77409,20 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "fdb625a6-3c32-4260-9e1e-0dd382c535fc"
+    "mbid": "fdb625a6-3c32-4260-9e1e-0dd382c535fc",
+    "genres": [
+      "video game music",
+      "Soundtrack",
+      "japanese",
+      "jazz",
+      "composer"
+    ],
+    "popularity": {
+      "listeners": 54608,
+      "playcount": 2654063
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:10:13.941Z"
   },
   {
     "name": "Noriyuki Makihara",
@@ -75904,14 +77438,28 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "18fba8c3-76b4-42b3-b630-931166d91e1b"
+    "mbid": "18fba8c3-76b4-42b3-b630-931166d91e1b",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "male vocalists",
+      "pop",
+      "singer-songwriter"
+    ],
+    "popularity": {
+      "listeners": 43199,
+      "playcount": 2946917
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a21e735a64b779cf306b2f8307afa448/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:10:14.546Z"
   },
   {
     "name": "Norm Chow",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:37.971Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:40:52.523Z"
+    "autoTriedAt": "2026-07-11T11:40:52.523Z",
+    "metaTriedAt": "2026-07-11T21:10:15.260Z"
   },
   {
     "name": "Norm Hacking",
@@ -75927,7 +77475,13 @@
     },
     "enrichedAt": "2026-07-07T07:20:37.971Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 35,
+      "playcount": 86
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:10:15.957Z"
   },
   {
     "name": "Norm Lewis",
@@ -75943,21 +77497,52 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:40:55.054Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Broadway",
+      "Musical theatre",
+      "male vocalists",
+      "USA",
+      "under 2000 listeners"
+    ],
+    "popularity": {
+      "listeners": 5334,
+      "playcount": 31504
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c18985a34504d7c0393f92053bcce7bf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:10:16.796Z"
   },
   {
     "name": "Norma Beecroft",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:59.526Z",
     "mbid": "d5199c05-b2f8-4828-84b0-ced080a0d0da",
-    "autoTriedAt": "2026-07-11T11:40:57.583Z"
+    "autoTriedAt": "2026-07-11T11:40:57.583Z",
+    "genres": [
+      "contemporary classical",
+      "Canadian",
+      "canada",
+      "Classical",
+      "Avant-Garde"
+    ],
+    "popularity": {
+      "listeners": 103,
+      "playcount": 542
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:10:17.513Z"
   },
   {
     "name": "Norma Fisher",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:59.526Z",
     "mbid": "6f1333de-4751-4fc1-829a-3b04ab3d6b89",
-    "autoTriedAt": "2026-07-11T11:41:00.093Z"
+    "autoTriedAt": "2026-07-11T11:41:00.093Z",
+    "popularity": {
+      "listeners": 21,
+      "playcount": 63
+    },
+    "metaEnrichedAt": "2026-07-11T21:10:18.197Z"
   },
   {
     "name": "Norma Jean",
@@ -75974,21 +77559,48 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T11:41:02.628Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "metalcore",
+      "hardcore",
+      "mathcore",
+      "christian",
+      "chaotic hardcore"
+    ],
+    "popularity": {
+      "listeners": 458568,
+      "playcount": 20500937
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0a9dadb95723d42e93162b91adf44fb2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:10:18.809Z"
   },
   {
     "name": "Norma Terris",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:59.526Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:41:03.864Z"
+    "autoTriedAt": "2026-07-11T11:41:03.864Z",
+    "metaTriedAt": "2026-07-11T21:10:19.398Z"
   },
   {
     "name": "Norma Waterson",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:59.526Z",
     "mbid": "ffe1207b-e6ea-40d3-a16b-20de2c012216",
-    "autoTriedAt": "2026-07-11T11:41:06.415Z"
+    "autoTriedAt": "2026-07-11T11:41:06.415Z",
+    "genres": [
+      "folk",
+      "female vocalists",
+      "british folk",
+      "english folk",
+      "english"
+    ],
+    "popularity": {
+      "listeners": 14058,
+      "playcount": 99597
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/44d8ca10e53fd005d04a21c89137f28f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:10:20.219Z"
   },
   {
     "name": "Norma Winstone",
@@ -76004,14 +77616,28 @@
     },
     "enrichedAt": "2026-07-07T07:20:59.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "07887e6c-c4b8-4ef6-8787-6f5261757a8b"
+    "mbid": "07887e6c-c4b8-4ef6-8787-6f5261757a8b",
+    "genres": [
+      "jazz",
+      "vocal jazz",
+      "female vocalists",
+      "piano",
+      "contemporary jazz"
+    ],
+    "popularity": {
+      "listeners": 11917,
+      "playcount": 102792
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a1794e6d0571dcdb8193f6a8e8e6a6ba/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:10:21.145Z"
   },
   {
     "name": "Norman Bay",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:20:59.526Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T11:41:07.668Z"
+    "autoTriedAt": "2026-07-11T11:41:07.668Z",
+    "metaTriedAt": "2026-07-11T21:10:21.859Z"
   },
   {
     "name": "Norman Beaker",
@@ -76027,7 +77653,18 @@
     },
     "enrichedAt": "2026-07-07T07:20:59.526Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "58c41394-12b9-4799-b516-a0f1ed4447a1"
+    "mbid": "58c41394-12b9-4799-b516-a0f1ed4447a1",
+    "genres": [
+      "blues rock",
+      "blues",
+      "gramusels bluesrock"
+    ],
+    "popularity": {
+      "listeners": 116,
+      "playcount": 1400
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/736462bc670d2cc37fd1c56acbc8c79c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:10:22.561Z"
   },
   {
     "name": "Norman Bedard",
