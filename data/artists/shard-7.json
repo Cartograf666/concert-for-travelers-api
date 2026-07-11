@@ -11107,7 +11107,8 @@
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:31.724Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:18:45.202Z"
+    "autoTriedAt": "2026-07-11T12:18:45.202Z",
+    "metaTriedAt": "2026-07-11T21:30:39.151Z"
   },
   {
     "name": "General Public",
@@ -11123,7 +11124,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:18:47.895Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "new wave",
+      "80s",
+      "ska",
+      "pop",
+      "british"
+    ],
+    "popularity": {
+      "listeners": 149559,
+      "playcount": 974937
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6fbe91f70a1b54ff16d2af46f39d6e65/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:30:39.740Z"
   },
   {
     "name": "General Rudie",
@@ -11139,7 +11153,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:31.724Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e6fef208-a2f1-4d62-a9ea-4382556f3169"
+    "mbid": "e6fef208-a2f1-4d62-a9ea-4382556f3169",
+    "genres": [
+      "ska",
+      "reggae",
+      "traditional ska",
+      "Canadian",
+      "trad ska"
+    ],
+    "popularity": {
+      "listeners": 4599,
+      "playcount": 58196
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/35361d4254b413b006978a4b2ff84afc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:30:40.425Z"
   },
   {
     "name": "General Surgery",
@@ -11155,21 +11182,60 @@
     },
     "enrichedAt": "2026-07-07T07:12:31.724Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "acc71360-3448-4df1-8a93-f247dfe089fd"
+    "mbid": "acc71360-3448-4df1-8a93-f247dfe089fd",
+    "genres": [
+      "grindcore",
+      "goregrind",
+      "death metal",
+      "Brutal Death Metal",
+      "swedish"
+    ],
+    "popularity": {
+      "listeners": 46803,
+      "playcount": 1055604
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/275d21bdf1eacfec97f50717f65c5bbd/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:30:41.073Z"
   },
   {
     "name": "General Trees",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:31.724Z",
     "mbid": "f82c70ce-4ad4-451e-9be8-162b437e178b",
-    "autoTriedAt": "2026-07-11T12:18:50.397Z"
+    "autoTriedAt": "2026-07-11T12:18:50.397Z",
+    "genres": [
+      "reggae",
+      "dancehall",
+      "jamaican",
+      "ragga",
+      "dancehall reggae"
+    ],
+    "popularity": {
+      "listeners": 4344,
+      "playcount": 24324
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/11150a7962abe1dd1fae6f3a4e7fc14a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:30:41.735Z"
   },
   {
     "name": "General Woo",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:31.724Z",
     "mbid": "3852e64e-b808-4e49-8868-d3619c2ce214",
-    "autoTriedAt": "2026-07-11T12:18:52.909Z"
+    "autoTriedAt": "2026-07-11T12:18:52.909Z",
+    "genres": [
+      "rap",
+      "Hip-Hop",
+      "hudba z dola",
+      "political",
+      "All"
+    ],
+    "popularity": {
+      "listeners": 3660,
+      "playcount": 95297
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/34b312712dc7e8eea0a53f3aaac25528/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:30:42.424Z"
   },
   {
     "name": "Generation X",
@@ -11186,7 +11252,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:18:55.572Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "punk",
+      "punk rock",
+      "new wave",
+      "british",
+      "British Punk"
+    ],
+    "popularity": {
+      "listeners": 532345,
+      "playcount": 3581210
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/41888469487dd526f9e8cfb0ff5b0984/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:30:43.008Z"
   },
   {
     "name": "Generationals",
@@ -11202,7 +11281,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:31.724Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "11f34bce-298f-4527-a5eb-28cafee71c4f"
+    "mbid": "11f34bce-298f-4527-a5eb-28cafee71c4f",
+    "genres": [
+      "indie",
+      "indie pop",
+      "indie rock",
+      "jangle pop",
+      "New Orleans"
+    ],
+    "popularity": {
+      "listeners": 576233,
+      "playcount": 7301420
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/eebf362cf03c25f5b2cedcc77b03a9b0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:30:43.736Z"
   },
   {
     "name": "Generations from Exile Tribe",
@@ -11218,7 +11310,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:31.724Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d7da9970-ac90-4d99-8328-b299a63fd24c"
+    "mbid": "d7da9970-ac90-4d99-8328-b299a63fd24c",
+    "genres": [
+      "japanese",
+      "j-pop",
+      "boyband",
+      "pop",
+      "exile tribe"
+    ],
+    "popularity": {
+      "listeners": 61111,
+      "playcount": 1169686
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9f8a81ab0aa20872a989a4b8974fd802/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:30:44.423Z"
   },
   {
     "name": "Genesis",
@@ -11235,7 +11340,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:18:58.305Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Progressive rock",
+      "classic rock",
+      "rock",
+      "80s",
+      "Progressive"
+    ],
+    "popularity": {
+      "listeners": 2092213,
+      "playcount": 71896646
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c0ed2cf09c7bf072111d614fc4557b66/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:30:45.098Z"
   },
   {
     "name": "Genetic Control",
@@ -11251,7 +11369,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:31.724Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f5a2e4a5-9a79-4580-a1d9-b294bc6e6813"
+    "mbid": "f5a2e4a5-9a79-4580-a1d9-b294bc6e6813",
+    "genres": [
+      "hardcore punk",
+      "hardcore",
+      "canada",
+      "80s",
+      "Canadian"
+    ],
+    "popularity": {
+      "listeners": 2201,
+      "playcount": 16945
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/50b4a1eafbbf270c74f6592280e596ab/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:30:45.765Z"
   },
   {
     "name": "Geneva",
@@ -11268,21 +11399,36 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:19:00.840Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "britpop",
+      "indie",
+      "post-hardcore",
+      "alternative",
+      "Post-Metal"
+    ],
+    "popularity": {
+      "listeners": 73820,
+      "playcount": 518920
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d41d8cd98f00b204e9800998ecf8427e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:30:46.484Z"
   },
   {
     "name": "Geneva Conservatory",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:31.724Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:19:02.075Z"
+    "autoTriedAt": "2026-07-11T12:19:02.075Z",
+    "metaTriedAt": "2026-07-11T21:30:47.093Z"
   },
   {
     "name": "Geneviève Joy-Dutilleux",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:31.724Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:19:03.338Z"
+    "autoTriedAt": "2026-07-11T12:19:03.338Z",
+    "metaTriedAt": "2026-07-11T21:30:47.739Z"
   },
   {
     "name": "Genevieve Nnaji",
@@ -11298,7 +11444,12 @@
     },
     "enrichedAt": "2026-07-07T07:12:31.724Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 7,
+      "playcount": 25
+    },
+    "metaEnrichedAt": "2026-07-11T21:30:48.370Z"
   },
   {
     "name": "Genghis Tron",
@@ -11314,14 +11465,32 @@
     },
     "enrichedAt": "2026-07-07T07:12:31.724Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "42d79b6b-2cfe-43f4-b5d9-239503074153"
+    "mbid": "42d79b6b-2cfe-43f4-b5d9-239503074153",
+    "genres": [
+      "cybergrind",
+      "grindcore",
+      "experimental",
+      "mathcore",
+      "electronic"
+    ],
+    "popularity": {
+      "listeners": 129890,
+      "playcount": 4385904
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e41551a473c86e6f4f3c4f3ec54ea839/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:30:49.013Z"
   },
   {
     "name": "Genia Tou Chaous",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:31.724Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:19:04.579Z"
+    "autoTriedAt": "2026-07-11T12:19:04.579Z",
+    "popularity": {
+      "listeners": 18,
+      "playcount": 192
+    },
+    "metaEnrichedAt": "2026-07-11T21:30:49.655Z"
   },
   {
     "name": "Genie Chuo",
@@ -11337,7 +11506,19 @@
     },
     "enrichedAt": "2026-07-07T07:12:31.724Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f36977c6-1c24-4e67-abba-3aff9f62bc80"
+    "mbid": "f36977c6-1c24-4e67-abba-3aff9f62bc80",
+    "genres": [
+      "taiwanese",
+      "sexy",
+      "chink",
+      "mandarin"
+    ],
+    "popularity": {
+      "listeners": 348,
+      "playcount": 8252
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/35413536ed0995021b6e2c8a1e408991/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:30:50.367Z"
   },
   {
     "name": "Genitorturers",
@@ -11353,14 +11534,32 @@
     },
     "enrichedAt": "2026-07-07T07:12:31.724Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d29fc72c-0148-49ef-906b-1f4a58ecde25"
+    "mbid": "d29fc72c-0148-49ef-906b-1f4a58ecde25",
+    "genres": [
+      "industrial metal",
+      "industrial",
+      "female vocalists",
+      "metal",
+      "Gothic"
+    ],
+    "popularity": {
+      "listeners": 242632,
+      "playcount": 5093222
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/02200c3d82be83d38799fcb1e167b62f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:30:50.946Z"
   },
   {
     "name": "Genius of Love",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:31.724Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:19:05.811Z"
+    "autoTriedAt": "2026-07-11T12:19:05.811Z",
+    "popularity": {
+      "listeners": 305,
+      "playcount": 741
+    },
+    "metaEnrichedAt": "2026-07-11T21:30:51.604Z"
   },
   {
     "name": "Genkaku Allergy",
@@ -11376,14 +11575,35 @@
     },
     "enrichedAt": "2026-07-07T07:12:31.724Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e5b56916-be2d-451c-9471-e2d0480be62d"
+    "mbid": "e5b56916-be2d-451c-9471-e2d0480be62d",
+    "genres": [
+      "visual kei",
+      "J-rock",
+      "Japanese pop",
+      "1991",
+      "kurafu kei"
+    ],
+    "popularity": {
+      "listeners": 532,
+      "playcount": 25573
+    },
+    "metaEnrichedAt": "2026-07-11T21:30:52.331Z"
   },
   {
     "name": "Gennaro Astarita",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:31.724Z",
     "mbid": "fc391efd-6021-44b7-9605-b9147d6719f6",
-    "autoTriedAt": "2026-07-11T12:19:08.294Z"
+    "autoTriedAt": "2026-07-11T12:19:08.294Z",
+    "genres": [
+      "italian",
+      "18th century"
+    ],
+    "popularity": {
+      "listeners": 3,
+      "playcount": 23
+    },
+    "metaEnrichedAt": "2026-07-11T21:30:53.028Z"
   },
   {
     "name": "Gennaro Manna",
@@ -11400,14 +11620,36 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:19:10.941Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Galante",
+      "opera",
+      "italian",
+      "18th century",
+      "galant"
+    ],
+    "popularity": {
+      "listeners": 693,
+      "playcount": 4246
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:30:53.698Z"
   },
   {
     "name": "Gennaro Ursino",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:31.724Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:19:12.662Z"
+    "autoTriedAt": "2026-07-11T12:19:12.662Z",
+    "genres": [
+      "italian",
+      "18th century"
+    ],
+    "popularity": {
+      "listeners": 1,
+      "playcount": 19
+    },
+    "metaEnrichedAt": "2026-07-11T21:30:54.340Z"
   },
   {
     "name": "Genocide Organ",
@@ -11423,14 +11665,40 @@
     },
     "enrichedAt": "2026-07-07T07:12:31.724Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "81fee804-8c9a-4bd3-8410-4b4b94927d9f"
+    "mbid": "81fee804-8c9a-4bd3-8410-4b4b94927d9f",
+    "genres": [
+      "power electronics",
+      "noise",
+      "industrial",
+      "death industrial",
+      "german"
+    ],
+    "popularity": {
+      "listeners": 49225,
+      "playcount": 1547826
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5558f96a1a785427a66b2e3bc9297bd2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:30:54.954Z"
   },
   {
     "name": "Genocide Superstars",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:31.724Z",
     "mbid": "299cc043-2caf-46ff-8707-f1eef6b0e8b9",
-    "autoTriedAt": "2026-07-11T12:19:15.245Z"
+    "autoTriedAt": "2026-07-11T12:19:15.245Z",
+    "genres": [
+      "Crust",
+      "d-beat",
+      "hardcore",
+      "punk",
+      "swedish"
+    ],
+    "popularity": {
+      "listeners": 14935,
+      "playcount": 387042
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/dcddea4e84d3ecb2a28b2fc55b51b74f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:30:56.206Z"
   },
   {
     "name": "Gente de Zona",
@@ -11446,7 +11714,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:31.724Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "35e53195-f6e1-40bc-a3ae-62b1900ee199"
+    "mbid": "35e53195-f6e1-40bc-a3ae-62b1900ee199",
+    "genres": [
+      "Reggaeton",
+      "cubaton",
+      "cuba",
+      "cuban",
+      "All"
+    ],
+    "popularity": {
+      "listeners": 298683,
+      "playcount": 2582031
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/dca2c5862fc003db54bc3943d1a3750a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:30:56.915Z"
   },
   {
     "name": "Genticorum",
@@ -11462,21 +11743,51 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:19:17.734Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "folk",
+      "Canadian",
+      "celtic",
+      "québec",
+      "spotify"
+    ],
+    "popularity": {
+      "listeners": 3342,
+      "playcount": 55833
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5e822356cb41e651250899ee90c45957/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:30:57.563Z"
   },
   {
     "name": "Gentil Montaña",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:31.724Z",
     "mbid": "e3d2df90-f5b1-4f8d-8881-2f924eec0a2b",
-    "autoTriedAt": "2026-07-11T12:19:20.319Z"
+    "autoTriedAt": "2026-07-11T12:19:20.319Z",
+    "genres": [
+      "Colombia",
+      "Classical",
+      "Guitare",
+      "guitarra",
+      "ibague"
+    ],
+    "popularity": {
+      "listeners": 5010,
+      "playcount": 19363
+    },
+    "metaEnrichedAt": "2026-07-11T21:30:58.221Z"
   },
   {
     "name": "Gentilly",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:19:21.536Z"
+    "autoTriedAt": "2026-07-11T12:19:21.536Z",
+    "popularity": {
+      "listeners": 6,
+      "playcount": 44
+    },
+    "metaEnrichedAt": "2026-07-11T21:30:59.011Z"
   },
   {
     "name": "Gentle Giant",
@@ -11493,14 +11804,40 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:19:24.188Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Progressive rock",
+      "art rock",
+      "rock",
+      "classic rock",
+      "Progressive"
+    ],
+    "popularity": {
+      "listeners": 435662,
+      "playcount": 10418894
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/af1ac3c55689251678a151f545b1569e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:30:59.587Z"
   },
   {
     "name": "Gentle Thunder",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:19:25.425Z"
+    "autoTriedAt": "2026-07-11T12:19:25.425Z",
+    "genres": [
+      "new age",
+      "flute",
+      "world",
+      "ambient",
+      "underrated"
+    ],
+    "popularity": {
+      "listeners": 2734,
+      "playcount": 19240
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:00.244Z"
   },
   {
     "name": "Gentleman",
@@ -11517,7 +11854,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:19:27.967Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "reggae",
+      "dancehall",
+      "german",
+      "ragga",
+      "german reggae"
+    ],
+    "popularity": {
+      "listeners": 653597,
+      "playcount": 16114146
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/74eb85bdc66cea34253169d3c7a690f7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:00.886Z"
   },
   {
     "name": "Gentleman Reg",
@@ -11533,7 +11883,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:33.523Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "adb6efd7-a812-46b8-aca0-5862f20f00a1"
+    "mbid": "adb6efd7-a812-46b8-aca0-5862f20f00a1",
+    "genres": [
+      "Canadian",
+      "singer-songwriter",
+      "indie",
+      "indie rock",
+      "toronto"
+    ],
+    "popularity": {
+      "listeners": 39174,
+      "playcount": 318805
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c2de88e2d1bcd893a2188497e85aa3bd/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:01.651Z"
   },
   {
     "name": "Gentleman's Dub Club",
@@ -11549,7 +11912,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:33.523Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "71333d03-2241-46ea-83c5-bd7a4cb2f913"
+    "mbid": "71333d03-2241-46ea-83c5-bd7a4cb2f913",
+    "genres": [
+      "dub",
+      "reggae",
+      "ska",
+      "Grime",
+      "Hip-Hop"
+    ],
+    "popularity": {
+      "listeners": 49172,
+      "playcount": 634243
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a47d30044b69628e32b32132466c46d5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:02.264Z"
   },
   {
     "name": "Gentlemen Hall",
@@ -11565,7 +11941,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:33.523Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "daa84735-cd27-46c7-a45e-21224ec07590"
+    "mbid": "daa84735-cd27-46c7-a45e-21224ec07590",
+    "genres": [
+      "indie pop",
+      "indie",
+      "electronic",
+      "alternative",
+      "indie rock"
+    ],
+    "popularity": {
+      "listeners": 77494,
+      "playcount": 322074
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5ad54f46936ec53a42057072ecf6ba76/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:02.850Z"
   },
   {
     "name": "Genya Ravan",
@@ -11581,7 +11970,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:33.523Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "9fbf0ccc-6b7e-41d2-892b-c5a6b5010bb2"
+    "mbid": "9fbf0ccc-6b7e-41d2-892b-c5a6b5010bb2",
+    "genres": [
+      "classic rock",
+      "Garage Rock",
+      "female vocalists",
+      "harmony",
+      "power-prog"
+    ],
+    "popularity": {
+      "listeners": 9479,
+      "playcount": 46450
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b127d3265aa4b45e5038169eaa3c47e8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:03.491Z"
   },
   {
     "name": "Geoff Barrow",
@@ -11597,7 +11999,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:33.523Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5082a11f-7203-4ff3-ae04-2a0150d3bbb6"
+    "mbid": "5082a11f-7203-4ff3-ae04-2a0150d3bbb6",
+    "genres": [
+      "electronic",
+      "Hip-Hop",
+      "Soundtrack",
+      "electronica",
+      "electro"
+    ],
+    "popularity": {
+      "listeners": 6251,
+      "playcount": 72712
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/963062cacd92b4756ba62ecffde46ca0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:04.103Z"
   },
   {
     "name": "Geoff Bartley",
@@ -11613,7 +12028,16 @@
     },
     "enrichedAt": "2026-07-07T07:12:33.523Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "61bac00f-d485-491d-af0f-3cbbddf9d936"
+    "mbid": "61bac00f-d485-491d-af0f-3cbbddf9d936",
+    "genres": [
+      "folk"
+    ],
+    "popularity": {
+      "listeners": 456,
+      "playcount": 2259
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/53b8aa479628efc1ed460ea20ecc1e2f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:04.884Z"
   },
   {
     "name": "Geoff Barton",
@@ -11621,7 +12045,12 @@
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "7fbb2246-6c1e-4b75-9e07-bf04327f6a32",
-    "autoTriedAt": "2026-07-11T12:19:30.469Z"
+    "autoTriedAt": "2026-07-11T12:19:30.469Z",
+    "popularity": {
+      "listeners": 67,
+      "playcount": 355
+    },
+    "metaEnrichedAt": "2026-07-11T21:31:05.599Z"
   },
   {
     "name": "Geoff Berner",
@@ -11637,7 +12066,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:33.523Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "22f2ab90-3640-435f-aa23-efb560a637a4"
+    "mbid": "22f2ab90-3640-435f-aa23-efb560a637a4",
+    "genres": [
+      "klezmer",
+      "accordion",
+      "folk",
+      "Canadian",
+      "punk"
+    ],
+    "popularity": {
+      "listeners": 13708,
+      "playcount": 191574
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5670821b8e0ef887052591e2caf79206/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:06.456Z"
   },
   {
     "name": "Geoff Bradford",
@@ -11654,7 +12096,17 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:19:33.470Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "British Blues",
+      "blues",
+      "acoustic blues"
+    ],
+    "popularity": {
+      "listeners": 333,
+      "playcount": 1666
+    },
+    "metaEnrichedAt": "2026-07-11T21:31:07.156Z"
   },
   {
     "name": "Geoff Collinson",
@@ -11662,7 +12114,8 @@
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "3ec6611e-0484-4560-abef-86033f6d4a57",
-    "autoTriedAt": "2026-07-11T12:19:35.962Z"
+    "autoTriedAt": "2026-07-11T12:19:35.962Z",
+    "metaTriedAt": "2026-07-11T21:31:07.788Z"
   },
   {
     "name": "Geoff Downes",
@@ -11679,7 +12132,18 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:19:38.507Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Progressive rock",
+      "Yes related",
+      "under 2000 listeners"
+    ],
+    "popularity": {
+      "listeners": 2480,
+      "playcount": 10596
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/75b84498607e91f27f3ab896fb54ea53/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:08.461Z"
   },
   {
     "name": "Geoff Eales",
@@ -11695,7 +12159,17 @@
     },
     "enrichedAt": "2026-07-07T07:12:33.523Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5bbb2014-a9ba-4a90-ba42-7eb5bc3d139e"
+    "mbid": "5bbb2014-a9ba-4a90-ba42-7eb5bc3d139e",
+    "genres": [
+      "piano",
+      "jazz"
+    ],
+    "popularity": {
+      "listeners": 462,
+      "playcount": 4158
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4ec036895c0eb8a0918d2f3bc521dbf8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:09.160Z"
   },
   {
     "name": "Geoff Keezer",
@@ -11711,7 +12185,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:33.523Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5b098a4b-6a89-4667-b85e-45826817c7f2"
+    "mbid": "5b098a4b-6a89-4667-b85e-45826817c7f2",
+    "genres": [
+      "jazz",
+      "piano",
+      "jazz piano",
+      "All",
+      "spotify"
+    ],
+    "popularity": {
+      "listeners": 3255,
+      "playcount": 17199
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/efed754485b2345481f11c71f9e764de/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:09.856Z"
   },
   {
     "name": "Geoff Kresge",
@@ -11727,7 +12214,9 @@
     },
     "enrichedAt": "2026-07-07T07:12:33.523Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f108fd23-2a30-48dc-b9fa-07229107f1f2"
+    "mbid": "f108fd23-2a30-48dc-b9fa-07229107f1f2",
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:10.625Z"
   },
   {
     "name": "Geoff Leigh",
@@ -11735,7 +12224,16 @@
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "2a850ab7-fdba-4b2c-b69d-b89d3f09f65a",
-    "autoTriedAt": "2026-07-11T12:19:41.063Z"
+    "autoTriedAt": "2026-07-11T12:19:41.063Z",
+    "genres": [
+      "11"
+    ],
+    "popularity": {
+      "listeners": 379,
+      "playcount": 2538
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e322a13d20b0ba6e616dbb93b7752712/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:11.240Z"
   },
   {
     "name": "Geoff Love",
@@ -11752,7 +12250,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:19:43.601Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "easy listening",
+      "instrumental",
+      "geoff love",
+      "UK",
+      "england"
+    ],
+    "popularity": {
+      "listeners": 9725,
+      "playcount": 53279
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f20a00c5ef65aa4d243bc4238b8189c7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:11.988Z"
   },
   {
     "name": "Geoff Muldaur",
@@ -11768,7 +12279,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:19:46.210Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "blues",
+      "folk",
+      "rock",
+      "guitar",
+      "blues rock"
+    ],
+    "popularity": {
+      "listeners": 8241,
+      "playcount": 51392
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ffa320eaf44a47c7af2ffbcfd8b1d1f1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:12.819Z"
   },
   {
     "name": "Geoff Rickly",
@@ -11784,7 +12308,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:33.523Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "132f1d42-4567-4dca-b6e1-3765726f91dc"
+    "mbid": "132f1d42-4567-4dca-b6e1-3765726f91dc",
+    "genres": [
+      "singer-songwriter",
+      "folk",
+      "alternative",
+      "experimental",
+      "dream pop"
+    ],
+    "popularity": {
+      "listeners": 1689,
+      "playcount": 34310
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/28febd1726195cc495e8e0d8413b8be2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:13.976Z"
   },
   {
     "name": "Geoff Smith",
@@ -11801,7 +12338,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:19:48.763Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "singer-songwriter",
+      "lounge",
+      "contemporary classical",
+      "geek",
+      "podsafe music network"
+    ],
+    "popularity": {
+      "listeners": 3527,
+      "playcount": 44254
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c82bbb529b9c434270a1e81dd355ccf9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:14.693Z"
   },
   {
     "name": "Geoff Stradling",
@@ -11818,7 +12368,18 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:19:51.257Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "contemporary classical",
+      "jazz",
+      "film scores"
+    ],
+    "popularity": {
+      "listeners": 102,
+      "playcount": 303
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5e3cf1be2d4fd26adbb0d6a20130da7e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:15.431Z"
   },
   {
     "name": "Geoff Tate",
@@ -11834,21 +12395,44 @@
     },
     "enrichedAt": "2026-07-07T07:12:33.523Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8382718b-c4e2-4200-8667-5b845b5da6ac"
+    "mbid": "8382718b-c4e2-4200-8667-5b845b5da6ac",
+    "genres": [
+      "Progressive rock",
+      "Progressive metal",
+      "rock",
+      "hard rock",
+      "singer-songwriter"
+    ],
+    "popularity": {
+      "listeners": 16253,
+      "playcount": 162114
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7d863afc070d2d3822080396bb20a285/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:16.175Z"
   },
   {
     "name": "Geoffrey Alvarez",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:19:52.481Z"
+    "autoTriedAt": "2026-07-11T12:19:52.481Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 2
+    },
+    "metaEnrichedAt": "2026-07-11T21:31:16.877Z"
   },
   {
     "name": "Geoffrey Arend",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbid": "27d96e49-c302-411f-ae39-8911b2c8f852",
-    "autoTriedAt": "2026-07-11T12:19:54.975Z"
+    "autoTriedAt": "2026-07-11T12:19:54.975Z",
+    "popularity": {
+      "listeners": 4,
+      "playcount": 41
+    },
+    "metaEnrichedAt": "2026-07-11T21:31:17.617Z"
   },
   {
     "name": "Geoffrey Burgon",
@@ -11864,7 +12448,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:33.523Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "eb55a8d7-1664-409c-9f51-277c59f06d20"
+    "mbid": "eb55a8d7-1664-409c-9f51-277c59f06d20",
+    "genres": [
+      "contemporary classical",
+      "Soundtrack",
+      "composers",
+      "british",
+      "movie score composers"
+    ],
+    "popularity": {
+      "listeners": 26258,
+      "playcount": 160304
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/64503d12a72e6b98e0809e15e6d34219/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:18.281Z"
   },
   {
     "name": "Geoffrey Bush",
@@ -11872,14 +12469,34 @@
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "4ebda682-969d-4dff-b6b7-0176bf74655d",
-    "autoTriedAt": "2026-07-11T12:19:57.513Z"
+    "autoTriedAt": "2026-07-11T12:19:57.513Z",
+    "genres": [
+      "UK",
+      "english",
+      "british",
+      "modern classical"
+    ],
+    "popularity": {
+      "listeners": 1053,
+      "playcount": 4382
+    },
+    "metaEnrichedAt": "2026-07-11T21:31:18.969Z"
   },
   {
     "name": "Geoffrey Chung",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbid": "7c082a81-fb6a-4014-8a1b-d5e6a3168217",
-    "autoTriedAt": "2026-07-11T12:19:59.979Z"
+    "autoTriedAt": "2026-07-11T12:19:59.979Z",
+    "genres": [
+      "reggae"
+    ],
+    "popularity": {
+      "listeners": 1233,
+      "playcount": 2967
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:19.681Z"
   },
   {
     "name": "Geoffrey Douglas Madge",
@@ -11895,7 +12512,17 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:20:02.616Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "piano",
+      "Classical"
+    ],
+    "popularity": {
+      "listeners": 463,
+      "playcount": 4704
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/462373346b4ff7a1f25f3a8372ad17ed/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:20.360Z"
   },
   {
     "name": "Geoffrey Gilbert",
@@ -11912,7 +12539,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:20:05.127Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 3
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9351147b7cf9dcf71d6c5c66cfecb541/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:21.051Z"
   },
   {
     "name": "Geoffrey Gurrumul Yunupingu",
@@ -11928,7 +12561,19 @@
     },
     "enrichedAt": "2026-07-07T07:12:33.523Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "91d4f35d-1bf4-474f-9c96-78201ff2eb40"
+    "mbid": "91d4f35d-1bf4-474f-9c96-78201ff2eb40",
+    "genres": [
+      "folk",
+      "australian",
+      "World Music",
+      "acoustic",
+      "roots"
+    ],
+    "popularity": {
+      "listeners": 19931,
+      "playcount": 255571
+    },
+    "metaEnrichedAt": "2026-07-11T21:31:21.646Z"
   },
   {
     "name": "Geoffrey Kelly",
@@ -11936,7 +12581,13 @@
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "e4baefc8-ba34-42be-9cea-bd875f9f7580",
-    "autoTriedAt": "2026-07-11T12:20:08.225Z"
+    "autoTriedAt": "2026-07-11T12:20:08.225Z",
+    "popularity": {
+      "listeners": 18,
+      "playcount": 167
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f5de3a61936e28b37ce9863bcd752634/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:22.271Z"
   },
   {
     "name": "Geoffrey Lancaster",
@@ -11952,14 +12603,21 @@
     },
     "enrichedAt": "2026-07-07T07:12:33.523Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "64951c6b-0ed0-4b8a-92cd-1de37fe6f3e3"
+    "mbid": "64951c6b-0ed0-4b8a-92cd-1de37fe6f3e3",
+    "popularity": {
+      "listeners": 76,
+      "playcount": 653
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0a5c91a9d35ffc7eb37ee7894284b377/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:23.159Z"
   },
   {
     "name": "Geoffrey Moull",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:20:09.458Z"
+    "autoTriedAt": "2026-07-11T12:20:09.458Z",
+    "metaTriedAt": "2026-07-11T21:31:23.792Z"
   },
   {
     "name": "Geoffrey Oryema",
@@ -11975,7 +12633,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:33.523Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "eb0cd72f-0235-47ec-9d0b-f244a2afc3b7"
+    "mbid": "eb0cd72f-0235-47ec-9d0b-f244a2afc3b7",
+    "genres": [
+      "african",
+      "Uganda",
+      "world",
+      "World Music",
+      "folk"
+    ],
+    "popularity": {
+      "listeners": 102069,
+      "playcount": 804070
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6102e3021be3b815bec4cdb685b71133/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:24.679Z"
   },
   {
     "name": "Geoffrey Simon",
@@ -11991,7 +12662,13 @@
     },
     "enrichedAt": "2026-07-07T07:12:33.523Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7c6a053b-59e7-457e-b499-602bb5c9142f"
+    "mbid": "7c6a053b-59e7-457e-b499-602bb5c9142f",
+    "popularity": {
+      "listeners": 567,
+      "playcount": 4738
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9cccb8f25bb517f5e540af9c4cf7704a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:25.409Z"
   },
   {
     "name": "Geoffrey Tozer",
@@ -12007,7 +12684,18 @@
     },
     "enrichedAt": "2026-07-07T07:12:33.523Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f4c6738b-78c5-4c2d-934d-38324f2c1793"
+    "mbid": "f4c6738b-78c5-4c2d-934d-38324f2c1793",
+    "genres": [
+      "piano",
+      "Classical",
+      "harpsichord"
+    ],
+    "popularity": {
+      "listeners": 440,
+      "playcount": 9470
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d3158daa46f6ed74ab497e466823b6f9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:26.127Z"
   },
   {
     "name": "Geoffrey Williams",
@@ -12024,7 +12712,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:20:12.565Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Neo-Soul",
+      "soul",
+      "90s",
+      "80s",
+      "spotify"
+    ],
+    "popularity": {
+      "listeners": 5920,
+      "playcount": 27144
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/137df3ecf43fc2345f47942d461d6bee/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:26.795Z"
   },
   {
     "name": "Geographer",
@@ -12040,14 +12741,28 @@
     },
     "enrichedAt": "2026-07-07T07:12:33.523Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c1213174-2d79-488d-93fd-1db2ef43da8e"
+    "mbid": "c1213174-2d79-488d-93fd-1db2ef43da8e",
+    "genres": [
+      "indie pop",
+      "electronic",
+      "indie",
+      "indietronica",
+      "cello"
+    ],
+    "popularity": {
+      "listeners": 266517,
+      "playcount": 3692052
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/94e1b99b3032934d6ef221124c91c065/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:27.496Z"
   },
   {
     "name": "Geographers and geologists",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:20:13.787Z"
+    "autoTriedAt": "2026-07-11T12:20:13.787Z",
+    "metaTriedAt": "2026-07-11T21:31:28.111Z"
   },
   {
     "name": "Geolier",
@@ -12063,7 +12778,20 @@
     },
     "mbid": "07455cec-07ae-4e0c-aec5-d74d9ed33cd4",
     "enrichedAt": "2026-07-09T08:32:12.140Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "Hip-Hop",
+      "hip hop",
+      "italian",
+      "trap",
+      "Italy"
+    ],
+    "popularity": {
+      "listeners": 82653,
+      "playcount": 6450519
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/797851c7f80f9e118663e460d4525b36/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:28.786Z"
   },
   {
     "name": "Geologist",
@@ -12079,7 +12807,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:20:16.352Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "electronic",
+      "experimental",
+      "beard",
+      "psychedelic",
+      "Neo-Psychedelia"
+    ],
+    "popularity": {
+      "listeners": 21578,
+      "playcount": 134559
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/772cdf4fc1cc6804ffe53b2001eb8314/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:29.496Z"
   },
   {
     "name": "Geordie",
@@ -12095,35 +12836,64 @@
     },
     "enrichedAt": "2026-07-07T07:12:33.523Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "bb1ecaa0-67c1-447f-b7e2-ad679ea4571a"
+    "mbid": "bb1ecaa0-67c1-447f-b7e2-ad679ea4571a",
+    "genres": [
+      "hard rock",
+      "classic rock",
+      "glam rock",
+      "rock",
+      "rock n roll"
+    ],
+    "popularity": {
+      "listeners": 57978,
+      "playcount": 514147
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/85db25770200463449c4ae81b75ddd52/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:30.259Z"
   },
   {
     "name": "Geordie dialect words",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:20:17.573Z"
+    "autoTriedAt": "2026-07-11T12:20:17.573Z",
+    "metaTriedAt": "2026-07-11T21:31:30.923Z"
   },
   {
     "name": "Geordie Walker",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbid": "f8cec1ac-ade6-46af-96c8-b600b10374eb",
-    "autoTriedAt": "2026-07-11T12:20:20.535Z"
+    "autoTriedAt": "2026-07-11T12:20:20.535Z",
+    "popularity": {
+      "listeners": 20,
+      "playcount": 905
+    },
+    "metaEnrichedAt": "2026-07-11T21:31:32.284Z"
   },
   {
     "name": "Georg Anton Benda",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:20:21.765Z"
+    "autoTriedAt": "2026-07-11T12:20:21.765Z",
+    "popularity": {
+      "listeners": 262,
+      "playcount": 2218
+    },
+    "metaEnrichedAt": "2026-07-11T21:31:32.964Z"
   },
   {
     "name": "Georg Benda",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbid": "2dffa2d9-3b13-420d-b6a7-84ca62763a41",
-    "autoTriedAt": "2026-07-11T12:20:22.985Z"
+    "autoTriedAt": "2026-07-11T12:20:22.985Z",
+    "popularity": {
+      "listeners": 122,
+      "playcount": 843
+    },
+    "metaEnrichedAt": "2026-07-11T21:31:33.672Z"
   },
   {
     "name": "Georg Böhm",
@@ -12140,14 +12910,28 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:20:25.518Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "baroque",
+      "organ",
+      "harpsichord",
+      "german",
+      "composer"
+    ],
+    "popularity": {
+      "listeners": 2655,
+      "playcount": 23480
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b88271a9cf46e4703e4b6bd0db3c6abc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:34.501Z"
   },
   {
     "name": "Georg Carl Bohlmann",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbid": "d75b7531-f33b-4255-a2f9-aebbde0d8c3d",
-    "autoTriedAt": "2026-07-11T12:20:28.058Z"
+    "autoTriedAt": "2026-07-11T12:20:28.058Z",
+    "metaTriedAt": "2026-07-11T21:31:35.150Z"
   },
   {
     "name": "Georg Caspar Schürmann",
@@ -12163,7 +12947,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:20:30.572Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "baroque",
+      "german",
+      "classical period",
+      "18th century",
+      "Galante"
+    ],
+    "popularity": {
+      "listeners": 581,
+      "playcount": 3334
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7aa297528cd56f1575141237287a1bfb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:35.835Z"
   },
   {
     "name": "Georg Christoph Wagenseil",
@@ -12179,7 +12976,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:20:34.042Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "baroque",
+      "Classical",
+      "austrian",
+      "composer",
+      "18th century"
+    ],
+    "popularity": {
+      "listeners": 3672,
+      "playcount": 17275
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/10b17939c4f45418588f48c91b9d97eb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:36.416Z"
   },
   {
     "name": "Georg Danzer",
@@ -12195,28 +13005,67 @@
     },
     "enrichedAt": "2026-07-07T07:12:33.523Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6a65cfbe-d198-4f24-aff0-e0ce1d500863"
+    "mbid": "6a65cfbe-d198-4f24-aff0-e0ce1d500863",
+    "genres": [
+      "liedermacher",
+      "singer-songwriter",
+      "austropop",
+      "austrian",
+      "Austria"
+    ],
+    "popularity": {
+      "listeners": 42750,
+      "playcount": 602621
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/de4f257de8ef913856b9d9ae8d38497d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:37.048Z"
   },
   {
     "name": "Georg Druschetzky",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbid": "04d474a1-bfab-4053-be03-5e3394a595b1",
-    "autoTriedAt": "2026-07-11T12:20:36.559Z"
+    "autoTriedAt": "2026-07-11T12:20:36.559Z",
+    "genres": [
+      "Czech",
+      "18th century",
+      "republica tcheca",
+      "classical period",
+      "lesser known yet streamable composers"
+    ],
+    "popularity": {
+      "listeners": 484,
+      "playcount": 4430
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:37.700Z"
   },
   {
     "name": "Georg Frederik Ferdinand Allen",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:20:37.801Z"
+    "autoTriedAt": "2026-07-11T12:20:37.801Z",
+    "metaTriedAt": "2026-07-11T21:31:38.436Z"
   },
   {
     "name": "Georg Friedrich Haas",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbid": "6373179f-fc88-4dab-a5f7-9a340fd14d98",
-    "autoTriedAt": "2026-07-11T12:20:40.321Z"
+    "autoTriedAt": "2026-07-11T12:20:40.321Z",
+    "genres": [
+      "contemporary classical",
+      "Spectralism",
+      "experimental",
+      "austrian",
+      "spectral"
+    ],
+    "popularity": {
+      "listeners": 5814,
+      "playcount": 32197
+    },
+    "metaEnrichedAt": "2026-07-11T21:31:39.264Z"
   },
   {
     "name": "Georg Gerson",
@@ -12224,28 +13073,55 @@
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "2dfcb65a-48af-40ef-80a5-8057d052e2d4",
-    "autoTriedAt": "2026-07-11T12:20:42.826Z"
+    "autoTriedAt": "2026-07-11T12:20:42.826Z",
+    "genres": [
+      "danish",
+      "19th century"
+    ],
+    "popularity": {
+      "listeners": 72,
+      "playcount": 347
+    },
+    "metaEnrichedAt": "2026-07-11T21:31:40.022Z"
   },
   {
     "name": "Georg Goltermann",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbid": "f656f4ae-a285-4f92-97bc-65ac0b2d7b1d",
-    "autoTriedAt": "2026-07-11T12:20:44.050Z"
+    "autoTriedAt": "2026-07-11T12:20:44.050Z",
+    "genres": [
+      "german",
+      "Classical",
+      "19th century",
+      "cello"
+    ],
+    "popularity": {
+      "listeners": 764,
+      "playcount": 2527
+    },
+    "metaEnrichedAt": "2026-07-11T21:31:40.724Z"
   },
   {
     "name": "Georg Grothe",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:20:45.308Z"
+    "autoTriedAt": "2026-07-11T12:20:45.308Z",
+    "metaTriedAt": "2026-07-11T21:31:41.370Z"
   },
   {
     "name": "Georg Høeberg",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbid": "98c3530c-4dd2-4da8-bb65-f5cc37315412",
-    "autoTriedAt": "2026-07-11T12:20:47.840Z"
+    "autoTriedAt": "2026-07-11T12:20:47.840Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 4
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/07cce59466b7aa16e9587bb2353df0cf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:42.096Z"
   },
   {
     "name": "Georg Hólm",
@@ -12261,14 +13137,24 @@
     },
     "enrichedAt": "2026-07-07T07:12:33.523Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4f47248b-4b19-4cf2-af58-0cdaf22221c9"
+    "mbid": "4f47248b-4b19-4cf2-af58-0cdaf22221c9",
+    "popularity": {
+      "listeners": 65,
+      "playcount": 1008
+    },
+    "metaEnrichedAt": "2026-07-11T21:31:42.817Z"
   },
   {
     "name": "Georg Kopprasch",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbid": "439e0023-0feb-4765-91e7-9df823d16192",
-    "autoTriedAt": "2026-07-11T12:20:50.354Z"
+    "autoTriedAt": "2026-07-11T12:20:50.354Z",
+    "popularity": {
+      "listeners": 5,
+      "playcount": 5
+    },
+    "metaEnrichedAt": "2026-07-11T21:31:43.460Z"
   },
   {
     "name": "Georg Malmstén",
@@ -12284,14 +13170,33 @@
     },
     "enrichedAt": "2026-07-07T07:12:33.523Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "751c5ab9-0cb0-4e3a-8ab7-41eae86ee989"
+    "mbid": "751c5ab9-0cb0-4e3a-8ab7-41eae86ee989",
+    "genres": [
+      "finnish",
+      "folk",
+      "oldies",
+      "iskelma",
+      "tango"
+    ],
+    "popularity": {
+      "listeners": 10331,
+      "playcount": 73340
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c1e8e08b1b61055e5c6679e020415ad6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:44.089Z"
   },
   {
     "name": "Georg Michael Telemann",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbid": "bfbcb80e-b4bf-44ef-ac6a-28a0ca7d6d07",
-    "autoTriedAt": "2026-07-11T12:20:52.888Z"
+    "autoTriedAt": "2026-07-11T12:20:52.888Z",
+    "popularity": {
+      "listeners": 214,
+      "playcount": 985
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:44.783Z"
   },
   {
     "name": "Georg Philipp Telemann",
@@ -12307,7 +13212,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:33.523Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8f831f50-e409-47c3-8598-71a61bc8cfb3"
+    "mbid": "8f831f50-e409-47c3-8598-71a61bc8cfb3",
+    "genres": [
+      "baroque",
+      "Classical",
+      "german",
+      "composer",
+      "composers"
+    ],
+    "popularity": {
+      "listeners": 420319,
+      "playcount": 4155845
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2dd9139134ec51f9f4efd2b1af636660/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:45.387Z"
   },
   {
     "name": "Georg Riedel",
@@ -12324,21 +13242,43 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:20:55.492Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "svenskt",
+      "svenskakrusbar"
+    ],
+    "popularity": {
+      "listeners": 19566,
+      "playcount": 276389
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a8811f7b39787b8eb09509737607ef0c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:46.091Z"
   },
   {
     "name": "Georg Schnéevoigt",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbid": "13755a51-a59d-47fb-8d00-a34a01ce508a",
-    "autoTriedAt": "2026-07-11T12:20:57.998Z"
+    "autoTriedAt": "2026-07-11T12:20:57.998Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 2
+    },
+    "metaEnrichedAt": "2026-07-11T21:31:46.724Z"
   },
   {
     "name": "George 'The Fat Man' Sanger",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:20:59.311Z"
+    "autoTriedAt": "2026-07-11T12:20:59.311Z",
+    "popularity": {
+      "listeners": 3,
+      "playcount": 4
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:47.608Z"
   },
   {
     "name": "George \"Harmonica\" Smith",
@@ -12346,21 +13286,52 @@
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "2b2529b8-58df-4ac7-807a-931370c6690e",
-    "autoTriedAt": "2026-07-11T12:21:01.848Z"
+    "autoTriedAt": "2026-07-11T12:21:01.848Z",
+    "genres": [
+      "blues",
+      "harmonica",
+      "harmonica blues",
+      "american",
+      "harp"
+    ],
+    "popularity": {
+      "listeners": 4281,
+      "playcount": 28338
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a95b69b24f774eef3daa2e92ea955435/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:48.275Z"
   },
   {
     "name": "George \"Kid Sheik\" Cola",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:21:03.106Z"
+    "autoTriedAt": "2026-07-11T12:21:03.106Z",
+    "popularity": {
+      "listeners": 8,
+      "playcount": 39
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a79c3a6f3c4332a0c98791984c907d64/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:49.817Z"
   },
   {
     "name": "George \"Mojo\" Buford",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbid": "117594ec-b00c-4f1f-b6fa-282ec0278268",
-    "autoTriedAt": "2026-07-11T12:21:07.578Z"
+    "autoTriedAt": "2026-07-11T12:21:07.578Z",
+    "genres": [
+      "blues",
+      "harmonica blues",
+      "harmonica",
+      "mississippi",
+      "blues harp"
+    ],
+    "popularity": {
+      "listeners": 3942,
+      "playcount": 20631
+    },
+    "metaEnrichedAt": "2026-07-11T21:31:50.965Z"
   },
   {
     "name": "George \"Wild Child\" Butler",
@@ -12376,7 +13347,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:21:10.085Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "blues",
+      "harmonica blues",
+      "rhythm and blues",
+      "rnb",
+      "rythm and blues"
+    ],
+    "popularity": {
+      "listeners": 2935,
+      "playcount": 11930
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b961e4f27e3174c2af8dd8b651041d25/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:51.623Z"
   },
   {
     "name": "George Adams",
@@ -12393,7 +13377,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:21:12.631Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "saxophone",
+      "ECM",
+      "contemporary jazz",
+      "free jazz"
+    ],
+    "popularity": {
+      "listeners": 3909,
+      "playcount": 29860
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0d338fa9ee32c85e2861a615e496dfaf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:52.252Z"
   },
   {
     "name": "George Antheil",
@@ -12409,21 +13406,40 @@
     },
     "enrichedAt": "2026-07-07T07:12:33.523Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5a0e065d-67ae-402b-97a3-19372b1b0c1d"
+    "mbid": "5a0e065d-67ae-402b-97a3-19372b1b0c1d",
+    "genres": [
+      "Avant-Garde",
+      "contemporary classical",
+      "Classical",
+      "20th Century Classical",
+      "composer"
+    ],
+    "popularity": {
+      "listeners": 13219,
+      "playcount": 86634
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/97117f306a87a5bdd7c217aaa11014b7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:52.970Z"
   },
   {
     "name": "George Ariyoshi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:21:13.850Z"
+    "autoTriedAt": "2026-07-11T12:21:13.850Z",
+    "metaTriedAt": "2026-07-11T21:31:53.583Z"
   },
   {
     "name": "George Assang",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbid": "405b3dad-dbe0-4240-bce3-e49661a754f1",
-    "autoTriedAt": "2026-07-11T12:21:16.334Z"
+    "autoTriedAt": "2026-07-11T12:21:16.334Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 2
+    },
+    "metaEnrichedAt": "2026-07-11T21:31:54.241Z"
   },
   {
     "name": "George Baker",
@@ -12440,7 +13456,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:21:18.904Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "classic rock",
+      "rock",
+      "pop",
+      "oldies",
+      "Soundtrack"
+    ],
+    "popularity": {
+      "listeners": 385043,
+      "playcount": 2467216
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fb8dd3d6b80261daa6a628f55dc8a80d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:54.983Z"
   },
   {
     "name": "George Balint",
@@ -12448,7 +13477,15 @@
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "5a807311-5b77-46f9-9ae7-25a2376f73fd",
-    "autoTriedAt": "2026-07-11T12:21:21.400Z"
+    "autoTriedAt": "2026-07-11T12:21:21.400Z",
+    "genres": [
+      "contemporary classical"
+    ],
+    "popularity": {
+      "listeners": 14,
+      "playcount": 21
+    },
+    "metaEnrichedAt": "2026-07-11T21:31:55.672Z"
   },
   {
     "name": "George Barnes",
@@ -12456,14 +13493,40 @@
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "4bfe4dde-72ff-4edf-bb79-77747bf5391d",
-    "autoTriedAt": "2026-07-11T12:21:23.968Z"
+    "autoTriedAt": "2026-07-11T12:21:23.968Z",
+    "genres": [
+      "guitar",
+      "jazz",
+      "american",
+      "folk",
+      "jazz guitar"
+    ],
+    "popularity": {
+      "listeners": 6470,
+      "playcount": 37093
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a43a56c9c9e5b488aa98c5351daf411b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:56.574Z"
   },
   {
     "name": "George Bassman",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:33.523Z",
     "mbid": "69a6332a-ce91-44d3-94ca-6f59d0206e9b",
-    "autoTriedAt": "2026-07-11T12:21:26.513Z"
+    "autoTriedAt": "2026-07-11T12:21:26.513Z",
+    "genres": [
+      "Soundtrack",
+      "USA",
+      "new york",
+      "us",
+      "United States"
+    ],
+    "popularity": {
+      "listeners": 949,
+      "playcount": 2663
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0977a4962e3580d3f22485040d24fe81/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:57.234Z"
   },
   {
     "name": "George Benjamin",
@@ -12480,7 +13543,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:21:29.067Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "contemporary classical",
+      "composer",
+      "Avant-Garde",
+      "british",
+      "20th Century Classical"
+    ],
+    "popularity": {
+      "listeners": 8451,
+      "playcount": 39492
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/439155d40fcbd361bbd3dabe5f915673/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:57.869Z"
   },
   {
     "name": "George Benson",
@@ -12497,7 +13573,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:21:31.729Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "Smooth Jazz",
+      "soul",
+      "funk",
+      "guitar"
+    ],
+    "popularity": {
+      "listeners": 1204993,
+      "playcount": 13964800
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/94af08fe634678e2288766fbb6cb3cd1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:58.496Z"
   },
   {
     "name": "George Boswell",
@@ -12505,7 +13594,19 @@
     "wdBulkTriedAt": "2026-07-07T07:12:35.648Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "83aea1d5-ddd4-4f51-b572-930081ab90fb",
-    "autoTriedAt": "2026-07-11T12:21:34.237Z"
+    "autoTriedAt": "2026-07-11T12:21:34.237Z",
+    "genres": [
+      "reggae",
+      "dub",
+      "roots",
+      "All",
+      "reggae dub"
+    ],
+    "popularity": {
+      "listeners": 2743,
+      "playcount": 6365
+    },
+    "metaEnrichedAt": "2026-07-11T21:31:59.221Z"
   },
   {
     "name": "George Braith",
@@ -12521,28 +13622,59 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:21:36.795Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "soul jazz",
+      "Hard Bop",
+      "saxophone",
+      "blue note"
+    ],
+    "popularity": {
+      "listeners": 5247,
+      "playcount": 34052
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c8482e2c6c19339dd258e8a2a9bedb61/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:31:59.858Z"
   },
   {
     "name": "George Brecht",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:35.648Z",
     "mbid": "406dd4c4-64f3-43a3-a145-ed66e2d411a7",
-    "autoTriedAt": "2026-07-11T12:21:39.310Z"
+    "autoTriedAt": "2026-07-11T12:21:39.310Z",
+    "genres": [
+      "spoken word",
+      "sound art",
+      "drone",
+      "noise",
+      "fluxus"
+    ],
+    "popularity": {
+      "listeners": 113,
+      "playcount": 549
+    },
+    "metaEnrichedAt": "2026-07-11T21:32:00.506Z"
   },
   {
     "name": "George Bridgetower",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:35.648Z",
     "mbid": "882a29d7-b781-4a6a-804f-f14cf3705704",
-    "autoTriedAt": "2026-07-11T12:21:42.011Z"
+    "autoTriedAt": "2026-07-11T12:21:42.011Z",
+    "metaTriedAt": "2026-07-11T21:32:01.120Z"
   },
   {
     "name": "George Brunies",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:35.648Z",
     "mbid": "5f9a137d-2811-4d60-9a92-29bed4e73638",
-    "autoTriedAt": "2026-07-11T12:21:44.511Z"
+    "autoTriedAt": "2026-07-11T12:21:44.511Z",
+    "popularity": {
+      "listeners": 66,
+      "playcount": 286
+    },
+    "metaEnrichedAt": "2026-07-11T21:32:01.912Z"
   },
   {
     "name": "George Burdi",
@@ -12558,7 +13690,12 @@
     },
     "enrichedAt": "2026-07-07T07:12:35.648Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "779cd852-510a-4103-96c6-bcf94ace83a1"
+    "mbid": "779cd852-510a-4103-96c6-bcf94ace83a1",
+    "popularity": {
+      "listeners": 3,
+      "playcount": 6
+    },
+    "metaEnrichedAt": "2026-07-11T21:32:02.586Z"
   },
   {
     "name": "George Butterworth",
@@ -12575,14 +13712,39 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:21:47.032Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Classical",
+      "english",
+      "composer",
+      "20th Century",
+      "Pastoral"
+    ],
+    "popularity": {
+      "listeners": 18032,
+      "playcount": 83857
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b61787afd4d726677070b888e84fd49e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:03.277Z"
   },
   {
     "name": "George C. Baker",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:35.648Z",
     "mbid": "f4179cd6-79d4-4541-b3d4-e93460ee1020",
-    "autoTriedAt": "2026-07-11T12:21:48.252Z"
+    "autoTriedAt": "2026-07-11T12:21:48.252Z",
+    "genres": [
+      "organ",
+      "american",
+      "romanticism",
+      "late romantic"
+    ],
+    "popularity": {
+      "listeners": 58,
+      "playcount": 192
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/53f9720e5283c48ad011b5c15bf23f9c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:03.931Z"
   },
   {
     "name": "George Cables",
@@ -12598,7 +13760,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:35.648Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7d3aa1dd-5e8b-47f3-a65b-41d78c725ce3"
+    "mbid": "7d3aa1dd-5e8b-47f3-a65b-41d78c725ce3",
+    "genres": [
+      "jazz",
+      "piano",
+      "jazz piano",
+      "Post-Bop",
+      "american"
+    ],
+    "popularity": {
+      "listeners": 38267,
+      "playcount": 173079
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d1c7ffeb9947b7241408b875b356a416/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:04.696Z"
   },
   {
     "name": "George Caird",
@@ -12615,7 +13790,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:21:50.739Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 60,
+      "playcount": 131
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a5f53d2394f15b3901fd20b83f9ce6ab/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:05.394Z"
   },
   {
     "name": "George Canyon",
@@ -12631,7 +13812,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:35.648Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2a396962-06e5-4ee8-89a7-203e90d07539"
+    "mbid": "2a396962-06e5-4ee8-89a7-203e90d07539",
+    "genres": [
+      "country",
+      "Canadian",
+      "new traditionalist",
+      "contemporary country",
+      "canadian country"
+    ],
+    "popularity": {
+      "listeners": 14255,
+      "playcount": 268965
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d82fd2218043fc7afe28a20ba4a17a13/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:06.100Z"
   },
   {
     "name": "George Cates",
@@ -12639,7 +13833,19 @@
     "wdBulkTriedAt": "2026-07-07T07:12:35.648Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "8b275555-70ef-40b7-b69f-69e9fea90d8a",
-    "autoTriedAt": "2026-07-11T12:21:53.466Z"
+    "autoTriedAt": "2026-07-11T12:21:53.466Z",
+    "genres": [
+      "world",
+      "All",
+      "spotify",
+      "entschleunigen"
+    ],
+    "popularity": {
+      "listeners": 1427,
+      "playcount": 7931
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3640ad2d3340ed215bb08179bf4df638/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:06.916Z"
   },
   {
     "name": "George Chakiris",
@@ -12655,7 +13861,19 @@
     },
     "enrichedAt": "2026-07-07T07:12:35.648Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8bf7f0dc-30ee-43a0-a096-fdba369132d0"
+    "mbid": "8bf7f0dc-30ee-43a0-a096-fdba369132d0",
+    "genres": [
+      "vocal jazz",
+      "jazz",
+      "everything",
+      "All"
+    ],
+    "popularity": {
+      "listeners": 1833,
+      "playcount": 5345
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/05ae1e79ec5c037ce1aafa26f09e7592/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:07.640Z"
   },
   {
     "name": "George Chisholm",
@@ -12663,7 +13881,13 @@
     "wdBulkTriedAt": "2026-07-07T07:12:35.648Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "0e00fcc5-fccd-4f34-972e-0fa6a5daf90d",
-    "autoTriedAt": "2026-07-11T12:21:56.004Z"
+    "autoTriedAt": "2026-07-11T12:21:56.004Z",
+    "popularity": {
+      "listeners": 465,
+      "playcount": 2413
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/606d86535680fbbcc789bd3050a48cfd/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:08.833Z"
   },
   {
     "name": "George Clinton",
@@ -12680,7 +13904,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:21:58.612Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "funk",
+      "p-funk",
+      "soul",
+      "jazz",
+      "reggae"
+    ],
+    "popularity": {
+      "listeners": 312471,
+      "playcount": 2064948
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3c9eacf5a6330eeeb42565b0f2ed6fe3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:09.474Z"
   },
   {
     "name": "George Cole",
@@ -12697,7 +13934,16 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:22:01.134Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "rnb"
+    ],
+    "popularity": {
+      "listeners": 601,
+      "playcount": 2956
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b5ba2800d0979f0670d71347338e2ab4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:11.134Z"
   },
   {
     "name": "George Coleman",
@@ -12714,7 +13960,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:22:03.756Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "saxophone",
+      "outsider",
+      "blues",
+      "Hard Bop"
+    ],
+    "popularity": {
+      "listeners": 8797,
+      "playcount": 49020
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/632f97c36c801a7d7e7acc1e84715f72/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:11.754Z"
   },
   {
     "name": "George Colligan",
@@ -12730,7 +13989,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:35.648Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1ecc3cc1-5e48-4f99-b46f-bf7bbe00c135"
+    "mbid": "1ecc3cc1-5e48-4f99-b46f-bf7bbe00c135",
+    "genres": [
+      "jazz",
+      "piano",
+      "jazz piano",
+      "instrumental",
+      "Progressive metal"
+    ],
+    "popularity": {
+      "listeners": 4275,
+      "playcount": 27248
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/11494b730a3affe064ca7921d81f9146/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:12.446Z"
   },
   {
     "name": "George Dalaras",
@@ -12746,7 +14018,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:35.648Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "457a3e37-cbf5-41f5-8c0a-b6f20a2ed905"
+    "mbid": "457a3e37-cbf5-41f5-8c0a-b6f20a2ed905",
+    "genres": [
+      "Greek",
+      "folk",
+      "rebetiko",
+      "world",
+      "Giorgos Dalaras"
+    ],
+    "popularity": {
+      "listeners": 48303,
+      "playcount": 694165
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a3326e6eb1ec0b4ffd14a50bf91de4f9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:13.224Z"
   },
   {
     "name": "George Daly",
@@ -12754,14 +14039,21 @@
     "wdBulkTriedAt": "2026-07-07T07:12:35.648Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "4a623447-be28-48c1-9aa4-904cb179ee7f",
-    "autoTriedAt": "2026-07-11T12:22:06.230Z"
+    "autoTriedAt": "2026-07-11T12:22:06.230Z",
+    "popularity": {
+      "listeners": 7,
+      "playcount": 12
+    },
+    "metaEnrichedAt": "2026-07-11T21:32:13.938Z"
   },
   {
     "name": "George Donoso",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:35.648Z",
     "mbid": "8bbde6f5-84c9-4d5e-97f4-1f940dc9f9a9",
-    "autoTriedAt": "2026-07-11T12:22:08.027Z"
+    "autoTriedAt": "2026-07-11T12:22:08.027Z",
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:14.549Z"
   },
   {
     "name": "George Dreyfus",
@@ -12778,7 +14070,12 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:22:10.697Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 118,
+      "playcount": 824
+    },
+    "metaEnrichedAt": "2026-07-11T21:32:15.197Z"
   },
   {
     "name": "George Ducas",
@@ -12795,7 +14092,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:22:13.369Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "country",
+      "George Ducas-Hello Cruel World",
+      "Tricky Moon",
+      "new traditionalist country",
+      "old country"
+    ],
+    "popularity": {
+      "listeners": 5642,
+      "playcount": 61559
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9f5fbc7bc4d380e773d8956a8931b856/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:15.970Z"
   },
   {
     "name": "George Duke",
@@ -12812,14 +14122,36 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:22:15.883Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "funk",
+      "Fusion",
+      "Smooth Jazz",
+      "jazz piano"
+    ],
+    "popularity": {
+      "listeners": 321866,
+      "playcount": 2919998
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d227c55aaa80028a061be0051b20c022/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:16.640Z"
   },
   {
     "name": "George Duvivier",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:35.648Z",
     "mbid": "fda81bdf-37b1-47e2-86fe-d639b04f8006",
-    "autoTriedAt": "2026-07-11T12:22:18.394Z"
+    "autoTriedAt": "2026-07-11T12:22:18.394Z",
+    "genres": [
+      "Need to Rate"
+    ],
+    "popularity": {
+      "listeners": 244,
+      "playcount": 733
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f7fa05da55e813bcaf0f7db4094de217/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:17.334Z"
   },
   {
     "name": "George Dyson",
@@ -12827,7 +14159,20 @@
     "wdBulkTriedAt": "2026-07-07T07:12:35.648Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "d75aa48d-f0fa-4ca1-ba1b-6c492c16eedd",
-    "autoTriedAt": "2026-07-11T12:22:20.890Z"
+    "autoTriedAt": "2026-07-11T12:22:20.890Z",
+    "genres": [
+      "english",
+      "Classical",
+      "20th Century",
+      "composer",
+      "england"
+    ],
+    "popularity": {
+      "listeners": 4083,
+      "playcount": 17004
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bbc4da403671f0d65e5b61a1d3676657/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:18.029Z"
   },
   {
     "name": "George Enescu",
@@ -12844,7 +14189,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:22:23.499Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Classical",
+      "Romanian",
+      "violin",
+      "romania",
+      "composer"
+    ],
+    "popularity": {
+      "listeners": 31394,
+      "playcount": 216732
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9553af31ac95baec2ea7b396af1a3bab/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:18.732Z"
   },
   {
     "name": "George Evans",
@@ -12852,7 +14210,20 @@
     "wdBulkTriedAt": "2026-07-07T07:12:35.648Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "c4da2456-beb7-4f49-b479-b4f5c9a5c7a5",
-    "autoTriedAt": "2026-07-11T12:22:26.327Z"
+    "autoTriedAt": "2026-07-11T12:22:26.327Z",
+    "genres": [
+      "jazz",
+      "Canadian",
+      "vocal jazz",
+      "female vocalists",
+      "male vocalists"
+    ],
+    "popularity": {
+      "listeners": 849,
+      "playcount": 3981
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9f45299a95d0d4b39897807feb2c8591/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:20.425Z"
   },
   {
     "name": "George Ezra",
@@ -12868,7 +14239,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:35.648Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2c5e2a98-d9ea-46b5-9618-d9bb4863a920"
+    "mbid": "2c5e2a98-d9ea-46b5-9618-d9bb4863a920",
+    "genres": [
+      "indie",
+      "folk",
+      "singer-songwriter",
+      "british",
+      "indie folk"
+    ],
+    "popularity": {
+      "listeners": 1483352,
+      "playcount": 32824678
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2685c0d156a661d3fc28678de3416750/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:21.031Z"
   },
   {
     "name": "George Formby",
@@ -12885,7 +14269,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:22:28.955Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "comedy",
+      "music hall",
+      "ukulele",
+      "british",
+      "Squeaky-voiced purveyor of ukelele-fuelled 1940s smut"
+    ],
+    "popularity": {
+      "listeners": 44646,
+      "playcount": 348278
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a12ea5008fa8d11ba3063c8ea92ae236/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:21.767Z"
   },
   {
     "name": "George Fox",
@@ -12902,7 +14299,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:22:31.635Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "country",
+      "Canadian",
+      "canadian country",
+      "90s Canadian Country"
+    ],
+    "popularity": {
+      "listeners": 3462,
+      "playcount": 27990
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d41d8cd98f00b204e9800998ecf8427e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:22.459Z"
   },
   {
     "name": "George Freeman",
@@ -12919,7 +14328,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T12:22:34.256Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "funk",
+      "jazz",
+      "soul jazz",
+      "Hard Bop",
+      "chicago"
+    ],
+    "popularity": {
+      "listeners": 9005,
+      "playcount": 35346
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a2fe3e0f2abfaaf580a45ca1b2b71421/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:23.251Z"
   },
   {
     "name": "George Frideric Handel",
@@ -12935,14 +14357,27 @@
     },
     "enrichedAt": "2026-07-07T07:12:35.648Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "27870d47-bb98-42d1-bf2b-c7e972e6befc"
+    "mbid": "27870d47-bb98-42d1-bf2b-c7e972e6befc",
+    "genres": [
+      "Classical",
+      "baroque",
+      "german",
+      "composers",
+      "instrumental"
+    ],
+    "popularity": {
+      "listeners": 541443,
+      "playcount": 5558962
+    },
+    "metaEnrichedAt": "2026-07-11T21:32:23.856Z"
   },
   {
     "name": "George Gately",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:35.648Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T12:22:35.494Z"
+    "autoTriedAt": "2026-07-11T12:22:35.494Z",
+    "metaTriedAt": "2026-07-11T21:32:24.518Z"
   },
   {
     "name": "George Gershwin",
@@ -12958,14 +14393,38 @@
     },
     "enrichedAt": "2026-07-07T07:12:35.648Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "65744963-191a-44ef-a3c7-b693a808a158"
+    "mbid": "65744963-191a-44ef-a3c7-b693a808a158",
+    "genres": [
+      "Classical",
+      "jazz",
+      "piano",
+      "composer",
+      "composers"
+    ],
+    "popularity": {
+      "listeners": 644884,
+      "playcount": 4546181
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/24b4805a1a47079669dfbe5c24920c4b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:25.113Z"
   },
   {
     "name": "George Girard",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:35.648Z",
     "mbid": "15fd946c-8dc3-4f63-b1d1-6fe64a2da7f3",
-    "autoTriedAt": "2026-07-11T12:22:38.161Z"
+    "autoTriedAt": "2026-07-11T12:22:38.161Z",
+    "genres": [
+      "USA",
+      "jazz",
+      "New Orleans"
+    ],
+    "popularity": {
+      "listeners": 931,
+      "playcount": 1944
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6c78e86277577d632cd4f7d6bb3897e6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:25.858Z"
   },
   {
     "name": "George Gobel",
@@ -12973,7 +14432,12 @@
     "wdBulkTriedAt": "2026-07-07T07:12:35.648Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "099082aa-cb3b-4825-bd81-35336fa3e790",
-    "autoTriedAt": "2026-07-11T12:22:40.762Z"
+    "autoTriedAt": "2026-07-11T12:22:40.762Z",
+    "popularity": {
+      "listeners": 58,
+      "playcount": 236
+    },
+    "metaEnrichedAt": "2026-07-11T21:32:26.653Z"
   },
   {
     "name": "George Gruntz",
@@ -12989,7 +14453,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:35.648Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a0e5522f-8ba6-497d-8c65-c482e52b008e"
+    "mbid": "a0e5522f-8ba6-497d-8c65-c482e52b008e",
+    "genres": [
+      "jazz",
+      "Big Band",
+      "swiss",
+      "free jazz",
+      "organ"
+    ],
+    "popularity": {
+      "listeners": 4004,
+      "playcount": 22794
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/163d7f64032c1d13dbd94dc7057d92ba/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T21:32:27.409Z"
   },
   {
     "name": "George Guesnon",
