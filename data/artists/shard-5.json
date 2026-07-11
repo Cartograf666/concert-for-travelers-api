@@ -75600,14 +75600,20 @@
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:23.892Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:51:28.011Z"
+    "autoTriedAt": "2026-07-11T00:51:28.011Z",
+    "metaTriedAt": "2026-07-11T10:38:26.540Z"
   },
   {
     "name": "Mark Pender",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:23.892Z",
     "mbid": "6ae5508c-cec6-4d23-a3df-92e8b1e988b2",
-    "autoTriedAt": "2026-07-11T00:51:33.895Z"
+    "autoTriedAt": "2026-07-11T00:51:33.895Z",
+    "popularity": {
+      "listeners": 26,
+      "playcount": 355
+    },
+    "metaEnrichedAt": "2026-07-11T10:38:27.239Z"
   },
   {
     "name": "Mark Perry",
@@ -75615,7 +75621,19 @@
     "wdBulkTriedAt": "2026-07-07T07:18:23.892Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "9eeacdbe-845c-401e-b64e-c8cb6c5c9930",
-    "autoTriedAt": "2026-07-11T00:51:36.984Z"
+    "autoTriedAt": "2026-07-11T00:51:36.984Z",
+    "genres": [
+      "punk",
+      "punk rock",
+      "Post punk",
+      "english",
+      "post-punk"
+    ],
+    "popularity": {
+      "listeners": 1826,
+      "playcount": 9090
+    },
+    "metaEnrichedAt": "2026-07-11T10:38:27.906Z"
   },
   {
     "name": "Mark Picchiotti",
@@ -75631,7 +75649,16 @@
     },
     "enrichedAt": "2026-07-07T07:18:23.892Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5fc11755-e761-4919-80e8-bd6c57063501"
+    "mbid": "5fc11755-e761-4919-80e8-bd6c57063501",
+    "genres": [
+      "House"
+    ],
+    "popularity": {
+      "listeners": 4854,
+      "playcount": 20004
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8902a0547e4e7f565032ab53eb410d4b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:28.561Z"
   },
   {
     "name": "Mark Pickerel",
@@ -75647,7 +75674,15 @@
     },
     "enrichedAt": "2026-07-07T07:18:23.892Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "90fd60fc-b149-4d97-a4fc-54b8b767ad42"
+    "mbid": "90fd60fc-b149-4d97-a4fc-54b8b767ad42",
+    "genres": [
+      "wa"
+    ],
+    "popularity": {
+      "listeners": 849,
+      "playcount": 5135
+    },
+    "metaEnrichedAt": "2026-07-11T10:38:29.240Z"
   },
   {
     "name": "Mark Rankin",
@@ -75655,14 +75690,31 @@
     "wdBulkTriedAt": "2026-07-07T07:18:23.892Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "3edd2b61-bf16-40fa-a673-b57f8aaae4dd",
-    "autoTriedAt": "2026-07-11T00:51:41.556Z"
+    "autoTriedAt": "2026-07-11T00:51:41.556Z",
+    "popularity": {
+      "listeners": 305,
+      "playcount": 1741
+    },
+    "metaEnrichedAt": "2026-07-11T10:38:30.014Z"
   },
   {
     "name": "Mark Reizen",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:23.892Z",
     "mbid": "e890eecb-73b5-4620-95e8-f4ccd8eba55c",
-    "autoTriedAt": "2026-07-11T00:51:44.721Z"
+    "autoTriedAt": "2026-07-11T00:51:44.721Z",
+    "genres": [
+      "bass",
+      "opera",
+      "m reizen",
+      "Russian opera"
+    ],
+    "popularity": {
+      "listeners": 988,
+      "playcount": 5699
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/05b2268caf409610fdaf8151fe1b8a6c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:30.687Z"
   },
   {
     "name": "Mark Ronson",
@@ -75678,7 +75730,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:23.892Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c3c82bdc-d9e7-4836-9746-c24ead47ca19"
+    "mbid": "c3c82bdc-d9e7-4836-9746-c24ead47ca19",
+    "genres": [
+      "funk",
+      "british",
+      "pop",
+      "Hip-Hop",
+      "dj"
+    ],
+    "popularity": {
+      "listeners": 3187990,
+      "playcount": 52316122
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cacdbfdf5fa8c600eadc3e1c2b6ac8c8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:31.254Z"
   },
   {
     "name": "Mark Rutherford",
@@ -75695,14 +75760,37 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:51:47.365Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Game Music",
+      "instrumental",
+      "alien vs predator"
+    ],
+    "popularity": {
+      "listeners": 3032,
+      "playcount": 22715
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6243c632b986a726e0ce1b784bf94ff9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:31.939Z"
   },
   {
     "name": "Mark Sandman",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:23.892Z",
     "mbid": "bdb7b3b2-de80-4a9d-8056-07f706cb2941",
-    "autoTriedAt": "2026-07-11T00:52:02.863Z"
+    "autoTriedAt": "2026-07-11T00:52:02.863Z",
+    "genres": [
+      "low rock",
+      "jazz",
+      "blues",
+      "singer-songwriter",
+      "Experimental Rock"
+    ],
+    "popularity": {
+      "listeners": 15204,
+      "playcount": 479480
+    },
+    "metaEnrichedAt": "2026-07-11T10:38:32.567Z"
   },
   {
     "name": "Mark Seibert",
@@ -75719,7 +75807,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:52:19.114Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Soundtrack",
+      "sierra",
+      "german",
+      "USA",
+      "musical"
+    ],
+    "popularity": {
+      "listeners": 8009,
+      "playcount": 114616
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/811b9213181bcac96de1cd6b23d73a5e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:33.326Z"
   },
   {
     "name": "Mark Seymour",
@@ -75736,7 +75837,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:52:32.744Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "singer-songwriter",
+      "seen live x3",
+      "pop",
+      "australia",
+      "seen live x2"
+    ],
+    "popularity": {
+      "listeners": 7058,
+      "playcount": 104616
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/93640164fb99056f4bea5dd56d0c7820/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:33.936Z"
   },
   {
     "name": "Mark Shaw",
@@ -75753,7 +75867,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:52:35.299Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 229,
+      "playcount": 2279
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b543350c8671923bdb99ca41b867fed4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:34.598Z"
   },
   {
     "name": "Mark Sherman",
@@ -75770,7 +75890,18 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:52:37.846Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "Vibraphone",
+      "jazz-rock"
+    ],
+    "popularity": {
+      "listeners": 25074,
+      "playcount": 69768
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c4f516f053dcfcdb8e9f183311173986/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:35.278Z"
   },
   {
     "name": "Mark Simpson",
@@ -75787,7 +75918,18 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:52:40.891Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "clarinet",
+      "composer",
+      "Classical"
+    ],
+    "popularity": {
+      "listeners": 493,
+      "playcount": 1324
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d41d8cd98f00b204e9800998ecf8427e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:36.047Z"
   },
   {
     "name": "Mark Slaughter",
@@ -75804,7 +75946,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:52:49.007Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "hard rock",
+      "glam",
+      "metal",
+      "80s",
+      "heavy metal"
+    ],
+    "popularity": {
+      "listeners": 7589,
+      "playcount": 51371
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d83857977150acf377749199079d5d81/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:36.700Z"
   },
   {
     "name": "Mark Snow",
@@ -75812,7 +75967,20 @@
     "wdBulkTriedAt": "2026-07-07T07:18:23.892Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "a1d3685a-c61d-49aa-a294-bcfc25e516b5",
-    "autoTriedAt": "2026-07-11T00:52:52.834Z"
+    "autoTriedAt": "2026-07-11T00:52:52.834Z",
+    "genres": [
+      "Soundtrack",
+      "ambient",
+      "instrumental",
+      "electronic",
+      "x-files"
+    ],
+    "popularity": {
+      "listeners": 92624,
+      "playcount": 1549251
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f2ce4ffdab652e1e5b64714dd84642ab/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:37.356Z"
   },
   {
     "name": "Mark Sparks",
@@ -75820,14 +75988,31 @@
     "wdBulkTriedAt": "2026-07-07T07:18:23.892Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "db0a6e42-98c2-42bf-a9e9-e6b656a2d745",
-    "autoTriedAt": "2026-07-11T00:52:55.789Z"
+    "autoTriedAt": "2026-07-11T00:52:55.789Z",
+    "genres": [
+      "North Carolina",
+      "rap",
+      "golden age"
+    ],
+    "popularity": {
+      "listeners": 294,
+      "playcount": 2237
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/891e1d46bb446dc076fe9ddaaf12328f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:38.056Z"
   },
   {
     "name": "Mark Spicoluk",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:23.892Z",
     "mbid": "defcf2de-be9d-45f7-b6c9-ff6c46148786",
-    "autoTriedAt": "2026-07-11T00:52:59.716Z"
+    "autoTriedAt": "2026-07-11T00:52:59.716Z",
+    "popularity": {
+      "listeners": 3,
+      "playcount": 8
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/46b558794a7aa255793a06976798ff90/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:38.869Z"
   },
   {
     "name": "Mark Spoelstra",
@@ -75843,7 +76028,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:23.892Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "51bcfb8f-8d97-49b7-9fab-0567bebf903c"
+    "mbid": "51bcfb8f-8d97-49b7-9fab-0567bebf903c",
+    "genres": [
+      "folk",
+      "singer-songwriter",
+      "greenwich village folk",
+      "60s",
+      "male vocalists"
+    ],
+    "popularity": {
+      "listeners": 3522,
+      "playcount": 13697
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ae4d141d728a26e4c67100893d7c2dcb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:39.481Z"
   },
   {
     "name": "Mark St. John",
@@ -75851,7 +76049,15 @@
     "wdBulkTriedAt": "2026-07-07T07:18:23.892Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "8159effc-ff85-49e0-bb42-c7b9fc41b6e0",
-    "autoTriedAt": "2026-07-11T00:53:02.659Z"
+    "autoTriedAt": "2026-07-11T00:53:02.659Z",
+    "genres": [
+      "great KISS guitarist"
+    ],
+    "popularity": {
+      "listeners": 204,
+      "playcount": 2429
+    },
+    "metaEnrichedAt": "2026-07-11T10:38:40.182Z"
   },
   {
     "name": "Mark Stewart",
@@ -75868,7 +76074,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:53:05.216Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "dub",
+      "post-punk",
+      "industrial",
+      "experimental",
+      "electronic"
+    ],
+    "popularity": {
+      "listeners": 28040,
+      "playcount": 256879
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4289f9a6de98735e40df805957342460/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:40.970Z"
   },
   {
     "name": "Mark Stoermer",
@@ -75884,7 +76103,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:23.892Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e4eaa11a-531e-42fc-8a7b-1e73a816d5c1"
+    "mbid": "e4eaa11a-531e-42fc-8a7b-1e73a816d5c1",
+    "genres": [
+      "indie",
+      "acoustic",
+      "folk",
+      "rock",
+      "singer-songwriter"
+    ],
+    "popularity": {
+      "listeners": 12243,
+      "playcount": 139666
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/71c03e74ac49e44959d60b68a2a04c14/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:41.582Z"
   },
   {
     "name": "Mark Stuart",
@@ -75901,7 +76133,16 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:53:07.955Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "country"
+    ],
+    "popularity": {
+      "listeners": 373,
+      "playcount": 2732
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f7ec8e5aebf801cdd8e71be6e2183234/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:42.230Z"
   },
   {
     "name": "Mark Sultan",
@@ -75917,14 +76158,40 @@
     },
     "enrichedAt": "2026-07-07T07:18:23.892Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2ba15f3d-21f2-4979-aa57-63a44538dede"
+    "mbid": "2ba15f3d-21f2-4979-aa57-63a44538dede",
+    "genres": [
+      "Garage Rock",
+      "rockabilly",
+      "Canadian",
+      "garage",
+      "Montreal garage"
+    ],
+    "popularity": {
+      "listeners": 32378,
+      "playcount": 385245
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/78e05514b91f1d328d920c932caa55e0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:42.945Z"
   },
   {
     "name": "Mark Summer",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:23.892Z",
     "mbid": "fa31912c-2ebd-4253-ad2a-738b23867e09",
-    "autoTriedAt": "2026-07-11T00:53:12.112Z"
+    "autoTriedAt": "2026-07-11T00:53:12.112Z",
+    "genres": [
+      "composer",
+      "cello",
+      "american",
+      "USA",
+      "California"
+    ],
+    "popularity": {
+      "listeners": 5552,
+      "playcount": 18471
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/66c49f7edf756d2410f72352118c7522/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:44.188Z"
   },
   {
     "name": "Mark Summers",
@@ -75932,14 +76199,20 @@
     "wdBulkTriedAt": "2026-07-07T07:18:23.892Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "b11dd279-b3f0-46a7-9772-8e0dc245567f",
-    "autoTriedAt": "2026-07-11T00:53:14.814Z"
+    "autoTriedAt": "2026-07-11T00:53:14.814Z",
+    "popularity": {
+      "listeners": 957,
+      "playcount": 5115
+    },
+    "metaEnrichedAt": "2026-07-11T10:38:44.800Z"
   },
   {
     "name": "Mark Taimanov",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:23.892Z",
     "mbid": "ad06a983-4bc7-45e2-946b-2bbab1ff8a7f",
-    "autoTriedAt": "2026-07-11T00:53:19.336Z"
+    "autoTriedAt": "2026-07-11T00:53:19.336Z",
+    "metaTriedAt": "2026-07-11T10:38:45.391Z"
   },
   {
     "name": "Mark Templeton",
@@ -75956,7 +76229,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:53:21.947Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "ambient",
+      "experimental",
+      "electronic",
+      "minimal",
+      "electro-acoustic"
+    ],
+    "popularity": {
+      "listeners": 14045,
+      "playcount": 164000
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b4dd5c5f46413a7f6b4b22adb5071941/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:45.964Z"
   },
   {
     "name": "Mark Thomas",
@@ -75973,7 +76259,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:53:24.667Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Soundtrack",
+      "comedy",
+      "political",
+      "british",
+      "stand-up"
+    ],
+    "popularity": {
+      "listeners": 8524,
+      "playcount": 67559
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3ae6fcc798436da823b85ccd58cde5f0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:46.650Z"
   },
   {
     "name": "Mark Tremonti",
@@ -75989,14 +76288,28 @@
     },
     "enrichedAt": "2026-07-07T07:18:23.892Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "bbb1e25d-5ae6-4cdc-82ee-6c47736e61ae"
+    "mbid": "bbb1e25d-5ae6-4cdc-82ee-6c47736e61ae",
+    "genres": [
+      "alternative metal",
+      "hard rock",
+      "metal",
+      "post-grunge",
+      "thrash metal"
+    ],
+    "popularity": {
+      "listeners": 102140,
+      "playcount": 4185904
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/23718ee4c283dc217a53f2a81f41b620/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:47.271Z"
   },
   {
     "name": "Mark Tulin",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:23.892Z",
     "mbid": "32314f7b-13c4-4b35-aa93-8ccec0bc4f07",
-    "autoTriedAt": "2026-07-11T00:53:27.403Z"
+    "autoTriedAt": "2026-07-11T00:53:27.403Z",
+    "metaTriedAt": "2026-07-11T10:38:47.910Z"
   },
   {
     "name": "Mark Turner",
@@ -76012,14 +76325,32 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T00:53:27.403Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "jazz",
+      "saxophone",
+      "contemporary jazz",
+      "Post-Bop",
+      "jazz saxophone"
+    ],
+    "popularity": {
+      "listeners": 32319,
+      "playcount": 175077
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a4e222d777a5165309051e2846b352ca/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:48.509Z"
   },
   {
     "name": "Mark Walk",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:23.892Z",
     "mbid": "241cfb26-6834-4387-8898-d4bdc84a30ea",
-    "autoTriedAt": "2026-07-11T00:53:30.290Z"
+    "autoTriedAt": "2026-07-11T00:53:30.290Z",
+    "popularity": {
+      "listeners": 206,
+      "playcount": 538
+    },
+    "metaEnrichedAt": "2026-07-11T10:38:49.184Z"
   },
   {
     "name": "Mark Wardell",
@@ -76027,7 +76358,13 @@
     "wdBulkTriedAt": "2026-07-07T07:18:23.892Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "c1bc4139-769e-41bc-9b54-fe1f7d266084",
-    "autoTriedAt": "2026-07-11T00:53:33.967Z"
+    "autoTriedAt": "2026-07-11T00:53:33.967Z",
+    "popularity": {
+      "listeners": 18,
+      "playcount": 120
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2741411a285eb8df5c19f1a87c17294e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:49.866Z"
   },
   {
     "name": "Mark White",
@@ -76044,7 +76381,16 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:53:37.352Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "folk"
+    ],
+    "popularity": {
+      "listeners": 573,
+      "playcount": 2323
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/484ac72f862ec0b3a87c790550157cbb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:50.573Z"
   },
   {
     "name": "Mark Whitfield",
@@ -76060,7 +76406,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:53:41.824Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Smooth Jazz",
+      "jazz",
+      "jazz guitar",
+      "guitar",
+      "contemporary jazz"
+    ],
+    "popularity": {
+      "listeners": 23986,
+      "playcount": 121189
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c71a6ad7106827dca3467329de442263/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:51.217Z"
   },
   {
     "name": "Mark Wills",
@@ -76077,7 +76436,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:53:44.526Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "country",
+      "modern country",
+      "mark wills",
+      "My Playlist",
+      "makes me melt"
+    ],
+    "popularity": {
+      "listeners": 184228,
+      "playcount": 1300942
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/530b011018ac3236276f027575e06660/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:51.850Z"
   },
   {
     "name": "Mark Wilson",
@@ -76085,7 +76457,18 @@
     "wdBulkTriedAt": "2026-07-07T07:18:23.892Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "0aed36f0-08d7-4edf-9e42-57818a018f6d",
-    "autoTriedAt": "2026-07-11T00:53:49.872Z"
+    "autoTriedAt": "2026-07-11T00:53:49.872Z",
+    "genres": [
+      "new age",
+      "ambient",
+      "meditative"
+    ],
+    "popularity": {
+      "listeners": 2081,
+      "playcount": 12848
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/31cd3ec0b500e9a24a40159f22cd35fa/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:52.598Z"
   },
   {
     "name": "Mark Wingfield",
@@ -76101,7 +76484,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:23.892Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4f11cf02-421f-44f9-809a-bec0a1f161a0"
+    "mbid": "4f11cf02-421f-44f9-809a-bec0a1f161a0",
+    "genres": [
+      "Fusion",
+      "Jazz Rock",
+      "guitar",
+      "jazz",
+      "UK"
+    ],
+    "popularity": {
+      "listeners": 632,
+      "playcount": 5669
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2fb882bce010b212ff59e4ebb10dbd37/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:53.371Z"
   },
   {
     "name": "Mark Wood",
@@ -76118,7 +76514,17 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:53:55.797Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "heavy metal",
+      "rock",
+      "Marc Wood"
+    ],
+    "popularity": {
+      "listeners": 3891,
+      "playcount": 25531
+    },
+    "metaEnrichedAt": "2026-07-11T10:38:54.425Z"
   },
   {
     "name": "Mark Zeltser",
@@ -76134,7 +76540,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:53:59.166Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 21,
+      "playcount": 55
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2a531df91668c0d60f669531f9e0ef91/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:55.116Z"
   },
   {
     "name": "Mark Zonder",
@@ -76151,7 +76563,12 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:54:01.765Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 10,
+      "playcount": 17
+    },
+    "metaEnrichedAt": "2026-07-11T10:38:55.835Z"
   },
   {
     "name": "Mark-Almond",
@@ -76167,7 +76584,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2512faa5-b630-49fd-a1a7-03aeeb5393ec"
+    "mbid": "2512faa5-b630-49fd-a1a7-03aeeb5393ec",
+    "genres": [
+      "jazz",
+      "classic rock",
+      "acoustic jazz",
+      "british",
+      "Jazz Rock"
+    ],
+    "popularity": {
+      "listeners": 19079,
+      "playcount": 114458
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/45af099360d9b84bcaf968c2ff655ad8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:56.547Z"
   },
   {
     "name": "Mark-Anthony Turnage",
@@ -76183,7 +76613,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c5ed9685-423f-4fe5-bbf3-e31ad25002ae"
+    "mbid": "c5ed9685-423f-4fe5-bbf3-e31ad25002ae",
+    "genres": [
+      "contemporary classical",
+      "composer",
+      "Classical",
+      "british",
+      "Juma"
+    ],
+    "popularity": {
+      "listeners": 7571,
+      "playcount": 43941
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b1b796f1b8eb684852a9a7354f1963ff/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:38:57.157Z"
   },
   {
     "name": "Mark-Paul Gosselaar",
@@ -76199,14 +76642,24 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 5
+    },
+    "metaEnrichedAt": "2026-07-11T10:38:57.900Z"
   },
   {
     "name": "marka art",
     "website": null,
     "wdBulkTriedAt": "2026-07-08T14:10:41.155Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:54:04.147Z"
+    "autoTriedAt": "2026-07-11T00:54:04.147Z",
+    "popularity": {
+      "listeners": 110,
+      "playcount": 504
+    },
+    "metaEnrichedAt": "2026-07-11T10:38:58.643Z"
   },
   {
     "name": "Markdown",
@@ -76223,14 +76676,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:54:07.786Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 47,
+      "playcount": 225
+    },
+    "metaEnrichedAt": "2026-07-11T10:38:59.361Z"
   },
   {
     "name": "Market abolitionism",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:25.687Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:54:10.076Z"
+    "autoTriedAt": "2026-07-11T00:54:10.076Z",
+    "metaTriedAt": "2026-07-11T10:39:00.020Z"
   },
   {
     "name": "Marko Annala",
@@ -76246,21 +76705,42 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "87a02870-01de-4a29-8acd-8b49b63b273d"
+    "mbid": "87a02870-01de-4a29-8acd-8b49b63b273d",
+    "genres": [
+      "thrash metal",
+      "death metal",
+      "under 100 listeners"
+    ],
+    "popularity": {
+      "listeners": 33,
+      "playcount": 77
+    },
+    "metaEnrichedAt": "2026-07-11T10:39:00.702Z"
   },
   {
     "name": "Marko DeSantis",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:25.687Z",
     "mbid": "592e272a-79b9-4aac-aa57-a658a450e80a",
-    "autoTriedAt": "2026-07-11T00:54:11.537Z"
+    "autoTriedAt": "2026-07-11T00:54:11.537Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 4
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:01.816Z"
   },
   {
     "name": "Marko Nešić",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:25.687Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:54:12.769Z"
+    "autoTriedAt": "2026-07-11T00:54:12.769Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 1
+    },
+    "metaEnrichedAt": "2026-07-11T10:39:02.629Z"
   },
   {
     "name": "Marko Saaresto",
@@ -76276,21 +76756,45 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:54:22.219Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "rock",
+      "alternative rock",
+      "finnish",
+      "alternative",
+      "hot"
+    ],
+    "popularity": {
+      "listeners": 4985,
+      "playcount": 102991
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/07ca69e23db0be75e61e64fabb10d165/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:03.256Z"
   },
   {
     "name": "Marko Savić",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:25.687Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:54:23.602Z"
+    "autoTriedAt": "2026-07-11T00:54:23.602Z",
+    "metaTriedAt": "2026-07-11T10:39:03.947Z"
   },
   {
     "name": "Marko Tajčević",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:25.687Z",
     "mbid": "58db9420-92fe-4921-b89f-53d1fe65cefd",
-    "autoTriedAt": "2026-07-11T00:54:27.858Z"
+    "autoTriedAt": "2026-07-11T00:54:27.858Z",
+    "genres": [
+      "serbian",
+      "composer",
+      "Serbian composer"
+    ],
+    "popularity": {
+      "listeners": 202,
+      "playcount": 889
+    },
+    "metaEnrichedAt": "2026-07-11T10:39:04.713Z"
   },
   {
     "name": "Marko Topchii",
@@ -76306,14 +76810,33 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b44e98d8-b051-4811-a1bc-81e1e7fdc714"
+    "mbid": "b44e98d8-b051-4811-a1bc-81e1e7fdc714",
+    "popularity": {
+      "listeners": 154,
+      "playcount": 736
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7eb0f5bf0e6af542bcbfa5d4b78c6465/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:05.330Z"
   },
   {
     "name": "Markos Vamvakaris",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:25.687Z",
     "mbid": "482a86e0-4d49-4d26-8406-3d06f01f0285",
-    "autoTriedAt": "2026-07-11T00:54:30.245Z"
+    "autoTriedAt": "2026-07-11T00:54:30.245Z",
+    "genres": [
+      "Greek",
+      "Markos Vamvakaris",
+      "mastoura",
+      "rebetiko",
+      "hash smokers"
+    ],
+    "popularity": {
+      "listeners": 15799,
+      "playcount": 164733
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3b634ae0a1b2c45f84fd76bf50d2d186/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:06.023Z"
   },
   {
     "name": "Markus Burger",
@@ -76330,14 +76853,32 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:54:35.225Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "gimme sum friends",
+      "piano",
+      "colognejazzart",
+      "jazz"
+    ],
+    "popularity": {
+      "listeners": 948,
+      "playcount": 4479
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/70102b371d8e4eb203861a3dcaf44d3c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:06.689Z"
   },
   {
     "name": "Markus Gottschlich",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:25.687Z",
     "mbid": "110ab439-dcbd-4b11-a84b-da2a83bdad80",
-    "autoTriedAt": "2026-07-11T00:54:39.219Z"
+    "autoTriedAt": "2026-07-11T00:54:39.219Z",
+    "popularity": {
+      "listeners": 282,
+      "playcount": 678
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/759f6f36bdef3b63fa26bb3c81f2057a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:07.381Z"
   },
   {
     "name": "Markus Grosskopf",
@@ -76353,7 +76894,13 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "90b10306-ffc8-485e-a40d-ccc27caf4a5e"
+    "mbid": "90b10306-ffc8-485e-a40d-ccc27caf4a5e",
+    "popularity": {
+      "listeners": 10,
+      "playcount": 115
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:07.970Z"
   },
   {
     "name": "Markus Schulz",
@@ -76370,7 +76917,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:54:44.504Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "trance",
+      "progressive trance",
+      "electronic",
+      "vocal trance",
+      "dance"
+    ],
+    "popularity": {
+      "listeners": 378648,
+      "playcount": 5289123
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/931fa3ea22934db417b8aa7444d19da7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:08.585Z"
   },
   {
     "name": "Markus Stockhausen",
@@ -76386,7 +76946,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "42939d2e-260d-4336-9794-cfd82753cba9"
+    "mbid": "42939d2e-260d-4336-9794-cfd82753cba9",
+    "genres": [
+      "jazz",
+      "trumpet",
+      "free jazz",
+      "experimental",
+      "Avant-Garde"
+    ],
+    "popularity": {
+      "listeners": 14056,
+      "playcount": 106824
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/85caac94fe265457796327df775bf354/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:09.247Z"
   },
   {
     "name": "Markus Wormstorm",
@@ -76402,7 +76975,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:54:48.774Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "electronic",
+      "downtempo",
+      "south african",
+      "glitch",
+      "electronic music"
+    ],
+    "popularity": {
+      "listeners": 5751,
+      "playcount": 47104
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4214066d904a8612f39652a9574c7433/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:10.014Z"
   },
   {
     "name": "Marky",
@@ -76418,7 +77004,19 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "20f4225f-f50e-4382-8b6e-b18448bc037d"
+    "mbid": "20f4225f-f50e-4382-8b6e-b18448bc037d",
+    "genres": [
+      "Drum and bass",
+      "brazilian",
+      "electronic",
+      "dnb",
+      "Drum n Bass"
+    ],
+    "popularity": {
+      "listeners": 141636,
+      "playcount": 1438229
+    },
+    "metaEnrichedAt": "2026-07-11T10:39:10.783Z"
   },
   {
     "name": "Marky Mark & The Funky Bunch",
@@ -76434,7 +77032,19 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "77250a7a-12ba-40c5-a16a-cef015abcc98"
+    "mbid": "77250a7a-12ba-40c5-a16a-cef015abcc98",
+    "genres": [
+      "Hip-Hop",
+      "rap",
+      "90s",
+      "pop",
+      "hip hop"
+    ],
+    "popularity": {
+      "listeners": 173796,
+      "playcount": 727608
+    },
+    "metaEnrichedAt": "2026-07-11T10:39:11.407Z"
   },
   {
     "name": "Marky Mark and the Funky Bunch",
@@ -76450,7 +77060,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "77250a7a-12ba-40c5-a16a-cef015abcc98"
+    "mbid": "77250a7a-12ba-40c5-a16a-cef015abcc98",
+    "genres": [
+      "Hip-Hop",
+      "rap",
+      "90s",
+      "pop",
+      "hip hop"
+    ],
+    "popularity": {
+      "listeners": 173796,
+      "playcount": 727608
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/539662810687341c82f15d0c01acda53/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:11.989Z"
   },
   {
     "name": "Marla Sokoloff",
@@ -76466,7 +77089,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "15663765-ef98-4634-8ae2-15b013ac7f13"
+    "mbid": "15663765-ef98-4634-8ae2-15b013ac7f13",
+    "genres": [
+      "rock",
+      "female vocalists",
+      "pop rock",
+      "indie",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 1136,
+      "playcount": 17405
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/97118b806002fae08f7b7a0d20f4c559/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:12.584Z"
   },
   {
     "name": "Marlango",
@@ -76482,7 +77118,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1a2bd2b1-7fe4-4b09-9ae8-96d2a519bf9a"
+    "mbid": "1a2bd2b1-7fe4-4b09-9ae8-96d2a519bf9a",
+    "genres": [
+      "jazz",
+      "spanish",
+      "female vocalists",
+      "Jazz-Pop",
+      "indie"
+    ],
+    "popularity": {
+      "listeners": 88876,
+      "playcount": 1599062
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d73a7821a344d7b2216f491ae16123c7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:13.235Z"
   },
   {
     "name": "Marlayne",
@@ -76498,7 +77147,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0f076ae5-8022-412b-a452-b27ac9b45670"
+    "mbid": "0f076ae5-8022-412b-a452-b27ac9b45670",
+    "genres": [
+      "Eurovision",
+      "dutch",
+      "female vocalists",
+      "pop",
+      "dna singers"
+    ],
+    "popularity": {
+      "listeners": 2057,
+      "playcount": 11734
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/06063982c9c3e98a65d8ee7b5aa3d601/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:13.950Z"
   },
   {
     "name": "Marlee Scott",
@@ -76514,7 +77176,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ec1fd892-4c1c-48f1-a071-a12072f2d671"
+    "mbid": "ec1fd892-4c1c-48f1-a071-a12072f2d671",
+    "genres": [
+      "country",
+      "indie",
+      "female vocalists",
+      "singer-songwriter",
+      "modern country"
+    ],
+    "popularity": {
+      "listeners": 917,
+      "playcount": 23017
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c9eb61188bcf265a8ec3dfa9f1559e12/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:14.686Z"
   },
   {
     "name": "Marlena Shaw",
@@ -76530,7 +77205,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f94db5b3-9260-4e81-9d35-6806e50c713f"
+    "mbid": "f94db5b3-9260-4e81-9d35-6806e50c713f",
+    "genres": [
+      "soul",
+      "jazz",
+      "female vocalists",
+      "funk",
+      "jazz vocal"
+    ],
+    "popularity": {
+      "listeners": 557141,
+      "playcount": 3959422
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/118737871b33845f3c12bb0c3e37a126/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:15.256Z"
   },
   {
     "name": "Marlene Cummins",
@@ -76546,7 +77234,18 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a42d9d46-2ba5-4450-8150-7db7bc515c70"
+    "mbid": "a42d9d46-2ba5-4450-8150-7db7bc515c70",
+    "genres": [
+      "australia",
+      "blues",
+      "australian"
+    ],
+    "popularity": {
+      "listeners": 554,
+      "playcount": 3774
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9b35f0a87d321268c96a8afb889ae3c5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:15.917Z"
   },
   {
     "name": "Marlene Dietrich",
@@ -76562,7 +77261,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "191cba6a-b83f-49ca-883c-02b20c7a9dd5"
+    "mbid": "191cba6a-b83f-49ca-883c-02b20c7a9dd5",
+    "genres": [
+      "cabaret",
+      "german",
+      "female vocalists",
+      "oldies",
+      "deutsch"
+    ],
+    "popularity": {
+      "listeners": 203986,
+      "playcount": 2072146
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6f1ad5e48b4798846e2352ac0c2c9b51/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:16.541Z"
   },
   {
     "name": "Marley Marl",
@@ -76578,14 +77290,40 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8e7f5842-de5e-4eab-8d5f-0a55c84f4cb1"
+    "mbid": "8e7f5842-de5e-4eab-8d5f-0a55c84f4cb1",
+    "genres": [
+      "Hip-Hop",
+      "rap",
+      "new york",
+      "hip hop",
+      "east coast rap"
+    ],
+    "popularity": {
+      "listeners": 50181,
+      "playcount": 239484
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/85c4f991c0704d80673de018e8e39f36/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:17.238Z"
   },
   {
     "name": "Marlon",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:25.687Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:54:50.479Z"
+    "autoTriedAt": "2026-07-11T00:54:50.479Z",
+    "genres": [
+      "german",
+      "pop",
+      "male vocalists",
+      "rock",
+      "Italo Disco"
+    ],
+    "popularity": {
+      "listeners": 39608,
+      "playcount": 608839
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a93c3ff5af002c07708cdc7d9d7032fe/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:17.912Z"
   },
   {
     "name": "Marlon Asher",
@@ -76601,7 +77339,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7f043106-19d6-4be9-9d32-8b877c5c0b7e"
+    "mbid": "7f043106-19d6-4be9-9d32-8b877c5c0b7e",
+    "genres": [
+      "reggae",
+      "dancehall",
+      "ganja",
+      "Riddim",
+      "trinidad"
+    ],
+    "popularity": {
+      "listeners": 53931,
+      "playcount": 308074
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/34a1ab1353ba88484bce29251af780e2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:19.029Z"
   },
   {
     "name": "Marlon Brando",
@@ -76617,7 +77368,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2d2429e7-de99-465f-b5e6-3d1431795f91"
+    "mbid": "2d2429e7-de99-465f-b5e6-3d1431795f91",
+    "genres": [
+      "Soundtrack",
+      "instrumental",
+      "Sludge",
+      "All",
+      "magic"
+    ],
+    "popularity": {
+      "listeners": 3638,
+      "playcount": 13518
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/81ee7d8dcfe0a9aa15bb6d3f2ba5b08d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:19.892Z"
   },
   {
     "name": "Marlon Hoffstadt",
@@ -76633,7 +77397,20 @@
     "mbid": "7377ee25-9240-4b50-a824-20c202e96da9",
     "wdBulkTriedAt": "2026-07-08T14:10:41.155Z",
     "enrichedAt": "2026-07-08T14:10:41.155Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "pop",
+      "House",
+      "deep house",
+      "electronic",
+      "trance"
+    ],
+    "popularity": {
+      "listeners": 249857,
+      "playcount": 3217927
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bd1c566968c829fa10826a2aecb8edfe/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:20.510Z"
   },
   {
     "name": "Marlon Jackson",
@@ -76641,7 +77418,20 @@
     "wdBulkTriedAt": "2026-07-07T07:18:25.687Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "dfa29df0-2f21-409c-8509-a75e72205e1d",
-    "autoTriedAt": "2026-07-11T00:54:55.955Z"
+    "autoTriedAt": "2026-07-11T00:54:55.955Z",
+    "genres": [
+      "soul",
+      "rnb",
+      "male vocalists",
+      "80s",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 1402,
+      "playcount": 11669
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4b1025c49a4b976cef66a471172901cc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:21.137Z"
   },
   {
     "name": "Marlon Saunders",
@@ -76657,7 +77447,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "28224c00-f987-46f5-809c-01a5df443034"
+    "mbid": "28224c00-f987-46f5-809c-01a5df443034",
+    "genres": [
+      "acid jazz",
+      "soul",
+      "rnb",
+      "indie soul",
+      "r&b"
+    ],
+    "popularity": {
+      "listeners": 2203,
+      "playcount": 18498
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3b2ac813dccd7f2597342c3217f4a057/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:21.783Z"
   },
   {
     "name": "Marlos Nobre",
@@ -76673,14 +77476,28 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:55:00.712Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "contemporary classical",
+      "instrumental",
+      "composer",
+      "brasil",
+      "Contemporary"
+    ],
+    "popularity": {
+      "listeners": 1440,
+      "playcount": 9684
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/57b56ac807b3bded67c94ff463140195/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:22.512Z"
   },
   {
     "name": "Marmaduke Barton",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:25.687Z",
     "mbid": "3e4cd9b3-e97c-48bb-9828-b607e4130096",
-    "autoTriedAt": "2026-07-11T00:55:04.607Z"
+    "autoTriedAt": "2026-07-11T00:55:04.607Z",
+    "metaTriedAt": "2026-07-11T10:39:23.124Z"
   },
   {
     "name": "Marmaduke Duke",
@@ -76696,7 +77513,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "69663ae1-5ce3-4c0b-a6ce-f476863b9065"
+    "mbid": "69663ae1-5ce3-4c0b-a6ce-f476863b9065",
+    "genres": [
+      "experimental",
+      "Scottish",
+      "alternative rock",
+      "alternative",
+      "post-hardcore"
+    ],
+    "popularity": {
+      "listeners": 105979,
+      "playcount": 1561106
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bfb6a245a871aed4e69ead0f9cd26391/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:23.757Z"
   },
   {
     "name": "Marmalade",
@@ -76712,7 +77542,20 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T00:55:04.607Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "60s",
+      "pop",
+      "oldies",
+      "Scottish",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 141500,
+      "playcount": 851874
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7f650da3ac650565a8112d38687883d8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:24.418Z"
   },
   {
     "name": "Marmozets",
@@ -76728,7 +77571,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a8397de0-fe98-42db-bf19-c26b99ead138"
+    "mbid": "a8397de0-fe98-42db-bf19-c26b99ead138",
+    "genres": [
+      "post-hardcore",
+      "math rock",
+      "mathcore",
+      "female vocalists",
+      "british"
+    ],
+    "popularity": {
+      "listeners": 173130,
+      "playcount": 4195245
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/205620689ba5ee8543aa604ec4368ea4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:25.152Z"
   },
   {
     "name": "Marni Nixon",
@@ -76744,7 +77600,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4bc4aee5-3f5f-4af9-bce1-d89064ce2bcc"
+    "mbid": "4bc4aee5-3f5f-4af9-bce1-d89064ce2bcc",
+    "genres": [
+      "musicals",
+      "Broadway",
+      "All",
+      "classic",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 19925,
+      "playcount": 103053
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e65ed68bcf0bc538ff4a3564ea9ca174/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:25.854Z"
   },
   {
     "name": "Marnie Stern",
@@ -76760,21 +77629,49 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1632e413-36d3-41db-9684-822deecffc3c"
+    "mbid": "1632e413-36d3-41db-9684-822deecffc3c",
+    "genres": [
+      "math rock",
+      "experimental",
+      "noise rock",
+      "indie rock",
+      "indie"
+    ],
+    "popularity": {
+      "listeners": 156010,
+      "playcount": 2996758
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fc95a69538ddd7091abf688397895def/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:26.503Z"
   },
   {
     "name": "Maronnier",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:25.687Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:55:05.842Z"
+    "autoTriedAt": "2026-07-11T00:55:05.842Z",
+    "genres": [
+      "Korean"
+    ],
+    "popularity": {
+      "listeners": 1316,
+      "playcount": 7498
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3fd4351aa30b27d58c60887c41945a44/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:27.153Z"
   },
   {
     "name": "Maroochy Barambah",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:25.687Z",
     "mbid": "e51410ff-a3a7-46d1-951e-76d6a0e143d1",
-    "autoTriedAt": "2026-07-11T00:55:09.965Z"
+    "autoTriedAt": "2026-07-11T00:55:09.965Z",
+    "popularity": {
+      "listeners": 252,
+      "playcount": 727
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:27.787Z"
   },
   {
     "name": "Maroon",
@@ -76790,7 +77687,19 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8ef964a0-c730-455e-bc05-43e5a6f6269d"
+    "mbid": "8ef964a0-c730-455e-bc05-43e5a6f6269d",
+    "genres": [
+      "metalcore",
+      "hardcore",
+      "Straight Edge",
+      "german",
+      "German Metalcore"
+    ],
+    "popularity": {
+      "listeners": 89509,
+      "playcount": 2506536
+    },
+    "metaEnrichedAt": "2026-07-11T10:39:28.441Z"
   },
   {
     "name": "Maroon 5",
@@ -76806,7 +77715,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0ab49580-c84f-44d4-875f-d83760ea2cfe"
+    "mbid": "0ab49580-c84f-44d4-875f-d83760ea2cfe",
+    "genres": [
+      "pop rock",
+      "rock",
+      "pop",
+      "alternative",
+      "alternative rock"
+    ],
+    "popularity": {
+      "listeners": 6762117,
+      "playcount": 296769180
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bbb526b9666c7e31dee295bcabbbdd8e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:29.030Z"
   },
   {
     "name": "Marques Houston",
@@ -76822,7 +77744,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "94df7b45-d847-4ed4-8606-0cbe6e5a5573"
+    "mbid": "94df7b45-d847-4ed4-8606-0cbe6e5a5573",
+    "genres": [
+      "rnb",
+      "marques houston",
+      "soul",
+      "Hip-Hop",
+      "r&b"
+    ],
+    "popularity": {
+      "listeners": 531700,
+      "playcount": 3662087
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/87c1fb65bd40da99fd11e6a16dcf8fec/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:29.605Z"
   },
   {
     "name": "Marracash",
@@ -76838,21 +77773,51 @@
     "wdBulkTriedAt": "2026-07-09T08:32:10.022Z",
     "mbid": "d7bcfcb3-9dab-4897-8c47-25132eb48a88",
     "enrichedAt": "2026-07-09T08:32:10.022Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "hip hop",
+      "rap",
+      "Hip-Hop",
+      "italian",
+      "alternative rap"
+    ],
+    "popularity": {
+      "listeners": 99068,
+      "playcount": 10354402
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1e89869c0db662b53cbecd2160db2021/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:30.269Z"
   },
   {
     "name": "Marriage Bureau Rendezvous",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:25.687Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:55:15.771Z"
+    "autoTriedAt": "2026-07-11T00:55:15.771Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 2
+    },
+    "metaEnrichedAt": "2026-07-11T10:39:30.907Z"
   },
   {
     "name": "MARRS",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:25.687Z",
     "mbid": "13176bb9-9a3a-48ae-b05d-75a0bb668d01",
-    "autoTriedAt": "2026-07-11T00:55:18.863Z"
+    "autoTriedAt": "2026-07-11T00:55:18.863Z",
+    "genres": [
+      "House",
+      "electronic",
+      "dance",
+      "80s",
+      "4ad"
+    ],
+    "popularity": {
+      "listeners": 98744,
+      "playcount": 382184
+    },
+    "metaEnrichedAt": "2026-07-11T10:39:31.500Z"
   },
   {
     "name": "Mars",
@@ -76867,14 +77832,39 @@
       "vk": null
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:55:20.145Z"
+    "autoTriedAt": "2026-07-11T00:55:20.145Z",
+    "genres": [
+      "no wave",
+      "post-punk",
+      "noise rock",
+      "experimental",
+      "noise"
+    ],
+    "popularity": {
+      "listeners": 111114,
+      "playcount": 1097452
+    },
+    "metaEnrichedAt": "2026-07-11T10:39:32.160Z"
   },
   {
     "name": "Mars Bonfire",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:25.687Z",
     "mbid": "be06e779-cde9-4fbf-b170-34967008fcbc",
-    "autoTriedAt": "2026-07-11T00:55:22.823Z"
+    "autoTriedAt": "2026-07-11T00:55:22.823Z",
+    "genres": [
+      "Psychedelic Rock",
+      "canada",
+      "classic rock",
+      "rock",
+      "Progressive"
+    ],
+    "popularity": {
+      "listeners": 1562,
+      "playcount": 11399
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/974fdb2ae3f0c51cd68214662a95583c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:32.764Z"
   },
   {
     "name": "Mars Ill",
@@ -76890,14 +77880,39 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "883aaad5-4b85-41aa-97d2-060c41ec6c0a"
+    "mbid": "883aaad5-4b85-41aa-97d2-060c41ec6c0a",
+    "genres": [
+      "Hip-Hop",
+      "rap",
+      "christian",
+      "hip hop",
+      "underground hip-hop"
+    ],
+    "popularity": {
+      "listeners": 14639,
+      "playcount": 252442
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8773f77fc8f3dd3cab7f9300364dc971/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:33.373Z"
   },
   {
     "name": "Mars Volta",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:25.687Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:55:24.940Z"
+    "autoTriedAt": "2026-07-11T00:55:24.940Z",
+    "genres": [
+      "Progressive rock",
+      "alternative",
+      "The Mars Volta",
+      "psychedelic",
+      "experimental psychobilly free-jazz"
+    ],
+    "popularity": {
+      "listeners": 36228,
+      "playcount": 561330
+    },
+    "metaEnrichedAt": "2026-07-11T10:39:34.206Z"
   },
   {
     "name": "Mars Williams",
@@ -76913,7 +77928,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:55:38.313Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 267,
+      "playcount": 1612
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c33abed1b05f76e021d36b58f2fa54a7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:34.884Z"
   },
   {
     "name": "Marseille",
@@ -76929,14 +77950,28 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8563fae6-2903-4bd9-a5e4-f100e2504b7f"
+    "mbid": "8563fae6-2903-4bd9-a5e4-f100e2504b7f",
+    "genres": [
+      "NWOBHM",
+      "heavy metal",
+      "techno",
+      "UK",
+      "russian"
+    ],
+    "popularity": {
+      "listeners": 6499,
+      "playcount": 54062
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/92e182c423a8302be292a31c1dd277cf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:36.113Z"
   },
   {
     "name": "Marsh Harbour",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:25.687Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:55:39.563Z"
+    "autoTriedAt": "2026-07-11T00:55:39.563Z",
+    "metaTriedAt": "2026-07-11T10:39:36.712Z"
   },
   {
     "name": "Marsha Ambrosius",
@@ -76952,7 +77987,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "24285231-f192-42f1-baea-0f467dd1d8aa"
+    "mbid": "24285231-f192-42f1-baea-0f467dd1d8aa",
+    "genres": [
+      "soul",
+      "Neo-Soul",
+      "rnb",
+      "female vocalists",
+      "soul female vocalists"
+    ],
+    "popularity": {
+      "listeners": 147664,
+      "playcount": 1259829
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b51482421e414f4d3280aa6d5eb511ba/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:37.294Z"
   },
   {
     "name": "Marsha Hunt",
@@ -76960,7 +78008,20 @@
     "wdBulkTriedAt": "2026-07-07T07:18:25.687Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "e2eea8b6-b2c1-4262-be92-80d6cfc0dc8e",
-    "autoTriedAt": "2026-07-11T00:55:42.145Z"
+    "autoTriedAt": "2026-07-11T00:55:42.145Z",
+    "genres": [
+      "soul",
+      "70s",
+      "female vocalists",
+      "USA",
+      "american"
+    ],
+    "popularity": {
+      "listeners": 10106,
+      "playcount": 43501
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/eb8cae2768a6311e0503e72204f89f8d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:38.031Z"
   },
   {
     "name": "Marsha Thornton",
@@ -76976,7 +78037,18 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2d015465-8980-4efe-b8ec-c4d0a3fdc825"
+    "mbid": "2d015465-8980-4efe-b8ec-c4d0a3fdc825",
+    "genres": [
+      "90's",
+      "country",
+      "early 90s country"
+    ],
+    "popularity": {
+      "listeners": 476,
+      "playcount": 3057
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/be312b9d3d9d8887ef9a8cbb96ed1fa5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:38.665Z"
   },
   {
     "name": "Marsha Vadhanapanich",
@@ -76992,14 +78064,24 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6fd36a81-23ed-4a2a-9739-34408898599b"
+    "mbid": "6fd36a81-23ed-4a2a-9739-34408898599b",
+    "popularity": {
+      "listeners": 53,
+      "playcount": 358
+    },
+    "metaEnrichedAt": "2026-07-11T10:39:39.296Z"
   },
   {
     "name": "Marshal Royal",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:25.687Z",
     "mbid": "e40c950a-1aad-46c7-9f13-3cf198a0f83e",
-    "autoTriedAt": "2026-07-11T00:55:44.414Z"
+    "autoTriedAt": "2026-07-11T00:55:44.414Z",
+    "popularity": {
+      "listeners": 20,
+      "playcount": 98
+    },
+    "metaEnrichedAt": "2026-07-11T10:39:39.997Z"
   },
   {
     "name": "Marshall Allen",
@@ -77015,7 +78097,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:55:47.098Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "free jazz",
+      "Avant-Garde",
+      "saxophone",
+      "Avant-Garde Jazz"
+    ],
+    "popularity": {
+      "listeners": 9162,
+      "playcount": 48614
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4d03eb331b5194c0eb363e2da4eced25/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:40.685Z"
   },
   {
     "name": "Marshall Crenshaw",
@@ -77031,7 +78126,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "3a389027-814a-4f99-8f12-44e5276595cf"
+    "mbid": "3a389027-814a-4f99-8f12-44e5276595cf",
+    "genres": [
+      "power pop",
+      "new wave",
+      "singer-songwriter",
+      "pop",
+      "80s"
+    ],
+    "popularity": {
+      "listeners": 91942,
+      "playcount": 1045126
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bd35917e0cd2981cc0c76e13aeee5d51/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:41.272Z"
   },
   {
     "name": "Marshall Drew",
@@ -77039,14 +78147,27 @@
     "wdBulkTriedAt": "2026-07-07T07:18:25.687Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "10dacded-a8c2-4782-bb27-940faf3fcb92",
-    "autoTriedAt": "2026-07-11T00:55:50.350Z"
+    "autoTriedAt": "2026-07-11T00:55:50.350Z",
+    "popularity": {
+      "listeners": 9,
+      "playcount": 25
+    },
+    "metaEnrichedAt": "2026-07-11T10:39:42.119Z"
   },
   {
     "name": "Marshall Dyllon",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:25.687Z",
     "mbid": "eeb9aa54-529f-4582-96e9-3c28a38f2ae3",
-    "autoTriedAt": "2026-07-11T00:55:53.023Z"
+    "autoTriedAt": "2026-07-11T00:55:53.023Z",
+    "genres": [
+      "country"
+    ],
+    "popularity": {
+      "listeners": 267,
+      "playcount": 6703
+    },
+    "metaEnrichedAt": "2026-07-11T10:39:42.743Z"
   },
   {
     "name": "Marshall Gilkes",
@@ -77062,7 +78183,17 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:55:55.903Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "trombone",
+      "jazz"
+    ],
+    "popularity": {
+      "listeners": 3735,
+      "playcount": 54568
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2f92aa5615f6beb7019a13c360b61cd3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:43.406Z"
   },
   {
     "name": "Marshall Hain",
@@ -77079,7 +78210,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:55:58.496Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "pop",
+      "70s",
+      "Disco",
+      "one hit wonder",
+      "oldies"
+    ],
+    "popularity": {
+      "listeners": 38329,
+      "playcount": 149424
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cc727825381c58b1a56a81d983ac6e86/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:44.219Z"
   },
   {
     "name": "Marshall Hall",
@@ -77087,7 +78231,16 @@
     "wdBulkTriedAt": "2026-07-07T07:18:25.687Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "39f95f14-ecc0-47d0-a7e3-de3770ca3b7a",
-    "autoTriedAt": "2026-07-11T00:56:01.050Z"
+    "autoTriedAt": "2026-07-11T00:56:01.050Z",
+    "genres": [
+      "Southern Gospel"
+    ],
+    "popularity": {
+      "listeners": 1090,
+      "playcount": 11511
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7819b872c18b574c4b0c50d80701b283/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:44.918Z"
   },
   {
     "name": "Marshall Jefferson",
@@ -77103,7 +78256,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d5e52d8c-c227-4387-9f86-100ab5432fc8"
+    "mbid": "d5e52d8c-c227-4387-9f86-100ab5432fc8",
+    "genres": [
+      "House",
+      "Chicago House",
+      "acid house",
+      "electronic",
+      "dance"
+    ],
+    "popularity": {
+      "listeners": 235122,
+      "playcount": 1082405
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c6a568324347a6c45eb24daaa607ce0d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:45.553Z"
   },
   {
     "name": "Marshall Tucker Band",
@@ -77119,14 +78285,27 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "568045b3-c3cb-4100-9bc5-ef9cdcebe643"
+    "mbid": "568045b3-c3cb-4100-9bc5-ef9cdcebe643",
+    "genres": [
+      "Southern Rock",
+      "classic rock",
+      "country rock",
+      "rock",
+      "70s"
+    ],
+    "popularity": {
+      "listeners": 542707,
+      "playcount": 5411217
+    },
+    "metaEnrichedAt": "2026-07-11T10:39:46.126Z"
   },
   {
     "name": "Marshall's Collection of Songs, Comic, Satirical 1827",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:25.687Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:56:03.248Z"
+    "autoTriedAt": "2026-07-11T00:56:03.248Z",
+    "metaTriedAt": "2026-07-11T10:39:46.912Z"
   },
   {
     "name": "Marshanda",
@@ -77142,7 +78321,17 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a011efb8-6144-48af-b548-fe828ec7a084"
+    "mbid": "a011efb8-6144-48af-b548-fe828ec7a084",
+    "genres": [
+      "indonesian",
+      "indonesian female vocal"
+    ],
+    "popularity": {
+      "listeners": 1565,
+      "playcount": 11873
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9e85ed33a0b15a6e05ac92a9b0bf6f47/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:47.565Z"
   },
   {
     "name": "Marsheaux",
@@ -77158,7 +78347,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:25.687Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d8ae9175-df93-4730-8274-6a0b53f1d5b1"
+    "mbid": "d8ae9175-df93-4730-8274-6a0b53f1d5b1",
+    "genres": [
+      "synthpop",
+      "electropop",
+      "electronic",
+      "Greek",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 142096,
+      "playcount": 2101879
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/232c4af1b91e9716041ed80d1fce10c9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:48.214Z"
   },
   {
     "name": "Marstein",
@@ -77174,7 +78376,20 @@
     },
     "mbid": "64dba024-3c85-4741-bd90-56aaa8509861",
     "enrichedAt": "2026-07-09T08:32:10.022Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "rap",
+      "hip hop",
+      "norwegian",
+      "Norway",
+      "Avantgarde Pop"
+    ],
+    "popularity": {
+      "listeners": 32746,
+      "playcount": 1565678
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/99c77b39bf9a556e265d7529bf1b05f9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:48.806Z"
   },
   {
     "name": "Marsyas",
@@ -77191,7 +78406,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:56:06.255Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Czech",
+      "folk rock",
+      "folk",
+      "Progressive rock",
+      "Gothic Metal"
+    ],
+    "popularity": {
+      "listeners": 4910,
+      "playcount": 90036
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/de2caeab6e3d186a1ad627d666c00b5e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:49.475Z"
   },
   {
     "name": "Marta Gómez",
@@ -77208,7 +78436,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:56:08.891Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "latin",
+      "Colombia",
+      "world",
+      "singer-songwriter",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 28440,
+      "playcount": 426386
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9b422eff853dce98f93bb31e2de44088/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:50.138Z"
   },
   {
     "name": "Marta Jandova",
@@ -77224,7 +78465,13 @@
     },
     "enrichedAt": "2026-07-07T07:18:27.533Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "68b8e15d-09ab-492c-bfc4-f45cb832149e"
+    "mbid": "68b8e15d-09ab-492c-bfc4-f45cb832149e",
+    "popularity": {
+      "listeners": 85,
+      "playcount": 391
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8e45876ddede2eaf39ac56e09f28b9e7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:50.874Z"
   },
   {
     "name": "Marta Mirska",
@@ -77232,7 +78479,20 @@
     "wdBulkTriedAt": "2026-07-07T07:18:27.533Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "a09e080f-a66b-428c-b679-5ac59fb96b24",
-    "autoTriedAt": "2026-07-11T00:56:11.883Z"
+    "autoTriedAt": "2026-07-11T00:56:11.883Z",
+    "genres": [
+      "polish",
+      "pop",
+      "50s",
+      "female vocalists",
+      "m mirska"
+    ],
+    "popularity": {
+      "listeners": 2688,
+      "playcount": 18978
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ee2ac807e1c61718fde82d64df745087/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:51.576Z"
   },
   {
     "name": "Marta Sánchez",
@@ -77249,7 +78509,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:56:14.456Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "spanish",
+      "female vocalists",
+      "pop",
+      "latin",
+      "dance"
+    ],
+    "popularity": {
+      "listeners": 69654,
+      "playcount": 625524
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/81cf3af3b101b3d18b8fb5dada0f9e28/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:52.213Z"
   },
   {
     "name": "Márta Sebestyén",
@@ -77265,14 +78538,28 @@
     },
     "enrichedAt": "2026-07-07T07:18:27.533Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0d3177ea-becd-461c-a364-af1760c8f367"
+    "mbid": "0d3177ea-becd-461c-a364-af1760c8f367",
+    "genres": [
+      "hungarian",
+      "folk",
+      "world",
+      "female vocalists",
+      "World Music"
+    ],
+    "popularity": {
+      "listeners": 18213,
+      "playcount": 113394
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6e8d08381d162603494e29fcb66e821c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:53.374Z"
   },
   {
     "name": "Marta Wittkowska",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:27.533Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:56:15.708Z"
+    "autoTriedAt": "2026-07-11T00:56:15.708Z",
+    "metaTriedAt": "2026-07-11T10:39:53.968Z"
   },
   {
     "name": "Marte Eberson",
@@ -77288,28 +78575,55 @@
     },
     "enrichedAt": "2026-07-07T07:18:27.533Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4ece8768-9ca2-4114-899c-3da213573a46"
+    "mbid": "4ece8768-9ca2-4114-899c-3da213573a46",
+    "genres": [
+      "pop",
+      "indie",
+      "norwegian",
+      "Norway"
+    ],
+    "popularity": {
+      "listeners": 3603,
+      "playcount": 19133
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f170d04a7777b0fcabd80cff84f22cf2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:54.640Z"
   },
   {
     "name": "Mårten Andersson",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:27.533Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:56:16.954Z"
+    "autoTriedAt": "2026-07-11T00:56:16.954Z",
+    "popularity": {
+      "listeners": 14,
+      "playcount": 56
+    },
+    "metaEnrichedAt": "2026-07-11T10:39:55.742Z"
   },
   {
     "name": "Mårten Falk",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:27.533Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:56:18.205Z"
+    "autoTriedAt": "2026-07-11T00:56:18.205Z",
+    "popularity": {
+      "listeners": 127,
+      "playcount": 664
+    },
+    "metaEnrichedAt": "2026-07-11T10:39:56.416Z"
   },
   {
     "name": "Mårten Hagström",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:27.533Z",
     "mbid": "5054ac0c-2633-4464-b025-0929b63f17c6",
-    "autoTriedAt": "2026-07-11T00:56:37.308Z"
+    "autoTriedAt": "2026-07-11T00:56:37.308Z",
+    "popularity": {
+      "listeners": 11,
+      "playcount": 23
+    },
+    "metaEnrichedAt": "2026-07-11T10:39:57.026Z"
   },
   {
     "name": "Marteria",
@@ -77325,14 +78639,40 @@
     },
     "enrichedAt": "2026-07-07T07:18:27.533Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e64f6569-f723-4737-b2c3-9c72a1101842"
+    "mbid": "e64f6569-f723-4737-b2c3-9c72a1101842",
+    "genres": [
+      "Deutschrap",
+      "rap",
+      "german",
+      "hip hop",
+      "Hip-Hop"
+    ],
+    "popularity": {
+      "listeners": 269078,
+      "playcount": 8506987
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6eadc937651239a34b74eeb080be8717/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:57.675Z"
   },
   {
     "name": "Martha & The Vandellas",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:27.533Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T00:56:38.558Z"
+    "autoTriedAt": "2026-07-11T00:56:38.558Z",
+    "genres": [
+      "soul",
+      "motown",
+      "60s",
+      "female vocalists",
+      "oldies"
+    ],
+    "popularity": {
+      "listeners": 823830,
+      "playcount": 6040813
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b7ab131ddfc30110eaf5908bdcd048eb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:58.254Z"
   },
   {
     "name": "Martha And The Muffins",
@@ -77349,7 +78689,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:56:41.806Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "new wave",
+      "Canadian",
+      "80s",
+      "female vocalists",
+      "post-punk"
+    ],
+    "popularity": {
+      "listeners": 204032,
+      "playcount": 1325191
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ce4b1f1b59614668b08428974b06acca/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:58.861Z"
   },
   {
     "name": "Martha and the Vandellas",
@@ -77365,7 +78718,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:27.533Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "9d1bc10a-24fe-4b41-8338-ea92d8101a09"
+    "mbid": "9d1bc10a-24fe-4b41-8338-ea92d8101a09",
+    "genres": [
+      "soul",
+      "motown",
+      "female vocalists",
+      "60s",
+      "oldies"
+    ],
+    "popularity": {
+      "listeners": 87988,
+      "playcount": 464119
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/602c4f8fed3e283cfbd5ebda6546c6ea/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:39:59.539Z"
   },
   {
     "name": "Martha Argerich",
@@ -77381,7 +78747,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:27.533Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "3bb8b89e-5700-4d7a-aa0b-d48f8706831d"
+    "mbid": "3bb8b89e-5700-4d7a-aa0b-d48f8706831d",
+    "genres": [
+      "Classical",
+      "piano",
+      "classical piano",
+      "pianist",
+      "argentina"
+    ],
+    "popularity": {
+      "listeners": 153352,
+      "playcount": 2118214
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/21672aa3a669561041b6b7dbe7a29016/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:40:00.176Z"
   },
   {
     "name": "Martha Copeland",
@@ -77389,7 +78768,20 @@
     "wdBulkTriedAt": "2026-07-07T07:18:27.533Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "077a8bf5-0b13-4af5-acbe-5d4b9f4b171b",
-    "autoTriedAt": "2026-07-11T00:56:44.569Z"
+    "autoTriedAt": "2026-07-11T00:56:44.569Z",
+    "genres": [
+      "blues",
+      "female vocalists",
+      "Early Blues",
+      "Classic Blues",
+      "female vocalist"
+    ],
+    "popularity": {
+      "listeners": 1702,
+      "playcount": 5790
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b3ea2f11ad772a6238307995dea6227e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:40:00.814Z"
   },
   {
     "name": "Martha Johnson",
@@ -77397,14 +78789,27 @@
     "wdBulkTriedAt": "2026-07-07T07:18:27.533Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "815f59dc-9343-491a-8fe5-6d7194739a03",
-    "autoTriedAt": "2026-07-11T00:57:03.366Z"
+    "autoTriedAt": "2026-07-11T00:57:03.366Z",
+    "genres": [
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 96,
+      "playcount": 1061
+    },
+    "metaEnrichedAt": "2026-07-11T10:40:01.441Z"
   },
   {
     "name": "Martha Joy",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:27.533Z",
     "mbid": "41e4e791-85bd-4734-9d87-74e33ab31937",
-    "autoTriedAt": "2026-07-11T00:57:05.951Z"
+    "autoTriedAt": "2026-07-11T00:57:05.951Z",
+    "popularity": {
+      "listeners": 36,
+      "playcount": 555
+    },
+    "metaEnrichedAt": "2026-07-11T10:40:02.539Z"
   },
   {
     "name": "Martha Ladly",
@@ -77420,7 +78825,13 @@
     },
     "enrichedAt": "2026-07-07T07:18:27.533Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "df12ddd4-26c0-496a-a008-55426c59698c"
+    "mbid": "df12ddd4-26c0-496a-a008-55426c59698c",
+    "popularity": {
+      "listeners": 66,
+      "playcount": 459
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2d4afa3e718bf02ef6fac31c0cce562b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:40:03.248Z"
   },
   {
     "name": "Martha Masters",
@@ -77436,14 +78847,32 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:57:08.525Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "classical guitar",
+      "Classical",
+      "guitar",
+      "instrumental",
+      "guitar virtuoso"
+    ],
+    "popularity": {
+      "listeners": 650,
+      "playcount": 4962
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7f4c4523a7878cf6a6d2cf8283d3e9e2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:40:03.885Z"
   },
   {
     "name": "Martha Mier",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:27.533Z",
     "mbid": "a933ffcb-9ea2-4895-b288-c4e41c3edae2",
-    "autoTriedAt": "2026-07-11T00:57:11.078Z"
+    "autoTriedAt": "2026-07-11T00:57:11.078Z",
+    "popularity": {
+      "listeners": 778,
+      "playcount": 2325
+    },
+    "metaEnrichedAt": "2026-07-11T10:40:04.613Z"
   },
   {
     "name": "Martha Munizzi",
@@ -77459,14 +78888,40 @@
     },
     "enrichedAt": "2026-07-07T07:18:27.533Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d476f86b-8e1d-4bc0-9466-3680034c00b0"
+    "mbid": "d476f86b-8e1d-4bc0-9466-3680034c00b0",
+    "genres": [
+      "gospel",
+      "worship",
+      "praise & worship",
+      "martha munizzi",
+      "christian"
+    ],
+    "popularity": {
+      "listeners": 37572,
+      "playcount": 328417
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4a3972c9b1ba13265a1a2c79706f7b2b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:40:05.296Z"
   },
   {
     "name": "Martha Raye",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:18:27.533Z",
     "mbid": "eb608fc1-fc6b-435f-8d1e-90a7c9930a77",
-    "autoTriedAt": "2026-07-11T00:57:13.705Z"
+    "autoTriedAt": "2026-07-11T00:57:13.705Z",
+    "genres": [
+      "swing",
+      "female vocalists",
+      "40s",
+      "the vitamin b12",
+      "50s"
+    ],
+    "popularity": {
+      "listeners": 4099,
+      "playcount": 16546
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d2b2c17647ea57752a676d342abf8d12/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:40:05.994Z"
   },
   {
     "name": "Martha Reeves",
@@ -77483,7 +78938,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:57:16.448Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "soul",
+      "motown",
+      "female vocalists",
+      "60s",
+      "oldies"
+    ],
+    "popularity": {
+      "listeners": 87988,
+      "playcount": 464119
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c9c394e4a8eab59294e655cf6f0aeaed/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:40:06.594Z"
   },
   {
     "name": "Martha Reeves and the Vandellas",
@@ -77500,7 +78968,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:57:19.068Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "soul",
+      "motown",
+      "60s",
+      "female vocalists",
+      "northern soul"
+    ],
+    "popularity": {
+      "listeners": 59690,
+      "playcount": 357873
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8e2599c07101e966c55eb320b2efc600/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:40:07.694Z"
   },
   {
     "name": "Martha Scanlan",
@@ -77517,7 +78998,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T00:57:21.701Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "country",
+      "Alt-country",
+      "Minnesota",
+      "americana",
+      "radioparadise"
+    ],
+    "popularity": {
+      "listeners": 6204,
+      "playcount": 50297
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/67b494535edd287f85b3acf722c67f90/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:40:08.304Z"
   },
   {
     "name": "Martha Strongin Katz",
@@ -77525,7 +79019,8 @@
     "wdBulkTriedAt": "2026-07-07T07:18:27.533Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "176596c2-66a5-4770-a595-dfef3a73dc7e",
-    "autoTriedAt": "2026-07-11T00:57:24.936Z"
+    "autoTriedAt": "2026-07-11T00:57:24.936Z",
+    "metaTriedAt": "2026-07-11T10:40:08.866Z"
   },
   {
     "name": "Martha Tilton",
@@ -77541,7 +79036,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:27.533Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "96ff3aa9-1b55-4fb2-8fd5-30f95bb3bc5a"
+    "mbid": "96ff3aa9-1b55-4fb2-8fd5-30f95bb3bc5a",
+    "genres": [
+      "female vocalists",
+      "jazz",
+      "swing",
+      "jazz vocal",
+      "singer-songwriter"
+    ],
+    "popularity": {
+      "listeners": 45944,
+      "playcount": 241842
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4f50617510ff34b15e078e1f642809dd/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:40:09.595Z"
   },
   {
     "name": "Martha Wainwright",
@@ -77557,7 +79065,20 @@
     },
     "enrichedAt": "2026-07-07T07:18:27.533Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "231475d8-fddb-4d7d-aad9-287e59e4b4ba"
+    "mbid": "231475d8-fddb-4d7d-aad9-287e59e4b4ba",
+    "genres": [
+      "singer-songwriter",
+      "folk",
+      "female vocalists",
+      "Canadian",
+      "indie"
+    ],
+    "popularity": {
+      "listeners": 437478,
+      "playcount": 5665835
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2b2348036a391533d9c210f73655913f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-11T10:40:10.236Z"
   },
   {
     "name": "Martha Wash",
