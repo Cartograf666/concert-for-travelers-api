@@ -1,0 +1,16 @@
+{
+  "id": "artist-hirahara-ayaka",
+  "domain": "www.camp-a-ya.com",
+  "url": "https://www.camp-a-ya.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "ul.liveList > li",
+    "artistNameFallback": "平原綾香",
+    "date": ".liveDate",
+    "ticketUrl": ".liveLinkArea a",
+    "venue": ".liveVenue",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}
