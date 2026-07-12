@@ -92157,7 +92157,20 @@
     },
     "enrichedAt": "2026-07-07T07:29:18.821Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4d5447d7-5b2e-45bc-98e2-3abaebb90741"
+    "mbid": "4d5447d7-5b2e-45bc-98e2-3abaebb90741",
+    "genres": [
+      "alternative rock",
+      "rock",
+      "singer-songwriter",
+      "acoustic",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 5044,
+      "playcount": 47489
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/31c14b5589868b8942bfb52a0ece4370/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:29:38.438Z"
   },
   {
     "name": "William Elliott Whitmore",
@@ -92173,28 +92186,59 @@
     },
     "enrichedAt": "2026-07-07T07:29:18.821Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "9f42398b-56e5-4430-842c-1d843ac9f116"
+    "mbid": "9f42398b-56e5-4430-842c-1d843ac9f116",
+    "genres": [
+      "folk",
+      "blues",
+      "Alt-country",
+      "singer-songwriter",
+      "americana"
+    ],
+    "popularity": {
+      "listeners": 116482,
+      "playcount": 1909566
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/763a4d7c028d9d8c9efce77e0c982323/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:29:39.062Z"
   },
   {
     "name": "William Ezell",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbid": "b8cad03c-8c93-4a4b-afb8-5d4052e96b69",
-    "autoTriedAt": "2026-07-11T17:36:07.832Z"
+    "autoTriedAt": "2026-07-11T17:36:07.832Z",
+    "genres": [
+      "piano",
+      "boogie woogie",
+      "blues",
+      "jazz",
+      "oldies"
+    ],
+    "popularity": {
+      "listeners": 1329,
+      "playcount": 6559
+    },
+    "metaEnrichedAt": "2026-07-12T04:29:39.755Z"
   },
   {
     "name": "William F. Lee",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:36:09.079Z"
+    "autoTriedAt": "2026-07-11T17:36:09.079Z",
+    "popularity": {
+      "listeners": 28,
+      "playcount": 33
+    },
+    "metaEnrichedAt": "2026-07-12T04:29:40.498Z"
   },
   {
     "name": "William fitz Robert Barry",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:36:10.364Z"
+    "autoTriedAt": "2026-07-11T17:36:10.364Z",
+    "metaTriedAt": "2026-07-12T04:29:41.124Z"
   },
   {
     "name": "William Fitzsimmons",
@@ -92211,7 +92255,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:36:13.005Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "folk",
+      "singer-songwriter",
+      "acoustic",
+      "indie",
+      "Mellow"
+    ],
+    "popularity": {
+      "listeners": 819861,
+      "playcount": 18211596
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9bca9d0707007a99f3fb9cef17206ef6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:29:41.793Z"
   },
   {
     "name": "William Ford Gibson",
@@ -92227,7 +92284,8 @@
     },
     "enrichedAt": "2026-07-07T07:29:18.821Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "be09d8f3-1a39-4220-a8a8-66f3c13e830b"
+    "mbid": "be09d8f3-1a39-4220-a8a8-66f3c13e830b",
+    "metaTriedAt": "2026-07-12T04:29:42.439Z"
   },
   {
     "name": "William Frawley",
@@ -92235,7 +92293,12 @@
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "7e67f32f-b55b-4795-9440-8466732ecd43",
-    "autoTriedAt": "2026-07-11T17:36:15.503Z"
+    "autoTriedAt": "2026-07-11T17:36:15.503Z",
+    "popularity": {
+      "listeners": 13,
+      "playcount": 40
+    },
+    "metaEnrichedAt": "2026-07-12T04:29:43.081Z"
   },
   {
     "name": "William Gardiner",
@@ -92243,28 +92306,56 @@
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "4c7bfd85-26f7-45cd-98da-da05f3157db6",
-    "autoTriedAt": "2026-07-11T17:36:18.018Z"
+    "autoTriedAt": "2026-07-11T17:36:18.018Z",
+    "genres": [
+      "modern classical",
+      "experimental",
+      "indie",
+      "instrumental",
+      "contemporary classical"
+    ],
+    "popularity": {
+      "listeners": 614,
+      "playcount": 2050
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1d70fbd7b9233a062c773aa3b2a069ff/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:29:43.755Z"
   },
   {
     "name": "William Garland",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:36:19.280Z"
+    "autoTriedAt": "2026-07-11T17:36:19.280Z",
+    "popularity": {
+      "listeners": 3,
+      "playcount": 43
+    },
+    "metaEnrichedAt": "2026-07-12T04:29:44.390Z"
   },
   {
     "name": "William Garnet James",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbid": "83bc118c-7c79-47bd-a556-24401e79e3a2",
-    "autoTriedAt": "2026-07-11T17:36:20.520Z"
+    "autoTriedAt": "2026-07-11T17:36:20.520Z",
+    "popularity": {
+      "listeners": 18,
+      "playcount": 37
+    },
+    "metaEnrichedAt": "2026-07-12T04:29:45.029Z"
   },
   {
     "name": "William Gaxton",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:36:21.752Z"
+    "autoTriedAt": "2026-07-11T17:36:21.752Z",
+    "popularity": {
+      "listeners": 16,
+      "playcount": 27
+    },
+    "metaEnrichedAt": "2026-07-12T04:29:45.691Z"
   },
   {
     "name": "William Gibson",
@@ -92281,7 +92372,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:36:24.301Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "science fiction",
+      "Audiobook",
+      "cyberpunk",
+      "fiction",
+      "speech"
+    ],
+    "popularity": {
+      "listeners": 4055,
+      "playcount": 92062
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5313d65cd9d715a698a667723c28f9f7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:29:46.336Z"
   },
   {
     "name": "William Godwin",
@@ -92289,7 +92393,12 @@
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "c45bea35-1de5-427a-9469-36d9a3dc3fca",
-    "autoTriedAt": "2026-07-11T17:36:26.797Z"
+    "autoTriedAt": "2026-07-11T17:36:26.797Z",
+    "popularity": {
+      "listeners": 3,
+      "playcount": 3
+    },
+    "metaEnrichedAt": "2026-07-12T04:29:46.988Z"
   },
   {
     "name": "William Grant Still",
@@ -92305,7 +92414,20 @@
     },
     "enrichedAt": "2026-07-07T07:29:18.821Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ca1ed31b-9acd-4d46-8016-e158b25cd4c8"
+    "mbid": "ca1ed31b-9acd-4d46-8016-e158b25cd4c8",
+    "genres": [
+      "Classical",
+      "20th Century",
+      "american classical",
+      "contemporary classical",
+      "american"
+    ],
+    "popularity": {
+      "listeners": 78385,
+      "playcount": 325278
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/af3d269083718312f9ddd49739e55158/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:29:47.563Z"
   },
   {
     "name": "William Henries",
@@ -92322,28 +92444,70 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:36:29.311Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 574,
+      "playcount": 2301
+    },
+    "metaEnrichedAt": "2026-07-12T04:29:48.265Z"
   },
   {
     "name": "William Henry Harris",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:36:30.611Z"
+    "autoTriedAt": "2026-07-11T17:36:30.611Z",
+    "genres": [
+      "contemporary classical",
+      "UK",
+      "choral",
+      "modern classical"
+    ],
+    "popularity": {
+      "listeners": 5132,
+      "playcount": 16514
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8f8227082f876808df38b41d33aa0f36/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:29:48.908Z"
   },
   {
     "name": "William Henry Squire",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbid": "84f5868d-29e4-4e93-b011-a75d9bbfebb7",
-    "autoTriedAt": "2026-07-11T17:36:33.182Z"
+    "autoTriedAt": "2026-07-11T17:36:33.182Z",
+    "genres": [
+      "20th Century",
+      "english",
+      "20th",
+      "cellist"
+    ],
+    "popularity": {
+      "listeners": 4369,
+      "playcount": 15834
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b48c35f391a74da253166bf3fc3e61bc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:29:49.515Z"
   },
   {
     "name": "William Herschel",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbid": "07c4274b-e217-4652-b50f-eb398c3fc9d4",
-    "autoTriedAt": "2026-07-11T17:36:35.754Z"
+    "autoTriedAt": "2026-07-11T17:36:35.754Z",
+    "genres": [
+      "Classical",
+      "baroque",
+      "composer",
+      "german",
+      "symphony"
+    ],
+    "popularity": {
+      "listeners": 2903,
+      "playcount": 18710
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7391f44422a246fe85c8ab2c1c497876/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:29:50.204Z"
   },
   {
     "name": "William Hooker",
@@ -92360,7 +92524,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:36:38.347Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "experimental",
+      "Juma",
+      "improvisation",
+      "free jazz"
+    ],
+    "popularity": {
+      "listeners": 1684,
+      "playcount": 14101
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5f0006b07ba0882e24bc76935d0b32a3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:29:50.954Z"
   },
   {
     "name": "William Hung",
@@ -92368,14 +92545,40 @@
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "e41fa57c-cfde-4986-ac69-994c0b55f228",
-    "autoTriedAt": "2026-07-11T17:36:40.884Z"
+    "autoTriedAt": "2026-07-11T17:36:40.884Z",
+    "genres": [
+      "pop",
+      "American Idol",
+      "Gothic Metal",
+      "outsider",
+      "comedy"
+    ],
+    "popularity": {
+      "listeners": 15090,
+      "playcount": 84663
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c917cec01fdf1a2e01bfe1179b9a968a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:29:51.632Z"
   },
   {
     "name": "William Hurlstone",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbid": "bee20018-031c-47fc-866e-dc4dbfaf02f3",
-    "autoTriedAt": "2026-07-11T17:36:43.457Z"
+    "autoTriedAt": "2026-07-11T17:36:43.457Z",
+    "genres": [
+      "composer",
+      "Classical",
+      "UK",
+      "romantic",
+      "United Kingdom"
+    ],
+    "popularity": {
+      "listeners": 1223,
+      "playcount": 5961
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/98315111f522800a77ccea812872eb11/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:29:52.308Z"
   },
   {
     "name": "William Hut",
@@ -92391,7 +92594,20 @@
     },
     "enrichedAt": "2026-07-07T07:29:18.821Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d608a2c4-10ad-45ab-9a40-cbc4e7f42c7c"
+    "mbid": "d608a2c4-10ad-45ab-9a40-cbc4e7f42c7c",
+    "genres": [
+      "norwegian",
+      "singer-songwriter",
+      "alternative",
+      "alternative rock",
+      "norsk"
+    ],
+    "popularity": {
+      "listeners": 13679,
+      "playcount": 108612
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c3c7ee17bb92c6e944dde629a733b19d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:29:52.978Z"
   },
   {
     "name": "William Joseph",
@@ -92408,14 +92624,28 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:36:46.214Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "piano",
+      "instrumental",
+      "Classical",
+      "new age",
+      "classical crossover"
+    ],
+    "popularity": {
+      "listeners": 66434,
+      "playcount": 610153
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1da6a5daa5970a05eb1946c7af5639cf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:29:53.668Z"
   },
   {
     "name": "William K. Nakamura",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:36:48.124Z"
+    "autoTriedAt": "2026-07-11T17:36:48.124Z",
+    "metaTriedAt": "2026-07-12T04:29:54.284Z"
   },
   {
     "name": "William Kanengiser",
@@ -92423,14 +92653,40 @@
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "9cd49b0f-2304-4c7e-8923-fc2170bf67b1",
-    "autoTriedAt": "2026-07-11T17:36:50.628Z"
+    "autoTriedAt": "2026-07-11T17:36:50.628Z",
+    "genres": [
+      "instrumental",
+      "guitar",
+      "guitar virtuoso",
+      "classical guitar",
+      "contemporary music"
+    ],
+    "popularity": {
+      "listeners": 937,
+      "playcount": 8955
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/eeb17b9e3d2b15662f6bd24fab26e5e0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:29:55.501Z"
   },
   {
     "name": "William Kapell",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbid": "79f8d39b-835c-4361-92e4-9217ad528d4f",
-    "autoTriedAt": "2026-07-11T17:36:53.196Z"
+    "autoTriedAt": "2026-07-11T17:36:53.196Z",
+    "genres": [
+      "piano",
+      "classical piano",
+      "Classical",
+      "kapell",
+      "acoustic"
+    ],
+    "popularity": {
+      "listeners": 3814,
+      "playcount": 42230
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e58a836818a7e10c917729d39d2bc632/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:29:56.154Z"
   },
   {
     "name": "William Kimber",
@@ -92438,7 +92694,20 @@
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "174a6f74-0533-4e88-a857-b2eb11a16a95",
-    "autoTriedAt": "2026-07-11T17:36:55.758Z"
+    "autoTriedAt": "2026-07-11T17:36:55.758Z",
+    "genres": [
+      "folk",
+      "english",
+      "british folk",
+      "english folk",
+      "British Isles"
+    ],
+    "popularity": {
+      "listeners": 451,
+      "playcount": 1877
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cf9aafd121569b2db796668773801fa4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:29:56.827Z"
   },
   {
     "name": "William Kincaid",
@@ -92446,21 +92715,36 @@
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "aabf656e-2437-42b9-80a0-3d725e48a95c",
-    "autoTriedAt": "2026-07-11T17:36:58.293Z"
+    "autoTriedAt": "2026-07-11T17:36:58.293Z",
+    "genres": [
+      "American classical flautists"
+    ],
+    "popularity": {
+      "listeners": 19,
+      "playcount": 45
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a88661355a6b482736f93ce492c30473/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:29:57.457Z"
   },
   {
     "name": "William Knabe",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:36:59.543Z"
+    "autoTriedAt": "2026-07-11T17:36:59.543Z",
+    "metaTriedAt": "2026-07-12T04:29:58.048Z"
   },
   {
     "name": "William Lawrie",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:37:00.840Z"
+    "autoTriedAt": "2026-07-11T17:37:00.840Z",
+    "popularity": {
+      "listeners": 4,
+      "playcount": 6
+    },
+    "metaEnrichedAt": "2026-07-12T04:29:58.689Z"
   },
   {
     "name": "William Lee Golden",
@@ -92476,14 +92760,21 @@
     },
     "enrichedAt": "2026-07-07T07:29:18.821Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1264044c-dee6-47e1-bc17-6d7ef40f44bf"
+    "mbid": "1264044c-dee6-47e1-bc17-6d7ef40f44bf",
+    "popularity": {
+      "listeners": 110,
+      "playcount": 1478
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ba3cfd0f250505bfcb7ec11f8a6a0e46/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:29:59.364Z"
   },
   {
     "name": "William Litton Viner",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbid": "1185752a-3b96-4636-b487-e113efe490a0",
-    "autoTriedAt": "2026-07-11T17:37:03.360Z"
+    "autoTriedAt": "2026-07-11T17:37:03.360Z",
+    "metaTriedAt": "2026-07-12T04:29:59.985Z"
   },
   {
     "name": "William Lloyd Webber",
@@ -92491,14 +92782,36 @@
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "af178cb7-1790-4a3b-9bdd-7b115911d295",
-    "autoTriedAt": "2026-07-11T17:37:05.932Z"
+    "autoTriedAt": "2026-07-11T17:37:05.932Z",
+    "genres": [
+      "modernismo",
+      "Inglaterra",
+      "composer",
+      "Classical",
+      "UK"
+    ],
+    "popularity": {
+      "listeners": 4148,
+      "playcount": 13528
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:00.809Z"
   },
   {
     "name": "William Lovelock",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbid": "cc7aa54d-33cd-47f4-8ac3-0bc75c61a976",
-    "autoTriedAt": "2026-07-11T17:37:08.462Z"
+    "autoTriedAt": "2026-07-11T17:37:08.462Z",
+    "genres": [
+      "Classical",
+      "australian"
+    ],
+    "popularity": {
+      "listeners": 111,
+      "playcount": 355
+    },
+    "metaEnrichedAt": "2026-07-12T04:30:01.520Z"
   },
   {
     "name": "William Marr",
@@ -92506,7 +92819,8 @@
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "ca79dbe5-e89a-4285-b9ac-1f41f61f5c47",
-    "autoTriedAt": "2026-07-11T17:37:11.055Z"
+    "autoTriedAt": "2026-07-11T17:37:11.055Z",
+    "metaTriedAt": "2026-07-12T04:30:02.202Z"
   },
   {
     "name": "William Mason",
@@ -92514,14 +92828,33 @@
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "e5fbf76a-3ed4-4350-8ce6-b78b522e7a9a",
-    "autoTriedAt": "2026-07-11T17:37:13.639Z"
+    "autoTriedAt": "2026-07-11T17:37:13.639Z",
+    "genres": [
+      "american classical",
+      "Classical",
+      "american",
+      "USA",
+      "w mason"
+    ],
+    "popularity": {
+      "listeners": 1732,
+      "playcount": 4657
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9e97a95413b6a1fa649ae343c380ee36/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:03.086Z"
   },
   {
     "name": "William Masselos",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbid": "b5208288-56cd-4201-bdb6-e4fb3964cf51",
-    "autoTriedAt": "2026-07-11T17:37:16.175Z"
+    "autoTriedAt": "2026-07-11T17:37:16.175Z",
+    "popularity": {
+      "listeners": 2059,
+      "playcount": 9273
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4571af28917699a734db1fa0edc2dc40/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:03.726Z"
   },
   {
     "name": "William Mathias",
@@ -92538,7 +92871,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:37:18.972Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "composer",
+      "contemporary classical",
+      "Classical",
+      "welsh",
+      "20th Century"
+    ],
+    "popularity": {
+      "listeners": 7231,
+      "playcount": 20721
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/319909c8defa00ebcd62d95c3e39b048/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:04.497Z"
   },
   {
     "name": "William McColl",
@@ -92546,14 +92892,29 @@
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "d7d679cf-bbf5-46ca-990b-cf6a9f4bb419",
-    "autoTriedAt": "2026-07-11T17:37:21.566Z"
+    "autoTriedAt": "2026-07-11T17:37:21.566Z",
+    "popularity": {
+      "listeners": 33,
+      "playcount": 306
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9f75d47b053c45690a2619f2259b8abf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:05.368Z"
   },
   {
     "name": "William McGibbon",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbid": "6c179930-706f-4a83-95cc-41d380342bea",
-    "autoTriedAt": "2026-07-11T17:37:24.111Z"
+    "autoTriedAt": "2026-07-11T17:37:24.111Z",
+    "genres": [
+      "Scottish",
+      "18th century"
+    ],
+    "popularity": {
+      "listeners": 74,
+      "playcount": 1068
+    },
+    "metaEnrichedAt": "2026-07-12T04:30:06.039Z"
   },
   {
     "name": "William McKinney",
@@ -92561,7 +92922,9 @@
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "e2a0c710-ba97-45c2-9d61-df3536e79fa1",
-    "autoTriedAt": "2026-07-11T17:37:26.763Z"
+    "autoTriedAt": "2026-07-11T17:37:26.763Z",
+    "image": "https://cdn-images.dzcdn.net/images/artist/d973df1d2dbadb62bb87fb7f76e92de9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:06.665Z"
   },
   {
     "name": "William Montgomery",
@@ -92578,7 +92941,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:37:29.322Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 115,
+      "playcount": 494
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:07.333Z"
   },
   {
     "name": "William Moore",
@@ -92586,7 +92955,20 @@
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "2633e969-f923-4d48-86fd-e8431645efe7",
-    "autoTriedAt": "2026-07-11T17:37:32.091Z"
+    "autoTriedAt": "2026-07-11T17:37:32.091Z",
+    "genres": [
+      "blues",
+      "xx",
+      "american",
+      "acoustic",
+      "ragtime"
+    ],
+    "popularity": {
+      "listeners": 3443,
+      "playcount": 11240
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/40567cccf89707d1fc3741e5032ed0c5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:08.014Z"
   },
   {
     "name": "William Murderface",
@@ -92594,7 +92976,16 @@
     "wdBulkTriedAt": "2026-07-07T07:29:18.821Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "9b6b6892-b8b4-4c35-bc13-603c4674d43a",
-    "autoTriedAt": "2026-07-11T17:37:34.591Z"
+    "autoTriedAt": "2026-07-11T17:37:34.591Z",
+    "genres": [
+      "planet piss",
+      "murderface murderface murderface"
+    ],
+    "popularity": {
+      "listeners": 546,
+      "playcount": 3462
+    },
+    "metaEnrichedAt": "2026-07-12T04:30:08.670Z"
   },
   {
     "name": "William Murdoch",
@@ -92602,21 +92993,33 @@
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "96ec581e-d834-449a-9523-9be50d9812a2",
-    "autoTriedAt": "2026-07-11T17:37:37.286Z"
+    "autoTriedAt": "2026-07-11T17:37:37.286Z",
+    "popularity": {
+      "listeners": 70,
+      "playcount": 343
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e6a6a6a171729191208d5a7f81f63060/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:09.478Z"
   },
   {
     "name": "William Mysterious",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:37:38.544Z"
+    "autoTriedAt": "2026-07-11T17:37:38.544Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 1
+    },
+    "metaEnrichedAt": "2026-07-12T04:30:10.327Z"
   },
   {
     "name": "William Neil McKie",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:37:39.810Z"
+    "autoTriedAt": "2026-07-11T17:37:39.810Z",
+    "metaTriedAt": "2026-07-12T04:30:11.136Z"
   },
   {
     "name": "William Onyeabor",
@@ -92632,7 +93035,20 @@
     },
     "enrichedAt": "2026-07-07T07:29:20.700Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "53dd0229-8a42-4bd7-8ffb-29bdec25e9c6"
+    "mbid": "53dd0229-8a42-4bd7-8ffb-29bdec25e9c6",
+    "genres": [
+      "afrobeat",
+      "funk",
+      "nigeria",
+      "african",
+      "African funk"
+    ],
+    "popularity": {
+      "listeners": 219677,
+      "playcount": 2253300
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/61c6bc8bdb6eb9f2796fbf2ecb959a0f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:11.774Z"
   },
   {
     "name": "William Orbit",
@@ -92648,7 +93064,20 @@
     },
     "enrichedAt": "2026-07-07T07:29:20.700Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a7412cd0-e0b8-4fa1-8d24-75bb92a84946"
+    "mbid": "a7412cd0-e0b8-4fa1-8d24-75bb92a84946",
+    "genres": [
+      "ambient",
+      "electronic",
+      "chillout",
+      "downtempo",
+      "electronica"
+    ],
+    "popularity": {
+      "listeners": 461504,
+      "playcount": 4566665
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a898b4027fac5a52cc1dc60b9b7daf49/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:12.540Z"
   },
   {
     "name": "William Parker",
@@ -92665,28 +93094,70 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:37:42.724Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "free jazz",
+      "Avant-Garde",
+      "bass",
+      "Avant-Garde Jazz"
+    ],
+    "popularity": {
+      "listeners": 31472,
+      "playcount": 276120
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b7ed87699d63034078e2103437aebb2a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:13.883Z"
   },
   {
     "name": "William Pennell",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:37:43.976Z"
+    "autoTriedAt": "2026-07-11T17:37:43.976Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 1
+    },
+    "metaEnrichedAt": "2026-07-12T04:30:14.644Z"
   },
   {
     "name": "William Pint and Felicia Dale",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbid": "7c2f7849-e97f-4f97-ac38-90373b2f8fef",
-    "autoTriedAt": "2026-07-11T17:37:45.840Z"
+    "autoTriedAt": "2026-07-11T17:37:45.840Z",
+    "genres": [
+      "shanties",
+      "folk",
+      "american",
+      "USA",
+      "pirates"
+    ],
+    "popularity": {
+      "listeners": 14407,
+      "playcount": 56306
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/78da7c69e5da74d944e6fe9c80c6ca3a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:15.305Z"
   },
   {
     "name": "William Pleeth",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbid": "30af5adf-71cc-4b02-8b88-6ed9b9b4bdb3",
-    "autoTriedAt": "2026-07-11T17:37:48.398Z"
+    "autoTriedAt": "2026-07-11T17:37:48.398Z",
+    "genres": [
+      "cello",
+      "Classical",
+      "w pleeth"
+    ],
+    "popularity": {
+      "listeners": 389,
+      "playcount": 1623
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6d7b7139fa6f619e42b950a6d4ab6559/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:15.978Z"
   },
   {
     "name": "William Porter",
@@ -92694,14 +93165,31 @@
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "eb513c4a-c088-4d3d-98da-00faa81bd1d7",
-    "autoTriedAt": "2026-07-11T17:37:50.943Z"
+    "autoTriedAt": "2026-07-11T17:37:50.943Z",
+    "genres": [
+      "organ",
+      "Bach",
+      "pipe organ",
+      "Buxtehude"
+    ],
+    "popularity": {
+      "listeners": 202,
+      "playcount": 1197
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a30cd5290adcddbb92d8f399eabdf629/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:16.827Z"
   },
   {
     "name": "William Presser",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:37:52.234Z"
+    "autoTriedAt": "2026-07-11T17:37:52.234Z",
+    "popularity": {
+      "listeners": 18,
+      "playcount": 48
+    },
+    "metaEnrichedAt": "2026-07-12T04:30:17.522Z"
   },
   {
     "name": "William Primrose",
@@ -92709,7 +93197,17 @@
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "52b9ebe9-bde2-4423-9b40-b0cb3ba7d933",
-    "autoTriedAt": "2026-07-11T17:37:54.976Z"
+    "autoTriedAt": "2026-07-11T17:37:54.976Z",
+    "genres": [
+      "w primrose",
+      "Klassik"
+    ],
+    "popularity": {
+      "listeners": 715,
+      "playcount": 5124
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/40ff4fb95700f60fc36a554c17727992/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:18.215Z"
   },
   {
     "name": "William Purvis",
@@ -92717,7 +93215,13 @@
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "80c460e2-fb96-4981-823a-6d66cd284c08",
-    "autoTriedAt": "2026-07-11T17:37:57.554Z"
+    "autoTriedAt": "2026-07-11T17:37:57.554Z",
+    "popularity": {
+      "listeners": 534,
+      "playcount": 2250
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d714cb378d7761e599141ba6a7eac49f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:19.028Z"
   },
   {
     "name": "William Reed",
@@ -92725,7 +93229,13 @@
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "014f3a2e-ab35-4842-b2b3-2022571f0224",
-    "autoTriedAt": "2026-07-11T17:38:00.343Z"
+    "autoTriedAt": "2026-07-11T17:38:00.343Z",
+    "popularity": {
+      "listeners": 41668,
+      "playcount": 142171
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/38241d7e31db0b4d8f25f1cde63455ed/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:19.711Z"
   },
   {
     "name": "William Ross",
@@ -92742,7 +93252,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:38:03.015Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Soundtrack",
+      "contemporary classical",
+      "composer",
+      "Classical",
+      "american"
+    ],
+    "popularity": {
+      "listeners": 130208,
+      "playcount": 687604
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b25fbedfaf760db14e5235c92e00873b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:20.450Z"
   },
   {
     "name": "William S. Burroughs",
@@ -92758,7 +93281,20 @@
     },
     "enrichedAt": "2026-07-07T07:29:20.700Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f150ed27-bee7-49d8-a226-31fef88c29b3"
+    "mbid": "f150ed27-bee7-49d8-a226-31fef88c29b3",
+    "genres": [
+      "spoken word",
+      "poetry",
+      "experimental",
+      "Avant-Garde",
+      "beat"
+    ],
+    "popularity": {
+      "listeners": 64075,
+      "playcount": 632340
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1405dd421ce8f47361f52b9739510fae/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:21.221Z"
   },
   {
     "name": "William Schimmel",
@@ -92775,7 +93311,12 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:38:05.569Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 1015,
+      "playcount": 2390
+    },
+    "metaEnrichedAt": "2026-07-12T04:30:21.978Z"
   },
   {
     "name": "William Shakespeare",
@@ -92792,7 +93333,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:38:08.186Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Audiobook",
+      "spoken word",
+      "poetry",
+      "shakespeare",
+      "british"
+    ],
+    "popularity": {
+      "listeners": 16576,
+      "playcount": 167585
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/382d152b12b1c8668f59fbfe4799f32a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:22.673Z"
   },
   {
     "name": "William Sheller",
@@ -92808,14 +93362,37 @@
     },
     "enrichedAt": "2026-07-07T07:29:20.700Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ecd76a79-59a4-4f29-8ddd-302b14100d1e"
+    "mbid": "ecd76a79-59a4-4f29-8ddd-302b14100d1e",
+    "genres": [
+      "chanson francaise",
+      "french",
+      "new age",
+      "france",
+      "chanson"
+    ],
+    "popularity": {
+      "listeners": 63711,
+      "playcount": 779172
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/aaae60c2e014af3b5f432420b97c5ec9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:23.384Z"
   },
   {
     "name": "William Shield",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbid": "e7a77075-f15d-4a87-8597-c1d60e029b69",
-    "autoTriedAt": "2026-07-11T17:38:10.756Z"
+    "autoTriedAt": "2026-07-11T17:38:10.756Z",
+    "genres": [
+      "classical period",
+      "Classical",
+      "classical era"
+    ],
+    "popularity": {
+      "listeners": 409,
+      "playcount": 2001
+    },
+    "metaEnrichedAt": "2026-07-12T04:30:24.017Z"
   },
   {
     "name": "William So",
@@ -92831,7 +93408,20 @@
     },
     "enrichedAt": "2026-07-07T07:29:20.700Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "57f502cb-a58e-43af-a2f6-41a4398c5123"
+    "mbid": "57f502cb-a58e-43af-a2f6-41a4398c5123",
+    "genres": [
+      "cantonese",
+      "chinese",
+      "Hong Kong",
+      "male vocalist",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 12050,
+      "playcount": 215988
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0e2a3b8447ff8138b068732d61f18e0c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:24.731Z"
   },
   {
     "name": "William Steinberg",
@@ -92848,7 +93438,17 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:38:13.292Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "conductor",
+      "Classical"
+    ],
+    "popularity": {
+      "listeners": 1061,
+      "playcount": 7796
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/86dc6a91b13a94efd48d8521cb690815/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:25.449Z"
   },
   {
     "name": "William Sterndale Bennett",
@@ -92864,14 +93464,28 @@
     },
     "enrichedAt": "2026-07-07T07:29:20.700Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4844cd51-00c4-4609-bec4-fb89b6d9693c"
+    "mbid": "4844cd51-00c4-4609-bec4-fb89b6d9693c",
+    "genres": [
+      "Classical",
+      "romantic",
+      "19th century romantic",
+      "piano",
+      "Romantic Classical"
+    ],
+    "popularity": {
+      "listeners": 2470,
+      "playcount": 15662
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d69454f100ea9829beffc1507668fa57/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:26.060Z"
   },
   {
     "name": "William Stoddard",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:38:14.535Z"
+    "autoTriedAt": "2026-07-11T17:38:14.535Z",
+    "metaTriedAt": "2026-07-12T04:30:26.667Z"
   },
   {
     "name": "William Thomson",
@@ -92879,21 +93493,42 @@
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "7f18697f-f674-4a11-a02a-a8d6f2fc8d18",
-    "autoTriedAt": "2026-07-11T17:38:17.110Z"
+    "autoTriedAt": "2026-07-11T17:38:17.110Z",
+    "popularity": {
+      "listeners": 8761,
+      "playcount": 28832
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b9e559049afc7067559821dc26c2d899/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:27.374Z"
   },
   {
     "name": "William Vacchiano",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbid": "4d95cedc-4003-4349-a6b0-1ead9872c6d6",
-    "autoTriedAt": "2026-07-11T17:38:19.643Z"
+    "autoTriedAt": "2026-07-11T17:38:19.643Z",
+    "popularity": {
+      "listeners": 12,
+      "playcount": 55
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/bdc0018f97b2f210f8020167287a6e32/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:28.518Z"
   },
   {
     "name": "William Vincent Wallace",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbid": "a83cb875-950c-46c1-bd1a-2b6fcbf9196e",
-    "autoTriedAt": "2026-07-11T17:38:22.337Z"
+    "autoTriedAt": "2026-07-11T17:38:22.337Z",
+    "genres": [
+      "opera"
+    ],
+    "popularity": {
+      "listeners": 1467,
+      "playcount": 4748
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:29.261Z"
   },
   {
     "name": "William Wallace",
@@ -92901,7 +93536,20 @@
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "fbd3f0d0-8545-4fc9-9c7d-0ae16b0afad0",
-    "autoTriedAt": "2026-07-11T17:38:24.981Z"
+    "autoTriedAt": "2026-07-11T17:38:24.981Z",
+    "genres": [
+      "UK",
+      "Classical",
+      "english",
+      "romantic",
+      "United Kingdom"
+    ],
+    "popularity": {
+      "listeners": 638,
+      "playcount": 3144
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/46ee54f1ebb62e5d59f4a5934b19c227/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:29.960Z"
   },
   {
     "name": "William Walton",
@@ -92918,7 +93566,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:38:27.681Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Classical",
+      "contemporary classical",
+      "british",
+      "20th Century Classical",
+      "20th Century"
+    ],
+    "popularity": {
+      "listeners": 205962,
+      "playcount": 868096
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7a4a0200b25d859031728db8be94f556/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:30.762Z"
   },
   {
     "name": "William Waterhouse",
@@ -92926,7 +93587,13 @@
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "4f765203-e61a-4d4b-9bcf-f35bb9155be8",
-    "autoTriedAt": "2026-07-11T17:38:30.505Z"
+    "autoTriedAt": "2026-07-11T17:38:30.505Z",
+    "popularity": {
+      "listeners": 8,
+      "playcount": 12
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:31.408Z"
   },
   {
     "name": "William Wordsworth",
@@ -92934,7 +93601,18 @@
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "6a0e8574-d332-4562-91bb-ecd51479af6a",
-    "autoTriedAt": "2026-07-11T17:38:33.139Z"
+    "autoTriedAt": "2026-07-11T17:38:33.139Z",
+    "genres": [
+      "poetry",
+      "spoken word",
+      "Classical"
+    ],
+    "popularity": {
+      "listeners": 1345,
+      "playcount": 5785
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2f0ab1c2d3675fde5980dd9a06d07fc8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:32.649Z"
   },
   {
     "name": "Williams Riley",
@@ -92950,28 +93628,45 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:38:35.667Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "country",
+      "williams riley"
+    ],
+    "popularity": {
+      "listeners": 3103,
+      "playcount": 24169
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ce351997524408f5192ba101db9ec81b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:33.672Z"
   },
   {
     "name": "Williams, Trey",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:38:36.912Z"
+    "autoTriedAt": "2026-07-11T17:38:36.912Z",
+    "metaTriedAt": "2026-07-12T04:30:34.329Z"
   },
   {
     "name": "Williams, Warner",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:38:38.181Z"
+    "autoTriedAt": "2026-07-11T17:38:38.181Z",
+    "popularity": {
+      "listeners": 5,
+      "playcount": 5
+    },
+    "metaEnrichedAt": "2026-07-12T04:30:35.009Z"
   },
   {
     "name": "Williams, Whit",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:38:39.436Z"
+    "autoTriedAt": "2026-07-11T17:38:39.436Z",
+    "metaTriedAt": "2026-07-12T04:30:35.712Z"
   },
   {
     "name": "Willie \"Big Eyes\" Smith",
@@ -92987,28 +93682,60 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:38:42.113Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "blues",
+      "harmonica blues",
+      "harp",
+      "guitar",
+      "harmonica"
+    ],
+    "popularity": {
+      "listeners": 2582,
+      "playcount": 12668
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/63044594f823b86b4b2a4f868ed2ccf9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:36.355Z"
   },
   {
     "name": "Willie \"Pdub\" Moore Jr.",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:38:43.840Z"
+    "autoTriedAt": "2026-07-11T17:38:43.840Z",
+    "popularity": {
+      "listeners": 240,
+      "playcount": 1594
+    },
+    "metaEnrichedAt": "2026-07-12T04:30:37.023Z"
   },
   {
     "name": "Willie \"The Lion\" Smith",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbid": "5daad4be-e76b-40cd-9dba-459a02451e83",
-    "autoTriedAt": "2026-07-11T17:38:46.529Z"
+    "autoTriedAt": "2026-07-11T17:38:46.529Z",
+    "genres": [
+      "jazz",
+      "piano",
+      "jazz piano",
+      "stride",
+      "jazzpiano fathers"
+    ],
+    "popularity": {
+      "listeners": 36305,
+      "playcount": 146731
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a4049762fa48d295c1e8ea7e1fb20135/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:37.735Z"
   },
   {
     "name": "Willie and Lobo (Willie Royal and Wolfgang \"Lobo\" Fink)",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:38:47.811Z"
+    "autoTriedAt": "2026-07-11T17:38:47.811Z",
+    "metaTriedAt": "2026-07-12T04:30:38.332Z"
   },
   {
     "name": "Willie Brown",
@@ -93025,7 +93752,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:38:50.351Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "blues",
+      "delta blues",
+      "acoustic",
+      "folk",
+      "american"
+    ],
+    "popularity": {
+      "listeners": 18987,
+      "playcount": 59329
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cb4e65b29762c3e60eba7e31b5b4d7c8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:39.027Z"
   },
   {
     "name": "Willie Clancy",
@@ -93033,7 +93773,20 @@
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "6e3c4fc5-e359-4adc-b035-063811cfe786",
-    "autoTriedAt": "2026-07-11T17:38:52.856Z"
+    "autoTriedAt": "2026-07-11T17:38:52.856Z",
+    "genres": [
+      "celtic",
+      "folk",
+      "irish",
+      "traditional",
+      "Irish Folk"
+    ],
+    "popularity": {
+      "listeners": 6683,
+      "playcount": 38831
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fea8950865f269436833caeed7ab9b4b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:40.007Z"
   },
   {
     "name": "Willie Clayton",
@@ -93050,14 +93803,28 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:38:55.373Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "blues",
+      "soul",
+      "Willie Clayton",
+      "rnb",
+      "Southern Soul"
+    ],
+    "popularity": {
+      "listeners": 10027,
+      "playcount": 73331
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/dc601f76f59e4604b21c81dd9446f697/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:40.814Z"
   },
   {
     "name": "Willie Cornish",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:38:56.641Z"
+    "autoTriedAt": "2026-07-11T17:38:56.641Z",
+    "metaTriedAt": "2026-07-12T04:30:41.474Z"
   },
   {
     "name": "Willie D",
@@ -93073,21 +93840,50 @@
     },
     "enrichedAt": "2026-07-07T07:29:20.700Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "51a21d27-fd0b-40f1-b589-2ac3d17d2960"
+    "mbid": "51a21d27-fd0b-40f1-b589-2ac3d17d2960",
+    "genres": [
+      "Gangsta Rap",
+      "southern rap",
+      "Houston",
+      "Dirty South",
+      "texas"
+    ],
+    "popularity": {
+      "listeners": 14742,
+      "playcount": 118440
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0b1334db3cb971d62ae87de186afb46e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:42.078Z"
   },
   {
     "name": "Willie D. Warren",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:38:57.891Z"
+    "autoTriedAt": "2026-07-11T17:38:57.891Z",
+    "genres": [
+      "blues",
+      "modern electric blues"
+    ],
+    "popularity": {
+      "listeners": 269,
+      "playcount": 1270
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/726bf73011d9354dcf176e188a6a775f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:42.758Z"
   },
   {
     "name": "Willie Dennis",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbid": "46f5ea60-f443-4635-a98d-e8390e18fd75",
-    "autoTriedAt": "2026-07-11T17:39:00.537Z"
+    "autoTriedAt": "2026-07-11T17:39:00.537Z",
+    "popularity": {
+      "listeners": 26,
+      "playcount": 48
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5a25a565a141bf438b684f404db85903/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:43.438Z"
   },
   {
     "name": "Willie Dixon",
@@ -93103,7 +93899,20 @@
     },
     "enrichedAt": "2026-07-07T07:29:20.700Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ff4c8d42-4871-4778-885b-d41b01245133"
+    "mbid": "ff4c8d42-4871-4778-885b-d41b01245133",
+    "genres": [
+      "blues",
+      "Chicago Blues",
+      "jazz",
+      "singer-songwriter",
+      "Root Blues"
+    ],
+    "popularity": {
+      "listeners": 205739,
+      "playcount": 1368381
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8e52ce5df3cf32480f4a0418d42b0d5f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:44.078Z"
   },
   {
     "name": "Willie Duncan",
@@ -93120,7 +93929,12 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:39:03.219Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 7,
+      "playcount": 8
+    },
+    "metaEnrichedAt": "2026-07-12T04:30:44.769Z"
   },
   {
     "name": "Willie Gardner",
@@ -93128,7 +93942,12 @@
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "18394b0e-5770-4257-afd7-66cc102409ea",
-    "autoTriedAt": "2026-07-11T17:39:05.719Z"
+    "autoTriedAt": "2026-07-11T17:39:05.719Z",
+    "popularity": {
+      "listeners": 4,
+      "playcount": 32
+    },
+    "metaEnrichedAt": "2026-07-12T04:30:45.641Z"
   },
   {
     "name": "Willie Hall",
@@ -93136,14 +93955,32 @@
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "11baaa13-b390-4e5e-bb36-30223729533c",
-    "autoTriedAt": "2026-07-11T17:39:08.219Z"
+    "autoTriedAt": "2026-07-11T17:39:08.219Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 4
+    },
+    "metaEnrichedAt": "2026-07-12T04:30:46.361Z"
   },
   {
     "name": "Willie Hutch",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbid": "870b79e0-10b7-4e19-b11f-65607cffad9a",
-    "autoTriedAt": "2026-07-11T17:39:10.913Z"
+    "autoTriedAt": "2026-07-11T17:39:10.913Z",
+    "genres": [
+      "soul",
+      "funk",
+      "motown",
+      "70s",
+      "blaxploitation"
+    ],
+    "popularity": {
+      "listeners": 216535,
+      "playcount": 1317491
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6002979ce0789d9b637a4562595019ed/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:47.007Z"
   },
   {
     "name": "Willie Johnson",
@@ -93151,7 +93988,20 @@
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "b20d757e-1151-4f72-8a78-4f358a8ce54e",
-    "autoTriedAt": "2026-07-11T17:39:13.438Z"
+    "autoTriedAt": "2026-07-11T17:39:13.438Z",
+    "genres": [
+      "funk",
+      "blues",
+      "Need to Rate",
+      "USA",
+      "United States"
+    ],
+    "popularity": {
+      "listeners": 5389,
+      "playcount": 16427
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ba4d6c2ab7d6cce14af5623bae0992ee/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:47.767Z"
   },
   {
     "name": "Willie Jones",
@@ -93168,14 +94018,36 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:39:16.002Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "acoustic",
+      "blues",
+      "rhythm and blues",
+      "male vocalists",
+      "male and female"
+    ],
+    "popularity": {
+      "listeners": 28127,
+      "playcount": 206164
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c4283a44c1289a930fe4e3b93c286bab/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:48.722Z"
   },
   {
     "name": "Willie Love",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbid": "0f2f2cca-f89f-47cf-a3cd-b7b7e216863c",
-    "autoTriedAt": "2026-07-11T17:39:18.535Z"
+    "autoTriedAt": "2026-07-11T17:39:18.535Z",
+    "genres": [
+      "blues"
+    ],
+    "popularity": {
+      "listeners": 1154,
+      "playcount": 6964
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c725aed67f73af15519ca592b9a0a663/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:49.424Z"
   },
   {
     "name": "Willie Mabon",
@@ -93191,7 +94063,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:39:21.056Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "blues",
+      "rhythm and blues",
+      "jazz",
+      "swing",
+      "USA"
+    ],
+    "popularity": {
+      "listeners": 31608,
+      "playcount": 111716
+    },
+    "metaEnrichedAt": "2026-07-12T04:30:50.157Z"
   },
   {
     "name": "Willie Max",
@@ -93199,7 +94083,20 @@
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "47380325-2fdc-4a01-a140-d210a7256aa8",
-    "autoTriedAt": "2026-07-11T17:39:23.674Z"
+    "autoTriedAt": "2026-07-11T17:39:23.674Z",
+    "genres": [
+      "pop",
+      "soul",
+      "female vocalists",
+      "90s",
+      "Girl Groups"
+    ],
+    "popularity": {
+      "listeners": 715,
+      "playcount": 7609
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2f1f379120f5c6a76168f105d3aba8ee/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:51.350Z"
   },
   {
     "name": "Willie Mitchell",
@@ -93207,7 +94104,20 @@
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "60d111b4-5541-4ac0-847c-4a81201695bc",
-    "autoTriedAt": "2026-07-11T17:39:26.334Z"
+    "autoTriedAt": "2026-07-11T17:39:26.334Z",
+    "genres": [
+      "soul",
+      "northern soul",
+      "60s",
+      "instrumental",
+      "United States"
+    ],
+    "popularity": {
+      "listeners": 71911,
+      "playcount": 388076
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/339ff3722260f2ea35be5c04ef38acc1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:52.022Z"
   },
   {
     "name": "Willie Nelson",
@@ -93224,7 +94134,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:39:29.039Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "country",
+      "folk",
+      "singer-songwriter",
+      "outlaw country",
+      "americana"
+    ],
+    "popularity": {
+      "listeners": 1622181,
+      "playcount": 26760583
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9854bef8f52bec00e539e15cdc0e2796/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:52.610Z"
   },
   {
     "name": "Willie Nile",
@@ -93240,14 +94163,39 @@
     },
     "enrichedAt": "2026-07-07T07:29:20.700Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "40fb02de-afc3-441c-a6ec-21fee861d478"
+    "mbid": "40fb02de-afc3-441c-a6ec-21fee861d478",
+    "genres": [
+      "singer-songwriter",
+      "rock",
+      "classic rock",
+      "new york",
+      "folk rock"
+    ],
+    "popularity": {
+      "listeners": 25570,
+      "playcount": 278810
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d37367198894e4397f04f9448654ff42/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:53.480Z"
   },
   {
     "name": "Willie Nix",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbid": "1559286b-9dde-40d7-bbd9-fb19b7bf4c51",
-    "autoTriedAt": "2026-07-11T17:39:31.566Z"
+    "autoTriedAt": "2026-07-11T17:39:31.566Z",
+    "genres": [
+      "blues",
+      "Chicago Blues",
+      "Chess Records",
+      "rhythm and blues",
+      "harmonica blues"
+    ],
+    "popularity": {
+      "listeners": 11565,
+      "playcount": 34622
+    },
+    "metaEnrichedAt": "2026-07-12T04:30:54.185Z"
   },
   {
     "name": "Willie P. Bennett",
@@ -93263,14 +94211,32 @@
     },
     "enrichedAt": "2026-07-07T07:29:20.700Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8b1dfd45-46a9-4c0a-ad6b-e10139fd1950"
+    "mbid": "8b1dfd45-46a9-4c0a-ad6b-e10139fd1950",
+    "genres": [
+      "Canadian",
+      "country",
+      "bluegrass",
+      "singer-songwriter",
+      "contemporary folk"
+    ],
+    "popularity": {
+      "listeners": 398,
+      "playcount": 7821
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1e5645146e1084f4695cbc2f19d6e3bb/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:54.834Z"
   },
   {
     "name": "Willie Pickens",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbid": "535f3810-cf4b-4299-9c69-5dd1141df8b8",
-    "autoTriedAt": "2026-07-11T17:39:34.256Z"
+    "autoTriedAt": "2026-07-11T17:39:34.256Z",
+    "popularity": {
+      "listeners": 156,
+      "playcount": 862
+    },
+    "metaEnrichedAt": "2026-07-12T04:30:55.494Z"
   },
   {
     "name": "Willie Ruff",
@@ -93287,7 +94253,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:39:36.794Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 238,
+      "playcount": 1172
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e6a605fc2defc1a69bc916a907f7ba1c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:56.197Z"
   },
   {
     "name": "Willie Smith",
@@ -93295,7 +94267,19 @@
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "2a3fb3ab-fc87-4094-9bfb-64640aa183a6",
-    "autoTriedAt": "2026-07-11T17:39:39.381Z"
+    "autoTriedAt": "2026-07-11T17:39:39.381Z",
+    "genres": [
+      "jazz",
+      "american",
+      "saxophone",
+      "jazz saxophone"
+    ],
+    "popularity": {
+      "listeners": 3249,
+      "playcount": 14271
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/868fa3315adbae2ccf3750693b464eba/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:57.357Z"
   },
   {
     "name": "Willie Taylor",
@@ -93312,14 +94296,40 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:39:41.978Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "rnb",
+      "soul",
+      "urban",
+      "slow jams",
+      "making the band 4"
+    ],
+    "popularity": {
+      "listeners": 3570,
+      "playcount": 36894
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5351ccf55fd96537805afb863a620107/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:58.020Z"
   },
   {
     "name": "Willie the Kid",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbid": "27e8d6b4-2090-4930-a7f3-cfe14e21a2f5",
-    "autoTriedAt": "2026-07-11T17:39:45.082Z"
+    "autoTriedAt": "2026-07-11T17:39:45.082Z",
+    "genres": [
+      "Hip-Hop",
+      "rap",
+      "hip hop",
+      "detroit",
+      "Michigan"
+    ],
+    "popularity": {
+      "listeners": 33724,
+      "playcount": 521230
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ffd67001474ca59a66081014e11b2c8e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:58.661Z"
   },
   {
     "name": "Willie Thrasher",
@@ -93335,7 +94345,20 @@
     },
     "enrichedAt": "2026-07-07T07:29:20.700Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ab2b15e3-7817-4fa7-8ec0-f8ced2f326a4"
+    "mbid": "ab2b15e3-7817-4fa7-8ec0-f8ced2f326a4",
+    "genres": [
+      "rock",
+      "canada",
+      "Canadian",
+      "psychedelic",
+      "native american"
+    ],
+    "popularity": {
+      "listeners": 5348,
+      "playcount": 35867
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1b3d7cf89eede58affc781734f1769c1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:30:59.371Z"
   },
   {
     "name": "Willie Watson",
@@ -93352,7 +94375,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:39:47.712Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "folk",
+      "blues",
+      "americana",
+      "bluegrass",
+      "american"
+    ],
+    "popularity": {
+      "listeners": 51279,
+      "playcount": 432832
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/87e3867242e0bb765ef3e4ba9a97ae9a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:00.035Z"
   },
   {
     "name": "Willie Weeks",
@@ -93360,14 +94396,21 @@
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "5a1e66a2-a745-43f2-b2cb-f98595f1aeb1",
-    "autoTriedAt": "2026-07-11T17:39:50.382Z"
+    "autoTriedAt": "2026-07-11T17:39:50.382Z",
+    "popularity": {
+      "listeners": 99,
+      "playcount": 309
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/38526e57a23229885ff0ee743bbf5d45/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:00.687Z"
   },
   {
     "name": "Willig, George",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:39:51.771Z"
+    "autoTriedAt": "2026-07-11T17:39:51.771Z",
+    "metaTriedAt": "2026-07-12T04:31:01.416Z"
   },
   {
     "name": "Willim Welsyn",
@@ -93383,14 +94426,33 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:39:54.317Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 106,
+      "playcount": 3131
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a9aa1323d6727a02acae2f17656cdc78/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:02.508Z"
   },
   {
     "name": "Willis \"Gator\" Jackson",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:39:55.796Z"
+    "autoTriedAt": "2026-07-11T17:39:55.796Z",
+    "genres": [
+      "jazz",
+      "soul",
+      "acid jazz",
+      "saxophone",
+      "Tenor Sax"
+    ],
+    "popularity": {
+      "listeners": 22247,
+      "playcount": 92918
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:03.179Z"
   },
   {
     "name": "Willis Alan Ramsey",
@@ -93406,14 +94468,28 @@
     },
     "enrichedAt": "2026-07-07T07:29:20.700Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a4727878-d27f-43bc-b6ae-15a0da01e192"
+    "mbid": "a4727878-d27f-43bc-b6ae-15a0da01e192",
+    "genres": [
+      "country",
+      "americana",
+      "singer-songwriter",
+      "USA",
+      "male vocalists"
+    ],
+    "popularity": {
+      "listeners": 37194,
+      "playcount": 258146
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/41dce5aa716a59a663bfda229d58cdc8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:03.756Z"
   },
   {
     "name": "Willis Jackson (saxophonist)",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:39:57.066Z"
+    "autoTriedAt": "2026-07-11T17:39:57.066Z",
+    "metaTriedAt": "2026-07-12T04:31:04.374Z"
   },
   {
     "name": "Willow Smith",
@@ -93429,14 +94505,31 @@
     },
     "enrichedAt": "2026-07-07T07:29:20.700Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6bbfc71b-5f18-4e61-82fb-bee0c2a6b5f9"
+    "mbid": "6bbfc71b-5f18-4e61-82fb-bee0c2a6b5f9",
+    "genres": [
+      "pop",
+      "rnb",
+      "female vocalists",
+      "dance",
+      "Hip-Hop"
+    ],
+    "popularity": {
+      "listeners": 594973,
+      "playcount": 2965438
+    },
+    "metaEnrichedAt": "2026-07-12T04:31:05.193Z"
   },
   {
     "name": "Willow Weep for Me",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:20.700Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:39:58.305Z"
+    "autoTriedAt": "2026-07-11T17:39:58.305Z",
+    "popularity": {
+      "listeners": 255,
+      "playcount": 685
+    },
+    "metaEnrichedAt": "2026-07-12T04:31:06.255Z"
   },
   {
     "name": "Willy Alberti",
@@ -93452,7 +94545,20 @@
     },
     "enrichedAt": "2026-07-07T07:29:20.700Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "60bbc45a-a4d2-4aaa-815a-a27d4770b889"
+    "mbid": "60bbc45a-a4d2-4aaa-815a-a27d4770b889",
+    "genres": [
+      "levenslied",
+      "dutch",
+      "male vocalists",
+      "Nederlandstalig",
+      "Home collection"
+    ],
+    "popularity": {
+      "listeners": 10269,
+      "playcount": 59823
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ac8512a348ba47cb54dc117e9b859826/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:06.945Z"
   },
   {
     "name": "Willy Chirino",
@@ -93468,7 +94574,20 @@
     },
     "enrichedAt": "2026-07-07T07:29:20.700Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a228a498-5356-433b-8b1a-c4984384d8e0"
+    "mbid": "a228a498-5356-433b-8b1a-c4984384d8e0",
+    "genres": [
+      "salsa",
+      "latin",
+      "Best Salsa",
+      "cuba",
+      "salsa boricua"
+    ],
+    "popularity": {
+      "listeners": 55450,
+      "playcount": 302051
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c562d9e54640706709c904f290c61302/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:07.623Z"
   },
   {
     "name": "Willy Denzey",
@@ -93484,7 +94603,20 @@
     },
     "enrichedAt": "2026-07-07T07:29:20.700Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "bf03911d-67a4-4c47-bc6c-be32f9b1743b"
+    "mbid": "bf03911d-67a4-4c47-bc6c-be32f9b1743b",
+    "genres": [
+      "rnb",
+      "Hip-Hop",
+      "french",
+      "soul",
+      "male vocalists"
+    ],
+    "popularity": {
+      "listeners": 14276,
+      "playcount": 90269
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/60725fe81e5ae29bba64b9211883ea7b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:08.306Z"
   },
   {
     "name": "Willy DeVille",
@@ -93500,7 +94632,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:40:00.975Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "singer-songwriter",
+      "rock",
+      "blues",
+      "folk",
+      "latin"
+    ],
+    "popularity": {
+      "listeners": 132519,
+      "playcount": 1023706
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b1dfa2c53d3eb247598a0bfb7ff31daf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:08.910Z"
   },
   {
     "name": "Willy Hess",
@@ -93508,7 +94653,15 @@
     "wdBulkTriedAt": "2026-07-07T07:29:22.369Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "b6a67ba1-1d4e-4c66-a82e-d917cabe2761",
-    "autoTriedAt": "2026-07-11T17:40:03.570Z"
+    "autoTriedAt": "2026-07-11T17:40:03.570Z",
+    "genres": [
+      "modern classical"
+    ],
+    "popularity": {
+      "listeners": 103,
+      "playcount": 323
+    },
+    "metaEnrichedAt": "2026-07-12T04:31:10.322Z"
   },
   {
     "name": "Willy Mason",
@@ -93524,7 +94677,20 @@
     },
     "enrichedAt": "2026-07-07T07:29:22.369Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d5c9ee75-5711-469f-b671-669dcde5c9bf"
+    "mbid": "d5c9ee75-5711-469f-b671-669dcde5c9bf",
+    "genres": [
+      "folk",
+      "singer-songwriter",
+      "acoustic",
+      "indie",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 292129,
+      "playcount": 3331467
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e94acb1d35939a4bde75e63cc7421b6c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:10.932Z"
   },
   {
     "name": "Willy Mitchell",
@@ -93540,7 +94706,19 @@
     },
     "enrichedAt": "2026-07-07T07:29:22.369Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2cfde089-801d-4fb6-a316-902acc014b5d"
+    "mbid": "2cfde089-801d-4fb6-a316-902acc014b5d",
+    "genres": [
+      "americana",
+      "folk",
+      "folk rock",
+      "USA",
+      "native american"
+    ],
+    "popularity": {
+      "listeners": 2375,
+      "playcount": 6884
+    },
+    "metaEnrichedAt": "2026-07-12T04:31:11.662Z"
   },
   {
     "name": "Willy Moon",
@@ -93556,7 +94734,20 @@
     },
     "enrichedAt": "2026-07-07T07:29:22.369Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "bc62880f-536e-45b4-89e0-1584c4069e8d"
+    "mbid": "bc62880f-536e-45b4-89e0-1584c4069e8d",
+    "genres": [
+      "indie",
+      "rockabilly",
+      "noise pop",
+      "Rock and Roll",
+      "born in the wrong decade"
+    ],
+    "popularity": {
+      "listeners": 115614,
+      "playcount": 841215
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a8c749380b112a2c27cdba54c6b7b39e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:12.415Z"
   },
   {
     "name": "Willy Northpole",
@@ -93572,7 +94763,20 @@
     },
     "enrichedAt": "2026-07-07T07:29:22.369Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "94ca02f2-d654-4649-b418-0bff5af8474a"
+    "mbid": "94ca02f2-d654-4649-b418-0bff5af8474a",
+    "genres": [
+      "west coast",
+      "rap",
+      "hip hop",
+      "Hip-Hop",
+      "AZhiphop"
+    ],
+    "popularity": {
+      "listeners": 13339,
+      "playcount": 64930
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9ec8b266c042c3c39a0b66abbfdcfa98/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:13.059Z"
   },
   {
     "name": "Willy Porter",
@@ -93588,7 +94792,20 @@
     },
     "enrichedAt": "2026-07-07T07:29:22.369Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "dd01c895-e124-413b-84f9-8e2112d2802e"
+    "mbid": "dd01c895-e124-413b-84f9-8e2112d2802e",
+    "genres": [
+      "acoustic",
+      "folk",
+      "folk rock",
+      "mine",
+      "folk artist"
+    ],
+    "popularity": {
+      "listeners": 13949,
+      "playcount": 141692
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d4754742328ef4e1213dfd0b7f514000/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:13.754Z"
   },
   {
     "name": "Willy William",
@@ -93604,7 +94821,20 @@
     "mbid": "afd6e960-0e48-444d-b65d-99e85cae90ba",
     "wdBulkTriedAt": "2026-07-08T14:10:46.260Z",
     "enrichedAt": "2026-07-08T14:10:46.260Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "jamaican",
+      "pop",
+      "french",
+      "dance",
+      "jamaica"
+    ],
+    "popularity": {
+      "listeners": 161653,
+      "playcount": 1170488
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/dfa89b69b401d69f6a7e75b178f37e0a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:14.339Z"
   },
   {
     "name": "Wilma Landkroon",
@@ -93620,21 +94850,49 @@
     },
     "enrichedAt": "2026-07-07T07:29:22.369Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "434fb731-8019-43dd-9cd0-403c5e8adbb6"
+    "mbid": "434fb731-8019-43dd-9cd0-403c5e8adbb6",
+    "popularity": {
+      "listeners": 10,
+      "playcount": 25
+    },
+    "metaEnrichedAt": "2026-07-12T04:31:14.957Z"
   },
   {
     "name": "Wilma Lee",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:22.369Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:40:04.854Z"
+    "autoTriedAt": "2026-07-11T17:40:04.854Z",
+    "genres": [
+      "classic country",
+      "country"
+    ],
+    "popularity": {
+      "listeners": 1832,
+      "playcount": 4720
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7948e48c9dec8cf5313ce9f9943827d5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:15.731Z"
   },
   {
     "name": "Wilma Lee Cooper",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:22.369Z",
     "mbid": "b13e69e9-7a37-4345-88bf-efe1ae12ddd6",
-    "autoTriedAt": "2026-07-11T17:40:07.406Z"
+    "autoTriedAt": "2026-07-11T17:40:07.406Z",
+    "genres": [
+      "folk",
+      "country",
+      "bluegrass",
+      "female vocalists",
+      "spotify"
+    ],
+    "popularity": {
+      "listeners": 3794,
+      "playcount": 14899
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7d8867df9526cc7a1c522c29f1eff64d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:16.352Z"
   },
   {
     "name": "Wilma Reading",
@@ -93650,28 +94908,60 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:40:09.918Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 635,
+      "playcount": 5561
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6fa4524c783ae8e14c0efee64c66709e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:17.089Z"
   },
   {
     "name": "WilmerHale",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:22.369Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:40:11.238Z"
+    "autoTriedAt": "2026-07-11T17:40:11.238Z",
+    "metaTriedAt": "2026-07-12T04:31:17.709Z"
   },
   {
     "name": "Wilmoth Houdini",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:22.369Z",
     "mbid": "5264fcdc-9cee-4d87-a354-6f6a704ab370",
-    "autoTriedAt": "2026-07-11T17:40:12.516Z"
+    "autoTriedAt": "2026-07-11T17:40:12.516Z",
+    "genres": [
+      "calypso",
+      "caribbean",
+      "trinidad",
+      "trinidad and tobago",
+      "world"
+    ],
+    "popularity": {
+      "listeners": 19491,
+      "playcount": 95948
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/12a06758a8eda8657441227bad738ec5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:18.341Z"
   },
   {
     "name": "Wilson Bugembe",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:22.369Z",
     "mbid": "3816cbb8-33e2-4eb8-b91d-eae46a641730",
-    "autoTriedAt": "2026-07-11T17:40:13.774Z"
+    "autoTriedAt": "2026-07-11T17:40:13.774Z",
+    "genres": [
+      "africa",
+      "gospel",
+      "Uganda",
+      "luganda"
+    ],
+    "popularity": {
+      "listeners": 137,
+      "playcount": 775
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/aee57bcdcbf3a8a0669d9689fc863d5d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:18.968Z"
   },
   {
     "name": "Wilson Cruz",
@@ -93679,7 +94969,16 @@
     "wdBulkTriedAt": "2026-07-07T07:29:22.369Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "4471d6fe-ef95-4f83-bac7-9ac75dbb79d2",
-    "autoTriedAt": "2026-07-11T17:40:16.481Z"
+    "autoTriedAt": "2026-07-11T17:40:16.481Z",
+    "genres": [
+      "queer"
+    ],
+    "popularity": {
+      "listeners": 47,
+      "playcount": 106
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:19.669Z"
   },
   {
     "name": "Wilson Jermaine Heredia",
@@ -93695,14 +94994,39 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:40:20.195Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "musical theater",
+      "USA",
+      "Broadway",
+      "show tunes",
+      "Rent"
+    ],
+    "popularity": {
+      "listeners": 42935,
+      "playcount": 311603
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e49f1b3205ecc9e60caeb0cf07fe94e0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:20.345Z"
   },
   {
     "name": "Wilson Philips",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:22.369Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:40:21.445Z"
+    "autoTriedAt": "2026-07-11T17:40:21.445Z",
+    "genres": [
+      "pop",
+      "female vocalists",
+      "90s",
+      "80s",
+      "Girl Groups"
+    ],
+    "popularity": {
+      "listeners": 358570,
+      "playcount": 2453266
+    },
+    "metaEnrichedAt": "2026-07-12T04:31:21.007Z"
   },
   {
     "name": "Wilson Phillips",
@@ -93718,7 +95042,20 @@
     },
     "enrichedAt": "2026-07-07T07:29:22.369Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "32b2e717-9e01-4f45-ac73-9542ccf18d4d"
+    "mbid": "32b2e717-9e01-4f45-ac73-9542ccf18d4d",
+    "genres": [
+      "pop",
+      "female vocalists",
+      "90s",
+      "80s",
+      "Girl Groups"
+    ],
+    "popularity": {
+      "listeners": 358570,
+      "playcount": 2453266
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/68093e5d5dd972d635efd5dd6e341810/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:21.665Z"
   },
   {
     "name": "Wilson Pickett",
@@ -93734,7 +95071,20 @@
     },
     "enrichedAt": "2026-07-07T07:29:22.369Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "fc6214b3-6d82-4803-be74-01ece1723e42"
+    "mbid": "fc6214b3-6d82-4803-be74-01ece1723e42",
+    "genres": [
+      "soul",
+      "rhythm and blues",
+      "funk",
+      "blues",
+      "oldies"
+    ],
+    "popularity": {
+      "listeners": 864298,
+      "playcount": 6829632
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/69591d73bfec8f5e67664f5509c0b4ec/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:22.367Z"
   },
   {
     "name": "Wilson Savoy",
@@ -93750,14 +95100,21 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:40:24.040Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 71,
+      "playcount": 227
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:23.101Z"
   },
   {
     "name": "Wilson, William Llewellyn",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:22.369Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:40:25.282Z"
+    "autoTriedAt": "2026-07-11T17:40:25.282Z",
+    "metaTriedAt": "2026-07-12T04:31:23.918Z"
   },
   {
     "name": "Wilton Felder",
@@ -93773,21 +95130,57 @@
     },
     "enrichedAt": "2026-07-07T07:29:22.369Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2825f90d-7c3b-467b-9a98-d66a5dc8ddca"
+    "mbid": "2825f90d-7c3b-467b-9a98-d66a5dc8ddca",
+    "genres": [
+      "jazz",
+      "funk",
+      "All",
+      "saxophone",
+      "United States"
+    ],
+    "popularity": {
+      "listeners": 11095,
+      "playcount": 54561
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a5ffbb5cc1153206f886fb76163a3e1d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:24.522Z"
   },
   {
     "name": "Wilton Gaynair",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:22.369Z",
     "mbid": "9d270f1b-08cb-4b08-99c7-dd0633cbcea0",
-    "autoTriedAt": "2026-07-11T17:40:27.946Z"
+    "autoTriedAt": "2026-07-11T17:40:27.946Z",
+    "genres": [
+      "jazz",
+      "saxophone",
+      "sax"
+    ],
+    "popularity": {
+      "listeners": 253,
+      "playcount": 949
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/897e3e59e9039fcef9be4463365facf5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:31:25.199Z"
   },
   {
     "name": "Wiltshire",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:29:22.369Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:40:29.268Z"
+    "autoTriedAt": "2026-07-11T17:40:29.268Z",
+    "genres": [
+      "Pop-Rock",
+      "christian",
+      "english",
+      "contemporary christian",
+      "Cross Rhythms"
+    ],
+    "popularity": {
+      "listeners": 3069,
+      "playcount": 25546
+    },
+    "metaEnrichedAt": "2026-07-12T04:31:25.891Z"
   },
   {
     "name": "Wim Franken",
@@ -93795,7 +95188,12 @@
     "wdBulkTriedAt": "2026-07-07T07:29:22.369Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "5e4d0b2a-da60-4d64-a189-68e5537654dd",
-    "autoTriedAt": "2026-07-11T17:40:31.813Z"
+    "autoTriedAt": "2026-07-11T17:40:31.813Z",
+    "popularity": {
+      "listeners": 29,
+      "playcount": 43
+    },
+    "metaEnrichedAt": "2026-07-12T04:31:26.719Z"
   },
   {
     "name": "Wim Mertens",
