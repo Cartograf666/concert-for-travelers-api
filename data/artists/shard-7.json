@@ -59128,7 +59128,8 @@
     "wdBulkTriedAt": "2026-07-07T07:21:08.862Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "99474e71-70ee-479e-b179-bc867d3e8447",
-    "autoTriedAt": "2026-07-11T16:57:41.124Z"
+    "autoTriedAt": "2026-07-11T16:57:41.124Z",
+    "metaTriedAt": "2026-07-12T04:10:50.880Z"
   },
   {
     "name": "Oleander",
@@ -59144,14 +59145,39 @@
     },
     "enrichedAt": "2026-07-07T07:21:08.862Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8b890043-2576-4550-843e-f68fabfd37c6"
+    "mbid": "8b890043-2576-4550-843e-f68fabfd37c6",
+    "genres": [
+      "alternative rock",
+      "rock",
+      "post-grunge",
+      "alternative",
+      "Grunge"
+    ],
+    "popularity": {
+      "listeners": 214328,
+      "playcount": 1742010
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8942056ccd898fabd81223153932ca07/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:10:51.511Z"
   },
   {
     "name": "Oleg Butman",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:08.862Z",
     "mbid": "89fcbab6-736d-4f48-927d-3354b3cee46e",
-    "autoTriedAt": "2026-07-11T16:57:43.661Z"
+    "autoTriedAt": "2026-07-11T16:57:43.661Z",
+    "genres": [
+      "russian jazz",
+      "jazz",
+      "russian jazz drummer",
+      "percussion"
+    ],
+    "popularity": {
+      "listeners": 204,
+      "playcount": 1894
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/56be219e25d773b21f619ef4810be226/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:10:52.222Z"
   },
   {
     "name": "Oleg Marshev",
@@ -59167,14 +59193,40 @@
     },
     "enrichedAt": "2026-07-07T07:21:08.862Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d5697f5d-2047-4731-a923-23f29fe7d61e"
+    "mbid": "d5697f5d-2047-4731-a923-23f29fe7d61e",
+    "genres": [
+      "piano",
+      "Classical",
+      "20th Century",
+      "russian",
+      "Russia"
+    ],
+    "popularity": {
+      "listeners": 913,
+      "playcount": 7663
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/329c76ac19c10206f6e1d2e518b1d486/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:10:52.906Z"
   },
   {
     "name": "Olenka and the Autumn Lovers",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:08.862Z",
     "mbid": "c7c21e56-012a-42c0-ac0d-4aa0aaed8845",
-    "autoTriedAt": "2026-07-11T16:57:44.919Z"
+    "autoTriedAt": "2026-07-11T16:57:44.919Z",
+    "genres": [
+      "singer-songwriter",
+      "Canadian",
+      "indie pop",
+      "folk",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 20738,
+      "playcount": 167377
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6ade9a0717e0077f5d47845f74e6ea65/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:10:53.605Z"
   },
   {
     "name": "Oleta Adams",
@@ -59190,28 +59242,67 @@
     },
     "enrichedAt": "2026-07-07T07:21:08.862Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d3ffeb64-9d7b-4911-98e5-91ee26005ee9"
+    "mbid": "d3ffeb64-9d7b-4911-98e5-91ee26005ee9",
+    "genres": [
+      "soul",
+      "female vocalists",
+      "jazz",
+      "pop",
+      "folk"
+    ],
+    "popularity": {
+      "listeners": 170222,
+      "playcount": 1161454
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8daffd4edea439ebad066e533575b34c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:10:54.278Z"
   },
   {
     "name": "Olga",
     "website": null,
     "wdBulkTriedAt": "2026-07-09T08:32:12.140Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:57:46.181Z"
+    "autoTriedAt": "2026-07-11T16:57:46.181Z",
+    "genres": [
+      "blues",
+      "rock brasil",
+      "pop",
+      "electropop",
+      "finland"
+    ],
+    "popularity": {
+      "listeners": 23227,
+      "playcount": 649929
+    },
+    "metaEnrichedAt": "2026-07-12T04:10:55.030Z"
   },
   {
     "name": "Olga Averino",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:08.862Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:57:47.424Z"
+    "autoTriedAt": "2026-07-11T16:57:47.424Z",
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:10:55.778Z"
   },
   {
     "name": "Olga Borodina",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:08.862Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:57:48.664Z"
+    "autoTriedAt": "2026-07-11T16:57:48.664Z",
+    "genres": [
+      "russian",
+      "opera",
+      "o borodina",
+      "seen twice"
+    ],
+    "popularity": {
+      "listeners": 903,
+      "playcount": 5870
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b9a2b23aeb828653563670a79903c7d0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:10:56.439Z"
   },
   {
     "name": "Olga Guillot",
@@ -59227,7 +59318,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:57:51.221Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "bolero",
+      "cuba",
+      "latin",
+      "cantantes femeninas de boleros",
+      "All"
+    ],
+    "popularity": {
+      "listeners": 27803,
+      "playcount": 164880
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ebc1b29b7e7973fe1aced9d6c2a38386/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:10:57.131Z"
   },
   {
     "name": "Olga Kern",
@@ -59243,14 +59347,40 @@
     },
     "enrichedAt": "2026-07-07T07:21:08.862Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "36515b74-9ad7-4879-bd0d-31461a0800b5"
+    "mbid": "36515b74-9ad7-4879-bd0d-31461a0800b5",
+    "genres": [
+      "Classical",
+      "piano",
+      "classical piano",
+      "instrumental",
+      "romantic"
+    ],
+    "popularity": {
+      "listeners": 2055,
+      "playcount": 41714
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/724593fafb721d9d1b9be4bc0890e185/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:10:57.803Z"
   },
   {
     "name": "Olga Konkova",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:08.862Z",
     "mbid": "7a8c47b7-3d81-4531-a431-65d0c11b2d17",
-    "autoTriedAt": "2026-07-11T16:57:53.766Z"
+    "autoTriedAt": "2026-07-11T16:57:53.766Z",
+    "genres": [
+      "jazz",
+      "norwegian",
+      "jazz piano",
+      "piano",
+      "contemporary jazz"
+    ],
+    "popularity": {
+      "listeners": 1137,
+      "playcount": 6963
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c43e7efb565e6f186298369eeebd4a4f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:10:58.520Z"
   },
   {
     "name": "Olga Mykytenko",
@@ -59266,7 +59396,13 @@
     },
     "enrichedAt": "2026-07-07T07:21:08.862Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "64c6258c-d104-4655-9718-d0a8d3ad2436"
+    "mbid": "64c6258c-d104-4655-9718-d0a8d3ad2436",
+    "popularity": {
+      "listeners": 56,
+      "playcount": 202
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/52675a9317852e40759648491644c923/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:10:59.258Z"
   },
   {
     "name": "Olga Samaroff",
@@ -59282,7 +59418,18 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:57:58.293Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "piano",
+      "Classical",
+      "American classical pianist"
+    ],
+    "popularity": {
+      "listeners": 194,
+      "playcount": 563
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/49c554d1347eaa86d164be588cf3e9ef/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:10:59.910Z"
   },
   {
     "name": "Olga Scheps",
@@ -59298,7 +59445,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:08.862Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "563783f7-f29c-42a1-8bc2-69a0e724b1d2"
+    "mbid": "563783f7-f29c-42a1-8bc2-69a0e724b1d2",
+    "genres": [
+      "piano",
+      "Classical",
+      "classic",
+      "pianist",
+      "pianists"
+    ],
+    "popularity": {
+      "listeners": 60677,
+      "playcount": 331829
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f4631976979888c699586e4e026b3c4b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:00.557Z"
   },
   {
     "name": "Olga Tañón",
@@ -59314,7 +59474,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:08.862Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "368e6707-d17c-4f06-97e2-cca841afd52f"
+    "mbid": "368e6707-d17c-4f06-97e2-cca841afd52f",
+    "genres": [
+      "latin",
+      "merengue",
+      "female vocalists",
+      "pop",
+      "spanish"
+    ],
+    "popularity": {
+      "listeners": 59068,
+      "playcount": 467471
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/347f11decbf0676e180e24b2367e7087/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:01.560Z"
   },
   {
     "name": "Oli Beaudoin",
@@ -59330,7 +59503,13 @@
     },
     "enrichedAt": "2026-07-07T07:21:08.862Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "494025ae-0530-40f1-991a-404f15f5ed6b"
+    "mbid": "494025ae-0530-40f1-991a-404f15f5ed6b",
+    "popularity": {
+      "listeners": 10,
+      "playcount": 52
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0bb967a5068839c723358fe8c1ca2e81/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:02.200Z"
   },
   {
     "name": "Oli Brown",
@@ -59346,7 +59525,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:08.862Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6ebd80de-e732-4568-8221-28e74bc611f9"
+    "mbid": "6ebd80de-e732-4568-8221-28e74bc611f9",
+    "genres": [
+      "blues rock",
+      "blues",
+      "guitar wunderkind",
+      "guitar",
+      "BRC Blues Band Karlsruhe"
+    ],
+    "popularity": {
+      "listeners": 40688,
+      "playcount": 289695
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e2376bbc5f06542069eea98c8a388589/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:02.941Z"
   },
   {
     "name": "Oli Silk",
@@ -59362,7 +59554,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:08.862Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "aef5a003-a1fa-40ba-91fc-0144c234a20e"
+    "mbid": "aef5a003-a1fa-40ba-91fc-0144c234a20e",
+    "genres": [
+      "Smooth Jazz",
+      "jazz",
+      "instrumental",
+      "chillout",
+      "funk"
+    ],
+    "popularity": {
+      "listeners": 38520,
+      "playcount": 346368
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9cc69b6d5b9a33fce96134eb52a0ac4d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:03.728Z"
   },
   {
     "name": "Oli Sykes",
@@ -59378,7 +59583,13 @@
     },
     "enrichedAt": "2026-07-07T07:21:08.862Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "dda04dd2-d815-4516-a640-949848f90d6e"
+    "mbid": "dda04dd2-d815-4516-a640-949848f90d6e",
+    "popularity": {
+      "listeners": 178,
+      "playcount": 725
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/14cbb61e506fa7ff2c6499fa950511df/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:04.367Z"
   },
   {
     "name": "Olive",
@@ -59395,7 +59606,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:58:00.850Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "trip-hop",
+      "electronic",
+      "chillout",
+      "female vocalists",
+      "electronica"
+    ],
+    "popularity": {
+      "listeners": 361046,
+      "playcount": 2660238
+    },
+    "metaEnrichedAt": "2026-07-12T04:11:04.956Z"
   },
   {
     "name": "Olive Mess",
@@ -59411,7 +59634,19 @@
     },
     "enrichedAt": "2026-07-07T07:21:08.862Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c709912f-08a2-4572-b10f-1382621d4126"
+    "mbid": "c709912f-08a2-4572-b10f-1382621d4126",
+    "genres": [
+      "Progressive rock",
+      "Avant-Garde",
+      "latvian",
+      "chamber rock",
+      "Avant-Prog"
+    ],
+    "popularity": {
+      "listeners": 261,
+      "playcount": 4305
+    },
+    "metaEnrichedAt": "2026-07-12T04:11:06.005Z"
   },
   {
     "name": "Oliver",
@@ -59427,7 +59662,19 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T16:58:02.916Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "House",
+      "electronic",
+      "pop",
+      "60s",
+      "psychedelic"
+    ],
+    "popularity": {
+      "listeners": 271375,
+      "playcount": 2506309
+    },
+    "metaEnrichedAt": "2026-07-12T04:11:06.887Z"
   },
   {
     "name": "Oliver Black",
@@ -59435,7 +59682,13 @@
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "24903d4e-3f8d-4d87-9f3d-620b98df5fd1",
-    "autoTriedAt": "2026-07-11T16:58:05.454Z"
+    "autoTriedAt": "2026-07-11T16:58:05.454Z",
+    "popularity": {
+      "listeners": 13222,
+      "playcount": 64162
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fbec1c18dcf5fb8bb09b24fe6729054d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:07.959Z"
   },
   {
     "name": "Oliver Cheatham",
@@ -59451,14 +59704,39 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:58:09.961Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "funk",
+      "Disco",
+      "soul",
+      "80s",
+      "dance"
+    ],
+    "popularity": {
+      "listeners": 275502,
+      "playcount": 1522727
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e4a07c43d29675c76535f5910959c208/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:08.788Z"
   },
   {
     "name": "Oliver De Coque",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:58:11.231Z"
+    "autoTriedAt": "2026-07-11T16:58:11.231Z",
+    "genres": [
+      "nigeria",
+      "folk",
+      "Ouest Africa",
+      "the vitamin b12"
+    ],
+    "popularity": {
+      "listeners": 1828,
+      "playcount": 11614
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0d485d7f4610f4e35596064ca058749a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:10.126Z"
   },
   {
     "name": "Oliver Dragojević",
@@ -59474,7 +59752,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f24b0d83-6990-415a-8463-bdbedd76d358"
+    "mbid": "f24b0d83-6990-415a-8463-bdbedd76d358",
+    "genres": [
+      "croatian",
+      "pop",
+      "balkan",
+      "male vocalists",
+      "dalmatian"
+    ],
+    "popularity": {
+      "listeners": 6907,
+      "playcount": 203630
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cc7e3d97580bf34b6db4f7fb2a7702e0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:10.862Z"
   },
   {
     "name": "Oliver Fartach-Naini",
@@ -59490,14 +59781,25 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 16,
+      "playcount": 67
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/56c8f7f1da65e70a11c4aaf932333252/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:11.526Z"
   },
   {
     "name": "Oliver Haze",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbid": "5388307d-3e2f-4dbf-8b57-d24637809422",
-    "autoTriedAt": "2026-07-11T16:58:13.744Z"
+    "autoTriedAt": "2026-07-11T16:58:13.744Z",
+    "popularity": {
+      "listeners": 313,
+      "playcount": 4032
+    },
+    "metaEnrichedAt": "2026-07-12T04:11:12.375Z"
   },
   {
     "name": "Oliver Heldens",
@@ -59513,7 +59815,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "df679f1d-2bab-442b-bc67-02a44f9b2adf"
+    "mbid": "df679f1d-2bab-442b-bc67-02a44f9b2adf",
+    "genres": [
+      "House",
+      "electronic",
+      "deep house",
+      "techno",
+      "future house"
+    ],
+    "popularity": {
+      "listeners": 716217,
+      "playcount": 9846005
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/88d0e8ce1e1e3aa957e5bc440323dc80/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:13.227Z"
   },
   {
     "name": "Oliver Jackson",
@@ -59521,7 +59836,13 @@
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "ffedc41b-e02f-44cb-bd87-9fe15d111418",
-    "autoTriedAt": "2026-07-11T16:58:17.853Z"
+    "autoTriedAt": "2026-07-11T16:58:17.853Z",
+    "popularity": {
+      "listeners": 504,
+      "playcount": 1854
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2b6b7478e012bc690dc903892b563b11/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:13.890Z"
   },
   {
     "name": "Oliver Jones",
@@ -59529,14 +59850,28 @@
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "ef16f964-05a2-404e-ac80-3919c6724ac1",
-    "autoTriedAt": "2026-07-11T16:58:20.399Z"
+    "autoTriedAt": "2026-07-11T16:58:20.399Z",
+    "genres": [
+      "jazz",
+      "lounge",
+      "piano",
+      "easy listening",
+      "downtempo"
+    ],
+    "popularity": {
+      "listeners": 8572,
+      "playcount": 60205
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d2c5da2c5eb873bf6900c005468e958e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:14.576Z"
   },
   {
     "name": "Oliver Jones (pianist)",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:58:23.329Z"
+    "autoTriedAt": "2026-07-11T16:58:23.329Z",
+    "metaTriedAt": "2026-07-12T04:11:15.187Z"
   },
   {
     "name": "Oliver Knussen",
@@ -59552,7 +59887,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "85391dc7-8a0d-4bda-a299-c74a2135525e"
+    "mbid": "85391dc7-8a0d-4bda-a299-c74a2135525e",
+    "genres": [
+      "contemporary classical",
+      "Classical",
+      "composer",
+      "british",
+      "english"
+    ],
+    "popularity": {
+      "listeners": 4416,
+      "playcount": 22341
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9090d1343b6039d8934e5c84f80ead74/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:16.315Z"
   },
   {
     "name": "Oliver Lake",
@@ -59568,7 +59916,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e58cdacf-c655-4848-a570-7d3f3fb11935"
+    "mbid": "e58cdacf-c655-4848-a570-7d3f3fb11935",
+    "genres": [
+      "jazz",
+      "free jazz",
+      "saxophone",
+      "Avant-Garde",
+      "All"
+    ],
+    "popularity": {
+      "listeners": 4637,
+      "playcount": 30543
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/dbe959b1968af40005071b4c39574ad1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:17.045Z"
   },
   {
     "name": "Oliver Nelson",
@@ -59585,7 +59946,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:58:25.948Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "saxophone",
+      "Hard Bop",
+      "bebop",
+      "swing"
+    ],
+    "popularity": {
+      "listeners": 405911,
+      "playcount": 2313763
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/46023fd710edd1311f7ec052e69e9908/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:17.727Z"
   },
   {
     "name": "Oliver Riedel",
@@ -59593,14 +59967,33 @@
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "730e20a5-66d3-4052-9143-a3ea7b56f568",
-    "autoTriedAt": "2026-07-11T16:58:30.061Z"
+    "autoTriedAt": "2026-07-11T16:58:30.061Z",
+    "popularity": {
+      "listeners": 43,
+      "playcount": 170
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:18.360Z"
   },
   {
     "name": "Oliver Sain",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbid": "ba8a3a9c-54dd-4673-83e5-d98ef5d2f3a1",
-    "autoTriedAt": "2026-07-11T16:58:32.617Z"
+    "autoTriedAt": "2026-07-11T16:58:32.617Z",
+    "genres": [
+      "All",
+      "funk",
+      "jazz",
+      "soul",
+      "70s"
+    ],
+    "popularity": {
+      "listeners": 11700,
+      "playcount": 37231
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/db7add6d197a849dd6137a96f236d66d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:19.085Z"
   },
   {
     "name": "Oliver Schroer",
@@ -59616,14 +60009,40 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d76ef56c-67a3-4ba9-9683-7550d85660db"
+    "mbid": "d76ef56c-67a3-4ba9-9683-7550d85660db",
+    "genres": [
+      "contemporary classical",
+      "celtic",
+      "new age",
+      "ethnic fusion",
+      "look into"
+    ],
+    "popularity": {
+      "listeners": 2020,
+      "playcount": 68199
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7337635d4fe766cf0a061a461ba31c5e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:19.752Z"
   },
   {
     "name": "Oliver Shanti & Friends",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbid": "e5955fc6-131f-4fb1-956b-96502833a91a",
-    "autoTriedAt": "2026-07-11T16:58:36.972Z"
+    "autoTriedAt": "2026-07-11T16:58:36.972Z",
+    "genres": [
+      "new age",
+      "ambient",
+      "ethnic",
+      "chillout",
+      "world"
+    ],
+    "popularity": {
+      "listeners": 92328,
+      "playcount": 1970408
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1dc59618a37e41937522f039ee854b9f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:20.435Z"
   },
   {
     "name": "Oliver Sykes",
@@ -59640,14 +60059,31 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:58:39.512Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "kircore",
+      "upyachka",
+      "brutal kircore",
+      "hammer smashed face",
+      "hairy pussy"
+    ],
+    "popularity": {
+      "listeners": 957,
+      "playcount": 5259
+    },
+    "metaEnrichedAt": "2026-07-12T04:11:21.055Z"
   },
   {
     "name": "Oliver Todd",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:58:40.752Z"
+    "autoTriedAt": "2026-07-11T16:58:40.752Z",
+    "popularity": {
+      "listeners": 3,
+      "playcount": 12
+    },
+    "metaEnrichedAt": "2026-07-12T04:11:21.828Z"
   },
   {
     "name": "Oliver Tree",
@@ -59663,42 +60099,76 @@
     "wdBulkTriedAt": "2026-07-09T08:32:12.140Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T16:58:40.752Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "electronic",
+      "pop",
+      "electropop",
+      "Hip-Hop",
+      "indie pop"
+    ],
+    "popularity": {
+      "listeners": 1643080,
+      "playcount": 49554449
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4acd6fc78c017cb062f163cc89167bfe/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:22.500Z"
   },
   {
     "name": "Oliver Weindling",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:58:43.270Z"
+    "autoTriedAt": "2026-07-11T16:58:43.270Z",
+    "metaTriedAt": "2026-07-12T04:11:23.241Z"
   },
   {
     "name": "Olivera Vojna Nešić",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:58:44.519Z"
+    "autoTriedAt": "2026-07-11T16:58:44.519Z",
+    "metaTriedAt": "2026-07-12T04:11:23.872Z"
   },
   {
     "name": "Olivia",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:58:45.948Z"
+    "autoTriedAt": "2026-07-11T16:58:45.948Z",
+    "genres": [
+      "japanese",
+      "J-rock",
+      "j-pop",
+      "female vocalists",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 139403,
+      "playcount": 5515675
+    },
+    "metaEnrichedAt": "2026-07-12T04:11:24.589Z"
   },
   {
     "name": "Olivia Bonilla",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:58:47.189Z"
+    "autoTriedAt": "2026-07-11T16:58:47.189Z",
+    "popularity": {
+      "listeners": 23,
+      "playcount": 140
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f475e0952dfb4cfd33ab8ca85803ccf5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:25.410Z"
   },
   {
     "name": "Olivia Buckley",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbid": "4ee46eb0-35c7-4009-be47-06f946c01b47",
-    "autoTriedAt": "2026-07-11T16:58:49.723Z"
+    "autoTriedAt": "2026-07-11T16:58:49.723Z",
+    "metaTriedAt": "2026-07-12T04:11:26.261Z"
   },
   {
     "name": "Olivia Dean",
@@ -59714,7 +60184,20 @@
     "wdBulkTriedAt": "2026-07-09T08:32:12.140Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T16:58:49.723Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "soul",
+      "rnb",
+      "pop",
+      "indie",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 1573658,
+      "playcount": 88416446
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fed7c3b756cf6049da62988cb8e744be/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:26.902Z"
   },
   {
     "name": "Olivia Lufkin",
@@ -59730,7 +60213,19 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "44353ce7-1d1b-43c8-868d-83213531f688"
+    "mbid": "44353ce7-1d1b-43c8-868d-83213531f688",
+    "genres": [
+      "japanese",
+      "J-rock",
+      "j-pop",
+      "female vocalists",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 139403,
+      "playcount": 5515675
+    },
+    "metaEnrichedAt": "2026-07-12T04:11:27.581Z"
   },
   {
     "name": "Olivia Merilahti",
@@ -59746,7 +60241,16 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b7f9fd30-b592-4bc2-9da6-fbddb9e1c3bf"
+    "mbid": "b7f9fd30-b592-4bc2-9da6-fbddb9e1c3bf",
+    "genres": [
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 2085,
+      "playcount": 13411
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a00541db42f77b4e5e32ccccb05224e4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:29.005Z"
   },
   {
     "name": "Olivia Newton-John",
@@ -59762,7 +60266,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "10ccb5d8-f9d5-4954-9441-3419b522a214"
+    "mbid": "10ccb5d8-f9d5-4954-9441-3419b522a214",
+    "genres": [
+      "pop",
+      "female vocalists",
+      "70s",
+      "80s",
+      "country"
+    ],
+    "popularity": {
+      "listeners": 1430661,
+      "playcount": 14477894
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/296da8fe39e9cbbc0d42cf2bf31f74e2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:29.728Z"
   },
   {
     "name": "Olivia Rodrigo",
@@ -59778,7 +60295,20 @@
     "wdBulkTriedAt": "2026-07-09T08:32:12.140Z",
     "mbid": "6925db17-f35e-42f3-a4eb-84ee6bf5d4b0",
     "enrichedAt": "2026-07-09T08:32:12.140Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "pop",
+      "pop rock",
+      "rock",
+      "indie pop",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 3277067,
+      "playcount": 664562915
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2c9e480317183c037eaebcd7ba96daf4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:30.453Z"
   },
   {
     "name": "Olivia Ruiz",
@@ -59794,21 +60324,47 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5083e4bf-3246-4ab9-a6d3-23be8db8db2c"
+    "mbid": "5083e4bf-3246-4ab9-a6d3-23be8db8db2c",
+    "genres": [
+      "french",
+      "chanson francaise",
+      "female vocalists",
+      "singer-songwriter",
+      "nouvelle scene francaise"
+    ],
+    "popularity": {
+      "listeners": 185111,
+      "playcount": 2344636
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e993ab55de9efc0863a9a008064c2d61/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:31.271Z"
   },
   {
     "name": "Olivier Aubert",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:58:50.959Z"
+    "autoTriedAt": "2026-07-11T16:58:50.959Z",
+    "metaTriedAt": "2026-07-12T04:11:31.994Z"
   },
   {
     "name": "Olivier Jarda",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:58:54.373Z"
+    "autoTriedAt": "2026-07-11T16:58:54.373Z",
+    "genres": [
+      "folk",
+      "Canadian",
+      "american",
+      "indie",
+      "All"
+    ],
+    "popularity": {
+      "listeners": 453,
+      "playcount": 3588
+    },
+    "metaEnrichedAt": "2026-07-12T04:11:32.700Z"
   },
   {
     "name": "Olivier Latry",
@@ -59824,14 +60380,32 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e6711018-699b-4cfa-8dbc-4e40606a5ed0"
+    "mbid": "e6711018-699b-4cfa-8dbc-4e40606a5ed0",
+    "genres": [
+      "organ",
+      "french",
+      "contemporary classical",
+      "Classical",
+      "20th Century Classical"
+    ],
+    "popularity": {
+      "listeners": 5275,
+      "playcount": 57224
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1285bd1e285d3fa3a4f146204e38294a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:33.277Z"
   },
   {
     "name": "Olivier Manchion",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbid": "e7e7e141-2ddb-4c7f-83f9-aed3ac6267ba",
-    "autoTriedAt": "2026-07-11T16:58:56.903Z"
+    "autoTriedAt": "2026-07-11T16:58:56.903Z",
+    "popularity": {
+      "listeners": 14,
+      "playcount": 38
+    },
+    "metaEnrichedAt": "2026-07-12T04:11:34.056Z"
   },
   {
     "name": "Olivier Messiaen",
@@ -59847,14 +60421,28 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c6e5c5f4-984e-432a-87b8-b6afa288bca1"
+    "mbid": "c6e5c5f4-984e-432a-87b8-b6afa288bca1",
+    "genres": [
+      "contemporary classical",
+      "Classical",
+      "Avant-Garde",
+      "experimental",
+      "french"
+    ],
+    "popularity": {
+      "listeners": 268840,
+      "playcount": 2420575
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/655441b5918e4a09ed78b9ce022c2a2b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:34.935Z"
   },
   {
     "name": "Olivo Krause",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:58:58.142Z"
+    "autoTriedAt": "2026-07-11T16:58:58.142Z",
+    "metaTriedAt": "2026-07-12T04:11:35.554Z"
   },
   {
     "name": "Oljeberget",
@@ -59871,7 +60459,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:59:01.322Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 3705,
+      "playcount": 16744
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/acfde2965ce586e3131465ce4ba28e19/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:36.207Z"
   },
   {
     "name": "Olla",
@@ -59879,7 +60473,16 @@
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "ca33f4a6-0070-4502-aa39-fe286b6c7b12",
-    "autoTriedAt": "2026-07-11T16:59:03.836Z"
+    "autoTriedAt": "2026-07-11T16:59:03.836Z",
+    "genres": [
+      "noise rock"
+    ],
+    "popularity": {
+      "listeners": 2715,
+      "playcount": 7504
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/16b8184e5a4e19d3fdd2bf95cdb8caca/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:36.938Z"
   },
   {
     "name": "Olli Kortekangas",
@@ -59895,7 +60498,16 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "3aee92dc-aa4d-45f2-a873-2bef866a7c3d"
+    "mbid": "3aee92dc-aa4d-45f2-a873-2bef866a7c3d",
+    "genres": [
+      "finland",
+      "finnish"
+    ],
+    "popularity": {
+      "listeners": 246,
+      "playcount": 1008
+    },
+    "metaEnrichedAt": "2026-07-12T04:11:37.603Z"
   },
   {
     "name": "Olli Lindholm",
@@ -59911,7 +60523,13 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7296c74d-26a6-40eb-a2fa-de2d865c0889"
+    "mbid": "7296c74d-26a6-40eb-a2fa-de2d865c0889",
+    "popularity": {
+      "listeners": 4752,
+      "playcount": 50206
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6e2279e34d1cad6b1c5f9a6d16ea4bdc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:38.286Z"
   },
   {
     "name": "Olli Mustonen",
@@ -59928,7 +60546,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:59:06.523Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Classical",
+      "piano",
+      "finnish",
+      "composer",
+      "classical piano"
+    ],
+    "popularity": {
+      "listeners": 7807,
+      "playcount": 74995
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e522fe942106ba1800e866825172235a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:39.258Z"
   },
   {
     "name": "Olli Tukiainen",
@@ -59944,7 +60575,13 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6b03f673-59ee-481e-bdc1-34a1a9c6da7e"
+    "mbid": "6b03f673-59ee-481e-bdc1-34a1a9c6da7e",
+    "popularity": {
+      "listeners": 6,
+      "playcount": 9
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:39.961Z"
   },
   {
     "name": "Olli-Pekka Laine",
@@ -59960,14 +60597,31 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "cdbaded6-c6cb-4587-ad27-0371aa030e89"
+    "mbid": "cdbaded6-c6cb-4587-ad27-0371aa030e89",
+    "popularity": {
+      "listeners": 7,
+      "playcount": 30
+    },
+    "metaEnrichedAt": "2026-07-12T04:11:40.594Z"
   },
   {
     "name": "Ollie and the Nightingales",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:59:07.780Z"
+    "autoTriedAt": "2026-07-11T16:59:07.780Z",
+    "genres": [
+      "soul",
+      "oldies",
+      "stax",
+      "rhythm and blues",
+      "ollie and the nightingales"
+    ],
+    "popularity": {
+      "listeners": 15025,
+      "playcount": 54695
+    },
+    "metaEnrichedAt": "2026-07-12T04:11:41.255Z"
   },
   {
     "name": "Ollie Halsall",
@@ -59983,7 +60637,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5155138f-d56a-445b-ae7a-378e91012294"
+    "mbid": "5155138f-d56a-445b-ae7a-378e91012294",
+    "genres": [
+      "rock",
+      "guitar",
+      "70s",
+      "blues",
+      "Vibraphone"
+    ],
+    "popularity": {
+      "listeners": 1181,
+      "playcount": 7810
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/75f82d04f3e65f40c791950cdbe0c0d2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:42.396Z"
   },
   {
     "name": "Ollie Mitchell",
@@ -59991,7 +60658,9 @@
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "f350886d-97bc-4794-a1df-f3bfad11782a",
-    "autoTriedAt": "2026-07-11T16:59:10.348Z"
+    "autoTriedAt": "2026-07-11T16:59:10.348Z",
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:43.047Z"
   },
   {
     "name": "Olly Alexander",
@@ -60007,7 +60676,19 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e9581624-d443-4dad-86f0-4f489283507c"
+    "mbid": "e9581624-d443-4dad-86f0-4f489283507c",
+    "genres": [
+      "queer",
+      "british",
+      "Eurovision",
+      "Eurovision Song Contest",
+      "actors"
+    ],
+    "popularity": {
+      "listeners": 25413,
+      "playcount": 276874
+    },
+    "metaEnrichedAt": "2026-07-12T04:11:44.157Z"
   },
   {
     "name": "Olly Murs",
@@ -60023,7 +60704,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0b108024-ccb5-468f-b2e9-77ed4f5615c6"
+    "mbid": "0b108024-ccb5-468f-b2e9-77ed4f5615c6",
+    "genres": [
+      "pop",
+      "british",
+      "male vocalists",
+      "indie",
+      "X factor"
+    ],
+    "popularity": {
+      "listeners": 1577150,
+      "playcount": 24344006
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e8a1691af26994e9d3c2244f5761bc24/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:44.746Z"
   },
   {
     "name": "Olsen Brothers",
@@ -60031,7 +60725,20 @@
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "2c1fa467-c38c-48c6-876c-93a4481b7e19",
-    "autoTriedAt": "2026-07-11T16:59:16.396Z"
+    "autoTriedAt": "2026-07-11T16:59:16.396Z",
+    "genres": [
+      "Eurovision",
+      "pop",
+      "danish",
+      "rock",
+      "soft rock"
+    ],
+    "popularity": {
+      "listeners": 23337,
+      "playcount": 140274
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/080df83cd3c9d7cd321f998b74875322/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:45.376Z"
   },
   {
     "name": "Oluf Ring",
@@ -60047,7 +60754,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:59:18.973Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 888,
+      "playcount": 4683
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:46.048Z"
   },
   {
     "name": "Olympia",
@@ -60064,7 +60777,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:59:21.505Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "indie",
+      "indie rock",
+      "post-hardcore",
+      "All",
+      "emo"
+    ],
+    "popularity": {
+      "listeners": 26206,
+      "playcount": 227000
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8c3ed45776de90daa5c4050abcf5a7b6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:46.858Z"
   },
   {
     "name": "Olympic",
@@ -60080,14 +60806,32 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T16:59:21.505Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "Czech",
+      "bigbeat",
+      "rock",
+      "classic rock",
+      "60s"
+    ],
+    "popularity": {
+      "listeners": 21760,
+      "playcount": 533282
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/013c9f9904de87d9d42dff402f07fd74/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:48.065Z"
   },
   {
     "name": "Olympic Hymn",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:59:22.760Z"
+    "autoTriedAt": "2026-07-11T16:59:22.760Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 18
+    },
+    "metaEnrichedAt": "2026-07-12T04:11:48.705Z"
   },
   {
     "name": "Olympos Mons",
@@ -60103,7 +60847,19 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8e093586-54bc-4b0b-8307-fcecbff54d06"
+    "mbid": "8e093586-54bc-4b0b-8307-fcecbff54d06",
+    "genres": [
+      "Power metal",
+      "heavy metal",
+      "finnish",
+      "finnish metal",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 3635,
+      "playcount": 137982
+    },
+    "metaEnrichedAt": "2026-07-12T04:11:49.407Z"
   },
   {
     "name": "Olympus Mons",
@@ -60119,28 +60875,65 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "ambient",
+      "drone",
+      "french",
+      "metal",
+      "Progressive metal"
+    ],
+    "popularity": {
+      "listeners": 1919,
+      "playcount": 23388
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b88fe7e0c40c8078aa9117f8ce59d9e0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:50.131Z"
   },
   {
     "name": "Om Bikram Bista",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:59:24.005Z"
+    "autoTriedAt": "2026-07-11T16:59:24.005Z",
+    "genres": [
+      "nepal",
+      "Nepalese"
+    ],
+    "popularity": {
+      "listeners": 226,
+      "playcount": 1338
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e10e0f269a409804c43c8887bddfe8f1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:50.781Z"
   },
   {
     "name": "Omaha Symphony Orchestra",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:59:25.257Z"
+    "autoTriedAt": "2026-07-11T16:59:25.257Z",
+    "metaTriedAt": "2026-07-12T04:11:51.432Z"
   },
   {
     "name": "Omar & The Howlers",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:59:26.536Z"
+    "autoTriedAt": "2026-07-11T16:59:26.536Z",
+    "genres": [
+      "blues rock",
+      "blues",
+      "Southern Rock",
+      "classic rock",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 20004,
+      "playcount": 205755
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5cbe00384b687ae8e76bd47db2960310/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:52.145Z"
   },
   {
     "name": "Omar Akram",
@@ -60157,7 +60950,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:59:29.058Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "new age",
+      "instrumental",
+      "piano",
+      "ambient",
+      "relaxing"
+    ],
+    "popularity": {
+      "listeners": 38653,
+      "playcount": 460756
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/34de4370b0313e0494d28cb3a870137c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:52.819Z"
   },
   {
     "name": "Omar Al-Abdallat",
@@ -60173,14 +60979,30 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ed243829-ff63-4c05-82d3-012071dd8396"
+    "mbid": "ed243829-ff63-4c05-82d3-012071dd8396",
+    "genres": [
+      "arabic",
+      "Jordanian"
+    ],
+    "popularity": {
+      "listeners": 17,
+      "playcount": 397
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/31ae397598ee3eae0909cf48584f9a6a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:53.528Z"
   },
   {
     "name": "Omar Blondahl",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbid": "11d01486-2f22-40e0-8946-4864de704659",
-    "autoTriedAt": "2026-07-11T16:59:31.619Z"
+    "autoTriedAt": "2026-07-11T16:59:31.619Z",
+    "popularity": {
+      "listeners": 61,
+      "playcount": 725
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3782589e2194e2ceb95e26afe136fb29/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:54.198Z"
   },
   {
     "name": "Omar Courtz",
@@ -60196,7 +61018,20 @@
     },
     "mbid": "61ee1029-4f35-43ce-83dd-2eb8d4eef85e",
     "enrichedAt": "2026-07-09T08:32:12.140Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "Reggaeton",
+      "rap",
+      "rnb",
+      "Hip-Hop",
+      "latino"
+    ],
+    "popularity": {
+      "listeners": 262599,
+      "playcount": 17033146
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/470ba2a8d9769b1a273463bcf2f7c2ee/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:54.792Z"
   },
   {
     "name": "Omar Daniel",
@@ -60204,7 +61039,12 @@
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "31c0ed78-3680-4086-a9e3-c5a31a9d2466",
-    "autoTriedAt": "2026-07-11T16:59:34.164Z"
+    "autoTriedAt": "2026-07-11T16:59:34.164Z",
+    "popularity": {
+      "listeners": 15,
+      "playcount": 74
+    },
+    "metaEnrichedAt": "2026-07-12T04:11:55.592Z"
   },
   {
     "name": "Omar Espinosa",
@@ -60212,7 +61052,9 @@
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "b9b703fe-e63b-41bc-9c27-ddc6cc48dc93",
-    "autoTriedAt": "2026-07-11T16:59:36.693Z"
+    "autoTriedAt": "2026-07-11T16:59:36.693Z",
+    "image": "https://cdn-images.dzcdn.net/images/artist/6daefa9676c0c7e5005671709dbcbf81/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:56.231Z"
   },
   {
     "name": "Omar Faruk Tekbilek",
@@ -60229,7 +61071,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:59:39.972Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "sufi",
+      "turkish",
+      "world",
+      "arabic",
+      "World Music"
+    ],
+    "popularity": {
+      "listeners": 106776,
+      "playcount": 784174
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/084ea732dda117edefaf03bb692c9edf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:56.855Z"
   },
   {
     "name": "Omar Hakim",
@@ -60246,21 +61101,59 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:59:42.557Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "drums",
+      "jazz",
+      "pop",
+      "Disco",
+      "fusion jazz"
+    ],
+    "popularity": {
+      "listeners": 1692,
+      "playcount": 12523
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ec3113e39b82df1ca8290f94e00d56a3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:57.691Z"
   },
   {
     "name": "Omar Kent Dykes",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbid": "d6b9f1d9-14fa-434a-9d59-26a3f5b8c581",
-    "autoTriedAt": "2026-07-11T16:59:45.439Z"
+    "autoTriedAt": "2026-07-11T16:59:45.439Z",
+    "genres": [
+      "blues",
+      "guitar",
+      "rhythm and blues",
+      "USA",
+      "harmonica"
+    ],
+    "popularity": {
+      "listeners": 3496,
+      "playcount": 16345
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/dc943081b154351753faa83b411cf1ed/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:58.359Z"
   },
   {
     "name": "Omar Khayrat",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:59:46.686Z"
+    "autoTriedAt": "2026-07-11T16:59:46.686Z",
+    "genres": [
+      "instrumental",
+      "egyptian",
+      "arabic",
+      "Classical",
+      "masreyat"
+    ],
+    "popularity": {
+      "listeners": 10329,
+      "playcount": 134247
+    },
+    "metaEnrichedAt": "2026-07-12T04:11:59.067Z"
   },
   {
     "name": "Omar Puente",
@@ -60268,7 +61161,13 @@
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "12c29b58-908a-498b-97d8-d276c988f7f5",
-    "autoTriedAt": "2026-07-11T16:59:49.188Z"
+    "autoTriedAt": "2026-07-11T16:59:49.188Z",
+    "popularity": {
+      "listeners": 196,
+      "playcount": 813
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a498e897077f7bb64b76ca5fb1ba2f6e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:11:59.723Z"
   },
   {
     "name": "Omar Rodriguez Lopez",
@@ -60284,7 +61183,19 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "71297544-fd63-4c1f-8bac-5838ca201e3d"
+    "mbid": "71297544-fd63-4c1f-8bac-5838ca201e3d",
+    "genres": [
+      "experimental",
+      "Progressive rock",
+      "psychedelic",
+      "instrumental",
+      "jazz"
+    ],
+    "popularity": {
+      "listeners": 94710,
+      "playcount": 1960413
+    },
+    "metaEnrichedAt": "2026-07-12T04:12:00.347Z"
   },
   {
     "name": "Omar Rodriguez-Lopez",
@@ -60300,7 +61211,19 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "71297544-fd63-4c1f-8bac-5838ca201e3d"
+    "mbid": "71297544-fd63-4c1f-8bac-5838ca201e3d",
+    "genres": [
+      "experimental",
+      "Progressive rock",
+      "psychedelic",
+      "instrumental",
+      "jazz"
+    ],
+    "popularity": {
+      "listeners": 94710,
+      "playcount": 1960413
+    },
+    "metaEnrichedAt": "2026-07-12T04:12:00.920Z"
   },
   {
     "name": "Omar Rodríguez-López",
@@ -60316,7 +61239,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "71297544-fd63-4c1f-8bac-5838ca201e3d"
+    "mbid": "71297544-fd63-4c1f-8bac-5838ca201e3d",
+    "genres": [
+      "experimental",
+      "Progressive rock",
+      "Psychedelic Rock",
+      "Experimental Rock",
+      "jazz fusion"
+    ],
+    "popularity": {
+      "listeners": 81887,
+      "playcount": 1356962
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/25e3dadd6d84afea8539baf756c10e4c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:01.557Z"
   },
   {
     "name": "Omar Shariff",
@@ -60324,14 +61260,31 @@
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "56d3a7d0-7a51-4c92-baa4-0d4e35ed6890",
-    "autoTriedAt": "2026-07-11T16:59:51.733Z"
+    "autoTriedAt": "2026-07-11T16:59:51.733Z",
+    "genres": [
+      "Texas Blues",
+      "blues",
+      "piano blues"
+    ],
+    "popularity": {
+      "listeners": 389,
+      "playcount": 1951
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c2e388593588764f0e0ce68891ea7608/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:02.329Z"
   },
   {
     "name": "Omar Zoboli",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbid": "6bdadfe3-59c9-45fd-a3c1-c5dca05bc690",
-    "autoTriedAt": "2026-07-11T16:59:54.255Z"
+    "autoTriedAt": "2026-07-11T16:59:54.255Z",
+    "popularity": {
+      "listeners": 162,
+      "playcount": 1037
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e457bf4410f72d3f27c6a57ddf1b7572/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:02.993Z"
   },
   {
     "name": "Omarion",
@@ -60347,7 +61300,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "3ca09fae-fdee-4771-bab9-244708515a98"
+    "mbid": "3ca09fae-fdee-4771-bab9-244708515a98",
+    "genres": [
+      "rnb",
+      "Hip-Hop",
+      "pop",
+      "Omarion",
+      "hip hop"
+    ],
+    "popularity": {
+      "listeners": 1220409,
+      "playcount": 9198915
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1406ad453118374b38dcf0ad60223a69/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:03.647Z"
   },
   {
     "name": "Omawumi",
@@ -60363,7 +61329,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:59:56.758Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "pop",
+      "funk",
+      "african",
+      "dance",
+      "nigeria"
+    ],
+    "popularity": {
+      "listeners": 4296,
+      "playcount": 26266
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c971836209f33600da14435f2d1782ba/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:04.403Z"
   },
   {
     "name": "Ombient",
@@ -60379,7 +61358,15 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d6dbb0d4-e7a2-4047-9f73-d6df690ea0b3"
+    "mbid": "d6dbb0d4-e7a2-4047-9f73-d6df690ea0b3",
+    "genres": [
+      "dark ambient"
+    ],
+    "popularity": {
+      "listeners": 196,
+      "playcount": 1185
+    },
+    "metaEnrichedAt": "2026-07-12T04:12:05.789Z"
   },
   {
     "name": "Omega",
@@ -60396,7 +61383,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:59:59.848Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Progressive rock",
+      "classic rock",
+      "rock",
+      "hard rock",
+      "hungarian"
+    ],
+    "popularity": {
+      "listeners": 338835,
+      "playcount": 3841468
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0702f968f30450c514a10bbf9a00fae2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:06.459Z"
   },
   {
     "name": "Omega Lithium",
@@ -60412,7 +61412,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:10.710Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ea550588-5c83-45e4-89e6-b6e1f1a9dece"
+    "mbid": "ea550588-5c83-45e4-89e6-b6e1f1a9dece",
+    "genres": [
+      "industrial metal",
+      "Gothic Metal",
+      "Female fronted metal",
+      "Gothic",
+      "gothic industrial"
+    ],
+    "popularity": {
+      "listeners": 27354,
+      "playcount": 768199
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9be8e481128cb4a769b14517277364e2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:07.135Z"
   },
   {
     "name": "Omega One",
@@ -60429,7 +61442,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:00:02.459Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "instrumental hip-hop",
+      "Hip-Hop",
+      "electronic",
+      "underground hip-hop",
+      "instrumental"
+    ],
+    "popularity": {
+      "listeners": 27952,
+      "playcount": 222980
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/53f8bb8c2cc4c9bcaaa320ec4fee7787/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:07.808Z"
   },
   {
     "name": "Omega Red",
@@ -60437,7 +61463,19 @@
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "fb18a6be-e714-4edf-a7a5-b7ad60f1be13",
-    "autoTriedAt": "2026-07-11T17:00:04.994Z"
+    "autoTriedAt": "2026-07-11T17:00:04.994Z",
+    "genres": [
+      "deathcore",
+      "Hip-Hop",
+      "breakcore",
+      "death metal",
+      "melodic"
+    ],
+    "popularity": {
+      "listeners": 712,
+      "playcount": 4929
+    },
+    "metaEnrichedAt": "2026-07-12T04:12:08.508Z"
   },
   {
     "name": "Omega Tribe",
@@ -60454,14 +61492,39 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:00:07.538Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "anarcho-punk",
+      "punk",
+      "peace punk",
+      "anarcho punk",
+      "punk rock"
+    ],
+    "popularity": {
+      "listeners": 5867,
+      "playcount": 123982
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c14c5744b9613806c1fb65c543d46b24/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:09.446Z"
   },
   {
     "name": "Omelette",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:10.710Z",
     "mbid": "4701e2ae-abf6-4034-b67e-caa71e509398",
-    "autoTriedAt": "2026-07-11T17:00:10.222Z"
+    "autoTriedAt": "2026-07-11T17:00:10.222Z",
+    "genres": [
+      "pop",
+      "indonesia",
+      "rock",
+      "alternative",
+      "indonesian"
+    ],
+    "popularity": {
+      "listeners": 1171,
+      "playcount": 17846
+    },
+    "metaEnrichedAt": "2026-07-12T04:12:10.171Z"
   },
   {
     "name": "Omen",
@@ -60478,21 +61541,51 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:00:12.771Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "heavy metal",
+      "Power metal",
+      "Hip-Hop",
+      "rap",
+      "hip hop"
+    ],
+    "popularity": {
+      "listeners": 97358,
+      "playcount": 1520983
+    },
+    "metaEnrichedAt": "2026-07-12T04:12:10.847Z"
   },
   {
     "name": "Omer Adam",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:22.763Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:00:14.028Z"
+    "autoTriedAt": "2026-07-11T17:00:14.028Z",
+    "genres": [
+      "pop",
+      "hebrew",
+      "Israel",
+      "israeli",
+      "hairy chest"
+    ],
+    "popularity": {
+      "listeners": 43219,
+      "playcount": 2253423
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e5e49b6dbb646e2f98c99e5dd86dc626/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:11.536Z"
   },
   {
     "name": "Omer Létourneau",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:22.763Z",
     "mbid": "72c135b7-b45c-4845-a759-7acc53fb0850",
-    "autoTriedAt": "2026-07-11T17:00:16.589Z"
+    "autoTriedAt": "2026-07-11T17:00:16.589Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 1
+    },
+    "metaEnrichedAt": "2026-07-12T04:12:12.220Z"
   },
   {
     "name": "Omer Simeon",
@@ -60500,7 +61593,20 @@
     "wdBulkTriedAt": "2026-07-07T07:21:22.763Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "bf319be5-31ba-48d1-a4bb-da4235994d7a",
-    "autoTriedAt": "2026-07-11T17:00:19.131Z"
+    "autoTriedAt": "2026-07-11T17:00:19.131Z",
+    "genres": [
+      "swing",
+      "jazz",
+      "clarinet",
+      "All",
+      "schellack-schatz"
+    ],
+    "popularity": {
+      "listeners": 896,
+      "playcount": 2756
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a72e0d3ca0e771087e8b6692c24a3d83/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:12.921Z"
   },
   {
     "name": "Omerta",
@@ -60517,7 +61623,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:00:21.684Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "metalcore",
+      "Nu Metal",
+      "deathcore",
+      "death metal",
+      "hardcore"
+    ],
+    "popularity": {
+      "listeners": 58328,
+      "playcount": 1394963
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d8f68edc899bcdc25e70734541c189c3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:13.539Z"
   },
   {
     "name": "OMG Girlz",
@@ -60533,7 +61652,19 @@
     },
     "enrichedAt": "2026-07-07T07:21:22.763Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "355f289c-2b14-4969-9afd-bd478f3c51f4"
+    "mbid": "355f289c-2b14-4969-9afd-bd478f3c51f4",
+    "genres": [
+      "rnb",
+      "pop",
+      "rap",
+      "Hip-Hop",
+      "powerful"
+    ],
+    "popularity": {
+      "listeners": 10165,
+      "playcount": 73785
+    },
+    "metaEnrichedAt": "2026-07-12T04:12:14.304Z"
   },
   {
     "name": "Omi",
@@ -60549,7 +61680,20 @@
     "wdBulkTriedAt": "2026-07-08T14:10:42.682Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T17:00:21.684Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "reggae",
+      "electronic",
+      "hardcore",
+      "dance",
+      "jamaican"
+    ],
+    "popularity": {
+      "listeners": 1205984,
+      "playcount": 9391221
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a5bcab4240fc8396c44b7e0eee795548/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:15.072Z"
   },
   {
     "name": "Omid 16B",
@@ -60565,7 +61709,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:22.763Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6a863547-3ed9-4dc6-8e3e-4842535c547b"
+    "mbid": "6a863547-3ed9-4dc6-8e3e-4842535c547b",
+    "genres": [
+      "british",
+      "ambient",
+      "House",
+      "electronic",
+      "UK"
+    ],
+    "popularity": {
+      "listeners": 5945,
+      "playcount": 33693
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ec21d1cae1029e78a9a97b846da955b7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:15.850Z"
   },
   {
     "name": "Omid Nourizadeh",
@@ -60581,7 +61738,13 @@
     },
     "enrichedAt": "2026-07-07T07:21:22.763Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6a863547-3ed9-4dc6-8e3e-4842535c547b"
+    "mbid": "6a863547-3ed9-4dc6-8e3e-4842535c547b",
+    "popularity": {
+      "listeners": 43,
+      "playcount": 228
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:16.565Z"
   },
   {
     "name": "Omillio Sparks",
@@ -60597,7 +61760,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:00:24.222Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "rap",
+      "hip hop",
+      "state property",
+      "Philadelphia",
+      "Omillio Sparks"
+    ],
+    "popularity": {
+      "listeners": 1206,
+      "playcount": 5843
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/73c794ec43983dc4eab7057b74e5fab6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:17.239Z"
   },
   {
     "name": "Omni Trio",
@@ -60613,7 +61789,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:22.763Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4b6dcce2-a169-48fa-a788-58cceb9a3a9e"
+    "mbid": "4b6dcce2-a169-48fa-a788-58cceb9a3a9e",
+    "genres": [
+      "Drum and bass",
+      "jungle",
+      "electronic",
+      "dnb",
+      "Drum n Bass"
+    ],
+    "popularity": {
+      "listeners": 153076,
+      "playcount": 1698510
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a373255ae45fcdfeb08484624b06c412/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:17.882Z"
   },
   {
     "name": "Omnia",
@@ -60630,21 +61819,44 @@
       "vk": "https://vk.com/omniamusic"
     },
     "enrichedAt": "2026-07-11T17:00:27.860Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "folk",
+      "celtic",
+      "Pagan",
+      "medieval",
+      "neofolk"
+    ],
+    "popularity": {
+      "listeners": 287196,
+      "playcount": 7348438
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/85646eb13a5c71193892b51708260b37/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:18.490Z"
   },
   {
     "name": "Omnibus Press",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:22.763Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:00:29.118Z"
+    "autoTriedAt": "2026-07-11T17:00:29.118Z",
+    "popularity": {
+      "listeners": 1,
+      "playcount": 3
+    },
+    "metaEnrichedAt": "2026-07-12T04:12:19.272Z"
   },
   {
     "name": "Omnionn",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:22.763Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:00:30.397Z"
+    "autoTriedAt": "2026-07-11T17:00:30.397Z",
+    "popularity": {
+      "listeners": 23,
+      "playcount": 219
+    },
+    "metaEnrichedAt": "2026-07-12T04:12:20.036Z"
   },
   {
     "name": "Omnium Gatherum",
@@ -60660,7 +61872,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:22.763Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "9319e8ca-75f1-4d43-acba-eb31c9f1c38e"
+    "mbid": "9319e8ca-75f1-4d43-acba-eb31c9f1c38e",
+    "genres": [
+      "Melodic Death Metal",
+      "death metal",
+      "finnish",
+      "metal",
+      "finnish metal"
+    ],
+    "popularity": {
+      "listeners": 154075,
+      "playcount": 7119816
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/310823b70f34c87da5de674bdb6f8c3d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:20.842Z"
   },
   {
     "name": "Omotola Jalade Ekeinde",
@@ -60676,7 +61901,8 @@
     },
     "enrichedAt": "2026-07-07T07:21:22.763Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "metaTriedAt": "2026-07-12T04:12:21.483Z"
   },
   {
     "name": "Omsk",
@@ -60684,14 +61910,39 @@
     "wdBulkTriedAt": "2026-07-07T07:21:22.763Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "afe337e3-86b1-42f4-a224-7c6ca92b589d",
-    "autoTriedAt": "2026-07-11T17:00:32.967Z"
+    "autoTriedAt": "2026-07-11T17:00:32.967Z",
+    "genres": [
+      "acoustic",
+      "folk",
+      "singer-songwriter",
+      "alternative",
+      "finnish"
+    ],
+    "popularity": {
+      "listeners": 553,
+      "playcount": 8351
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0eddc7a2115bc49f49e1cbe0307496be/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:22.215Z"
   },
   {
     "name": "On and On",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:22.763Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:00:34.263Z"
+    "autoTriedAt": "2026-07-11T17:00:34.263Z",
+    "genres": [
+      "dream pop",
+      "french",
+      "indie",
+      "electronic",
+      "indie pop"
+    ],
+    "popularity": {
+      "listeners": 2013,
+      "playcount": 13896
+    },
+    "metaEnrichedAt": "2026-07-12T04:12:22.876Z"
   },
   {
     "name": "On My Honor",
@@ -60707,14 +61958,36 @@
     },
     "enrichedAt": "2026-07-07T07:21:22.763Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f6d0706a-245a-436f-9cfa-36287c1e62d0"
+    "mbid": "f6d0706a-245a-436f-9cfa-36287c1e62d0",
+    "genres": [
+      "pop punk",
+      "Easycore",
+      "pop",
+      "post-hardcore",
+      "Tennessee"
+    ],
+    "popularity": {
+      "listeners": 2741,
+      "playcount": 53057
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0160caed7fa6e03d1c39f2786a8e7eaf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:24.151Z"
   },
   {
     "name": "On My Own",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:22.763Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:00:35.510Z"
+    "autoTriedAt": "2026-07-11T17:00:35.510Z",
+    "genres": [
+      "hardcore"
+    ],
+    "popularity": {
+      "listeners": 1774,
+      "playcount": 7172
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/608ee1f62d7de7c149d951fafe7d30e1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:24.788Z"
   },
   {
     "name": "On the Might of Princes",
@@ -60730,7 +62003,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:22.763Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4a7a0203-0a30-4fbf-9e5b-43a07a0d6792"
+    "mbid": "4a7a0203-0a30-4fbf-9e5b-43a07a0d6792",
+    "genres": [
+      "screamo",
+      "emo",
+      "post-hardcore",
+      "indie",
+      "real screamo"
+    ],
+    "popularity": {
+      "listeners": 50782,
+      "playcount": 1248904
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8a09f00a41687868177893d7c505311a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:25.424Z"
   },
   {
     "name": "On The Rocks",
@@ -60747,7 +62033,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:00:38.077Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "a cappella",
+      "hard rock",
+      "cover songs",
+      "a capella",
+      "1993"
+    ],
+    "popularity": {
+      "listeners": 25725,
+      "playcount": 296679
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4b634f37eb1459abcdc1ce9d24250bbe/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:26.020Z"
   },
   {
     "name": "On Thorns I Lay",
@@ -60763,28 +62062,53 @@
     },
     "enrichedAt": "2026-07-07T07:21:22.763Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "68dd5e82-878d-4f2b-9046-531c751862a9"
+    "mbid": "68dd5e82-878d-4f2b-9046-531c751862a9",
+    "genres": [
+      "Gothic Metal",
+      "doom metal",
+      "Gothic Doom Metal",
+      "Greek",
+      "Gothic"
+    ],
+    "popularity": {
+      "listeners": 55090,
+      "playcount": 983763
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e0b0588ea86d987e504bb8112ff41697/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:26.642Z"
   },
   {
     "name": "On-U Sound Records",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:22.763Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:00:39.325Z"
+    "autoTriedAt": "2026-07-11T17:00:39.325Z",
+    "popularity": {
+      "listeners": 117,
+      "playcount": 273
+    },
+    "metaEnrichedAt": "2026-07-12T04:12:27.269Z"
   },
   {
     "name": "On-U Sound System",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:22.763Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:00:40.581Z"
+    "autoTriedAt": "2026-07-11T17:00:40.581Z",
+    "popularity": {
+      "listeners": 89,
+      "playcount": 293
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:27.917Z"
   },
   {
     "name": "On, Richard",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:22.763Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:00:41.843Z"
+    "autoTriedAt": "2026-07-11T17:00:41.843Z",
+    "metaTriedAt": "2026-07-12T04:12:28.558Z"
   },
   {
     "name": "On! Air! Library!",
@@ -60792,7 +62116,20 @@
     "wdBulkTriedAt": "2026-07-07T07:21:22.763Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "b7dc1c91-422b-4b80-8ef3-9c200edc32b4",
-    "autoTriedAt": "2026-07-11T17:00:44.391Z"
+    "autoTriedAt": "2026-07-11T17:00:44.391Z",
+    "genres": [
+      "post-rock",
+      "shoegaze",
+      "Lo-Fi",
+      "indie rock",
+      "experimental"
+    ],
+    "popularity": {
+      "listeners": 10530,
+      "playcount": 135832
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:29.365Z"
   },
   {
     "name": "On/Off",
@@ -60808,7 +62145,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:22.763Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8409227a-1e7d-4536-80cd-933a82d5bc14"
+    "mbid": "8409227a-1e7d-4536-80cd-933a82d5bc14",
+    "genres": [
+      "j-pop",
+      "japanese",
+      "J-rock",
+      "anime",
+      "vampire knight"
+    ],
+    "popularity": {
+      "listeners": 86718,
+      "playcount": 1308303
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/81a485bd7795575b90281ab19ce29f21/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:30.126Z"
   },
   {
     "name": "Onaje Allan Gumbs",
@@ -60824,7 +62174,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:22.763Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "67e01698-0843-4b46-adce-79b3328e8828"
+    "mbid": "67e01698-0843-4b46-adce-79b3328e8828",
+    "genres": [
+      "Avant-Garde",
+      "jazz",
+      "Contemporary",
+      "Post Bop",
+      "Modal"
+    ],
+    "popularity": {
+      "listeners": 1457,
+      "playcount": 9111
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a7aa943e13063e8539a7261c6e2800cf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:30.786Z"
   },
   {
     "name": "ONAR",
@@ -60840,7 +62203,19 @@
     },
     "enrichedAt": "2026-07-07T07:21:22.763Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "bf374c79-647a-4c43-956d-5e059eac2e27"
+    "mbid": "bf374c79-647a-4c43-956d-5e059eac2e27",
+    "genres": [
+      "rap",
+      "Hip-Hop",
+      "Polski Hip Hop",
+      "polish",
+      "hip hop"
+    ],
+    "popularity": {
+      "listeners": 47983,
+      "playcount": 1801659
+    },
+    "metaEnrichedAt": "2026-07-12T04:12:31.559Z"
   },
   {
     "name": "Once",
@@ -60857,14 +62232,39 @@
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "0db8057d-7c8b-459f-afb8-3344164de894",
     "enrichedAt": "2026-07-11T17:00:47.137Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Soundtrack",
+      "singer-songwriter",
+      "male vocalists",
+      "a movie that can sing",
+      "5 Stars"
+    ],
+    "popularity": {
+      "listeners": 26241,
+      "playcount": 372825
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/911eb06594f3704a754f34cda0f81992/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:32.176Z"
   },
   {
     "name": "Once a Day",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:22.763Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T17:00:48.380Z"
+    "autoTriedAt": "2026-07-11T17:00:48.380Z",
+    "genres": [
+      "indie pop",
+      "new wave",
+      "indie rock",
+      "Post punk",
+      "male vocalists"
+    ],
+    "popularity": {
+      "listeners": 170,
+      "playcount": 1365
+    },
+    "metaEnrichedAt": "2026-07-12T04:12:32.957Z"
   },
   {
     "name": "Once Dead",
@@ -60872,7 +62272,20 @@
     "wdBulkTriedAt": "2026-07-07T07:21:22.763Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "a9efc426-c8af-472e-a7ec-3b617d478722",
-    "autoTriedAt": "2026-07-11T17:00:54.313Z"
+    "autoTriedAt": "2026-07-11T17:00:54.313Z",
+    "genres": [
+      "thrash metal",
+      "thrash",
+      "christian metal",
+      "Christian Thrash Metal",
+      "crossover"
+    ],
+    "popularity": {
+      "listeners": 800,
+      "playcount": 9183
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f847c20dbf86e644a1802a8e2a62826f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:33.682Z"
   },
   {
     "name": "Once Nothing",
@@ -60888,14 +62301,32 @@
     },
     "enrichedAt": "2026-07-07T07:21:22.763Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "metalcore",
+      "christian",
+      "Christian Metalcore",
+      "hardcore",
+      "Southern metal"
+    ],
+    "popularity": {
+      "listeners": 23154,
+      "playcount": 278377
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/87f684bb2b963d343693b111da52d71d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:34.493Z"
   },
   {
     "name": "Ondřej Havelka and his Melody Makers",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:21:22.763Z",
     "mbid": "324a78ba-b893-4dda-aa51-c8938754cae9",
-    "autoTriedAt": "2026-07-11T17:00:55.665Z"
+    "autoTriedAt": "2026-07-11T17:00:55.665Z",
+    "popularity": {
+      "listeners": 12,
+      "playcount": 64
+    },
+    "metaEnrichedAt": "2026-07-12T04:12:35.495Z"
   },
   {
     "name": "Ondskapt",
@@ -60911,7 +62342,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:22.763Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "61cbf534-5def-4e53-b904-786ac854e05e"
+    "mbid": "61cbf534-5def-4e53-b904-786ac854e05e",
+    "genres": [
+      "black metal",
+      "Orthodox Black Metal",
+      "swedish black metal",
+      "swedish",
+      "religious black metal"
+    ],
+    "popularity": {
+      "listeners": 34968,
+      "playcount": 1072684
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6945aa68365f66b6f22925aa253deff3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:36.357Z"
   },
   {
     "name": "One Act Play",
@@ -60927,7 +62371,12 @@
     },
     "enrichedAt": "2026-07-07T07:21:22.763Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "popularity": {
+      "listeners": 10,
+      "playcount": 30
+    },
+    "metaEnrichedAt": "2026-07-12T04:12:37.245Z"
   },
   {
     "name": "One Bad Pig",
@@ -60943,7 +62392,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:22.763Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f88dd1a1-8e46-4b89-84af-edeaa479e55a"
+    "mbid": "f88dd1a1-8e46-4b89-84af-edeaa479e55a",
+    "genres": [
+      "Christian punk",
+      "punk",
+      "christian",
+      "christian rock",
+      "talibangelical"
+    ],
+    "popularity": {
+      "listeners": 4672,
+      "playcount": 65123
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e28e5a426e013af32e5323ca0ece84ff/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:38.001Z"
   },
   {
     "name": "One Bad Son",
@@ -60959,7 +62421,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:22.763Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4f3958e5-ad8d-4f7e-bb4f-66f05957fee2"
+    "mbid": "4f3958e5-ad8d-4f7e-bb4f-66f05957fee2",
+    "genres": [
+      "Canadian",
+      "hard rock",
+      "rock",
+      "saskatchewan",
+      "classic"
+    ],
+    "popularity": {
+      "listeners": 19789,
+      "playcount": 161356
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d044a21f539ee23fb1b2000bb176e042/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:38.929Z"
   },
   {
     "name": "One Block Radius",
@@ -60975,7 +62450,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:00:58.323Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Hip-Hop",
+      "pop",
+      "rap",
+      "hip hop",
+      "alternative rap"
+    ],
+    "popularity": {
+      "listeners": 17183,
+      "playcount": 151286
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c818ff644ab42f4a9042045629553a93/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:39.561Z"
   },
   {
     "name": "One Chance",
@@ -60991,7 +62479,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T17:01:00.874Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "rnb",
+      "urban",
+      "One Chance",
+      "hip hop",
+      "r&b"
+    ],
+    "popularity": {
+      "listeners": 195657,
+      "playcount": 811597
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/aac7988abdda331dd13fa5197e3694c1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:40.303Z"
   },
   {
     "name": "One Day as a Lion",
@@ -61007,7 +62508,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:22.763Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4ab20a44-3df1-48bc-9cc1-d130ef2179d4"
+    "mbid": "4ab20a44-3df1-48bc-9cc1-d130ef2179d4",
+    "genres": [
+      "rapcore",
+      "Hip-Hop",
+      "alternative",
+      "political",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 142087,
+      "playcount": 1866924
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cc96d700ba518af0cd002aa71a557e34/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:40.900Z"
   },
   {
     "name": "One Direction",
@@ -61023,7 +62537,20 @@
     },
     "enrichedAt": "2026-07-07T07:21:22.763Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1a425bbd-cca4-4b2c-aeb7-71cb176c828a"
+    "mbid": "1a425bbd-cca4-4b2c-aeb7-71cb176c828a",
+    "genres": [
+      "pop",
+      "british",
+      "boyband",
+      "one direction",
+      "X factor"
+    ],
+    "popularity": {
+      "listeners": 3357616,
+      "playcount": 327546073
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6760dba71ba14145eec5478d8b135c55/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T04:12:41.516Z"
   },
   {
     "name": "One Dove",
