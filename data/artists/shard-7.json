@@ -31030,7 +31030,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:29:11.873Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "singer-songwriter",
+      "acoustic",
+      "folk",
+      "folk rock",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 63170,
+      "playcount": 675074
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ae09e4c8982cfd6f5d2f8d0b5a63be6f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:55:58.417Z"
   },
   {
     "name": "Glen Velez",
@@ -31046,21 +31059,53 @@
     },
     "enrichedAt": "2026-07-07T07:12:52.309Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "cf682e14-a639-444b-9128-86ad5e5b9188"
+    "mbid": "cf682e14-a639-444b-9128-86ad5e5b9188",
+    "genres": [
+      "percussion",
+      "world",
+      "ethnic",
+      "instrumental",
+      "complex rhythm"
+    ],
+    "popularity": {
+      "listeners": 15830,
+      "playcount": 89192
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/60cd01e99098ae880484941f156615f6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:55:59.323Z"
   },
   {
     "name": "Glengarry Bhoys",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:52.309Z",
     "mbid": "0925b4a0-a88c-49e3-b11c-7cf6793a62f0",
-    "autoTriedAt": "2026-07-11T16:29:14.408Z"
+    "autoTriedAt": "2026-07-11T16:29:14.408Z",
+    "genres": [
+      "celtic",
+      "Canadian",
+      "folk",
+      "Scottish",
+      "french"
+    ],
+    "popularity": {
+      "listeners": 5198,
+      "playcount": 45307
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3a8952f6bfcc03030a9db4ae3ddd4cef/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:55:59.993Z"
   },
   {
     "name": "Glengarry Pipe Band",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:52.309Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:29:15.671Z"
+    "autoTriedAt": "2026-07-11T16:29:15.671Z",
+    "popularity": {
+      "listeners": 3,
+      "playcount": 79
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:00.853Z"
   },
   {
     "name": "Glenn Bidmead",
@@ -31076,7 +31121,13 @@
     },
     "enrichedAt": "2026-07-07T07:12:52.309Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "8246c782-685e-4bdc-8bae-6ca93a267d91"
+    "mbid": "8246c782-685e-4bdc-8bae-6ca93a267d91",
+    "popularity": {
+      "listeners": 15,
+      "playcount": 43
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/84b115e3813bab24421f187bb2344b09/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:01.484Z"
   },
   {
     "name": "Glenn Branca",
@@ -31092,7 +31143,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:52.309Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7c0735b8-6444-47a3-a244-522fa7925834"
+    "mbid": "7c0735b8-6444-47a3-a244-522fa7925834",
+    "genres": [
+      "no wave",
+      "experimental",
+      "Avant-Garde",
+      "post-punk",
+      "contemporary classical"
+    ],
+    "popularity": {
+      "listeners": 116357,
+      "playcount": 1311363
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/03450755b1321aea0e952080c64e4044/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:02.122Z"
   },
   {
     "name": "Glenn Close",
@@ -31108,14 +31172,36 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "512f6db1-63ef-42d1-a234-55bacecfe0c0"
+    "mbid": "512f6db1-63ef-42d1-a234-55bacecfe0c0",
+    "genres": [
+      "Broadway",
+      "Glenn Close",
+      "musical theater",
+      "Soundtrack",
+      "musicals"
+    ],
+    "popularity": {
+      "listeners": 110155,
+      "playcount": 417482
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/70a5beb9f0f38a9569f5a4e8eacc5b91/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:02.751Z"
   },
   {
     "name": "Glenn Corneille",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:53.985Z",
     "mbid": "d4785d24-f87b-4b32-8e40-b3107270adb1",
-    "autoTriedAt": "2026-07-11T16:29:18.257Z"
+    "autoTriedAt": "2026-07-11T16:29:18.257Z",
+    "genres": [
+      "Whapzz"
+    ],
+    "popularity": {
+      "listeners": 24,
+      "playcount": 608
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:03.484Z"
   },
   {
     "name": "Glenn Cornick",
@@ -31131,7 +31217,9 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d7546c3b-8e41-41bf-a046-d2c366d3568c"
+    "mbid": "d7546c3b-8e41-41bf-a046-d2c366d3568c",
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:04.142Z"
   },
   {
     "name": "Glenn Danzig",
@@ -31147,7 +31235,19 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f0bec136-82e8-4fcb-8172-421d9c542d09"
+    "mbid": "f0bec136-82e8-4fcb-8172-421d9c542d09",
+    "genres": [
+      "dark ambient",
+      "ambient",
+      "Classical",
+      "Gothic",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 28105,
+      "playcount": 388466
+    },
+    "metaEnrichedAt": "2026-07-12T03:56:04.777Z"
   },
   {
     "name": "Glenn Ferris",
@@ -31163,7 +31263,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a3b670bb-ec2e-4c3d-be48-b8a824e6d9ff"
+    "mbid": "a3b670bb-ec2e-4c3d-be48-b8a824e6d9ff",
+    "genres": [
+      "american",
+      "trombone",
+      "act",
+      "contemporary jazz",
+      "Juma"
+    ],
+    "popularity": {
+      "listeners": 903,
+      "playcount": 4837
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/277c9bb9db526797c1ebde9b9f7feb33/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:05.509Z"
   },
   {
     "name": "Glenn Fredly",
@@ -31179,7 +31292,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "aab5d7a7-3909-4442-ae18-2f0741184429"
+    "mbid": "aab5d7a7-3909-4442-ae18-2f0741184429",
+    "genres": [
+      "indonesian",
+      "pop",
+      "indonesia",
+      "jazz",
+      "indonesian male singer"
+    ],
+    "popularity": {
+      "listeners": 54700,
+      "playcount": 1351802
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/eddf1a3e7b6e57abef80ba3bfc5d4034/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:06.219Z"
   },
   {
     "name": "Glenn Frey",
@@ -31196,7 +31322,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:29:20.860Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "80s",
+      "classic rock",
+      "rock",
+      "singer-songwriter",
+      "soft rock"
+    ],
+    "popularity": {
+      "listeners": 411558,
+      "playcount": 2738786
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d8bf42506d109a47711fb44538c8d3f5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:06.813Z"
   },
   {
     "name": "Glenn Gould",
@@ -31212,14 +31351,36 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7002bf88-1269-4965-a772-4ba1e7a91eaa"
+    "mbid": "7002bf88-1269-4965-a772-4ba1e7a91eaa",
+    "genres": [
+      "Classical",
+      "piano",
+      "baroque",
+      "Canadian",
+      "Bach"
+    ],
+    "popularity": {
+      "listeners": 357767,
+      "playcount": 16796750
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/42d0a2632d618e6ad733816271d5f59f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:07.489Z"
   },
   {
     "name": "Glenn Gregory",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:53.985Z",
     "mbid": "59b17cf8-149a-4358-b080-cd606a4c84fe",
-    "autoTriedAt": "2026-07-11T16:29:23.439Z"
+    "autoTriedAt": "2026-07-11T16:29:23.439Z",
+    "genres": [
+      "Heaven 17"
+    ],
+    "popularity": {
+      "listeners": 831,
+      "playcount": 2793
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c7acfc5a1c641d28e65f572fd23b3589/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:08.151Z"
   },
   {
     "name": "Glenn Horiuchi",
@@ -31235,7 +31396,18 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:29:27.131Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "free jazz",
+      "jazz",
+      "Avant-Garde Jazz"
+    ],
+    "popularity": {
+      "listeners": 151,
+      "playcount": 921
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b2ab1674a3766244eaa086a5f493c100/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:08.843Z"
   },
   {
     "name": "Glenn Hughes",
@@ -31252,7 +31424,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:29:29.741Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "hard rock",
+      "classic rock",
+      "rock",
+      "heavy metal",
+      "Deep Purple family"
+    ],
+    "popularity": {
+      "listeners": 106645,
+      "playcount": 1524816
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a6474cbdf6f9be470ab1a83cfaad74ba/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:09.517Z"
   },
   {
     "name": "Glenn Jones",
@@ -31269,7 +31454,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:29:32.486Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "folk",
+      "guitar",
+      "soul",
+      "acoustic",
+      "American Primitivism"
+    ],
+    "popularity": {
+      "listeners": 84660,
+      "playcount": 802432
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f28fbac734ca531db541f99e26cde823/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:10.155Z"
   },
   {
     "name": "Glenn Kaiser",
@@ -31285,7 +31483,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7a6817e4-c0ca-4021-bb40-accd80181461"
+    "mbid": "7a6817e4-c0ca-4021-bb40-accd80181461",
+    "genres": [
+      "blues",
+      "rock",
+      "blues rock",
+      "hard rock",
+      "christian"
+    ],
+    "popularity": {
+      "listeners": 4197,
+      "playcount": 95089
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5f0fc4720425d51454261a329ad57cbc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:10.863Z"
   },
   {
     "name": "Glenn Kotche",
@@ -31301,7 +31512,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b9e25253-dd51-44a6-b4c2-1c0573d94187"
+    "mbid": "b9e25253-dd51-44a6-b4c2-1c0573d94187",
+    "genres": [
+      "instrumental",
+      "experimental",
+      "percussion",
+      "drums",
+      "avantgarde"
+    ],
+    "popularity": {
+      "listeners": 11651,
+      "playcount": 77679
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3a09fa58d382a59a73dae88bda6d7df0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:11.591Z"
   },
   {
     "name": "Glenn Lewis",
@@ -31318,14 +31542,32 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:29:35.022Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "soul",
+      "Neo-Soul",
+      "rnb",
+      "Canadian",
+      "male vocalists"
+    ],
+    "popularity": {
+      "listeners": 106738,
+      "playcount": 691724
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0b8efc52a94f5431d18c407286f2f46d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:12.244Z"
   },
   {
     "name": "Glenn Ljungström",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:53.985Z",
     "mbid": "1ba48056-d0a9-430d-8676-74de0633e010",
-    "autoTriedAt": "2026-07-11T16:29:37.791Z"
+    "autoTriedAt": "2026-07-11T16:29:37.791Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 22
+    },
+    "metaEnrichedAt": "2026-07-12T03:56:12.891Z"
   },
   {
     "name": "Glenn Medeiros",
@@ -31341,7 +31583,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a203c2a4-682c-4d72-bc4e-4c61a4250245"
+    "mbid": "a203c2a4-682c-4d72-bc4e-4c61a4250245",
+    "genres": [
+      "pop",
+      "80s",
+      "soul",
+      "oldies",
+      "Love"
+    ],
+    "popularity": {
+      "listeners": 161552,
+      "playcount": 915211
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/92ab5c13753679e0c9290610aff97857/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:13.494Z"
   },
   {
     "name": "Glenn Miller",
@@ -31358,7 +31613,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:29:40.560Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "swing",
+      "Big Band",
+      "40s",
+      "oldies"
+    ],
+    "popularity": {
+      "listeners": 984448,
+      "playcount": 10088557
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ce50c83acd0fff3eb9ee9d68eb648fb1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:14.185Z"
   },
   {
     "name": "Glenn Miller Orchestra",
@@ -31375,14 +31643,38 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:29:43.105Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "swing",
+      "Big Band",
+      "instrumental",
+      "40s"
+    ],
+    "popularity": {
+      "listeners": 177435,
+      "playcount": 1220372
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8f9580d28befe6a19884a5f08c516320/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:14.999Z"
   },
   {
     "name": "Glenn Monroig",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:53.985Z",
     "mbid": "f6f25ca4-0986-450d-83ac-0ada3a6498a3",
-    "autoTriedAt": "2026-07-11T16:29:45.665Z"
+    "autoTriedAt": "2026-07-11T16:29:45.665Z",
+    "genres": [
+      "rumba",
+      "salsa",
+      "puerto rico"
+    ],
+    "popularity": {
+      "listeners": 1004,
+      "playcount": 8609
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ec80b15622a07b17baa1e166ead31443/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:16.305Z"
   },
   {
     "name": "Glenn Richards",
@@ -31398,7 +31690,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "c9208cdf-f74a-4181-8c3a-a63ebf682ce8"
+    "mbid": "c9208cdf-f74a-4181-8c3a-a63ebf682ce8",
+    "genres": [
+      "singer-songwriter",
+      "indie folk",
+      "folk",
+      "indie",
+      "Glenn"
+    ],
+    "popularity": {
+      "listeners": 4856,
+      "playcount": 55879
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b3f2dfeb23ed0d825d8c14af2fe1d5e3/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:16.971Z"
   },
   {
     "name": "Glenn Tilbrook",
@@ -31414,7 +31719,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4723899c-3546-4e3e-b2e4-e24d2a2ddf87"
+    "mbid": "4723899c-3546-4e3e-b2e4-e24d2a2ddf87",
+    "genres": [
+      "pop",
+      "squeeze",
+      "singer-songwriter",
+      "power pop",
+      "United Kingdom"
+    ],
+    "popularity": {
+      "listeners": 6718,
+      "playcount": 72951
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c49b96a797a3e9adaa4670f2bded0fd2/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:17.600Z"
   },
   {
     "name": "Glenn Tipton",
@@ -31430,7 +31748,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "13b14a2e-470c-434c-8f89-c8763f849e2c"
+    "mbid": "13b14a2e-470c-434c-8f89-c8763f849e2c",
+    "genres": [
+      "heavy metal",
+      "hard rock",
+      "british",
+      "Judas Priest",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 18821,
+      "playcount": 168072
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/477293ef678fa3a3071216dc71205e59/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:18.230Z"
   },
   {
     "name": "Glenn Zaleski",
@@ -31446,7 +31777,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:29:48.254Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "instrumental",
+      "jazz",
+      "composer",
+      "piano",
+      "american"
+    ],
+    "popularity": {
+      "listeners": 5258,
+      "playcount": 18913
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/813cdeeeb29d67f8d4bf4792a298f392/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:18.904Z"
   },
   {
     "name": "Glennis Grace",
@@ -31462,14 +31806,39 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "26f6fba4-7714-418b-be30-385f01163a63"
+    "mbid": "26f6fba4-7714-418b-be30-385f01163a63",
+    "genres": [
+      "pop",
+      "dutch",
+      "Eurovision",
+      "female vocalists",
+      "rnb"
+    ],
+    "popularity": {
+      "listeners": 30226,
+      "playcount": 317538
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a580fb32735890748e230b9c48d36017/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:19.601Z"
   },
   {
     "name": "Glifted",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:53.985Z",
     "mbid": "8460ab60-afd5-4d0b-bb88-a0ed53b334fa",
-    "autoTriedAt": "2026-07-11T16:29:50.766Z"
+    "autoTriedAt": "2026-07-11T16:29:50.766Z",
+    "genres": [
+      "shoegaze",
+      "noise pop",
+      "indie",
+      "experimental",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 3683,
+      "playcount": 97624
+    },
+    "metaEnrichedAt": "2026-07-12T03:56:20.336Z"
   },
   {
     "name": "Glis",
@@ -31485,14 +31854,40 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d9221da7-afcc-44dd-bb65-3bd3cc9838a6"
+    "mbid": "d9221da7-afcc-44dd-bb65-3bd3cc9838a6",
+    "genres": [
+      "ebm",
+      "futurepop",
+      "industrial",
+      "dark electro",
+      "synthpop"
+    ],
+    "popularity": {
+      "listeners": 38694,
+      "playcount": 562291
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/288f38738fe504395839b1d2461edb96/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:21.034Z"
   },
   {
     "name": "Glissandro 70",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:53.985Z",
     "mbid": "7d65014c-1b14-4fc9-a234-fd4f5225c077",
-    "autoTriedAt": "2026-07-11T16:29:53.291Z"
+    "autoTriedAt": "2026-07-11T16:29:53.291Z",
+    "genres": [
+      "experimental",
+      "post-rock",
+      "electronic",
+      "Constellation Records",
+      "must"
+    ],
+    "popularity": {
+      "listeners": 10839,
+      "playcount": 77798
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6f63c908321edc91837f809097e34ae0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:21.710Z"
   },
   {
     "name": "Glittertind",
@@ -31508,7 +31903,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d0e9a61a-cf2c-4976-92f8-bfd20a7ed657"
+    "mbid": "d0e9a61a-cf2c-4976-92f8-bfd20a7ed657",
+    "genres": [
+      "folk metal",
+      "viking metal",
+      "norwegian",
+      "pagan metal",
+      "punk"
+    ],
+    "popularity": {
+      "listeners": 41592,
+      "playcount": 1168371
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9bf1bc896abff747b3b9e3810e344d22/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:22.367Z"
   },
   {
     "name": "Glo Gang",
@@ -31516,14 +31924,25 @@
     "wdBulkTriedAt": "2026-07-07T07:12:53.985Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "dd08d011-75a8-4689-81dc-24b7ec662a26",
-    "autoTriedAt": "2026-07-11T16:29:55.912Z"
+    "autoTriedAt": "2026-07-11T16:29:55.912Z",
+    "popularity": {
+      "listeners": 83,
+      "playcount": 405
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ea1aed7b226a232ef0d6247cf5155f1a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:23.205Z"
   },
   {
     "name": "Global City",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:53.985Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:29:57.156Z"
+    "autoTriedAt": "2026-07-11T16:29:57.156Z",
+    "popularity": {
+      "listeners": 9,
+      "playcount": 80
+    },
+    "metaEnrichedAt": "2026-07-12T03:56:23.895Z"
   },
   {
     "name": "Global Communication",
@@ -31540,7 +31959,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:29:59.703Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "ambient",
+      "electronic",
+      "downtempo",
+      "chillout",
+      "electronica"
+    ],
+    "popularity": {
+      "listeners": 282708,
+      "playcount": 3593375
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/24c331be6f887be7a96765d6fd0aff5a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:24.522Z"
   },
   {
     "name": "Global Deejays",
@@ -31556,7 +31988,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "b918ac6e-15b2-49f8-9836-8e67f41e310d"
+    "mbid": "b918ac6e-15b2-49f8-9836-8e67f41e310d",
+    "genres": [
+      "House",
+      "dance",
+      "electronic",
+      "trance",
+      "techno"
+    ],
+    "popularity": {
+      "listeners": 422458,
+      "playcount": 3003296
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/193d90fe202f4b6a3a6755011184a2d6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:25.217Z"
   },
   {
     "name": "Global Goon",
@@ -31572,14 +32017,37 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:30:02.364Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "idm",
+      "electronic",
+      "downtempo",
+      "electronica",
+      "Acid"
+    ],
+    "popularity": {
+      "listeners": 48402,
+      "playcount": 673139
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b04f271517a93f94a78d47b9f1a3d2da/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:25.955Z"
   },
   {
     "name": "Global Icon",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:53.985Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:30:03.616Z"
+    "autoTriedAt": "2026-07-11T16:30:03.616Z",
+    "genres": [
+      "female vocalists",
+      "k-pop",
+      "Kpop"
+    ],
+    "popularity": {
+      "listeners": 323,
+      "playcount": 3954
+    },
+    "metaEnrichedAt": "2026-07-12T03:56:26.915Z"
   },
   {
     "name": "Global Kryner",
@@ -31595,7 +32063,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "a494c2c2-28e2-41ad-95bd-8fea7cdf2371"
+    "mbid": "a494c2c2-28e2-41ad-95bd-8fea7cdf2371",
+    "genres": [
+      "folk",
+      "jazz",
+      "Austria",
+      "austrian",
+      "brass"
+    ],
+    "popularity": {
+      "listeners": 5229,
+      "playcount": 66986
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6fb7ccd2ad1f1286ba5f9707791aaf59/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:27.517Z"
   },
   {
     "name": "Globe",
@@ -31612,7 +32093,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:30:06.738Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "j-pop",
+      "dance",
+      "japanese",
+      "trance",
+      "electronic"
+    ],
+    "popularity": {
+      "listeners": 62006,
+      "playcount": 2855044
+    },
+    "metaEnrichedAt": "2026-07-12T03:56:28.150Z"
   },
   {
     "name": "Globi",
@@ -31629,7 +32122,13 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:30:09.242Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 3870,
+      "playcount": 595141
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6fffa81203f06a2152981f8ace019e77/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:28.922Z"
   },
   {
     "name": "Globus",
@@ -31645,7 +32144,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "484bdea6-8ee4-4365-a561-34a50cd5a12f"
+    "mbid": "484bdea6-8ee4-4365-a561-34a50cd5a12f",
+    "genres": [
+      "orchestral",
+      "Soundtrack",
+      "cinematic rock",
+      "rock",
+      "classical crossover"
+    ],
+    "popularity": {
+      "listeners": 137990,
+      "playcount": 3093008
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ad30afa53253c1d925ba4124eab2eb9e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:29.587Z"
   },
   {
     "name": "Glocky",
@@ -31662,14 +32174,37 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:30:11.856Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "rage",
+      "trap",
+      "mumble"
+    ],
+    "popularity": {
+      "listeners": 18927,
+      "playcount": 3737748
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/42c9f99f64b54efa3bbf7e1812b81088/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:30.413Z"
   },
   {
     "name": "Gloria",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:53.985Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:30:13.107Z"
+    "autoTriedAt": "2026-07-11T16:30:13.107Z",
+    "genres": [
+      "post-hardcore",
+      "screamo",
+      "brazilian",
+      "metalcore",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 185656,
+      "playcount": 6932735
+    },
+    "metaEnrichedAt": "2026-07-12T03:56:31.056Z"
   },
   {
     "name": "Gloria DeHaven",
@@ -31685,7 +32220,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "45b803b1-6e5f-47eb-86f9-dbddf8f18020"
+    "mbid": "45b803b1-6e5f-47eb-86f9-dbddf8f18020",
+    "genres": [
+      "pop",
+      "swing",
+      "All",
+      "Female Voices",
+      "schellack-schatz"
+    ],
+    "popularity": {
+      "listeners": 245,
+      "playcount": 1382
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1fdefcc64dd4f9b16ae4071fe1386e07/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:31.722Z"
   },
   {
     "name": "Gloria Estefan",
@@ -31701,7 +32249,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "becd8cc6-a453-4183-af88-dedaaec859a6"
+    "mbid": "becd8cc6-a453-4183-af88-dedaaec859a6",
+    "genres": [
+      "latin",
+      "pop",
+      "female vocalists",
+      "80s",
+      "latin pop"
+    ],
+    "popularity": {
+      "listeners": 775783,
+      "playcount": 7896899
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9f00d29a3d44e72f5096c4d7fe00f7a1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:32.514Z"
   },
   {
     "name": "Gloria Gaynor",
@@ -31717,7 +32278,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d5c51c36-ac67-4727-91ed-ee9f0df81a2d"
+    "mbid": "d5c51c36-ac67-4727-91ed-ee9f0df81a2d",
+    "genres": [
+      "Disco",
+      "70s",
+      "soul",
+      "female vocalists",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 1633617,
+      "playcount": 11941454
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cffc00c4b0d8fab9028bf189256332c5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:33.106Z"
   },
   {
     "name": "Gloria Jones",
@@ -31733,7 +32307,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "1fb910ff-917b-409e-a787-6143fd7b1387"
+    "mbid": "1fb910ff-917b-409e-a787-6143fd7b1387",
+    "genres": [
+      "soul",
+      "northern soul",
+      "funk",
+      "60s",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 202825,
+      "playcount": 1028358
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6a454044cf3bdca1c0a1d28943c3cf2d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:34.477Z"
   },
   {
     "name": "Gloria Lynne",
@@ -31749,14 +32336,40 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:30:15.663Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "jazz",
+      "soul",
+      "female vocalists",
+      "jazz vocal",
+      "60s"
+    ],
+    "popularity": {
+      "listeners": 34602,
+      "playcount": 154598
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4d6788dff473c891bc4d0e7e3c4812b9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:35.206Z"
   },
   {
     "name": "Gloria Mundi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:53.985Z",
     "mbid": "aaf36cae-a80a-453a-b042-ba360fc37ed6",
-    "autoTriedAt": "2026-07-11T16:30:18.225Z"
+    "autoTriedAt": "2026-07-11T16:30:18.225Z",
+    "genres": [
+      "post-punk",
+      "punk",
+      "new wave",
+      "glam rock",
+      "proto-goth"
+    ],
+    "popularity": {
+      "listeners": 1603,
+      "playcount": 26018
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/187921a501afe53e1572b791a6e77895/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:36.001Z"
   },
   {
     "name": "Gloria Trevi",
@@ -31772,7 +32385,20 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T16:30:18.225Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "pop",
+      "mexican",
+      "latin",
+      "female vocalists",
+      "spanish"
+    ],
+    "popularity": {
+      "listeners": 293891,
+      "playcount": 5720799
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ac0c6d9d181386bb175b77319d7c4349/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:36.644Z"
   },
   {
     "name": "Gloriana",
@@ -31789,14 +32415,39 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:30:20.846Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "country",
+      "pop",
+      "acoustic",
+      "female vocalists",
+      "Gloriana"
+    ],
+    "popularity": {
+      "listeners": 277542,
+      "playcount": 2131759
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9058ed46546d453d83905bbebeebdea5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:37.351Z"
   },
   {
     "name": "Glory",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:53.985Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:30:22.131Z"
+    "autoTriedAt": "2026-07-11T16:30:22.131Z",
+    "genres": [
+      "hard rock",
+      "AOR",
+      "80s",
+      "classic rock",
+      "hardcore"
+    ],
+    "popularity": {
+      "listeners": 47930,
+      "playcount": 351204
+    },
+    "metaEnrichedAt": "2026-07-12T03:56:37.990Z"
   },
   {
     "name": "Gloryhammer",
@@ -31812,7 +32463,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "85997032-ff48-4383-b86a-a920d4230a0b"
+    "mbid": "85997032-ff48-4383-b86a-a920d4230a0b",
+    "genres": [
+      "Power metal",
+      "symphonic metal",
+      "symphonic power metal",
+      "Scottish",
+      "Epic Power Metal"
+    ],
+    "popularity": {
+      "listeners": 157013,
+      "playcount": 7635205
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b41d21e5ad1b0977f2dd7bc33b7ae00d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:38.656Z"
   },
   {
     "name": "Glossary",
@@ -31829,14 +32493,32 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:30:24.668Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Alt-country",
+      "americana",
+      "well defined",
+      "Post Core",
+      "post post"
+    ],
+    "popularity": {
+      "listeners": 31840,
+      "playcount": 423933
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/50a7c16f4edc65453b73653610aed761/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:39.639Z"
   },
   {
     "name": "Glowin' Moses",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:53.985Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:30:25.921Z"
+    "autoTriedAt": "2026-07-11T16:30:25.921Z",
+    "popularity": {
+      "listeners": 2,
+      "playcount": 3
+    },
+    "metaEnrichedAt": "2026-07-12T03:56:40.311Z"
   },
   {
     "name": "Glue",
@@ -31853,7 +32535,20 @@
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "7c35ec53-2213-4841-846a-019fe553987e",
     "enrichedAt": "2026-07-11T16:30:28.429Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "hardcore punk",
+      "hardcore",
+      "Hip-Hop",
+      "underground hip-hop",
+      "Korean"
+    ],
+    "popularity": {
+      "listeners": 25680,
+      "playcount": 413043
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f02df43a7401f50534fea07a7b64aab4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:41.027Z"
   },
   {
     "name": "Gluecifer",
@@ -31869,14 +32564,38 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4fbfc573-414f-4094-aeda-d7dee5f3370f"
+    "mbid": "4fbfc573-414f-4094-aeda-d7dee5f3370f",
+    "genres": [
+      "hard rock",
+      "rock",
+      "Garage Rock",
+      "norwegian",
+      "rock n roll"
+    ],
+    "popularity": {
+      "listeners": 105974,
+      "playcount": 2144474
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a0a66586fc9443a3a8897857d3c3bfb7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:41.693Z"
   },
   {
     "name": "Glueleg",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:53.985Z",
     "mbid": "54ae0fdd-8f8c-4ac0-abd1-088d6d2053c0",
-    "autoTriedAt": "2026-07-11T16:30:30.999Z"
+    "autoTriedAt": "2026-07-11T16:30:30.999Z",
+    "genres": [
+      "Canadian",
+      "hard rock",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 1276,
+      "playcount": 16119
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/2a3262f2a96422406e72bd8ce7772a1c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:42.431Z"
   },
   {
     "name": "Glup!",
@@ -31892,7 +32611,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:30:33.525Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "chile",
+      "alternative",
+      "chilean",
+      "pop",
+      "britpop"
+    ],
+    "popularity": {
+      "listeners": 93196,
+      "playcount": 2361574
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a73661ef683bbb67d4a710eae928fcf8/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:43.141Z"
   },
   {
     "name": "Glykeria",
@@ -31908,7 +32640,19 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ccb45d35-9e2b-4ed0-8ba5-1f4d682ddd8c"
+    "mbid": "ccb45d35-9e2b-4ed0-8ba5-1f4d682ddd8c",
+    "genres": [
+      "Greek",
+      "folk",
+      "world",
+      "greek folk",
+      "female vocalists"
+    ],
+    "popularity": {
+      "listeners": 36636,
+      "playcount": 360860
+    },
+    "metaEnrichedAt": "2026-07-12T03:56:43.816Z"
   },
   {
     "name": "Glynis Johns",
@@ -31924,7 +32668,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "35b4d9cc-918a-4496-9b9b-52fac536fbec"
+    "mbid": "35b4d9cc-918a-4496-9b9b-52fac536fbec",
+    "genres": [
+      "Broadway",
+      "Soundtrack",
+      "sondheim",
+      "musical theater",
+      "musical"
+    ],
+    "popularity": {
+      "listeners": 29079,
+      "playcount": 109844
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/23adac078a587e54f747a8063f615b30/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:44.534Z"
   },
   {
     "name": "Gnarls Barkley",
@@ -31941,7 +32698,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:30:37.235Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "funk",
+      "soul",
+      "Hip-Hop",
+      "alternative",
+      "hip hop"
+    ],
+    "popularity": {
+      "listeners": 2750395,
+      "playcount": 45050540
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4a341e560eb0b004a2af17888f122f72/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:45.185Z"
   },
   {
     "name": "Gnarwolves",
@@ -31957,7 +32727,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "0658adf9-a397-4600-b3ab-5be1c4994cd5"
+    "mbid": "0658adf9-a397-4600-b3ab-5be1c4994cd5",
+    "genres": [
+      "melodic hardcore",
+      "punk",
+      "hardcore",
+      "hardcore punk",
+      "pop punk"
+    ],
+    "popularity": {
+      "listeners": 36561,
+      "playcount": 1337272
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6b41a0a775000b871102b8fa095d0aa1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:45.820Z"
   },
   {
     "name": "GNL Zamba",
@@ -31974,14 +32757,25 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:30:39.763Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "popularity": {
+      "listeners": 310,
+      "playcount": 2999
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/69ee65b2650da0efe30bf7c9070a8607/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:46.487Z"
   },
   {
     "name": "Go All the Way",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:53.985Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:30:41.009Z"
+    "autoTriedAt": "2026-07-11T16:30:41.009Z",
+    "popularity": {
+      "listeners": 225,
+      "playcount": 520
+    },
+    "metaEnrichedAt": "2026-07-12T03:56:47.256Z"
   },
   {
     "name": "Go Betty Go",
@@ -31997,28 +32791,58 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "32357e32-58d7-46e9-8a8d-875a6dbfaa99"
+    "mbid": "32357e32-58d7-46e9-8a8d-875a6dbfaa99",
+    "genres": [
+      "punk rock",
+      "female vocalists",
+      "punk",
+      "pop punk",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 67372,
+      "playcount": 700931
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/648b64dddd5b84e6d3883422595eb83b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:47.885Z"
   },
   {
     "name": "Go Ghetto Tiger",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:53.985Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:30:42.267Z"
+    "autoTriedAt": "2026-07-11T16:30:42.267Z",
+    "genres": [
+      "Canadian",
+      "electronic",
+      "Vancouver"
+    ],
+    "popularity": {
+      "listeners": 39,
+      "playcount": 497
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/905e954db64d6af44cb0a11bef3776bd/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:48.570Z"
   },
   {
     "name": "Go Go Summer!",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:53.985Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:30:43.521Z"
+    "autoTriedAt": "2026-07-11T16:30:43.521Z",
+    "metaTriedAt": "2026-07-12T03:56:49.263Z"
   },
   {
     "name": "Gō Hiromi",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:53.985Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:30:45.893Z"
+    "autoTriedAt": "2026-07-11T16:30:45.893Z",
+    "popularity": {
+      "listeners": 3,
+      "playcount": 92
+    },
+    "metaEnrichedAt": "2026-07-12T03:56:49.960Z"
   },
   {
     "name": "Go Jimmy Go",
@@ -32034,7 +32858,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2c4cb786-8d55-4f4a-96fc-5419a0d3bdfe"
+    "mbid": "2c4cb786-8d55-4f4a-96fc-5419a0d3bdfe",
+    "genres": [
+      "ska",
+      "reggae",
+      "rocksteady",
+      "soul",
+      "american"
+    ],
+    "popularity": {
+      "listeners": 15894,
+      "playcount": 188439
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9515fbf9f5def9d78f8d338a6be618fa/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:50.642Z"
   },
   {
     "name": "Go Radio",
@@ -32050,7 +32887,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "6bcdd659-b1f6-4b6e-afc4-20f4473d7306"
+    "mbid": "6bcdd659-b1f6-4b6e-afc4-20f4473d7306",
+    "genres": [
+      "pop punk",
+      "rock",
+      "indie",
+      "powerpop",
+      "alternative rock"
+    ],
+    "popularity": {
+      "listeners": 267842,
+      "playcount": 4960635
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5dee7bf9d896d2af8212910579a31f4b/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:51.249Z"
   },
   {
     "name": "Go Sailor",
@@ -32066,7 +32916,19 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "4db5f10d-51d4-412e-9465-945150422ab6"
+    "mbid": "4db5f10d-51d4-412e-9465-945150422ab6",
+    "genres": [
+      "indie pop",
+      "twee",
+      "female vocalists",
+      "indie",
+      "twee pop"
+    ],
+    "popularity": {
+      "listeners": 42513,
+      "playcount": 753031
+    },
+    "metaEnrichedAt": "2026-07-12T03:56:52.475Z"
   },
   {
     "name": "Go Shiina",
@@ -32082,7 +32944,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f708f203-8c33-4e89-8460-9631c11fe2b8"
+    "mbid": "f708f203-8c33-4e89-8460-9631c11fe2b8",
+    "genres": [
+      "video game music",
+      "japanese",
+      "Soundtrack",
+      "composer",
+      "orchestral"
+    ],
+    "popularity": {
+      "listeners": 33637,
+      "playcount": 898482
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/535589272db2ba5edc29202d8d1ee406/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:53.141Z"
   },
   {
     "name": "Go West",
@@ -32098,7 +32973,20 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T16:30:45.893Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "80s",
+      "pop",
+      "new wave",
+      "soft rock",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 404389,
+      "playcount": 3040121
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d860bdcca70d8aa92fddb572416c9a55/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:53.717Z"
   },
   {
     "name": "Go_A",
@@ -32114,7 +33002,20 @@
     "mbid": "80b54212-19f5-42ce-bfd7-e08db9c298ae",
     "wdBulkTriedAt": "2026-07-08T14:10:37.517Z",
     "enrichedAt": "2026-07-08T14:10:37.517Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "Ukrainian",
+      "folk",
+      "folktronica",
+      "electronic",
+      "Ukraine"
+    ],
+    "popularity": {
+      "listeners": 232430,
+      "playcount": 4874277
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/cf0bcaa2bf9350ac6b766b38273a1c8c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:54.369Z"
   },
   {
     "name": "Go-Bang's",
@@ -32130,14 +33031,39 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "eea5b015-f9ea-46b7-8c76-d7e1ba38a91e"
+    "mbid": "eea5b015-f9ea-46b7-8c76-d7e1ba38a91e",
+    "genres": [
+      "female vocalists",
+      "japanese",
+      "j-pop",
+      "japan",
+      "90s-00s j-pop"
+    ],
+    "popularity": {
+      "listeners": 3818,
+      "playcount": 83536
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6b995d1b31fa0621152271db46ad0cf4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:55.365Z"
   },
   {
     "name": "Go-Go's, The",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:53.985Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:30:47.257Z"
+    "autoTriedAt": "2026-07-11T16:30:47.257Z",
+    "genres": [
+      "new wave",
+      "80s",
+      "female vocalists",
+      "pop",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 643509,
+      "playcount": 5683338
+    },
+    "metaEnrichedAt": "2026-07-12T03:56:56.010Z"
   },
   {
     "name": "GO!GO!7188",
@@ -32154,7 +33080,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:30:49.838Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "japanese",
+      "J-rock",
+      "female vocalists",
+      "rock",
+      "jrock"
+    ],
+    "popularity": {
+      "listeners": 64178,
+      "playcount": 3643076
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fb7068e9c83b93e3662b3c62f87a8f91/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:56.618Z"
   },
   {
     "name": "Goapele",
@@ -32170,7 +33109,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "fc272874-7f58-40ab-979c-1a1250f365f1"
+    "mbid": "fc272874-7f58-40ab-979c-1a1250f365f1",
+    "genres": [
+      "soul",
+      "Neo-Soul",
+      "female vocalists",
+      "rnb",
+      "Neo Soul"
+    ],
+    "popularity": {
+      "listeners": 291949,
+      "playcount": 2318155
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9efc5e67b0f9c933c7164f43f60332ba/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:57.218Z"
   },
   {
     "name": "Goat",
@@ -32186,7 +33138,20 @@
     },
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T16:30:49.839Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "Psychedelic Rock",
+      "psychedelic",
+      "afrobeat",
+      "swedish",
+      "noise"
+    ],
+    "popularity": {
+      "listeners": 295992,
+      "playcount": 5582467
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/f12cfc3b1f2e76a4e52055b38585a13f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:57.856Z"
   },
   {
     "name": "Goat Horn",
@@ -32202,7 +33167,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e8156e7b-ccfc-47c6-ba53-776f1c5bc575"
+    "mbid": "e8156e7b-ccfc-47c6-ba53-776f1c5bc575",
+    "genres": [
+      "heavy metal",
+      "doom metal",
+      "stoner metal",
+      "thrash metal",
+      "Canadian"
+    ],
+    "popularity": {
+      "listeners": 4173,
+      "playcount": 92646
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/4ff9b074ae2a51e35d0cbdf855db517e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:58.607Z"
   },
   {
     "name": "Goatlord",
@@ -32218,7 +33196,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "7afb3ada-a6c7-4bd0-9987-5c9c3cc11e8e"
+    "mbid": "7afb3ada-a6c7-4bd0-9987-5c9c3cc11e8e",
+    "genres": [
+      "black metal",
+      "death metal",
+      "doom metal",
+      "Death Doom Metal",
+      "death-doom metal"
+    ],
+    "popularity": {
+      "listeners": 10907,
+      "playcount": 228393
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/abd890fa37542fb80c6eea61e1effa8e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:59.315Z"
   },
   {
     "name": "Goats Don't Shave",
@@ -32234,7 +33225,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5ff17cb5-e6e7-41dc-b04e-d4005dc38dcb"
+    "mbid": "5ff17cb5-e6e7-41dc-b04e-d4005dc38dcb",
+    "genres": [
+      "folk",
+      "irish",
+      "folk rock",
+      "celtic",
+      "celtic folk"
+    ],
+    "popularity": {
+      "listeners": 1605,
+      "playcount": 15992
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3302a8e2ff459a0ec4cedbed932bf21d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:56:59.933Z"
   },
   {
     "name": "Goatsnake",
@@ -32250,7 +33254,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ae720a02-629e-4e9b-98e7-d1f637bd5a49"
+    "mbid": "ae720a02-629e-4e9b-98e7-d1f637bd5a49",
+    "genres": [
+      "doom metal",
+      "Stoner Rock",
+      "stoner metal",
+      "stoner doom",
+      "Sludge"
+    ],
+    "popularity": {
+      "listeners": 115177,
+      "playcount": 1915814
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/114b48b0acca640c14a78703243a9ab7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:00.597Z"
   },
   {
     "name": "Goatwhore",
@@ -32266,7 +33283,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:53.985Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "eb7c29b4-6951-4ac6-8516-4374fb51e6bc"
+    "mbid": "eb7c29b4-6951-4ac6-8516-4374fb51e6bc",
+    "genres": [
+      "Blackened Death Metal",
+      "black metal",
+      "death metal",
+      "thrash metal",
+      "american"
+    ],
+    "popularity": {
+      "listeners": 97738,
+      "playcount": 2471183
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/313782e395416ea310f4268f0647ee81/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:01.277Z"
   },
   {
     "name": "Gob",
@@ -32282,14 +33312,28 @@
     "wdBulkTriedAt": "2026-07-08T14:10:37.517Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "enrichedAt": "2026-07-11T16:30:49.839Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "genres": [
+      "punk rock",
+      "pop punk",
+      "punk",
+      "Canadian",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 293584,
+      "playcount": 4099400
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e82544784ba94cab1a821599c567df5d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:01.908Z"
   },
   {
     "name": "Gobind Behari Lal",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:55.641Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:30:54.829Z"
+    "autoTriedAt": "2026-07-11T16:30:54.829Z",
+    "metaTriedAt": "2026-07-12T03:57:02.507Z"
   },
   {
     "name": "Goblin",
@@ -32306,7 +33350,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:30:57.523Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "Progressive rock",
+      "Soundtrack",
+      "italian",
+      "experimental",
+      "electronic"
+    ],
+    "popularity": {
+      "listeners": 220867,
+      "playcount": 3329595
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fd5cf4d3587c4a9d89dcb08f29e3546f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:03.196Z"
   },
   {
     "name": "Goblin Cock",
@@ -32322,7 +33379,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:55.641Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2a210ece-17f4-4cbb-8b2c-95a41f6641f4"
+    "mbid": "2a210ece-17f4-4cbb-8b2c-95a41f6641f4",
+    "genres": [
+      "Stoner Rock",
+      "doom metal",
+      "stoner metal",
+      "stoner",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 65002,
+      "playcount": 875891
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6892c7c433f2cb7e4b972ccac0d558f0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:03.899Z"
   },
   {
     "name": "Goblini",
@@ -32338,7 +33408,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:55.641Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "e3dd3a42-bde8-4235-8c15-fd692cab15fd"
+    "mbid": "e3dd3a42-bde8-4235-8c15-fd692cab15fd",
+    "genres": [
+      "punk",
+      "punk rock",
+      "serbian punk",
+      "serbian",
+      "GOBLINI"
+    ],
+    "popularity": {
+      "listeners": 10463,
+      "playcount": 472921
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/44f32c2453d2c21b957dc91d372d9767/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:04.566Z"
   },
   {
     "name": "God Bless",
@@ -32354,7 +33437,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:55.641Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d2b28cf0-d884-4001-833f-c722d5875576"
+    "mbid": "d2b28cf0-d884-4001-833f-c722d5875576",
+    "genres": [
+      "rock",
+      "Progressive rock",
+      "indonesian",
+      "hard rock",
+      "classic rock"
+    ],
+    "popularity": {
+      "listeners": 9531,
+      "playcount": 150926
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5a2e0c1b34ee8f25b86a04608c870945/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:05.218Z"
   },
   {
     "name": "God Dethroned",
@@ -32370,7 +33466,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:55.641Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "2b72f17f-3449-4ce9-9805-9f6839bd909e"
+    "mbid": "2b72f17f-3449-4ce9-9805-9f6839bd909e",
+    "genres": [
+      "death metal",
+      "Blackened Death Metal",
+      "Melodic Death Metal",
+      "black metal",
+      "dutch"
+    ],
+    "popularity": {
+      "listeners": 73183,
+      "playcount": 2878801
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0a59d72b65ce4e77a172e4c9857b9a71/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:05.867Z"
   },
   {
     "name": "God Forbid",
@@ -32386,7 +33495,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:55.641Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "5ff2b813-ced5-4e1a-8b8d-408f681a0748"
+    "mbid": "5ff2b813-ced5-4e1a-8b8d-408f681a0748",
+    "genres": [
+      "metalcore",
+      "thrash metal",
+      "metal",
+      "Melodic Death Metal",
+      "death metal"
+    ],
+    "popularity": {
+      "listeners": 203415,
+      "playcount": 3017162
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fe029906db9901559a0b4b162e2d1fbf/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:06.546Z"
   },
   {
     "name": "God Help the Girl",
@@ -32403,7 +33525,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:31:00.686Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "indie pop",
+      "indie",
+      "Scottish",
+      "female vocalists",
+      "twee"
+    ],
+    "popularity": {
+      "listeners": 173577,
+      "playcount": 4453961
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7448a34cc3db763eba98196b69c17117/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:07.165Z"
   },
   {
     "name": "God Is An Astronaut",
@@ -32420,7 +33555,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:31:04.527Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "post-rock",
+      "instrumental",
+      "ambient",
+      "experimental",
+      "post rock"
+    ],
+    "popularity": {
+      "listeners": 832218,
+      "playcount": 57820205
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e476e055ab2cc06142ddbdb001c8a87f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:08.660Z"
   },
   {
     "name": "God Is My Co-Pilot",
@@ -32436,7 +33584,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:55.641Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "d5149e67-d3d8-48ab-94ce-8beaf1a5a9d2"
+    "mbid": "d5149e67-d3d8-48ab-94ce-8beaf1a5a9d2",
+    "genres": [
+      "queercore",
+      "experimental",
+      "post-punk",
+      "noise rock",
+      "noise"
+    ],
+    "popularity": {
+      "listeners": 13137,
+      "playcount": 262764
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ad1be536aefac4f0837662b982c5d38a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:09.284Z"
   },
   {
     "name": "God Lives Underwater",
@@ -32452,7 +33613,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:55.641Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "dda71dfb-3df9-48f9-90ac-577d3d2b2a01"
+    "mbid": "dda71dfb-3df9-48f9-90ac-577d3d2b2a01",
+    "genres": [
+      "industrial rock",
+      "industrial",
+      "electronic",
+      "alternative",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 85891,
+      "playcount": 1040910
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a708c26fb328db551608327fd6705fb7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:10.536Z"
   },
   {
     "name": "God Macabre",
@@ -32468,7 +33642,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:55.641Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ffb307e6-123f-4186-ba03-491c17cd7992"
+    "mbid": "ffb307e6-123f-4186-ba03-491c17cd7992",
+    "genres": [
+      "death metal",
+      "old school death metal",
+      "Swedish Death Metal",
+      "swedish",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 15728,
+      "playcount": 301749
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/880cf03483a136ba70f30becbc15d80f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:11.194Z"
   },
   {
     "name": "God Made Me Funky",
@@ -32484,7 +33671,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:31:07.101Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "funk",
+      "Hip-Hop",
+      "pop",
+      "Canadian",
+      "Disco"
+    ],
+    "popularity": {
+      "listeners": 4080,
+      "playcount": 38817
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/025faaaa59471c21370a50a5f92e4461/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:11.830Z"
   },
   {
     "name": "God Module",
@@ -32500,7 +33700,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:55.641Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "3d3fceda-d274-41f0-bac9-7516f6c872ba"
+    "mbid": "3d3fceda-d274-41f0-bac9-7516f6c872ba",
+    "genres": [
+      "dark electro",
+      "ebm",
+      "industrial",
+      "darkwave",
+      "electronic"
+    ],
+    "popularity": {
+      "listeners": 136720,
+      "playcount": 4157739
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/6c02a9ce8b61f476c30b92ed12e70dd7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:12.557Z"
   },
   {
     "name": "God of War",
@@ -32517,7 +33730,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:31:09.708Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "metal",
+      "death metal",
+      "indietronica",
+      "electronic",
+      "game soundtrack"
+    ],
+    "popularity": {
+      "listeners": 16119,
+      "playcount": 136989
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/0b03aca7a033a6097e4161605247e9c1/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:13.268Z"
   },
   {
     "name": "God Seed",
@@ -32533,7 +33759,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:55.641Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ce8cc6cf-8013-471a-a37d-257ef7428cfb"
+    "mbid": "ce8cc6cf-8013-471a-a37d-257ef7428cfb",
+    "genres": [
+      "black metal",
+      "Norwegian Black Metal",
+      "norwegian",
+      "metal",
+      "Norway"
+    ],
+    "popularity": {
+      "listeners": 35754,
+      "playcount": 732052
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e2e2f4766cfff68f962238077040a577/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:14.053Z"
   },
   {
     "name": "God Street Wine",
@@ -32549,7 +33788,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:55.641Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "492a80cc-792b-4491-80f9-695ef1233656"
+    "mbid": "492a80cc-792b-4491-80f9-695ef1233656",
+    "genres": [
+      "rock",
+      "jazz",
+      "americana",
+      "psychedelic",
+      "Jam Bands"
+    ],
+    "popularity": {
+      "listeners": 3327,
+      "playcount": 57851
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3435c1ca7b0eb9ba7bdb73e67e68e929/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:14.742Z"
   },
   {
     "name": "God's Gift",
@@ -32557,7 +33809,20 @@
     "wdBulkTriedAt": "2026-07-07T07:12:55.641Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "b1ec1819-c9ef-47f8-870b-8d7b9968da08",
-    "autoTriedAt": "2026-07-11T16:31:12.234Z"
+    "autoTriedAt": "2026-07-11T16:31:12.234Z",
+    "genres": [
+      "Manchester",
+      "post-punk",
+      "Grime",
+      "hard rock",
+      "UK"
+    ],
+    "popularity": {
+      "listeners": 1819,
+      "playcount": 6761
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b356bc999f91aeaaf24f08688c2fc37e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:15.465Z"
   },
   {
     "name": "God's Property",
@@ -32573,14 +33838,40 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:31:14.811Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "gospel",
+      "christian",
+      "black gospel",
+      "soul",
+      "Soul Gospel"
+    ],
+    "popularity": {
+      "listeners": 10120,
+      "playcount": 74189
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/b6e4273131ab4c8866077dc75f6471fe/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:16.219Z"
   },
   {
     "name": "Goddo",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:55.641Z",
     "mbid": "78f6df46-40a6-4fe4-9590-8c26e642a5d7",
-    "autoTriedAt": "2026-07-11T16:31:17.323Z"
+    "autoTriedAt": "2026-07-11T16:31:17.323Z",
+    "genres": [
+      "hard rock",
+      "classic rock",
+      "70s",
+      "Canadian",
+      "canada"
+    ],
+    "popularity": {
+      "listeners": 2450,
+      "playcount": 33594
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/58f5f92b0abda82c8ca4d48f4b1635bc/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:16.891Z"
   },
   {
     "name": "Godflesh",
@@ -32597,14 +33888,33 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:31:20.024Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "industrial metal",
+      "industrial",
+      "experimental",
+      "doom metal",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 230094,
+      "playcount": 10177665
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/da2e3353ffc736dce93107f38dc599f6/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:17.501Z"
   },
   {
     "name": "Godfrey Ridout",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:55.641Z",
     "mbid": "4ab254f5-59d7-4f1c-8132-87234294394c",
-    "autoTriedAt": "2026-07-11T16:31:25.175Z"
+    "autoTriedAt": "2026-07-11T16:31:25.175Z",
+    "popularity": {
+      "listeners": 144,
+      "playcount": 399
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:18.142Z"
   },
   {
     "name": "Godgory",
@@ -32620,7 +33930,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:55.641Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ab1d9b06-f3a1-47f7-a5e1-add28eea7698"
+    "mbid": "ab1d9b06-f3a1-47f7-a5e1-add28eea7698",
+    "genres": [
+      "Melodic Death Metal",
+      "doom metal",
+      "death metal",
+      "swedish",
+      "doom death metal"
+    ],
+    "popularity": {
+      "listeners": 27711,
+      "playcount": 615593
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e7614b31d39b37c0c8b64a2e7a0e9b43/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:18.938Z"
   },
   {
     "name": "Godhead",
@@ -32636,7 +33959,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:55.641Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "eb34176f-adbc-4ff8-b96f-5040e941ca91"
+    "mbid": "eb34176f-adbc-4ff8-b96f-5040e941ca91",
+    "genres": [
+      "industrial",
+      "industrial rock",
+      "industrial metal",
+      "metal",
+      "rock"
+    ],
+    "popularity": {
+      "listeners": 218548,
+      "playcount": 2007057
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8dfc05de121d88aedadaed09e87d080e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:19.567Z"
   },
   {
     "name": "Godkiller",
@@ -32652,7 +33988,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:55.641Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "3d2e4733-44a0-49bf-8e76-45ab6eddbf90"
+    "mbid": "3d2e4733-44a0-49bf-8e76-45ab6eddbf90",
+    "genres": [
+      "black metal",
+      "industrial black metal",
+      "industrial metal",
+      "monaco",
+      "monegasque"
+    ],
+    "popularity": {
+      "listeners": 15129,
+      "playcount": 296430
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/12dabbc310eb6ea183e97c6d00e3a455/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:20.231Z"
   },
   {
     "name": "Godley & Creme",
@@ -32669,7 +34018,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:31:28.082Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "art rock",
+      "80s",
+      "pop",
+      "rock",
+      "british"
+    ],
+    "popularity": {
+      "listeners": 104713,
+      "playcount": 808870
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ec569370294f97020c863ebe97b1726f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:20.809Z"
   },
   {
     "name": "Godsmack",
@@ -32686,7 +34048,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:31:30.958Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "hard rock",
+      "Nu Metal",
+      "metal",
+      "rock",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 2071349,
+      "playcount": 58243674
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/df4367740012546846d2f2c2d8c52e5e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:21.387Z"
   },
   {
     "name": "Godspeed You! Black Emperor",
@@ -32702,14 +34077,39 @@
     },
     "enrichedAt": "2026-07-07T07:12:55.641Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "3648db01-b29d-4ab9-835c-83f6a5068fe4"
+    "mbid": "3648db01-b29d-4ab9-835c-83f6a5068fe4",
+    "genres": [
+      "post-rock",
+      "instrumental",
+      "experimental",
+      "ambient",
+      "post rock"
+    ],
+    "popularity": {
+      "listeners": 976262,
+      "playcount": 34253742
+    },
+    "metaEnrichedAt": "2026-07-12T03:57:21.960Z"
   },
   {
     "name": "Goff Richards",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:55.641Z",
     "mbid": "6020365a-828a-4359-93b2-64ca32b2ca69",
-    "autoTriedAt": "2026-07-11T16:31:33.811Z"
+    "autoTriedAt": "2026-07-11T16:31:33.811Z",
+    "genres": [
+      "composer",
+      "british",
+      "United Kingdom",
+      "arranger",
+      "Great Britain"
+    ],
+    "popularity": {
+      "listeners": 783,
+      "playcount": 5300
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/fd56f628897730fd1c1cac4a0c16ca3f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:22.593Z"
   },
   {
     "name": "Goffredo Petrassi",
@@ -32725,14 +34125,40 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:31:36.531Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "composer",
+      "contemporary classical",
+      "italian",
+      "Classical",
+      "classicpurp1e"
+    ],
+    "popularity": {
+      "listeners": 1435,
+      "playcount": 13298
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/351441bc6d16a686d4847cf8bb964dd5/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:23.459Z"
   },
   {
     "name": "Gogh Van Go",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:55.641Z",
     "mbid": "8eba0971-4992-4aad-9632-c1e36622548c",
-    "autoTriedAt": "2026-07-11T16:31:39.099Z"
+    "autoTriedAt": "2026-07-11T16:31:39.099Z",
+    "genres": [
+      "pop",
+      "rock",
+      "Canadian",
+      "montreal",
+      "90s"
+    ],
+    "popularity": {
+      "listeners": 444,
+      "playcount": 5321
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/9439374e744a2cec96810e62d7968059/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:24.178Z"
   },
   {
     "name": "Gogi Grant",
@@ -32748,14 +34174,40 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:31:41.717Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "female vocalists",
+      "60s",
+      "oldies",
+      "jazz",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 20609,
+      "playcount": 3954724
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e12159e990274df89af0d60be538c488/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:25.245Z"
   },
   {
     "name": "Gogmagog",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:55.641Z",
     "mbid": "97a55ef2-2e2a-4652-bd62-8b7e11ca1988",
-    "autoTriedAt": "2026-07-11T16:31:44.220Z"
+    "autoTriedAt": "2026-07-11T16:31:44.220Z",
+    "genres": [
+      "heavy metal",
+      "NWOBHM",
+      "80s",
+      "hard rock",
+      "metal"
+    ],
+    "popularity": {
+      "listeners": 1286,
+      "playcount": 14986
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5287d18450b836ac7fa0a1972ab6c7d0/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:25.948Z"
   },
   {
     "name": "GOGO13",
@@ -32771,14 +34223,40 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:31:46.745Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "linescratcher",
+      "ska",
+      "USA",
+      "90s",
+      "3rd wave ska"
+    ],
+    "popularity": {
+      "listeners": 3706,
+      "playcount": 42570
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5e8b4f7c5e432546ca207a8ab80ad61f/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:26.994Z"
   },
   {
     "name": "GoGoGo Airheart",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:55.641Z",
     "mbid": "363119f7-1321-41f7-8186-a9674318ab70",
-    "autoTriedAt": "2026-07-11T16:31:49.319Z"
+    "autoTriedAt": "2026-07-11T16:31:49.319Z",
+    "genres": [
+      "post-punk",
+      "indie",
+      "san diego",
+      "experimental",
+      "USA"
+    ],
+    "popularity": {
+      "listeners": 12075,
+      "playcount": 189408
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/7def772e33b69be3c8b3e3a7a94bb178/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:27.630Z"
   },
   {
     "name": "Gogol Bordello",
@@ -32794,7 +34272,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:55.641Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "f47fc54d-b334-4321-8218-00c5b11d4dd1"
+    "mbid": "f47fc54d-b334-4321-8218-00c5b11d4dd1",
+    "genres": [
+      "gypsy punk",
+      "punk",
+      "Gypsy",
+      "alternative",
+      "punk rock"
+    ],
+    "popularity": {
+      "listeners": 794697,
+      "playcount": 32066914
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8d846b93600b73317528218549796bed/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:28.744Z"
   },
   {
     "name": "Goher Mumtaz",
@@ -32810,7 +34301,16 @@
     },
     "enrichedAt": "2026-07-07T07:12:55.641Z",
     "enrichedBy": "wikidata-bulk",
-    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z"
+    "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
+    "genres": [
+      "jal"
+    ],
+    "popularity": {
+      "listeners": 724,
+      "playcount": 4761
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/ae4ee9802218fa62cd6b828682d49d2a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:29.415Z"
   },
   {
     "name": "Going Red",
@@ -32818,7 +34318,12 @@
     "wdBulkTriedAt": "2026-07-07T07:12:55.641Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "88a566d2-2226-45a0-8aec-549ab356d727",
-    "autoTriedAt": "2026-07-11T16:31:51.898Z"
+    "autoTriedAt": "2026-07-11T16:31:51.898Z",
+    "popularity": {
+      "listeners": 314,
+      "playcount": 1016
+    },
+    "metaEnrichedAt": "2026-07-12T03:57:30.122Z"
   },
   {
     "name": "Going Under Ground",
@@ -32834,7 +34339,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:55.641Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "ba384659-4488-401e-9061-d027dfe72fa5"
+    "mbid": "ba384659-4488-401e-9061-d027dfe72fa5",
+    "genres": [
+      "J-rock",
+      "rock",
+      "japanese",
+      "j-pop",
+      "Japanese music"
+    ],
+    "popularity": {
+      "listeners": 53180,
+      "playcount": 1876057
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/97179d5804e7a1cfa279b04d899f0638/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:30.757Z"
   },
   {
     "name": "Gojira",
@@ -32850,7 +34368,20 @@
     },
     "enrichedAt": "2026-07-07T06:00:11.164Z",
     "mbid": "1c5efd53-d6b6-4d63-9d22-a15025cf5f07",
-    "wdBulkTriedAt": "2026-07-07T07:12:55.641Z"
+    "wdBulkTriedAt": "2026-07-07T07:12:55.641Z",
+    "genres": [
+      "death metal",
+      "Progressive metal",
+      "progressive death metal",
+      "metal",
+      "thrash metal"
+    ],
+    "popularity": {
+      "listeners": 1050123,
+      "playcount": 87755390
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/e144a10ac405b4a1173aa06ea41610b9/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:31.359Z"
   },
   {
     "name": "Göksel",
@@ -32866,7 +34397,19 @@
     "wdBulkTriedAt": "2026-07-09T08:32:12.140Z",
     "mbid": "f7893c8c-f4f9-452b-b566-27eab5c7855c",
     "enrichedAt": "2026-07-09T08:32:12.140Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "turkish",
+      "pop",
+      "female vocalists",
+      "Turkish Pop",
+      "alternative"
+    ],
+    "popularity": {
+      "listeners": 99168,
+      "playcount": 3491655
+    },
+    "metaEnrichedAt": "2026-07-12T03:57:32.090Z"
   },
   {
     "name": "Gold",
@@ -32883,7 +34426,19 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:31:54.989Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "post-hardcore",
+      "pop",
+      "post-punk",
+      "hard rock",
+      "french"
+    ],
+    "popularity": {
+      "listeners": 74569,
+      "playcount": 755118
+    },
+    "metaEnrichedAt": "2026-07-12T03:57:32.705Z"
   },
   {
     "name": "Gold Motel",
@@ -32899,7 +34454,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:55.641Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "163c8bbc-053d-4208-ae42-4cb0dc75f050"
+    "mbid": "163c8bbc-053d-4208-ae42-4cb0dc75f050",
+    "genres": [
+      "indie pop",
+      "female vocalists",
+      "indie",
+      "summer",
+      "pop"
+    ],
+    "popularity": {
+      "listeners": 68197,
+      "playcount": 1202089
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/665ae28532abda73bd7a558034f9472d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:33.311Z"
   },
   {
     "name": "Gold Panda",
@@ -32915,14 +34483,28 @@
     },
     "enrichedAt": "2026-07-07T07:12:55.641Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "bfbccd40-1a06-4ee7-b24d-b2f8cc714fa9"
+    "mbid": "bfbccd40-1a06-4ee7-b24d-b2f8cc714fa9",
+    "genres": [
+      "electronic",
+      "chillwave",
+      "psychedelic",
+      "dubstep",
+      "glo-fi"
+    ],
+    "popularity": {
+      "listeners": 595841,
+      "playcount": 12951534
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/8aad0d95e576aa7b1f92c4d1fd828fe7/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:33.959Z"
   },
   {
     "name": "Gold, Taro",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:55.641Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:31:56.246Z"
+    "autoTriedAt": "2026-07-11T16:31:56.246Z",
+    "metaTriedAt": "2026-07-12T03:57:34.623Z"
   },
   {
     "name": "Goldblade",
@@ -32939,7 +34521,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:32:06.192Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "punk rock",
+      "punk",
+      "british",
+      "Punkabilly",
+      "UK"
+    ],
+    "popularity": {
+      "listeners": 4961,
+      "playcount": 69812
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a79978a7314f56ae0eb7237449072f3d/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:35.292Z"
   },
   {
     "name": "Golden \"Big\" Wheeler",
@@ -32955,14 +34550,29 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:32:09.011Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "blues",
+      "harmonica blues"
+    ],
+    "popularity": {
+      "listeners": 782,
+      "playcount": 2293
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/5aacf0f6eb438fbc7c5f55733dbb752c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:35.949Z"
   },
   {
     "name": "Golden Blunders",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:55.641Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:32:14.705Z"
+    "autoTriedAt": "2026-07-11T16:32:14.705Z",
+    "popularity": {
+      "listeners": 3,
+      "playcount": 3
+    },
+    "metaEnrichedAt": "2026-07-12T03:57:36.585Z"
   },
   {
     "name": "Golden Bomber",
@@ -32978,7 +34588,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:55.641Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "679dacca-2057-454c-940b-c22c5f860adc"
+    "mbid": "679dacca-2057-454c-940b-c22c5f860adc",
+    "genres": [
+      "visual kei",
+      "J-rock",
+      "japanese",
+      "indie",
+      "golden bomber"
+    ],
+    "popularity": {
+      "listeners": 16332,
+      "playcount": 1969385
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/1ad713866b7b6541fc64e829eb4cccd4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:37.216Z"
   },
   {
     "name": "Golden Boy",
@@ -32986,7 +34609,20 @@
     "wdBulkTriedAt": "2026-07-07T07:12:55.641Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "9663a4dd-7afa-4314-a4f3-b444bdedcdda",
-    "autoTriedAt": "2026-07-11T16:32:21.147Z"
+    "autoTriedAt": "2026-07-11T16:32:21.147Z",
+    "genres": [
+      "breakcore",
+      "electro",
+      "hardcore breaks",
+      "electronic",
+      "jungle"
+    ],
+    "popularity": {
+      "listeners": 159016,
+      "playcount": 2115733
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/930d3da2193e365d9bfc2bcf6dac1049/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:37.888Z"
   },
   {
     "name": "golden coast",
@@ -32994,7 +34630,20 @@
     "wdBulkTriedAt": "2026-07-08T14:10:37.517Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "05ad8508-2c15-439d-9551-925081277415",
-    "autoTriedAt": "2026-07-11T16:32:23.680Z"
+    "autoTriedAt": "2026-07-11T16:32:23.680Z",
+    "genres": [
+      "trance",
+      "electronic",
+      "synthpop",
+      "House",
+      "Tech trance"
+    ],
+    "popularity": {
+      "listeners": 49717,
+      "playcount": 239966
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/c708a58ecda6bca4ece968cac3593a55/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:38.662Z"
   },
   {
     "name": "Golden Dawn",
@@ -33011,7 +34660,20 @@
       "vk": null
     },
     "enrichedAt": "2026-07-11T16:32:26.260Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "genres": [
+      "black metal",
+      "melodic black metal",
+      "Symphonic Black Metal",
+      "Gothic Metal",
+      "psychedelic"
+    ],
+    "popularity": {
+      "listeners": 13146,
+      "playcount": 136128
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/a6b59b70d0f71207cb84c9eae7ee3f3c/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:39.372Z"
   },
   {
     "name": "Golden Earring",
@@ -33027,7 +34689,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:55.641Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "75336c3d-2833-46cb-8037-b835cd7d646d"
+    "mbid": "75336c3d-2833-46cb-8037-b835cd7d646d",
+    "genres": [
+      "classic rock",
+      "rock",
+      "hard rock",
+      "dutch",
+      "70s"
+    ],
+    "popularity": {
+      "listeners": 662560,
+      "playcount": 7250031
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/d9f0f5843ca2e0c2694c161a4e4644ec/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:39.958Z"
   },
   {
     "name": "Golden Features",
@@ -33043,28 +34718,64 @@
     "mbid": "64bdfb5e-cbf4-4b4d-b939-1086fb4673f2",
     "wdBulkTriedAt": "2026-07-08T14:10:37.517Z",
     "enrichedAt": "2026-07-08T14:10:37.517Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "genres": [
+      "deep house",
+      "australian",
+      "trap",
+      "electronic",
+      "dark house"
+    ],
+    "popularity": {
+      "listeners": 157726,
+      "playcount": 1775338
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/3b16332a62d94652995b1fa3231935d4/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:40.543Z"
   },
   {
     "name": "Golden Harvest",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:55.641Z",
     "mbid": "60ff3419-0630-4af8-9769-797a41ab3178",
-    "autoTriedAt": "2026-07-11T16:32:28.782Z"
+    "autoTriedAt": "2026-07-11T16:32:28.782Z",
+    "genres": [
+      "pop",
+      "pop rock"
+    ],
+    "popularity": {
+      "listeners": 657,
+      "playcount": 3176
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/55f3265371ec00d9b810c3f2a1651b0a/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:41.157Z"
   },
   {
     "name": "Golden Microphone",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:55.641Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:32:33.764Z"
+    "autoTriedAt": "2026-07-11T16:32:33.764Z",
+    "metaTriedAt": "2026-07-12T03:57:41.770Z"
   },
   {
     "name": "Golden Palominos",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:55.641Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
-    "autoTriedAt": "2026-07-11T16:32:35.039Z"
+    "autoTriedAt": "2026-07-11T16:32:35.039Z",
+    "genres": [
+      "experimental",
+      "Avant-Garde",
+      "alternative",
+      "rock",
+      "Experimental Rock"
+    ],
+    "popularity": {
+      "listeners": 26109,
+      "playcount": 334303
+    },
+    "metaEnrichedAt": "2026-07-12T03:57:42.440Z"
   },
   {
     "name": "Golden Resurrection",
@@ -33080,7 +34791,20 @@
     },
     "enrichedAt": "2026-07-07T07:12:55.641Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "9e35b677-fbf6-493a-852e-0592467705a8"
+    "mbid": "9e35b677-fbf6-493a-852e-0592467705a8",
+    "genres": [
+      "Power metal",
+      "christian metal",
+      "neoclassical metal",
+      "heavy metal",
+      "christian"
+    ],
+    "popularity": {
+      "listeners": 7299,
+      "playcount": 165987
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/36e34b22c6d12976449b08a4b9b50d91/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:43.095Z"
   },
   {
     "name": "Golden Smog",
@@ -33096,14 +34820,32 @@
     },
     "enrichedAt": "2026-07-07T07:12:55.641Z",
     "enrichedBy": "wikidata-bulk",
-    "mbid": "974b1bfe-dc7a-419a-94f4-f387a193e273"
+    "mbid": "974b1bfe-dc7a-419a-94f4-f387a193e273",
+    "genres": [
+      "Alt-country",
+      "americana",
+      "post folk dans lere du nimporte quoi",
+      "rock",
+      "smoggity"
+    ],
+    "popularity": {
+      "listeners": 141725,
+      "playcount": 1499151
+    },
+    "image": "https://cdn-images.dzcdn.net/images/artist/90b967be499c4ecc74f232a1f8f2cb8e/250x250-000000-80-0-0.jpg",
+    "metaEnrichedAt": "2026-07-12T03:57:43.794Z"
   },
   {
     "name": "Golden State Pops Orchestra",
     "website": null,
     "wdBulkTriedAt": "2026-07-07T07:12:55.641Z",
     "mbid": "18071ed9-2192-4c69-a074-d5f18356ccba",
-    "autoTriedAt": "2026-07-11T16:32:40.159Z"
+    "autoTriedAt": "2026-07-11T16:32:40.159Z",
+    "popularity": {
+      "listeners": 170,
+      "playcount": 569
+    },
+    "metaEnrichedAt": "2026-07-12T03:57:44.489Z"
   },
   {
     "name": "Goldenhorse",
