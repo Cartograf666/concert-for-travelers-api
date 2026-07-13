@@ -1,0 +1,16 @@
+{
+  "id": "artist-horia-brenciu",
+  "domain": "www.horiabrenciu.ro",
+  "url": "https://www.horiabrenciu.ro/concerte/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-item",
+    "artistNameFallback": "Horia Brenciu",
+    "date": ".event-item .event-date",
+    "ticketUrl": ".event-item .event-ticket-link",
+    "venue": ".event-item .event-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "RO"
+  }
+}

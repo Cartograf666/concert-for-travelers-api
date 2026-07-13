@@ -1,0 +1,17 @@
+{
+  "id": "artist-hootie-and-the-blowfish",
+  "domain": "www.hootie.com",
+  "url": "https://www.hootie.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour-date-row",
+    "artistNameFallback": "Hootie & The Blowfish",
+    "date": ".tour-date-row .date",
+    "ticketUrl": ".tour-date-row .button.tickets",
+    "venue": ".tour-date-row .venue-name",
+    "city": ".tour-date-row .city-state",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "id": "artist-hometown-band",
+  "domain": "www.thehometownband.org",
+  "url": "https://www.thehometownband.org/concert-event-calendar/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.em_event_widget li",
+    "artistNameFallback": "The Hometown Band",
+    "date": ".event_date",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

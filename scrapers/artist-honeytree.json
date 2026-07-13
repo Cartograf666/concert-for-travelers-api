@@ -1,0 +1,17 @@
+{
+  "id": "artist-honeytree",
+  "domain": "www.honeytree.org",
+  "url": "https://www.honeytree.org/in-person-concerts",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.sqs-block-content p:has(strong)",
+    "artistNameFallback": "Honeytree",
+    "date": "strong:nth-of-type(1)",
+    "ticketUrl": "a[href*='eventbrite']",
+    "city": "strong:nth-of-type(1)",
+    "country": "strong:nth-of-type(1)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
