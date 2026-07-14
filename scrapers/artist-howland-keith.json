@@ -1,0 +1,17 @@
+{
+  "id": "artist-howland-keith",
+  "domain": "keithhowland.com",
+  "url": "https://keithhowland.com/tour-dates",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-item",
+    "artistNameFallback": "The Players (featuring Keith Howland)",
+    "date": ".event-date",
+    "ticketUrl": ".event-link a",
+    "venue": ".event-venue",
+    "city": ".event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-howard-marsh",
+  "domain": "anjunadeep.com",
+  "url": "https://anjunadeep.com/artist/marsh",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".artist-events__row",
+    "artistNameFallback": "Marsh",
+    "date": ".artist-events__date",
+    "ticketUrl": ".artist-events__tickets-btn",
+    "venue": ".artist-events__location__venue",
+    "city": ".artist-events__location__city",
+    "country": ".artist-events__location__country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
