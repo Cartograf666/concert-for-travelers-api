@@ -50,7 +50,7 @@ jobs:
       # skipped (conditional request / hash match), same pattern as the daily
       # venue scrape cache.
       - name: Restore artist scrape cache
-        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: reports/artist-scrape-cache.json
           key: artist-scrape-cache-${{ github.run_id }}
@@ -62,7 +62,7 @@ jobs:
       # same head of the list every run, and so a blocked/failed run falls back to
       # last-good data instead of dropping an artist's shows.
       - name: Restore Bandsintown cache
-        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: reports/bandsintown-cache.json
           key: bandsintown-cache-${{ github.run_id }}
@@ -74,7 +74,7 @@ jobs:
       # src/engine/eventbrite.ts for why this scrapes public pages (no public
       # multi-organizer search API exists) and the accepted ToS-risk tradeoff.
       - name: Restore Eventbrite cache
-        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: reports/eventbrite-cache.json
           key: eventbrite-cache-${{ github.run_id }}
