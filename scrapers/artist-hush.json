@@ -1,0 +1,16 @@
+{
+  "id": "artist-hush",
+  "domain": "hush.dk",
+  "url": "https://hush.dk/index.php/koncerter",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.box",
+    "artistNameFallback": "Hush",
+    "date": "p.dato",
+    "ticketUrl": "div.box a.btn-buy",
+    "venue": "p.sted",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DK"
+  }
+}
