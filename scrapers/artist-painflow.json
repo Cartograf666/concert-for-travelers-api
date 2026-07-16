@@ -1,0 +1,17 @@
+{
+  "id": "artist-painflow",
+  "domain": "painflow.com",
+  "url": "https://painflow.com/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event_list_widget_content .event-item",
+    "artistNameFallback": "Painflow",
+    "date": ".event-date",
+    "ticketUrl": ".event-button a",
+    "venue": ".event-location .venue",
+    "city": ".event-location .city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-paivi-capri-virkkunen",
+  "domain": "www.capri.fi",
+  "url": "http://www.capri.fi/keikat.html",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.keikkataulu tr",
+    "artistNameFallback": "Päivi \"Capri\" Virkkunen",
+    "date": "td:nth-child(1)",
+    "ticketUrl": "td:nth-child(4) a",
+    "venue": "td:nth-child(2)",
+    "city": "td:nth-child(3)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "FI"
+  }
+}

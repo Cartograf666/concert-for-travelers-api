@@ -1,0 +1,18 @@
+{
+  "id": "artist-pain-for-pleasure",
+  "domain": "www.painforpleasure.com",
+  "url": "https://www.painforpleasure.com/gigs",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.tour-item",
+    "artistNameFallback": "Pain For Pleasure",
+    "date": ".date",
+    "ticketUrl": ".tour-item-button a",
+    "venue": ".venue-name",
+    "city": ".venue-location span:first-child",
+    "country": ".venue-location span:last-child",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-paige-haley",
+  "domain": "www.paigehaley.com",
+  "url": "https://www.paigehaley.com/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".sqs-block-content .eventlist-column-block.eventitem",
+    "artistNameFallback": "Paige Haley",
+    "date": ".eventitem-meta .event-date",
+    "ticketUrl": ".event-ticket-link a",
+    "venue": ".eventitem-meta .event-venue",
+    "city": ".eventitem-meta .event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

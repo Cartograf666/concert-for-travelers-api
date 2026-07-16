@@ -1,0 +1,17 @@
+{
+  "id": "artist-paivi-lepisto",
+  "domain": "www.paivilepisto.fi",
+  "url": "https://www.paivilepisto.fi/keikat/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".list-item.event-item",
+    "artistNameFallback": "Päivi Lepistö",
+    "date": ".event-date span:nth-child(1)",
+    "ticketUrl": ".event-tickets a",
+    "venue": ".event-venue",
+    "city": ".event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "FI"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-painstream",
+  "domain": "painstream.band",
+  "url": "https://painstream.band/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".elementor-column.elementor-col-33",
+    "artistNameFallback": "Painstream",
+    "date": ".elementor-text-editor.elementor-clearfix > p:nth-child(1)",
+    "ticketUrl": ".elementor-button-link",
+    "venue": ".elementor-text-editor.elementor-clearfix > p:nth-child(3)",
+    "city": ".elementor-text-editor.elementor-clearfix > p:nth-child(2)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}
