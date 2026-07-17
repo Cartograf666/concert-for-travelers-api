@@ -1,0 +1,17 @@
+{
+  "id": "artist-parlez-vous-english",
+  "domain": "www.parlezvousenglishband.com",
+  "url": "https://www.parlezvousenglishband.com/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-card",
+    "artistNameFallback": "Parlez-Vous English",
+    "date": ".event-date",
+    "ticketUrl": ".event-tickets-link",
+    "venue": ".event-venue-name",
+    "city": ".event-location-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

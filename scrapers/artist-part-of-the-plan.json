@@ -1,0 +1,17 @@
+{
+  "id": "artist-part-of-the-plan",
+  "domain": "partoftheplanband.com",
+  "url": "https://partoftheplanband.com/gigs",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".gig-item",
+    "artistNameFallback": "Part of the Plan",
+    "date": ".gig-date",
+    "ticketUrl": ".gig-link",
+    "venue": ".gig-venue",
+    "city": ".gig-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

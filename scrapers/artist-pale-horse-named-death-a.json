@@ -1,0 +1,18 @@
+{
+  "id": "artist-pale-horse-named-death-a",
+  "domain": "apalehorsenameddeath.com",
+  "url": "https://apalehorsenameddeath.com/tour-dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".gigpress-row",
+    "artistNameFallback": "A Pale Horse Named Death",
+    "date": ".gigpress-date",
+    "ticketUrl": ".gigpress-external-link a",
+    "venue": ".gigpress-venue",
+    "city": ".gigpress-city",
+    "country": ".gigpress-country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

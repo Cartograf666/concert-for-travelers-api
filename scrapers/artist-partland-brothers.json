@@ -1,0 +1,18 @@
+{
+  "id": "artist-partland-brothers",
+  "domain": "partlandbrothers.com",
+  "url": "https://partlandbrothers.com/live-dates",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".sqs-block-content .eventlist-event",
+    "artistNameFallback": "Partland Brothers",
+    "date": ".eventlist-datetag",
+    "ticketUrl": ".eventlist-button",
+    "venue": ".eventlist-title",
+    "city": ".event-dateline-item--address-city",
+    "country": ".event-dateline-item--address-country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}
