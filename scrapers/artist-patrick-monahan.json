@@ -1,0 +1,17 @@
+{
+  "id": "artist-patrick-monahan",
+  "domain": "www.patmonahan.com",
+  "url": "https://www.patmonahan.com/tour-dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour_date",
+    "artistNameFallback": "Patrick Monahan",
+    "date": ".tour_date_date",
+    "ticketUrl": ".tour_date_tickets a",
+    "venue": ".tour_date_venue",
+    "city": ".tour_date_city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
