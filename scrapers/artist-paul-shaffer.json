@@ -1,0 +1,17 @@
+{
+  "id": "artist-paul-shaffer",
+  "domain": "www.paulshaffer.net",
+  "url": "https://www.paulshaffer.net/tour-dates",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.shows-grid > div",
+    "artistNameFallback": "Paul Shaffer",
+    "date": "div.event-date",
+    "ticketUrl": "a.ticket-button",
+    "venue": "div.event-venue",
+    "city": "div.event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

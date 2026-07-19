@@ -1,0 +1,17 @@
+{
+  "id": "artist-patrizia",
+  "domain": "www.patriciamusic.nl",
+  "url": "https://www.patriciamusic.nl/agenda",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.agenda-item",
+    "artistNameFallback": "PATRICIA",
+    "date": "div.date-day",
+    "ticketUrl": "a.ticket-link",
+    "venue": "span.venue",
+    "city": "span.location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "NL"
+  }
+}

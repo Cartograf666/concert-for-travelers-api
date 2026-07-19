@@ -1,0 +1,17 @@
+{
+  "id": "artist-paul-kelly-irish-musician",
+  "domain": "www.paulkelly.ie",
+  "url": "https://www.paulkelly.ie/live-dates",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".gig-list-item",
+    "artistNameFallback": "Paul Kelly",
+    "date": ".date-wrap",
+    "ticketUrl": ".gig-link a",
+    "venue": ".gig-location-line-2",
+    "city": ".gig-location-line-1",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "IE"
+  }
+}

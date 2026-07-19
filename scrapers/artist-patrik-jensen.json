@@ -1,0 +1,16 @@
+{
+  "id": "artist-patrik-jensen",
+  "domain": "www.the-haunted.com",
+  "url": "https://www.the-haunted.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-listing-item",
+    "artistNameFallback": "The Haunted",
+    "date": "div.event-date",
+    "ticketUrl": "a.event-tickets-link",
+    "city": "span.event-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "SE"
+  }
+}

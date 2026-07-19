@@ -1,0 +1,17 @@
+{
+  "id": "artist-paul",
+  "domain": "www.paulmccartney.com",
+  "url": "https://www.paulmccartney.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.tour-card",
+    "artistNameFallback": "Paul McCartney",
+    "date": "div.date-details",
+    "ticketUrl": "a.cta-button",
+    "venue": "div.location span.venue",
+    "city": "div.location span.city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
