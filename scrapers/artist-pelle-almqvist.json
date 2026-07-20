@@ -1,0 +1,18 @@
+{
+  "id": "artist-pelle-almqvist",
+  "domain": "www.thehives.com",
+  "url": "https://www.thehives.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".live-dates__list li",
+    "artistNameFallback": "The Hives",
+    "date": ".live-dates__date",
+    "ticketUrl": ".live-dates__tickets a",
+    "venue": ".live-dates__venue",
+    "city": ".live-dates__city",
+    "country": ".live-dates__country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "SE"
+  }
+}

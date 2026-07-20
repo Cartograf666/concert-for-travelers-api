@@ -1,0 +1,17 @@
+{
+  "id": "artist-peabody-institute",
+  "domain": "peabody.jhu.edu",
+  "url": "https://peabody.jhu.edu/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tribe-events-calendar-list__event-row",
+    "artistNameFallback": "Peabody Institute",
+    "date": ".tribe-events-calendar-list__event-date-tag",
+    "ticketUrl": ".tribe-events-calendar-list__event-details-link",
+    "venue": ".tribe-events-calendar-list__event-venue-title",
+    "city": ".tribe-events-calendar-list__event-venue-location-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "Baltimore",
+    "countryNameFallback": "US"
+  }
+}

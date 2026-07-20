@@ -1,0 +1,17 @@
+{
+  "id": "artist-peoria-symphony-orchestra",
+  "domain": "peoriasymphony.org",
+  "url": "https://peoriasymphony.org/calendar",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tribe-events-event-meta",
+    "artistNameFallback": "Peoria Symphony Orchestra",
+    "date": ".tribe-events-event-date",
+    "ticketUrl": ".tribe-events-read-more",
+    "venue": ".tribe-events-venue-info",
+    "city": ".tribe-events-venue-info",
+    "venueNameFallback": "",
+    "cityNameFallback": "Peoria",
+    "countryNameFallback": "US"
+  }
+}
