@@ -412,13 +412,58 @@ these are still current if much time has passed).
   side-by-side `.safeParse()` probing across every real schema in this repo
   (Concert/Artist/Config/RepairedSelectors) — no behavioral change, only
   cosmetic error-message wording. Safe.
+- **6 Dependabot PRs merged** (`actions/checkout`→v7, `actions/configure-pages`→v6,
+  `actions/github-script`→v9, `reviewdog/action-actionlint`→v1.72.0, `c8`→11.0.0,
+  `@ai-sdk/google`→4.0.10, plus zod above). `typescript`→7.0.2 (PR #21) left
+  open on purpose — see TS7 item below, don't merge it.
+- **Artist whitelist trimmed to a "professional" tier + composite popularity
+  score.** See the score/tier item further up — same work, cross-referenced
+  here since it's also what made the rest of this list possible: 20,528
+  professional / 42,649 longtail (of 63,177 pre-existing + 47 new artists
+  discovered mid-session). `discover_tour_urls.ts` and the Bandsintown/
+  Eventbrite sweep (`run-artists.ts`) now scope to this tier (+ untiered,
+  fail-open for not-yet-scored artists) instead of the full whitelist —
+  this is the actual fix for "pipeline is too slow," not just a data-quality
+  change.
+- **`reapply_artist_db_delta.ts`: replaces whole-sub-chunk conflict-drop with
+  per-artist delta replay** across all 6 `data/artists/`-writing workflows.
+  *Caught and fixed during review*: the first version blindly overwrote a
+  row keyed only by artist name with no check that the freshly-reset origin
+  state hadn't ALSO diverged from this sub-chunk's own snapshot for that
+  same row — reproduced concretely: a concurrent writer's already-merged
+  change to a shared artist record could be silently clobbered, and not just
+  dropped but actively regressed to a stale value. Fixed to skip (not
+  overwrite) a row that diverges from both snapshots
+  (`skippedConflicts`), conservative by design — same "drop rather than
+  corrupt" philosophy as before, just scoped to the single conflicting row
+  instead of the whole sub-chunk.
+- **New tourUrl→LLM scraper-config extraction tier** (`extract_tour_scrapers.ts`,
+  script + tests only, deliberately **not** wired into a workflow yet — needs
+  the same real-batch human-validation pass `discover_tour_urls.ts` went
+  through first). *Caught and fixed during review*: an SSRF-via-redirect gap
+  (same class already fixed once this session in `discover_tour_urls.ts` —
+  fetch followed redirects natively, checking the blocked-host list only
+  against the initial URL) and a config-hijack bug (the LLM-returned object
+  was spread AFTER the code-controlled `id`/`domain`/`url` fields, so a
+  prompt-injected field in Gemini's response could silently override the
+  real artist's tourUrl/domain) — both fixed before this landed.
+- **Artist-review-needed backlog resolved** (see Done note above under
+  zod/Dependabot — cross-referenced here): "Airport" kept (real, corroborated
+  touring act), "Empire" removed to `data/removed-non-artists.json` (weakest
+  signal of the two, risk accepted knowingly). `data/artist-review-needed.json`
+  is now empty. *Note: an earlier automated pass had resolved this identically
+  but bypassed the human-review gate entirely with zero reasoning trail —
+  redone properly as an explicit, logged human decision.*
 
 ### ⬜ Open — critical
 - **`artist-db-write` concurrency group's actual queue-preemption is still
-  unfixed, only observed.** The watchdog above gives visibility; the
-  auto-retry workflow recovers `daily-scrape.yml`'s manual dispatches; the 5
-  scheduled enrich-* workflows can still lose their queued slot to each
-  other with no automatic recovery. *A worktree
+  unfixed, only observed/mitigated.** The watchdog gives visibility; the
+  auto-retry workflow recovers `daily-scrape.yml`'s manual dispatches;
+  `reapply_artist_db_delta.ts` means a real conflict now costs at most one
+  skipped artist-row instead of a whole sub-chunk. But the 5 scheduled
+  enrich-* workflows can still lose their queued *slot* (never even start)
+  to each other with no automatic recovery — that's a different failure
+  mode than a mid-run conflict, still open. *A worktree
   `.claude/worktrees/fix-daily-scrape-concurrency` existed earlier this
   session (deleted — confirmed fully merged) — if a new one appears, check
   it's not already mid-fix in a parallel session first.*
@@ -432,25 +477,38 @@ these are still current if much time has passed).
   alias — meaning the type-aware `no-floating-promises` rule would've been
   checked against TS5's type checker while the project actually builds on
   TS7, a real (if narrow) silent-wrong-lint-results risk for no real
-  benefit. Reverted; back on `typescript@5.9.3`. Revisit once
-  `typescript-eslint` has real TS7 support — don't repeat the monkeypatch
-  approach.
+  benefit. Reverted; back on `typescript@5.9.3`. Dependabot PR #21 left open
+  and intentionally unmerged. Revisit once `typescript-eslint` has real TS7
+  support — don't repeat the monkeypatch approach.
 
 ### ⬜ Open — medium
-- **5 Dependabot PRs still need triage**: typescript 5.9.3→7.0.2 (major —
-  blocked, see above, don't merge until typescript-eslint supports it), c8
-  10.1.3→11.0.0, `actions/checkout` 4→7, `actions/configure-pages` 4→6,
-  `actions/github-script` 7→9, `reviewdog/action-actionlint` 1.27.0→1.72.0
-  (each of the 4 actions ones needs a fresh SHA re-pin on merge). zod PR #20
-  is now redundant (4.4.3 already landed directly, see Done above) — close
-  it. `@ai-sdk/google` PR #18 needs a Dependabot-rebase retry (hit a
-  `package-lock.json` conflict earlier, should auto-resolve once asked).
-- **`discover_tour_urls.ts` at 60/20,187 eligible artists.** Validated batch
-  only; intentionally not cron'd yet per its own task spec until proven at
-  scale. Next step: run larger batches, spot-check hits, then decide on
-  wiring a workflow.
-- **2 entries in `data/artist-review-needed.json`** ("Airport", "Empire")
-  awaiting manual disambiguation (place name vs. real artist).
+- **`discover_tour_urls.ts` at 60/9,228 eligible artists** (eligible count
+  dropped from 20,187 now that candidate selection is scoped to the
+  professional tier). Validated batch only; intentionally not cron'd yet.
+  Default batch size stays 60 — no per-slice checkpointing exists yet (one
+  save at the very end), so don't raise the default until that's added.
+- **`extract_tour_scrapers.ts` has no workflow yet** — needs the same
+  real-batch validation pass before it earns one. When it does, keep it
+  `workflow_dispatch`-only at first, same as `discover_tour_urls.ts` was.
+- **No scheduled re-scoring for the popularity tier.** `score_artist_popularity.ts
+  apply` is a fully manual, human-run script with a hand-picked threshold —
+  nothing re-runs it on a cadence. Currently masked because new artists from
+  `discover-artists.yml` flow through `data/artist_scrape_targets.txt` (which
+  bypasses the tier check entirely in both `discover_tour_urls.ts` and
+  `run-artists.ts`'s fail-open-for-untiered logic) — but any future intake
+  path that adds straight to the whitelist DB without also being a target-
+  list line would sit un-scored (and un-swept) indefinitely.
+- **`score_artist_popularity.ts`'s 100k professional-tier cap only applies
+  within the score-ranked selection loop** — protected/explicit targets are
+  unioned in afterward with no subsequent cap re-check, so the true final
+  size can exceed 100k once the whitelist grows large enough that protected
+  targets + capped-scored-set > 100k. Doesn't bind today (~63k total
+  artists). No test file exists for this script yet.
+- **`wikidataSitelinks` is 0 for every artist** in the current data — the
+  SPARQL query was extended to pull it, but `enrich-wd-bulk` hasn't re-run
+  against the network since. The popularity score's sitelinks component
+  (25% weight) is a no-op until that next runs; re-run `npm run enrich-wd-bulk`
+  and re-score once it has.
 
 ---
 
