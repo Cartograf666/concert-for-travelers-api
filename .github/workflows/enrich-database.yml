@@ -120,6 +120,8 @@ jobs:
 
             THIS_RUN=$SUB_CHUNK
             if [ "$REMAINING" -lt "$SUB_CHUNK" ]; then THIS_RUN=$REMAINING; fi
+            rm -rf /tmp/artists-before /tmp/artists-after
+            cp -R data/artists /tmp/artists-before
 
             npx tsx src/scripts/enrich_via_gemini_search.ts "$THIS_RUN" /tmp/results.json "$BATCH_SIZE" "$DELAY_MS" 2>&1 | tee /tmp/enrich-gemini.log
 
@@ -134,6 +136,7 @@ jobs:
             fi
 
             npm run enrich-sites apply /tmp/results.json
+            cp -R data/artists /tmp/artists-after
 
             if git diff --quiet -- data/artists/ scrapers/; then
               echo "Sub-chunk made no changes to commit."
@@ -154,17 +157,18 @@ jobs:
                 echo "Push rejected (concurrent write), retrying with rebase ($i/5)..."
                 git fetch origin main
                 if ! git rebase origin/main; then
-                  echo "::warning::Rebase conflict -- dropping this sub-chunk's commit."
+                  echo "::warning::Rebase conflict -- replaying artist DB changes on fresh origin/main."
                   git rebase --abort
-                  # Resync to origin BEFORE the conflict-drop commit below -- otherwise
-                  # that commit lands on the same stale base the push was just rejected
-                  # against and is itself guaranteed to fail as a non-fast-forward. Also
-                  # means the next sub-chunk starts from current state instead of
-                  # recomputing/dropping the identical work over and over until timeout.
                   git fetch origin main
                   git reset --hard origin/main
-                  npm run record-conflict-drop -- enrich-database || true
-                  git add data/conflict-drops.json && git commit -m "chore: record conflict-drop metric [skip ci]" && git push || true
+                  npm run reapply-artist-db-delta -- /tmp/artists-before /tmp/artists-after
+                  if git diff --quiet -- data/artists/; then
+                    echo "::warning::Replay produced no data/artists changes; scraper config changes from this conflicted sub-chunk will be retried next run."
+                  else
+                    git add data/artists/
+                    git commit -m "auto: enrich artist database chunk (reapplied) [skip ci]"
+                    if git push; then pushed=true; else npm run record-conflict-drop -- enrich-database || true; fi
+                  fi
                   break
                 fi
                 sleep $((RANDOM % 5 + 2))

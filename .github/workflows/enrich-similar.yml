@@ -79,8 +79,11 @@ jobs:
 
             THIS_RUN=$SUB_CHUNK
             if [ "$REMAINING" -lt "$SUB_CHUNK" ]; then THIS_RUN=$REMAINING; fi
+            rm -rf /tmp/artists-before /tmp/artists-after
+            cp -R data/artists /tmp/artists-before
 
             npm run enrich-similar -- "$THIS_RUN" 2>&1 | tee /tmp/enrich-similar.log
+            cp -R data/artists /tmp/artists-after
 
             if grep -q "Nothing pending for the similar-artists tier\|LASTFM_API_KEY not set" /tmp/enrich-similar.log; then
               echo "Nothing left to process -- stopping the loop early."
@@ -106,17 +109,18 @@ jobs:
                 echo "Push rejected (concurrent write), retrying with rebase ($i/5)..."
                 git fetch origin main
                 if ! git rebase origin/main; then
-                  echo "::warning::Rebase conflict on data/artists/ -- dropping this sub-chunk's commit."
+                  echo "::warning::Rebase conflict on data/artists/ -- replaying this sub-chunk on fresh origin/main."
                   git rebase --abort
-                  # Resync to origin BEFORE the conflict-drop commit below -- otherwise that
-                  # commit lands on the same stale base the push was just rejected against
-                  # and is itself guaranteed to fail as a non-fast-forward. Resyncing first
-                  # also means the next sub-chunk starts from current state instead of
-                  # recomputing/dropping the identical work over and over until timeout.
                   git fetch origin main
                   git reset --hard origin/main
-                  npm run record-conflict-drop -- enrich-similar || true
-                  git add data/conflict-drops.json && git commit -m "chore: record conflict-drop metric [skip ci]" && git push || true
+                  npm run reapply-artist-db-delta -- /tmp/artists-before /tmp/artists-after
+                  if git diff --quiet -- data/artists/; then
+                    echo "::warning::Replay produced no data/artists changes; nothing to push."
+                  else
+                    git add data/artists/
+                    git commit -m "auto: Tier-2 similar-artists enrichment (reapplied) [skip ci]"
+                    if git push; then pushed=true; else npm run record-conflict-drop -- enrich-similar || true; fi
+                  fi
                   break
                 fi
                 sleep $((RANDOM % 5 + 2))

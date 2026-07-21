@@ -55,6 +55,8 @@ jobs:
           GEMINI_API_KEYS: ${{ secrets.GEMINI_API_KEYS }}
         run: |
           set -eo pipefail
+          rm -rf /tmp/artists-before /tmp/artists-after
+          cp -R data/artists /tmp/artists-before
 
           # 1. Prune Non-Artists (select -> classify -> apply)
           echo "Selecting prune candidates..."
@@ -72,6 +74,7 @@ jobs:
           # 2. Clean Denylist
           echo "Cleaning denylisted entries..."
           npm run clean-denylist
+          cp -R data/artists /tmp/artists-after
 
       - name: Commit and push changes
         run: |
@@ -94,12 +97,18 @@ jobs:
               echo "Push rejected (concurrent write), retrying with rebase ($i/5)..."
               git fetch origin main
               if ! git rebase origin/main; then
-                echo "::warning::Rebase conflict on data/artists/ -- dropping this commit."
+                echo "::warning::Rebase conflict on data/artists/ -- replaying hygiene changes on fresh origin/main."
                 git rebase --abort
                 git fetch origin main
                 git reset --hard origin/main
-                npm run record-conflict-drop -- data-hygiene || true
-                git add data/conflict-drops.json && git commit -m "chore: record conflict-drop metric [skip ci]" && git push || true
+                npm run reapply-artist-db-delta -- /tmp/artists-before /tmp/artists-after
+                if git diff --quiet -- data/artists/; then
+                  echo "::warning::Replay produced no data/artists changes; nothing to push."
+                else
+                  git add data/artists/
+                  git commit -m "auto: data-hygiene database prune (reapplied) [skip ci]"
+                  if git push; then pushed=true; else npm run record-conflict-drop -- data-hygiene || true; fi
+                fi
                 break
               fi
               sleep $((RANDOM % 5 + 2))

@@ -152,7 +152,10 @@ jobs:
       # only what's missing); the diff is committed by the enrich step below, so
       # editing the target list is all that's needed to cover a new artist.
       - name: Sync target artists into whitelist
-        run: npm run add-targets
+        run: |
+          rm -rf /tmp/artists-before
+          cp -R data/artists /tmp/artists-before
+          npm run add-targets
 
       - name: Run Scraper
         env:
@@ -160,7 +163,10 @@ jobs:
           GEMINI_API_KEY_RESERV1: ${{ secrets.GEMINI_API_KEY_RESERV1 }}
           GEMINI_API_KEY_RESERV2: ${{ secrets.GEMINI_API_KEY_RESERV2 }}
           TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
-        run: npm run scrape
+        run: |
+          npm run scrape
+          rm -rf /tmp/artists-after
+          cp -R data/artists /tmp/artists-after
 
       - name: Save scrape cache
         if: always()
@@ -258,15 +264,18 @@ jobs:
               echo "Push rejected (concurrent write), retrying with rebase ($i/5)..."
               git fetch origin main
               if ! git rebase origin/main; then
-                echo "::warning::Rebase conflict on data/artists/ -- dropping this run's enrichment commit."
+                echo "::warning::Rebase conflict on data/artists/ -- replaying this run's enrichment on fresh origin/main."
                 git rebase --abort
-                # Resync to origin BEFORE the conflict-drop commit below -- otherwise that
-                # commit lands on the same stale base the push was just rejected against
-                # and is itself guaranteed to fail as a non-fast-forward.
                 git fetch origin main
                 git reset --hard origin/main
-                npm run record-conflict-drop -- daily-scrape || true
-                git add data/conflict-drops.json && git commit -m "chore: record conflict-drop metric [skip ci]" && git push || true
+                npm run reapply-artist-db-delta -- /tmp/artists-before /tmp/artists-after
+                if git diff --quiet -- data/artists/; then
+                  echo "::warning::Replay produced no data/artists changes; nothing to push."
+                else
+                  git add data/artists/
+                  git commit -m "auto: enrich artist websites and socials (reapplied) [skip ci]"
+                  if git push; then pushed=true; else npm run record-conflict-drop -- daily-scrape || true; fi
+                fi
                 break
               fi
               sleep $((RANDOM % 5 + 2))

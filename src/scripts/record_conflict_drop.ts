@@ -4,11 +4,22 @@ import * as path from 'path';
 /**
  * Appends one conflict-drop event to data/conflict-drops.json, trimmed to the
  * last 30 days. A "conflict drop" is a workflow's git-push retry loop hitting
- * an unresolvable rebase conflict on data/approved_artists.json and giving up
- * on that run/sub-chunk's commit (see enrich-auto.yml, enrich-database.yml,
- * daily-scrape.yml). Previously this was only a `::warning::` annotation
- * inside that one run's log -- easy to miss, no visibility over time. This
- * makes it queryable and lets dist/status.json surface a rolling count.
+ * an unresolvable rebase conflict on data/artists/ (the sharded artist DB) and
+ * giving up on that run/sub-chunk's commit (see enrich-auto.yml,
+ * enrich-database.yml, enrich-metadata.yml, enrich-similar.yml,
+ * data-hygiene.yml, daily-scrape.yml). Previously this was only a
+ * `::warning::` annotation inside that one run's log -- easy to miss, no
+ * visibility over time. This makes it queryable and lets dist/status.json
+ * surface a rolling count.
+ *
+ * Note: since reapply_artist_db_delta.ts landed, most conflicts on
+ * data/artists/ get resolved by replaying the sub-chunk's own delta onto a
+ * fresh origin/main instead of dropping the whole commit -- this metric now
+ * only fires when that replay-and-repush itself still fails (or, in
+ * enrich-database.yml's case, on the separate scrapers/ directory that isn't
+ * covered by the replay). It undercounts relative to its original "every
+ * unresolvable conflict" meaning; read conflictDropsLast7Days with that
+ * narrower definition in mind.
  *
  * Usage: record_conflict_drop.ts <workflow-name>
  * Best-effort by design: called with `|| true` from the workflows above, so a
