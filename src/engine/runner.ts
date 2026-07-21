@@ -13,6 +13,7 @@ import * as http from 'http';
 import * as https from 'https';
 import * as dns from 'dns';
 import { sleep } from './sleep.js';
+import { tryLlmExtractionFallback } from './llm_extraction_fallback.js';
 
 // SSRF guard at CONNECT time: validate every resolved IP, not just the literal config.url.
 // This is what defends against a public host that 302-redirects to 169.254.169.254, a
@@ -515,6 +516,16 @@ export async function runScraper(config: ScraperConfig, cached?: VenueCache): Pr
           concerts = jsonLd;
         }
       }
+      // Last-resort, budget-capped fallback: both free extraction paths came up
+      // empty on a page that fetched fine and isn't purely client-side-rendered
+      // (isLikelyCsr below) -- the selector is probably just stale, so ask an
+      // LLM to read the same HTML sample directly rather than reporting a hard
+      // miss for today. heal.ts still gets the identical fail-log entry and
+      // still repairs the selector for tomorrow's free static-selector run.
+      if (concerts.length === 0 && !config.allowEmpty && !isLikelyCsr(responseData)) {
+        const fallback = await tryLlmExtractionFallback(config, responseData, scrapedAt);
+        if (fallback.length > 0) concerts = fallback;
+      }
     } else if (config.type === 'jsonld') {
       expectString();
       concerts = extractJsonLd(config, responseData, scrapedAt);
@@ -538,6 +549,12 @@ export async function runScraper(config: ScraperConfig, cached?: VenueCache): Pr
           console.log(`[Runner] ${config.id}: selectors matched 0, recovered ${jsonLd.length} via JSON-LD fallback.`);
           concerts = jsonLd;
         }
+      }
+      // Same budget-capped LLM fallback as static_selectors above -- the rendered
+      // HTML is already in hand, no second Playwright render needed.
+      if (concerts.length === 0 && !config.allowEmpty && !isLikelyCsr(responseData)) {
+        const fallback = await tryLlmExtractionFallback(config, responseData, scrapedAt);
+        if (fallback.length > 0) concerts = fallback;
       }
     } else {
       // Guards against a schema/engine drift: a config.type the schema enum

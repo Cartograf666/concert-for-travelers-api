@@ -91,6 +91,21 @@ jobs:
           BANDSINTOWN_MAX_PER_RUN: '800'
           # Smaller/gentler cap than Bandsintown -- see src/engine/eventbrite.ts.
           EVENTBRITE_MAX_PER_RUN: '300'
+          # This step's tour-page pass runs the exact same runner.ts as
+          # daily-scrape.yml, including the budget-capped LLM-extraction fallback
+          # (src/engine/llm_extraction_fallback.ts) -- without a key configured it
+          # silently no-ops, which is exactly what was happening here before this
+          # was wired: the ~59 auto-generated artist-<slug> tour scrapers this
+          # workflow runs never got any fallback coverage at all.
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          GEMINI_API_KEY_4: ${{ secrets.GEMINI_API_KEY_4 }}
+          GEMINI_API_KEY_5: ${{ secrets.GEMINI_API_KEY_5 }}
+          GEMINI_API_KEY_RESERV1: ${{ secrets.GEMINI_API_KEY_RESERV1 }}
+          GEMINI_API_KEY_RESERV2: ${{ secrets.GEMINI_API_KEY_RESERV2 }}
+          GEMINI_API_KEY_RESERV3: ${{ secrets.GEMINI_API_KEY_RESERV3 }}
+          GEMINI_API_KEYS: ${{ secrets.GEMINI_API_KEYS }}
         run: npm run scrape-artists
 
       - name: Save artist scrape cache

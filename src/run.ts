@@ -7,6 +7,7 @@ import { processConcerts, stampLastConcertSeenAt } from './pipeline/process.js';
 import { enrichMissingArtistMetadata } from './pipeline/enrich.js';
 import { geocodeConcerts, loadGeocodeCache, saveGeocodeCache } from './pipeline/geocode.js';
 import { getGeminiKeys } from './engine/gemini_keys.js';
+import { getLlmFallbackUsageSummary } from './engine/llm_extraction_fallback.js';
 import { publishConcerts, publishArtistCatalog } from './generator/publish.js';
 import { publishChangelog, loadChangelogCache, saveChangelogCache } from './generator/changelog.js';
 import { fetchTicketmasterConcerts, loadTicketmasterCache, saveTicketmasterCache } from './engine/ticketmaster.js';
@@ -311,6 +312,7 @@ async function main() {
 
     console.log(`[Orchestrator] Scrape complete. Successful scrapers: ${configs.length - failures.length}/${configs.length}.`);
     console.log(`[Orchestrator] Failed scrapers log saved to: ${failLogPath}`);
+    console.log(`[Orchestrator] ${getLlmFallbackUsageSummary()}`);
 
   } catch (error: any) {
     console.error(`[Orchestrator] Critical error during scrape run: ${error.message}`);

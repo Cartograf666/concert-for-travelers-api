@@ -5,6 +5,7 @@ import { loadCache, saveCache } from './engine/cache.js';
 import { fetchBandsintownConcerts, loadBandsintownCache, saveBandsintownCache } from './engine/bandsintown.js';
 import { fetchEventbriteConcerts, loadEventbriteCache, saveEventbriteCache } from './engine/eventbrite.js';
 import { loadApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from './pipeline/artistDb.js';
+import { getLlmFallbackUsageSummary } from './engine/llm_extraction_fallback.js';
 
 /** Reads the newline-delimited explicit artist target list, dropping blanks/dupes. */
 async function loadExplicitArtistTargets(filePath: string): Promise<string[]> {
@@ -109,6 +110,7 @@ async function main() {
     }
     await saveCache(cachePath, cache);
     console.log(`[ArtistScrape] Tour-page pass done. ${changedCount}/${configs.length} changed, ${failedCount} failed. Cache saved to ${cachePath}.`);
+    console.log(`[ArtistScrape] ${getLlmFallbackUsageSummary()}`);
 
     // Bandsintown public-widget sweep -- the artist-keyed, worldwide source (covers
     // markets the venue/Ticketmaster sources miss). Batched + resumable via its own
