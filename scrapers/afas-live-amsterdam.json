@@ -4,15 +4,13 @@
   "url": "https://www.afaslive.nl/agenda",
   "type": "static_selectors",
   "selectors": {
-    "eventBlock": "article[id^=\"_agenda_\"]:not(:contains(\"Fellowship of the Ring\"))",
-    "artist": "a label",
-    "date": "a datetime",
+    "eventBlock": "article[id^=\"_agenda_\"]",
+    "artist": "h4",
+    "date": "p.date .d",
     "datePattern": "EEEE dd MMMM yyyy",
-    "ticketUrl": "a[href]",
+    "ticketUrl": "a.btnV2.tickets",
     "venueNameFallback": "AFAS Live",
     "cityNameFallback": "Amsterdam",
-    "countryNameFallback": "NL",
-    "lat": 52.3122606,
-    "lng": 4.9442166
+    "countryNameFallback": "NL"
   }
 }
