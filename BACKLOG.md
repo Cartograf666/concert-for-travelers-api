@@ -167,6 +167,44 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   shape as `enrich-metadata.yml`), also runnable manually with
   `npm run enrich-similar [N]`. → `src/scripts/enrich_similar_artists.ts`,
   `src/generator/publish.ts` (`ArtistCatalogEntry.similarArtists`).
+- **Bandsintown spam-venue filter.** Live investigation confirmed fabricated RU
+  tour dates for real artists (e.g. "Сплин в Ижевске") — Bandsintown's public
+  widget feed lets third parties attach events to any artist page with no
+  verification. `isTemplatedArtistCityVenueName()` rejects any event whose venue
+  name matches the `"<artist> in/в <city>"` spam pattern. →
+  `src/engine/bandsintown.ts`.
+- **`ticketUrl` now prefers the artist's own site over a raw ticket-vendor
+  link.** Product decision: a ticket-purchase link is often confusing out of
+  context (unclear what the page even is); the artist's own known website is a
+  safer default landing page. Falls back to the raw source ticket link only
+  when no artist website is known. → `src/pipeline/process.ts`.
+- **Auto-prune permanently-dead scraper configs.** `heal.ts` deliberately skips
+  `fetch_error`/`csr_detected`/`circuit_open` failures (a broken CSS selector
+  can't be repaired on a page that never loaded) — these configs accumulated
+  forever with zero automated cleanup. `prune_dead_scrapers.ts` tracks
+  consecutive-failure streaks per scraper (`data/scraper-health.json`), and once
+  a config hits 5 straight prunable failures, deletes the dead scraper config +
+  resets that artist's `tourUrl`/`tourScraperTriedAt`/`tourScraperCreatedAt`/
+  `tourUrlProbeTriedAt` markers so it's eligible for re-discovery, logging every
+  prune to `data/pruned-scrapers.json` for audit. Skips the artist-field reset
+  (but still prunes the dead scraper) when 2+ DB entries share a
+  case-insensitive name, rather than guessing which one to touch. Runs after
+  every daily scrape via `workflow_run`, joins the `artist-db-write` concurrency
+  group. → `src/scripts/prune_dead_scrapers.ts`,
+  `.github/workflows/prune-dead-scrapers.yml`.
+- **LLM-extraction fallback for zero-result scraper runs.** Closes the gap
+  between a CSS selector breaking and `heal.ts` repairing it: when both the
+  static selector and the existing free JSON-LD fallback return zero events on
+  a page that fetched fine and isn't CSR, ask Gemini to extract concerts
+  directly from the same already-fetched HTML. Per-run budget (30 calls,
+  race-safe synchronous check-then-decrement), `ticketUrl` output goes through
+  `safeAbsoluteUrl()` like every other source, hallucination risk bounded by
+  the existing artist-whitelist match + date validation downstream. Wired into
+  `runner.ts`'s `static_selectors`/`playwright_render` branches only;
+  `daily-scrape.yml` and `artist-scrape.yml` both got the full Gemini
+  key-rotation secret set (previously missing/partial, which would have made
+  this silently no-op or quota-starved). →
+  `src/engine/llm_extraction_fallback.ts`, `src/engine/runner.ts`.
 
 ---
 
@@ -221,9 +259,9 @@ end passes):
 
 Distinct axis from the data-richness roadmap below: pipeline reliability,
 safety, and dev tooling rather than product features. Last verified against
-live repo/CI state 2026-07-08, ~20:40 UTC (commit hashes / `gh run` ids given
-as evidence below — re-check via `git log` / `gh run list` before assuming
-these are still current if much time has passed).
+live repo/CI state 2026-07-21 (commit hashes / `gh run` ids given as evidence
+below — re-check via `git log` / `gh run list` before assuming these are
+still current if much time has passed).
 
 ### ✅ Done
 - **Stranded-artist bug in the Gemini identity tier.** `apply()` used to stamp
@@ -454,6 +492,23 @@ these are still current if much time has passed).
   is now empty. *Note: an earlier automated pass had resolved this identically
   but bypassed the human-review gate entirely with zero reasoning trail —
   redone properly as an explicit, logged human decision.*
+- **Self-heal's auto-merge silently broken for ~2 weeks — repo setting, not
+  code.** Root cause of a visible "big scraper degradation": 65 scrapers
+  failing, and `heal.ts`'s repair PRs weren't auto-merging because "Allow
+  GitHub Actions to create and approve pull requests" was off at the repo
+  level — outside what this session could flip via the API (Claude Code's own
+  auto-mode classifier blocked the `gh api ... actions/permissions/workflow`
+  call as a permissions change). Fixed by the user via the GitHub UI;
+  re-ran the previously-failing self-heal workflow afterward and confirmed it
+  completes green end-to-end. Of the 65 failures, 45 were
+  `fetch_error`/`csr_detected`/`circuit_open` — permanently unfixable by
+  selector-repair by design, which is what motivated the two items directly
+  above (auto-prune + LLM-extraction fallback).
+- **7 more Dependabot PRs merged**: `actions/checkout`→v7.0.0,
+  `actions/setup-node`→v7.0.0, `actions/cache/restore`+`/save`→v6.1.0,
+  `actions/upload-pages-artifact`→v5.0.0, `ai`→7.0.28, `chrono-node`→2.10.0,
+  `tsx`→4.23.1. `typescript-eslint`→8.64.0 merged; `typescript`→v7 (PR #21)
+  still deliberately left open, see TS7 item below.
 
 ### ⬜ Open — critical
 - **`artist-db-write` concurrency group's actual queue-preemption is still
