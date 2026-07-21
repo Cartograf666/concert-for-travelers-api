@@ -1,0 +1,119 @@
+schema_version: 1
+status: provisional
+architecture_style: scheduled-batch-pipeline (no persistent server -- ingest/process/publish runs as scheduled GitHub Actions jobs writing to a static JSON artifact on GitHub Pages)
+
+automation:
+  mode: manual
+  auto_allow: [tests, internal_dto, dependency_injection, generated_types]
+  ask: [database_schema, public_api, authentication, authorization, external_api_contract, new_dependency, cross_component_dependency]
+  # repo_permission_change added after a real incident this project hit: a repo-level
+  # GitHub setting ("Allow GitHub Actions to create and approve pull requests") being
+  # off silently broke self-heal's auto-merge for ~2 weeks with no error surfaced --
+  # this class of change is easy to make by accident and hard to notice when wrong.
+  deny: [production_deployment, destructive_migration, credential_change, repo_permission_change]
+
+components:
+  schemas:
+    paths: [src/schemas/**]
+    responsibilities:
+      - Zod contracts shared by every other component (Concert, ScraperConfig, ArtistEntry)
+      - "the only true leaf -- OBSERVED to import nothing but zod itself"
+    public_interfaces: [Concert, ScraperConfig, ArtistEntry, ConcertSchema]
+    internal_interfaces: []
+    required_gate_ids: []
+    change_approval_class: human
+
+  engine:
+    paths: [src/engine/**, src/healing/**, src/heal.ts]
+    responsibilities:
+      - external I/O boundary -- fetch, Gemini LLM calls, Bandsintown/Ticketmaster/Eventbrite connectors
+      - "scraper execution (runner.ts -- static_selectors/playwright_render/jsonld/next_data/json_api/custom_js)"
+      - self-heal (LLM-repairs broken CSS selectors, opens an auto-merged PR)
+      - SSRF/scheme-safety guardrails (url.ts safeAbsoluteUrl, isBlockedHost, redirect:'manual' hop validation)
+    public_interfaces: [runScraper, runAllScrapers, tryLlmExtractionFallback, fetchBandsintownConcerts, fetchTicketmasterConcerts, fetchEventbriteConcerts]
+    internal_interfaces: []
+    required_gate_ids: []
+    change_approval_class: human
+
+  pipeline:
+    paths: [src/pipeline/**]
+    responsibilities:
+      - business rules -- artist matching/dedupe, concert normalization (processConcerts)
+      - the sharded artist-whitelist DB's sole read/write gateway (artistDb.ts -- loadApprovedArtists/saveApprovedArtists)
+      - enrichment orchestration, geocoding, denylist
+    public_interfaces: [processConcerts, loadApprovedArtists, saveApprovedArtists, slugify, parseSpotifyArtistId]
+    internal_interfaces: []
+    required_gate_ids: []
+    change_approval_class: human
+
+  generator:
+    paths: [src/generator/**]
+    responsibilities:
+      - shapes already-processed pipeline output into the published static JSON contract
+      - concerts.json / artists.json / artists/{slug}.json / cities/{slug}.json / changes.json / index.json
+      - OBSERVED to depend only on schemas + pipeline (slugify/parseSpotifyArtistId) -- never talks to engine/external APIs directly
+    public_interfaces: [publishConcerts, publishArtistCatalog]
+    internal_interfaces: []
+    required_gate_ids: []
+    change_approval_class: human
+
+  scripts:
+    paths: [src/scripts/**, src/run.ts, src/run-artists.ts]
+    responsibilities:
+      - orchestration/entrypoints -- the two daily run entrypoints plus ~30 cron/one-off maintenance
+        scripts (discovery, enrichment tiers, hygiene/pruning, popularity scoring)
+      - composes engine + pipeline + generator; does not itself own business rules or I/O primitives
+    public_interfaces: []
+    internal_interfaces: []
+    required_gate_ids: []
+    change_approval_class: manager
+
+  scraper_configs:
+    paths: [scrapers/**]
+    responsibilities:
+      - declarative per-source scraper definitions (venue configs + artist tour-page configs), data not code
+      - consumed by engine/runner.ts through the ScraperConfig schema
+      - community-contributable via PR; self-heal auto-merges its own repairs to these under existing validation gates
+    public_interfaces: []
+    internal_interfaces: []
+    required_gate_ids: []
+    change_approval_class: manager
+
+  workflows:
+    paths: [.github/workflows/**, .github/actions/**]
+    responsibilities:
+      - the actual runtime -- this system has no persistent server; every entrypoint above
+        runs as a scheduled/dispatched GitHub Actions job
+      - deployment boundary (publishes dist/ to GitHub Pages)
+      - artist-db-write concurrency group serializes every workflow that writes data/artists/
+    public_interfaces: []
+    internal_interfaces: []
+    required_gate_ids: []
+    change_approval_class: human
+
+dependency_rules:
+  - { id: ARCH-SCHEMAS_NO_ENGINE,    from: schemas, to: engine,    decision: deny }
+  - { id: ARCH-SCHEMAS_NO_PIPELINE,  from: schemas, to: pipeline,  decision: deny }
+  - { id: ARCH-SCHEMAS_NO_GENERATOR, from: schemas, to: generator, decision: deny }
+  - { id: ARCH-SCHEMAS_NO_SCRIPTS,   from: schemas, to: scripts,   decision: deny }
+  - { id: ARCH-ENGINE_NO_PIPELINE,   from: engine,  to: pipeline,  decision: deny }
+  - { id: ARCH-ENGINE_NO_GENERATOR,  from: engine,  to: generator, decision: deny }
+  - { id: ARCH-ENGINE_NO_SCRIPTS,    from: engine,  to: scripts,   decision: deny }
+  - { id: ARCH-PIPELINE_ENGINE,      from: pipeline,  to: engine,    decision: allow }
+  - { id: ARCH-GENERATOR_NO_ENGINE,  from: generator, to: engine,    decision: deny }
+  - { id: ARCH-GENERATOR_PIPELINE,   from: generator, to: pipeline,  decision: allow }
+  - { id: ARCH-SCRIPTS_ENGINE,       from: scripts, to: engine,    decision: allow }
+  - { id: ARCH-SCRIPTS_PIPELINE,     from: scripts, to: pipeline,  decision: allow }
+  - { id: ARCH-SCRIPTS_GENERATOR,    from: scripts, to: generator, decision: allow }
+  - { id: ARCH-WORKFLOWS_SCRIPTS,    from: workflows, to: scripts, decision: allow }
+  - { id: ARCH-SCRAPERCFG_ENGINE,    from: scraper_configs, to: engine, decision: allow-via-port }
+
+architecture_checks:
+  enforcement: report-only
+  gate_ids: []
+
+approval:
+  status: pending
+  approved_by: null
+  approved_at: null
+  manifest_sha256: null

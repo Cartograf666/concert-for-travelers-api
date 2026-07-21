@@ -1,3 +1,11 @@
+> **ARCHIVED 2026-07-21.** Task A/B/C below are all done or superseded (Task C's
+> artist tour-page scraper population, and the sharding it references, both
+> shipped). `data/approved_artists.json` (referenced throughout below) no
+> longer exists -- replaced by `data/artists/shard-0.json`..`shard-7.json`.
+> Kept for historical reference only. Current status lives in `BACKLOG.md`;
+> hand a fresh, self-contained task doc to any future Gemini/agent session
+> instead of reviving this one.
+
 # GEMINI WORK BRIEF — concert-for-travelers-api
 
 You are a fast worker on this TypeScript repo. You do **high-volume, mechanical**

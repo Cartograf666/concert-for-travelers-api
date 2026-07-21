@@ -1,0 +1,15 @@
+schema_version: 1
+generated_at: "2026-07-21T09:30:00Z"
+source_revision: 1f1b539b2cfe0d6d48520604f1b44c9fcddb7240
+
+# No evidence-derived violations found during bootstrap review (2026-07-21):
+# schemas/ imports only zod (true leaf); engine/ does not import pipeline/ or
+# generator/; generator/ does not import engine/ directly. Keep this array
+# empty rather than seed it with placeholder entries -- add a real entry only
+# when a specific, located violation is actually found.
+known_violations: []
+
+policy:
+  allow_exact_baseline: true
+  block_expansion: true
+  block_new_instances: true

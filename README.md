@@ -141,7 +141,11 @@ Each concert object follows `src/schemas/concert.ts`: `artist`, `artistWebsite?`
 │   └── artist_denylist.json    # Genre/language/generic terms that must never whitelist-match
 ├── docs/
 │   ├── ADD-VENUE-SCRAPERS.md   # Convention for adding a new venue scraper
-│   └── CONCURRENT-SESSIONS.md  # Coordination notes for concurrent AI sessions on this repo
+│   ├── CONCURRENT-SESSIONS.md  # Coordination notes for concurrent AI sessions on this repo
+│   └── archive/                # Superseded task briefs, historical reference only (see BACKLOG.md for current status)
+├── .ai/
+│   ├── architecture.yaml       # Architecture manifest: layer boundaries, dependency rules (provisional)
+│   └── architecture-baseline.yaml # Recorded pre-existing architecture violations (currently empty)
 ├── src/
 │   ├── schemas/
 │   │   ├── concert.ts          # Concert Zod schema (dates, lat/lng, socials, web validation)

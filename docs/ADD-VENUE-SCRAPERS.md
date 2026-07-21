@@ -116,7 +116,8 @@ Schema: `src/schemas/config.ts`. Shape:
   plus a chrono-node fallback. If dates come out as unparseable garbage, fix the `date`
   selector (you're grabbing the wrong node).
 - **Important — do not judge by published output.** The pipeline keeps only events
-  whose artist is in `data/approved_artists.json`. A correct config can extract 50
+  whose artist is in the whitelist DB (`data/artists/shard-0.json`..`shard-7.json`).
+  A correct config can extract 50
   events yet publish 0 because none are approved. Judge the config by the **raw
   extracted count** from `test-config`, not by `dist/`.
 - Do not run `npm run scrape` to test one venue (it runs all of them).
@@ -146,9 +147,9 @@ Schema: `src/schemas/config.ts`. Shape:
 - End commit messages with:
   `Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>`
 - Opening a PR that touches `scrapers/**` runs `pr-test.yml` (build + tests) — keep it green.
-- Do **not** commit `data/approved_artists.json` from this task (it's owned by the
-  enrichment workflows). Only touch `scrapers/` (and, once, the test helper +
-  package.json).
+- Do **not** commit `data/artists/shard-*.json` from this task (owned by the
+  enrichment workflows, gateway is `src/pipeline/artistDb.ts`). Only touch
+  `scrapers/` (and, once, the test helper + package.json).
 
 ---
 

@@ -1,3 +1,11 @@
+> **ARCHIVED 2026-07-21.** S1-S4 shipped (`585239a`, "security S1-S4 hardening" --
+> see `BACKLOG.md`'s Done/tech-debt section). S5 (SQLite migration) was never
+> done as literally written; the write-contention problem it describes was
+> instead solved by sharding `data/approved_artists.json` into
+> `data/artists/shard-0.json`..`shard-7.json` (`src/pipeline/artistDb.ts`).
+> Kept for historical reference only -- do not treat any item below as open
+> work. Current status lives in `BACKLOG.md`.
+
 # Senior/Smart-Agent Task Brief — hard items (judgment required)
 
 These are the roadmap items deliberately kept away from the fast/mechanical agent: they

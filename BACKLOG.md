@@ -620,3 +620,12 @@ _(done — see ✅ Done above)_
 - One line per item, prefixed with a status emoji. Move items between sections as
   they progress; don't delete — a done item is the record that it shipped.
 - When an item ships, note the touch-point file(s) so the history stays traceable.
+- **This file is the single source of truth for current status.** `README.md`/
+  `ENRICHMENT_RUNBOOK.md` are user-facing docs, kept current but not a status
+  log. `docs/*.md` are living process/convention notes (how to add a venue
+  scraper, concurrent-session courtesy protocol). `docs/archive/` holds
+  point-in-time task briefs whose content has fully shipped or been
+  superseded — historical reference only, not maintained, may reference
+  deleted paths. `.ai/architecture.yaml` is the architecture manifest
+  (layer boundaries/dependency rules) — separate axis from this file, only
+  edited for an intentional architecture decision.
