@@ -4,9 +4,10 @@ import { loadConfigs, runAllScrapers, closeBrowser } from './engine/runner.js';
 import { loadCache, saveCache } from './engine/cache.js';
 import { fetchBandsintownConcerts, loadBandsintownCache, saveBandsintownCache } from './engine/bandsintown.js';
 import { fetchEventbriteConcerts, loadEventbriteCache, saveEventbriteCache } from './engine/eventbrite.js';
+import { loadApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from './pipeline/artistDb.js';
 
-/** Reads the newline-delimited artist target list, dropping blanks/dupes. */
-async function loadArtistTargets(filePath: string): Promise<string[]> {
+/** Reads the newline-delimited explicit artist target list, dropping blanks/dupes. */
+async function loadExplicitArtistTargets(filePath: string): Promise<string[]> {
   try {
     const raw = await fs.readFile(filePath, 'utf-8');
     const seen = new Set<string>();
@@ -19,6 +20,41 @@ async function loadArtistTargets(filePath: string): Promise<string[]> {
     console.warn(`[ArtistScrape] Could not read artist target list at ${filePath}: ${err.message}`);
     return [];
   }
+}
+
+function addTarget(seen: Map<string, string>, name: string): void {
+  const clean = name.trim();
+  if (!clean) return;
+  const key = clean.replace(/\s+/g, ' ').toLowerCase();
+  if (!seen.has(key)) seen.set(key, clean);
+}
+
+/**
+ * Active artist-sweep targets are the professional tier plus explicit manual
+ * targets. The manual file stays an override so hand-picked artists do not
+ * disappear from Bandsintown/Eventbrite sweeps while metadata coverage catches up.
+ */
+export async function loadArtistTargets(filePath: string, artistDbPath = PRODUCTION_ARTIST_DB_DIR): Promise<string[]> {
+  const seen = new Map<string, string>();
+  const explicitTargets = await loadExplicitArtistTargets(filePath);
+  for (const name of explicitTargets) addTarget(seen, name);
+
+  const artists = await loadApprovedArtists(artistDbPath);
+  let professional = 0;
+  for (const artist of artists) {
+    if (typeof artist === 'string') continue;
+    // Untiered (not yet scored by score_artist_popularity.ts) rows are treated
+    // as eligible too, same convention as discover_tour_urls.ts/extract_tour_scrapers.ts --
+    // a newly-added artist shouldn't be silently excluded from Bandsintown/Eventbrite
+    // sweeps just because the scoring pass hasn't run again yet.
+    if ((artist?.tier && artist.tier !== 'professional') || !artist.name) continue;
+    addTarget(seen, artist.name);
+    professional++;
+  }
+
+  const targets = Array.from(seen.values());
+  console.log(`[ArtistScrape] Active sweep targets: ${targets.length} (${professional} professional-tier rows + ${explicitTargets.length} explicit targets, deduped).`);
+  return targets;
 }
 
 /**
@@ -110,7 +146,9 @@ async function main() {
   }
 }
 
-void main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+if (require.main === module) {
+  void main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}

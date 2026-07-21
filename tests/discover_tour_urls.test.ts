@@ -10,6 +10,7 @@ import {
   hasMeaningfulPathKeyword,
   analyzeContent,
   probeArtist,
+  isTourUrlProbeCandidate,
   ArtistEntry,
   ProbeResult
 } from '../src/scripts/discover_tour_urls.js';
@@ -316,4 +317,11 @@ test('discover_tour_urls - DB save & tried-vs-hit marker updates', async () => {
 
   // Clean up
   await fs.rm(tempDir, { recursive: true, force: true });
+});
+
+test('discover_tour_urls - candidate selection excludes longtail tier but keeps legacy untiered rows', () => {
+  assert.strictEqual(isTourUrlProbeCandidate({ name: 'Pro', website: 'https://pro.example', tier: 'professional' }), true);
+  assert.strictEqual(isTourUrlProbeCandidate({ name: 'Legacy', website: 'https://legacy.example' }), true);
+  assert.strictEqual(isTourUrlProbeCandidate({ name: 'Longtail', website: 'https://long.example', tier: 'longtail' }), false);
+  assert.strictEqual(isTourUrlProbeCandidate({ name: 'Tried', website: 'https://tried.example', tier: 'professional', tourUrlProbeTriedAt: '2026-07-09T00:00:00.000Z' }), false);
 });

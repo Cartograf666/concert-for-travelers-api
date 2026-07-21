@@ -344,6 +344,10 @@ async function saveDb(artists: ArtistEntry[]): Promise<void> {
   await saveApprovedArtists(PRODUCTION_ARTIST_DB_DIR, artists);
 }
 
+export function isTourUrlProbeCandidate(artist: ArtistEntry): boolean {
+  return !!artist.website && !artist.tourUrl && !artist.tourUrlProbeTriedAt && (!artist.tier || artist.tier === 'professional');
+}
+
 async function appendToAuditFile(filePath: string, newHits: any[]): Promise<void> {
   if (newHits.length === 0) return;
   let hits: any[] = [];
@@ -360,8 +364,8 @@ async function select(n: number, outFile?: string): Promise<void> {
   const artists = await loadDb();
   const pending: { name: string; website: string }[] = [];
   for (const a of artists) {
-    if (a.website && !a.tourUrl && !a.tourUrlProbeTriedAt) {
-      pending.push({ name: a.name, website: a.website });
+    if (isTourUrlProbeCandidate(a)) {
+      pending.push({ name: a.name, website: a.website! });
       if (pending.length >= n) break;
     }
   }
@@ -460,15 +464,15 @@ async function stats(): Promise<void> {
   console.log(`  probed (tried)      : ${tried}`);
   console.log(`    hits              : ${hits}`);
   console.log(`    misses            : ${misses}`);
-  console.log(`  eligible remaining  : ${artists.filter(a => a.website && !a.tourUrl && !a.tourUrlProbeTriedAt).length}`);
+  console.log(`  eligible remaining  : ${artists.filter(isTourUrlProbeCandidate).length}`);
 }
 
 async function runConvenience(n: number): Promise<void> {
   const artists = await loadDb();
   const pending: { name: string; website: string }[] = [];
   for (const a of artists) {
-    if (a.website && !a.tourUrl && !a.tourUrlProbeTriedAt) {
-      pending.push({ name: a.name, website: a.website });
+    if (isTourUrlProbeCandidate(a)) {
+      pending.push({ name: a.name, website: a.website! });
       if (pending.length >= n) break;
     }
   }
@@ -531,7 +535,7 @@ async function main() {
   const [mode, arg1, arg2] = process.argv.slice(2);
   switch (mode) {
     case 'select':
-      await select(parseInt(arg1 || '50', 10), arg2);
+      await select(parseInt(arg1 || '60', 10), arg2);
       break;
     case 'probe':
       if (!arg1 || !arg2) throw new Error('probe requires candidatesFile and resultsFile paths');
@@ -545,10 +549,10 @@ async function main() {
       await stats();
       break;
     case 'run':
-      await runConvenience(parseInt(arg1 || '50', 10));
+      await runConvenience(parseInt(arg1 || '60', 10));
       break;
     default:
-      console.error('Usage: discover_tour_urls.ts <select <N> [outFile] | probe <candidatesFile> <resultsFile> | apply <resultsFile> | stats | run <N>>');
+      console.error('Usage: discover_tour_urls.ts <select <N=60> [outFile] | probe <candidatesFile> <resultsFile> | apply <resultsFile> | stats | run <N=60>>');
       process.exit(1);
   }
 }
