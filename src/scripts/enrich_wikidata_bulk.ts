@@ -51,10 +51,11 @@ function sparqlLiteral(name: string): string {
 
 export function buildQuery(names: string[]): string {
   const values = names.map(sparqlLiteral).join(' ');
-  return `SELECT ?name ?item ?website ?spotify ?instagram ?facebook ?youtube ?vk ?telegram ?mbid WHERE {
+  return `SELECT ?name ?item ?sitelinks ?website ?spotify ?instagram ?facebook ?youtube ?vk ?telegram ?mbid WHERE {
   VALUES ?name { ${values} }
   { ?item rdfs:label ?name } UNION { ?item skos:altLabel ?name }
   ?item wdt:P31 ?type .
+  ?item wikibase:sitelinks ?sitelinks .
   FILTER(?type IN (wd:Q215380, wd:Q5, wd:Q2088357, wd:Q215627))
   OPTIONAL { ?item wdt:P856 ?website }
   OPTIONAL { ?item wdt:P1902 ?spotify }
@@ -72,6 +73,7 @@ export interface Resolved {
   website: string | null;
   socials: Socials;
   mbid: string | null;
+  wikidataSitelinks: number | null;
 }
 
 /**
@@ -113,7 +115,7 @@ export async function queryBatch(names: string[]): Promise<Map<string, Resolved 
       continue;
     }
 
-    const r: Resolved = existing ?? { item, website: null, socials: emptySocials(), mbid: null };
+    const r: Resolved = existing ?? { item, website: null, socials: emptySocials(), mbid: null, wikidataSitelinks: null };
     if (b.website?.value && !r.website) r.website = b.website.value;
     if (b.spotify?.value && !r.socials.spotify) r.socials.spotify = `https://open.spotify.com/artist/${b.spotify.value}`;
     if (b.instagram?.value && !r.socials.instagram) r.socials.instagram = `https://www.instagram.com/${String(b.instagram.value).replace(/^@/, '')}`;
@@ -122,6 +124,10 @@ export async function queryBatch(names: string[]): Promise<Map<string, Resolved 
     if (b.vk?.value && !r.socials.vk) r.socials.vk = `https://vk.com/${b.vk.value}`;
     if (b.telegram?.value && !r.socials.telegram) r.socials.telegram = `https://t.me/${String(b.telegram.value).replace(/^@/, '')}`;
     if (b.mbid?.value && !r.mbid) r.mbid = b.mbid.value;
+    if (b.sitelinks?.value && r.wikidataSitelinks === null) {
+      const sitelinks = Number(b.sitelinks.value);
+      if (Number.isFinite(sitelinks)) r.wikidataSitelinks = sitelinks;
+    }
     byName.set(nameKey, r);
   }
   return byName;
@@ -135,8 +141,8 @@ export async function saveDb(artists: ArtistEntry[]): Promise<void> {
   await saveApprovedArtists(PRODUCTION_ARTIST_DB_DIR, artists);
 }
 
-function hasData(website: string | null, socials: Socials, mbid: string | null): boolean {
-  return !!website || !!mbid || Object.values(socials).some(Boolean);
+function hasData(website: string | null, socials: Socials, mbid: string | null, wikidataSitelinks: number | null): boolean {
+  return !!website || !!mbid || wikidataSitelinks !== null || Object.values(socials).some(Boolean);
 }
 
 async function main() {
@@ -177,7 +183,7 @@ async function main() {
       const key = normName(entry.name);
       const r = resolved.get(key);
       entry.wdBulkTriedAt = stamp; // processed this pass either way
-      if (r && r !== 'ambiguous' && hasData(r.website, r.socials, r.mbid)) {
+      if (r && r !== 'ambiguous' && hasData(r.website, r.socials, r.mbid, r.wikidataSitelinks)) {
         const merged = { ...emptySocials(), ...(entry.socials || {}) };
         for (const [k, v] of Object.entries(r.socials)) {
           const kk = k as keyof Socials;
@@ -186,6 +192,7 @@ async function main() {
         entry.website = entry.website || r.website;
         entry.socials = merged;
         entry.mbid = entry.mbid || r.mbid || undefined;
+        if (r.wikidataSitelinks !== null) entry.wikidataSitelinks = r.wikidataSitelinks;
         entry.enrichedAt = stamp;
         entry.enrichedBy = entry.enrichedBy ? `${entry.enrichedBy}+wikidata-bulk` : 'wikidata-bulk';
         hits++;

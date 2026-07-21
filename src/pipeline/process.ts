@@ -694,6 +694,40 @@ export function inferVenueKind(venueName: string): Concert['venueKind'] | undefi
   return undefined;
 }
 
+function normArtistKey(name: string): string {
+  return name.trim().replace(/\s+/g, ' ').toLowerCase();
+}
+
+/**
+ * Marks whitelisted artists that survived normalization/matching as having had
+ * a concert seen in this scrape pass. Kept as a pure in-memory mutation so
+ * processConcerts remains free of artist-DB writes; the orchestrator decides
+ * when to persist the snapshot it already captured.
+ */
+export function stampLastConcertSeenAt(approvedArtists: any[], concerts: Concert[], seenAt: string): number {
+  const artistsByName = new Map<string, any[]>();
+  for (const artist of approvedArtists) {
+    const name: string | undefined = typeof artist === 'string' ? artist : artist?.name;
+    if (!name || typeof artist === 'string') continue;
+    const key = normArtistKey(name);
+    const rows = artistsByName.get(key) ?? [];
+    rows.push(artist);
+    artistsByName.set(key, rows);
+  }
+
+  let changed = 0;
+  const seenArtistKeys = new Set(concerts.map((concert) => normArtistKey(concert.artist)));
+  for (const key of seenArtistKeys) {
+    for (const artist of artistsByName.get(key) ?? []) {
+      if (artist.lastConcertSeenAt !== seenAt) {
+        artist.lastConcertSeenAt = seenAt;
+        changed++;
+      }
+    }
+  }
+  return changed;
+}
+
 /**
  * Build a consistent artistSocials object: keep only present links, drop empties,
  * and return undefined when there are none — so downstream consumers see one shape

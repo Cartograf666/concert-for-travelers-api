@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert';
-import { slugify, cleanArtistName, matchApprovedArtist, parseDate, processConcerts, normalizeCountry, parseSpotifyArtistId, extractTimeFromRawDate, inferVenueKind } from '../src/pipeline/process.js';
+import { slugify, cleanArtistName, matchApprovedArtist, parseDate, processConcerts, normalizeCountry, parseSpotifyArtistId, extractTimeFromRawDate, inferVenueKind, stampLastConcertSeenAt } from '../src/pipeline/process.js';
 import { Concert } from '../src/schemas/concert.js';
 import { PRODUCTION_ARTIST_DB_DIR } from '../src/pipeline/artistDb.js';
 
@@ -256,6 +256,40 @@ test('Pipeline - processConcerts wires startTime/venueKind/festival/lineup throu
   assert.deepStrictEqual(processed[0].festival, { name: 'Some Festival', url: 'https://example.com/fest' });
   assert.deepStrictEqual(processed[0].lineup, ['The Cure', 'Muse']);
   assert.deepStrictEqual(processed[0].priceRange, { min: 45, max: 250, currency: 'GBP' });
+});
+
+test('Pipeline - stampLastConcertSeenAt marks only artists with matched concerts', () => {
+  const artists: any[] = [
+    { name: 'The Cure' },
+    { name: 'Muse', lastConcertSeenAt: '2026-01-01T00:00:00.000Z' },
+    { name: 'Unseen Artist' }
+  ];
+  const concerts: Concert[] = [
+    {
+      artist: 'The Cure',
+      date: '2026-10-12',
+      venue: 'Wembley Stadium',
+      city: 'London',
+      country: 'GB',
+      originalSource: 'example.com',
+      scrapedAt: '2026-07-07T00:00:00.000Z'
+    },
+    {
+      artist: 'Muse',
+      date: '2026-10-13',
+      venue: 'Wembley Stadium',
+      city: 'London',
+      country: 'GB',
+      originalSource: 'example.com',
+      scrapedAt: '2026-07-07T00:00:00.000Z'
+    }
+  ];
+
+  const changed = stampLastConcertSeenAt(artists, concerts, '2026-07-09T12:00:00.000Z');
+  assert.strictEqual(changed, 2);
+  assert.strictEqual(artists[0].lastConcertSeenAt, '2026-07-09T12:00:00.000Z');
+  assert.strictEqual(artists[1].lastConcertSeenAt, '2026-07-09T12:00:00.000Z');
+  assert.strictEqual(artists[2].lastConcertSeenAt, undefined);
 });
 
 test('Pipeline - full concert processing & deduplication', async () => {

@@ -3,14 +3,14 @@ import * as path from 'path';
 import { loadConfigs, runAllScrapers, ScraperResult, closeBrowser } from './engine/runner.js';
 import { loadCache, saveCache, shouldSkipPublish, isCacheStale } from './engine/cache.js';
 import { Concert } from './schemas/concert.js';
-import { processConcerts } from './pipeline/process.js';
+import { processConcerts, stampLastConcertSeenAt } from './pipeline/process.js';
 import { enrichMissingArtistMetadata } from './pipeline/enrich.js';
 import { geocodeConcerts, loadGeocodeCache, saveGeocodeCache } from './pipeline/geocode.js';
 import { getGeminiKeys } from './engine/gemini_keys.js';
 import { publishConcerts, publishArtistCatalog } from './generator/publish.js';
 import { publishChangelog, loadChangelogCache, saveChangelogCache } from './generator/changelog.js';
 import { fetchTicketmasterConcerts, loadTicketmasterCache, saveTicketmasterCache } from './engine/ticketmaster.js';
-import { PRODUCTION_ARTIST_DB_DIR } from './pipeline/artistDb.js';
+import { PRODUCTION_ARTIST_DB_DIR, saveApprovedArtists } from './pipeline/artistDb.js';
 
 /**
  * Writes dist/status.json — a small machine-readable health surface so a watchdog /
@@ -268,6 +268,12 @@ async function main() {
       `${geoStats.failed} failed/unresolved, ${geoStats.skippedCapped} deferred to next run ` +
       `(${((Date.now() - passStart) / 1000).toFixed(1)}s).`
     );
+
+    const stampedArtists = stampLastConcertSeenAt(approvedArtistsSnapshot, normalizedConcerts, runDate);
+    if (stampedArtists > 0) {
+      await saveApprovedArtists(approvedArtistsPath, approvedArtistsSnapshot);
+      console.log(`[Orchestrator] Stamped lastConcertSeenAt for ${stampedArtists} artist(s).`);
+    }
 
     // 9. Write static API files to dist/
     console.log(`[Orchestrator] Publishing ${normalizedConcerts.length} concerts to ${distDir}...`);
