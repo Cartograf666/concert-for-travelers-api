@@ -31,6 +31,7 @@
     "reapply-artist-db-delta": "tsx src/scripts/reapply_artist_db_delta.ts",
     "check-concurrency-drops": "tsx src/scripts/check_concurrency_drops.ts",
     "prune-non-artists": "tsx src/scripts/prune_non_artists.ts",
+    "prune-dead-scrapers": "tsx src/scripts/prune_dead_scrapers.ts",
     "test": "SCRAPER_ALLOW_LOCAL_HOSTS=1 node --import tsx --test tests/*.test.ts",
     "test:coverage": "SCRAPER_ALLOW_LOCAL_HOSTS=1 c8 node --import tsx --test tests/*.test.ts",
     "lint": "eslint src/ tests/"

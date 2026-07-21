@@ -1,0 +1,140 @@
+name: Prune Dead Scrapers
+
+# heal.ts deliberately skips fetch_error/csr_detected/circuit_open failures --
+# re-selecting CSS selectors can't fix a page that never loaded. Those scrapers
+# otherwise fail forever with nothing tracking how long or ever retiring them.
+# This tracks a consecutive-failure streak per auto-generated artist-<slug>
+# scraper across daily runs and, past a threshold, retires the dead config and
+# resets the matching artist's tourUrl markers so discover_tour_urls.ts /
+# extract_tour_scrapers.ts can find and generate a fresh one later.
+
+on:
+  workflow_run:
+    workflows: ["Daily Concert Scrape"]
+    types:
+      - completed
+
+permissions:
+  contents: write
+  issues: write # open/update a dedup'd failure issue (see "Alert on failure" step)
+
+concurrency:
+  group: artist-db-write
+  cancel-in-progress: false
+
+jobs:
+  prune:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Download fail log from triggering run
+        id: download-reports
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p reports
+          # Same distinction as self-heal.yml: a real API/auth failure must not
+          # be conflated with "no artifact exists yet" (e.g. the triggering run
+          # never got to the upload step, or was itself cancelled).
+          if gh run download ${{ github.event.workflow_run.id }} --name scraper-reports --dir reports 2> download-error.log; then
+            echo "downloaded=true" >> "$GITHUB_OUTPUT"
+          else
+            if grep -qi "no valid artifacts found" download-error.log; then
+              echo "No reports artifact found on the triggering run -- nothing to track."
+              echo "downloaded=false" >> "$GITHUB_OUTPUT"
+            else
+              echo "::error::gh run download failed for a reason other than a missing artifact:"
+              cat download-error.log
+              exit 1
+            fi
+          fi
+
+      - name: Setup Node.js
+        if: steps.download-reports.outputs.downloaded == 'true'
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        if: steps.download-reports.outputs.downloaded == 'true'
+        run: npm ci
+
+      - name: Build project
+        if: steps.download-reports.outputs.downloaded == 'true'
+        run: npm run build
+
+      - name: Track scraper health and prune dead ones
+        if: steps.download-reports.outputs.downloaded == 'true'
+        run: |
+          set -eo pipefail
+          rm -rf /tmp/artists-before /tmp/artists-after
+          cp -R data/artists /tmp/artists-before
+          if [ -f reports/fail-log.json ]; then
+            npm run prune-dead-scrapers -- reports/fail-log.json
+          else
+            echo "No fail-log.json in the downloaded artifact -- nothing to track."
+          fi
+          cp -R data/artists /tmp/artists-after
+
+      - name: Commit and push changes
+        if: steps.download-reports.outputs.downloaded == 'true'
+        run: |
+          set -eo pipefail
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          # `git diff --quiet` only compares TRACKED paths -- data/scraper-health.json
+          # and data/pruned-scrapers.json are untracked on their very first write (and
+          # every run before this workflow's first successful commit), so that check
+          # alone would silently conclude "nothing to commit" forever and this
+          # workflow's entire persistence mechanism would never actually persist.
+          # `git status --porcelain` correctly surfaces untracked files too.
+          if [ -z "$(git status --porcelain -- data/artists/ scrapers/ data/scraper-health.json data/pruned-scrapers.json 2>/dev/null)" ]; then
+            echo "No scraper-health/prune changes to commit."
+          else
+            git add data/artists/ scrapers/ data/scraper-health.json data/pruned-scrapers.json 2>/dev/null || true
+            git commit -m "auto: track/prune dead scrapers [skip ci]"
+
+            pushed=false
+            for i in 1 2 3 4 5; do
+              if git push; then
+                pushed=true
+                break
+              fi
+              echo "Push rejected (concurrent write), retrying with rebase ($i/5)..."
+              git fetch origin main
+              if ! git rebase origin/main; then
+                echo "::warning::Rebase conflict -- replaying data/artists/ changes on fresh origin/main. scrapers/ and data/scraper-health.json/data/pruned-scrapers.json changes from this conflicted run are not covered by the replay and will be retried next run."
+                git rebase --abort
+                git fetch origin main
+                git reset --hard origin/main
+                npm run reapply-artist-db-delta -- /tmp/artists-before /tmp/artists-after
+                if git diff --quiet -- data/artists/; then
+                  echo "::warning::Replay produced no data/artists changes; nothing to push."
+                else
+                  git add data/artists/
+                  git commit -m "auto: track/prune dead scrapers (reapplied) [skip ci]"
+                  if git push; then pushed=true; else npm run record-conflict-drop -- prune-dead-scrapers || true; fi
+                fi
+                break
+              fi
+              sleep $((RANDOM % 5 + 2))
+            done
+
+            if [ "$pushed" = "true" ]; then
+              echo "Committed and pushed scraper-health/prune changes."
+            else
+              echo "::warning::Could not push scraper-health/prune changes after retries."
+            fi
+          fi
+
+      - name: Alert on failure
+        if: failure()
+        uses: ./.github/actions/alert-on-failure
+        with:
+          workflow-name: "Prune Dead Scrapers"
+          job-label: prune

@@ -14,7 +14,8 @@ const WORKFLOW_FILES = [
   'enrich-database.yml',
   'enrich-metadata.yml',
   'enrich-similar.yml',
-  'data-hygiene.yml'
+  'data-hygiene.yml',
+  'prune-dead-scrapers.yml'
 ];
 
 const CONCURRENCY_DROPS_FILE = path.join(process.cwd(), 'data', 'concurrency-drops.json');
