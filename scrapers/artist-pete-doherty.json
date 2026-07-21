@@ -1,0 +1,18 @@
+{
+  "id": "artist-pete-doherty",
+  "domain": "www.thelibertines.com",
+  "url": "https://www.thelibertines.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.tour_item",
+    "artistNameFallback": "The Libertines",
+    "date": ".tour_date_date, .tour_date_month, .tour_date_year",
+    "ticketUrl": "a.tour_button",
+    "venue": ".tour_location_venue",
+    "city": ".tour_location_city",
+    "country": ".tour_location_country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "UK"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-pete-thomas",
+  "domain": "www.petethomasmusic.com",
+  "url": "https://www.petethomasmusic.com/events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-item",
+    "artistNameFallback": "Pete Thomas",
+    "date": "div.event-date",
+    "ticketUrl": "a.event-tickets",
+    "venue": "div.event-venue",
+    "city": "div.event-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

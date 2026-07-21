@@ -1,0 +1,17 @@
+{
+  "id": "artist-pete-stride-john-plain",
+  "domain": "www.johnplain.com",
+  "url": "http://www.johnplain.com/gigs",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.gig-item",
+    "artistNameFallback": "Pete Stride & John Plain",
+    "date": "div.gig-date",
+    "ticketUrl": "a.gig-link",
+    "venue": "div.gig-venue",
+    "city": "div.gig-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

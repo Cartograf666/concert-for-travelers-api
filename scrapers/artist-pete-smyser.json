@@ -1,0 +1,17 @@
+{
+  "id": "artist-pete-smyser",
+  "domain": "www.petesmyser.com",
+  "url": "https://www.petesmyser.com/gigs",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.eventitem",
+    "artistNameFallback": "Pete Smyser",
+    "date": "time.event-date",
+    "ticketUrl": "a.event-tickets",
+    "venue": "span.event-venue",
+    "city": "span.event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

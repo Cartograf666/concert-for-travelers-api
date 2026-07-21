@@ -1,0 +1,16 @@
+{
+  "id": "artist-paul-halley",
+  "domain": "paulhalley.com",
+  "url": "https://paulhalley.com/concerts-and-workshops/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.av-upcoming-events-list > article",
+    "artistNameFallback": "Paul Halley",
+    "date": ".date-container",
+    "ticketUrl": ".av-upcoming-events-button a",
+    "city": ".av-special-font.av-upcoming-events-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}

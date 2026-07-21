@@ -1,0 +1,17 @@
+{
+  "id": "artist-pete-campbell",
+  "domain": "www.petecampbellmusic.com",
+  "url": "https://www.petecampbellmusic.com/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-item",
+    "artistNameFallback": "Pete Campbell & The Lazy Dog",
+    "date": "div.event-item h3",
+    "ticketUrl": "div.event-item a.btn",
+    "venue": "div.event-item p:nth-of-type(2)",
+    "city": "div.event-item p:nth-of-type(1)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "AU"
+  }
+}
