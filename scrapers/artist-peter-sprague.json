@@ -1,0 +1,16 @@
+{
+  "id": "artist-peter-sprague",
+  "domain": "www.petersprague.com",
+  "url": "https://www.petersprague.com/gigs/live-concerts/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.tribe-events-event",
+    "artistNameFallback": "Peter Sprague",
+    "date": "span.tribe-event-date-start",
+    "ticketUrl": "a.tribe-events-read-more",
+    "city": "span.tribe-events-address",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

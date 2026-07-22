@@ -1,0 +1,16 @@
+{
+  "id": "artist-peter-smith",
+  "domain": "www.petersmithmusic.com",
+  "url": "https://www.petersmithmusic.com/calendar",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-item",
+    "artistNameFallback": "Peter Smith",
+    "date": "div.event-date",
+    "ticketUrl": "a.more-info-link",
+    "city": "p.event-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}
