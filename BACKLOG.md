@@ -629,3 +629,7 @@ _(done — see ✅ Done above)_
   deleted paths. `.ai/architecture.yaml` is the architecture manifest
   (layer boundaries/dependency rules) — separate axis from this file, only
   edited for an intentional architecture decision.
+- `docs-ru/` is a one-time Russian translation snapshot (2026-07-21) of the
+  main docs, made on request — it is NOT kept in sync going forward. Don't
+  update it when editing the English originals; if it drifts noticeably
+  stale, that's expected, not a bug.
