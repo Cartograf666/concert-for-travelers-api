@@ -4,6 +4,8 @@ import * as fs from 'fs/promises';
 import * as path from 'path';
 import * as os from 'os';
 import { enrichMissingArtistMetadata, GenerateEnrichmentFn } from '../src/pipeline/enrich.js';
+import { mergeArtistAliases } from '../src/pipeline/artistAliases.js';
+import { selectPendingWikidataBulkArtists } from '../src/scripts/enrich_wikidata_bulk.js';
 
 async function tempArtistsFile(entries: any[]): Promise<string> {
   const file = path.join(os.tmpdir(), `test-artists-${Date.now()}-${Math.random().toString(36).slice(2)}.json`);
@@ -169,5 +171,37 @@ test('Enrich - preserves existing socials when not returned by LLM', async () =>
   assert.strictEqual(artist.socials.facebook, null);
 
   await fs.unlink(file);
+});
+
+test('Enrich - buildQuery includes skos:altLabel field for Wikidata alias extraction', () => {
+  const { buildQuery } = require('../src/scripts/enrich_wikidata_bulk.js');
+  const query = buildQuery(['The Beatles']);
+  assert.ok(query.includes('skos:altLabel'), 'SPARQL query should include skos:altLabel for alias extraction');
+  assert.ok(query.includes('?altLabel'), 'SPARQL query should request ?altLabel in SELECT projection');
+});
+
+test('Enrich - Wikidata alias backfill selects existing bulk-processed artists once', () => {
+  const artists: any[] = [
+    { name: 'Already enriched', enrichedAt: '2026-01-01', wdBulkTriedAt: '2026-01-01' },
+    { name: 'Already backfilled', wdAliasesTriedAt: '2026-01-01' }
+  ];
+
+  assert.deepStrictEqual(selectPendingWikidataBulkArtists(artists, 10).map((artist) => artist.name), ['Already enriched']);
+});
+
+test('Enrich - alias merge ignores canonical and normalized duplicates', () => {
+  const artist: any = { name: 'The Beatles', aliases: ['Fab Four'] };
+  assert.strictEqual(mergeArtistAliases(artist, ['The Beatles', 'fab-four', 'Битлз']), true);
+  assert.deepStrictEqual(artist.aliases, ['Fab Four', 'Битлз']);
+
+  const canonicalOnly: any = { name: 'The Beatles', aliases: ['The Beatles'] };
+  assert.strictEqual(mergeArtistAliases(canonicalOnly, []), true);
+  assert.strictEqual(canonicalOnly.aliases, undefined);
+});
+
+test('Enrich - alias merge works independently of website or socials metadata', () => {
+  const artist: any = { name: 'The Beatles' };
+  assert.strictEqual(mergeArtistAliases(artist, ['Fab Four', 'Битлз']), true);
+  assert.deepStrictEqual(artist.aliases, ['Fab Four', 'Битлз']);
 });
 

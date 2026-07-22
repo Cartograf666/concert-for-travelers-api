@@ -173,11 +173,15 @@ const FUZZY_MAX_EDIT_DISTANCE = 2;
  * end of the string, so `\b` there would never fire — anchoring only where a real
  * boundary can exist fixes that without weakening the check for ordinary names.
  */
+const UNICODE_WORD_CHAR = /[\p{L}\p{N}\p{M}_]/u;
+
 function buildSubstringRegex(name: string): RegExp {
   const escaped = escapeRegExp(name);
-  const left = /^\w/.test(name) ? '\\b' : '';
-  const right = /\w$/.test(name) ? '\\b' : '';
-  return new RegExp(`${left}${escaped}${right}`, 'i');
+  const wordChar = '[\\p{L}\\p{N}\\p{M}_]';
+  const chars = Array.from(name);
+  const left = chars[0] && UNICODE_WORD_CHAR.test(chars[0]) ? `(?<!${wordChar})` : '';
+  const right = chars.at(-1) && UNICODE_WORD_CHAR.test(chars.at(-1)!) ? `(?!${wordChar})` : '';
+  return new RegExp(`${left}${escaped}${right}`, 'iu');
 }
 
 /**
@@ -192,9 +196,9 @@ function buildSubstringRegex(name: string): RegExp {
 function hasAttachedCapitalizedNeighbor(text: string, matchIndex: number, matchLength: number): boolean {
   const before = text.slice(0, matchIndex);
   const after = text.slice(matchIndex + matchLength);
-  const beforeWord = before.match(/([A-Za-z][\w']*)\s$/);
-  if (beforeWord && /^[A-Z]/.test(beforeWord[1])) return true;
-  return /^\s[A-Z]/.test(after);
+  const beforeWord = before.match(/([\p{L}][\p{L}\p{N}\p{M}_']*)\s$/u);
+  if (beforeWord && /^\p{Lu}/u.test(beforeWord[1])) return true;
+  return /^\s\p{Lu}/u.test(after);
 }
 
 // Phrase-joining words. A substring match glued to one of these is almost always a
@@ -291,29 +295,55 @@ function candidatesNearLength(byLength: Map<number, string[]>, len: number, maxD
 }
 
 export function buildApprovedMatcher(approvedArtists: any[]): ApprovedMatcher {
-  const entries = approvedArtists
-    .map((approved) => {
-      const name: string = typeof approved === 'string' ? approved : approved?.name ?? '';
-      return { approved, name, lower: name.toLowerCase() };
-    })
-    .filter((e) => e.name);
+  type MatchVariant = { approved: any; matchName: string; lower: string };
+  const canonicalEntries: MatchVariant[] = [];
+  const aliasCandidates: MatchVariant[] = [];
+  for (const approved of approvedArtists) {
+    const name: string = typeof approved === 'string' ? approved : approved?.name ?? '';
+    if (!name) continue;
+    canonicalEntries.push({ approved, matchName: name, lower: name.toLowerCase() });
+    if (typeof approved === 'object' && Array.isArray(approved?.aliases)) {
+      for (const alias of approved.aliases) {
+        if (typeof alias === 'string' && alias.trim()) {
+          const aliasTrimmed = alias.trim();
+          aliasCandidates.push({ approved, matchName: aliasTrimmed, lower: aliasTrimmed.toLowerCase() });
+        }
+      }
+    }
+  }
 
-  const exactByLower = new Map(entries.map((e) => [e.lower, e]));
+  // Canonical names always win. Aliases shared by separate artists are excluded
+  // from every tier rather than allowing database order to choose a wrong artist.
+  const canonicalByLower = new Map(canonicalEntries.map((entry) => [entry.lower, entry]));
+  const aliasesByLower = new Map<string, MatchVariant>();
+  const ambiguousAliases = new Set<string>();
+  for (const alias of aliasCandidates) {
+    if (canonicalByLower.has(alias.lower) || ambiguousAliases.has(alias.lower)) continue;
+    const existing = aliasesByLower.get(alias.lower);
+    if (existing && existing.approved !== alias.approved) {
+      aliasesByLower.delete(alias.lower);
+      ambiguousAliases.add(alias.lower);
+    } else if (!existing) {
+      aliasesByLower.set(alias.lower, alias);
+    }
+  }
+  const entries = [...canonicalEntries, ...aliasesByLower.values()];
+  const exactByLower = new Map(entries.map((entry) => [entry.lower, entry]));
 
-  const longNames = entries.filter((e) => e.name.length > SHORT_NAME_MAX);
+  const longNames = entries.filter((e) => e.matchName.length > SHORT_NAME_MAX);
   // Longest-first so a more specific match is tested (and wins) before a shorter one.
   const bySubstring = longNames
-    .map((e) => ({ ...e, regex: buildSubstringRegex(e.name) }))
-    .sort((a, b) => b.name.length - a.name.length);
-  const fuzzyNamesShort = longNames.filter((e) => e.name.length <= FUZZY_SHORT_NAME_MAX).map((e) => e.name);
-  const fuzzyNamesLong = longNames.filter((e) => e.name.length > FUZZY_SHORT_NAME_MAX).map((e) => e.name);
+    .map((e) => ({ ...e, regex: buildSubstringRegex(e.matchName) }))
+    .sort((a, b) => b.matchName.length - a.matchName.length);
+  const fuzzyNamesShort = longNames.filter((e) => e.matchName.length <= FUZZY_SHORT_NAME_MAX).map((e) => e.matchName);
+  const fuzzyNamesLong = longNames.filter((e) => e.matchName.length > FUZZY_SHORT_NAME_MAX).map((e) => e.matchName);
   // ~62k-entry approved list, precomputed once per matcher build (not per event).
   const fuzzyShortByLength = bucketByLength(fuzzyNamesShort);
   const fuzzyLongByLength = bucketByLength(fuzzyNamesLong);
 
-  const toMatch = (e: { name: string; approved: any }): ArtistMatch =>
+  const toMatch = (e: { matchName: string; approved: any }): ArtistMatch =>
     typeof e.approved === 'string'
-      ? { name: e.name }
+      ? { name: e.matchName }
       : { name: e.approved.name, website: e.approved.website, socials: e.approved.socials, mbid: e.approved.mbid };
 
   return (scrapedName: string): ArtistMatch | null => {
@@ -349,7 +379,7 @@ export function buildApprovedMatcher(approvedArtists: any[]): ApprovedMatcher {
       const match = e.regex.exec(primaryClause);
       if (
         match &&
-        e.name.length / primaryClause.length >= MIN_SUBSTRING_COVERAGE &&
+        e.matchName.length / primaryClause.length >= MIN_SUBSTRING_COVERAGE &&
         !hasAttachedCapitalizedNeighbor(primaryClause, match.index, match[0].length) &&
         !hasAttachedConnectorNeighbor(primaryClause, match.index, match[0].length)
       ) {

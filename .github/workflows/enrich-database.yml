@@ -58,8 +58,25 @@ jobs:
       # Tier-0: free structured enrichment (Wikidata SPARQL bulk, no LLM) sweeps the
       # whole catalog first so Gemini only spends calls on the remaining long tail.
       # Idempotent — already-tried artists are marked and skipped.
+      - name: Snapshot artist DB before Wikidata bulk enrichment
+        run: |
+          rm -rf /tmp/wikidata-artists-before /tmp/wikidata-artists-after
+          cp -R data/artists /tmp/wikidata-artists-before
+
       - name: Run Wikidata bulk enrichment (Tier-0, no LLM)
         run: npm run enrich-wd-bulk -- 100000
+
+      - name: Snapshot artist DB after Wikidata bulk enrichment
+        run: cp -R data/artists /tmp/wikidata-artists-after
+
+      # Commit this tier independently. In particular, the one-time alias
+      # backfill must still be persisted when the later Gemini queue is empty.
+      - name: Commit and push Wikidata bulk enrichment
+        uses: ./.github/actions/commit-artist-db-delta
+        with:
+          before-artists-dir: /tmp/wikidata-artists-before
+          after-artists-dir: /tmp/wikidata-artists-after
+          commit-message: "auto: enrich Wikidata aliases and metadata [skip ci]"
 
       # One-off (but idempotent/safe to re-run) backfill: retrofits `mbid` for
       # artists that were already enriched by MusicBrainz/Wikidata before that
