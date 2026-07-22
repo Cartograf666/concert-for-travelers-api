@@ -14,9 +14,21 @@ import type { ArtistEntry } from '../schemas/artist.js';
  *
  * Markers:
  *   enrichedAt + enrichedBy='wikidata-bulk'  set on a hit (Gemini skips it).
- *   wdBulkTriedAt                            set on every processed name so this
- *                                            pass never re-queries the same misses,
- *                                            yet they stay pending (!enrichedAt).
+ *   wdBulkTriedAt                            legacy marker, still stamped on every
+ *                                            processed name for backfill_mbid.ts's
+ *                                            gate, but no longer what THIS file
+ *                                            selects on (see below).
+ *   wdAliasesTriedAt                         the actual pending-gate now (see
+ *                                            selectPendingWikidataBulkArtists).
+ *                                            Deliberately a NEW marker rather than
+ *                                            reusing wdBulkTriedAt: every artist
+ *                                            already processed under the old
+ *                                            marker has wdBulkTriedAt set but not
+ *                                            this one, so gating on it forces
+ *                                            exactly one more pass over the whole
+ *                                            already-processed population to
+ *                                            backfill aliases, then this marker
+ *                                            takes over as the steady-state gate.
  *
  * Usage: enrich_wikidata_bulk.ts [N] [batchSize]   default N=5000, batch=80
  *

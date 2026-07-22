@@ -336,6 +336,34 @@ async function probeBatch(batch: { name: string; website: string }[], concurrenc
   return results;
 }
 
+/**
+ * Maps each artist's lowercased name to every index that owns it. A probe result
+ * can only be applied when its name resolves to exactly one DB row -- two entries
+ * sharing a case-insensitive name (seen in production) must not let a later one
+ * silently steal an earlier one's map slot and get the wrong artist's result.
+ */
+export function buildNameIndex(artists: ArtistEntry[]): Map<string, number[]> {
+  const byName = new Map<string, number[]>();
+  artists.forEach((a, i) => {
+    const key = a.name.toLowerCase();
+    const list = byName.get(key);
+    if (list) list.push(i);
+    else byName.set(key, [i]);
+  });
+  return byName;
+}
+
+/** Resolves a probed name to its unique DB index, or undefined if unmatched/ambiguous. */
+export function resolveUniqueIndex(byName: Map<string, number[]>, name: string, warnLabel: string): number | undefined {
+  const indices = byName.get(name.toLowerCase());
+  if (!indices) return undefined;
+  if (indices.length > 1) {
+    console.warn(`[discover-tour-urls] Skipping "${name}" in ${warnLabel} -- ${indices.length} DB entries share this name case-insensitively, can't tell which one owns this probe result without guessing.`);
+    return undefined;
+  }
+  return indices[0];
+}
+
 async function loadDb(): Promise<ArtistEntry[]> {
   return (await loadApprovedArtists(PRODUCTION_ARTIST_DB_DIR)) as ArtistEntry[];
 }
@@ -396,22 +424,21 @@ async function apply(resultsFile: string): Promise<void> {
   const artists = await loadDb();
   const results: ProbeResult[] = JSON.parse(await fs.readFile(resultsFile, 'utf-8'));
   
-  const byName = new Map<string, number>();
-  artists.forEach((a, i) => byName.set(a.name.toLowerCase(), i));
-  
+  const byName = buildNameIndex(artists);
+
   const now = new Date().toISOString();
   let hitsCount = 0;
   let missesCount = 0;
   const unmatched: string[] = [];
   const auditHits: any[] = [];
-  
+
   for (const r of results) {
-    const idx = byName.get(r.name.toLowerCase());
+    const idx = resolveUniqueIndex(byName, r.name, 'apply');
     if (idx === undefined) {
       unmatched.push(r.name);
       continue;
     }
-    
+
     const entry = artists[idx];
     entry.tourUrlProbeTriedAt = now;
     
@@ -441,7 +468,7 @@ async function apply(resultsFile: string): Promise<void> {
   console.log(`  hits (tourUrls found): ${hitsCount}`);
   console.log(`  misses               : ${missesCount}`);
   if (unmatched.length) {
-    console.log(`  unmatched (not in DB): ${unmatched.length} -> ${unmatched.slice(0, 10).join(', ')}`);
+    console.log(`  unmatched (not in DB, or ambiguous -- see warnings above): ${unmatched.length} -> ${unmatched.slice(0, 10).join(', ')}`);
   }
   if (auditHits.length) {
     console.log(`  Audit log appended at ${auditPath}`);
@@ -491,13 +518,12 @@ async function runConvenience(n: number): Promise<void> {
   const auditHits: any[] = [];
   
   const freshArtists = await loadDb();
-  const byName = new Map<string, number>();
-  freshArtists.forEach((a, i) => byName.set(a.name.toLowerCase(), i));
-  
+  const byName = buildNameIndex(freshArtists);
+
   for (const r of results) {
-    const idx = byName.get(r.name.toLowerCase());
+    const idx = resolveUniqueIndex(byName, r.name, 'runConvenience');
     if (idx === undefined) continue;
-    
+
     const entry = freshArtists[idx];
     entry.tourUrlProbeTriedAt = now;
     

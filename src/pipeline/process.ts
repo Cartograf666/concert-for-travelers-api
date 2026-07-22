@@ -173,11 +173,15 @@ const FUZZY_MAX_EDIT_DISTANCE = 2;
  * end of the string, so `\b` there would never fire — anchoring only where a real
  * boundary can exist fixes that without weakening the check for ordinary names.
  */
-const UNICODE_WORD_CHAR = /[\p{L}\p{N}\p{M}_]/u;
+// Shared Unicode "word character" class -- kept as one string constant so the
+// compiled-regex, inline-pattern-fragment, and continuation-char-set uses below
+// can't silently drift apart from each other.
+const WORD_CHAR_CLASS = '\\p{L}\\p{N}\\p{M}_';
+const UNICODE_WORD_CHAR = new RegExp(`[${WORD_CHAR_CLASS}]`, 'u');
 
 function buildSubstringRegex(name: string): RegExp {
   const escaped = escapeRegExp(name);
-  const wordChar = '[\\p{L}\\p{N}\\p{M}_]';
+  const wordChar = `[${WORD_CHAR_CLASS}]`;
   const chars = Array.from(name);
   const left = chars[0] && UNICODE_WORD_CHAR.test(chars[0]) ? `(?<!${wordChar})` : '';
   const right = chars.at(-1) && UNICODE_WORD_CHAR.test(chars.at(-1)!) ? `(?!${wordChar})` : '';
@@ -196,7 +200,7 @@ function buildSubstringRegex(name: string): RegExp {
 function hasAttachedCapitalizedNeighbor(text: string, matchIndex: number, matchLength: number): boolean {
   const before = text.slice(0, matchIndex);
   const after = text.slice(matchIndex + matchLength);
-  const beforeWord = before.match(/([\p{L}][\p{L}\p{N}\p{M}_']*)\s$/u);
+  const beforeWord = before.match(new RegExp(`([\\p{L}][${WORD_CHAR_CLASS}']*)\\s$`, 'u'));
   if (beforeWord && /^\p{Lu}/u.test(beforeWord[1])) return true;
   return /^\s\p{Lu}/u.test(after);
 }

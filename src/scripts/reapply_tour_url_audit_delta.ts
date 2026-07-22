@@ -1,11 +1,8 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
+import { stableJson } from './diffUtil.js';
 
 type AuditEntry = Record<string, unknown>;
-
-function stableJson(value: unknown): string {
-  return JSON.stringify(value);
-}
 
 async function readAudit(filePath: string): Promise<AuditEntry[]> {
   const parsed = JSON.parse(await fs.readFile(filePath, 'utf-8'));
