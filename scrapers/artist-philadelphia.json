@@ -1,0 +1,17 @@
+{
+  "id": "artist-philadelphia",
+  "domain": "philadelphiafreedomband.com",
+  "url": "https://philadelphiafreedomband.com/upcoming-events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".eventlist-event",
+    "artistNameFallback": "Philadelphia Freedom Band",
+    "date": ".eventlist-date",
+    "ticketUrl": ".eventlist-button a",
+    "venue": ".eventlist-meta-text:first-child",
+    "city": ".eventlist-meta-text:last-child",
+    "venueNameFallback": "",
+    "cityNameFallback": "Philadelphia, PA",
+    "countryNameFallback": "US"
+  }
+}

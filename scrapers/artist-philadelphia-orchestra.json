@@ -1,0 +1,16 @@
+{
+  "id": "artist-philadelphia-orchestra",
+  "domain": "www.philorch.org",
+  "url": "https://www.philorch.org/performances/residencies-and-tours/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-list__item",
+    "artistNameFallback": "The Philadelphia Orchestra",
+    "date": ".event-item__date",
+    "ticketUrl": ".event-item__link",
+    "venue": ".event-item__venue",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

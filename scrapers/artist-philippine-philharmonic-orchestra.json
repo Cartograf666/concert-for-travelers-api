@@ -1,0 +1,18 @@
+{
+  "id": "artist-philippine-philharmonic-orchestra",
+  "domain": "culturalcenter.gov.ph",
+  "url": "https://culturalcenter.gov.ph/events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.tribe-events-event-info",
+    "artistNameFallback": "Philippine Philharmonic Orchestra",
+    "date": "div.tribe-events-event-date-start",
+    "ticketUrl": "a.tribe-events-read-more",
+    "venue": "span.tribe-venue-name",
+    "city": "span.tribe-address-city",
+    "country": "span.tribe-address-country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "PH"
+  }
+}

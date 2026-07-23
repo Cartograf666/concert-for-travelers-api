@@ -1,0 +1,18 @@
+{
+  "id": "artist-philippe-aerts",
+  "domain": "philippeaerts.be",
+  "url": "https://philippeaerts.be/concerts",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.tour-item",
+    "artistNameFallback": "Philippe Aerts",
+    "date": "span.tour-date",
+    "ticketUrl": "a.tour-tickets",
+    "venue": "span.tour-venue",
+    "city": "span.tour-location",
+    "country": "span.tour-country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "BE"
+  }
+}

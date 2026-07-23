@@ -1,0 +1,16 @@
+{
+  "id": "artist-philipp-wachsmann",
+  "domain": "philippwachsmann.com",
+  "url": "https://www.philippwachsmann.com/concerts",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-item",
+    "artistNameFallback": "Philipp Wachsmann",
+    "date": "span.event-date",
+    "ticketUrl": "a.event-link",
+    "city": "span.event-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "UK"
+  }
+}

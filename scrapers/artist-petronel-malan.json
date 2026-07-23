@@ -1,0 +1,17 @@
+{
+  "id": "artist-petronel-malan",
+  "domain": "petronelmalan.com",
+  "url": "https://petronelmalan.com/upcoming-performances/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".mec-event-article",
+    "artistNameFallback": "Petronel Malan",
+    "date": ".mec-event-date",
+    "ticketUrl": ".mec-booking-button",
+    "venue": ".mec-event-venue-name",
+    "city": ".mec-address",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
