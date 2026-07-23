@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { loadApprovedArtists, saveApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from '../pipeline/artistDb.js';
+import { normalizeArtistName } from '../pipeline/artistAliases.js';
 import { ArtistEntry } from '../schemas/artist.js';
 
 /**
@@ -52,9 +53,7 @@ function emptySocials(): Socials {
   return { spotify: null, instagram: null, facebook: null, youtube: null, telegram: null, vk: null };
 }
 
-function normName(s: string): string {
-  return s.toLowerCase().normalize('NFKD').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
-}
+const normName = normalizeArtistName;
 
 /** Map a URL to the social field it represents (or 'website' for a plain homepage). */
 function classifyUrl(url: string): keyof Socials | 'website' | null {

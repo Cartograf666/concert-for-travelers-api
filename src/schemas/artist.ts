@@ -46,10 +46,12 @@ export const ArtistEntrySchema = z.object({
   enrichedBy: z.string().optional(),
   autoTriedAt: z.string().optional(),
   wdBulkTriedAt: z.string().optional(),
+  wdAliasesTriedAt: z.string().optional(),
   similarArtists: z.array(SimilarArtistRefSchema).optional(),
   similarEnrichedAt: z.string().optional(),
   similarTriedAt: z.string().optional(),
-  mbidBackfillTriedAt: z.string().optional()
+  mbidBackfillTriedAt: z.string().optional(),
+  aliases: z.array(z.string()).optional()
 }).catchall(z.any());
 
 export type ArtistEntry = z.infer<typeof ArtistEntrySchema>;

@@ -1,11 +1,8 @@
 import { loadApprovedArtists, saveApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from '../pipeline/artistDb.js';
+import { stableJson } from './diffUtil.js';
 
 function keyFor(entry: any): string {
   return typeof entry === 'string' ? entry : String(entry?.name ?? '');
-}
-
-function stableJson(value: any): string {
-  return JSON.stringify(value);
 }
 
 export interface ReapplyStats {

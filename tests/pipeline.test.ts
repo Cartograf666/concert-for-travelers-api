@@ -212,6 +212,40 @@ test('Pipeline - processConcerts populates spotifyId (parsed) and mbid (passed t
   assert.ok(processed[0].mbid === undefined || typeof processed[0].mbid === 'string');
 });
 
+test('Pipeline - buildApprovedMatcher resolves artist aliases to the canonical artist name', () => {
+  const approved = [{
+    name: 'The Beatles',
+    website: 'https://beatles.com',
+    aliases: ['The Beatles UK', 'Битлз', 'Fab Four']
+  }];
+
+  const matchedCanonical = matchApprovedArtist('The Beatles', approved);
+  assert.strictEqual(matchedCanonical?.name, 'The Beatles');
+
+  const matchedAlias1 = matchApprovedArtist('The Beatles UK', approved);
+  assert.strictEqual(matchedAlias1?.name, 'The Beatles');
+  assert.strictEqual(matchedAlias1?.website, 'https://beatles.com');
+
+  const matchedAlias2 = matchApprovedArtist('Битлз', approved);
+  assert.strictEqual(matchedAlias2?.name, 'The Beatles');
+
+  const matchedAlias3 = matchApprovedArtist('Fab Four', approved);
+  assert.strictEqual(matchedAlias3?.name, 'The Beatles');
+});
+
+test('Pipeline - aliases respect Unicode word boundaries and canonical-name precedence', () => {
+  const approved = [
+    { name: 'The Beatles', aliases: ['Битлз'] },
+    { name: 'Битлз', website: 'https://canonical.example' },
+    { name: 'Another Artist', aliases: ['Shared Alias'] },
+    { name: 'Different Artist', aliases: ['Shared Alias'] }
+  ];
+
+  assert.strictEqual(matchApprovedArtist('СуперБитлз', approved), null, 'an alias must not match inside a longer Cyrillic word');
+  assert.strictEqual(matchApprovedArtist('Битлз', approved)?.website, 'https://canonical.example', 'a canonical name must win over an alias');
+  assert.strictEqual(matchApprovedArtist('Shared Alias', approved), null, 'an alias shared by two artists is ambiguous');
+});
+
 test('Pipeline - extractTimeFromRawDate pulls HH:MM from an embedded ISO datetime, nothing else', () => {
   assert.strictEqual(extractTimeFromRawDate('2026-09-10T20:00:00'), '20:00');
   assert.strictEqual(extractTimeFromRawDate('2026-09-10T20:00:00.000Z'), '20:00');

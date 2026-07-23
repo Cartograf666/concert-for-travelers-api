@@ -40,6 +40,7 @@ export interface ArtistCatalogEntry {
   popularity?: { listeners: number; playcount: number };
   image?: string;
   similarArtists?: Array<{ name: string; slug: string; match: number }>;
+  aliases?: string[];
 }
 
 /**
@@ -88,6 +89,7 @@ export async function publishArtistCatalog(approvedArtists: any[], outputDir: st
           .map((s: any) => ({ name: s.name, slug: s.slug, match: s.match }));
         if (similar.length > 0) entry.similarArtists = similar;
       }
+      if (Array.isArray(a.aliases) && a.aliases.length > 0) entry.aliases = a.aliases;
     }
     bySlug.set(slug, entry);
   }

@@ -11,6 +11,8 @@ import {
   analyzeContent,
   probeArtist,
   isTourUrlProbeCandidate,
+  buildNameIndex,
+  resolveUniqueIndex,
   ArtistEntry,
   ProbeResult
 } from '../src/scripts/discover_tour_urls.js';
@@ -324,4 +326,25 @@ test('discover_tour_urls - candidate selection excludes longtail tier but keeps 
   assert.strictEqual(isTourUrlProbeCandidate({ name: 'Legacy', website: 'https://legacy.example' }), true);
   assert.strictEqual(isTourUrlProbeCandidate({ name: 'Longtail', website: 'https://long.example', tier: 'longtail' }), false);
   assert.strictEqual(isTourUrlProbeCandidate({ name: 'Tried', website: 'https://tried.example', tier: 'professional', tourUrlProbeTriedAt: '2026-07-09T00:00:00.000Z' }), false);
+});
+
+test('discover_tour_urls - buildNameIndex/resolveUniqueIndex: a probe result never gets applied to the wrong artist on a same-name collision', () => {
+  const artists: ArtistEntry[] = [
+    { name: 'Airport', website: 'https://airport-one.example' },
+    { name: 'Nirvana', website: 'https://nirvana.example' },
+    { name: 'AIRPORT', website: 'https://airport-two.example' } // case-insensitive collision with row 0
+  ];
+  const byName = buildNameIndex(artists);
+
+  // Unambiguous name resolves cleanly.
+  assert.strictEqual(resolveUniqueIndex(byName, 'nirvana', 'test'), 1);
+
+  // Ambiguous name (2 rows share it case-insensitively) resolves to undefined
+  // rather than guessing -- silently picking one would risk applying another
+  // artist's probe result (tourUrl) to the wrong DB row.
+  assert.strictEqual(resolveUniqueIndex(byName, 'Airport', 'test'), undefined);
+  assert.strictEqual(resolveUniqueIndex(byName, 'AIRPORT', 'test'), undefined);
+
+  // A name genuinely absent from the DB also resolves to undefined.
+  assert.strictEqual(resolveUniqueIndex(byName, 'Some Unknown Band', 'test'), undefined);
 });

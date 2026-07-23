@@ -1,0 +1,78 @@
+name: Commit artist database delta
+description: Commit and push an artist-DB update, replaying the local delta after a rebase conflict.
+
+inputs:
+  before-artists-dir:
+    required: true
+  after-artists-dir:
+    required: true
+  commit-message:
+    required: true
+  audit-before-file:
+    required: false
+  audit-after-file:
+    required: false
+
+runs:
+  using: composite
+  steps:
+    - name: Commit and push artist database delta
+      shell: bash
+      env:
+        BEFORE_ARTISTS_DIR: ${{ inputs.before-artists-dir }}
+        AFTER_ARTISTS_DIR: ${{ inputs.after-artists-dir }}
+        AUDIT_BEFORE_FILE: ${{ inputs.audit-before-file }}
+        AUDIT_AFTER_FILE: ${{ inputs.audit-after-file }}
+        COMMIT_MESSAGE: ${{ inputs.commit-message }}
+      run: |
+        set -eo pipefail
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+
+        changed_paths=(data/artists/)
+        if [ -n "$AUDIT_BEFORE_FILE" ] && [ -n "$AUDIT_AFTER_FILE" ]; then
+          changed_paths+=(data/tour-url-probe-hits.json)
+        fi
+        if git diff --quiet -- "${changed_paths[@]}"; then
+          echo "Run made no changes to commit."
+          exit 0
+        fi
+
+        git add "${changed_paths[@]}"
+        git commit -m "$COMMIT_MESSAGE"
+
+        pushed=false
+        for i in 1 2 3 4 5; do
+          if git push; then
+            pushed=true
+            break
+          fi
+          echo "Push rejected (concurrent write), retrying with rebase ($i/5)..."
+          git fetch origin main
+          if ! git rebase origin/main; then
+            echo "::warning::Rebase conflict on data/artists/ -- replaying delta on fresh origin/main."
+            git rebase --abort
+            git fetch origin main
+            git reset --hard origin/main
+            npm run reapply-artist-db-delta -- "$BEFORE_ARTISTS_DIR" "$AFTER_ARTISTS_DIR"
+            if [ -n "$AUDIT_BEFORE_FILE" ] && [ -n "$AUDIT_AFTER_FILE" ]; then
+              npm run reapply-tour-url-audit-delta -- "$AUDIT_BEFORE_FILE" "$AUDIT_AFTER_FILE"
+            fi
+            if git diff --quiet -- "${changed_paths[@]}"; then
+              echo "::warning::Replay produced no changes; nothing to push."
+            else
+              git add "${changed_paths[@]}"
+              git commit -m "$COMMIT_MESSAGE"
+              if git push; then pushed=true; fi
+            fi
+            break
+          fi
+          sleep $((RANDOM % 5 + 2))
+        done
+
+        if [ "$pushed" = "true" ]; then
+          echo "Committed and pushed artist database changes."
+        else
+          echo "::error::Could not push artist database changes after retries."
+          exit 1
+        fi

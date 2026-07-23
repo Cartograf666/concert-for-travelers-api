@@ -58,16 +58,53 @@ jobs:
       # Tier-0: free structured enrichment (Wikidata SPARQL bulk, no LLM) sweeps the
       # whole catalog first so Gemini only spends calls on the remaining long tail.
       # Idempotent — already-tried artists are marked and skipped.
+      - name: Snapshot artist DB before Wikidata bulk enrichment
+        run: |
+          rm -rf /tmp/wikidata-artists-before /tmp/wikidata-artists-after
+          cp -R data/artists /tmp/wikidata-artists-before
+
       - name: Run Wikidata bulk enrichment (Tier-0, no LLM)
         run: npm run enrich-wd-bulk -- 100000
+
+      - name: Snapshot artist DB after Wikidata bulk enrichment
+        run: cp -R data/artists /tmp/wikidata-artists-after
+
+      # Commit this tier independently. In particular, the one-time alias
+      # backfill must still be persisted when the later Gemini queue is empty.
+      - name: Commit and push Wikidata bulk enrichment
+        uses: ./.github/actions/commit-artist-db-delta
+        with:
+          before-artists-dir: /tmp/wikidata-artists-before
+          after-artists-dir: /tmp/wikidata-artists-after
+          commit-message: "auto: enrich Wikidata aliases and metadata [skip ci]"
 
       # One-off (but idempotent/safe to re-run) backfill: retrofits `mbid` for
       # artists that were already enriched by MusicBrainz/Wikidata before that
       # field existed. Manual-dispatch-only like this whole workflow, not on a
       # cron -- unlike the tiers above it has no "already tried, don't re-check"
       # marker, so it re-queries every artist still missing an mbid each run.
+      - name: Snapshot artist DB before mbid backfill
+        run: |
+          rm -rf /tmp/mbid-artists-before /tmp/mbid-artists-after
+          cp -R data/artists /tmp/mbid-artists-before
+
       - name: Backfill mbid for already-enriched artists
         run: npm run backfill-mbid -- 100000
+
+      - name: Snapshot artist DB after mbid backfill
+        run: cp -R data/artists /tmp/mbid-artists-after
+
+      # Same reasoning as the Wikidata bulk tier above: this step has no marker
+      # of its own gating the Gemini loop below, so if that loop makes zero
+      # commits this run (e.g. nothing pending that day), this tier's work would
+      # otherwise never get committed at all -- an ephemeral runner discards any
+      # uncommitted change when the job ends.
+      - name: Commit and push mbid backfill
+        uses: ./.github/actions/commit-artist-db-delta
+        with:
+          before-artists-dir: /tmp/mbid-artists-before
+          after-artists-dir: /tmp/mbid-artists-after
+          commit-message: "auto: backfill mbid for already-enriched artists [skip ci]"
 
       - name: Debug Model IDs
         env:

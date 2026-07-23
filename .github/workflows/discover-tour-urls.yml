@@ -1,0 +1,69 @@
+name: Discover Tour URLs
+
+# Automates probing un-probed website-having artists for tour-page URLs (/tour, /shows, etc.)
+# Runs on a schedule, saving hits to data/artists/ and data/tour-url-probe-hits.json.
+
+on:
+  schedule:
+    - cron: '0 4 * * 0' # weekly on Sunday at 04:00 UTC
+  workflow_dispatch:
+    inputs:
+      artists_count:
+        description: 'Number of artists to probe this run'
+        required: true
+        default: '300'
+
+permissions:
+  contents: write
+  issues: write # open/update a dedup'd failure issue (see "Alert on failure" step)
+
+concurrency:
+  group: artist-db-write
+  cancel-in-progress: false
+
+jobs:
+  discover-tour-urls:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Tour URL discovery
+        env:
+          ARTISTS_COUNT_INPUT: ${{ github.event.inputs.artists_count }}
+        run: |
+          set -eo pipefail
+          COUNT=${ARTISTS_COUNT_INPUT:-300}
+          rm -rf /tmp/artists-before /tmp/artists-after /tmp/tour-url-audit-before.json /tmp/tour-url-audit-after.json
+          cp -R data/artists /tmp/artists-before
+          cp data/tour-url-probe-hits.json /tmp/tour-url-audit-before.json
+
+          npm run discover-tour-urls -- run "$COUNT" 2>&1 | tee /tmp/discover-tour-urls.log
+          cp -R data/artists /tmp/artists-after
+          cp data/tour-url-probe-hits.json /tmp/tour-url-audit-after.json
+
+      - name: Commit and push Tour URL discovery results
+        uses: ./.github/actions/commit-artist-db-delta
+        with:
+          before-artists-dir: /tmp/artists-before
+          after-artists-dir: /tmp/artists-after
+          audit-before-file: /tmp/tour-url-audit-before.json
+          audit-after-file: /tmp/tour-url-audit-after.json
+          commit-message: "auto: discover tour URLs [skip ci]"
+
+      - name: Alert on failure
+        if: failure()
+        uses: ./.github/actions/alert-on-failure
+        with:
+          workflow-name: "Discover Tour URLs"
+          job-label: discover-tour-urls
