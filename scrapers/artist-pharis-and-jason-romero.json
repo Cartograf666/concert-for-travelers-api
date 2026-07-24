@@ -1,0 +1,18 @@
+{
+  "id": "artist-pharis-and-jason-romero",
+  "domain": "pharisandjason.com",
+  "url": "https://pharisandjason.com/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.sqs-block-content > div.event-item",
+    "artistNameFallback": "Pharis and Jason Romero",
+    "date": "time[itemprop='startDate']",
+    "ticketUrl": "a.event-ticket-button",
+    "venue": "span.event-venue",
+    "city": "span.event-city",
+    "country": "span.event-country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}
