@@ -1,0 +1,17 @@
+{
+  "id": "artist-pratt-awadagin",
+  "domain": "www.awadaginpratt.com",
+  "url": "https://www.awadaginpratt.com/calendar",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-item",
+    "artistNameFallback": "Awadagin Pratt",
+    "date": "div.event-date",
+    "ticketUrl": "a.event-tickets-link",
+    "venue": "span.event-venue",
+    "city": "span.event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
