@@ -4,12 +4,11 @@
   "url": "https://www.poemsband.com/#poems",
   "type": "static_selectors",
   "selectors": {
-    "eventBlock": ".event-item",
-    "artistNameFallback": "Poems",
-    "date": ".event-date",
-    "ticketUrl": ".event-tickets",
-    "venue": ".event-venue",
-    "city": ".event-location",
+    "eventBlock": "table tbody tr.border-accent",
+    "artist": ".event-name .text",
+    "date": ".event-date .date-long .date",
+    "datePattern": "dddd, MMMM D",
+    "ticketUrl": "a.event_details",
     "venueNameFallback": "",
     "cityNameFallback": "",
     "countryNameFallback": "US"
