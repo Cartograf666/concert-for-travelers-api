@@ -1,0 +1,16 @@
+{
+  "id": "artist-pro-arte-chamber-orchestra-of-boston",
+  "domain": "www.proarte.org",
+  "url": "https://www.proarte.org/season-48-concerts",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.sqs-block-content",
+    "artistNameFallback": "Pro Arte Chamber Orchestra of Boston",
+    "date": "div.event-date",
+    "ticketUrl": "a.event-tickets-button",
+    "venue": "div.event-venue",
+    "venueNameFallback": "",
+    "cityNameFallback": "Newton",
+    "countryNameFallback": "US"
+  }
+}
