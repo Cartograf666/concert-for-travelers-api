@@ -1,0 +1,17 @@
+{
+  "id": "artist-xutos-e-pontapes",
+  "domain": "www.xutos.pt",
+  "url": "https://www.xutos.pt/espetaculos/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".col-md-4.col-sm-6.col-xs-12",
+    "artistNameFallback": "Xutos e Pontapés",
+    "date": ".data-info h3",
+    "ticketUrl": ".button.primary-button-inverted",
+    "venue": ".data-info p:nth-child(3)",
+    "city": ".data-info p:nth-child(2)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "PT"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-aaron-barrett",
+  "domain": "www.aaronsbarrett.com",
+  "url": "https://www.aaronsbarrett.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour-item",
+    "artistNameFallback": "Aaron Barrett",
+    "date": ".tour-item-date",
+    "ticketUrl": ".tour-item-tickets a",
+    "venue": ".tour-item-venue",
+    "city": ".tour-item-city",
+    "country": ".tour-item-country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
