@@ -1,6 +1,7 @@
 import * as path from 'path';
 import * as chrono from 'chrono-node';
 import didYouMean, { ThresholdTypeEnums } from 'didyoumean2';
+import deburr from 'lodash.deburr';
 import { Concert, ConcertSchema } from '../schemas/concert.js';
 import { loadApprovedArtists } from './artistDb.js';
 
@@ -179,6 +180,45 @@ const FUZZY_MAX_EDIT_DISTANCE = 2;
 const WORD_CHAR_CLASS = '\\p{L}\\p{N}\\p{M}_';
 const UNICODE_WORD_CHAR = new RegExp(`[${WORD_CHAR_CLASS}]`, 'u');
 
+/**
+ * Case-folded key for the tier-3 substring index. Two rules matter, both learned
+ * from characters whose lower-casing is not a simple per-character mapping:
+ *   - lower-case the exact substring in ISOLATION, never a slice of an
+ *     already-lower-cased clause. Turkish dotted I lower-cases to two code units
+ *     (U+0130 -> "i" + U+0307), so offsets into a lower-cased clause stop lining
+ *     up with offsets into the original.
+ *   - fold both lower-case Greek sigmas together. Which one toLowerCase()
+ *     produces depends on whether a letter follows, which differs between a name
+ *     standing alone and the same text inside a longer clause -- while the /iu
+ *     regexes that confirm every candidate treat the two as equal anyway.
+ */
+function substringKey(s: string): string {
+  return s.toLowerCase().replace(/\u03c2/g, '\u03c3');
+}
+
+/**
+ * Every offset in `text` at which a boundary-anchored name could start, and every
+ * offset at which one could end (exclusive). See the tier-3 comment in
+ * buildApprovedMatcher for why this is a superset of the regexes' real match
+ * positions -- deliberately permissive, since each candidate is re-checked by the
+ * regex itself afterwards.
+ */
+function boundaryPositions(text: string): { starts: number[]; ends: number[] } {
+  const length = text.length;
+  const isWord: boolean[] = new Array(length);
+  for (let i = 0; i < length; i++) isWord[i] = UNICODE_WORD_CHAR.test(text[i]);
+
+  const starts: number[] = [];
+  for (let i = 0; i < length; i++) {
+    if (i === 0 || !isWord[i - 1] || !isWord[i]) starts.push(i);
+  }
+  const ends: number[] = [];
+  for (let end = 1; end <= length; end++) {
+    if (end === length || !isWord[end] || !isWord[end - 1]) ends.push(end);
+  }
+  return { starts, ends };
+}
+
 function buildSubstringRegex(name: string): RegExp {
   const escaped = escapeRegExp(name);
   const wordChar = `[${WORD_CHAR_CLASS}]`;
@@ -274,12 +314,54 @@ const FUZZY_SHORT_NAME_MAX_EDIT_DISTANCE = 1;
 
 /** Bucket names by length so a length-windowed candidate lookup (see
  * candidatesNearLength) is O(window) map lookups instead of an O(m) scan. */
-function bucketByLength(names: string[]): Map<number, string[]> {
-  const map = new Map<number, string[]>();
+interface FuzzyCandidate { name: string; mask: number }
+
+/**
+ * Bitmask of which characters a string contains. Every edit operation changes a
+ * string's character SET by at most 2 symbols (a substitution can drop one and add
+ * one), so two strings within edit distance k differ in at most 2k mask bits --
+ * see candidatesNearLength for how that prunes the fuzzy tier.
+ *
+ * The mask MUST be built from the same normalized text didyoumean2 actually
+ * compares, or the bound stops holding and real matches get pruned. That is
+ * `trim -> collapse whitespace -> lodash.deburr -> lowercase` (didyoumean2's
+ * normalizeString with this project's options), which is why lodash.deburr is a
+ * direct dependency here rather than only a transitive one: the two must stay in
+ * lockstep. Whitespace and ASCII punctuation contribute no bits at all, so the
+ * trim/collapse half cannot move one.
+ *
+ * Buckets coarser than one-bit-per-character are fine: merging distinct symbols
+ * into a shared bit can only ever shrink the observed difference, never grow it,
+ * so the <= 2k bound survives. Bit 31 is deliberately left unused so the mask
+ * stays a non-negative int32 for popcount's arithmetic shifts.
+ */
+function letterMask(s: string): number {
+  const normalized = deburr(s).toLowerCase();
+  let mask = 0;
+  for (let i = 0; i < normalized.length; i++) {
+    const code = normalized.charCodeAt(i);
+    if (code >= 97 && code <= 122) mask |= 1 << (code - 97); // a-z
+    else if (code >= 48 && code <= 57) mask |= 1 << 26; // any digit
+    else if (code > 127) mask |= 1 << (27 + (code & 3)); // any non-Latin script, 4 buckets
+    // ASCII whitespace/punctuation: intentionally no bit.
+  }
+  return mask;
+}
+
+function popcount(n: number): number {
+  n = n - ((n >> 1) & 0x55555555);
+  n = (n & 0x33333333) + ((n >> 2) & 0x33333333);
+  n = (n + (n >> 4)) & 0x0f0f0f0f;
+  return (n * 0x01010101) >> 24;
+}
+
+function bucketByLength(names: string[]): Map<number, FuzzyCandidate[]> {
+  const map = new Map<number, FuzzyCandidate[]>();
   for (const n of names) {
+    const candidate: FuzzyCandidate = { name: n, mask: letterMask(n) };
     const bucket = map.get(n.length);
-    if (bucket) bucket.push(n);
-    else map.set(n.length, [n]);
+    if (bucket) bucket.push(candidate);
+    else map.set(n.length, [candidate]);
   }
   return map;
 }
@@ -289,17 +371,34 @@ function bucketByLength(names: string[]): Map<number, string[]> {
  * maxDist -- collecting only those buckets is a lossless (zero false-negative)
  * way to shrink didyoumean2's candidate list before it computes real Levenshtein
  * distance against each one. */
-function candidatesNearLength(byLength: Map<number, string[]>, len: number, maxDist: number): string[] {
+function candidatesNearLength(
+  byLength: Map<number, FuzzyCandidate[]>,
+  len: number,
+  maxDist: number,
+  inputMask: number
+): string[] {
   const out: string[] = [];
+  const maxBitDiff = 2 * maxDist;
   for (let l = len - maxDist; l <= len + maxDist; l++) {
     const bucket = byLength.get(l);
-    if (bucket) out.push(...bucket);
+    if (!bucket) continue;
+    for (const candidate of bucket) {
+      // Character-set prefilter: more than 2*maxDist differing mask bits is
+      // provably beyond the threshold (see letterMask), so reject with one XOR and
+      // a popcount instead of building a full Levenshtein matrix. Lossless -- it
+      // only ever drops candidates the real distance computation would reject too.
+      if (popcount(inputMask ^ candidate.mask) > maxBitDiff) continue;
+      out.push(candidate.name);
+    }
   }
   return out;
 }
 
 export function buildApprovedMatcher(approvedArtists: any[]): ApprovedMatcher {
   type MatchVariant = { approved: any; matchName: string; lower: string };
+  // `order` is the candidate's position in the original (pre-sort) entry list --
+  // the tiebreaker that reproduces the old longest-first scan's winner exactly.
+  type SubstringCandidate = { entry: MatchVariant; order: number };
   const canonicalEntries: MatchVariant[] = [];
   const aliasCandidates: MatchVariant[] = [];
   for (const approved of approvedArtists) {
@@ -335,10 +434,32 @@ export function buildApprovedMatcher(approvedArtists: any[]): ApprovedMatcher {
   const exactByLower = new Map(entries.map((entry) => [entry.lower, entry]));
 
   const longNames = entries.filter((e) => e.matchName.length > SHORT_NAME_MAX);
-  // Longest-first so a more specific match is tested (and wins) before a shorter one.
-  const bySubstring = longNames
-    .map((e) => ({ ...e, regex: buildSubstringRegex(e.matchName) }))
-    .sort((a, b) => b.matchName.length - a.matchName.length);
+
+  // Tier-3 candidate index, keyed by lower-cased name. Replaces a longest-first
+  // linear scan over every candidate: at 153k entries (63k names + 110k Wikidata
+  // aliases) that scan is what pushed daily-scrape past its job timeout.
+  // Insertion order is the original entry order, and the first writer wins, so
+  // the entry stored here is exactly the one the old scan would have reached
+  // first among equal-length names (Array#sort is stable).
+  const substringIndex = new Map<string, SubstringCandidate>();
+  longNames.forEach((entry, order) => {
+    const key = substringKey(entry.matchName);
+    if (!substringIndex.has(key)) substringIndex.set(key, { entry, order });
+  });
+
+  // Compiled lazily and only for candidates that actually reach the regex check --
+  // eagerly building 153k RegExp objects cost more than the matching itself, and
+  // this matcher is rebuilt on every pipeline pass.
+  const regexCache = new Map<string, RegExp>();
+  const regexFor = (name: string): RegExp => {
+    let re = regexCache.get(name);
+    if (!re) {
+      re = buildSubstringRegex(name);
+      regexCache.set(name, re);
+    }
+    return re;
+  };
+
   const fuzzyNamesShort = longNames.filter((e) => e.matchName.length <= FUZZY_SHORT_NAME_MAX).map((e) => e.matchName);
   const fuzzyNamesLong = longNames.filter((e) => e.matchName.length > FUZZY_SHORT_NAME_MAX).map((e) => e.matchName);
   // ~62k-entry approved list, precomputed once per matcher build (not per event).
@@ -367,23 +488,50 @@ export function buildApprovedMatcher(approvedArtists: any[]): ApprovedMatcher {
     // clause is a subtitle/venue/genre tag, not the artist name (the same
     // assumption cleanArtistName's suffix-stripping already makes explicit).
     const primaryClause = cleaned.split(/\s-\s/)[0];
-    const lowerPrimaryClause = primaryClause.toLowerCase();
 
     // Tier 3: whole-word/whole-string substring match, most specific first.
-    for (const e of bySubstring) {
-      // Cheap native substring pre-check before the costlier \b-anchored regex --
-      // provably safe: e.regex is just e's escaped text plus optional \b anchors,
-      // so if it matches, e.lower must also appear literally inside
-      // lowerPrimaryClause. At ~55k entries tested per event, .includes() (V8's
-      // optimized native scan) rejecting most candidates outright, instead of
-      // invoking the regex engine on every one, is the dominant cost of matching
-      // an unapproved event -- confirmed live on a run where Ticketmaster's
-      // broader raw-event volume made this stage take 15+ minutes.
-      if (!lowerPrimaryClause.includes(e.lower)) continue;
-      const match = e.regex.exec(primaryClause);
+    //
+    // Instead of testing all ~153k candidates against this one clause, enumerate
+    // the clause's own boundary-aligned substrings and hash-look-up each. A clause
+    // has a few dozen of those; the catalog has 153k entries, and that asymmetry
+    // is the whole point. Correctness rests on the enumeration being a SUPERSET of
+    // what the regexes can match: buildSubstringRegex anchors a side only when the
+    // name's own first/last character is a word character, so any match must start
+    // at a position that is either the clause start, preceded by a non-word
+    // character, or itself a non-word character -- exactly what
+    // boundaryPositions() collects (and symmetrically for the end). Every survivor
+    // is still confirmed by the original regex below, so the index can only ever
+    // narrow the work, never change a verdict.
+    const clauseLength = primaryClause.length;
+    // floor(), not ceil(): the exact float coverage comparison still runs per
+    // candidate below, so this bound must never exclude a length that would pass.
+    const minCandidateLength = Math.max(
+      SHORT_NAME_MAX + 1,
+      Math.floor(MIN_SUBSTRING_COVERAGE * clauseLength)
+    );
+    const candidates: SubstringCandidate[] = [];
+    if (clauseLength >= minCandidateLength) {
+      const { starts, ends } = boundaryPositions(primaryClause);
+      const seenKeys = new Set<string>();
+      for (const start of starts) {
+        for (const end of ends) {
+          if (end - start < minCandidateLength) continue;
+          const key = substringKey(primaryClause.slice(start, end));
+          if (seenKeys.has(key)) continue;
+          seenKeys.add(key);
+          const hit = substringIndex.get(key);
+          if (hit) candidates.push(hit);
+        }
+      }
+    }
+    // Same ordering the old scan walked in: longest name first, original entry
+    // order as the tiebreaker.
+    candidates.sort((a, b) => b.entry.matchName.length - a.entry.matchName.length || a.order - b.order);
+    for (const { entry: e } of candidates) {
+      const match = regexFor(e.matchName).exec(primaryClause);
       if (
         match &&
-        e.matchName.length / primaryClause.length >= MIN_SUBSTRING_COVERAGE &&
+        e.matchName.length / clauseLength >= MIN_SUBSTRING_COVERAGE &&
         !hasAttachedCapitalizedNeighbor(primaryClause, match.index, match[0].length) &&
         !hasAttachedConnectorNeighbor(primaryClause, match.index, match[0].length)
       ) {
@@ -399,8 +547,9 @@ export function buildApprovedMatcher(approvedArtists: any[]): ApprovedMatcher {
     // only the length-plausible names first (see its docstring for why that's
     // lossless), typically a few dozen names instead of tens of thousands.
     const clauseLen = primaryClause.length;
-    const shortCandidates = candidatesNearLength(fuzzyShortByLength, clauseLen, FUZZY_SHORT_NAME_MAX_EDIT_DISTANCE);
-    const longCandidates = candidatesNearLength(fuzzyLongByLength, clauseLen, FUZZY_MAX_EDIT_DISTANCE);
+    const clauseMask = letterMask(primaryClause);
+    const shortCandidates = candidatesNearLength(fuzzyShortByLength, clauseLen, FUZZY_SHORT_NAME_MAX_EDIT_DISTANCE, clauseMask);
+    const longCandidates = candidatesNearLength(fuzzyLongByLength, clauseLen, FUZZY_MAX_EDIT_DISTANCE, clauseMask);
     const fuzzyHit =
       didYouMean(primaryClause, shortCandidates, {
         threshold: FUZZY_SHORT_NAME_MAX_EDIT_DISTANCE,

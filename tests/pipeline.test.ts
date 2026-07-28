@@ -470,3 +470,101 @@ test('Pipeline - normalizeCountry accepts full country names (schema.org address
   assert.strictEqual(normalizeCountry('Czech Republic, Prague'), 'CZ');
   assert.strictEqual(normalizeCountry('Slovakia (Slovak Republic), Bratislava'), 'SK');
 });
+
+test('Pipeline - tier-3 substring index preserves longest-first precedence and boundary anchoring', () => {
+  // The substring tier is served by a hash index over the clause's own boundary-
+  // aligned substrings rather than a scan over the whole catalogue. These are the
+  // properties that scan had, which the index must reproduce exactly.
+  const approved = [
+    { name: 'Cure', website: 'https://short.example' },
+    { name: 'The Cure', website: 'https://long.example' },
+    { name: 'Against Me!', website: 'https://punct.example' },
+    { name: '...And You Will Know Us', website: 'https://leading.example' },
+    { name: 'Rammstein' }
+  ];
+
+  assert.strictEqual(
+    matchApprovedArtist('The Cure live', approved)?.website,
+    'https://long.example',
+    'the longer, more specific name wins over the shorter one it contains'
+  );
+  assert.strictEqual(
+    matchApprovedArtist('Cure tonight', approved)?.website,
+    'https://short.example',
+    'the shorter name still matches when the longer one is not present'
+  );
+  assert.strictEqual(
+    matchApprovedArtist('the cure tonight', approved)?.website,
+    'https://long.example',
+    'index lookups are case-insensitive'
+  );
+  // Names whose own first/last character is not a word character are anchored only
+  // on the side where a boundary can exist, so the index must still surface them.
+  assert.strictEqual(
+    matchApprovedArtist('Against Me! tonight', approved)?.website,
+    'https://punct.example',
+    'a name ending in punctuation is still matched'
+  );
+  assert.strictEqual(
+    matchApprovedArtist('...And You Will Know Us tonight', approved)?.website,
+    'https://leading.example',
+    'a name starting with punctuation is still matched'
+  );
+  assert.strictEqual(
+    matchApprovedArtist('Rammsteinburger', approved),
+    null,
+    'a name embedded inside a longer word is not a whole-word match'
+  );
+});
+
+test('Pipeline - substring index is case-folding safe for Greek sigma and Turkish dotted I', () => {
+  // Both are characters where lower-casing is not a plain per-character mapping:
+  // sigma's lower-case form depends on whether a letter follows, and U+0130
+  // lower-cases to TWO code units. Index keys are therefore built by lower-casing
+  // each substring in isolation, with the two lower-case sigmas folded together.
+  const approved = [
+    { name: 'ΟΔΟΣ ΟΝΕΙΡΩΝ', website: 'https://sigma.example' },
+    { name: 'İstanbul Orkestra', website: 'https://dotted.example' }
+  ];
+
+  assert.strictEqual(
+    matchApprovedArtist('ΟΔΟΣ ΟΝΕΙΡΩΝ live', approved)?.website,
+    'https://sigma.example',
+    'upper-case sigma at the end of the name'
+  );
+  assert.strictEqual(
+    matchApprovedArtist('οδος ονειρων live', approved)?.website,
+    'https://sigma.example',
+    'final-sigma lower-case form resolves to the same entry'
+  );
+  assert.strictEqual(
+    matchApprovedArtist('ΟΔΟΣ ΟΝΕΙΡΩΝ, Αθήνα', approved)?.website,
+    'https://sigma.example',
+    'sigma followed by punctuation rather than end-of-string'
+  );
+  assert.strictEqual(
+    matchApprovedArtist('İstanbul Orkestra live', approved)?.website,
+    'https://dotted.example',
+    'a length-changing lower-case mapping must not shift index offsets'
+  );
+  assert.strictEqual(
+    matchApprovedArtist('İSTANBUL ORKESTRA live', approved)?.website,
+    'https://dotted.example',
+    'and the same name in upper case'
+  );
+});
+
+test('Pipeline - fuzzy tier character-set prefilter never drops a real near-miss', () => {
+  // The prefilter rejects any candidate whose character set differs by more than
+  // 2 * maxEditDistance bits. These are all within the edit-distance threshold and
+  // must survive it, including the accented cases where the mask has to agree with
+  // didyoumean2's own deburr + lowercase normalization.
+  const approved = ['Rammstein', 'Motörhead', 'Björk', 'Кино', 'Beyoncé'];
+
+  assert.strictEqual(matchApprovedArtist('Rammstien', approved)?.name, 'Rammstein', 'transposition');
+  assert.strictEqual(matchApprovedArtist('Motorhead', approved)?.name, 'Motörhead', 'dropped umlaut');
+  assert.strictEqual(matchApprovedArtist('Bjork', approved)?.name, 'Björk', 'deburred candidate');
+  assert.strictEqual(matchApprovedArtist('Beyonce', approved)?.name, 'Beyoncé', 'dropped acute accent');
+  assert.strictEqual(matchApprovedArtist('Кинo', approved)?.name, 'Кино', 'mixed-script single substitution');
+  assert.strictEqual(matchApprovedArtist('Completely Different', approved), null);
+});
