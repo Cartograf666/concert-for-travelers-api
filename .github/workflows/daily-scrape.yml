@@ -39,7 +39,14 @@ jobs:
       group: artist-db-write
       cancel-in-progress: false
     runs-on: ubuntu-latest
-    timeout-minutes: 30 # a wedged run must not sit on the 6h Actions default ceiling
+    # A wedged run must not sit on the 6h Actions default ceiling. Raised 30 -> 60
+    # on 2026-07-28: bulk Wikidata alias enrichment landed 110k aliases in the
+    # artist DB on 07-24, which nearly tripled the whitelist-matcher's per-event
+    # substring scan (58k -> 153k candidate entries). Matching runs twice per run
+    # (pre- and post-enrichment pass), so the job went 279s+346s -> ~1110s+1110s and
+    # blew the 30m ceiling every day from 07-25 on, cancelling four consecutive
+    # deploys. 60m restores headroom; the matcher indexing work is the real fix.
+    timeout-minutes: 60
     outputs:
       should_deploy: ${{ steps.health-check.outputs.should_deploy }}
     steps:
@@ -49,7 +56,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version: 20
+          node-version: 22
           cache: 'npm'
 
       - name: Install dependencies

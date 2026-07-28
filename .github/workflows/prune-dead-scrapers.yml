@@ -56,7 +56,7 @@ jobs:
         if: steps.download-reports.outputs.downloaded == 'true'
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version: 20
+          node-version: 22
           cache: 'npm'
 
       - name: Install dependencies
@@ -96,7 +96,19 @@ jobs:
           if [ -z "$(git status --porcelain -- data/artists/ scrapers/ data/scraper-health.json data/pruned-scrapers.json 2>/dev/null)" ]; then
             echo "No scraper-health/prune changes to commit."
           else
-            git add data/artists/ scrapers/ data/scraper-health.json data/pruned-scrapers.json 2>/dev/null || true
+            # Stage each path only if it exists. `git add a b` where b is missing is
+            # fatal and stages NOTHING -- and with stderr swallowed by `2>/dev/null
+            # || true` that failure was invisible, so the commit below then died with
+            # "nothing added to commit but untracked files present" and failed this
+            # workflow on every run (data/pruned-scrapers.json only exists once
+            # something is actually pruned, i.e. almost never).
+            for p in data/artists/ scrapers/ data/scraper-health.json data/pruned-scrapers.json; do
+              if [ -e "$p" ]; then git add "$p"; fi
+            done
+            if git diff --cached --quiet; then
+              echo "Nothing staged after add (all candidate paths absent or unchanged)."
+              exit 0
+            fi
             git commit -m "auto: track/prune dead scrapers [skip ci]"
 
             pushed=false
