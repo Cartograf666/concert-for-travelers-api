@@ -41,6 +41,8 @@ export const ArtistEntrySchema = z.object({
   lastConcertSeenAt: z.string().optional(),
   tier: z.enum(['professional', 'longtail']).optional(),
   image: z.string().optional(),
+  imageSource: z.string().optional(),
+  imageFallbackTriedAt: z.string().optional(),
   metaEnrichedAt: z.string().optional(),
   metaTriedAt: z.string().optional(),
   enrichedBy: z.string().optional(),
