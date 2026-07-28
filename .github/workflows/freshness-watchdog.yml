@@ -74,15 +74,20 @@ jobs:
           if [ -z "$problem" ]; then
             echo "Healthy."
             if [ -n "$num" ]; then
-              gh issue close "$num" --comment "Recovered: latest daily-scrape succeeded at $created and live index.json is fresh."
+              gh issue close "$num" --repo "$REPO" --comment "Recovered: latest daily-scrape succeeded at $created and live index.json is fresh."
             fi
             exit 0
           fi
 
           echo "::warning::$problem"
+          # Every gh issue call needs --repo: this job deliberately has no
+          # actions/checkout (it only queries the API), so gh has no git remote to
+          # infer the repo from and dies with "failed to run git: fatal: not a git
+          # repository" -- which turned every genuine unhealthy detection into a
+          # workflow failure that never actually filed the issue it exists to file.
           if [ -n "$num" ]; then
-            gh issue comment "$num" --body "Still unhealthy on $(date -u '+%Y-%m-%d %H:%M UTC'): $problem — $url"
+            gh issue comment "$num" --repo "$REPO" --body "Still unhealthy on $(date -u '+%Y-%m-%d %H:%M UTC'): $problem — $url"
           else
-            gh issue create --title "$TITLE" \
+            gh issue create --repo "$REPO" --title "$TITLE" \
               --body "$(printf 'The freshness watchdog detected a problem:\n\n- %s\n\nLatest run: %s' "$problem" "$url")"
           fi
