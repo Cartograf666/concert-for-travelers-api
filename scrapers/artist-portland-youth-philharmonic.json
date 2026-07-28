@@ -4,11 +4,11 @@
   "url": "https://portlandyouthphil.org/concerts-tickets/all-concerts-events",
   "type": "static_selectors",
   "selectors": {
-    "eventBlock": ".event-item",
-    "artistNameFallback": "Portland Youth Philharmonic",
-    "date": ".event-date",
-    "ticketUrl": ".button--event-details a",
-    "venue": ".event-venue",
+    "eventBlock": ".nr-concerts-events-section",
+    "artist": ".nr-h5-mimic",
+    "date": ".nr-h6-mimic",
+    "datePattern": "dddd, MMMM DD, YYYY",
+    "ticketUrl": ".nr-button",
     "venueNameFallback": "Arlene Schnitzer Concert Hall",
     "cityNameFallback": "Portland, OR",
     "countryNameFallback": "US"
