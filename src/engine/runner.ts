@@ -360,18 +360,143 @@ interface FetchResponse {
   headers: Record<string, any>;
 }
 
+export type HttpBackend = 'axios' | 'got-scraping';
+
+/**
+ * Which plain-HTTP backend fetches this config. Global env override
+ * (SCRAPER_HTTP_BACKEND) wins so a single measurement run can flip every venue
+ * without touching 91 JSON files; otherwise the per-config `httpClient` field;
+ * otherwise axios (the unchanged default -- nothing regresses unless opted in).
+ */
+export function resolveHttpBackend(config: ScraperConfig): HttpBackend {
+  const env = process.env.SCRAPER_HTTP_BACKEND;
+  if (env === 'axios' || env === 'got-scraping') return env;
+  if (config.httpClient === 'axios' || config.httpClient === 'got-scraping') return config.httpClient;
+  return 'axios';
+}
+
+// Minimal surface of got-scraping we actually call -- lets the dynamic import be
+// typed without a `typeof import()` annotation (and without loading the ESM-only
+// module at parse time).
+interface GotScrapingResponse {
+  statusCode: number;
+  body: string;
+  headers: Record<string, unknown>;
+}
+type GotScrapingFn = (url: string, options: Record<string, unknown>) => Promise<GotScrapingResponse>;
+
+// got-scraping is ESM-only; dynamic import() loads it from both the tsx dev path
+// and the compiled CommonJS output, and keeps it off the axios-default hot path.
+// Cached as a module-level promise so concurrent scrapers share one import.
+//
+// Supply-chain note: got-scraping -> header-generator -> generative-bayesian-network
+// -> adm-zip pulls advisory GHSA-xcpc-8h2w-3j85 (crafted ZIP -> 4GB alloc), for which
+// no fixed adm-zip is published yet. Not reachable here: adm-zip only ever inflates
+// header-generator's own package-bundled fingerprint dataset, never remote/attacker
+// input. Revisit (override/replace) once a patched adm-zip ships.
+let gotScrapingPromise: Promise<GotScrapingFn> | null = null;
+function loadGotScraping(): Promise<GotScrapingFn> {
+  if (!gotScrapingPromise) {
+    gotScrapingPromise = import('got-scraping').then((m) => m.gotScraping as unknown as GotScrapingFn);
+  }
+  return gotScrapingPromise;
+}
+
+/**
+ * One HTTP GET on the chosen backend, normalized to the axios-shaped
+ * {status,data,headers} contract AND the axios error shape isRetryableError
+ * expects -- so fetchWithRetry's retry loop, the circuit breaker, and 304
+ * handling behave identically regardless of backend.
+ *
+ * got-scraping path: header-generator produces the full order-correct browser
+ * header set (UA, sec-ch-ua, sec-fetch-*) instead of axios's static UA rotation,
+ * which is the actual anti-bot win. SSRF is preserved by forcing HTTP/1.1
+ * (http2:false) through the same DNS-validating agents axios uses, plus a
+ * redirect-hop host recheck. Tradeoff: routing through those agents keeps
+ * Node's TLS fingerprint rather than a browser JA3 -- header-level evasion only,
+ * not TLS-level. Full JA3 (curl-impersonate) is deferred precisely because it
+ * would require dropping the SSRF-checked agent.
+ */
+async function performGet(
+  url: string,
+  backend: HttpBackend,
+  conditionalHeaders: Record<string, string>,
+  axiosUserAgent: string
+): Promise<FetchResponse> {
+  if (backend === 'got-scraping') {
+    const gotScraping = await loadGotScraping();
+    let res: GotScrapingResponse;
+    try {
+      res = await gotScraping(url, {
+        // Let header-generator own UA/Accept/sec-* for a realistic fingerprint;
+        // only force the conditional-request + language headers on top.
+        headers: { 'Accept-Language': 'en-US,en;q=0.5', ...conditionalHeaders },
+        timeout: { request: 15000 },
+        retry: { limit: 0 }, // retries are owned by fetchWithRetry's loop below
+        followRedirect: true,
+        maxRedirects: 3,
+        throwHttpErrors: false, // handle status ourselves to mirror axios validateStatus
+        http2: false, // force HTTP/1.1 so the SSRF-checked http(s) agents are actually used
+        agent: { http: ssrfHttpAgent, https: ssrfHttpsAgent },
+        hooks: {
+          beforeRedirect: [
+            (options: any) => {
+              const host = options?.url?.hostname;
+              if (host && hostBlocked(String(host))) {
+                throw new Error(`Blocked SSRF redirect target: ${host}`);
+              }
+            }
+          ]
+        }
+      });
+    } catch (err: any) {
+      // Network/timeout errors: normalize to the axios shape (no response, request
+      // present) so isRetryableError retries them exactly as it would for axios.
+      const norm: any = new Error(err?.message || 'got-scraping request failed');
+      norm.code = err?.code;
+      norm.request = {};
+      throw norm;
+    }
+    const status = res.statusCode;
+    if ((status >= 200 && status < 300) || status === 304) {
+      return { status, data: res.body, headers: res.headers as Record<string, any> };
+    }
+    // Mirror axios: any non-2xx/304 throws; isRetryableError decides 429/5xx retry.
+    const httpErr: any = new Error(`Request failed with status code ${status}`);
+    httpErr.response = { status };
+    httpErr.request = {};
+    throw httpErr;
+  }
+
+  const response = await axios.get(url, {
+    headers: {
+      'User-Agent': axiosUserAgent,
+      'Accept': 'text/html,application/xhtml+xml,application/xml,application/json;q=0.9,*/*;q=0.8',
+      'Accept-Language': 'en-US,en;q=0.5',
+      ...conditionalHeaders
+    },
+    timeout: 15000, // 15s timeout (some venue pages ship large SSR/Next.js payloads)
+    httpAgent: ssrfHttpAgent,
+    httpsAgent: ssrfHttpsAgent,
+    maxRedirects: 3, // follow a few, but every hop's resolved IP is SSRF-checked by the agents
+    validateStatus: (s) => (s >= 200 && s < 300) || s === 304
+  });
+  return { status: response.status, data: response.data, headers: response.headers };
+}
+
 async function fetchWithRetry(config: ScraperConfig, conditional?: { etag?: string; lastModified?: string }): Promise<FetchResponse> {
   const maxRetries = config.maxRetries ?? DEFAULT_MAX_RETRIES;
+  const backend = resolveHttpBackend(config);
   let lastErr: any = null;
 
-  const headers: Record<string, string> = {
-    'User-Agent': getRandomUserAgent(),
-    'Accept': 'text/html,application/xhtml+xml,application/xml,application/json;q=0.9,*/*;q=0.8',
-    'Accept-Language': 'en-US,en;q=0.5',
-  };
-  // Conditional request: ask the server to answer 304 if nothing changed.
-  if (conditional?.etag) headers['If-None-Match'] = conditional.etag;
-  if (conditional?.lastModified) headers['If-Modified-Since'] = conditional.lastModified;
+  // Conditional request: ask the server to answer 304 if nothing changed. These are
+  // backend-agnostic; UA/Accept/sec-* are assembled per backend inside performGet.
+  const conditionalHeaders: Record<string, string> = {};
+  if (conditional?.etag) conditionalHeaders['If-None-Match'] = conditional.etag;
+  if (conditional?.lastModified) conditionalHeaders['If-Modified-Since'] = conditional.lastModified;
+
+  // Pick the axios UA once so it stays stable across this config's retries.
+  const axiosUserAgent = getRandomUserAgent();
 
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
     if (attempt > 0) {
@@ -381,15 +506,7 @@ async function fetchWithRetry(config: ScraperConfig, conditional?: { etag?: stri
     }
     await politeDelay(config);
     try {
-      const response = await axios.get(config.url, {
-        headers,
-        timeout: 15000, // 15s timeout (some venue pages ship large SSR/Next.js payloads)
-        httpAgent: ssrfHttpAgent,
-        httpsAgent: ssrfHttpsAgent,
-        maxRedirects: 3, // follow a few, but every hop's resolved IP is SSRF-checked by the agents
-        validateStatus: (s) => (s >= 200 && s < 300) || s === 304
-      });
-      return { status: response.status, data: response.data, headers: response.headers };
+      return await performGet(config.url, backend, conditionalHeaders, axiosUserAgent);
     } catch (err: any) {
       lastErr = err;
       if (!isRetryableError(err) || attempt === maxRetries) throw err;
