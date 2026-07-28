@@ -85,6 +85,7 @@ export const ScraperConfigSchema = z.object({
     { message: "url must be http(s) and must not target localhost/private-network/link-local/metadata addresses" }
   ).describe("Target schedule URL to scrape"),
   type: z.enum(['static_selectors', 'json_api', 'custom_js', 'jsonld', 'next_data', 'playwright_render']).default('static_selectors'),
+  httpClient: z.enum(['axios', 'got-scraping']).optional().describe("Plain-HTTP fetch backend for this venue (ignored by 'playwright_render'). 'axios' (default) rotates a static User-Agent; 'got-scraping' generates a full, order-correct browser header set (sec-ch-ua, sec-fetch-*) to get past header-fingerprint anti-bot checks. The global env override SCRAPER_HTTP_BACKEND wins over this per-config value."),
   maxRetries: z.number().int().min(0).max(5).optional().describe("Retry attempts on transient fetch failures (network/timeout/429/5xx). Defaults to 2."),
   requestDelayMs: z.number().int().min(0).optional().describe("Minimum delay between successive requests to this domain (politeness throttle)."),
   allowEmpty: z.boolean().optional().describe("Set true for venues with a genuinely sparse/seasonal schedule, so 0 parsed events is treated as a valid (empty) result instead of a broken-selector failure."),
