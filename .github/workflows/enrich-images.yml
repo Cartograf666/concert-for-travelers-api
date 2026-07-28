@@ -1,0 +1,142 @@
+name: "Enrich Artists (Tier-3 Image Fallback: Wikidata/TheAudioDB)"
+
+# Fallback image tier for artists enrich-metadata.yml's Deezer lookup never matched
+# (Wikidata P18 by mbid + TheAudioDB by name, both keyless). Separate pending-gate
+# (imageFallbackTriedAt) from the metadata tier, so this sweeps the whole catalog
+# on its own schedule regardless of what enrich-metadata.yml already decided.
+
+on:
+  schedule:
+    - cron: '5 */6 * * *' # every 6 hours, offset from enrich-similar's :45/*6 and the watchdog's :20/*6
+  workflow_dispatch:
+    inputs:
+      chunk_size:
+        description: 'Artists to process this run'
+        required: true
+        default: '2000'
+
+permissions:
+  contents: write
+  issues: write # open/update a dedup'd failure issue (see "Alert on failure" step)
+
+# Serialize with every other data/artists/ (sharded artist DB) writer (enrich-auto,
+# enrich-metadata, enrich-database/wd-bulk, self-heal auto-merges).
+concurrency:
+  group: artist-db-write
+  cancel-in-progress: false
+
+jobs:
+  enrich-images:
+    runs-on: ubuntu-latest
+    # Same reasoning as enrich-metadata.yml: stay under the 6h cron cadence above.
+    timeout-minutes: 200
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      # True job-elapsed-time reference for the soft-deadline check below.
+      - name: Record job start time
+        run: echo "JOB_START=$(date +%s)" >> "$GITHUB_ENV"
+
+      # Same checkpointed sub-chunk-and-commit shape as enrich-metadata.yml: a run
+      # that gets cancelled or times out loses at most one sub-chunk's worth of
+      # work instead of everything back to the start. enrich_artist_images.ts is
+      # already resumable (re-reads the DB fresh each invocation, marks each
+      # artist as it goes).
+      - name: Run Tier-3 image fallback enrichment (checkpointed)
+        env:
+          CHUNK_SIZE_INPUT: ${{ github.event.inputs.chunk_size }}
+        run: |
+          set -eo pipefail
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          SUB_CHUNK=150
+          REMAINING=${CHUNK_SIZE_INPUT:-2000}
+          # timeout-minutes above is 200 -- stop 15min short so a truncated run exits
+          # 0 (success, picked up next run) instead of getting force-killed by GitHub
+          # Actions mid-sub-chunk and reported as a failure (which trips the alert-on-
+          # failure issue for what is actually just normal, expected backlog behavior).
+          SOFT_DEADLINE_SECS=$((185 * 60))
+
+          while [ "$REMAINING" -gt 0 ]; do
+            if [ $(( $(date +%s) - JOB_START )) -ge "$SOFT_DEADLINE_SECS" ]; then
+              echo "Approaching this job's timeout-minutes budget -- stopping the loop early so the run finishes cleanly (success) instead of being force-killed mid-sub-chunk. Remaining artists pick up on the next scheduled run."
+              break
+            fi
+
+            THIS_RUN=$SUB_CHUNK
+            if [ "$REMAINING" -lt "$SUB_CHUNK" ]; then THIS_RUN=$REMAINING; fi
+            rm -rf /tmp/artists-before /tmp/artists-after
+            cp -R data/artists /tmp/artists-before
+
+            npm run enrich-images -- "$THIS_RUN" 2>&1 | tee /tmp/enrich-images.log
+            cp -R data/artists /tmp/artists-after
+
+            if grep -q "Nothing pending for the image fallback tier" /tmp/enrich-images.log; then
+              echo "Nothing left to process -- stopping the loop early."
+              break
+            fi
+
+            if git diff --quiet -- data/artists/; then
+              echo "Sub-chunk made no changes to commit."
+            else
+              git add data/artists/
+              git commit -m "auto: Tier-3 image fallback enrichment (Wikidata/TheAudioDB) [skip ci]"
+
+              # main gets concurrent writes (daily-scrape, self-heal auto-merges,
+              # other enrich runs) -- retry with rebase instead of failing outright.
+              # Sharding means two writers only actually conflict if they touched
+              # the SAME shard file; different shards rebase cleanly.
+              pushed=false
+              for i in 1 2 3 4 5; do
+                if git push; then
+                  pushed=true
+                  break
+                fi
+                echo "Push rejected (concurrent write), retrying with rebase ($i/5)..."
+                git fetch origin main
+                if ! git rebase origin/main; then
+                  echo "::warning::Rebase conflict on data/artists/ -- replaying this sub-chunk on fresh origin/main."
+                  git rebase --abort
+                  git fetch origin main
+                  git reset --hard origin/main
+                  npm run reapply-artist-db-delta -- /tmp/artists-before /tmp/artists-after
+                  if git diff --quiet -- data/artists/; then
+                    echo "::warning::Replay produced no data/artists changes; nothing to push."
+                  else
+                    git add data/artists/
+                    git commit -m "auto: Tier-3 image fallback enrichment (reapplied) [skip ci]"
+                    if git push; then pushed=true; else npm run record-conflict-drop -- enrich-images || true; fi
+                  fi
+                  break
+                fi
+                sleep $((RANDOM % 5 + 2))
+              done
+
+              if [ "$pushed" = "true" ]; then
+                echo "Committed and pushed this sub-chunk's Tier-3 image enrichment."
+              else
+                echo "::warning::Could not push this sub-chunk after retries -- its work stays local and will be redone next run."
+              fi
+            fi
+
+            REMAINING=$((REMAINING - THIS_RUN))
+          done
+
+      # Turn a silent scheduled-run failure into a visible, deduplicated GitHub issue.
+      - name: Alert on failure
+        if: failure()
+        uses: ./.github/actions/alert-on-failure
+        with:
+          workflow-name: "Enrich Artists (Tier-3 Image Fallback)"
+          job-label: enrich-images
