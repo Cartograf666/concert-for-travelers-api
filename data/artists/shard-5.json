@@ -68293,7 +68293,40 @@
     "wdBulkTriedAt": "2026-07-29T07:46:37.684Z",
     "wdAliasesTriedAt": "2026-07-29T07:46:37.684Z",
     "mbidBackfillTriedAt": "2026-07-29T07:46:47.397Z",
-    "autoTriedAt": "2026-07-29T09:21:16.885Z"
+    "autoTriedAt": "2026-07-29T09:21:16.885Z",
+    "similarArtists": [
+      {
+        "name": "Sal Priadi",
+        "slug": "sal-priadi",
+        "match": 0.863994
+      },
+      {
+        "name": "Nadhif Basalamah",
+        "slug": "nadhif-basalamah",
+        "match": 0.734431
+      },
+      {
+        "name": "Hindia",
+        "slug": "hindia",
+        "match": 0.62198
+      },
+      {
+        "name": "Perunggu",
+        "slug": "perunggu",
+        "match": 0.56695
+      },
+      {
+        "name": "Iwan Fals",
+        "slug": "iwan-fals",
+        "match": 0.527425
+      },
+      {
+        "name": "Bernadya",
+        "slug": "bernadya",
+        "match": 0.525746
+      }
+    ],
+    "similarEnrichedAt": "2026-07-29T09:29:30.755Z"
   },
   {
     "name": "Enchant",
@@ -322984,7 +323017,50 @@
       "vk": null
     },
     "enrichedAt": "2026-07-29T09:21:19.425Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "PUN",
+        "slug": "pun",
+        "match": 1
+      },
+      {
+        "name": "bowkylion",
+        "slug": "bowkylion",
+        "match": 0.910006
+      },
+      {
+        "name": "Three Man Down",
+        "slug": "three-man-down",
+        "match": 0.728358
+      },
+      {
+        "name": "Musketeers",
+        "slug": "musketeers",
+        "match": 0.725625
+      },
+      {
+        "name": "Ink Waruntorn",
+        "slug": "ink-waruntorn",
+        "match": 0.713749
+      },
+      {
+        "name": "Nont Tanont",
+        "slug": "nont-tanont",
+        "match": 0.703573
+      },
+      {
+        "name": "SERIOUS BACON",
+        "slug": "serious-bacon",
+        "match": 0.662997
+      },
+      {
+        "name": "PolyCat",
+        "slug": "polycat",
+        "match": 0.624509
+      }
+    ],
+    "similarEnrichedAt": "2026-07-29T09:29:31.123Z"
   },
   {
     "name": "miRthkon",
@@ -377542,7 +377618,15 @@
     "mbidBackfillTriedAt": "2026-07-29T07:46:47.397Z",
     "mbid": "ed8d7078-b7c3-43ab-9722-570459ea4339",
     "enrichedAt": "2026-07-29T09:21:26.015Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "Lucho RK",
+        "slug": "lucho-rk",
+        "match": 0.657888
+      }
+    ],
+    "similarEnrichedAt": "2026-07-29T09:29:31.517Z"
   },
   {
     "name": "MxPx",

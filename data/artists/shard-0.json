@@ -784,7 +784,30 @@
     "sitesTriedAt": "2026-07-29T07:53:08.178Z",
     "mbid": "073955d7-0069-4edd-b831-8def3791f204",
     "enrichedAt": "2026-07-29T09:21:13.121Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "Albany",
+        "slug": "albany",
+        "match": 0.408568
+      },
+      {
+        "name": "Rusowsky",
+        "slug": "rusowsky",
+        "match": 0.382407
+      },
+      {
+        "name": "Judeline",
+        "slug": "judeline",
+        "match": 0.257049
+      },
+      {
+        "name": "Aitana",
+        "slug": "aitana",
+        "match": 0.132366
+      }
+    ],
+    "similarEnrichedAt": "2026-07-29T09:29:27.644Z"
   },
   {
     "name": "8Eight",
@@ -121802,7 +121825,25 @@
     "mbid": "d9550ac2-7bcf-4655-a3fe-24922e254a74",
     "wikidataSitelinks": 22,
     "enrichedAt": "2026-07-29T07:46:37.684Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "similarArtists": [
+      {
+        "name": "Anitta",
+        "slug": "anitta",
+        "match": 0.814307
+      },
+      {
+        "name": "PEDRO SAMPAIO",
+        "slug": "pedro-sampaio",
+        "match": 0.649506
+      },
+      {
+        "name": "Luísa Sonza",
+        "slug": "luisa-sonza",
+        "match": 0.61287
+      }
+    ],
+    "similarEnrichedAt": "2026-07-29T09:29:28.052Z"
   },
   {
     "name": "Pablo Alborán",

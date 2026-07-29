@@ -41384,7 +41384,50 @@
     "wdBulkTriedAt": "2026-07-29T07:46:37.684Z",
     "wdAliasesTriedAt": "2026-07-29T07:46:37.684Z",
     "mbidBackfillTriedAt": "2026-07-29T07:46:47.397Z",
-    "autoTriedAt": "2026-07-29T09:21:27.291Z"
+    "autoTriedAt": "2026-07-29T09:21:27.291Z",
+    "similarArtists": [
+      {
+        "name": "El Canto Del Loco",
+        "slug": "el-canto-del-loco",
+        "match": 1
+      },
+      {
+        "name": "Extremoduro",
+        "slug": "extremoduro",
+        "match": 0.977322
+      },
+      {
+        "name": "Marea",
+        "slug": "marea",
+        "match": 0.921256
+      },
+      {
+        "name": "M-Clan",
+        "slug": "m-clan",
+        "match": 0.880365
+      },
+      {
+        "name": "Platero y Tú",
+        "slug": "platero-y-tu",
+        "match": 0.789054
+      },
+      {
+        "name": "Celtas Cortos",
+        "slug": "celtas-cortos",
+        "match": 0.702548
+      },
+      {
+        "name": "Pereza",
+        "slug": "pereza",
+        "match": 0.688568
+      },
+      {
+        "name": "Loquillo",
+        "slug": "loquillo",
+        "match": 0.573989
+      }
+    ],
+    "similarEnrichedAt": "2026-07-29T09:29:31.867Z"
   },
   {
     "name": "Fito y los Fitipaldis",
@@ -133877,7 +133920,45 @@
       "vk": null
     },
     "enrichedAt": "2026-07-29T09:21:33.453Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "TWICE",
+        "slug": "twice",
+        "match": 1
+      },
+      {
+        "name": "Tzuyu",
+        "slug": "tzuyu",
+        "match": 0.922181
+      },
+      {
+        "name": "Kiss of Life",
+        "slug": "kiss-of-life",
+        "match": 0.234689
+      },
+      {
+        "name": "ITZY",
+        "slug": "itzy",
+        "match": 0.227961
+      },
+      {
+        "name": "NMIXX",
+        "slug": "nmixx",
+        "match": 0.191379
+      },
+      {
+        "name": "IVE",
+        "slug": "ive",
+        "match": 0.189084
+      },
+      {
+        "name": "LE SSERAFIM",
+        "slug": "le-sserafim",
+        "match": 0.18335
+      }
+    ],
+    "similarEnrichedAt": "2026-07-29T09:29:32.231Z"
   },
   {
     "name": "Naykilla",

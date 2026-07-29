@@ -22849,7 +22849,40 @@
     "wdAliasesTriedAt": "2026-07-29T07:46:37.684Z",
     "mbidBackfillTriedAt": "2026-07-29T07:46:47.397Z",
     "enrichedAt": "2026-07-29T09:21:13.122Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "similarArtists": [
+      {
+        "name": "K.I.Z",
+        "slug": "kiz",
+        "match": 0.416009
+      },
+      {
+        "name": "Marteria",
+        "slug": "marteria",
+        "match": 0.348645
+      },
+      {
+        "name": "Fettes Brot",
+        "slug": "fettes-brot",
+        "match": 0.306454
+      },
+      {
+        "name": "Beginner",
+        "slug": "beginner",
+        "match": 0.289499
+      },
+      {
+        "name": "yU",
+        "slug": "yu",
+        "match": 0.284704
+      },
+      {
+        "name": "Sido",
+        "slug": "sido",
+        "match": 0.277778
+      }
+    ],
+    "similarEnrichedAt": "2026-07-29T09:29:29.601Z"
   },
   {
     "name": "Danger Danger",
@@ -211438,7 +211471,30 @@
     "mbid": "eeac91f1-ea41-4559-b29a-4764e053bafe",
     "wikidataSitelinks": 3,
     "enrichedAt": "2026-07-29T07:46:37.684Z",
-    "enrichedBy": "wikidata-bulk"
+    "enrichedBy": "wikidata-bulk",
+    "similarArtists": [
+      {
+        "name": "Pignoise",
+        "slug": "pignoise",
+        "match": 0.987116
+      },
+      {
+        "name": "El Canto Del Loco",
+        "slug": "el-canto-del-loco",
+        "match": 0.674161
+      },
+      {
+        "name": "La Casa Azul",
+        "slug": "la-casa-azul",
+        "match": 0.638458
+      },
+      {
+        "name": "Melendi",
+        "slug": "melendi",
+        "match": 0.606128
+      }
+    ],
+    "similarEnrichedAt": "2026-07-29T09:29:29.987Z"
   },
   {
     "name": "La Ley",
@@ -357038,7 +357094,40 @@
     "mbidBackfillTriedAt": "2026-07-29T07:46:47.397Z",
     "mbid": "c3d7f812-47b2-4d78-9ac2-9512817d8add",
     "enrichedAt": "2026-07-29T09:21:15.654Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "Quevedo",
+        "slug": "quevedo",
+        "match": 0.560089
+      },
+      {
+        "name": "Saiko",
+        "slug": "saiko",
+        "match": 0.420996
+      },
+      {
+        "name": "MVRK",
+        "slug": "mvrk",
+        "match": 0.316481
+      },
+      {
+        "name": "Mora",
+        "slug": "mora",
+        "match": 0.285004
+      },
+      {
+        "name": "JC Reyes",
+        "slug": "jc-reyes",
+        "match": 0.279576
+      },
+      {
+        "name": "JHAYCO",
+        "slug": "jhayco",
+        "match": 0.182004
+      }
+    ],
+    "similarEnrichedAt": "2026-07-29T09:29:30.353Z"
   },
   {
     "name": "Luci",
