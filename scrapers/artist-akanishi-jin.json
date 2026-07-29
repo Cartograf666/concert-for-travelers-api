@@ -1,0 +1,17 @@
+{
+  "id": "artist-akanishi-jin",
+  "domain": "special.jinakanishi.com",
+  "url": "https://special.jinakanishi.com/redwest2025/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.schedule-list li",
+    "artistNameFallback": "Jin Akanishi",
+    "date": "p.date",
+    "ticketUrl": "p.info a",
+    "venue": "p.venue",
+    "city": "p.area",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

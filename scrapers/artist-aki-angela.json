@@ -1,0 +1,16 @@
+{
+  "id": "artist-aki-angela",
+  "domain": "www.angelaaki.com",
+  "url": "https://www.angelaaki.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "section.live-detail ul li",
+    "artistNameFallback": "Angela Aki",
+    "date": "p.live-date",
+    "ticketUrl": "p.live-text a",
+    "venue": "h3",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}
