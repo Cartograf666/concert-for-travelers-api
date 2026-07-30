@@ -1,0 +1,16 @@
+{
+  "id": "artist-alan-munde",
+  "domain": "mundemusic.com",
+  "url": "https://mundemusic.com/upcoming-events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-item",
+    "artistNameFallback": "Alan Munde",
+    "date": ".event-date",
+    "ticketUrl": ".event-link a",
+    "venue": ".event-venue",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
