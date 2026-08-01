@@ -2361,7 +2361,50 @@
     "wdBulkTriedAt": "2026-08-01T07:30:14.663Z",
     "wdAliasesTriedAt": "2026-08-01T07:30:14.663Z",
     "mbidBackfillTriedAt": "2026-08-01T07:30:25.585Z",
-    "autoTriedAt": "2026-08-01T08:41:20.931Z"
+    "autoTriedAt": "2026-08-01T08:41:20.931Z",
+    "similarArtists": [
+      {
+        "name": "林俊傑",
+        "slug": "林俊傑",
+        "match": 1
+      },
+      {
+        "name": "薛之谦",
+        "slug": "薛之谦",
+        "match": 0.853158
+      },
+      {
+        "name": "周杰倫",
+        "slug": "周杰倫",
+        "match": 0.795413
+      },
+      {
+        "name": "王力宏",
+        "slug": "王力宏",
+        "match": 0.676894
+      },
+      {
+        "name": "许嵩",
+        "slug": "许嵩",
+        "match": 0.660363
+      },
+      {
+        "name": "蔡健雅",
+        "slug": "蔡健雅",
+        "match": 0.615928
+      },
+      {
+        "name": "五月天",
+        "slug": "五月天",
+        "match": 0.586528
+      },
+      {
+        "name": "莫文蔚",
+        "slug": "莫文蔚",
+        "match": 0.52839
+      }
+    ],
+    "similarEnrichedAt": "2026-08-01T08:57:14.518Z"
   },
   {
     "name": "G.H.E.T.T.O.U.T.",
@@ -172943,7 +172986,30 @@
     "mbidBackfillTriedAt": "2026-08-01T07:30:25.585Z",
     "mbid": "35214d53-009b-45d9-8a00-6664325b9e2a",
     "enrichedAt": "2026-08-01T08:41:23.577Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "Che",
+        "slug": "che",
+        "match": 1
+      },
+      {
+        "name": "Destroy Lonely",
+        "slug": "destroy-lonely",
+        "match": 0.57574
+      },
+      {
+        "name": "Ken Carson",
+        "slug": "ken-carson",
+        "match": 0.541992
+      },
+      {
+        "name": "Playboi Carti",
+        "slug": "playboi-carti",
+        "match": 0.356563
+      }
+    ],
+    "similarEnrichedAt": "2026-08-01T08:57:14.922Z"
   },
   {
     "name": "Osanna",
@@ -259359,7 +259425,50 @@
       "vk": null
     },
     "enrichedAt": "2026-08-01T08:41:26.180Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "陳奕迅",
+        "slug": "陳奕迅",
+        "match": 0.858118
+      },
+      {
+        "name": "五月天",
+        "slug": "五月天",
+        "match": 0.851353
+      },
+      {
+        "name": "李荣浩",
+        "slug": "李荣浩",
+        "match": 0.831308
+      },
+      {
+        "name": "王力宏",
+        "slug": "王力宏",
+        "match": 0.823732
+      },
+      {
+        "name": "林俊傑",
+        "slug": "林俊傑",
+        "match": 0.823402
+      },
+      {
+        "name": "蔡健雅",
+        "slug": "蔡健雅",
+        "match": 0.815675
+      },
+      {
+        "name": "田馥甄",
+        "slug": "田馥甄",
+        "match": 0.810938
+      },
+      {
+        "name": "陶喆",
+        "slug": "陶喆",
+        "match": 0.788706
+      }
+    ],
+    "similarEnrichedAt": "2026-08-01T08:57:15.324Z"
   },
   {
     "name": "林憶蓮",
@@ -259434,6 +259543,49 @@
     "wdBulkTriedAt": "2026-08-01T07:30:14.663Z",
     "wdAliasesTriedAt": "2026-08-01T07:30:14.663Z",
     "mbidBackfillTriedAt": "2026-08-01T07:30:25.585Z",
-    "autoTriedAt": "2026-08-01T08:41:27.470Z"
+    "autoTriedAt": "2026-08-01T08:41:27.470Z",
+    "similarArtists": [
+      {
+        "name": "S.H.E",
+        "slug": "she",
+        "match": 1
+      },
+      {
+        "name": "蔡依林",
+        "slug": "蔡依林",
+        "match": 0.971742
+      },
+      {
+        "name": "王心凌",
+        "slug": "王心凌",
+        "match": 0.786283
+      },
+      {
+        "name": "田馥甄",
+        "slug": "田馥甄",
+        "match": 0.735132
+      },
+      {
+        "name": "莫文蔚",
+        "slug": "莫文蔚",
+        "match": 0.670829
+      },
+      {
+        "name": "王力宏",
+        "slug": "王力宏",
+        "match": 0.594174
+      },
+      {
+        "name": "蔡健雅",
+        "slug": "蔡健雅",
+        "match": 0.563222
+      },
+      {
+        "name": "A-Lin",
+        "slug": "a-lin",
+        "match": 0.542953
+      }
+    ],
+    "similarEnrichedAt": "2026-08-01T08:57:16.798Z"
   }
 ]

@@ -2890,7 +2890,15 @@
       "vk": null
     },
     "enrichedAt": "2026-08-01T08:40:07.155Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "Bladee",
+        "slug": "bladee",
+        "match": 0.175834
+      }
+    ],
+    "similarEnrichedAt": "2026-08-01T08:57:02.382Z"
   },
   {
     "name": "2Mex",
@@ -120230,7 +120238,20 @@
       "vk": null
     },
     "enrichedAt": "2026-08-01T08:40:15.382Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "Yung Lean",
+        "slug": "yung-lean",
+        "match": 0.704812
+      },
+      {
+        "name": "Hi-C",
+        "slug": "hi-c",
+        "match": 0.247822
+      }
+    ],
+    "similarEnrichedAt": "2026-08-01T08:57:02.753Z"
   },
   {
     "name": "Blady",
@@ -271923,7 +271944,35 @@
       "vk": null
     },
     "enrichedAt": "2026-08-01T08:40:18.005Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "Anavitória",
+        "slug": "anavitoria",
+        "match": 1
+      },
+      {
+        "name": "Luísa Sonza",
+        "slug": "luisa-sonza",
+        "match": 0.683959
+      },
+      {
+        "name": "Luan Santana",
+        "slug": "luan-santana",
+        "match": 0.508057
+      },
+      {
+        "name": "Pabllo Vittar",
+        "slug": "pabllo-vittar",
+        "match": 0.431764
+      },
+      {
+        "name": "Anitta",
+        "slug": "anitta",
+        "match": 0.424974
+      }
+    ],
+    "similarEnrichedAt": "2026-08-01T08:57:03.145Z"
   },
   {
     "name": "Japan",
@@ -482400,7 +482449,50 @@
     "wdBulkTriedAt": "2026-08-01T07:30:14.663Z",
     "wdAliasesTriedAt": "2026-08-01T07:30:14.663Z",
     "mbidBackfillTriedAt": "2026-08-01T07:30:25.585Z",
-    "autoTriedAt": "2026-08-01T08:40:19.282Z"
+    "autoTriedAt": "2026-08-01T08:40:19.282Z",
+    "similarArtists": [
+      {
+        "name": "Nadhif Basalamah",
+        "slug": "nadhif-basalamah",
+        "match": 1
+      },
+      {
+        "name": "Sal Priadi",
+        "slug": "sal-priadi",
+        "match": 0.837374
+      },
+      {
+        "name": "Hindia",
+        "slug": "hindia",
+        "match": 0.676151
+      },
+      {
+        "name": ".Feast",
+        "slug": "feast",
+        "match": 0.58376
+      },
+      {
+        "name": "Nadin Amizah",
+        "slug": "nadin-amizah",
+        "match": 0.578827
+      },
+      {
+        "name": "Sheila on 7",
+        "slug": "sheila-on-7",
+        "match": 0.554712
+      },
+      {
+        "name": "Pamungkas",
+        "slug": "pamungkas",
+        "match": 0.549
+      },
+      {
+        "name": "Nidji",
+        "slug": "nidji",
+        "match": 0.532941
+      }
+    ],
+    "similarEnrichedAt": "2026-08-01T08:57:04.641Z"
   },
   {
     "name": "Raimon",
@@ -563686,7 +563778,35 @@
       "vk": null
     },
     "enrichedAt": "2026-08-01T08:40:23.394Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "Earl Agustin",
+        "slug": "earl-agustin",
+        "match": 1
+      },
+      {
+        "name": "Cup of Joe",
+        "slug": "cup-of-joe",
+        "match": 0.818059
+      },
+      {
+        "name": "IV Of Spades",
+        "slug": "iv-of-spades",
+        "match": 0.749972
+      },
+      {
+        "name": "December Avenue",
+        "slug": "december-avenue",
+        "match": 0.704112
+      },
+      {
+        "name": "Silent Sanctuary",
+        "slug": "silent-sanctuary",
+        "match": 0.671429
+      }
+    ],
+    "similarEnrichedAt": "2026-08-01T08:57:05.229Z"
   },
   {
     "name": "Rob Derhak",

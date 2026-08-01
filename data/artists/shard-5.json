@@ -232587,7 +232587,25 @@
     "mbidBackfillTriedAt": "2026-08-01T07:30:25.585Z",
     "mbid": "175a1b69-7a19-4881-b1ca-fe6b84ff3a2d",
     "enrichedAt": "2026-08-01T08:40:56.286Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "Earl Sweatshirt",
+        "slug": "earl-sweatshirt",
+        "match": 0.690216
+      },
+      {
+        "name": "Isaiah Rashad",
+        "slug": "isaiah-rashad",
+        "match": 0.488647
+      },
+      {
+        "name": "Mick Jenkins",
+        "slug": "mick-jenkins",
+        "match": 0.411434
+      }
+    ],
+    "similarEnrichedAt": "2026-08-01T08:57:10.184Z"
   },
   {
     "name": "Mavis Chloe Rivers",
@@ -408198,7 +408216,50 @@
       "vk": null
     },
     "enrichedAt": "2026-08-01T08:40:58.891Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "B'z",
+        "slug": "bz",
+        "match": 1
+      },
+      {
+        "name": "Bump of Chicken",
+        "slug": "bump-of-chicken",
+        "match": 0.873422
+      },
+      {
+        "name": "ORANGE RANGE",
+        "slug": "orange-range",
+        "match": 0.806024
+      },
+      {
+        "name": "UNISON SQUARE GARDEN",
+        "slug": "unison-square-garden",
+        "match": 0.795879
+      },
+      {
+        "name": "Uverworld",
+        "slug": "uverworld",
+        "match": 0.784181
+      },
+      {
+        "name": "Glay",
+        "slug": "glay",
+        "match": 0.780433
+      },
+      {
+        "name": "FLOW",
+        "slug": "flow",
+        "match": 0.757299
+      },
+      {
+        "name": "Mr.Children",
+        "slug": "mrchildren",
+        "match": 0.748196
+      }
+    ],
+    "similarEnrichedAt": "2026-08-01T08:57:10.504Z"
   },
   {
     "name": "初星学園",
@@ -408276,6 +408337,44 @@
       "vk": null
     },
     "enrichedAt": "2026-08-01T08:41:06.310Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "毛不易",
+        "slug": "毛不易",
+        "match": 0.931137
+      },
+      {
+        "name": "许嵩",
+        "slug": "许嵩",
+        "match": 0.752583
+      },
+      {
+        "name": "李荣浩",
+        "slug": "李荣浩",
+        "match": 0.737269
+      },
+      {
+        "name": "周杰倫",
+        "slug": "周杰倫",
+        "match": 0.733882
+      },
+      {
+        "name": "王力宏",
+        "slug": "王力宏",
+        "match": 0.662266
+      },
+      {
+        "name": "陳奕迅",
+        "slug": "陳奕迅",
+        "match": 0.646173
+      },
+      {
+        "name": "薛之谦",
+        "slug": "薛之谦",
+        "match": 0.603567
+      }
+    ],
+    "similarEnrichedAt": "2026-08-01T08:57:11.782Z"
   }
 ]
