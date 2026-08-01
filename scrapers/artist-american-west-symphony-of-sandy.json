@@ -1,0 +1,15 @@
+{
+  "id": "artist-american-west-symphony-of-sandy",
+  "domain": "www.americanwestsymphony.com",
+  "url": "https://www.americanwestsymphony.com/concert-season",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.sqs-block-content",
+    "artistNameFallback": "American West Symphony of Sandy",
+    "date": "h3",
+    "ticketUrl": "a[href*='tickets']",
+    "venueNameFallback": "",
+    "cityNameFallback": "Sandy, UT",
+    "countryNameFallback": "US"
+  }
+}
