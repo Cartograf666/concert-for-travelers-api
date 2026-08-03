@@ -1,0 +1,17 @@
+{
+  "id": "artist-anne-steele",
+  "domain": "annesteele.com",
+  "url": "https://annesteele.com/gigs",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event_list_item",
+    "artistNameFallback": "Anne Steele",
+    "date": ".event_list_item_date",
+    "ticketUrl": ".event_list_item_tickets a",
+    "venue": ".event_list_item_venue",
+    "city": ".event_list_item_location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

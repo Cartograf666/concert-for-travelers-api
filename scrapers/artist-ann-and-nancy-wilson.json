@@ -1,0 +1,17 @@
+{
+  "id": "artist-ann-and-nancy-wilson",
+  "domain": "www.heart-music.com",
+  "url": "https://www.heart-music.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event",
+    "artistNameFallback": "Heart",
+    "date": ".event-date",
+    "ticketUrl": ".event-tickets a",
+    "venue": ".event-venue",
+    "city": ".event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

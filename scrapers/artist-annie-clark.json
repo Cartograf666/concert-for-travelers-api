@@ -1,0 +1,17 @@
+{
+  "id": "artist-annie-clark",
+  "domain": "ilovestvincent.com",
+  "url": "https://ilovestvincent.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour-item",
+    "artistNameFallback": "St. Vincent",
+    "date": ".date",
+    "ticketUrl": ".tickets a",
+    "venue": ".venue",
+    "city": ".city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

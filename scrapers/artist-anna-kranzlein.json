@@ -1,0 +1,17 @@
+{
+  "id": "artist-anna-kranzlein",
+  "domain": "www.annakraenzlein.de",
+  "url": "https://www.annakraenzlein.de/live-termine/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-list-item",
+    "artistNameFallback": "Anna Kränzlein",
+    "date": ".event-date",
+    "ticketUrl": ".event-ticket-link a",
+    "venue": ".event-venue",
+    "city": ".event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}

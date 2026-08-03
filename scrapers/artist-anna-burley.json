@@ -1,0 +1,17 @@
+{
+  "id": "artist-anna-burley",
+  "domain": "www.annaburley.com",
+  "url": "https://www.annaburley.com/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.list-item.event",
+    "artistNameFallback": "Anna Burley",
+    "date": ".event-date",
+    "ticketUrl": ".btn-details a",
+    "venue": ".event-venue",
+    "city": ".event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "artist-angel-heart",
+  "domain": "www.angelheart.rocks",
+  "url": "https://www.angelheart.rocks/events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.s2-blog-item",
+    "artistNameFallback": "Angel Heart",
+    "date": ".s2-blog-item__date",
+    "ticketUrl": "a.s2-button",
+    "city": ".s2-blog-item__title",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "UK"
+  }
+}
