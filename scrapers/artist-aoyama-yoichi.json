@@ -1,0 +1,17 @@
+{
+  "id": "artist-aoyama-yoichi",
+  "domain": "www.yoichi-aoyama.com",
+  "url": "http://www.yoichi-aoyama.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".live-item",
+    "artistNameFallback": "Aoyama, Yōichi",
+    "date": ".live-item__date",
+    "ticketUrl": ".live-item__link a",
+    "venue": ".live-item__venue",
+    "city": ".live-item__venue",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

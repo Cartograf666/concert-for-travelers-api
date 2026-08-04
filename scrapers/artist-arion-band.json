@@ -1,0 +1,17 @@
+{
+  "id": "artist-arion-band",
+  "domain": "www.arion.fi",
+  "url": "https://www.arion.fi/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-row",
+    "artistNameFallback": "Arion Band",
+    "date": ".event-date",
+    "ticketUrl": ".event-tickets a",
+    "venue": ".event-venue",
+    "city": ".event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "FI"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-antonio-iturrioz",
+  "domain": "antonioiturrioz.com",
+  "url": "https://antonioiturrioz.com/conciertos/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.tour-event",
+    "artistNameFallback": "Antonio Iturrioz",
+    "date": "span.tour-date",
+    "ticketUrl": "div.tour-event a.vc_general",
+    "venue": "span.tour-venue",
+    "city": "span.tour-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "ES"
+  }
+}

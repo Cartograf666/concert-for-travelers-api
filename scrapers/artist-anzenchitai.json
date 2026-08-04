@@ -1,0 +1,17 @@
+{
+  "id": "artist-anzenchitai",
+  "domain": "www.anzenchitai.jp",
+  "url": "https://www.anzenchitai.jp/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.list-item",
+    "artistNameFallback": "Anzenchitai",
+    "date": ".date",
+    "ticketUrl": "a.btn-ticket",
+    "venue": ".place",
+    "city": ".place",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}
