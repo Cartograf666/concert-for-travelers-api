@@ -141,7 +141,7 @@ export function pageEvidence(finalUrl: string | undefined, body: string | undefi
  * artist's canonical name for a valid id and 404s for an invalid one -- so we get
  * both "does it resolve" and "is it the right artist" deterministically.
  */
-async function verifySpotify(url: string, name: string, fetchFn: FetchFn): Promise<FieldVerdict> {
+async function verifySpotify(url: string, name: string, fetchFn: FetchFn, aliases: string[] = []): Promise<FieldVerdict> {
   const base: FieldVerdict = { field: 'spotify', url, reach: 'unknown', action: 'keep' };
   const m = url.match(/artist\/([A-Za-z0-9]+)/);
   if (!m || !/^[0-9A-Za-z]{22}$/.test(m[1])) {
@@ -159,7 +159,13 @@ async function verifySpotify(url: string, name: string, fetchFn: FetchFn): Promi
   if (reach !== 'ok') return { ...base, reach, action: 'keep', note: 'inconclusive (infra)' };
   let title = '';
   try { title = JSON.parse(r.body || '{}').title || ''; } catch { /* ignore */ }
-  if (title && !nameMatches(name, title) && !nameMatches(title, name)) {
+  // Match against every name we know the artist by, not just the canonical one.
+  // Spotify picks one romanisation and the DB picks another -- "Ham Eun-jeong" vs
+  // Spotify's "Eun Jung" -- and treating that as evidence of a wrong link deleted
+  // correct data. The DB already carries Wikidata's altLabels for 37% of artists;
+  // the answer was sitting in the entry the whole time.
+  const knownAs = [name, ...aliases];
+  if (title && !knownAs.some((n) => nameMatches(n, title) || nameMatches(title, n))) {
     return { ...base, reach, identity: 'mismatch', action: 'null', note: `oembed name "${title}" != artist` };
   }
   return { ...base, reach, identity: title ? 'match' : 'unsure', action: 'keep' };
@@ -222,7 +228,7 @@ export async function verifyEntry(entry: ArtistEntry, fetchFn: FetchFn, judgeFn:
 
   // 5. spotify (deterministic oembed)
   const socials = entry.socials || {};
-  if (socials.spotify) verdicts.push(await verifySpotify(socials.spotify, name, fetchFn));
+  if (socials.spotify) verdicts.push(await verifySpotify(socials.spotify, name, fetchFn, entry.aliases || []));
 
   // 6. other socials -- reachability only (bot walls make identity unreliable; only
   //    null on a definitively dead link, never on a 200-that-might-be-wrong).

@@ -1,7 +1,7 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import { loadApprovedArtists, saveApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from '../pipeline/artistDb.js';
-import { isInfraHost, publicResolverAgreesNxdomain } from '../pipeline/verify_enrichment.js';
+import { isInfraHost, publicResolverAgreesNxdomain, nameMatches } from '../pipeline/verify_enrichment.js';
 import type { ArtistEntry } from '../schemas/artist.js';
 
 /**
@@ -50,7 +50,21 @@ function setValue(a: ArtistEntry, field: string, value: string): void {
  * Decides one audited null. Resolves against public DNS only for non-infra hosts,
  * memoized per host so a sweep that nulled 151 facebook links costs one lookup.
  */
-async function shouldRestore(row: AuditRow, cache: Map<string, boolean>): Promise<{ restore: boolean; reason: string }> {
+async function shouldRestore(row: AuditRow, entry: ArtistEntry, cache: Map<string, boolean>): Promise<{ restore: boolean; reason: string }> {
+  // An identity mismatch recorded by an OLDER, broken matcher. The note carries
+  // the exact title the endpoint returned, so the current matcher can re-judge
+  // the same evidence without a single network call -- and it now knows about
+  // aliases and non-Latin scripts, which is what produced these verdicts.
+  const mismatch = row.note?.match(/^oembed name "(.+)" != artist$/);
+  if (mismatch) {
+    const title = mismatch[1];
+    const knownAs = [entry.name, ...(entry.aliases || [])];
+    if (knownAs.some((n) => nameMatches(n, title) || nameMatches(title, n))) {
+      return { restore: true, reason: 'name matches under the current matcher (alias / script / spacing)' };
+    }
+    return { restore: false, reason: `identity mismatch stands ("${title}")` };
+  }
+
   if (row.note !== DNS_NOTE) return { restore: false, reason: `not DNS-driven (${row.note})` };
   const host = hostOf(row.url);
   if (!host) return { restore: false, reason: 'unparseable url' };
@@ -99,7 +113,7 @@ async function main(): Promise<void> {
     const entry = byName.get(row.name);
     if (!entry) { skipped.push(`${row.name}: no longer in the DB`); continue; }
 
-    const verdict = await shouldRestore(row, cache);
+    const verdict = await shouldRestore(row, entry, cache);
     if (!verdict.restore) {
       kept.set(verdict.reason, (kept.get(verdict.reason) || 0) + 1);
       continue;

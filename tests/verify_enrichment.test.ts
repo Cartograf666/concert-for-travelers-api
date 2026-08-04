@@ -180,3 +180,25 @@ test('applyVerdicts stamps verifyTriedAt (not verifiedAt) when nothing was concl
   assert.equal(out.verifyTriedAt, '2026-08-04T00:00:00.000Z');
   assert.equal(out.website, 'https://a.example');
 });
+
+test('a spotify title matching an ALIAS is not a mismatch', async () => {
+  const oembed = (title: string): FetchFn => async () => ({ status: 200, body: JSON.stringify({ title }) });
+  const noJudge: JudgeFn = async () => ({});
+
+  // Spotify romanises the name differently from the DB; the alias reconciles them.
+  const entry = {
+    name: 'Ham Eun-jeong',
+    aliases: ['Eunjung', 'Eun Jung', 'Ham Eunjeong'],
+    socials: { spotify: 'https://open.spotify.com/artist/7Ek3oOUVLuhonVO3p5SVyy' }
+  } as ArtistEntry;
+  const ok = await verifyEntry(entry, oembed('Eun Jung'), noJudge);
+  assert.deepEqual(ok.nulledFields, [], 'an alias match must never null the link');
+
+  // A title matching neither the name nor any alias is still a real mismatch.
+  const bad = await verifyEntry(entry, oembed('Nine Inch Nails'), noJudge);
+  assert.deepEqual(bad.nulledFields, ['spotify']);
+
+  // No aliases recorded -> behaviour is unchanged.
+  const bare = { name: 'Hannah Montana', socials: { spotify: 'https://open.spotify.com/artist/14scxEoUN7Dcx1m4EQ7oHe' } } as ArtistEntry;
+  assert.deepEqual((await verifyEntry(bare, oembed('Ashley O'), noJudge)).nulledFields, ['spotify']);
+});
