@@ -30,6 +30,9 @@ export const ArtistEntrySchema = z.object({
   sitesTriedAt: z.string().optional(),
   tourUrlProbeTriedAt: z.string().optional(),
   artistCheckedAt: z.string().optional(),
+  verifiedAt: z.string().optional(),
+  /** Set when a verify pass reached nothing conclusive (all links timed out/blocked). */
+  verifyTriedAt: z.string().optional(),
   mbid: z.string().optional(),
   genres: z.array(z.string()).optional(),
   popularity: z.object({

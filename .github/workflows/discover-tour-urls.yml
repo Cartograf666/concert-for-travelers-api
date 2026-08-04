@@ -5,7 +5,9 @@ name: Discover Tour URLs
 
 on:
   schedule:
-    - cron: '0 4 * * 0' # weekly on Sunday at 04:00 UTC
+    # Daily, not weekly: the probe queue is ~11.6k artists and a weekly 300-run
+    # would take eight months to reach the ones that actually play concerts.
+    - cron: '0 4 * * *' # daily at 04:00 UTC
   workflow_dispatch:
     inputs:
       artists_count:
@@ -24,7 +26,7 @@ concurrency:
 jobs:
   discover-tour-urls:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90 # 800 artists at the measured ~3.4s each is ~45min; headroom for slow hosts
     steps:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -43,7 +45,7 @@ jobs:
           ARTISTS_COUNT_INPUT: ${{ github.event.inputs.artists_count }}
         run: |
           set -eo pipefail
-          COUNT=${ARTISTS_COUNT_INPUT:-300}
+          COUNT=${ARTISTS_COUNT_INPUT:-800}
           rm -rf /tmp/artists-before /tmp/artists-after /tmp/tour-url-audit-before.json /tmp/tour-url-audit-after.json
           cp -R data/artists /tmp/artists-before
           cp data/tour-url-probe-hits.json /tmp/tour-url-audit-before.json

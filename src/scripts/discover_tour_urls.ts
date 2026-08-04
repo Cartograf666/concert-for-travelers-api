@@ -372,8 +372,42 @@ async function saveDb(artists: ArtistEntry[]): Promise<void> {
   await saveApprovedArtists(PRODUCTION_ARTIST_DB_DIR, artists);
 }
 
+/**
+ * The tier filter exists to keep the probe off the 42k longtail entries whose
+ * websites are mostly wrong or irrelevant. But an artist who has actually turned
+ * up in a scraped concert is exactly who a tour URL is FOR, whatever tier the
+ * popularity heuristic assigned them -- 1,104 booked artists with a website were
+ * excluded by tier alone and could never be probed at all.
+ */
 export function isTourUrlProbeCandidate(artist: ArtistEntry): boolean {
-  return !!artist.website && !artist.tourUrl && !artist.tourUrlProbeTriedAt && (!artist.tier || artist.tier === 'professional');
+  if (!artist.website || artist.tourUrl || artist.tourUrlProbeTriedAt) return false;
+  return !artist.tier || artist.tier === 'professional' || !!artist.lastConcertSeenAt;
+}
+
+/**
+ * Ranks the probe queue by how much a tour URL for that artist is actually worth.
+ *
+ * Selection used to be array order, i.e. alphabetical within the shard layout, so
+ * months of weekly 300-artist runs ground through names beginning 0/8/H/P/X and
+ * never reached anyone else. Ordering by evidence of real bookings instead means
+ * the 4,012 booked artists who have a website and no tour URL are cleared first
+ * rather than in eight months' time.
+ */
+export function tourUrlProbePriority(a: ArtistEntry): number {
+  const booked = a.lastConcertSeenAt ? Date.parse(a.lastConcertSeenAt) : NaN;
+  // Recency of a real booking dominates; popularity only breaks ties among the
+  // artists we have never seen on a bill.
+  if (Number.isFinite(booked)) return 1e15 + booked;
+  return a.popularity?.listeners ?? 0;
+}
+
+/** The next `n` artists to probe, highest-value first. */
+export function selectProbeQueue(artists: ArtistEntry[], n: number): { name: string; website: string }[] {
+  return artists
+    .filter(isTourUrlProbeCandidate)
+    .sort((a, b) => tourUrlProbePriority(b) - tourUrlProbePriority(a))
+    .slice(0, n)
+    .map((a) => ({ name: a.name, website: a.website! }));
 }
 
 async function appendToAuditFile(filePath: string, newHits: any[]): Promise<void> {
@@ -390,13 +424,7 @@ async function appendToAuditFile(filePath: string, newHits: any[]): Promise<void
 
 async function select(n: number, outFile?: string): Promise<void> {
   const artists = await loadDb();
-  const pending: { name: string; website: string }[] = [];
-  for (const a of artists) {
-    if (isTourUrlProbeCandidate(a)) {
-      pending.push({ name: a.name, website: a.website! });
-      if (pending.length >= n) break;
-    }
-  }
+  const pending = selectProbeQueue(artists, n);
   const json = JSON.stringify(pending, null, 2);
   if (outFile) {
     await fs.writeFile(outFile, json, 'utf-8');
@@ -496,13 +524,7 @@ async function stats(): Promise<void> {
 
 async function runConvenience(n: number): Promise<void> {
   const artists = await loadDb();
-  const pending: { name: string; website: string }[] = [];
-  for (const a of artists) {
-    if (isTourUrlProbeCandidate(a)) {
-      pending.push({ name: a.name, website: a.website! });
-      if (pending.length >= n) break;
-    }
-  }
+  const pending = selectProbeQueue(artists, n);
   
   if (pending.length === 0) {
     console.log('[discover-tour-urls] No pending candidates found.');
