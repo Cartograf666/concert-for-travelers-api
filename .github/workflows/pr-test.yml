@@ -52,3 +52,12 @@ jobs:
 
       - name: Run Tests
         run: npm run test
+
+      # Offline data-quality ratchet over data/artists/. Pure JSON rules -- no
+      # network, no LLM -- so it is safe to block a merge on. It fails only when
+      # the ERROR count rises above data/artist-integrity-baseline.json, which
+      # makes it a ratchet rather than a demand that 63k accumulated entries be
+      # spotless. Lower the baseline as defects get cleaned:
+      #   npm run audit-artist-integrity -- --update-baseline
+      - name: Artist data integrity
+        run: npm run audit-artist-integrity -- --strict
