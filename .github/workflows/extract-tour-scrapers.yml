@@ -1,0 +1,110 @@
+name: Extract Tour Scrapers
+
+# The missing link between discovery and scraping. discover-tour-urls finds tour
+# pages and artist-scrape runs scraper configs against them -- but nothing was
+# turning the former into the latter, so 421 discovered tour URLs sat unused and
+# scrapers/artists/ held 5 configs. `tourScraperTriedAt` was 0 across the entire
+# catalog: this step had never run outside a manual invocation.
+#
+# Reads artists that have a tourUrl and no scraper yet, fetches the page, and asks
+# Gemini to derive a selector config, writing it to scrapers/artists/.
+
+on:
+  schedule:
+    # 06:00, deliberately after discover-tour-urls (04:00) so each day's freshly
+    # found tour URLs are converted the same morning rather than a day later, and
+    # before nothing else -- artist-scrape also runs at 04:00 and would otherwise
+    # be racing the same artist-db-write lock.
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+    inputs:
+      artists_count:
+        description: 'Number of tourUrl-having artists to attempt this run'
+        required: true
+        default: '100'
+
+permissions:
+  contents: write
+  issues: write # open/update a dedup'd failure issue (see "Alert on failure" step)
+
+concurrency:
+  group: artist-db-write
+  cancel-in-progress: false
+
+jobs:
+  extract-tour-scrapers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Extract tour scrapers
+        env:
+          ARTISTS_COUNT_INPUT: ${{ github.event.inputs.artists_count }}
+          # Rotated by src/engine/gemini_keys.ts;
+          # add GEMINI_API_KEY_2/_3/... as repo secrets to add more.
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+        run: |
+          set -eo pipefail
+          COUNT=${ARTISTS_COUNT_INPUT:-100}
+          rm -rf /tmp/artists-before /tmp/artists-after /tmp/scrapers-artists-after
+          cp -R data/artists /tmp/artists-before
+
+          npm run extract-tour-scrapers -- run "$COUNT" 2>&1 | tee /tmp/extract-tour-scrapers.log
+
+          cp -R data/artists /tmp/artists-after
+          # Snapshot for the commit action's conflict path, which hard-resets the
+          # tree and can only reconstruct data/artists from the delta.
+          mkdir -p /tmp/scrapers-artists-after
+          if [ -d scrapers/artists ]; then cp -R scrapers/artists/. /tmp/scrapers-artists-after/; fi
+
+      - name: Report conversion rate
+        if: always()
+        run: |
+          set -eo pipefail
+          # The number this whole workflow exists to make visible: how often a
+          # discovered tour page actually yields a working scraper config. Nobody
+          # has ever measured it, because the step never ran.
+          node -e '
+            const fs = require("fs");
+            let db = [];
+            for (const f of fs.readdirSync("data/artists")) db.push(...JSON.parse(fs.readFileSync("data/artists/" + f, "utf8")));
+            const withTourUrl = db.filter((a) => a.tourUrl).length;
+            const tried = db.filter((a) => a.tourScraperTriedAt || a.tourScraperCreatedAt).length;
+            const created = db.filter((a) => a.tourScraperCreatedAt).length;
+            const configs = fs.existsSync("scrapers/artists") ? fs.readdirSync("scrapers/artists").filter((f) => f.endsWith(".json")).length : 0;
+            const pct = (n, d) => (d === 0 ? "n/a" : ((n / d) * 100).toFixed(1) + "%");
+            console.log(`tourUrl held        : ${withTourUrl}`);
+            console.log(`extraction attempted: ${tried}`);
+            console.log(`scraper created     : ${created}  (${pct(created, tried)} of attempts)`);
+            console.log(`configs on disk     : ${configs}`);
+            console.log(`awaiting extraction : ${withTourUrl - tried}`);
+          '
+
+      - name: Commit and push generated scrapers
+        uses: ./.github/actions/commit-artist-db-delta
+        with:
+          before-artists-dir: /tmp/artists-before
+          after-artists-dir: /tmp/artists-after
+          extra-path: scrapers/artists
+          extra-after-dir: /tmp/scrapers-artists-after
+          commit-message: "auto: extract tour scrapers [skip ci]"
+
+      - name: Alert on failure
+        if: failure()
+        uses: ./.github/actions/alert-on-failure
+        with:
+          workflow-name: "Extract Tour Scrapers"
+          job-label: extract-tour-scrapers

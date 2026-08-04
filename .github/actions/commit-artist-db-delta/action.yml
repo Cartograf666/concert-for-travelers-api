@@ -12,6 +12,15 @@ inputs:
     required: false
   audit-after-file:
     required: false
+  # An additional repo path the run produces alongside data/artists/ (currently
+  # scrapers/artists/, written by extract-tour-scrapers). It needs its own snapshot
+  # because the conflict path below does `git reset --hard`, and the delta replay
+  # only knows how to reconstruct the artist DB -- newly generated files anywhere
+  # else would simply be thrown away.
+  extra-path:
+    required: false
+  extra-after-dir:
+    required: false
 
 runs:
   using: composite
@@ -23,6 +32,8 @@ runs:
         AFTER_ARTISTS_DIR: ${{ inputs.after-artists-dir }}
         AUDIT_BEFORE_FILE: ${{ inputs.audit-before-file }}
         AUDIT_AFTER_FILE: ${{ inputs.audit-after-file }}
+        EXTRA_PATH: ${{ inputs.extra-path }}
+        EXTRA_AFTER_DIR: ${{ inputs.extra-after-dir }}
         COMMIT_MESSAGE: ${{ inputs.commit-message }}
       run: |
         set -eo pipefail
@@ -33,7 +44,15 @@ runs:
         if [ -n "$AUDIT_BEFORE_FILE" ] && [ -n "$AUDIT_AFTER_FILE" ]; then
           changed_paths+=(data/tour-url-probe-hits.json)
         fi
-        if git diff --quiet -- "${changed_paths[@]}"; then
+        # git add on a path that does not exist stages nothing and exits 1 under
+        # set -e, so only include the extra path once it is real.
+        if [ -n "$EXTRA_PATH" ] && [ -e "$EXTRA_PATH" ]; then
+          changed_paths+=("$EXTRA_PATH")
+        fi
+        # --porcelain, not `git diff --quiet`: the extra path contributes NEW files,
+        # and git diff only ever compares tracked ones -- a run whose entire output
+        # is freshly generated scraper configs would report "no changes".
+        if [ -z "$(git status --porcelain -- "${changed_paths[@]}")" ]; then
           echo "Run made no changes to commit."
           exit 0
         fi
@@ -55,10 +74,16 @@ runs:
             git fetch origin main
             git reset --hard origin/main
             npm run reapply-artist-db-delta -- "$BEFORE_ARTISTS_DIR" "$AFTER_ARTISTS_DIR"
+            # The hard reset above wiped anything this run generated outside the
+            # artist DB. Restore it from the post-run snapshot before re-staging.
+            if [ -n "$EXTRA_PATH" ] && [ -n "$EXTRA_AFTER_DIR" ] && [ -d "$EXTRA_AFTER_DIR" ]; then
+              mkdir -p "$EXTRA_PATH"
+              cp -R "$EXTRA_AFTER_DIR"/. "$EXTRA_PATH"/
+            fi
             if [ -n "$AUDIT_BEFORE_FILE" ] && [ -n "$AUDIT_AFTER_FILE" ]; then
               npm run reapply-tour-url-audit-delta -- "$AUDIT_BEFORE_FILE" "$AUDIT_AFTER_FILE"
             fi
-            if git diff --quiet -- "${changed_paths[@]}"; then
+            if [ -z "$(git status --porcelain -- "${changed_paths[@]}")" ]; then
               echo "::warning::Replay produced no changes; nothing to push."
             else
               git add "${changed_paths[@]}"
