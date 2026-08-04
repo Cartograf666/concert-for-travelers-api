@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert';
 import {
   classifyReach, nameMatches, verifyEntry, applyVerdicts, resolverHealthy,
+  isInfraHost, publicResolverAgreesNxdomain, hostKillRateBreaker, type VerifyResult,
   type FetchFn, type JudgeFn, type FetchResult
 } from '../src/pipeline/verify_enrichment.js';
 import type { ArtistEntry } from '../src/schemas/artist.js';
@@ -112,4 +113,70 @@ test('dead social (404) nulled; malformed spotify id nulled', async () => {
   assert.ok(res.nulledFields.includes('facebook'));
   assert.ok(res.nulledFields.includes('spotify')); // malformed id, never even fetched
   assert.ok(!res.nulledFields.includes('youtube'));
+});
+
+// ---------------------------------------------------------------------------
+// Regression: the 2026-08-04 mass-null incident (350 live links destroyed by a
+// VPN resolver that returned NXDOMAIN for www.facebook.com / www.instagram.com /
+// www.youtube.com while every control domain resolved normally).
+// ---------------------------------------------------------------------------
+
+test('platform hosts are never DNS-dead: an NXDOMAIN-ing resolver cannot null socials', async () => {
+  for (const h of ['www.facebook.com', 'm.facebook.com', 'www.instagram.com', 'www.youtube.com', 'music.youtube.com', 'youtu.be', 'open.spotify.com', 't.me', 'vk.com']) {
+    assert.equal(isInfraHost(h), true, `${h} must be treated as an always-exists host`);
+  }
+  // ...but a per-artist domain is still eligible to be declared dead.
+  for (const h of ['keijihaino.com', 'www.8-ball.jp', 'halwellband.com']) {
+    assert.equal(isInfraHost(h), false, `${h} must remain DNS-checkable`);
+  }
+});
+
+test('an NXDOMAIN is only believed when a public resolver agrees', async () => {
+  // Public resolver sees the host -> the local resolver was lying -> not dead.
+  assert.equal(await publicResolverAgreesNxdomain('anything', []).catch(() => false), false);
+});
+
+test('nameMatches: identical non-Latin names match (previously nulled as a mismatch)', () => {
+  for (const n of ['Аквариум', '坂本龍一', '방탄소년단', 'Ελευθερία Αρβανιτάκη', 'ヨルシカ', '嵐']) {
+    assert.equal(nameMatches(n, n), true, `${n} must match itself`);
+  }
+});
+
+test('nameMatches: diacritic and spacing variants are the same artist', () => {
+  assert.equal(nameMatches('Bjork', 'Björk'), true);
+  assert.equal(nameMatches('Björk', 'Bjork'), true);
+  assert.equal(nameMatches('Han Sunhwa', 'Han Sun Hwa'), true);
+  assert.equal(nameMatches('Motorhead', 'Motörhead'), true);
+  // A genuinely different artist must still be reported as a mismatch.
+  assert.equal(nameMatches('Hannah Montana', 'Ashley O'), false);
+});
+
+test('hostKillRateBreaker trips on a host killed ~universally, stays silent on a plausible one', () => {
+  const mk = (host: string, n: number, kills: number): VerifyResult => ({
+    name: 'x', changed: true, nulledFields: [],
+    verdicts: Array.from({ length: n }, (_, i) => ({
+      field: 'facebook' as const,
+      url: `https://${host}/a${i}`,
+      reach: 'dead' as const,
+      action: (i < kills ? 'null' : 'keep') as 'null' | 'keep'
+    }))
+  });
+  // The incident's shape: 151/151 facebook.
+  assert.equal(hostKillRateBreaker([mk('www.facebook.com', 151, 151)]).length, 1);
+  // A legitimate hallucination rate on a heavily-used host: 71/175 spotify.
+  assert.deepEqual(hostKillRateBreaker([mk('open.spotify.com', 175, 71)]), []);
+  // Below the observation floor: a 2/2 per-artist domain proves nothing either way.
+  assert.deepEqual(hostKillRateBreaker([mk('halwellband.com', 2, 2)]), []);
+});
+
+test('applyVerdicts stamps verifyTriedAt (not verifiedAt) when nothing was conclusive', () => {
+  const entry = { name: 'A', website: 'https://a.example', socials: {} } as ArtistEntry;
+  const inconclusive: VerifyResult = {
+    name: 'A', changed: false, nulledFields: [],
+    verdicts: [{ field: 'website', url: 'https://a.example', reach: 'unreachable', action: 'keep' }]
+  };
+  const out = applyVerdicts(entry, inconclusive, '2026-08-04T00:00:00.000Z') as any;
+  assert.equal(out.verifiedAt, undefined, 'a run that reached nothing must not claim the artist is verified');
+  assert.equal(out.verifyTriedAt, '2026-08-04T00:00:00.000Z');
+  assert.equal(out.website, 'https://a.example');
 });
