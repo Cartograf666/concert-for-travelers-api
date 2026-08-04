@@ -40,7 +40,8 @@
     "test:coverage": "SCRAPER_ALLOW_LOCAL_HOSTS=1 c8 node --import tsx --test tests/*.test.ts",
     "lint": "eslint src/ tests/",
     "restore-verify-nulls": "tsx src/scripts/restore_verify_nulls.ts",
-    "audit-artist-integrity": "tsx src/scripts/audit_artist_integrity.ts"
+    "audit-artist-integrity": "tsx src/scripts/audit_artist_integrity.ts",
+    "crosscheck-ground-truth": "tsx src/scripts/crosscheck_ground_truth.ts"
   },
   "keywords": [
     "concert",
