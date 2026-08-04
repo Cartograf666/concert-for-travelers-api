@@ -8,13 +8,24 @@ interface ConcurrencyDropEvent {
   at: string;
 }
 
-const WORKFLOW_FILES = [
+/**
+ * Every workflow serialized by `concurrency: group: artist-db-write`. A member
+ * missing from this list is invisible to the watchdog: its cancelled runs are
+ * silently dropped work that nothing reports. The list had drifted to 7 of 10 --
+ * discover-tour-urls, enrich-images and extract-tour-scrapers were all unwatched --
+ * so tests/check_concurrency_drops.test.ts now asserts it against the workflow
+ * files themselves rather than trusting anyone to remember.
+ */
+export const WORKFLOW_FILES = [
   'daily-scrape.yml',
+  'data-hygiene.yml',
+  'discover-tour-urls.yml',
   'enrich-auto.yml',
   'enrich-database.yml',
+  'enrich-images.yml',
   'enrich-metadata.yml',
   'enrich-similar.yml',
-  'data-hygiene.yml',
+  'extract-tour-scrapers.yml',
   'prune-dead-scrapers.yml'
 ];
 
