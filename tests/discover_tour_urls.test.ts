@@ -15,7 +15,7 @@ import {
   resolveUniqueIndex,
   ArtistEntry,
   ProbeResult
-} from '../src/scripts/discover_tour_urls.js';
+, isTourUrlProbeCandidate, selectProbeQueue } from '../src/scripts/discover_tour_urls.js';
 import { loadApprovedArtists, saveApprovedArtists } from '../src/pipeline/artistDb.js';
 
 // Clean test helpers
@@ -347,4 +347,44 @@ test('discover_tour_urls - buildNameIndex/resolveUniqueIndex: a probe result nev
 
   // A name genuinely absent from the DB also resolves to undefined.
   assert.strictEqual(resolveUniqueIndex(byName, 'Some Unknown Band', 'test'), undefined);
+});
+
+// ---------------------------------------------------------------------------
+// Probe queue: who gets probed, and in what order.
+// ---------------------------------------------------------------------------
+
+test('a booked artist is probed even when the tier heuristic calls them longtail', () => {
+  const base = { website: 'https://x.example' } as ArtistEntry;
+  assert.equal(isTourUrlProbeCandidate({ ...base, tier: 'professional' } as ArtistEntry), true);
+  assert.equal(isTourUrlProbeCandidate({ ...base, tier: 'longtail' } as ArtistEntry), false);
+  assert.equal(
+    isTourUrlProbeCandidate({ ...base, tier: 'longtail', lastConcertSeenAt: '2026-07-01T00:00:00Z' } as ArtistEntry),
+    true,
+    'an artist who actually played a show is exactly who a tour URL is for'
+  );
+});
+
+test('nothing already answered is re-probed', () => {
+  const a = { name: 'A', website: 'https://x.example', tier: 'professional' } as ArtistEntry;
+  assert.equal(isTourUrlProbeCandidate({ ...a, tourUrl: 'https://x.example/tour' } as ArtistEntry), false);
+  assert.equal(isTourUrlProbeCandidate({ ...a, tourUrlProbeTriedAt: '2026-01-01T00:00:00Z' } as ArtistEntry), false);
+  assert.equal(isTourUrlProbeCandidate({ name: 'A', tier: 'professional' } as ArtistEntry), false, 'no website, nothing to probe');
+});
+
+test('the queue puts real bookings ahead of popularity, and recent bookings first', () => {
+  const mk = (name: string, extra: Partial<ArtistEntry>) =>
+    ({ name, website: `https://${name}.example`, tier: 'professional', ...extra }) as ArtistEntry;
+  const db = [
+    mk('huge', { popularity: { listeners: 5_000_000, playcount: 9 } }),
+    mk('old-booking', { lastConcertSeenAt: '2026-01-01T00:00:00Z' }),
+    mk('small', { popularity: { listeners: 12, playcount: 1 } }),
+    mk('recent-booking', { lastConcertSeenAt: '2026-07-30T00:00:00Z' })
+  ];
+  assert.deepEqual(
+    selectProbeQueue(db, 4).map((x) => x.name),
+    ['recent-booking', 'old-booking', 'huge', 'small']
+  );
+  // Selection used to be array order, so a cap smaller than the queue took
+  // whatever happened to sort first alphabetically rather than what mattered.
+  assert.deepEqual(selectProbeQueue(db, 2).map((x) => x.name), ['recent-booking', 'old-booking']);
 });
