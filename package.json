@@ -41,7 +41,8 @@
     "lint": "eslint src/ tests/",
     "restore-verify-nulls": "tsx src/scripts/restore_verify_nulls.ts",
     "audit-artist-integrity": "tsx src/scripts/audit_artist_integrity.ts",
-    "crosscheck-ground-truth": "tsx src/scripts/crosscheck_ground_truth.ts"
+    "crosscheck-ground-truth": "tsx src/scripts/crosscheck_ground_truth.ts",
+    "golden": "tsx src/scripts/golden_set.ts"
   },
   "keywords": [
     "concert",
