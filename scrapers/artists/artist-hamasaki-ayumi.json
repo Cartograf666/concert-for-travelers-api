@@ -1,0 +1,16 @@
+{
+  "id": "artist-hamasaki-ayumi",
+  "domain": "avex.jp",
+  "url": "https://avex.jp/ayu/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "ul.list-image > li",
+    "artistNameFallback": "Hamasaki, Ayumi",
+    "date": "dd",
+    "ticketUrl": "a",
+    "venue": "dt",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

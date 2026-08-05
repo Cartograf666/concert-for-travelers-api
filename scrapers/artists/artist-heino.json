@@ -1,0 +1,17 @@
+{
+  "id": "artist-heino",
+  "domain": "www.heino.de",
+  "url": "https://www.heino.de/termine",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "main .grid > div",
+    "artistNameFallback": "Heino",
+    "date": "div.space-y-3 > div:nth-of-type(1) span",
+    "ticketUrl": ".mt-auto a[href]",
+    "venue": "div.space-y-3 > div:nth-of-type(2) span",
+    "city": "div.space-y-3 > div:nth-of-type(3) span",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}

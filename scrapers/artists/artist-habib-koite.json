@@ -1,0 +1,18 @@
+{
+  "id": "artist-habib-koite",
+  "domain": "habibkoite.com",
+  "url": "https://habibkoite.com/concerts",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-detail",
+    "artistNameFallback": "Habib Koité",
+    "date": "div.event-description p.event-datetime span.date-long span.date",
+    "ticketUrl": "div.event-description div.buying-options a.tickets.button@href",
+    "venue": "div.event-description p.event-location a",
+    "city": "div.event-description p.event-location a",
+    "country": "div.event-description p.event-location a@href",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

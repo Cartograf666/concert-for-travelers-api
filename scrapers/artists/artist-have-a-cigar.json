@@ -1,0 +1,16 @@
+{
+  "id": "artist-have-a-cigar",
+  "domain": "haveacigarpinkfloydtribute.com",
+  "url": "https://haveacigarpinkfloydtribute.com/tour-dates",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div[data-aid='CALENDAR_BIGGER_SCREEN_CONTAINER']",
+    "artistNameFallback": "Have a Cigar",
+    "date": "[data-aid='CALENDAR_EVENT_DATE']",
+    "venue": "[data-aid='CALENDAR_EVENT_TITLE']",
+    "city": "[data-aid='CALENDAR_EVENT_TITLE']",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-helen-jane-long",
+  "domain": "helenjanelong.com",
+  "url": "https://helenjanelong.com/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.tribe-events-calendar-list__event-row",
+    "artistNameFallback": "Helen Jane Long",
+    "date": "time.tribe-events-calendar-list__event-datetime",
+    "ticketUrl": "a.tribe-events-calendar-list__event-title-link",
+    "venue": ".tribe-events-calendar-list__event-venue-title",
+    "city": ".tribe-events-calendar-list__event-venue-address",
+    "country": ".tribe-events-calendar-list__event-venue-address",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-helge-schneider",
+  "domain": "helge-schneider.de",
+  "url": "https://helge-schneider.de/termine",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.views-table tbody tr",
+    "artistNameFallback": "Helge Schneider",
+    "date": ".views-field-field-tdatum-value",
+    "ticketUrl": ".views-field-field-tlink-url a",
+    "venue": ".views-field-field-tloc-value",
+    "city": ".views-field-name-1",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}

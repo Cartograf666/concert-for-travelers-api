@@ -1,0 +1,15 @@
+{
+  "id": "artist-hamilton-police-pipe-band",
+  "domain": "hppb.ca",
+  "url": "https://hppb.ca/events.html",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.txt p",
+    "artistNameFallback": "Hamilton Police Pipe Band",
+    "date": "span[style*='color:#FF0000']",
+    "venue": "span:not([style*='color:#FF0000'])",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}
