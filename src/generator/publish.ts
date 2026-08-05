@@ -2,7 +2,7 @@ import * as fs from 'fs/promises';
 import * as path from 'path';
 import { Concert } from '../schemas/concert.js';
 import { slugify, parseSpotifyArtistId } from '../pipeline/process.js';
-import { isLatinReadable } from '../pipeline/script.js';
+import { isReadableScript, isLatinScript } from '../pipeline/script.js';
 
 export interface PublishStats {
   totalConcerts: number;
@@ -92,12 +92,12 @@ export async function publishArtistCatalog(approvedArtists: any[], outputDir: st
       }
       if (Array.isArray(a.aliases) && a.aliases.length > 0) {
         // Wikidata altLabels arrive in every script the entity has a label in, so
-        // 27% of the catalog's aliases (30,098 of 110,794) are Han, kana, Hangul,
-        // Arabic, Hebrew, Thai, Greek, Devanagari, Georgian or Armenian. They are
-        // correct data and stay in data/artists/ for the matcher, but an
-        // English-language autocomplete offering a script the user cannot read is
-        // noise -- and for 9,370 artists it is most of what they would see.
-        const aliases = a.aliases.filter(isLatinReadable);
+        // a large share are Han, kana, Hangul, Arabic, Hebrew, Thai, Greek,
+        // Devanagari, Georgian or Armenian. They are correct data and stay in
+        // data/artists/ for the matcher, but an autocomplete offering a script the
+        // reader cannot read is noise -- and for thousands of artists it is most of
+        // what they would see. Latin and Cyrillic both pass; see script.ts.
+        const aliases = a.aliases.filter(isReadableScript);
         if (aliases.length > 0) entry.aliases = aliases;
       }
     }
@@ -226,9 +226,8 @@ function buildCityCanonicalMap(concerts: Concert[]): Map<string, string> {
       // carry the most events. Bandsintown returns a venue's own locale often
       // enough that bandsintown.ts has to map the country name, so that is a live
       // risk, not a hypothetical one.
-      const aLatin = isLatinReadable(a.city);
-      const bLatin = isLatinReadable(b.city);
-      if (aLatin !== bLatin) return aLatin ? -1 : 1;
+      const rank = (city: string) => (isLatinScript(city) ? 0 : isReadableScript(city) ? 1 : 2);
+      if (rank(a.city) !== rank(b.city)) return rank(a.city) - rank(b.city);
       if (b.totalCount !== a.totalCount) return b.totalCount - a.totalCount;
       if (b.city.length !== a.city.length) return b.city.length - a.city.length;
       return a.city.localeCompare(b.city);

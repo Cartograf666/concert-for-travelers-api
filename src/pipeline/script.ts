@@ -1,12 +1,12 @@
 /**
  * Writing-system helpers for the published output.
  *
- * The API serves an English-language consumer app, but its sources do not: the
- * artist DB carries Wikidata altLabels in every script a label exists in (30,098
- * of 110,794 aliases are non-Latin -- Han, kana, Hangul, Arabic, Hebrew, Thai,
- * Greek, Devanagari, Georgian, Armenian), and Bandsintown returns a venue's own
- * locale often enough that bandsintown.ts has to map "日本" to JP. None of that is
- * wrong data; it is simply unreadable to the audience the published feed is for.
+ * The feed serves readers of English and Russian; its sources serve everyone. The
+ * artist DB carries Wikidata altLabels in every script a label exists in (Han,
+ * kana, Hangul, Arabic, Hebrew, Thai, Greek, Devanagari, Georgian, Armenian), and
+ * Bandsintown returns a venue's own locale often enough that bandsintown.ts has to
+ * map "日本" to JP. None of that is wrong data; it is simply unreadable to the
+ * audience the published feed is for.
  *
  * So the rule is a PUBLISH-time filter, never a delete: `data/artists/` keeps
  * every script, because the matcher needs 東京事変 to recognise that artist on a
@@ -15,43 +15,63 @@
  */
 
 /**
- * True when a string is readable as English -- Latin letters, digits and
- * punctuation only.
+ * Scripts the published feed's readers can actually read. Latin and Cyrillic
+ * both pass: "Аквариум" and "Мумий Тролль" are exactly as useful to this
+ * audience as "Radiohead", and filtering them out to leave a single-script feed
+ * would silently drop the Russian-language half of the catalog.
+ */
+const READABLE_SCRIPT = /\p{Script=Latin}|\p{Script=Cyrillic}/u;
+/** Any letter that is neither Latin nor Cyrillic. */
+const UNREADABLE_LETTER = /[^\P{L}\p{Script=Latin}\p{Script=Cyrillic}]/u;
+
+/**
+ * True when a string carries no script outside Latin and Cyrillic.
+ *
+ * The test is the ABSENCE of a foreign script, not the presence of a familiar
+ * letter. Requiring one looks tighter and is wrong: "!!!" and "65daysofstatic"
+ * are real acts, and a letterless name reads fine either way. Judging whether a
+ * string is a plausible name is artist_integrity.ts's job, not this one's.
  *
  * Combining marks are allowed so decomposed forms ("Bjo" + combining diaeresis)
- * are not misread as foreign; symbols and emoji are allowed because band names
- * genuinely contain them ("†", "∆", "!!!"). What this rejects is a string
- * carrying letters from a non-Latin script.
+ * are not misread as foreign, and symbols pass because band names genuinely
+ * contain them ("†", "∆").
  */
-export function isLatinReadable(s: string): boolean {
+export function isReadableScript(s: string): boolean {
   if (!s) return false;
-  // The test is the absence of a script the reader cannot read -- NOT the presence
-  // of a Latin letter. Requiring one looks tighter and is wrong: "!!!", "65daysofstatic"
-  // and "√Ö" are real acts, and a letterless name is perfectly readable in English.
-  // Judging whether a string is a plausible name is a different job, done by the
-  // integrity rules in artist_integrity.ts.
-  return !/[^\P{L}\p{Script=Latin}]/u.test(s);
+  return !UNREADABLE_LETTER.test(s);
 }
 
-/** True when a string contains letters from a script other than Latin. */
-export function hasNonLatinLetters(s: string): boolean {
-  return /[^\P{L}\p{Script=Latin}]/u.test(s);
+/** True when a string contains letters from a script the feed's readers cannot read. */
+export function hasUnreadableScript(s: string): boolean {
+  return UNREADABLE_LETTER.test(s);
 }
 
 /**
- * Picks the best English-readable spelling from a set of variants for the same
- * thing, or null when every variant is non-Latin.
+ * Picks the best readable spelling from a set of variants for the same thing, or
+ * null when every variant is unreadable.
+ *
+ * Latin is preferred over Cyrillic when both exist, because the feed's primary
+ * language is English and "Tokyo" travels further than "Токио" -- but a Cyrillic
+ * variant still beats returning nothing.
  *
  * `preferShorter` matters for city names: sources spell one place as "Tokyo",
  * "Tokyo, Japan" and "Tokyo Metropolis", and the bare name is what a UI wants.
- * For artist aliases the opposite is not true, so callers that want stable
- * ordering rather than brevity pass false.
+ * Callers that want stable ordering rather than brevity pass false.
  */
-export function pickLatin(variants: string[], preferShorter = true): string | null {
-  const latin = variants.filter(isLatinReadable);
-  if (latin.length === 0) return null;
-  return latin.sort((a, b) => {
+export function pickReadable(variants: string[], preferShorter = true): string | null {
+  const readable = variants.filter(isReadableScript);
+  if (readable.length === 0) return null;
+  const isLatin = (s: string) => /\p{Script=Latin}/u.test(s);
+  return readable.sort((a, b) => {
+    const aLatin = isLatin(a);
+    const bLatin = isLatin(b);
+    if (aLatin !== bLatin) return aLatin ? -1 : 1;
     if (preferShorter && a.length !== b.length) return a.length - b.length;
     return a.localeCompare(b);
   })[0];
+}
+
+/** Kept for readability at call sites that only care about the primary language. */
+export function isLatinScript(s: string): boolean {
+  return isReadableScript(s) && !/\p{Script=Cyrillic}/u.test(s) && READABLE_SCRIPT.test(s);
 }
