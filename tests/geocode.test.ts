@@ -137,3 +137,63 @@ test('Geocode - respects the per-run cap, deferring the rest to a future run ins
   assert.strictEqual(stats.skippedCapped, 1);
   assert.strictEqual(concerts.filter((c) => c.lat !== undefined).length, 2);
 });
+
+test('an unreadable city is replaced with Nominatim\'s English name', async () => {
+  const concerts = [makeConcert({ city: '東京', venue: 'Zepp Tokyo', lat: undefined, lng: undefined })];
+  const geocodeFn: GeocodeFn = async () => ({ lat: 35.68, lng: 139.76, cityEn: 'Tokyo' });
+  const cache: GeocodeCache = {};
+
+  const stats = await geocodeConcerts(concerts, { geocodeFn, cache, delayMs: 0 });
+
+  assert.equal(concerts[0].city, 'Tokyo');
+  assert.equal(stats.cityTranslated, 1);
+  assert.equal(Object.values(cache)[0].cityEn, 'Tokyo');
+});
+
+test('a city already readable is never overwritten, even by a different answer', async () => {
+  // Nominatim commonly answers with a ward or suburb ("Shibuya City"); replacing a
+  // good city name with a narrower one would be a downgrade, not a translation.
+  const concerts = [makeConcert({ city: 'Tokyo', lat: undefined, lng: undefined })];
+  const geocodeFn: GeocodeFn = async () => ({ lat: 35.68, lng: 139.76, cityEn: 'Shibuya City' });
+
+  const stats = await geocodeConcerts(concerts, { geocodeFn, delayMs: 0 });
+
+  assert.equal(concerts[0].city, 'Tokyo');
+  assert.equal(stats.cityTranslated, 0);
+});
+
+test('an unreadable city is looked up even when coordinates are already known', async () => {
+  // Most concerts carry lat/lng from their scraper config, so a coords-only guard
+  // would never offer those an English name.
+  const concerts = [makeConcert({ city: '東京', lat: 35.68, lng: 139.76 })];
+  let called = 0;
+  const geocodeFn: GeocodeFn = async () => { called++; return { lat: 35.68, lng: 139.76, cityEn: 'Tokyo' }; };
+
+  await geocodeConcerts(concerts, { geocodeFn, delayMs: 0 });
+
+  assert.equal(called, 1);
+  assert.equal(concerts[0].city, 'Tokyo');
+});
+
+test('Nominatim answering in the local script is not treated as a translation', async () => {
+  const concerts = [makeConcert({ city: '東京', lat: undefined, lng: undefined })];
+  const geocodeFn: GeocodeFn = async () => ({ lat: 35.68, lng: 139.76, cityEn: '東京都' });
+
+  const stats = await geocodeConcerts(concerts, { geocodeFn, delayMs: 0 });
+
+  assert.equal(concerts[0].city, '東京', 'unreadable in, unreadable out -- but not silently swapped');
+  assert.equal(stats.cityTranslated, 0);
+});
+
+test('a cached null cityEn is not re-queried every run', async () => {
+  const concerts = [makeConcert({ city: '東京', lat: 35.68, lng: 139.76 })];
+  const cache: GeocodeCache = {
+    [geocodeCacheKey(concerts[0])]: { lat: 35.68, lng: 139.76, geocodedAt: '2026-01-01T00:00:00Z', cityEn: null }
+  };
+  let called = 0;
+  const geocodeFn: GeocodeFn = async () => { called++; return { lat: 1, lng: 2, cityEn: 'Tokyo' }; };
+
+  await geocodeConcerts(concerts, { geocodeFn, cache, delayMs: 0 });
+
+  assert.equal(called, 0, 'Nominatim already said it has no English name for this point');
+});

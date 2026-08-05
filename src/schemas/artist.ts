@@ -30,6 +30,8 @@ export const ArtistEntrySchema = z.object({
   sitesTriedAt: z.string().optional(),
   tourUrlProbeTriedAt: z.string().optional(),
   artistCheckedAt: z.string().optional(),
+  /** English name for the published feed when `name` is in a script its readers cannot read. */
+  displayName: z.string().optional(),
   verifiedAt: z.string().optional(),
   /** Set when a verify pass reached nothing conclusive (all links timed out/blocked). */
   verifyTriedAt: z.string().optional(),

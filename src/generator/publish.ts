@@ -2,6 +2,7 @@ import * as fs from 'fs/promises';
 import * as path from 'path';
 import { Concert } from '../schemas/concert.js';
 import { slugify, parseSpotifyArtistId } from '../pipeline/process.js';
+import { isReadableScript, isLatinScript } from '../pipeline/script.js';
 
 export interface PublishStats {
   totalConcerts: number;
@@ -32,6 +33,8 @@ export interface PublishIndex {
 export interface ArtistCatalogEntry {
   slug: string;
   name: string;
+  /** Original name when `name` carries an English label instead -- kept so a consumer can search either. */
+  nameNative?: string;
   website?: string;
   socials?: Record<string, string>;
   spotifyId?: string;
@@ -65,7 +68,11 @@ export async function publishArtistCatalog(approvedArtists: any[], outputDir: st
     const slug = slugify(name);
     if (bySlug.has(slug)) continue; // first entry wins on a slug collision (same documented limitation as per-artist concert files)
 
-    const entry: ArtistCatalogEntry = { slug, name };
+    // An unreadable name gets its English label here, not in the DB: `name` stays
+    // native so the matcher can still recognise the artist on a local listing page.
+    const displayName = typeof a !== 'string' && a.displayName && isReadableScript(a.displayName) ? a.displayName : name;
+    const entry: ArtistCatalogEntry = { slug, name: displayName };
+    if (displayName !== name) entry.nameNative = name;
     if (typeof a !== 'string') {
       if (a.website) entry.website = a.website;
       if (a.socials && typeof a.socials === 'object') {
@@ -89,7 +96,16 @@ export async function publishArtistCatalog(approvedArtists: any[], outputDir: st
           .map((s: any) => ({ name: s.name, slug: s.slug, match: s.match }));
         if (similar.length > 0) entry.similarArtists = similar;
       }
-      if (Array.isArray(a.aliases) && a.aliases.length > 0) entry.aliases = a.aliases;
+      if (Array.isArray(a.aliases) && a.aliases.length > 0) {
+        // Wikidata altLabels arrive in every script the entity has a label in, so
+        // a large share are Han, kana, Hangul, Arabic, Hebrew, Thai, Greek,
+        // Devanagari, Georgian or Armenian. They are correct data and stay in
+        // data/artists/ for the matcher, but an autocomplete offering a script the
+        // reader cannot read is noise -- and for thousands of artists it is most of
+        // what they would see. Latin and Cyrillic both pass; see script.ts.
+        const aliases = a.aliases.filter(isReadableScript);
+        if (aliases.length > 0) entry.aliases = aliases;
+      }
     }
     bySlug.set(slug, entry);
   }
@@ -209,6 +225,15 @@ function buildCityCanonicalMap(concerts: Concert[]): Map<string, string> {
   const canonicalMap = new Map<string, string>();
   for (const members of clusters.values()) {
     const canonical = [...members].sort((a, b) => {
+      // Script first, ahead of popularity. A geo-cluster deliberately mixes one
+      // place's spellings across sources -- reconciling kanji against romaji is
+      // this function's stated purpose -- so without this the label for every
+      // concert in the cluster is decided by whichever spelling merely happens to
+      // carry the most events. Bandsintown returns a venue's own locale often
+      // enough that bandsintown.ts has to map the country name, so that is a live
+      // risk, not a hypothetical one.
+      const rank = (city: string) => (isLatinScript(city) ? 0 : isReadableScript(city) ? 1 : 2);
+      if (rank(a.city) !== rank(b.city)) return rank(a.city) - rank(b.city);
       if (b.totalCount !== a.totalCount) return b.totalCount - a.totalCount;
       if (b.city.length !== a.city.length) return b.city.length - a.city.length;
       return a.city.localeCompare(b.city);

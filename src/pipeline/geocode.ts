@@ -1,5 +1,6 @@
 import * as fs from 'fs/promises';
 import getGeocoder from 'node-geocoder';
+import { hasUnreadableScript, isReadableScript } from './script.js';
 import { Concert } from '../schemas/concert.js';
 import { sleep } from '../engine/sleep.js';
 
@@ -33,6 +34,13 @@ export interface GeocodeCacheEntry {
   lat: number | null; // null = tried, Nominatim had no result -- don't retry every run
   lng: number | null;
   geocodedAt: string;
+  /**
+   * The place name Nominatim returns under `accept-language: en`, when it has one.
+   * Absent on entries written before this existed; `null` means Nominatim answered
+   * but named no locality. Free: the same lookup already being made for lat/lng
+   * carries it, so no extra request is issued to obtain an English city name.
+   */
+  cityEn?: string | null;
 }
 export type GeocodeCache = Record<string, GeocodeCacheEntry>;
 
@@ -55,7 +63,7 @@ export function geocodeCacheKey(concert: Pick<Concert, 'venue' | 'city' | 'count
   return `${norm(concert.venue)}|${norm(concert.city)}|${norm(concert.country)}`;
 }
 
-export type GeocodeFn = (query: string) => Promise<{ lat: number; lng: number } | null>;
+export type GeocodeFn = (query: string) => Promise<{ lat: number; lng: number; cityEn?: string | null } | null>;
 
 function defaultGeocodeFn(): GeocodeFn {
   const email = process.env.NOMINATIM_EMAIL;
@@ -65,13 +73,25 @@ function defaultGeocodeFn(): GeocodeFn {
       'identifying contact for automated use -- set it to a real address before running this at scale.'
     );
   }
-  const geocoder = getGeocoder(email ? { provider: 'openstreetmap', email } : { provider: 'openstreetmap' });
+  // `language: 'en'` costs nothing and answers a question the scrapers cannot:
+  // a Japanese venue page yields a Japanese city string, and no amount of
+  // reconciling sources helps when every source spells it the same unreadable
+  // way. Nominatim holds the English exonym and returns it on the very request
+  // this pass already makes for lat/lng.
+  const base = { provider: 'openstreetmap' as const, language: 'en' };
+  const geocoder = getGeocoder(email ? { ...base, email } : base);
   return async (query: string) => {
     const results = await geocoder.geocode(query);
-    if (results.length === 0 || results[0].latitude === undefined || results[0].longitude === undefined) {
+    const r = results[0];
+    if (!r || r.latitude === undefined || r.longitude === undefined) {
       return null;
     }
-    return { lat: results[0].latitude, lng: results[0].longitude };
+    // Nominatim's own hierarchy: `city` when it has one, else the next-widest
+    // locality it does have. `state` is deliberately last -- better a region name
+    // the reader can read than a city name they cannot.
+    const loose = r as unknown as Record<string, string | undefined>;
+    const cityEn = r.city || loose.town || loose.village || loose.state || null;
+    return { lat: r.latitude, lng: r.longitude, cityEn };
   };
 }
 
@@ -88,6 +108,7 @@ export interface GeocodeStats {
   geocoded: number; // fresh lookups that resolved
   failed: number; // fresh lookups that errored or found nothing
   skippedCapped: number; // left ungeocoded this run because maxPerRun was hit
+  cityTranslated: number; // unreadable city strings replaced with Nominatim's English name
 }
 
 /**
@@ -102,20 +123,29 @@ export async function geocodeConcerts(concerts: Concert[], options: GeocodeConce
   const geocodeFn = options.geocodeFn ?? defaultGeocodeFn();
   const delayMs = options.delayMs ?? NOMINATIM_RATE_LIMIT_MS;
 
-  const stats: GeocodeStats = { attempted: 0, filledFromCache: 0, geocoded: 0, failed: 0, skippedCapped: 0 };
+  const stats: GeocodeStats = { attempted: 0, filledFromCache: 0, geocoded: 0, failed: 0, skippedCapped: 0, cityTranslated: 0 };
 
   for (const concert of concerts) {
-    if (concert.lat !== undefined && concert.lng !== undefined) continue;
     if (!concert.venue || !concert.city || !concert.country) continue;
 
     const key = geocodeCacheKey(concert);
     const cached = cache[key];
-    if (cached) {
+    const needsCoords = concert.lat === undefined || concert.lng === undefined;
+    // A city string in a script the feed's readers cannot read is worth a lookup
+    // even when coordinates are already known -- most concerts carry lat/lng from
+    // their scraper config and would otherwise never be offered an English name.
+    // Entries cached before cityEn existed have `undefined` here, so they are
+    // retried once; entries that came back with `null` are not asked again.
+    const needsCityEn = hasUnreadableScript(concert.city) && cached?.cityEn === undefined;
+    if (!needsCoords && !needsCityEn) continue;
+
+    if (cached && !needsCityEn) {
       stats.filledFromCache++;
       if (cached.lat !== null && cached.lng !== null) {
         concert.lat = cached.lat;
         concert.lng = cached.lng;
       }
+      applyEnglishCity(concert, cached.cityEn, stats);
       continue;
     }
 
@@ -132,10 +162,11 @@ export async function geocodeConcerts(concerts: Concert[], options: GeocodeConce
       if (result) {
         concert.lat = result.lat;
         concert.lng = result.lng;
-        cache[key] = { lat: result.lat, lng: result.lng, geocodedAt };
+        cache[key] = { lat: result.lat, lng: result.lng, geocodedAt, cityEn: result.cityEn ?? null };
+        applyEnglishCity(concert, result.cityEn ?? null, stats);
         stats.geocoded++;
       } else {
-        cache[key] = { lat: null, lng: null, geocodedAt }; // known-unresolvable -- don't retry every run
+        cache[key] = { lat: null, lng: null, geocodedAt, cityEn: null }; // known-unresolvable -- don't retry every run
         stats.failed++;
       }
     } catch (err: any) {
@@ -148,4 +179,19 @@ export async function geocodeConcerts(concerts: Concert[], options: GeocodeConce
   }
 
   return stats;
+}
+
+/**
+ * Replaces an unreadable city string with Nominatim's English name for the same
+ * point. Deliberately one-directional: a city the reader can already read is left
+ * exactly as scraped, because Nominatim often answers with a ward or suburb
+ * ("Shibuya City" for a venue in Tokyo) and overwriting good data with a narrower
+ * name would be a downgrade. The publisher's geo-clustering already reconciles
+ * those; this only fills the case where clustering has nothing readable to pick.
+ */
+function applyEnglishCity(concert: Concert, cityEn: string | null | undefined, stats: GeocodeStats): void {
+  if (!cityEn || !hasUnreadableScript(concert.city)) return;
+  if (!isReadableScript(cityEn)) return; // Nominatim answered in the local script anyway
+  concert.city = cityEn;
+  stats.cityTranslated++;
 }
