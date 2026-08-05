@@ -3,7 +3,7 @@ import assert from 'node:assert';
 import { isReadableScript, hasUnreadableScript, pickReadable, isLatinScript } from '../src/pipeline/script.js';
 
 test('Latin names, including diacritics and symbols, are readable', () => {
-  for (const s of ['Tokyo', 'Björk', 'Motörhead', '!!!', 'AC/DC', 'Sigur Rós', 'Zepp Tokyo', 'M83', 'P!nk']) {
+  for (const s of ['Tokyo', 'Björk', 'Motörhead', '!!!', 'AC/DC', 'Sigur Rós', 'Zepp Tokyo', 'M83', 'P!nk', 'Israel Kamakawiwoʻole', 'O’Brien']) {
     assert.equal(isReadableScript(s), true, `${s} must be publishable`);
   }
 });
@@ -46,4 +46,38 @@ test('pickReadable prefers Latin, falls back to Cyrillic, and gives up honestly'
   assert.equal(pickReadable(['東京', 'Москва']), 'Москва', 'Cyrillic beats returning nothing');
   assert.equal(pickReadable(['東京', '東京都']), null, 'no readable variant means no answer, not a guess');
   assert.equal(pickReadable(['Tokyo', 'Tokio'], false), 'Tokio', 'stable ordering when brevity is not wanted');
+});
+
+// --- catalog naming ----------------------------------------------------------
+import { publishArtistCatalog } from '../src/generator/publish.js';
+import * as fsp from 'fs/promises';
+import * as os from 'os';
+import * as pathMod from 'path';
+
+test('the catalog publishes an English name and keeps the native one alongside', async () => {
+  const dir = await fsp.mkdtemp(pathMod.join(os.tmpdir(), 'catalog-'));
+  await publishArtistCatalog(
+    [
+      { name: 'ヨルシカ', displayName: 'Yorushika', aliases: ['ヨルシカ', 'Yorushika'] },
+      { name: 'Radiohead', aliases: ['レディオヘッド', 'Radio Head'] },
+      { name: '初星学園' } // no label anywhere -- must still appear, untranslated
+    ],
+    dir
+  );
+  const catalog = JSON.parse(await fsp.readFile(pathMod.join(dir, 'artists.json'), 'utf-8'));
+  const byNative = new Map(catalog.map((e: any) => [e.nameNative ?? e.name, e]));
+
+  const yorushika: any = byNative.get('ヨルシカ');
+  assert.equal(yorushika.name, 'Yorushika');
+  assert.equal(yorushika.nameNative, 'ヨルシカ', 'the native spelling stays searchable');
+  assert.deepEqual(yorushika.aliases, ['Yorushika'], 'unreadable aliases are dropped');
+
+  const radiohead: any = byNative.get('Radiohead');
+  assert.equal(radiohead.name, 'Radiohead');
+  assert.equal(radiohead.nameNative, undefined, 'no rename means no extra field');
+  assert.deepEqual(radiohead.aliases, ['Radio Head']);
+
+  const untranslated: any = byNative.get('初星学園');
+  assert.equal(untranslated.name, '初星学園', 'better present and unreadable than missing');
+  assert.equal(untranslated.nameNative, undefined);
 });

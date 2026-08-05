@@ -33,6 +33,8 @@ export interface PublishIndex {
 export interface ArtistCatalogEntry {
   slug: string;
   name: string;
+  /** Original name when `name` carries an English label instead -- kept so a consumer can search either. */
+  nameNative?: string;
   website?: string;
   socials?: Record<string, string>;
   spotifyId?: string;
@@ -66,7 +68,11 @@ export async function publishArtistCatalog(approvedArtists: any[], outputDir: st
     const slug = slugify(name);
     if (bySlug.has(slug)) continue; // first entry wins on a slug collision (same documented limitation as per-artist concert files)
 
-    const entry: ArtistCatalogEntry = { slug, name };
+    // An unreadable name gets its English label here, not in the DB: `name` stays
+    // native so the matcher can still recognise the artist on a local listing page.
+    const displayName = typeof a !== 'string' && a.displayName && isReadableScript(a.displayName) ? a.displayName : name;
+    const entry: ArtistCatalogEntry = { slug, name: displayName };
+    if (displayName !== name) entry.nameNative = name;
     if (typeof a !== 'string') {
       if (a.website) entry.website = a.website;
       if (a.socials && typeof a.socials === 'object') {

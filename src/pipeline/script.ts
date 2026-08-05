@@ -21,8 +21,15 @@
  * would silently drop the Russian-language half of the catalog.
  */
 const READABLE_SCRIPT = /\p{Script=Latin}|\p{Script=Cyrillic}/u;
-/** Any letter that is neither Latin nor Cyrillic. */
-const UNREADABLE_LETTER = /[^\P{L}\p{Script=Latin}\p{Script=Cyrillic}]/u;
+/**
+ * Any letter belonging to some OTHER script.
+ *
+ * Common and Inherited are allowed alongside Latin and Cyrillic: they hold the
+ * script-neutral modifier letters that real names use -- the okina in
+ * "Israel Kamakawiwoʻole" (U+02BB) is category Lm, script Common, and excluding
+ * it flagged a perfectly readable Hawaiian name as foreign.
+ */
+const UNREADABLE_LETTER = /[^\P{L}\p{Script=Latin}\p{Script=Cyrillic}\p{Script=Common}\p{Script=Inherited}]/u;
 
 /**
  * True when a string carries no script outside Latin and Cyrillic.
