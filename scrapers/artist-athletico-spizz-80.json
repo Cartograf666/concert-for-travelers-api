@@ -1,0 +1,16 @@
+{
+  "id": "artist-athletico-spizz-80",
+  "domain": "www.spizzenergi.com",
+  "url": "https://www.spizzenergi.com/gigs",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.elementor-column.elementor-col-33",
+    "artistNameFallback": "Spizzenergi",
+    "date": ".elementor-widget-container h3",
+    "ticketUrl": ".elementor-widget-container a",
+    "city": ".elementor-widget-container h4",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

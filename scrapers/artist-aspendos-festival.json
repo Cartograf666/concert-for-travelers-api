@@ -1,0 +1,16 @@
+{
+  "id": "artist-aspendos-festival",
+  "domain": "www.aspendo.org",
+  "url": "https://www.aspendo.org/en/events-calendar/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.event-box",
+    "artistNameFallback": "Aspendos festival",
+    "date": ".event-date span",
+    "ticketUrl": ".button.primary.solid",
+    "venue": ".event-place span",
+    "venueNameFallback": "",
+    "cityNameFallback": "Antalya",
+    "countryNameFallback": "TR"
+  }
+}

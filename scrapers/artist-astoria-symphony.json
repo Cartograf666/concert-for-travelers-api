@@ -1,0 +1,16 @@
+{
+  "id": "artist-astoria-symphony",
+  "domain": "www.astoriasymphony.org",
+  "url": "http://www.astoriasymphony.org/concerts/upcoming-concerts.html",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-item",
+    "artistNameFallback": "Astoria Symphony",
+    "date": "div.event-date",
+    "ticketUrl": "a.ticket-link",
+    "venue": "div.event-venue",
+    "venueNameFallback": "",
+    "cityNameFallback": "Astoria, NY",
+    "countryNameFallback": "US"
+  }
+}
