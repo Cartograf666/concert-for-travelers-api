@@ -1,0 +1,17 @@
+{
+  "id": "artist-paralamas-do-sucesso",
+  "domain": "osparalamas.com.br",
+  "url": "https://osparalamas.com.br/agenda/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.event",
+    "artistNameFallback": "Paralamas do Sucesso",
+    "date": ".event-line-node:nth-child(1)",
+    "ticketUrl": "a.event-map-link",
+    "venue": ".event-line-node.medium:nth-child(2)",
+    "city": ".event-line-node.medium:nth-child(2)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "BR"
+  }
+}

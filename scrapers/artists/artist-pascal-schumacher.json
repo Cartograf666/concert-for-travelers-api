@@ -1,0 +1,18 @@
+{
+  "id": "artist-pascal-schumacher",
+  "domain": "www.pascalschumacher.com",
+  "url": "https://www.pascalschumacher.com/agenda",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.c-concerts-list__items__item",
+    "artistNameFallback": "Pascal Schumacher",
+    "date": ".c-concerts-list__items__item__date",
+    "ticketUrl": ".c-concerts-list__items__item__actions a.p-button[href]",
+    "venue": ".c-concerts-list__items__item__location__venue",
+    "city": ".c-concerts-list__items__item__location__city",
+    "country": ".c-concerts-list__items__item__location__country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "LU"
+  }
+}

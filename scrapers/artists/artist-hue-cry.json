@@ -1,0 +1,18 @@
+{
+  "id": "artist-hue-cry",
+  "domain": "hueandcry.co.uk",
+  "url": "https://hueandcry.co.uk/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.entry-content p.wp-block-paragraph:has(strong)",
+    "artistNameFallback": "Hue & Cry",
+    "date": "strong",
+    "ticketUrl": "a",
+    "venue": "strong",
+    "city": "strong",
+    "country": "strong",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

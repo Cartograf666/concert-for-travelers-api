@@ -1,0 +1,17 @@
+{
+  "id": "artist-hermitude",
+  "domain": "www.hermitude.com",
+  "url": "https://www.hermitude.com/tour-dates",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div[data-sqsp-block=\"text\"] p",
+    "artistNameFallback": "Hermitude",
+    "date": "strong",
+    "ticketUrl": "a@href",
+    "venue": "span.sqsrte-text-color--white:last-of-type",
+    "city": "span.sqsrte-text-color--white:first-of-type",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

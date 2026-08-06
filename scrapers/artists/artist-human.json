@@ -1,0 +1,18 @@
+{
+  "id": "artist-human",
+  "domain": "www.thehumanleague.co.uk",
+  "url": "https://www.thehumanleague.co.uk/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "section.article .lead p",
+    "artistNameFallback": "Human",
+    "date": "a",
+    "ticketUrl": "a",
+    "venue": "a",
+    "city": "a",
+    "country": "a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

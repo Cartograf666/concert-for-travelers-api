@@ -1,0 +1,17 @@
+{
+  "id": "artist-herbie-hancock",
+  "domain": "www.herbiehancock.com",
+  "url": "https://www.herbiehancock.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.itin-item",
+    "artistNameFallback": "Herbie Hancock",
+    "date": "div.full-date",
+    "ticketUrl": "div.url a @href",
+    "venue": "div.venue",
+    "city": "div.location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

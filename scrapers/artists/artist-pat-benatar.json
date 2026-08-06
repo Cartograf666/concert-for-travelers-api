@@ -1,0 +1,17 @@
+{
+  "id": "artist-pat-benatar",
+  "domain": "www.benatargiraldo.com",
+  "url": "https://www.benatargiraldo.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.tourdates-block",
+    "artistNameFallback": "Pat Benatar",
+    "date": ".tourdates-date",
+    "ticketUrl": "a.tourdates-tickets",
+    "venue": ".tourdates-headline",
+    "city": ".tourdates-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

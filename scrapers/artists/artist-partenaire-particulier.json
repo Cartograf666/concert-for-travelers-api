@@ -1,0 +1,16 @@
+{
+  "id": "artist-partenaire-particulier",
+  "domain": "partenaireparticulier.com",
+  "url": "https://partenaireparticulier.com/concerts/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".e-loop-item.concert",
+    "artistNameFallback": "Partenaire Particulier",
+    "date": ".show_date",
+    "venue": ".show_place",
+    "city": ".show_city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "FR"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "artist-heritage-singers",
+  "domain": "www.heritagesingers.com",
+  "url": "https://www.heritagesingers.com/concerts",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "section#bandsintown_feature_17777 article.list-style",
+    "artistNameFallback": "Heritage Singers",
+    "date": "p.event-info.event-datetime span.date-long",
+    "ticketUrl": "div.event-info.buying-options a.button @href",
+    "venue": "p.event-info.event-location a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

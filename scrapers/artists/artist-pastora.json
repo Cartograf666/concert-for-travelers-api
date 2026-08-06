@@ -1,0 +1,17 @@
+{
+  "id": "artist-pastora",
+  "domain": "pastora.org",
+  "url": "https://pastora.org/agenda/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "ul#post-list > li.event",
+    "artistNameFallback": "Pastora",
+    "date": "time.datetime",
+    "ticketUrl": "a.buttons",
+    "venue": ".city",
+    "city": ".city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "ES"
+  }
+}

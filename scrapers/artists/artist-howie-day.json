@@ -1,0 +1,17 @@
+{
+  "id": "artist-howie-day",
+  "domain": "www.howieday.com",
+  "url": "https://www.howieday.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.list-style",
+    "artistNameFallback": "Howie Day",
+    "date": ".date-long .date",
+    "ticketUrl": "a.tickets",
+    "venue": ".event-location a",
+    "city": ".event-location a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

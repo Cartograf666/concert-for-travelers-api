@@ -1,0 +1,17 @@
+{
+  "id": "artist-hermann-nitsch",
+  "domain": "www.nitsch.org",
+  "url": "https://www.nitsch.org/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table tbody tr",
+    "artistNameFallback": "Hermann Nitsch",
+    "date": "td:nth-child(1)",
+    "venue": "td:nth-child(3)",
+    "city": "td:nth-child(4)",
+    "country": "td:nth-child(5)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

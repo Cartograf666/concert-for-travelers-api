@@ -1,0 +1,18 @@
+{
+  "id": "artist-hot-tuna",
+  "domain": "hottuna.com",
+  "url": "https://hottuna.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour-button-single-button",
+    "artistNameFallback": "Hot Tuna",
+    "date": ".tour-show-date",
+    "ticketUrl": ".tour-button-link",
+    "venue": ".tour-show-venue",
+    "city": ".tour-show-citystate",
+    "country": ".tour-show-citystate",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

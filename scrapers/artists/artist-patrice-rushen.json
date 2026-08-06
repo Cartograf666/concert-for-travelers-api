@@ -1,0 +1,17 @@
+{
+  "id": "artist-patrice-rushen",
+  "domain": "patricerushen.com",
+  "url": "https://patricerushen.com/schedule",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div[id^='pg-33-']",
+    "artistNameFallback": "Patrice Rushen",
+    "date": ".siteorigin-widget-tinymce p:first-child",
+    "ticketUrl": ".siteorigin-widget-tinymce a",
+    "venue": ".siteorigin-widget-tinymce blockquote strong",
+    "city": ".siteorigin-widget-tinymce p:nth-child(2)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

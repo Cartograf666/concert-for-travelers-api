@@ -1,0 +1,17 @@
+{
+  "id": "artist-hollie-smith",
+  "domain": "holliesmith.co.nz",
+  "url": "https://holliesmith.co.nz/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".fl-col-group-nested",
+    "artistNameFallback": "Hollie Smith",
+    "date": ".fl-heading-text:contains(' - ')",
+    "ticketUrl": ".fl-button",
+    "venue": ".fl-rich-text p",
+    "city": ".fl-heading-text:contains(' - ')",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "NZ"
+  }
+}
