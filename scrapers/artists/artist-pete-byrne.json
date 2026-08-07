@@ -1,0 +1,18 @@
+{
+  "id": "artist-pete-byrne",
+  "domain": "www.nakedeyesmusic.com",
+  "url": "https://www.nakedeyesmusic.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".row.sqs-row",
+    "artistNameFallback": "Pete Byrne",
+    "date": ".col.sqs-col-4.span-4:nth-of-type(1) p",
+    "ticketUrl": ".col.sqs-col-4.span-4:nth-of-type(3) p",
+    "venue": ".col.sqs-col-4.span-4:nth-of-type(2) p",
+    "city": ".col.sqs-col-4.span-4:nth-of-type(1) p",
+    "country": ".col.sqs-col-4.span-4:nth-of-type(1) p",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

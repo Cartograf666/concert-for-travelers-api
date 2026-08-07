@@ -1,0 +1,17 @@
+{
+  "id": "artist-philip-howard",
+  "domain": "www.philiphoward.com",
+  "url": "https://www.philiphoward.com/concerts",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".ProductList-item",
+    "artistNameFallback": "Philip Howard",
+    "date": ".ProductList-title",
+    "ticketUrl": ".ProductList-item-link",
+    "venue": ".ProductList-title",
+    "city": ".ProductList-title",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

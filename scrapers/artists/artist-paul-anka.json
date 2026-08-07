@@ -1,0 +1,17 @@
+{
+  "id": "artist-paul-anka",
+  "domain": "www.paulanka.com",
+  "url": "https://www.paulanka.com/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.event",
+    "artistNameFallback": "Paul Anka",
+    "date": "time",
+    "ticketUrl": "a.btn-tickets",
+    "venue": "p.h6.h5-lg.h4-xl",
+    "city": "span.d-inline-block",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

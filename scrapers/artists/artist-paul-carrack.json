@@ -1,0 +1,18 @@
+{
+  "id": "artist-paul-carrack",
+  "domain": "paulcarrack.net",
+  "url": "https://paulcarrack.net/live",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".LiveDates-Item",
+    "artistNameFallback": "Paul Carrack",
+    "date": ".LiveDates-Date time",
+    "ticketUrl": ".LiveDates-Tickets a",
+    "venue": ".LiveDates-Venue",
+    "city": ".LiveDates-Location",
+    "country": ".LiveDates-Location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

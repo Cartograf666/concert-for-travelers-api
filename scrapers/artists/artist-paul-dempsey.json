@@ -1,0 +1,17 @@
+{
+  "id": "artist-paul-dempsey",
+  "domain": "pauldempseymusic.com",
+  "url": "https://pauldempseymusic.com/shows/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".showslist",
+    "artistNameFallback": "Paul Dempsey",
+    "date": ".showitem1",
+    "ticketUrl": ".showsbuy",
+    "venue": ".showitem2",
+    "city": ".showitem3",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "AU"
+  }
+}

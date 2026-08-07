@@ -1,0 +1,17 @@
+{
+  "id": "artist-peter-bernstein",
+  "domain": "www.peterbernsteinmusic.com",
+  "url": "https://www.peterbernsteinmusic.com/performances",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".accordion-item",
+    "artistNameFallback": "Peter Bernstein",
+    "date": ".accordion-item__description p",
+    "venue": ".accordion-item__description p",
+    "city": ".accordion-item__description p",
+    "country": ".accordion-item__description p",
+    "venueNameFallback": "accordion-item__description p",
+    "cityNameFallback": "accordion-item__description p",
+    "countryNameFallback": "GB"
+  }
+}
