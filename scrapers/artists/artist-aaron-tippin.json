@@ -1,0 +1,17 @@
+{
+  "id": "artist-aaron-tippin",
+  "domain": "www.aarontippin.com",
+  "url": "https://www.aarontippin.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.eventlist-event",
+    "artistNameFallback": "Aaron Tippin",
+    "date": "time.event-date",
+    "ticketUrl": "a.eventlist-button",
+    "venue": "li.eventlist-meta-address",
+    "city": "h1.eventlist-title",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-pretty-ricky",
+  "domain": "www.prettyricky.com",
+  "url": "https://www.prettyricky.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li[data-hook='event-list-item']",
+    "artistNameFallback": "Pretty Ricky",
+    "date": "div[data-hook='date']",
+    "ticketUrl": "a[data-hook='ev-rsvp-button']",
+    "venue": "div[data-hook='location']",
+    "city": "div[data-hook='ev-list-item-title']",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

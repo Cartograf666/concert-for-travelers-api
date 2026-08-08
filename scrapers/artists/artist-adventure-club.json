@@ -1,0 +1,17 @@
+{
+  "id": "artist-adventure-club",
+  "domain": "www.weareadventureclub.com",
+  "url": "https://www.weareadventureclub.com/live",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "ol.divide-y > li",
+    "artistNameFallback": "Adventure Club",
+    "date": "p.text-center",
+    "ticketUrl": "a.btn",
+    "venue": "p.truncate.text-sm",
+    "city": "h3.truncate",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}

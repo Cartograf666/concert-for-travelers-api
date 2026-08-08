@@ -1,0 +1,17 @@
+{
+  "id": "artist-poetry",
+  "domain": "www.poemsband.com",
+  "url": "https://www.poemsband.com/#poems",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".calendar_feature table tbody tr",
+    "artistNameFallback": "poetry",
+    "date": ".event-date .date-long",
+    "ticketUrl": "a.event_details",
+    "venue": ".event-location .text",
+    "city": ".event-location .text",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

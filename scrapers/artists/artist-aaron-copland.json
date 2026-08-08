@@ -1,0 +1,18 @@
+{
+  "id": "artist-aaron-copland",
+  "domain": "www.aaroncopland.com",
+  "url": "https://www.aaroncopland.com/events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-item",
+    "artistNameFallback": "Aaron Copland",
+    "date": ".event-dates span",
+    "ticketUrl": ".event-links a",
+    "venue": ".event-location",
+    "city": ".event-location",
+    "country": ".event-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-aaron-pritchett",
+  "domain": "www.aaron-pritchett.com",
+  "url": "https://www.aaron-pritchett.com/tours",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".summary-item.summary-item-record-type-event",
+    "artistNameFallback": "Aaron Pritchett",
+    "date": ".summary-metadata-item--date",
+    "ticketUrl": ".summary-title-link",
+    "venue": ".summary-title",
+    "city": ".summary-title",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}

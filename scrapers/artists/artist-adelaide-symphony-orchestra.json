@@ -1,0 +1,18 @@
+{
+  "id": "artist-adelaide-symphony-orchestra",
+  "domain": "www.aso.com.au",
+  "url": "https://www.aso.com.au/concerts-tickets/tickets-and-packages-faqs/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".wp-block-post-template li.aso_event",
+    "artistNameFallback": "Adelaide Symphony Orchestra",
+    "date": ".module--listing-item-event",
+    "ticketUrl": "a",
+    "venue": ".module--listing-item-event",
+    "city": "null",
+    "country": "null",
+    "venueNameFallback": "Adelaide",
+    "cityNameFallback": "Adelaide",
+    "countryNameFallback": "AU"
+  }
+}

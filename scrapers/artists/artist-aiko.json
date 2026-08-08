@@ -1,0 +1,16 @@
+{
+  "id": "artist-aiko",
+  "domain": "www.aiko.com",
+  "url": "https://www.aiko.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".live-detail-content table tbody tr",
+    "artistNameFallback": "Aiko",
+    "date": "td.day",
+    "venue": ".venue",
+    "city": ".area",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

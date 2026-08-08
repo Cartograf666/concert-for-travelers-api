@@ -1,0 +1,18 @@
+{
+  "id": "artist-x-perience",
+  "domain": "www.x-perience.de",
+  "url": "https://www.x-perience.de/dates",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".wixui-repeater__item",
+    "artistNameFallback": "X-Perience",
+    "date": ".wixui-rich-text__text:contains('2026'), .wixui-rich-text__text:contains('2027')",
+    "ticketUrl": "a[href*='eventim.de'], a[href*='eventbrite.de']",
+    "venue": ".wixui-rich-text__text:nth-of-type(1)",
+    "city": ".wixui-rich-text__text:nth-of-type(1)",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}

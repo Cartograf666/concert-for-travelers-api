@@ -1,0 +1,18 @@
+{
+  "id": "artist-a-certain-ratio",
+  "domain": "www.acrmcr.com",
+  "url": "https://www.acrmcr.com/shows/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".gig-summary",
+    "artistNameFallback": "A Certain Ratio",
+    "date": "time.dtstart",
+    "ticketUrl": ".gig-tickets-link",
+    "venue": ".venue-name.fn.org",
+    "city": ".gig-title",
+    "country": ".country-name.country-name-united-kingdom",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

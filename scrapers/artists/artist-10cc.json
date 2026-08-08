@@ -1,0 +1,18 @@
+{
+  "id": "artist-10cc",
+  "domain": "www.10cc.world",
+  "url": "https://www.10cc.world/events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.table tbody tr.row:not(:has(th))",
+    "artistNameFallback": "10cc",
+    "date": "td.cell:nth-child(1)",
+    "ticketUrl": "td.cell:nth-child(4) a",
+    "venue": "td.cell:nth-child(3)",
+    "city": "td.cell:nth-child(2)",
+    "country": "td.cell:nth-child(2)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

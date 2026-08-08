@@ -1,0 +1,18 @@
+{
+  "id": "artist-psycho-le-cemu",
+  "domain": "psycholecemu.com",
+  "url": "http://psycholecemu.com/live",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "dl.accordion-menu",
+    "artistNameFallback": "Psycho le Cému",
+    "date": "dt.acHeader h3:nth-of-type(1)",
+    "ticketUrl": "dd.acBody a",
+    "venue": "dt.acHeader h3:nth-of-type(2)",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

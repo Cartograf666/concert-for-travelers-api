@@ -1,0 +1,16 @@
+{
+  "id": "artist-polysics",
+  "domain": "www.polysics.com",
+  "url": "http://www.polysics.com/live",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".live-content",
+    "artistNameFallback": "Polysics",
+    "date": "h2",
+    "venue": ".live-content h3",
+    "city": "h2 span",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

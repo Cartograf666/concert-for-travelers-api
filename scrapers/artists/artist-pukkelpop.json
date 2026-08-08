@@ -1,0 +1,18 @@
+{
+  "id": "artist-pukkelpop",
+  "domain": "www.pukkelpop.be",
+  "url": "https://www.pukkelpop.be/en/line-up/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".act-list__item",
+    "artistNameFallback": "Pukkelpop",
+    "date": ".act__performance",
+    "ticketUrl": "null",
+    "venue": ".act__performance",
+    "city": "null",
+    "country": "null",
+    "venueNameFallback": "Kiewit, Hasselt",
+    "cityNameFallback": "Hasselt",
+    "countryNameFallback": "BE"
+  }
+}

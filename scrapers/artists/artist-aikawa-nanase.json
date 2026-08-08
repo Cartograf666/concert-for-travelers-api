@@ -1,0 +1,17 @@
+{
+  "id": "artist-aikawa-nanase",
+  "domain": "www.nanase.jp",
+  "url": "http://www.nanase.jp/information/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.contentBox",
+    "artistNameFallback": "Aikawa, Nanase",
+    "date": ".newsDate",
+    "ticketUrl": "h3 a",
+    "venue": ".content p",
+    "city": ".content p",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

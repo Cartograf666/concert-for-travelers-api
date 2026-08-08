@@ -1,0 +1,18 @@
+{
+  "id": "artist-admiral-fallow",
+  "domain": "www.admiralfallow.com",
+  "url": "https://www.admiralfallow.com/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".EventListingListItem",
+    "artistNameFallback": "Admiral Fallow",
+    "date": ".EventListingListItem-date",
+    "ticketUrl": ".EventListingListItem-ticketsLink",
+    "venue": ".EventListingListItem-venue a",
+    "city": ".EventListingListItem-venue a",
+    "country": ".EventListingListItem-venue a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

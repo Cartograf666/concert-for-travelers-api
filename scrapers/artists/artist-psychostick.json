@@ -1,0 +1,17 @@
+{
+  "id": "artist-psychostick",
+  "domain": "psychostick.com",
+  "url": "https://psychostick.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".show_bit",
+    "artistNameFallback": "Psychostick",
+    "date": ".big_date",
+    "ticketUrl": ".show_clickables a[title='Buy Tickets']",
+    "venue": ".col-5 h3",
+    "city": ".col-4 h3",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

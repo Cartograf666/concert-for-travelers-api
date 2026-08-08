@@ -1,0 +1,18 @@
+{
+  "id": "artist-pretty-yende",
+  "domain": "prettyyende.com",
+  "url": "http://prettyyende.com/schedule/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".schedule-show",
+    "artistNameFallback": "Pretty Yende",
+    "date": ".schedule-show-dates p",
+    "ticketUrl": ".schedule-show-tickets a",
+    "venue": ".schedule-show-venue",
+    "city": ".schedule-show-location",
+    "country": ".schedule-show-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

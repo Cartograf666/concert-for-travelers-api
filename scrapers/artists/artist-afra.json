@@ -1,0 +1,17 @@
+{
+  "id": "artist-afra",
+  "domain": "afra.jp",
+  "url": "http://afra.jp/schedule",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.event",
+    "artistNameFallback": "Afra",
+    "date": ".post-date",
+    "ticketUrl": ".post-title a",
+    "venue": ".post-venue",
+    "city": ".post-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}
