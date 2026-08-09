@@ -1,0 +1,16 @@
+{
+  "id": "artist-anne-hills",
+  "domain": "annehills.com",
+  "url": "https://annehills.com/gigs/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.gigpress-table tbody:nth-of-type(n+2)",
+    "artistNameFallback": "Anne Hills",
+    "date": "tr.gigpress-row .gigpress-date",
+    "venue": "tr.gigpress-row .gigpress-venue a",
+    "city": "tr.gigpress-row .gigpress-city",
+    "venueNameFallback": "tr.gigpress-row .gigpress-venue",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

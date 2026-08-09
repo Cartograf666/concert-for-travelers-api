@@ -1,0 +1,18 @@
+{
+  "id": "artist-andrew-farriss",
+  "domain": "andrewfarriss.com",
+  "url": "https://andrewfarriss.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div[id^='av_section_']:not(#av_section_1):not(#av_section_7)",
+    "artistNameFallback": "Andrew Farriss",
+    "date": ".avia_textblock h4:first-child strong",
+    "ticketUrl": ".avia-button",
+    "venue": ".avia_textblock h1:nth-of-type(1)",
+    "city": ".avia_textblock p:last-of-type",
+    "country": "AU",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "AU"
+  }
+}

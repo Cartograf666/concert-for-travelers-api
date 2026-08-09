@@ -1,0 +1,17 @@
+{
+  "id": "artist-alexis-p-suter",
+  "domain": "alexispsuter.com",
+  "url": "https://alexispsuter.com/performances",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "[data-aid='CALENDAR_BIGGER_SCREEN_CONTAINER']",
+    "artistNameFallback": "Alexis P. Suter",
+    "date": "[data-aid='CALENDAR_EVENT_DATE'] h3",
+    "ticketUrl": "[data-aid='CALENDAR_DESC_TEXT'] a[href]",
+    "venue": "[data-aid='CALENDAR_EVENT_TITLE']",
+    "city": "p[data-ux='Text']",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

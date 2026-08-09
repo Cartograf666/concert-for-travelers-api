@@ -1,0 +1,18 @@
+{
+  "id": "artist-amber-run",
+  "domain": "www.amber-run.com",
+  "url": "https://www.amber-run.com/live",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.EventListingListItem",
+    "artistNameFallback": "Amber Run",
+    "date": ".EventListingListItem-date-day",
+    "ticketUrl": "a.EventListingListItem-content",
+    "venue": ".EventListingListItem-venue-name",
+    "city": ".EventListingListItem-venue-city",
+    "country": ".EventListingListItem-venue-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

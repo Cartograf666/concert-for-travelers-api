@@ -1,0 +1,17 @@
+{
+  "id": "artist-anne-mccue",
+  "domain": "annemccue.com",
+  "url": "https://annemccue.com/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.table-style tbody tr",
+    "artistNameFallback": "Anne McCue",
+    "date": "td.event-date",
+    "ticketUrl": "a.event_details",
+    "venue": "td.event-location",
+    "city": "td.event-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

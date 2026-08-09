@@ -1,0 +1,17 @@
+{
+  "id": "artist-anna-depenbusch",
+  "domain": "www.annadepenbusch.de",
+  "url": "https://www.annadepenbusch.de/termine/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "main ul > li",
+    "artistNameFallback": "Anna Depenbusch",
+    "date": "span:nth-child(1)",
+    "ticketUrl": "a.bg-(--anna-highlight)",
+    "venue": "div.space-y-0.5 > div.text-sm.text-gray-500",
+    "city": "div.space-y-0.5 > span.font-semibold",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}

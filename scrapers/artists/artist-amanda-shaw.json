@@ -1,0 +1,17 @@
+{
+  "id": "artist-amanda-shaw",
+  "domain": "www.amandashaw.com",
+  "url": "https://www.amandashaw.com/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-detail",
+    "artistNameFallback": "Amanda Shaw",
+    "date": ".event-datetime .date-long .date",
+    "ticketUrl": ".buying-options a.button",
+    "venue": ".event-location a",
+    "city": ".event-location a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

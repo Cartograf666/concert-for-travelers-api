@@ -1,0 +1,17 @@
+{
+  "id": "artist-angst",
+  "domain": "adamangst.de",
+  "url": "https://adamangst.de/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "#tablepress-1 tbody tr",
+    "artistNameFallback": "Angst",
+    "date": ".column-1",
+    "ticketUrl": ".column-3 a::attr(href)",
+    "venue": ".column-3 a",
+    "city": ".column-2",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}

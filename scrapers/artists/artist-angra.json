@@ -1,0 +1,18 @@
+{
+  "id": "artist-angra",
+  "domain": "angra.net",
+  "url": "https://angra.net/dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.gigpress-table.upcoming:not(:has(tr.gigpress-header)) tr",
+    "artistNameFallback": "Angra",
+    "date": "td.gigpress-date",
+    "ticketUrl": "td.gigpress-venue a.gigpress-tickets-link",
+    "venue": "td.gigpress-venue",
+    "city": "td.gigpress-city:nth-of-type(2)",
+    "country": "td.gigpress-city:nth-of-type(2)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "BR"
+  }
+}

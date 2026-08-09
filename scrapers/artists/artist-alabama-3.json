@@ -1,0 +1,16 @@
+{
+  "id": "artist-alabama-3",
+  "domain": "alabama3.co.uk",
+  "url": "https://alabama3.co.uk/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.vc_row.row-internal.row-container",
+    "artistNameFallback": "Alabama 3",
+    "date": "div.wpb_column.col-lg-3:first-child h3 span",
+    "ticketUrl": "div.wpb_column.col-lg-3:last-child a@href",
+    "venue": "div.wpb_column.col-lg-6 h3 span",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

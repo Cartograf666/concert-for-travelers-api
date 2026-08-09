@@ -1,0 +1,18 @@
+{
+  "id": "artist-andrea-motis",
+  "domain": "andreamotis.com",
+  "url": "https://andreamotis.com/agenda/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table tbody tr",
+    "artistNameFallback": "Andrea Motis",
+    "date": "td:nth-child(1)",
+    "ticketUrl": "td:nth-child(4) a@href",
+    "venue": "td:nth-child(3)",
+    "city": "td:nth-child(3)",
+    "country": "td:nth-child(3)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "ES"
+  }
+}
