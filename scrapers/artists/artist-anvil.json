@@ -1,0 +1,18 @@
+{
+  "id": "artist-anvil",
+  "domain": "my.tbaytel.net",
+  "url": "http://my.tbaytel.net/tgallo/anvil/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table tbody tr:not(:first-child)",
+    "artistNameFallback": "Anvil",
+    "date": "td:nth-child(3)",
+    "ticketUrl": "td:nth-child(1) a@href",
+    "venue": "td:nth-child(1) a",
+    "city": "td:nth-child(2)",
+    "country": "td:nth-child(2)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

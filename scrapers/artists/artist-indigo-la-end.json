@@ -1,0 +1,17 @@
+{
+  "id": "artist-indigo-la-end",
+  "domain": "indigolaend.com",
+  "url": "http://indigolaend.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "a.news__item__header",
+    "artistNameFallback": "indigo la End",
+    "date": ".live__date__txt",
+    "ticketUrl": "a.news__item__header",
+    "venue": ".news__item__ttl__txt",
+    "city": ".news__item__ttl__txt",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

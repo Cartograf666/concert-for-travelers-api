@@ -1,0 +1,17 @@
+{
+  "id": "artist-in-extremo",
+  "domain": "www.inextremo.de",
+  "url": "https://www.inextremo.de/dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".dateslist li.item",
+    "artistNameFallback": "In Extremo",
+    "date": ".date",
+    "ticketUrl": "a.ticket",
+    "venue": ".venue",
+    "city": ".city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}

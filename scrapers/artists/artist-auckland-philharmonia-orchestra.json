@@ -1,0 +1,16 @@
+{
+  "id": "artist-auckland-philharmonia-orchestra",
+  "domain": "www.aucklandphil.nz",
+  "url": "https://www.aucklandphil.nz/whats-on",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div[data-id=\"div_block-3031-295\"]",
+    "artistNameFallback": "Auckland Philharmonia Orchestra",
+    "date": ".concert-date-container",
+    "ticketUrl": "a.ct-link-button.blue",
+    "venue": ".concert-venue a",
+    "venueNameFallback": "",
+    "cityNameFallback": "Auckland",
+    "countryNameFallback": "GB"
+  }
+}

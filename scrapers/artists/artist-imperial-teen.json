@@ -1,0 +1,17 @@
+{
+  "id": "artist-imperial-teen",
+  "domain": "imperialteen.com",
+  "url": "https://imperialteen.com/shows/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.type-event",
+    "artistNameFallback": "Imperial Teen",
+    "date": ".start-date",
+    "ticketUrl": ".event-action a",
+    "venue": ".venue",
+    "city": ".location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

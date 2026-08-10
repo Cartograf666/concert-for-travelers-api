@@ -1,0 +1,17 @@
+{
+  "id": "artist-ian-shaw",
+  "domain": "www.ianshaw.biz",
+  "url": "https://www.ianshaw.biz/p/tourdates.php",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-box",
+    "artistNameFallback": "Ian Shaw",
+    "date": ".event-date",
+    "ticketUrl": ".event-info a",
+    "venue": ".event-venue",
+    "city": ".event-venue",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-inbal-segev",
+  "domain": "inbalsegev.com",
+  "url": "https://inbalsegev.com/schedule/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.event-item",
+    "artistNameFallback": "Inbal Segev",
+    "date": ".date-title",
+    "ticketUrl": "a.ticket-link",
+    "venue": ".upcoming-venue",
+    "city": ".city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-iration",
+  "domain": "www.irationmusic.com",
+  "url": "https://www.irationmusic.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.tour-item",
+    "artistNameFallback": "Iration",
+    "date": ".tour-timeframe",
+    "ticketUrl": ".tour-actions a",
+    "venue": ".tour-venue-name",
+    "city": ".tour-location-city",
+    "country": ".tour-location-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

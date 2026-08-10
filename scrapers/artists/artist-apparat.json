@@ -1,0 +1,17 @@
+{
+  "id": "artist-apparat",
+  "domain": "www.apparat.net",
+  "url": "http://www.apparat.net/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "section.tour > a.show",
+    "artistNameFallback": "Apparat",
+    "date": "span.date",
+    "ticketUrl": "@href",
+    "venue": "span.location > span.venue",
+    "city": "span.location > span.city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}
