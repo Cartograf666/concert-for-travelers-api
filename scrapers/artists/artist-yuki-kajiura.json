@@ -1,0 +1,17 @@
+{
+  "id": "artist-yuki-kajiura",
+  "domain": "fictionjunction.com",
+  "url": "https://fictionjunction.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div#content table.alignleft tr:has(td:nth-child(2))",
+    "artistNameFallback": "Yuki Kajiura",
+    "date": "td:nth-child(1)",
+    "ticketUrl": "td:nth-child(2) a",
+    "venue": "td:nth-child(2)",
+    "city": "td:nth-child(2)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

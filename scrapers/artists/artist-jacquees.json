@@ -1,0 +1,17 @@
+{
+  "id": "artist-jacquees",
+  "domain": "www.jacqueeslive.com",
+  "url": "https://www.jacqueeslive.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".data-row.data-row-gig",
+    "artistNameFallback": "Jacquees",
+    "date": ".tour-date a",
+    "ticketUrl": ".buy-btn",
+    "venue": ".tour-venue a:first-child",
+    "city": ".tour-city a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-buzzcocks",
+  "domain": "www.buzzcocks.com",
+  "url": "https://www.buzzcocks.com/events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".eventlist-event",
+    "artistNameFallback": "Buzzcocks",
+    "date": ".event-date",
+    "ticketUrl": ".sqs-block-button a",
+    "venue": ".eventlist-meta-address",
+    "city": ".eventlist-title",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

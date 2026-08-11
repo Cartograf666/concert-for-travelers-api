@@ -1,0 +1,16 @@
+{
+  "id": "artist-bankrupt",
+  "domain": "bankrupt.hu",
+  "url": "http://bankrupt.hu/concerts/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".entry-content p:has(span.date):has(span.gig)",
+    "artistNameFallback": "Bankrupt",
+    "date": "span.date",
+    "venue": "span.gig",
+    "city": "span.gig",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "HU"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-bob-marley",
+  "domain": "www.bobmarley.com",
+  "url": "https://www.bobmarley.com/tour-archives/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.entry-event-list",
+    "artistNameFallback": "Bob Marley",
+    "date": "span.start-date",
+    "ticketUrl": "a.event-link-mask@href",
+    "venue": "span.venue",
+    "city": "meta[itemprop='addressLocality']@content",
+    "country": "span.location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JM"
+  }
+}

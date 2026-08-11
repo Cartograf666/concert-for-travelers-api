@@ -1,0 +1,17 @@
+{
+  "id": "artist-beck",
+  "domain": "www.beck.com",
+  "url": "https://www.beck.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".data-row.data-row-gig",
+    "artistNameFallback": "Beck",
+    "date": ".tour-date a",
+    "ticketUrl": ".tour-table-row-tickets a.tour-btn",
+    "venue": ".tour-venue a:first-child",
+    "city": ".tour-city a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

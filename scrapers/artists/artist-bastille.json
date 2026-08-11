@@ -1,0 +1,18 @@
+{
+  "id": "artist-bastille",
+  "domain": "www.bastillebastille.com",
+  "url": "https://www.bastillebastille.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "umg-event",
+    "artistNameFallback": "Bastille",
+    "date": "[part='event-date']",
+    "ticketUrl": "umg-link[data-offer-type='tickets']",
+    "venue": "[part='venue']",
+    "city": "[part='location']",
+    "country": "[part='location']",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-yiruma",
+  "domain": "yiruma.com",
+  "url": "http://yiruma.com/performances/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".section-blog__wrapper-post.section-grid__item",
+    "artistNameFallback": "Yiruma",
+    "date": ".figure-post__wrapper-info .post-meta li a",
+    "ticketUrl": "p a",
+    "venue": "p",
+    "city": "p",
+    "country": "p",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

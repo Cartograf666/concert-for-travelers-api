@@ -1,0 +1,16 @@
+{
+  "id": "artist-bill-cunliffe",
+  "domain": "www.billcunliffe.com",
+  "url": "https://www.billcunliffe.com/events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".summary-item",
+    "artistNameFallback": "Bill Cunliffe",
+    "date": ".summary-thumbnail-event-date",
+    "ticketUrl": ".summary-title-link",
+    "venue": ".summary-title",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

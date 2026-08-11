@@ -1,0 +1,18 @@
+{
+  "id": "artist-bonnie-pink",
+  "domain": "www.bonniepink.jp",
+  "url": "https://www.bonniepink.jp/live",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".text-list__item",
+    "artistNameFallback": "Bonnie Pink",
+    "date": ".data-head__date",
+    "ticketUrl": ".text-list__body a",
+    "venue": ".text-list__body",
+    "city": ".text-list__body",
+    "country": "JP",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

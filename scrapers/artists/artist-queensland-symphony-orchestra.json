@@ -1,0 +1,15 @@
+{
+  "id": "artist-queensland-symphony-orchestra",
+  "domain": "qso.com.au",
+  "url": "https://qso.com.au/events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.columns.columns-1-4 > div.column > div.column-inner",
+    "artistNameFallback": "Queensland Symphony Orchestra",
+    "date": "section.relative > div.flex-auto > div.width-1.flex-none.padding-vertical-s.padding-horizontal-m.border-top.border-color-dark-300 > p.no-margin.flex.flex-justify.line-height-xs > time.margin-right-xs.font-size-s",
+    "ticketUrl": "section.relative > div.flex-auto > div.width-1.flex-auto.flex.flex-column.width-1.padding-m.justify-content-space-between > div.width-1 > div.padding-top-m > a.button.button-pill.button-xs",
+    "venueNameFallback": "QPAC",
+    "cityNameFallback": "Brisbane",
+    "countryNameFallback": "AU"
+  }
+}

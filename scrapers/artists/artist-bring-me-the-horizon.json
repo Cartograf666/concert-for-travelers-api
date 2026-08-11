@@ -1,0 +1,18 @@
+{
+  "id": "artist-bring-me-the-horizon",
+  "domain": "www.bmthofficial.com",
+  "url": "https://www.bmthofficial.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.grid.gap-3.lg\\:gap-6.lg\\:grid-cols-2",
+    "artistNameFallback": "Bring Me The Horizon",
+    "date": "time",
+    "ticketUrl": "a.absolute.top-0.left-0.z-10",
+    "venue": "h2",
+    "city": "p",
+    "country": "p",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

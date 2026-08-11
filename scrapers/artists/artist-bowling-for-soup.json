@@ -1,0 +1,17 @@
+{
+  "id": "artist-bowling-for-soup",
+  "domain": "www.bowlingforsoup.com",
+  "url": "https://www.bowlingforsoup.com/tour-dates",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div[role='listitem']._FiCX",
+    "artistNameFallback": "Bowling For Soup",
+    "date": ".comp-lh8jvon23",
+    "ticketUrl": "a.StylableButton2545352419__link",
+    "venue": ".comp-lh8jvon15",
+    "city": ".comp-lh8k86ux",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

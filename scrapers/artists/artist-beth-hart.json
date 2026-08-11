@@ -1,0 +1,18 @@
+{
+  "id": "artist-beth-hart",
+  "domain": "www.bethhart.com",
+  "url": "https://www.bethhart.com/tour-3-2/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event_item",
+    "artistNameFallback": "Beth Hart",
+    "date": ".event_date",
+    "ticketUrl": ".event_tickets a.event_ticket-link::attr(href)",
+    "venue": ".event_venue",
+    "city": ".event_geo",
+    "country": ".event_geo",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

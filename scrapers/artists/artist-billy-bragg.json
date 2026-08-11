@@ -1,0 +1,18 @@
+{
+  "id": "artist-billy-bragg",
+  "domain": "www.billybragg.co.uk",
+  "url": "https://www.billybragg.co.uk/js_albums/live-and-dubious-ep-promo/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "#footer_sidebar4 .widget_slide_next_events ul li",
+    "artistNameFallback": "Billy Bragg",
+    "date": ".wg_event_date",
+    "ticketUrl": "a@href",
+    "venue": "a",
+    "city": "a",
+    "country": "GB",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-brahman",
+  "domain": "brahman-tc.com",
+  "url": "https://brahman-tc.com/live",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "#contents table tr:has(.date)",
+    "artistNameFallback": "Brahman",
+    "date": ".date",
+    "ticketUrl": ".liveDesc a[href*='eplus'], .liveDesc a[href*='pia']",
+    "venue": ".at",
+    "city": ".at",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

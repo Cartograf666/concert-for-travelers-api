@@ -1,0 +1,17 @@
+{
+  "id": "artist-bad-company",
+  "domain": "badcompany.com",
+  "url": "https://badcompany.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.event",
+    "artistNameFallback": "Bad Company",
+    "date": ".event-line-node:nth-child(1)",
+    "ticketUrl": "a.event-link",
+    "venue": ".event-line-node:nth-child(3)",
+    "city": ".event-line-node:nth-child(2)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

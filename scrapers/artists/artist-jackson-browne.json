@@ -1,0 +1,18 @@
+{
+  "id": "artist-jackson-browne",
+  "domain": "www.jacksonbrowne.com",
+  "url": "https://www.jacksonbrowne.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".one-tour-date",
+    "artistNameFallback": "Jackson Browne",
+    "date": ".date",
+    "ticketUrl": ".button-ticket",
+    "venue": ".venue",
+    "city": ".location",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

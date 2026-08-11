@@ -1,0 +1,18 @@
+{
+  "id": "artist-beatsteaks",
+  "domain": "beatsteaks.com",
+  "url": "https://beatsteaks.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "tbody.vevent",
+    "artistNameFallback": "Beatsteaks",
+    "date": ".dtstart",
+    "ticketUrl": ".description.addition a",
+    "venue": ".beatgigs-venue a",
+    "city": ".beatgigs-city",
+    "country": ".beatgigs-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}

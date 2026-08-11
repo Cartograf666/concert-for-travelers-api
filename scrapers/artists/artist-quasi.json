@@ -1,0 +1,18 @@
+{
+  "id": "artist-quasi",
+  "domain": "www.quasiband.net",
+  "url": "https://www.quasiband.net/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.column-content[data-module='text'] > div.is-content > p",
+    "artistNameFallback": "Quasi",
+    "date": ".font_tt3bx2r0y",
+    "ticketUrl": "a[href*='axs.com'], a[href*='ticketmaster.com'], a[href*='eventbrite.com'], a[href*='tixr.com'], a[href*='etix.com'], a[href*='ticketweb.com']",
+    "venue": ".font_tt3bx2r0y",
+    "city": ".font_tt3bx2r0y",
+    "country": ".font_tt3bx2r0y",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

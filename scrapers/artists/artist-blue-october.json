@@ -1,0 +1,18 @@
+{
+  "id": "artist-blue-october",
+  "domain": "www.blueoctober.com",
+  "url": "https://www.blueoctober.com/tour-dates",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.wixui-repeater__item",
+    "artistNameFallback": "Blue October",
+    "date": ".wixui-rich-text[id^=\"comp-lh7wnc2h__\"] .wixui-rich-text__text:last-of-type",
+    "ticketUrl": "div[id^=\"comp-lh80ivgu__\"] a[data-testid=\"linkElement\"]::attr(href)",
+    "venue": ".wixui-rich-text[id^=\"comp-lh7wpx2j__\"] .wixui-rich-text__text:last-of-type",
+    "city": ".wixui-rich-text[id^=\"comp-lh7yohlq__\"] .wixui-rich-text__text:last-of-type",
+    "country": ".wixui-rich-text[id^=\"comp-lh7yohlq__\"] .wixui-rich-text__text:last-of-type",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

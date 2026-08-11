@@ -1,0 +1,18 @@
+{
+  "id": "artist-huey-lewis-and-the-news",
+  "domain": "hueylewisandthenews.com",
+  "url": "https://hueylewisandthenews.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.tour.past table tr",
+    "artistNameFallback": "Huey Lewis and the News",
+    "date": "td.tour-item.tour-date",
+    "ticketUrl": "td.tour-item.tour-url a::attr(href)",
+    "venue": "td.tour-item.tour-venue",
+    "city": "td.tour-item.tour-city",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

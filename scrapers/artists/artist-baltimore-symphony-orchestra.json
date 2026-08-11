@@ -1,0 +1,18 @@
+{
+  "id": "artist-baltimore-symphony-orchestra",
+  "domain": "www.bsomusic.org",
+  "url": "https://www.bsomusic.org/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "a.concert-card",
+    "artistNameFallback": "Baltimore Symphony Orchestra",
+    "date": ".x-text-content-text-subheadline",
+    "ticketUrl": "a.concert-card",
+    "venue": "",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "Joseph Meyerhoff Symphony Hall",
+    "cityNameFallback": "Baltimore",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-james",
+  "domain": "wearejames.com",
+  "url": "https://wearejames.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.live tbody tr",
+    "artistNameFallback": "James",
+    "date": "th",
+    "ticketUrl": "td.nowrap a",
+    "venue": "td.location",
+    "city": "td.location",
+    "country": "td.location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

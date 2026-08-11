@@ -1,0 +1,18 @@
+{
+  "id": "artist-black-roots",
+  "domain": "blackrootsreggae.net",
+  "url": "https://blackrootsreggae.net/gigs",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-detail",
+    "artistNameFallback": "Black Roots",
+    "date": ".event-datetime time",
+    "ticketUrl": "a.tickets",
+    "venue": ".event-location a",
+    "city": ".event-location a",
+    "country": ".event-location a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

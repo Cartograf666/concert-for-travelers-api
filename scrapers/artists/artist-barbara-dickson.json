@@ -1,0 +1,18 @@
+{
+  "id": "artist-barbara-dickson",
+  "domain": "www.barbaradickson.net",
+  "url": "https://www.barbaradickson.net/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li[data-hook='event-list-item']",
+    "artistNameFallback": "Barbara Dickson",
+    "date": "[data-hook='date']",
+    "ticketUrl": "a[data-hook='ev-rsvp-button']",
+    "venue": "[data-hook='ev-list-item-location']",
+    "city": "[data-hook='location']",
+    "country": "[data-hook='location']",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

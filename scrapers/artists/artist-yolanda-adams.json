@@ -1,0 +1,18 @@
+{
+  "id": "artist-yolanda-adams",
+  "domain": "yolandaadamslive.com",
+  "url": "https://yolandaadamslive.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".qode-event-content",
+    "artistNameFallback": "Yolanda Adams",
+    "date": ".qode-event-date-holder",
+    "ticketUrl": ".qode-event-buy-tickets-button",
+    "venue": ".qode-event-title a",
+    "city": ".qode-event-title a",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
