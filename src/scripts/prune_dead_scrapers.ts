@@ -1,7 +1,9 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
+import * as dns from 'dns/promises';
 import { loadApprovedArtists, saveApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from '../pipeline/artistDb.js';
 import { ArtistEntry } from '../schemas/artist.js';
+import { classifyFailure } from '../healing/classify.js';
 
 /**
  * `heal.ts` deliberately skips `fetch_error`/`csr_detected`/`circuit_open`
@@ -89,6 +91,68 @@ export async function updateScraperHealth(
   const updated = Array.from(byId.values());
   await fs.writeFile(healthPath, JSON.stringify(updated, null, 2) + '\n', 'utf-8');
   return updated;
+}
+
+/**
+ * Scrapers whose domain is provably gone, retired immediately instead of serving
+ * out the PRUNE_THRESHOLD-day streak.
+ *
+ * A streak is the right instrument for "keeps failing for reasons we can't read",
+ * but NXDOMAIN is not ambiguous: the name no longer exists, so five more days of
+ * daily requests buy no information. On the 2026-07-24 fail-log this covered 18 of
+ * 84 failures (17x ENOTFOUND plus one domain re-parked on 127.0.0.1) that would
+ * otherwise have kept consuming scrape time and blocking the artist's tourUrl from
+ * being re-discovered.
+ *
+ * The fail-log message alone is not enough to delete a config -- a CI resolver
+ * hiccup produces a similar-looking error -- so every candidate is re-checked live
+ * against DNS here, and only a second confirmed failure retires it.
+ */
+export async function selectImmediateDeaths(
+  failures: Array<{ id?: unknown; reason?: string; error?: string }>,
+  scrapersDir: string,
+  resolveHost: (hostname: string) => Promise<boolean>,
+  now: string
+): Promise<ScraperHealthEntry[]> {
+  const deaths: ScraperHealthEntry[] = [];
+
+  for (const failure of failures) {
+    if (!isEligible(failure.id)) continue;
+    if (classifyFailure(failure).strategy !== 'dead_domain') continue;
+
+    let hostname: string;
+    try {
+      const raw = await fs.readFile(path.join(scrapersDir, `${failure.id}.json`), 'utf-8');
+      hostname = new URL(JSON.parse(raw).url).hostname;
+    } catch {
+      continue; // config already gone or unreadable -- nothing to retire
+    }
+
+    if (await resolveHost(hostname)) {
+      console.log(`[PruneDeadScrapers] ${failure.id}: ${hostname} resolves again, not retiring.`);
+      continue;
+    }
+
+    console.log(`[PruneDeadScrapers] ${failure.id}: ${hostname} confirmed dead (NXDOMAIN) — retiring immediately.`);
+    deaths.push({
+      id: failure.id,
+      consecutiveFailures: PRUNE_THRESHOLD,
+      lastReason: 'dead_domain',
+      firstFailedAt: now,
+      lastFailedAt: now
+    });
+  }
+
+  return deaths;
+}
+
+async function hostResolves(hostname: string): Promise<boolean> {
+  try {
+    await dns.lookup(hostname);
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 async function findArtistScraperConfigDomain(configPath: string): Promise<string | null> {
@@ -205,11 +269,18 @@ async function main() {
   if (!Array.isArray(failures)) failures = [];
 
   const health = await updateScraperHealth(healthPath, failures, now);
-  const result = await pruneDeadScrapers(scrapersDir, health, PRODUCTION_ARTIST_DB_DIR, auditPath, now);
+
+  // Confirmed-dead domains jump the streak. Merged by id so a scraper that is both
+  // streak-tracked and DNS-dead is retired once, not twice.
+  const deaths = await selectImmediateDeaths(failures, scrapersDir, hostResolves, now);
+  const byId = new Map(health.map((h) => [h.id, h]));
+  for (const d of deaths) byId.set(d.id, { ...(byId.get(d.id) ?? d), ...d });
+
+  const result = await pruneDeadScrapers(scrapersDir, Array.from(byId.values()), PRODUCTION_ARTIST_DB_DIR, auditPath, now);
 
   console.log(
     `[PruneDeadScrapers] pruned=${result.pruned.length} (${result.pruned.join(', ') || 'none'}), ` +
-    `stillTracking=${result.stillFailing.length}`
+    `immediateDeadDomains=${deaths.length}, stillTracking=${result.stillFailing.length}`
   );
 }
 

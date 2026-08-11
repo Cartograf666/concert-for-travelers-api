@@ -67,6 +67,19 @@ jobs:
         if: steps.download-reports.outputs.downloaded == 'true'
         run: npm run build
 
+      # Runs BEFORE the prune below: a repair that did not hold must be rolled back
+      # while its config still exists. Ordering them the other way round would let
+      # prune retire the scraper first and leave the rollback with nothing to restore.
+      - name: Confirm or roll back pending self-heal repairs
+        if: steps.download-reports.outputs.downloaded == 'true'
+        run: |
+          set -eo pipefail
+          if [ -f reports/fail-log.json ]; then
+            npm run confirm-repairs -- reports/fail-log.json
+          else
+            echo "No fail-log.json in the downloaded artifact -- leaving pending repairs untouched."
+          fi
+
       - name: Track scraper health and prune dead ones
         if: steps.download-reports.outputs.downloaded == 'true'
         run: |
@@ -93,7 +106,7 @@ jobs:
           # alone would silently conclude "nothing to commit" forever and this
           # workflow's entire persistence mechanism would never actually persist.
           # `git status --porcelain` correctly surfaces untracked files too.
-          if [ -z "$(git status --porcelain -- data/artists/ scrapers/ data/scraper-health.json data/pruned-scrapers.json 2>/dev/null)" ]; then
+          if [ -z "$(git status --porcelain -- data/artists/ scrapers/ data/scraper-health.json data/pruned-scrapers.json data/repair-history.json 2>/dev/null)" ]; then
             echo "No scraper-health/prune changes to commit."
           else
             # Stage each path only if it exists. `git add a b` where b is missing is
@@ -102,7 +115,7 @@ jobs:
             # "nothing added to commit but untracked files present" and failed this
             # workflow on every run (data/pruned-scrapers.json only exists once
             # something is actually pruned, i.e. almost never).
-            for p in data/artists/ scrapers/ data/scraper-health.json data/pruned-scrapers.json; do
+            for p in data/artists/ scrapers/ data/scraper-health.json data/pruned-scrapers.json data/repair-history.json; do
               if [ -e "$p" ]; then git add "$p"; fi
             done
             if git diff --cached --quiet; then
@@ -120,7 +133,7 @@ jobs:
               echo "Push rejected (concurrent write), retrying with rebase ($i/5)..."
               git fetch origin main
               if ! git rebase origin/main; then
-                echo "::warning::Rebase conflict -- replaying data/artists/ changes on fresh origin/main. scrapers/ and data/scraper-health.json/data/pruned-scrapers.json changes from this conflicted run are not covered by the replay and will be retried next run."
+                echo "::warning::Rebase conflict -- replaying data/artists/ changes on fresh origin/main. scrapers/, data/scraper-health.json, data/pruned-scrapers.json and data/repair-history.json changes from this conflicted run are not covered by the replay and will be retried next run."
                 git rebase --abort
                 git fetch origin main
                 git reset --hard origin/main

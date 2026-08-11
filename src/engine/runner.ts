@@ -61,6 +61,22 @@ const DEFAULT_MAX_RETRIES = 2;
 const HTML_SAMPLE_LIMIT = 60000; // large enough to keep JSON-LD / hydration blocks intact for the healer
 
 /**
+ * Response body as a string the healer can analyze, or undefined when there is
+ * genuinely nothing to look at (the request never returned). A json_api or
+ * next_data scraper receives an already-parsed object; stringifying it keeps
+ * those failures healable instead of silently unfixable.
+ */
+function serializeSample(data: unknown): string | undefined {
+  if (typeof data === 'string') return data.slice(0, HTML_SAMPLE_LIMIT);
+  if (data === null || data === undefined) return undefined;
+  try {
+    return JSON.stringify(data).slice(0, HTML_SAMPLE_LIMIT);
+  } catch {
+    return undefined; // circular or otherwise unserializable
+  }
+}
+
+/**
  * Why a scrape produced no usable events. Lets the healer skip pages the LLM
  * cannot fix (CSR shells, genuinely empty schedules) instead of burning calls.
  */
@@ -92,6 +108,20 @@ const lastAccessByDomain = new Map<string, number>();
 const breakersByDomain = new Map<string, ReturnType<typeof circuitBreaker>>();
 const CIRCUIT_HALF_OPEN_AFTER_MS = 5 * 60_000;
 const CIRCUIT_CONSECUTIVE_FAILURES = 3;
+
+/**
+ * Drops a domain's circuit so the next request starts from a clean slate.
+ *
+ * The breaker exists to stop the daily run hammering one sick domain across 163
+ * configs. The healer's job is the opposite: it deliberately probes the SAME
+ * domain up to MAX_CANDIDATES times looking for the page that moved. Without
+ * this the breaker opens after the 3rd candidate and every remaining probe is
+ * refused before it is even attempted -- observed live on hanson.net and
+ * henrychocomedy.com, where candidates 5 and 6 never got a real request.
+ */
+export function resetDomainCircuit(domain: string): void {
+  breakersByDomain.delete(domain);
+}
 
 function getBreaker(domain: string): ReturnType<typeof circuitBreaker> {
   let breaker = breakersByDomain.get(domain);
@@ -515,6 +545,23 @@ async function fetchWithRetry(config: ScraperConfig, conditional?: { etag?: stri
   throw lastErr;
 }
 
+/**
+ * Plain HTML GET for the healer's URL-rediscovery probe, which needs a site's raw
+ * markup (to rank candidate schedule links) rather than parsed events.
+ *
+ * Routed through the same performGet path as a real scrape so it inherits the
+ * SSRF-checked agents, the redirect cap and the timeout -- the healer must not
+ * become a softer request path than the scraper it repairs.
+ */
+export async function fetchHtmlForHealing(url: string, backend: HttpBackend = 'axios'): Promise<string> {
+  const parsed = new URL(url);
+  if (!/^https?:$/.test(parsed.protocol) || hostBlocked(parsed.hostname)) {
+    throw new Error(`Refusing to fetch ${url}: blocked protocol or host.`);
+  }
+  const res = await performGet(url, backend, {}, getRandomUserAgent());
+  return typeof res.data === 'string' ? res.data : JSON.stringify(res.data);
+}
+
 // Shared headless browser for 'playwright_render' scrapers -- launched lazily on
 // first use and reused across the whole scrape run (launching Chromium per-config
 // would be far slower and heavier than necessary for a handful of JS-rendered SPA
@@ -737,7 +784,11 @@ export async function runScraper(config: ScraperConfig, cached?: VenueCache): Pr
     }
 
     // Capture HTML sample for debugging/self-healing (keep JSON-LD/hydration blocks intact).
-    const htmlSample = typeof responseData === 'string' ? responseData.slice(0, HTML_SAMPLE_LIMIT) : undefined;
+    // json_api/next_data scrapers hand back a parsed object, not a string -- serializing
+    // it here is what makes those failures healable at all. Measured on the 2026-07-24
+    // fail-log, 7 of 9 parse_error entries carried no sample and were skipped outright
+    // purely because the body was an object.
+    const htmlSample = serializeSample(responseData);
     const reason: FailureReason = responseData === null ? 'fetch_error' : 'parse_error';
     return {
       configId: config.id,

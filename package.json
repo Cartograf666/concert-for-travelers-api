@@ -34,6 +34,7 @@
     "check-concurrency-drops": "tsx src/scripts/check_concurrency_drops.ts",
     "prune-non-artists": "tsx src/scripts/prune_non_artists.ts",
     "prune-dead-scrapers": "tsx src/scripts/prune_dead_scrapers.ts",
+    "confirm-repairs": "tsx src/scripts/confirm_repairs.ts",
     "compare-backends": "tsx src/scripts/compare_http_backends.ts",
     "verify-enrichment": "tsx src/scripts/verify_enrichment.ts",
     "test": "SCRAPER_ALLOW_LOCAL_HOSTS=1 node --import tsx --test tests/*.test.ts",
