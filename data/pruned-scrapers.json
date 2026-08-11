@@ -574,5 +574,21 @@
     "consecutiveFailures": 5,
     "firstFailedAt": "2026-08-06T06:10:01.370Z",
     "prunedAt": "2026-08-10T04:58:31.211Z"
+  },
+  {
+    "id": "artist-honeytree",
+    "artistName": "Honeytree",
+    "reason": "fetch_error",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-08-07T05:14:43.157Z",
+    "prunedAt": "2026-08-11T04:39:49.616Z"
+  },
+  {
+    "id": "artist-peter-sprague",
+    "artistName": "Peter Sprague",
+    "reason": "fetch_error",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-08-07T05:14:43.157Z",
+    "prunedAt": "2026-08-11T04:39:49.616Z"
   }
 ]
