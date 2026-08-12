@@ -1,0 +1,15 @@
+{
+  "id": "artist-radwimps",
+  "domain": "radwimps.jp",
+  "url": "https://radwimps.jp/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".p-articles__item",
+    "artistNameFallback": "Radwimps",
+    "date": ".date",
+    "ticketUrl": "a.c-article",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

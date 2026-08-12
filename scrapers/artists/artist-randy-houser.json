@@ -1,0 +1,18 @@
+{
+  "id": "artist-randy-houser",
+  "domain": "www.randyhouser.com",
+  "url": "https://www.randyhouser.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.card.event",
+    "artistNameFallback": "Randy Houser",
+    "date": "time",
+    "ticketUrl": "a.btn-tickets",
+    "venue": "h1.card-title",
+    "city": "p.location",
+    "country": "p.location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

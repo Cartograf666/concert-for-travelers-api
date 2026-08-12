@@ -1,0 +1,18 @@
+{
+  "id": "artist-burak-yeter",
+  "domain": "www.burakyeter.com",
+  "url": "https://www.burakyeter.com/dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".nectar-hor-list-item",
+    "artistNameFallback": "Burak Yeter",
+    "date": ".nectar-list-item:nth-of-type(1) h3",
+    "ticketUrl": ".nectar-list-item-btn",
+    "venue": ".nectar-list-item:nth-of-type(2) h3",
+    "city": ".nectar-list-item:nth-of-type(2) h3",
+    "country": ".nectar-list-item:nth-of-type(2) h3",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

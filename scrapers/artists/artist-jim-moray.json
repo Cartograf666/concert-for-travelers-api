@@ -1,0 +1,17 @@
+{
+  "id": "artist-jim-moray",
+  "domain": "jimmoray.co.uk",
+  "url": "https://jimmoray.co.uk/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.table-style tbody tr",
+    "artistNameFallback": "Jim Moray",
+    "date": "td.event-date time.from .date",
+    "ticketUrl": "td.event-date a",
+    "venue": "td.event-name .text-tertiary",
+    "city": "td.event-name .text-tertiary",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

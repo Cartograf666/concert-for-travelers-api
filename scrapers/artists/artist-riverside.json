@@ -1,0 +1,16 @@
+{
+  "id": "artist-riverside",
+  "domain": "riversideband.pl",
+  "url": "https://riversideband.pl/en/gigs",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "ul.rs_events_container_a > li.rs_event_detail",
+    "artistNameFallback": "Riverside",
+    "date": ".show-date",
+    "venue": ".show-venue",
+    "city": ".show-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "PL"
+  }
+}

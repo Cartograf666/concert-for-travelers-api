@@ -1,0 +1,18 @@
+{
+  "id": "artist-ron-sexsmith",
+  "domain": "ronsexsmith.com",
+  "url": "https://ronsexsmith.com/tour-landing-page/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".et_pb_row_inner:has(.et_pb_button)",
+    "artistNameFallback": "Ron Sexsmith",
+    "date": "h4",
+    "ticketUrl": "a.et_pb_button",
+    "venue": ".et_pb_text:has(p.p1) p.p1",
+    "city": "h5.p1",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}

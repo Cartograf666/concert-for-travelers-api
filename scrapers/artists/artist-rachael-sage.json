@@ -1,0 +1,18 @@
+{
+  "id": "artist-rachael-sage",
+  "domain": "www.rachaelsage.com",
+  "url": "https://www.rachaelsage.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.tour_list tr.pm_top_tr",
+    "artistNameFallback": "Rachael Sage",
+    "date": "td:nth-child(1)",
+    "ticketUrl": "td.ticket_info img.row_buy_but@onclick",
+    "venue": "td.event_venue",
+    "city": "td.event_location",
+    "country": "td.event_location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

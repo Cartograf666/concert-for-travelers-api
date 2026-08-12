@@ -1,0 +1,17 @@
+{
+  "id": "artist-jay-semko",
+  "domain": "www.jaysemko.com",
+  "url": "https://www.jaysemko.com/events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "section.upcoming table tbody tr.border-accent",
+    "artistNameFallback": "Jay Semko",
+    "date": "td.event-date .date",
+    "ticketUrl": "a.event_details",
+    "venue": "td.event-name .text-tertiary",
+    "city": "td.event-location .text-tertiary",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}

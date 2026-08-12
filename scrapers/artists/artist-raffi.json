@@ -1,0 +1,18 @@
+{
+  "id": "artist-raffi",
+  "domain": "raffinews.com",
+  "url": "https://raffinews.com/raffi/concerts/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "ul.wp-block-list",
+    "artistNameFallback": "Raffi",
+    "date": "li",
+    "ticketUrl": "li > a",
+    "venue": "li > a",
+    "city": "li",
+    "country": "li",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}

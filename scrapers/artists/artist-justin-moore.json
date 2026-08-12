@@ -1,0 +1,17 @@
+{
+  "id": "artist-justin-moore",
+  "domain": "www.justinmooremusic.com",
+  "url": "https://www.justinmooremusic.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".data-row.data-row-gig",
+    "artistNameFallback": "Justin Moore",
+    "date": ".tour-date a",
+    "ticketUrl": ".tour-table-row-tickets .buy-btn",
+    "venue": ".tour-venue a",
+    "city": ".tour-city a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

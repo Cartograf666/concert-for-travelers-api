@@ -1,0 +1,18 @@
+{
+  "id": "artist-rick-astley",
+  "domain": "rickastley.co.uk",
+  "url": "https://rickastley.co.uk/tour-dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "ul.shows-col-outer li.date-item",
+    "artistNameFallback": "Rick Astley",
+    "date": "div[itemprop='startDate']",
+    "ticketUrl": "a.buyticketurl",
+    "venue": "div[itemprop='name'].s_venue",
+    "city": "span[itemprop='addressLocality']",
+    "country": "span[itemprop='addressCountry']",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

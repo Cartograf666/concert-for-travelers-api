@@ -1,0 +1,17 @@
+{
+  "id": "artist-john-mellencamp",
+  "domain": "www.mellencamp.com",
+  "url": "https://www.mellencamp.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.card",
+    "artistNameFallback": "John Mellencamp",
+    "date": "time",
+    "ticketUrl": "a.dropdown-item[href^='http']",
+    "venue": ".h3",
+    "city": "h1 > div:first-of-type",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

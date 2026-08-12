@@ -1,0 +1,17 @@
+{
+  "id": "artist-robin-thicke",
+  "domain": "www.robinthicke.com",
+  "url": "https://www.robinthicke.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".sqs-block-button-container:has(a[href=''])",
+    "artistNameFallback": "Robin Thicke",
+    "date": "a.sqs-block-button-element",
+    "ticketUrl": "a.sqs-block-button-element",
+    "venue": "a.sqs-block-button-element",
+    "city": "a.sqs-block-button-element",
+    "venueNameFallback": "See Website",
+    "cityNameFallback": "See Website",
+    "countryNameFallback": "US"
+  }
+}

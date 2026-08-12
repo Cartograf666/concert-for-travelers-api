@@ -1,0 +1,18 @@
+{
+  "id": "artist-julie-fowlis",
+  "domain": "www.juliefowlis.com",
+  "url": "https://www.juliefowlis.com/tour-dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".av-upcoming-events > a.av-upcoming-event-entry",
+    "artistNameFallback": "Julie Fowlis",
+    "date": ".tribe-event-date-start",
+    "ticketUrl": "attr(href)",
+    "venue": ".av-upcoming-event-venue",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-rick-braun",
+  "domain": "www.rickbraun.com",
+  "url": "https://www.rickbraun.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div[data-framer-name='Schedule']",
+    "artistNameFallback": "Rick Braun",
+    "date": "div[class*='framer-'][data-framer-component-type='RichTextContainer'] p[style*='color:rgb(181, 153, 127)']",
+    "ticketUrl": "a[href*='ticket'][target='_blank']",
+    "venue": "div[class*='framer-'][data-framer-component-type='RichTextContainer'] p[style*='color:rgb(173, 173, 172)']",
+    "city": "div[class*='framer-'][data-framer-component-type='RichTextContainer'] p[style*='font-style:italic']",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

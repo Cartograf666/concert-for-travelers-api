@@ -1,0 +1,18 @@
+{
+  "id": "artist-johnny-dowd",
+  "domain": "www.johnnydowd.com",
+  "url": "https://www.johnnydowd.com/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.eventlist-event",
+    "artistNameFallback": "Johnny Dowd",
+    "date": "time.event-date",
+    "ticketUrl": "a.eventlist-title-link",
+    "venue": ".eventlist-meta-address",
+    "city": ".eventlist-meta-address",
+    "country": ".eventlist-meta-address",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

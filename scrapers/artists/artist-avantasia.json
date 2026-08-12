@@ -1,0 +1,18 @@
+{
+  "id": "artist-avantasia",
+  "domain": "avantasia.com",
+  "url": "https://avantasia.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.single_event_list",
+    "artistNameFallback": "Avantasia",
+    "date": "div.event_list_entry.event_date div.text_center.event_list_date_container",
+    "ticketUrl": "div.event_list_entry.event_buy div.event_buy_btn::attr(data-href)",
+    "venue": "div.event_list_entry.event_venue a",
+    "city": "div.event_list_entry.event_title_img div.event_list_title",
+    "country": "div.event_list_entry.event_title_img div.event_list_title",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "artist-adiemus",
+  "domain": "www.karljenkins.com",
+  "url": "http://www.karljenkins.com/performances",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.col-md-7 > div.row.padding-bottom-4x.aos-item[data-aos=\"fade-up\"]",
+    "artistNameFallback": "Adiemus",
+    "date": ".performance-date",
+    "ticketUrl": "div.col-10 > a.btn.btn-primary@href",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

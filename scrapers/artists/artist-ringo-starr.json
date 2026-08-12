@@ -1,0 +1,18 @@
+{
+  "id": "artist-ringo-starr",
+  "domain": "www.ringostarr.com",
+  "url": "https://www.ringostarr.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".data-row.data-row-gig",
+    "artistNameFallback": "Ringo Starr",
+    "date": ".tour-table-row-date",
+    "ticketUrl": ".tour-table-row-tickets .buy-btn@href",
+    "venue": ".tour-table-row-venue a:first-child",
+    "city": ".tour-table-row-city",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
