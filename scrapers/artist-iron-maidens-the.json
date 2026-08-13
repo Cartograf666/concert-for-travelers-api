@@ -1,0 +1,17 @@
+{
+  "id": "artist-iron-maidens-the",
+  "domain": "www.theironmaidens.com",
+  "url": "https://www.theironmaidens.com/tour-dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour-item",
+    "artistNameFallback": "The Iron Maidens",
+    "date": ".tour-date",
+    "ticketUrl": ".tour-tickets a",
+    "venue": ".tour-venue",
+    "city": ".tour-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
