@@ -1,0 +1,17 @@
+{
+  "id": "artist-claudia-jung",
+  "domain": "www.claudia-jung.de",
+  "url": "https://www.claudia-jung.de/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.mec-event-article",
+    "artistNameFallback": "Claudia Jung",
+    "date": ".mec-event-date",
+    "ticketUrl": "a.mec-detail-button",
+    "venue": ".mec-event-loc-place",
+    "city": ".mec-event-loc-place",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}

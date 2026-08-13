@@ -1,0 +1,18 @@
+{
+  "id": "artist-kate-dearaugo",
+  "domain": "www.katedearaugo.com.au",
+  "url": "https://www.katedearaugo.com.au/events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".eventlist-event--upcoming",
+    "artistNameFallback": "Kate DeAraugo",
+    "date": "time.event-date",
+    "ticketUrl": ".eventlist-description a",
+    "venue": ".eventlist-meta-address",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "AU"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-celtic-woman",
+  "domain": "www.celticwoman.com",
+  "url": "https://www.celticwoman.com/tour-dates",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table#ticketTable tbody tr",
+    "artistNameFallback": "Celtic Woman",
+    "date": "td:nth-child(2)",
+    "ticketUrl": "td.book-btn a",
+    "venue": "td:nth-child(3)",
+    "city": "td:nth-child(4)",
+    "country": "td:nth-child(6)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "IE"
+  }
+}

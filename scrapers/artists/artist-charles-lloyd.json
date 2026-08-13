@@ -1,0 +1,18 @@
+{
+  "id": "artist-charles-lloyd",
+  "domain": "charleslloyd.com",
+  "url": "http://charleslloyd.com/calendar/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".performances p:has(strong)",
+    "artistNameFallback": "Charles Lloyd",
+    "date": "strong",
+    "ticketUrl": ".tixfloat a",
+    "venue": "strong",
+    "city": "strong",
+    "country": "strong",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

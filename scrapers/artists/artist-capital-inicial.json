@@ -1,0 +1,18 @@
+{
+  "id": "artist-capital-inicial",
+  "domain": "capitalinicial.com.br",
+  "url": "https://capitalinicial.com.br/agenda",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li",
+    "artistNameFallback": "Capital Inicial",
+    "date": "span.font-display",
+    "ticketUrl": "a[href]",
+    "venue": "p.text-sm.text-muted-foreground",
+    "city": "p.font-display",
+    "country": "p.font-display span",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "BR"
+  }
+}

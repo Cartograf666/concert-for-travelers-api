@@ -1,0 +1,18 @@
+{
+  "id": "artist-chris-norman",
+  "domain": "www.chris-norman.co.uk",
+  "url": "https://www.chris-norman.co.uk/dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".col-md-12.wow.fadeIn.pb-30",
+    "artistNameFallback": "Chris Norman",
+    "date": ".blog2-date-numb, .blog2-month",
+    "ticketUrl": ".pre-arrow",
+    "venue": ".blog2-post-prev-text",
+    "city": ".post-prev-title h2",
+    "country": ".post-prev-info",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

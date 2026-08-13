@@ -1,0 +1,15 @@
+{
+  "id": "artist-allison-crowe",
+  "domain": "allisoncroweband.com",
+  "url": "https://allisoncroweband.com/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "section.calendar_feature table.table-style tbody tr.border-accent",
+    "artistNameFallback": "Allison Crowe",
+    "date": ".event-date .date-long .from",
+    "ticketUrl": ".event-date a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

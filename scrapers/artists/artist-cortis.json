@@ -1,0 +1,15 @@
+{
+  "id": "artist-cortis",
+  "domain": "cortis-official.jp",
+  "url": "https://cortis-official.jp/schedule",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "a.news__item-group",
+    "artistNameFallback": "CORTIS",
+    "date": ".schedule__item-date-ym, .schedule__item-date-d",
+    "ticketUrl": "a.news__item-group",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

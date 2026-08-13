@@ -1,0 +1,17 @@
+{
+  "id": "artist-karrin-allyson",
+  "domain": "karrin.com",
+  "url": "https://karrin.com/live-dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".eventer-event-item",
+    "artistNameFallback": "Karrin Allyson",
+    "date": ".eventer-event-date",
+    "ticketUrl": "a.eventer-event-item-link",
+    "venue": ".eventer-event-title",
+    "city": ".eventer-event-title",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

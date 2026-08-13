@@ -1,0 +1,17 @@
+{
+  "id": "artist-katy-perry",
+  "domain": "www.katyperry.com",
+  "url": "https://www.katyperry.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".data-row.data-row-gig",
+    "artistNameFallback": "Katy Perry",
+    "date": ".tour-date",
+    "ticketUrl": ".buy-btn, .presale-btn",
+    "venue": ".tour-venue",
+    "city": ".tour-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

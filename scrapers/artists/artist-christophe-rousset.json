@@ -1,0 +1,18 @@
+{
+  "id": "artist-christophe-rousset",
+  "domain": "www.lestalenslyriques.com",
+  "url": "http://www.lestalenslyriques.com/agenda/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".itemEvent",
+    "artistNameFallback": "Christophe Rousset",
+    "date": ".date",
+    "ticketUrl": "a",
+    "venue": ".place",
+    "city": ".place",
+    "country": ".country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "FR"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-phil-selway",
+  "domain": "www.philipselway.com",
+  "url": "https://www.philipselway.com/tour-dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.et_pb_row.et_pb_equal_columns",
+    "artistNameFallback": "Phil Selway",
+    "date": "div.et_pb_column_1_4:nth-child(1) .et_pb_text_inner strong",
+    "ticketUrl": "div.et_pb_column_1_4:nth-child(3) a",
+    "venue": "div.et_pb_column_1_2:nth-child(2) .et_pb_text_inner strong",
+    "city": "div.et_pb_column_1_2:nth-child(2) .et_pb_text_inner em",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

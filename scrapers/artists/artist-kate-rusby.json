@@ -1,0 +1,17 @@
+{
+  "id": "artist-kate-rusby",
+  "domain": "katerusby.com",
+  "url": "https://katerusby.com/gigs/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tours_list",
+    "artistNameFallback": "Kate Rusby",
+    "date": "ul li:nth-child(1) span",
+    "ticketUrl": "ul li:nth-child(3) a",
+    "venue": "ul li:nth-child(2) p",
+    "city": "ul li:nth-child(2) p",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

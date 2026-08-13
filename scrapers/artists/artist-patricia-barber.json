@@ -1,0 +1,17 @@
+{
+  "id": "artist-patricia-barber",
+  "domain": "patriciabarber.com",
+  "url": "http://patriciabarber.com/concerts/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.gigstable tbody tr",
+    "artistNameFallback": "Patricia Barber",
+    "date": "td.views-field-field-date span.date-display-single",
+    "ticketUrl": "td.views-field-field-venue a.extlink",
+    "venue": "td.views-field-field-venue a.extlink",
+    "city": "td.views-field-field-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

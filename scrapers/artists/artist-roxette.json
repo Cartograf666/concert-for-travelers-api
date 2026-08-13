@@ -1,0 +1,18 @@
+{
+  "id": "artist-roxette",
+  "domain": "roxette.se",
+  "url": "https://roxette.se/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.gig",
+    "artistNameFallback": "Roxette",
+    "date": "div.date",
+    "ticketUrl": "div.link a",
+    "venue": "div.place",
+    "city": "div.place",
+    "country": "div.place strong",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

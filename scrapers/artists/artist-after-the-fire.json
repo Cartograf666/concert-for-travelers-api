@@ -1,0 +1,16 @@
+{
+  "id": "artist-after-the-fire",
+  "domain": "www.afterthefire.co.uk",
+  "url": "http://www.afterthefire.co.uk/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.table-bordered tbody tr",
+    "artistNameFallback": "After the Fire",
+    "date": "td:nth-child(2)",
+    "venue": "td:nth-child(4)",
+    "city": "td:nth-child(3)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}
