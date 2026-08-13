@@ -3,6 +3,8 @@
   "domain": "majestic.sk",
   "url": "https://majestic.sk/program/",
   "type": "static_selectors",
+  "maxRetries": 5,
+  "requestDelayMs": 2000,
   "selectors": {
     "eventBlock": ".tt-evt-li",
     "artist": ".tt-evt-li__name",
