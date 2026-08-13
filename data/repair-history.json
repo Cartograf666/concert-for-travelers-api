@@ -25,5 +25,61 @@
     "failuresSinceRepair": 0,
     "note": "transient: raising maxRetries 2 -> 5 with a politeness delay",
     "verification": "PASS (15 events, 7 checks)"
+  },
+  {
+    "id": "yugong-yishan-beijing",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-08-13T05:14:22.843Z",
+    "previousConfig": {
+      "id": "yugong-yishan-beijing",
+      "domain": "theatrebeijing.com",
+      "url": "https://theatrebeijing.com/whats_on/live/",
+      "type": "static_selectors",
+      "maxRetries": 3,
+      "requestDelayMs": 2000,
+      "allowEmpty": false,
+      "selectors": {
+        "eventBlock": "div.events",
+        "artist": "h2 a",
+        "date": "ul.eventsTag li:nth-child(2)",
+        "venue": "ul.eventsTag li:nth-child(3) a",
+        "ticketUrl": "h2 a",
+        "venueNameFallback": "Yugong Yishan",
+        "cityNameFallback": "Beijing",
+        "countryNameFallback": "CN",
+        "lat": 39.9356,
+        "lng": 116.4065
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend",
+    "verification": "PASS (1 events, 7 checks)"
+  },
+  {
+    "id": "majestic-music-club-bratislava",
+    "strategy": "transient",
+    "repairedAt": "2026-08-13T05:14:24.772Z",
+    "previousConfig": {
+      "id": "majestic-music-club-bratislava",
+      "domain": "majestic.sk",
+      "url": "https://majestic.sk/program/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tt-evt-li",
+        "artist": ".tt-evt-li__name",
+        "date": ".tt-evt-li__sub-info--BeginDate",
+        "ticketUrl": ".tt-evt-li__btn-holder a",
+        "venueNameFallback": "Majestic Music Club",
+        "cityNameFallback": "Bratislava",
+        "countryNameFallback": "SK",
+        "lat": 48.148194,
+        "lng": 17.107558
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay",
+    "verification": "PASS (14 events, 7 checks)"
   }
 ]
