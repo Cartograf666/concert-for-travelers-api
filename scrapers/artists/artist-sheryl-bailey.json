@@ -1,0 +1,17 @@
+{
+  "id": "artist-sheryl-bailey",
+  "domain": "sherylbailey.com",
+  "url": "https://sherylbailey.com/gigs",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.list-style",
+    "artistNameFallback": "Sheryl Bailey",
+    "date": ".event-datetime time.from",
+    "ticketUrl": ".buying-options a.tickets",
+    "venue": ".event-location a",
+    "city": ".event-location a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

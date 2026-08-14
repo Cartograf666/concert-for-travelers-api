@@ -1,0 +1,17 @@
+{
+  "id": "artist-pentangle",
+  "domain": "www.pentangle.info",
+  "url": "https://www.pentangle.info/concerts",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div#comp-lq9qr32g p.font_8.wixui-rich-text__text:has(a)",
+    "artistNameFallback": "Pentangle",
+    "date": "span[style*=\"font-weight:bold;\"]",
+    "ticketUrl": "a @href",
+    "venue": "a span[style*=\"text-decoration:underline;\"]",
+    "city": "a span[style*=\"text-decoration:underline;\"]",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

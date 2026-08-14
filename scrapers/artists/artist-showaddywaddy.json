@@ -1,0 +1,17 @@
+{
+  "id": "artist-showaddywaddy",
+  "domain": "www.showaddywaddy.net",
+  "url": "https://www.showaddywaddy.net/gigs/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "tr.tableBuilderRow:not(.uniqueStyleRow)",
+    "artistNameFallback": "Showaddywaddy",
+    "date": ".tableBuilderCell1",
+    "ticketUrl": ".tableBuilderCell3 a@href",
+    "venue": ".tableBuilderCell2",
+    "city": ".tableBuilderCell2",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

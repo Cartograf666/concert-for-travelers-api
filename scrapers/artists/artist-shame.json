@@ -1,0 +1,18 @@
+{
+  "id": "artist-shame",
+  "domain": "www.shame.world",
+  "url": "https://www.shame.world/live",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".sqs-html-content p:has(a)",
+    "artistNameFallback": "Shame",
+    "date": "a",
+    "ticketUrl": "a",
+    "venue": "p:nth-of-type(3) a, p:nth-of-type(3)",
+    "city": "p:nth-of-type(2) a, p:nth-of-type(2)",
+    "country": "p:nth-of-type(2) a, p:nth-of-type(2)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-scotty-mccreery",
+  "domain": "www.scottymccreery.com",
+  "url": "https://www.scottymccreery.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event.d-flex.justify-content-between",
+    "artistNameFallback": "Scotty McCreery",
+    "date": ".event-date",
+    "ticketUrl": "a.btn-tickets",
+    "venue": ".event-title",
+    "city": ".event-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

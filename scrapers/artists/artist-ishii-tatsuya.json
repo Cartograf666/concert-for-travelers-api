@@ -1,0 +1,16 @@
+{
+  "id": "artist-ishii-tatsuya",
+  "domain": "www.t-stone.com",
+  "url": "https://www.t-stone.com/concert",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.list-date__item",
+    "artistNameFallback": "Ishii, Tatsuya",
+    "date": ".list-date__date-item-year, .list-date__date-item-day",
+    "ticketUrl": "a.list-date__link",
+    "venue": ".list-date__title",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

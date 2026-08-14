@@ -1,0 +1,16 @@
+{
+  "id": "artist-b-real",
+  "domain": "breal.tv",
+  "url": "https://breal.tv/show-reviews/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".elementor-widget-foxiz-list-small-2 .swiper-slide",
+    "artistNameFallback": "B-Real",
+    "date": ".p-meta .meta-date .date",
+    "ticketUrl": ".entry-title a",
+    "venue": ".entry-title a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

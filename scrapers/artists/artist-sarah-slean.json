@@ -1,0 +1,17 @@
+{
+  "id": "artist-sarah-slean",
+  "domain": "sarahslean.com",
+  "url": "https://sarahslean.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.table-style tbody tr",
+    "artistNameFallback": "Sarah Slean",
+    "date": "td.event-date .date-long",
+    "ticketUrl": "a.event_details",
+    "venue": "td.event-location .text",
+    "city": "td.event-location .text",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}

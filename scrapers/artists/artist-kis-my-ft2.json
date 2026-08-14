@@ -1,0 +1,17 @@
+{
+  "id": "artist-kis-my-ft2",
+  "domain": "mentrecording.jp",
+  "url": "https://mentrecording.jp/kismyft2/live",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.infoList.js-infoLists",
+    "artistNameFallback": "Kis-my-ft2",
+    "date": ".infoList__time",
+    "ticketUrl": "a.infoList__link",
+    "venue": ".infoList__text",
+    "city": ".infoList__text",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

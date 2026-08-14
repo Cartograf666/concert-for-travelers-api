@@ -1,0 +1,18 @@
+{
+  "id": "artist-schwarz-stein",
+  "domain": "schwarz-stein.jp",
+  "url": "http://schwarz-stein.jp/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "ul.lists > li",
+    "artistNameFallback": "Schwarz Stein",
+    "date": "time",
+    "ticketUrl": "a",
+    "venue": "article p:first-of-type",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "Tokyo",
+    "countryNameFallback": "JP"
+  }
+}

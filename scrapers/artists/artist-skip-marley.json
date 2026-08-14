@@ -1,0 +1,17 @@
+{
+  "id": "artist-skip-marley",
+  "domain": "www.skipmarley.com",
+  "url": "https://www.skipmarley.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".data-row.data-row-gig",
+    "artistNameFallback": "Skip Marley",
+    "date": ".tour-date",
+    "ticketUrl": ".tour-table-row-tickets .buy-btn",
+    "venue": ".tour-venue > a:first-child",
+    "city": ".tour-city > a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

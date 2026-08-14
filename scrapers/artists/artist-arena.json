@@ -1,0 +1,18 @@
+{
+  "id": "artist-arena",
+  "domain": "www.arenaband.co.uk",
+  "url": "https://www.arenaband.co.uk/tour-dates-2022/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.tftable tbody tr",
+    "artistNameFallback": "Arena",
+    "date": "td:nth-child(2) span",
+    "ticketUrl": "td:nth-child(4) a::attr(href)",
+    "venue": "td:nth-child(3) strong",
+    "city": "td:nth-child(3) span",
+    "country": "td:nth-child(1) img::attr(alt)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

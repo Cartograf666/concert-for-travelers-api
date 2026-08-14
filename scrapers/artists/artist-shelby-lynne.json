@@ -1,0 +1,17 @@
+{
+  "id": "artist-shelby-lynne",
+  "domain": "www.shelbylynne.com",
+  "url": "https://www.shelbylynne.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "section.elementor-inner-section[data-id][class*='elementor-element-']",
+    "artistNameFallback": "Shelby Lynne",
+    "date": ".elementor-widget-heading .elementor-heading-title",
+    "ticketUrl": "a.elementor-button-link",
+    "venue": ".elementor-image-box-title",
+    "city": ".elementor-image-box-description",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

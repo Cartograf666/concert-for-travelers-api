@@ -1,0 +1,18 @@
+{
+  "id": "artist-shelly-berg",
+  "domain": "www.shellyberg.com",
+  "url": "https://www.shellyberg.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.eventlist-event",
+    "artistNameFallback": "Shelly Berg",
+    "date": "time.event-date",
+    "ticketUrl": ".eventlist-title-link",
+    "venue": ".eventlist-meta-address",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

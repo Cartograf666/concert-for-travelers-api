@@ -1,0 +1,17 @@
+{
+  "id": "artist-sienna-spiro",
+  "domain": "www.officialsiennaspiro.com",
+  "url": "https://www.officialsiennaspiro.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "umg-event",
+    "artistNameFallback": "Sienna Spiro",
+    "date": "[part='event-date'] a",
+    "ticketUrl": "umg-link[data-offer-type='tickets']",
+    "venue": "[part='venue'] a",
+    "city": "[part='location'] a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "artist-keri-noble",
+  "domain": "www.kerinoble.com",
+  "url": "https://www.kerinoble.com/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.eventlist-event",
+    "artistNameFallback": "Keri Noble",
+    "date": ".event-date",
+    "ticketUrl": ".eventlist-description a",
+    "venue": ".eventlist-title-link",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-paul-rodgers",
+  "domain": "paulrodgers.com",
+  "url": "https://paulrodgers.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.gigpress-table tbody tr.gigpress-row",
+    "artistNameFallback": "Paul Rodgers",
+    "date": ".gigpress-date",
+    "ticketUrl": "+ tr.gigpress-info a",
+    "venue": ".gigpress-venue",
+    "city": ".gigpress-city",
+    "country": ".gigpress-country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}
