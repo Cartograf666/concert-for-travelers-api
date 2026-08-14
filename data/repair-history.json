@@ -52,7 +52,7 @@
       }
     },
     "status": "pending",
-    "failuresSinceRepair": 0,
+    "failuresSinceRepair": 1,
     "note": "anti_bot: escalating to the got-scraping header-fingerprint backend",
     "verification": "PASS (1 events, 7 checks)"
   },
@@ -78,7 +78,7 @@
       }
     },
     "status": "pending",
-    "failuresSinceRepair": 0,
+    "failuresSinceRepair": 1,
     "note": "transient: raising maxRetries 2 -> 5 with a politeness delay",
     "verification": "PASS (14 events, 7 checks)"
   }
