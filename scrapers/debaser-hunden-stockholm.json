@@ -3,6 +3,7 @@
   "domain": "debaser.se",
   "url": "https://www.debaser.se/konserter",
   "type": "static_selectors",
+  "httpClient": "got-scraping",
   "selectors": {
     "eventBlock": ".collection-item-20",
     "artist": ".h3.calendar-mobile",

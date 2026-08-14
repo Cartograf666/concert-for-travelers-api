@@ -3,6 +3,8 @@
   "domain": "bakuconventioncenter.com",
   "url": "https://bakuconventioncenter.com/events",
   "type": "static_selectors",
+  "maxRetries": 5,
+  "requestDelayMs": 2000,
   "selectors": {
     "eventBlock": "article.event-box",
     "artist": "h4.event-box__title",

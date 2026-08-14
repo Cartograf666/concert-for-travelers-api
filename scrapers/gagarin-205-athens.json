@@ -3,6 +3,7 @@
   "domain": "gagarin205.gr",
   "url": "https://gagarin205.gr/events/",
   "type": "jsonld",
+  "httpClient": "got-scraping",
   "maxRetries": 2,
   "requestDelayMs": 0,
   "allowEmpty": false,

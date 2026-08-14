@@ -3,6 +3,7 @@
   "domain": "portlandyouthphil.org",
   "url": "https://portlandyouthphil.org/concerts-tickets/all-concerts-events",
   "type": "static_selectors",
+  "httpClient": "got-scraping",
   "selectors": {
     "eventBlock": ".nr-concerts-events-section",
     "artist": ".nr-h5-mimic",
