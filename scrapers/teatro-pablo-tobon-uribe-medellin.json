@@ -3,6 +3,8 @@
   "domain": "teatropablotobon.com",
   "url": "https://teatropablotobon.com/eventos/",
   "type": "static_selectors",
+  "maxRetries": 5,
+  "requestDelayMs": 2000,
   "selectors": {
     "eventBlock": "div.card:has(.chips__chip--musica)",
     "artist": "h2.card__title",

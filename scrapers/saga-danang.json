@@ -3,6 +3,7 @@
   "domain": "sagadanang.com",
   "url": "https://sagadanang.com/saga-events",
   "type": "static_selectors",
+  "httpClient": "got-scraping",
   "allowEmpty": true,
   "selectors": {
     "eventBlock": "article.mec-event-article",
