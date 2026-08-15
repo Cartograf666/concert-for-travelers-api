@@ -1,0 +1,17 @@
+{
+  "id": "artist-sophie-b-hawkins",
+  "domain": "sophiebhawkins.com",
+  "url": "https://sophiebhawkins.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".upcoming tbody tr",
+    "artistNameFallback": "Sophie B. Hawkins",
+    "date": ".event-date time",
+    "ticketUrl": "a.event_details",
+    "venue": ".event-name .text-tertiary",
+    "city": ".event-name .text-tertiary",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-shingo-suzuki",
+  "domain": "shingosuzuki.com",
+  "url": "https://shingosuzuki.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.post.type-post",
+    "artistNameFallback": "Shingo Suzuki",
+    "date": "time.published",
+    "ticketUrl": "h2.entry-title a",
+    "venue": ".entry-summary",
+    "city": ".entry-summary",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

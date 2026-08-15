@@ -1,0 +1,17 @@
+{
+  "id": "artist-stephen-hough",
+  "domain": "stephenhough.com",
+  "url": "https://stephenhough.com/performances",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".collection-list---performances .w-dyn-item",
+    "artistNameFallback": "Stephen Hough",
+    "date": ".performance---date---single, .performance---date---multiple",
+    "ticketUrl": ".item---links a",
+    "venue": ".performance---venue",
+    "city": ".performance---city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

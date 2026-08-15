@@ -1,0 +1,18 @@
+{
+  "id": "artist-damon-naomi",
+  "domain": "www.damonandnaomi.com",
+  "url": "https://www.damonandnaomi.com/events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".eventlist-event",
+    "artistNameFallback": "Damon & Naomi",
+    "date": ".event-date",
+    "ticketUrl": ".eventlist-excerpt a",
+    "venue": ".eventlist-meta-address",
+    "city": ".eventlist-meta-address",
+    "country": ".eventlist-meta-address",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

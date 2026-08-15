@@ -1,0 +1,16 @@
+{
+  "id": "artist-stephen-pearcy",
+  "domain": "www.stephen-pearcy.com",
+  "url": "https://www.stephen-pearcy.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.table-style tbody tr",
+    "artistNameFallback": "Stephen Pearcy",
+    "date": ".event-date",
+    "venue": ".event-name",
+    "city": ".city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

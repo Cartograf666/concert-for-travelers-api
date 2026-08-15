@@ -1,0 +1,18 @@
+{
+  "id": "artist-alasdair-roberts",
+  "domain": "www.alasdairroberts.com",
+  "url": "http://www.alasdairroberts.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "tbody.vevent",
+    "artistNameFallback": "Alasdair Roberts",
+    "date": ".gigpress-date abbr",
+    "ticketUrl": ".gigpress-tickets-link",
+    "venue": ".gigpress-venue.location",
+    "city": ".gigpress-city.summary",
+    "country": ".gigpress-country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

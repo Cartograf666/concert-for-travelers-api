@@ -1,0 +1,17 @@
+{
+  "id": "artist-daughtry",
+  "domain": "daughtryofficial.com",
+  "url": "https://daughtryofficial.com/daughtry/events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".single-event-container",
+    "artistNameFallback": "Daughtry",
+    "date": ".date-container",
+    "ticketUrl": ".ticket-link@href",
+    "venue": ".venue-name",
+    "city": ".venue-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

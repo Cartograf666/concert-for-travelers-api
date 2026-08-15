@@ -1,0 +1,18 @@
+{
+  "id": "artist-sonicflood",
+  "domain": "sonicflood.com",
+  "url": "https://sonicflood.com/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.list-style",
+    "artistNameFallback": "Sonicflood",
+    "date": "time.from",
+    "ticketUrl": "a.button.tickets",
+    "venue": "p.event-location a",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "p.event-location",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

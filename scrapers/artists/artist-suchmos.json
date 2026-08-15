@@ -1,0 +1,17 @@
+{
+  "id": "artist-suchmos",
+  "domain": "www.suchmos.com",
+  "url": "https://www.suchmos.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".news-item.loop",
+    "artistNameFallback": "Suchmos",
+    "date": "date",
+    "ticketUrl": ".text a",
+    "venue": ".text",
+    "city": ".text",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

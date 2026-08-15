@@ -1,0 +1,18 @@
+{
+  "id": "artist-david-newman",
+  "domain": "www.davidlouisnewman.com",
+  "url": "https://www.davidlouisnewman.com/upcoming-events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".eventlist-event",
+    "artistNameFallback": "David Newman",
+    "date": ".event-date",
+    "ticketUrl": ".eventlist-title-link",
+    "venue": ".eventlist-meta-address",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

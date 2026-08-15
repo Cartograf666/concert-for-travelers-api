@@ -1,0 +1,18 @@
+{
+  "id": "artist-insomnia",
+  "domain": "www.insomnium.net",
+  "url": "https://www.insomnium.net/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".el-item.uk-card",
+    "artistNameFallback": "Insomnia",
+    "date": ".el-title",
+    "ticketUrl": ".el-link",
+    "venue": ".el-title",
+    "city": ".el-title",
+    "country": ".el-title",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

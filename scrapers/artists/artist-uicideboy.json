@@ -1,0 +1,18 @@
+{
+  "id": "artist-uicideboy",
+  "domain": "www.g59records.com",
+  "url": "https://www.g59records.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour-row",
+    "artistNameFallback": "$uicideboy$",
+    "date": ".hidden.md\\:flex .font-stencil:first-child, .hidden.md\\:flex .font-sans:nth-child(2)",
+    "ticketUrl": ".hidden.md\\:flex a:last-of-type",
+    "venue": ".hidden.md\\:flex .font-kraut:nth-of-type(1)",
+    "city": ".hidden.md\\:flex .font-sans:nth-child(1)",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-steve-cradock",
+  "domain": "www.stevecradock.com",
+  "url": "https://www.stevecradock.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.tour.upcoming table",
+    "artistNameFallback": "Steve Cradock",
+    "date": "td.tour-date",
+    "ticketUrl": "td.tour-url a",
+    "venue": "td.tour-venue",
+    "city": "td.tour-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

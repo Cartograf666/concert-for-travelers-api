@@ -1,0 +1,18 @@
+{
+  "id": "artist-dave",
+  "domain": "santandave.com",
+  "url": "https://santandave.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.d-gigs tr",
+    "artistNameFallback": "Dave",
+    "date": "td.gig-date",
+    "ticketUrl": "td.gig-link a",
+    "venue": "td.gig-venue",
+    "city": "td.gig-city",
+    "country": "td.gig-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

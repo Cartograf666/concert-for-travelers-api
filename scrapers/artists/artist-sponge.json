@@ -1,0 +1,17 @@
+{
+  "id": "artist-sponge",
+  "domain": "www.spongetheband.com",
+  "url": "https://www.spongetheband.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".wixui-repeater__item",
+    "artistNameFallback": "Sponge",
+    "date": ".comp-l312npcl",
+    "ticketUrl": ".comp-l328nhm4 a",
+    "venue": ".comp-l312npds",
+    "city": ".comp-l312npcl",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

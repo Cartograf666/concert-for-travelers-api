@@ -1,0 +1,18 @@
+{
+  "id": "artist-your-song-is-good",
+  "domain": "yoursongisgood.com",
+  "url": "https://yoursongisgood.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.post.type-post",
+    "artistNameFallback": "Your Song Is Good",
+    "date": "h2.fs20",
+    "ticketUrl": ".entry-content a:first-of-type",
+    "venue": "h2.fs20",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

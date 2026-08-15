@@ -1,0 +1,16 @@
+{
+  "id": "artist-steinar-raknes",
+  "domain": "steinarraknes.com",
+  "url": "https://steinarraknes.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour-item",
+    "artistNameFallback": "Steinar Raknes",
+    "date": ".tour-date",
+    "venue": ".tour-venue",
+    "city": ".tour-venue",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "NO"
+  }
+}

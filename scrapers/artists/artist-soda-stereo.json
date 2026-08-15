@@ -1,0 +1,18 @@
+{
+  "id": "artist-soda-stereo",
+  "domain": "sodastereo.com",
+  "url": "https://sodastereo.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tr[itemscope][itemtype*='MusicEvent']:not(.past)",
+    "artistNameFallback": "Soda Stereo",
+    "date": "time[itemprop='startDate']",
+    "ticketUrl": ".ticket-btn[itemprop='url']",
+    "venue": ".td.lugar",
+    "city": ".td.pais",
+    "country": ".td.pais",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "AR"
+  }
+}

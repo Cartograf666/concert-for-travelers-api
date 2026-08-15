@@ -1,0 +1,17 @@
+{
+  "id": "artist-kiroro",
+  "domain": "www.kiroromusic.com",
+  "url": "https://www.kiroromusic.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.p-conts-wrap.c-archive-list",
+    "artistNameFallback": "Kiroro",
+    "date": ".c-conts-date time",
+    "ticketUrl": ".c-conts-ttl-lv1 a",
+    "venue": ".p-conts-section",
+    "city": ".p-conts-section",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

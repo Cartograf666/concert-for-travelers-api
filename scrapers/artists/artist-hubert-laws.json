@@ -1,0 +1,17 @@
+{
+  "id": "artist-hubert-laws",
+  "domain": "hubertlaws.com",
+  "url": "https://hubertlaws.com/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tribe-events-calendar-latest-past__event-row",
+    "artistNameFallback": "Hubert Laws",
+    "date": ".tribe-events-calendar-latest-past__event-datetime",
+    "ticketUrl": ".tribe-events-calendar-latest-past__event-title-link",
+    "venue": ".tribe-events-calendar-latest-past__event-venue-title",
+    "city": ".tribe-events-calendar-latest-past__event-venue-address",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

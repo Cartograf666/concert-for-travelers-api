@@ -1,0 +1,17 @@
+{
+  "id": "artist-a-tribe-called-red",
+  "domain": "atribecalledred.com",
+  "url": "https://atribecalledred.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".gigpress-row",
+    "artistNameFallback": "A Tribe Called Red",
+    "date": ".gigpress-date",
+    "ticketUrl": ".gigpress-venue a",
+    "venue": ".gigpress-venue a",
+    "city": ".gigpress-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}

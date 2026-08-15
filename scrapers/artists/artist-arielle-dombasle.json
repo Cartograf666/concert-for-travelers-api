@@ -1,0 +1,17 @@
+{
+  "id": "artist-arielle-dombasle",
+  "domain": "www.arielle-dombasle.com",
+  "url": "https://www.arielle-dombasle.com/concerts/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "#tablepress-3 tbody tr",
+    "artistNameFallback": "Arielle Dombasle",
+    "date": ".column-1",
+    "ticketUrl": ".column-4 a",
+    "venue": ".column-3",
+    "city": ".column-2",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "FR"
+  }
+}

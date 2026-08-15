@@ -1,0 +1,17 @@
+{
+  "id": "artist-interface",
+  "domain": "interfacemusic.net",
+  "url": "http://interfacemusic.net/tour-dates",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour.past table tr",
+    "artistNameFallback": "Interface",
+    "date": ".tour-date",
+    "ticketUrl": ".tour-more a@href",
+    "venue": ".tour-venue",
+    "city": ".tour-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

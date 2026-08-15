@@ -1,0 +1,17 @@
+{
+  "id": "artist-stuts",
+  "domain": "stutsbeats.com",
+  "url": "https://stutsbeats.com/live",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".box",
+    "artistNameFallback": "Stuts",
+    "date": "h2",
+    "ticketUrl": ".livepost-doc a",
+    "venue": ".livepost-doc",
+    "city": ".livepost-doc",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

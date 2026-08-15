@@ -1,0 +1,18 @@
+{
+  "id": "artist-da-pump",
+  "domain": "www.dapump.jp",
+  "url": "https://www.dapump.jp/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "#live .list ul li",
+    "artistNameFallback": "Da Pump",
+    "date": "time",
+    "ticketUrl": "span:nth-of-type(1) a@href",
+    "venue": "span:nth-of-type(1) a",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

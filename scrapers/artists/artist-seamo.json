@@ -1,0 +1,15 @@
+{
+  "id": "artist-seamo",
+  "domain": "seamo.jp",
+  "url": "https://seamo.jp/calendar",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".content-list > ul > li",
+    "artistNameFallback": "Seamo",
+    "date": "time",
+    "ticketUrl": "a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

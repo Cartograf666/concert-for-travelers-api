@@ -1,0 +1,15 @@
+{
+  "id": "artist-al-gromer-khan",
+  "domain": "khanart.de",
+  "url": "https://khanart.de/calendar",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-detail",
+    "artistNameFallback": "Al Gromer Khan",
+    "date": ".event-datetime .date-long",
+    "venue": ".event-location span",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

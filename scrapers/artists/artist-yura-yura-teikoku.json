@@ -1,0 +1,15 @@
+{
+  "id": "artist-yura-yura-teikoku",
+  "domain": "www.yurayurateikoku.com",
+  "url": "http://www.yurayurateikoku.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table[width=\"546\"], table[width=\"544\"], table[width=\"543\"], table[width=\"542\"]",
+    "artistNameFallback": "Yura Yura Teikoku",
+    "date": "td[bgcolor=\"#333333\"]",
+    "venue": "td[bgcolor=\"#999999\"]",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

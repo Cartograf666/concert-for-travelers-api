@@ -1,0 +1,16 @@
+{
+  "id": "artist-daler-mehndi",
+  "domain": "dalermehndi.com",
+  "url": "https://dalermehndi.com/tour-grid/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".gallery_grid_item",
+    "artistNameFallback": "Daler Mehndi",
+    "date": ".tilter__description",
+    "ticketUrl": "a.gallery_grid_item",
+    "venue": ".tilter__title",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

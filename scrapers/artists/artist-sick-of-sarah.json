@@ -1,0 +1,17 @@
+{
+  "id": "artist-sick-of-sarah",
+  "domain": "www.sickofsarah.com",
+  "url": "https://www.sickofsarah.com/shows/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.table-style tbody tr",
+    "artistNameFallback": "Sick of Sarah",
+    "date": "td.event-date time.from",
+    "ticketUrl": "a.event_details",
+    "venue": "span.fn.org",
+    "city": "span.city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-smalltown-poets",
+  "domain": "smalltownpoets.tv",
+  "url": "https://smalltownpoets.tv/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.list-style",
+    "artistNameFallback": "Smalltown Poets",
+    "date": "time.from",
+    "ticketUrl": ".add-to-cart .tickets",
+    "venue": ".event-location a",
+    "city": ".event-location a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

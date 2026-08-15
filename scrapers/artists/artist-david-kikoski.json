@@ -1,0 +1,17 @@
+{
+  "id": "artist-david-kikoski",
+  "domain": "davekikoski.com",
+  "url": "https://davekikoski.com/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tribe-events-calendar-latest-past__event-row",
+    "artistNameFallback": "David Kikoski",
+    "date": ".tribe-events-calendar-latest-past__event-datetime",
+    "ticketUrl": ".tribe-events-calendar-latest-past__event-title-link::attr(href)",
+    "venue": ".tribe-events-calendar-latest-past__event-venue-title",
+    "city": ".tribe-events-calendar-latest-past__event-venue-address",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

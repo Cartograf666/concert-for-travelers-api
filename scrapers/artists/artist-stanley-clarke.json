@@ -1,0 +1,17 @@
+{
+  "id": "artist-stanley-clarke",
+  "domain": "stanleyclarke.com",
+  "url": "https://stanleyclarke.com/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "ul#events-index > li.event",
+    "artistNameFallback": "Stanley Clarke",
+    "date": "span.start-date",
+    "ticketUrl": "a.event-link-mask@href",
+    "venue": "span.venue",
+    "city": "span.location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-dave-hole",
+  "domain": "www.davehole.com",
+  "url": "https://www.davehole.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "section[id^='comp-mokx'], section[id^='comp-mnhk']",
+    "artistNameFallback": "Dave Hole",
+    "date": ".wixui-rich-text__text",
+    "ticketUrl": "a.wixui-button",
+    "venue": ".wixui-rich-text__text",
+    "city": ".wixui-rich-text__text",
+    "country": ".wixui-rich-text__text",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "AU"
+  }
+}

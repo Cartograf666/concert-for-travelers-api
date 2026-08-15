@@ -1,0 +1,17 @@
+{
+  "id": "artist-dan-hill",
+  "domain": "danhill.com",
+  "url": "https://danhill.com/events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.table-style tbody tr",
+    "artistNameFallback": "Dan Hill",
+    "date": "td.event-date time",
+    "ticketUrl": "td.event-name a",
+    "venue": "td.event-name",
+    "city": "td.event-name",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}

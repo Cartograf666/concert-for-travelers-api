@@ -1,0 +1,17 @@
+{
+  "id": "artist-paul-winter",
+  "domain": "paulwinter.com",
+  "url": "http://paulwinter.com/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tribe-events-calendar-latest-past__event-row",
+    "artistNameFallback": "Paul Winter",
+    "date": "time.tribe-events-calendar-latest-past__event-datetime",
+    "ticketUrl": ".tribe-events-calendar-latest-past__event-title-link",
+    "venue": ".tribe-events-calendar-latest-past__event-venue-title",
+    "city": ".tribe-events-calendar-latest-past__event-venue-address",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
