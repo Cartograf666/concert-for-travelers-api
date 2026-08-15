@@ -261,5 +261,31 @@
     "failuresSinceRepair": 0,
     "note": "transient: raising maxRetries 2 -> 5 with a politeness delay",
     "verification": "PASS (2 events, 7 checks)"
+  },
+  {
+    "id": "artist-iron-maidens-the",
+    "strategy": "url_moved",
+    "repairedAt": "2026-08-15T03:59:49.489Z",
+    "previousConfig": {
+      "id": "artist-iron-maidens-the",
+      "domain": "www.theironmaidens.com",
+      "url": "https://www.theironmaidens.com/tour-dates/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour-item",
+        "artistNameFallback": "The Iron Maidens",
+        "date": ".tour-date",
+        "ticketUrl": ".tour-tickets a",
+        "venue": ".tour-venue",
+        "city": ".tour-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.theironmaidens.com",
+    "verification": "PASS (20 events, 6 checks)"
   }
 ]
