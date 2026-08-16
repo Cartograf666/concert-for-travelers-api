@@ -287,5 +287,33 @@
     "failuresSinceRepair": 0,
     "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.theironmaidens.com",
     "verification": "PASS (20 events, 6 checks)"
+  },
+  {
+    "id": "botanique-brussels",
+    "strategy": "transient",
+    "repairedAt": "2026-08-16T04:12:38.899Z",
+    "previousConfig": {
+      "id": "botanique-brussels",
+      "domain": "botanique.be",
+      "url": "https://botanique.be/en/concerts",
+      "type": "static_selectors",
+      "maxRetries": 2,
+      "requestDelayMs": 0,
+      "allowEmpty": false,
+      "selectors": {
+        "eventBlock": "div.node-type-event",
+        "artist": "div.node-type-event__title h2 a span",
+        "date": "div.node-date__wrapper",
+        "venueNameFallback": "Botanique",
+        "cityNameFallback": "Brussels",
+        "countryNameFallback": "BE",
+        "lat": 50.8540268,
+        "lng": 4.3656393
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay",
+    "verification": "PASS (3 events, 6 checks)"
   }
 ]

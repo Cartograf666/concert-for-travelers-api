@@ -3,8 +3,8 @@
   "domain": "botanique.be",
   "url": "https://botanique.be/en/concerts",
   "type": "static_selectors",
-  "maxRetries": 2,
-  "requestDelayMs": 0,
+  "maxRetries": 5,
+  "requestDelayMs": 2000,
   "allowEmpty": false,
   "selectors": {
     "eventBlock": "div.node-type-event",
