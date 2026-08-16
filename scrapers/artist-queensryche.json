@@ -1,0 +1,17 @@
+{
+  "id": "artist-queensryche",
+  "domain": "www.queensrycheofficial.com",
+  "url": "https://www.queensrycheofficial.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour-item",
+    "artistNameFallback": "Queensryche",
+    "date": ".tour-date",
+    "ticketUrl": ".tour-tickets a",
+    "venue": ".tour-venue",
+    "city": ".tour-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

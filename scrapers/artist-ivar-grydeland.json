@@ -1,0 +1,14 @@
+{
+  "id": "artist-ivar-grydeland",
+  "domain": "www.ivargrydeland.com",
+  "url": "https://www.ivargrydeland.com/concerts",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".sqs-block-content p:has(strong)",
+    "artistNameFallback": "Ivar Grydeland",
+    "date": "strong",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "NO"
+  }
+}
