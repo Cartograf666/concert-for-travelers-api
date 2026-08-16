@@ -1,0 +1,17 @@
+{
+  "id": "artist-djavan",
+  "domain": "djavan.com.br",
+  "url": "https://djavan.com.br/show/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".show-list--upcoming .show-list__item",
+    "artistNameFallback": "Djavan",
+    "date": ".show-list__item-date",
+    "ticketUrl": ".show-list__item-actions a",
+    "venue": ".show-list__item-where p:nth-child(3)",
+    "city": ".show-list__item-where p:nth-child(2)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "BR"
+  }
+}

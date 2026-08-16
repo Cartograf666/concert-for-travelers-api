@@ -1,0 +1,17 @@
+{
+  "id": "artist-die-prinzen",
+  "domain": "www.dieprinzen.de",
+  "url": "https://www.dieprinzen.de/termine/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.events",
+    "artistNameFallback": "Die Prinzen",
+    "date": ".event_date",
+    "ticketUrl": ".event_comment a",
+    "venue": ".event_location",
+    "city": ".event_place",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}

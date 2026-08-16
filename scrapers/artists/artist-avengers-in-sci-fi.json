@@ -1,0 +1,18 @@
+{
+  "id": "artist-avengers-in-sci-fi",
+  "domain": "www.avengers.jp",
+  "url": "http://www.avengers.jp/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.main section",
+    "artistNameFallback": "Avengers in Sci-Fi",
+    "date": "tr:nth-child(1) td.table_record span.px14",
+    "ticketUrl": "td.table_record a[href*='eplus'], td.table_record a[href*='pia'], td.table_record a[href*='l-tike'], td.table_record a[href*='t.co']",
+    "venue": "tr:nth-child(2) td.table_record span.px14",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

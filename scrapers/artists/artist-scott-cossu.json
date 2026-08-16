@@ -1,0 +1,17 @@
+{
+  "id": "artist-scott-cossu",
+  "domain": "scottcossu.com",
+  "url": "https://scottcossu.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "[data-aid=\"CALENDAR_SMALLER_SCREEN_CONTAINER\"]",
+    "artistNameFallback": "Scott Cossu",
+    "date": "[data-aid=\"CALENDAR_EVENT_DATE\"]",
+    "ticketUrl": "[data-aid=\"CALENDAR_DESC_TEXT\"] a",
+    "venue": "[data-aid=\"CALENDAR_EVENT_TITLE\"]",
+    "city": ".x-el-p",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

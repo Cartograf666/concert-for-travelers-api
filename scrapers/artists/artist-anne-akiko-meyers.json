@@ -1,0 +1,18 @@
+{
+  "id": "artist-anne-akiko-meyers",
+  "domain": "anneakikomeyers.com",
+  "url": "https://anneakikomeyers.com/tour-dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.elementor-2183",
+    "artistNameFallback": "Anne Akiko Meyers",
+    "date": ".elementor-element-dbb5de1, .elementor-element-d61d8a2",
+    "ticketUrl": ".elementor-element-a564f82 a",
+    "venue": ".elementor-element-65d1d45 .elementor-icon-list-text",
+    "city": ".elementor-element-0619fce .elementor-icon-list-text",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

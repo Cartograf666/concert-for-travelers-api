@@ -1,0 +1,16 @@
+{
+  "id": "artist-yamazaki-masayoshi",
+  "domain": "www.office-augusta.com",
+  "url": "https://www.office-augusta.com/yamazaki/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".schedule-item",
+    "artistNameFallback": "Yamazaki, Masayoshi",
+    "date": ".date",
+    "ticketUrl": "a",
+    "venue": "a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

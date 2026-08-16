@@ -1,0 +1,18 @@
+{
+  "id": "artist-ann-nesby",
+  "domain": "www.annnesby.com",
+  "url": "https://www.annnesby.com/events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".wixui-repeater__item",
+    "artistNameFallback": "Ann Nesby",
+    "date": "h3",
+    "ticketUrl": "a[href]",
+    "venue": ".wixui-rich-text:nth-of-type(2)",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-deep-purple",
+  "domain": "deeppurple.com",
+  "url": "https://deeppurple.com/pages/tours",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.event",
+    "artistNameFallback": "Deep Purple",
+    "date": ".event-date",
+    "ticketUrl": ".event-links a:first-child",
+    "venue": ".details-tour",
+    "city": ".header-tour",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

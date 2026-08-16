@@ -1,0 +1,18 @@
+{
+  "id": "artist-chad-wackerman",
+  "domain": "chadwackerman.com",
+  "url": "https://chadwackerman.com/tour-dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".entry-content ul li",
+    "artistNameFallback": "Chad Wackerman",
+    "date": "a, li",
+    "ticketUrl": "a@href",
+    "venue": "a, li",
+    "city": "a, li",
+    "country": "a, li",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

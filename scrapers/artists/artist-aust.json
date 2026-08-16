@@ -1,0 +1,17 @@
+{
+  "id": "artist-aust",
+  "domain": "www.austmusic.net",
+  "url": "https://www.austmusic.net/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div[role='listitem']",
+    "artistNameFallback": "Aust",
+    "date": "p.wixui-rich-text__text",
+    "venue": "p.wixui-rich-text__text",
+    "city": "p.wixui-rich-text__text",
+    "country": "p.wixui-rich-text__text",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CH"
+  }
+}

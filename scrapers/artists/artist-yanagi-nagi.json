@@ -1,0 +1,16 @@
+{
+  "id": "artist-yanagi-nagi",
+  "domain": "yanaginagi.net",
+  "url": "https://yanaginagi.net/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".c-live_list__item",
+    "artistNameFallback": "Yanagi, Nagi",
+    "date": ".c-live_list__date-period",
+    "ticketUrl": "a.c-live_list__link",
+    "venue": ".c-live_list__ttl",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

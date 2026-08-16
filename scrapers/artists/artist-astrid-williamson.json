@@ -1,0 +1,17 @@
+{
+  "id": "artist-astrid-williamson",
+  "domain": "astridwilliamson.com",
+  "url": "https://astridwilliamson.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".listingswrap .lentry",
+    "artistNameFallback": "Astrid Williamson",
+    "date": "#date",
+    "venue": "#venue",
+    "city": "#vecity",
+    "country": "#vecity",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

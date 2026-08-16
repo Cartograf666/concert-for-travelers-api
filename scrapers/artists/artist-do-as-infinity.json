@@ -1,0 +1,16 @@
+{
+  "id": "artist-do-as-infinity",
+  "domain": "d-a-i.com",
+  "url": "https://d-a-i.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article#live div.title ul li",
+    "artistNameFallback": "Do As Infinity",
+    "date": "time",
+    "ticketUrl": "span a::attr(href)",
+    "venue": "span a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

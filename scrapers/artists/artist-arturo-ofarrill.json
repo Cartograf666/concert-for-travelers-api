@@ -1,0 +1,17 @@
+{
+  "id": "artist-arturo-ofarrill",
+  "domain": "www.arturoofarrill.com",
+  "url": "https://www.arturoofarrill.com/schedule",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.w-dyn-item .schedule-text8_item",
+    "artistNameFallback": "Arturo O'Farrill",
+    "date": ".schedule-text8_col .subtitle:first-child",
+    "ticketUrl": "a.viewport-absolute",
+    "venue": "h3",
+    "city": ".subtitle.small-text",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
