@@ -1,0 +1,17 @@
+{
+  "id": "artist-you-used-to-hold-me-so-tight",
+  "domain": "sharonvanetten.com",
+  "url": "https://www.sharonvanetten.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.tour-dates-list-item",
+    "artistNameFallback": "Sharon Van Etten",
+    "date": ".tour-date",
+    "ticketUrl": ".tour-button a",
+    "venue": ".tour-venue",
+    "city": ".tour-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

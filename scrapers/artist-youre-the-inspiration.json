@@ -1,0 +1,17 @@
+{
+  "id": "artist-youre-the-inspiration",
+  "domain": "chicagotheband.com",
+  "url": "https://chicagotheband.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.tour-date-row",
+    "artistNameFallback": "Chicago",
+    "date": "div.date-col",
+    "ticketUrl": "a.ticket-button",
+    "venue": "div.venue-col",
+    "city": "div.city-col",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

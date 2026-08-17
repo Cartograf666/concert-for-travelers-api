@@ -1,0 +1,17 @@
+{
+  "id": "artist-you-saved-my-soul",
+  "domain": "michaelbolton.com",
+  "url": "https://www.michaelbolton.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour-list__item",
+    "artistNameFallback": "Michael Bolton",
+    "date": ".tour-list__date",
+    "ticketUrl": ".tour-list__button a",
+    "venue": ".tour-list__location--venue",
+    "city": ".tour-list__location--city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

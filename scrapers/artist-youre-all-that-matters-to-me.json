@@ -1,0 +1,17 @@
+{
+  "id": "artist-youre-all-that-matters-to-me",
+  "domain": "frankiejmusic.com",
+  "url": "https://frankiejmusic.com/events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-item",
+    "artistNameFallback": "Frankie J",
+    "date": "span.date-display-single",
+    "ticketUrl": "a.ticket-button",
+    "venue": "span.venue",
+    "city": "span.city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

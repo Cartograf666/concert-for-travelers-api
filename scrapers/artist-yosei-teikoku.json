@@ -1,0 +1,16 @@
+{
+  "id": "artist-yosei-teikoku",
+  "domain": "www.dasreich.com",
+  "url": "http://www.dasreich.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.listitem",
+    "artistNameFallback": "Yōsei Teikoku",
+    "date": "span.date",
+    "ticketUrl": "p.ticket_info a",
+    "city": "span.place",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

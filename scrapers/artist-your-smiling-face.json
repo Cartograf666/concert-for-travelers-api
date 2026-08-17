@@ -1,0 +1,18 @@
+{
+  "id": "artist-your-smiling-face",
+  "domain": "www.jamestaylor.com",
+  "url": "https://www.jamestaylor.com/schedule/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".gig-list .gig-item",
+    "artistNameFallback": "James Taylor",
+    "date": ".gig-date",
+    "ticketUrl": ".button-link",
+    "venue": ".gig-venue",
+    "city": ".gig-city",
+    "country": ".gig-country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

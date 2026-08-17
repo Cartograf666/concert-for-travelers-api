@@ -1,0 +1,17 @@
+{
+  "id": "artist-you-tore-me-down",
+  "domain": "beck.com",
+  "url": "https://beck.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.tour-list__item",
+    "artistNameFallback": "Beck",
+    "date": ".tour-list__date",
+    "ticketUrl": ".tour-list__button a",
+    "venue": ".tour-list__location--venue",
+    "city": ".tour-list__location--city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

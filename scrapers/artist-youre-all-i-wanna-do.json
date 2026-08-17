@@ -1,0 +1,17 @@
+{
+  "id": "artist-youre-all-i-wanna-do",
+  "domain": "jamestaylor.com",
+  "url": "https://www.jamestaylor.com/schedule/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.tour-item",
+    "artistNameFallback": "James Taylor",
+    "date": "div.tour-date-box",
+    "ticketUrl": "a.ticket-button",
+    "venue": "div.venue",
+    "city": "div.city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
