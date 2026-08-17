@@ -1,0 +1,17 @@
+{
+  "id": "artist-cris-williamson",
+  "domain": "www.criswilliamson.com",
+  "url": "https://www.criswilliamson.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.zebra tr:not(:has(h3))",
+    "artistNameFallback": "Cris Williamson",
+    "date": "td:nth-child(1)",
+    "ticketUrl": "td:nth-child(5) a",
+    "venue": "td:nth-child(5)",
+    "city": "td:nth-child(3)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

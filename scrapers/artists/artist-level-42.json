@@ -1,0 +1,18 @@
+{
+  "id": "artist-level-42",
+  "domain": "www.level42.com",
+  "url": "https://www.level42.com/event-listing/tour-history/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.gigpress-table tbody:has(tr.gigpress-row)",
+    "artistNameFallback": "Level 42",
+    "date": "tr.gigpress-row td.gigpress-date",
+    "ticketUrl": "tr.gigpress-row td.gigpress-venue a",
+    "venue": "tr.gigpress-row td.gigpress-venue",
+    "city": "tr.gigpress-row td.gigpress-city",
+    "country": "tr.gigpress-row td.gigpress-country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

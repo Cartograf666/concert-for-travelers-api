@@ -1,0 +1,17 @@
+{
+  "id": "artist-jason-vieaux",
+  "domain": "jasonvieaux.com",
+  "url": "http://jasonvieaux.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "section.entry-content.tour table tr",
+    "artistNameFallback": "Jason Vieaux",
+    "date": "td:nth-child(1)",
+    "ticketUrl": "td:nth-child(2) a@href",
+    "venue": "td:nth-child(2) a",
+    "city": "td:nth-child(4)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

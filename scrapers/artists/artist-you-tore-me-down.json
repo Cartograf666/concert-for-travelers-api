@@ -1,0 +1,17 @@
+{
+  "id": "artist-you-tore-me-down",
+  "domain": "beck.com",
+  "url": "https://beck.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".data-row-gig",
+    "artistNameFallback": "You Tore Me Down",
+    "date": ".tour-date",
+    "ticketUrl": ".tour-table-row-tickets a",
+    "venue": ".tour-venue a",
+    "city": ".tour-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

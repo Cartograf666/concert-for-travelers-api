@@ -1,0 +1,18 @@
+{
+  "id": "artist-andy-white",
+  "domain": "www.andywhite.com",
+  "url": "http://www.andywhite.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "section.event",
+    "artistNameFallback": "Andy White",
+    "date": "div.date",
+    "ticketUrl": "div.buttons a.default",
+    "venue": "div.details h1",
+    "city": "div.details span",
+    "country": "div.details span",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

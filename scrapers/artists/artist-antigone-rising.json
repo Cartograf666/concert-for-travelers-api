@@ -1,0 +1,17 @@
+{
+  "id": "artist-antigone-rising",
+  "domain": "www.antigonerising.com",
+  "url": "https://www.antigonerising.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "tr.border-accent",
+    "artistNameFallback": "Antigone Rising",
+    "date": "td.event-date .date-long",
+    "ticketUrl": "a.event_details",
+    "venue": "td.event-location .text-tertiary",
+    "city": "td.event-location .text-tertiary",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

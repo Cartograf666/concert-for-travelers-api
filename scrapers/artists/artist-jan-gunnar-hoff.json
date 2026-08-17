@@ -1,0 +1,18 @@
+{
+  "id": "artist-jan-gunnar-hoff",
+  "domain": "jangunnarhoff.no",
+  "url": "http://jangunnarhoff.no/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".widget_audiotheme_upcoming_gigs dl.vevent",
+    "artistNameFallback": "Jan Gunnar Hoff",
+    "date": "time.dtstart",
+    "ticketUrl": "dt a",
+    "venue": "dd.venue",
+    "city": ".locality",
+    "country": ".country-name",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "NO"
+  }
+}

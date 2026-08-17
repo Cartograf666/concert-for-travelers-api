@@ -1,0 +1,18 @@
+{
+  "id": "artist-josh-nelson",
+  "domain": "www.joshnelsonmusic.com",
+  "url": "https://www.joshnelsonmusic.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.eventlist-event",
+    "artistNameFallback": "Josh Nelson",
+    "date": "time.event-date",
+    "ticketUrl": ".eventlist-description a",
+    "venue": "h1.eventlist-title",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-lady-gaga",
+  "domain": "www.ladygaga.com",
+  "url": "https://www.ladygaga.com/us-en/live",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "ul._pastEventsList_16kz0_75 > li._root_1ozs6_19",
+    "artistNameFallback": "Lady Gaga",
+    "date": "div._dates_1ozs6_87",
+    "ticketUrl": "a._root_lzwqa_20",
+    "venue": "p._subtitle_1ozs6_86",
+    "city": "h2._title_1ozs6_69",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

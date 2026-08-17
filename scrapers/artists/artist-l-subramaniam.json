@@ -1,0 +1,18 @@
+{
+  "id": "artist-l-subramaniam",
+  "domain": "indianviolin.com",
+  "url": "https://indianviolin.com/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".entry-content p",
+    "artistNameFallback": "L. Subramaniam",
+    "date": "strong:first-child",
+    "ticketUrl": "a",
+    "venue": "br:nth-of-type(1) + text()",
+    "city": "strong:first-child",
+    "country": "strong:first-child",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "IN"
+  }
+}

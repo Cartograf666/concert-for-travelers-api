@@ -1,0 +1,17 @@
+{
+  "id": "artist-richie-furay",
+  "domain": "www.richiefuray.com",
+  "url": "https://www.richiefuray.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".eventlist-event",
+    "artistNameFallback": "Richie Furay",
+    "date": "time.event-date",
+    "ticketUrl": ".sqs-block-button-element",
+    "venue": ".eventlist-meta-address",
+    "city": ".eventlist-description strong",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

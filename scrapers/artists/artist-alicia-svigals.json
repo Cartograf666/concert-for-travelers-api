@@ -1,0 +1,17 @@
+{
+  "id": "artist-alicia-svigals",
+  "domain": "aliciasvigals.com",
+  "url": "https://aliciasvigals.com/calendar",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "tr.border-accent",
+    "artistNameFallback": "Alicia Svigals",
+    "date": "td.event-date .date-long",
+    "ticketUrl": "a.event_details",
+    "venue": "td.event-name .text-tertiary",
+    "city": "td.event-location .text-tertiary",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

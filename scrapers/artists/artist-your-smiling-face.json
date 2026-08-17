@@ -1,0 +1,17 @@
+{
+  "id": "artist-your-smiling-face",
+  "domain": "www.jamestaylor.com",
+  "url": "https://www.jamestaylor.com/schedule/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "ul.flex-col li.border-b",
+    "artistNameFallback": "Your Smiling Face",
+    "date": "div.w-24",
+    "ticketUrl": "a[href]",
+    "venue": "div.text-lg",
+    "city": "div.text-sm",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

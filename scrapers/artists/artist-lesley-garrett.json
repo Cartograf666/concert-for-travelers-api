@@ -1,0 +1,16 @@
+{
+  "id": "artist-lesley-garrett",
+  "domain": "lesleygarrett.co.uk",
+  "url": "https://lesleygarrett.co.uk/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.ae-post-list-item",
+    "artistNameFallback": "Lesley Garrett",
+    "date": ".elementor-element-487ef0b .ae-acf-content-wrapper",
+    "ticketUrl": ".elementor-element-ca3a839 a",
+    "venue": ".elementor-element-9d220be .ae-element-post-title",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

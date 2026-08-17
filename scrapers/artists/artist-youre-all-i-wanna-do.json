@@ -1,0 +1,17 @@
+{
+  "id": "artist-youre-all-i-wanna-do",
+  "domain": "www.jamestaylor.com",
+  "url": "https://www.jamestaylor.com/schedule/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "ul > li",
+    "artistNameFallback": "You're All I Wanna Do",
+    "date": "div.w-24 > div:nth-child(2)",
+    "ticketUrl": "a.bg-\\[\\#9fdcf5\\]",
+    "venue": "div.md:w-60 > div:first-child",
+    "city": "div.md:w-60 > div:last-child",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

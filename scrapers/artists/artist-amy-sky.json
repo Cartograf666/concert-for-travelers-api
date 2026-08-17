@@ -1,0 +1,16 @@
+{
+  "id": "artist-amy-sky",
+  "domain": "amysky.com",
+  "url": "https://amysky.com/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-detail",
+    "artistNameFallback": "Amy Sky",
+    "date": ".event-datetime .date-long .date",
+    "ticketUrl": "a.tickets",
+    "venue": ".event-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-barra-macneils",
+  "domain": "barramacneils.com",
+  "url": "https://barramacneils.com/calendar/shows-past/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event",
+    "artistNameFallback": "Barra MacNeils",
+    "date": ".event-start-date",
+    "ticketUrl": "a.event-tickets",
+    "venue": ".event-venue",
+    "city": ".event-city",
+    "country": ".event-country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}

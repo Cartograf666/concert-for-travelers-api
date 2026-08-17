@@ -1,0 +1,18 @@
+{
+  "id": "artist-jacqui-dankworth",
+  "domain": "jacquidankworth.com",
+  "url": "https://jacquidankworth.com/live-dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.gigpress-table tbody tr.gigpress-row",
+    "artistNameFallback": "Jacqui Dankworth",
+    "date": ".gp-date",
+    "ticketUrl": ".gigpress-tickets-link",
+    "venue": ".gigpress-venue a",
+    "city": ".gigpress-city",
+    "country": ".gigpress-country",
+    "venueNameFallback": ".gigpress-venue",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

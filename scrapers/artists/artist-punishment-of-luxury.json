@@ -1,0 +1,17 @@
+{
+  "id": "artist-punishment-of-luxury",
+  "domain": "www.punishmentofluxury.com",
+  "url": "https://www.punishmentofluxury.com/tour-dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.qodef-event-content",
+    "artistNameFallback": "Punishment of Luxury",
+    "date": ".qodef-event-date-holder",
+    "ticketUrl": ".qodef-event-buy-tickets-button",
+    "venue": ".qodef-event-title a",
+    "city": ".qodef-event-title a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

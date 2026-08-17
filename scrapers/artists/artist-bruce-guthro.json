@@ -1,0 +1,17 @@
+{
+  "id": "artist-bruce-guthro",
+  "domain": "bruceguthro.com",
+  "url": "http://bruceguthro.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour-date",
+    "artistNameFallback": "Bruce Guthro",
+    "date": ".tour-date-datetime",
+    "ticketUrl": ".tour-ticket a",
+    "venue": ".tour-date-datetime",
+    "city": ".tour-date-datetime",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}

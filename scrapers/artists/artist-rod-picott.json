@@ -1,0 +1,17 @@
+{
+  "id": "artist-rod-picott",
+  "domain": "www.rodpicott.com",
+  "url": "https://www.rodpicott.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.eventlist-event",
+    "artistNameFallback": "Rod Picott",
+    "date": "time.event-date",
+    "ticketUrl": ".eventlist-description a",
+    "venue": "h1.eventlist-title",
+    "city": "h1.eventlist-title",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

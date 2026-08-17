@@ -1,0 +1,17 @@
+{
+  "id": "artist-dmitri-matheny",
+  "domain": "www.dmitrimatheny.com",
+  "url": "https://www.dmitrimatheny.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.list-style",
+    "artistNameFallback": "Dmitri Matheny",
+    "date": ".event-datetime time.from",
+    "ticketUrl": ".event-title a@href",
+    "venue": ".event-location a",
+    "city": ".event-location a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

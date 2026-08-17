@@ -1,0 +1,17 @@
+{
+  "id": "artist-lady-antebellum",
+  "domain": "www.ladyamusic.com",
+  "url": "https://www.ladyamusic.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".data-row.data-row-gig",
+    "artistNameFallback": "Lady Antebellum",
+    "date": ".tour-date",
+    "ticketUrl": ".buy-btn",
+    "venue": ".tour-venue",
+    "city": ".tour-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
