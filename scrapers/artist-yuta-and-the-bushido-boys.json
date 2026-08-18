@@ -1,0 +1,17 @@
+{
+  "id": "artist-yuta-and-the-bushido-boys",
+  "domain": "nct-jp.net",
+  "url": "https://nct-jp.net/live/tour.php?id=1002270",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.live-item",
+    "artistNameFallback": "Yuta",
+    "date": ".date",
+    "ticketUrl": "a.btn-ticket",
+    "venue": ".venue",
+    "city": ".place",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

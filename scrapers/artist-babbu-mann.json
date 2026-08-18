@@ -1,0 +1,18 @@
+{
+  "id": "artist-babbu-mann",
+  "domain": "www.babbumaan.com",
+  "url": "https://www.babbumaan.com/shows.html",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.show-block",
+    "artistNameFallback": "Babbu Mann",
+    "date": "div.date",
+    "ticketUrl": "a.ticket-button",
+    "venue": "div.venue",
+    "city": "div.city",
+    "country": "div.country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "IN"
+  }
+}

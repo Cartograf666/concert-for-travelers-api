@@ -1,0 +1,17 @@
+{
+  "id": "artist-yusa-mimori",
+  "domain": "www.mimoriyusa.net",
+  "url": "http://www.mimoriyusa.net/concert/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.concert_block_list > article",
+    "artistNameFallback": "Mimori Yusa",
+    "date": ".date",
+    "ticketUrl": "a[href*='ticket']",
+    "venue": ".venue",
+    "city": ".place",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}
