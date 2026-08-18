@@ -1,0 +1,18 @@
+{
+  "id": "artist-the-breath-of-life",
+  "domain": "www.the-breath-of-life.com",
+  "url": "https://www.the-breath-of-life.com/live",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.list-style",
+    "artistNameFallback": "The Breath Of Life",
+    "date": "time.from",
+    "ticketUrl": "h2.event-title a",
+    "venue": ".event-location a, .event-location span",
+    "city": ".event-location a, .event-location span",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

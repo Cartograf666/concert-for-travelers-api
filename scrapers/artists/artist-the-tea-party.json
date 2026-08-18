@@ -1,0 +1,18 @@
+{
+  "id": "artist-the-tea-party",
+  "domain": "www.teaparty.com",
+  "url": "https://www.teaparty.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.list-style",
+    "artistNameFallback": "The Tea Party",
+    "date": ".event-datetime time.from",
+    "ticketUrl": ".buying-options a.tickets",
+    "venue": ".event-location a",
+    "city": ".event-location a",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}

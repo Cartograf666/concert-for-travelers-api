@@ -1,0 +1,17 @@
+{
+  "id": "artist-terell-stafford",
+  "domain": "terellstafford.com",
+  "url": "https://terellstafford.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "ul#cal > li.event",
+    "artistNameFallback": "Terell Stafford",
+    "date": ".date",
+    "ticketUrl": ".info_block h3 a",
+    "venue": ".info_block .location p:first-child",
+    "city": ".info_block .location p:last-child",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

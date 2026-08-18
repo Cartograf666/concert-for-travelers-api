@@ -1,0 +1,18 @@
+{
+  "id": "artist-the-rose-of-avalanche",
+  "domain": "roseofavalanche.com",
+  "url": "https://roseofavalanche.com/live",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".blog-article",
+    "artistNameFallback": "The Rose of Avalanche",
+    "date": "footer.blog-footer .post-info span[data-time]",
+    "ticketUrl": ".message a.no-pjax",
+    "venue": "h2.heading-blog a",
+    "city": ".message p:nth-of-type(3)",
+    "country": ".message p:nth-of-type(3)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-limahl",
+  "domain": "www.limahl.com",
+  "url": "https://www.limahl.com/tour-all-events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "ul.concerts-list li.event",
+    "artistNameFallback": "Limahl",
+    "date": ".event-line-wrap > a > .event-line-node:nth-of-type(2)",
+    "ticketUrl": ".event-line-wrap > a@href",
+    "venue": ".event-line-wrap > a > .event-line-node:nth-of-type(4)",
+    "city": ".event-line-wrap > a > .event-line-node:nth-of-type(3)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

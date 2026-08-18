@@ -1,0 +1,18 @@
+{
+  "id": "artist-lorne-balfe",
+  "domain": "lornebalfe.com",
+  "url": "https://lornebalfe.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "section.live > div.grid.container",
+    "artistNameFallback": "Lorne Balfe",
+    "date": "div:nth-child(3) p",
+    "ticketUrl": "div:nth-child(4) a@href",
+    "venue": "div:nth-child(2) p",
+    "city": "div:nth-child(2) p",
+    "country": "div:nth-child(2) p",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-the-innocence-mission",
+  "domain": "www.theinnocencemission.com",
+  "url": "https://www.theinnocencemission.com/concerts",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".sqs-html-content p:has(a)",
+    "artistNameFallback": "The Innocence Mission",
+    "date": "a",
+    "ticketUrl": "a@href",
+    "venue": "a",
+    "city": "a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

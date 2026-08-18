@@ -1,0 +1,18 @@
+{
+  "id": "artist-the-plastic-people-of-the-universe",
+  "domain": "plastic-people.cz",
+  "url": "https://plastic-people.cz/concerts/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".wp-block-group .wp-block-group__inner-container",
+    "artistNameFallback": "The Plastic People of the Universe",
+    "date": "h6.wp-block-heading",
+    "ticketUrl": ".wp-block-button__link",
+    "venue": "h3.wp-block-heading",
+    "city": "h3.wp-block-heading",
+    "country": "null",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CZ"
+  }
+}

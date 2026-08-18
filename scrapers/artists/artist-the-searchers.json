@@ -1,0 +1,17 @@
+{
+  "id": "artist-the-searchers",
+  "domain": "www.the-searchers.co.uk",
+  "url": "http://www.the-searchers.co.uk/home/dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".wp-block-table table tbody tr:not(:first-child)",
+    "artistNameFallback": "The Searchers",
+    "date": "td:first-child",
+    "ticketUrl": "td:first-child a",
+    "venue": "td:first-child",
+    "city": "td:first-child",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "artist-lynch",
+  "domain": "pc.lynch.jp",
+  "url": "https://pc.lynch.jp/live",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".live_in .tour_list",
+    "artistNameFallback": "Lynch",
+    "date": "h3 span:first-child",
+    "ticketUrl": "a",
+    "venue": "h3 span:last-child",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

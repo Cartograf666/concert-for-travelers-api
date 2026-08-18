@@ -1,0 +1,18 @@
+{
+  "id": "artist-the-script",
+  "domain": "www.thescriptmusic.com",
+  "url": "https://www.thescriptmusic.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "ul.shows-col-outer > li[id^='shows_row_']",
+    "artistNameFallback": "The Script",
+    "date": "div.googleDate",
+    "ticketUrl": "a.buyticketurl",
+    "venue": "div.s_venue",
+    "city": "span.addressLocality",
+    "country": "span.addressCountry",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

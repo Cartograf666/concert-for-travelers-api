@@ -1,0 +1,17 @@
+{
+  "id": "artist-the-subways",
+  "domain": "www.thesubways.net",
+  "url": "https://www.thesubways.net/gigs",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div[role='listitem']",
+    "artistNameFallback": "The Subways",
+    "date": "div[id^='comp-k0sjr4lk']",
+    "ticketUrl": "div[id^='comp-k0sjr4rk'] a",
+    "venue": "div[id^='comp-k0sjr4kz']",
+    "city": "div[id^='comp-k0sjr4kz']",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

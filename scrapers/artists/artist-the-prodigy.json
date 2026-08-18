@@ -1,0 +1,18 @@
+{
+  "id": "artist-the-prodigy",
+  "domain": "theprodigy.com",
+  "url": "https://theprodigy.com/live-dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-item",
+    "artistNameFallback": "The Prodigy",
+    "date": ".event-date",
+    "ticketUrl": ".event-link a",
+    "venue": ".event-name h1",
+    "city": ".event-name h1",
+    "country": ".event-location i",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

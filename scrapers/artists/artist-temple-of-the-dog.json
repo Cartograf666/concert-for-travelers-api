@@ -1,0 +1,17 @@
+{
+  "id": "artist-temple-of-the-dog",
+  "domain": "templeofthedog.com",
+  "url": "https://templeofthedog.com/tour-dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table tr",
+    "artistNameFallback": "Temple of the Dog",
+    "date": "td:nth-child(1)",
+    "ticketUrl": "td:nth-child(4) a@href",
+    "venue": "td:nth-child(3)",
+    "city": "td:nth-child(2)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

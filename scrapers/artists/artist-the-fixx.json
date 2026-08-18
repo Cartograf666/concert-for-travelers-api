@@ -1,0 +1,17 @@
+{
+  "id": "artist-the-fixx",
+  "domain": "www.thefixx.com",
+  "url": "https://www.thefixx.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour-date",
+    "artistNameFallback": "The Fixx",
+    "date": ".date",
+    "ticketUrl": "a.button@href",
+    "venue": ".location",
+    "city": ".city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

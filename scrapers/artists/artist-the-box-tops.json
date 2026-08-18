@@ -1,0 +1,18 @@
+{
+  "id": "artist-the-box-tops",
+  "domain": "boxtops.com",
+  "url": "https://boxtops.com/tour-list/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.gigpress-table tbody:has(.gigpress-row)",
+    "artistNameFallback": "The Box Tops",
+    "date": ".gigpress-date",
+    "ticketUrl": ".gigpress-tickets-link",
+    "venue": ".gigpress-venue",
+    "city": ".gigpress-city",
+    "country": "US",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

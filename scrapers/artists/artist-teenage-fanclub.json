@@ -1,0 +1,18 @@
+{
+  "id": "artist-teenage-fanclub",
+  "domain": "www.teenagefanclub.com",
+  "url": "https://www.teenagefanclub.com/live",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".sqs-html-content p:has(a)",
+    "artistNameFallback": "Teenage Fanclub",
+    "date": "a",
+    "ticketUrl": "a@href",
+    "venue": "a",
+    "city": "a",
+    "country": "a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

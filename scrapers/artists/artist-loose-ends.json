@@ -1,0 +1,17 @@
+{
+  "id": "artist-loose-ends",
+  "domain": "looseendsmusic.com",
+  "url": "https://looseendsmusic.com/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.table-style tbody tr",
+    "artistNameFallback": "Loose Ends",
+    "date": "td.event-date time.from",
+    "ticketUrl": "a.event_details",
+    "venue": "td.event-location span.text",
+    "city": "td.event-location span.text",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

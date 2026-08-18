@@ -1,0 +1,18 @@
+{
+  "id": "artist-the-carter-family",
+  "domain": "carterfamilyfold.org",
+  "url": "https://carterfamilyfold.org/event/show-cancelled/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".ecs-event",
+    "artistNameFallback": "The Carter Family",
+    "date": ".decm_date",
+    "ticketUrl": "h4.entry-title a",
+    "venue": ".decm_venue",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "Carter Family Fold",
+    "cityNameFallback": "Hiltons",
+    "countryNameFallback": "US"
+  }
+}

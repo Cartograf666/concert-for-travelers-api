@@ -1,0 +1,18 @@
+{
+  "id": "artist-the-clientele",
+  "domain": "theclientele.co.uk",
+  "url": "https://theclientele.co.uk/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table[aria-labelledby='table-label-upcoming'] tbody tr",
+    "artistNameFallback": "The Clientele",
+    "date": "time",
+    "ticketUrl": "td:nth-child(2) a",
+    "venue": "td:nth-child(2) > span",
+    "city": "td:nth-child(3)",
+    "country": "td:nth-child(4)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

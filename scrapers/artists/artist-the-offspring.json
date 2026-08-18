@@ -1,0 +1,18 @@
+{
+  "id": "artist-the-offspring",
+  "domain": "www.offspring.com",
+  "url": "https://www.offspring.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.card.event",
+    "artistNameFallback": "The Offspring",
+    "date": "time",
+    "ticketUrl": ".btn-tickets",
+    "venue": ".location",
+    "city": "h1.card-title",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-lucy-kaplansky",
+  "domain": "lucykaplansky.com",
+  "url": "https://lucykaplansky.com/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-detail",
+    "artistNameFallback": "Lucy Kaplansky",
+    "date": ".event-datetime .date-long",
+    "ticketUrl": "a.tickets",
+    "venue": ".event-location a",
+    "city": ".event-location a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

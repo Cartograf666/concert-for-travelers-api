@@ -1,0 +1,17 @@
+{
+  "id": "artist-lobao",
+  "domain": "lobao.com.br",
+  "url": "https://lobao.com.br/agenda/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".show-item",
+    "artistNameFallback": "Lobão",
+    "date": ".show-item__date",
+    "ticketUrl": "a.btn-outlined",
+    "venue": ".show-item__name",
+    "city": ".show-item__location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "BR"
+  }
+}

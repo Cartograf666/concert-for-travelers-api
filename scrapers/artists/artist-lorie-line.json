@@ -1,0 +1,17 @@
+{
+  "id": "artist-lorie-line",
+  "domain": "www.lorieline.com",
+  "url": "http://www.lorieline.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table#Shows tr.show",
+    "artistNameFallback": "Lorie Line",
+    "date": "td.date",
+    "ticketUrl": "tr.show@data-ticketLink",
+    "venue": "h1 span.venue",
+    "city": "h1 span.loc",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

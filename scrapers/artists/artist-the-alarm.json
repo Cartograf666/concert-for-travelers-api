@@ -1,0 +1,17 @@
+{
+  "id": "artist-the-alarm",
+  "domain": "thealarm.com",
+  "url": "https://thealarm.com/tour-more-shows-sell-out/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "ul.gigpress-listing li.vevent",
+    "artistNameFallback": "The Alarm",
+    "date": "abbr.dtstart",
+    "ticketUrl": ".gigpress-tickets-link",
+    "venue": ".gigpress-sidebar-venue a",
+    "city": ".gigpress-sidebar-city",
+    "venueNameFallback": ".gigpress-sidebar-venue",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

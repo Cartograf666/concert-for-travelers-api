@@ -1,0 +1,17 @@
+{
+  "id": "artist-tesla",
+  "domain": "teslatheband.com",
+  "url": "https://teslatheband.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.list-style",
+    "artistNameFallback": "Tesla",
+    "date": ".event-datetime time.from",
+    "ticketUrl": "a.tickets.button",
+    "venue": ".event-location a",
+    "city": ".event-location a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
