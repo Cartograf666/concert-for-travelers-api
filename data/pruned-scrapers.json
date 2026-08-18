@@ -630,5 +630,29 @@
     "consecutiveFailures": 5,
     "firstFailedAt": "2026-08-17T04:12:31.871Z",
     "prunedAt": "2026-08-17T04:12:31.871Z"
+  },
+  {
+    "id": "artist-hardline",
+    "artistName": "Hardline",
+    "reason": "fetch_error",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-08-14T05:10:57.750Z",
+    "prunedAt": "2026-08-18T04:04:58.680Z"
+  },
+  {
+    "id": "artist-yoshikazu-iwamoto",
+    "artistName": "Yoshikazu Iwamoto",
+    "reason": "dead_domain",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-08-18T04:04:58.680Z",
+    "prunedAt": "2026-08-18T04:04:58.680Z"
+  },
+  {
+    "id": "artist-youll-never-walk-alone",
+    "artistName": "Gerry's Pacemakers",
+    "reason": "dead_domain",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-08-18T04:04:58.680Z",
+    "prunedAt": "2026-08-18T04:04:58.680Z"
   }
 ]
