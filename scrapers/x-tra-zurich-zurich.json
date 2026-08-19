@@ -3,6 +3,8 @@
   "domain": "x-tra.ch",
   "url": "https://www.x-tra.ch/en/program/",
   "type": "jsonld",
+  "maxRetries": 5,
+  "requestDelayMs": 2000,
   "selectors": {
     "eventBlock": "script[type=\"application/ld+json\"]",
     "date": "startDate",
