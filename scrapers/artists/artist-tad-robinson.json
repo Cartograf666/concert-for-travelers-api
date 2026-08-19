@@ -1,0 +1,18 @@
+{
+  "id": "artist-tad-robinson",
+  "domain": "tadrobinson.com",
+  "url": "https://tadrobinson.com/shows/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".entry-content > p:has(strong)",
+    "artistNameFallback": "Tad Robinson",
+    "date": "strong",
+    "ticketUrl": "a::attr(href)",
+    "venue": "a",
+    "city": "a",
+    "country": "a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-thievery-corporation",
+  "domain": "thieverycorporation.com",
+  "url": "https://thieverycorporation.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".vc_row.wpb_row.vc_row-fluid:has(.vc_btn3-container)",
+    "artistNameFallback": "Thievery Corporation",
+    "date": ".wpb_column:nth-child(1) h2",
+    "ticketUrl": ".vc_btn3-container a",
+    "venue": ".wpb_column:nth-child(2) h3 span:nth-of-type(2)",
+    "city": ".wpb_column:nth-child(2) h3 span:nth-of-type(1)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

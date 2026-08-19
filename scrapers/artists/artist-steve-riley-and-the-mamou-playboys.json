@@ -1,0 +1,18 @@
+{
+  "id": "artist-steve-riley-and-the-mamou-playboys",
+  "domain": "www.mamouplayboys.com",
+  "url": "http://www.mamouplayboys.com/tour-archive/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".em-list .em-item-info",
+    "artistNameFallback": "Steve Riley and the Mamou Playboys",
+    "date": ".em-event-date",
+    "ticketUrl": ".em-item-title a",
+    "venue": ".em-item-title",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

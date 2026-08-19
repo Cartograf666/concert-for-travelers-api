@@ -1,0 +1,17 @@
+{
+  "id": "artist-rory-mcleod",
+  "domain": "rorymcleod.com",
+  "url": "https://rorymcleod.com/tour-dates",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".gig.svelte-ycoml7",
+    "artistNameFallback": "Rory McLeod",
+    "date": "date.svelte-ycoml7",
+    "ticketUrl": "a.svelte-ycoml7[href^='http']",
+    "venue": "h3.svelte-ycoml7",
+    "city": "address.svelte-ycoml7",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-them",
+  "domain": "vanmorrison.com",
+  "url": "https://vanmorrison.com/live",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".shows__list .shows__item",
+    "artistNameFallback": "Them",
+    "date": "time.shows__date",
+    "ticketUrl": ".shows__action a",
+    "venue": ".shows__venue",
+    "city": ".shows__location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

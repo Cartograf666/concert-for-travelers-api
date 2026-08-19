@@ -1,0 +1,18 @@
+{
+  "id": "artist-twin-atlantic",
+  "domain": "twinatlantic.com",
+  "url": "https://twinatlantic.com/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".eventlist-event",
+    "artistNameFallback": "Twin Atlantic",
+    "date": ".event-date",
+    "ticketUrl": ".eventlist-description a",
+    "venue": ".eventlist-meta-address-line:first-child",
+    "city": ".eventlist-meta-address-line:first-child",
+    "country": ".eventlist-meta-address-line:last-child",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

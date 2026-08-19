@@ -1,0 +1,18 @@
+{
+  "id": "artist-jean-michel-pilc",
+  "domain": "jeanmichelpilc.com",
+  "url": "http://jeanmichelpilc.com/gigs/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".vsel-content.vsel-upcoming",
+    "artistNameFallback": "Jean-Michel Pilc",
+    "date": ".vsel-meta-date",
+    "ticketUrl": ".vsel-meta-link a::attr(href)",
+    "venue": ".vsel-meta-location",
+    "city": ".vsel-meta-location",
+    "country": ".vsel-meta-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}

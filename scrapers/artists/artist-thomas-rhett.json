@@ -1,0 +1,17 @@
+{
+  "id": "artist-thomas-rhett",
+  "domain": "www.thomasrhett.com",
+  "url": "https://www.thomasrhett.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.chakra-table tbody tr",
+    "artistNameFallback": "Thomas Rhett",
+    "date": "td:nth-child(1) p",
+    "ticketUrl": "td:nth-child(6) a",
+    "venue": "td:nth-child(3) p",
+    "city": "td:nth-child(2) p",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

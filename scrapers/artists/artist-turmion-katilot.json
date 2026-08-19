@@ -1,0 +1,18 @@
+{
+  "id": "artist-turmion-katilot",
+  "domain": "turmionkatilot.com",
+  "url": "https://turmionkatilot.com/shows/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".fl-rich-text p:has(strong)",
+    "artistNameFallback": "Turmion Kätilöt",
+    "date": "strong",
+    "ticketUrl": "a@href",
+    "venue": "a",
+    "city": "p",
+    "country": "p",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "FI"
+  }
+}

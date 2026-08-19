@@ -1,0 +1,17 @@
+{
+  "id": "artist-johann-wilhelm-wilms",
+  "domain": "www.ijwwg.com",
+  "url": "https://www.ijwwg.com/konzerte.html",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".konzert",
+    "artistNameFallback": "Johann Wilhelm Wilms",
+    "date": ".kdate",
+    "ticketUrl": "a.btn",
+    "venue": ".kort",
+    "city": ".kort",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}

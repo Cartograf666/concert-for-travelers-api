@@ -1,0 +1,18 @@
+{
+  "id": "artist-andy-milne",
+  "domain": "andymilne.com",
+  "url": "https://andymilne.com/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "dl.gig-card",
+    "artistNameFallback": "Andy Milne",
+    "date": "time.dtstart",
+    "ticketUrl": ".gig-tickets-url",
+    "venue": ".venue-name",
+    "city": ".venue-locality",
+    "country": ".venue-country",
+    "venueNameFallback": ".gig-title",
+    "cityNameFallback": ".locality",
+    "countryNameFallback": "US"
+  }
+}

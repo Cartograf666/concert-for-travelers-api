@@ -1,0 +1,18 @@
+{
+  "id": "artist-torun-eriksen",
+  "domain": "toruneriksen.no",
+  "url": "https://toruneriksen.no/concerts",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.table-style tbody tr",
+    "artistNameFallback": "Torun Eriksen",
+    "date": ".event-date .date",
+    "ticketUrl": "a.event_details",
+    "venue": ".event-name .text-tertiary",
+    "city": ".event-name .text-tertiary",
+    "country": ".event-name .text-tertiary",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "NO"
+  }
+}

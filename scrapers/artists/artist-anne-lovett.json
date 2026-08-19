@@ -1,0 +1,16 @@
+{
+  "id": "artist-anne-lovett",
+  "domain": "www.annelovett.net",
+  "url": "https://www.annelovett.net/events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.eventlist-event",
+    "artistNameFallback": "Anne Lovett",
+    "date": "time.event-date",
+    "ticketUrl": "a.eventlist-title-link",
+    "venue": ".eventlist-meta-address",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

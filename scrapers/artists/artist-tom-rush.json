@@ -1,0 +1,17 @@
+{
+  "id": "artist-tom-rush",
+  "domain": "www.tomrush.com",
+  "url": "https://www.tomrush.com/shows/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "#upcoming-gigs table tbody tr:not(.nohover)",
+    "artistNameFallback": "Tom Rush",
+    "date": "td:nth-child(1) b",
+    "ticketUrl": "td:nth-child(4) a",
+    "venue": "td:nth-child(3) a",
+    "city": "td:nth-child(2)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

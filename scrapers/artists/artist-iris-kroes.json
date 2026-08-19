@@ -1,0 +1,17 @@
+{
+  "id": "artist-iris-kroes",
+  "domain": "www.iriskroes.com",
+  "url": "https://www.iriskroes.com/agenda/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".flex-item .module-event-1",
+    "artistNameFallback": "Iris Kroes",
+    "date": ".date-event",
+    "ticketUrl": ".location-event a.link-layer",
+    "venue": ".location-event .event-name",
+    "city": ".location-event .city-name",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "NL"
+  }
+}

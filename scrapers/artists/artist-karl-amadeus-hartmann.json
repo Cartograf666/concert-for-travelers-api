@@ -1,0 +1,18 @@
+{
+  "id": "artist-karl-amadeus-hartmann",
+  "domain": "www.hartmann-gesellschaft.de",
+  "url": "https://www.hartmann-gesellschaft.de/en/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.entry-header.mb60",
+    "artistNameFallback": "Karl Amadeus Hartmann",
+    "date": "p.displaydate",
+    "ticketUrl": "a.btn",
+    "venue": "div.veranstaltungsort",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}

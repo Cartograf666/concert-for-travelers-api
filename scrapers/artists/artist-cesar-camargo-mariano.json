@@ -1,0 +1,18 @@
+{
+  "id": "artist-cesar-camargo-mariano",
+  "domain": "www.cesarcamargomariano.com",
+  "url": "https://www.cesarcamargomariano.com/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".item-list .cpt_event",
+    "artistNameFallback": "César Camargo Mariano",
+    "date": ".item-info .item-title-intro",
+    "ticketUrl": "a.item-hold",
+    "venue": ".item-info .item-title-main",
+    "city": ".item-info .item-byline",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "BR"
+  }
+}

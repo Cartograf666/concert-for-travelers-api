@@ -1,0 +1,18 @@
+{
+  "id": "artist-paul-thompson",
+  "domain": "paulsmusic.co.uk",
+  "url": "https://paulsmusic.co.uk/calendar",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-detail",
+    "artistNameFallback": "Paul Thompson",
+    "date": ".event-datetime",
+    "ticketUrl": ".add-to-cart a",
+    "venue": ".event-location a",
+    "city": ".event-location a",
+    "country": ".event-location a",
+    "venueNameFallback": "venue",
+    "cityNameFallback": "city",
+    "countryNameFallback": "GB"
+  }
+}

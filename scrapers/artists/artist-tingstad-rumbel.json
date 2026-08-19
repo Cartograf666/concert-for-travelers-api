@@ -1,0 +1,17 @@
+{
+  "id": "artist-tingstad-rumbel",
+  "domain": "tingstadrumbel.com",
+  "url": "https://tingstadrumbel.com/tour-dates",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.list-style",
+    "artistNameFallback": "Tingstad & Rumbel",
+    "date": ".event-datetime time.from",
+    "ticketUrl": ".buying-options .tickets",
+    "venue": ".event-location",
+    "city": ".event-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

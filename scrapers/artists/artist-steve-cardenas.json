@@ -1,0 +1,17 @@
+{
+  "id": "artist-steve-cardenas",
+  "domain": "stevecardenasmusic.com",
+  "url": "http://stevecardenasmusic.com/schedule/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table tbody tr",
+    "artistNameFallback": "Steve Cardenas",
+    "date": "td p span span[style*='color: #9c0000']",
+    "venue": "td p",
+    "city": "td p",
+    "country": "td p",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

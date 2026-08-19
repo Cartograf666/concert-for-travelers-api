@@ -1,0 +1,17 @@
+{
+  "id": "artist-tyrone-wells",
+  "domain": "www.tyronewells.com",
+  "url": "http://www.tyronewells.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".sqs-block-html:has(h3 > strong)",
+    "artistNameFallback": "Tyrone Wells",
+    "date": "h3 > strong",
+    "ticketUrl": ".sqs-block-button a",
+    "venue": "p",
+    "city": "p",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-american-composers-orchestra",
+  "domain": "www.americancomposers.org",
+  "url": "https://www.americancomposers.org/performances-events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".p-e-item",
+    "artistNameFallback": "American Composers Orchestra",
+    "date": ".when",
+    "ticketUrl": "a.event-tickets-button",
+    "venue": ".event-location",
+    "city": ".performance-location_wrapper",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

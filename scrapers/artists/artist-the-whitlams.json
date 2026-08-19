@@ -1,0 +1,17 @@
+{
+  "id": "artist-the-whitlams",
+  "domain": "thewhitlams.com",
+  "url": "https://thewhitlams.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".ep-events__item",
+    "artistNameFallback": "The Whitlams",
+    "date": ".ep-events__datetime",
+    "ticketUrl": ".ep-events__button",
+    "venue": ".ep-events__venue",
+    "city": ".ep-events__venue",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "AU"
+  }
+}

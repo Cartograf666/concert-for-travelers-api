@@ -1,0 +1,18 @@
+{
+  "id": "artist-lisa-brokop",
+  "domain": "www.lisabrokop.com",
+  "url": "https://www.lisabrokop.com/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.list-style",
+    "artistNameFallback": "Lisa Brokop",
+    "date": ".event-datetime time.from",
+    "ticketUrl": ".buying-options .tickets",
+    "venue": ".event-location a",
+    "city": ".event-location a",
+    "country": ".event-location a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}

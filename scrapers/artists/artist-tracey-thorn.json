@@ -1,0 +1,17 @@
+{
+  "id": "artist-tracey-thorn",
+  "domain": "traceythorn.com",
+  "url": "http://traceythorn.com/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.listing__item.event",
+    "artistNameFallback": "Tracey Thorn",
+    "date": "div.bordered",
+    "ticketUrl": "a",
+    "venue": "h2.heading",
+    "city": "h2.heading",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}
