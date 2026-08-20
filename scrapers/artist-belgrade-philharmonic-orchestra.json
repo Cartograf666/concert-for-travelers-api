@@ -1,0 +1,15 @@
+{
+  "id": "artist-belgrade-philharmonic-orchestra",
+  "domain": "www.bgf.rs",
+  "url": "https://www.bgf.rs/en/concerts/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.one-event-post",
+    "artistNameFallback": "Belgrade Philharmonic Orchestra",
+    "date": "div.one-event-post .event-date",
+    "ticketUrl": "div.one-event-post .img-box a",
+    "venueNameFallback": "Kolarac Hall",
+    "cityNameFallback": "Belgrade",
+    "countryNameFallback": "RS"
+  }
+}

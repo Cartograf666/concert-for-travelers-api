@@ -1,0 +1,18 @@
+{
+  "id": "artist-bb-mak",
+  "domain": "bbmak.com",
+  "url": "https://bbmak.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour-item",
+    "artistNameFallback": "BB Mak",
+    "date": ".tour-item-date",
+    "ticketUrl": ".tour-item-button a",
+    "venue": ".tour-item-location .venue",
+    "city": ".tour-item-location .city",
+    "country": ".tour-item-location .country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
