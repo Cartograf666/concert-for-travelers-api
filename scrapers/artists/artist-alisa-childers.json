@@ -1,0 +1,17 @@
+{
+  "id": "artist-alisa-childers",
+  "domain": "alisachilders.com",
+  "url": "https://alisachilders.com/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tribe-events-calendar-list__event-row",
+    "artistNameFallback": "Alisa Childers",
+    "date": ".tribe-events-calendar-list__event-date-tag-datetime",
+    "ticketUrl": ".tribe-events-calendar-list__event-title-link",
+    "venue": ".tribe-events-calendar-list__event-venue-title",
+    "city": ".tribe-events-calendar-list__event-venue-address",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-pequot",
+  "domain": "www.pequotmuseum.org",
+  "url": "https://www.pequotmuseum.org/explore/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".jet-listing-grid__item",
+    "artistNameFallback": "Pequot",
+    "date": ".jet-listing-dynamic-field__content",
+    "ticketUrl": ".elementor-button-link, .elementor-heading-title a",
+    "venue": "",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "Mashantucket Pequot Museum and Research Center",
+    "cityNameFallback": "Mashantucket",
+    "countryNameFallback": "US"
+  }
+}

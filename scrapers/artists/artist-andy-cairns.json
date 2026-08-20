@@ -1,0 +1,18 @@
+{
+  "id": "artist-andy-cairns",
+  "domain": "therapyquestionmark.co.uk",
+  "url": "https://therapyquestionmark.co.uk/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour.upcoming tr",
+    "artistNameFallback": "Andy Cairns",
+    "date": ".tour-date",
+    "ticketUrl": ".tour-url a.tour-button",
+    "venue": ".tour-city",
+    "city": ".tour-venue",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

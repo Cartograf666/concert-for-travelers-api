@@ -1,0 +1,17 @@
+{
+  "id": "artist-annette-von-droste-hulshoff",
+  "domain": "www.droste-gesellschaft.de",
+  "url": "https://www.droste-gesellschaft.de/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tribe-events-calendar-list__event-row",
+    "artistNameFallback": "Annette von Droste-Hülshoff",
+    "date": ".tribe-events-calendar-list__event-datetime",
+    "ticketUrl": ".tribe-events-calendar-list__event-title-link@href",
+    "venue": ".tribe-events-calendar-list__event-venue-title",
+    "city": ".tribe-events-calendar-list__event-venue-address",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}

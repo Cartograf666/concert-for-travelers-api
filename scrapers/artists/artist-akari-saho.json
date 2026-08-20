@@ -1,0 +1,15 @@
+{
+  "id": "artist-akari-saho",
+  "domain": "www.upupgirlskakkokari.com",
+  "url": "http://www.upupgirlskakkokari.com/live_event/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event_list_item",
+    "artistNameFallback": "Akari Saho",
+    "date": ".event_month, .event_date",
+    "ticketUrl": "a",
+    "venueNameFallback": "TBD",
+    "cityNameFallback": "TBD",
+    "countryNameFallback": "JP"
+  }
+}

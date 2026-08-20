@@ -1,0 +1,15 @@
+{
+  "id": "artist-pontarddulais-male-choir",
+  "domain": "www.pontarddulaismalechoir.com",
+  "url": "https://www.pontarddulaismalechoir.com/concerts.php",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.row.mt-2",
+    "artistNameFallback": "Pontarddulais Male Choir",
+    "date": "div.col-4 p",
+    "venue": "div.col-6 p",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

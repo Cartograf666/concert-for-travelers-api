@@ -1,0 +1,17 @@
+{
+  "id": "artist-arthur-c-brooks",
+  "domain": "www.arthurbrooks.com",
+  "url": "https://www.arthurbrooks.com/events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".w-dyn-items > .events__item",
+    "artistNameFallback": "Arthur C. Brooks",
+    "date": "[fs-list-field='date']",
+    "ticketUrl": ".event-bottom a.w-button",
+    "venue": "[fs-list-field='title']",
+    "city": "[fs-list-field='location']",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

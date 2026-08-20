@@ -1,0 +1,18 @@
+{
+  "id": "artist-ariana-gillis",
+  "domain": "arianagillis.com",
+  "url": "https://arianagillis.com/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.table-style tbody tr",
+    "artistNameFallback": "Ariana Gillis",
+    "date": "td.event-date time",
+    "ticketUrl": "a.event_details",
+    "venue": "td.event-location",
+    "city": "td.event-location",
+    "country": "td.event-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}

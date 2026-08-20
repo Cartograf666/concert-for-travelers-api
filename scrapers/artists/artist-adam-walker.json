@@ -1,0 +1,14 @@
+{
+  "id": "artist-adam-walker",
+  "domain": "www.adamwalkerflute.com",
+  "url": "http://www.adamwalkerflute.com/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".entry-content ul li",
+    "artistNameFallback": "Adam Walker",
+    "date": "strong:first-child",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

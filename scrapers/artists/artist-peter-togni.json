@@ -1,0 +1,17 @@
+{
+  "id": "artist-peter-togni",
+  "domain": "www.petertogni.com",
+  "url": "http://www.petertogni.com/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tribe-events-calendar-latest-past__event-row",
+    "artistNameFallback": "Peter Togni",
+    "date": ".tribe-events-calendar-latest-past__event-date-tag-datetime",
+    "ticketUrl": ".tribe-events-calendar-latest-past__event-title-link",
+    "venue": ".tribe-events-calendar-latest-past__event-venue-title",
+    "city": ".tribe-events-calendar-latest-past__event-venue-address",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}

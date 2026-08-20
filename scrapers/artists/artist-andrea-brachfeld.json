@@ -1,0 +1,17 @@
+{
+  "id": "artist-andrea-brachfeld",
+  "domain": "andreabrachfeld.com",
+  "url": "https://andreabrachfeld.com/show-schedule/shows-archive/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "tbody.vevent",
+    "artistNameFallback": "Andrea Brachfeld",
+    "date": "tr.gigpress-row abbr.dtstart",
+    "ticketUrl": "tr.gigpress-info span.gigpress-info-item a:contains('More information')",
+    "venue": "tr.gigpress-info span.gigpress-info-item:has(span:contains('Venue:')) a",
+    "city": "tr.gigpress-info span.address-one",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

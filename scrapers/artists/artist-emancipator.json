@@ -1,0 +1,18 @@
+{
+  "id": "artist-emancipator",
+  "domain": "emancipatormusic.com",
+  "url": "http://emancipatormusic.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.gigpress-table.upcoming tr.gigpress-row",
+    "artistNameFallback": "Emancipator",
+    "date": ".gigpress-date",
+    "ticketUrl": "a.gigpress-tickets-link",
+    "venue": ".gigpress-venue",
+    "city": ".gigpress-city",
+    "country": ".gigpress-country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-aaron-barker",
+  "domain": "www.aaronbarker.com",
+  "url": "http://www.aaronbarker.com/concerts/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "section.elementor-inner-section",
+    "artistNameFallback": "Aaron Barker",
+    "date": "h6.elementor-heading-title",
+    "ticketUrl": "a.elementor-button",
+    "venue": ".elementor-icon-list-text",
+    "city": ".elementor-icon-list-text",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "artist-alex-prior",
+  "domain": "alexprior.com",
+  "url": "https://alexprior.com/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-items__list .event-item",
+    "artistNameFallback": "Alex Prior",
+    "date": ".event-item__date",
+    "ticketUrl": "a.btn__primary",
+    "venue": ".event-item__venue",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

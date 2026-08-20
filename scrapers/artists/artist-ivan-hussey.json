@@ -1,0 +1,18 @@
+{
+  "id": "artist-ivan-hussey",
+  "domain": "www.celloman.co.uk",
+  "url": "http://www.celloman.co.uk/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.event",
+    "artistNameFallback": "Ivan Hussey",
+    "date": ".postdate",
+    "ticketUrl": "h2 a",
+    "venue": ".article-content",
+    "city": ".article-content",
+    "country": ".article-content",
+    "venueNameFallback": "See page content",
+    "cityNameFallback": "See page content",
+    "countryNameFallback": "GB"
+  }
+}

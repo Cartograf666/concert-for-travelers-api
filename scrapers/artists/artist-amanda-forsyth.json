@@ -1,0 +1,18 @@
+{
+  "id": "artist-amanda-forsyth",
+  "domain": "www.amandaforsyth.com",
+  "url": "https://www.amandaforsyth.com/concerts",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".summary-item.summary-item-record-type-event",
+    "artistNameFallback": "Amanda Forsyth",
+    "date": ".summary-metadata-item--date",
+    "ticketUrl": "a.summary-title-link",
+    "venue": ".summary-metadata-item--location",
+    "city": ".summary-metadata-item--location",
+    "country": ".summary-metadata-item--location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

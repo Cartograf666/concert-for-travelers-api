@@ -1,0 +1,18 @@
+{
+  "id": "artist-abdee-negara",
+  "domain": "slank.com",
+  "url": "https://slank.com/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "ul.tour-dates > li.group",
+    "artistNameFallback": "Abdee Negara",
+    "date": "p.tour-date",
+    "ticketUrl": "span.sub-head a",
+    "venue": "span.main-head",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "ID"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-eddi-reader",
+  "domain": "eddireader.co.uk",
+  "url": "https://eddireader.co.uk/calendar/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "ul.gigpress-listing > li",
+    "artistNameFallback": "Eddi Reader",
+    "date": ".gigpress-sidebar-date",
+    "ticketUrl": ".gigpress-tickets-link",
+    "venue": ".gigpress-sidebar-venue",
+    "city": ".gigpress-sidebar-city",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-pj-powers",
+  "domain": "pjpowers.co.za",
+  "url": "http://pjpowers.co.za/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tribe-events-calendar-latest-past__event-row",
+    "artistNameFallback": "PJ Powers",
+    "date": ".tribe-events-calendar-latest-past__event-date-tag-datetime",
+    "ticketUrl": ".tribe-events-calendar-latest-past__event-title-link",
+    "venue": ".tribe-events-calendar-latest-past__event-description",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "ZA"
+  }
+}

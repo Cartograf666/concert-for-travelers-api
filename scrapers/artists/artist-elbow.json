@@ -1,0 +1,17 @@
+{
+  "id": "artist-elbow",
+  "domain": "www.elbow.co.uk",
+  "url": "https://www.elbow.co.uk/gig/showbox-seattle-wa/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".elbow-news-post",
+    "artistNameFallback": "Elbow",
+    "date": "table.umg-live-gig tr:nth-child(1) td:nth-child(2)",
+    "venue": "table.umg-live-gig tr:nth-child(2) td:nth-child(2)",
+    "city": "table.umg-live-gig tr:nth-child(3) td:nth-child(2)",
+    "country": "table.umg-live-gig tr:nth-child(3) td:nth-child(2)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

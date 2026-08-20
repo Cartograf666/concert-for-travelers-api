@@ -1,0 +1,17 @@
+{
+  "id": "artist-paolo-tosti",
+  "domain": "www.istitutonazionaletostiano.it",
+  "url": "https://www.istitutonazionaletostiano.it/it/events-2/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.post-item",
+    "artistNameFallback": "Paolo Tosti",
+    "date": ".date_label",
+    "ticketUrl": ".entry-title a",
+    "venue": ".entry-title",
+    "city": ".entry-title",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "IT"
+  }
+}

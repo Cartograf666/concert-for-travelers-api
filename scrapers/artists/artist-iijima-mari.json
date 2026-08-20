@@ -1,0 +1,16 @@
+{
+  "id": "artist-iijima-mari",
+  "domain": "marimusic.com",
+  "url": "https://marimusic.com/calendar",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-detail",
+    "artistNameFallback": "Iijima, Mari",
+    "date": ".event-when time.from",
+    "ticketUrl": ".event-info.event-title a",
+    "venue": ".event-location a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

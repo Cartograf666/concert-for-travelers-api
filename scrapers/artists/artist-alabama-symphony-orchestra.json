@@ -1,0 +1,16 @@
+{
+  "id": "artist-alabama-symphony-orchestra",
+  "domain": "alabamasymphony.org",
+  "url": "http://alabamasymphony.org/concert/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.type-concert",
+    "artistNameFallback": "Alabama Symphony Orchestra",
+    "date": ".event-date:first-of-type",
+    "ticketUrl": ".red_button",
+    "venue": ".venue",
+    "venueNameFallback": "",
+    "cityNameFallback": "Birmingham",
+    "countryNameFallback": "US"
+  }
+}

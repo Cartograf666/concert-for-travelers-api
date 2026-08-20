@@ -1,0 +1,15 @@
+{
+  "id": "artist-portland-symphony-orchestra",
+  "domain": "portlandsymphony.org",
+  "url": "https://portlandsymphony.org/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.event",
+    "artistNameFallback": "Portland Symphony Orchestra",
+    "date": ".date",
+    "ticketUrl": ".links a:nth-of-type(2)",
+    "venueNameFallback": "Portland",
+    "cityNameFallback": "Portland",
+    "countryNameFallback": "US"
+  }
+}

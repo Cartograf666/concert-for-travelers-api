@@ -1,0 +1,18 @@
+{
+  "id": "artist-param-vir",
+  "domain": "paramvir.net",
+  "url": "https://paramvir.net/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-in-list",
+    "artistNameFallback": "Param Vir",
+    "date": ".meta-col h2",
+    "ticketUrl": "a.details-button",
+    "venue": ".mec-venue-details span strong",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

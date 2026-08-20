@@ -1,0 +1,17 @@
+{
+  "id": "artist-patrick-scales",
+  "domain": "patrickscales.com",
+  "url": "https://patrickscales.com/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.single_event_list",
+    "artistNameFallback": "Patrick Scales",
+    "date": ".event_date",
+    "ticketUrl": ".event_buy .lc_js_link",
+    "venue": ".lcl_ev_venue",
+    "city": ".event_location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}

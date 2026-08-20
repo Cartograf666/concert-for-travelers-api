@@ -1,0 +1,18 @@
+{
+  "id": "artist-peter-paul-koprowski",
+  "domain": "ppkoprowski.com",
+  "url": "https://ppkoprowski.com/performances/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "section.elementor-top-section:not(:first-child)",
+    "artistNameFallback": "Peter Paul Koprowski",
+    "date": ".elementor-column:first-child .elementor-widget-text-editor:nth-child(1)",
+    "ticketUrl": "a.elementor-button-link",
+    "venue": ".elementor-column:first-child .elementor-widget-text-editor:nth-child(2)",
+    "city": ".elementor-column:first-child .elementor-widget-text-editor:nth-child(2)",
+    "country": ".elementor-column:first-child .elementor-widget-text-editor:nth-child(2)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}

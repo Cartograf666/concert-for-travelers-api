@@ -1,0 +1,18 @@
+{
+  "id": "artist-antonio-estevez",
+  "domain": "www.antonioestevez.com",
+  "url": "https://www.antonioestevez.com/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tribe-events-calendar-latest-past__event-row",
+    "artistNameFallback": "Antonio Estévez",
+    "date": "time.tribe-events-calendar-latest-past__event-date-tag-datetime",
+    "ticketUrl": ".tribe-events-calendar-latest-past__event-title-link",
+    "venue": ".tribe-events-calendar-latest-past__event-venue-title",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

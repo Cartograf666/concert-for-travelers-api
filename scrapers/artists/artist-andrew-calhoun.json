@@ -1,0 +1,18 @@
+{
+  "id": "artist-andrew-calhoun",
+  "domain": "andrewcalhoun.com",
+  "url": "https://andrewcalhoun.com/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.list-style",
+    "artistNameFallback": "Andrew Calhoun",
+    "date": ".event-datetime time.from",
+    "ticketUrl": ".event-title a",
+    "venue": ".event-location a",
+    "city": ".event-location a",
+    "country": "null",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

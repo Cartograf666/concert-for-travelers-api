@@ -1,0 +1,17 @@
+{
+  "id": "artist-anthony-mcgill",
+  "domain": "www.anthonymcgill.com",
+  "url": "https://www.anthonymcgill.com/schedule",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".w-dyn-item .schedule-text2_content",
+    "artistNameFallback": "Anthony McGill",
+    "date": ".subtitle:first-child",
+    "ticketUrl": "a.schedule-links",
+    "venue": "h5",
+    "city": ".small-text",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-andreas-boyde",
+  "domain": "www.andreasboyde.com",
+  "url": "https://www.andreasboyde.com/schedule",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.event-post",
+    "artistNameFallback": "Andreas Boyde",
+    "date": ".event-start-date",
+    "ticketUrl": ".buy-button",
+    "venue": ".location span",
+    "city": ".location span",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-philip-lindholm",
+  "domain": "philiplindholm.com",
+  "url": "https://philiplindholm.com/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tribe-events-calendar-latest-past__event-row",
+    "artistNameFallback": "Philip Lindholm",
+    "date": ".tribe-events-calendar-latest-past__event-datetime",
+    "ticketUrl": ".tribe-events-calendar-latest-past__event-title-link",
+    "venue": ".tribe-events-calendar-latest-past__event-venue-title",
+    "city": ".tribe-events-calendar-latest-past__event-venue-address",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

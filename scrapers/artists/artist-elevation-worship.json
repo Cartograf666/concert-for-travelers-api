@@ -1,0 +1,17 @@
+{
+  "id": "artist-elevation-worship",
+  "domain": "www.elevationworship.com",
+  "url": "https://www.elevationworship.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div[data-sentry-component=\"SectionHeader\"]",
+    "artistNameFallback": "Elevation Worship",
+    "date": "span",
+    "ticketUrl": "a",
+    "venue": "div > div > div > div > div:nth-child(2)",
+    "city": "div > div > div > div > div:nth-child(1)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

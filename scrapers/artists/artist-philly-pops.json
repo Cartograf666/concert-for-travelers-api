@@ -1,0 +1,17 @@
+{
+  "id": "artist-philly-pops",
+  "domain": "phillypops.org",
+  "url": "https://phillypops.org/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.tribe-events-calendar-list__event-row",
+    "artistNameFallback": "Philly Pops",
+    "date": "time.tribe-events-calendar-list__event-datetime",
+    "ticketUrl": ".tribe-events-calendar-list__event-title a",
+    "venue": ".tribe-events-calendar-list__event-venue-title",
+    "city": ".tribe-events-calendar-list__event-venue-address",
+    "venueNameFallback": "",
+    "cityNameFallback": "Philadelphia",
+    "countryNameFallback": "US"
+  }
+}
