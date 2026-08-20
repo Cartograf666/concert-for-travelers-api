@@ -3,6 +3,7 @@
   "domain": "www.theironmaidens.com",
   "url": "https://theironmaidens.com/upcoming-events/",
   "type": "static_selectors",
+  "httpClient": "got-scraping",
   "selectors": {
     "eventBlock": ".tour-item",
     "artistNameFallback": "The Iron Maidens",
