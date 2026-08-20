@@ -339,5 +339,31 @@
     "failuresSinceRepair": 0,
     "note": "transient: raising maxRetries 2 -> 5 with a politeness delay",
     "verification": "PASS (9 events, 7 checks)"
+  },
+  {
+    "id": "artist-iron-maidens-the",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-08-20T04:15:21.956Z",
+    "previousConfig": {
+      "id": "artist-iron-maidens-the",
+      "domain": "www.theironmaidens.com",
+      "url": "https://theironmaidens.com/upcoming-events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour-item",
+        "artistNameFallback": "The Iron Maidens",
+        "date": ".tour-date",
+        "ticketUrl": ".tour-tickets a",
+        "venue": ".tour-venue",
+        "city": ".tour-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend",
+    "verification": "PASS (19 events, 7 checks)"
   }
 ]
