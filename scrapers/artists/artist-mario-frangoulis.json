@@ -1,0 +1,18 @@
+{
+  "id": "artist-mario-frangoulis",
+  "domain": "www.mariofrangoulis.com",
+  "url": "https://www.mariofrangoulis.com/concerts",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".eb-event-container",
+    "artistNameFallback": "Mario Frangoulis",
+    "date": ".eb-event-date-day, .eb-event-date-month, .eb-event-date-year",
+    "ticketUrl": ".eb-description-details a.btn-info",
+    "venue": ".eb-description-details",
+    "city": ".eb-description-details",
+    "country": ".eb-description-details",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GR"
+  }
+}

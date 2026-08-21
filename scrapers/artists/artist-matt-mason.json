@@ -1,0 +1,17 @@
+{
+  "id": "artist-matt-mason",
+  "domain": "mattmasonmusic.com",
+  "url": "https://mattmasonmusic.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.list-style",
+    "artistNameFallback": "Matt Mason",
+    "date": ".event-datetime time.from",
+    "ticketUrl": "a.tickets.button",
+    "venue": ".event-location a",
+    "city": ".event-location a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-my-vitriol",
+  "domain": "my-vitriol.com",
+  "url": "https://my-vitriol.com/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.table-style tbody tr.border-accent",
+    "artistNameFallback": "My Vitriol",
+    "date": ".event-date .date",
+    "ticketUrl": "a.event_details",
+    "venue": ".event-location .text",
+    "city": ".event-location .text",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

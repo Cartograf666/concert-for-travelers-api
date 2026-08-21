@@ -1,0 +1,17 @@
+{
+  "id": "artist-fabolous",
+  "domain": "www.fabolous.com",
+  "url": "https://www.fabolous.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".data-row-gig",
+    "artistNameFallback": "Fabolous",
+    "date": ".tour-date",
+    "ticketUrl": ".buy-btn",
+    "venue": ".tour-venue",
+    "city": ".tour-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-mr-scruff",
+  "domain": "www.mrscruff.com",
+  "url": "https://www.mrscruff.com/gigs",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".wixui-repeater__item",
+    "artistNameFallback": "Mr. Scruff",
+    "date": "[id^='comp-ks0916kr__item']",
+    "ticketUrl": "[id^='comp-ks0916m1__item'] a",
+    "venue": "[id^='comp-ks0916l7__item']",
+    "city": "[id^='comp-ks0916ls1__item']",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-mystery-jets",
+  "domain": "www.mysteryjets.com",
+  "url": "https://www.mysteryjets.com/tour-dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "umg-event",
+    "artistNameFallback": "Mystery Jets",
+    "date": "[part='event-date'] a",
+    "ticketUrl": "umg-link[data-offer-type='tickets']",
+    "venue": "[part='venue'] a",
+    "city": "[part='location'] a",
+    "country": "[part='location'] a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

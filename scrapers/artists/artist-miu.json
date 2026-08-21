@@ -1,0 +1,17 @@
+{
+  "id": "artist-miu",
+  "domain": "miu-music.org",
+  "url": "https://miu-music.org/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.table-style tbody tr",
+    "artistNameFallback": "Miü",
+    "date": "td.event-date time.from",
+    "ticketUrl": "td.event-date a.event_details",
+    "venue": "td.event-name span.text",
+    "city": "td.event-location span.text",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}

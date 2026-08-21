@@ -1,0 +1,17 @@
+{
+  "id": "artist-mia",
+  "domain": "www.miarockt.de",
+  "url": "https://www.miarockt.de/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".events-container .item",
+    "artistNameFallback": "MIA.",
+    "date": ".time",
+    "ticketUrl": ".event-actions a.btn-secondary",
+    "venue": ".location a",
+    "city": ".event-title",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}

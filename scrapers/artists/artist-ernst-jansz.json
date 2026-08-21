@@ -1,0 +1,17 @@
+{
+  "id": "artist-ernst-jansz",
+  "domain": "ernstjansz.com",
+  "url": "https://ernstjansz.com/agenda/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table tbody tr:nth-child(n+2)",
+    "artistNameFallback": "Ernst Jansz",
+    "date": "td:nth-child(1)",
+    "ticketUrl": "td:nth-child(6) a, td:nth-child(5) a",
+    "venue": "td:nth-child(5)",
+    "city": "td:nth-child(3)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "NL"
+  }
+}

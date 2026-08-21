@@ -1,0 +1,18 @@
+{
+  "id": "artist-marilyn-mazur",
+  "domain": "www.marilynmazur.com",
+  "url": "https://www.marilynmazur.com/concerts",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".wixui-repeater__item",
+    "artistNameFallback": "Marilyn Mazur",
+    "date": ".comp-meka4aqc__item-lzfek1i5, .comp-m3kdsmt9__item-lzfek1i5",
+    "ticketUrl": "a",
+    "venue": ".comp-meka4ar7__item-lzfek1i5, .comp-m3kdsmtg__item-lzfek1i5",
+    "city": ".comp-meka4ar7__item-lzfek1i5 p:nth-child(2), .comp-m3kdsmtg__item-lzfek1i5 p:nth-child(2)",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DK"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-marina-satti",
+  "domain": "marinasatti.com",
+  "url": "https://marinasatti.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".vip-cities .vip-city-row",
+    "artistNameFallback": "Marina Satti",
+    "date": ".vip-city-info strong",
+    "ticketUrl": "a.vip-btn@href",
+    "venue": ".vip-city-info",
+    "city": ".vip-city-info",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}

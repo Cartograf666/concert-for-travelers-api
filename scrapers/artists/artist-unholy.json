@@ -1,0 +1,18 @@
+{
+  "id": "artist-unholy",
+  "domain": "unholy.fi",
+  "url": "https://unholy.fi/live-dates-section-available",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "#live-dates li",
+    "artistNameFallback": "Unholy",
+    "date": "p",
+    "ticketUrl": "a",
+    "venue": "p",
+    "city": "p",
+    "country": "p",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "FI"
+  }
+}

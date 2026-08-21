@@ -1,0 +1,18 @@
+{
+  "id": "artist-marjan-mozetich",
+  "domain": "www.mozetich.com",
+  "url": "https://www.mozetich.com/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".entry-content > p.wp-block-paragraph",
+    "artistNameFallback": "Marjan Mozetich",
+    "date": "strong:first-child",
+    "ticketUrl": "a:last-of-type",
+    "venue": "a:last-of-type",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}

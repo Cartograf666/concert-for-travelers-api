@@ -1,0 +1,17 @@
+{
+  "id": "artist-eric-lindell",
+  "domain": "www.ericlindell.com",
+  "url": "https://www.ericlindell.com/tour-dates",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-detail",
+    "artistNameFallback": "Eric Lindell",
+    "date": ".date-long .date",
+    "ticketUrl": "a.tickets",
+    "venue": ".event-location a",
+    "city": ".event-location a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

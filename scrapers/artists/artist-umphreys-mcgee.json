@@ -1,0 +1,16 @@
+{
+  "id": "artist-umphreys-mcgee",
+  "domain": "umphreys.com",
+  "url": "https://umphreys.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "#tour-dates-fallback li",
+    "artistNameFallback": "Umphrey's McGee",
+    "date": ".tour-date-day",
+    "venue": ".tour-date-venue",
+    "city": ".tour-date-venue",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

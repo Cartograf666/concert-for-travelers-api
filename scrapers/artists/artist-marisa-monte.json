@@ -1,0 +1,18 @@
+{
+  "id": "artist-marisa-monte",
+  "domain": "www.marisamonte.com.br",
+  "url": "http://www.marisamonte.com.br/agenda/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "a.evento",
+    "artistNameFallback": "Marisa Monte",
+    "date": ".evento-data",
+    "ticketUrl": "a.evento::attr(href)",
+    "venue": ".evento-local p",
+    "city": ".evento-titulo",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "BR"
+  }
+}

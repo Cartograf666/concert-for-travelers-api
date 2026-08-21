@@ -1,0 +1,18 @@
+{
+  "id": "artist-mugison",
+  "domain": "www.mugison.com",
+  "url": "http://www.mugison.com/gigs",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.eventlist-event",
+    "artistNameFallback": "Mugison",
+    "date": "time.event-date",
+    "ticketUrl": ".eventlist-description a",
+    "venue": ".eventlist-title",
+    "city": ".eventlist-title",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "IS"
+  }
+}

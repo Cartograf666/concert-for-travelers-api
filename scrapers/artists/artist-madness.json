@@ -1,0 +1,18 @@
+{
+  "id": "artist-madness",
+  "domain": "www.madness.co.uk",
+  "url": "https://www.madness.co.uk/2010/11/26/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "ul.gigs-list > li",
+    "artistNameFallback": "Madness",
+    "date": "time",
+    "ticketUrl": "a",
+    "venue": "h4.venue",
+    "city": "h4.venue",
+    "country": "h4.venue",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

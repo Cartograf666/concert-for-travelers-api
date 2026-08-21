@@ -1,0 +1,18 @@
+{
+  "id": "artist-baton-rouge-symphony-orchestra",
+  "domain": "www.brso.org",
+  "url": "https://www.brso.org/events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".summary-item",
+    "artistNameFallback": "Baton Rouge Symphony Orchestra",
+    "date": ".summary-metadata-item--date",
+    "ticketUrl": ".summary-title-link",
+    "venue": "",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "Baton Rouge",
+    "countryNameFallback": "US"
+  }
+}

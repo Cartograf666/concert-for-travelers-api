@@ -1,0 +1,18 @@
+{
+  "id": "artist-marike-jager",
+  "domain": "marikejager.com",
+  "url": "https://marikejager.com/shows/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".et_pb_with_border.et_clickable",
+    "artistNameFallback": "Marike Jager",
+    "date": ".et_pb_column_1_3:nth-child(1) .et_pb_text_inner",
+    "ticketUrl": "",
+    "venue": ".et_pb_column_1_3:nth-child(2) .et_pb_text_inner",
+    "city": ".et_pb_column_1_3:nth-child(2) .et_pb_text_inner",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "NL"
+  }
+}

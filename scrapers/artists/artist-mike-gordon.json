@@ -1,0 +1,17 @@
+{
+  "id": "artist-mike-gordon",
+  "domain": "mike-gordon.com",
+  "url": "https://mike-gordon.com/tour/?event_type=past",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".section-list.tour-list li",
+    "artistNameFallback": "Mike Gordon",
+    "date": "h4",
+    "ticketUrl": "a.button:contains('View more details')@href",
+    "venue": "h3:nth-of-type(2)",
+    "city": "h3:nth-of-type(1)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

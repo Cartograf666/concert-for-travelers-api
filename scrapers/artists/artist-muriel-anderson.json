@@ -1,0 +1,18 @@
+{
+  "id": "artist-muriel-anderson",
+  "domain": "murielanderson.com",
+  "url": "https://murielanderson.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.gigpress-table tbody:has(tr.gigpress-row)",
+    "artistNameFallback": "Muriel Anderson",
+    "date": "tr.gigpress-row .gigpress-date",
+    "ticketUrl": "tr.gigpress-info .gigpress-tickets-link",
+    "venue": "tr.gigpress-row .gigpress-venue",
+    "city": "tr.gigpress-row .gigpress-city",
+    "country": "tr.gigpress-row .gigpress-country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-majesty",
+  "domain": "majesty-metal.de",
+  "url": "https://majesty-metal.de/tour/tour-dates-dark/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".edgtf-event-content",
+    "artistNameFallback": "Majesty",
+    "date": ".edgt-event-day-number-holder, .edgt-event-day-holder, .edgt-event-month-holder",
+    "ticketUrl": ".edgtf-event-title a",
+    "venue": ".edgtf-event-title",
+    "city": ".edgtf-event-title",
+    "country": ".edgtf-event-title",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-mungos-hi-fi",
+  "domain": "mungoshifi.net",
+  "url": "https://mungoshifi.net/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".events-list .item",
+    "artistNameFallback": "Mungo's Hi Fi",
+    "date": ".event-date",
+    "ticketUrl": ".event-ticket a@href",
+    "venue": ".event-name",
+    "city": ".event-name",
+    "country": ".event-name",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

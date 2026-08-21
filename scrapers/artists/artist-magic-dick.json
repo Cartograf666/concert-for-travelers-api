@@ -1,0 +1,17 @@
+{
+  "id": "artist-magic-dick",
+  "domain": "www.magicdick.com",
+  "url": "https://www.magicdick.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div[id^='NewsPostsView_'] > div > div > div > div:has(a.wixAppsLink)",
+    "artistNameFallback": "Magic Dick",
+    "date": "div.s_usaAWRichTextClickableSkin:nth-of-type(1) p",
+    "ticketUrl": "a.wixAppsLink::attr(href)",
+    "venue": "div.s_usaAWRichTextClickableSkin:nth-of-type(2) p",
+    "city": "div.s_usaAWRichTextClickableSkin:nth-of-type(3) p",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

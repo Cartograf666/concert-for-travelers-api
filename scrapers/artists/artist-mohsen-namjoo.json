@@ -1,0 +1,17 @@
+{
+  "id": "artist-mohsen-namjoo",
+  "domain": "www.mohsennamjoo.com",
+  "url": "https://www.mohsennamjoo.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".eventlist-event",
+    "artistNameFallback": "Mohsen Namjoo",
+    "date": ".event-date",
+    "ticketUrl": "a.sqs-block-button-element",
+    "venue": ".eventlist-meta-address",
+    "city": ".eventlist-meta-address",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

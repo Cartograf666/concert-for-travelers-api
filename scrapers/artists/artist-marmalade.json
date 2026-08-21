@@ -1,0 +1,18 @@
+{
+  "id": "artist-marmalade",
+  "domain": "themarmalade.net",
+  "url": "https://themarmalade.net/tour-dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.hc_rse_events_table tr:not(:has(td[colspan]))",
+    "artistNameFallback": "Marmalade",
+    "date": "td.hc_rse_date",
+    "ticketUrl": "",
+    "venue": "td.hc_rse_title",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-matt-mays",
+  "domain": "www.mattmays.com",
+  "url": "https://www.mattmays.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.sonic-events tr.event-brief",
+    "artistNameFallback": "Matt Mays",
+    "date": "td.date datetime",
+    "ticketUrl": "td.actions a",
+    "venue": "td.venue",
+    "city": "td.city",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}

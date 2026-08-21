@@ -1,0 +1,17 @@
+{
+  "id": "artist-mark-hummel",
+  "domain": "markhummel.com",
+  "url": "https://markhummel.com/tour-dates",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.list-style",
+    "artistNameFallback": "Mark Hummel",
+    "date": ".event-datetime time.from",
+    "ticketUrl": ".buying-options .tickets.button",
+    "venue": ".event-location a",
+    "city": ".event-location a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

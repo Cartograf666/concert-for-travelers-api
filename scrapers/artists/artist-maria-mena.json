@@ -1,0 +1,17 @@
+{
+  "id": "artist-maria-mena",
+  "domain": "www.mariamena.no",
+  "url": "https://www.mariamena.no/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".w-dyn-item",
+    "artistNameFallback": "Maria Mena",
+    "date": ".date-wrap",
+    "ticketUrl": ".concert-btn-wrap a.button.concert-ticket-link::attr(href)",
+    "venue": ".concert-title",
+    "city": ".concert-content > .text-block",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "NO"
+  }
+}

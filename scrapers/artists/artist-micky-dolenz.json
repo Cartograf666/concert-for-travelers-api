@@ -1,0 +1,17 @@
+{
+  "id": "artist-micky-dolenz",
+  "domain": "mickydolenz.com",
+  "url": "https://mickydolenz.com/gigs",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table.table-style tbody tr",
+    "artistNameFallback": "Micky Dolenz",
+    "date": "td.event-date time.from",
+    "ticketUrl": "a.event_details",
+    "venue": "td.event-location span.text",
+    "city": "td.event-location span.text",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

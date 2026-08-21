@@ -1,0 +1,18 @@
+{
+  "id": "artist-mystery",
+  "domain": "www.therealmystery.com",
+  "url": "https://www.therealmystery.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div[id^='comp-m6uz'][class*='gpDCD5']",
+    "artistNameFallback": "Mystery",
+    "date": "div[id^='comp-m6uz'][id$='q'] div[data-testid='richTextElement'] h3",
+    "ticketUrl": "div[id^='comp-m6uz'][id$='n'] a",
+    "venue": "div[id^='comp-m6uz'][id$='k2'] div[data-testid='richTextElement'] h3",
+    "city": "div[id^='comp-m6uz'][id$='k2'] div[data-testid='richTextElement'] h3",
+    "country": "div[id^='comp-m6uz'][id$='m'] div[data-testid='richTextElement'] h3",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

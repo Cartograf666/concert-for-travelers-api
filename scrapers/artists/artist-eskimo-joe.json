@@ -1,0 +1,17 @@
+{
+  "id": "artist-eskimo-joe",
+  "domain": "www.eskimojoe.net",
+  "url": "https://www.eskimojoe.net/tours",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "a.EventLink",
+    "artistNameFallback": "Eskimo Joe",
+    "date": ".eventDate",
+    "ticketUrl": "a.EventLink",
+    "venue": ".venue",
+    "city": ".city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "AU"
+  }
+}

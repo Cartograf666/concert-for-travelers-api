@@ -1,0 +1,18 @@
+{
+  "id": "artist-michel-camilo",
+  "domain": "www.michelcamilo.com",
+  "url": "https://www.michelcamilo.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".sqs-html-content",
+    "artistNameFallback": "Michel Camilo",
+    "date": "p:nth-of-type(1)",
+    "ticketUrl": ".sqs-block-button-element",
+    "venue": "h2:first-of-type",
+    "city": "p:nth-of-type(1)",
+    "country": "p:nth-of-type(1)",
+    "venueNameFallback": "h2:first-of-type",
+    "cityNameFallback": "p:nth-of-type(1)",
+    "countryNameFallback": "US"
+  }
+}

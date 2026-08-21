@@ -1,0 +1,18 @@
+{
+  "id": "artist-ensiferum",
+  "domain": "ensiferum.com",
+  "url": "https://ensiferum.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.tour-date-item",
+    "artistNameFallback": "Ensiferum",
+    "date": "time",
+    "ticketUrl": "a.btn-primary",
+    "venue": ".tour-date-venue",
+    "city": ".tour-date-city span",
+    "country": ".tour-date-city span",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "FI"
+  }
+}

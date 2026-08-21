@@ -1,0 +1,18 @@
+{
+  "id": "artist-excision",
+  "domain": "excision.ca",
+  "url": "https://excision.ca/tour-dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".events-list .event",
+    "artistNameFallback": "Excision",
+    "date": ".event-day-text",
+    "ticketUrl": ".event-ticket-link",
+    "venue": ".event-venue-text",
+    "city": ".event-location-text",
+    "country": ".event-location-text",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
