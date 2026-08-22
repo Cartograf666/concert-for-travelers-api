@@ -1,0 +1,18 @@
+{
+  "id": "artist-vittorio-grigolo",
+  "domain": "www.vittoriogrigolo.com",
+  "url": "https://www.vittoriogrigolo.com/schedule",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div[data-testid='richTextElement']:has(a[href*='ticket'])",
+    "artistNameFallback": "Vittorio Grigolo",
+    "date": "p:nth-of-type(1)",
+    "ticketUrl": "a[href*='ticket']",
+    "venue": "p:nth-of-type(4)",
+    "city": "p:nth-of-type(4)",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "IT"
+  }
+}

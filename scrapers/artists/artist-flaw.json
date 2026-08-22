@@ -1,0 +1,18 @@
+{
+  "id": "artist-flaw",
+  "domain": "www.flawband.com",
+  "url": "https://www.flawband.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.list-style",
+    "artistNameFallback": "Flaw",
+    "date": ".date-long .date",
+    "ticketUrl": ".tickets.button",
+    "venue": ".event-location a",
+    "city": ".event-location a",
+    "country": "United States",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

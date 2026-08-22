@@ -1,0 +1,17 @@
+{
+  "id": "artist-night-ranger",
+  "domain": "nightranger.com",
+  "url": "https://nightranger.com/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-list-item",
+    "artistNameFallback": "Night Ranger",
+    "date": ".event-date a",
+    "ticketUrl": ".event-purchase a:first-child",
+    "venue": ".event-location a, .event-location .event-title a",
+    "city": ".event-city a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-nena",
+  "domain": "www.nena.de",
+  "url": "https://www.nena.de/live",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".w-dyn-item",
+    "artistNameFallback": "Nena",
+    "date": ".ticket-loca.fill",
+    "ticketUrl": "a",
+    "venue": ".ticket-loca:not(.fill)",
+    "city": ".ticket-loca.fill",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-giggs",
+  "domain": "sn1giggs.com",
+  "url": "https://sn1giggs.com/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tribe-events-calendar-list__event-row",
+    "artistNameFallback": "Giggs",
+    "date": ".tribe-events-calendar-list__event-datetime",
+    "ticketUrl": ".tribe-events-calendar-list__event-title-link",
+    "venue": ".tribe-events-calendar-list__event-venue-title",
+    "city": ".tribe-events-calendar-list__event-venue-address",
+    "country": ".tribe-events-calendar-list__event-venue-address",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-george-dalaras",
+  "domain": "www.georgedalaras.com",
+  "url": "https://www.georgedalaras.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".events_list > li.single_event_list",
+    "artistNameFallback": "George Dalaras",
+    "date": ".event_date",
+    "ticketUrl": "a",
+    "venue": ".event_venue",
+    "city": ".event_location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GR"
+  }
+}

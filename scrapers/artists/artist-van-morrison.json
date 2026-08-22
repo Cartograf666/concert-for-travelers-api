@@ -1,0 +1,17 @@
+{
+  "id": "artist-van-morrison",
+  "domain": "vanmorrison.com",
+  "url": "https://vanmorrison.com/live",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.shows__item",
+    "artistNameFallback": "Van Morrison",
+    "date": "time.shows__date",
+    "ticketUrl": "div.shows__action a",
+    "venue": "p.shows__venue",
+    "city": "p.shows__location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

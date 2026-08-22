@@ -1,0 +1,17 @@
+{
+  "id": "artist-gaia-consort",
+  "domain": "gaiaconsort.com",
+  "url": "https://gaiaconsort.com/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-detail",
+    "artistNameFallback": "Gaia Consort",
+    "date": "time.from",
+    "ticketUrl": "a.tickets",
+    "venue": "p.event-location a",
+    "city": "p.event-location a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

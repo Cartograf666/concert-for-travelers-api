@@ -1,0 +1,17 @@
+{
+  "id": "artist-gandalfs-fist",
+  "domain": "gandalfsfist.com",
+  "url": "https://gandalfsfist.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-detail",
+    "artistNameFallback": "Gandalf's Fist",
+    "date": ".date-long .event-when",
+    "ticketUrl": ".buying-options .tickets",
+    "venue": ".event-location a",
+    "city": ".event-location a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-gerard-joling",
+  "domain": "gerardjoling.nl",
+  "url": "https://gerardjoling.nl/agenda/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "tr[itemscope][itemtype='http://schema.org/MusicEvent']",
+    "artistNameFallback": "Gerard Joling",
+    "date": ".event-date",
+    "ticketUrl": "a.artwinlive_tour_dates-button-tickets",
+    "venue": ".artwinlive_tour_dates-where",
+    "city": ".artwinlive_tour_dates-where",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "NL"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-flook",
+  "domain": "flook.co.uk",
+  "url": "http://flook.co.uk/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "ul.event-list li.event-item",
+    "artistNameFallback": "Flook",
+    "date": "span.date",
+    "ticketUrl": "a",
+    "venue": "span.venue",
+    "city": "span.city",
+    "country": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

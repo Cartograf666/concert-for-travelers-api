@@ -1,0 +1,17 @@
+{
+  "id": "artist-golem",
+  "domain": "golemrocks.com",
+  "url": "http://golemrocks.com/shows/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "#tablepress-1 tbody tr",
+    "artistNameFallback": "Golem",
+    "date": ".column-1",
+    "venue": ".column-3",
+    "city": ".column-2",
+    "country": ".column-2",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

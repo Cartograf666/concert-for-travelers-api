@@ -1,0 +1,17 @@
+{
+  "id": "artist-foghat",
+  "domain": "foghat.com",
+  "url": "http://foghat.com/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.tribe-events-calendar-latest-past__event-row",
+    "artistNameFallback": "Foghat",
+    "date": "time.tribe-events-calendar-latest-past__event-datetime",
+    "ticketUrl": "h3.tribe-events-calendar-latest-past__event-title a",
+    "venue": "h3.tribe-events-calendar-latest-past__event-title",
+    "city": "div.tribe-events-calendar-latest-past__event-description p",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

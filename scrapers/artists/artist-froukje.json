@@ -1,0 +1,17 @@
+{
+  "id": "artist-froukje",
+  "domain": "froukje.net",
+  "url": "https://froukje.net/tickets",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".agendaitem",
+    "artistNameFallback": "Froukje",
+    "date": ".date",
+    "ticketUrl": "a.agenda-button-link",
+    "venue": ".venue",
+    "city": ".city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "NL"
+  }
+}

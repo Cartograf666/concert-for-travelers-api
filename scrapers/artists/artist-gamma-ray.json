@@ -1,0 +1,18 @@
+{
+  "id": "artist-gamma-ray",
+  "domain": "www.gammaray.org",
+  "url": "https://www.gammaray.org/en/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table tbody tr:has(td:nth-child(3))",
+    "artistNameFallback": "Gamma Ray",
+    "date": "td:nth-child(1)",
+    "ticketUrl": "td:nth-child(7) a",
+    "venue": "td:nth-child(4)",
+    "city": "td:nth-child(3)",
+    "country": "td:nth-child(2) img",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

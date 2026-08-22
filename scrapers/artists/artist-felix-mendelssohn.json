@@ -1,0 +1,18 @@
+{
+  "id": "artist-felix-mendelssohn",
+  "domain": "www.mendelssohn-stiftung.de",
+  "url": "https://www.mendelssohn-stiftung.de/en/konzerte",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.eventlist__item",
+    "artistNameFallback": "Felix Mendelssohn",
+    "date": ".eventlist__item-date .date",
+    "ticketUrl": "a.eventlist__item-button",
+    "venue": "",
+    "city": "",
+    "country": "",
+    "venueNameFallback": "Mendelssohn-Haus",
+    "cityNameFallback": "Leipzig",
+    "countryNameFallback": "DE"
+  }
+}

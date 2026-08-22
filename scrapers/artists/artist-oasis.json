@@ -1,0 +1,17 @@
+{
+  "id": "artist-oasis",
+  "domain": "oasisinet.com",
+  "url": "https://oasisinet.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".live-listing > li",
+    "artistNameFallback": "Oasis",
+    "date": ".live-date",
+    "venue": ".live-listing > li > span:nth-of-type(2)",
+    "city": ".live-listing > li > span:nth-of-type(2)",
+    "country": ".live-listing > li > span:nth-of-type(2)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

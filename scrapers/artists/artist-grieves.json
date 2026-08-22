@@ -1,0 +1,17 @@
+{
+  "id": "artist-grieves",
+  "domain": "grievesmusic.com",
+  "url": "https://grievesmusic.com/events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".touritem.group",
+    "artistNameFallback": "Grieves",
+    "date": ".tourdate",
+    "ticketUrl": "a[href*='ticket']",
+    "venue": ".location p",
+    "city": ".location strong",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

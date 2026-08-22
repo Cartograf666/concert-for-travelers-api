@@ -1,0 +1,18 @@
+{
+  "id": "artist-nick-cave-the-bad-seeds",
+  "domain": "www.nickcave.com",
+  "url": "https://www.nickcave.com/tour-dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".live-event",
+    "artistNameFallback": "Nick Cave & The Bad Seeds",
+    "date": ".live-date p",
+    "ticketUrl": ".buytickets-button::attr(href)",
+    "venue": ".venue",
+    "city": ".venue",
+    "country": ".venue",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-vienna-teng",
+  "domain": "viennateng.com",
+  "url": "https://viennateng.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".featured_layout .w-dyn-item",
+    "artistNameFallback": "Vienna Teng",
+    "date": ".date-wrap",
+    "ticketUrl": "a.button",
+    "venue": ".tour-subhead",
+    "city": ".tour-heading",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

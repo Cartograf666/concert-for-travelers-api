@@ -1,0 +1,17 @@
+{
+  "id": "artist-giora-feidman",
+  "domain": "www.giorafeidman-online.com",
+  "url": "https://www.giorafeidman-online.com/termine",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".listItem",
+    "artistNameFallback": "Giora Feidman",
+    "date": ".itemName",
+    "ticketUrl": "a.biglink",
+    "venue": ".itemText .rteBlock:nth-of-type(3)",
+    "city": ".itemName",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}

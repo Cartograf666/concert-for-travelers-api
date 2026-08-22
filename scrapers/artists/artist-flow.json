@@ -1,0 +1,16 @@
+{
+  "id": "artist-flow",
+  "domain": "www.flow-official.jp",
+  "url": "https://www.flow-official.jp/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.c-schedule__item",
+    "artistNameFallback": "FLOW",
+    "date": ".c-schedule__daytime",
+    "ticketUrl": "a.c-listbtn",
+    "venue": ".c-schedule__ttl",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

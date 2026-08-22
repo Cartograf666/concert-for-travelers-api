@@ -1,0 +1,18 @@
+{
+  "id": "artist-gabrielle",
+  "domain": "gabrielle.co.uk",
+  "url": "https://gabrielle.co.uk/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "ul.liveContainer > li.date-item",
+    "artistNameFallback": "Gabrielle",
+    "date": ".googleDate",
+    "ticketUrl": "a.buyticketurl",
+    "venue": ".s_venue",
+    "city": ".addressLocality",
+    "country": ".addressCountry",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

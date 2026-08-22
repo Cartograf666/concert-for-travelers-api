@@ -1,0 +1,18 @@
+{
+  "id": "artist-vitalic",
+  "domain": "vitalic.org",
+  "url": "https://vitalic.org/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".bandsintown-tour-dates__list .bandsintown-tour-dates__event",
+    "artistNameFallback": "Vitalic",
+    "date": ".bandsintown-tour-dates__event-date-day, .bandsintown-tour-dates__event-date-month, .bandsintown-tour-dates__event-date-year",
+    "ticketUrl": ".bandsintown-tour-dates__event-link",
+    "venue": ".bandsintown-tour-dates__event-venue",
+    "city": ".bandsintown-tour-dates__event-location",
+    "country": ".bandsintown-tour-dates__event-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

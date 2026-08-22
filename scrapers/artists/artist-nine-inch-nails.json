@@ -1,0 +1,18 @@
+{
+  "id": "artist-nine-inch-nails",
+  "domain": "www.nin.com",
+  "url": "https://www.nin.com/tickets2018/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "section#section-tickets2018 > div.section-inner > p:has(strong)",
+    "artistNameFallback": "Nine Inch Nails",
+    "date": "strong:first-child",
+    "ticketUrl": "a:first-of-type",
+    "venue": "b",
+    "city": "xpath=.//p/text()[contains(., ',')][1]",
+    "country": "US",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "artist-nothings-carved-in-stone",
+  "domain": "www.ncis.jp",
+  "url": "https://www.ncis.jp/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".schedule-item",
+    "artistNameFallback": "Nothing's Carved in Stone",
+    "date": ".schedule-date",
+    "ticketUrl": ".schedule-title a::attr(href)",
+    "venue": ".schedule-title a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}
