@@ -1,0 +1,17 @@
+{
+  "id": "artist-bird-and-the-bee-the",
+  "domain": "www.thebirdandthebee.com",
+  "url": "https://www.thebirdandthebee.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-listing div.row",
+    "artistNameFallback": "The Bird and The Bee",
+    "date": ".event-date",
+    "ticketUrl": ".event-ticket-link a",
+    "venue": ".event-venue",
+    "city": ".event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
