@@ -694,5 +694,21 @@
     "consecutiveFailures": 5,
     "firstFailedAt": "2026-08-17T04:12:31.871Z",
     "prunedAt": "2026-08-21T04:15:05.800Z"
+  },
+  {
+    "id": "artist-you-saved-my-soul",
+    "artistName": "Michael Bolton",
+    "reason": "fetch_error",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-08-18T04:04:58.680Z",
+    "prunedAt": "2026-08-22T04:15:58.324Z"
+  },
+  {
+    "id": "artist-youre-all-that-matters-to-me",
+    "artistName": "Frankie J",
+    "reason": "fetch_error",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-08-18T04:04:58.680Z",
+    "prunedAt": "2026-08-22T04:15:58.324Z"
   }
 ]
