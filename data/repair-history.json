@@ -365,5 +365,36 @@
     "failuresSinceRepair": 0,
     "note": "anti_bot: escalating to the got-scraping header-fingerprint backend",
     "verification": "PASS (19 events, 7 checks)"
+  },
+  {
+    "id": "yugong-yishan-beijing",
+    "strategy": "transient",
+    "repairedAt": "2026-08-23T04:16:56.540Z",
+    "previousConfig": {
+      "id": "yugong-yishan-beijing",
+      "domain": "theatrebeijing.com",
+      "url": "https://theatrebeijing.com/whats_on/live/",
+      "type": "static_selectors",
+      "httpClient": "got-scraping",
+      "maxRetries": 3,
+      "requestDelayMs": 2000,
+      "allowEmpty": false,
+      "selectors": {
+        "eventBlock": "div.events",
+        "artist": "h2 a",
+        "date": "ul.eventsTag li:nth-child(2)",
+        "ticketUrl": "h2 a",
+        "venue": "ul.eventsTag li:nth-child(3) a",
+        "venueNameFallback": "Yugong Yishan",
+        "cityNameFallback": "Beijing",
+        "countryNameFallback": "CN",
+        "lat": 39.9356,
+        "lng": 116.4065
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 3 -> 5 with a politeness delay",
+    "verification": "PASS (2 events, 7 checks)"
   }
 ]

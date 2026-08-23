@@ -4,7 +4,7 @@
   "url": "https://theatrebeijing.com/whats_on/live/",
   "type": "static_selectors",
   "httpClient": "got-scraping",
-  "maxRetries": 3,
+  "maxRetries": 5,
   "requestDelayMs": 2000,
   "allowEmpty": false,
   "selectors": {
