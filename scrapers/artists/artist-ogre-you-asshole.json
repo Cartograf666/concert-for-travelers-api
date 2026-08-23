@@ -1,0 +1,15 @@
+{
+  "id": "artist-ogre-you-asshole",
+  "domain": "ogreyouasshole.com",
+  "url": "http://ogreyouasshole.com/live",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.column.scrollview",
+    "artistNameFallback": "Ogre You Asshole",
+    "date": "h1.title span.date",
+    "venue": "div.place",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

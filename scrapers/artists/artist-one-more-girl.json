@@ -1,0 +1,18 @@
+{
+  "id": "artist-one-more-girl",
+  "domain": "www.onemoregirl.com",
+  "url": "https://www.onemoregirl.com/gigs",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-detail",
+    "artistNameFallback": "One More Girl",
+    "date": ".event-datetime .date",
+    "ticketUrl": ".buying-options .tickets",
+    "venue": ".event-location a",
+    "city": ".event-location a",
+    "country": ".event-location a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

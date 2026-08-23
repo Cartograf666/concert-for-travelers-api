@@ -1,0 +1,18 @@
+{
+  "id": "artist-wolfgang-amadeus-mozart",
+  "domain": "mozarteum.at",
+  "url": "https://mozarteum.at/konzerte",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-card",
+    "artistNameFallback": "Wolfgang Amadeus Mozart",
+    "date": ".day-number, .month-short",
+    "ticketUrl": ".tickets-buttons a",
+    "venue": ".location-name",
+    "city": "body",
+    "country": "body",
+    "venueNameFallback": "Stiftung Mozarteum, Salzburg",
+    "cityNameFallback": "Salzburg",
+    "countryNameFallback": "AT"
+  }
+}

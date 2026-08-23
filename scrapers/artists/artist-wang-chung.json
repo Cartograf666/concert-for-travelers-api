@@ -1,0 +1,17 @@
+{
+  "id": "artist-wang-chung",
+  "domain": "wangchung.com",
+  "url": "https://wangchung.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-detail",
+    "artistNameFallback": "Wang Chung",
+    "date": ".date-long .date",
+    "ticketUrl": "a.tickets",
+    "venue": ".event-location a",
+    "city": ".event-location a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

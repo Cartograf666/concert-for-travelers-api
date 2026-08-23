@@ -1,0 +1,17 @@
+{
+  "id": "artist-willeke-alberti",
+  "domain": "willekealberti.nl",
+  "url": "https://willekealberti.nl/agenda/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "table tbody tr:has(td:nth-child(2))",
+    "artistNameFallback": "Willeke Alberti",
+    "date": "td:nth-child(1)",
+    "ticketUrl": "td:nth-child(4) a",
+    "venue": "td:nth-child(4)",
+    "city": "td:nth-child(2)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "NL"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-widespread-panic",
+  "domain": "widespreadpanic.com",
+  "url": "https://widespreadpanic.com/shows/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".gig-summary.vevent",
+    "artistNameFallback": "Widespread Panic",
+    "date": "time.dtstart",
+    "ticketUrl": ".gig-tickets-link_ticket",
+    "venue": ".venue-name.fn.org",
+    "city": ".venue-locality.locality",
+    "country": ".venue-country.country-name",
+    "venueNameFallback": ".gig-title a",
+    "cityNameFallback": ".locality",
+    "countryNameFallback": "US"
+  }
+}
