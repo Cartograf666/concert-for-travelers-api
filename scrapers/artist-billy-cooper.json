@@ -1,0 +1,17 @@
+{
+  "id": "artist-billy-cooper",
+  "domain": "www.billycoopertrumpet.com",
+  "url": "https://www.billycoopertrumpet.com/calendar",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.event",
+    "artistNameFallback": "Billy Cooper",
+    "date": ".event-date",
+    "ticketUrl": "a.event-ticket-link",
+    "venue": ".event-venue",
+    "city": ".event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
