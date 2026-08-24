@@ -1,0 +1,17 @@
+{
+  "id": "artist-bobs-your-uncle",
+  "domain": "www.bobsyourunclemadison.com",
+  "url": "https://www.bobsyourunclemadison.com/upcoming-shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.eventlist-event",
+    "artistNameFallback": "Bob's Your Uncle",
+    "date": "time.event-date",
+    "ticketUrl": "a.event-more-info-link",
+    "venue": "span.event-venue",
+    "city": "span.event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
