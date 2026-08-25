@@ -718,5 +718,45 @@
     "consecutiveFailures": 5,
     "firstFailedAt": "2026-08-24T04:14:16.347Z",
     "prunedAt": "2026-08-24T04:14:16.347Z"
+  },
+  {
+    "id": "artist-bb-mak",
+    "artistName": "BB Mak",
+    "reason": "fetch_error",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-08-21T04:15:05.800Z",
+    "prunedAt": "2026-08-25T04:09:57.995Z"
+  },
+  {
+    "id": "artist-beasley-sean",
+    "artistName": "Dying Fetus",
+    "reason": "fetch_error",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-08-21T04:15:05.800Z",
+    "prunedAt": "2026-08-25T04:09:57.995Z"
+  },
+  {
+    "id": "artist-bavarian-radio-symphony-orchestra",
+    "artistName": "Bavarian Radio Symphony Orchestra",
+    "reason": "fetch_error",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-08-21T04:15:05.800Z",
+    "prunedAt": "2026-08-25T04:09:57.995Z"
+  },
+  {
+    "id": "artist-beijing-symphony-orchestra",
+    "artistName": "Beijing Symphony Orchestra",
+    "reason": "fetch_error",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-08-21T04:15:05.800Z",
+    "prunedAt": "2026-08-25T04:09:57.995Z"
+  },
+  {
+    "id": "artist-bobs-your-uncle",
+    "artistName": "Bob's Your Uncle",
+    "reason": "dead_domain",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-08-25T04:09:57.995Z",
+    "prunedAt": "2026-08-25T04:09:57.995Z"
   }
 ]
