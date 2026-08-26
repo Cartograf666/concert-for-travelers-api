@@ -758,5 +758,29 @@
     "consecutiveFailures": 5,
     "firstFailedAt": "2026-08-25T04:09:57.995Z",
     "prunedAt": "2026-08-25T04:09:57.995Z"
+  },
+  {
+    "id": "artist-berlin-philharmonic",
+    "artistName": "Berliner Philharmoniker",
+    "reason": "fetch_error",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-08-22T04:15:58.324Z",
+    "prunedAt": "2026-08-26T04:14:07.860Z"
+  },
+  {
+    "id": "artist-berlin-radio-symphony-orchestra",
+    "artistName": "Rundfunk-Sinfonieorchester Berlin",
+    "reason": "fetch_error",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-08-22T04:15:58.324Z",
+    "prunedAt": "2026-08-26T04:14:07.860Z"
+  },
+  {
+    "id": "artist-big-head-todd-the-monsters",
+    "artistName": "Big Head Todd & The Monsters",
+    "reason": "fetch_error",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-08-22T04:15:58.324Z",
+    "prunedAt": "2026-08-26T04:14:07.860Z"
   }
 ]
