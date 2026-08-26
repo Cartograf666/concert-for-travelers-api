@@ -1,0 +1,17 @@
+{
+  "id": "artist-bobs-and-lolo",
+  "domain": "bobsandlolo.com",
+  "url": "https://bobsandlolo.com/shows/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.em_event_box",
+    "artistNameFallback": "Bobs and Lolo",
+    "date": ".em_date",
+    "ticketUrl": "a.em_button.em_button_alt",
+    "venue": ".em_venue_name",
+    "city": ".em_venue_city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "artist-bob-hite",
+  "domain": "cannedheatmusic.com",
+  "url": "https://cannedheatmusic.com/tour-dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".gig_grid > .gig",
+    "artistNameFallback": "Canned Heat",
+    "date": ".gig-grid-cell-date",
+    "ticketUrl": ".gig-grid-cell-tickets a",
+    "venue": ".gig-grid-cell-venue",
+    "city": ".gig-grid-cell-city",
+    "country": ".gig-grid-cell-country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
