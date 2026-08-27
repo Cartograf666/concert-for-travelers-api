@@ -1,0 +1,17 @@
+{
+  "id": "artist-brisbane-philharmonic-orchestra",
+  "domain": "bpo.org.au",
+  "url": "https://bpo.org.au/concerts/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".mec-event-list-article",
+    "artistNameFallback": "Brisbane Philharmonic Orchestra",
+    "date": ".mec-event-date",
+    "ticketUrl": ".mec-booking-button a",
+    "venue": ".mec-single-event-location span",
+    "city": ".mec-address-detail",
+    "venueNameFallback": "",
+    "cityNameFallback": "Brisbane",
+    "countryNameFallback": "AU"
+  }
+}
