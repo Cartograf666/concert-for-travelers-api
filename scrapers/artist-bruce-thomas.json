@@ -1,0 +1,17 @@
+{
+  "id": "artist-bruce-thomas",
+  "domain": "brucethomasmusic.com",
+  "url": "https://brucethomasmusic.com/schedule",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".eventList .eventItem",
+    "artistNameFallback": "Bruce Thomas",
+    "date": ".eventDate",
+    "ticketUrl": ".button.book",
+    "venue": ".eventVenue",
+    "city": ".eventCity",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

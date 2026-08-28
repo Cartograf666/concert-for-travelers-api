@@ -1,0 +1,17 @@
+{
+  "id": "artist-bucks-fizz",
+  "domain": "thefizzofficial.com",
+  "url": "https://www.thefizzofficial.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.html-section-item.html-section-event-row",
+    "artistNameFallback": "The Fizz",
+    "date": ".html-section-event-date",
+    "ticketUrl": ".html-section-event-tickets a",
+    "venue": ".html-section-event-venue",
+    "city": ".html-section-event-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "UK"
+  }
+}

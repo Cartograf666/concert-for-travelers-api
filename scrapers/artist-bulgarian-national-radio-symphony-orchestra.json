@@ -1,0 +1,15 @@
+{
+  "id": "artist-bulgarian-national-radio-symphony-orchestra",
+  "domain": "bnr.bg",
+  "url": "https://bnr.bg/radio/symphony-orchestra/concerts",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-listing-item",
+    "artistNameFallback": "Bulgarian National Radio Symphony Orchestra",
+    "date": ".event-date",
+    "ticketUrl": "a.ticket-link",
+    "venueNameFallback": "Bulgaria Concert Hall",
+    "cityNameFallback": "Sofia",
+    "countryNameFallback": "BG"
+  }
+}
