@@ -396,5 +396,31 @@
     "failuresSinceRepair": 0,
     "note": "transient: raising maxRetries 3 -> 5 with a politeness delay",
     "verification": "PASS (2 events, 7 checks)"
+  },
+  {
+    "id": "artist-bruce-thomas",
+    "strategy": "selectors",
+    "repairedAt": "2026-08-29T10:10:31.665Z",
+    "previousConfig": {
+      "id": "artist-bruce-thomas",
+      "domain": "brucethomasmusic.com",
+      "url": "https://brucethomasmusic.com/schedule",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".eventList .eventItem",
+        "artistNameFallback": "Bruce Thomas",
+        "date": ".eventDate",
+        "ticketUrl": ".button.book",
+        "venue": ".eventVenue",
+        "city": ".eventCity",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "LLM/JSON-LD re-selection",
+    "verification": "PASS (32 events, 6 checks)"
   }
 ]

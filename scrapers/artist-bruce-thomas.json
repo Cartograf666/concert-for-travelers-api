@@ -4,12 +4,11 @@
   "url": "https://brucethomasmusic.com/schedule",
   "type": "static_selectors",
   "selectors": {
-    "eventBlock": ".eventList .eventItem",
-    "artistNameFallback": "Bruce Thomas",
-    "date": ".eventDate",
-    "ticketUrl": ".button.book",
-    "venue": ".eventVenue",
-    "city": ".eventCity",
+    "eventBlock": "#calendar tbody .with-events li",
+    "artist": ".event-name",
+    "date": ".calendar-placeholder",
+    "datePattern": "MMM DD",
+    "ticketUrl": ".event_details",
     "venueNameFallback": "",
     "cityNameFallback": "",
     "countryNameFallback": "US"
