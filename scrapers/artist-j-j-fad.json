@@ -1,0 +1,14 @@
+{
+  "id": "artist-j-j-fad",
+  "domain": "jjfad.com",
+  "url": "https://jjfad.com/events/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.sqs-block-content p",
+    "artistNameFallback": "J J Fad",
+    "date": "span:nth-of-type(1)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
