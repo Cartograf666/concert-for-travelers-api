@@ -422,5 +422,30 @@
     "failuresSinceRepair": 0,
     "note": "LLM/JSON-LD re-selection",
     "verification": "PASS (32 events, 6 checks)"
+  },
+  {
+    "id": "artist-j-alvarez",
+    "strategy": "url_moved",
+    "repairedAt": "2026-08-30T09:23:24.222Z",
+    "previousConfig": {
+      "id": "artist-j-alvarez",
+      "domain": "jalvarezmusic.com",
+      "url": "https://jalvarezmusic.com/luxury-tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.fusion-li-item",
+        "artistNameFallback": "J Alvarez",
+        "date": ".fusion-li-item-content strong:nth-of-type(1)",
+        "ticketUrl": ".fusion-button-text-left",
+        "city": ".fusion-li-item-content strong:nth-of-type(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "ES"
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "relocated to https://www.jalvarezmusic.com/events/ and re-selected",
+    "verification": "PASS (6 events, 6 checks)"
   }
 ]
