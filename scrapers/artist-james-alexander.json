@@ -1,0 +1,18 @@
+{
+  "id": "artist-james-alexander",
+  "domain": "www.jamesalexanderbright.com",
+  "url": "https://www.jamesalexanderbright.com/live",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-list-item",
+    "artistNameFallback": "James Alexander Bright",
+    "date": ".event-date",
+    "ticketUrl": ".event-tickets a",
+    "venue": ".event-venue",
+    "city": ".event-location-city",
+    "country": ".event-location-country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "UK"
+  }
+}

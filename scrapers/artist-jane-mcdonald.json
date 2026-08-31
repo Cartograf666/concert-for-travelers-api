@@ -1,0 +1,17 @@
+{
+  "id": "artist-jane-mcdonald",
+  "domain": "www.janemcdonald.com",
+  "url": "https://www.janemcdonald.com/tour-dates",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour-date-item",
+    "artistNameFallback": "Jane McDonald",
+    "date": ".tour-date-item__date",
+    "ticketUrl": ".tour-date-item__button a",
+    "venue": ".tour-date-item__venue",
+    "city": ".tour-date-item__city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "UK"
+  }
+}
