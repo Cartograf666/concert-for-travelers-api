@@ -814,5 +814,37 @@
     "consecutiveFailures": 5,
     "firstFailedAt": "2026-08-25T04:09:57.995Z",
     "prunedAt": "2026-08-29T10:08:18.484Z"
+  },
+  {
+    "id": "artist-bob-hite",
+    "artistName": "Canned Heat",
+    "reason": "fetch_error",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-08-27T14:15:46.101Z",
+    "prunedAt": "2026-08-31T09:48:05.679Z"
+  },
+  {
+    "id": "artist-bob-marley-and-the-wailers",
+    "artistName": "The Wailers",
+    "reason": "fetch_error",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-08-27T14:15:46.101Z",
+    "prunedAt": "2026-08-31T09:48:05.679Z"
+  },
+  {
+    "id": "artist-bobs-and-lolo",
+    "artistName": "Bobs and Lolo",
+    "reason": "fetch_error",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-08-27T14:15:46.101Z",
+    "prunedAt": "2026-08-31T09:48:05.679Z"
+  },
+  {
+    "id": "artist-braddell-heights-symphony-orchestra",
+    "artistName": "Braddell Heights Symphony Orchestra",
+    "reason": "fetch_error",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-08-27T14:15:46.101Z",
+    "prunedAt": "2026-08-31T09:48:05.679Z"
   }
 ]
