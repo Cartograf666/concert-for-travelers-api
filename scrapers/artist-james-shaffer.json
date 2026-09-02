@@ -1,0 +1,17 @@
+{
+  "id": "artist-james-shaffer",
+  "domain": "korn.com",
+  "url": "https://korn.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-item",
+    "artistNameFallback": "Korn",
+    "date": "div.event-date > span:first-child",
+    "ticketUrl": "div.event-buttons > a.button.buy-tickets",
+    "venue": "div.event-details > h5",
+    "city": "div.event-details > h4",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

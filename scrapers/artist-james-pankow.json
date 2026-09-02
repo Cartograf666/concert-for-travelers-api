@@ -1,0 +1,17 @@
+{
+  "id": "artist-james-pankow",
+  "domain": "www.chicagotheband.com",
+  "url": "https://www.chicagotheband.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.tour-list__item",
+    "artistNameFallback": "Chicago",
+    "date": ".tour-list__date",
+    "ticketUrl": ".tour-list__item-links > a.button",
+    "venue": ".tour-list__venue",
+    "city": ".tour-list__city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
