@@ -447,5 +447,58 @@
     "failuresSinceRepair": 0,
     "note": "relocated to https://www.jalvarezmusic.com/events/ and re-selected",
     "verification": "PASS (6 events, 6 checks)"
+  },
+  {
+    "id": "hrvatski-dom-split-split",
+    "strategy": "tls_broken",
+    "repairedAt": "2026-09-04T08:20:47.904Z",
+    "previousConfig": {
+      "id": "hrvatski-dom-split-split",
+      "domain": "hdsplit.hr",
+      "url": "https://hdsplit.hr/en/program/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.repdiv",
+        "artist": "h4.ct-headline",
+        "date": ".ct-div-block:has(.ciklus-text) + .ct-div-block .ct-text-block",
+        "ticketUrl": "h4.ct-headline a",
+        "venueNameFallback": "Hrvatski Dom Split",
+        "cityNameFallback": "Split",
+        "countryNameFallback": "HR",
+        "lat": 43.509844,
+        "lng": 16.436942
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "tls_broken: trying the www/apex variant, which usually holds the valid certificate",
+    "verification": "PASS (15 events, 7 checks)"
+  },
+  {
+    "id": "artist-philippine-philharmonic-orchestra",
+    "strategy": "transient",
+    "repairedAt": "2026-09-04T08:20:54.380Z",
+    "previousConfig": {
+      "id": "artist-philippine-philharmonic-orchestra",
+      "domain": "culturalcenter.gov.ph",
+      "url": "https://culturalcenter.gov.ph/events",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.tribe-events-event-info",
+        "artistNameFallback": "Philippine Philharmonic Orchestra",
+        "date": "div.tribe-events-event-date-start",
+        "ticketUrl": "a.tribe-events-read-more",
+        "venue": "span.tribe-venue-name",
+        "city": "span.tribe-address-city",
+        "country": "span.tribe-address-country",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "PH"
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay",
+    "verification": "PASS (5 events, 7 checks)"
   }
 ]
