@@ -3,6 +3,8 @@
   "domain": "culturalcenter.gov.ph",
   "url": "https://culturalcenter.gov.ph/events",
   "type": "static_selectors",
+  "maxRetries": 5,
+  "requestDelayMs": 2000,
   "selectors": {
     "eventBlock": "div.tribe-events-event-info",
     "artistNameFallback": "Philippine Philharmonic Orchestra",
