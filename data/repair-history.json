@@ -469,7 +469,7 @@
         "lng": 16.436942
       }
     },
-    "status": "pending",
+    "status": "confirmed",
     "failuresSinceRepair": 0,
     "note": "tls_broken: trying the www/apex variant, which usually holds the valid certificate",
     "verification": "PASS (15 events, 7 checks)"
@@ -496,7 +496,7 @@
         "countryNameFallback": "PH"
       }
     },
-    "status": "pending",
+    "status": "confirmed",
     "failuresSinceRepair": 0,
     "note": "transient: raising maxRetries 2 -> 5 with a politeness delay",
     "verification": "PASS (5 events, 7 checks)"
