@@ -41665,7 +41665,9 @@
     "lastConcertSeenAt": "2026-09-05T19:38:03.175Z",
     "image": "https://r2.theaudiodb.com/images/media/artist/thumb/iwgiyv1665408609.jpg",
     "imageSource": "audiodb",
-    "imageFallbackTriedAt": "2026-09-05T20:13:14.469Z"
+    "imageFallbackTriedAt": "2026-09-05T20:13:14.469Z",
+    "enrichedAt": "2026-09-05T20:37:10.474Z",
+    "enrichedBy": "auto"
   },
   {
     "name": "Electric Century",
@@ -313260,11 +313262,22 @@
   },
   {
     "name": "Milet",
-    "website": null,
+    "website": "https://www.milet.jp/",
     "lastConcertSeenAt": "2026-09-05T19:38:03.175Z",
     "image": "https://r2.theaudiodb.com/images/media/artist/thumb/otabo61713994637.jpg",
     "imageSource": "audiodb",
-    "imageFallbackTriedAt": "2026-09-05T20:13:15.824Z"
+    "imageFallbackTriedAt": "2026-09-05T20:13:15.824Z",
+    "mbid": "906c39c0-e839-43db-a644-ea1a0101e8f8",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/45ft4DyTCEJfQwTBHXpdhM",
+      "instagram": "https://www.instagram.com/milet_music/",
+      "facebook": null,
+      "youtube": "https://www.youtube.com/channel/UCpgxgkifUGSKg9dNFE5Vo7Q",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-09-05T20:37:35.868Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Miley Cyrus",
@@ -396075,7 +396088,9 @@
   {
     "name": "Uncle Dags",
     "website": null,
-    "imageFallbackTriedAt": "2026-09-05T20:13:16.273Z"
+    "imageFallbackTriedAt": "2026-09-05T20:13:16.273Z",
+    "mbid": "ce27b2d5-84a2-442d-ad62-a584d8a0421c",
+    "autoTriedAt": "2026-09-05T20:37:51.399Z"
   },
   {
     "name": "Uncle Dave Macon",
@@ -410087,6 +410102,17 @@
   {
     "name": "郭顶",
     "website": null,
-    "imageFallbackTriedAt": "2026-09-05T20:13:16.724Z"
+    "imageFallbackTriedAt": "2026-09-05T20:13:16.724Z",
+    "mbid": "9603c124-915d-4d64-809a-0814bdfab741",
+    "socials": {
+      "spotify": "https://open.spotify.com/artist/2yeYnG54WIgfWLpHMZpcWU",
+      "instagram": null,
+      "facebook": null,
+      "youtube": null,
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-09-05T20:37:55.675Z",
+    "enrichedBy": "musicbrainz"
   }
 ]
