@@ -1,0 +1,73 @@
+name: Alert Reaper
+
+# .github/actions/alert-on-failure opens a deduplicated "🚨 ...: ... failed"
+# issue and comments on it again on every subsequent failure -- but it has no
+# way to notice a recovery, because it only ever runs from a failed job. So a
+# transient failure leaves an open 🚨 issue forever: #44 ("Prune Dead Scrapers:
+# prune failed") sat open from 2026-07-22 while that workflow went green and
+# stayed green.
+#
+# That is not merely untidy. Permanently-open alert issues are why a REAL
+# outage went unnoticed for 23 days: #77 and #79 correctly fired on day one of
+# the daily-scrape failure and were commented on daily, but by then an open 🚨
+# issue no longer meant anything, so nobody looked.
+#
+# Rather than teach 20 workflows to report their own recovery, this exploits a
+# property alert-on-failure already guarantees: a still-broken workflow gets a
+# fresh comment on every run. Silence therefore means recovery. An alert issue
+# with no activity for STALE_DAYS is closed as resolved.
+
+on:
+  schedule:
+    - cron: '30 7 * * *' # after the daily scrape and the 06:00 freshness watchdog
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  reap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Close alert issues that have gone quiet
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          # Longer than the slowest alerting workflow's cadence (daily), with
+          # enough slack that one skipped run cannot look like a recovery.
+          STALE_DAYS: '3'
+        run: |
+          set -euo pipefail
+
+          now=$(date -u +%s)
+          cutoff=$(( STALE_DAYS * 86400 ))
+
+          # updated_at moves on a new failure comment, so it is exactly the
+          # "last time this alert still had something to say" timestamp.
+          gh issue list --repo "$REPO" --state open --limit 100 \
+            --json number,title,updatedAt \
+            --jq '.[] | select(.title | startswith("🚨")) | [.number, .updatedAt, .title] | @tsv' \
+            > /tmp/alerts.tsv || true
+
+          if [ ! -s /tmp/alerts.tsv ]; then
+            echo "No open 🚨 alert issues."
+            exit 0
+          fi
+
+          closed=0
+          while IFS=$'\t' read -r num updated title; do
+            [ -n "$num" ] || continue
+            age=$(( now - $(date -u -d "$updated" +%s) ))
+            days=$(( age / 86400 ))
+            if [ "$age" -gt "$cutoff" ]; then
+              echo "Closing #$num (quiet ${days}d): $title"
+              gh issue close "$num" --repo "$REPO" --comment \
+                "Closed automatically by the alert reaper: no new failure reported for ${days} days, so the underlying job is treated as recovered. It will reopen as a new issue if it fails again."
+              closed=$(( closed + 1 ))
+            else
+              echo "Keeping #$num (last activity ${days}d ago): $title"
+            fi
+          done < /tmp/alerts.tsv
+
+          echo "Closed $closed stale alert issue(s)."

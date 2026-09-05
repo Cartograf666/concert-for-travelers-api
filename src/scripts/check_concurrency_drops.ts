@@ -26,6 +26,7 @@ export const WORKFLOW_FILES = [
   'enrich-metadata.yml',
   'enrich-similar.yml',
   'extract-tour-scrapers.yml',
+  'integrity-baseline-refresh.yml',
   'prune-dead-scrapers.yml'
 ];
 
