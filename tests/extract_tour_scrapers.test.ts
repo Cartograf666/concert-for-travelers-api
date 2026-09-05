@@ -4,7 +4,8 @@ import {
   buildScraperConfig,
   fetchTourHtml,
   selectTourScraperCandidates,
-  validateStaticSelectorsAgainstHtml
+  validateStaticSelectorsAgainstHtml,
+  dropDuplicateCitySelector
 } from '../src/scripts/extract_tour_scrapers.js';
 
 const originalFetch = global.fetch;
@@ -105,4 +106,30 @@ test('extract_tour_scrapers - validates generated selectors against fetched HTML
 
   const invalid = validateStaticSelectorsAgainstHtml('<div class="show"><span class="day">12 Oct 2026</span></div>', config);
   assert.strictEqual(invalid.ok, false);
+});
+
+test('dropDuplicateCitySelector - removes a city selector that just repeats the venue selector', () => {
+  // 130 of 345 generated artist configs had made this substitution: with no
+  // distinct city element on the page, the model reuses the venue selector, and
+  // the "city" becomes the whole event block. An absent selector falls back to
+  // cityNameFallback; a wrong one publishes event prose as a city name.
+  const out = dropDuplicateCitySelector({
+    eventBlock: '.text-list__item',
+    venue: '.text-list__body',
+    city: '.text-list__body',
+    cityNameFallback: ''
+  });
+  assert.ok(!('city' in out), 'the duplicate city selector must be dropped');
+  assert.strictEqual(out.venue, '.text-list__body', 'the venue selector must survive');
+});
+
+test('dropDuplicateCitySelector - keeps a genuinely distinct city selector', () => {
+  const selectors = { venue: '.s_venue', city: '.addressLocality' };
+  assert.deepStrictEqual(dropDuplicateCitySelector(selectors), selectors);
+});
+
+test('dropDuplicateCitySelector - ignores absent or non-string selectors', () => {
+  assert.deepStrictEqual(dropDuplicateCitySelector({ venue: '.v' }), { venue: '.v' });
+  assert.deepStrictEqual(dropDuplicateCitySelector({}), {});
+  assert.deepStrictEqual(dropDuplicateCitySelector({ venue: '', city: '' }), { venue: '', city: '' });
 });

@@ -1,7 +1,22 @@
 import { z } from 'zod';
 
+/**
+ * Upper bounds on the free-text fields. These are not cosmetic: `city` and
+ * `venue` become filenames (dist/cities/{slug}.json), and a scraper config whose
+ * `city` selector matches the same element as `venue` emits the entire event
+ * block -- ticket blurb, times, lineup and all -- as the "city". Unbounded, that
+ * shipped 60+ junk cities into the live API and, once a Japanese listing pushed
+ * a slug past the filesystem's 255-BYTE filename limit, crashed publish outright
+ * for 23 consecutive nights. The bounds are deliberately loose: the longest real
+ * place name in use is ~85 characters, so 120 rejects blurbs without ever
+ * touching a genuine city.
+ */
+export const MAX_CITY_LENGTH = 120;
+export const MAX_VENUE_LENGTH = 200;
+export const MAX_ARTIST_LENGTH = 200;
+
 export const ConcertSchema = z.object({
-  artist: z.string().min(1).describe("Normalized artist or band name"),
+  artist: z.string().min(1).max(MAX_ARTIST_LENGTH).describe("Normalized artist or band name"),
   artistWebsite: z.string().url().or(z.literal("")).optional().describe("Official website of the artist"),
   spotifyId: z.string().optional().describe("Spotify artist ID, parsed from artistSocials.spotify -- lets a consumer app match a loved artist by ID instead of a fragile name string"),
   mbid: z.string().optional().describe("MusicBrainz artist MBID, from MusicBrainz/Wikidata enrichment -- a free, stable canonical artist ID"),
@@ -14,8 +29,8 @@ export const ConcertSchema = z.object({
     vk: z.string().url().or(z.literal("")).optional().nullable()
   }).optional().describe("Official social links of the artist"),
   date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).describe("ISO Date: YYYY-MM-DD"),
-  venue: z.string().min(1).describe("Name of the venue/club"),
-  city: z.string().min(1).describe("City name"),
+  venue: z.string().min(1).max(MAX_VENUE_LENGTH).describe("Name of the venue/club"),
+  city: z.string().min(1).max(MAX_CITY_LENGTH).describe("City name"),
   country: z.string().min(2).max(2).describe("ISO 3166-1 alpha-2 country code"),
   lat: z.number().min(-90).max(90).optional().describe("Venue latitude, when known"),
   lng: z.number().min(-180).max(180).optional().describe("Venue longitude, when known"),

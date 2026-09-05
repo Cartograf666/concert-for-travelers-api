@@ -38,10 +38,12 @@
     "compare-backends": "tsx src/scripts/compare_http_backends.ts",
     "verify-enrichment": "tsx src/scripts/verify_enrichment.ts",
     "test": "SCRAPER_ALLOW_LOCAL_HOSTS=1 node --import tsx --test tests/*.test.ts",
+    "test:no-playwright": "SCRAPER_ALLOW_LOCAL_HOSTS=1 node --import tsx --test $(ls tests/*.test.ts | grep -v runner.test.ts)",
     "test:coverage": "SCRAPER_ALLOW_LOCAL_HOSTS=1 c8 node --import tsx --test tests/*.test.ts",
     "lint": "eslint src/ tests/",
     "restore-verify-nulls": "tsx src/scripts/restore_verify_nulls.ts",
     "audit-artist-integrity": "tsx src/scripts/audit_artist_integrity.ts",
+    "audit-city-selectors": "tsx src/scripts/audit_duplicate_city_selectors.ts",
     "crosscheck-ground-truth": "tsx src/scripts/crosscheck_ground_truth.ts",
     "golden": "tsx src/scripts/golden_set.ts",
     "backfill-display-names": "tsx src/scripts/backfill_display_names.ts"

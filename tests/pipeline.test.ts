@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert';
-import { slugify, cleanArtistName, matchApprovedArtist, parseDate, processConcerts, normalizeCountry, parseSpotifyArtistId, extractTimeFromRawDate, inferVenueKind, stampLastConcertSeenAt } from '../src/pipeline/process.js';
+import { slugify, cleanArtistName, matchApprovedArtist, parseDate, processConcerts, normalizeCountry, parseSpotifyArtistId, extractTimeFromRawDate, inferVenueKind, stampLastConcertSeenAt, normalizeTextField, MAX_SLUG_BYTES } from '../src/pipeline/process.js';
 import { Concert } from '../src/schemas/concert.js';
 import { PRODUCTION_ARTIST_DB_DIR } from '../src/pipeline/artistDb.js';
 
@@ -567,4 +567,46 @@ test('Pipeline - fuzzy tier character-set prefilter never drops a real near-miss
   assert.strictEqual(matchApprovedArtist('Beyonce', approved)?.name, 'Beyoncé', 'dropped acute accent');
   assert.strictEqual(matchApprovedArtist('Кинo', approved)?.name, 'Кино', 'mixed-script single substitution');
   assert.strictEqual(matchApprovedArtist('Completely Different', approved), null);
+});
+
+// --- Guards for the ENAMETOOLONG publish outage (2026-08-13 .. 2026-09-04) ---
+
+test('slugify - caps the slug at a filesystem-safe byte length', () => {
+  // Bytes, not characters: a CJK character costs 3, so a 90-character Japanese
+  // string already overruns the 255-byte filename limit an uncapped slug hit.
+  const cjk = slugify('東京'.repeat(200));
+  assert.ok(Buffer.byteLength(cjk, 'utf8') <= MAX_SLUG_BYTES);
+
+  const latin = slugify('a'.repeat(500));
+  assert.ok(Buffer.byteLength(latin, 'utf8') <= MAX_SLUG_BYTES);
+});
+
+test('slugify - leaves an ordinary name untouched', () => {
+  assert.strictEqual(slugify('Berlin'), 'berlin');
+  assert.strictEqual(slugify('The Cure'), 'the-cure');
+  assert.strictEqual(slugify('Zürich'), 'zurich');
+});
+
+test('slugify - capped slugs stay distinct and stable', () => {
+  const prefix = '東京都渋谷区'.repeat(40);
+  const a = slugify(`${prefix}A`);
+  const b = slugify(`${prefix}B`);
+  assert.notStrictEqual(a, b, 'truncation alone would merge distinct long names');
+  assert.strictEqual(a, slugify(`${prefix}A`), 'the same input must always slug identically');
+});
+
+test('slugify - a capped slug does not end in a stray separator', () => {
+  const slug = slugify(`${'word '.repeat(100)}end`);
+  assert.ok(!slug.endsWith('-'));
+  assert.ok(!slug.includes('--'));
+});
+
+test('normalizeTextField - collapses the whitespace a scraped HTML block carries', () => {
+  // The live API shipped cities like this because .trim() only touched the ends.
+  assert.strictEqual(
+    normalizeTextField('Fortaleza (CE), Festival\n\n\t\t\tPorão do Rock\t\t\n'),
+    'Fortaleza (CE), Festival Porão do Rock'
+  );
+  assert.strictEqual(normalizeTextField('  Berlin  '), 'Berlin');
+  assert.strictEqual(normalizeTextField('Berlin'), 'Berlin');
 });

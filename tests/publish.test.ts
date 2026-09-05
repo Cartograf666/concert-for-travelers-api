@@ -289,3 +289,151 @@ test('Publisher - paginates concerts into 500-sized pages additively and prunes 
   });
 });
 
+
+// --- Regression: the ENAMETOOLONG publish outage (2026-08-13 .. 2026-09-04) ---
+//
+// An artist scraper whose `city` selector matched the same element as `venue`
+// emitted an entire Japanese event blurb as the city. slugify() had no length
+// cap, so the resulting dist/cities/{slug}.json filename exceeded the
+// filesystem's 255-BYTE limit and fs.writeFile threw ENAMETOOLONG. Because
+// publishConcerts awaited every write with Promise.all, that one record aborted
+// the whole publish, and the daily scrape failed 23 nights in a row while ~40k
+// scraped concerts were computed and discarded each time.
+//
+// The suite only ever exercised 'Berlin' / 'Paris' / 'London', which is exactly
+// why the bug shipped. These cover the adversarial shapes instead.
+
+test('Publisher - a very long CJK city name produces a writable filename', async () => {
+  await withTempDir(async (dir) => {
+    // 3 UTF-8 bytes per character: 200 characters is 600 bytes, well past the
+    // 255-byte per-component filename limit an uncapped slug would produce.
+    const hugeCity = '東京'.repeat(100);
+    await publishConcerts([makeConcert({ city: hugeCity })], dir);
+
+    const cityFiles = await fs.readdir(path.join(dir, 'cities'));
+    assert.strictEqual(cityFiles.length, 1);
+    assert.ok(
+      Buffer.byteLength(cityFiles[0], 'utf8') <= 255,
+      `city filename must fit the filesystem limit, got ${Buffer.byteLength(cityFiles[0], 'utf8')} bytes`
+    );
+
+    // The concert itself must still be published, not silently dropped.
+    const master = JSON.parse(await fs.readFile(path.join(dir, 'concerts.json'), 'utf-8'));
+    assert.strictEqual(master.length, 1);
+    assert.strictEqual(master[0].city, hugeCity);
+  });
+});
+
+test('Publisher - a very long artist name produces a writable filename', async () => {
+  await withTempDir(async (dir) => {
+    const hugeArtist = 'ハロー'.repeat(80);
+    await publishConcerts([makeConcert({ artist: hugeArtist })], dir);
+
+    const artistFiles = await fs.readdir(path.join(dir, 'artists'));
+    assert.strictEqual(artistFiles.length, 1);
+    assert.ok(Buffer.byteLength(artistFiles[0], 'utf8') <= 255);
+  });
+});
+
+test('Publisher - two distinct over-long city names do not collide into one file', async () => {
+  await withTempDir(async (dir) => {
+    // Identical for far longer than the byte cap, differing only at the very
+    // end -- truncation alone would merge them, losing a whole city's concerts.
+    const prefix = '東京都渋谷区'.repeat(40);
+    await publishConcerts(
+      [
+        makeConcert({ city: `${prefix}A`, date: '2026-10-12' }),
+        makeConcert({ city: `${prefix}B`, date: '2026-10-13' })
+      ],
+      dir
+    );
+
+    const cityFiles = await fs.readdir(path.join(dir, 'cities'));
+    assert.strictEqual(cityFiles.length, 2, 'distinct long city names must get distinct files');
+    for (const f of cityFiles) {
+      assert.ok(Buffer.byteLength(f, 'utf8') <= 255);
+    }
+  });
+});
+
+test('Publisher - an over-long slug is stable across runs', async () => {
+  await withTempDir(async (dir) => {
+    const hugeCity = '大阪府大阪市'.repeat(40);
+    await publishConcerts([makeConcert({ city: hugeCity })], dir);
+    const first = await fs.readdir(path.join(dir, 'cities'));
+
+    await publishConcerts([makeConcert({ city: hugeCity })], dir);
+    const second = await fs.readdir(path.join(dir, 'cities'));
+
+    assert.deepStrictEqual(first, second, 'the same city must map to the same filename every run');
+  });
+});
+
+test('Publisher - a city name that slugifies to a path separator cannot escape the output dir', async () => {
+  await withTempDir(async (dir) => {
+    await publishConcerts([makeConcert({ city: '../../etc/passwd' })], dir);
+
+    const cityFiles = await fs.readdir(path.join(dir, 'cities'));
+    assert.strictEqual(cityFiles.length, 1);
+    assert.ok(!cityFiles[0].includes('/'), 'slug must not contain a path separator');
+    assert.ok(!cityFiles[0].startsWith('..'), 'slug must not start a traversal');
+  });
+});
+
+test('Publisher - one unwritable per-slug file does not discard the whole run', async () => {
+  await withTempDir(async (dir) => {
+    // Occupy one city's target path with a DIRECTORY, so writeFile to it fails
+    // with EISDIR. Under Promise.all this rejection aborted publish entirely --
+    // the exact shape of the 23-day outage, where a single bad record cost
+    // every other concert in the run.
+    await fs.mkdir(path.join(dir, 'cities'), { recursive: true });
+    await fs.mkdir(path.join(dir, 'cities', 'berlin.json'), { recursive: true });
+
+    const concerts = [
+      makeConcert({ city: 'Berlin', artist: 'The Cure', date: '2026-10-12' }),
+      makeConcert({ city: 'Paris', artist: 'Rammstein', date: '2026-11-01' }),
+      makeConcert({ city: 'London', artist: 'Aphex Twin', date: '2026-11-02' })
+    ];
+
+    await publishConcerts(concerts, dir);
+
+    // Every healthy file still written...
+    const master = JSON.parse(await fs.readFile(path.join(dir, 'concerts.json'), 'utf-8'));
+    assert.strictEqual(master.length, 3, 'the master list must survive one bad per-slug write');
+    const paris = JSON.parse(await fs.readFile(path.join(dir, 'cities', 'paris.json'), 'utf-8'));
+    assert.strictEqual(paris.length, 1);
+
+    // ...and the tolerated failure is reported rather than swallowed.
+    const index = JSON.parse(await fs.readFile(path.join(dir, 'index.json'), 'utf-8'));
+    assert.strictEqual(index.stats.totalConcerts, 3);
+    assert.strictEqual(index.stats.failedWrites, 1, 'a tolerated write failure must be visible in index.json');
+  });
+});
+
+test('Publisher - a broadly failing publish still throws rather than shipping a gutted API', async () => {
+  await withTempDir(async (dir) => {
+    // Every per-slug path occupied -> past MAX_WRITE_FAILURE_RATIO. No
+    // per-record explanation covers that; it is the disk-full / bad-outputDir
+    // shape, and must fail loudly rather than deploy a gutted dataset.
+    await fs.mkdir(path.join(dir, 'cities'), { recursive: true });
+    await fs.mkdir(path.join(dir, 'artists'), { recursive: true });
+    for (const slug of ['berlin', 'paris', 'london']) {
+      await fs.mkdir(path.join(dir, 'cities', `${slug}.json`), { recursive: true });
+    }
+    for (const slug of ['a', 'b', 'c']) {
+      await fs.mkdir(path.join(dir, 'artists', `${slug}.json`), { recursive: true });
+    }
+
+    await assert.rejects(
+      () => publishConcerts(
+        [
+          makeConcert({ city: 'Berlin', artist: 'A', date: '2026-10-12' }),
+          makeConcert({ city: 'Paris', artist: 'B', date: '2026-11-01' }),
+          makeConcert({ city: 'London', artist: 'C', date: '2026-11-02' })
+        ],
+        dir
+      ),
+      /Publish aborted/
+    );
+  });
+});

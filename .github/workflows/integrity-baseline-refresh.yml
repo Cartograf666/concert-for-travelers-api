@@ -1,0 +1,119 @@
+name: Integrity Baseline Refresh
+
+# The artist-integrity ratchet in pr-test.yml compares a PR's error count
+# against data/artist-integrity-baseline.json. That baseline was only ever
+# updated by hand, while the enrichment bots write to data/artists/ on main
+# every few hours with [skip ci] -- so nothing recomputed it and nothing gated
+# the writes that moved it.
+#
+# The result was a ratchet pointed at the wrong target: errors drifted 82 -> 119
+# on main without objection, and every PR then failed a check for damage it had
+# not done. All six open dependabot PRs had been blocked this way since
+# 2026-08-12, including dependency updates.
+#
+# This job re-anchors the baseline to main daily, so the PR ratchet measures
+# "did THIS PR add errors" (its actual purpose) rather than "has main drifted
+# since someone last ran the script by hand". Drift itself does not vanish
+# silently -- a rise is written to the run summary, and a large single-day jump
+# fails the job so the standard alert fires.
+
+on:
+  schedule:
+    - cron: '0 13 * * *' # midday, clear of the 03:00 scrape and the enrichment crons
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: artist-db-write
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Refresh baseline and report drift
+        id: refresh
+        env:
+          # A day-over-day jump this large is a broken enrichment run, not
+          # ordinary drift, and should page someone rather than be absorbed.
+          MAX_DAILY_RISE: '25'
+        run: |
+          set -euo pipefail
+
+          before=$(jq -r '.errors // 0' data/artist-integrity-baseline.json 2>/dev/null || echo 0)
+          npm run audit-artist-integrity -- --update-baseline
+          after=$(jq -r '.errors // 0' data/artist-integrity-baseline.json)
+
+          delta=$(( after - before ))
+          echo "before=$before after=$after delta=$delta"
+          echo "delta=$delta" >> "$GITHUB_OUTPUT"
+
+          {
+            echo "## Artist integrity baseline"
+            echo ''
+            echo "| | errors |"
+            echo "|---|---|"
+            echo "| previous baseline | $before |"
+            echo "| current on main | $after |"
+            echo "| delta | $delta |"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          if [ "$delta" -gt 0 ]; then
+            echo "::warning::Artist integrity errors rose by $delta on main ($before -> $after)."
+          fi
+
+          if [ "$delta" -gt "$MAX_DAILY_RISE" ]; then
+            echo "::error::Artist integrity errors rose by $delta in one day (max $MAX_DAILY_RISE) -- an enrichment step is likely writing bad records."
+            exit 1
+          fi
+
+      - name: Commit refreshed baseline
+        if: always() && steps.refresh.outcome != 'cancelled'
+        run: |
+          set -eo pipefail
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          if git diff --quiet -- data/artist-integrity-baseline.json; then
+            echo "Baseline unchanged."
+            exit 0
+          fi
+
+          git add data/artist-integrity-baseline.json
+          git commit -m "auto: refresh artist integrity baseline [skip ci]"
+
+          for i in 1 2 3 4 5; do
+            if git push; then
+              echo "Pushed refreshed baseline."
+              exit 0
+            fi
+            echo "Push rejected (concurrent write), retrying with rebase ($i/5)..."
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort; break; }
+            sleep $((RANDOM % 5 + 2))
+          done
+
+          echo "::warning::Could not push refreshed baseline after retries."
+
+      - name: Alert on failure
+        if: failure()
+        uses: ./.github/actions/alert-on-failure
+        with:
+          workflow-name: "Integrity Baseline Refresh"
+          job-label: refresh
