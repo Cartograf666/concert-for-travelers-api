@@ -1,0 +1,17 @@
+{
+  "id": "artist-jeff-irwin",
+  "domain": "www.jeffirwin.com",
+  "url": "https://www.jeffirwin.com/schedule",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event_item",
+    "artistNameFallback": "Jeff Irwin",
+    "date": "span.event_date, span.event_year",
+    "ticketUrl": "a.ticket_link",
+    "venue": "span.event_venue",
+    "city": "span.event_city_state",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
