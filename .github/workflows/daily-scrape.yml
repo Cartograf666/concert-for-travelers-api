@@ -233,6 +233,24 @@ jobs:
               return;
             }
 
+            // publishConcerts no longer aborts when a handful of per-slug files
+            // cannot be written -- one unwritable filename used to abort the
+            // entire publish, which is what kept the API frozen for 23 days.
+            // It reports them here instead, so deciding whether that degree of
+            // incompleteness may ship is this gate's call, not the publisher's.
+            const failedWrites = index.stats.failedWrites || 0;
+            if (failedWrites > 0) {
+              const share = failedWrites / total;
+              core.warning(`Publish tolerated ${failedWrites} failed per-slug write(s).`);
+              if (share > 0.01) {
+                core.setFailed(
+                  `Health gate: ${failedWrites} per-slug writes failed ` +
+                  `(${(share * 100).toFixed(2)}% of ${total} concerts) -- refusing to deploy a visibly incomplete dataset.`
+                );
+                return;
+              }
+            }
+
             let baseline = null;
             if (fs.existsSync('reports/last-good-stats.json')) {
               baseline = JSON.parse(fs.readFileSync('reports/last-good-stats.json', 'utf-8'));

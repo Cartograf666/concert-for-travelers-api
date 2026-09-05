@@ -121,7 +121,64 @@ export function slugify(str: string): string {
     .replace(/[^\p{L}\p{N}\s-]/gu, '') // drop punctuation/symbols; keep letters/digits from ANY script
     .replace(/[\s_-]+/g, '-')
     .replace(/^-+|-+$/g, '');
-  return slug || `artist-${fallbackSlugHash(str)}`;
+  if (!slug) return `artist-${fallbackSlugHash(str)}`;
+  return capSlugBytes(slug, str);
+}
+
+/**
+ * A slug becomes a filename (dist/cities/{slug}.json, dist/artists/{slug}.json),
+ * so it is bounded by the filesystem's per-component byte limit -- 255 on
+ * ext4/APFS, and it is BYTES not characters, which matters enormously here: a
+ * CJK character costs 3 bytes, so a 90-character Japanese string already
+ * overflows. That is not hypothetical -- an artist scraper whose `city`
+ * selector accidentally matched the whole event blurb produced a 250+ byte
+ * city slug, and fs.writeFile threw ENAMETOOLONG mid-publish. Because publish
+ * awaited the writes together, that single record aborted the entire run, and
+ * the daily scrape failed 23 days straight (2026-08-13 .. 2026-09-04) while
+ * ~40k successfully-scraped concerts were computed and thrown away each night.
+ *
+ * Truncation alone would merge distinct long names into one file, so a
+ * truncated slug carries a hash of the FULL original string. Distinct inputs
+ * keep distinct slugs; the same input keeps a stable slug across runs.
+ */
+export const MAX_SLUG_BYTES = 180; // 255 minus ".json" and comfortable headroom
+
+/**
+ * Collapses every whitespace run (including the newlines and tab stacks a
+ * scraped HTML block carries) to a single space, then trims. A bare .trim()
+ * left the interior intact, which is how live cities like
+ * "Fortaleza (CE), Festival Porao do Rock ...\n\t\t\t\t\tComprar Ingr" reached
+ * the published API: a scraper config whose `city` selector matched the same
+ * element as `venue` emits the entire event block, and only the outer
+ * whitespace was ever removed. Normalizing first means ConcertSchema's length
+ * bound judges the real text rather than the indentation around it.
+ */
+export function normalizeTextField(value: string): string {
+  return value.replace(/\s+/g, ' ').trim();
+}
+
+function utf8Len(str: string): number {
+  return Buffer.byteLength(str, 'utf8');
+}
+
+/** Truncates to at most `maxBytes` UTF-8 bytes, never splitting a code point. */
+function truncateToBytes(str: string, maxBytes: number): string {
+  let bytes = 0;
+  let out = '';
+  for (const ch of str) { // iterating a string yields whole code points, not UTF-16 halves
+    const chBytes = utf8Len(ch);
+    if (bytes + chBytes > maxBytes) break;
+    bytes += chBytes;
+    out += ch;
+  }
+  return out;
+}
+
+function capSlugBytes(slug: string, original: string): string {
+  if (utf8Len(slug) <= MAX_SLUG_BYTES) return slug;
+  const suffix = `-${fallbackSlugHash(original)}`;
+  const head = truncateToBytes(slug, MAX_SLUG_BYTES - utf8Len(suffix)).replace(/-+$/, '');
+  return `${head}${suffix}`;
 }
 
 /**
@@ -1007,9 +1064,9 @@ export async function processConcerts(
       mbid: matched.mbid || undefined,
       date: normalizedDate,
       startTime: raw.startTime || extractTimeFromRawDate(raw.date),
-      venue: raw.venue.trim(),
+      venue: normalizeTextField(raw.venue),
       venueKind: inferVenueKind(raw.venue),
-      city: raw.city.trim(),
+      city: normalizeTextField(raw.city),
       country: normalizeCountry(raw.country),
       lat: raw.lat,
       lng: raw.lng,

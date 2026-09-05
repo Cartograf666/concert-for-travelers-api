@@ -106,12 +106,33 @@ export function buildScraperConfig(name: string, tourUrl: string, rawScraper: un
     url: tourUrl,
     type: 'static_selectors',
     selectors: {
-      ...rawSelectors,
+      ...dropDuplicateCitySelector(rawSelectors),
       artistNameFallback: name
     }
   });
   const parsed = ScraperConfigSchema.safeParse(candidate);
   return parsed.success ? parsed.data : null;
+}
+
+/**
+ * When a tour page has no distinct city element, the model reliably reaches for
+ * the nearest thing it can see and reuses the `venue` selector for `city` too.
+ * That does not yield a city -- it yields the whole event block a second time,
+ * so the published record carries a "city" like
+ * "Fortaleza (CE), Festival Porao do Rock ... Comprar Ingressos". 130 of 345
+ * generated artist configs had made exactly this substitution, and one of them
+ * eventually produced a city slug long enough to break publish outright.
+ *
+ * An absent selector is strictly better than a knowingly wrong one: it falls
+ * back to `cityNameFallback`, and a record with no usable city is dropped at
+ * validation instead of polluting dist/cities/ with venue prose.
+ */
+export function dropDuplicateCitySelector(selectors: Record<string, unknown>): Record<string, unknown> {
+  const { venue, city } = selectors;
+  if (typeof venue !== 'string' || typeof city !== 'string') return selectors;
+  if (venue.trim() !== city.trim() || !venue.trim()) return selectors;
+  const { city: _dropped, ...rest } = selectors;
+  return rest;
 }
 
 export function validateStaticSelectorsAgainstHtml(html: string, config: ScraperConfig): { ok: boolean; reason: string } {
@@ -205,6 +226,8 @@ Return JSON:
 }
 
 Only return scraper when selectors are grounded in repeated HTML in the sample. Use null for JS-rendered, widget-only, or uncertain pages.
+
+"city" must select an element containing ONLY a place name. If the page has no such element, set "city" to null -- do NOT reuse the "venue" selector or any selector covering the whole event row, since that publishes the entire event blurb as the city.
 
 HTML sample:
 ${html}`;

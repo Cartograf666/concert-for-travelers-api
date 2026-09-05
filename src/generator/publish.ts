@@ -10,9 +10,40 @@ export interface PublishStats {
   uniqueCities: number;
   pageCount: number;
   pageSize: number;
+  /**
+   * Per-slug files that could not be written this run (see MAX_WRITE_FAILURE_RATIO).
+   * Surfaced in dist/index.json so a tolerated-but-real failure is visible to the
+   * deploy health gate and the freshness watchdog instead of only living in a log
+   * line nobody reads. Omitted when zero.
+   */
+  failedWrites?: number;
 }
 
 export const CONCERTS_PAGE_SIZE = 500;
+
+/**
+ * Share of per-slug writes that must fail before publish treats the run as
+ * systemic breakage and gives up.
+ *
+ * Deliberately permissive. Publish is not the right place to decide whether a
+ * partially-complete dataset is fit to ship -- it cannot see the previous run,
+ * and aborting is precisely the behaviour that turned one bad record into a
+ * 23-day outage. Its only job is to distinguish "some records are pathological"
+ * (keep going, report them) from "the environment is broken -- disk full,
+ * outputDir gone" (stop). Past half of all writes failing, no plausible cause is
+ * per-record.
+ *
+ * Anything below this threshold is still counted into
+ * PublishStats.failedWrites, and daily-scrape.yml's deploy health gate is what
+ * decides whether that degree of incompleteness may reach production.
+ */
+export const MAX_WRITE_FAILURE_RATIO = 0.5;
+
+/** Result of one per-slug write: `error` is null on success. */
+interface WriteOutcome {
+  label: string;
+  error: string | null;
+}
 
 // Bump whenever the shape of a Concert object changes in a way a consumer
 // should know about (a field added, its meaning changed, or a field removed).
@@ -326,18 +357,28 @@ export async function publishConcerts(concerts: Concert[], outputDir: string): P
     'utf-8'
   );
 
-  const writePromises: Promise<void>[] = [];
+  // Each write is wrapped the moment it is created, never later: an awaited
+  // step between creating a promise and attaching its handler (pruneOrphans and
+  // the orphan-page readdir both yield) is long enough for a rejection to be
+  // seen as unhandled, and Node 22 terminates the process on that. Settling
+  // each write at creation keeps the failure as data instead of a crash.
+  const writes: Promise<WriteOutcome>[] = [];
+  const queueWrite = (label: string, op: Promise<unknown>): void => {
+    writes.push(
+      op.then(
+        () => ({ label, error: null }),
+        (err: unknown) => ({ label, error: String((err as Error)?.message ?? err) })
+      )
+    );
+  };
 
   // 3. Write individual artist files: dist/artists/{slug}.json
   for (const [artistSlug, artistConcerts] of concertsByArtist.entries()) {
     // Sort concerts by date ascending
     artistConcerts.sort((a, b) => a.date.localeCompare(b.date));
-    writePromises.push(
-      fs.writeFile(
-        path.join(artistsDir, `${artistSlug}.json`),
-        JSON.stringify(artistConcerts),
-        'utf-8'
-      )
+    queueWrite(
+      `artists/${artistSlug}.json`,
+      fs.writeFile(path.join(artistsDir, `${artistSlug}.json`), JSON.stringify(artistConcerts), 'utf-8')
     );
   }
 
@@ -345,12 +386,9 @@ export async function publishConcerts(concerts: Concert[], outputDir: string): P
   for (const [citySlug, cityConcerts] of concertsByCity.entries()) {
     // Sort concerts by date ascending
     cityConcerts.sort((a, b) => a.date.localeCompare(b.date));
-    writePromises.push(
-      fs.writeFile(
-        path.join(citiesDir, `${citySlug}.json`),
-        JSON.stringify(cityConcerts),
-        'utf-8'
-      )
+    queueWrite(
+      `cities/${citySlug}.json`,
+      fs.writeFile(path.join(citiesDir, `${citySlug}.json`), JSON.stringify(cityConcerts), 'utf-8')
     );
   }
 
@@ -365,12 +403,9 @@ export async function publishConcerts(concerts: Concert[], outputDir: string): P
     const slice = concerts.slice(i * CONCERTS_PAGE_SIZE, (i + 1) * CONCERTS_PAGE_SIZE);
     const fileName = `page-${i + 1}.json`;
     keepPageFiles.add(fileName);
-    writePromises.push(
-      fs.writeFile(
-        path.join(concertsDir, fileName),
-        JSON.stringify(slice),
-        'utf-8'
-      )
+    queueWrite(
+      `concerts/${fileName}`,
+      fs.writeFile(path.join(concertsDir, fileName), JSON.stringify(slice), 'utf-8')
     );
   }
 
@@ -382,14 +417,35 @@ export async function publishConcerts(concerts: Concert[], outputDir: string): P
     const existingFiles = await fs.readdir(concertsDir);
     for (const file of existingFiles) {
       if (PAGE_FILE_PATTERN.test(file) && !keepPageFiles.has(file)) {
-        writePromises.push(fs.rm(path.join(concertsDir, file), { force: true }));
+        queueWrite(`rm concerts/${file}`, fs.rm(path.join(concertsDir, file), { force: true }));
       }
     }
   } catch (err: any) {
     // fine if directory didn't exist or readdir failed
   }
 
-  await Promise.all(writePromises);
+  // Per-file isolation. Promise.all here meant ONE unwritable filename aborted
+  // the whole publish (and with it the deploy), discarding every other concert
+  // in the run -- see the 23-day outage described on MAX_SLUG_BYTES. A handful
+  // of bad records should cost their own files, not the dataset, so failures
+  // are collected and only a broad failure (which means something systemic
+  // like a full disk or a bad outputDir, not one weird venue name) is fatal.
+  const outcomes = await Promise.all(writes);
+  const writeFailures = outcomes.filter((o): o is { label: string; error: string } => o.error !== null);
+
+  if (writeFailures.length > 0) {
+    for (const f of writeFailures) {
+      console.error(`[Publisher] Failed to write ${f.label}: ${f.error}`);
+    }
+    console.error(`[Publisher] ${writeFailures.length}/${outcomes.length} per-slug writes failed.`);
+    if (writeFailures.length > outcomes.length * MAX_WRITE_FAILURE_RATIO) {
+      throw new Error(
+        `Publish aborted: ${writeFailures.length}/${outcomes.length} writes failed ` +
+        `(over the ${MAX_WRITE_FAILURE_RATIO * 100}% tolerance) -- this looks systemic, not a few bad records. ` +
+        `First failure: ${writeFailures[0].label}: ${writeFailures[0].error}`
+      );
+    }
+  }
 
   // 5. Create index metadata: dist/index.json
   const indexData: PublishIndex = {
@@ -400,7 +456,8 @@ export async function publishConcerts(concerts: Concert[], outputDir: string): P
       uniqueArtists: uniqueArtists.size,
       uniqueCities: uniqueCities.size,
       pageCount,
-      pageSize: CONCERTS_PAGE_SIZE
+      pageSize: CONCERTS_PAGE_SIZE,
+      ...(writeFailures.length > 0 ? { failedWrites: writeFailures.length } : {})
     },
     artists: sortedArtists,
     cities: sortedCities
