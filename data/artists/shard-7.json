@@ -2362,7 +2362,50 @@
     "name": "G.E.M. 邓紫棋",
     "website": null,
     "imageFallbackTriedAt": "2026-09-05T20:13:18.527Z",
-    "autoTriedAt": "2026-09-05T20:38:29.816Z"
+    "autoTriedAt": "2026-09-05T20:38:29.816Z",
+    "similarArtists": [
+      {
+        "name": "薛之谦",
+        "slug": "薛之谦",
+        "match": 1
+      },
+      {
+        "name": "林俊傑",
+        "slug": "林俊傑",
+        "match": 0.99655
+      },
+      {
+        "name": "周传雄",
+        "slug": "周传雄",
+        "match": 0.915792
+      },
+      {
+        "name": "周杰倫",
+        "slug": "周杰倫",
+        "match": 0.898865
+      },
+      {
+        "name": "毛不易",
+        "slug": "毛不易",
+        "match": 0.875476
+      },
+      {
+        "name": "陳奕迅",
+        "slug": "陳奕迅",
+        "match": 0.85413
+      },
+      {
+        "name": "张杰",
+        "slug": "张杰",
+        "match": 0.833616
+      },
+      {
+        "name": "李荣浩",
+        "slug": "李荣浩",
+        "match": 0.809204
+      }
+    ],
+    "similarEnrichedAt": "2026-09-05T20:43:47.478Z"
   },
   {
     "name": "G.E.M.邓紫棋",
@@ -260250,7 +260293,8 @@
       "vk": null
     },
     "enrichedAt": "2026-09-05T20:38:37.882Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarTriedAt": "2026-09-05T20:43:47.827Z"
   },
   {
     "name": "星野 源",
@@ -260540,7 +260584,45 @@
       "vk": null
     },
     "enrichedAt": "2026-09-05T20:38:40.000Z",
-    "enrichedBy": "wikidata"
+    "enrichedBy": "wikidata",
+    "similarArtists": [
+      {
+        "name": "莫文蔚",
+        "slug": "莫文蔚",
+        "match": 1
+      },
+      {
+        "name": "陳奕迅",
+        "slug": "陳奕迅",
+        "match": 0.69605
+      },
+      {
+        "name": "张惠妹",
+        "slug": "张惠妹",
+        "match": 0.64952
+      },
+      {
+        "name": "梁靜茹",
+        "slug": "梁靜茹",
+        "match": 0.622162
+      },
+      {
+        "name": "蔡健雅",
+        "slug": "蔡健雅",
+        "match": 0.60681
+      },
+      {
+        "name": "李克勤",
+        "slug": "李克勤",
+        "match": 0.602403
+      },
+      {
+        "name": "王菲",
+        "slug": "王菲",
+        "match": 0.598973
+      }
+    ],
+    "similarEnrichedAt": "2026-09-05T20:43:48.350Z"
   },
   {
     "name": "林憶蓮",

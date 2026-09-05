@@ -41667,7 +41667,50 @@
     "imageSource": "audiodb",
     "imageFallbackTriedAt": "2026-09-05T20:13:14.469Z",
     "enrichedAt": "2026-09-05T20:37:10.474Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "similarArtists": [
+      {
+        "name": "Samurai Pizza Cats",
+        "slug": "samurai-pizza-cats",
+        "match": 1
+      },
+      {
+        "name": "Eskimo Callboy",
+        "slug": "eskimo-callboy",
+        "match": 0.384354
+      },
+      {
+        "name": "Motionless In White",
+        "slug": "motionless-in-white",
+        "match": 0.295188
+      },
+      {
+        "name": "Architects",
+        "slug": "architects",
+        "match": 0.291936
+      },
+      {
+        "name": "Bury Tomorrow",
+        "slug": "bury-tomorrow",
+        "match": 0.291848
+      },
+      {
+        "name": "Ice Nine Kills",
+        "slug": "ice-nine-kills",
+        "match": 0.286323
+      },
+      {
+        "name": "Crossfaith",
+        "slug": "crossfaith",
+        "match": 0.269628
+      },
+      {
+        "name": "Beartooth",
+        "slug": "beartooth",
+        "match": 0.265097
+      }
+    ],
+    "similarEnrichedAt": "2026-09-05T20:43:43.765Z"
   },
   {
     "name": "Electric Century",
@@ -313277,7 +313320,40 @@
       "vk": null
     },
     "enrichedAt": "2026-09-05T20:37:35.868Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "Aimer",
+        "slug": "aimer",
+        "match": 1
+      },
+      {
+        "name": "Miwa",
+        "slug": "miwa",
+        "match": 0.510502
+      },
+      {
+        "name": "Yama",
+        "slug": "yama",
+        "match": 0.49648
+      },
+      {
+        "name": "ヨルシカ",
+        "slug": "ヨルシカ",
+        "match": 0.426512
+      },
+      {
+        "name": "YOASOBI",
+        "slug": "yoasobi",
+        "match": 0.416231
+      },
+      {
+        "name": "Sayuri",
+        "slug": "sayuri",
+        "match": 0.407545
+      }
+    ],
+    "similarEnrichedAt": "2026-09-05T20:43:45.184Z"
   },
   {
     "name": "Miley Cyrus",
@@ -396090,7 +396166,50 @@
     "website": null,
     "imageFallbackTriedAt": "2026-09-05T20:13:16.273Z",
     "mbid": "ce27b2d5-84a2-442d-ad62-a584d8a0421c",
-    "autoTriedAt": "2026-09-05T20:37:51.399Z"
+    "autoTriedAt": "2026-09-05T20:37:51.399Z",
+    "similarArtists": [
+      {
+        "name": "Gat Putch",
+        "slug": "gat-putch",
+        "match": 1
+      },
+      {
+        "name": "HELLMERRY",
+        "slug": "hellmerry",
+        "match": 0.769767
+      },
+      {
+        "name": "Realest Cram",
+        "slug": "realest-cram",
+        "match": 0.654949
+      },
+      {
+        "name": "La Mave",
+        "slug": "la-mave",
+        "match": 0.648354
+      },
+      {
+        "name": "Hev Abi",
+        "slug": "hev-abi",
+        "match": 0.643956
+      },
+      {
+        "name": "Shanti Dope",
+        "slug": "shanti-dope",
+        "match": 0.598711
+      },
+      {
+        "name": "RAPROJECT SIX",
+        "slug": "raproject-six",
+        "match": 0.595274
+      },
+      {
+        "name": "Nateman",
+        "slug": "nateman",
+        "match": 0.543055
+      }
+    ],
+    "similarEnrichedAt": "2026-09-05T20:43:45.549Z"
   },
   {
     "name": "Uncle Dave Macon",
@@ -410113,6 +410232,49 @@
       "vk": null
     },
     "enrichedAt": "2026-09-05T20:37:55.675Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "李荣浩",
+        "slug": "李荣浩",
+        "match": 1
+      },
+      {
+        "name": "薛之谦",
+        "slug": "薛之谦",
+        "match": 0.895352
+      },
+      {
+        "name": "林俊傑",
+        "slug": "林俊傑",
+        "match": 0.783727
+      },
+      {
+        "name": "张杰",
+        "slug": "张杰",
+        "match": 0.766631
+      },
+      {
+        "name": "毛不易",
+        "slug": "毛不易",
+        "match": 0.722907
+      },
+      {
+        "name": "蔡健雅",
+        "slug": "蔡健雅",
+        "match": 0.708854
+      },
+      {
+        "name": "陶喆",
+        "slug": "陶喆",
+        "match": 0.705013
+      },
+      {
+        "name": "陈粒",
+        "slug": "陈粒",
+        "match": 0.696592
+      }
+    ],
+    "similarEnrichedAt": "2026-09-05T20:43:45.914Z"
   }
 ]

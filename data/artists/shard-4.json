@@ -416218,7 +416218,45 @@
       "vk": null
     },
     "enrichedAt": "2026-09-05T20:37:10.474Z",
-    "enrichedBy": "musicbrainz+wikidata"
+    "enrichedBy": "musicbrainz+wikidata",
+    "similarArtists": [
+      {
+        "name": "sombr",
+        "slug": "sombr",
+        "match": 1
+      },
+      {
+        "name": "The Neighbourhood",
+        "slug": "the-neighbourhood",
+        "match": 0.542685
+      },
+      {
+        "name": "Twenty One Pilots",
+        "slug": "twenty-one-pilots",
+        "match": 0.371986
+      },
+      {
+        "name": "Plain White T's",
+        "slug": "plain-white-ts",
+        "match": 0.361412
+      },
+      {
+        "name": "OneRepublic",
+        "slug": "onerepublic",
+        "match": 0.347467
+      },
+      {
+        "name": "Harry Styles",
+        "slug": "harry-styles",
+        "match": 0.335368
+      },
+      {
+        "name": "Wheatus",
+        "slug": "wheatus",
+        "match": 0.316078
+      }
+    ],
+    "similarEnrichedAt": "2026-09-05T20:43:43.436Z"
   },
   {
     "name": "Temperamento",

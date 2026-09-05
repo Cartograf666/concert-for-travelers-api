@@ -148270,7 +148270,35 @@
       "vk": null
     },
     "enrichedAt": "2026-09-05T20:38:23.069Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "OsamaSon",
+        "slug": "osamason",
+        "match": 1
+      },
+      {
+        "name": "Ken Carson",
+        "slug": "ken-carson",
+        "match": 0.517941
+      },
+      {
+        "name": "Destroy Lonely",
+        "slug": "destroy-lonely",
+        "match": 0.427713
+      },
+      {
+        "name": "fakemink",
+        "slug": "fakemink",
+        "match": 0.384792
+      },
+      {
+        "name": "Playboi Carti",
+        "slug": "playboi-carti",
+        "match": 0.324204
+      }
+    ],
+    "similarEnrichedAt": "2026-09-05T20:43:46.387Z"
   },
   {
     "name": "Netzwerk",
@@ -221129,7 +221157,50 @@
     "image": "https://r2.theaudiodb.com/images/media/artist/thumb/rswqyq1402271964.jpg",
     "imageSource": "audiodb",
     "imageFallbackTriedAt": "2026-09-05T20:13:17.625Z",
-    "autoTriedAt": "2026-09-05T20:38:25.156Z"
+    "autoTriedAt": "2026-09-05T20:38:25.156Z",
+    "similarArtists": [
+      {
+        "name": "Redd",
+        "slug": "redd",
+        "match": 1
+      },
+      {
+        "name": "Şebnem Ferah",
+        "slug": "sebnem-ferah",
+        "match": 0.933094
+      },
+      {
+        "name": "Teoman",
+        "slug": "teoman",
+        "match": 0.92163
+      },
+      {
+        "name": "Pilli Bebek",
+        "slug": "pilli-bebek",
+        "match": 0.900471
+      },
+      {
+        "name": "Mor ve Ötesi",
+        "slug": "mor-ve-otesi",
+        "match": 0.859788
+      },
+      {
+        "name": "Hayko Cepkin",
+        "slug": "hayko-cepkin",
+        "match": 0.779443
+      },
+      {
+        "name": "Duman",
+        "slug": "duman",
+        "match": 0.638589
+      },
+      {
+        "name": "maNga",
+        "slug": "manga",
+        "match": 0.555433
+      }
+    ],
+    "similarEnrichedAt": "2026-09-05T20:43:46.752Z"
   },
   {
     "name": "Vegan",
@@ -261172,7 +261243,40 @@
       "vk": null
     },
     "enrichedAt": "2026-09-05T20:38:28.255Z",
-    "enrichedBy": "musicbrainz+wikidata"
+    "enrichedBy": "musicbrainz+wikidata",
+    "similarArtists": [
+      {
+        "name": "张信哲",
+        "slug": "张信哲",
+        "match": 0.951688
+      },
+      {
+        "name": "莫文蔚",
+        "slug": "莫文蔚",
+        "match": 0.885237
+      },
+      {
+        "name": "许巍",
+        "slug": "许巍",
+        "match": 0.840225
+      },
+      {
+        "name": "梁靜茹",
+        "slug": "梁靜茹",
+        "match": 0.803367
+      },
+      {
+        "name": "陳奕迅",
+        "slug": "陳奕迅",
+        "match": 0.742159
+      },
+      {
+        "name": "王力宏",
+        "slug": "王力宏",
+        "match": 0.703183
+      }
+    ],
+    "similarEnrichedAt": "2026-09-05T20:43:47.114Z"
   },
   {
     "name": "李荣浩",
