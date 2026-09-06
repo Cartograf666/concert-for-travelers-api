@@ -1,0 +1,17 @@
+{
+  "id": "artist-jerry-augustyniak",
+  "domain": "www.10000maniacs.com",
+  "url": "http://www.10000maniacs.com/shows/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.shows-list__item",
+    "artistNameFallback": "10,000 Maniacs",
+    "date": "div.shows-list__date",
+    "ticketUrl": "a.shows-list__button",
+    "venue": "div.shows-list__venue",
+    "city": "div.shows-list__city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

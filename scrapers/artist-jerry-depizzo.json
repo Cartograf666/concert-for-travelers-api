@@ -1,0 +1,18 @@
+{
+  "id": "artist-jerry-depizzo",
+  "domain": "ofarevolution.com",
+  "url": "https://ofarevolution.com/tour-dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour_date",
+    "artistNameFallback": "O.A.R.",
+    "date": ".date-group .day",
+    "ticketUrl": "a.tickets",
+    "venue": ".tour-location .venue",
+    "city": ".tour-location .city",
+    "country": ".tour-location .country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
