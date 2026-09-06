@@ -918,5 +918,29 @@
     "consecutiveFailures": 5,
     "firstFailedAt": "2026-09-03T08:16:42.062Z",
     "prunedAt": "2026-09-05T20:01:14.096Z"
+  },
+  {
+    "id": "artist-hail",
+    "artistName": "The Hails",
+    "reason": "fetch_error",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-09-04T08:20:03.689Z",
+    "prunedAt": "2026-09-06T08:10:19.913Z"
+  },
+  {
+    "id": "artist-heresy",
+    "artistName": "Heresy",
+    "reason": "fetch_error",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-09-04T08:20:03.689Z",
+    "prunedAt": "2026-09-06T08:10:19.913Z"
+  },
+  {
+    "id": "artist-jeff-sherman",
+    "artistName": "Jeff Sherman",
+    "reason": "fetch_error",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-09-04T08:20:03.689Z",
+    "prunedAt": "2026-09-06T08:10:19.913Z"
   }
 ]
