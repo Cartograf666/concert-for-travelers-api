@@ -186,7 +186,11 @@ async function main() {
       .filter((r) => !r.success)
       .map((r) => ({
         id: r.configId,
-        configPath: path.join(scrapersDir, `${r.configId}.json`),
+        // Repo-relative: heal.ts and prune_dead_scrapers.ts resolve this against
+        // cwd, and run-artists.ts emits the same field pointing into
+        // scrapers/artists/. An absolute path happened to work only because both
+        // sides ran from the same checkout directory.
+        configPath: path.join('scrapers', `${r.configId}.json`),
         error: r.error,
         reason: r.reason,
         htmlSample: r.htmlSample

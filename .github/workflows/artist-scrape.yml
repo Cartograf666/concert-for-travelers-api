@@ -137,6 +137,7 @@ jobs:
             reports/artist-scrape-cache.json
             reports/bandsintown-cache.json
             reports/eventbrite-cache.json
+            reports/fail-log.json
           retention-days: 5
 
       # Turn a silent scheduled-run failure into a visible, deduplicated GitHub issue

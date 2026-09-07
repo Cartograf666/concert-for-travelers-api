@@ -230,3 +230,66 @@ test('Healing - a 404 (unknown/deprecated model) skips just that model and conti
     await fs.rm(tempConfigDir, { recursive: true, force: true });
   }
 });
+
+test('Healing - a repair preserves selectors the model cannot re-select', async () => {
+  // RepairedSelectorsSchema can only express eventBlock/artist/date/datePattern/
+  // ticketUrl. Spreading the model's answer alone therefore deleted the per-row
+  // venue/city/country selectors and artistNameFallback on every repair. All four
+  // are optional in ScraperConfigSchema, so the config still validated and still
+  // parsed events -- each one now carrying the single fixed *NameFallback for
+  // every row. Plausible-looking, uniformly wrong data, produced by the healer.
+  const tempConfigDir = path.join(process.cwd(), 'reports', 'temp_tests');
+  await fs.mkdir(tempConfigDir, { recursive: true });
+  const tempConfigPath = path.join(tempConfigDir, 'preserve-selectors.json');
+
+  const brokenConfig: ScraperConfig = {
+    id: 'preserve-selectors',
+    domain: 'tour.example',
+    url: 'https://tour.example/live',
+    type: 'static_selectors',
+    selectors: {
+      eventBlock: '.old-row',
+      date: '.date',
+      venue: '.venue',
+      city: '.city',
+      country: '.country',
+      artistNameFallback: 'Bonnie Pink',
+      venueNameFallback: 'Fallback Venue',
+      cityNameFallback: 'Fallback City',
+      countryNameFallback: 'JP'
+    }
+  };
+  await fs.writeFile(tempConfigPath, JSON.stringify(brokenConfig, null, 2), 'utf-8');
+
+  const html = `
+    <div class="new-row">
+      <span class="artist">Bonnie Pink</span>
+      <span class="date">12. Okt 2026</span>
+      <span class="venue">Zepp DiverCity</span>
+      <span class="city">Tokyo</span>
+      <span class="country">JP</span>
+    </div>
+  `;
+
+  const fakeGenerateSelectors: GenerateSelectorsFn = async () => ({
+    eventBlock: '.new-row',
+    artist: '.artist',
+    date: '.date'
+  });
+
+  try {
+    const res = await repairScraperConfig(tempConfigPath, html, 'MOCK_API_KEY', fakeGenerateSelectors, path.dirname(tempConfigPath));
+    assert.strictEqual(res.success, true);
+
+    const s = res.config!.selectors!;
+    assert.strictEqual(s.eventBlock, '.new-row', 'the re-selected field must be updated');
+    // Everything the model could not express must survive.
+    assert.strictEqual(s.venue, '.venue');
+    assert.strictEqual(s.city, '.city');
+    assert.strictEqual(s.country, '.country');
+    assert.strictEqual(s.artistNameFallback, 'Bonnie Pink');
+    assert.strictEqual(s.venueNameFallback, 'Fallback Venue');
+  } finally {
+    await fs.rm(tempConfigPath, { force: true });
+  }
+});

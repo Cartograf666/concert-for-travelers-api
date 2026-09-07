@@ -10,7 +10,10 @@ name: Prune Dead Scrapers
 
 on:
   workflow_run:
-    workflows: ["Daily Concert Scrape"]
+    # Artist tour-page configs live in scrapers/artists/ and are scraped by the
+    # separate artist workflow; without it here their dead-domain streaks were
+    # never tracked at all.
+    workflows: ["Daily Concert Scrape", "Artist Tour-Page Scrape"]
     types:
       - completed
 
@@ -36,10 +39,18 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p reports
+          # The two scrapes upload their reports under different artifact names,
+          # so pick by which one triggered this run.
+          if [ "${{ github.event.workflow_run.name }}" = "Artist Tour-Page Scrape" ]; then
+            ARTIFACT=artist-scrape-reports
+          else
+            ARTIFACT=scraper-reports
+          fi
+          echo "Reading fail-log from artifact: $ARTIFACT" 
           # Same distinction as self-heal.yml: a real API/auth failure must not
           # be conflated with "no artifact exists yet" (e.g. the triggering run
           # never got to the upload step, or was itself cancelled).
-          if gh run download ${{ github.event.workflow_run.id }} --name scraper-reports --dir reports 2> download-error.log; then
+          if gh run download ${{ github.event.workflow_run.id }} --name "$ARTIFACT" --dir reports 2> download-error.log; then
             echo "downloaded=true" >> "$GITHUB_OUTPUT"
           else
             if grep -qi "no valid artifacts found" download-error.log; then
