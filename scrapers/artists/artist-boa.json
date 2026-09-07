@@ -1,0 +1,16 @@
+{
+  "id": "artist-boa",
+  "domain": "www.boaukofficial.com",
+  "url": "https://www.boaukofficial.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour-row",
+    "artistNameFallback": "bôa",
+    "date": ".tour-text:nth-child(2)",
+    "ticketUrl": "a.tour-row",
+    "venue": ".tour-text:nth-child(1)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}
