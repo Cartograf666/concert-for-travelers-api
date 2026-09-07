@@ -41,6 +41,20 @@ export function isBlockedHost(hostname: string): boolean {
   if (/^fe80:/.test(h)) return true; // IPv6 link-local
   if (/^f[cd][0-9a-f]{2}:/.test(h)) return true; // IPv6 unique local (fc00::/7)
 
+  // Catch-all for every remaining IPv6 literal. A DNS hostname can never contain
+  // a colon, and no legitimate venue or artist site is configured as a bare IPv6
+  // literal -- while enumerating the private ones is a game this loses:
+  //
+  //   new URL('http://[::ffff:127.0.0.1]/').hostname === '[::ffff:7f00:1]'
+  //
+  // Every caller parses the URL before calling here, so the dotted-form rule
+  // above only ever sees a spelling the parser does not produce -- it matched
+  // nothing in practice, and `::ffff:a9fe:a9fe` (169.254.169.254) sailed
+  // through the whole guard. 64:ff9b::/96 NAT64 embeds IPv4 addresses too, and
+  // there is no reason to expect that list to stay complete. Rejecting the
+  // literal form outright removes the entire class.
+  if (h.includes(':')) return true;
+
   return false;
 }
 
