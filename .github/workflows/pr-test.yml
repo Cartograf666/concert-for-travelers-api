@@ -14,6 +14,7 @@ on:
 
 permissions:
   contents: read
+  pull-requests: read # the integrity gate below asks which files this PR touched
 
 jobs:
   verify:
@@ -59,5 +60,34 @@ jobs:
       # makes it a ratchet rather than a demand that 63k accumulated entries be
       # spotless. Lower the baseline as defects get cleaned:
       #   npm run audit-artist-integrity -- --update-baseline
+      # The ratchet compares against data/artist-integrity-baseline.json, but the
+      # enrichment bots write data/artists/ on main every few hours with
+      # [skip ci], so main's true error count drifts upward between refreshes no
+      # matter how often the baseline is re-anchored. Every PR then failed a
+      # check for damage it had not done -- that is what blocked all six
+      # dependabot PRs from 2026-08-12, and it recurred on this very PR
+      # (baseline 121 recorded 2026-09-06 16:05, main already at 124 by the next
+      # afternoon).
+      #
+      # A PR that does not touch data/artists/ cannot have added an artist-data
+      # error, so running the gate on it measures only bot drift. Gate it on the
+      # files the PR actually changed; drift itself is tracked by
+      # integrity-baseline-refresh.yml, which alarms on a large daily jump.
+      - name: Check whether this PR touches artist data
+        id: artist-data
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if gh api "repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/files" \
+               --paginate --jq '.[].filename' | grep -q '^data/artists/'; then
+            echo "touched=true" >> "$GITHUB_OUTPUT"
+            echo "This PR changes data/artists/ -- enforcing the integrity ratchet."
+          else
+            echo "touched=false" >> "$GITHUB_OUTPUT"
+            echo "This PR does not change data/artists/ -- skipping the ratchet (it would only measure bot drift on main)."
+          fi
+
       - name: Artist data integrity
+        if: steps.artist-data.outputs.touched == 'true'
         run: npm run audit-artist-integrity -- --strict

@@ -72,3 +72,28 @@ test('config url rejects SSRF hosts (metadata / integer-encoded loopback)', () =
   assert.strictEqual(ScraperConfigSchema.safeParse({ ...base, url: 'http://2130706433/' }).success, false);
   assert.ok(ScraperConfigSchema.safeParse({ ...base, url: 'https://paradiso.nl/agenda' }).success);
 });
+
+test('isBlockedHost blocks the IPv6 spelling the URL parser actually produces', () => {
+  // The dotted IPv4-mapped form this suite already checked ('::ffff:127.0.0.1')
+  // never reaches isBlockedHost in practice: every caller parses the URL first,
+  // and the WHATWG parser re-serializes it to hex.
+  assert.strictEqual(new URL('http://[::ffff:127.0.0.1]/').hostname, '[::ffff:7f00:1]');
+  assert.strictEqual(new URL('http://[::ffff:169.254.169.254]/').hostname, '[::ffff:a9fe:a9fe]');
+
+  // Those hex forms used to sail through the entire guard.
+  for (const bad of [
+    '::ffff:7f00:1',        // 127.0.0.1
+    '::ffff:a9fe:a9fe',     // 169.254.169.254, cloud metadata
+    '::ffff:0:7f00:1',      // 4-group mapped spelling
+    '64:ff9b::7f00:1',      // NAT64 embedding 127.0.0.1
+    '[::ffff:7f00:1]',      // still bracketed
+  ]) {
+    assert.strictEqual(isBlockedHost(bad), true, `${bad} must be blocked`);
+  }
+});
+
+test('isBlockedHost still allows ordinary public hosts', () => {
+  for (const good of ['example.com', 'paradiso.nl', '8.8.8.8', '93.184.216.34', 'a38.hu']) {
+    assert.strictEqual(isBlockedHost(good), false, `${good} must be allowed`);
+  }
+});

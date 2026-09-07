@@ -61,6 +61,16 @@ const DEFAULT_MAX_RETRIES = 2;
 const HTML_SAMPLE_LIMIT = 60000; // large enough to keep JSON-LD / hydration blocks intact for the healer
 
 /**
+ * Hard ceiling on a single fetched response. Venue and tour pages are HTML; the
+ * heaviest legitimate ones in this corpus are large SSR/Next.js payloads well
+ * under a megabyte. The cap exists because the response body is attacker-chosen
+ * content: without it, one hostile (or merely broken) host can stream gigabytes
+ * -- or a small gzip that decompresses to them -- into a run that is already
+ * holding every other scraper's parsed events in memory.
+ */
+export const MAX_RESPONSE_BYTES = 20 * 1024 * 1024; // 20 MB
+
+/**
  * Response body as a string the healer can analyze, or undefined when there is
  * genuinely nothing to look at (the request never returned). A json_api or
  * next_data scraper receives an already-parsed object; stringifying it keeps
@@ -489,6 +499,14 @@ async function performGet(
     }
     const status = res.statusCode;
     if ((status >= 200 && status < 300) || status === 304) {
+      // got has no streaming size ceiling to match axios's maxContentLength, so
+      // this only stops an oversized body propagating into parsing, the fail-log
+      // and the healer's Gemini prompt -- it cannot prevent the allocation
+      // itself. Acceptable here: got is the backend for 6 of 558 configs.
+      const bodyLength = typeof res.body === 'string' ? Buffer.byteLength(res.body, 'utf8') : 0;
+      if (bodyLength > MAX_RESPONSE_BYTES) {
+        throw new Error(`Response exceeded ${MAX_RESPONSE_BYTES} bytes (${bodyLength})`);
+      }
       return { status, data: res.body, headers: res.headers as Record<string, any> };
     }
     // Mirror axios: any non-2xx/304 throws; isRetryableError decides 429/5xx retry.
@@ -508,7 +526,25 @@ async function performGet(
     timeout: 15000, // 15s timeout (some venue pages ship large SSR/Next.js payloads)
     httpAgent: ssrfHttpAgent,
     httpsAgent: ssrfHttpsAgent,
-    maxRedirects: 3, // follow a few, but every hop's resolved IP is SSRF-checked by the agents
+    maxRedirects: 3,
+    // The agents' safeLookup does NOT cover redirect hops: Node skips dns.lookup
+    // entirely when the host is an IP literal, so a `Location: http://127.0.0.1/`
+    // never reaches it. got-scraping has had this hook since it was added above;
+    // axios -- the backend 552 of 558 configs actually use -- did not, which left
+    // the default path able to follow a scraped page's redirect into loopback,
+    // RFC1918 and link-local space and then ship the body to reports/fail-log.json
+    // (uploaded as a public artifact) and to Gemini.
+    beforeRedirect: (options: any) => {
+      const host = options?.hostname;
+      if (host && hostBlocked(String(host))) {
+        throw new Error(`Blocked SSRF redirect target: ${host}`);
+      }
+    },
+    // A venue page is HTML; nothing legitimate here is tens of megabytes. Without
+    // a cap, one attacker-controlled response (or a decompression bomb) can OOM
+    // the whole run, and the run holds every other scraper's results in memory.
+    maxContentLength: MAX_RESPONSE_BYTES,
+    maxBodyLength: MAX_RESPONSE_BYTES,
     validateStatus: (s) => (s >= 200 && s < 300) || s === 304
   });
   return { status: response.status, data: response.data, headers: response.headers };
