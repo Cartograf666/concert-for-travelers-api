@@ -91,3 +91,23 @@ jobs:
       - name: Artist data integrity
         if: steps.artist-data.outputs.touched == 'true'
         run: npm run audit-artist-integrity -- --strict
+
+      # The duplicate city/venue selector defect -- one selector doing both jobs,
+      # so every "city" is the whole event blurb -- is what froze the published
+      # API for 24 days. The generator can no longer produce one, but nothing
+      # stopped a hand-written or healed config from reintroducing it: the audit
+      # script existed and was wired to nothing. A ratchet, not a demand that the
+      # 132 pre-existing configs be fixed first.
+      - name: Duplicate city/venue selectors (ratchet)
+        run: |
+          set -euo pipefail
+          count=$(npm run --silent audit-city-selectors -- --json | jq '.offenders | length')
+          baseline=$(cat .github/duplicate-city-selector-baseline.txt)
+          echo "duplicate city/venue selector configs: $count (baseline $baseline)"
+          if [ "$count" -gt "$baseline" ]; then
+            echo "::error::Duplicate city/venue selector configs rose from $baseline to $count. A city selector that repeats the venue selector publishes the whole event block as the city."
+            exit 1
+          fi
+          if [ "$count" -lt "$baseline" ]; then
+            echo "::notice::Down to $count -- lower the baseline in .github/duplicate-city-selector-baseline.txt."
+          fi

@@ -135,3 +135,58 @@ test('verify - live gate passes a healthy scrape', async () => {
   assert.strictEqual(report.ok, true, formatVerifyReport(report));
   assert.strictEqual(report.checks[0].name, 'live_fetch');
 });
+
+// --- The outage class the gate used to be blind to ---
+//
+// A `city` selector pointing at the same element as `venue` makes every "city"
+// the whole event blurb. That is what froze the published API for 24 days, and
+// before these checks it satisfied every rule in this file: real artists,
+// parsing dates, holding volume. The healer would have accepted such a repair.
+
+test('verify - rejects a repair whose city is the whole event blurb', () => {
+  const blurb = '2026年9月21日(月・祝) 会場:東京Zepp DiverCity(TOKYO) OPEN 17:15 / START 18:00 出演:BONNIE PINK ほか多数のゲストミュージシャンが参加する特別公演';
+  const events = goodEvents(10).map((e) => ({ ...e, city: blurb, venue: 'Zepp DiverCity' }));
+
+  const report = verifyEvents(events, config, { now: NOW, baselineCount: 12 });
+  assert.strictEqual(check(report, 'city_values_plausible').ok, false, formatVerifyReport(report));
+  assert.strictEqual(report.ok, false);
+});
+
+test('verify - rejects a repair where city and venue are the same selector', () => {
+  const events = goodEvents(10).map((e) => ({ ...e, city: 'Zepp DiverCity', venue: 'Zepp DiverCity' }));
+
+  const report = verifyEvents(events, config, { now: NOW, baselineCount: 12 });
+  assert.strictEqual(check(report, 'city_distinct_from_venue').ok, false, formatVerifyReport(report));
+  assert.strictEqual(report.ok, false);
+});
+
+test('verify - rejects a repair whose country is prose rather than a code', () => {
+  const events = goodEvents(10).map((e) => ({ ...e, city: 'Tokyo', country: 'Japan, Tokyo Prefecture' }));
+
+  const report = verifyEvents(events, config, { now: NOW, baselineCount: 12 });
+  assert.strictEqual(check(report, 'country_codes_valid').ok, false, formatVerifyReport(report));
+  assert.strictEqual(report.ok, false);
+});
+
+test('verify - a genuinely good repair with place fields still passes', () => {
+  const events = goodEvents(10).map((e, i) => ({
+    ...e,
+    city: i % 2 ? 'Berlin' : 'Hamburg',
+    venue: 'Test Venue',
+    country: 'DE'
+  }));
+
+  const report = verifyEvents(events, config, { now: NOW, baselineCount: 12 });
+  assert.strictEqual(report.ok, true, formatVerifyReport(report));
+  assert.strictEqual(check(report, 'city_values_plausible').ok, true);
+  assert.strictEqual(check(report, 'city_distinct_from_venue').ok, true);
+  assert.strictEqual(check(report, 'country_codes_valid').ok, true);
+});
+
+test('verify - place checks stay silent when the fields are absent', () => {
+  // Absent city/venue is a fallback's job, not a mis-selection signal.
+  const report = verifyEvents(goodEvents(10), config, { now: NOW, baselineCount: 12 });
+  assert.strictEqual(report.ok, true, formatVerifyReport(report));
+  assert.strictEqual(report.checks.some((c) => c.name === 'city_values_plausible'), false);
+  assert.strictEqual(report.checks.some((c) => c.name === 'country_codes_valid'), false);
+});
