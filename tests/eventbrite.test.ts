@@ -148,3 +148,46 @@ test('Eventbrite - a page-parse failure (blocked/changed structure) counts towar
 
   assert.strictEqual(calls, 5);
 });
+
+test('Eventbrite - a run where every request fails raises an annotation', async () => {
+  // Falling back to cache is deliberate, but it also made a permanently broken
+  // source look identical to a throttled one: all requests failing, every run,
+  // job green, stale cached events republished forever.
+  const logged: string[] = [];
+  const originalLog = console.log;
+  console.log = (...args: unknown[]) => { logged.push(args.join(' ')); };
+
+  try {
+    const cache = {};
+    const fetchFn = async () => { throw Object.assign(new Error('blocked'), { response: { status: 405 } }); };
+    await fetchEventbriteConcerts(['A', 'B'], { cache, fetchFn, delayMs: 0 });
+  } finally {
+    console.log = originalLog;
+  }
+
+  const annotation = logged.find((l) => l.startsWith('::error::[Eventbrite]'));
+  assert.ok(annotation, `expected an ::error:: annotation, got:\n${logged.join('\n')}`);
+  assert.match(annotation!, /every one of 2 request\(s\) failed/);
+  assert.match(annotation!, /405/);
+});
+
+test('Eventbrite - a partially successful run raises no annotation', async () => {
+  const logged: string[] = [];
+  const originalLog = console.log;
+  console.log = (...args: unknown[]) => { logged.push(args.join(' ')); };
+
+  try {
+    const cache = {};
+    let n = 0;
+    const fetchFn = async () => {
+      n++;
+      if (n === 1) throw new Error('transient');
+      return [];
+    };
+    await fetchEventbriteConcerts(['A', 'B'], { cache, fetchFn, delayMs: 0 });
+  } finally {
+    console.log = originalLog;
+  }
+
+  assert.strictEqual(logged.some((l) => l.startsWith('::error::[Eventbrite]')), false);
+});

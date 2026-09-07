@@ -13,6 +13,7 @@ permissions:
 jobs:
   watchdog:
     runs-on: ubuntu-latest
+    timeout-minutes: 20 # it commits and pushes to main, so a wedged run sits on the 6h default holding that write
     steps:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1

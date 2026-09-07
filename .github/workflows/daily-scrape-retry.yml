@@ -12,6 +12,7 @@ permissions:
 jobs:
   retry:
     runs-on: ubuntu-latest
+    timeout-minutes: 10 # a wedged retry must not sit on the 6h Actions default
     # All 3 guard conditions live here, not in the step below:
     #   1. conclusion == 'cancelled' -- only a hard cancel, not a real failure.
     #   2. event == 'workflow_dispatch' -- never auto-retry a cancelled cron;
