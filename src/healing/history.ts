@@ -19,7 +19,14 @@
 import * as fs from 'fs/promises';
 import { RepairStrategy } from './classify.js';
 
-export type RepairStatus = 'pending' | 'confirmed' | 'reverted';
+/**
+ * 'rejected' is a repair that never landed: a candidate was generated and failed
+ * verification, so no config was written. It is recorded anyway because
+ * otherwise the attempt left NO durable trace -- the scraper reappeared in the
+ * next day's fail-log, was classified identically, and the same Gemini cascade
+ * ran and failed again. Every night, billed, indefinitely.
+ */
+export type RepairStatus = 'pending' | 'confirmed' | 'reverted' | 'rejected';
 
 export interface RepairRecord {
   id: string;
@@ -38,6 +45,14 @@ export interface RepairRecord {
 
 /** Consecutive post-repair failures tolerated before the repair is rolled back. */
 export const REVERT_AFTER_FAILURES = 2;
+
+/**
+ * Rejected attempts of one strategy tolerated before that strategy is treated as
+ * known-bad for a scraper. Not 1: a rejection can be a transient site outage
+ * rather than a hopeless strategy, and banning on a single fluke would retire a
+ * strategy that would have worked the next day.
+ */
+export const REJECTED_ATTEMPTS_BEFORE_SKIP = 3;
 
 export async function loadRepairHistory(historyPath: string): Promise<RepairRecord[]> {
   try {
@@ -67,6 +82,15 @@ export function trimRepairHistory(records: RepairRecord[]): RepairRecord[] {
       out.push(r);
       continue;
     }
+    // 'reverted' is never trimmed. It is the strong blacklist signal -- a repair
+    // that landed, verified, and still broke in production -- and dropping one
+    // silently un-blacklists a strategy the healer has already proven bad. They
+    // are also rare. Letting the far more numerous 'rejected' records evict them
+    // would have made the retention cap actively harmful.
+    if (r.status === 'reverted') {
+      out.push(r);
+      continue;
+    }
     const kept = settledKept.get(r.id) ?? 0;
     if (kept >= MAX_SETTLED_PER_SCRAPER) continue;
     settledKept.set(r.id, kept + 1);
@@ -85,9 +109,25 @@ export async function saveRepairHistory(historyPath: string, records: RepairReco
  * the same swap every single day.
  */
 export function failedStrategiesFor(records: RepairRecord[], id: string): Set<RepairStrategy> {
-  return new Set(
-    records.filter((r) => r.id === id && r.status === 'reverted').map((r) => r.strategy)
-  );
+  const failed = new Set<RepairStrategy>();
+
+  // A rolled-back repair is known-bad immediately: it landed, was verified, and
+  // still broke in production.
+  for (const r of records) {
+    if (r.id === id && r.status === 'reverted') failed.add(r.strategy);
+  }
+
+  // A repair that never passed verification is weaker evidence, so it takes
+  // REJECTED_ATTEMPTS_BEFORE_SKIP of them before the strategy is skipped.
+  const rejectedCounts = new Map<RepairStrategy, number>();
+  for (const r of records) {
+    if (r.id !== id || r.status !== 'rejected') continue;
+    const next = (rejectedCounts.get(r.strategy) ?? 0) + 1;
+    rejectedCounts.set(r.strategy, next);
+    if (next >= REJECTED_ATTEMPTS_BEFORE_SKIP) failed.add(r.strategy);
+  }
+
+  return failed;
 }
 
 /** The still-unproven repair for a scraper, if any. At most one is pending per id. */

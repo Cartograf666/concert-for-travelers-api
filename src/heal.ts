@@ -110,6 +110,9 @@ async function main() {
   }
 
   const history = await loadRepairHistory(historyPath);
+  // Set by any path that mutates `history`, so the save below is driven by
+  // "did anything change" rather than "did a repair succeed".
+  let historyChanged = false;
   const deps: StrategyDeps = { hostResolves, fetchHtml: (url) => fetchHtmlForHealing(url) };
 
   const outcomes: HealOutcome[] = [];
@@ -250,7 +253,24 @@ async function main() {
     }
 
     if (!accepted) {
-      outcomes.push({ ...classification, id, result: 'rejected', note: lastNote || 'no candidate passed verification' });
+      const note = lastNote || 'no candidate passed verification';
+      outcomes.push({ ...classification, id, result: 'rejected', note });
+      // Record the failed attempt. Without this the run left no durable trace of
+      // it -- repair-report.json is an ephemeral artifact -- so tomorrow's run
+      // saw the same failure, classified it identically, and paid for the same
+      // Gemini cascade to fail the same way. failedStrategiesFor stops trying a
+      // strategy after REJECTED_ATTEMPTS_BEFORE_SKIP of these.
+      history.push({
+        id,
+        strategy: classification.strategy,
+        repairedAt: new Date().toISOString(),
+        previousConfig: JSON.parse(loaded.raw),
+        status: 'rejected',
+        failuresSinceRepair: 0,
+        note,
+        verification: ''
+      });
+      historyChanged = true;
       continue;
     }
 
@@ -272,9 +292,13 @@ async function main() {
     // Supersede any earlier unproven repair for this scraper; only the newest
     // pending record can be confirmed or rolled back.
     for (const r of history) {
-      if (r.id === id && r.status === 'pending') r.status = 'reverted';
+      if (r.id === id && r.status === 'pending') {
+        r.status = 'reverted';
+        historyChanged = true;
+      }
     }
     history.push(record);
+    historyChanged = true;
 
     console.log(`[Healer] ${id}: REPAIRED via ${classification.strategy} — ${verification}`);
   }
@@ -295,8 +319,15 @@ async function main() {
   await fs.mkdir(reportsDir, { recursive: true });
   await fs.writeFile(path.join(reportsDir, 'repair-report.json'), JSON.stringify(summary, null, 2) + '\n', 'utf-8');
 
-  if (healed.length > 0) {
+  // Persist whenever history changed, not only when a repair succeeded. Gating
+  // the save on healed.length meant a run that only rejected candidates -- or
+  // that superseded a pending record to 'reverted' -- threw that state away and
+  // repeated the same work, and the same Gemini spend, the next night.
+  if (historyChanged) {
     await saveRepairHistory(historyPath, history);
+  }
+
+  if (healed.length > 0) {
     // Sentinel the workflow checks to decide whether to open a PR at all.
     await fs.writeFile(
       path.join(reportsDir, 'repair-summary.json'),

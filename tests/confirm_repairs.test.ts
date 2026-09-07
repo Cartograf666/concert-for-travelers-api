@@ -6,7 +6,7 @@ import * as path from 'path';
 import { confirmRepairs } from '../src/scripts/confirm_repairs.js';
 import {
   RepairRecord, failedStrategiesFor, pendingRecordFor, trimRepairHistory,
-  REVERT_AFTER_FAILURES, MAX_SETTLED_PER_SCRAPER
+  REVERT_AFTER_FAILURES, MAX_SETTLED_PER_SCRAPER, REJECTED_ATTEMPTS_BEFORE_SKIP
 } from '../src/healing/history.js';
 
 const PREVIOUS_CONFIG = {
@@ -144,4 +144,49 @@ test('history - trimming keeps every pending record and the newest settled ones'
   const kept = trimmed.filter((r) => r.id === 'artist-example' && r.status === 'confirmed');
   assert.strictEqual(kept[0].repairedAt, '2026-07-06T00:00:00.000Z');
   assert.strictEqual(kept[kept.length - 1].repairedAt, '2026-07-15T00:00:00.000Z');
+});
+
+// --- Rejected repairs must leave durable state ---
+//
+// A candidate that fails verification writes no config, so before it was
+// recorded the attempt vanished with the run's ephemeral report. The scraper
+// reappeared in the next day's fail-log, was classified identically, and the
+// same Gemini cascade ran and failed the same way. Every night, billed.
+
+test('failedStrategiesFor skips a strategy only after repeated rejections', () => {
+  const rejected = (n: number) =>
+    Array.from({ length: n }, () => record({ id: 'v1', strategy: 'llm_reselect', status: 'rejected' }));
+
+  // One or two rejections can be a transient site outage, not a hopeless
+  // strategy -- banning on a fluke would retire one that works tomorrow.
+  assert.strictEqual(
+    failedStrategiesFor(rejected(REJECTED_ATTEMPTS_BEFORE_SKIP - 1), 'v1').has('llm_reselect'),
+    false
+  );
+  assert.strictEqual(
+    failedStrategiesFor(rejected(REJECTED_ATTEMPTS_BEFORE_SKIP), 'v1').has('llm_reselect'),
+    true
+  );
+});
+
+test('failedStrategiesFor still blacklists a reverted repair immediately', () => {
+  // A rolled-back repair landed, verified, and broke anyway -- strong evidence.
+  const records = [record({ id: 'v1', strategy: 'llm_reselect', status: 'reverted' })];
+  assert.strictEqual(failedStrategiesFor(records, 'v1').has('llm_reselect'), true);
+});
+
+test('trimRepairHistory never drops a reverted record', () => {
+  // Rejected records are far more numerous; letting them evict the reverted one
+  // would silently un-blacklist a strategy already proven bad.
+  const reverted = record({ id: 'v1', strategy: 'llm_reselect', status: 'reverted' });
+  const noise = Array.from({ length: MAX_SETTLED_PER_SCRAPER + 10 }, () =>
+    record({ id: 'v1', strategy: 'chain_probe', status: 'rejected' })
+  );
+
+  const trimmed = trimRepairHistory([reverted, ...noise]);
+  assert.ok(
+    trimmed.some((r) => r.status === 'reverted' && r.strategy === 'llm_reselect'),
+    'the reverted record must survive trimming'
+  );
+  assert.strictEqual(failedStrategiesFor(trimmed, 'v1').has('llm_reselect'), true);
 });
