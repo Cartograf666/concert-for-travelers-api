@@ -2,7 +2,11 @@ name: Self-Healing Pipeline
 
 on:
   workflow_run:
-    workflows: ["Daily Concert Scrape"]
+    # Both scrapes, not just the venue one. run-artists.ts covers the 414 configs
+    # in scrapers/artists/ -- 88% of all artist tour-page scrapers -- and until it
+    # emitted a fail-log they were invisible here: they could break and stay
+    # broken forever with no repair attempt and no signal.
+    workflows: ["Daily Concert Scrape", "Artist Tour-Page Scrape"]
     types:
       - completed
 
@@ -11,11 +15,23 @@ permissions:
   pull-requests: write
   issues: write # open/update a dedup'd failure issue (see "Alert on failure" step)
 
+# Shared with prune-dead-scrapers.yml, which the same workflow_run event starts at
+# the same instant. Both edit scrapers/ and push to main: one repairs a config
+# while the other retires it, and their pushes race. Queue instead of cancelling
+# -- neither is safe to drop halfway through a commit.
+concurrency:
+  group: artist-db-write
+  cancel-in-progress: false
+
 jobs:
   heal:
     runs-on: ubuntu-latest
     timeout-minutes: 60 # a wedged Playwright install/Gemini repair call/test run must not sit on the 6h Actions default ceiling
-    # Run only if the triggering workflow succeeded or completed, and we have failures to check
+    # The comment below used to claim this gate without implementing it, so the
+    # healer also ran after a FAILED scrape -- during the 23-day publish outage it
+    # woke every night on a fail-log from a run that never finished, and judged
+    # scrapers on it. A cancelled or failed scrape has no trustworthy fail-log.
+    if: github.event.workflow_run.conclusion == 'success'
     steps:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -26,11 +42,19 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p reports
+          # The two scrapes upload their reports under different artifact names,
+          # so pick by which one triggered this run.
+          if [ "${{ github.event.workflow_run.name }}" = "Artist Tour-Page Scrape" ]; then
+            ARTIFACT=artist-scrape-reports
+          else
+            ARTIFACT=scraper-reports
+          fi
+          echo "Reading fail-log from artifact: $ARTIFACT" 
           # Use GitHub CLI to download the artifact from the triggering run. A real
           # API/auth failure must be distinguishable from "no artifact exists yet"
           # (e.g. the triggering run never got to the upload step) -- only the latter
           # is a legitimate "nothing to heal" case.
-          if gh run download ${{ github.event.workflow_run.id }} --name scraper-reports --dir reports 2> download-error.log; then
+          if gh run download ${{ github.event.workflow_run.id }} --name "$ARTIFACT" --dir reports 2> download-error.log; then
             echo "downloaded=true" >> "$GITHUB_OUTPUT"
           else
             if grep -qi "no valid artifacts found" download-error.log; then

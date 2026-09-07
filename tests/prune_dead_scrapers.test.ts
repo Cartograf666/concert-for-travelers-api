@@ -4,7 +4,7 @@ import * as fs from 'fs/promises';
 import * as path from 'path';
 import * as os from 'os';
 import { saveApprovedArtists, loadApprovedArtists } from '../src/pipeline/artistDb.js';
-import { updateScraperHealth, pruneDeadScrapers } from '../src/scripts/prune_dead_scrapers.js';
+import { updateScraperHealth, pruneDeadScrapers, resolveConfigPath } from '../src/scripts/prune_dead_scrapers.js';
 
 async function tmpDir(prefix: string): Promise<string> {
   return fs.mkdtemp(path.join(os.tmpdir(), prefix));
@@ -176,4 +176,27 @@ test('pruneDeadScrapers: a case-insensitive name collision skips the field reset
   } finally {
     await fs.rm(root, { recursive: true, force: true });
   }
+});
+
+test('resolveConfigPath honours the fail-log path so artist configs are found', () => {
+  // Venue configs live in scrapers/, artist tour-page configs in
+  // scrapers/artists/. Rebuilding the path from the id alone resolved every
+  // artist config to a file that does not exist, so the streak was tracked but
+  // the retirement then silently did nothing.
+  const artist = resolveConfigPath('/repo/scrapers', {
+    id: 'artist-bonnie-pink',
+    configPath: 'scrapers/artists/artist-bonnie-pink.json'
+  });
+  assert.ok(artist.endsWith(path.join('scrapers', 'artists', 'artist-bonnie-pink.json')), artist);
+
+  const venue = resolveConfigPath('/repo/scrapers', {
+    id: 'a38-ship-budapest',
+    configPath: 'scrapers/a38-ship-budapest.json'
+  });
+  assert.ok(venue.endsWith(path.join('scrapers', 'a38-ship-budapest.json')), venue);
+});
+
+test('resolveConfigPath falls back for a fail-log written before configPath existed', () => {
+  const p = resolveConfigPath('/repo/scrapers', { id: 'a38-ship-budapest' });
+  assert.strictEqual(p, path.join('/repo/scrapers', 'a38-ship-budapest.json'));
 });

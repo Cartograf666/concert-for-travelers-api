@@ -143,7 +143,13 @@ async function main() {
     const classification = classifyFailure(failure);
     console.log(`\n--- Healing ${id} (${classification.strategy}: ${classification.detail}) ---`);
 
-    const configPath = path.join(scrapersDir, `${id}.json`);
+    // Honour the path the fail-log recorded. Venue configs live in scrapers/ and
+    // artist tour-page configs in scrapers/artists/, so reconstructing from the
+    // id alone resolved every artist config to a file that does not exist -- the
+    // healer would report "config missing" and move on forever.
+    const configPath = typeof failure.configPath === 'string' && failure.configPath
+      ? path.resolve(process.cwd(), failure.configPath)
+      : path.join(scrapersDir, `${id}.json`);
     const loaded = await readConfig(configPath);
     if (!loaded) {
       outcomes.push({ ...classification, id, result: 'skipped', note: 'config missing or invalid' });

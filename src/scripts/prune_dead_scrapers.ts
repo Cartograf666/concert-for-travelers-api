@@ -122,7 +122,7 @@ export async function selectImmediateDeaths(
 
     let hostname: string;
     try {
-      const raw = await fs.readFile(path.join(scrapersDir, `${failure.id}.json`), 'utf-8');
+      const raw = await fs.readFile(resolveConfigPath(scrapersDir, failure), 'utf-8');
       hostname = new URL(JSON.parse(raw).url).hostname;
     } catch {
       continue; // config already gone or unreadable -- nothing to retire
@@ -153,6 +153,21 @@ async function hostResolves(hostname: string): Promise<boolean> {
   } catch {
     return false;
   }
+}
+
+/**
+ * Resolves a failure to its config file. Venue configs live in scrapers/ and
+ * artist tour-page configs in scrapers/artists/, so reconstructing the path from
+ * the id alone pointed at a non-existent file for every artist config -- the
+ * streak was tracked but the retirement then silently did nothing. The fail-log
+ * records the real path; prefer it and keep the old reconstruction as a fallback
+ * for a fail-log written before that field existed.
+ */
+export function resolveConfigPath(scrapersDir: string, failure: { id?: unknown; configPath?: unknown }): string {
+  if (typeof failure.configPath === 'string' && failure.configPath) {
+    return path.resolve(process.cwd(), failure.configPath);
+  }
+  return path.join(scrapersDir, `${failure.id}.json`);
 }
 
 async function findArtistScraperConfigDomain(configPath: string): Promise<string | null> {

@@ -109,6 +109,33 @@ async function main() {
       }
     }
     await saveCache(cachePath, cache);
+
+    // Record failures in the same shape run.ts uses, so self-heal and
+    // prune-dead-scrapers can act on them.
+    //
+    // Without this the 414 configs in scrapers/artists/ were simply invisible to
+    // both: self-heal only ever read the fail-log produced by run.ts, which
+    // covers scrapers/ (145 configs). 88% of the artist tour-page scrapers could
+    // therefore break and stay broken forever -- no repair attempt, no dead-config
+    // retirement, no signal anywhere.
+    //
+    // configPath is repo-relative and is what heal.ts/prune_dead_scrapers.ts
+    // resolve against, because these configs live in scrapers/artists/ while the
+    // venue ones live in scrapers/ -- reconstructing the path from the id alone
+    // silently points at the wrong directory.
+    const failures = results
+      .filter((r) => !r.success)
+      .map((r) => ({
+        id: r.configId,
+        configPath: path.join('scrapers', 'artists', `${r.configId}.json`),
+        error: r.error,
+        reason: r.reason,
+        htmlSample: r.htmlSample
+      }));
+    const failLogPath = path.join(reportsDir, 'fail-log.json');
+    await fs.writeFile(failLogPath, JSON.stringify(failures, null, 2), 'utf-8');
+    console.log(`[ArtistScrape] Failed scrapers log saved to: ${failLogPath} (${failures.length} entries).`);
+
     console.log(`[ArtistScrape] Tour-page pass done. ${changedCount}/${configs.length} changed, ${failedCount} failed. Cache saved to ${cachePath}.`);
     console.log(`[ArtistScrape] ${getLlmFallbackUsageSummary()}`);
 

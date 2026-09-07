@@ -43,6 +43,14 @@ export interface FailureEntry {
   reason?: string;
   error?: string;
   htmlSample?: string;
+  /**
+   * Repo-relative path to the config that failed, as recorded by the scrape that
+   * produced this entry. Venue configs live in scrapers/ and artist tour-page
+   * configs in scrapers/artists/, so consumers must use this rather than
+   * rebuilding the path from `id`. Optional: a fail-log written before this
+   * field existed has none, and consumers fall back to the old reconstruction.
+   */
+  configPath?: string;
 }
 
 export interface Classification {

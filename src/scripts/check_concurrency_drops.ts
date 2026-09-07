@@ -27,7 +27,8 @@ export const WORKFLOW_FILES = [
   'enrich-similar.yml',
   'extract-tour-scrapers.yml',
   'integrity-baseline-refresh.yml',
-  'prune-dead-scrapers.yml'
+  'prune-dead-scrapers.yml',
+  'self-heal.yml'
 ];
 
 const CONCURRENCY_DROPS_FILE = path.join(process.cwd(), 'data', 'concurrency-drops.json');

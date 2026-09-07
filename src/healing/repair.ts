@@ -245,8 +245,20 @@ selectors compatible with Cheerio.`;
       throw new Error(`All Gemini models failed across all ${keys.length} key(s). Last error: ${lastError?.message}`);
     }
 
-    // Ensure fallback names are preserved (never LLM-controlled, see RepairedSelectorsSchema).
+    // Merge onto the existing selectors rather than replacing them.
+    //
+    // RepairedSelectorsSchema can only express five fields (eventBlock, artist,
+    // date, datePattern, ticketUrl), so spreading `generated` alone DELETED every
+    // selector outside that set on every repair: the per-row `venue`, `city` and
+    // `country`, plus `artistNameFallback`. All four are optional in
+    // ScraperConfigSchema, so the result still validated and still parsed events
+    // -- each one now carrying the single fixed *NameFallback value for every
+    // row. Plausible-looking, uniformly wrong data, produced by the repair itself.
+    //
+    // The model re-selects what it can see is broken; anything it cannot express
+    // is not thereby wrong, so it is carried forward.
     const newSelectors: any = {
+      ...brokenConfig.selectors,
       ...generated,
       venueNameFallback: brokenConfig.selectors.venueNameFallback,
       cityNameFallback: brokenConfig.selectors.cityNameFallback,
