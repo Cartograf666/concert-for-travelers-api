@@ -375,12 +375,19 @@ async function runCustomJsScraper(config: ScraperConfig, html: string, scrapedAt
   }
 }
 
+/** Mirrors the ScraperConfigSchema ceiling on requestDelayMs. */
+const MAX_REQUEST_DELAY_MS = 600000;
+
 /**
  * Enforces the per-domain politeness delay. Reserves the next slot optimistically
  * so concurrent workers hitting the same domain space themselves out.
  */
 async function politeDelay(config: ScraperConfig): Promise<void> {
-  const minGap = config.requestDelayMs ?? 0;
+  // Clamped again here, not only in the schema: a config can reach the runner
+  // without passing ScraperConfigSchema (a test fixture, a future caller), and
+  // the value below is written into a map shared with every other config on the
+  // same domain, so a bad one is not self-limiting.
+  const minGap = Math.min(config.requestDelayMs ?? 0, MAX_REQUEST_DELAY_MS);
   if (minGap <= 0) return;
   const now = Date.now();
   const last = lastAccessByDomain.get(config.domain) ?? 0;
@@ -648,10 +655,30 @@ async function renderWithPlaywright(config: ScraperConfig): Promise<FetchRespons
   try {
     // SSRF guard for the browser: abort any main/sub-resource request to a private,
     // loopback, link-local or metadata host (covers redirects and JS-issued fetches).
-    await page.route('**/*', (route) => {
+    // Chromium does its own DNS and never touches ssrfHttpAgent/safeLookup, so
+    // unlike the axios/got paths nothing here validates the RESOLVED address --
+    // a hostname whose A record points into private space passed the string
+    // check and was fetched. That applies to every subresource the page asks
+    // for, not just config.url, so a compromised venue page can reach internal
+    // hosts with its own JS and read the response back through the DOM (which
+    // page.content() then captures into htmlSample).
+    const hostVerdicts = new Map<string, boolean>();
+    await page.route('**/*', async (route) => {
       let host = '';
       try { host = new URL(route.request().url()).hostname; } catch { return route.abort(); }
-      return hostBlocked(host) ? route.abort() : route.continue();
+      if (hostBlocked(host)) return route.abort();
+
+      let blocked = hostVerdicts.get(host);
+      if (blocked === undefined) {
+        try {
+          const { address } = await dns.promises.lookup(host);
+          blocked = hostBlocked(address);
+        } catch {
+          blocked = false; // a name that will not resolve cannot reach anything either
+        }
+        hostVerdicts.set(host, blocked); // one lookup per host, not per subresource
+      }
+      return blocked ? route.abort() : route.continue();
     });
     // domcontentloaded (not networkidle): many venue pages poll/stream forever so
     // networkidle never settles and hangs the goto until timeout; the page.route SSRF

@@ -4,6 +4,7 @@ import * as path from 'path';
 import { ScraperConfigSchema, isBlockedHost } from '../src/schemas/config.js';
 import { repairScraperConfig, testSelectorsOnHtml } from '../src/healing/repair.js';
 import { safeAbsoluteUrl } from '../src/engine/url.js';
+import { ConcertSchema } from '../src/schemas/concert.js';
 
 const BASE = {
   domain: 'x.com',
@@ -96,4 +97,33 @@ test('isBlockedHost still allows ordinary public hosts', () => {
   for (const good of ['example.com', 'paradiso.nl', '8.8.8.8', '93.184.216.34', 'a38.hu']) {
     assert.strictEqual(isBlockedHost(good), false, `${good} must be allowed`);
   }
+});
+
+test('published URL fields reject non-http schemes', () => {
+  // Zod's bare .url() accepts all of these, and every one of these fields is
+  // filled from LLM enrichment output or a scraped href, then published as a
+  // clickable link in the static API.
+  const base = {
+    artist: 'The Cure', date: '2026-10-12', venue: 'Club Arena', city: 'Berlin',
+    country: 'DE', originalSource: 'club-arena.de', scrapedAt: new Date().toISOString()
+  };
+  for (const bad of ['javascript:alert(1)', 'data:text/html,<script>x</script>', 'vbscript:x', 'file:///etc/passwd']) {
+    assert.strictEqual(ConcertSchema.safeParse({ ...base, ticketUrl: bad }).success, false, `ticketUrl ${bad}`);
+    assert.strictEqual(ConcertSchema.safeParse({ ...base, artistWebsite: bad }).success, false, `artistWebsite ${bad}`);
+    assert.strictEqual(
+      ConcertSchema.safeParse({ ...base, artistSocials: { instagram: bad } }).success, false, `social ${bad}`
+    );
+  }
+  // Real links and the empty-string sentinel still pass.
+  assert.strictEqual(ConcertSchema.safeParse({ ...base, ticketUrl: 'https://a38.hu/x' }).success, true);
+  assert.strictEqual(ConcertSchema.safeParse({ ...base, ticketUrl: '' }).success, true);
+});
+
+test('requestDelayMs is bounded — it reserves a slot in a shared per-domain map', () => {
+  const base = {
+    id: 'x', domain: 'example.com', url: 'https://example.com/', type: 'static_selectors',
+    selectors: { eventBlock: '.e', date: '.d', venueNameFallback: 'V', cityNameFallback: 'C', countryNameFallback: 'DE' }
+  };
+  assert.strictEqual(ScraperConfigSchema.safeParse({ ...base, requestDelayMs: 999999999 }).success, false);
+  assert.strictEqual(ScraperConfigSchema.safeParse({ ...base, requestDelayMs: 2000 }).success, true);
 });
