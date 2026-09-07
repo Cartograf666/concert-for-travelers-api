@@ -83,8 +83,14 @@ jobs:
             exit 1
           fi
 
+      # Deliberately NOT `always()`. The refresh step fails on purpose when the
+      # day's rise exceeds MAX_DAILY_RISE, and committing anyway would bake that
+      # spike in as the new normal -- the alarm would fire once and the inflated
+      # count would become the baseline every later run is measured against,
+      # which is the opposite of what the guard is for. On a failure the baseline
+      # stays put, the alert fires, and a human decides.
       - name: Commit refreshed baseline
-        if: always() && steps.refresh.outcome != 'cancelled'
+        if: steps.refresh.outcome == 'success'
         run: |
           set -eo pipefail
           git config --local user.email "github-actions[bot]@users.noreply.github.com"

@@ -14,7 +14,7 @@
  */
 
 import { ScraperConfig } from '../schemas/config.js';
-import { Concert } from '../schemas/concert.js';
+import { Concert, MAX_VENUE_LENGTH } from '../schemas/concert.js';
 import { parseDate } from '../pipeline/process.js';
 
 export interface VerifyCheck {
@@ -76,6 +76,12 @@ const MAX_JUNK_ARTIST_RATE = 0.2;
 const MIN_ABSOLUTE_URL_RATE = 0.8;
 /** How far the event count may fall below the last good run before it reads as a mis-selection. */
 const MIN_BASELINE_RETENTION = 0.3;
+/** Fraction of city/venue values allowed to look like an event blurb rather than a place. */
+const MAX_JUNK_PLACE_RATE = 0.2;
+/** A city name longer than this is prose. The longest real place name in the live data is ~85, but a healer gate should fire well before the publish bound. */
+const SUSPECT_CITY_LENGTH = 60;
+/** Fraction of country values that must be a real 2-letter code. */
+const MIN_VALID_COUNTRY_RATE = 0.8;
 
 function isJunkArtist(value: string | undefined, config: ScraperConfig): boolean {
   const v = (value ?? '').trim();
@@ -148,6 +154,79 @@ export function verifyEvents(
       name: 'ticket_urls_absolute',
       ok: rate >= MIN_ABSOLUTE_URL_RATE,
       detail: `${absolute}/${withUrl.length} ticket URLs are absolute http(s) (${(rate * 100).toFixed(0)}%)`
+    });
+  }
+
+  // city/venue/country were unchecked entirely, which left this gate blind to the
+  // exact defect that froze the published API for 24 days: a `city` selector
+  // pointing at the same element as `venue`, so every "city" was the whole event
+  // blurb. Such a repair satisfies every check above -- the artists are real, the
+  // dates parse, the volume holds -- so the healer would have accepted it and
+  // confirm_repairs would have marked it good. These mirror the bounds
+  // ConcertSchema enforces at publish time, so the healer stops approving
+  // repairs whose output the pipeline will later drop.
+  const placeFields: Array<{ name: string; get: (e: Partial<Concert>) => unknown; bad: (v: string) => boolean; why: string }> = [
+    {
+      name: 'city',
+      get: (e) => e.city,
+      // Deliberately stricter than ConcertSchema's MAX_CITY_LENGTH. That bound is
+      // the last line before publishing; this one is judging whether a SELECTOR
+      // is right, so it should fire long before a value is unpublishable. Real
+      // city names are short and have no digits -- of the 1859 cities in the live
+      // API, the 45 containing a digit were all blurbs. A date, a start time or a
+      // ticket price in the "city" is the selector confessing.
+      bad: (v) => v.length > SUSPECT_CITY_LENGTH || /\d/.test(v),
+      why: `longer than ${SUSPECT_CITY_LENGTH} chars or containing digits`
+    },
+    {
+      name: 'venue',
+      get: (e) => e.venue,
+      // A venue legitimately carries digits ("O2 Arena", "Club 100"), so length
+      // is the only honest signal here.
+      bad: (v) => v.length > MAX_VENUE_LENGTH,
+      why: `longer than ${MAX_VENUE_LENGTH} chars`
+    }
+  ];
+  for (const field of placeFields) {
+    const values = events
+      .map((e) => field.get(e))
+      .filter((v): v is string => typeof v === 'string' && v.trim().length > 0)
+      .map((v) => v.trim().replace(/\s+/g, ' '));
+    if (values.length === 0) continue; // absent is a fallback's job, not a mis-selection signal
+    const junk = values.filter(field.bad).length;
+    const rate = junk / values.length;
+    checks.push({
+      name: `${field.name}_values_plausible`,
+      ok: rate <= MAX_JUNK_PLACE_RATE,
+      detail: `${junk}/${values.length} ${field.name} values are ${field.why} (${(rate * 100).toFixed(0)}%, allow ${MAX_JUNK_PLACE_RATE * 100}%)`
+    });
+  }
+
+  // The duplicate-selector signature itself: city and venue resolving to the
+  // identical string on most rows means one selector is doing both jobs.
+  const bothPresent = events.filter(
+    (e) => typeof e.city === 'string' && typeof e.venue === 'string' && e.city.trim() && e.venue.trim()
+  );
+  if (bothPresent.length > 0) {
+    const identical = bothPresent.filter((e) => String(e.city).trim() === String(e.venue).trim()).length;
+    const rate = identical / bothPresent.length;
+    checks.push({
+      name: 'city_distinct_from_venue',
+      ok: rate <= MAX_JUNK_PLACE_RATE,
+      detail: `${identical}/${bothPresent.length} rows have city identical to venue (${(rate * 100).toFixed(0)}%, allow ${MAX_JUNK_PLACE_RATE * 100}%)`
+    });
+  }
+
+  // ConcertSchema requires exactly 2 characters; anything else means the selector
+  // grabbed prose, and every such event is dropped at publish.
+  const countries = events.map((e) => e.country).filter((v): v is string => typeof v === 'string' && v.trim().length > 0);
+  if (countries.length > 0) {
+    const valid = countries.filter((c) => /^[A-Za-z]{2}$/.test(c.trim())).length;
+    const rate = valid / countries.length;
+    checks.push({
+      name: 'country_codes_valid',
+      ok: rate >= MIN_VALID_COUNTRY_RATE,
+      detail: `${valid}/${countries.length} country values are 2-letter codes (${(rate * 100).toFixed(0)}%, need ${MIN_VALID_COUNTRY_RATE * 100}%)`
     });
   }
 
