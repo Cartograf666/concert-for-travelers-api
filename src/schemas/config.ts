@@ -12,6 +12,15 @@ export function isBlockedHost(hostname: string): boolean {
   const h = hostname.toLowerCase().replace(/^\[|\]$/g, ''); // strip IPv6 brackets
   if (h === 'localhost' || h === '0.0.0.0' || h.endsWith('.localhost')) return true;
 
+  // Private-network name suffixes and the named cloud metadata host. A venue or
+  // artist site never lives on one of these, and `metadata.google.internal` is a
+  // real credential endpoint reachable by name rather than by the 169.254 literal
+  // the numeric rules below cover.
+  if (h === 'metadata.google.internal') return true;
+  for (const suffix of ['.internal', '.local', '.lan', '.home.arpa', '.intranet', '.corp']) {
+    if (h.endsWith(suffix)) return true;
+  }
+
   // IPv4-mapped IPv6 (e.g. ::ffff:169.254.169.254) — check the embedded v4 address.
   const mapped = h.match(/^::ffff:(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})$/);
   if (mapped) return isBlockedHost(mapped[1]);
@@ -25,6 +34,14 @@ export function isBlockedHost(hostname: string): boolean {
     if (a === 192 && b === 168) return true; // RFC1918
     if (a === 169 && b === 254) return true; // link-local / cloud metadata (169.254.169.254)
     if (a === 0) return true;
+    if (a === 100 && b >= 64 && b <= 127) return true; // CGNAT (100.64.0.0/10) -- carrier-side private space
+    if (a === 198 && (b === 18 || b === 19)) return true; // benchmark (198.18.0.0/15)
+    // TEST-NET blocks: reserved for documentation, so a config pointing at one is
+    // a copy-paste from an example rather than a real venue.
+    if (a === 192 && b === 0 && Number(ipv4[3]) === 2) return true; // 192.0.2.0/24
+    if (a === 198 && b === 51 && Number(ipv4[3]) === 100) return true; // 198.51.100.0/24
+    if (a === 203 && b === 0 && Number(ipv4[3]) === 113) return true; // 203.0.113.0/24
+    if (a >= 224) return true; // multicast (224/4) and reserved (240/4)
     return false;
   }
 

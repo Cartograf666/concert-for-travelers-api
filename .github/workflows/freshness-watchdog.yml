@@ -18,6 +18,7 @@ permissions:
 jobs:
   watchdog:
     runs-on: ubuntu-latest
+    timeout-minutes: 10 # a wedged watchdog must not sit on the 6h Actions default
     steps:
       - name: Check the daily scrape ran recently and succeeded
         env:

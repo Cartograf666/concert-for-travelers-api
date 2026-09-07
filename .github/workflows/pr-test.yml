@@ -25,7 +25,12 @@ jobs:
     # squash-merges the PR immediately without waiting on this workflow -- so this
     # run has zero gating value on that branch and just pays for a second full
     # chromium install + test run on every auto-merge. Skip it there.
-    if: ${{ !startsWith(github.head_ref, 'auto/self-heal-') }}
+    # Also requires the branch to live in THIS repo: head_ref is attacker-chosen
+    # on a fork, so a fork PR could name its branch auto/self-heal-x and skip
+    # verification entirely. self-heal's own branches are always same-repo.
+    if: >-
+      ${{ !(startsWith(github.head_ref, 'auto/self-heal-')
+            && github.event.pull_request.head.repo.full_name == github.repository) }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -47,9 +52,12 @@ jobs:
       - name: Build project
         run: npm run build
 
+      # `continue-on-error: true` meant this could never block anything, so a lint
+      # error could land on main unnoticed. The config currently reports 0 errors
+      # and 109 warnings, and eslint exits non-zero only on errors -- so enforcing
+      # it costs nothing today and catches the first real one.
       - name: Lint code
         run: npm run lint
-        continue-on-error: true
 
       - name: Run Tests
         run: npm run test

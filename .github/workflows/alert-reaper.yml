@@ -45,10 +45,19 @@ jobs:
 
           # updated_at moves on a new failure comment, so it is exactly the
           # "last time this alert still had something to say" timestamp.
-          gh issue list --repo "$REPO" --state open --limit 100 \
-            --json number,title,updatedAt \
-            --jq '.[] | select(.title | startswith("🚨")) | [.number, .updatedAt, .title] | @tsv' \
-            > /tmp/alerts.tsv || true
+          # A failed API call must not look like "nothing to do". With `|| true`
+          # swallowing the exit code, an outage or a permissions change left an
+          # empty file that read as "no open alerts" and the job went green --
+          # a watchdog silently reporting health is the exact failure mode this
+          # workflow exists to prevent.
+          if ! gh issue list --repo "$REPO" --state open --limit 100 \
+                 --json number,title,updatedAt \
+                 --jq '.[] | select(.title | startswith("🚨")) | [.number, .updatedAt, .title] | @tsv' \
+                 > /tmp/alerts.tsv 2> /tmp/alerts-error.log; then
+            echo "::error::Could not list issues -- cannot tell whether any alert is stale:"
+            cat /tmp/alerts-error.log
+            exit 1
+          fi
 
           if [ ! -s /tmp/alerts.tsv ]; then
             echo "No open 🚨 alert issues."

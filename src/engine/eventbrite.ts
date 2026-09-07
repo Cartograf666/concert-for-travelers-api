@@ -208,6 +208,8 @@ export async function fetchEventbriteConcerts(
   const ordered = [...unique].sort((a, b) => staleness(a) - staleness(b));
 
   let fetched = 0;
+  let attempted = 0;
+  let lastError = '';
   let blockStreak = 0;
   let stopped = false;
 
@@ -220,6 +222,7 @@ export async function fetchEventbriteConcerts(
       continue;
     }
 
+    attempted++;
     try {
       const results = await fetchFn(artist, locationSlug, baseUrl);
       const concerts: Partial<Concert>[] = [];
@@ -233,7 +236,8 @@ export async function fetchEventbriteConcerts(
       await sleep(delayMs);
     } catch (err: any) {
       blockStreak++;
-      console.warn(`[Eventbrite] ${artist} failed (${err.response?.status ?? err.message}); streak ${blockStreak}/${BLOCK_STREAK_LIMIT}. Keeping any cached events.`);
+      lastError = String(err.response?.status ?? err.message);
+      console.warn(`[Eventbrite] ${artist} failed (${lastError}); streak ${blockStreak}/${BLOCK_STREAK_LIMIT}. Keeping any cached events.`);
       if (blockStreak >= BLOCK_STREAK_LIMIT) {
         console.error(`[Eventbrite] ${BLOCK_STREAK_LIMIT} consecutive failures -- likely throttled/blocked. Stopping this run; remaining artists use cached events.`);
         stopped = true;
@@ -247,5 +251,19 @@ export async function fetchEventbriteConcerts(
   }
 
   console.log(`[Eventbrite] Fetched ${fetched} artists this run (cap ${maxPerRun}); ${Object.keys(cache).length} cached total -> ${all.length} raw events.`);
+
+  // Falling back to cache on failure is deliberate -- a transient block must not
+  // wipe an artist's dates. But that fallback also made a PERMANENTLY broken
+  // source indistinguishable from a throttled one: every request could fail,
+  // every run, and the job still succeeded while quietly republishing stale
+  // cached events forever. A run where nothing at all succeeded is not
+  // throttling, so it is raised as a workflow annotation rather than a log line.
+  if (attempted > 0 && fetched === 0) {
+    console.log(
+      `::error::[Eventbrite] every one of ${attempted} request(s) failed this run (last: ${lastError}). ` +
+      `Republishing cached events only -- if this repeats, the source is broken rather than throttled.`
+    );
+  }
+
   return all;
 }

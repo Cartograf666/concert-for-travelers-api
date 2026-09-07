@@ -127,3 +127,24 @@ test('requestDelayMs is bounded — it reserves a slot in a shared per-domain ma
   assert.strictEqual(ScraperConfigSchema.safeParse({ ...base, requestDelayMs: 999999999 }).success, false);
   assert.strictEqual(ScraperConfigSchema.safeParse({ ...base, requestDelayMs: 2000 }).success, true);
 });
+
+test('isBlockedHost covers CGNAT, reserved ranges and private name suffixes', () => {
+  for (const bad of [
+    '100.64.0.1', '100.127.255.254',      // CGNAT 100.64.0.0/10
+    '198.18.0.1',                          // benchmark 198.18.0.0/15
+    '192.0.2.1', '198.51.100.5', '203.0.113.9', // TEST-NET (documentation only)
+    '239.1.1.1', '250.0.0.1',              // multicast / reserved
+    'metadata.google.internal',            // named GCP credential endpoint
+    'db.internal', 'nas.local', 'host.lan'
+  ]) {
+    assert.strictEqual(isBlockedHost(bad), true, `${bad} must be blocked`);
+  }
+
+  // Neighbours of those ranges are ordinary public space and must stay reachable.
+  for (const good of [
+    '8.8.8.8', '93.184.216.34', 'example.com', 'paradiso.nl', 'a38.hu',
+    '100.128.0.1', '198.20.0.1', '192.1.2.3', '203.1.113.9', '223.255.255.1'
+  ]) {
+    assert.strictEqual(isBlockedHost(good), false, `${good} must be allowed`);
+  }
+});
