@@ -1,6 +1,7 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import * as dns from 'dns';
 import type { ArtistEntry } from '../schemas/artist.js';
+import { isBlockedHost } from '../schemas/config.js';
 
 /**
  * Post-enrichment VERIFIER for the collected artist metadata.
@@ -400,13 +401,30 @@ export async function publicResolverAgreesNxdomain(
 
 /** Real fetch: DNS pre-check (a confirmed NXDOMAIN host is dead without an HTTP attempt), then GET/HEAD with a hard timeout. */
 export const defaultFetch: FetchFn = async (url, opts) => {
-  let host: string;
-  try { host = new URL(url).hostname; } catch { return { status: 0, error: 'bad-url' }; }
+  let parsed: URL;
+  try { parsed = new URL(url); } catch { return { status: 0, error: 'bad-url' }; }
+  const host = parsed.hostname;
+  // Every URL reaching here came out of an LLM enrichment response (an artist
+  // website or tour page it claimed to know), so it is no more trustworthy than
+  // scraped page content -- and unlike the scraper's fetch paths this one had no
+  // host check at all while following redirects, then stored 80KB of the body in
+  // reports/verify-report.json.
+  if (!/^https?:$/.test(parsed.protocol) || isBlockedHost(host)) {
+    return { status: 0, error: 'blocked-host' };
+  }
   if (await isNxdomain(host)) return { status: 0, error: 'dns' };
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), 12000);
   try {
     const res = await fetch(url, { method: opts?.method ?? 'GET', redirect: 'follow', signal: ctrl.signal, headers: { 'User-Agent': UA } });
+    // redirect: 'follow' means the check above only covered the first hop.
+    // Undici exposes no per-hop hook, so the final URL is checked instead: the
+    // body is what gets stored, and this refuses to store one fetched from a
+    // blocked host.
+    try {
+      const finalHost = new URL(res.url).hostname;
+      if (isBlockedHost(finalHost)) return { status: 0, error: 'blocked-redirect' };
+    } catch { /* res.url unparseable -- fall through to the normal path */ }
     let body = '';
     if ((opts?.method ?? 'GET') === 'GET') { try { body = (await res.text()).slice(0, 80000); } catch { /* ignore */ } }
     return { status: res.status, finalUrl: res.url, body };

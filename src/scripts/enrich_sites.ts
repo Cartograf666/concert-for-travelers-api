@@ -137,13 +137,36 @@ async function apply(resultsFile: string): Promise<void> {
 
     // Best-effort scraper config for the tour page. Runtime selector correctness is
     // later checked by `npm run scrape`; broken ones are fixed by the self-healing flow.
-    if (r.scraper) {
+    if (r.scraper && tourUrl) {
       const slug = slugify(r.name);
+      // The model's object is spread FIRST and the identity fields are written
+      // over it, never the other way round. Spreading it last let the response
+      // choose the config's own `id`, `url`, `domain` and `type`: `id` drives
+      // heal.ts and prune_dead_scrapers.ts, which resolve
+      // scrapers/${id}.json -- so an id that disagreed with the filename below
+      // silently pointed the healer at a different path -- and `url` is what the
+      // daily scrape then fetches. extract_tour_scrapers.ts already had this
+      // ordering right; this is the same rule.
+      //
+      // `domain` and `url` are pinned to the tour URL that was actually
+      // discovered, so the config can only ever fetch the host this enrichment
+      // was about. A response with no tourUrl gets no config at all.
+      let tourHost: string;
+      try {
+        const parsedTour = new URL(tourUrl);
+        if (!/^https?:$/.test(parsedTour.protocol)) throw new Error('non-http tour URL');
+        tourHost = parsedTour.hostname;
+      } catch {
+        console.error(`[enrich-sites] Skipped scraper config for "${r.name}": unusable tourUrl ${tourUrl}`);
+        continue;
+      }
       // Agents emit null for absent optional selectors; Zod's optional strings reject null,
       // so drop null/empty leaves before validating.
       const candidate = stripNulls({
+        ...(r.scraper as Record<string, unknown>),
         id: `artist-${slug}`,
-        ...(r.scraper as Record<string, unknown>)
+        url: tourUrl,
+        domain: tourHost
       });
       const parsed = ScraperConfigSchema.safeParse(candidate);
       if (parsed.success) {

@@ -5,7 +5,8 @@ import {
   fetchTourHtml,
   selectTourScraperCandidates,
   validateStaticSelectorsAgainstHtml,
-  dropDuplicateCitySelector
+  dropDuplicateCitySelector,
+  dropOperationalFields
 } from '../src/scripts/extract_tour_scrapers.js';
 
 const originalFetch = global.fetch;
@@ -132,4 +133,38 @@ test('dropDuplicateCitySelector - ignores absent or non-string selectors', () =>
   assert.deepStrictEqual(dropDuplicateCitySelector({ venue: '.v' }), { venue: '.v' });
   assert.deepStrictEqual(dropDuplicateCitySelector({}), {});
   assert.deepStrictEqual(dropDuplicateCitySelector({ venue: '', city: '' }), { venue: '', city: '' });
+});
+
+test('dropOperationalFields strips the knobs the model must not choose', () => {
+  // allowEmpty is the dangerous one: it tells the runner that 0 parsed events is
+  // a VALID result, which makes a permanently-broken scraper look healthy and
+  // suppresses the very failure the healer and pruner act on.
+  const out = dropOperationalFields({
+    selectors: { eventBlock: '.e' },
+    allowEmpty: true,
+    httpClient: 'got-scraping',
+    maxRetries: 5,
+    requestDelayMs: 999999999
+  });
+  for (const field of ['allowEmpty', 'httpClient', 'maxRetries', 'requestDelayMs']) {
+    assert.ok(!(field in out), `${field} must not survive from model output`);
+  }
+  assert.deepStrictEqual(out.selectors, { eventBlock: '.e' }, 'selectors must survive untouched');
+});
+
+test('buildScraperConfig pins identity to the discovered tour URL, not model output', () => {
+  const config = buildScraperConfig('Bonnie Pink', 'https://www.bonniepink.jp/live', {
+    type: 'playwright_render',
+    id: 'artist-something-else',
+    url: 'https://evil.example/',
+    domain: 'evil.example',
+    allowEmpty: true,
+    selectors: { eventBlock: '.e', date: '.d', venueNameFallback: '', cityNameFallback: '', countryNameFallback: 'JP' }
+  });
+  assert.ok(config, 'a valid config should still be produced');
+  assert.strictEqual(config!.url, 'https://www.bonniepink.jp/live');
+  assert.strictEqual(config!.domain, 'www.bonniepink.jp');
+  assert.strictEqual(config!.id, 'artist-bonnie-pink');
+  assert.strictEqual(config!.type, 'static_selectors');
+  assert.strictEqual((config as any).allowEmpty, undefined);
 });

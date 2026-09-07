@@ -101,7 +101,13 @@ export const ScraperConfigSchema = z.object({
   type: z.enum(['static_selectors', 'json_api', 'custom_js', 'jsonld', 'next_data', 'playwright_render']).default('static_selectors'),
   httpClient: z.enum(['axios', 'got-scraping']).optional().describe("Plain-HTTP fetch backend for this venue (ignored by 'playwright_render'). 'axios' (default) rotates a static User-Agent; 'got-scraping' generates a full, order-correct browser header set (sec-ch-ua, sec-fetch-*) to get past header-fingerprint anti-bot checks. The global env override SCRAPER_HTTP_BACKEND wins over this per-config value."),
   maxRetries: z.number().int().min(0).max(5).optional().describe("Retry attempts on transient fetch failures (network/timeout/429/5xx). Defaults to 2."),
-  requestDelayMs: z.number().int().min(0).optional().describe("Minimum delay between successive requests to this domain (politeness throttle)."),
+  // Bounded because this value is not always human-written: enrich_sites and
+  // extract_tour_scrapers build configs out of LLM output, and politeDelay
+  // reserves the next slot in a per-domain map shared by every config on that
+  // host BEFORE it sleeps. An unbounded value therefore stalls not just its own
+  // scraper but every sibling on the same domain for the rest of the run. Ten
+  // minutes is far beyond any real politeness need and still bounded.
+  requestDelayMs: z.number().int().min(0).max(600000).optional().describe("Minimum delay between successive requests to this domain (politeness throttle), max 10 minutes."),
   allowEmpty: z.boolean().optional().describe("Set true for venues with a genuinely sparse/seasonal schedule, so 0 parsed events is treated as a valid (empty) result instead of a broken-selector failure."),
   selectors: ScraperSelectorsSchema.optional()
 });
