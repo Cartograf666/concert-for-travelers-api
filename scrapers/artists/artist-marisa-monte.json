@@ -5,9 +5,11 @@
   "type": "static_selectors",
   "selectors": {
     "eventBlock": "a.evento",
+    "artist": ".evento-titulo",
     "artistNameFallback": "Marisa Monte",
     "date": ".evento-data",
-    "ticketUrl": "a.evento::attr(href)",
+    "datePattern": "DD/MM/YYYY",
+    "ticketUrl": "a.evento",
     "venue": ".evento-local p",
     "city": ".evento-titulo",
     "country": "",
