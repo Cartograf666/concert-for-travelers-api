@@ -1,128 +1,982 @@
 [
   {
-    "id": "artist-jeff-irwin",
-    "consecutiveFailures": 5,
-    "lastReason": "fetch_error",
-    "firstFailedAt": "2026-09-05T15:12:02.973Z",
-    "lastFailedAt": "2026-09-08T08:25:29.618Z"
-  },
-  {
-    "id": "artist-jeff-linsky",
-    "consecutiveFailures": 5,
-    "lastReason": "fetch_error",
-    "firstFailedAt": "2026-09-05T15:12:02.973Z",
-    "lastFailedAt": "2026-09-08T08:25:29.618Z"
-  },
-  {
-    "id": "artist-pelle-almqvist",
-    "consecutiveFailures": 5,
-    "lastReason": "fetch_error",
-    "firstFailedAt": "2026-09-05T15:12:02.973Z",
-    "lastFailedAt": "2026-09-08T08:25:29.618Z"
-  },
-  {
-    "id": "artist-jeff-ng",
-    "consecutiveFailures": 5,
-    "lastReason": "fetch_error",
-    "firstFailedAt": "2026-09-05T15:12:02.973Z",
-    "lastFailedAt": "2026-09-08T08:25:29.618Z"
-  },
-  {
-    "id": "artist-bucks-fizz",
-    "consecutiveFailures": 3,
-    "lastReason": "fetch_error",
-    "firstFailedAt": "2026-09-06T08:10:19.913Z",
-    "lastFailedAt": "2026-09-08T08:25:29.618Z"
-  },
-  {
-    "id": "artist-james-pankow",
-    "consecutiveFailures": 2,
-    "lastReason": "fetch_error",
-    "firstFailedAt": "2026-09-07T08:22:12.226Z",
-    "lastFailedAt": "2026-09-08T08:25:29.618Z"
-  },
-  {
-    "id": "artist-jerry-depizzo",
-    "consecutiveFailures": 2,
-    "lastReason": "fetch_error",
-    "firstFailedAt": "2026-09-07T08:22:12.226Z",
-    "lastFailedAt": "2026-09-08T08:25:29.618Z"
-  },
-  {
-    "id": "artist-jerry-augustyniak",
-    "consecutiveFailures": 2,
-    "lastReason": "fetch_error",
-    "firstFailedAt": "2026-09-07T08:22:12.226Z",
-    "lastFailedAt": "2026-09-08T08:25:29.618Z"
-  },
-  {
-    "id": "artist-paul-halley",
-    "consecutiveFailures": 2,
-    "lastReason": "fetch_error",
-    "firstFailedAt": "2026-09-07T08:22:12.226Z",
-    "lastFailedAt": "2026-09-08T08:25:29.618Z"
-  },
-  {
-    "id": "artist-angel-heart",
-    "consecutiveFailures": 1,
-    "lastReason": "fetch_error",
-    "firstFailedAt": "2026-09-08T08:25:29.618Z",
-    "lastFailedAt": "2026-09-08T08:25:29.618Z"
-  },
-  {
     "id": "artist-ann-and-nancy-wilson",
-    "consecutiveFailures": 1,
+    "consecutiveFailures": 2,
     "lastReason": "fetch_error",
     "firstFailedAt": "2026-09-08T08:25:29.618Z",
-    "lastFailedAt": "2026-09-08T08:25:29.618Z"
-  },
-  {
-    "id": "artist-bruce-thomas",
-    "consecutiveFailures": 1,
-    "lastReason": "fetch_error",
-    "firstFailedAt": "2026-09-08T08:25:29.618Z",
-    "lastFailedAt": "2026-09-08T08:25:29.618Z"
-  },
-  {
-    "id": "artist-heart",
-    "consecutiveFailures": 1,
-    "lastReason": "fetch_error",
-    "firstFailedAt": "2026-09-08T08:25:29.618Z",
-    "lastFailedAt": "2026-09-08T08:25:29.618Z"
-  },
-  {
-    "id": "artist-iron-maidens-the",
-    "consecutiveFailures": 1,
-    "lastReason": "fetch_error",
-    "firstFailedAt": "2026-09-08T08:25:29.618Z",
-    "lastFailedAt": "2026-09-08T08:25:29.618Z"
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
   },
   {
     "id": "artist-poetry",
-    "consecutiveFailures": 1,
+    "consecutiveFailures": 2,
     "lastReason": "fetch_error",
     "firstFailedAt": "2026-09-08T08:25:29.618Z",
-    "lastFailedAt": "2026-09-08T08:25:29.618Z"
-  },
-  {
-    "id": "artist-sabaton",
-    "consecutiveFailures": 1,
-    "lastReason": "fetch_error",
-    "firstFailedAt": "2026-09-08T08:25:29.618Z",
-    "lastFailedAt": "2026-09-08T08:25:29.618Z"
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
   },
   {
     "id": "artist-your-smiling-face",
-    "consecutiveFailures": 1,
+    "consecutiveFailures": 2,
     "lastReason": "fetch_error",
     "firstFailedAt": "2026-09-08T08:25:29.618Z",
-    "lastFailedAt": "2026-09-08T08:25:29.618Z"
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
   },
   {
     "id": "artist-youre-all-i-wanna-do",
-    "consecutiveFailures": 1,
+    "consecutiveFailures": 2,
     "lastReason": "fetch_error",
     "firstFailedAt": "2026-09-08T08:25:29.618Z",
-    "lastFailedAt": "2026-09-08T08:25:29.618Z"
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-a-certain-ratio",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-aaron-pritchett",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-acid-test",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-adelaide-symphony-orchestra",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-al-gromer-khan",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-alex-prior",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-alisa-childers",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-alicia-svigals",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-allison-crowe",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-amanda-shaw",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-american-composers-orchestra",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-andrew-calhoun",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-andy-cairns",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-angst",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-anne-mccue",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-anthony-mcgill",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-antigone-rising",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-apparat",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-ariana-gillis",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-arielle-dombasle",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-arthur-c-brooks",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-arturo-ofarrill",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-astrid-williamson",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-bassnectar",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-black-roots",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-boa",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-chris-norman",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-dan-hill",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-david-kikoski",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-death-in-vegas",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-diamond-head",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-djavan",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-dmitri-matheny",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-ellen-ten-damme",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-eric-lindell",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-excision",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-felix-mendelssohn",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-flaw",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-gandalfs-fist",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-gaia-consort",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-gerard-joling",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-giora-feidman",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-habib-koite",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-herbie-hancock",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-heritage-singers",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-howie-day",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-ian-shaw",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-iijima-mari",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-in-extremo",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-inbal-segev",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-interface",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-ircam",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-ishii-tatsuya",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-jacqui-dankworth",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-james",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-jan-gunnar-hoff",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-jay-semko",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-jim-moray",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-johann-wilhelm-wilms",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-john-mellencamp",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-julie-fowlis",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-kj-52",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-l-subramaniam",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-lady-gaga",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-limahl",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-lisa-brokop",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-loose-ends",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-lucy-kaplansky",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-lynch",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-marike-jager",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-mark-hummel",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-matt-mason",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-marmalade",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-micky-dolenz",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-miu",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-mungos-hi-fi",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-my-vitriol",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-nena",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-nick-cave-the-bad-seeds",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-hermann-nitsch",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-nine-inch-nails",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-one-more-girl",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-paralamas-do-sucesso",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-param-vir",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-paolo-tosti",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-pat-benatar",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-patrice-rushen",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-patrick-scales",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-paul-anka",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-paul-dempsey",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-paul-thompson",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-paul-winter",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-pequot",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-phil-selway",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-philip-lindholm",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-pontarddulais-male-choir",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-pretty-ricky",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-pretty-yende",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-primal-scream",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-pukkelpop",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-puts-kevin",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-queensland-symphony-orchestra",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-rachael-sage",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-randy-houser",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-ron-sexsmith",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-sarah-slean",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-shelby-lynne",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-sheryl-bailey",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-sick-of-sarah",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-smalltown-poets",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-sonicflood",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-sophie-b-hawkins",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-stef-bos",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-steinar-raknes",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-tesla",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-terell-stafford",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-the-alarm",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-the-breath-of-life",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-the-crookes",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-the-offspring",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-the-plastic-people-of-the-universe",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-the-rose-of-avalanche",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-the-script",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-the-searchers",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-the-whitlams",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-the-tea-party",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-them",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-twin-atlantic",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-tingstad-rumbel",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-torun-eriksen",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-ub40",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-uicideboy",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-unholy",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-van-morrison",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-vitalic",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
+  },
+  {
+    "id": "artist-wang-chung",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:46:03.792Z",
+    "lastFailedAt": "2026-09-08T08:46:03.792Z"
   }
 ]
