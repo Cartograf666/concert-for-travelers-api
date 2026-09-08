@@ -1,65 +1,128 @@
 [
   {
     "id": "artist-jeff-irwin",
-    "consecutiveFailures": 4,
+    "consecutiveFailures": 5,
     "lastReason": "fetch_error",
     "firstFailedAt": "2026-09-05T15:12:02.973Z",
-    "lastFailedAt": "2026-09-07T08:22:12.226Z"
+    "lastFailedAt": "2026-09-08T08:25:29.618Z"
   },
   {
     "id": "artist-jeff-linsky",
-    "consecutiveFailures": 4,
+    "consecutiveFailures": 5,
     "lastReason": "fetch_error",
     "firstFailedAt": "2026-09-05T15:12:02.973Z",
-    "lastFailedAt": "2026-09-07T08:22:12.226Z"
+    "lastFailedAt": "2026-09-08T08:25:29.618Z"
   },
   {
     "id": "artist-pelle-almqvist",
-    "consecutiveFailures": 4,
+    "consecutiveFailures": 5,
     "lastReason": "fetch_error",
     "firstFailedAt": "2026-09-05T15:12:02.973Z",
-    "lastFailedAt": "2026-09-07T08:22:12.226Z"
+    "lastFailedAt": "2026-09-08T08:25:29.618Z"
   },
   {
     "id": "artist-jeff-ng",
-    "consecutiveFailures": 4,
+    "consecutiveFailures": 5,
     "lastReason": "fetch_error",
     "firstFailedAt": "2026-09-05T15:12:02.973Z",
-    "lastFailedAt": "2026-09-07T08:22:12.226Z"
+    "lastFailedAt": "2026-09-08T08:25:29.618Z"
   },
   {
     "id": "artist-bucks-fizz",
-    "consecutiveFailures": 2,
+    "consecutiveFailures": 3,
     "lastReason": "fetch_error",
     "firstFailedAt": "2026-09-06T08:10:19.913Z",
-    "lastFailedAt": "2026-09-07T08:22:12.226Z"
+    "lastFailedAt": "2026-09-08T08:25:29.618Z"
   },
   {
     "id": "artist-james-pankow",
-    "consecutiveFailures": 1,
+    "consecutiveFailures": 2,
     "lastReason": "fetch_error",
     "firstFailedAt": "2026-09-07T08:22:12.226Z",
-    "lastFailedAt": "2026-09-07T08:22:12.226Z"
+    "lastFailedAt": "2026-09-08T08:25:29.618Z"
   },
   {
     "id": "artist-jerry-depizzo",
-    "consecutiveFailures": 1,
+    "consecutiveFailures": 2,
     "lastReason": "fetch_error",
     "firstFailedAt": "2026-09-07T08:22:12.226Z",
-    "lastFailedAt": "2026-09-07T08:22:12.226Z"
+    "lastFailedAt": "2026-09-08T08:25:29.618Z"
   },
   {
     "id": "artist-jerry-augustyniak",
-    "consecutiveFailures": 1,
+    "consecutiveFailures": 2,
     "lastReason": "fetch_error",
     "firstFailedAt": "2026-09-07T08:22:12.226Z",
-    "lastFailedAt": "2026-09-07T08:22:12.226Z"
+    "lastFailedAt": "2026-09-08T08:25:29.618Z"
   },
   {
     "id": "artist-paul-halley",
-    "consecutiveFailures": 1,
+    "consecutiveFailures": 2,
     "lastReason": "fetch_error",
     "firstFailedAt": "2026-09-07T08:22:12.226Z",
-    "lastFailedAt": "2026-09-07T08:22:12.226Z"
+    "lastFailedAt": "2026-09-08T08:25:29.618Z"
+  },
+  {
+    "id": "artist-angel-heart",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:25:29.618Z",
+    "lastFailedAt": "2026-09-08T08:25:29.618Z"
+  },
+  {
+    "id": "artist-ann-and-nancy-wilson",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:25:29.618Z",
+    "lastFailedAt": "2026-09-08T08:25:29.618Z"
+  },
+  {
+    "id": "artist-bruce-thomas",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:25:29.618Z",
+    "lastFailedAt": "2026-09-08T08:25:29.618Z"
+  },
+  {
+    "id": "artist-heart",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:25:29.618Z",
+    "lastFailedAt": "2026-09-08T08:25:29.618Z"
+  },
+  {
+    "id": "artist-iron-maidens-the",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:25:29.618Z",
+    "lastFailedAt": "2026-09-08T08:25:29.618Z"
+  },
+  {
+    "id": "artist-poetry",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:25:29.618Z",
+    "lastFailedAt": "2026-09-08T08:25:29.618Z"
+  },
+  {
+    "id": "artist-sabaton",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:25:29.618Z",
+    "lastFailedAt": "2026-09-08T08:25:29.618Z"
+  },
+  {
+    "id": "artist-your-smiling-face",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:25:29.618Z",
+    "lastFailedAt": "2026-09-08T08:25:29.618Z"
+  },
+  {
+    "id": "artist-youre-all-i-wanna-do",
+    "consecutiveFailures": 1,
+    "lastReason": "fetch_error",
+    "firstFailedAt": "2026-09-08T08:25:29.618Z",
+    "lastFailedAt": "2026-09-08T08:25:29.618Z"
   }
 ]
