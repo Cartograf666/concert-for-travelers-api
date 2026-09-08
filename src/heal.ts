@@ -135,178 +135,190 @@ async function main() {
       continue;
     }
 
-    if (Date.now() - startedAt > HEAL_BUDGET_MS) {
-      outcomes.push({
-        id, strategy: 'unfixable', detail: '', result: 'budget_exhausted',
-        note: `not attempted: ${Math.round(HEAL_BUDGET_MS / 60000)}min healing budget exhausted; will be retried on the next daily run`
-      });
-      continue;
-    }
+    // One scraper must not be able to abort the whole pass. repairScraperConfig
+    // throws when the Gemini cascade is exhausted across every key -- a routine
+    // quota outcome, not a bug -- and with the loop unguarded that killed the run
+    // before repair-report.json was written, so the pass produced no record of
+    // anything it had already done, healed or not.
+    try {
 
-    const classification = classifyFailure(failure);
-    console.log(`\n--- Healing ${id} (${classification.strategy}: ${classification.detail}) ---`);
-
-    // Honour the path the fail-log recorded. Venue configs live in scrapers/ and
-    // artist tour-page configs in scrapers/artists/, so reconstructing from the
-    // id alone resolved every artist config to a file that does not exist -- the
-    // healer would report "config missing" and move on forever.
-    const configPath = typeof failure.configPath === 'string' && failure.configPath
-      ? path.resolve(process.cwd(), failure.configPath)
-      : path.join(scrapersDir, `${id}.json`);
-    const loaded = await readConfig(configPath);
-    if (!loaded) {
-      outcomes.push({ ...classification, id, result: 'skipped', note: 'config missing or invalid' });
-      continue;
-    }
-
-    const alreadyFailed = failedStrategiesFor(history, id);
-    if (alreadyFailed.has(classification.strategy)) {
-      outcomes.push({
-        ...classification, id, result: 'skipped',
-        note: `strategy "${classification.strategy}" was already tried and rolled back for this scraper`
-      });
-      continue;
-    }
-
-    const verifyOptions = { baselineCount: baselineCounts.get(id) };
-    let accepted: { config: ScraperConfig; report: VerifyReport; note: string } | null = null;
-    let lastNote = '';
-
-    if (classification.strategy === 'selectors') {
-      if (apiKeys.length === 0) {
-        outcomes.push({ ...classification, id, result: 'skipped', note: 'no Gemini key for LLM re-selection' });
-        continue;
-      }
-      // repairScraperConfig writes the file in place (it also does the free JSON-LD
-      // probe first). Verify what it produced against the live site and restore the
-      // original bytes if it does not hold up -- the working tree must never keep a
-      // repair the gate rejected.
-      const res = await repairScraperConfig(configPath, String(failure.htmlSample ?? ''), apiKeys);
-      if (!res.success || !res.config) {
-        await fs.writeFile(configPath, loaded.raw, 'utf-8');
-        outcomes.push({ ...classification, id, result: 'rejected', note: `repair failed: ${res.error}` });
-        continue;
-      }
-      const report = await verifyConfigLive(res.config, (c) => runScraper(c), verifyOptions);
-      if (report.ok) {
-        accepted = { config: res.config, report, note: 'LLM/JSON-LD re-selection' };
-      } else {
-        await fs.writeFile(configPath, loaded.raw, 'utf-8');
-        lastNote = `re-selection rejected by live verification -- ${formatVerifyReport(report)}`;
-      }
-    } else {
-      const plan = await proposeRepairCandidates(loaded.config, classification, deps);
-      if (plan.retire) {
-        // Retirement (deleting the config and resetting the artist's tourUrl fields)
-        // belongs to prune-dead-scrapers.ts: it holds the artist-db-write lock and
-        // already owns that path. Recorded here for the report only.
-        retireCandidates.push({ id, detail: plan.note });
-        outcomes.push({ ...classification, id, result: 'retire_candidate', note: plan.note });
-        continue;
-      }
-      if (plan.candidates.length === 0) {
-        // Nothing to try is not the same as "we tried and the gate refused it" --
-        // conflating them would make the report read as if the verification gate
-        // were rejecting far more repairs than it actually sees.
-        outcomes.push({ ...classification, id, result: 'skipped', note: plan.note });
-        continue;
-      }
-      lastNote = plan.note;
-      // A candidate that fetched cleanly and then parsed to nothing is almost
-      // certainly the page we were looking for: sites that move their schedule
-      // usually redesign it at the same time, so the old selectors miss. Observed
-      // live on hartfordsymphony.org and henrychocomedy.com, where every
-      // reachable candidate came back 'selectors_stale'. Remember the first such
-      // hit and re-select on it rather than reporting the whole scraper as
-      // unfixable.
-      let chain: { config: ScraperConfig; htmlSample: string; reason: string } | null = null;
-
-      for (const candidate of plan.candidates) {
-        if (Date.now() - startedAt > HEAL_BUDGET_MS) {
-          lastNote = `${plan.note}; stopped mid-probe on the healing budget`;
-          break;
-        }
-        // Probing one domain repeatedly is the point here, so the per-domain
-        // circuit must not carry over between candidates.
-        resetDomainCircuit(candidate.domain);
-        console.log(`[Healer] ${id}: probing candidate ${candidate.url} (type=${candidate.type}, client=${candidate.httpClient ?? 'axios'})`);
-        const report = await verifyConfigLive(candidate, (c) => runScraper(c), verifyOptions);
-        if (report.ok) {
-          accepted = { config: candidate, report, note: plan.note };
-          break;
-        }
-        if (!chain && report.htmlSample &&
-            (report.failureReason === 'selectors_stale' || report.failureReason === 'csr_detected')) {
-          chain = { config: candidate, htmlSample: report.htmlSample, reason: report.failureReason };
-        }
-        console.log(`[Healer] ${id}: candidate rejected -- ${formatVerifyReport(report)}`);
-        lastNote = `${plan.note}; last candidate: ${formatVerifyReport(report)}`;
-      }
-
-      if (!accepted && chain) {
-        accepted = await chainSelectorRepair(id, configPath, loaded.raw, chain, {
-          repairConfig: (p, html) => repairScraperConfig(p, html, apiKeys),
-          verify: (c) => {
-            resetDomainCircuit(c.domain);
-            return verifyConfigLive(c, (cc) => runScraper(cc), verifyOptions);
-          },
-          hasLlmKey: apiKeys.length > 0
+      if (Date.now() - startedAt > HEAL_BUDGET_MS) {
+        outcomes.push({
+          id, strategy: 'unfixable', detail: '', result: 'budget_exhausted',
+          note: `not attempted: ${Math.round(HEAL_BUDGET_MS / 60000)}min healing budget exhausted; will be retried on the next daily run`
         });
-        if (!accepted) {
-          lastNote = `${lastNote}; reached ${chain.config.url} but could not re-select on it`;
+        continue;
+      }
+
+      const classification = classifyFailure(failure);
+      console.log(`\n--- Healing ${id} (${classification.strategy}: ${classification.detail}) ---`);
+
+      // Honour the path the fail-log recorded. Venue configs live in scrapers/ and
+      // artist tour-page configs in scrapers/artists/, so reconstructing from the
+      // id alone resolved every artist config to a file that does not exist -- the
+      // healer would report "config missing" and move on forever.
+      const configPath = typeof failure.configPath === 'string' && failure.configPath
+        ? path.resolve(process.cwd(), failure.configPath)
+        : path.join(scrapersDir, `${id}.json`);
+      const loaded = await readConfig(configPath);
+      if (!loaded) {
+        outcomes.push({ ...classification, id, result: 'skipped', note: 'config missing or invalid' });
+        continue;
+      }
+
+      const alreadyFailed = failedStrategiesFor(history, id);
+      if (alreadyFailed.has(classification.strategy)) {
+        outcomes.push({
+          ...classification, id, result: 'skipped',
+          note: `strategy "${classification.strategy}" was already tried and rolled back for this scraper`
+        });
+        continue;
+      }
+
+      const verifyOptions = { baselineCount: baselineCounts.get(id) };
+      let accepted: { config: ScraperConfig; report: VerifyReport; note: string } | null = null;
+      let lastNote = '';
+
+      if (classification.strategy === 'selectors') {
+        if (apiKeys.length === 0) {
+          outcomes.push({ ...classification, id, result: 'skipped', note: 'no Gemini key for LLM re-selection' });
+          continue;
+        }
+        // repairScraperConfig writes the file in place (it also does the free JSON-LD
+        // probe first). Verify what it produced against the live site and restore the
+        // original bytes if it does not hold up -- the working tree must never keep a
+        // repair the gate rejected.
+        const res = await repairScraperConfig(configPath, String(failure.htmlSample ?? ''), apiKeys);
+        if (!res.success || !res.config) {
+          await fs.writeFile(configPath, loaded.raw, 'utf-8');
+          outcomes.push({ ...classification, id, result: 'rejected', note: `repair failed: ${res.error}` });
+          continue;
+        }
+        const report = await verifyConfigLive(res.config, (c) => runScraper(c), verifyOptions);
+        if (report.ok) {
+          accepted = { config: res.config, report, note: 'LLM/JSON-LD re-selection' };
+        } else {
+          await fs.writeFile(configPath, loaded.raw, 'utf-8');
+          lastNote = `re-selection rejected by live verification -- ${formatVerifyReport(report)}`;
+        }
+      } else {
+        const plan = await proposeRepairCandidates(loaded.config, classification, deps);
+        if (plan.retire) {
+          // Retirement (deleting the config and resetting the artist's tourUrl fields)
+          // belongs to prune-dead-scrapers.ts: it holds the artist-db-write lock and
+          // already owns that path. Recorded here for the report only.
+          retireCandidates.push({ id, detail: plan.note });
+          outcomes.push({ ...classification, id, result: 'retire_candidate', note: plan.note });
+          continue;
+        }
+        if (plan.candidates.length === 0) {
+          // Nothing to try is not the same as "we tried and the gate refused it" --
+          // conflating them would make the report read as if the verification gate
+          // were rejecting far more repairs than it actually sees.
+          outcomes.push({ ...classification, id, result: 'skipped', note: plan.note });
+          continue;
+        }
+        lastNote = plan.note;
+        // A candidate that fetched cleanly and then parsed to nothing is almost
+        // certainly the page we were looking for: sites that move their schedule
+        // usually redesign it at the same time, so the old selectors miss. Observed
+        // live on hartfordsymphony.org and henrychocomedy.com, where every
+        // reachable candidate came back 'selectors_stale'. Remember the first such
+        // hit and re-select on it rather than reporting the whole scraper as
+        // unfixable.
+        let chain: { config: ScraperConfig; htmlSample: string; reason: string } | null = null;
+
+        for (const candidate of plan.candidates) {
+          if (Date.now() - startedAt > HEAL_BUDGET_MS) {
+            lastNote = `${plan.note}; stopped mid-probe on the healing budget`;
+            break;
+          }
+          // Probing one domain repeatedly is the point here, so the per-domain
+          // circuit must not carry over between candidates.
+          resetDomainCircuit(candidate.domain);
+          console.log(`[Healer] ${id}: probing candidate ${candidate.url} (type=${candidate.type}, client=${candidate.httpClient ?? 'axios'})`);
+          const report = await verifyConfigLive(candidate, (c) => runScraper(c), verifyOptions);
+          if (report.ok) {
+            accepted = { config: candidate, report, note: plan.note };
+            break;
+          }
+          if (!chain && report.htmlSample &&
+              (report.failureReason === 'selectors_stale' || report.failureReason === 'csr_detected')) {
+            chain = { config: candidate, htmlSample: report.htmlSample, reason: report.failureReason };
+          }
+          console.log(`[Healer] ${id}: candidate rejected -- ${formatVerifyReport(report)}`);
+          lastNote = `${plan.note}; last candidate: ${formatVerifyReport(report)}`;
+        }
+
+        if (!accepted && chain) {
+          accepted = await chainSelectorRepair(id, configPath, loaded.raw, chain, {
+            repairConfig: (p, html) => repairScraperConfig(p, html, apiKeys),
+            verify: (c) => {
+              resetDomainCircuit(c.domain);
+              return verifyConfigLive(c, (cc) => runScraper(cc), verifyOptions);
+            },
+            hasLlmKey: apiKeys.length > 0
+          });
+          if (!accepted) {
+            lastNote = `${lastNote}; reached ${chain.config.url} but could not re-select on it`;
+          }
         }
       }
-    }
 
-    if (!accepted) {
-      const note = lastNote || 'no candidate passed verification';
-      outcomes.push({ ...classification, id, result: 'rejected', note });
-      // Record the failed attempt. Without this the run left no durable trace of
-      // it -- repair-report.json is an ephemeral artifact -- so tomorrow's run
-      // saw the same failure, classified it identically, and paid for the same
-      // Gemini cascade to fail the same way. failedStrategiesFor stops trying a
-      // strategy after REJECTED_ATTEMPTS_BEFORE_SKIP of these.
-      history.push({
+      if (!accepted) {
+        const note = lastNote || 'no candidate passed verification';
+        outcomes.push({ ...classification, id, result: 'rejected', note });
+        // Record the failed attempt. Without this the run left no durable trace of
+        // it -- repair-report.json is an ephemeral artifact -- so tomorrow's run
+        // saw the same failure, classified it identically, and paid for the same
+        // Gemini cascade to fail the same way. failedStrategiesFor stops trying a
+        // strategy after REJECTED_ATTEMPTS_BEFORE_SKIP of these.
+        history.push({
+          id,
+          strategy: classification.strategy,
+          repairedAt: new Date().toISOString(),
+          previousConfig: JSON.parse(loaded.raw),
+          status: 'rejected',
+          failuresSinceRepair: 0,
+          note,
+          verification: ''
+        });
+        historyChanged = true;
+        continue;
+      }
+
+      await writeConfig(configPath, accepted.config);
+      healed.push(id);
+      const verification = formatVerifyReport(accepted.report);
+      outcomes.push({ ...classification, id, result: 'repaired', note: accepted.note, verification });
+
+      const record: RepairRecord = {
         id,
         strategy: classification.strategy,
         repairedAt: new Date().toISOString(),
         previousConfig: JSON.parse(loaded.raw),
-        status: 'rejected',
+        status: 'pending',
         failuresSinceRepair: 0,
-        note,
-        verification: ''
-      });
+        note: accepted.note,
+        verification
+      };
+      // Supersede any earlier unproven repair for this scraper; only the newest
+      // pending record can be confirmed or rolled back.
+      for (const r of history) {
+        if (r.id === id && r.status === 'pending') {
+          r.status = 'reverted';
+          historyChanged = true;
+        }
+      }
+      history.push(record);
       historyChanged = true;
+
+      console.log(`[Healer] ${id}: REPAIRED via ${classification.strategy} — ${verification}`);
+    } catch (err: any) {
+      console.error(`[Healer] ${id}: aborted with an unexpected error: ${err?.message ?? err}`);
+      outcomes.push({ id, strategy: 'unfixable', detail: '', result: 'rejected', note: `unexpected error: ${err?.message ?? err}` });
       continue;
     }
-
-    await writeConfig(configPath, accepted.config);
-    healed.push(id);
-    const verification = formatVerifyReport(accepted.report);
-    outcomes.push({ ...classification, id, result: 'repaired', note: accepted.note, verification });
-
-    const record: RepairRecord = {
-      id,
-      strategy: classification.strategy,
-      repairedAt: new Date().toISOString(),
-      previousConfig: JSON.parse(loaded.raw),
-      status: 'pending',
-      failuresSinceRepair: 0,
-      note: accepted.note,
-      verification
-    };
-    // Supersede any earlier unproven repair for this scraper; only the newest
-    // pending record can be confirmed or rolled back.
-    for (const r of history) {
-      if (r.id === id && r.status === 'pending') {
-        r.status = 'reverted';
-        historyChanged = true;
-      }
-    }
-    history.push(record);
-    historyChanged = true;
-
-    console.log(`[Healer] ${id}: REPAIRED via ${classification.strategy} — ${verification}`);
   }
 
   await closeBrowser();

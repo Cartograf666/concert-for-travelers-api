@@ -238,6 +238,36 @@ jobs:
             // entire publish, which is what kept the API frozen for 23 days.
             // It reports them here instead, so deciding whether that degree of
             // incompleteness may ship is this gate's call, not the publisher's.
+            // A failed scraper does not reduce totalConcerts: run.ts deliberately
+            // reuses that venue's cached events so a transient outage cannot wipe
+            // its dates. Correct -- but it also means the floor and the -50% guard
+            // below CANNOT see mass scraper failure: every scraper could break and
+            // totalConcerts would hold steady on stale cache. run.ts already
+            // records the real numbers in dist/status.json; nothing read them.
+            if (fs.existsSync('dist/status.json')) {
+              const status = JSON.parse(fs.readFileSync('dist/status.json', 'utf-8'));
+              const total = status.scrapersTotal || 0;
+              const ok = status.scrapersOk || 0;
+              if (total > 0) {
+                const okRate = ok / total;
+                console.log(`Scraper success: ${ok}/${total} (${(okRate * 100).toFixed(0)}%)`);
+                // Roughly a third of scrapers fail on a normal day (dead venues,
+                // 403s, layout drift), so this floor is far below the baseline and
+                // only trips on something systemic -- a network/DNS failure, an
+                // expired credential, a bad deploy of the runner itself.
+                if (okRate < 0.25) {
+                  core.setFailed(
+                    `Health gate: only ${ok}/${total} scrapers succeeded (${(okRate * 100).toFixed(0)}%) -- ` +
+                    `the published set would be almost entirely stale cache. Refusing to deploy.`
+                  );
+                  return;
+                }
+                if (Array.isArray(status.staleVenues) && status.staleVenues.length > 0) {
+                  core.warning(`${status.staleVenues.length} venue(s) are being served from a cache past the staleness bound.`);
+                }
+              }
+            }
+
             const failedWrites = index.stats.failedWrites || 0;
             if (failedWrites > 0) {
               const share = failedWrites / total;

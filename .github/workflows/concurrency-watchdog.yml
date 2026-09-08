@@ -73,3 +73,13 @@ jobs:
           else
             echo "No changes in data/concurrency-drops.json"
           fi
+
+      # A scheduled job that fails silently is indistinguishable from one that
+      # never ran. This was the only alerting gap left among the scheduled
+      # workflows -- and for a watchdog it matters most: nothing else watches it.
+      - name: Alert on failure
+        if: failure()
+        uses: ./.github/actions/alert-on-failure
+        with:
+          workflow-name: "Concurrency Starvation Watchdog"
+          job-label: watchdog
