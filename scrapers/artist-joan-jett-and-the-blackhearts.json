@@ -1,0 +1,17 @@
+{
+  "id": "artist-joan-jett-and-the-blackhearts",
+  "domain": "www.joanjett.com",
+  "url": "https://www.joanjett.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.show-item",
+    "artistNameFallback": "Joan Jett and The Blackhearts",
+    "date": "div.show-date",
+    "ticketUrl": "a.tickets-link",
+    "venue": "div.show-venue",
+    "city": "div.show-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
