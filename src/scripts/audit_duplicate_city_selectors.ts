@@ -32,6 +32,22 @@ interface Offender {
   cityNameFallback: string;
   /** With no fallback, dropping the duplicate selector drops the scraper's concerts too. */
   droppingLosesData: boolean;
+  /**
+   * True when cityNameFallback is not a place name at all -- a CSS selector the
+   * generator copied into the wrong field, or a placeholder like "See Website".
+   * It is published as the city whenever the selector yields nothing, so it is a
+   * latent source of junk even where the selector usually works.
+   */
+  fallbackIsJunk: boolean;
+}
+
+/** A fallback that is plainly not a place: a selector fragment or a placeholder. */
+export function isJunkPlaceFallback(value: string): boolean {
+  const v = value.trim();
+  if (!v) return false;
+  if (v.startsWith('.') || v.startsWith('#')) return true;
+  if (v.includes('>') || v.includes('::') || v.includes('[')) return true;
+  return ['city', 'venue', 'see website', 'see page content', 'n/a', 'tba', 'tbd'].includes(v.toLowerCase());
 }
 
 export function findDuplicateCitySelector(config: any, file: string): Offender | null {
@@ -47,7 +63,8 @@ export function findDuplicateCitySelector(config: any, file: string): Offender |
     domain: String(config.domain ?? ''),
     selector: venue,
     cityNameFallback: fallback,
-    droppingLosesData: fallback.length === 0
+    droppingLosesData: fallback.length === 0,
+    fallbackIsJunk: isJunkPlaceFallback(fallback)
   };
 }
 
@@ -97,12 +114,16 @@ async function main(): Promise<void> {
   }
 
   const losing = offenders.filter((o) => o.droppingLosesData).length;
+  const junkFallback = offenders.filter((o) => o.fallbackIsJunk).length;
   console.log(`[CitySelectors] ${offenders.length} config(s) use the same selector for venue and city.`);
   console.log(`[CitySelectors]   ${offenders.length - losing} have a cityNameFallback -- safe to drop the selector.`);
   console.log(`[CitySelectors]   ${losing} have no fallback -- dropping the selector drops their concerts.`);
+  console.log(`[CitySelectors]   ${junkFallback} have a cityNameFallback that is not a place name (selector fragment or placeholder).`);
   console.log('');
   for (const o of offenders) {
-    const note = o.droppingLosesData ? 'no fallback' : `fallback="${o.cityNameFallback}"`;
+    const note = o.droppingLosesData
+      ? 'no fallback'
+      : `fallback="${o.cityNameFallback}"${o.fallbackIsJunk ? ' (NOT a place name)' : ''}`;
     console.log(`  ${o.id}  (${o.domain})  selector=${o.selector}  [${note}]`);
   }
 }

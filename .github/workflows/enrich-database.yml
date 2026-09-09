@@ -20,6 +20,7 @@ on:
 
 permissions:
   contents: write
+  issues: write # open/update a dedup\'d failure issue (see "Alert on failure" step)
 
 # Serialize with the MusicBrainz Tier-0 workflow so two writers never race on
 # data/artists/ (the sharded artist DB).
@@ -220,3 +221,13 @@ jobs:
 
             REMAINING=$((REMAINING - THIS_RUN))
           done
+
+      # A scheduled job that fails silently is indistinguishable from one that
+      # never ran. This was the only alerting gap left among the scheduled
+      # workflows -- and for a watchdog it matters most: nothing else watches it.
+      - name: Alert on failure
+        if: failure()
+        uses: ./.github/actions/alert-on-failure
+        with:
+          workflow-name: "Enrich Artist Database"
+          job-label: enrich
