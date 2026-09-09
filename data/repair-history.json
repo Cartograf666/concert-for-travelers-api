@@ -1829,7 +1829,7 @@
         "countryNameFallback": "DE"
       }
     },
-    "status": "pending",
+    "status": "confirmed",
     "failuresSinceRepair": 0,
     "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.inextremo.de",
     "verification": "PASS (1 events, 10 checks)"
@@ -2405,7 +2405,7 @@
         "countryNameFallback": "BR"
       }
     },
-    "status": "pending",
+    "status": "confirmed",
     "failuresSinceRepair": 0,
     "note": "LLM/JSON-LD re-selection",
     "verification": "PASS (5 events, 10 checks)"
@@ -2697,7 +2697,7 @@
         "countryNameFallback": "GB"
       }
     },
-    "status": "pending",
+    "status": "confirmed",
     "failuresSinceRepair": 0,
     "note": "transient: raising maxRetries 2 -> 5 with a politeness delay",
     "verification": "PASS (1396 events, 9 checks)"
