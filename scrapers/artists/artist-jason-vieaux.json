@@ -3,6 +3,7 @@
   "domain": "jasonvieaux.com",
   "url": "http://jasonvieaux.com/tour/",
   "type": "static_selectors",
+  "httpClient": "got-scraping",
   "selectors": {
     "eventBlock": "section.entry-content.tour table tr",
     "artistNameFallback": "Jason Vieaux",

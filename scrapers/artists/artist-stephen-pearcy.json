@@ -3,6 +3,7 @@
   "domain": "www.stephen-pearcy.com",
   "url": "https://www.stephen-pearcy.com/tour/",
   "type": "static_selectors",
+  "httpClient": "got-scraping",
   "selectors": {
     "eventBlock": "table.table-style tbody tr",
     "artistNameFallback": "Stephen Pearcy",

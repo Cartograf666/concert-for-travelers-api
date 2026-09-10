@@ -3,6 +3,8 @@
   "domain": "froukje.net",
   "url": "https://froukje.net/tickets",
   "type": "static_selectors",
+  "maxRetries": 5,
+  "requestDelayMs": 2000,
   "selectors": {
     "eventBlock": ".agendaitem",
     "artistNameFallback": "Froukje",

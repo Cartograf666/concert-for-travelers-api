@@ -8173,5 +8173,4421 @@
     "failuresSinceRepair": 0,
     "note": "dead_domain reclassified: www.bravogroup.ru resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.bravogroup.ru -> 2a00:15f8:a000:5:1:13:0:c39c]",
     "verification": ""
+  },
+  {
+    "id": "artist-a-certain-ratio",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:52:55.455Z",
+    "previousConfig": {
+      "id": "artist-a-certain-ratio",
+      "domain": "www.acrmcr.com",
+      "url": "https://www.acrmcr.com/shows/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".gig-summary",
+        "artistNameFallback": "A Certain Ratio",
+        "date": "time.dtstart",
+        "ticketUrl": ".gig-tickets-link",
+        "venue": ".venue-name.fn.org",
+        "city": ".gig-title",
+        "country": ".country-name.country-name-united-kingdom",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.acrmcr.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.acrmcr.com -> 2606:4700:3030::ac43:9555]",
+    "verification": ""
+  },
+  {
+    "id": "artist-aaron-pritchett",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:53:03.478Z",
+    "previousConfig": {
+      "id": "artist-aaron-pritchett",
+      "domain": "www.aaron-pritchett.com",
+      "url": "https://www.aaron-pritchett.com/tours",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".summary-item.summary-item-record-type-event",
+        "artistNameFallback": "Aaron Pritchett",
+        "date": ".summary-metadata-item--date",
+        "ticketUrl": ".summary-title-link",
+        "venue": ".summary-title",
+        "city": ".summary-title",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.aaron-pritchett.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.aaron-pritchett.com -> 2606:4700:3032::6815:2038]",
+    "verification": ""
+  },
+  {
+    "id": "artist-adam-walker",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-10T08:53:05.162Z",
+    "previousConfig": {
+      "id": "artist-adam-walker",
+      "domain": "www.adamwalkerflute.com",
+      "url": "http://www.adamwalkerflute.com/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".entry-content ul li",
+        "artistNameFallback": "Adam Walker",
+        "date": "strong:first-child",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend",
+    "verification": "PASS (243 events, 6 checks)"
+  },
+  {
+    "id": "artist-acid-test",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:53:13.672Z",
+    "previousConfig": {
+      "id": "artist-acid-test",
+      "domain": "acidtestmusic.com",
+      "url": "https://acidtestmusic.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-detail",
+        "artistNameFallback": "Acid Test",
+        "date": ".event-datetime .date-long .date",
+        "ticketUrl": "a.tickets",
+        "venue": ".event-location a",
+        "city": ".event-location a",
+        "country": ".event-location a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: acidtestmusic.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: acidtestmusic.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-adelaide-symphony-orchestra",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:53:21.771Z",
+    "previousConfig": {
+      "id": "artist-adelaide-symphony-orchestra",
+      "domain": "www.aso.com.au",
+      "url": "https://www.aso.com.au/concerts-tickets/tickets-and-packages-faqs/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".wp-block-post-template li.aso_event",
+        "artistNameFallback": "Adelaide Symphony Orchestra",
+        "date": ".module--listing-item-event",
+        "ticketUrl": "a",
+        "venue": ".module--listing-item-event",
+        "city": "null",
+        "country": "null",
+        "venueNameFallback": "Adelaide",
+        "cityNameFallback": "Adelaide",
+        "countryNameFallback": "AU"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.aso.com.au resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.aso.com.au -> 2606:4700:3035::ac43:8f49]",
+    "verification": ""
+  },
+  {
+    "id": "artist-alasdair-roberts",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-10T08:53:23.104Z",
+    "previousConfig": {
+      "id": "artist-alasdair-roberts",
+      "domain": "www.alasdairroberts.com",
+      "url": "http://www.alasdairroberts.com/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "tbody.vevent",
+        "artistNameFallback": "Alasdair Roberts",
+        "date": ".gigpress-date abbr",
+        "ticketUrl": ".gigpress-tickets-link",
+        "venue": ".gigpress-venue.location",
+        "city": ".gigpress-city.summary",
+        "country": ".gigpress-country",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: city_values_plausible [9/22 city values are longer than 60 chars or containing digits (41%, allow 20%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-al-gromer-khan",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:53:39.798Z",
+    "previousConfig": {
+      "id": "artist-al-gromer-khan",
+      "domain": "khanart.de",
+      "url": "https://khanart.de/calendar",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-detail",
+        "artistNameFallback": "Al Gromer Khan",
+        "date": ".event-datetime .date-long",
+        "venue": ".event-location span",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: khanart.de resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: khanart.de -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-alex-prior",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:53:47.691Z",
+    "previousConfig": {
+      "id": "artist-alex-prior",
+      "domain": "alexprior.com",
+      "url": "https://alexprior.com/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-items__list .event-item",
+        "artistNameFallback": "Alex Prior",
+        "date": ".event-item__date",
+        "ticketUrl": "a.btn__primary",
+        "venue": ".event-item__venue",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: alexprior.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: alexprior.com -> 2606:4700:3031::ac43:c260]",
+    "verification": ""
+  },
+  {
+    "id": "artist-alicia-svigals",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:53:55.659Z",
+    "previousConfig": {
+      "id": "artist-alicia-svigals",
+      "domain": "aliciasvigals.com",
+      "url": "https://aliciasvigals.com/calendar",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "tr.border-accent",
+        "artistNameFallback": "Alicia Svigals",
+        "date": "td.event-date .date-long",
+        "ticketUrl": "a.event_details",
+        "venue": "td.event-name .text-tertiary",
+        "city": "td.event-location .text-tertiary",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: aliciasvigals.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: aliciasvigals.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-alisa-childers",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:54:03.834Z",
+    "previousConfig": {
+      "id": "artist-alisa-childers",
+      "domain": "alisachilders.com",
+      "url": "https://alisachilders.com/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tribe-events-calendar-list__event-row",
+        "artistNameFallback": "Alisa Childers",
+        "date": ".tribe-events-calendar-list__event-date-tag-datetime",
+        "ticketUrl": ".tribe-events-calendar-list__event-title-link",
+        "venue": ".tribe-events-calendar-list__event-venue-title",
+        "city": ".tribe-events-calendar-list__event-venue-address",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: alisachilders.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: alisachilders.com -> 2a02:4780:21:772c:ee3d:312b:96e4:e1b6]",
+    "verification": ""
+  },
+  {
+    "id": "artist-allison-crowe",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:54:12.043Z",
+    "previousConfig": {
+      "id": "artist-allison-crowe",
+      "domain": "allisoncroweband.com",
+      "url": "https://allisoncroweband.com/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "section.calendar_feature table.table-style tbody tr.border-accent",
+        "artistNameFallback": "Allison Crowe",
+        "date": ".event-date .date-long .from",
+        "ticketUrl": ".event-date a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: allisoncroweband.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: allisoncroweband.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-amanda-shaw",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:54:19.935Z",
+    "previousConfig": {
+      "id": "artist-amanda-shaw",
+      "domain": "www.amandashaw.com",
+      "url": "https://www.amandashaw.com/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-detail",
+        "artistNameFallback": "Amanda Shaw",
+        "date": ".event-datetime .date-long .date",
+        "ticketUrl": ".buying-options a.button",
+        "venue": ".event-location a",
+        "city": ".event-location a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.amandashaw.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.amandashaw.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-american-composers-orchestra",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:54:28.576Z",
+    "previousConfig": {
+      "id": "artist-american-composers-orchestra",
+      "domain": "www.americancomposers.org",
+      "url": "https://www.americancomposers.org/performances-events",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".p-e-item",
+        "artistNameFallback": "American Composers Orchestra",
+        "date": ".when",
+        "ticketUrl": "a.event-tickets-button",
+        "venue": ".event-location",
+        "city": ".performance-location_wrapper",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.americancomposers.org resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.americancomposers.org -> 2620:cb:2000::1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-andrew-calhoun",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:54:36.645Z",
+    "previousConfig": {
+      "id": "artist-andrew-calhoun",
+      "domain": "andrewcalhoun.com",
+      "url": "https://andrewcalhoun.com/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.list-style",
+        "artistNameFallback": "Andrew Calhoun",
+        "date": ".event-datetime time.from",
+        "ticketUrl": ".event-title a",
+        "venue": ".event-location a",
+        "city": ".event-location a",
+        "country": "null",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: andrewcalhoun.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: andrewcalhoun.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-andy-cairns",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:54:46.363Z",
+    "previousConfig": {
+      "id": "artist-andy-cairns",
+      "domain": "therapyquestionmark.co.uk",
+      "url": "https://therapyquestionmark.co.uk/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour.upcoming tr",
+        "artistNameFallback": "Andy Cairns",
+        "date": ".tour-date",
+        "ticketUrl": ".tour-url a.tour-button",
+        "venue": ".tour-city",
+        "city": ".tour-venue",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: therapyquestionmark.co.uk resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: therapyquestionmark.co.uk -> 2400:52e0:1a00::1232:1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-angst",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:54:54.585Z",
+    "previousConfig": {
+      "id": "artist-angst",
+      "domain": "adamangst.de",
+      "url": "https://adamangst.de/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "#tablepress-1 tbody tr",
+        "artistNameFallback": "Angst",
+        "date": ".column-1",
+        "ticketUrl": ".column-3 a::attr(href)",
+        "venue": ".column-3 a",
+        "city": ".column-2",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "DE"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: adamangst.de resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: adamangst.de -> 2a02:2350:5:10a:2:a14d:b61a:c507]",
+    "verification": ""
+  },
+  {
+    "id": "artist-ann-and-nancy-wilson",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:55:02.840Z",
+    "previousConfig": {
+      "id": "artist-ann-and-nancy-wilson",
+      "domain": "www.heart-music.com",
+      "url": "https://www.heart-music.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".widget-events .event",
+        "artistNameFallback": "Ann and Nancy Wilson",
+        "date": "time",
+        "ticketUrl": ".btn-tickets",
+        "venue": ".card-title",
+        "city": ".location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.heart-music.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.heart-music.com -> 2606:4700::6812:1074]",
+    "verification": ""
+  },
+  {
+    "id": "artist-anne-mccue",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:55:12.149Z",
+    "previousConfig": {
+      "id": "artist-anne-mccue",
+      "domain": "annemccue.com",
+      "url": "https://annemccue.com/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.table-style tbody tr",
+        "artistNameFallback": "Anne McCue",
+        "date": "td.event-date",
+        "ticketUrl": "a.event_details",
+        "venue": "td.event-location",
+        "city": "td.event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: annemccue.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: annemccue.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-anthony-mcgill",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:55:20.110Z",
+    "previousConfig": {
+      "id": "artist-anthony-mcgill",
+      "domain": "www.anthonymcgill.com",
+      "url": "https://www.anthonymcgill.com/schedule",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".w-dyn-item .schedule-text2_content",
+        "artistNameFallback": "Anthony McGill",
+        "date": ".subtitle:first-child",
+        "ticketUrl": "a.schedule-links",
+        "venue": "h5",
+        "city": ".small-text",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.anthonymcgill.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.anthonymcgill.com -> 2620:cb:2000::1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-antigone-rising",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:55:28.378Z",
+    "previousConfig": {
+      "id": "artist-antigone-rising",
+      "domain": "www.antigonerising.com",
+      "url": "https://www.antigonerising.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "tr.border-accent",
+        "artistNameFallback": "Antigone Rising",
+        "date": "td.event-date .date-long",
+        "ticketUrl": "a.event_details",
+        "venue": "td.event-location .text-tertiary",
+        "city": "td.event-location .text-tertiary",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.antigonerising.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.antigonerising.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-apparat",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:55:36.540Z",
+    "previousConfig": {
+      "id": "artist-apparat",
+      "domain": "www.apparat.net",
+      "url": "http://www.apparat.net/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "section.tour > a.show",
+        "artistNameFallback": "Apparat",
+        "date": "span.date",
+        "ticketUrl": "@href",
+        "venue": "span.location > span.venue",
+        "city": "span.location > span.city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.apparat.net resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.apparat.net -> 2001:8d8:100f:f000::24b]",
+    "verification": ""
+  },
+  {
+    "id": "artist-ariana-gillis",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:55:44.589Z",
+    "previousConfig": {
+      "id": "artist-ariana-gillis",
+      "domain": "arianagillis.com",
+      "url": "https://arianagillis.com/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.table-style tbody tr",
+        "artistNameFallback": "Ariana Gillis",
+        "date": "td.event-date time",
+        "ticketUrl": "a.event_details",
+        "venue": "td.event-location",
+        "city": "td.event-location",
+        "country": "td.event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: arianagillis.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: arianagillis.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-arielle-dombasle",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:55:54.802Z",
+    "previousConfig": {
+      "id": "artist-arielle-dombasle",
+      "domain": "www.arielle-dombasle.com",
+      "url": "https://www.arielle-dombasle.com/concerts/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "#tablepress-3 tbody tr",
+        "artistNameFallback": "Arielle Dombasle",
+        "date": ".column-1",
+        "ticketUrl": ".column-4 a",
+        "venue": ".column-3",
+        "city": ".column-2",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "FR"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.arielle-dombasle.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.arielle-dombasle.com -> 2001:41d0:301::23]",
+    "verification": ""
+  },
+  {
+    "id": "artist-arthur-c-brooks",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:56:02.962Z",
+    "previousConfig": {
+      "id": "artist-arthur-c-brooks",
+      "domain": "www.arthurbrooks.com",
+      "url": "https://www.arthurbrooks.com/events",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".w-dyn-items > .events__item",
+        "artistNameFallback": "Arthur C. Brooks",
+        "date": "[fs-list-field='date']",
+        "ticketUrl": ".event-bottom a.w-button",
+        "venue": "[fs-list-field='title']",
+        "city": "[fs-list-field='location']",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.arthurbrooks.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.arthurbrooks.com -> 2620:cb:2000::1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-arturo-ofarrill",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:56:11.167Z",
+    "previousConfig": {
+      "id": "artist-arturo-ofarrill",
+      "domain": "www.arturoofarrill.com",
+      "url": "https://www.arturoofarrill.com/schedule",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.w-dyn-item .schedule-text8_item",
+        "artistNameFallback": "Arturo O'Farrill",
+        "date": ".schedule-text8_col .subtitle:first-child",
+        "ticketUrl": "a.viewport-absolute",
+        "venue": "h3",
+        "city": ".subtitle.small-text",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.arturoofarrill.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.arturoofarrill.com -> 2620:cb:2000::1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-astrid-williamson",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:56:19.359Z",
+    "previousConfig": {
+      "id": "artist-astrid-williamson",
+      "domain": "astridwilliamson.com",
+      "url": "https://astridwilliamson.com/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".listingswrap .lentry",
+        "artistNameFallback": "Astrid Williamson",
+        "date": "#date",
+        "venue": "#venue",
+        "city": "#vecity",
+        "country": "#vecity",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: astridwilliamson.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: astridwilliamson.com -> 2a07:7800::198]",
+    "verification": ""
+  },
+  {
+    "id": "artist-barra-macneils",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-10T08:56:24.024Z",
+    "previousConfig": {
+      "id": "artist-barra-macneils",
+      "domain": "barramacneils.com",
+      "url": "https://barramacneils.com/calendar/shows-past/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event",
+        "artistNameFallback": "Barra MacNeils",
+        "date": ".event-start-date",
+        "ticketUrl": "a.event-tickets",
+        "venue": ".event-venue",
+        "city": ".event-city",
+        "country": ".event-country",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: has_future_dates [0 event(s) dated today or later]; country_codes_valid [3/133 country values are 2-letter codes (2%, need 80%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-bassnectar",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:56:31.969Z",
+    "previousConfig": {
+      "id": "artist-bassnectar",
+      "domain": "bassnectar.net",
+      "url": "https://bassnectar.net/shows/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".bn-show-show-row",
+        "artistNameFallback": "Bassnectar",
+        "date": ".bn-show-date-inline",
+        "ticketUrl": "self::a/@href",
+        "venue": ".bn-show-venue",
+        "city": ".bn-show-venue",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: bassnectar.net resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: bassnectar.net -> 2606:4700:20::681a:d19]",
+    "verification": ""
+  },
+  {
+    "id": "artist-beth-hart",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-10T08:56:49.399Z",
+    "previousConfig": {
+      "id": "artist-beth-hart",
+      "domain": "www.bethhart.com",
+      "url": "https://www.bethhart.com/tour-3-2/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event_item",
+        "artistNameFallback": "Beth Hart",
+        "date": ".event_date",
+        "ticketUrl": ".event_tickets a.event_ticket-link::attr(href)",
+        "venue": ".event_venue",
+        "city": ".event_geo",
+        "country": ".event_geo",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=parse_error): Pseudo-elements are not supported by css-select]",
+    "verification": ""
+  },
+  {
+    "id": "artist-black-roots",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:56:57.552Z",
+    "previousConfig": {
+      "id": "artist-black-roots",
+      "domain": "blackrootsreggae.net",
+      "url": "https://blackrootsreggae.net/gigs",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-detail",
+        "artistNameFallback": "Black Roots",
+        "date": ".event-datetime time",
+        "ticketUrl": "a.tickets",
+        "venue": ".event-location a",
+        "city": ".event-location a",
+        "country": ".event-location a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: blackrootsreggae.net resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: blackrootsreggae.net -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-boa",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:57:07.144Z",
+    "previousConfig": {
+      "id": "artist-boa",
+      "domain": "www.boaukofficial.com",
+      "url": "https://www.boaukofficial.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour-row",
+        "artistNameFallback": "bôa",
+        "date": ".tour-text:nth-child(2)",
+        "ticketUrl": "a.tour-row",
+        "venue": ".tour-text:nth-child(1)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.boaukofficial.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.boaukofficial.com -> 2620:cb:2000::1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-chris-norman",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:57:15.351Z",
+    "previousConfig": {
+      "id": "artist-chris-norman",
+      "domain": "www.chris-norman.co.uk",
+      "url": "https://www.chris-norman.co.uk/dates/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".col-md-12.wow.fadeIn.pb-30",
+        "artistNameFallback": "Chris Norman",
+        "date": ".blog2-date-numb, .blog2-month",
+        "ticketUrl": ".pre-arrow",
+        "venue": ".blog2-post-prev-text",
+        "city": ".post-prev-title h2",
+        "country": ".post-prev-info",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.chris-norman.co.uk resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.chris-norman.co.uk -> 2001:8d8:100f:f000::22d]",
+    "verification": ""
+  },
+  {
+    "id": "artist-dan-hill",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T08:59:27.772Z",
+    "previousConfig": {
+      "id": "artist-dan-hill",
+      "domain": "danhill.com",
+      "url": "https://danhill.com/events",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.table-style tbody tr",
+        "artistNameFallback": "Dan Hill",
+        "date": "td.event-date time",
+        "ticketUrl": "td.event-name a",
+        "venue": "td.event-name",
+        "city": "td.event-name",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: danhill.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: danhill.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-daughtry",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-10T08:59:28.888Z",
+    "previousConfig": {
+      "id": "artist-daughtry",
+      "domain": "daughtryofficial.com",
+      "url": "https://daughtryofficial.com/daughtry/events",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".single-event-container",
+        "artistNameFallback": "Daughtry",
+        "date": ".date-container",
+        "ticketUrl": ".ticket-link@href",
+        "venue": ".venue-name",
+        "city": ".venue-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend",
+    "verification": "PASS (29 events, 9 checks)"
+  },
+  {
+    "id": "artist-david-kikoski",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:00:22.263Z",
+    "previousConfig": {
+      "id": "artist-david-kikoski",
+      "domain": "davekikoski.com",
+      "url": "https://davekikoski.com/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tribe-events-calendar-latest-past__event-row",
+        "artistNameFallback": "David Kikoski",
+        "date": ".tribe-events-calendar-latest-past__event-datetime",
+        "ticketUrl": ".tribe-events-calendar-latest-past__event-title-link::attr(href)",
+        "venue": ".tribe-events-calendar-latest-past__event-venue-title",
+        "city": ".tribe-events-calendar-latest-past__event-venue-address",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: davekikoski.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: davekikoski.com -> 2606:4700:3030::6815:2e16]",
+    "verification": ""
+  },
+  {
+    "id": "artist-death-in-vegas",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:00:30.103Z",
+    "previousConfig": {
+      "id": "artist-death-in-vegas",
+      "domain": "www.deathinvegasmusic.com",
+      "url": "https://www.deathinvegasmusic.com/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "#tour-dates > li",
+        "artistNameFallback": "Death in Vegas",
+        "date": "span:nth-child(1)",
+        "ticketUrl": "a.gigpress-tickets-link@href",
+        "venue": "span:nth-child(2)",
+        "city": "span:nth-child(2)",
+        "country": "span:nth-child(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.deathinvegasmusic.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.deathinvegasmusic.com -> 2606:4700:3036::6815:1bd0]",
+    "verification": ""
+  },
+  {
+    "id": "artist-diamond-head",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:00:38.055Z",
+    "previousConfig": {
+      "id": "artist-diamond-head",
+      "domain": "www.diamond-head.net",
+      "url": "http://www.diamond-head.net/tour-dates/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.gigpress-table.upcoming tbody:has(.gigpress-row)",
+        "artistNameFallback": "Diamond Head",
+        "date": ".gigpress-date",
+        "ticketUrl": ".gigpress-tickets-link",
+        "venue": ".gigpress-venue",
+        "city": ".gigpress-city",
+        "country": ".gigpress-country",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.diamond-head.net resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.diamond-head.net -> 2606:4700:3033::6815:3e4b]",
+    "verification": ""
+  },
+  {
+    "id": "artist-djavan",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:00:46.203Z",
+    "previousConfig": {
+      "id": "artist-djavan",
+      "domain": "djavan.com.br",
+      "url": "https://djavan.com.br/show/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".show-list--upcoming .show-list__item",
+        "artistNameFallback": "Djavan",
+        "date": ".show-list__item-date",
+        "ticketUrl": ".show-list__item-actions a",
+        "venue": ".show-list__item-where p:nth-child(3)",
+        "city": ".show-list__item-where p:nth-child(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "BR"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: djavan.com.br resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: djavan.com.br -> 2606:4700:3034::ac43:afa9]",
+    "verification": ""
+  },
+  {
+    "id": "artist-dmitri-matheny",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:00:54.294Z",
+    "previousConfig": {
+      "id": "artist-dmitri-matheny",
+      "domain": "www.dmitrimatheny.com",
+      "url": "https://www.dmitrimatheny.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.list-style",
+        "artistNameFallback": "Dmitri Matheny",
+        "date": ".event-datetime time.from",
+        "ticketUrl": ".event-title a@href",
+        "venue": ".event-location a",
+        "city": ".event-location a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.dmitrimatheny.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.dmitrimatheny.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-andrea-motis",
+    "strategy": "transient",
+    "repairedAt": "2026-09-10T09:00:55.883Z",
+    "previousConfig": {
+      "id": "artist-andrea-motis",
+      "domain": "andreamotis.com",
+      "url": "https://andreamotis.com/agenda/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table tbody tr",
+        "artistNameFallback": "Andrea Motis",
+        "date": "td:nth-child(1)",
+        "ticketUrl": "td:nth-child(4) a@href",
+        "venue": "td:nth-child(3)",
+        "city": "td:nth-child(3)",
+        "country": "td:nth-child(3)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "ES"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: city_distinct_from_venue [15/15 rows have city identical to venue (100%, allow 20%)]; country_codes_valid [0/15 country values are 2-letter codes (0%, need 80%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-emancipator",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-10T09:00:56.841Z",
+    "previousConfig": {
+      "id": "artist-emancipator",
+      "domain": "emancipatormusic.com",
+      "url": "http://emancipatormusic.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.gigpress-table.upcoming tr.gigpress-row",
+        "artistNameFallback": "Emancipator",
+        "date": ".gigpress-date",
+        "ticketUrl": "a.gigpress-tickets-link",
+        "venue": ".gigpress-venue",
+        "city": ".gigpress-city",
+        "country": ".gigpress-country",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: country_codes_valid [1/14 country values are 2-letter codes (7%, need 80%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-ellen-ten-damme",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:01:05.462Z",
+    "previousConfig": {
+      "id": "artist-ellen-ten-damme",
+      "domain": "ellentendamme.nl",
+      "url": "https://ellentendamme.nl/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.shows.show-upcoming tr",
+        "artistNameFallback": "Ellen ten Damme",
+        "date": "td.event-field-datetime",
+        "ticketUrl": "td.event-field-info a.ticket-link",
+        "venue": "td.event-field-venue .venue-name a",
+        "city": "td.event-field-city a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "NL"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: ellentendamme.nl resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: ellentendamme.nl -> 2a05:1500:600:7:1c00:bcff:fe00:f5a]",
+    "verification": ""
+  },
+  {
+    "id": "artist-eric-lindell",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:01:13.864Z",
+    "previousConfig": {
+      "id": "artist-eric-lindell",
+      "domain": "www.ericlindell.com",
+      "url": "https://www.ericlindell.com/tour-dates",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-detail",
+        "artistNameFallback": "Eric Lindell",
+        "date": ".date-long .date",
+        "ticketUrl": "a.tickets",
+        "venue": ".event-location a",
+        "city": ".event-location a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.ericlindell.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.ericlindell.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-excision",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:01:21.977Z",
+    "previousConfig": {
+      "id": "artist-excision",
+      "domain": "excision.ca",
+      "url": "https://excision.ca/tour-dates/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".events-list .event",
+        "artistNameFallback": "Excision",
+        "date": ".event-day-text",
+        "ticketUrl": ".event-ticket-link",
+        "venue": ".event-venue-text",
+        "city": ".event-location-text",
+        "country": ".event-location-text",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: excision.ca resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: excision.ca -> 2606:4700:3035::6815:167c]",
+    "verification": ""
+  },
+  {
+    "id": "artist-flook",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-10T09:01:33.228Z",
+    "previousConfig": {
+      "id": "artist-flook",
+      "domain": "flook.co.uk",
+      "url": "http://flook.co.uk/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "ul.event-list li.event-item",
+        "artistNameFallback": "Flook",
+        "date": "span.date",
+        "ticketUrl": "a",
+        "venue": "span.venue",
+        "city": "span.city",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend",
+    "verification": "PASS (9 events, 10 checks)"
+  },
+  {
+    "id": "artist-foghat",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-10T09:01:35.545Z",
+    "previousConfig": {
+      "id": "artist-foghat",
+      "domain": "foghat.com",
+      "url": "http://foghat.com/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.tribe-events-calendar-latest-past__event-row",
+        "artistNameFallback": "Foghat",
+        "date": "time.tribe-events-calendar-latest-past__event-datetime",
+        "ticketUrl": "h3.tribe-events-calendar-latest-past__event-title a",
+        "venue": "h3.tribe-events-calendar-latest-past__event-title",
+        "city": "div.tribe-events-calendar-latest-past__event-description p",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: has_future_dates [0 event(s) dated today or later]",
+    "verification": ""
+  },
+  {
+    "id": "artist-felix-mendelssohn",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:01:44.122Z",
+    "previousConfig": {
+      "id": "artist-felix-mendelssohn",
+      "domain": "www.mendelssohn-stiftung.de",
+      "url": "https://www.mendelssohn-stiftung.de/en/konzerte",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.eventlist__item",
+        "artistNameFallback": "Felix Mendelssohn",
+        "date": ".eventlist__item-date .date",
+        "ticketUrl": "a.eventlist__item-button",
+        "venue": "",
+        "city": "",
+        "country": "",
+        "venueNameFallback": "Mendelssohn-Haus",
+        "cityNameFallback": "Leipzig",
+        "countryNameFallback": "DE"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.mendelssohn-stiftung.de resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.mendelssohn-stiftung.de -> 2a01:4f8:1c0c:81fd::2]",
+    "verification": ""
+  },
+  {
+    "id": "artist-flaw",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:01:52.600Z",
+    "previousConfig": {
+      "id": "artist-flaw",
+      "domain": "www.flawband.com",
+      "url": "https://www.flawband.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.list-style",
+        "artistNameFallback": "Flaw",
+        "date": ".date-long .date",
+        "ticketUrl": ".tickets.button",
+        "venue": ".event-location a",
+        "city": ".event-location a",
+        "country": "United States",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.flawband.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.flawband.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-gaia-consort",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:02:00.813Z",
+    "previousConfig": {
+      "id": "artist-gaia-consort",
+      "domain": "gaiaconsort.com",
+      "url": "https://gaiaconsort.com/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-detail",
+        "artistNameFallback": "Gaia Consort",
+        "date": "time.from",
+        "ticketUrl": "a.tickets",
+        "venue": "p.event-location a",
+        "city": "p.event-location a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: gaiaconsort.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: gaiaconsort.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-george-dalaras",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-10T09:02:04.455Z",
+    "previousConfig": {
+      "id": "artist-george-dalaras",
+      "domain": "www.georgedalaras.com",
+      "url": "https://www.georgedalaras.com/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".events_list > li.single_event_list",
+        "artistNameFallback": "George Dalaras",
+        "date": ".event_date",
+        "ticketUrl": "a",
+        "venue": ".event_venue",
+        "city": ".event_location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GR"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: dates_parse [0/10 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]",
+    "verification": ""
+  },
+  {
+    "id": "artist-gandalfs-fist",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:02:12.719Z",
+    "previousConfig": {
+      "id": "artist-gandalfs-fist",
+      "domain": "gandalfsfist.com",
+      "url": "https://gandalfsfist.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-detail",
+        "artistNameFallback": "Gandalf's Fist",
+        "date": ".date-long .event-when",
+        "ticketUrl": ".buying-options .tickets",
+        "venue": ".event-location a",
+        "city": ".event-location a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: gandalfsfist.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: gandalfsfist.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-gerard-joling",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:02:20.905Z",
+    "previousConfig": {
+      "id": "artist-gerard-joling",
+      "domain": "gerardjoling.nl",
+      "url": "https://gerardjoling.nl/agenda/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "tr[itemscope][itemtype='http://schema.org/MusicEvent']",
+        "artistNameFallback": "Gerard Joling",
+        "date": ".event-date",
+        "ticketUrl": "a.artwinlive_tour_dates-button-tickets",
+        "venue": ".artwinlive_tour_dates-where",
+        "city": ".artwinlive_tour_dates-where",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "NL"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: gerardjoling.nl resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: gerardjoling.nl -> 2606:4700:7::a29f:872a]",
+    "verification": ""
+  },
+  {
+    "id": "artist-giora-feidman",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:02:29.173Z",
+    "previousConfig": {
+      "id": "artist-giora-feidman",
+      "domain": "www.giorafeidman-online.com",
+      "url": "https://www.giorafeidman-online.com/termine",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".listItem",
+        "artistNameFallback": "Giora Feidman",
+        "date": ".itemName",
+        "ticketUrl": "a.biglink",
+        "venue": ".itemText .rteBlock:nth-of-type(3)",
+        "city": ".itemName",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "DE"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.giorafeidman-online.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.giorafeidman-online.com -> 2001:8d8:100f:f000::200]",
+    "verification": ""
+  },
+  {
+    "id": "artist-habib-koite",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:02:37.163Z",
+    "previousConfig": {
+      "id": "artist-habib-koite",
+      "domain": "habibkoite.com",
+      "url": "https://habibkoite.com/concerts",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-detail",
+        "artistNameFallback": "Habib Koité",
+        "date": "div.event-description p.event-datetime span.date-long span.date",
+        "ticketUrl": "div.event-description div.buying-options a.tickets.button@href",
+        "venue": "div.event-description p.event-location a",
+        "city": "div.event-description p.event-location a",
+        "country": "div.event-description p.event-location a@href",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: habibkoite.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: habibkoite.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-herbie-hancock",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:02:45.149Z",
+    "previousConfig": {
+      "id": "artist-herbie-hancock",
+      "domain": "www.herbiehancock.com",
+      "url": "https://www.herbiehancock.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.itin-item",
+        "artistNameFallback": "Herbie Hancock",
+        "date": "div.full-date",
+        "ticketUrl": "div.url a @href",
+        "venue": "div.venue",
+        "city": "div.location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.herbiehancock.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.herbiehancock.com -> 2606:4700:3031::6815:3656]",
+    "verification": ""
+  },
+  {
+    "id": "artist-heritage-singers",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:02:53.329Z",
+    "previousConfig": {
+      "id": "artist-heritage-singers",
+      "domain": "www.heritagesingers.com",
+      "url": "https://www.heritagesingers.com/concerts",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "section#bandsintown_feature_17777 article.list-style",
+        "artistNameFallback": "Heritage Singers",
+        "date": "p.event-info.event-datetime span.date-long",
+        "ticketUrl": "div.event-info.buying-options a.button @href",
+        "venue": "p.event-info.event-location a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.heritagesingers.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.heritagesingers.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-howie-day",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:03:01.447Z",
+    "previousConfig": {
+      "id": "artist-howie-day",
+      "domain": "www.howieday.com",
+      "url": "https://www.howieday.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.list-style",
+        "artistNameFallback": "Howie Day",
+        "date": ".date-long .date",
+        "ticketUrl": "a.tickets",
+        "venue": ".event-location a",
+        "city": ".event-location a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.howieday.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.howieday.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-ian-shaw",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:03:11.157Z",
+    "previousConfig": {
+      "id": "artist-ian-shaw",
+      "domain": "www.ianshaw.biz",
+      "url": "https://www.ianshaw.biz/p/tourdates.php",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-box",
+        "artistNameFallback": "Ian Shaw",
+        "date": ".event-date",
+        "ticketUrl": ".event-info a",
+        "venue": ".event-venue",
+        "city": ".event-venue",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.ianshaw.biz resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.ianshaw.biz -> 2001:8d8:100f:f000::201]",
+    "verification": ""
+  },
+  {
+    "id": "artist-iijima-mari",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:03:19.385Z",
+    "previousConfig": {
+      "id": "artist-iijima-mari",
+      "domain": "marimusic.com",
+      "url": "https://marimusic.com/calendar",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-detail",
+        "artistNameFallback": "Iijima, Mari",
+        "date": ".event-when time.from",
+        "ticketUrl": ".event-info.event-title a",
+        "venue": ".event-location a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: marimusic.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: marimusic.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-burak-yeter",
+    "strategy": "transient",
+    "repairedAt": "2026-09-10T09:03:23.985Z",
+    "previousConfig": {
+      "id": "artist-burak-yeter",
+      "domain": "www.burakyeter.com",
+      "url": "https://www.burakyeter.com/dates/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".nectar-hor-list-item",
+        "artistNameFallback": "Burak Yeter",
+        "date": ".nectar-list-item:nth-of-type(1) h3",
+        "ticketUrl": ".nectar-list-item-btn",
+        "venue": ".nectar-list-item:nth-of-type(2) h3",
+        "city": ".nectar-list-item:nth-of-type(2) h3",
+        "country": ".nectar-list-item:nth-of-type(2) h3",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: city_values_plausible [2/8 city values are longer than 60 chars or containing digits (25%, allow 20%)]; city_distinct_from_venue [8/8 rows have city identical to venue (100%, allow 20%)]; country_codes_valid [0/8 country values are 2-letter codes (0%, need 80%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-inbal-segev",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:03:32.072Z",
+    "previousConfig": {
+      "id": "artist-inbal-segev",
+      "domain": "inbalsegev.com",
+      "url": "https://inbalsegev.com/schedule/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.event-item",
+        "artistNameFallback": "Inbal Segev",
+        "date": ".date-title",
+        "ticketUrl": "a.ticket-link",
+        "venue": ".upcoming-venue",
+        "city": ".city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: inbalsegev.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: inbalsegev.com -> 2606:4700:3036::6815:2594]",
+    "verification": ""
+  },
+  {
+    "id": "artist-interface",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:03:40.233Z",
+    "previousConfig": {
+      "id": "artist-interface",
+      "domain": "interfacemusic.net",
+      "url": "http://interfacemusic.net/tour-dates",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour.past table tr",
+        "artistNameFallback": "Interface",
+        "date": ".tour-date",
+        "ticketUrl": ".tour-more a@href",
+        "venue": ".tour-venue",
+        "city": ".tour-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: interfacemusic.net resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: interfacemusic.net -> 2607:f1c0:100f:f000::2e7]",
+    "verification": ""
+  },
+  {
+    "id": "artist-ircam",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:03:48.311Z",
+    "previousConfig": {
+      "id": "artist-ircam",
+      "domain": "www.ircam.fr",
+      "url": "https://www.ircam.fr/en/events",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".MediaCard-module__I7_2rG__card",
+        "artistNameFallback": "IRCAM",
+        "date": ".m_b6d8b162[data-size='md']:first-of-type",
+        "venue": ".m_b6d8b162[data-size='md']:last-of-type",
+        "venueNameFallback": "IRCAM",
+        "cityNameFallback": "Paris",
+        "countryNameFallback": "FR"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.ircam.fr resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.ircam.fr -> 2001:660:3004:4000::40:80]",
+    "verification": ""
+  },
+  {
+    "id": "artist-ishii-tatsuya",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:03:56.589Z",
+    "previousConfig": {
+      "id": "artist-ishii-tatsuya",
+      "domain": "www.t-stone.com",
+      "url": "https://www.t-stone.com/concert",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.list-date__item",
+        "artistNameFallback": "Ishii, Tatsuya",
+        "date": ".list-date__date-item-year, .list-date__date-item-day",
+        "ticketUrl": "a.list-date__link",
+        "venue": ".list-date__title",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.t-stone.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.t-stone.com -> 2607:f8b0:4001:c01::79]",
+    "verification": ""
+  },
+  {
+    "id": "artist-jacqui-dankworth",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:04:04.759Z",
+    "previousConfig": {
+      "id": "artist-jacqui-dankworth",
+      "domain": "jacquidankworth.com",
+      "url": "https://jacquidankworth.com/live-dates/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.gigpress-table tbody tr.gigpress-row",
+        "artistNameFallback": "Jacqui Dankworth",
+        "date": ".gp-date",
+        "ticketUrl": ".gigpress-tickets-link",
+        "venue": ".gigpress-venue a",
+        "city": ".gigpress-city",
+        "country": ".gigpress-country",
+        "venueNameFallback": ".gigpress-venue",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: jacquidankworth.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: jacquidankworth.com -> 2606:4700:3035::6815:2ee9]",
+    "verification": ""
+  },
+  {
+    "id": "artist-james",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:04:12.789Z",
+    "previousConfig": {
+      "id": "artist-james",
+      "domain": "wearejames.com",
+      "url": "https://wearejames.com/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.live tbody tr",
+        "artistNameFallback": "James",
+        "date": "th",
+        "ticketUrl": "td.nowrap a",
+        "venue": "td.location",
+        "city": "td.location",
+        "country": "td.location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: wearejames.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: wearejames.com -> 2606:4700:3030::ac43:abd3]",
+    "verification": ""
+  },
+  {
+    "id": "artist-jason-vieaux",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-10T09:04:12.981Z",
+    "previousConfig": {
+      "id": "artist-jason-vieaux",
+      "domain": "jasonvieaux.com",
+      "url": "http://jasonvieaux.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "section.entry-content.tour table tr",
+        "artistNameFallback": "Jason Vieaux",
+        "date": "td:nth-child(1)",
+        "ticketUrl": "td:nth-child(2) a@href",
+        "venue": "td:nth-child(2) a",
+        "city": "td:nth-child(4)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend",
+    "verification": "PASS (36 events, 9 checks)"
+  },
+  {
+    "id": "artist-jan-gunnar-hoff",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:04:20.992Z",
+    "previousConfig": {
+      "id": "artist-jan-gunnar-hoff",
+      "domain": "jangunnarhoff.no",
+      "url": "http://jangunnarhoff.no/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".widget_audiotheme_upcoming_gigs dl.vevent",
+        "artistNameFallback": "Jan Gunnar Hoff",
+        "date": "time.dtstart",
+        "ticketUrl": "dt a",
+        "venue": "dd.venue",
+        "city": ".locality",
+        "country": ".country-name",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "NO"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: jangunnarhoff.no resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: jangunnarhoff.no -> 2a01:5b40:0:4a06:0:7a00:60d3:b204]",
+    "verification": ""
+  },
+  {
+    "id": "artist-jean-michel-pilc",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-10T09:04:24.113Z",
+    "previousConfig": {
+      "id": "artist-jean-michel-pilc",
+      "domain": "jeanmichelpilc.com",
+      "url": "http://jeanmichelpilc.com/gigs/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".vsel-content.vsel-upcoming",
+        "artistNameFallback": "Jean-Michel Pilc",
+        "date": ".vsel-meta-date",
+        "ticketUrl": ".vsel-meta-link a::attr(href)",
+        "venue": ".vsel-meta-location",
+        "city": ".vsel-meta-location",
+        "country": ".vsel-meta-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: city_values_plausible [11/11 city values are longer than 60 chars or containing digits (100%, allow 20%)]; city_distinct_from_venue [11/11 rows have city identical to venue (100%, allow 20%)]; country_codes_valid [4/15 country values are 2-letter codes (27%, need 80%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-jay-semko",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:04:32.188Z",
+    "previousConfig": {
+      "id": "artist-jay-semko",
+      "domain": "www.jaysemko.com",
+      "url": "https://www.jaysemko.com/events",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "section.upcoming table tbody tr.border-accent",
+        "artistNameFallback": "Jay Semko",
+        "date": "td.event-date .date",
+        "ticketUrl": "a.event_details",
+        "venue": "td.event-name .text-tertiary",
+        "city": "td.event-location .text-tertiary",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.jaysemko.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.jaysemko.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-jim-moray",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:04:40.226Z",
+    "previousConfig": {
+      "id": "artist-jim-moray",
+      "domain": "jimmoray.co.uk",
+      "url": "https://jimmoray.co.uk/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.table-style tbody tr",
+        "artistNameFallback": "Jim Moray",
+        "date": "td.event-date time.from .date",
+        "ticketUrl": "td.event-date a",
+        "venue": "td.event-name .text-tertiary",
+        "city": "td.event-name .text-tertiary",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: jimmoray.co.uk resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: jimmoray.co.uk -> 2606:4700:3030::ac43:c7b6]",
+    "verification": ""
+  },
+  {
+    "id": "artist-johann-wilhelm-wilms",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:04:48.724Z",
+    "previousConfig": {
+      "id": "artist-johann-wilhelm-wilms",
+      "domain": "www.ijwwg.com",
+      "url": "https://www.ijwwg.com/konzerte.html",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".konzert",
+        "artistNameFallback": "Johann Wilhelm Wilms",
+        "date": ".kdate",
+        "ticketUrl": "a.btn",
+        "venue": ".kort",
+        "city": ".kort",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "DE"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.ijwwg.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.ijwwg.com -> 2a01:238:20a:202:1143::]",
+    "verification": ""
+  },
+  {
+    "id": "artist-john-mellencamp",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:04:57.177Z",
+    "previousConfig": {
+      "id": "artist-john-mellencamp",
+      "domain": "www.mellencamp.com",
+      "url": "https://www.mellencamp.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.card",
+        "artistNameFallback": "John Mellencamp",
+        "date": "time",
+        "ticketUrl": "a.dropdown-item[href^='http']",
+        "venue": ".h3",
+        "city": "h1 > div:first-of-type",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.mellencamp.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.mellencamp.com -> 2606:4700::6812:b4f]",
+    "verification": ""
+  },
+  {
+    "id": "artist-julie-fowlis",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:05:05.333Z",
+    "previousConfig": {
+      "id": "artist-julie-fowlis",
+      "domain": "www.juliefowlis.com",
+      "url": "https://www.juliefowlis.com/tour-dates/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".av-upcoming-events > a.av-upcoming-event-entry",
+        "artistNameFallback": "Julie Fowlis",
+        "date": ".tribe-event-date-start",
+        "ticketUrl": "attr(href)",
+        "venue": ".av-upcoming-event-venue",
+        "city": "",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.juliefowlis.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.juliefowlis.com -> 2a00:da00:100f:f000::200]",
+    "verification": ""
+  },
+  {
+    "id": "artist-l-subramaniam",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:05:13.211Z",
+    "previousConfig": {
+      "id": "artist-l-subramaniam",
+      "domain": "indianviolin.com",
+      "url": "https://indianviolin.com/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".entry-content p",
+        "artistNameFallback": "L. Subramaniam",
+        "date": "strong:first-child",
+        "ticketUrl": "a",
+        "venue": "br:nth-of-type(1) + text()",
+        "city": "strong:first-child",
+        "country": "strong:first-child",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "IN"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: indianviolin.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: indianviolin.com -> 2606:4700:3030::ac43:cc89]",
+    "verification": ""
+  },
+  {
+    "id": "artist-kj-52",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:05:21.449Z",
+    "previousConfig": {
+      "id": "artist-kj-52",
+      "domain": "www.kj52.com",
+      "url": "https://www.kj52.com/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "tr.border-accent",
+        "artistNameFallback": "KJ-52",
+        "date": "td.event-date .date-long .date",
+        "ticketUrl": "a.event_details",
+        "venue": "td.event-name .text-tertiary",
+        "city": "td.event-location .text-tertiary",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.kj52.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.kj52.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-legs-diamond",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-10T09:05:22.276Z",
+    "previousConfig": {
+      "id": "artist-legs-diamond",
+      "domain": "legsdiamond.com",
+      "url": "https://legsdiamond.com/tours/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table[width='720'] td[style='padding-right:5px'] p:has(b.red)",
+        "artistNameFallback": "Legs Diamond",
+        "date": "b.red",
+        "ticketUrl": "a",
+        "venue": "b:nth-of-type(2)",
+        "city": "p:nth-child(n) > b:nth-of-type(2) + br + text()",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=parse_error): Unmatched selector: ()]",
+    "verification": ""
+  },
+  {
+    "id": "artist-lesley-garrett",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-10T09:05:24.507Z",
+    "previousConfig": {
+      "id": "artist-lesley-garrett",
+      "domain": "lesleygarrett.co.uk",
+      "url": "https://lesleygarrett.co.uk/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.ae-post-list-item",
+        "artistNameFallback": "Lesley Garrett",
+        "date": ".elementor-element-487ef0b .ae-acf-content-wrapper",
+        "ticketUrl": ".elementor-element-ca3a839 a",
+        "venue": ".elementor-element-9d220be .ae-element-post-title",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: has_future_dates [0 event(s) dated today or later]",
+    "verification": ""
+  },
+  {
+    "id": "artist-lady-gaga",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:05:32.654Z",
+    "previousConfig": {
+      "id": "artist-lady-gaga",
+      "domain": "www.ladygaga.com",
+      "url": "https://www.ladygaga.com/us-en/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "ul._pastEventsList_16kz0_75 > li._root_1ozs6_19",
+        "artistNameFallback": "Lady Gaga",
+        "date": "div._dates_1ozs6_87",
+        "ticketUrl": "a._root_lzwqa_20",
+        "venue": "p._subtitle_1ozs6_86",
+        "city": "h2._title_1ozs6_69",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.ladygaga.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.ladygaga.com -> 2620:127:f00f:e::]",
+    "verification": ""
+  },
+  {
+    "id": "artist-lobao",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-10T09:05:33.164Z",
+    "previousConfig": {
+      "id": "artist-lobao",
+      "domain": "lobao.com.br",
+      "url": "https://lobao.com.br/agenda/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".show-item",
+        "artistNameFallback": "Lobão",
+        "date": ".show-item__date",
+        "ticketUrl": "a.btn-outlined",
+        "venue": ".show-item__name",
+        "city": ".show-item__location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "BR"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: has_future_dates [0 event(s) dated today or later]",
+    "verification": ""
+  },
+  {
+    "id": "artist-limahl",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:05:41.136Z",
+    "previousConfig": {
+      "id": "artist-limahl",
+      "domain": "www.limahl.com",
+      "url": "https://www.limahl.com/tour-all-events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "ul.concerts-list li.event",
+        "artistNameFallback": "Limahl",
+        "date": ".event-line-wrap > a > .event-line-node:nth-of-type(2)",
+        "ticketUrl": ".event-line-wrap > a@href",
+        "venue": ".event-line-wrap > a > .event-line-node:nth-of-type(4)",
+        "city": ".event-line-wrap > a > .event-line-node:nth-of-type(3)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.limahl.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.limahl.com -> 2606:4700:3035::6815:59db]",
+    "verification": ""
+  },
+  {
+    "id": "artist-lisa-brokop",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:05:49.241Z",
+    "previousConfig": {
+      "id": "artist-lisa-brokop",
+      "domain": "www.lisabrokop.com",
+      "url": "https://www.lisabrokop.com/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.list-style",
+        "artistNameFallback": "Lisa Brokop",
+        "date": ".event-datetime time.from",
+        "ticketUrl": ".buying-options .tickets",
+        "venue": ".event-location a",
+        "city": ".event-location a",
+        "country": ".event-location a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.lisabrokop.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.lisabrokop.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-lorne-balfe",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-10T09:05:50.337Z",
+    "previousConfig": {
+      "id": "artist-lorne-balfe",
+      "domain": "lornebalfe.com",
+      "url": "https://lornebalfe.com/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "section.live > div.grid.container",
+        "artistNameFallback": "Lorne Balfe",
+        "date": "div:nth-child(3) p",
+        "ticketUrl": "div:nth-child(4) a@href",
+        "venue": "div:nth-child(2) p",
+        "city": "div:nth-child(2) p",
+        "country": "div:nth-child(2) p",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: city_distinct_from_venue [13/13 rows have city identical to venue (100%, allow 20%)]; country_codes_valid [0/13 country values are 2-letter codes (0%, need 80%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-loose-ends",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:05:58.340Z",
+    "previousConfig": {
+      "id": "artist-loose-ends",
+      "domain": "looseendsmusic.com",
+      "url": "https://looseendsmusic.com/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.table-style tbody tr",
+        "artistNameFallback": "Loose Ends",
+        "date": "td.event-date time.from",
+        "ticketUrl": "a.event_details",
+        "venue": "td.event-location span.text",
+        "city": "td.event-location span.text",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: looseendsmusic.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: looseendsmusic.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-lucy-kaplansky",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:06:06.968Z",
+    "previousConfig": {
+      "id": "artist-lucy-kaplansky",
+      "domain": "lucykaplansky.com",
+      "url": "https://lucykaplansky.com/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-detail",
+        "artistNameFallback": "Lucy Kaplansky",
+        "date": ".event-datetime .date-long",
+        "ticketUrl": "a.tickets",
+        "venue": ".event-location a",
+        "city": ".event-location a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: lucykaplansky.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: lucykaplansky.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-lynch",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:06:22.613Z",
+    "previousConfig": {
+      "id": "artist-lynch",
+      "domain": "pc.lynch.jp",
+      "url": "https://pc.lynch.jp/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".live_in .tour_list",
+        "artistNameFallback": "Lynch",
+        "date": "h3 span:first-child",
+        "ticketUrl": "a",
+        "venue": "h3 span:last-child",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: pc.lynch.jp resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: pc.lynch.jp -> 2606:4700:3034::ac43:cf03]",
+    "verification": ""
+  },
+  {
+    "id": "artist-froukje",
+    "strategy": "transient",
+    "repairedAt": "2026-09-10T09:06:23.452Z",
+    "previousConfig": {
+      "id": "artist-froukje",
+      "domain": "froukje.net",
+      "url": "https://froukje.net/tickets",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".agendaitem",
+        "artistNameFallback": "Froukje",
+        "date": ".date",
+        "ticketUrl": "a.agenda-button-link",
+        "venue": ".venue",
+        "city": ".city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "NL"
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay",
+    "verification": "PASS (22 events, 10 checks)"
+  },
+  {
+    "id": "artist-marina-satti",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-10T09:06:32.354Z",
+    "previousConfig": {
+      "id": "artist-marina-satti",
+      "domain": "marinasatti.com",
+      "url": "https://marinasatti.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".vip-cities .vip-city-row",
+        "artistNameFallback": "Marina Satti",
+        "date": ".vip-city-info strong",
+        "ticketUrl": "a.vip-btn@href",
+        "venue": ".vip-city-info",
+        "city": ".vip-city-info",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: city_values_plausible [4/4 city values are longer than 60 chars or containing digits (100%, allow 20%)]; city_distinct_from_venue [4/4 rows have city identical to venue (100%, allow 20%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-mario-frangoulis",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-10T09:06:34.579Z",
+    "previousConfig": {
+      "id": "artist-mario-frangoulis",
+      "domain": "www.mariofrangoulis.com",
+      "url": "https://www.mariofrangoulis.com/concerts",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".eb-event-container",
+        "artistNameFallback": "Mario Frangoulis",
+        "date": ".eb-event-date-day, .eb-event-date-month, .eb-event-date-year",
+        "ticketUrl": ".eb-description-details a.btn-info",
+        "venue": ".eb-description-details",
+        "city": ".eb-description-details",
+        "country": ".eb-description-details",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GR"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: city_values_plausible [3/3 city values are longer than 60 chars or containing digits (100%, allow 20%)]; city_distinct_from_venue [3/3 rows have city identical to venue (100%, allow 20%)]; country_codes_valid [0/3 country values are 2-letter codes (0%, need 80%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-marike-jager",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:06:42.720Z",
+    "previousConfig": {
+      "id": "artist-marike-jager",
+      "domain": "marikejager.com",
+      "url": "https://marikejager.com/shows/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".et_pb_with_border.et_clickable",
+        "artistNameFallback": "Marike Jager",
+        "date": ".et_pb_column_1_3:nth-child(1) .et_pb_text_inner",
+        "ticketUrl": "",
+        "venue": ".et_pb_column_1_3:nth-child(2) .et_pb_text_inner",
+        "city": ".et_pb_column_1_3:nth-child(2) .et_pb_text_inner",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "NL"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: marikejager.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: marikejager.com -> 2a01:238:20a:202:1068::]",
+    "verification": ""
+  },
+  {
+    "id": "artist-marjan-mozetich",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-10T09:06:43.728Z",
+    "previousConfig": {
+      "id": "artist-marjan-mozetich",
+      "domain": "www.mozetich.com",
+      "url": "https://www.mozetich.com/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".entry-content > p.wp-block-paragraph",
+        "artistNameFallback": "Marjan Mozetich",
+        "date": "strong:first-child",
+        "ticketUrl": "a:last-of-type",
+        "venue": "a:last-of-type",
+        "city": "",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend",
+    "verification": "PASS (69 events, 8 checks)"
+  },
+  {
+    "id": "artist-matt-mays",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-10T09:06:48.375Z",
+    "previousConfig": {
+      "id": "artist-matt-mays",
+      "domain": "www.mattmays.com",
+      "url": "https://www.mattmays.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.sonic-events tr.event-brief",
+        "artistNameFallback": "Matt Mays",
+        "date": "td.date datetime",
+        "ticketUrl": "td.actions a",
+        "venue": "td.venue",
+        "city": "td.city",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.mattmays.com/tour/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-mark-hummel",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:06:56.500Z",
+    "previousConfig": {
+      "id": "artist-mark-hummel",
+      "domain": "markhummel.com",
+      "url": "https://markhummel.com/tour-dates",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.list-style",
+        "artistNameFallback": "Mark Hummel",
+        "date": ".event-datetime time.from",
+        "ticketUrl": ".buying-options .tickets.button",
+        "venue": ".event-location a",
+        "city": ".event-location a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: markhummel.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: markhummel.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-matt-mason",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:07:05.015Z",
+    "previousConfig": {
+      "id": "artist-matt-mason",
+      "domain": "mattmasonmusic.com",
+      "url": "https://mattmasonmusic.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.list-style",
+        "artistNameFallback": "Matt Mason",
+        "date": ".event-datetime time.from",
+        "ticketUrl": "a.tickets.button",
+        "venue": ".event-location a",
+        "city": ".event-location a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: mattmasonmusic.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: mattmasonmusic.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-marmalade",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:07:13.216Z",
+    "previousConfig": {
+      "id": "artist-marmalade",
+      "domain": "themarmalade.net",
+      "url": "https://themarmalade.net/tour-dates/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.hc_rse_events_table tr:not(:has(td[colspan]))",
+        "artistNameFallback": "Marmalade",
+        "date": "td.hc_rse_date",
+        "ticketUrl": "",
+        "venue": "td.hc_rse_title",
+        "city": "",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: themarmalade.net resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: themarmalade.net -> 2a07:7800::158]",
+    "verification": ""
+  },
+  {
+    "id": "artist-micky-dolenz",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:07:21.593Z",
+    "previousConfig": {
+      "id": "artist-micky-dolenz",
+      "domain": "mickydolenz.com",
+      "url": "https://mickydolenz.com/gigs",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.table-style tbody tr",
+        "artistNameFallback": "Micky Dolenz",
+        "date": "td.event-date time.from",
+        "ticketUrl": "a.event_details",
+        "venue": "td.event-location span.text",
+        "city": "td.event-location span.text",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: mickydolenz.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: mickydolenz.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-miu",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:07:29.861Z",
+    "previousConfig": {
+      "id": "artist-miu",
+      "domain": "miu-music.org",
+      "url": "https://miu-music.org/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.table-style tbody tr",
+        "artistNameFallback": "Miü",
+        "date": "td.event-date time.from",
+        "ticketUrl": "td.event-date a.event_details",
+        "venue": "td.event-name span.text",
+        "city": "td.event-location span.text",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "DE"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: miu-music.org resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: miu-music.org -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-mungos-hi-fi",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:07:37.952Z",
+    "previousConfig": {
+      "id": "artist-mungos-hi-fi",
+      "domain": "mungoshifi.net",
+      "url": "https://mungoshifi.net/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".events-list .item",
+        "artistNameFallback": "Mungo's Hi Fi",
+        "date": ".event-date",
+        "ticketUrl": ".event-ticket a@href",
+        "venue": ".event-name",
+        "city": ".event-name",
+        "country": ".event-name",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: mungoshifi.net resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: mungoshifi.net -> 2a02:4780:21:3e33:fcc8:2224:a948:2611]",
+    "verification": ""
+  },
+  {
+    "id": "artist-my-vitriol",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:07:46.125Z",
+    "previousConfig": {
+      "id": "artist-my-vitriol",
+      "domain": "my-vitriol.com",
+      "url": "https://my-vitriol.com/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.table-style tbody tr.border-accent",
+        "artistNameFallback": "My Vitriol",
+        "date": ".event-date .date",
+        "ticketUrl": "a.event_details",
+        "venue": ".event-location .text",
+        "city": ".event-location .text",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: my-vitriol.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: my-vitriol.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-nick-cave-the-bad-seeds",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:07:54.655Z",
+    "previousConfig": {
+      "id": "artist-nick-cave-the-bad-seeds",
+      "domain": "www.nickcave.com",
+      "url": "https://www.nickcave.com/tour-dates/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".live-event",
+        "artistNameFallback": "Nick Cave & The Bad Seeds",
+        "date": ".live-date p",
+        "ticketUrl": ".buytickets-button::attr(href)",
+        "venue": ".venue",
+        "city": ".venue",
+        "country": ".venue",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.nickcave.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.nickcave.com -> 2600:9000:2340:200:c:9d6a:5f40:93a1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-nena",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:08:02.792Z",
+    "previousConfig": {
+      "id": "artist-nena",
+      "domain": "www.nena.de",
+      "url": "https://www.nena.de/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".w-dyn-item",
+        "artistNameFallback": "Nena",
+        "date": ".ticket-loca.fill",
+        "ticketUrl": "a",
+        "venue": ".ticket-loca:not(.fill)",
+        "city": ".ticket-loca.fill",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "DE"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.nena.de resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.nena.de -> 2620:cb:2000::1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-nine-inch-nails",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:08:13.474Z",
+    "previousConfig": {
+      "id": "artist-nine-inch-nails",
+      "domain": "www.nin.com",
+      "url": "https://www.nin.com/tickets2018/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "section#section-tickets2018 > div.section-inner > p:has(strong)",
+        "artistNameFallback": "Nine Inch Nails",
+        "date": "strong:first-child",
+        "ticketUrl": "a:first-of-type",
+        "venue": "b",
+        "city": "xpath=.//p/text()[contains(., ',')][1]",
+        "country": "US",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.nin.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.nin.com -> 2606:4700:3030::ac43:8094]",
+    "verification": ""
+  },
+  {
+    "id": "artist-ocean-colour-scene",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-10T09:08:18.212Z",
+    "previousConfig": {
+      "id": "artist-ocean-colour-scene",
+      "domain": "www.oceancolourscene.com",
+      "url": "https://www.oceancolourscene.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".EventListingListItem",
+        "artistNameFallback": "Ocean Colour Scene",
+        "date": ".EventListingListItem-date",
+        "ticketUrl": "a.EventListingListItem-link::attr(href)",
+        "venue": ".EventListingListItem-venue-room",
+        "city": ".EventListingListItem-venue-city",
+        "country": ".EventListingListItem-venue-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: country_codes_valid [0/12 country values are 2-letter codes (0%, need 80%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-one-more-girl",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:08:26.483Z",
+    "previousConfig": {
+      "id": "artist-one-more-girl",
+      "domain": "www.onemoregirl.com",
+      "url": "https://www.onemoregirl.com/gigs",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-detail",
+        "artistNameFallback": "One More Girl",
+        "date": ".event-datetime .date",
+        "ticketUrl": ".buying-options .tickets",
+        "venue": ".event-location a",
+        "city": ".event-location a",
+        "country": ".event-location a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.onemoregirl.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.onemoregirl.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-paolo-tosti",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:08:34.486Z",
+    "previousConfig": {
+      "id": "artist-paolo-tosti",
+      "domain": "www.istitutonazionaletostiano.it",
+      "url": "https://www.istitutonazionaletostiano.it/it/events-2/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.post-item",
+        "artistNameFallback": "Paolo Tosti",
+        "date": ".date_label",
+        "ticketUrl": ".entry-title a",
+        "venue": ".entry-title",
+        "city": ".entry-title",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "IT"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.istitutonazionaletostiano.it resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.istitutonazionaletostiano.it -> 2a00:6d40:4:1::c277:51]",
+    "verification": ""
+  },
+  {
+    "id": "artist-paralamas-do-sucesso",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:08:42.800Z",
+    "previousConfig": {
+      "id": "artist-paralamas-do-sucesso",
+      "domain": "osparalamas.com.br",
+      "url": "https://osparalamas.com.br/agenda/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.event",
+        "artistNameFallback": "Paralamas do Sucesso",
+        "date": ".event-line-node:nth-child(1)",
+        "ticketUrl": "a.event-map-link",
+        "venue": ".event-line-node.medium:nth-child(2)",
+        "city": ".event-line-node.medium:nth-child(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "BR"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: osparalamas.com.br resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: osparalamas.com.br -> 2804:10:8036::170:4]",
+    "verification": ""
+  },
+  {
+    "id": "artist-param-vir",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:08:50.922Z",
+    "previousConfig": {
+      "id": "artist-param-vir",
+      "domain": "paramvir.net",
+      "url": "https://paramvir.net/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-in-list",
+        "artistNameFallback": "Param Vir",
+        "date": ".meta-col h2",
+        "ticketUrl": "a.details-button",
+        "venue": ".mec-venue-details span strong",
+        "city": "",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: paramvir.net resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: paramvir.net -> 2606:4700:3033::ac43:8b40]",
+    "verification": ""
+  },
+  {
+    "id": "artist-patrice-rushen",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:08:59.049Z",
+    "previousConfig": {
+      "id": "artist-patrice-rushen",
+      "domain": "patricerushen.com",
+      "url": "https://patricerushen.com/schedule",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div[id^='pg-33-']",
+        "artistNameFallback": "Patrice Rushen",
+        "date": ".siteorigin-widget-tinymce p:first-child",
+        "ticketUrl": ".siteorigin-widget-tinymce a",
+        "venue": ".siteorigin-widget-tinymce blockquote strong",
+        "city": ".siteorigin-widget-tinymce p:nth-child(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: patricerushen.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: patricerushen.com -> 2607:f1c0:100f:f000::29f]",
+    "verification": ""
+  },
+  {
+    "id": "artist-pat-benatar",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:09:07.729Z",
+    "previousConfig": {
+      "id": "artist-pat-benatar",
+      "domain": "www.benatargiraldo.com",
+      "url": "https://www.benatargiraldo.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.tourdates-block",
+        "artistNameFallback": "Pat Benatar",
+        "date": ".tourdates-date",
+        "ticketUrl": "a.tourdates-tickets",
+        "venue": ".tourdates-headline",
+        "city": ".tourdates-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.benatargiraldo.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.benatargiraldo.com -> 2606:4700::6812:1074]",
+    "verification": ""
+  },
+  {
+    "id": "artist-patrick-scales",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:09:16.229Z",
+    "previousConfig": {
+      "id": "artist-patrick-scales",
+      "domain": "patrickscales.com",
+      "url": "https://patrickscales.com/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.single_event_list",
+        "artistNameFallback": "Patrick Scales",
+        "date": ".event_date",
+        "ticketUrl": ".event_buy .lc_js_link",
+        "venue": ".lcl_ev_venue",
+        "city": ".event_location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "DE"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: patrickscales.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: patrickscales.com -> 2a01:238:20a:202:1094::]",
+    "verification": ""
+  },
+  {
+    "id": "artist-paul-anka",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:09:24.375Z",
+    "previousConfig": {
+      "id": "artist-paul-anka",
+      "domain": "www.paulanka.com",
+      "url": "https://www.paulanka.com/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.event",
+        "artistNameFallback": "Paul Anka",
+        "date": "time",
+        "ticketUrl": "a.btn-tickets",
+        "venue": "p.h6.h5-lg.h4-xl",
+        "city": "span.d-inline-block",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.paulanka.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.paulanka.com -> 2606:4700::6812:b4f]",
+    "verification": ""
+  },
+  {
+    "id": "artist-paul-dempsey",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:09:32.430Z",
+    "previousConfig": {
+      "id": "artist-paul-dempsey",
+      "domain": "pauldempseymusic.com",
+      "url": "https://pauldempseymusic.com/shows/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".showslist",
+        "artistNameFallback": "Paul Dempsey",
+        "date": ".showitem1",
+        "ticketUrl": ".showsbuy",
+        "venue": ".showitem2",
+        "city": ".showitem3",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "AU"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: pauldempseymusic.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: pauldempseymusic.com -> 2606:4700:3030::ac43:b333]",
+    "verification": ""
+  },
+  {
+    "id": "artist-paul-thompson",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:09:40.998Z",
+    "previousConfig": {
+      "id": "artist-paul-thompson",
+      "domain": "paulsmusic.co.uk",
+      "url": "https://paulsmusic.co.uk/calendar",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-detail",
+        "artistNameFallback": "Paul Thompson",
+        "date": ".event-datetime",
+        "ticketUrl": ".add-to-cart a",
+        "venue": ".event-location a",
+        "city": ".event-location a",
+        "country": ".event-location a",
+        "venueNameFallback": "venue",
+        "cityNameFallback": "city",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: paulsmusic.co.uk resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: paulsmusic.co.uk -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-paul-winter",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:09:48.998Z",
+    "previousConfig": {
+      "id": "artist-paul-winter",
+      "domain": "paulwinter.com",
+      "url": "http://paulwinter.com/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tribe-events-calendar-latest-past__event-row",
+        "artistNameFallback": "Paul Winter",
+        "date": "time.tribe-events-calendar-latest-past__event-datetime",
+        "ticketUrl": ".tribe-events-calendar-latest-past__event-title-link",
+        "venue": ".tribe-events-calendar-latest-past__event-venue-title",
+        "city": ".tribe-events-calendar-latest-past__event-venue-address",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: paulwinter.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: paulwinter.com -> 2606:4700:3031::6815:4ac5]",
+    "verification": ""
+  },
+  {
+    "id": "artist-peter-togni",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-10T09:09:49.753Z",
+    "previousConfig": {
+      "id": "artist-peter-togni",
+      "domain": "www.petertogni.com",
+      "url": "http://www.petertogni.com/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tribe-events-calendar-latest-past__event-row",
+        "artistNameFallback": "Peter Togni",
+        "date": ".tribe-events-calendar-latest-past__event-date-tag-datetime",
+        "ticketUrl": ".tribe-events-calendar-latest-past__event-title-link",
+        "venue": ".tribe-events-calendar-latest-past__event-venue-title",
+        "city": ".tribe-events-calendar-latest-past__event-venue-address",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: has_future_dates [0 event(s) dated today or later]; city_values_plausible [3/3 city values are longer than 60 chars or containing digits (100%, allow 20%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-pequot",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:09:58.444Z",
+    "previousConfig": {
+      "id": "artist-pequot",
+      "domain": "www.pequotmuseum.org",
+      "url": "https://www.pequotmuseum.org/explore/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".jet-listing-grid__item",
+        "artistNameFallback": "Pequot",
+        "date": ".jet-listing-dynamic-field__content",
+        "ticketUrl": ".elementor-button-link, .elementor-heading-title a",
+        "venue": "",
+        "city": "",
+        "country": "",
+        "venueNameFallback": "Mashantucket Pequot Museum and Research Center",
+        "cityNameFallback": "Mashantucket",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.pequotmuseum.org resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.pequotmuseum.org -> 2606:4700::6811:3640]",
+    "verification": ""
+  },
+  {
+    "id": "artist-phil-selway",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:10:06.699Z",
+    "previousConfig": {
+      "id": "artist-phil-selway",
+      "domain": "www.philipselway.com",
+      "url": "https://www.philipselway.com/tour-dates/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.et_pb_row.et_pb_equal_columns",
+        "artistNameFallback": "Phil Selway",
+        "date": "div.et_pb_column_1_4:nth-child(1) .et_pb_text_inner strong",
+        "ticketUrl": "div.et_pb_column_1_4:nth-child(3) a",
+        "venue": "div.et_pb_column_1_2:nth-child(2) .et_pb_text_inner strong",
+        "city": "div.et_pb_column_1_2:nth-child(2) .et_pb_text_inner em",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.philipselway.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.philipselway.com -> 2a01:4f9:c011:a457::1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-philip-lindholm",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:10:16.989Z",
+    "previousConfig": {
+      "id": "artist-philip-lindholm",
+      "domain": "philiplindholm.com",
+      "url": "https://philiplindholm.com/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tribe-events-calendar-latest-past__event-row",
+        "artistNameFallback": "Philip Lindholm",
+        "date": ".tribe-events-calendar-latest-past__event-datetime",
+        "ticketUrl": ".tribe-events-calendar-latest-past__event-title-link",
+        "venue": ".tribe-events-calendar-latest-past__event-venue-title",
+        "city": ".tribe-events-calendar-latest-past__event-venue-address",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: philiplindholm.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.philiplindholm.com -> 2606:4700:7::a29f:802d]",
+    "verification": ""
+  },
+  {
+    "id": "artist-poetry",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:10:25.065Z",
+    "previousConfig": {
+      "id": "artist-poetry",
+      "domain": "www.poemsband.com",
+      "url": "https://www.poemsband.com/#poems",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".calendar_feature table tbody tr",
+        "artistNameFallback": "poetry",
+        "date": ".event-date .date-long",
+        "ticketUrl": "a.event_details",
+        "venue": ".event-location .text",
+        "city": ".event-location .text",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.poemsband.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.poemsband.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-pontarddulais-male-choir",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:10:33.135Z",
+    "previousConfig": {
+      "id": "artist-pontarddulais-male-choir",
+      "domain": "www.pontarddulaismalechoir.com",
+      "url": "https://www.pontarddulaismalechoir.com/concerts.php",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.row.mt-2",
+        "artistNameFallback": "Pontarddulais Male Choir",
+        "date": "div.col-4 p",
+        "venue": "div.col-6 p",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.pontarddulaismalechoir.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.pontarddulaismalechoir.com -> 2001:8d8:100f:f000::200]",
+    "verification": ""
+  },
+  {
+    "id": "artist-pretty-ricky",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:10:41.173Z",
+    "previousConfig": {
+      "id": "artist-pretty-ricky",
+      "domain": "www.prettyricky.com",
+      "url": "https://www.prettyricky.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li[data-hook='event-list-item']",
+        "artistNameFallback": "Pretty Ricky",
+        "date": "div[data-hook='date']",
+        "ticketUrl": "a[data-hook='ev-rsvp-button']",
+        "venue": "div[data-hook='location']",
+        "city": "div[data-hook='ev-list-item-title']",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.prettyricky.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.prettyricky.com -> 2606:4700:3031::6815:554c]",
+    "verification": ""
+  },
+  {
+    "id": "artist-pretty-yende",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:10:49.370Z",
+    "previousConfig": {
+      "id": "artist-pretty-yende",
+      "domain": "prettyyende.com",
+      "url": "http://prettyyende.com/schedule/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".schedule-show",
+        "artistNameFallback": "Pretty Yende",
+        "date": ".schedule-show-dates p",
+        "ticketUrl": ".schedule-show-tickets a",
+        "venue": ".schedule-show-venue",
+        "city": ".schedule-show-location",
+        "country": ".schedule-show-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: prettyyende.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: prettyyende.com -> 2606:4700:3037::6815:318a]",
+    "verification": ""
+  },
+  {
+    "id": "artist-primal-scream",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:10:57.546Z",
+    "previousConfig": {
+      "id": "artist-primal-scream",
+      "domain": "www.primalscream.net",
+      "url": "https://www.primalscream.net/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "ul.shows-col-inner li[id^='shows_row_']",
+        "artistNameFallback": "Primal Scream",
+        "date": ".googleDate",
+        "ticketUrl": "a.buyticketurl",
+        "venue": ".s_venue",
+        "city": ".addressLocality",
+        "country": ".addressCountry",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.primalscream.net resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.primalscream.net -> 2606:4700:3030::ac43:9c48]",
+    "verification": ""
+  },
+  {
+    "id": "artist-pukkelpop",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:11:06.336Z",
+    "previousConfig": {
+      "id": "artist-pukkelpop",
+      "domain": "www.pukkelpop.be",
+      "url": "https://www.pukkelpop.be/en/line-up/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".act-list__item",
+        "artistNameFallback": "Pukkelpop",
+        "date": ".act__performance",
+        "ticketUrl": "null",
+        "venue": ".act__performance",
+        "city": "null",
+        "country": "null",
+        "venueNameFallback": "Kiewit, Hasselt",
+        "cityNameFallback": "Hasselt",
+        "countryNameFallback": "BE"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.pukkelpop.be resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.pukkelpop.be -> 2a02:5b40:4:224::40]",
+    "verification": ""
+  },
+  {
+    "id": "artist-puts-kevin",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:11:14.453Z",
+    "previousConfig": {
+      "id": "artist-puts-kevin",
+      "domain": "www.kevinputs.com",
+      "url": "https://www.kevinputs.com/events",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".schedule-text4_item",
+        "artistNameFallback": "Puts, Kevin",
+        "date": "h5.margin-vertical-0",
+        "ticketUrl": "a.button",
+        "venue": ".small-text",
+        "city": ".small-text",
+        "country": ".small-text",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.kevinputs.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.kevinputs.com -> 2620:cb:2000::1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-queensland-symphony-orchestra",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:11:22.769Z",
+    "previousConfig": {
+      "id": "artist-queensland-symphony-orchestra",
+      "domain": "qso.com.au",
+      "url": "https://qso.com.au/events",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.columns.columns-1-4 > div.column > div.column-inner",
+        "artistNameFallback": "Queensland Symphony Orchestra",
+        "date": "section.relative > div.flex-auto > div.width-1.flex-none.padding-vertical-s.padding-horizontal-m.border-top.border-color-dark-300 > p.no-margin.flex.flex-justify.line-height-xs > time.margin-right-xs.font-size-s",
+        "ticketUrl": "section.relative > div.flex-auto > div.width-1.flex-auto.flex.flex-column.width-1.padding-m.justify-content-space-between > div.width-1 > div.padding-top-m > a.button.button-pill.button-xs",
+        "venueNameFallback": "QPAC",
+        "cityNameFallback": "Brisbane",
+        "countryNameFallback": "AU"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: qso.com.au resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: qso.com.au -> 2606:4700:3033::6815:cab]",
+    "verification": ""
+  },
+  {
+    "id": "artist-raffi",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-10T09:11:24.390Z",
+    "previousConfig": {
+      "id": "artist-raffi",
+      "domain": "raffinews.com",
+      "url": "https://raffinews.com/raffi/concerts/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "ul.wp-block-list",
+        "artistNameFallback": "Raffi",
+        "date": "li",
+        "ticketUrl": "li > a",
+        "venue": "li > a",
+        "city": "li",
+        "country": "li",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: dates_parse [1/12 date strings parsed (8%, need 60%)]; city_values_plausible [12/12 city values are longer than 60 chars or containing digits (100%, allow 20%)]; country_codes_valid [0/12 country values are 2-letter codes (0%, need 80%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-rachael-sage",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:11:32.321Z",
+    "previousConfig": {
+      "id": "artist-rachael-sage",
+      "domain": "www.rachaelsage.com",
+      "url": "https://www.rachaelsage.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.tour_list tr.pm_top_tr",
+        "artistNameFallback": "Rachael Sage",
+        "date": "td:nth-child(1)",
+        "ticketUrl": "td.ticket_info img.row_buy_but@onclick",
+        "venue": "td.event_venue",
+        "city": "td.event_location",
+        "country": "td.event_location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.rachaelsage.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.rachaelsage.com -> 2606:4700:3037::6815:534]",
+    "verification": ""
+  },
+  {
+    "id": "artist-randy-houser",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:11:41.004Z",
+    "previousConfig": {
+      "id": "artist-randy-houser",
+      "domain": "www.randyhouser.com",
+      "url": "https://www.randyhouser.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.card.event",
+        "artistNameFallback": "Randy Houser",
+        "date": "time",
+        "ticketUrl": "a.btn-tickets",
+        "venue": "h1.card-title",
+        "city": "p.location",
+        "country": "p.location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.randyhouser.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.randyhouser.com -> 2606:4700::6812:b4f]",
+    "verification": ""
+  },
+  {
+    "id": "artist-ron-sexsmith",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:11:56.803Z",
+    "previousConfig": {
+      "id": "artist-ron-sexsmith",
+      "domain": "ronsexsmith.com",
+      "url": "https://ronsexsmith.com/tour-landing-page/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".et_pb_row_inner:has(.et_pb_button)",
+        "artistNameFallback": "Ron Sexsmith",
+        "date": "h4",
+        "ticketUrl": "a.et_pb_button",
+        "venue": ".et_pb_text:has(p.p1) p.p1",
+        "city": "h5.p1",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: ronsexsmith.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: ronsexsmith.com -> 2a07:7800::179]",
+    "verification": ""
+  },
+  {
+    "id": "artist-sarah-slean",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:12:04.925Z",
+    "previousConfig": {
+      "id": "artist-sarah-slean",
+      "domain": "sarahslean.com",
+      "url": "https://sarahslean.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.table-style tbody tr",
+        "artistNameFallback": "Sarah Slean",
+        "date": "td.event-date .date-long",
+        "ticketUrl": "a.event_details",
+        "venue": "td.event-location .text",
+        "city": "td.event-location .text",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: sarahslean.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: sarahslean.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-shelby-lynne",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:12:13.140Z",
+    "previousConfig": {
+      "id": "artist-shelby-lynne",
+      "domain": "www.shelbylynne.com",
+      "url": "https://www.shelbylynne.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "section.elementor-inner-section[data-id][class*='elementor-element-']",
+        "artistNameFallback": "Shelby Lynne",
+        "date": ".elementor-widget-heading .elementor-heading-title",
+        "ticketUrl": "a.elementor-button-link",
+        "venue": ".elementor-image-box-title",
+        "city": ".elementor-image-box-description",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.shelbylynne.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.shelbylynne.com -> 2606:4700:3036::ac43:8ca1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-sheryl-bailey",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:12:21.169Z",
+    "previousConfig": {
+      "id": "artist-sheryl-bailey",
+      "domain": "sherylbailey.com",
+      "url": "https://sherylbailey.com/gigs",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.list-style",
+        "artistNameFallback": "Sheryl Bailey",
+        "date": ".event-datetime time.from",
+        "ticketUrl": ".buying-options a.tickets",
+        "venue": ".event-location a",
+        "city": ".event-location a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: sherylbailey.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: sherylbailey.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-showaddywaddy",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-10T09:12:23.323Z",
+    "previousConfig": {
+      "id": "artist-showaddywaddy",
+      "domain": "www.showaddywaddy.net",
+      "url": "https://www.showaddywaddy.net/gigs/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "tr.tableBuilderRow:not(.uniqueStyleRow)",
+        "artistNameFallback": "Showaddywaddy",
+        "date": ".tableBuilderCell1",
+        "ticketUrl": ".tableBuilderCell3 a@href",
+        "venue": ".tableBuilderCell2",
+        "city": ".tableBuilderCell2",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: dates_parse [1/115 date strings parsed (1%, need 60%)]; city_distinct_from_venue [115/115 rows have city identical to venue (100%, allow 20%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-sick-of-sarah",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:12:31.434Z",
+    "previousConfig": {
+      "id": "artist-sick-of-sarah",
+      "domain": "www.sickofsarah.com",
+      "url": "https://www.sickofsarah.com/shows/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.table-style tbody tr",
+        "artistNameFallback": "Sick of Sarah",
+        "date": "td.event-date time.from",
+        "ticketUrl": "a.event_details",
+        "venue": "span.fn.org",
+        "city": "span.city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.sickofsarah.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.sickofsarah.com -> 2606:4700:3030::6815:2e58]",
+    "verification": ""
+  },
+  {
+    "id": "artist-smalltown-poets",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:12:39.823Z",
+    "previousConfig": {
+      "id": "artist-smalltown-poets",
+      "domain": "smalltownpoets.tv",
+      "url": "https://smalltownpoets.tv/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.list-style",
+        "artistNameFallback": "Smalltown Poets",
+        "date": "time.from",
+        "ticketUrl": ".add-to-cart .tickets",
+        "venue": ".event-location a",
+        "city": ".event-location a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: smalltownpoets.tv resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: smalltownpoets.tv -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-sonicflood",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:12:49.898Z",
+    "previousConfig": {
+      "id": "artist-sonicflood",
+      "domain": "sonicflood.com",
+      "url": "https://sonicflood.com/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.list-style",
+        "artistNameFallback": "Sonicflood",
+        "date": "time.from",
+        "ticketUrl": "a.button.tickets",
+        "venue": "p.event-location a",
+        "city": "",
+        "country": "",
+        "venueNameFallback": "p.event-location",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: sonicflood.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: sonicflood.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-sophie-b-hawkins",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:12:57.929Z",
+    "previousConfig": {
+      "id": "artist-sophie-b-hawkins",
+      "domain": "sophiebhawkins.com",
+      "url": "https://sophiebhawkins.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".upcoming tbody tr",
+        "artistNameFallback": "Sophie B. Hawkins",
+        "date": ".event-date time",
+        "ticketUrl": "a.event_details",
+        "venue": ".event-name .text-tertiary",
+        "city": ".event-name .text-tertiary",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: sophiebhawkins.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: sophiebhawkins.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-stephen-pearcy",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-10T09:13:00.659Z",
+    "previousConfig": {
+      "id": "artist-stephen-pearcy",
+      "domain": "www.stephen-pearcy.com",
+      "url": "https://www.stephen-pearcy.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.table-style tbody tr",
+        "artistNameFallback": "Stephen Pearcy",
+        "date": ".event-date",
+        "venue": ".event-name",
+        "city": ".city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend",
+    "verification": "PASS (1 events, 9 checks)"
+  },
+  {
+    "id": "artist-steinar-raknes",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:13:09.046Z",
+    "previousConfig": {
+      "id": "artist-steinar-raknes",
+      "domain": "steinarraknes.com",
+      "url": "https://steinarraknes.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour-item",
+        "artistNameFallback": "Steinar Raknes",
+        "date": ".tour-date",
+        "venue": ".tour-venue",
+        "city": ".tour-venue",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "NO"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: steinarraknes.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: steinarraknes.com -> 2a01:5b40:0:4700::1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-steve-cardenas",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-10T09:13:11.128Z",
+    "previousConfig": {
+      "id": "artist-steve-cardenas",
+      "domain": "stevecardenasmusic.com",
+      "url": "http://stevecardenasmusic.com/schedule/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table tbody tr",
+        "artistNameFallback": "Steve Cardenas",
+        "date": "td p span span[style*='color: #9c0000']",
+        "venue": "td p",
+        "city": "td p",
+        "country": "td p",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: city_values_plausible [44/44 city values are longer than 60 chars or containing digits (100%, allow 20%)]; city_distinct_from_venue [44/44 rows have city identical to venue (100%, allow 20%)]; country_codes_valid [0/44 country values are 2-letter codes (0%, need 80%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-stef-bos",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:13:19.435Z",
+    "previousConfig": {
+      "id": "artist-stef-bos",
+      "domain": "www.stefbos.nl",
+      "url": "https://www.stefbos.nl/tourdata/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "#all > div > div",
+        "artistNameFallback": "Stef Bos",
+        "date": "div:nth-child(1)",
+        "ticketUrl": "div:nth-child(8) a@href",
+        "venue": "div:nth-child(5)",
+        "city": "div:nth-child(4)",
+        "country": "div:nth-child(3)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "NL"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.stefbos.nl resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.stefbos.nl -> 2a00:19c0:a065:41::1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-terell-stafford",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:13:30.527Z",
+    "previousConfig": {
+      "id": "artist-terell-stafford",
+      "domain": "terellstafford.com",
+      "url": "https://terellstafford.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "ul#cal > li.event",
+        "artistNameFallback": "Terell Stafford",
+        "date": ".date",
+        "ticketUrl": ".info_block h3 a",
+        "venue": ".info_block .location p:first-child",
+        "city": ".info_block .location p:last-child",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: terellstafford.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: terellstafford.com -> 2a02:4780:1e:22fe:212f:3928:24fc:5793]",
+    "verification": ""
+  },
+  {
+    "id": "artist-tesla",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:13:38.672Z",
+    "previousConfig": {
+      "id": "artist-tesla",
+      "domain": "teslatheband.com",
+      "url": "https://teslatheband.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.list-style",
+        "artistNameFallback": "Tesla",
+        "date": ".event-datetime time.from",
+        "ticketUrl": "a.tickets.button",
+        "venue": ".event-location a",
+        "city": ".event-location a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: teslatheband.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: teslatheband.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-the-alarm",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:13:46.859Z",
+    "previousConfig": {
+      "id": "artist-the-alarm",
+      "domain": "thealarm.com",
+      "url": "https://thealarm.com/tour-more-shows-sell-out/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "ul.gigpress-listing li.vevent",
+        "artistNameFallback": "The Alarm",
+        "date": "abbr.dtstart",
+        "ticketUrl": ".gigpress-tickets-link",
+        "venue": ".gigpress-sidebar-venue a",
+        "city": ".gigpress-sidebar-city",
+        "venueNameFallback": ".gigpress-sidebar-venue",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: thealarm.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: thealarm.com -> 2001:8d8:100f:f000::228]",
+    "verification": ""
+  },
+  {
+    "id": "artist-the-breath-of-life",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:13:55.005Z",
+    "previousConfig": {
+      "id": "artist-the-breath-of-life",
+      "domain": "www.the-breath-of-life.com",
+      "url": "https://www.the-breath-of-life.com/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.list-style",
+        "artistNameFallback": "The Breath Of Life",
+        "date": "time.from",
+        "ticketUrl": "h2.event-title a",
+        "venue": ".event-location a, .event-location span",
+        "city": ".event-location a, .event-location span",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.the-breath-of-life.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.the-breath-of-life.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-the-crookes",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:14:03.299Z",
+    "previousConfig": {
+      "id": "artist-the-crookes",
+      "domain": "thecrookes.co.uk",
+      "url": "http://thecrookes.co.uk/tour-dates",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.easy-table tbody tr",
+        "artistNameFallback": "The Crookes",
+        "date": "td:nth-child(1)",
+        "ticketUrl": "td:nth-child(6) a",
+        "venue": "td:nth-child(4)",
+        "city": "td:nth-child(3)",
+        "country": "td:nth-child(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: thecrookes.co.uk resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: thecrookes.co.uk -> 2606:4700:3032::ac43:ba50]",
+    "verification": ""
+  },
+  {
+    "id": "artist-the-offspring",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:14:48.839Z",
+    "previousConfig": {
+      "id": "artist-the-offspring",
+      "domain": "www.offspring.com",
+      "url": "https://www.offspring.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.card.event",
+        "artistNameFallback": "The Offspring",
+        "date": "time",
+        "ticketUrl": ".btn-tickets",
+        "venue": ".location",
+        "city": "h1.card-title",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.offspring.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.offspring.com -> 2606:4700::6812:b4f]",
+    "verification": ""
+  },
+  {
+    "id": "artist-the-plastic-people-of-the-universe",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:14:56.938Z",
+    "previousConfig": {
+      "id": "artist-the-plastic-people-of-the-universe",
+      "domain": "plastic-people.cz",
+      "url": "https://plastic-people.cz/concerts/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".wp-block-group .wp-block-group__inner-container",
+        "artistNameFallback": "The Plastic People of the Universe",
+        "date": "h6.wp-block-heading",
+        "ticketUrl": ".wp-block-button__link",
+        "venue": "h3.wp-block-heading",
+        "city": "h3.wp-block-heading",
+        "country": "null",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CZ"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: plastic-people.cz resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: plastic-people.cz -> 2a0e:acc0::c11]",
+    "verification": ""
+  },
+  {
+    "id": "artist-the-rose-of-avalanche",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:15:05.172Z",
+    "previousConfig": {
+      "id": "artist-the-rose-of-avalanche",
+      "domain": "roseofavalanche.com",
+      "url": "https://roseofavalanche.com/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".blog-article",
+        "artistNameFallback": "The Rose of Avalanche",
+        "date": "footer.blog-footer .post-info span[data-time]",
+        "ticketUrl": ".message a.no-pjax",
+        "venue": "h2.heading-blog a",
+        "city": ".message p:nth-of-type(3)",
+        "country": ".message p:nth-of-type(3)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: roseofavalanche.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: roseofavalanche.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-the-script",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:15:13.473Z",
+    "previousConfig": {
+      "id": "artist-the-script",
+      "domain": "www.thescriptmusic.com",
+      "url": "https://www.thescriptmusic.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "ul.shows-col-outer > li[id^='shows_row_']",
+        "artistNameFallback": "The Script",
+        "date": "div.googleDate",
+        "ticketUrl": "a.buyticketurl",
+        "venue": "div.s_venue",
+        "city": "span.addressLocality",
+        "country": "span.addressCountry",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.thescriptmusic.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.thescriptmusic.com -> 2606:4700:3032::ac43:8c86]",
+    "verification": ""
+  },
+  {
+    "id": "artist-the-searchers",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:15:21.630Z",
+    "previousConfig": {
+      "id": "artist-the-searchers",
+      "domain": "www.the-searchers.co.uk",
+      "url": "http://www.the-searchers.co.uk/home/dates/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".wp-block-table table tbody tr:not(:first-child)",
+        "artistNameFallback": "The Searchers",
+        "date": "td:first-child",
+        "ticketUrl": "td:first-child a",
+        "venue": "td:first-child",
+        "city": "td:first-child",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.the-searchers.co.uk resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.the-searchers.co.uk -> 2001:8d8:100f:f000::229]",
+    "verification": ""
+  },
+  {
+    "id": "artist-the-tea-party",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:15:29.943Z",
+    "previousConfig": {
+      "id": "artist-the-tea-party",
+      "domain": "www.teaparty.com",
+      "url": "https://www.teaparty.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.list-style",
+        "artistNameFallback": "The Tea Party",
+        "date": ".event-datetime time.from",
+        "ticketUrl": ".buying-options a.tickets",
+        "venue": ".event-location a",
+        "city": ".event-location a",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.teaparty.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.teaparty.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-the-whitlams",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:15:37.858Z",
+    "previousConfig": {
+      "id": "artist-the-whitlams",
+      "domain": "thewhitlams.com",
+      "url": "https://thewhitlams.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".ep-events__item",
+        "artistNameFallback": "The Whitlams",
+        "date": ".ep-events__datetime",
+        "ticketUrl": ".ep-events__button",
+        "venue": ".ep-events__venue",
+        "city": ".ep-events__venue",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "AU"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: thewhitlams.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: thewhitlams.com -> 2401:c080:1800:141c:5400:5ff:fe8f:3399]",
+    "verification": ""
+  },
+  {
+    "id": "artist-them",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:15:45.811Z",
+    "previousConfig": {
+      "id": "artist-them",
+      "domain": "vanmorrison.com",
+      "url": "https://vanmorrison.com/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".shows__list .shows__item",
+        "artistNameFallback": "Them",
+        "date": "time.shows__date",
+        "ticketUrl": ".shows__action a",
+        "venue": ".shows__venue",
+        "city": ".shows__location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: vanmorrison.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: vanmorrison.com -> 2606:4700:3033::ac43:aef2]",
+    "verification": ""
+  },
+  {
+    "id": "artist-twin-atlantic",
+    "strategy": "url_moved",
+    "repairedAt": "2026-09-10T09:15:56.523Z",
+    "previousConfig": {
+      "id": "artist-twin-atlantic",
+      "domain": "twinatlantic.com",
+      "url": "https://twinatlantic.com/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".eventlist-event",
+        "artistNameFallback": "Twin Atlantic",
+        "date": ".event-date",
+        "ticketUrl": ".eventlist-description a",
+        "venue": ".eventlist-meta-address-line:first-child",
+        "city": ".eventlist-meta-address-line:first-child",
+        "country": ".eventlist-meta-address-line:last-child",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://twinatlantic.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://twinatlantic.com/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-tingstad-rumbel",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:16:04.909Z",
+    "previousConfig": {
+      "id": "artist-tingstad-rumbel",
+      "domain": "tingstadrumbel.com",
+      "url": "https://tingstadrumbel.com/tour-dates",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.list-style",
+        "artistNameFallback": "Tingstad & Rumbel",
+        "date": ".event-datetime time.from",
+        "ticketUrl": ".buying-options .tickets",
+        "venue": ".event-location",
+        "city": ".event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: tingstadrumbel.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: tingstadrumbel.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-torun-eriksen",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:16:12.882Z",
+    "previousConfig": {
+      "id": "artist-torun-eriksen",
+      "domain": "toruneriksen.no",
+      "url": "https://toruneriksen.no/concerts",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.table-style tbody tr",
+        "artistNameFallback": "Torun Eriksen",
+        "date": ".event-date .date",
+        "ticketUrl": "a.event_details",
+        "venue": ".event-name .text-tertiary",
+        "city": ".event-name .text-tertiary",
+        "country": ".event-name .text-tertiary",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "NO"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: toruneriksen.no resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: toruneriksen.no -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-ub40",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:16:21.358Z",
+    "previousConfig": {
+      "id": "artist-ub40",
+      "domain": "ub40.global",
+      "url": "https://ub40.global/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.uk-table tbody tr.el-item",
+        "artistNameFallback": "UB40",
+        "date": ".el-meta",
+        "ticketUrl": "a.el-link",
+        "venue": ".el-title",
+        "city": ".el-content p",
+        "country": ".el-content p",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: ub40.global resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: ub40.global -> 2a07:7800::178]",
+    "verification": ""
+  },
+  {
+    "id": "artist-uicideboy",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:16:29.615Z",
+    "previousConfig": {
+      "id": "artist-uicideboy",
+      "domain": "www.g59records.com",
+      "url": "https://www.g59records.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour-row",
+        "artistNameFallback": "$uicideboy$",
+        "date": ".hidden.md\\:flex .font-stencil:first-child, .hidden.md\\:flex .font-sans:nth-child(2)",
+        "ticketUrl": ".hidden.md\\:flex a:last-of-type",
+        "venue": ".hidden.md\\:flex .font-kraut:nth-of-type(1)",
+        "city": ".hidden.md\\:flex .font-sans:nth-child(1)",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.g59records.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.g59records.com -> 2606:4700:3031::ac43:cff4]",
+    "verification": ""
+  },
+  {
+    "id": "artist-van-morrison",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:16:37.612Z",
+    "previousConfig": {
+      "id": "artist-van-morrison",
+      "domain": "vanmorrison.com",
+      "url": "https://vanmorrison.com/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.shows__item",
+        "artistNameFallback": "Van Morrison",
+        "date": "time.shows__date",
+        "ticketUrl": "div.shows__action a",
+        "venue": "p.shows__venue",
+        "city": "p.shows__location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: vanmorrison.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: vanmorrison.com -> 2606:4700:3034::6815:1f29]",
+    "verification": ""
+  },
+  {
+    "id": "artist-unholy",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:16:45.783Z",
+    "previousConfig": {
+      "id": "artist-unholy",
+      "domain": "unholy.fi",
+      "url": "https://unholy.fi/live-dates-section-available",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "#live-dates li",
+        "artistNameFallback": "Unholy",
+        "date": "p",
+        "ticketUrl": "a",
+        "venue": "p",
+        "city": "p",
+        "country": "p",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "FI"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: unholy.fi resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: unholy.fi -> 2a01:4f9:3070:10df::2]",
+    "verification": ""
+  },
+  {
+    "id": "artist-vitalic",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:16:54.396Z",
+    "previousConfig": {
+      "id": "artist-vitalic",
+      "domain": "vitalic.org",
+      "url": "https://vitalic.org/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".bandsintown-tour-dates__list .bandsintown-tour-dates__event",
+        "artistNameFallback": "Vitalic",
+        "date": ".bandsintown-tour-dates__event-date-day, .bandsintown-tour-dates__event-date-month, .bandsintown-tour-dates__event-date-year",
+        "ticketUrl": ".bandsintown-tour-dates__event-link",
+        "venue": ".bandsintown-tour-dates__event-venue",
+        "city": ".bandsintown-tour-dates__event-location",
+        "country": ".bandsintown-tour-dates__event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: vitalic.org resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: vitalic.org -> 2001:1600:0:aaaa::80:5a]",
+    "verification": ""
+  },
+  {
+    "id": "artist-wang-chung",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:17:02.715Z",
+    "previousConfig": {
+      "id": "artist-wang-chung",
+      "domain": "wangchung.com",
+      "url": "https://wangchung.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-detail",
+        "artistNameFallback": "Wang Chung",
+        "date": ".date-long .date",
+        "ticketUrl": "a.tickets",
+        "venue": ".event-location a",
+        "city": ".event-location a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: wangchung.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: wangchung.com -> 2606:4700:90:0:3626:d0ff:6957:de1]",
+    "verification": ""
+  },
+  {
+    "id": "artist-your-smiling-face",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:17:10.624Z",
+    "previousConfig": {
+      "id": "artist-your-smiling-face",
+      "domain": "www.jamestaylor.com",
+      "url": "https://www.jamestaylor.com/schedule/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "ul.flex-col li.border-b",
+        "artistNameFallback": "Your Smiling Face",
+        "date": "div.w-24",
+        "ticketUrl": "a[href]",
+        "venue": "div.text-lg",
+        "city": "div.text-sm",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.jamestaylor.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.jamestaylor.com -> 2606:4700:3034::6815:5010]",
+    "verification": ""
+  },
+  {
+    "id": "artist-youre-all-i-wanna-do",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:17:18.687Z",
+    "previousConfig": {
+      "id": "artist-youre-all-i-wanna-do",
+      "domain": "www.jamestaylor.com",
+      "url": "https://www.jamestaylor.com/schedule/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "ul > li",
+        "artistNameFallback": "You're All I Wanna Do",
+        "date": "div.w-24 > div:nth-child(2)",
+        "ticketUrl": "a.bg-\\[\\#9fdcf5\\]",
+        "venue": "div.md:w-60 > div:first-child",
+        "city": "div.md:w-60 > div:last-child",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.jamestaylor.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.jamestaylor.com -> 2606:4700:3033::ac43:ad10]",
+    "verification": ""
+  },
+  {
+    "id": "bravo-tour",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-10T09:17:27.126Z",
+    "previousConfig": {
+      "id": "bravo-tour",
+      "domain": "www.bravogroup.ru",
+      "url": "http://www.bravogroup.ru/show_all.htm",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "ul.afishaTable li",
+        "artistNameFallback": "Браво",
+        "date": "div.date",
+        "venue": "div.name",
+        "city": "div.name",
+        "ticketUrl": "a.buyButton",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "RU"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.bravogroup.ru resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.bravogroup.ru -> 2a00:15f8:a000:5:1:13:0:c39c]",
+    "verification": ""
+  },
+  {
+    "id": "artist-scotty-mccreery",
+    "strategy": "transient",
+    "repairedAt": "2026-09-10T09:17:28.504Z",
+    "previousConfig": {
+      "id": "artist-scotty-mccreery",
+      "domain": "www.scottymccreery.com",
+      "url": "https://www.scottymccreery.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event.d-flex.justify-content-between",
+        "artistNameFallback": "Scotty McCreery",
+        "date": ".event-date",
+        "ticketUrl": "a.btn-tickets",
+        "venue": ".event-title",
+        "city": ".event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.scottymccreery.com/tour but could not re-select on it",
+    "verification": ""
   }
 ]
