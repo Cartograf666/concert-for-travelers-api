@@ -1,0 +1,17 @@
+{
+  "id": "artist-joe-hutton",
+  "domain": "thekingblues.com",
+  "url": "https://thekingblues.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.wp-block-the-king-blues-event-item",
+    "artistNameFallback": "The King Blues",
+    "date": "time",
+    "ticketUrl": "div.event-buttons a",
+    "venue": "h4.event-venue",
+    "city": "h4.event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}
