@@ -974,5 +974,37 @@
     "consecutiveFailures": 5,
     "firstFailedAt": "2026-09-05T15:12:02.973Z",
     "prunedAt": "2026-09-08T08:25:29.618Z"
+  },
+  {
+    "id": "artist-ann-and-nancy-wilson",
+    "artistName": "Heart",
+    "reason": "fetch_error",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-09-08T08:25:29.618Z",
+    "prunedAt": "2026-09-10T08:25:13.995Z"
+  },
+  {
+    "id": "artist-poetry",
+    "artistName": null,
+    "reason": "fetch_error",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-09-08T08:25:29.618Z",
+    "prunedAt": "2026-09-10T08:25:13.995Z"
+  },
+  {
+    "id": "artist-your-smiling-face",
+    "artistName": "James Taylor",
+    "reason": "fetch_error",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-09-08T08:25:29.618Z",
+    "prunedAt": "2026-09-10T08:25:13.995Z"
+  },
+  {
+    "id": "artist-youre-all-i-wanna-do",
+    "artistName": "James Taylor",
+    "reason": "fetch_error",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-09-08T08:25:29.618Z",
+    "prunedAt": "2026-09-10T08:25:13.995Z"
   }
 ]
