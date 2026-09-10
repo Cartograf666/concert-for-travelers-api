@@ -1,0 +1,17 @@
+{
+  "id": "artist-james-taylor",
+  "domain": "www.jamestaylor.com",
+  "url": "https://www.jamestaylor.com/schedule",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "ul.flex-col li",
+    "artistNameFallback": "James Taylor",
+    "date": "div.w-24",
+    "ticketUrl": "a",
+    "venue": "div.text-lg",
+    "city": "div.text-sm",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
