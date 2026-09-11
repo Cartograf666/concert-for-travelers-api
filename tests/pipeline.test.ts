@@ -4,6 +4,8 @@ import { slugify, cleanArtistName, matchApprovedArtist, parseDate, processConcer
 import { Concert } from '../src/schemas/concert.js';
 import { PRODUCTION_ARTIST_DB_DIR } from '../src/pipeline/artistDb.js';
 
+const unknownArtistDiscovery = { version: 1, audience: 'unknown', basis: 'lastfm-listeners', metricAsOf: null };
+
 test('Pipeline - slugify', () => {
   assert.strictEqual(slugify('The Cure'), 'the-cure');
   assert.strictEqual(slugify('Rammstein - Live in Berlin!'), 'rammstein-live-in-berlin');
@@ -52,12 +54,12 @@ test('Pipeline - match approved artists and detect cover bands', () => {
   const approved = ['The Cure', 'Rammstein', 'Metallica', 'Daft Punk'];
 
   // Case-insensitive exact matches
-  assert.deepStrictEqual(matchApprovedArtist('the cure', approved), { name: 'The Cure' });
-  assert.deepStrictEqual(matchApprovedArtist('RAMMSTEIN', approved), { name: 'Rammstein' });
+  assert.deepStrictEqual(matchApprovedArtist('the cure', approved), { name: 'The Cure', artistDiscovery: unknownArtistDiscovery });
+  assert.deepStrictEqual(matchApprovedArtist('RAMMSTEIN', approved), { name: 'Rammstein', artistDiscovery: unknownArtistDiscovery });
 
   // Substring matches inside cleaned strings
-  assert.deepStrictEqual(matchApprovedArtist('The Cure - SOLD OUT', approved), { name: 'The Cure' });
-  assert.deepStrictEqual(matchApprovedArtist('Metallica - Special Guest', approved), { name: 'Metallica' });
+  assert.deepStrictEqual(matchApprovedArtist('The Cure - SOLD OUT', approved), { name: 'The Cure', artistDiscovery: unknownArtistDiscovery });
+  assert.deepStrictEqual(matchApprovedArtist('Metallica - Special Guest', approved), { name: 'Metallica', artistDiscovery: unknownArtistDiscovery });
 
   // Cover bands / Tribute checks (must return null)
   assert.strictEqual(matchApprovedArtist('The Cure Tribute Band', approved), null);
@@ -71,24 +73,24 @@ test('Pipeline - match approved artists and detect cover bands', () => {
 test('Pipeline - artist matching bug fixes: punctuation, shadowing, cover-substring, hyphenated names', () => {
   // Name ending in punctuation: a naive \b...\b regex never matches at end-of-string here.
   const withPunctuation = ['Against Me!', 'Rammstein'];
-  assert.deepStrictEqual(matchApprovedArtist('Against Me!', withPunctuation), { name: 'Against Me!' });
+  assert.deepStrictEqual(matchApprovedArtist('Against Me!', withPunctuation), { name: 'Against Me!', artistDiscovery: unknownArtistDiscovery });
 
   // A short generic entry must not shadow a longer, more specific one that also matches.
   const shadowing = ['alan', 'Alan Walker'];
-  assert.deepStrictEqual(matchApprovedArtist('Alan Walker', shadowing), { name: 'Alan Walker' });
+  assert.deepStrictEqual(matchApprovedArtist('Alan Walker', shadowing), { name: 'Alan Walker', artistDiscovery: unknownArtistDiscovery });
 
   // "cover"/"tribute" as a substring of a real name must not trigger the cover-band filter.
   const coverSubstring = ['David Coverdale', 'The Cure'];
-  assert.deepStrictEqual(matchApprovedArtist('David Coverdale', coverSubstring), { name: 'David Coverdale' });
+  assert.deepStrictEqual(matchApprovedArtist('David Coverdale', coverSubstring), { name: 'David Coverdale', artistDiscovery: unknownArtistDiscovery });
   // A real cover-band listing must still be rejected.
   assert.strictEqual(matchApprovedArtist('The Cure Cover Band', coverSubstring), null);
 
   // A hyphenated stage name with no surrounding spaces must survive cleanArtistName's
   // "- Live" suffix-stripping (which only strips when the hyphen is preceded by a space).
   const hyphenated = ['J-Live', 'Rammstein'];
-  assert.deepStrictEqual(matchApprovedArtist('J-Live', hyphenated), { name: 'J-Live' });
+  assert.deepStrictEqual(matchApprovedArtist('J-Live', hyphenated), { name: 'J-Live', artistDiscovery: unknownArtistDiscovery });
   // A genuine "- Live" suffix (space before the hyphen) must still be stripped.
-  assert.deepStrictEqual(matchApprovedArtist('J-Live - Live at Blue Note', hyphenated), { name: 'J-Live' });
+  assert.deepStrictEqual(matchApprovedArtist('J-Live - Live at Blue Note', hyphenated), { name: 'J-Live', artistDiscovery: unknownArtistDiscovery });
 
   // "Live in <city>" (no leading hyphen -- a common tour-page template) must be
   // stripped, and a bare "Live" (the real approved artist) left untouched.
@@ -96,8 +98,8 @@ test('Pipeline - artist matching bug fixes: punctuation, shadowing, cover-substr
   // matched to a "Berlin" whitelist entry (the band), because "Live in Berlin"
   // never got stripped and the city name matched literally.
   const liveInCity = ['AZ', 'Berlin', 'Live'];
-  assert.deepStrictEqual(matchApprovedArtist('AZ Live in Berlin', liveInCity), { name: 'AZ' });
-  assert.deepStrictEqual(matchApprovedArtist('Live', liveInCity), { name: 'Live' });
+  assert.deepStrictEqual(matchApprovedArtist('AZ Live in Berlin', liveInCity), { name: 'AZ', artistDiscovery: unknownArtistDiscovery });
+  assert.deepStrictEqual(matchApprovedArtist('Live', liveInCity), { name: 'Live', artistDiscovery: unknownArtistDiscovery });
 });
 
 test('Pipeline - parse date strings', () => {

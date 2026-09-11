@@ -1,7 +1,8 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
-import { Concert } from '../schemas/concert.js';
+import type { Concert } from '../schemas/concert.js';
 import { slugify } from '../pipeline/process.js';
+import type { ArtistDiscovery } from '../schemas/artist_discovery.js';
 
 /**
  * Publishes dist/changes.json: concerts that are new since the LAST run, so
@@ -34,6 +35,8 @@ export interface ChangeEntry {
   city: string;
   country: string;
   detectedAt: string;
+  /** Omitted by historical entries written before discovery was introduced. */
+  artistDiscovery?: ArtistDiscovery;
 }
 
 export async function loadChangelogCache(cachePath: string): Promise<ChangelogCache> {
@@ -92,7 +95,8 @@ export async function publishChangelog(
     venue: c.venue,
     city: c.city,
     country: c.country,
-    detectedAt
+    detectedAt,
+    artistDiscovery: c.artistDiscovery
   }));
 
   const cutoffMs = Date.now() - CHANGES_RETENTION_DAYS * 24 * 60 * 60 * 1000;

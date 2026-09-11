@@ -11,6 +11,60 @@ each concert in space and time, and (3) **rank** the options.
 
 Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
+## Artist discovery calibration — 2026-09-11
+
+- ✅ **Offline calibration, not a shipped filter.** Alex accepted the proposed
+  calibration-first step on 2026-09-11 and delegated the choice of trend/era/
+  generation approach. Root owns package/docs integration; implementer owns
+  `src/scripts/calibrate_artist_fame.ts` and its test. That first step left the
+  artist DB, acquisition tier, publisher, workflows and consumer app unchanged.
+  Three fixed listener-threshold candidates evaluated on 63,331 DB rows and
+  42,256 concerts; missing metrics remain unknown. Full examples, input hashes,
+  commands and limitations: `docs/ARTIST-DISCOVERY-CALIBRATION.md`.
+- ✅ **Accepted and implemented locally on 2026-09-11:** Alex's follow-up “это делаем
+  касательно калибровки по популярности” approves the proposed balanced 1m/100k/10k
+  accumulated Last.fm listeners. Top two groups retain 30,488 concerts (72.2%).
+  Working labels describe audience size, superseding the earlier proposed
+  “superstars/world fame” semantics: regional and profile-level biases persist.
+  Trend, peak era and generation labels remain unsupported, not guessed from
+  a snapshot, formation date or presumed age-based tastes.
+- ✅ **Checks:** build, 4 focused tests, scoped eslint and real CLI report pass;
+  root corrected all-mode accounting and checked final aggregate/cohort results.
+  Tested base `b0c4c9e` plus the new calibration files/package command; TS hashes
+  retained in the report document. DB unchanged in final diff. No deployment.
+- ✅ **API integration contract:** implementer owns shared discovery schema/helper,
+  concert schema, matcher/process, publisher/changelog and their tests; root owns README,
+  OpenAPI and this state. Catalog `discovery` and concert `artistDiscovery` must
+  agree for the actual matched DB entry, including aliases. Version 1 describes
+  accumulated Last.fm audience with unknown metric date; no temporal/demographic
+  claims. Protected: artist DB, acquisition tiers, source acquisition, workflows
+  and the separate app. No backend filtering or network dependency. Verified:
+  backward-compatible parsing, category boundaries, full/page/artist/city feed
+  shapes, new changelog entries, alias-row consistency and no-loss behavior for
+  small/unknown audiences. Historical changelog entries may omit the profile.
+  Consumer integration documented in README/OpenAPI; feed schema version is 2.
+  `npm run build` pass; `npm run test:no-playwright` 474 pass/1 skipped/0 fail
+  (log `/tmp/concert-fame-api-tests.log`); scoped eslint 0 errors/11 existing
+  warnings; OpenAPI YAML parsed, catalog required field and three refs checked
+  with Ruby YAML. No browser
+  or live-provider tests for this change. Full-data recalibration passed unchanged.
+  Reviewer found the separate changelog path missing the profile and the catalog
+  OpenAPI required field missing. Both fixed; bounded repeat review found no
+  remaining issues. After that fix: build plus 9 discovery/changelog tests and
+  changelog scoped lint passed. The 474-test run preceded this isolated fix;
+  unaffected evidence retained, affected paths rerun (full suite not repeated).
+  Tested HEAD `b0c4c9e` plus final working tree: combined SHA-256
+  `b17e5b81de760d00d1be1ab8451c66e33879eea263c7be6bb08d6841cc07edca`
+  over sorted path+NUL+bytes+NUL for the two new discovery modules, concert schema,
+  process, publisher, changelog, calibration CLI, their five test files and package.json.
+  Deployment is separate; no push/merge/workflow dispatch performed.
+  Human relevance/precision and a default restrictive UI filter remain unverified.
+- ⬜ **Consumer follow-up:** the separate app at `/Users/alex/code/concerts-for-travelers`
+  needs profile propagation through `server/src/services/sources/cartograf.ts`
+  and server/client types, followed by the audience control in region browsing.
+  Inspection only here; no app edits. Preserve favorites/all-mode and handle
+  missing/unsupported profiles as unknown. Backend delivery does not complete UI.
+
 ---
 
 ## ✅ Done

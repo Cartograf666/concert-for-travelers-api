@@ -3,6 +3,8 @@ import * as path from 'path';
 import { Concert } from '../schemas/concert.js';
 import { slugify, parseSpotifyArtistId } from '../pipeline/process.js';
 import { isReadableScript, isLatinScript } from '../pipeline/script.js';
+import { artistDiscoveryFor } from '../pipeline/artist_discovery.js';
+import type { ArtistDiscovery } from '../schemas/artist_discovery.js';
 
 export interface PublishStats {
   totalConcerts: number;
@@ -51,7 +53,7 @@ interface WriteOutcome {
 // backwards-compatible for a consumer that ignores unknown fields, so this
 // isn't a hard compatibility gate, just a cheap signal of "something changed,
 // go check src/schemas/concert.ts" for a consumer that wants to notice.
-export const CONCERT_SCHEMA_VERSION = 1;
+export const CONCERT_SCHEMA_VERSION = 2;
 
 export interface PublishIndex {
   schemaVersion: number;
@@ -75,6 +77,7 @@ export interface ArtistCatalogEntry {
   image?: string;
   similarArtists?: Array<{ name: string; slug: string; match: number }>;
   aliases?: string[];
+  discovery: ArtistDiscovery;
 }
 
 /**
@@ -102,7 +105,7 @@ export async function publishArtistCatalog(approvedArtists: any[], outputDir: st
     // An unreadable name gets its English label here, not in the DB: `name` stays
     // native so the matcher can still recognise the artist on a local listing page.
     const displayName = typeof a !== 'string' && a.displayName && isReadableScript(a.displayName) ? a.displayName : name;
-    const entry: ArtistCatalogEntry = { slug, name: displayName };
+    const entry: ArtistCatalogEntry = { slug, name: displayName, discovery: artistDiscoveryFor(a) };
     if (displayName !== name) entry.nameNative = name;
     if (typeof a !== 'string') {
       if (a.website) entry.website = a.website;

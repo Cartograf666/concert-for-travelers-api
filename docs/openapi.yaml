@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: Concerts for Travelers API
-  version: 1.0.0
+  version: 1.1.0
   description: |
     This is a static-file JSON API hosted on GitHub Pages.
     All endpoints represent static JSON files published under the base URL:
@@ -202,11 +202,36 @@ components:
         pageSize:
           type: integer
           minimum: 1
+    ArtistDiscovery:
+      type: object
+      description: >-
+        Version 1 estimates accumulated Last.fm audience, not current popularity,
+        regional recognition or music quality. Fixed thresholds: very-large >=
+        1000000 listeners, large >= 100000, medium >= 10000, small > 0.
+        Missing, zero or invalid metrics are unknown. No growth, peak-era or
+        generation inference. Technical acquisition tiers are unrelated.
+      required: [version, audience, basis, metricAsOf]
+      properties:
+        version:
+          type: integer
+          enum: [1]
+        audience:
+          type: string
+          enum: [very-large, large, medium, small, unknown]
+        basis:
+          type: string
+          enum: [lastfm-listeners]
+        metricAsOf:
+          type: string
+          nullable: true
+          enum: [null]
+          description: Always null in version 1; the metric observation date is not known.
     ArtistCatalogEntry:
       type: object
       required:
         - slug
         - name
+        - discovery
       properties:
         slug:
           type: string
@@ -247,6 +272,8 @@ components:
               type: integer
             playcount:
               type: integer
+        discovery:
+          $ref: '#/components/schemas/ArtistDiscovery'
         image:
           type: string
           format: uri
@@ -287,6 +314,8 @@ components:
           type: string
           format: uri
           example: 'https://www.radiohead.com'
+        artistDiscovery:
+          $ref: '#/components/schemas/ArtistDiscovery'
         spotifyId:
           type: string
           example: '4Z8W4fdv2fs2g504Z4gGSI'
@@ -454,6 +483,8 @@ components:
         - country
         - detectedAt
       properties:
+        artistDiscovery:
+          $ref: '#/components/schemas/ArtistDiscovery'
         concertId:
           type: string
         artist:

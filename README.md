@@ -81,6 +81,12 @@ Example Concert JSON object structure:
 {
   "artist": "The Cure",
   "artistWebsite": "https://www.thecure.com/",
+  "artistDiscovery": {
+    "version": 1,
+    "audience": "very-large",
+    "basis": "lastfm-listeners",
+    "metricAsOf": null
+  },
   "spotifyId": "7bu3v4mR1rR2880r3W6y23",
   "mbid": "cc197c19-090e-437c-9b41-f1b1967451c8",
   "artistSocials": {
@@ -115,6 +121,39 @@ Example Concert JSON object structure:
 Each concert object follows `src/schemas/concert.ts`: `artist`, `artistWebsite?`, `spotifyId?`, `mbid?`, `artistSocials?` (spotify/instagram/facebook/youtube/telegram/vk), `date` (`YYYY-MM-DD`), `startTime?` (`HH:MM`), `venue`, `venueKind?` (stadium/arena/club/theatre/hall/open-air/other), `city`, `country` (ISO 3166-1 alpha-2), `lat?`/`lng?`, `festival?` (`{name, url?}`), `lineup?`, `priceRange?` (`{min, max, currency}`, Ticketmaster only), `ticketUrl?` (the artist's own site when known, not a ticket-vendor link -- see below), `originalSource`, `scrapedAt`.
 
 **Note on `ticketUrl`**: despite the name, this is the artist's own official website when we know it, not a ticket-purchase page — source-specific ticket/aggregator links are frequently an unlabeled widget or a generic city-listing page with no indication of what it is. It only falls back to the raw source ticket link when no artist website is known for that artist.
+
+### Audience categories (discovery version 1)
+
+Newly generated artist catalog entries include `discovery`; normalized concerts
+include the same profile as `artistDiscovery`, in the full feed, pages and
+artist/city feeds and new `changes.json` entries. `index.json.schemaVersion` is
+now 2. Retained historical changelog entries and older snapshots may omit
+the profile: clients should treat missing, unsupported versions or unknown
+categories as `unknown`, not as `small`.
+
+`audience` estimates **accumulated Last.fm audience**, not current monthly
+listeners, worldwide recognition, ticket demand or music quality:
+
+| Value | Stored Last.fm listeners |
+|---|---:|
+| `very-large` | ≥ 1,000,000 |
+| `large` | ≥ 100,000 and < 1,000,000 |
+| `medium` | ≥ 10,000 and < 100,000 |
+| `small` | > 0 and < 10,000 |
+| `unknown` | missing, zero or invalid |
+
+The profile also includes `version: 1`, `basis: "lastfm-listeners"` and
+`metricAsOf: null` (observation date unknown; publication time is not metric
+freshness). Boundaries are fixed, unrelated to acquisition `tier` or the size
+of the DB. No trend, peak-era or generation labels are inferred.
+
+**Consumer integration:** filter locally after the user's date/place selection.
+Top-two mode accepts `very-large`/`large`; top-three also accepts `medium`;
+all-mode retains every concert including missing/unknown profiles. Favorites
+must bypass audience filtering (not the user's date/place constraints). Do not
+overwrite raw `popularity`, discard concerts during ingestion or silently choose
+a restrictive mode when migrating an existing preference. This backend adds data,
+not a UI/default-filter change. See [calibration and caveats](docs/ARTIST-DISCOVERY-CALIBRATION.md).
 
 ---
 
