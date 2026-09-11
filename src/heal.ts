@@ -1,19 +1,22 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import * as dns from 'dns/promises';
+import { createHash } from 'crypto';
 import { repairScraperConfig } from './healing/repair.js';
 import { classifyFailure, FailureEntry, RepairStrategy } from './healing/classify.js';
 import { proposeRepairCandidates, StrategyDeps } from './healing/strategies.js';
 import { verifyConfigLive, formatVerifyReport, VerifyReport } from './healing/verify.js';
 import { chainSelectorRepair } from './healing/chain.js';
 import {
-  loadRepairHistory, saveRepairHistory, failedStrategiesFor, RepairRecord
+  loadRepairHistory, saveRepairHistory, failedStrategiesFor, RepairRecord,
+  cohortForConfigPath
 } from './healing/history.js';
 import { getGeminiKeys } from './engine/gemini_keys.js';
 import { runScraper, closeBrowser, fetchHtmlForHealing, resetDomainCircuit } from './engine/runner.js';
 import { resetLlmFallbackBudget } from './engine/llm_extraction_fallback.js';
 import { loadCache } from './engine/cache.js';
 import { ScraperConfig, ScraperConfigSchema } from './schemas/config.js';
+import { failureLogMatchesManifest, readRunManifest, ScrapeCohort } from './observability/run_manifest.js';
 
 const ID_RE = /^[a-z0-9][a-z0-9-]{0,80}$/;
 
@@ -59,6 +62,30 @@ async function writeConfig(configPath: string, config: ScraperConfig): Promise<v
   await fs.writeFile(configPath, JSON.stringify(config, null, 2) + '\n', 'utf-8');
 }
 
+function configHash(raw: string): string {
+  return createHash('sha256').update(raw).digest('hex');
+}
+
+/** A fail-log is an artifact, never authority to write an arbitrary path. */
+function resolveFailureConfigPath(cwd: string, scrapersDir: string, id: string, reportedPath: unknown): {
+  absolute: string;
+  relative: string;
+  cohort: 'venue' | 'artist';
+} | null {
+  const fallback = path.join('scrapers', `${id}.json`);
+  const relative = typeof reportedPath === 'string' && reportedPath ? reportedPath : fallback;
+  const normalized = relative.replace(/\\/g, '/').replace(/^\.\//, '');
+  const venuePath = `scrapers/${id}.json`;
+  const artistPath = `scrapers/artists/${id}.json`;
+  if (normalized !== venuePath && normalized !== artistPath) return null;
+  const cohort = cohortForConfigPath(normalized);
+  if (!cohort) return null;
+  const absolute = path.resolve(cwd, normalized);
+  const root = `${path.resolve(scrapersDir)}${path.sep}`;
+  if (!absolute.startsWith(root)) return null;
+  return { absolute, relative: normalized, cohort };
+}
+
 async function main() {
   const cwd = process.cwd();
   const reportsDir = path.join(cwd, 'reports');
@@ -85,6 +112,28 @@ async function main() {
   if (!Array.isArray(failures) || failures.length === 0) {
     console.log('[Healer] No failed scrapers in log. Nothing to heal.');
     return;
+  }
+
+  const args = process.argv.slice(2);
+  const cohortFlag = args.indexOf('--cohort');
+  const requestedCohort = cohortFlag >= 0 ? args[cohortFlag + 1] : undefined;
+  if (requestedCohort !== undefined && requestedCohort !== 'venue' && requestedCohort !== 'artist') {
+    throw new Error(`Invalid cohort: ${requestedCohort}`);
+  }
+  const observedCohorts = new Set(failures.map((failure) =>
+    cohortForConfigPath(typeof failure.configPath === 'string' ? failure.configPath : undefined)
+  ).filter((value): value is ScrapeCohort => value === 'venue' || value === 'artist'));
+  const cohort = requestedCohort ?? (observedCohorts.size === 1 ? Array.from(observedCohorts)[0] : undefined);
+  if (!cohort) throw new Error('A single scrape cohort is required to validate the failure artifact.');
+  const manifest = await readRunManifest(reportsDir, cohort);
+  if (!manifest || !failureLogMatchesManifest(failures, manifest)) {
+    throw new Error('Missing, incomplete, or mismatched run manifest; refusing to heal from an unproven failure log.');
+  }
+  const expectedRunId = process.env.EXPECTED_SOURCE_RUN_ID;
+  const expectedRunAttempt = Number.parseInt(process.env.EXPECTED_SOURCE_RUN_ATTEMPT ?? '', 10);
+  if ((expectedRunId && manifest.run.id !== expectedRunId) ||
+      (Number.isInteger(expectedRunAttempt) && expectedRunAttempt > 0 && manifest.run.attempt !== expectedRunAttempt)) {
+    throw new Error('Run manifest identity does not match the triggering workflow run.');
   }
 
   const apiKeys = getGeminiKeys();
@@ -135,6 +184,18 @@ async function main() {
       continue;
     }
 
+    // Keep enough verified context outside the per-scraper try block to make
+    // an unexpected throw durable. In particular, a failed restore after an
+    // exhausted Gemini cascade used to land here with only an outcome report;
+    // the paid attempt was then retried from scratch the next day.
+    let repairContext: {
+      classification: ReturnType<typeof classifyFailure>;
+      configPath: string;
+      configPathRelative: string;
+      cohort: 'venue' | 'artist';
+      originalRaw: string;
+    } | undefined;
+
     // One scraper must not be able to abort the whole pass. repairScraperConfig
     // throws when the Gemini cascade is exhausted across every key -- a routine
     // quota outcome, not a bug -- and with the loop unguarded that killed the run
@@ -157,16 +218,36 @@ async function main() {
       // artist tour-page configs in scrapers/artists/, so reconstructing from the
       // id alone resolved every artist config to a file that does not exist -- the
       // healer would report "config missing" and move on forever.
-      const configPath = typeof failure.configPath === 'string' && failure.configPath
-        ? path.resolve(process.cwd(), failure.configPath)
-        : path.join(scrapersDir, `${id}.json`);
+      const resolvedConfig = resolveFailureConfigPath(cwd, scrapersDir, id, failure.configPath);
+      if (!resolvedConfig) {
+        outcomes.push({ ...classification, id, result: 'skipped', note: 'invalid config path in fail-log' });
+        continue;
+      }
+      const configPath = resolvedConfig.absolute;
       const loaded = await readConfig(configPath);
       if (!loaded) {
         outcomes.push({ ...classification, id, result: 'skipped', note: 'config missing or invalid' });
         continue;
       }
+      const sourceOutcome = manifest.outcomes.find((outcome) =>
+        outcome.id === id && outcome.configPath === resolvedConfig.relative && outcome.status === 'failed'
+      );
+      if (!sourceOutcome || configHash(loaded.raw) !== sourceOutcome.configHash) {
+        outcomes.push({
+          ...classification, id, result: 'skipped',
+          note: 'config changed after the source run; refusing to repair a newer revision from stale evidence'
+        });
+        continue;
+      }
+      repairContext = {
+        classification,
+        configPath,
+        configPathRelative: resolvedConfig.relative,
+        cohort: resolvedConfig.cohort,
+        originalRaw: loaded.raw
+      };
 
-      const alreadyFailed = failedStrategiesFor(history, id);
+      const alreadyFailed = failedStrategiesFor(history, id, resolvedConfig.cohort);
       if (alreadyFailed.has(classification.strategy)) {
         outcomes.push({
           ...classification, id, result: 'skipped',
@@ -191,7 +272,24 @@ async function main() {
         const res = await repairScraperConfig(configPath, String(failure.htmlSample ?? ''), apiKeys);
         if (!res.success || !res.config) {
           await fs.writeFile(configPath, loaded.raw, 'utf-8');
-          outcomes.push({ ...classification, id, result: 'rejected', note: `repair failed: ${res.error}` });
+          const note = `repair failed: ${res.error}`;
+          outcomes.push({ ...classification, id, result: 'rejected', note });
+          // This direct failure path used to bypass the common !accepted block
+          // below, so an exhausted/invalid LLM response vanished after a
+          // zero-repair run and was billed again on the next one.
+          history.push({
+            id,
+            cohort: resolvedConfig.cohort,
+            configPath: resolvedConfig.relative,
+            strategy: classification.strategy,
+            repairedAt: new Date().toISOString(),
+            previousConfig: JSON.parse(loaded.raw),
+            status: 'rejected',
+            failuresSinceRepair: 0,
+            note,
+            verification: ''
+          });
+          historyChanged = true;
           continue;
         }
         const report = await verifyConfigLive(res.config, (c) => runScraper(c), verifyOptions);
@@ -275,6 +373,8 @@ async function main() {
         // strategy after REJECTED_ATTEMPTS_BEFORE_SKIP of these.
         history.push({
           id,
+          cohort: resolvedConfig.cohort,
+          configPath: resolvedConfig.relative,
           strategy: classification.strategy,
           repairedAt: new Date().toISOString(),
           previousConfig: JSON.parse(loaded.raw),
@@ -288,12 +388,16 @@ async function main() {
       }
 
       await writeConfig(configPath, accepted.config);
+      const repairedRaw = JSON.stringify(accepted.config, null, 2) + '\n';
       healed.push(id);
       const verification = formatVerifyReport(accepted.report);
       outcomes.push({ ...classification, id, result: 'repaired', note: accepted.note, verification });
 
       const record: RepairRecord = {
         id,
+        cohort: resolvedConfig.cohort,
+        configPath: resolvedConfig.relative,
+        repairedConfigHash: configHash(repairedRaw),
         strategy: classification.strategy,
         repairedAt: new Date().toISOString(),
         previousConfig: JSON.parse(loaded.raw),
@@ -302,11 +406,14 @@ async function main() {
         note: accepted.note,
         verification
       };
-      // Supersede any earlier unproven repair for this scraper; only the newest
-      // pending record can be confirmed or rolled back.
+      // Supersede only an earlier repair from the same scrape cohort. Venue and
+      // artist jobs can legitimately contain the same id, and one must never
+      // settle the other's rollback record.
       for (const r of history) {
-        if (r.id === id && r.status === 'pending') {
-          r.status = 'reverted';
+        if (r.id === id && r.status === 'pending' &&
+            (r.cohort === resolvedConfig.cohort ||
+             (!r.cohort && cohortForConfigPath(r.configPath) === resolvedConfig.cohort))) {
+          r.status = 'superseded';
           historyChanged = true;
         }
       }
@@ -315,8 +422,38 @@ async function main() {
 
       console.log(`[Healer] ${id}: REPAIRED via ${classification.strategy} — ${verification}`);
     } catch (err: any) {
+      let note = `unexpected error: ${err?.message ?? err}`;
       console.error(`[Healer] ${id}: aborted with an unexpected error: ${err?.message ?? err}`);
-      outcomes.push({ id, strategy: 'unfixable', detail: '', result: 'rejected', note: `unexpected error: ${err?.message ?? err}` });
+      if (repairContext) {
+        // The LLM repair writes in place before live verification. Preserve the
+        // source-run revision if any later step throws, but never lose the
+        // rejected-attempt record merely because that best-effort restoration
+        // also failed.
+        try {
+          await fs.writeFile(repairContext.configPath, repairContext.originalRaw, 'utf-8');
+        } catch (restoreError: any) {
+          note += `; could not restore original config: ${restoreError?.message ?? restoreError}`;
+          console.error(`[Healer] ${id}: could not restore original config: ${restoreError?.message ?? restoreError}`);
+        }
+        history.push({
+          id,
+          cohort: repairContext.cohort,
+          configPath: repairContext.configPathRelative,
+          strategy: repairContext.classification.strategy,
+          repairedAt: new Date().toISOString(),
+          previousConfig: JSON.parse(repairContext.originalRaw),
+          status: 'rejected',
+          failuresSinceRepair: 0,
+          note,
+          verification: ''
+        });
+        historyChanged = true;
+        outcomes.push({
+          ...repairContext.classification, id, result: 'rejected', note
+        });
+      } else {
+        outcomes.push({ id, strategy: 'unfixable', detail: '', result: 'rejected', note });
+      }
       continue;
     }
   }
@@ -345,11 +482,12 @@ async function main() {
     await saveRepairHistory(historyPath, history);
   }
 
-  if (healed.length > 0) {
-    // Sentinel the workflow checks to decide whether to open a PR at all.
+  if (historyChanged) {
+    // The workflow must also merge rejected-attempt history. Otherwise a
+    // zero-repair run discards the only durable record of paid failed probes.
     await fs.writeFile(
       path.join(reportsDir, 'repair-summary.json'),
-      JSON.stringify({ healed }, null, 2),
+      JSON.stringify({ healed, historyChanged: true }, null, 2),
       'utf-8'
     );
   }

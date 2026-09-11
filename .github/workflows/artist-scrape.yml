@@ -57,6 +57,16 @@ jobs:
           restore-keys: |
             artist-scrape-cache-
 
+      # Small cohort manifest consumed read-only by daily-scrape.yml so the
+      # public status page can show the latest artist health alongside venues.
+      - name: Restore artist run manifest
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: reports/artist-run-manifest.json
+          key: artist-run-manifest-${{ github.run_id }}
+          restore-keys: |
+            artist-run-manifest-
+
       # Per-artist last-successful Bandsintown results. Persisted so the batched
       # sweep resumes where it left off (stalest-first) instead of re-fetching the
       # same head of the list every run, and so a blocked/failed run falls back to
@@ -115,6 +125,13 @@ jobs:
           path: reports/artist-scrape-cache.json
           key: artist-scrape-cache-${{ github.run_id }}
 
+      - name: Save artist run manifest
+        if: always()
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: reports/artist-run-manifest.json
+          key: artist-run-manifest-${{ github.run_id }}
+
       - name: Save Bandsintown cache
         if: always()
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
@@ -138,6 +155,7 @@ jobs:
             reports/bandsintown-cache.json
             reports/eventbrite-cache.json
             reports/fail-log.json
+            reports/artist-run-manifest.json
           retention-days: 5
 
       # Turn a silent scheduled-run failure into a visible, deduplicated GitHub issue

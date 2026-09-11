@@ -53,6 +53,110 @@ test('updateScraperHealth: a scraper that stops failing (or recovers) drops out 
   }
 });
 
+test('updateScraperHealth: a cohort run cannot reset another cohort\'s streak', async () => {
+  const root = await tmpDir('scraper-health-cohort-');
+  try {
+    const healthPath = path.join(root, 'health.json');
+    await updateScraperHealth(
+      healthPath,
+      [{ id: 'artist-foo', reason: 'fetch_error', configPath: 'scrapers/artists/artist-foo.json' }],
+      '2026-01-01T00:00:00.000Z',
+      'artist'
+    );
+
+    const afterVenue = await updateScraperHealth(healthPath, [], '2026-01-02T00:00:00.000Z', 'venue');
+    assert.strictEqual(afterVenue.length, 1);
+    assert.strictEqual(afterVenue[0].cohort, 'artist');
+    assert.strictEqual(afterVenue[0].consecutiveFailures, 1);
+  } finally {
+    await fs.rm(root, { recursive: true, force: true });
+  }
+});
+
+test('updateScraperHealth: current artist evidence migrates a legacy path safely', async () => {
+  const root = await tmpDir('scraper-health-migrate-');
+  try {
+    const healthPath = path.join(root, 'health.json');
+    await fs.writeFile(healthPath, JSON.stringify([{
+      id: 'artist-foo', consecutiveFailures: 4, lastReason: 'fetch_error',
+      firstFailedAt: '2026-01-01T00:00:00.000Z', lastFailedAt: '2026-01-04T00:00:00.000Z'
+    }]));
+
+    const migrated = await updateScraperHealth(healthPath, [{
+      id: 'artist-foo', reason: 'fetch_error', configPath: 'scrapers/artists/artist-foo.json'
+    }], '2026-01-05T00:00:00.000Z', 'artist');
+
+    assert.strictEqual(migrated.length, 1);
+    assert.strictEqual(migrated[0].cohort, 'artist');
+    assert.strictEqual(migrated[0].configPath, 'scrapers/artists/artist-foo.json');
+    assert.strictEqual(migrated[0].consecutiveFailures, 5);
+  } finally {
+    await fs.rm(root, { recursive: true, force: true });
+  }
+});
+
+test('updateScraperHealth: replayed and stale source runs are idempotent', async () => {
+  const root = await tmpDir('scraper-health-replay-');
+  try {
+    const healthPath = path.join(root, 'health.json');
+    const failures = [{ id: 'artist-foo', reason: 'fetch_error', configPath: 'scrapers/artists/artist-foo.json' }];
+    const run = { generatedAt: '2026-01-02T00:00:00.000Z', run: { id: 'run-2', attempt: 1 } };
+    const first = await updateScraperHealth(healthPath, failures, run.generatedAt, 'artist', { run });
+    const replay = await updateScraperHealth(healthPath, failures, run.generatedAt, 'artist', { run });
+    const staleRun = { generatedAt: '2026-01-01T00:00:00.000Z', run: { id: 'run-1', attempt: 1 } };
+    const stale = await updateScraperHealth(healthPath, failures, staleRun.generatedAt, 'artist', { run: staleRun });
+
+    assert.strictEqual(first.runApplied, true);
+    assert.strictEqual(replay.runApplied, false);
+    assert.strictEqual(stale.runApplied, false);
+    assert.strictEqual(stale[0].consecutiveFailures, 1);
+  } finally {
+    await fs.rm(root, { recursive: true, force: true });
+  }
+});
+
+test('updateScraperHealth: dry-run previews without persisting counters or run identity', async () => {
+  const root = await tmpDir('scraper-health-dry-');
+  try {
+    const healthPath = path.join(root, 'health.json');
+    const failures = [{ id: 'artist-foo', reason: 'fetch_error', configPath: 'scrapers/artists/artist-foo.json' }];
+    const run = { generatedAt: '2026-01-02T00:00:00.000Z', run: { id: 'run-2', attempt: 1 } };
+    const preview = await updateScraperHealth(healthPath, failures, run.generatedAt, 'artist', { run, dryRun: true });
+
+    assert.strictEqual(preview.runApplied, true);
+    assert.strictEqual(preview[0].consecutiveFailures, 1);
+    await assert.rejects(fs.access(healthPath));
+  } finally {
+    await fs.rm(root, { recursive: true, force: true });
+  }
+});
+
+test('updateScraperHealth: absence does not reset a streak without an explicit outcome', async () => {
+  const root = await tmpDir('scraper-health-absence-');
+  try {
+    const healthPath = path.join(root, 'health.json');
+    const failure = { id: 'artist-foo', reason: 'fetch_error', configPath: 'scrapers/artists/artist-foo.json' };
+    const failedOutcome = { id: failure.id, configPath: failure.configPath, configHash: 'a'.repeat(64), status: 'failed' as const };
+    await updateScraperHealth(healthPath, [failure], '2026-01-01T00:00:00.000Z', 'artist', {
+      run: { generatedAt: '2026-01-01T00:00:00.000Z', run: { id: 'run-1', attempt: 1 }, outcomes: [failedOutcome] }
+    });
+    const absent = await updateScraperHealth(healthPath, [], '2026-01-02T00:00:00.000Z', 'artist', {
+      run: { generatedAt: '2026-01-02T00:00:00.000Z', run: { id: 'run-2', attempt: 1 }, outcomes: [] }
+    });
+    assert.strictEqual(absent.length, 1);
+
+    const recovered = await updateScraperHealth(healthPath, [], '2026-01-03T00:00:00.000Z', 'artist', {
+      run: {
+        generatedAt: '2026-01-03T00:00:00.000Z', run: { id: 'run-3', attempt: 1 },
+        outcomes: [{ ...failedOutcome, status: 'succeeded' }]
+      }
+    });
+    assert.deepStrictEqual(recovered, []);
+  } finally {
+    await fs.rm(root, { recursive: true, force: true });
+  }
+});
+
 test('pruneDeadScrapers: removes the config + resets the matching artist only past the threshold', async () => {
   const root = await tmpDir('prune-dead-');
   try {
@@ -173,6 +277,60 @@ test('pruneDeadScrapers: a case-insensitive name collision skips the field reset
     const realOwner = artists.find((a) => a.tourUrl === 'https://x.example/tour');
     assert.ok(unrelated, 'unrelated same-named artist must still be present, untouched'); // not wiped
     assert.ok(realOwner, 'the real scraper-owning artist must still be present, untouched'); // ambiguous, left alone
+  } finally {
+    await fs.rm(root, { recursive: true, force: true });
+  }
+});
+
+test('pruneDeadScrapers: retains pruning for legacy root artist configs in the venue cohort', async () => {
+  const root = await tmpDir('prune-root-artist-');
+  try {
+    const scrapersDir = path.join(root, 'scrapers');
+    const artistDb = path.join(root, 'artists');
+    const auditPath = path.join(root, 'pruned-scrapers.json');
+    await fs.mkdir(scrapersDir, { recursive: true });
+    await fs.writeFile(path.join(scrapersDir, 'artist-legacy.json'), JSON.stringify({
+      id: 'artist-legacy', selectors: { artistNameFallback: 'Legacy Artist' }
+    }));
+    await saveApprovedArtists(artistDb, [{ name: 'Legacy Artist', tourUrl: 'https://example.com/tour' }]);
+
+    const result = await pruneDeadScrapers(scrapersDir, [{
+      id: 'artist-legacy', cohort: 'venue', configPath: 'scrapers/artist-legacy.json',
+      consecutiveFailures: 5, lastReason: 'fetch_error',
+      firstFailedAt: '2026-01-01T00:00:00.000Z', lastFailedAt: '2026-01-05T00:00:00.000Z'
+    }], artistDb, auditPath, '2026-01-05T00:00:00.000Z');
+
+    assert.deepStrictEqual(result.pruned, ['artist-legacy']);
+    await assert.rejects(fs.access(path.join(scrapersDir, 'artist-legacy.json')));
+  } finally {
+    await fs.rm(root, { recursive: true, force: true });
+  }
+});
+
+test('pruneDeadScrapers: never reports success or resets the artist when deletion fails', async () => {
+  const root = await tmpDir('prune-delete-fails-');
+  try {
+    const scrapersDir = path.join(root, 'scrapers');
+    const artistDb = path.join(root, 'artists');
+    const auditPath = path.join(root, 'pruned-scrapers.json');
+    // fs.rm(path) without recursive cannot delete a directory, giving us a
+    // deterministic deletion failure without mocking fs internals.
+    await fs.mkdir(path.join(scrapersDir, 'artist-stuck.json'), { recursive: true });
+    await saveApprovedArtists(artistDb, [{ name: 'Stuck Artist', tourUrl: 'https://example.com/tour' }]);
+
+    const result = await pruneDeadScrapers(scrapersDir, [{
+      id: 'artist-stuck', cohort: 'venue', configPath: 'scrapers/artist-stuck.json',
+      consecutiveFailures: 5, lastReason: 'fetch_error',
+      firstFailedAt: '2026-01-01T00:00:00.000Z', lastFailedAt: '2026-01-05T00:00:00.000Z'
+    }], artistDb, auditPath, '2026-01-05T00:00:00.000Z');
+
+    assert.deepStrictEqual(result.pruned, []);
+    assert.deepStrictEqual(result.pruneFailed, ['artist-stuck']);
+    assert.ok(result.stillFailing.includes('artist-stuck'));
+    await fs.access(path.join(scrapersDir, 'artist-stuck.json'));
+    const artists = await loadApprovedArtists(artistDb) as any[];
+    assert.strictEqual(artists[0].tourUrl, 'https://example.com/tour');
+    await assert.rejects(fs.access(auditPath));
   } finally {
     await fs.rm(root, { recursive: true, force: true });
   }

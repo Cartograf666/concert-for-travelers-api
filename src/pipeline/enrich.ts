@@ -1,7 +1,7 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { loadDenylistGuard } from './denylist.js';
 import { loadApprovedArtists, saveApprovedArtists } from './artistDb.js';
-import { ArtistEntry, ArtistSocials } from '../schemas/artist.js';
+import type { ArtistEntry } from '../schemas/artist.js';
 
 /** Matches repair.ts's check: 401/403/429 mean this key/model is unauthorized or
  * out of quota; 404 means the model ID itself doesn't exist (e.g. a deprecated
@@ -56,6 +56,39 @@ export const DEFAULT_ENRICHMENT_MODELS = [
   'gemini-3.5-flash', 'gemini-2.5-flash', 'gemini-2.5-flash-lite'
 ];
 
+function normalizedArtistName(name: string): string {
+  return name.trim().toLocaleLowerCase();
+}
+
+/**
+ * Preserve the established JIT eligibility rule exactly. In particular, a
+ * partial socials object is already considered checked; broadening that rule
+ * would multiply background Gemini requests without an explicit budget change.
+ */
+export function needsArtistMetadata(entry: ArtistEntry | undefined): boolean {
+  return !entry || entry.website === null || !entry.socials;
+}
+
+/**
+ * Preserves target order while removing case/whitespace duplicates, then looks
+ * up artist records once. This replaces the old O(targets × database) scan.
+ */
+export function selectArtistsMissingMetadata(artistsToEnrich: string[], approvedArtists: ArtistEntry[]): string[] {
+  const byName = new Map<string, ArtistEntry>();
+  for (const artist of approvedArtists) byName.set(normalizedArtistName(artist.name), artist);
+
+  const selected: string[] = [];
+  const seen = new Set<string>();
+  for (const candidate of artistsToEnrich) {
+    const name = candidate.trim();
+    const key = normalizedArtistName(name);
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    if (needsArtistMetadata(byName.get(key))) selected.push(name);
+  }
+  return selected;
+}
+
 /**
  * Batches and queries Gemini to enrich missing artist metadata. `generateFn` and
  * `models` are both injectable (default to the real Gemini call / real model
@@ -93,11 +126,7 @@ export async function enrichMissingArtistMetadata(
   }
 
   // 2. Identify which of the scraped artists have missing metadata
-  const missingArtists = artistsToEnrich.filter(name => {
-    const entry = approvedArtists.find(a => a.name.toLowerCase() === name.toLowerCase());
-    // Enrich if entry doesn't exist, has null website, or lacks socials
-    return !entry || entry.website === null || !entry.socials;
-  });
+  const missingArtists = selectArtistsMissingMetadata(artistsToEnrich, approvedArtists);
 
   if (missingArtists.length === 0) {
     console.log('[Enricher] All active artists already have metadata populated. Skipping.');
@@ -110,6 +139,8 @@ export async function enrichMissingArtistMetadata(
   // term as a brand-new whitelist entry -- the exact leak clean_denylist.ts exists to clean
   // up after (see src/pipeline/denylist.ts for the shared exemption rule).
   const denylistGuard = await loadDenylistGuard();
+  const approvedArtistIndexByName = new Map<string, number>();
+  approvedArtists.forEach((artist, index) => approvedArtistIndexByName.set(normalizedArtistName(artist.name), index));
 
   // Batch artists to avoid overloading (e.g. 15 per batch)
   const batchSize = 15;
@@ -208,8 +239,8 @@ Provide ONLY the raw JSON array. Do not include markdown code block backticks (\
       for (const entry of enrichedEntries) {
         if (!entry.name) continue;
         
-        const index = approvedArtists.findIndex(a => a.name.toLowerCase() === entry.name.toLowerCase());
-        if (index !== -1) {
+        const index = approvedArtistIndexByName.get(normalizedArtistName(entry.name));
+        if (index !== undefined) {
           approvedArtists[index] = {
             ...approvedArtists[index],
             website: entry.website || approvedArtists[index].website || null,
@@ -232,6 +263,7 @@ Provide ONLY the raw JSON array. Do not include markdown code block backticks (\
             website: entry.website || null,
             socials: entry.socials || {}
           });
+          approvedArtistIndexByName.set(normalizedArtistName(entry.name), approvedArtists.length - 1);
           console.log(`[Enricher] Added and enriched metadata for new artist: ${entry.name}`);
         }
       }

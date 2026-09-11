@@ -1,25 +1,16 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
-import getGeocoder from 'node-geocoder';
 import { ScraperConfigSchema } from '../schemas/config.js';
 import { sleep } from '../engine/sleep.js';
+import { createNominatimGeocodeFn, NOMINATIM_RATE_LIMIT_MS } from '../pipeline/geocode.js';
 
-// Nominatim's usage policy requires a max of 1 request/second and an identifying
-// contact (email query param or a descriptive User-Agent) for any bulk/automated use.
-const NOMINATIM_RATE_LIMIT_MS = 1100;
-
-
+// Scheduled bulk geocoding is deliberately limited to four requests per minute;
+// the shared transport supplies the identifying project User-Agent.
 async function main() {
   const scrapersDir = path.join(process.cwd(), 'scrapers');
-  const email = process.env.NOMINATIM_EMAIL;
-  if (!email) {
-    console.warn(
-      '[Geocode] NOMINATIM_EMAIL is not set. Nominatim\'s usage policy asks for an ' +
-      'identifying contact for automated use -- set it to a real address before running this at scale.'
-    );
-  }
-
-  const geocoder = getGeocoder(email ? { provider: 'openstreetmap', email } : { provider: 'openstreetmap' });
+  // Uses the same HTTPS endpoint, identifying project User-Agent and bounded
+  // timeout as the resumable venue backfill.
+  const geocode = createNominatimGeocodeFn();
 
   const files = (await fs.readdir(scrapersDir)).filter((f) => f.endsWith('.json'));
   let geocoded = 0;
@@ -54,16 +45,15 @@ async function main() {
     const query = `${venueNameFallback}, ${cityNameFallback}, ${countryNameFallback}`;
 
     try {
-      const results = await geocoder.geocode(query);
-      if (results.length === 0 || results[0].latitude === undefined || results[0].longitude === undefined) {
+      const result = await geocode(query);
+      if (!result) {
         console.warn(`[Geocode] ${config.id}: no result for "${query}".`);
         failed++;
       } else {
-        const { latitude, longitude } = results[0];
-        raw.selectors.lat = latitude;
-        raw.selectors.lng = longitude;
+        raw.selectors.lat = result.lat;
+        raw.selectors.lng = result.lng;
         await fs.writeFile(filePath, JSON.stringify(raw, null, 2) + '\n', 'utf-8');
-        console.log(`[Geocode] ${config.id}: "${query}" -> ${latitude}, ${longitude}`);
+        console.log(`[Geocode] ${config.id}: "${query}" -> ${result.lat}, ${result.lng}`);
         geocoded++;
       }
     } catch (err: any) {

@@ -83,22 +83,43 @@ jobs:
       # prune retire the scraper first and leave the rollback with nothing to restore.
       - name: Confirm or roll back pending self-heal repairs
         if: steps.download-reports.outputs.downloaded == 'true'
+        env:
+          EXPECTED_SOURCE_RUN_ID: ${{ github.event.workflow_run.id }}
+          EXPECTED_SOURCE_RUN_ATTEMPT: ${{ github.event.workflow_run.run_attempt }}
         run: |
           set -eo pipefail
+          if [ "${{ github.event.workflow_run.name }}" = "Artist Tour-Page Scrape" ]; then
+            COHORT=artist
+          else
+            COHORT=venue
+          fi
           if [ -f reports/fail-log.json ]; then
-            npm run confirm-repairs -- reports/fail-log.json
+            # Migration guard: do not overwrite configs until records with cohort,
+            # path and post-repair hash have accumulated on main.
+            REPAIR_ROLLBACK_DRY_RUN=1 npm run confirm-repairs -- reports/fail-log.json --cohort "$COHORT"
           else
             echo "No fail-log.json in the downloaded artifact -- leaving pending repairs untouched."
           fi
 
       - name: Track scraper health and prune dead ones
         if: steps.download-reports.outputs.downloaded == 'true'
+        env:
+          EXPECTED_SOURCE_RUN_ID: ${{ github.event.workflow_run.id }}
+          EXPECTED_SOURCE_RUN_ATTEMPT: ${{ github.event.workflow_run.run_attempt }}
         run: |
           set -eo pipefail
+          if [ "${{ github.event.workflow_run.name }}" = "Artist Tour-Page Scrape" ]; then
+            COHORT=artist
+          else
+            COHORT=venue
+          fi
           rm -rf /tmp/artists-before /tmp/artists-after
           cp -R data/artists /tmp/artists-before
           if [ -f reports/fail-log.json ]; then
-            npm run prune-dead-scrapers -- reports/fail-log.json
+            # Keep destructive retirement disabled during the state-schema
+            # migration. Dry-run previews candidates without advancing durable
+            # streaks, so replaying this artifact cannot manufacture failures.
+            PRUNE_DEAD_SCRAPERS_DRY_RUN=1 npm run prune-dead-scrapers -- reports/fail-log.json --cohort "$COHORT"
           else
             echo "No fail-log.json in the downloaded artifact -- nothing to track."
           fi

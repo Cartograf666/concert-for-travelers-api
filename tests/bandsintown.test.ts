@@ -4,6 +4,7 @@ import {
   mapBitEventToConcert,
   bandsintownCountryToCode,
   fetchBandsintownConcerts,
+  selectBandsintownArtists,
   BandsintownCache,
   BitFetchFn
 } from '../src/engine/bandsintown.js';
@@ -135,6 +136,126 @@ test('Bandsintown - per-run cap batches the work, stalest-first, leaving the res
   const fetchedThisRun = Object.entries(cache).filter(([, v]) => v.fetchedAt !== '2020-01-01T00:00:00.000Z');
   assert.strictEqual(fetchedThisRun.length, 2);
   assert.ok(concerts.length >= 2);
+});
+
+test('Bandsintown - bounded queue reserves active priority and carries unused capacity into oldest exploration', () => {
+  const now = new Date('2026-01-20T00:00:00.000Z');
+  const cache: BandsintownCache = {
+    Active: { fetchedAt: '2026-01-01T00:00:00.000Z', attemptedAt: '2026-01-01T00:00:00.000Z', concerts: [{ date: '2026-02-01' }] },
+    Cold: { fetchedAt: '2020-01-01T00:00:00.000Z', attemptedAt: '2020-01-01T00:00:00.000Z', concerts: [] }
+  };
+  const selected = selectBandsintownArtists(['New', 'Cold', 'Active'], cache, 3, 6, now);
+
+  assert.deepStrictEqual(selected.artists, ['Active', 'New', 'Cold']);
+  assert.deepStrictEqual(selected.availableByCohort, { active: 1, new: 1, cold: 1 });
+  assert.deepStrictEqual(selected.selectedByCohort, { active: 1, new: 1, cold: 1 });
+
+  // No active candidate: its reserved share is not wasted.
+  const carried = selectBandsintownArtists(['New', 'Cold'], cache, 3, 6, now);
+  assert.deepStrictEqual(carried.artists, ['New', 'Cold']);
+});
+
+test('Bandsintown - failed attempts consume the cap and retain last-good cache with attemptedAt', async () => {
+  const calls: string[] = [];
+  const fetchFn: BitFetchFn = async (artist) => {
+    calls.push(artist);
+    if (artist === 'fails') throw new Error('temporary outage');
+    return [bitEvent({ venue: { name: 'V', city: 'C', country: 'US' } })];
+  };
+  const cache: BandsintownCache = {
+    fails: { fetchedAt: '2020-01-01T00:00:00.000Z', concerts: [{ artist: 'fails', date: '2026-02-01', venue: 'Cached' }] }
+  };
+  await fetchBandsintownConcerts(['fails', 'works', 'deferred'], {
+    cache, fetchFn, maxPerRun: 2, delayMs: 0, now: () => new Date('2026-01-20T00:00:00.000Z')
+  });
+
+  assert.deepStrictEqual(calls, ['fails', 'deferred'], 'a failure is a real, capped request attempt');
+  assert.strictEqual(cache.fails.fetchedAt, '2020-01-01T00:00:00.000Z', 'keep the last good snapshot');
+  assert.strictEqual(cache.fails.attemptedAt, '2026-01-20T00:00:00.000Z');
+  assert.ok(cache.deferred.fetchedAt);
+  assert.strictEqual(cache.works, undefined);
+});
+
+test('Bandsintown - interleaved active failures do not block healthy cold exploration across runs', async () => {
+  const failures = Array.from({ length: 5 }, (_, index) => `Failure ${index}`);
+  const healthy = Array.from({ length: 10 }, (_, index) => `Healthy ${index}`);
+  const cache: BandsintownCache = Object.fromEntries(failures.map((artist) => [artist, {
+    fetchedAt: '2020-01-01T00:00:00.000Z',
+    concerts: [{ artist, date: '2026-12-31', venue: 'Cached' }]
+  }]));
+  const calls: string[] = [];
+  const fetchFn: BitFetchFn = async (artist) => {
+    calls.push(artist);
+    if (failures.includes(artist)) { const error: any = new Error('rate limited'); error.response = { status: 429 }; throw error; }
+    return [];
+  };
+
+  for (let day = 0; day < 3; day++) {
+    await fetchBandsintownConcerts([...failures, ...healthy], {
+      cache, fetchFn, maxPerRun: 5, delayMs: 0, now: () => new Date(Date.UTC(2026, 0, 1 + day))
+    });
+  }
+
+  assert.ok(healthy.every((artist) => cache[artist]?.fetchedAt), 'healthy cold artists progress despite clustered active 429s');
+  assert.ok(calls.filter((artist) => healthy.includes(artist)).length >= healthy.length);
+  let longestFailureStreak = 0;
+  let failureStreak = 0;
+  for (const artist of calls) {
+    failureStreak = failures.includes(artist) ? failureStreak + 1 : 0;
+    longestFailureStreak = Math.max(longestFailureStreak, failureStreak);
+  }
+  assert.ok(longestFailureStreak < 5, 'interleaving keeps clustered active failures below the block-streak guard');
+});
+
+test('Bandsintown - 20,711 target simulation has bounded fair coverage, not a six-day SLA', () => {
+  const targetCount = 20_711;
+  const artists = Array.from({ length: targetCount }, (_, index) => `Artist ${String(index).padStart(5, '0')}`);
+  const cache: BandsintownCache = {};
+  let firstCoverageDay: number | undefined;
+
+  // Simulate successful empty responses. No network: queue selection gets an
+  // injected clock, then the test records the same successful-cache effect.
+  for (let day = 0; day < 60; day++) {
+    const now = new Date(Date.UTC(2026, 0, 1 + day));
+    const selected = selectBandsintownArtists(artists, cache, 800, 6, now);
+    for (const artist of selected.artists) {
+      cache[artist] = { fetchedAt: now.toISOString(), attemptedAt: now.toISOString(), concerts: [] };
+    }
+    if (firstCoverageDay === undefined && artists.every((artist) => cache[artist]?.fetchedAt)) firstCoverageDay = day;
+  }
+
+  const finalNow = new Date(Date.UTC(2026, 0, 60));
+  const ages = artists.map((artist) => (finalNow.getTime() - new Date(cache[artist].fetchedAt!).getTime()) / 86_400_000).sort((a, b) => a - b);
+  const p95 = ages[Math.floor((ages.length - 1) * 0.95)];
+  const max = ages.at(-1)!;
+
+  assert.strictEqual(firstCoverageDay, 25, '800/day needs 26 days to cover 20,711 never-fetched targets');
+  assert.ok(max <= 26 && max > 6, `max age ${max}d should be bounded but cannot promise 6d`);
+  assert.ok(p95 <= 25 && p95 > 6, `p95 age ${p95}d should reflect the capacity limit`);
+});
+
+test('Bandsintown - populated active 20,711-target roster retains full-capacity fair coverage', () => {
+  const targetCount = 20_711;
+  const artists = Array.from({ length: targetCount }, (_, index) => `Active ${String(index).padStart(5, '0')}`);
+  const cache: BandsintownCache = Object.fromEntries(artists.map((artist) => [artist, {
+    fetchedAt: '2020-01-01T00:00:00.000Z', concerts: [{ artist, date: '2030-01-01' }]
+  }]));
+  let firstCoverageDay: number | undefined;
+
+  for (let day = 0; day < 60; day++) {
+    const now = new Date(Date.UTC(2026, 0, 1 + day));
+    const selected = selectBandsintownArtists(artists, cache, 800, 6, now);
+    for (const artist of selected.artists) {
+      cache[artist] = { fetchedAt: now.toISOString(), attemptedAt: now.toISOString(), concerts: [{ artist, date: '2030-01-01' }] };
+    }
+    if (firstCoverageDay === undefined && artists.every((artist) => cache[artist].attemptedAt)) firstCoverageDay = day;
+  }
+
+  const finalNow = new Date(Date.UTC(2026, 0, 60));
+  const ages = artists.map((artist) => (finalNow.getTime() - new Date(cache[artist].fetchedAt!).getTime()) / 86_400_000).sort((a, b) => a - b);
+  assert.strictEqual(firstCoverageDay, 25, 'when all slots are active, global carry-over preserves the 800/day capacity bound');
+  assert.ok(ages.at(-1)! <= 26);
+  assert.ok(ages[Math.floor((ages.length - 1) * 0.95)] <= 25);
 });
 
 test('Bandsintown - a 404 is recorded as empty (not a block) and does not stop the sweep', async () => {

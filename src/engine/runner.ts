@@ -27,6 +27,11 @@ function hostBlocked(h: string): boolean {
   return !ALLOW_LOCAL_HOSTS && isBlockedHost(h);
 }
 
+/** The connect-time policy used for every address returned by DNS. */
+export function isBlockedResolvedAddress(address: string): boolean {
+  return hostBlocked(address);
+}
+
 function safeLookup(hostname: string, options: any, callback?: any): void {
   const cb = typeof options === 'function' ? options : callback;
   const opts = typeof options === 'function' ? {} : options;
@@ -34,7 +39,7 @@ function safeLookup(hostname: string, options: any, callback?: any): void {
     if (err) return cb(err, address, family);
     const list = Array.isArray(address) ? address : [{ address, family }];
     for (const a of list) {
-      if (hostBlocked(String(a.address))) {
+      if (isBlockedResolvedAddress(String(a.address))) {
         return cb(new Error(`Blocked SSRF target: ${hostname} -> ${a.address}`));
       }
     }
@@ -90,7 +95,7 @@ function serializeSample(data: unknown): string | undefined {
  * Why a scrape produced no usable events. Lets the healer skip pages the LLM
  * cannot fix (CSR shells, genuinely empty schedules) instead of burning calls.
  */
-export type FailureReason = 'fetch_error' | 'csr_detected' | 'empty_schedule' | 'selectors_stale' | 'parse_error' | 'circuit_open';
+export type FailureReason = 'fetch_error' | 'network_policy_block' | 'csr_detected' | 'empty_schedule' | 'selectors_stale' | 'parse_error' | 'circuit_open';
 
 export interface ScraperResult {
   configId: string;
@@ -852,7 +857,12 @@ export async function runScraper(config: ScraperConfig, cached?: VenueCache): Pr
     // fail-log, 7 of 9 parse_error entries carried no sample and were skipped outright
     // purely because the body was an object.
     const htmlSample = serializeSample(responseData);
-    const reason: FailureReason = responseData === null ? 'fetch_error' : 'parse_error';
+    // HTTP clients often wrap the original error, so do not require the policy
+    // message to be at the beginning of the final text.
+    const isPolicyBlock = /Blocked\s+SSRF(?:\s+redirect)?\s+target:/i.test(error.message ?? '');
+    const reason: FailureReason = responseData === null
+      ? (isPolicyBlock ? 'network_policy_block' : 'fetch_error')
+      : 'parse_error';
     return {
       configId: config.id,
       success: false,

@@ -39,6 +39,7 @@
     padding: 3px 8px; margin: 0 6px 6px 0; font-size: 12.5px; color: var(--muted); }
   .pill.bad { color: var(--bad); border-color: rgba(229,96,94,.35); }
   .pill.warn { color: var(--warn); border-color: rgba(224,179,65,.35); }
+  .pill.ok { color: var(--ok); border-color: rgba(71,196,121,.35); }
   .note { color: var(--muted); font-size: 13px; margin: 4px 0 12px; }
   .heal { background: rgba(71,196,121,.08); border: 1px solid rgba(71,196,121,.25); color: #bfe9cf;
     border-radius: 8px; padding: 10px 12px; font-size: 13px; margin-bottom: 8px; }
@@ -130,12 +131,37 @@ async function load() {
   const byCountry = [...countryCounts.entries()].map(([country, n]) => ({ country, concerts: n })).sort((a, b) => b.concerts - a.concerts);
   const bySource = [...sourceCounts.entries()].map(([source, n]) => ({ source, concerts: n })).sort((a, b) => b.concerts - a.concerts);
 
-  const failed = status.scrapersFailed || 0;
-  const stale = (status.staleVenues || []).length;
+  // status.json v2 groups cohorts under sources. Keep the original flat-field
+  // fallback so an older Pages deployment remains renderable during rollout.
+  const venueHealth = (status.sources && status.sources.venue) || {
+    total: status.scrapersTotal || 0,
+    succeeded: status.scrapersOk || 0,
+    failed: status.scrapersFailed || 0,
+    changed: status.venuesChanged || 0,
+    unchanged: status.venuesUnchanged || 0,
+    stale: (status.staleVenues || []).length
+  };
+  const artistHealth = status.sources && status.sources.artist;
+  const publication = status.publication;
+  const failed = venueHealth.failed || 0;
+  const stale = venueHealth.stale || 0;
+  const artistFailed = (artistHealth && artistHealth.failed) || 0;
+  const artistStale = (artistHealth && artistHealth.stale) || 0;
+  const artistAgeMs = artistHealth && Date.parse(artistHealth.generatedAt)
+    ? Date.now() - Date.parse(artistHealth.generatedAt)
+    : Infinity;
+  const artistReportMissing = status.schemaVersion >= 2 && !artistHealth;
+  const artistReportStale = Boolean(artistHealth) && artistAgeMs > 48 * 60 * 60 * 1000;
+  const gateState = publication && publication.healthGate && publication.healthGate.state;
+  const criticallyDegraded = gateState === 'blocked' || artistReportStale ||
+    failed > (venueHealth.total || 1) * 0.25 ||
+    artistFailed > ((artistHealth && artistHealth.total) || 1) * 0.25;
+  const hasIssues = failed > 0 || stale > 0 || artistFailed > 0 || artistStale > 0 ||
+    artistReportMissing || (gateState && gateState !== 'eligible' && gateState !== 'not_required');
   const healthEl = document.getElementById('health');
-  if (failed === 0 && stale === 0) { healthEl.className = 'badge ok'; healthEl.textContent = 'HEALTHY'; }
-  else if (failed > (status.scrapersTotal || 1) * 0.25) { healthEl.className = 'badge bad'; healthEl.textContent = 'DEGRADED'; }
-  else { healthEl.className = 'badge warn'; healthEl.textContent = 'MINOR ISSUES'; }
+  if (criticallyDegraded) { healthEl.className = 'badge bad'; healthEl.textContent = 'DEGRADED'; }
+  else if (hasIssues) { healthEl.className = 'badge warn'; healthEl.textContent = 'MINOR ISSUES'; }
+  else { healthEl.className = 'badge ok'; healthEl.textContent = 'HEALTHY'; }
 
   document.getElementById('lastrun').textContent =
     'Last run ' + ago(status.generatedAt) + ' · ' + (status.generatedAt || '').replace('T', ' ').slice(0, 16) + ' UTC';
@@ -146,7 +172,10 @@ async function load() {
     ['Artists', artistSet.size || (index.stats && index.stats.uniqueArtists)],
     ['Cities', citySet.size || (index.stats && index.stats.uniqueCities)],
     ['Countries', byCountry.length || null],
-    ['Venue parsers OK', (status.scrapersOk != null ? status.scrapersOk + '/' + status.scrapersTotal : null)]
+    ['Venue parsers OK', (venueHealth.succeeded != null ? venueHealth.succeeded + '/' + venueHealth.total : null)],
+    // Keep the empty-state card compact. The detailed health panel below
+    // explains why an artist report is unavailable.
+    ['Artist parsers OK', (artistHealth ? artistHealth.succeeded + '/' + artistHealth.total : null)]
   ];
   document.getElementById('cards').innerHTML = cards.map(([l, n]) =>
     `<div class="card"><div class="n">${n == null ? '—' : (typeof n === 'number' ? fmt(n) : n)}</div><div class="l">${l}</div></div>`
@@ -160,15 +189,30 @@ async function load() {
   // Parser health detail
   const hd = document.getElementById('health-detail');
   let html = `<div class="note">
-    ${fmt(status.scrapersOk)} OK · ${fmt(failed)} failed · ${fmt(status.venuesUnchanged)} unchanged · ${fmt(status.venuesChanged)} changed this run · ${fmt(status.ticketmasterEvents)} Ticketmaster events</div>`;
+    Venues: ${fmt(venueHealth.succeeded)} OK · ${fmt(failed)} failed · ${fmt(venueHealth.unchanged)} unchanged · ${fmt(venueHealth.changed)} changed this run · ${fmt(status.ticketmasterEvents)} Ticketmaster events</div>`;
+  if (artistHealth) {
+    html += `<div class="note">Artists: ${fmt(artistHealth.succeeded)} OK · ${fmt(artistHealth.failed)} failed · last artist pass ${ago(artistHealth.generatedAt)}</div>`;
+  } else if (status.schemaVersion >= 2) {
+    html += '<div class="note">Artist health has not been reported yet (first run or cache miss).</div>';
+  }
   if (failed) html += '<div><b class="err">Failing:</b><br>' + (status.failedVenueIds || []).map(id => `<span class="pill bad">${id}</span>`).join('') + '</div>';
   if (stale) html += '<div style="margin-top:8px"><b class="warn">Stale (serving old cache):</b><br>' + (status.staleVenues || []).map(id => `<span class="pill warn">${id}</span>`).join('') + '</div>';
-  if (!failed && !stale) html += '<div class="pill ok" style="color:var(--ok);border-color:rgba(71,196,121,.35)">All parsers healthy ✓</div>';
+  if (!failed && !stale && !artistFailed && !artistStale && !artistReportMissing && !artistReportStale) {
+    html += '<div class="pill ok" style="color:var(--ok);border-color:rgba(71,196,121,.35)">All parsers healthy ✓</div>';
+  }
   // Enrichment writers (enrich-auto/enrich-database/daily-scrape) occasionally lose a
   // sub-chunk to an unresolvable git rebase conflict on approved_artists.json -- not
   // data loss (the affected artists just get retried next run), but worth watching
   // if the count keeps climbing.
   if (status.conflictDropsLast7Days) html += `<div style="margin-top:8px"><span class="pill warn">${fmt(status.conflictDropsLast7Days)} enrichment conflict-drop(s) in the last 7 days</span></div>`;
+  if (publication && publication.healthGate) {
+    const gate = publication.healthGate;
+    const css = gate.state === 'blocked' ? 'bad' : gate.state === 'eligible' ? 'ok' : 'warn';
+    html += `<div style="margin-top:8px"><span class="pill ${css}">Publication gate: ${gate.state}${gate.reason ? ' — ' + gate.reason : ''}</span></div>`;
+  }
+  if (status.repair && status.repair.state) {
+    html += `<div class="note">Repair follow-up: ${status.repair.state.replace(/_/g, ' ')}</div>`;
+  }
   hd.innerHTML = html;
 
   // Countries

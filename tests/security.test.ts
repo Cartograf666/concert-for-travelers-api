@@ -72,9 +72,10 @@ test('config url rejects SSRF hosts (metadata / integer-encoded loopback)', () =
   assert.strictEqual(ScraperConfigSchema.safeParse({ ...base, url: 'http://169.254.169.254/latest/meta-data' }).success, false);
   assert.strictEqual(ScraperConfigSchema.safeParse({ ...base, url: 'http://2130706433/' }).success, false);
   assert.ok(ScraperConfigSchema.safeParse({ ...base, url: 'https://paradiso.nl/agenda' }).success);
+  assert.ok(ScraperConfigSchema.safeParse({ ...base, url: 'https://[2606:4700:4700::1111]/agenda' }).success);
 });
 
-test('isBlockedHost blocks the IPv6 spelling the URL parser actually produces', () => {
+test('isBlockedHost blocks private IPv6 encodings while allowing public IPv6', () => {
   // The dotted IPv4-mapped form this suite already checked ('::ffff:127.0.0.1')
   // never reaches isBlockedHost in practice: every caller parses the URL first,
   // and the WHATWG parser re-serializes it to hex.
@@ -87,9 +88,26 @@ test('isBlockedHost blocks the IPv6 spelling the URL parser actually produces', 
     '::ffff:a9fe:a9fe',     // 169.254.169.254, cloud metadata
     '::ffff:0:7f00:1',      // 4-group mapped spelling
     '64:ff9b::7f00:1',      // NAT64 embedding 127.0.0.1
+    '64:ff9b:1::7f00:1',    // local-use NAT64 embedding loopback
+    '2002:7f00:1::',        // 6to4 embedding 127.0.0.1
+    'fe90::1',              // link-local (the whole fe80::/10, not only fe80::/16)
+    'fec0::1',              // deprecated site-local
+    'ff02::1',              // multicast
+    '100::1',               // discard-only
+    '100:0:0:1::1',         // dummy prefix
+    '2001:db8::1',          // documentation
+    '3fff::1',              // documentation
+    '5f00::1',              // non-global SRv6 SIDs
+    '4000::1',              // currently reserved outside global unicast
+    '64:ff9b:1::808:808',   // local-use NAT64, even with a public v4 tail
+    '2002:808:808::',       // deprecated 6to4, even with a public v4 payload
     '[::ffff:7f00:1]',      // still bracketed
   ]) {
     assert.strictEqual(isBlockedHost(bad), true, `${bad} must be blocked`);
+  }
+
+  for (const good of ['2606:4700:4700::1111', '2001:4860:4860::8888', '64:ff9b::808:808']) {
+    assert.strictEqual(isBlockedHost(good), false, `${good} must be allowed`);
   }
 });
 

@@ -15,10 +15,19 @@ test('classify - dead domains vs temporary resolver failures', () => {
     classifyFailure({ reason: 'fetch_error', error: 'getaddrinfo ENOTFOUND www.paigehaley.com' }).strategy,
     'dead_domain'
   );
-  // A domain re-parked on loopback trips the SSRF guard -- also dead.
+  // A policy refusal is evidence about this request path, not proof that the
+  // domain died. It must never enqueue automatic retirement.
   assert.strictEqual(
     classifyFailure({ reason: 'fetch_error', error: 'Blocked SSRF target: www.hallandoates.com -> 127.0.0.1' }).strategy,
-    'dead_domain'
+    'policy_denied'
+  );
+  assert.strictEqual(
+    classifyFailure({ reason: 'network_policy_block', error: 'Blocked SSRF target: www.example.com -> 2606:4700:4700::1111' }).strategy,
+    'policy_denied'
+  );
+  assert.strictEqual(
+    classifyFailure({ reason: 'fetch_error', error: 'AxiosError: request failed: Blocked SSRF redirect target: 127.0.0.1' }).strategy,
+    'policy_denied'
   );
   // EAI_AGAIN is the runner's resolver being busy, NOT a dead domain. Retiring on
   // this would delete live scrapers over CI flakiness.

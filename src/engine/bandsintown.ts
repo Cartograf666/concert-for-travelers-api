@@ -24,7 +24,11 @@ const DEFAULT_MAX_ARTISTS_PER_RUN = 800;
 
 // An artist fetched more recently than this is skipped this run -- tour dates don't
 // change hour to hour, and this is what lets the per-run cap cycle through the whole
-// list instead of re-fetching the same head of it every time.
+// list instead of re-fetching the same head of it every time. This is a minimum
+// freshness interval, not a six-day SLA: 20,711 targets at 800/day need at least
+// 26 runs even before failures and active-priority traffic are considered. The
+// active reservation is only 20% under a permanently contended oldest lane, so it
+// deliberately does not promise a tighter bound than available daily capacity.
 const DEFAULT_FRESHNESS_DAYS = 6;
 
 // Stop the whole sweep after this many consecutive request failures -- a sustained
@@ -121,7 +125,10 @@ export function bandsintownCountryToCode(name: string | undefined): string | nul
 
 export interface BandsintownCache {
   [artistName: string]: {
-    fetchedAt: string;
+    /** Last response that was usable for this artist (including 401/404 = known empty). */
+    fetchedAt?: string;
+    /** Last network attempt. Optional so existing cache files remain readable. */
+    attemptedAt?: string;
     concerts: Partial<Concert>[];
   };
 }
@@ -231,6 +238,103 @@ export interface BandsintownSweepOptions {
   baseUrl?: string;
   fetchFn?: BitFetchFn;
   delayMs?: number;
+  /** Injected by tests and schedulers that need deterministic queue selection. */
+  now?: () => Date;
+}
+
+export type BandsintownCohort = 'active' | 'new' | 'cold';
+
+export interface BandsintownQueueSelection {
+  artists: string[];
+  cohortByArtist: Record<string, BandsintownCohort>;
+  availableByCohort: Record<BandsintownCohort, number>;
+  selectedByCohort: Record<BandsintownCohort, number>;
+}
+
+const ACTIVE_PRIORITY_FRACTION = 0.20;
+
+function parsedTime(value: string | undefined): number | undefined {
+  if (!value) return undefined;
+  const time = new Date(value).getTime();
+  return Number.isFinite(time) ? time : undefined;
+}
+
+function isActiveCacheEntry(entry: BandsintownCache[string] | undefined, nowMs: number): boolean {
+  if (!entry) return false;
+  const today = new Date(nowMs).toISOString().slice(0, 10);
+  return entry.concerts.some((concert) => typeof concert.date === 'string' && concert.date >= today);
+}
+
+/**
+ * Deterministically select stale artists without letting either discovery or useful
+ * (future-event) artists starve. Twenty percent of a run is reserved for active
+ * artists; the other eighty percent is globally oldest-attempt-first, which is the
+ * exploration/oldest lane. The lanes are interleaved (one active then its global
+ * share) so active failures cannot trip the block guard before healthy exploration
+ * gets a turn. Unused active capacity carries into that global lane.
+ *
+ * `attemptedAt` deliberately differs from `fetchedAt`: a failed request should not
+ * make old data look fresh, but must yield its turn to other artists on later runs.
+ */
+export function selectBandsintownArtists(
+  artists: string[],
+  cache: BandsintownCache,
+  maxPerRun: number,
+  freshnessDays: number,
+  now: Date = new Date()
+): BandsintownQueueSelection {
+  const nowMs = now.getTime();
+  const freshCutoff = nowMs - freshnessDays * 24 * 60 * 60 * 1000;
+  const unique = Array.from(new Set(artists.map((artist) => artist.trim()).filter(Boolean)));
+  const cohortByArtist: Record<string, BandsintownCohort> = {};
+  const stale = unique.filter((artist) => {
+    const entry = cache[artist];
+    const fetchedAt = parsedTime(entry?.fetchedAt);
+    return fetchedAt === undefined || fetchedAt <= freshCutoff;
+  });
+  for (const artist of stale) {
+    const entry = cache[artist];
+    cohortByArtist[artist] = !entry ? 'new' : isActiveCacheEntry(entry, nowMs) ? 'active' : 'cold';
+  }
+  const oldestAttemptFirst = (left: string, right: string): number => {
+    const leftTime = parsedTime(cache[left]?.attemptedAt) ?? parsedTime(cache[left]?.fetchedAt) ?? Number.NEGATIVE_INFINITY;
+    const rightTime = parsedTime(cache[right]?.attemptedAt) ?? parsedTime(cache[right]?.fetchedAt) ?? Number.NEGATIVE_INFINITY;
+    return leftTime - rightTime || left.localeCompare(right);
+  };
+  const active = stale.filter((artist) => cohortByArtist[artist] === 'active').sort(oldestAttemptFirst);
+  const activeSlots = Math.min(active.length, Math.ceil(Math.max(0, maxPerRun) * ACTIVE_PRIORITY_FRACTION));
+  const reservedActive = active.slice(0, activeSlots);
+  const selectedSet = new Set(reservedActive);
+  // The oldest lane intentionally includes every cohort. It is what guarantees
+  // exploration of never-fetched/cold artists when the active roster is stable.
+  const remaining = stale.filter((artist) => !selectedSet.has(artist)).sort(oldestAttemptFirst)
+    .slice(0, Math.max(0, maxPerRun) - reservedActive.length);
+  const selected: string[] = [];
+  // Spread global-oldest candidates evenly between reserved active attempts. This
+  // preserves the reservation while ensuring a cluster of failing active artists
+  // cannot consume BLOCK_STREAK_LIMIT consecutive requests ahead of everyone else.
+  const globalPerActive = reservedActive.length ? Math.ceil(remaining.length / reservedActive.length) : 0;
+  for (let index = 0; index < reservedActive.length; index++) {
+    selected.push(reservedActive[index]);
+    selected.push(...remaining.slice(index * globalPerActive, (index + 1) * globalPerActive));
+  }
+  selected.push(...remaining.slice(reservedActive.length * globalPerActive));
+
+  const availableByCohort: Record<BandsintownCohort, number> = { active: 0, new: 0, cold: 0 };
+  const selectedByCohort: Record<BandsintownCohort, number> = { active: 0, new: 0, cold: 0 };
+  for (const artist of stale) availableByCohort[cohortByArtist[artist]]++;
+  for (const artist of selected) selectedByCohort[cohortByArtist[artist]]++;
+  return { artists: selected, cohortByArtist, availableByCohort, selectedByCohort };
+}
+
+function ageQuantilesDays(artists: string[], cache: BandsintownCache, nowMs: number): Record<string, number | null> {
+  const ages = artists
+    .map((artist) => parsedTime(cache[artist]?.fetchedAt))
+    .filter((value): value is number => value !== undefined)
+    .map((value) => Math.max(0, (nowMs - value) / (24 * 60 * 60 * 1000)))
+    .sort((a, b) => a - b);
+  const quantile = (p: number): number | null => ages.length ? Number(ages[Math.min(ages.length - 1, Math.floor((ages.length - 1) * p))].toFixed(2)) : null;
+  return { p50: quantile(0.5), p95: quantile(0.95), max: quantile(1) };
 }
 
 /**
@@ -258,32 +362,24 @@ export async function fetchBandsintownConcerts(
   const fetchFn = options.fetchFn ?? defaultBitFetch;
   const delayMs = options.delayMs ?? REQUEST_DELAY_MS;
 
-  const scrapedAt = new Date().toISOString();
-  const freshCutoff = Date.now() - freshnessDays * 24 * 60 * 60 * 1000;
-
-  // De-dupe and drop blanks, then order stalest-first (never-fetched before
-  // long-ago-fetched before recently-fetched) so the per-run cap advances through
-  // the whole list over successive runs instead of re-doing the same head.
+  const runNow = options.now?.() ?? new Date();
+  const scrapedAt = runNow.toISOString();
   const unique = Array.from(new Set(artists.map((a) => a.trim()).filter(Boolean)));
-  const staleness = (name: string): number => {
-    const c = cache[name];
-    if (!c) return -Infinity; // never fetched -> highest priority
-    return new Date(c.fetchedAt).getTime();
-  };
-  const ordered = [...unique].sort((a, b) => staleness(a) - staleness(b));
+  const selection = selectBandsintownArtists(unique, cache, maxPerRun, freshnessDays, runNow);
 
-  let fetched = 0;
+  let attempts = 0;
+  let yielded = 0;
+  const attemptsByCohort: Record<BandsintownCohort, number> = { active: 0, new: 0, cold: 0 };
+  const yieldByCohort: Record<BandsintownCohort, number> = { active: 0, new: 0, cold: 0 };
   let blockStreak = 0;
   let stopped = false;
 
-  for (const artist of ordered) {
+  for (const artist of selection.artists) {
     if (stopped) break;
-    if (fetched >= maxPerRun) break;
-
-    const cached = cache[artist];
-    if (cached && new Date(cached.fetchedAt).getTime() > freshCutoff) {
-      continue; // still fresh -- leave it, its concerts are merged in at the end
-    }
+    // Increment before the call: successful and failed HTTP attempts consume the
+    // same run budget and are spaced identically as a courtesy to the public feed.
+    attempts++;
+    attemptsByCohort[selection.cohortByArtist[artist]]++;
 
     try {
       const events = await fetchFn(artist, appId, baseUrl);
@@ -292,10 +388,10 @@ export async function fetchBandsintownConcerts(
         const c = mapBitEventToConcert(ev, artist, scrapedAt);
         if (c) concerts.push(c);
       }
-      cache[artist] = { fetchedAt: scrapedAt, concerts };
+      cache[artist] = { fetchedAt: scrapedAt, attemptedAt: scrapedAt, concerts };
+      yielded += concerts.length;
+      yieldByCohort[selection.cohortByArtist[artist]] += concerts.length;
       blockStreak = 0;
-      fetched++;
-      await sleep(delayMs);
     } catch (err: any) {
       const status = err.response?.status;
       // 404 (no page for this name) and 401 both mean "no usable data for this exact
@@ -306,18 +402,21 @@ export async function fetchBandsintownConcerts(
       // never-fetched Russian names all 401'd in a row and wrongly halted the sweep).
       // Real throttling shows up as 429, which still counts toward the block streak.
       if (status === 404 || status === 401) {
-        cache[artist] = { fetchedAt: scrapedAt, concerts: [] };
+        cache[artist] = { fetchedAt: scrapedAt, attemptedAt: scrapedAt, concerts: [] };
         blockStreak = 0;
-        fetched++;
-        await sleep(delayMs);
-        continue;
+      } else {
+        // Preserve last-good concerts/fetchedAt for cache fallback. `attemptedAt`
+        // prevents this failed artist from monopolising the oldest lane next run.
+        cache[artist] = { ...cache[artist], attemptedAt: scrapedAt, concerts: cache[artist]?.concerts ?? [] };
+        blockStreak++;
+        console.warn(`[Bandsintown] ${artist} failed (${status ?? err.message}); streak ${blockStreak}/${BLOCK_STREAK_LIMIT}. Keeping any cached events.`);
+        if (blockStreak >= BLOCK_STREAK_LIMIT) {
+          console.error(`[Bandsintown] ${BLOCK_STREAK_LIMIT} consecutive failures -- likely throttled/blocked. Stopping this run; remaining artists use cached events.`);
+          stopped = true;
+        }
       }
-      blockStreak++;
-      console.warn(`[Bandsintown] ${artist} failed (${status ?? err.message}); streak ${blockStreak}/${BLOCK_STREAK_LIMIT}. Keeping any cached events.`);
-      if (blockStreak >= BLOCK_STREAK_LIMIT) {
-        console.error(`[Bandsintown] ${BLOCK_STREAK_LIMIT} consecutive failures -- likely throttled/blocked. Stopping this run; remaining artists use cached events.`);
-        stopped = true;
-      }
+    } finally {
+      await sleep(delayMs);
     }
   }
 
@@ -328,6 +427,21 @@ export async function fetchBandsintownConcerts(
     all.push(...entry.concerts);
   }
 
-  console.log(`[Bandsintown] Fetched ${fetched} artists this run (cap ${maxPerRun}); ${Object.keys(cache).length} cached total -> ${all.length} raw events.`);
+  const neverFetched = unique.filter((artist) => parsedTime(cache[artist]?.fetchedAt) === undefined).length;
+  console.log(`[Bandsintown] telemetry ${JSON.stringify({
+    attempts,
+    yield: yielded,
+    neverFetched,
+    ageDays: ageQuantilesDays(unique, cache, runNow.getTime()),
+    cohorts: {
+      available: selection.availableByCohort,
+      selected: selection.selectedByCohort,
+      attempts: attemptsByCohort,
+      yield: yieldByCohort
+    },
+    cached: Object.keys(cache).length,
+    rawEvents: all.length,
+    cap: maxPerRun
+  })}`);
   return all;
 }
