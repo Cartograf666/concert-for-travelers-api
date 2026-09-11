@@ -3,8 +3,8 @@
   "domain": "akbanksanat.com",
   "url": "https://www.akbanksanat.com/etkinlik-takvimi",
   "type": "custom_js",
-  "maxRetries": 2,
-  "requestDelayMs": 500,
+  "maxRetries": 5,
+  "requestDelayMs": 2000,
   "allowEmpty": false,
   "selectors": {
     "eventBlock": "div[data-category]",
