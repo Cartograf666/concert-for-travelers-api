@@ -27,11 +27,10 @@ jobs:
   heal:
     runs-on: ubuntu-latest
     timeout-minutes: 60 # a wedged Playwright install/Gemini repair call/test run must not sit on the 6h Actions default ceiling
-    # The comment below used to claim this gate without implementing it, so the
-    # healer also ran after a FAILED scrape -- during the 23-day publish outage it
-    # woke every night on a fail-log from a run that never finished, and judged
-    # scrapers on it. A cancelled or failed scrape has no trustworthy fail-log.
-    if: github.event.workflow_run.conclusion == 'success'
+    # Publication eligibility and scrape completeness are different facts. A
+    # blocked deploy is precisely when healing may be most valuable, so the
+    # healer validates the downloaded complete run manifest instead of trusting
+    # the workflow's overall conclusion.
     steps:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -109,6 +108,8 @@ jobs:
       - name: Run Healer Script
         if: steps.check-failures.outputs.has_failures == 'true'
         env:
+          EXPECTED_SOURCE_RUN_ID: ${{ github.event.workflow_run.id }}
+          EXPECTED_SOURCE_RUN_ATTEMPT: ${{ github.event.workflow_run.run_attempt }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
           GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
@@ -121,7 +122,13 @@ jobs:
           # Stop probing 15min before this job's timeout-minutes so a heavy failure
           # day ends with a clean report instead of being force-killed mid-write.
           HEAL_BUDGET_MS: '2700000'
-        run: npm run heal
+        run: |
+          if [ "${{ github.event.workflow_run.name }}" = "Artist Tour-Page Scrape" ]; then
+            COHORT=artist
+          else
+            COHORT=venue
+          fi
+          npm run heal -- --cohort "$COHORT"
 
       # Repo-wide regression check. NOT the acceptance gate for the repairs -- this
       # suite passes identically whether the new selectors are correct or point at
@@ -140,15 +147,15 @@ jobs:
           path: reports/repair-report.json
           retention-days: 14
 
-      - name: Check for repaired scrapers
+      - name: Check for repair state changes
         if: steps.check-failures.outputs.has_failures == 'true'
         id: check-repaired
         run: |
           if [ -f reports/repair-summary.json ]; then
-            echo "repaired=true" >> "$GITHUB_OUTPUT"
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           else
-            echo "repaired=false" >> "$GITHUB_OUTPUT"
-            echo "No scraper configs were successfully repaired."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No durable repair state changed."
           fi
 
       # Open a PR (audit trail + diff visibility) and squash-merge it automatically.
@@ -159,7 +166,7 @@ jobs:
       # back on its own if it stops working over the next runs.
       - name: Open PR with repaired scrapers
         id: cpr
-        if: steps.check-failures.outputs.has_failures == 'true' && steps.check-repaired.outputs.repaired == 'true'
+        if: steps.check-failures.outputs.has_failures == 'true' && steps.check-repaired.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8
         with:
           commit-message: "auto: self-healed broken scrapers"

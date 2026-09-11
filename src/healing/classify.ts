@@ -23,6 +23,8 @@
 export type RepairStrategy =
   /** Domain no longer resolves, or resolves somewhere useless (parked on loopback). Retire it. */
   | 'dead_domain'
+  /** The runner intentionally refused a private/metadata target. Keep it out of repair/prune. */
+  | 'policy_denied'
   /** TLS is broken in a way that suggests the domain was abandoned/re-parked. Probe, then retire. */
   | 'tls_broken'
   /** 404 -- host is alive, the schedule page moved. Re-discover the URL. */
@@ -72,10 +74,13 @@ export function extractHttpStatus(error: string | undefined): number | null {
 const DEAD_DNS_RE = /getaddrinfo\s+(ENOTFOUND|EAI_NONAME)|NXDOMAIN/i;
 const TEMP_DNS_RE = /getaddrinfo\s+EAI_AGAIN/i;
 
-// The SSRF guard fires when a hostname resolves into private space. For a venue
-// domain that means the name was released and re-pointed (typically at 127.0.0.1
-// by a parking provider) -- functionally dead, and we must never keep requesting it.
-const SSRF_RE = /Blocked SSRF target/i;
+// A policy refusal says that this runner protected itself, not that the public
+// domain is dead. In particular, old runs used this message for public IPv6 due
+// to an over-broad guard. Never let it feed dead-domain pruning.
+// Match both connect-time DNS refusals and redirect-hop refusals, including
+// messages wrapped by an HTTP client. These are policy decisions, never proof
+// that a domain is dead and therefore never input to automatic pruning.
+const NETWORK_POLICY_RE = /blocked\s+ssrf(?:\s+redirect)?\s+target|network[_ -]policy(?:[_ -](?:block|den(?:y|ied)))?|blocked[_ -]redirect/i;
 
 const TLS_RE = /certificate has expired|does not match certificate's altnames|self[- ]signed certificate|SSL routines|EPROTO|unable to verify the first certificate|CERT_/i;
 
@@ -108,11 +113,12 @@ export function classifyFailure(failure: FailureEntry): Classification {
     return { strategy: 'transient', detail: 'domain circuit breaker opened during the run' };
   }
 
+  if (reason === 'network_policy_block' || NETWORK_POLICY_RE.test(error)) {
+    return { strategy: 'policy_denied', detail: 'network policy blocked the target; it must not be retired as a dead domain' };
+  }
+
   if (DEAD_DNS_RE.test(error)) {
     return { strategy: 'dead_domain', detail: 'hostname does not resolve (NXDOMAIN)' };
-  }
-  if (SSRF_RE.test(error)) {
-    return { strategy: 'dead_domain', detail: 'hostname resolves into private/loopback space -- domain released or parked' };
   }
   if (TEMP_DNS_RE.test(error)) {
     return { strategy: 'transient', detail: 'temporary resolver failure (EAI_AGAIN)' };

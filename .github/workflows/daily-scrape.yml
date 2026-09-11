@@ -8,8 +8,9 @@ name: Daily Concert Scrape
 run-name: ${{ (github.event.inputs.is_retry == 'true') && 'Daily Concert Scrape (auto-retry)' || 'Daily Concert Scrape' }}
 
 on:
-  schedule:
-    - cron: '0 3 * * *' # Daily at 03:00 UTC
+  workflow_run:
+    workflows: ["Artist Tour-Page Scrape"]
+    types: [completed]
   workflow_dispatch: # Allow manual trigger
     inputs:
       is_retry:
@@ -35,6 +36,13 @@ jobs:
   # deploy into its own job below is what lets this one join artist-db-write without
   # losing the pages-specific cancel-in-progress behavior.
   scrape:
+    # Failed artist runs still publish venues with last-good artist data. Never
+    # consume a fork/non-default-branch producer in this privileged workflow.
+    if: >-
+      github.event_name != 'workflow_run' ||
+      (github.event.workflow_run.repository.full_name == github.repository &&
+       github.event.workflow_run.head_repository.full_name == github.repository &&
+       github.event.workflow_run.head_branch == github.event.repository.default_branch)
     concurrency:
       group: artist-db-write
       cancel-in-progress: false
@@ -49,6 +57,7 @@ jobs:
     timeout-minutes: 60
     outputs:
       should_deploy: ${{ steps.health-check.outputs.should_deploy }}
+      pages_ready: ${{ steps.prepare-pages.outputs.ready }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -102,6 +111,15 @@ jobs:
           restore-keys: |
             changelog-cache-
 
+      # Read-only here; the serialized geocode backfill is the sole cache writer.
+      - name: Restore geocode cache
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: reports/geocode-cache.json
+          key: geocode-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            geocode-v1-
+
       # Per-country last-successful Ticketmaster results, so a transient failure on
       # one country falls back to yesterday's data instead of contributing nothing.
       - name: Restore Ticketmaster cache
@@ -122,6 +140,30 @@ jobs:
           restore-keys: |
             publish-stats-
 
+      # Full last-good Pages payload. On a blocked/no-op run we deploy only the
+      # new status over this snapshot, so health remains current without ever
+      # replacing the API with data that failed the publication gate.
+      - name: Restore last-good Pages payload
+        id: restore-site-bundle
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            reports/last-good-site
+            reports/geocode-cache-backup.json
+          key: publish-site-v2-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            publish-site-v2-
+
+      # Separate restore is necessary: Actions cache versions include path lists.
+      - name: Restore legacy Pages snapshot during migration
+        if: steps.restore-site-bundle.outputs.cache-matched-key == ''
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: reports/last-good-site
+          key: publish-site-${{ github.run_id }}
+          restore-keys: |
+            publish-site-
+
       # Read-only: owned and saved by artist-scrape.yml (its own, less-frequent
       # workflow -- see there for why). This job only merges in whatever it last
       # produced, never scrapes scrapers/artists/ itself, so it never saves this key.
@@ -132,6 +174,17 @@ jobs:
           key: artist-scrape-cache-${{ github.run_id }}
           restore-keys: |
             artist-scrape-cache-
+
+      # Read-only output of artist-scrape.yml. This lets run.ts carry the most
+      # recent artist cohort health into the next published status.json without
+      # making the daily venue workflow responsible for artist scraping.
+      - name: Restore artist run manifest
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: reports/artist-run-manifest.json
+          key: artist-run-manifest-${{ github.run_id }}
+          restore-keys: |
+            artist-run-manifest-
 
       # Read-only, same as the artist tour-page cache above: owned by
       # artist-scrape.yml's Bandsintown sweep, merged into today's publish here.
@@ -218,8 +271,28 @@ jobs:
         with:
           script: |
             const fs = require('fs');
+            core.setOutput('should_deploy', 'false');
+            core.setOutput('should_publish_status', 'false');
+            // status.json is published with Pages. Record the gate decision in
+            // the same versioned surface instead of leaving a green-looking
+            // scrape status whose deployment was actually refused.
+            const recordGate = (state, reason) => {
+              if (!fs.existsSync('dist/status.json')) return;
+              const status = JSON.parse(fs.readFileSync('dist/status.json', 'utf-8'));
+              status.publication = {
+                ...(status.publication || { schemaVersion: 1 }),
+                healthGate: {
+                  state,
+                  reason,
+                  evaluatedAt: new Date().toISOString()
+                }
+              };
+              fs.writeFileSync('dist/status.json', JSON.stringify(status, null, 2));
+              core.setOutput('should_publish_status', 'true');
+            };
             if (!fs.existsSync('dist/index.json')) {
               console.log('No dist/index.json -- scrape run was a no-op (nothing changed since last deploy). Skipping deploy.');
+              recordGate('not_required', 'No publish was needed because the source data did not change.');
               core.setOutput('should_deploy', 'false');
               return;
             }
@@ -229,6 +302,7 @@ jobs:
             console.log(`Freshly published totalConcerts: ${total}`);
 
             if (total === 0) {
+              recordGate('blocked', 'totalConcerts is 0');
               core.setFailed('Health gate: totalConcerts is 0 -- refusing to deploy an empty dataset.');
               return;
             }
@@ -256,6 +330,7 @@ jobs:
                 // only trips on something systemic -- a network/DNS failure, an
                 // expired credential, a bad deploy of the runner itself.
                 if (okRate < 0.25) {
+                  recordGate('blocked', `Only ${ok}/${total} venue scrapers succeeded.`);
                   core.setFailed(
                     `Health gate: only ${ok}/${total} scrapers succeeded (${(okRate * 100).toFixed(0)}%) -- ` +
                     `the published set would be almost entirely stale cache. Refusing to deploy.`
@@ -273,6 +348,7 @@ jobs:
               const share = failedWrites / total;
               core.warning(`Publish tolerated ${failedWrites} failed per-slug write(s).`);
               if (share > 0.01) {
+                recordGate('blocked', `${failedWrites} per-slug publish writes failed.`);
                 core.setFailed(
                   `Health gate: ${failedWrites} per-slug writes failed ` +
                   `(${(share * 100).toFixed(2)}% of ${total} concerts) -- refusing to deploy a visibly incomplete dataset.`
@@ -286,6 +362,7 @@ jobs:
               baseline = JSON.parse(fs.readFileSync('reports/last-good-stats.json', 'utf-8'));
             }
             if (baseline && total < baseline.totalConcerts * 0.5) {
+              recordGate('blocked', `totalConcerts dropped from ${baseline.totalConcerts} to ${total}.`);
               core.setFailed(
                 `Health gate: totalConcerts dropped from ${baseline.totalConcerts} to ${total} ` +
                 `(more than 50%) -- refusing to deploy. Investigate before overriding.`
@@ -295,6 +372,7 @@ jobs:
 
             fs.mkdirSync('reports', { recursive: true });
             fs.writeFileSync('reports/last-good-stats.json', JSON.stringify(index.stats, null, 2));
+            recordGate('eligible', 'Current publication passed the existing health gate.');
             core.setOutput('should_deploy', 'true');
 
       - name: Save last-good publish stats
@@ -303,6 +381,22 @@ jobs:
         with:
           path: reports/last-good-stats.json
           key: publish-stats-${{ github.run_id }}
+
+      - name: Snapshot last-good Pages payload
+        if: steps.health-check.outputs.should_deploy == 'true'
+        run: |
+          rm -rf reports/last-good-site
+          mkdir -p reports/last-good-site
+          cp -R dist/. reports/last-good-site/
+
+      - name: Save last-good Pages payload
+        if: steps.health-check.outputs.should_deploy == 'true'
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            reports/last-good-site
+            reports/geocode-cache-backup.json
+          key: publish-site-v2-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Commit and Push Enriched Artist Metadata
         run: |
@@ -369,15 +463,35 @@ jobs:
           path: reports/
           retention-days: 5
 
+      - name: Prepare safe Pages payload
+        id: prepare-pages
+        if: always()
+        run: |
+          echo "ready=false" >> "$GITHUB_OUTPUT"
+          mkdir -p pages-dist
+          if [ "${{ steps.health-check.outputs.should_deploy }}" = "true" ]; then
+            cp -R dist/. pages-dist/
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          elif [ "${{ steps.health-check.outputs.should_publish_status }}" = "true" ] && \
+               [ -f dist/status.json ] && [ -f reports/last-good-site/index.json ]; then
+            cp -R reports/last-good-site/. pages-dist/
+            cp dist/status.json pages-dist/status.json
+            cp public/dashboard.html pages-dist/index.html
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+            echo "Publishing current health over the last-good API payload."
+          else
+            echo "::warning::No safe last-good Pages snapshot is available; leaving the deployed API/status untouched."
+          fi
+
       - name: Setup Pages
-        if: steps.health-check.outputs.should_deploy == 'true'
+        if: always() && steps.prepare-pages.outputs.ready == 'true'
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
 
       - name: Upload Pages artifact
-        if: steps.health-check.outputs.should_deploy == 'true'
+        if: always() && steps.prepare-pages.outputs.ready == 'true'
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
-          path: './dist'
+          path: './pages-dist'
 
       # Turn a silent scheduled-run failure into a visible, deduplicated GitHub issue
       # (GitHub only emails the workflow author, and mutes that after repeated failures).
@@ -397,7 +511,7 @@ jobs:
   # no explicit download step needed since both jobs belong to the same workflow run.
   deploy:
     needs: scrape
-    if: needs.scrape.outputs.should_deploy == 'true'
+    if: always() && needs.scrape.outputs.pages_ready == 'true'
     concurrency:
       group: pages
       cancel-in-progress: true

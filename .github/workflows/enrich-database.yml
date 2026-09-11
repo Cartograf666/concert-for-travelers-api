@@ -56,6 +56,62 @@ jobs:
       - name: Record job start time
         run: echo "JOB_START=$(date +%s)" >> "$GITHUB_ENV"
 
+      - name: Restore active concerts snapshot
+        id: restore-site-bundle
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            reports/last-good-site
+            reports/geocode-cache-backup.json
+          key: publish-site-v2-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            publish-site-v2-
+
+      - name: Restore legacy active concerts during migration
+        if: steps.restore-site-bundle.outputs.cache-matched-key == ''
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: reports/last-good-site
+          key: publish-site-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            publish-site-
+
+      # Former daily JIT: keep the same incomplete-metadata eligibility, including
+      # already-enriched touring artists, but remove network work from publication.
+      - name: Snapshot artist DB before active enrichment
+        run: |
+          ACTIVE_BEFORE=$(mktemp -d)
+          cp -R data/artists/. "$ACTIVE_BEFORE/"
+          echo "ACTIVE_BEFORE=$ACTIVE_BEFORE" >> "$GITHUB_ENV"
+
+      - name: Enrich active artists
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          GEMINI_API_KEY_4: ${{ secrets.GEMINI_API_KEY_4 }}
+          GEMINI_API_KEY_5: ${{ secrets.GEMINI_API_KEY_5 }}
+          GEMINI_API_KEY_RESERV1: ${{ secrets.GEMINI_API_KEY_RESERV1 }}
+          GEMINI_API_KEY_RESERV2: ${{ secrets.GEMINI_API_KEY_RESERV2 }}
+          GEMINI_API_KEY_RESERV3: ${{ secrets.GEMINI_API_KEY_RESERV3 }}
+          GEMINI_API_KEYS: ${{ secrets.GEMINI_API_KEYS }}
+        run: npm run enrich-active
+
+      - name: Snapshot artist DB after active enrichment
+        if: always() && env.ACTIVE_BEFORE != ''
+        run: |
+          ACTIVE_AFTER=$(mktemp -d)
+          cp -R data/artists/. "$ACTIVE_AFTER/"
+          echo "ACTIVE_AFTER=$ACTIVE_AFTER" >> "$GITHUB_ENV"
+
+      - name: Commit active artist enrichment
+        if: always() && env.ACTIVE_BEFORE != '' && env.ACTIVE_AFTER != ''
+        uses: ./.github/actions/commit-artist-db-delta
+        with:
+          before-artists-dir: ${{ env.ACTIVE_BEFORE }}
+          after-artists-dir: ${{ env.ACTIVE_AFTER }}
+          commit-message: "auto: enrich active artist websites and socials [skip ci]"
+
       # Tier-0: free structured enrichment (Wikidata SPARQL bulk, no LLM) sweeps the
       # whole catalog first so Gemini only spends calls on the remaining long tail.
       # Idempotent — already-tried artists are marked and skipped.

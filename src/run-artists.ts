@@ -6,6 +6,7 @@ import { fetchBandsintownConcerts, loadBandsintownCache, saveBandsintownCache } 
 import { fetchEventbriteConcerts, loadEventbriteCache, saveEventbriteCache } from './engine/eventbrite.js';
 import { loadApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from './pipeline/artistDb.js';
 import { getLlmFallbackUsageSummary } from './engine/llm_extraction_fallback.js';
+import { buildRunManifest, hashRunConfigs, writeRunManifest } from './observability/run_manifest.js';
 
 /** Reads the newline-delimited explicit artist target list, dropping blanks/dupes. */
 async function loadExplicitArtistTargets(filePath: string): Promise<string[]> {
@@ -134,7 +135,13 @@ async function main() {
       }));
     const failLogPath = path.join(reportsDir, 'fail-log.json');
     await fs.writeFile(failLogPath, JSON.stringify(failures, null, 2), 'utf-8');
+    const configHashes = await hashRunConfigs(scrapersDir, results.map((result) => result.configId));
+    const manifestPath = await writeRunManifest(
+      reportsDir,
+      buildRunManifest('artist', results, { changed: changedCount, configHashes })
+    );
     console.log(`[ArtistScrape] Failed scrapers log saved to: ${failLogPath} (${failures.length} entries).`);
+    console.log(`[ArtistScrape] Artist run manifest saved to: ${manifestPath}`);
 
     console.log(`[ArtistScrape] Tour-page pass done. ${changedCount}/${configs.length} changed, ${failedCount} failed. Cache saved to ${cachePath}.`);
     console.log(`[ArtistScrape] ${getLlmFallbackUsageSummary()}`);

@@ -21,10 +21,6 @@ export function isBlockedHost(hostname: string): boolean {
     if (h.endsWith(suffix)) return true;
   }
 
-  // IPv4-mapped IPv6 (e.g. ::ffff:169.254.169.254) — check the embedded v4 address.
-  const mapped = h.match(/^::ffff:(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})$/);
-  if (mapped) return isBlockedHost(mapped[1]);
-
   const ipv4 = h.match(/^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/);
   if (ipv4) {
     const [a, b] = [Number(ipv4[1]), Number(ipv4[2])];
@@ -54,25 +50,91 @@ export function isBlockedHost(hostname: string): boolean {
   if (/^(0x[0-9a-f]+|0[0-7]*|\d+)(\.(0x[0-9a-f]+|0[0-7]*|\d+)){1,3}$/i.test(h)
       && /(^0x|\.0x|^0\d|\.0\d)/i.test(h)) return true;   // dotted form with a hex/octal octet
 
-  if (h === '::1' || h === '::') return true; // IPv6 loopback/unspecified
-  if (/^fe80:/.test(h)) return true; // IPv6 link-local
-  if (/^f[cd][0-9a-f]{2}:/.test(h)) return true; // IPv6 unique local (fc00::/7)
+  const ipv6 = parseIpv6(h);
+  if (ipv6 !== null) {
+    // IPv6 wrappers need explicit handling before the public-unicast allowlist.
+    // IPv4-mapped/compatible/translated forms are protocol-internal, not public
+    // IPv6 destinations; accepting them creates alternate spellings for a URL
+    // that should have used the ordinary IPv4 policy.
+    const lowV4 = Number(ipv6 & 0xffffffffn);
+    if (inIpv6Prefix(ipv6, 96, 0n) ||
+        inIpv6Prefix(ipv6, 96, 0xffffn) ||
+        inIpv6Prefix(ipv6, 96, 0xffff0000n)) return true;
 
-  // Catch-all for every remaining IPv6 literal. A DNS hostname can never contain
-  // a colon, and no legitimate venue or artist site is configured as a bare IPv6
-  // literal -- while enumerating the private ones is a game this loses:
-  //
-  //   new URL('http://[::ffff:127.0.0.1]/').hostname === '[::ffff:7f00:1]'
-  //
-  // Every caller parses the URL before calling here, so the dotted-form rule
-  // above only ever sees a spelling the parser does not produce -- it matched
-  // nothing in practice, and `::ffff:a9fe:a9fe` (169.254.169.254) sailed
-  // through the whole guard. 64:ff9b::/96 NAT64 embeds IPv4 addresses too, and
-  // there is no reason to expect that list to stay complete. Rejecting the
-  // literal form outright removes the entire class.
-  if (h.includes(':')) return true;
+    // RFC 6052's well-known NAT64 prefix is globally reachable, but only when
+    // it embeds an IPv4 address our normal public-address policy allows.
+    if (inIpv6Prefix(ipv6, 96, 0x64ff9b0000000000000000n)) {
+      return isBlockedHost(formatIpv4(lowV4));
+    }
+
+    // Everything outside global unicast is denied by default. This covers
+    // unspecified/loopback, discard-only, local-use NAT64, site-local
+    // (fec0::/10), unique-local, link-local, multicast, and the currently
+    // reserved address space. Keeping this as an allowlist prevents a newly
+    // exposed special range from silently becoming an SSRF bypass.
+    if (!inIpv6Prefix(ipv6, 3, 0x1n)) return true; // 2000::/3
+
+    // Non-global special-purpose blocks that sit inside 2000::/3. 2001::/23 is
+    // reserved for IETF protocol assignments (with a few service-specific
+    // exceptions that are not web origins), 2002::/16 is deprecated 6to4, and
+    // the two documentation ranges must never appear as a live destination.
+    if (inIpv6Prefix(ipv6, 23, 0x100080n) || // 2001::/23
+        inIpv6Prefix(ipv6, 32, 0x20010db8n) ||
+        inIpv6Prefix(ipv6, 16, 0x2002n) ||
+        inIpv6Prefix(ipv6, 20, 0x3fff0n)) return true;
+
+    return false; // ordinary public global-unicast AAAA record
+  }
 
   return false;
+}
+
+/** Whether a parsed IPv6 integer begins with the supplied high-order prefix. */
+function inIpv6Prefix(address: bigint, bits: number, prefix: bigint): boolean {
+  return (address >> BigInt(128 - bits)) === prefix;
+}
+
+/** Converts a 32-bit IPv4 value to the dotted spelling consumed by the v4 policy. */
+function formatIpv4(value: number): string {
+  return [value >>> 24, (value >>> 16) & 0xff, (value >>> 8) & 0xff, value & 0xff].join('.');
+}
+
+/**
+ * Parses a valid IPv6 literal into an unsigned 128-bit number. URL/DNS callers
+ * give us canonical hex, but accepting a dotted tail here also keeps direct
+ * policy checks correct for the common ::ffff:192.168.0.1 spelling.
+ */
+function parseIpv6(input: string): bigint | null {
+  if (!input.includes(':') || input.includes('%')) return null;
+  const halves = input.split('::');
+  if (halves.length > 2) return null;
+  const parseSide = (side: string): number[] | null => {
+    if (!side) return [];
+    const parts = side.split(':');
+    const words: number[] = [];
+    for (let i = 0; i < parts.length; i++) {
+      const part = parts[i];
+      if (part.includes('.')) {
+        if (i !== parts.length - 1) return null;
+        const match = part.match(/^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/);
+        if (!match || match.slice(1).some((octet) => Number(octet) > 255)) return null;
+        words.push((Number(match[1]) << 8) | Number(match[2]), (Number(match[3]) << 8) | Number(match[4]));
+      } else {
+        if (!/^[0-9a-f]{1,4}$/i.test(part)) return null;
+        words.push(parseInt(part, 16));
+      }
+    }
+    return words;
+  };
+  const left = parseSide(halves[0]);
+  const right = parseSide(halves[1] ?? '');
+  if (!left || !right) return null;
+  const hasCompression = halves.length === 2;
+  if ((hasCompression && left.length + right.length >= 8) || (!hasCompression && left.length + right.length !== 8)) return null;
+  const words = hasCompression
+    ? [...left, ...Array(8 - left.length - right.length).fill(0), ...right]
+    : left;
+  return words.reduce((value, word) => (value << 16n) | BigInt(word), 0n);
 }
 
 const ALLOWED_PROTOCOLS = new Set(['http:', 'https:']);

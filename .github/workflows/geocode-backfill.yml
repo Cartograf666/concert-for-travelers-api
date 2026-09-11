@@ -1,0 +1,81 @@
+name: Geocode Backfill
+
+on:
+  schedule:
+    - cron: '30 0,6,12,18 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Sole writer of geocode-v1; scheduled Nominatim work must be single-threaded.
+concurrency:
+  group: geocode-backfill
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Restore last-good Pages payload
+        id: restore-site-bundle
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            reports/last-good-site
+            reports/geocode-cache-backup.json
+          key: publish-site-v2-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            publish-site-v2-
+
+      - name: Restore legacy Pages snapshot during migration
+        if: steps.restore-site-bundle.outputs.cache-matched-key == ''
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: reports/last-good-site
+          key: publish-site-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            publish-site-
+
+      - name: Restore geocode cache
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: reports/geocode-cache.json
+          key: geocode-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            geocode-v1-
+
+      # 100 attempts four times/day retains the former 400/day ceiling without
+      # blocking publication. New coordinates appear at the next publication.
+      - name: Backfill missing places
+        if: hashFiles('reports/last-good-site/concerts.json') != ''
+        # Leave time for always-save even if all 100 provider requests time out.
+        timeout-minutes: 45
+        env:
+          NOMINATIM_EMAIL: ${{ secrets.NOMINATIM_EMAIL }}
+        run: npm run geocode-backfill
+
+      - name: Report missing publication snapshot
+        if: hashFiles('reports/last-good-site/concerts.json') == ''
+        run: echo "::warning::No last-good concert snapshot yet; backfill will resume after a successful publication."
+
+      - name: Save geocode progress
+        if: always() && hashFiles('reports/geocode-cache.json') != ''
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: reports/geocode-cache.json
+          key: geocode-v1-${{ github.run_id }}-${{ github.run_attempt }}

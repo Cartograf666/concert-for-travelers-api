@@ -1,17 +1,16 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import { loadConfigs, runAllScrapers, ScraperResult, closeBrowser } from './engine/runner.js';
-import { loadCache, saveCache, shouldSkipPublish, isCacheStale } from './engine/cache.js';
+import { loadCache, saveCache, isCacheStale } from './engine/cache.js';
 import { Concert } from './schemas/concert.js';
 import { processConcerts, stampLastConcertSeenAt } from './pipeline/process.js';
-import { enrichMissingArtistMetadata } from './pipeline/enrich.js';
-import { geocodeConcerts, loadGeocodeCache, saveGeocodeCache } from './pipeline/geocode.js';
-import { getGeminiKeys } from './engine/gemini_keys.js';
+import { geocodeConcerts, loadGeocodeCacheWithBackup, saveGeocodeCache } from './pipeline/geocode.js';
 import { getLlmFallbackUsageSummary } from './engine/llm_extraction_fallback.js';
 import { publishConcerts, publishArtistCatalog } from './generator/publish.js';
 import { publishChangelog, loadChangelogCache, saveChangelogCache } from './generator/changelog.js';
 import { fetchTicketmasterConcerts, loadTicketmasterCache, saveTicketmasterCache } from './engine/ticketmaster.js';
 import { PRODUCTION_ARTIST_DB_DIR, saveApprovedArtists } from './pipeline/artistDb.js';
+import { buildRunManifest, hashRunConfigs, readRunManifest, sourceHealth, writeRunManifest } from './observability/run_manifest.js';
 
 /**
  * Writes dist/status.json — a small machine-readable health surface so a watchdog /
@@ -37,16 +36,47 @@ async function countRecentConflictDrops(days: number): Promise<number> {
   }
 }
 
+/**
+ * The repair workflow commits its durable lifecycle records to main. Summarise
+ * that history for the public status without exposing old configs or diagnostics.
+ */
+async function loadRepairHealth(): Promise<Record<string, unknown>> {
+  try {
+    const raw: unknown = JSON.parse(await fs.readFile(path.join(process.cwd(), 'data', 'repair-history.json'), 'utf-8'));
+    if (!Array.isArray(raw)) throw new Error('repair history is not an array');
+    const entries = raw.filter((entry): entry is { status?: string; repairedAt?: string } => Boolean(entry && typeof entry === 'object'));
+    const statuses = entries.reduce<Record<string, number>>((counts, entry) => {
+      const status = entry.status ?? 'unknown';
+      counts[status] = (counts[status] ?? 0) + 1;
+      return counts;
+    }, {});
+    const attempts = entries.map((entry) => entry.repairedAt).filter((at): at is string => typeof at === 'string').sort();
+    return {
+      schemaVersion: 1,
+      state: (statuses.pending ?? 0) > 0 ? 'pending_confirmation' : 'no_pending_confirmation',
+      tracked: entries.length,
+      byStatus: statuses,
+      latestAttemptAt: attempts.at(-1) ?? null
+    };
+  } catch {
+    return { schemaVersion: 1, state: 'unavailable' };
+  }
+}
+
 async function writeStatus(
   distDir: string,
   results: ScraperResult[],
   changedCount: number,
   ticketmasterCount: number,
   publishedConcerts: number | null,
-  staleVenueIds: string[]
+  staleVenueIds: string[],
+  artistManifest: Awaited<ReturnType<typeof readRunManifest>>
 ): Promise<void> {
   const failed = results.filter((r) => !r.success);
   const status = {
+    // Flat fields below are kept for existing API consumers. New clients should
+    // prefer the grouped, versioned health surfaces.
+    schemaVersion: 2,
     generatedAt: new Date().toISOString(),
     scrapersTotal: results.length,
     scrapersOk: results.length - failed.length,
@@ -59,7 +89,32 @@ async function writeStatus(
     staleVenues: staleVenueIds,
     ticketmasterEvents: ticketmasterCount,
     publishedConcerts, // null when the run short-circuited (published set unchanged)
-    conflictDropsLast7Days: await countRecentConflictDrops(7)
+    conflictDropsLast7Days: await countRecentConflictDrops(7),
+    sources: {
+      venue: {
+        schemaVersion: 1,
+        generatedAt: new Date().toISOString(),
+        cohort: 'venue',
+        total: results.length,
+        succeeded: results.length - failed.length,
+        failed: failed.length,
+        changed: changedCount,
+        unchanged: results.filter((r) => r.success && r.notModified).length,
+        stale: staleVenueIds.length
+      },
+      // The artist workflow owns this manifest. A missing value is normal on a
+      // first deployment or when its cache was evicted, and must not masquerade
+      // as a successful artist scrape.
+      artist: sourceHealth(artistManifest)
+    },
+    publication: {
+      schemaVersion: 1,
+      state: publishedConcerts === null ? 'no_changes' : 'pending_health_gate',
+      generatedAt: new Date().toISOString(),
+      publishedConcerts,
+      healthGate: { state: 'not_evaluated' }
+    },
+    repair: await loadRepairHealth()
   };
   await fs.mkdir(distDir, { recursive: true });
   await fs.writeFile(path.join(distDir, 'status.json'), JSON.stringify(status, null, 2), 'utf-8');
@@ -198,11 +253,8 @@ async function main() {
     const failLogPath = path.join(reportsDir, 'fail-log.json');
     await fs.writeFile(failLogPath, JSON.stringify(failures, null, 2), 'utf-8');
 
-    // 6. Short-circuit: if no venue changed (and no uncached venue needs publishing),
-    //    the published output is already current — skip normalization, enrichment,
-    //    and publish entirely so a daily run does nothing when nothing updated.
-    //    Ticketmaster has no per-item change-detection cache (it's a fresh sweep
-    //    every run), so any Ticketmaster results always count as "changed".
+    // 6. Record health independently from publication. Even unchanged venue data
+    // must be reprocessed: artist caches, metadata and the UTC day can change.
     // Venues whose events are served from a cache older than the staleness bound
     // (a scraper that broke long ago still serving frozen shows) — surfaced in status.json.
     const nowMs = Date.now();
@@ -212,18 +264,19 @@ async function main() {
     if (staleVenueIds.length) {
       console.warn(`[Orchestrator] ${staleVenueIds.length} venue(s) served from stale cache: ${staleVenueIds.join(', ')}`);
     }
-
-    if (shouldSkipPublish(results, cache, changedCount, ticketmasterCount)) {
-      await writeStatus(distDir, results, changedCount, ticketmasterCount, null, staleVenueIds);
-      console.log('[Orchestrator] No venue changed — skipping normalization, enrichment, and publish.');
-      console.log(`[Orchestrator] Scrape complete (no-op). Failures logged: ${failures.length}.`);
-      return;
-    }
+    const venueConfigHashes = await hashRunConfigs(scrapersDir, results.map((result) => result.configId));
+    const venueManifest = buildRunManifest('venue', results, {
+      changed: changedCount,
+      staleIds: staleVenueIds,
+      configHashes: venueConfigHashes
+    });
+    const venueManifestPath = await writeRunManifest(reportsDir, venueManifest);
+    const artistManifest = await readRunManifest(reportsDir, 'artist');
+    console.log(`[Orchestrator] Venue run manifest saved to: ${venueManifestPath}`);
 
     console.log(`[Orchestrator] Gathered ${allScrapedConcerts.length} raw events before processing.`);
 
-    // Anchor both normalization passes to a single instant so relative/year-less
-    // dates and their dedupe keys stay identical even if the run crosses midnight.
+    // Anchor normalization and activity stamps to one instant.
     const runDate = new Date().toISOString();
 
     // 7. First-pass normalization and deduplication. Explicit start/duration logs
@@ -231,43 +284,25 @@ async function main() {
     // many raw events came in) can take long enough on a big run to otherwise look
     // like the job hung between "Gathered N raw events" and the next line.
     console.log(`[Orchestrator] Matching ${allScrapedConcerts.length} raw events against the approved-artist whitelist...`);
-    // Captured from whichever processConcerts call below runs last (pass2 if JIT
-    // enrichment ran, else pass1) -- reused by the catalog step further down so it
+    // Reused by the catalog step further down so it
     // doesn't need its own separate read+parse of the same ~63k-entry file.
     let approvedArtistsSnapshot: any[] = [];
     const captureApprovedArtists = (a: any[]) => { approvedArtistsSnapshot = a; };
 
     let passStart = Date.now();
-    let normalizedConcerts = await processConcerts(allScrapedConcerts, approvedArtistsPath, runDate, captureApprovedArtists);
+    const normalizedConcerts = await processConcerts(allScrapedConcerts, approvedArtistsPath, runDate, captureApprovedArtists);
     console.log(`[Orchestrator] First pass: parsed ${normalizedConcerts.length} valid events (${((Date.now() - passStart) / 1000).toFixed(1)}s).`);
 
-    // 8. JIT Metadata Enrichment (if any Gemini API key is present)
-    const geminiKeys = getGeminiKeys();
-    if (geminiKeys.length > 0) {
-      const touringArtists = Array.from(new Set(normalizedConcerts.map((c) => c.artist)));
-      console.log(`[Orchestrator] Running JIT metadata enrichment for ${touringArtists.length} active artists across ${geminiKeys.length} key(s) (this calls Gemini per batch and can take a while)...`);
-      passStart = Date.now();
-      await enrichMissingArtistMetadata(touringArtists, approvedArtistsPath, geminiKeys);
-      console.log(`[Orchestrator] Enrichment done (${((Date.now() - passStart) / 1000).toFixed(1)}s).`);
-
-      // Re-run normalization to pick up updated website and social links from disk
-      passStart = Date.now();
-      normalizedConcerts = await processConcerts(allScrapedConcerts, approvedArtistsPath, runDate, captureApprovedArtists);
-      console.log(`[Orchestrator] Second pass (post-enrichment): loaded updated metadata (${((Date.now() - passStart) / 1000).toFixed(1)}s).`);
-    } else {
-      console.log('[Orchestrator] No GEMINI_API_KEY found. Skipping JIT metadata enrichment.');
-    }
-
-    // 8b. Guaranteed geocoding: fill lat/lng for every concert still missing them
-    // (per-row artist tour-page venues, or any source without coordinates yet), via
-    // a persistent cache keyed by venue+city+country so a repeat venue is geocoded
-    // at most once across the project's whole lifetime. Capped per run; the cache
-    // makes the pending set shrink permanently rather than being an all-or-nothing gate.
+    // 8. Network enrichment runs separately. Publication only applies the shared
+    // geocode cache; new places stay pending until backfill and a later publish.
     const geocodeCachePath = path.join(reportsDir, 'geocode-cache.json');
-    const geocodeCache = await loadGeocodeCache(geocodeCachePath);
+    const geocodeBackupPath = path.join(reportsDir, 'geocode-cache-backup.json');
+    const geocodeCache = await loadGeocodeCacheWithBackup(geocodeCachePath, geocodeBackupPath);
+    // Kept outside the Pages payload; saved with the last-good publication cache
+    // so eviction of the primary geocode cache cannot erase known coordinates.
+    await saveGeocodeCache(geocodeBackupPath, geocodeCache);
     passStart = Date.now();
-    const geoStats = await geocodeConcerts(normalizedConcerts, { cache: geocodeCache });
-    await saveGeocodeCache(geocodeCachePath, geocodeCache);
+    const geoStats = await geocodeConcerts(normalizedConcerts, { cache: geocodeCache, maxPerRun: 0 });
     console.log(
       `[Orchestrator] Geocoding: ${geoStats.geocoded} geocoded, ${geoStats.filledFromCache} from cache, ` +
       `${geoStats.failed} failed/unresolved, ${geoStats.skippedCapped} deferred to next run ` +
@@ -283,7 +318,7 @@ async function main() {
     // 9. Write static API files to dist/
     console.log(`[Orchestrator] Publishing ${normalizedConcerts.length} concerts to ${distDir}...`);
     await publishConcerts(normalizedConcerts, distDir);
-    await writeStatus(distDir, results, changedCount, ticketmasterCount, normalizedConcerts.length, staleVenueIds);
+    await writeStatus(distDir, results, changedCount, ticketmasterCount, normalizedConcerts.length, staleVenueIds, artistManifest);
 
     // 9a. Publish dist/changes.json: concerts new since last run, so the consumer
     // can show "N new concerts since your last visit" without diffing all of

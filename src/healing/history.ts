@@ -18,6 +18,7 @@
 
 import * as fs from 'fs/promises';
 import { RepairStrategy } from './classify.js';
+import type { RunIdentity } from '../observability/run_manifest.js';
 
 /**
  * 'rejected' is a repair that never landed: a candidate was generated and failed
@@ -26,10 +27,21 @@ import { RepairStrategy } from './classify.js';
  * next day's fail-log, was classified identically, and the same Gemini cascade
  * ran and failed again. Every night, billed, indefinitely.
  */
-export type RepairStatus = 'pending' | 'confirmed' | 'reverted' | 'rejected';
+export type RepairStatus = 'pending' | 'confirmed' | 'reverted' | 'rejected' | 'superseded';
+export type ScraperCohort = 'venue' | 'artist';
 
 export interface RepairRecord {
   id: string;
+  /**
+   * The scrape cohort that produced this repair. Confirmation is only valid
+   * against a complete fail-log from this same cohort: an artist pass says
+   * nothing about a venue scraper and vice versa.
+   */
+  cohort?: ScraperCohort;
+  /** Repo-relative config location, retained for a guarded rollback. */
+  configPath?: string;
+  /** SHA-256 of the exact config written by the healer. */
+  repairedConfigHash?: string;
   strategy: RepairStrategy;
   repairedAt: string;
   /** Verbatim config JSON from before the repair, for a byte-exact revert. */
@@ -41,6 +53,8 @@ export interface RepairRecord {
   /** Rendered verification report at the time of the repair. */
   verification: string;
   revertedAt?: string;
+  /** Last complete source run applied to this pending repair (replay guard). */
+  lastProcessedRun?: RunIdentity & { generatedAt: string };
 }
 
 /** Consecutive post-repair failures tolerated before the repair is rolled back. */
@@ -53,6 +67,14 @@ export const REVERT_AFTER_FAILURES = 2;
  * strategy that would have worked the next day.
  */
 export const REJECTED_ATTEMPTS_BEFORE_SKIP = 3;
+
+export function cohortForConfigPath(configPath: string | undefined): ScraperCohort | undefined {
+  if (!configPath) return undefined;
+  const normalized = configPath.replace(/\\/g, '/').replace(/^\.\//, '');
+  if (/^scrapers\/artists\/[^/]+\.json$/.test(normalized)) return 'artist';
+  if (/^scrapers\/[^/]+\.json$/.test(normalized)) return 'venue';
+  return undefined;
+}
 
 export async function loadRepairHistory(historyPath: string): Promise<RepairRecord[]> {
   try {
@@ -71,6 +93,24 @@ export async function loadRepairHistory(historyPath: string): Promise<RepairReco
  * nothing but keeps the diff small.
  */
 export const MAX_SETTLED_PER_SCRAPER = 10;
+
+/**
+ * The retention bucket must identify the config, not just its short id. Artist
+ * and venue runs may both legitimately own (for example) "the-national".
+ *
+ * Config paths are the most specific identity available. Records created while
+ * cohort migration was in progress may have only a cohort, and truly old
+ * records have neither; those intentionally stay in a separate legacy bucket
+ * rather than being allowed to evict either modern config's history.
+ */
+function retentionKey(record: RepairRecord): string {
+  const normalizedPath = record.configPath?.replace(/\\/g, '/').replace(/^\.\//, '');
+  if (normalizedPath && cohortForConfigPath(normalizedPath)) {
+    return `path:${normalizedPath}:id:${record.id}`;
+  }
+  if (record.cohort) return `cohort:${record.cohort}:id:${record.id}`;
+  return `legacy:id:${record.id}`;
+}
 
 export function trimRepairHistory(records: RepairRecord[]): RepairRecord[] {
   const settledKept = new Map<string, number>();
@@ -91,9 +131,10 @@ export function trimRepairHistory(records: RepairRecord[]): RepairRecord[] {
       out.push(r);
       continue;
     }
-    const kept = settledKept.get(r.id) ?? 0;
+    const key = retentionKey(r);
+    const kept = settledKept.get(key) ?? 0;
     if (kept >= MAX_SETTLED_PER_SCRAPER) continue;
-    settledKept.set(r.id, kept + 1);
+    settledKept.set(key, kept + 1);
     out.push(r);
   }
   return out.reverse();
@@ -108,20 +149,31 @@ export async function saveRepairHistory(historyPath: string, records: RepairReco
  * scraper that cannot be fixed by, say, a backend swap does not burn a probe on
  * the same swap every single day.
  */
-export function failedStrategiesFor(records: RepairRecord[], id: string): Set<RepairStrategy> {
+export function failedStrategiesFor(records: RepairRecord[], id: string, cohort?: ScraperCohort): Set<RepairStrategy> {
   const failed = new Set<RepairStrategy>();
+
+  // Legacy history used globally unique ids and had no cohort field. Preserve
+  // that rejection/rollback evidence during migration: a path, when present,
+  // narrows it safely; an entirely legacy record remains applicable rather
+  // than silently re-enabling an already exhausted paid strategy.
+  const matchesCohort = (record: RepairRecord): boolean => {
+    if (!cohort) return true;
+    if (record.cohort) return record.cohort === cohort;
+    const pathCohort = cohortForConfigPath(record.configPath);
+    return pathCohort ? pathCohort === cohort : true;
+  };
 
   // A rolled-back repair is known-bad immediately: it landed, was verified, and
   // still broke in production.
   for (const r of records) {
-    if (r.id === id && r.status === 'reverted') failed.add(r.strategy);
+    if (r.id === id && r.status === 'reverted' && matchesCohort(r)) failed.add(r.strategy);
   }
 
   // A repair that never passed verification is weaker evidence, so it takes
   // REJECTED_ATTEMPTS_BEFORE_SKIP of them before the strategy is skipped.
   const rejectedCounts = new Map<RepairStrategy, number>();
   for (const r of records) {
-    if (r.id !== id || r.status !== 'rejected') continue;
+    if (r.id !== id || r.status !== 'rejected' || !matchesCohort(r)) continue;
     const next = (rejectedCounts.get(r.strategy) ?? 0) + 1;
     rejectedCounts.set(r.strategy, next);
     if (next >= REJECTED_ATTEMPTS_BEFORE_SKIP) failed.add(r.strategy);
@@ -131,6 +183,6 @@ export function failedStrategiesFor(records: RepairRecord[], id: string): Set<Re
 }
 
 /** The still-unproven repair for a scraper, if any. At most one is pending per id. */
-export function pendingRecordFor(records: RepairRecord[], id: string): RepairRecord | undefined {
-  return records.find((r) => r.id === id && r.status === 'pending');
+export function pendingRecordFor(records: RepairRecord[], id: string, cohort?: ScraperCohort): RepairRecord | undefined {
+  return records.find((r) => r.id === id && r.status === 'pending' && (!cohort || r.cohort === cohort));
 }
