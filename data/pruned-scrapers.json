@@ -1038,5 +1038,21 @@
     "consecutiveFailures": 6,
     "firstFailedAt": "2026-09-08T08:25:29.618Z",
     "prunedAt": "2026-09-10T09:18:21.896Z"
+  },
+  {
+    "id": "artist-joe-lopez",
+    "artistName": "Joe Lopez",
+    "reason": "dead_domain",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-09-11T08:17:20.179Z",
+    "prunedAt": "2026-09-11T08:17:20.179Z"
+  },
+  {
+    "id": "artist-joe-payne",
+    "artistName": "Joe Payne",
+    "reason": "dead_domain",
+    "consecutiveFailures": 5,
+    "firstFailedAt": "2026-09-11T08:17:20.179Z",
+    "prunedAt": "2026-09-11T08:17:20.179Z"
   }
 ]
