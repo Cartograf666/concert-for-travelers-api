@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { ArtistDiscoverySchema } from './artist_discovery.js';
 
 /**
  * A URL that is safe to publish as a clickable link.
@@ -42,6 +43,9 @@ export const MAX_ARTIST_LENGTH = 200;
 
 export const ConcertSchema = z.object({
   artist: z.string().min(1).max(MAX_ARTIST_LENGTH).describe("Normalized artist or band name"),
+  // Optional only so cached legacy concert feeds remain parseable. New pipeline
+  // output always includes this stable projection of the matched approved row.
+  artistDiscovery: ArtistDiscoverySchema.optional(),
   artistWebsite: httpUrl().or(z.literal("")).optional().describe("Official website of the artist"),
   spotifyId: z.string().optional().describe("Spotify artist ID, parsed from artistSocials.spotify -- lets a consumer app match a loved artist by ID instead of a fragile name string"),
   mbid: z.string().optional().describe("MusicBrainz artist MBID, from MusicBrainz/Wikidata enrichment -- a free, stable canonical artist ID"),

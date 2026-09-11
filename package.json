@@ -30,6 +30,7 @@
     "rank-scraper-candidates": "tsx src/scripts/rank_scraper_candidates.ts",
     "compute-similar-inbound": "tsx src/scripts/compute_similar_inbound.ts",
     "score-artist-popularity": "tsx src/scripts/score_artist_popularity.ts",
+    "calibrate-artist-fame": "node --import tsx src/scripts/calibrate_artist_fame.ts",
     "record-conflict-drop": "tsx src/scripts/record_conflict_drop.ts",
     "reapply-artist-db-delta": "tsx src/scripts/reapply_artist_db_delta.ts",
     "reapply-tour-url-audit-delta": "tsx src/scripts/reapply_tour_url_audit_delta.ts",

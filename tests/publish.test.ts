@@ -165,7 +165,11 @@ test('Publisher - artist catalog: publishes the FULL whitelist (not just artists
     assert.ok(untoured, 'an artist with no current concert must still appear in the full directory');
 
     const legacy = catalog.find((a: any) => a.slug === 'legacy-string-entry');
-    assert.deepStrictEqual(legacy, { slug: 'legacy-string-entry', name: 'Legacy String Entry' });
+    assert.deepStrictEqual(legacy, {
+      slug: 'legacy-string-entry',
+      name: 'Legacy String Entry',
+      discovery: { version: 1, audience: 'unknown', basis: 'lastfm-listeners', metricAsOf: null }
+    });
   });
 });
 

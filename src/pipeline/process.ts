@@ -4,6 +4,8 @@ import didYouMean, { ThresholdTypeEnums } from 'didyoumean2';
 import deburr from 'lodash.deburr';
 import { Concert, ConcertSchema } from '../schemas/concert.js';
 import { loadApprovedArtists } from './artistDb.js';
+import { artistDiscoveryFor } from './artist_discovery.js';
+import type { ArtistDiscovery } from '../schemas/artist_discovery.js';
 
 /** Format a Date as a timezone-safe YYYY-MM-DD using its local calendar fields. */
 function toLocalIso(d: Date): string {
@@ -210,7 +212,7 @@ export function cleanArtistName(name: string): string {
     .trim();
 }
 
-export type ArtistMatch = { name: string; website?: string | null; socials?: any; mbid?: string | null };
+export type ArtistMatch = { name: string; website?: string | null; socials?: any; mbid?: string | null; artistDiscovery: ArtistDiscovery };
 export type ApprovedMatcher = (scrapedName: string) => ArtistMatch | null;
 
 // Names this short are matched only by exact equality, never as a whole-word
@@ -525,8 +527,14 @@ export function buildApprovedMatcher(approvedArtists: any[]): ApprovedMatcher {
 
   const toMatch = (e: { matchName: string; approved: any }): ArtistMatch =>
     typeof e.approved === 'string'
-      ? { name: e.matchName }
-      : { name: e.approved.name, website: e.approved.website, socials: e.approved.socials, mbid: e.approved.mbid };
+      ? { name: e.matchName, artistDiscovery: artistDiscoveryFor(e.approved) }
+      : {
+        name: e.approved.name,
+        website: e.approved.website,
+        socials: e.approved.socials,
+        mbid: e.approved.mbid,
+        artistDiscovery: artistDiscoveryFor(e.approved)
+      };
 
   return (scrapedName: string): ArtistMatch | null => {
     const cleaned = cleanArtistName(scrapedName);
@@ -1058,6 +1066,7 @@ export async function processConcerts(
     const artistSocials = buildArtistSocials(matched.socials);
     const concertData: Concert = {
       artist: matched.name,
+      artistDiscovery: matched.artistDiscovery,
       artistWebsite: matched.website || undefined,
       artistSocials,
       spotifyId: parseSpotifyArtistId(artistSocials?.spotify),

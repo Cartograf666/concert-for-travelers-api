@@ -6,6 +6,8 @@ import * as os from 'os';
 import { publishChangelog, concertKey, ChangelogCache } from '../src/generator/changelog.js';
 import { Concert } from '../src/schemas/concert.js';
 
+const unknownArtistDiscovery = { version: 1, audience: 'unknown', basis: 'lastfm-listeners', metricAsOf: null } as const;
+
 function makeConcert(overrides: Partial<Concert>): Concert {
   return {
     artist: 'The Cure',
@@ -54,7 +56,7 @@ test('publishChangelog - reports only concerts not in the prior known set', asyn
   await withTempDir(async (dir) => {
     const existing = makeConcert({ artist: 'The Cure' });
     const cache: ChangelogCache = { knownKeys: [concertKey(existing)] };
-    const newOne = makeConcert({ artist: 'Muse', city: 'Amsterdam' });
+    const newOne = makeConcert({ artist: 'Muse', city: 'Amsterdam', artistDiscovery: unknownArtistDiscovery });
 
     const result = await publishChangelog([existing, newOne], dir, cache);
 
@@ -64,6 +66,7 @@ test('publishChangelog - reports only concerts not in the prior known set', asyn
     assert.strictEqual(changes.length, 1);
     assert.strictEqual(changes[0].artist, 'Muse');
     assert.strictEqual(changes[0].concertId, concertKey(newOne));
+    assert.deepStrictEqual(changes[0].artistDiscovery, unknownArtistDiscovery);
   });
 });
 
@@ -82,7 +85,8 @@ test('publishChangelog - accumulates across multiple runs and prunes entries pas
   await withTempDir(async (dir) => {
     // Pre-seed changes.json with one stale (31 days old) and one fresh entry.
     const stale = { concertId: 'old_2026-01-01_old', artist: 'Old Band', date: '2026-01-01', venue: 'V', city: 'C', country: 'DE', detectedAt: new Date(Date.now() - 31 * 24 * 60 * 60 * 1000).toISOString() };
-    const fresh = { concertId: 'fresh_2026-06-01_fresh', artist: 'Fresh Band', date: '2026-06-01', venue: 'V', city: 'C', country: 'DE', detectedAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString() };
+    const freshDiscovery = { version: 1, audience: 'medium', basis: 'lastfm-listeners', metricAsOf: null };
+    const fresh = { concertId: 'fresh_2026-06-01_fresh', artist: 'Fresh Band', date: '2026-06-01', venue: 'V', city: 'C', country: 'DE', detectedAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(), artistDiscovery: freshDiscovery };
     await fs.mkdir(dir, { recursive: true });
     await fs.writeFile(path.join(dir, 'changes.json'), JSON.stringify([stale, fresh]), 'utf-8');
 
@@ -96,5 +100,6 @@ test('publishChangelog - accumulates across multiple runs and prunes entries pas
     assert.ok(!ids.includes('old_2026-01-01_old'), 'stale (>30 day) entry pruned');
     assert.ok(ids.includes('fresh_2026-06-01_fresh'), 'still-fresh entry kept');
     assert.ok(ids.includes(concertKey(brandNew)), 'newly detected concert added');
+    assert.deepStrictEqual(changes.find((c: any) => c.concertId === fresh.concertId).artistDiscovery, freshDiscovery, 'retained history is not rewritten');
   });
 });
