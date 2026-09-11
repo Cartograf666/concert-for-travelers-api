@@ -3,6 +3,8 @@
   "domain": "slank.com",
   "url": "https://slank.com/events/",
   "type": "static_selectors",
+  "maxRetries": 5,
+  "requestDelayMs": 2000,
   "selectors": {
     "eventBlock": "ul.tour-dates > li.group",
     "artistNameFallback": "Abdee Negara",
