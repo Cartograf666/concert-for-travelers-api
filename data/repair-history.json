@@ -12589,5 +12589,192 @@
     "failuresSinceRepair": 0,
     "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.scottymccreery.com/tour but could not re-select on it",
     "verification": ""
+  },
+  {
+    "id": "artist-dan-deacon",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-11T08:46:50.294Z",
+    "previousConfig": {
+      "id": "artist-dan-deacon",
+      "domain": "dandeacon.com",
+      "url": "https://dandeacon.com/live-dates/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".entry-content > p:has(a)",
+        "artistNameFallback": "Dan Deacon",
+        "date": "a",
+        "ticketUrl": "a::attr(href)",
+        "venue": "a",
+        "city": "a",
+        "country": "a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=parse_error): Pseudo-elements are not supported by css-select]",
+    "verification": ""
+  },
+  {
+    "id": "artist-abdee-negara",
+    "strategy": "transient",
+    "repairedAt": "2026-09-11T08:46:51.611Z",
+    "previousConfig": {
+      "id": "artist-abdee-negara",
+      "domain": "slank.com",
+      "url": "https://slank.com/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "ul.tour-dates > li.group",
+        "artistNameFallback": "Abdee Negara",
+        "date": "p.tour-date",
+        "ticketUrl": "span.sub-head a",
+        "venue": "span.main-head",
+        "city": "",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "ID"
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay",
+    "verification": "PASS (17 events, 8 checks)"
+  },
+  {
+    "id": "artist-james-taylor",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-09-11T08:47:01.475Z",
+    "previousConfig": {
+      "id": "artist-james-taylor",
+      "domain": "www.jamestaylor.com",
+      "url": "https://www.jamestaylor.com/schedule",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "ul.flex-col li",
+        "artistNameFallback": "James Taylor",
+        "date": "div.w-24",
+        "ticketUrl": "a",
+        "venue": "div.text-lg",
+        "city": "div.text-sm",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: www.jamestaylor.com resolves now, retrying instead of retiring; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Blocked SSRF target: www.jamestaylor.com -> 2606:4700:3034::6815:5010]",
+    "verification": ""
+  },
+  {
+    "id": "artist-jean-michel-pilc",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-11T08:47:17.046Z",
+    "previousConfig": {
+      "id": "artist-jean-michel-pilc",
+      "domain": "jeanmichelpilc.com",
+      "url": "http://jeanmichelpilc.com/gigs/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".vsel-content.vsel-upcoming",
+        "artistNameFallback": "Jean-Michel Pilc",
+        "date": ".vsel-meta-date",
+        "ticketUrl": ".vsel-meta-link a::attr(href)",
+        "venue": ".vsel-meta-location",
+        "city": ".vsel-meta-location",
+        "country": ".vsel-meta-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: city_values_plausible [11/11 city values are longer than 60 chars or containing digits (100%, allow 20%)]; city_distinct_from_venue [11/11 rows have city identical to venue (100%, allow 20%)]; country_codes_valid [4/15 country values are 2-letter codes (27%, need 80%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-madness",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-11T08:47:59.495Z",
+    "previousConfig": {
+      "id": "artist-madness",
+      "domain": "www.madness.co.uk",
+      "url": "https://www.madness.co.uk/2010/11/26/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "ul.gigs-list > li",
+        "artistNameFallback": "Madness",
+        "date": "time",
+        "ticketUrl": "a",
+        "venue": "h4.venue",
+        "city": "h4.venue",
+        "country": "h4.venue",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: has_future_dates [0 event(s) dated today or later]; artist_names_plausible [1/1 artist values look like page chrome (100%, allow 20%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-ivan-hussey",
+    "strategy": "transient",
+    "repairedAt": "2026-09-11T08:48:11.147Z",
+    "previousConfig": {
+      "id": "artist-ivan-hussey",
+      "domain": "www.celloman.co.uk",
+      "url": "http://www.celloman.co.uk/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.event",
+        "artistNameFallback": "Ivan Hussey",
+        "date": ".postdate",
+        "ticketUrl": "h2 a",
+        "venue": ".article-content",
+        "city": ".article-content",
+        "country": ".article-content",
+        "venueNameFallback": "See page content",
+        "cityNameFallback": "See page content",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: city_values_plausible [1/1 city values are longer than 60 chars or containing digits (100%, allow 20%)]; venue_values_plausible [1/1 venue values are longer than 200 chars (100%, allow 20%)]; city_distinct_from_venue [1/1 rows have city identical to venue (100%, allow 20%)]; country_codes_valid [0/1 country values are 2-letter codes (0%, need 80%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-stanley-clarke",
+    "strategy": "transient",
+    "repairedAt": "2026-09-11T08:48:29.972Z",
+    "previousConfig": {
+      "id": "artist-stanley-clarke",
+      "domain": "stanleyclarke.com",
+      "url": "https://stanleyclarke.com/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "ul#events-index > li.event",
+        "artistNameFallback": "Stanley Clarke",
+        "date": "span.start-date",
+        "ticketUrl": "a.event-link-mask@href",
+        "venue": "span.venue",
+        "city": "span.location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay",
+    "verification": "PASS (4 events, 9 checks)"
   }
 ]
