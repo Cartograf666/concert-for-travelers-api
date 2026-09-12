@@ -15403,5 +15403,1175 @@
     "failuresSinceRepair": 0,
     "note": "repair failed: Selector \"eventBlock\" (div.event-item) matched 0 elements.",
     "verification": ""
+  },
+  {
+    "id": "artist-10cc",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-10cc.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:33:41.855Z",
+    "previousConfig": {
+      "id": "artist-10cc",
+      "domain": "www.10cc.world",
+      "url": "https://www.10cc.world/events",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.table tbody tr.row:not(:has(th))",
+        "artistNameFallback": "10cc",
+        "date": "td.cell:nth-child(1)",
+        "ticketUrl": "td.cell:nth-child(4) a",
+        "venue": "td.cell:nth-child(3)",
+        "city": "td.cell:nth-child(2)",
+        "country": "td.cell:nth-child(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.dmTable .row) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "antoha-mc-tour",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/antoha-mc-tour.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:33:44.223Z",
+    "previousConfig": {
+      "id": "antoha-mc-tour",
+      "domain": "antoha-mc.ru",
+      "url": "http://antoha-mc.ru",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".t396__artboard:has([data-elem-id=\"1762508321256\"])",
+        "artistNameFallback": "Антоха МС",
+        "date": "[data-elem-id=\"1762508321256\"]",
+        "venue": "[data-elem-id=\"1762508321263\"]",
+        "city": "[data-elem-id=\"1762508321260\"]",
+        "ticketUrl": "[data-elem-id=\"1762508349918\"] a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "RU"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: dates_parse [0/1 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]",
+    "verification": ""
+  },
+  {
+    "id": "artist-andy-timmons",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-andy-timmons.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:33:47.403Z",
+    "previousConfig": {
+      "id": "artist-andy-timmons",
+      "domain": "andytimmons.com",
+      "url": "https://andytimmons.com/shows/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.gigpress-table tbody tr.gigpress-row",
+        "artistNameFallback": "Andy Timmons",
+        "date": ".gigpress-date",
+        "ticketUrl": "following-sibling::tr[contains(@class, 'gigpress-info')] .gigpress-tickets-link",
+        "venue": ".gigpress-venue",
+        "city": ".gigpress-city",
+        "country": ".gigpress-country",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (table.gigpress-table tbody tr.gigpress-row) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-andy-cairns",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-andy-cairns.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:33:50.405Z",
+    "previousConfig": {
+      "id": "artist-andy-cairns",
+      "domain": "therapyquestionmark.co.uk",
+      "url": "https://therapyquestionmark.co.uk/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour.upcoming tr",
+        "artistNameFallback": "Andy Cairns",
+        "date": ".tour-date",
+        "ticketUrl": ".tour-url a.tour-button",
+        "venue": ".tour-city",
+        "city": ".tour-venue",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.tour.upcoming table tr) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-anna-depenbusch",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-anna-depenbusch.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:33:53.333Z",
+    "previousConfig": {
+      "id": "artist-anna-depenbusch",
+      "domain": "www.annadepenbusch.de",
+      "url": "https://www.annadepenbusch.de/termine/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "main ul > li",
+        "artistNameFallback": "Anna Depenbusch",
+        "date": "span:nth-child(1)",
+        "ticketUrl": "a.bg-(--anna-highlight)",
+        "venue": "div.space-y-0.5 > div.text-sm.text-gray-500",
+        "city": "div.space-y-0.5 > span.font-semibold",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "DE"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-amanda-forsyth",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-amanda-forsyth.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:33:55.516Z",
+    "previousConfig": {
+      "id": "artist-amanda-forsyth",
+      "domain": "www.amandaforsyth.com",
+      "url": "https://www.amandaforsyth.com/concerts",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".summary-item.summary-item-record-type-event",
+        "artistNameFallback": "Amanda Forsyth",
+        "date": ".summary-metadata-item--date",
+        "ticketUrl": "a.summary-title-link",
+        "venue": ".summary-metadata-item--location",
+        "city": ".summary-metadata-item--location",
+        "country": ".summary-metadata-item--location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.summary-item) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-angst",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-angst.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:33:57.741Z",
+    "previousConfig": {
+      "id": "artist-angst",
+      "domain": "adamangst.de",
+      "url": "https://adamangst.de/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "#tablepress-1 tbody tr",
+        "artistNameFallback": "Angst",
+        "date": ".column-1",
+        "ticketUrl": ".column-3 a::attr(href)",
+        "venue": ".column-3 a",
+        "city": ".column-2",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "DE"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.bit-widget-initializer) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-astrid-williamson",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-astrid-williamson.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-12T08:33:59.274Z",
+    "previousConfig": {
+      "id": "artist-astrid-williamson",
+      "domain": "astridwilliamson.com",
+      "url": "https://astridwilliamson.com/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".listingswrap .lentry",
+        "artistNameFallback": "Astrid Williamson",
+        "date": "#date",
+        "venue": "#venue",
+        "city": "#vecity",
+        "country": "#vecity",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 401]",
+    "verification": ""
+  },
+  {
+    "id": "artist-arena",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-arena.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:34:01.901Z",
+    "previousConfig": {
+      "id": "artist-arena",
+      "domain": "www.arenaband.co.uk",
+      "url": "https://www.arenaband.co.uk/tour-dates-2022/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.tftable tbody tr",
+        "artistNameFallback": "Arena",
+        "date": "td:nth-child(2) span",
+        "ticketUrl": "td:nth-child(4) a::attr(href)",
+        "venue": "td:nth-child(3) strong",
+        "city": "td:nth-child(3) span",
+        "country": "td:nth-child(1) img::attr(alt)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Pseudo-elements are not supported by css-select",
+    "verification": ""
+  },
+  {
+    "id": "artist-bassnectar",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-bassnectar.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:34:04.010Z",
+    "previousConfig": {
+      "id": "artist-bassnectar",
+      "domain": "bassnectar.net",
+      "url": "https://bassnectar.net/shows/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".bn-show-show-row",
+        "artistNameFallback": "Bassnectar",
+        "date": ".bn-show-date-inline",
+        "ticketUrl": "self::a/@href",
+        "venue": ".bn-show-venue",
+        "city": ".bn-show-venue",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.bn-show-show-row) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-avantasia",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-avantasia.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:34:05.056Z",
+    "previousConfig": {
+      "id": "artist-avantasia",
+      "domain": "avantasia.com",
+      "url": "https://avantasia.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.single_event_list",
+        "artistNameFallback": "Avantasia",
+        "date": "div.event_list_entry.event_date div.text_center.event_list_date_container",
+        "ticketUrl": "div.event_list_entry.event_buy div.event_buy_btn::attr(data-href)",
+        "venue": "div.event_list_entry.event_venue a",
+        "city": "div.event_list_entry.event_title_img div.event_list_title",
+        "country": "div.event_list_entry.event_title_img div.event_list_title",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.wc-block-grid__product) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-beatsteaks",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-beatsteaks.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:34:06.934Z",
+    "previousConfig": {
+      "id": "artist-beatsteaks",
+      "domain": "beatsteaks.com",
+      "url": "https://beatsteaks.com/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "tbody.vevent",
+        "artistNameFallback": "Beatsteaks",
+        "date": ".dtstart",
+        "ticketUrl": ".description.addition a",
+        "venue": ".beatgigs-venue a",
+        "city": ".beatgigs-city",
+        "country": ".beatgigs-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "DE"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.gigpress-row) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-blue-october",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-blue-october.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:34:29.786Z",
+    "previousConfig": {
+      "id": "artist-blue-october",
+      "domain": "www.blueoctober.com",
+      "url": "https://www.blueoctober.com/tour-dates",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.wixui-repeater__item",
+        "artistNameFallback": "Blue October",
+        "date": ".wixui-rich-text[id^=\"comp-lh7wnc2h__\"] .wixui-rich-text__text:last-of-type",
+        "ticketUrl": "div[id^=\"comp-lh80ivgu__\"] a[data-testid=\"linkElement\"]::attr(href)",
+        "venue": ".wixui-rich-text[id^=\"comp-lh7wpx2j__\"] .wixui-rich-text__text:last-of-type",
+        "city": ".wixui-rich-text[id^=\"comp-lh7yohlq__\"] .wixui-rich-text__text:last-of-type",
+        "country": ".wixui-rich-text[id^=\"comp-lh7yohlq__\"] .wixui-rich-text__text:last-of-type",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (div[data-testid=\"repeater-item\"], .wixui-repeater__item) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-beth-hart",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-beth-hart.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:34:50.737Z",
+    "previousConfig": {
+      "id": "artist-beth-hart",
+      "domain": "www.bethhart.com",
+      "url": "https://www.bethhart.com/tour-3-2/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event_item",
+        "artistNameFallback": "Beth Hart",
+        "date": ".event_date",
+        "ticketUrl": ".event_tickets a.event_ticket-link::attr(href)",
+        "venue": ".event_venue",
+        "city": ".event_geo",
+        "country": ".event_geo",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-dan-deacon",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-dan-deacon.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-12T08:34:51.299Z",
+    "previousConfig": {
+      "id": "artist-dan-deacon",
+      "domain": "dandeacon.com",
+      "url": "https://dandeacon.com/live-dates/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".entry-content > p:has(a)",
+        "artistNameFallback": "Dan Deacon",
+        "date": "a",
+        "ticketUrl": "a::attr(href)",
+        "venue": "a",
+        "city": "a",
+        "country": "a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=parse_error): Pseudo-elements are not supported by css-select]",
+    "verification": ""
+  },
+  {
+    "id": "artist-david-kikoski",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-david-kikoski.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:34:53.430Z",
+    "previousConfig": {
+      "id": "artist-david-kikoski",
+      "domain": "davekikoski.com",
+      "url": "https://davekikoski.com/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tribe-events-calendar-latest-past__event-row",
+        "artistNameFallback": "David Kikoski",
+        "date": ".tribe-events-calendar-latest-past__event-datetime",
+        "ticketUrl": ".tribe-events-calendar-latest-past__event-title-link::attr(href)",
+        "venue": ".tribe-events-calendar-latest-past__event-venue-title",
+        "city": ".tribe-events-calendar-latest-past__event-venue-address",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: dates_parse [0/3 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]; city_values_plausible [3/3 city values are longer than 60 chars or containing digits (100%, allow 20%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-giora-feidman",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-giora-feidman.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:34:55.432Z",
+    "previousConfig": {
+      "id": "artist-giora-feidman",
+      "domain": "www.giorafeidman-online.com",
+      "url": "https://www.giorafeidman-online.com/termine",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".listItem",
+        "artistNameFallback": "Giora Feidman",
+        "date": ".itemName",
+        "ticketUrl": "a.biglink",
+        "venue": ".itemText .rteBlock:nth-of-type(3)",
+        "city": ".itemName",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "DE"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.listItem) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-huey-lewis-and-the-news",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-huey-lewis-and-the-news.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:34:57.961Z",
+    "previousConfig": {
+      "id": "artist-huey-lewis-and-the-news",
+      "domain": "hueylewisandthenews.com",
+      "url": "https://hueylewisandthenews.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.tour.past table tr",
+        "artistNameFallback": "Huey Lewis and the News",
+        "date": "td.tour-item.tour-date",
+        "ticketUrl": "td.tour-item.tour-url a::attr(href)",
+        "venue": "td.tour-item.tour-venue",
+        "city": "td.tour-item.tour-city",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-julie-fowlis",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-julie-fowlis.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:34:59.066Z",
+    "previousConfig": {
+      "id": "artist-julie-fowlis",
+      "domain": "www.juliefowlis.com",
+      "url": "https://www.juliefowlis.com/tour-dates/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".av-upcoming-events > a.av-upcoming-event-entry",
+        "artistNameFallback": "Julie Fowlis",
+        "date": ".tribe-event-date-start",
+        "ticketUrl": "attr(href)",
+        "venue": ".av-upcoming-event-venue",
+        "city": "",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Unmatched selector: )",
+    "verification": ""
+  },
+  {
+    "id": "artist-l-subramaniam",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-l-subramaniam.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:35:02.161Z",
+    "previousConfig": {
+      "id": "artist-l-subramaniam",
+      "domain": "indianviolin.com",
+      "url": "https://indianviolin.com/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".entry-content p",
+        "artistNameFallback": "L. Subramaniam",
+        "date": "strong:first-child",
+        "ticketUrl": "a",
+        "venue": "br:nth-of-type(1) + text()",
+        "city": "strong:first-child",
+        "country": "strong:first-child",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "IN"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-legs-diamond",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-legs-diamond.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:35:04.173Z",
+    "previousConfig": {
+      "id": "artist-legs-diamond",
+      "domain": "legsdiamond.com",
+      "url": "https://legsdiamond.com/tours/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table[width='720'] td[style='padding-right:5px'] p:has(b.red)",
+        "artistNameFallback": "Legs Diamond",
+        "date": "b.red",
+        "ticketUrl": "a",
+        "venue": "b:nth-of-type(2)",
+        "city": "p:nth-child(n) > b:nth-of-type(2) + br + text()",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-limahl",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-limahl.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-12T08:35:04.834Z",
+    "previousConfig": {
+      "id": "artist-limahl",
+      "domain": "www.limahl.com",
+      "url": "https://www.limahl.com/tour-all-events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "ul.concerts-list li.event",
+        "artistNameFallback": "Limahl",
+        "date": ".event-line-wrap > a > .event-line-node:nth-of-type(2)",
+        "ticketUrl": ".event-line-wrap > a@href",
+        "venue": ".event-line-wrap > a > .event-line-node:nth-of-type(4)",
+        "city": ".event-line-wrap > a > .event-line-node:nth-of-type(3)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 401]",
+    "verification": ""
+  },
+  {
+    "id": "artist-lobao",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-lobao.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-12T08:35:05.281Z",
+    "previousConfig": {
+      "id": "artist-lobao",
+      "domain": "lobao.com.br",
+      "url": "https://lobao.com.br/agenda/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".show-item",
+        "artistNameFallback": "Lobão",
+        "date": ".show-item__date",
+        "ticketUrl": "a.btn-outlined",
+        "venue": ".show-item__name",
+        "city": ".show-item__location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "BR"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: has_future_dates [0 event(s) dated today or later]",
+    "verification": ""
+  },
+  {
+    "id": "artist-magic-dick",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-magic-dick.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:35:06.594Z",
+    "previousConfig": {
+      "id": "artist-magic-dick",
+      "domain": "www.magicdick.com",
+      "url": "https://www.magicdick.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div[id^='NewsPostsView_'] > div > div > div > div:has(a.wixAppsLink)",
+        "artistNameFallback": "Magic Dick",
+        "date": "div.s_usaAWRichTextClickableSkin:nth-of-type(1) p",
+        "ticketUrl": "a.wixAppsLink::attr(href)",
+        "venue": "div.s_usaAWRichTextClickableSkin:nth-of-type(2) p",
+        "city": "div.s_usaAWRichTextClickableSkin:nth-of-type(3) p",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (div[data-mesh-id$='-gridContainer']:has(a[href*='ticket'])) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-maria-mena",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-maria-mena.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:35:10.396Z",
+    "previousConfig": {
+      "id": "artist-maria-mena",
+      "domain": "www.mariamena.no",
+      "url": "https://www.mariamena.no/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".w-dyn-item",
+        "artistNameFallback": "Maria Mena",
+        "date": ".date-wrap",
+        "ticketUrl": ".concert-btn-wrap a.button.concert-ticket-link::attr(href)",
+        "venue": ".concert-title",
+        "city": ".concert-content > .text-block",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "NO"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-marmalade",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-marmalade.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-12T08:35:11.688Z",
+    "previousConfig": {
+      "id": "artist-marmalade",
+      "domain": "themarmalade.net",
+      "url": "https://themarmalade.net/tour-dates/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.hc_rse_events_table tr:not(:has(td[colspan]))",
+        "artistNameFallback": "Marmalade",
+        "date": "td.hc_rse_date",
+        "ticketUrl": "",
+        "venue": "td.hc_rse_title",
+        "city": "",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 401]",
+    "verification": ""
+  },
+  {
+    "id": "artist-matt-mays",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-matt-mays.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:35:12.352Z",
+    "previousConfig": {
+      "id": "artist-matt-mays",
+      "domain": "www.mattmays.com",
+      "url": "https://www.mattmays.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.sonic-events tr.event-brief",
+        "artistNameFallback": "Matt Mays",
+        "date": "td.date datetime",
+        "ticketUrl": "td.actions a",
+        "venue": "td.venue",
+        "city": "td.city",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-nine-inch-nails",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-nine-inch-nails.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:35:13.634Z",
+    "previousConfig": {
+      "id": "artist-nine-inch-nails",
+      "domain": "www.nin.com",
+      "url": "https://www.nin.com/tickets2018/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "section#section-tickets2018 > div.section-inner > p:has(strong)",
+        "artistNameFallback": "Nine Inch Nails",
+        "date": "strong:first-child",
+        "ticketUrl": "a:first-of-type",
+        "venue": "b",
+        "city": "xpath=.//p/text()[contains(., ',')][1]",
+        "country": "US",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (section#section-tickets2018 > p:has(strong):has(a[href*='NIN.lnk.to'])) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-nothings-carved-in-stone",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-nothings-carved-in-stone.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:35:15.196Z",
+    "previousConfig": {
+      "id": "artist-nothings-carved-in-stone",
+      "domain": "www.ncis.jp",
+      "url": "https://www.ncis.jp/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".schedule-item",
+        "artistNameFallback": "Nothing's Carved in Stone",
+        "date": ".schedule-date",
+        "ticketUrl": ".schedule-title a::attr(href)",
+        "venue": ".schedule-title a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Pseudo-elements are not supported by css-select",
+    "verification": ""
+  },
+  {
+    "id": "artist-nick-cave-the-bad-seeds",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-nick-cave-the-bad-seeds.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:35:16.319Z",
+    "previousConfig": {
+      "id": "artist-nick-cave-the-bad-seeds",
+      "domain": "www.nickcave.com",
+      "url": "https://www.nickcave.com/tour-dates/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".live-event",
+        "artistNameFallback": "Nick Cave & The Bad Seeds",
+        "date": ".live-date p",
+        "ticketUrl": ".buytickets-button::attr(href)",
+        "venue": ".venue",
+        "city": ".venue",
+        "country": ".venue",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.live-entries .live-event) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-philip-lindholm",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-philip-lindholm.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-12T08:35:17.018Z",
+    "previousConfig": {
+      "id": "artist-philip-lindholm",
+      "domain": "philiplindholm.com",
+      "url": "https://philiplindholm.com/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tribe-events-calendar-latest-past__event-row",
+        "artistNameFallback": "Philip Lindholm",
+        "date": ".tribe-events-calendar-latest-past__event-datetime",
+        "ticketUrl": ".tribe-events-calendar-latest-past__event-title-link",
+        "venue": ".tribe-events-calendar-latest-past__event-venue-title",
+        "city": ".tribe-events-calendar-latest-past__event-venue-address",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]",
+    "verification": ""
+  },
+  {
+    "id": "artist-poetry",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-poetry.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:35:18.542Z",
+    "previousConfig": {
+      "id": "artist-poetry",
+      "domain": "www.poemsband.com",
+      "url": "https://www.poemsband.com/#poems",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".calendar_feature table tbody tr",
+        "artistNameFallback": "poetry",
+        "date": ".event-date .date-long",
+        "ticketUrl": "a.event_details",
+        "venue": ".event-location .text",
+        "city": ".event-location .text",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.events_feature .event) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-ron-sexsmith",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-ron-sexsmith.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-12T08:35:19.935Z",
+    "previousConfig": {
+      "id": "artist-ron-sexsmith",
+      "domain": "ronsexsmith.com",
+      "url": "https://ronsexsmith.com/tour-landing-page/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".et_pb_row_inner:has(.et_pb_button)",
+        "artistNameFallback": "Ron Sexsmith",
+        "date": "h4",
+        "ticketUrl": "a.et_pb_button",
+        "venue": ".et_pb_text:has(p.p1) p.p1",
+        "city": "h5.p1",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 401]",
+    "verification": ""
+  },
+  {
+    "id": "artist-robin-thicke",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-robin-thicke.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:35:43.837Z",
+    "previousConfig": {
+      "id": "artist-robin-thicke",
+      "domain": "www.robinthicke.com",
+      "url": "https://www.robinthicke.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".sqs-block-button-container:has(a[href=''])",
+        "artistNameFallback": "Robin Thicke",
+        "date": "a.sqs-block-button-element",
+        "ticketUrl": "a.sqs-block-button-element",
+        "venue": "a.sqs-block-button-element",
+        "city": "a.sqs-block-button-element",
+        "venueNameFallback": "See Website",
+        "cityNameFallback": "See Website",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.sqs-tourdate) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-rick-braun",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-rick-braun.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:35:47.301Z",
+    "previousConfig": {
+      "id": "artist-rick-braun",
+      "domain": "www.rickbraun.com",
+      "url": "https://www.rickbraun.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div[data-framer-name='Schedule']",
+        "artistNameFallback": "Rick Braun",
+        "date": "div[class*='framer-'][data-framer-component-type='RichTextContainer'] p[style*='color:rgb(181, 153, 127)']",
+        "ticketUrl": "a[href*='ticket'][target='_blank']",
+        "venue": "div[class*='framer-'][data-framer-component-type='RichTextContainer'] p[style*='color:rgb(173, 173, 172)']",
+        "city": "div[class*='framer-'][data-framer-component-type='RichTextContainer'] p[style*='font-style:italic']",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (div[data-framer-name='Schedule'] > div) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-scissor-sisters",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-scissor-sisters.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:35:48.470Z",
+    "previousConfig": {
+      "id": "artist-scissor-sisters",
+      "domain": "www.scissorsisters.com",
+      "url": "https://www.scissorsisters.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "umg-event",
+        "artistNameFallback": "Scissor Sisters",
+        "date": "[part='event-date'] a",
+        "ticketUrl": "umg-link[data-offer-type='tickets']",
+        "venue": "[part='venue'] a",
+        "city": "[part='location'] a",
+        "country": "[part='location'] a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (div[class*='event']) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-skip-marley",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-skip-marley.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:35:50.373Z",
+    "previousConfig": {
+      "id": "artist-skip-marley",
+      "domain": "www.skipmarley.com",
+      "url": "https://www.skipmarley.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".data-row.data-row-gig",
+        "artistNameFallback": "Skip Marley",
+        "date": ".tour-date",
+        "ticketUrl": ".tour-table-row-tickets .buy-btn",
+        "venue": ".tour-venue > a:first-child",
+        "city": ".tour-city > a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.tour-table .tour-table-row) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-tad-robinson",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-tad-robinson.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:35:52.523Z",
+    "previousConfig": {
+      "id": "artist-tad-robinson",
+      "domain": "tadrobinson.com",
+      "url": "https://tadrobinson.com/shows/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".entry-content > p:has(strong)",
+        "artistNameFallback": "Tad Robinson",
+        "date": "strong",
+        "ticketUrl": "a::attr(href)",
+        "venue": "a",
+        "city": "a",
+        "country": "a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-baltimore-symphony-orchestra",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-baltimore-symphony-orchestra.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-12T08:35:55.702Z",
+    "previousConfig": {
+      "id": "artist-baltimore-symphony-orchestra",
+      "domain": "www.bsomusic.org",
+      "url": "https://www.bsomusic.org/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "a.concert-card",
+        "artistNameFallback": "Baltimore Symphony Orchestra",
+        "date": ".x-text-content-text-subheadline",
+        "ticketUrl": "a.concert-card",
+        "venue": "",
+        "city": "",
+        "country": "",
+        "venueNameFallback": "Joseph Meyerhoff Symphony Hall",
+        "cityNameFallback": "Baltimore",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.bsomusic.org/live/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-the-cure",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-the-cure.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:35:58.058Z",
+    "previousConfig": {
+      "id": "artist-the-cure",
+      "domain": "www.thecure.com",
+      "url": "https://www.thecure.com/shows/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".liveContainer li",
+        "artistNameFallback": "The Cure",
+        "date": ".googleDate",
+        "ticketUrl": ".s_tickets a::attr(href)",
+        "venue": ".s_venue",
+        "city": ".addressLocality",
+        "country": ".addressCountry",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.liveContainer .s_item) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-youre-all-i-wanna-do",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-youre-all-i-wanna-do.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-12T08:35:59.068Z",
+    "previousConfig": {
+      "id": "artist-youre-all-i-wanna-do",
+      "domain": "www.jamestaylor.com",
+      "url": "https://www.jamestaylor.com/schedule/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "ul > li",
+        "artistNameFallback": "You're All I Wanna Do",
+        "date": "div.w-24 > div:nth-child(2)",
+        "ticketUrl": "a.bg-\\[\\#9fdcf5\\]",
+        "venue": "div.md:w-60 > div:first-child",
+        "city": "div.md:w-60 > div:last-child",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
   }
 ]
