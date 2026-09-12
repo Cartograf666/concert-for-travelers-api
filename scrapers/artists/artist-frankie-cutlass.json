@@ -1,0 +1,17 @@
+{
+  "id": "artist-frankie-cutlass",
+  "domain": "frankiecutlass.com",
+  "url": "https://frankiecutlass.com/events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div[data-aid='CALENDAR_BIGGER_SCREEN_CONTAINER']",
+    "artistNameFallback": "Frankie Cutlass",
+    "date": "[data-aid='CALENDAR_EVENT_DATE'] h3",
+    "ticketUrl": "[data-aid='CALENDAR_DESC_TEXT'] a",
+    "venue": "[data-aid='CALENDAR_DESC_TEXT'] p:first-child span",
+    "city": "[data-aid='CALENDAR_EVENT_TIME'] + p",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
