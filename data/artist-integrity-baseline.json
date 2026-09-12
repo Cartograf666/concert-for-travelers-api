@@ -1,15 +1,15 @@
 {
-  "recordedAt": "2026-09-11T17:05:22.239Z",
-  "errors": 135,
+  "recordedAt": "2026-09-12T16:08:12.808Z",
+  "errors": 156,
   "byRule": {
     "name/contains-date": 77,
     "similar/self-reference": 34,
-    "spotify/not-an-artist-url": 110,
+    "spotify/not-an-artist-url": 131,
     "name/too-long": 128,
     "url/wrong-platform": 14,
     "website/aggregator": 14,
     "url/unparseable": 11,
-    "url/shared-across-artists": 215,
+    "url/shared-across-artists": 216,
     "name/duplicate-entry": 542
   }
 }
