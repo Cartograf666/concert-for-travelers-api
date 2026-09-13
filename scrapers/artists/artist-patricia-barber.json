@@ -3,6 +3,8 @@
   "domain": "patriciabarber.com",
   "url": "http://patriciabarber.com/concerts/",
   "type": "static_selectors",
+  "maxRetries": 5,
+  "requestDelayMs": 2000,
   "selectors": {
     "eventBlock": "table.gigstable tbody tr",
     "artistNameFallback": "Patricia Barber",
