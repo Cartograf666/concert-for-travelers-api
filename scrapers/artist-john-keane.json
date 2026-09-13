@@ -1,0 +1,16 @@
+{
+  "id": "artist-john-keane",
+  "domain": "johnkeane.com",
+  "url": "https://johnkeane.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event",
+    "artistNameFallback": "John Keane",
+    "date": "div.event-date",
+    "ticketUrl": "a.event-tickets",
+    "city": "div.event-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
