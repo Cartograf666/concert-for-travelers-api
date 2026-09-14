@@ -18890,5 +18890,444 @@
     "failuresSinceRepair": 0,
     "note": "repair failed: Selector \"eventBlock\" (.tour-table-row) matched 0 elements.",
     "verification": ""
+  },
+  {
+    "id": "artist-haash",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-haash.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-14T09:51:12.398Z",
+    "previousConfig": {
+      "id": "artist-haash",
+      "domain": "ha-ash.com",
+      "url": "https://ha-ash.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-item",
+        "artistNameFallback": "Ha*Ash",
+        "date": "div.event-date p",
+        "ticketUrl": "a.event-tickets",
+        "venue": "span.event-venue",
+        "city": "span.event-city",
+        "country": "span.event-country",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "MX"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.sqs-events-collection-item) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-harley-flanagan",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-harley-flanagan.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-14T09:51:13.620Z",
+    "previousConfig": {
+      "id": "artist-harley-flanagan",
+      "domain": "harleyflanagan.com",
+      "url": "https://harleyflanagan.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.list-item",
+        "artistNameFallback": "Harley Flanagan",
+        "date": "div.list-item__date",
+        "ticketUrl": "a.btn.btn-primary",
+        "city": "div.list-item__location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (article.post) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-harry-connick-jr",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-harry-connick-jr.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-14T09:51:15.436Z",
+    "previousConfig": {
+      "id": "artist-harry-connick-jr",
+      "domain": "www.harryconnickjr.com",
+      "url": "https://www.harryconnickjr.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.tour-item",
+        "artistNameFallback": "Harry Connick, Jr.",
+        "date": ".date-wrap",
+        "ticketUrl": "a.ticket-link",
+        "venue": ".venue-name",
+        "city": ".city-state-country",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.view-tour .views-row) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-angel-heart",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-angel-heart.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-14T09:51:18.467Z",
+    "previousConfig": {
+      "id": "artist-angel-heart",
+      "domain": "www.angelheart.rocks",
+      "url": "https://www.angelheart.rocks/events",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.s2-blog-item",
+        "artistNameFallback": "Angel Heart",
+        "date": ".s2-blog-item__date",
+        "ticketUrl": "a.s2-button",
+        "city": ".s2-blog-item__title",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "UK"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.LBrwzc) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-bucks-fizz",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-bucks-fizz.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-14T09:51:21.138Z",
+    "previousConfig": {
+      "id": "artist-bucks-fizz",
+      "domain": "thefizzofficial.com",
+      "url": "https://www.thefizzofficial.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.html-section-item.html-section-event-row",
+        "artistNameFallback": "The Fizz",
+        "date": ".html-section-event-date",
+        "ticketUrl": ".html-section-event-tickets a",
+        "venue": ".html-section-event-venue",
+        "city": ".html-section-event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "UK"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (div[data-mesh-id='comp-kv70p88o']) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-pain-for-pleasure",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-pain-for-pleasure.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-14T09:51:21.916Z",
+    "previousConfig": {
+      "id": "artist-pain-for-pleasure",
+      "domain": "www.painforpleasure.com",
+      "url": "https://www.painforpleasure.com/gigs",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.tour-item",
+        "artistNameFallback": "Pain For Pleasure",
+        "date": ".date",
+        "ticketUrl": ".tour-item-button a",
+        "venue": ".venue-name",
+        "city": ".venue-location span:first-child",
+        "country": ".venue-location span:last-child",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.gig-card) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-paul-halley",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-paul-halley.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-14T09:51:22.563Z",
+    "previousConfig": {
+      "id": "artist-paul-halley",
+      "domain": "paulhalley.com",
+      "url": "https://paulhalley.com/concerts-and-workshops/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".paragraph-id--43",
+        "artist": "h2.text-h2",
+        "date": ".paragraph-id--43 p",
+        "datePattern": "DD.MM.YYYY",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]",
+    "verification": ""
+  },
+  {
+    "id": "artist-patti-smith-group",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-patti-smith-group.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-14T09:51:24.092Z",
+    "previousConfig": {
+      "id": "artist-patti-smith-group",
+      "domain": "www.pattismith.net",
+      "url": "https://www.pattismith.net/shows.html",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "p.show",
+        "artistNameFallback": "Patti Smith Group",
+        "date": "strong:nth-of-type(1)",
+        "ticketUrl": "a",
+        "venue": "strong:nth-of-type(3)",
+        "city": "strong:nth-of-type(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-john-keane",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-john-keane.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-14T09:51:25.015Z",
+    "previousConfig": {
+      "id": "artist-john-keane",
+      "domain": "johnkeane.com",
+      "url": "https://johnkeane.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event",
+        "artistNameFallback": "John Keane",
+        "date": "div.event-date",
+        "ticketUrl": "a.event-tickets",
+        "city": "div.event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.tour-item) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-the-cure",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-the-cure.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-14T09:51:26.059Z",
+    "previousConfig": {
+      "id": "artist-the-cure",
+      "domain": "www.thecure.com",
+      "url": "https://www.thecure.com/shows/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div[itemtype='http://schema.org/MusicEvent']",
+        "artistNameFallback": "The Cure",
+        "date": ".s_dateblock",
+        "ticketUrl": ".s_tickets a",
+        "venue": ".s_venue",
+        "city": ".addressLocality",
+        "country": ".addressCountry",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.liveContainer .s_item) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-yanagi-nagi",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-yanagi-nagi.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-14T09:51:30.511Z",
+    "previousConfig": {
+      "id": "artist-yanagi-nagi",
+      "domain": "yanaginagi.net",
+      "url": "https://yanaginagi.net/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.live__item",
+        "artistNameFallback": "Yanagi, Nagi",
+        "date": ".live__date",
+        "ticketUrl": ".live__link a",
+        "city": ".live__place",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: dates_parse [0/11 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]",
+    "verification": ""
+  },
+  {
+    "id": "artist-yamazaki-masayoshi",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-yamazaki-masayoshi.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-14T09:51:34.087Z",
+    "previousConfig": {
+      "id": "artist-yamazaki-masayoshi",
+      "domain": "www.office-augusta.com",
+      "url": "https://www.office-augusta.com/yamazaki/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.list_item",
+        "artistNameFallback": "Masayoshi Yamazaki",
+        "date": ".date",
+        "ticketUrl": "a",
+        "venue": ".place",
+        "city": ".place",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: dates_parse [0/5 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]",
+    "verification": ""
+  },
+  {
+    "id": "artist-yarbrough-and-peoples",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-yarbrough-and-peoples.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-14T09:51:36.606Z",
+    "previousConfig": {
+      "id": "artist-yarbrough-and-peoples",
+      "domain": "jacobspavilion.com",
+      "url": "https://jacobspavilion.com/calendar/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-card",
+        "artistNameFallback": "Yarbrough and Peoples",
+        "date": ".date-time span:first-child",
+        "ticketUrl": ".buy-tickets-btn",
+        "venueNameFallback": "Jacobs Pavilion",
+        "cityNameFallback": "Cleveland",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.c-axs-event-card__wrapper) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "hard-rock-hotel-riviera-maya-playa-del-carmen",
+    "cohort": "venue",
+    "configPath": "scrapers/hard-rock-hotel-riviera-maya-playa-del-carmen.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-14T09:51:36.609Z",
+    "previousConfig": {
+      "id": "hard-rock-hotel-riviera-maya-playa-del-carmen",
+      "domain": "hotel.hardrock.com",
+      "url": "https://hotel.hardrock.com/riviera-maya/events-calendar.aspx",
+      "type": "jsonld",
+      "selectors": {
+        "eventBlock": "",
+        "date": "",
+        "venueNameFallback": "Hard Rock Hotel Riviera Maya",
+        "cityNameFallback": "Playa del Carmen",
+        "countryNameFallback": "MX",
+        "lat": 20.4989,
+        "lng": -87.2419
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper hard-rock-hotel-riviera-maya-playa-del-carmen is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "rust-copenhagen",
+    "cohort": "venue",
+    "configPath": "scrapers/rust-copenhagen.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-14T09:51:37.643Z",
+    "previousConfig": {
+      "id": "rust-copenhagen",
+      "domain": "rust.dk",
+      "url": "https://rust.dk/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.event",
+        "artist": "h2.event-title",
+        "date": "p.event-meta",
+        "venueNameFallback": "RUST",
+        "cityNameFallback": "Copenhagen",
+        "countryNameFallback": "DK",
+        "lat": 55.6912,
+        "lng": 12.5593
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: dates_parse [0/104 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]",
+    "verification": ""
+  },
+  {
+    "id": "kt-g-sangsangmadang-seoul",
+    "cohort": "venue",
+    "configPath": "scrapers/kt-g-sangsangmadang-seoul.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-14T09:52:07.183Z",
+    "previousConfig": {
+      "id": "kt-g-sangsangmadang-seoul",
+      "domain": "sangsangmadang.com",
+      "url": "https://www.sangsangmadang.com/calendar/list",
+      "type": "custom_js",
+      "requestDelayMs": 500,
+      "selectors": {
+        "eventBlock": "",
+        "date": "",
+        "venueNameFallback": "KT&G Sangsangmadang Seoul",
+        "cityNameFallback": "Seoul",
+        "countryNameFallback": "KR",
+        "lat": 37.5515,
+        "lng": 126.9256
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=parse_error): Failed to execute custom JS scraper for kt-g-sangsangmadang-seoul: Cannot find module '/home/runner/work/concert-for-travelers-api/concert-for-travelers-api/src/engine/custom/kt-g-sangsangmadang-seoul.js' imported from /home/runner/work/concert-for-travelers-api/concert-for-travelers-api/src/engine/runner.ts]",
+    "verification": ""
   }
 ]
