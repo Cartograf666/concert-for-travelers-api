@@ -19329,5 +19329,227 @@
     "failuresSinceRepair": 0,
     "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=parse_error): Failed to execute custom JS scraper for kt-g-sangsangmadang-seoul: Cannot find module '/home/runner/work/concert-for-travelers-api/concert-for-travelers-api/src/engine/custom/kt-g-sangsangmadang-seoul.js' imported from /home/runner/work/concert-for-travelers-api/concert-for-travelers-api/src/engine/runner.ts]",
     "verification": ""
+  },
+  {
+    "id": "artist-allan-stewart",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-allan-stewart.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-15T09:36:13.418Z",
+    "previousConfig": {
+      "id": "artist-allan-stewart",
+      "domain": "www.allanstewart.com",
+      "url": "https://www.allanstewart.com/shows/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.elementor-column.elementor-col-33.elementor-top-column.elementor-has-gap",
+        "artistNameFallback": "Allan Stewart",
+        "date": "div.elementor-widget-container h3",
+        "ticketUrl": "div.elementor-widget-container a.elementor-button",
+        "venue": "div.elementor-widget-container h4:nth-of-type(1)",
+        "city": "div.elementor-widget-container h4:nth-of-type(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (div[data-mesh-id$='-gridContainer'] > div[id^='comp-']) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-james-pankow",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-james-pankow.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-15T09:36:13.719Z",
+    "previousConfig": {
+      "id": "artist-james-pankow",
+      "domain": "www.chicagotheband.com",
+      "url": "https://www.chicagotheband.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.tour-list__item",
+        "artistNameFallback": "Chicago",
+        "date": ".tour-list__date",
+        "ticketUrl": ".tour-list__item-links > a.button",
+        "venue": ".tour-list__venue",
+        "city": ".tour-list__city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]",
+    "verification": ""
+  },
+  {
+    "id": "artist-john-keane",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-john-keane.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-15T09:36:16.561Z",
+    "previousConfig": {
+      "id": "artist-john-keane",
+      "domain": "johnkeane.com",
+      "url": "https://johnkeane.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event",
+        "artistNameFallback": "John Keane",
+        "date": "div.event-date",
+        "ticketUrl": "a.event-tickets",
+        "city": "div.event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.tour-item) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-hey-nineteen",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-hey-nineteen.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-15T09:38:02.821Z",
+    "previousConfig": {
+      "id": "artist-hey-nineteen",
+      "domain": "www.hey19band.com",
+      "url": "http://www.hey19band.com/fans",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".gigpress-row",
+        "artistNameFallback": "Hey Nineteen",
+        "date": ".gigpress-date",
+        "ticketUrl": ".gigpress-tickets a",
+        "venue": ".gigpress-venue",
+        "city": ".gigpress-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
+    "verification": ""
+  },
+  {
+    "id": "cartagena-festival-de-musica-cartagena",
+    "cohort": "venue",
+    "configPath": "scrapers/cartagena-festival-de-musica-cartagena.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-15T09:38:02.909Z",
+    "previousConfig": {
+      "id": "cartagena-festival-de-musica-cartagena",
+      "domain": "cartagenamusicfestival.com",
+      "url": "https://cartagenamusicfestival.com/programacion/?lang=en",
+      "type": "static_selectors",
+      "allowEmpty": true,
+      "selectors": {
+        "eventBlock": ".mkdf-event-list-item",
+        "artist": ".mkdf-eli-title",
+        "date": ".mkdf-el-date-separated",
+        "datePattern": "DD Month (no year present on page)",
+        "ticketUrl": ".mkdf-eli-read-more-holder a.mkdf-btn-solid",
+        "venueNameFallback": "Teatro Adolfo Mejia",
+        "cityNameFallback": "Cartagena",
+        "countryNameFallback": "CO",
+        "lat": 10.4266575,
+        "lng": -75.5510108
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]",
+    "verification": ""
+  },
+  {
+    "id": "hard-rock-hotel-riviera-maya-playa-del-carmen",
+    "cohort": "venue",
+    "configPath": "scrapers/hard-rock-hotel-riviera-maya-playa-del-carmen.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-15T09:38:02.910Z",
+    "previousConfig": {
+      "id": "hard-rock-hotel-riviera-maya-playa-del-carmen",
+      "domain": "hotel.hardrock.com",
+      "url": "https://hotel.hardrock.com/riviera-maya/events-calendar.aspx",
+      "type": "jsonld",
+      "selectors": {
+        "eventBlock": "",
+        "date": "",
+        "venueNameFallback": "Hard Rock Hotel Riviera Maya",
+        "cityNameFallback": "Playa del Carmen",
+        "countryNameFallback": "MX",
+        "lat": 20.4989,
+        "lng": -87.2419
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper hard-rock-hotel-riviera-maya-playa-del-carmen is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "hrvatski-dom-split-split",
+    "cohort": "venue",
+    "configPath": "scrapers/hrvatski-dom-split-split.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-15T09:38:23.783Z",
+    "previousConfig": {
+      "id": "hrvatski-dom-split-split",
+      "domain": "hdsplit.hr",
+      "url": "https://www.hdsplit.hr/en/program/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.repdiv",
+        "artist": "h4.ct-headline",
+        "date": ".ct-div-block:has(.ciklus-text) + .ct-div-block .ct-text-block",
+        "ticketUrl": "h4.ct-headline a",
+        "venueNameFallback": "Hrvatski Dom Split",
+        "cityNameFallback": "Split",
+        "countryNameFallback": "HR",
+        "lat": 43.509844,
+        "lng": 16.436942
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 500]",
+    "verification": ""
+  },
+  {
+    "id": "kt-g-sangsangmadang-seoul",
+    "cohort": "venue",
+    "configPath": "scrapers/kt-g-sangsangmadang-seoul.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-15T09:38:23.784Z",
+    "previousConfig": {
+      "id": "kt-g-sangsangmadang-seoul",
+      "domain": "sangsangmadang.com",
+      "url": "https://www.sangsangmadang.com/calendar/list",
+      "type": "custom_js",
+      "requestDelayMs": 500,
+      "selectors": {
+        "eventBlock": "",
+        "date": "",
+        "venueNameFallback": "KT&G Sangsangmadang Seoul",
+        "cityNameFallback": "Seoul",
+        "countryNameFallback": "KR",
+        "lat": 37.5515,
+        "lng": 126.9256
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper kt-g-sangsangmadang-seoul is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
   }
 ]
