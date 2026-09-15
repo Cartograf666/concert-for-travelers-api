@@ -1,0 +1,16 @@
+{
+  "id": "artist-john-macdonald",
+  "domain": "johnmcdonaldmusic.com",
+  "url": "https://johnmcdonaldmusic.com/calendar",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-detail",
+    "artistNameFallback": "John MacDonald",
+    "date": ".event-when",
+    "ticketUrl": "h2.event-title a",
+    "venue": ".event-location a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
