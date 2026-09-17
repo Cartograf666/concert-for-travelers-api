@@ -20945,5 +20945,33 @@
     "failuresSinceRepair": 0,
     "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]",
     "verification": ""
+  },
+  {
+    "id": "artist-james-pankow",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-james-pankow.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-17T09:29:15.406Z",
+    "previousConfig": {
+      "id": "artist-james-pankow",
+      "domain": "www.chicagotheband.com",
+      "url": "https://www.chicagotheband.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.tour-list__item",
+        "artistNameFallback": "Chicago",
+        "date": ".tour-list__date",
+        "ticketUrl": ".tour-list__item-links > a.button",
+        "venue": ".tour-list__venue",
+        "city": ".tour-list__city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]",
+    "verification": ""
   }
 ]
