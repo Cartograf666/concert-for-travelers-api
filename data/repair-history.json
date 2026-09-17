@@ -20830,5 +20830,120 @@
     "failuresSinceRepair": 0,
     "note": "repair failed: Scraper kt-g-sangsangmadang-seoul is not a static_selectors scraper or is missing selectors.",
     "verification": ""
+  },
+  {
+    "id": "artist-avantasia",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-avantasia.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-17T09:21:20.765Z",
+    "previousConfig": {
+      "id": "artist-avantasia",
+      "domain": "avantasia.com",
+      "url": "https://avantasia.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.single_event_list",
+        "artistNameFallback": "Avantasia",
+        "date": "div.event_list_entry.event_date div.text_center.event_list_date_container",
+        "ticketUrl": "div.event_list_entry.event_buy div.event_buy_btn::attr(data-href)",
+        "venue": "div.event_list_entry.event_venue a",
+        "city": "div.event_list_entry.event_title_img div.event_list_title",
+        "country": "div.event_list_entry.event_title_img div.event_list_title",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.wp-block-columns) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-dan-deacon",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-dan-deacon.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-17T09:21:22.115Z",
+    "previousConfig": {
+      "id": "artist-dan-deacon",
+      "domain": "dandeacon.com",
+      "url": "https://dandeacon.com/live-dates/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".entry-content > p:has(a)",
+        "artistNameFallback": "Dan Deacon",
+        "date": "a",
+        "ticketUrl": "a::attr(href)",
+        "venue": "a",
+        "city": "a",
+        "country": "a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.wp-block-post-content p:contains('•')) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-oasis",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-oasis.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-17T09:21:24.882Z",
+    "previousConfig": {
+      "id": "artist-oasis",
+      "domain": "oasisinet.com",
+      "url": "https://oasisinet.com/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".live-listing > li",
+        "artistNameFallback": "Oasis",
+        "date": ".live-date",
+        "venue": ".live-listing > li > span:nth-of-type(2)",
+        "city": ".live-listing > li > span:nth-of-type(2)",
+        "country": ".live-listing > li > span:nth-of-type(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: dates_parse [0/11 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]",
+    "verification": ""
+  },
+  {
+    "id": "artist-pequot",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-pequot.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-17T09:21:25.476Z",
+    "previousConfig": {
+      "id": "artist-pequot",
+      "domain": "www.pequotmuseum.org",
+      "url": "https://www.pequotmuseum.org/explore/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".jet-listing-grid__item",
+        "artistNameFallback": "Pequot",
+        "date": ".jet-listing-dynamic-field__content",
+        "ticketUrl": ".elementor-button-link, .elementor-heading-title a",
+        "venue": "",
+        "city": "",
+        "country": "",
+        "venueNameFallback": "Mashantucket Pequot Museum and Research Center",
+        "cityNameFallback": "Mashantucket",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]",
+    "verification": ""
   }
 ]
