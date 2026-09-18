@@ -20973,5 +20973,90 @@
     "failuresSinceRepair": 0,
     "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]",
     "verification": ""
+  },
+  {
+    "id": "artist-lady-antebellum",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-lady-antebellum.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-18T08:56:26.460Z",
+    "previousConfig": {
+      "id": "artist-lady-antebellum",
+      "domain": "www.ladyamusic.com",
+      "url": "https://www.ladyamusic.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".data-row.data-row-gig",
+        "artistNameFallback": "Lady Antebellum",
+        "date": ".tour-date",
+        "ticketUrl": ".buy-btn",
+        "venue": ".tour-venue",
+        "city": ".tour-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-oasis",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-oasis.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-18T08:57:26.439Z",
+    "previousConfig": {
+      "id": "artist-oasis",
+      "domain": "oasisinet.com",
+      "url": "https://oasisinet.com/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".live-listing > li",
+        "artistNameFallback": "Oasis",
+        "date": ".live-date",
+        "venue": ".live-listing > li > span:nth-of-type(2)",
+        "city": ".live-listing > li > span:nth-of-type(2)",
+        "country": ".live-listing > li > span:nth-of-type(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: dates_parse [0/11 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]",
+    "verification": ""
+  },
+  {
+    "id": "artist-l-subramaniam",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-l-subramaniam.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-18T08:57:26.544Z",
+    "previousConfig": {
+      "id": "artist-l-subramaniam",
+      "domain": "indianviolin.com",
+      "url": "https://indianviolin.com/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".entry-content p",
+        "artistNameFallback": "L. Subramaniam",
+        "date": "strong:first-child",
+        "ticketUrl": "a",
+        "venue": "br:nth-of-type(1) + text()",
+        "city": "strong:first-child",
+        "country": "strong:first-child",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "IN"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=parse_error): Unmatched selector: ()]",
+    "verification": ""
   }
 ]
