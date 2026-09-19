@@ -1,0 +1,18 @@
+{
+  "id": "artist-juan-garcia-herreros",
+  "domain": "www.juan-garcia-herreros.com",
+  "url": "https://www.juan-garcia-herreros.com/tour-dates",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour-item",
+    "artistNameFallback": "Juan Garcia-Herreros",
+    "date": ".tour-item-date",
+    "ticketUrl": ".tour-item-tickets a",
+    "venue": ".tour-item-venue",
+    "city": ".tour-item-city",
+    "country": ".tour-item-country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "AT"
+  }
+}

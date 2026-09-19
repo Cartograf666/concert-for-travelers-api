@@ -1,0 +1,17 @@
+{
+  "id": "artist-julian-arguelles",
+  "domain": "www.julianarguelles.com",
+  "url": "https://www.julianarguelles.com/calendar",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".eventlist-event",
+    "artistNameFallback": "Julian Arguelles",
+    "date": ".eventlist-date",
+    "ticketUrl": ".eventlist-button",
+    "venue": ".eventlist-title",
+    "city": ".eventlist-meta-item--location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-judith-rijnveld",
+  "domain": "www.judithrijnveld.com",
+  "url": "https://www.judithrijnveld.com/agenda",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-list-item",
+    "artistNameFallback": "Judith Rijnveld",
+    "date": ".event-date",
+    "ticketUrl": ".event-link a",
+    "venue": ".event-title",
+    "city": ".event-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "NL"
+  }
+}
