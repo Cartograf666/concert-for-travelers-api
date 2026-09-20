@@ -216693,7 +216693,20 @@
       "vk": null
     },
     "enrichedAt": "2026-09-20T11:41:35.739Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "Тёмный принц",
+        "slug": "темныи-принц",
+        "match": 0.449746
+      },
+      {
+        "name": "madk1d",
+        "slug": "madk1d",
+        "match": 0.372244
+      }
+    ],
+    "similarEnrichedAt": "2026-09-20T11:50:17.683Z"
   },
   {
     "name": "Kai Eckhardt",
@@ -225016,7 +225029,20 @@
       "vk": null
     },
     "enrichedAt": "2026-09-20T11:41:38.328Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "gyuris",
+        "slug": "gyuris",
+        "match": 0.523494
+      },
+      {
+        "name": "Dzsúdló",
+        "slug": "dzsudlo",
+        "match": 0.425058
+      }
+    ],
+    "similarEnrichedAt": "2026-09-20T11:50:18.163Z"
   },
   {
     "name": "Kapotte Muziek",
@@ -268085,7 +268111,8 @@
     "wdAliasesTriedAt": "2026-09-20T09:43:23.170Z",
     "mbidBackfillTriedAt": "2026-09-20T09:43:32.355Z",
     "imageFallbackTriedAt": "2026-09-20T11:06:53.600Z",
-    "autoTriedAt": "2026-09-20T11:41:39.569Z"
+    "autoTriedAt": "2026-09-20T11:41:39.569Z",
+    "similarTriedAt": "2026-09-20T11:50:18.492Z"
   },
   {
     "name": "Ketama",
@@ -339650,7 +339677,50 @@
     "wikidataSitelinks": 4,
     "enrichedAt": "2026-09-20T09:43:23.170Z",
     "enrichedBy": "wikidata-bulk",
-    "imageFallbackTriedAt": "2026-09-20T11:06:54.049Z"
+    "imageFallbackTriedAt": "2026-09-20T11:06:54.049Z",
+    "similarArtists": [
+      {
+        "name": "Anirudh Ravichander",
+        "slug": "anirudh-ravichander",
+        "match": 1
+      },
+      {
+        "name": "Yuvan Shankar Raja",
+        "slug": "yuvan-shankar-raja",
+        "match": 0.587112
+      },
+      {
+        "name": "Harris Jayaraj",
+        "slug": "harris-jayaraj",
+        "match": 0.519736
+      },
+      {
+        "name": "A.R.Rahman",
+        "slug": "arrahman",
+        "match": 0.471087
+      },
+      {
+        "name": "Karthik",
+        "slug": "karthik",
+        "match": 0.337005
+      },
+      {
+        "name": "Dhanush",
+        "slug": "dhanush",
+        "match": 0.329443
+      },
+      {
+        "name": "Devi Sri Prasad",
+        "slug": "devi-sri-prasad",
+        "match": 0.310061
+      },
+      {
+        "name": "Vidyasagar",
+        "slug": "vidyasagar",
+        "match": 0.243473
+      }
+    ],
+    "similarEnrichedAt": "2026-09-20T11:50:18.817Z"
   },
   {
     "name": "Saïan Supa Crew",
@@ -449834,7 +449904,40 @@
     "enrichedAt": "2026-09-20T09:43:23.170Z",
     "enrichedBy": "wikidata-bulk",
     "mbidBackfillTriedAt": "2026-09-20T09:43:32.355Z",
-    "imageFallbackTriedAt": "2026-09-20T11:06:54.497Z"
+    "imageFallbackTriedAt": "2026-09-20T11:06:54.497Z",
+    "similarArtists": [
+      {
+        "name": "Diljit Dosanjh",
+        "slug": "diljit-dosanjh",
+        "match": 1
+      },
+      {
+        "name": "AP Dhillon",
+        "slug": "ap-dhillon",
+        "match": 0.964908
+      },
+      {
+        "name": "Yo Yo Honey Singh",
+        "slug": "yo-yo-honey-singh",
+        "match": 0.514386
+      },
+      {
+        "name": "Aditya Rikhari",
+        "slug": "aditya-rikhari",
+        "match": 0.357645
+      },
+      {
+        "name": "Garry Sandhu",
+        "slug": "garry-sandhu",
+        "match": 0.340641
+      },
+      {
+        "name": "Badshah",
+        "slug": "badshah",
+        "match": 0.330416
+      }
+    ],
+    "similarEnrichedAt": "2026-09-20T11:50:19.175Z"
   },
   {
     "name": "Shubha Mudgal",
@@ -634119,7 +634222,8 @@
       "vk": null
     },
     "enrichedAt": "2026-09-20T11:41:42.154Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarTriedAt": "2026-09-20T11:50:20.096Z"
   },
   {
     "name": "Гио Пика",

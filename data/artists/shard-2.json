@@ -24433,7 +24433,25 @@
       "vk": null
     },
     "enrichedAt": "2026-09-20T11:41:29.313Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "Aditya Rikhari",
+        "slug": "aditya-rikhari",
+        "match": 0.112341
+      },
+      {
+        "name": "Anuv Jain",
+        "slug": "anuv-jain",
+        "match": 0.109155
+      },
+      {
+        "name": "AP Dhillon",
+        "slug": "ap-dhillon",
+        "match": 0.074214
+      }
+    ],
+    "similarEnrichedAt": "2026-09-20T11:50:16.521Z"
   },
   {
     "name": "banjo",
@@ -629892,7 +629910,50 @@
     "imageSource": "audiodb",
     "imageFallbackTriedAt": "2026-09-20T11:06:51.807Z",
     "enrichedAt": "2026-09-20T11:41:29.313Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "similarArtists": [
+      {
+        "name": "BLACKPINK",
+        "slug": "blackpink",
+        "match": 1
+      },
+      {
+        "name": "JISOO",
+        "slug": "jisoo",
+        "match": 0.983439
+      },
+      {
+        "name": "Jennie",
+        "slug": "jennie",
+        "match": 0.922608
+      },
+      {
+        "name": "LiSA",
+        "slug": "lisa",
+        "match": 0.699152
+      },
+      {
+        "name": "MEOVV",
+        "slug": "meovv",
+        "match": 0.294216
+      },
+      {
+        "name": "Kiss of Life",
+        "slug": "kiss-of-life",
+        "match": 0.198421
+      },
+      {
+        "name": "IVE",
+        "slug": "ive",
+        "match": 0.193171
+      },
+      {
+        "name": "i-dle",
+        "slug": "i-dle",
+        "match": 0.189853
+      }
+    ],
+    "similarEnrichedAt": "2026-09-20T11:50:16.885Z"
   },
   {
     "name": "Rose and Ottilie Sutro",
@@ -667751,7 +667812,15 @@
       "vk": null
     },
     "enrichedAt": "2026-09-20T11:41:32.081Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "Radikal",
+        "slug": "radikal",
+        "match": 1
+      }
+    ],
+    "similarEnrichedAt": "2026-09-20T11:50:17.330Z"
   },
   {
     "name": "Zekuhl",
