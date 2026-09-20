@@ -21058,5 +21058,33 @@
     "failuresSinceRepair": 0,
     "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=parse_error): Unmatched selector: ()]",
     "verification": ""
+  },
+  {
+    "id": "artist-julian-arguelles",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-julian-arguelles.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-20T09:23:25.675Z",
+    "previousConfig": {
+      "id": "artist-julian-arguelles",
+      "domain": "www.julianarguelles.com",
+      "url": "https://www.julianarguelles.com/calendar",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".eventlist-event",
+        "artistNameFallback": "Julian Arguelles",
+        "date": ".eventlist-date",
+        "ticketUrl": ".eventlist-button",
+        "venue": ".eventlist-title",
+        "city": ".eventlist-meta-item--location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: dates_parse [7/20 date strings parsed (35%, need 60%)]",
+    "verification": ""
   }
 ]
