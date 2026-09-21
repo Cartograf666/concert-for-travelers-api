@@ -1,0 +1,16 @@
+{
+  "id": "artist-jorge-palma",
+  "domain": "jorgepalma.pt",
+  "url": "https://jorgepalma.pt/espetaculos/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-item",
+    "artistNameFallback": "Jorge Palma",
+    "date": "p.event-date",
+    "ticketUrl": "a.tickets-button",
+    "city": "p.event-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "PT"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "artist-jun-shibata",
+  "domain": "www.shibatajun.com",
+  "url": "https://www.shibatajun.com/schedule/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.live-schedule__list__item",
+    "artistNameFallback": "Jun Shibata",
+    "date": "p.live-schedule__list__item__date",
+    "ticketUrl": "a.live-schedule__list__item__link",
+    "city": "p.live-schedule__list__item__place",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

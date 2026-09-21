@@ -1,0 +1,16 @@
+{
+  "id": "artist-jorge-e-mateus",
+  "domain": "jorgeemateus.com.br",
+  "url": "https://jorgeemateus.com.br/agenda/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.agenda-event",
+    "artistNameFallback": "Jorge e Mateus",
+    "date": "p.event-date",
+    "ticketUrl": "a.event-tickets",
+    "city": "p.event-local",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "BR"
+  }
+}
