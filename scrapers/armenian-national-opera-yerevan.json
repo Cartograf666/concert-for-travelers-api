@@ -6,10 +6,10 @@
   "maxRetries": 5,
   "requestDelayMs": 2000,
   "selectors": {
-    "eventBlock": "#repo-tab-4 article.repo-card",
-    "artist": "h5.repo-title a",
-    "date": ".repo-date",
-    "ticketUrl": "a.repo-image",
+    "eventBlock": ".card.js-card",
+    "artist": ".card__title-wrap h2 a",
+    "date": ".card__date",
+    "ticketUrl": ".card__title-wrap a.button",
     "venueNameFallback": "Armenian National Academic Theatre of Opera and Ballet",
     "cityNameFallback": "Yerevan",
     "countryNameFallback": "AM"
