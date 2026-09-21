@@ -21086,5 +21086,139 @@
     "failuresSinceRepair": 0,
     "note": "re-selection rejected by live verification -- FAIL: dates_parse [7/20 date strings parsed (35%, need 60%)]",
     "verification": ""
+  },
+  {
+    "id": "armenian-national-opera-yerevan",
+    "cohort": "venue",
+    "configPath": "scrapers/armenian-national-opera-yerevan.json",
+    "repairedConfigHash": "7cbaf85ce9a9efb59c28493b092bcaddc519ae6358d663fc8d412537a4f78385",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-21T10:01:29.273Z",
+    "previousConfig": {
+      "id": "armenian-national-opera-yerevan",
+      "domain": "opera.am",
+      "url": "https://www.opera.am/en/repertoire",
+      "type": "static_selectors",
+      "maxRetries": 5,
+      "requestDelayMs": 2000,
+      "selectors": {
+        "eventBlock": "#repo-tab-4 article.repo-card",
+        "artist": "h5.repo-title a",
+        "date": ".repo-date",
+        "ticketUrl": "a.repo-image",
+        "venueNameFallback": "Armenian National Academic Theatre of Opera and Ballet",
+        "cityNameFallback": "Yerevan",
+        "countryNameFallback": "AM"
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "LLM/JSON-LD re-selection",
+    "verification": "PASS (71 events, 11 checks)"
+  },
+  {
+    "id": "artist-julian-arguelles",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-julian-arguelles.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-21T10:01:31.256Z",
+    "previousConfig": {
+      "id": "artist-julian-arguelles",
+      "domain": "www.julianarguelles.com",
+      "url": "https://www.julianarguelles.com/calendar",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".eventlist-event",
+        "artistNameFallback": "Julian Arguelles",
+        "date": ".eventlist-date",
+        "ticketUrl": ".eventlist-button",
+        "venue": ".eventlist-title",
+        "city": ".eventlist-meta-item--location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: dates_parse [9/20 date strings parsed (45%, need 60%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-ivar-grydeland",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-ivar-grydeland.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-21T10:01:35.008Z",
+    "previousConfig": {
+      "id": "artist-ivar-grydeland",
+      "domain": "www.ivargrydeland.com",
+      "url": "https://www.ivargrydeland.com/concerts",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".sqs-block-content p:has(strong)",
+        "artistNameFallback": "Ivar Grydeland",
+        "date": "strong",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "NO"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.entry-content p) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "hard-rock-hotel-riviera-maya-playa-del-carmen",
+    "cohort": "venue",
+    "configPath": "scrapers/hard-rock-hotel-riviera-maya-playa-del-carmen.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-21T10:01:35.009Z",
+    "previousConfig": {
+      "id": "hard-rock-hotel-riviera-maya-playa-del-carmen",
+      "domain": "hotel.hardrock.com",
+      "url": "https://hotel.hardrock.com/riviera-maya/events-calendar.aspx",
+      "type": "jsonld",
+      "selectors": {
+        "eventBlock": "",
+        "date": "",
+        "venueNameFallback": "Hard Rock Hotel Riviera Maya",
+        "cityNameFallback": "Playa del Carmen",
+        "countryNameFallback": "MX",
+        "lat": 20.4989,
+        "lng": -87.2419
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper hard-rock-hotel-riviera-maya-playa-del-carmen is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "the-wall-live-house-taipei",
+    "cohort": "venue",
+    "configPath": "scrapers/the-wall-live-house-taipei.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-21T10:01:38.576Z",
+    "previousConfig": {
+      "id": "the-wall-live-house-taipei",
+      "domain": "thewalllivehouse.kktix.cc",
+      "url": "https://thewalllivehouse.kktix.cc/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "#event-list li.clearfix",
+        "artist": "h2 a",
+        "date": ".date",
+        "ticketUrl": "h2 a",
+        "venueNameFallback": "The Wall Live House",
+        "cityNameFallback": "Taipei",
+        "countryNameFallback": "TW"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: dates_parse [0/250 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]",
+    "verification": ""
   }
 ]
