@@ -21363,5 +21363,312 @@
     "failuresSinceRepair": 0,
     "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
     "verification": ""
+  },
+  {
+    "id": "artist-iron-maidens-the",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-iron-maidens-the.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-22T09:26:47.689Z",
+    "previousConfig": {
+      "id": "artist-iron-maidens-the",
+      "domain": "www.theironmaidens.com",
+      "url": "https://theironmaidens.com/upcoming-events/",
+      "type": "static_selectors",
+      "httpClient": "got-scraping",
+      "selectors": {
+        "eventBlock": ".tour-item",
+        "artistNameFallback": "The Iron Maidens",
+        "date": ".tour-date",
+        "ticketUrl": ".tour-tickets a",
+        "venue": ".tour-venue",
+        "city": ".tour-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.event-list-item) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-jorge-e-mateus",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-jorge-e-mateus.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-22T09:27:37.522Z",
+    "previousConfig": {
+      "id": "artist-jorge-e-mateus",
+      "domain": "jorgeemateus.com.br",
+      "url": "https://jorgeemateus.com.br/agenda/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.agenda-event",
+        "artistNameFallback": "Jorge e Mateus",
+        "date": "p.event-date",
+        "ticketUrl": "a.event-tickets",
+        "city": "p.event-local",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "BR"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-jorge-palma",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-jorge-palma.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-22T09:29:23.877Z",
+    "previousConfig": {
+      "id": "artist-jorge-palma",
+      "domain": "jorgepalma.pt",
+      "url": "https://jorgepalma.pt/espetaculos/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-item",
+        "artistNameFallback": "Jorge Palma",
+        "date": "p.event-date",
+        "ticketUrl": "a.tickets-button",
+        "city": "p.event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "PT"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
+    "verification": ""
+  },
+  {
+    "id": "artist-jun-shibata",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-jun-shibata.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-22T09:29:32.100Z",
+    "previousConfig": {
+      "id": "artist-jun-shibata",
+      "domain": "www.shibatajun.com",
+      "url": "https://www.shibatajun.com/schedule/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.live-schedule__list__item",
+        "artistNameFallback": "Jun Shibata",
+        "date": "p.live-schedule__list__item__date",
+        "ticketUrl": "a.live-schedule__list__item__link",
+        "city": "p.live-schedule__list__item__place",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (div.live-schedule__list__item) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-allan-stewart",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-allan-stewart.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-22T09:29:33.776Z",
+    "previousConfig": {
+      "id": "artist-allan-stewart",
+      "domain": "www.allanstewart.com",
+      "url": "https://www.allanstewart.com/shows/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.elementor-column.elementor-col-33.elementor-top-column.elementor-has-gap",
+        "artistNameFallback": "Allan Stewart",
+        "date": "div.elementor-widget-container h3",
+        "ticketUrl": "div.elementor-widget-container a.elementor-button",
+        "venue": "div.elementor-widget-container h4:nth-of-type(1)",
+        "city": "div.elementor-widget-container h4:nth-of-type(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.allanstewart.com/shows/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-ivar-grydeland",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-ivar-grydeland.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-22T09:29:38.017Z",
+    "previousConfig": {
+      "id": "artist-ivar-grydeland",
+      "domain": "www.ivargrydeland.com",
+      "url": "https://www.ivargrydeland.com/concerts",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".sqs-block-content p:has(strong)",
+        "artistNameFallback": "Ivar Grydeland",
+        "date": "strong",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "NO"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.ivargrydeland.com/concerts but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-julian-arguelles",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-julian-arguelles.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-22T09:29:39.638Z",
+    "previousConfig": {
+      "id": "artist-julian-arguelles",
+      "domain": "www.julianarguelles.com",
+      "url": "https://www.julianarguelles.com/calendar",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".eventlist-event",
+        "artistNameFallback": "Julian Arguelles",
+        "date": ".eventlist-date",
+        "ticketUrl": ".eventlist-button",
+        "venue": ".eventlist-title",
+        "city": ".eventlist-meta-item--location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: dates_parse [7/20 date strings parsed (35%, need 60%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-joan-jett-and-the-blackhearts",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-joan-jett-and-the-blackhearts.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-22T09:29:41.238Z",
+    "previousConfig": {
+      "id": "artist-joan-jett-and-the-blackhearts",
+      "domain": "www.joanjett.com",
+      "url": "https://www.joanjett.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.show-item",
+        "artistNameFallback": "Joan Jett and The Blackhearts",
+        "date": "div.show-date",
+        "ticketUrl": "a.tickets-link",
+        "venue": "div.show-venue",
+        "city": "div.show-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.joanjett.com/tour but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "the-wall-live-house-taipei",
+    "cohort": "venue",
+    "configPath": "scrapers/the-wall-live-house-taipei.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-22T09:29:43.086Z",
+    "previousConfig": {
+      "id": "the-wall-live-house-taipei",
+      "domain": "thewalllivehouse.kktix.cc",
+      "url": "https://thewalllivehouse.kktix.cc/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "#event-list li.clearfix",
+        "artist": "h2 a",
+        "date": ".date",
+        "ticketUrl": "h2 a",
+        "venueNameFallback": "The Wall Live House",
+        "cityNameFallback": "Taipei",
+        "countryNameFallback": "TW"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: dates_parse [0/250 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]",
+    "verification": ""
+  },
+  {
+    "id": "yugong-yishan-beijing",
+    "cohort": "venue",
+    "configPath": "scrapers/yugong-yishan-beijing.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-22T09:29:46.278Z",
+    "previousConfig": {
+      "id": "yugong-yishan-beijing",
+      "domain": "theatrebeijing.com",
+      "url": "https://theatrebeijing.com/whats_on/live/",
+      "type": "static_selectors",
+      "httpClient": "got-scraping",
+      "maxRetries": 5,
+      "requestDelayMs": 2000,
+      "allowEmpty": false,
+      "selectors": {
+        "eventBlock": "div.events",
+        "artist": "h2 a",
+        "date": "ul.eventsTag li:nth-child(2)",
+        "ticketUrl": "h2 a",
+        "venue": "ul.eventsTag li:nth-child(3) a",
+        "venueNameFallback": "Yugong Yishan",
+        "cityNameFallback": "Beijing",
+        "countryNameFallback": "CN",
+        "lat": 39.9356,
+        "lng": 116.4065
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (div.event-item, .event, .card) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-pharis-and-jason-romero",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-pharis-and-jason-romero.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-22T09:29:47.783Z",
+    "previousConfig": {
+      "id": "artist-pharis-and-jason-romero",
+      "domain": "pharisandjason.com",
+      "url": "https://pharisandjason.com/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.sqs-block-content > div.event-item",
+        "artistNameFallback": "Pharis and Jason Romero",
+        "date": "time[itemprop='startDate']",
+        "ticketUrl": "a.event-ticket-button",
+        "venue": "span.event-venue",
+        "city": "span.event-city",
+        "country": "span.event-country",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://pharisandjason.com/shows but could not re-select on it",
+    "verification": ""
   }
 ]
