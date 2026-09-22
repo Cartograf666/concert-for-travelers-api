@@ -21220,5 +21220,148 @@
     "failuresSinceRepair": 0,
     "note": "re-selection rejected by live verification -- FAIL: dates_parse [0/250 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]",
     "verification": ""
+  },
+  {
+    "id": "artist-marina-satti",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-marina-satti.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-09-22T09:15:07.470Z",
+    "previousConfig": {
+      "id": "artist-marina-satti",
+      "domain": "marinasatti.com",
+      "url": "https://marinasatti.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".vip-cities .vip-city-row",
+        "artistNameFallback": "Marina Satti",
+        "date": ".vip-city-info strong",
+        "ticketUrl": "a.vip-btn@href",
+        "venue": ".vip-city-info",
+        "city": ".vip-city-info",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://marinasatti.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]",
+    "verification": ""
+  },
+  {
+    "id": "artist-pequot",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-pequot.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-22T09:15:08.034Z",
+    "previousConfig": {
+      "id": "artist-pequot",
+      "domain": "www.pequotmuseum.org",
+      "url": "https://www.pequotmuseum.org/explore/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".jet-listing-grid__item",
+        "artistNameFallback": "Pequot",
+        "date": ".jet-listing-dynamic-field__content",
+        "ticketUrl": ".elementor-button-link, .elementor-heading-title a",
+        "venue": "",
+        "city": "",
+        "country": "",
+        "venueNameFallback": "Mashantucket Pequot Museum and Research Center",
+        "cityNameFallback": "Mashantucket",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]",
+    "verification": ""
+  },
+  {
+    "id": "artist-primal-scream",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-primal-scream.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-22T09:15:09.506Z",
+    "previousConfig": {
+      "id": "artist-primal-scream",
+      "domain": "www.primalscream.net",
+      "url": "https://www.primalscream.net/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "ul.shows-col-inner li[id^='shows_row_']",
+        "artistNameFallback": "Primal Scream",
+        "date": ".googleDate",
+        "ticketUrl": "a.buyticketurl",
+        "venue": ".s_venue",
+        "city": ".addressLocality",
+        "country": ".addressCountry",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.liveContainer .shows-col-inner) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-scotty-mccreery",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-scotty-mccreery.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-22T09:15:10.519Z",
+    "previousConfig": {
+      "id": "artist-scotty-mccreery",
+      "domain": "www.scottymccreery.com",
+      "url": "https://www.scottymccreery.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event.d-flex.justify-content-between",
+        "artistNameFallback": "Scotty McCreery",
+        "date": ".event-date",
+        "ticketUrl": "a.btn-tickets",
+        "venue": ".event-title",
+        "city": ".event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-lady-antebellum",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-lady-antebellum.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-22T09:15:11.452Z",
+    "previousConfig": {
+      "id": "artist-lady-antebellum",
+      "domain": "www.ladyamusic.com",
+      "url": "https://www.ladyamusic.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".data-row.data-row-gig",
+        "artistNameFallback": "Lady Antebellum",
+        "date": ".tour-date",
+        "ticketUrl": ".buy-btn",
+        "venue": ".tour-venue",
+        "city": ".tour-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
   }
 ]
