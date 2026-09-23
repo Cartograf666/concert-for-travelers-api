@@ -21813,5 +21813,112 @@
     "failuresSinceRepair": 0,
     "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
     "verification": ""
+  },
+  {
+    "id": "artist-jorge-e-mateus",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-jorge-e-mateus.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-23T09:26:39.619Z",
+    "previousConfig": {
+      "id": "artist-jorge-e-mateus",
+      "domain": "jorgeemateus.com.br",
+      "url": "https://jorgeemateus.com.br/agenda/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.agenda-event",
+        "artistNameFallback": "Jorge e Mateus",
+        "date": "p.event-date",
+        "ticketUrl": "a.event-tickets",
+        "city": "p.event-local",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "BR"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]; reached https://jorgeemateus.com.br/agenda/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-jun-shibata",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-jun-shibata.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-23T09:26:44.099Z",
+    "previousConfig": {
+      "id": "artist-jun-shibata",
+      "domain": "www.shibatajun.com",
+      "url": "https://www.shibatajun.com/schedule/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.live-schedule__list__item",
+        "artistNameFallback": "Jun Shibata",
+        "date": "p.live-schedule__list__item__date",
+        "ticketUrl": "a.live-schedule__list__item__link",
+        "city": "p.live-schedule__list__item__place",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (div.live-schedule__list__item) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-jorge-palma",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-jorge-palma.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-23T09:28:30.205Z",
+    "previousConfig": {
+      "id": "artist-jorge-palma",
+      "domain": "jorgepalma.pt",
+      "url": "https://jorgepalma.pt/espetaculos/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-item",
+        "artistNameFallback": "Jorge Palma",
+        "date": "p.event-date",
+        "ticketUrl": "a.tickets-button",
+        "city": "p.event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "PT"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
+    "verification": ""
+  },
+  {
+    "id": "the-wall-live-house-taipei",
+    "cohort": "venue",
+    "configPath": "scrapers/the-wall-live-house-taipei.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-23T09:28:49.065Z",
+    "previousConfig": {
+      "id": "the-wall-live-house-taipei",
+      "domain": "thewalllivehouse.kktix.cc",
+      "url": "https://thewalllivehouse.kktix.cc/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "#event-list li.clearfix",
+        "artist": "h2 a",
+        "date": ".date",
+        "ticketUrl": "h2 a",
+        "venueNameFallback": "The Wall Live House",
+        "cityNameFallback": "Taipei",
+        "countryNameFallback": "TW"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: dates_parse [0/250 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]",
+    "verification": ""
   }
 ]
