@@ -21670,5 +21670,148 @@
     "failuresSinceRepair": 0,
     "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://pharisandjason.com/shows but could not re-select on it",
     "verification": ""
+  },
+  {
+    "id": "artist-lady-antebellum",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-lady-antebellum.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-23T09:17:14.365Z",
+    "previousConfig": {
+      "id": "artist-lady-antebellum",
+      "domain": "www.ladyamusic.com",
+      "url": "https://www.ladyamusic.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".data-row.data-row-gig",
+        "artistNameFallback": "Lady Antebellum",
+        "date": ".tour-date",
+        "ticketUrl": ".buy-btn",
+        "venue": ".tour-venue",
+        "city": ".tour-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-marina-satti",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-marina-satti.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-09-23T09:18:19.321Z",
+    "previousConfig": {
+      "id": "artist-marina-satti",
+      "domain": "marinasatti.com",
+      "url": "https://marinasatti.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".vip-cities .vip-city-row",
+        "artistNameFallback": "Marina Satti",
+        "date": ".vip-city-info strong",
+        "ticketUrl": "a.vip-btn@href",
+        "venue": ".vip-city-info",
+        "city": ".vip-city-info",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://marinasatti.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://marinasatti.com/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-primal-scream",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-primal-scream.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-23T09:18:21.987Z",
+    "previousConfig": {
+      "id": "artist-primal-scream",
+      "domain": "www.primalscream.net",
+      "url": "https://www.primalscream.net/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "ul.shows-col-inner li[id^='shows_row_']",
+        "artistNameFallback": "Primal Scream",
+        "date": ".googleDate",
+        "ticketUrl": "a.buyticketurl",
+        "venue": ".s_venue",
+        "city": ".addressLocality",
+        "country": ".addressCountry",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.liveContainer .shows-col-inner) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-ivan-hussey",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-ivan-hussey.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-23T09:18:33.263Z",
+    "previousConfig": {
+      "id": "artist-ivan-hussey",
+      "domain": "www.celloman.co.uk",
+      "url": "http://www.celloman.co.uk/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.event",
+        "artistNameFallback": "Ivan Hussey",
+        "date": ".postdate",
+        "ticketUrl": "h2 a",
+        "venue": ".article-content",
+        "city": ".article-content",
+        "country": ".article-content",
+        "venueNameFallback": "See page content",
+        "cityNameFallback": "See page content",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: city_values_plausible [1/1 city values are longer than 60 chars or containing digits (100%, allow 20%)]; venue_values_plausible [1/1 venue values are longer than 200 chars (100%, allow 20%)]; city_distinct_from_venue [1/1 rows have city identical to venue (100%, allow 20%)]; country_codes_valid [0/1 country values are 2-letter codes (0%, need 80%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-scotty-mccreery",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-scotty-mccreery.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-23T09:18:40.204Z",
+    "previousConfig": {
+      "id": "artist-scotty-mccreery",
+      "domain": "www.scottymccreery.com",
+      "url": "https://www.scottymccreery.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event.d-flex.justify-content-between",
+        "artistNameFallback": "Scotty McCreery",
+        "date": ".event-date",
+        "ticketUrl": "a.btn-tickets",
+        "venue": ".event-title",
+        "city": ".event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
   }
 ]
