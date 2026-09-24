@@ -21920,5 +21920,143 @@
     "failuresSinceRepair": 0,
     "note": "re-selection rejected by live verification -- FAIL: dates_parse [0/250 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]",
     "verification": ""
+  },
+  {
+    "id": "artist-james-alexander",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-james-alexander.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-24T09:22:23.571Z",
+    "previousConfig": {
+      "id": "artist-james-alexander",
+      "domain": "www.jamesalexanderbright.com",
+      "url": "https://www.jamesalexanderbright.com/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-list-item",
+        "artistNameFallback": "James Alexander Bright",
+        "date": ".event-date",
+        "ticketUrl": ".event-tickets a",
+        "venue": ".event-venue",
+        "city": ".event-location-city",
+        "country": ".event-location-country",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "UK"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.elementor-widget-container .elementor-element .elementor-widget-text-editor p) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-jorge-e-mateus",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-jorge-e-mateus.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-24T09:22:27.271Z",
+    "previousConfig": {
+      "id": "artist-jorge-e-mateus",
+      "domain": "jorgeemateus.com.br",
+      "url": "https://jorgeemateus.com.br/agenda/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.agenda-event",
+        "artistNameFallback": "Jorge e Mateus",
+        "date": "p.event-date",
+        "ticketUrl": "a.event-tickets",
+        "city": "p.event-local",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "BR"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://jorgeemateus.com.br/agenda/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-jorge-palma",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-jorge-palma.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-09-24T09:27:23.321Z",
+    "previousConfig": {
+      "id": "artist-jorge-palma",
+      "domain": "jorgepalma.pt",
+      "url": "https://jorgepalma.pt/espetaculos/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-item",
+        "artistNameFallback": "Jorge Palma",
+        "date": "p.event-date",
+        "ticketUrl": "a.tickets-button",
+        "city": "p.event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "PT"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://jorgepalma.pt; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
+    "verification": ""
+  },
+  {
+    "id": "artist-jun-shibata",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-jun-shibata.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-24T09:29:09.860Z",
+    "previousConfig": {
+      "id": "artist-jun-shibata",
+      "domain": "www.shibatajun.com",
+      "url": "https://www.shibatajun.com/schedule/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.live-schedule__list__item",
+        "artistNameFallback": "Jun Shibata",
+        "date": "p.live-schedule__list__item__date",
+        "ticketUrl": "a.live-schedule__list__item__link",
+        "city": "p.live-schedule__list__item__place",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
+    "verification": ""
+  },
+  {
+    "id": "artist-julian-arguelles",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-julian-arguelles.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-24T09:29:17.892Z",
+    "previousConfig": {
+      "id": "artist-julian-arguelles",
+      "domain": "www.julianarguelles.com",
+      "url": "https://www.julianarguelles.com/calendar",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".eventlist-event",
+        "artistNameFallback": "Julian Arguelles",
+        "date": ".eventlist-date",
+        "ticketUrl": ".eventlist-button",
+        "venue": ".eventlist-title",
+        "city": ".eventlist-meta-item--location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.julianarguelles.com/calendar but could not re-select on it",
+    "verification": ""
   }
 ]
