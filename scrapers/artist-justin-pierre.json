@@ -1,0 +1,17 @@
+{
+  "id": "artist-justin-pierre",
+  "domain": "www.justinpierre.com",
+  "url": "http://www.justinpierre.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour-list-item",
+    "artistNameFallback": "Justin Pierre",
+    "date": ".tour-date",
+    "ticketUrl": ".tour-tickets a",
+    "venue": ".tour-venue",
+    "city": ".tour-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
