@@ -22058,5 +22058,168 @@
     "failuresSinceRepair": 0,
     "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.julianarguelles.com/calendar but could not re-select on it",
     "verification": ""
+  },
+  {
+    "id": "artist-james-alexander",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-james-alexander.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-25T09:40:23.013Z",
+    "previousConfig": {
+      "id": "artist-james-alexander",
+      "domain": "www.jamesalexanderbright.com",
+      "url": "https://www.jamesalexanderbright.com/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-list-item",
+        "artistNameFallback": "James Alexander Bright",
+        "date": ".event-date",
+        "ticketUrl": ".event-tickets a",
+        "venue": ".event-venue",
+        "city": ".event-location-city",
+        "country": ".event-location-country",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "UK"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.elementor-widget-container .elementor-element .elementor-widget-wrap > .elementor-element) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-jorge-e-mateus",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-jorge-e-mateus.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-25T09:40:29.374Z",
+    "previousConfig": {
+      "id": "artist-jorge-e-mateus",
+      "domain": "jorgeemateus.com.br",
+      "url": "https://jorgeemateus.com.br/agenda/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.agenda-event",
+        "artistNameFallback": "Jorge e Mateus",
+        "date": "p.event-date",
+        "ticketUrl": "a.event-tickets",
+        "city": "p.event-local",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "BR"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-jorge-palma",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-jorge-palma.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-09-25T09:45:25.431Z",
+    "previousConfig": {
+      "id": "artist-jorge-palma",
+      "domain": "jorgepalma.pt",
+      "url": "https://jorgepalma.pt/espetaculos/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-item",
+        "artistNameFallback": "Jorge Palma",
+        "date": "p.event-date",
+        "ticketUrl": "a.tickets-button",
+        "city": "p.event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "PT"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://jorgepalma.pt; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
+    "verification": ""
+  },
+  {
+    "id": "artist-justin-pierre",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-justin-pierre.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-25T09:45:31.176Z",
+    "previousConfig": {
+      "id": "artist-justin-pierre",
+      "domain": "www.justinpierre.com",
+      "url": "http://www.justinpierre.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour-list-item",
+        "artistNameFallback": "Justin Pierre",
+        "date": ".tour-date",
+        "ticketUrl": ".tour-tickets a",
+        "venue": ".tour-venue",
+        "city": ".tour-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.tour-row) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-jun-shibata",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-jun-shibata.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-25T09:45:35.439Z",
+    "previousConfig": {
+      "id": "artist-jun-shibata",
+      "domain": "www.shibatajun.com",
+      "url": "https://www.shibatajun.com/schedule/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.live-schedule__list__item",
+        "artistNameFallback": "Jun Shibata",
+        "date": "p.live-schedule__list__item__date",
+        "ticketUrl": "a.live-schedule__list__item__link",
+        "city": "p.live-schedule__list__item__place",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (div.live-schedule__list__item) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-ivar-grydeland",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-ivar-grydeland.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-25T09:45:41.662Z",
+    "previousConfig": {
+      "id": "artist-ivar-grydeland",
+      "domain": "www.ivargrydeland.com",
+      "url": "https://www.ivargrydeland.com/concerts",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".sqs-block-content p:has(strong)",
+        "artistNameFallback": "Ivar Grydeland",
+        "date": "strong",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "NO"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.entry-content p) matched 0 elements.",
+    "verification": ""
   }
 ]
