@@ -23,6 +23,49 @@ function ebResult(overrides: any = {}): any {
   };
 }
 
+test('Eventbrite - failed attempts consume the request cap without discarding cache', async () => {
+  let calls = 0;
+  let health: any;
+  const retained = { artist: 'A', country: 'US' };
+  const cache: EventbriteCache = { A: { concerts: [retained] } };
+  const output = await fetchEventbriteConcerts(['A', 'B', 'C', 'D'], {
+    cache, maxPerRun: 2, delayMs: 0,
+    fetchFn: async () => {
+      calls++;
+      if (calls % 2) throw Object.assign(new Error('blocked'), { response: { status: 405 } });
+      return [];
+    },
+    onHealth: report => { health = report; }
+  });
+  assert.equal(calls, 2);
+  assert.equal(health.counts.attempted, 2);
+  assert.equal(health.counts.failed, 1);
+  assert.equal(health.counts.succeeded, 1);
+  assert.deepStrictEqual(output, [retained]);
+  assert.equal(cache.A.verifiedAt, undefined);
+});
+
+test('Eventbrite - failure does not bypass the configured inter-request delay', async t => {
+  t.mock.timers.enable({ apis: ['setTimeout'] });
+  let calls = 0;
+  const sweep = fetchEventbriteConcerts(['A', 'B'], {
+    maxPerRun: 2,
+    fetchFn: async () => {
+      calls++;
+      throw Object.assign(new Error('blocked'), { response: { status: 405 } });
+    }
+  });
+  await Promise.resolve();
+  await Promise.resolve();
+  assert.equal(calls, 1, 'failure must not immediately trigger the next request');
+  t.mock.timers.tick(2499);
+  await Promise.resolve();
+  assert.equal(calls, 1);
+  t.mock.timers.tick(1);
+  await sweep;
+  assert.equal(calls, 2);
+});
+
 test('Eventbrite - extractEbServerData parses the embedded window.__SERVER_DATA__ blob', () => {
   const html = `<html><script>window.__SERVER_DATA__ = {"a":1,"b":[2,3]};\n</script></html>`;
   assert.deepStrictEqual(extractEbServerData(html), { a: 1, b: [2, 3] });
@@ -202,7 +245,7 @@ test('Eventbrite - an all-fresh verified cache needs no requests and is healthy'
   assert.equal(health.freshness.intervalMeaning, 'minimum_revisit_interval_not_stale_sla');
 });
 
-test('Eventbrite - skippedFresh covers fresh targets beyond the successful request cap', async () => {
+test('Eventbrite - skippedFresh covers fresh targets beyond the request cap', async () => {
   const at = '2026-02-01T00:00:00.000Z';
   let health: any;
   const cache: EventbriteCache = {

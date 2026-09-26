@@ -14,60 +14,127 @@ function toLocalIso(d: Date): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 }
 
-// ISO 3166-1 alpha-2 codes for the touring markets this project actually scrapes
-// (Europe + the other major concert markets). Used to build a full-English-name ->
-// code reverse lookup below, since some sites (e.g. schema.org addressCountry
-// microdata on artist tour pages) render the country as a name ("Germany"), not
-// the 2-character code ConcertSchema requires.
-const KNOWN_COUNTRY_CODES = [
-  'AD', 'AT', 'AU', 'BA', 'BE', 'BG', 'BR', 'CA', 'CH', 'CY', 'CZ', 'DE', 'DK', 'EE',
-  'ES', 'FI', 'FR', 'GB', 'GE', 'GR', 'HR', 'HU', 'IE', 'IL', 'IS', 'IT', 'JP', 'LT',
-  'LU', 'LV', 'MC', 'MD', 'ME', 'MK', 'MT', 'MX', 'NL', 'NO', 'NZ', 'PL', 'PT', 'RO',
-  'RS', 'RU', 'SE', 'SG', 'SI', 'SK', 'TR', 'UA', 'US', 'ZA'
-];
+// Complete ISO 3166-1 alpha-2 list. Limiting this to today's main touring markets
+// caused valid tour-page values such as "Argentina" and "Colombia" to survive as
+// long strings and then fail ConcertSchema's strict two-character country field.
+const ISO_COUNTRY_CODES = `AD AE AF AG AI AL AM AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BM BN BO BQ BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CW CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR SS ST SV SX SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VA VC VE VG VI VN VU WF WS YE YT ZA ZM ZW`.split(' ');
+const ISO_COUNTRY_CODE_SET = new Set(ISO_COUNTRY_CODES);
 
-/** Reverse lookup: full English country name (lowercased) -> ISO alpha-2 code. */
-function buildCountryNameToCode(): Map<string, string> {
-  const map = new Map<string, string>();
+const COUNTRY_NAME_LOCALES = ['en', 'nl', 'fr', 'de', 'it', 'es', 'no', 'tr'];
+
+function countryLookupKey(value: string): string {
+  return deburr(value).replace(/\s+/g, ' ').trim().toLowerCase();
+}
+
+function cleanCountryCandidate(value: string): string {
+  return value.replace(/\s*\([^)]*\)\s*$/, '').replace(/\s+/g, ' ').trim();
+}
+
+/** Reverse lookup of exact localized country names. `null` marks a name that
+ * resolves to different regions across locales and is therefore unsafe. */
+function buildCountryNameToCode(): Map<string, string | null> {
+  const map = new Map<string, string | null>();
+  const add = (name: string, code: string): void => {
+    const key = countryLookupKey(name);
+    const existing = map.get(key);
+    if (existing === undefined) map.set(key, code);
+    else if (existing !== code) map.set(key, null);
+  };
+
   try {
-    const displayNames = new Intl.DisplayNames(['en'], { type: 'region' });
-    for (const code of KNOWN_COUNTRY_CODES) {
-      const name = displayNames.of(code);
-      if (name) map.set(name.toLowerCase(), code);
+    for (const locale of COUNTRY_NAME_LOCALES) {
+      const displayNames = new Intl.DisplayNames([locale], { type: 'region' });
+      for (const code of ISO_COUNTRY_CODES) {
+        const name = displayNames.of(code);
+        if (name && name !== code) add(name, code);
+      }
     }
   } catch {
-    // Intl.DisplayNames unavailable (older runtime) -- country normalization
-    // just won't apply; raw 2-letter codes still pass through unaffected.
+    // Intl.DisplayNames unavailable (older runtime): explicit aliases and raw
+    // two-letter codes still work; unknown names remain invalid and are rejected.
   }
-  // A couple of common short/alternate forms Intl doesn't produce by default.
-  map.set('uk', 'GB');
-  map.set('the united kingdom', 'GB');
-  map.set('usa', 'US');
-  map.set('the united states', 'US');
-  map.set('the netherlands', 'NL');
-  map.set('czech republic', 'CZ');
+
+  // Common standalone spellings and constituent countries not emitted as ISO
+  // display names. These remain exact matches; there is no fuzzy inference.
+  for (const [name, code] of Object.entries({
+    uk: 'GB',
+    'u.k.': 'GB',
+    'the united kingdom': 'GB',
+    england: 'GB',
+    scotland: 'GB',
+    wales: 'GB',
+    'northern ireland': 'GB',
+    usa: 'US',
+    'the united states': 'US',
+    'the netherlands': 'NL',
+    holland: 'NL',
+    'czech republic': 'CZ'
+  })) add(name, code);
+
   return map;
 }
 const COUNTRY_NAME_TO_CODE = buildCountryNameToCode();
 
-/** Accepts either a 2-letter code or a full English country name (e.g. schema.org
- * addressCountry microdata, which some sites render as a name, not a code). */
+// In a mixed location, this exact word is also a common state/region name. A
+// standalone country field may still legitimately be Georgia, but
+// "Atlanta, Georgia" must not silently become the country GE.
+const AMBIGUOUS_MIXED_COUNTRY_NAMES = new Set(['georgia']);
+
+function countryNameCode(value: string, mixed: boolean): string | undefined {
+  const key = countryLookupKey(value);
+  if (!key || (mixed && AMBIGUOUS_MIXED_COUNTRY_NAMES.has(key))) return undefined;
+  return COUNTRY_NAME_TO_CODE.get(key) ?? undefined;
+}
+
+/** Accept a strict two-letter code or an exact country name. The only mixed
+ * input this recognizes is the established country-first shape
+ * "Bulgaria, Plovdiv". It deliberately does not reverse city-first locations:
+ * in "Los Angeles, CA", CA is a US state, not Canada. Unknown/contradictory
+ * text stays long so ConcertSchema rejects it instead of publishing a guess. */
 export function normalizeCountry(raw: string): string {
-  // Some sites nest a city span inside the same element as the country text with
-  // no separating markup (e.g. Sabaton's tour page: a "tour-country-city" element
-  // whose cheerio .text() yields "Bulgaria, Plovdiv" once the nested city span's
-  // text is concatenated in) -- neither 2-letter codes nor country names contain a
-  // comma, so taking only the part before the first one recovers just the country.
-  // .trim() also strips a trailing non-breaking space from an &nbsp; entity.
-  // A trailing parenthetical alternate name ("Slovakia (Slovak Republic)") is
-  // dropped too -- the primary name before it is what the lookup below expects.
-  const cleaned = raw.split(',')[0].replace(/\s*\([^)]*\)\s*$/, '').trim();
-  // Check the name map first (case-insensitive) -- some informal 2-letter
-  // abbreviations ("UK") are not valid ISO codes themselves (the real code is
-  // "GB"), so a bare length check can't be trusted to mean "already a code".
-  const byName = COUNTRY_NAME_TO_CODE.get(cleaned.toLowerCase());
-  if (byName) return byName;
-  return cleaned.toUpperCase();
+  const cleaned = raw.replace(/\s+/g, ' ').trim();
+  const exactCandidate = cleanCountryCandidate(cleaned);
+
+  const exactName = countryNameCode(exactCandidate, false);
+  if (exactName) return exactName;
+  if (/^[a-z]{2}$/i.test(exactCandidate)) {
+    const upper = exactCandidate.toUpperCase();
+    return ISO_COUNTRY_CODE_SET.has(upper) ? upper : '';
+  }
+
+  // Some generated selectors concatenate a nested country label twice without
+  // a separator (observed live: "United KingdomUnited Kingdom"). Only recover
+  // when the two exact halves are identical and themselves a known country.
+  const key = countryLookupKey(exactCandidate);
+  if (key.length % 2 === 0) {
+    const half = key.slice(0, key.length / 2);
+    if (half === key.slice(key.length / 2)) {
+      const repeatedName = countryNameCode(half, false);
+      if (repeatedName) return repeatedName;
+    }
+  }
+
+  const segments = cleaned.split(',').map(cleanCountryCandidate);
+  const first = segments[0];
+  if (segments.length > 1) {
+    const firstByName = countryNameCode(first, false);
+    const upperFirst = first.toUpperCase();
+    const firstCode = firstByName ?? (ISO_COUNTRY_CODE_SET.has(upperFirst) ? upperFirst : undefined);
+    const countryEvidence = new Set<string>();
+
+    for (const segment of segments) {
+      const upper = segment.toUpperCase();
+      if (ISO_COUNTRY_CODE_SET.has(upper)) countryEvidence.add(upper);
+      const byName = countryNameCode(segment, true);
+      if (byName) countryEvidence.add(byName);
+    }
+
+    if (countryEvidence.size > 1) return cleaned.toUpperCase();
+    if (firstCode && (countryEvidence.size === 0 || countryEvidence.has(firstCode))) return firstCode;
+  }
+
+  // Preserve the old reject shape (first comma-delimited field, upper-cased).
+  return /^[a-z]{2}$/i.test(first) ? '' : first.toUpperCase();
 }
 
 // A year-less date is only assumed to be next year once it is more than this many
