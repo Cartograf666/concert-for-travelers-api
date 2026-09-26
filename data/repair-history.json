@@ -22422,5 +22422,199 @@
     "failuresSinceRepair": 0,
     "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: dates_parse [0/5 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]; city_values_plausible [5/5 city values are longer than 60 chars or containing digits (100%, allow 20%)]; venue_values_plausible [2/5 venue values are longer than 200 chars (40%, allow 20%)]; city_distinct_from_venue [5/5 rows have city identical to venue (100%, allow 20%)]; country_codes_valid [0/5 country values are 2-letter codes (0%, need 80%)]",
     "verification": ""
+  },
+  {
+    "id": "artist-iron-maidens-the",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-iron-maidens-the.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-26T09:10:07.748Z",
+    "previousConfig": {
+      "id": "artist-iron-maidens-the",
+      "domain": "www.theironmaidens.com",
+      "url": "https://theironmaidens.com/upcoming-events/",
+      "type": "static_selectors",
+      "httpClient": "got-scraping",
+      "selectors": {
+        "eventBlock": ".tour-item",
+        "artistNameFallback": "The Iron Maidens",
+        "date": ".tour-date",
+        "ticketUrl": ".tour-tickets a",
+        "venue": ".tour-venue",
+        "city": ".tour-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.tour-item) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-ivar-grydeland",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-ivar-grydeland.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-26T09:10:09.688Z",
+    "previousConfig": {
+      "id": "artist-ivar-grydeland",
+      "domain": "www.ivargrydeland.com",
+      "url": "https://www.ivargrydeland.com/concerts",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".sqs-block-content p:has(strong)",
+        "artistNameFallback": "Ivar Grydeland",
+        "date": "strong",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "NO"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.entry-content p) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-james-alexander",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-james-alexander.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-26T09:10:10.764Z",
+    "previousConfig": {
+      "id": "artist-james-alexander",
+      "domain": "www.jamesalexanderbright.com",
+      "url": "https://www.jamesalexanderbright.com/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-list-item",
+        "artistNameFallback": "James Alexander Bright",
+        "date": ".event-date",
+        "ticketUrl": ".event-tickets a",
+        "venue": ".event-venue",
+        "city": ".event-location-city",
+        "country": ".event-location-country",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "UK"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.elementor-element .elementor-widget-container p) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-jorge-e-mateus",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-jorge-e-mateus.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-26T09:10:11.590Z",
+    "previousConfig": {
+      "id": "artist-jorge-e-mateus",
+      "domain": "jorgeemateus.com.br",
+      "url": "https://jorgeemateus.com.br/agenda/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.agenda-event",
+        "artistNameFallback": "Jorge e Mateus",
+        "date": "p.event-date",
+        "ticketUrl": "a.event-tickets",
+        "city": "p.event-local",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "BR"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-justin-pierre",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-justin-pierre.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-26T09:10:12.333Z",
+    "previousConfig": {
+      "id": "artist-justin-pierre",
+      "domain": "www.justinpierre.com",
+      "url": "http://www.justinpierre.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour-list-item",
+        "artistNameFallback": "Justin Pierre",
+        "date": ".tour-date",
+        "ticketUrl": ".tour-tickets a",
+        "venue": ".tour-venue",
+        "city": ".tour-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.event-row) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "asiaworld-expo-hong-kong",
+    "cohort": "venue",
+    "configPath": "scrapers/asiaworld-expo-hong-kong.json",
+    "repairedConfigHash": "9c951688fe75dabddc349ba05439f1e4f5e6048c3d345cc0e93731da8bac55d0",
+    "strategy": "transient",
+    "repairedAt": "2026-09-26T09:10:24.991Z",
+    "previousConfig": {
+      "id": "asiaworld-expo-hong-kong",
+      "domain": "asiaworld-expo.com",
+      "url": "https://www.asiaworld-expo.com/whats-on/upcoming-events",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-filter-tab",
+        "artist": "h3",
+        "date": "div.event-filter-tab-date",
+        "venue": "div.event-filter-tab-location",
+        "venueNameFallback": "AsiaWorld-Expo",
+        "cityNameFallback": "Hong Kong",
+        "countryNameFallback": "HK",
+        "lat": 22.3047,
+        "lng": 113.9397
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay",
+    "verification": "PASS (580 events, 10 checks)"
+  },
+  {
+    "id": "artist-jorge-palma",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-jorge-palma.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-26T09:12:11.002Z",
+    "previousConfig": {
+      "id": "artist-jorge-palma",
+      "domain": "jorgepalma.pt",
+      "url": "https://jorgepalma.pt/espetaculos/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-item",
+        "artistNameFallback": "Jorge Palma",
+        "date": "p.event-date",
+        "ticketUrl": "a.tickets-button",
+        "city": "p.event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "PT"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
+    "verification": ""
   }
 ]
