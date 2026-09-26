@@ -649,14 +649,16 @@ let browserPromise: Promise<Browser> | null = null;
 
 function getBrowser(): Promise<Browser> {
   if (!browserPromise) {
-    browserPromise = (async () => {
-      try {
-        return await chromium.launch({ headless: true });
-      } catch (err) {
-        await closeBrowser();
-        throw err;
-      }
-    })();
+    const launchPromise = chromium.launch({ headless: true });
+    browserPromise = launchPromise;
+    // A failed launch has no Browser to close. Calling closeBrowser() from this
+    // rejection path used to deadlock: closeBrowser awaited browserPromise,
+    // which was this same still-rejecting promise. Clear only this failed launch
+    // so all concurrent waiters see the original error while a later scrape can
+    // start a fresh shared launch.
+    void launchPromise.catch(() => {
+      if (browserPromise === launchPromise) browserPromise = null;
+    });
   }
   return browserPromise;
 }

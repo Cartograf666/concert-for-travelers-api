@@ -18,7 +18,9 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   This is separate from the labelled synthetic dashboard preview. Base `c8f1f0a`
   (iteration 1, PR #141); isolated branch `codex/collector-recovery-20260926`
   in `/private/tmp/concert-live-fix.XPYzJe/worktree`. The concurrently released
-  checkout is untouched. No commit, push, deployment or provider sweep here.
+  checkout is untouched. Initial local handoff had no publication or provider sweep.
+  Alex subsequently approved the full release and source-recovery plan with
+  “Все делаем”; release preparation now uses the current main (`68d2d37`).
 - Fresh evidence: published status generated `2026-09-25T09:38:24.515Z` reports
   39,711 concerts, venue 96/147 successful with 10 stale caches, artist 366/417
   successful. Daily run [36119104354](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/36119104354)
@@ -62,17 +64,31 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   PASS; `npm run build` and `git diff --check` PASS. Scoped ESLint has no errors,
   only existing warnings. Independent review found the non-ISO code issue above;
   it was corrected and regression-tested, with no remaining blocking findings.
-  Full runner verification is NOT green: its Playwright case cannot bind port
-  8130 because another existing Node test process (PID 84788) holds it. No foreign
-  process was killed and no test/security check was weakened to bypass this.
+  The initial full runner attempt was blocked by port 8130. Its owner confirmed
+  and stopped that previous test process. A further run exposed a real launch
+  failure deadlock: getBrowser caught a rejected launch, then awaited closeBrowser,
+  which awaited the same pending promise. A deterministic test reproduced the
+  timeout; failed launches now clear their shared promise and allow a later retry.
+  Compatible Chromium 1243 was installed. The full test suite, including the real
+  Playwright-render case, then passed on Node 22; production SSRF policy separately
+  passed without the localhost override. Full lint: 0 errors, 109 existing warnings;
+  build and diff-check passed. No test/security check was weakened.
 - Tested base `c8f1f0acb2597c0063371dd12b54e8142593b067` plus seven code/test
   paths: `src/engine/{eventbrite,runner}.ts`, `src/pipeline/process.ts`, and
   `tests/{eventbrite,country_recovery,selector_attr_recovery,custom_json_response}.test.ts`.
   SHA-256 over sorted path + NUL + bytes + NUL:
   `e3e05f5e0f97a2efc478b44c97a810d0fdd580924bb494cc6320b20e3828d8bc`.
-  Next: integrate this separate patch only with release-owner coordination, then
-  verify a real hosted run before claiming improved public coverage. Individual
-  broken-site configs/access failures require source-specific recovery evidence.
+  This hash identifies the original seven-file patch, before the additional
+  browser lifecycle fix and its regression test. Release-owner coordination is
+  complete. Next: release through PR/CI, then verify a normal hosted collection
+  before claiming improved public coverage. Individual broken-site configs/access
+  failures require source-specific recovery evidence.
+- Coverage assessment on the same saved Bandsintown cache: 20,738 artists,
+  including 3,808 with future events. Active-cache verification age p50 11.01 days,
+  p95 19.06, max 20.07; 2,781 active artists were older than six days. The 800/day
+  cap requires at least 26 runs for one whole-pool pass. Existing 20% active
+  reservation and all provider limits are unchanged; a freshness-priority change
+  remains a separate product decision after hosted recovery is measured.
 
 ## Collector clarity and freshness — iteration 1, 2026-09-25
 
