@@ -204,6 +204,27 @@ export async function loadConfigs(scrapersDir: string): Promise<ScraperConfig[]>
   return configs;
 }
 
+const TERMINAL_ATTRIBUTE_SELECTOR = /^(?<css>.+?)::attr\(\s*(?<attribute>[A-Za-z_:][A-Za-z0-9:_.-]*)\s*\)\s*$/;
+
+/**
+ * Existing generated configs contain the terminal attribute shorthand
+ * `a::attr(href)`. css-select deliberately rejects pseudo-elements, so decode
+ * only that unambiguous terminal form before giving the CSS portion to Cheerio.
+ * Other pseudo-elements and malformed shorthands remain ordinary CSS input and
+ * therefore keep failing loudly rather than being guessed at.
+ */
+function splitTerminalAttributeSelector(selector: string): { css: string; attribute?: string } {
+  const match = selector.match(TERMINAL_ATTRIBUTE_SELECTOR);
+  if (!match?.groups) return { css: selector };
+  return { css: match.groups.css.trim(), attribute: match.groups.attribute };
+}
+
+function extractStaticField(block: any, selector: string): string {
+  const { css, attribute } = splitTerminalAttributeSelector(selector);
+  const selected = block.find(css);
+  return attribute ? (selected.attr(attribute)?.trim() ?? '') : selected.text().trim();
+}
+
 /**
  * Runs a single static selector-based scraper.
  */
@@ -220,25 +241,26 @@ async function runStaticScraper(config: ScraperConfig, html: string, scrapedAt: 
     const block = $(element);
 
     // Extract artist text; single-artist tour pages carry no per-row name, use the fixed fallback
-    const artistText = (artist ? block.find(artist).text().trim() : '') || artistNameFallback || '';
+    const artistText = (artist ? extractStaticField(block, artist) : '') || artistNameFallback || '';
 
     // Extract date text
-    const dateText = block.find(date).text().trim();
+    const dateText = extractStaticField(block, date);
 
     // Per-row venue/city/country (artist tour pages); empty when selector absent
-    const venueText = venue ? block.find(venue).text().trim() : '';
-    const cityText = city ? block.find(city).text().trim() : '';
-    const countryText = country ? block.find(country).text().trim() : '';
+    const venueText = venue ? extractStaticField(block, venue) : '';
+    const cityText = city ? extractStaticField(block, city) : '';
+    const countryText = country ? extractStaticField(block, country) : '';
 
     // Extract ticket/info URL
     let absoluteTicketUrl: string | undefined;
     if (ticketUrl) {
-      const ticketEl = block.find(ticketUrl);
-      let href = ticketEl.attr('href');
+      const { css, attribute } = splitTerminalAttributeSelector(ticketUrl);
+      const ticketEl = block.find(css);
+      let href = ticketEl.attr(attribute ?? 'href');
 
       // Fallback: check if the block itself is an anchor tag and we selected it
       if (!href && block.is('a')) {
-        href = block.attr('href');
+        href = block.attr(attribute ?? 'href');
       }
 
       if (href) {
@@ -529,6 +551,11 @@ async function performGet(
   }
 
   const response = await axios.get(url, {
+    // Every non-JSON API scraper consumes the raw response body: static and custom
+    // implementations parse HTML/JSON themselves. Axios otherwise auto-parses an
+    // application/json response into an object, which breaks custom_js modules
+    // such as so36-berlin that intentionally JSON.parse the supplied text.
+    responseType: 'text',
     headers: {
       'User-Agent': axiosUserAgent,
       'Accept': 'text/html,application/xhtml+xml,application/xml,application/json;q=0.9,*/*;q=0.8',

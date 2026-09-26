@@ -11,6 +11,69 @@ each concert in space and time, and (3) **rank** the options.
 
 Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
+## Confirmed collector failures — recovery, 2026-09-26
+
+- ✅ Confirmed code defects fixed locally; hosted source recovery remains unverified.
+  Alex explicitly requested diagnosis of real degradation followed by fixes.
+  This is separate from the labelled synthetic dashboard preview. Base `c8f1f0a`
+  (iteration 1, PR #141); isolated branch `codex/collector-recovery-20260926`
+  in `/private/tmp/concert-live-fix.XPYzJe/worktree`. The concurrently released
+  checkout is untouched. No commit, push, deployment or provider sweep here.
+- Fresh evidence: published status generated `2026-09-25T09:38:24.515Z` reports
+  39,711 concerts, venue 96/147 successful with 10 stale caches, artist 366/417
+  successful. Daily run [36119104354](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/36119104354)
+  and artist run [36117069512](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/36117069512)
+  both completed successfully despite these source failures. Downloaded existing
+  `scraper-reports` artifact (10856307237), not a new collection, into
+  `/private/tmp/concert-live-fix.XPYzJe/reports` for offline reproduction.
+- Failure breakdown: venue 38 selector/empty-result failures, 9 fetch errors,
+  1 client-rendered page and 3 parse errors; artist 21 parse errors, 15 selector/
+  empty-result failures, 15 fetch errors. Counts are per cohort, not unique sites.
+  Eleven artist parse errors explicitly reject existing `::attr(...)` selectors.
+  SO36 fails because its JSON response is auto-decoded before its text-based
+  custom parser. Eventbrite makes five HTTP 405 requests in approximately 0.3 s,
+  collects zero artists and falls back to 23 cached raw events. Daily processing
+  rejects 618 records at schema validation; most errors concern country length.
+- Implemented bounded local corrections: preserve strict country validation while
+  recovering unambiguous representations; support terminal attribute extraction;
+  preserve raw response text for custom JSON parsers; count failed Eventbrite
+  requests against its existing cap and retain spacing after failures. Root owns
+  Eventbrite/integration/docs, senior_debugger country normalization/tests,
+  implementer runner/tests, reviewer read-only correctness checks. API limits,
+  source selection, schedules and security protections are not relaxed.
+- Remaining live limitations: HTTP 405/access restrictions, unavailable hosts,
+  stale/invalid per-site configs and finite sweep capacity are not resolved by
+  these code corrections. No source is relabelled healthy without a successful
+  check. Recovery counts from saved data are offline evidence, not newly scraped
+  concerts or proof of published improvement.
+- Saved artist-cache replay (11,974 raw records, fixed clock
+  `2026-09-25T09:35:00Z`, identical approved artist DB): 2,375 -> 2,492 accepted
+  identities, exactly 117 added / 0 removed / 0 changed using the production
+  artist/date/city dedupe key. Zod rejects 615 -> 498; oversized country fields
+  590 -> 473. These are artist-cache-only counts, not the whole daily dataset.
+  Invalid `PO`/`KO` are now rejected; their historical fixtures were already past
+  dated, so they do not affect this accepted-set delta. Remaining malformed
+  fields are not guessed. Replay script and baseline/current/delta JSON are at
+  `/private/tmp/concert-live-fix.XPYzJe/replay-country-loss.mjs` and
+  `/private/tmp/concert-live-fix.XPYzJe/country-replay-{baseline,current,delta}.json`.
+  Delta SHA-256: `bf004d4d6b4a7e493757cf4d5dc9294fc9ec48b147a0e1b2cd7f246e831cfe39`.
+- Final root checks: 59 country/pipeline/processing/Eventbrite/source-health
+  tests PASS; three loopback selector/raw-JSON tests and one SSRF policy test
+  PASS; `npm run build` and `git diff --check` PASS. Scoped ESLint has no errors,
+  only existing warnings. Independent review found the non-ISO code issue above;
+  it was corrected and regression-tested, with no remaining blocking findings.
+  Full runner verification is NOT green: its Playwright case cannot bind port
+  8130 because another existing Node test process (PID 84788) holds it. No foreign
+  process was killed and no test/security check was weakened to bypass this.
+- Tested base `c8f1f0acb2597c0063371dd12b54e8142593b067` plus seven code/test
+  paths: `src/engine/{eventbrite,runner}.ts`, `src/pipeline/process.ts`, and
+  `tests/{eventbrite,country_recovery,selector_attr_recovery,custom_json_response}.test.ts`.
+  SHA-256 over sorted path + NUL + bytes + NUL:
+  `e3e05f5e0f97a2efc478b44c97a810d0fdd580924bb494cc6320b20e3828d8bc`.
+  Next: integrate this separate patch only with release-owner coordination, then
+  verify a real hosted run before claiming improved public coverage. Individual
+  broken-site configs/access failures require source-specific recovery evidence.
+
 ## Collector clarity and freshness — iteration 1, 2026-09-25
 
 - ✅ Merged via PR #141; hosted collection validation pending. Alex

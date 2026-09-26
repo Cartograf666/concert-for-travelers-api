@@ -237,13 +237,16 @@ export async function fetchEventbriteConcerts(
 
   for (const artist of ordered) {
     if (stopped) break;
-    if (fetched >= maxPerRun) break;
+    if (attempted >= maxPerRun) break;
 
     const cached = cache[artist];
     if (cached?.fetchedAt && new Date(cached.fetchedAt).getTime() > freshCutoff) {
       continue;
     }
 
+    // Failed requests still count against the provider budget and must not
+    // bypass its spacing. Wait only when another request will actually run.
+    if (attempted > 0) await sleep(delayMs);
     attempted++;
     try {
       const results = await fetchFn(artist, locationSlug, baseUrl);
@@ -263,7 +266,6 @@ export async function fetchEventbriteConcerts(
       verifiedThisRun.add(artist);
       blockStreak = 0;
       fetched++;
-      await sleep(delayMs);
     } catch (err: any) {
       blockStreak++;
       failed++;
