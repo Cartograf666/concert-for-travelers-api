@@ -24,6 +24,7 @@ permissions:
 # enrich-database/wd-bulk, enrich-metadata, self-heal auto-merges).
 concurrency:
   group: artist-db-write
+  queue: max # retain up to 100 pending writers instead of replacing their slots
   cancel-in-progress: false
 
 jobs:

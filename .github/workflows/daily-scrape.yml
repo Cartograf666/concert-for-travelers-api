@@ -45,6 +45,7 @@ jobs:
        github.event.workflow_run.head_branch == github.event.repository.default_branch)
     concurrency:
       group: artist-db-write
+      queue: max # retain up to 100 pending writers instead of replacing their slots
       cancel-in-progress: false
     runs-on: ubuntu-latest
     # A wedged run must not sit on the 6h Actions default ceiling. Raised 30 -> 60
@@ -181,7 +182,9 @@ jobs:
       - name: Restore artist run manifest
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
-          path: reports/artist-run-manifest.json
+          path: |
+            reports/artist-run-manifest.json
+            reports/artist-source-health.json
           key: artist-run-manifest-${{ github.run_id }}
           restore-keys: |
             artist-run-manifest-
@@ -281,6 +284,9 @@ jobs:
               const status = JSON.parse(fs.readFileSync('dist/status.json', 'utf-8'));
               status.publication = {
                 ...(status.publication || { schemaVersion: 1 }),
+                // Eligibility is not a deployment receipt. Keep the top-level
+                // state consistent without claiming Pages has deployed yet.
+                state: state === 'eligible' ? 'eligible' : state === 'blocked' ? 'blocked' : 'no_changes',
                 healthGate: {
                   state,
                   reason,

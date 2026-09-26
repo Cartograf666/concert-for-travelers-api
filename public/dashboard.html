@@ -45,7 +45,21 @@
     border-radius: 8px; padding: 10px 12px; font-size: 13px; margin-bottom: 8px; }
   .err { color: var(--bad); }
   .foot { color: var(--muted); font-size: 12px; margin-top: 8px; }
-  .toggle { cursor: pointer; color: var(--accent); font-size: 13px; user-select: none; }
+  .toggle { cursor: pointer; color: var(--accent); font: inherit; font-size: 13px; background: none; border: 0; padding: 6px 0; }
+  .source-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-bottom: 12px; }
+  .source-item { background: var(--panel2); border: 1px solid var(--line); border-radius: 8px; padding: 12px; min-width: 0; }
+  .source-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+  .source-heading h3 { margin: 0; font-size: 15px; }
+  @media (max-width: 720px) { .source-list { grid-template-columns: 1fr; } }
+  .source-item p { margin: 6px 0 0; color: var(--muted); font-size: 13px; overflow-wrap: anywhere; }
+  .source-item .action { color: var(--txt); }
+  details { margin: 10px 0; }
+  summary { cursor: pointer; color: var(--accent); }
+  .table-scroll { overflow-x: auto; margin: 12px 0; }
+  table { width: 100%; border-collapse: collapse; text-align: left; font-size: 13px; }
+  th, td { padding: 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 500; }
+  button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 </style>
 </head>
 <body>
@@ -58,6 +72,17 @@
 
   <div class="cards" id="cards"></div>
 
+  <section aria-labelledby="freshness-heading">
+    <h2 id="freshness-heading">Source verification &amp; cache age</h2>
+    <p class="note">A new API snapshot can contain older cached events. Verification age measures successful source checks; request intervals and provider limits are unchanged.</p>
+    <div class="source-list" id="source-health"><p class="note">Loading source reports…</p></div>
+  </section>
+
+  <section aria-labelledby="processing-heading">
+    <h2 id="processing-heading">Latest processing pass</h2>
+    <div id="processing"><p class="note">Loading processing report…</p></div>
+  </section>
+
   <div class="grid2">
     <section>
       <h2>By source</h2>
@@ -65,7 +90,7 @@
     </section>
     <section>
       <h2>Parser health</h2>
-      <div class="heal">🔧 Failed parsers are re-diagnosed and repaired automatically by the self-heal workflow — a red entry here is queued for auto-fix, not lost.</div>
+      <div class="heal">Automatic repair attempts are checked before adoption. A failed source may still serve cached events; recovery is confirmed only by a later successful check.</div>
       <div id="health-detail"><div class="note">…</div></div>
     </section>
   </div>
@@ -86,7 +111,9 @@ const flag = (cc) => {
 const fmt = (n) => (n == null ? '—' : n.toLocaleString('en-US'));
 const ago = (iso) => {
   if (!iso) return 'unknown';
-  const s = Math.max(0, (Date.now() - new Date(iso).getTime()) / 1000);
+  const time = Date.parse(iso);
+  if (!Number.isFinite(time)) return 'unknown';
+  const s = Math.max(0, (Date.now() - time) / 1000);
   if (s < 90) return 'just now';
   if (s < 5400) return Math.round(s / 60) + ' min ago';
   if (s < 129600) return Math.round(s / 3600) + ' h ago';
@@ -99,7 +126,7 @@ function bars(el, rows, max) {
   for (const r of rows) {
     const div = document.createElement('div');
     div.className = 'row';
-    div.innerHTML = `<div class="name">${r.label}</div>
+    div.innerHTML = `<div class="name">${esc(r.label)}</div>
       <div class="bar"><i style="width:${max ? Math.max(2, (r.value / max) * 100) : 0}%"></i></div>
       <div class="v">${fmt(r.value)}</div>`;
     el.appendChild(div);
@@ -107,13 +134,81 @@ function bars(el, rows, max) {
 }
 
 const SOURCE_LABEL = (s) =>
-  s === 'ticketmaster.com' ? 'Ticketmaster' : s === 'bandsintown.com' ? 'Bandsintown' : 'Direct scrapers';
+  s === 'ticketmaster.com' ? 'Ticketmaster' : s === 'bandsintown.com' ? 'Bandsintown' : s === 'eventbrite.com' ? 'Eventbrite' : 'Direct scrapers';
+const esc = (value) => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const days = (n) => Number.isFinite(n) ? n.toLocaleString('en-US', { maximumFractionDigits: 1 }) + ' d' : 'unknown';
+const SOURCE_NAMES = { venue: 'Venue & direct parsers', artist: 'Artist tour pages', bandsintown: 'Bandsintown', eventbrite: 'Eventbrite', ticketmaster: 'Ticketmaster' };
+const SOURCE_STATES = { healthy: 'CHECKED', degraded: 'PARTIAL', unavailable: 'UNAVAILABLE', unknown: 'UNKNOWN', not_run: 'NOT RUN' };
+const ACTION_NAMES = {
+  wait_for_next_completed_stage: 'Check that the next scheduled collection stage completes.',
+  configure_source_targets: 'Check the configured source targets.', configure_source: 'Check source configuration and credentials.',
+  retry_and_inspect_source_access: 'Check source access and the next scheduled retry.',
+  review_source_network_policy: 'Review the source URL against the existing network policy.',
+  use_supported_rendered_source_path: 'Check whether the source requires a supported rendered page.',
+  repair_source_extraction: 'Inspect and repair extraction for the affected source.',
+  inspect_source_format_change: 'Inspect the source response format.', wait_for_source_cooldown: 'Allow the existing source cooldown before retrying.',
+  inspect_source_failure: 'Inspect the latest source failure report.',
+  treat_source_coverage_as_partial: 'Treat this source coverage as incomplete; inspect the pagination report.',
+  check_ticketmaster_api_key: 'Check the Ticketmaster API configuration.',
+  retry_next_scheduled_sweep: 'Check the next scheduled sweep using the existing request limits.',
+  review_artist_source_identity: 'Check whether the source has a usable feed for the affected artist.',
+  inspect_source_access_or_format: 'Inspect source access and the response format.'
+};
+const actionText = action => ACTION_NAMES[action] || 'Inspect the latest source report; keep the existing request limits.';
+const DROP_NAMES = { incomplete: 'Missing required fields', notApproved: 'Artist not in approved catalog', badDate: 'Date not recognized', pastDate: 'Past event', zodFail: 'Invalid field format' };
+
+function renderSourceHealth(reports) {
+  document.getElementById('source-health').innerHTML = Object.entries(SOURCE_NAMES).map(([key, label]) => {
+    const r = reports && reports[key];
+    if (!r || r.schemaVersion !== 1) return `<article class="source-item"><div class="source-heading"><h3>${label}</h3><span class="badge warn">UNKNOWN</span></div><p>No verification report available. Existing event counts do not establish source health.</p></article>`;
+    const c = r.counts || {}, f = r.freshness || {};
+    const oldReport = !Number.isFinite(Date.parse(r.generatedAt)) || Date.now() - Date.parse(r.generatedAt) > 48 * 3600000;
+    const badge = oldReport ? 'OLD REPORT' : SOURCE_STATES[r.state] || 'UNKNOWN';
+    const css = oldReport ? 'warn' : r.state === 'unavailable' ? 'bad' : r.state === 'healthy' ? 'ok' : 'warn';
+    const issues = Array.isArray(r.issues) ? r.issues : [];
+    const action = oldReport ? 'Check the latest scheduled source run; this report is older than 48 hours.' : issues.map(i => i.action ? actionText(i.action) : null).filter(Boolean).filter((v, i, a) => a.indexOf(v) === i).join(' ');
+    const interval = f.revisitIntervalDays == null ? '' : `<p>Minimum revisit interval: ${esc(f.revisitIntervalDays)} days. This is a request constraint, not a freshness guarantee for every target.</p>`;
+    return `<article class="source-item"><div class="source-heading"><h3>${label}</h3><span class="badge ${css}">${badge}</span></div>
+      <p>Pass ${esc(ago(r.generatedAt))} · ${fmt(c.attempted)} ${key === 'ticketmaster' ? 'countries' : 'targets'} attempted · ${fmt(c.succeeded)} successful · ${fmt(c.failed)} failed · ${fmt(c.unavailable)} unavailable</p>
+      <p>Verification age at pass: median ${esc(days(f.p50Days))} · 95th percentile ${esc(days(f.p95Days))} · oldest ${esc(days(f.maxDays))} · ${fmt(f.unknown)} unknown</p>
+      <details><summary>Coverage and collection details</summary><p>${fmt(c.targets)} targets · ${fmt(c.empty)} successful empty responses · ${fmt(c.skippedFresh)} skipped within interval · ${fmt(c.cacheFallbacks)} fallbacks after failure · ${fmt(c.missing)} without cached data · ${fmt(c.partial)} partial results</p><p>Completeness: ${esc(r.completeness || 'unknown')} · latest verified target ${esc(ago(f.latestVerifiedAt))}</p>${interval}${issues.map(i => `<p>${esc(String(i.reason).replace(/_/g, ' '))}: ${fmt(i.count)}</p>`).join('')}</details>
+      ${action ? `<p class="action">Next step: ${esc(action)}</p>` : ''}</article>`;
+  }).join('');
+}
+
+function renderProcessing(p) {
+  const el = document.getElementById('processing');
+  if (!p || p.schemaVersion !== 1) { el.innerHTML = '<p class="note">No processing report available for this snapshot.</p>'; return; }
+  const d = p.dropped || {};
+  const rejected = Object.values(d).reduce((sum, n) => sum + (Number(n) || 0), 0);
+  const rows = Object.entries(p.sources || {}).sort((a,b) => b[1].rawCount - a[1].rawCount);
+  const issues = Object.entries(p.validationIssues || {}).sort((a,b) => b[1] - a[1]);
+  const missing = Object.entries(p.missingFields || {}).sort((a,b) => b[1] - a[1]);
+  el.innerHTML = `<p class="note">Pass ${esc(ago(p.generatedAt))}: <strong>${fmt(p.rawCount)}</strong> input → <strong>${fmt(p.publishedCount)}</strong> accepted · ${fmt(p.duplicatesMerged)} duplicates merged · ${fmt(rejected)} rejected. Accepted count belongs to this processing pass; a blocked publication retains the previous live dataset.</p>
+    <div>${Object.entries(DROP_NAMES).map(([k,l]) => `<span class="pill">${l}: ${fmt(d[k])}</span>`).join('')}</div>
+    <p class="note">Past events and unapproved artists are intentional filters. Format and missing-field rejects need source-level diagnosis.</p>
+    <details><summary>Rejections by source and field</summary><div class="table-scroll"><table><thead><tr><th scope="col">Source</th><th scope="col">Input</th><th scope="col">Accepted</th><th scope="col">Invalid date</th><th scope="col">Missing fields</th><th scope="col">Invalid format</th></tr></thead><tbody>${rows.map(([name,r]) => `<tr><th scope="row">${esc(name)}</th><td>${fmt(r.rawCount)}</td><td>${fmt(r.publishedCount)}</td><td>${fmt(r.dropped.badDate)}</td><td>${fmt(r.dropped.incomplete)}</td><td>${fmt(r.dropped.zodFail)}</td></tr>`).join('')}</tbody></table></div>
+    ${issues.map(([name,n]) => `<span class="pill warn">${esc(name)}: ${fmt(n)}</span>`).join('')}
+    ${missing.map(([name,n]) => `<span class="pill warn">Missing ${esc(name)}: ${fmt(n)}</span>`).join('')}
+    <p class="note">Representative rejected records are kept in the processing-diagnostics.json workflow artifact, outside the public API.</p></details>`;
+}
+
+async function readJson(url) {
+  const response = await fetch(url + '?_=' + Date.now());
+  if (!response.ok) throw new Error('HTTP ' + response.status);
+  return response.json();
+}
 
 async function load() {
   let status = {}, index = {}, concerts = [];
-  try { status = await (await fetch('./status.json?_=' + Date.now())).json(); } catch (e) {}
-  try { index = await (await fetch('./index.json?_=' + Date.now())).json(); } catch (e) {}
-  try { concerts = await (await fetch('./concerts.json?_=' + Date.now())).json(); } catch (e) {}
+  let statusAvailable = false, concertsAvailable = false;
+  await Promise.all([
+    readJson('./status.json').then(v => { if (!v || !Number.isFinite(Date.parse(v.generatedAt))) throw new Error('Invalid status'); status = v; statusAvailable = true; }).catch(() => {}),
+    readJson('./index.json').then(v => { index = v || {}; }).catch(() => {}),
+    readJson('./concerts.json').then(v => { if (!Array.isArray(v)) throw new Error('Invalid events'); concerts = v; concertsAvailable = true; }).catch(() => {})
+  ]);
+  renderSourceHealth(status.sourceHealth);
+  renderProcessing(status.processing);
 
   // By-country and by-source are computed client-side from the full published
   // concerts.json (each concert carries country + originalSource), so the dashboard
@@ -153,26 +248,32 @@ async function load() {
   const artistReportMissing = status.schemaVersion >= 2 && !artistHealth;
   const artistReportStale = Boolean(artistHealth) && artistAgeMs > 48 * 60 * 60 * 1000;
   const gateState = publication && publication.healthGate && publication.healthGate.state;
-  const criticallyDegraded = gateState === 'blocked' || artistReportStale ||
+  const providerReports = Object.values(status.sourceHealth || {});
+  const missingSourceReports = Object.keys(SOURCE_NAMES).some(key => !status.sourceHealth || !status.sourceHealth[key]);
+  const providerUnavailable = providerReports.some(r => r?.state === 'unavailable');
+  const providerIssues = providerReports.some(r => !r || r.schemaVersion !== 1 || r.state !== 'healthy' || !Number.isFinite(Date.parse(r.generatedAt)) || Date.now() - Date.parse(r.generatedAt) > 48 * 3600000);
+  const statusOld = Date.now() - Date.parse(status.generatedAt) > 48 * 3600000;
+  const criticallyDegraded = gateState === 'blocked' || artistReportStale || providerUnavailable || statusOld ||
     failed > (venueHealth.total || 1) * 0.25 ||
     artistFailed > ((artistHealth && artistHealth.total) || 1) * 0.25;
   const hasIssues = failed > 0 || stale > 0 || artistFailed > 0 || artistStale > 0 ||
-    artistReportMissing || (gateState && gateState !== 'eligible' && gateState !== 'not_required');
+    artistReportMissing || missingSourceReports || providerIssues || !concertsAvailable || (gateState && gateState !== 'eligible' && gateState !== 'not_required');
   const healthEl = document.getElementById('health');
-  if (criticallyDegraded) { healthEl.className = 'badge bad'; healthEl.textContent = 'DEGRADED'; }
+  if (!statusAvailable) { healthEl.className = 'badge warn'; healthEl.textContent = 'STATUS UNAVAILABLE'; }
+  else if (criticallyDegraded) { healthEl.className = 'badge bad'; healthEl.textContent = 'DEGRADED'; }
   else if (hasIssues) { healthEl.className = 'badge warn'; healthEl.textContent = 'MINOR ISSUES'; }
   else { healthEl.className = 'badge ok'; healthEl.textContent = 'HEALTHY'; }
 
   document.getElementById('lastrun').textContent =
-    'Last run ' + ago(status.generatedAt) + ' · ' + (status.generatedAt || '').replace('T', ' ').slice(0, 16) + ' UTC';
+    'API dataset built ' + ago(index.lastRun) + ' · Collection report ' + ago(status.generatedAt) + (!concertsAvailable ? ' · Concert feed unavailable' : '');
 
-  const totalConcerts = concerts.length || (index.stats && index.stats.totalConcerts);
+  const totalConcerts = concertsAvailable ? concerts.length : (index.stats && index.stats.totalConcerts);
   const cards = [
     ['Concerts live', totalConcerts],
-    ['Artists', artistSet.size || (index.stats && index.stats.uniqueArtists)],
-    ['Cities', citySet.size || (index.stats && index.stats.uniqueCities)],
-    ['Countries', byCountry.length || null],
-    ['Venue parsers OK', (venueHealth.succeeded != null ? venueHealth.succeeded + '/' + venueHealth.total : null)],
+    ['Artists', concertsAvailable ? artistSet.size : (index.stats && index.stats.uniqueArtists)],
+    ['Cities', concertsAvailable ? citySet.size : (index.stats && index.stats.uniqueCities)],
+    ['Countries', concertsAvailable ? byCountry.length : null],
+    ['Venue parsers OK', (statusAvailable && venueHealth.succeeded != null ? venueHealth.succeeded + '/' + venueHealth.total : null)],
     // Keep the empty-state card compact. The detailed health panel below
     // explains why an artist report is unavailable.
     ['Artist parsers OK', (artistHealth ? artistHealth.succeeded + '/' + artistHealth.total : null)]
@@ -195,9 +296,9 @@ async function load() {
   } else if (status.schemaVersion >= 2) {
     html += '<div class="note">Artist health has not been reported yet (first run or cache miss).</div>';
   }
-  if (failed) html += '<div><b class="err">Failing:</b><br>' + (status.failedVenueIds || []).map(id => `<span class="pill bad">${id}</span>`).join('') + '</div>';
-  if (stale) html += '<div style="margin-top:8px"><b class="warn">Stale (serving old cache):</b><br>' + (status.staleVenues || []).map(id => `<span class="pill warn">${id}</span>`).join('') + '</div>';
-  if (!failed && !stale && !artistFailed && !artistStale && !artistReportMissing && !artistReportStale) {
+  if (failed) html += '<div><b class="err">Failing:</b><br>' + (status.failedVenueIds || []).map(id => `<span class="pill bad">${esc(id)}</span>`).join('') + '</div>';
+  if (stale) html += '<div style="margin-top:8px"><b class="warn">Stale (serving old cache):</b><br>' + (status.staleVenues || []).map(id => `<span class="pill warn">${esc(id)}</span>`).join('') + '</div>';
+  if (statusAvailable && venueHealth.total > 0 && !failed && !stale && !artistFailed && !artistStale && !artistReportMissing && !artistReportStale) {
     html += '<div class="pill ok" style="color:var(--ok);border-color:rgba(71,196,121,.35)">All parsers healthy ✓</div>';
   }
   // Enrichment writers (enrich-auto/enrich-database/daily-scrape) occasionally lose a
@@ -208,10 +309,10 @@ async function load() {
   if (publication && publication.healthGate) {
     const gate = publication.healthGate;
     const css = gate.state === 'blocked' ? 'bad' : gate.state === 'eligible' ? 'ok' : 'warn';
-    html += `<div style="margin-top:8px"><span class="pill ${css}">Publication gate: ${gate.state}${gate.reason ? ' — ' + gate.reason : ''}</span></div>`;
+    html += `<div style="margin-top:8px"><span class="pill ${css}">Publication gate: ${esc(gate.state)}${gate.reason ? ' — ' + esc(gate.reason) : ''}</span></div>`;
   }
   if (status.repair && status.repair.state) {
-    html += `<div class="note">Repair follow-up: ${status.repair.state.replace(/_/g, ' ')}</div>`;
+    html += `<div class="note">Repair follow-up: ${esc(status.repair.state.replace(/_/g, ' '))}</div>`;
   }
   hd.innerHTML = html;
 
@@ -223,14 +324,16 @@ async function load() {
   const render = (showAll) => {
     bars(cEl, showAll ? rows : rows.slice(0, TOP), cmax);
     if (rows.length > TOP) {
-      const t = document.createElement('div');
+      const t = document.createElement('button');
+      t.type = 'button';
+      t.setAttribute('aria-expanded', String(showAll));
       t.className = 'toggle';
       t.textContent = showAll ? '▲ show less' : `▼ show all ${rows.length} countries`;
       t.onclick = () => render(!showAll);
       cEl.appendChild(t);
     }
   };
-  if (rows.length) render(false); else cEl.innerHTML = '<div class="note">No per-country data in this run (no-op run reuses the last published set).</div>';
+  if (rows.length) render(false); else cEl.innerHTML = '<div class="note">No country data available in the loaded concert feed.</div>';
 
   document.getElementById('foot').textContent = 'Auto-refreshes every 60s · data from status.json / index.json';
 }

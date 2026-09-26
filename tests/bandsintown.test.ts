@@ -258,7 +258,7 @@ test('Bandsintown - populated active 20,711-target roster retains full-capacity 
   assert.ok(ages[Math.floor((ages.length - 1) * 0.95)] <= 25);
 });
 
-test('Bandsintown - a 404 is recorded as empty (not a block) and does not stop the sweep', async () => {
+test('Bandsintown - a 404 is recorded as unavailable (not a block) and does not stop the sweep', async () => {
   const fetchFn: BitFetchFn = async (artist) => {
     if (artist === 'Unknown') { const e: any = new Error('not found'); e.response = { status: 404 }; throw e; }
     return [bitEvent({ artist: { name: artist }, venue: { name: 'V', city: 'C', country: 'US' } })];
@@ -269,6 +269,68 @@ test('Bandsintown - a 404 is recorded as empty (not a block) and does not stop t
   assert.deepStrictEqual(cache['Unknown'].concerts, []);
   assert.ok(cache['Metallica'].concerts.length === 1, 'the sweep continues past a 404');
   assert.strictEqual(concerts.length, 1);
+});
+
+test('Bandsintown - health distinguishes verified success from 404/401 unavailable outcomes', async () => {
+  let health: any;
+  const fetchFn: BitFetchFn = async (artist) => {
+    if (artist === 'Available') return [bitEvent()];
+    const error: any = new Error('classified');
+    error.response = { status: artist === 'Missing' ? 404 : 401 };
+    throw error;
+  };
+  const cache: BandsintownCache = {
+    Missing: {
+      fetchedAt: '2025-01-01T00:00:00.000Z',
+      verifiedAt: '2025-01-01T00:00:00.000Z',
+      concerts: [{ artist: 'Old', date: '2025-01-01' }]
+    }
+  };
+  await fetchBandsintownConcerts(['Available', 'Missing', 'Unavailable'], {
+    cache,
+    fetchFn,
+    delayMs: 0,
+    now: () => new Date('2026-02-01T00:00:00.000Z'),
+    onHealth: (report) => { health = report; }
+  });
+
+  assert.equal(health.counts.succeeded, 1);
+  assert.equal(health.counts.empty, 0);
+  assert.equal(health.counts.unavailable, 2);
+  assert.equal(health.freshness.fresh, 1);
+  assert.equal(health.freshness.old, 1);
+  assert.equal(health.freshness.unknown, 1);
+  assert.equal(cache.Available.verifiedAt, '2026-02-01T00:00:00.000Z');
+  assert.equal(cache.Missing.verifiedAt, '2025-01-01T00:00:00.000Z', '404 keeps the last successful verification');
+  assert.equal(cache.Unavailable.verifiedAt, undefined);
+});
+
+test('Bandsintown - cadence-fresh prior unavailable outcome is unknown, not healthy', async () => {
+  const now = '2026-02-01T00:00:00.000Z';
+  let calls = 0;
+  let health: any;
+  const cache: BandsintownCache = {
+    Missing: {
+      fetchedAt: now,
+      verifiedAt: '2025-01-01T00:00:00.000Z',
+      lastOutcome: 'unavailable',
+      concerts: []
+    }
+  };
+  await fetchBandsintownConcerts(['Missing'], {
+    cache,
+    freshnessDays: 6,
+    delayMs: 0,
+    now: () => new Date(now),
+    fetchFn: async () => { calls++; return []; },
+    onHealth: (report) => { health = report; }
+  });
+  assert.equal(calls, 0);
+  assert.equal(health.state, 'unknown');
+  assert.equal(health.completeness, 'partial');
+  assert.deepStrictEqual(health.issues, [{
+    reason: 'previous_target_failures', count: 1, action: 'retry_next_scheduled_sweep'
+  }]);
 });
 
 test('Bandsintown - a cluster of 401s (unresolvable names) does NOT trip the block guard', async () => {

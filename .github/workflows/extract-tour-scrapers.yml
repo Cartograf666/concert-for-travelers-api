@@ -29,6 +29,7 @@ permissions:
 
 concurrency:
   group: artist-db-write
+  queue: max # retain up to 100 pending writers instead of replacing their slots
   cancel-in-progress: false
 
 jobs:
@@ -86,7 +87,7 @@ jobs:
           # The number this whole workflow exists to make visible: how often a
           # discovered tour page actually yields a working scraper config. Nobody
           # has ever measured it, because the step never ran.
-          node -e '
+          node <<'NODE'
             const fs = require("fs");
             let db = [];
             for (const f of fs.readdirSync("data/artists")) db.push(...JSON.parse(fs.readFileSync("data/artists/" + f, "utf8")));
@@ -100,7 +101,7 @@ jobs:
             console.log(`scraper created     : ${created}  (${pct(created, tried)} of attempts)`);
             console.log(`configs on disk     : ${configs}`);
             console.log(`awaiting extraction : ${withTourUrl - tried}`);
-          '
+          NODE
 
       - name: Commit and push generated scrapers
         uses: ./.github/actions/commit-artist-db-delta

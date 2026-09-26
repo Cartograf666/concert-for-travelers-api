@@ -136,7 +136,10 @@ async function main() {
   }
 }
 
-void main().catch(err => {
-  console.error(`[ConcurrencyWatchdog] Fatal error: ${err.message}`);
-  process.exit(1);
-});
+// Importing WORKFLOW_FILES for configuration tests must not run gh or write data.
+if (require.main === module) {
+  void main().catch(err => {
+    console.error(`[ConcurrencyWatchdog] Fatal error: ${err.message}`);
+    process.exit(1);
+  });
+}

@@ -44,6 +44,14 @@ test('isCacheStale: entry older than the staleness bound is stale', () => {
   assert.strictEqual(isCacheStale({ contentHash: 'h', scrapedAt: old, concerts: [] }, now), true);
 });
 
+test('isCacheStale: fresh verification overrides an old observation, invalid verification falls back', () => {
+  const now = Date.now();
+  const old = new Date(now - MAX_CACHE_STALENESS_MS - 1000).toISOString();
+  const fresh = new Date(now).toISOString();
+  assert.strictEqual(isCacheStale({ contentHash: 'h', scrapedAt: old, verifiedAt: fresh, concerts: [] }, now), false);
+  assert.strictEqual(isCacheStale({ contentHash: 'h', scrapedAt: old, verifiedAt: 'invalid', concerts: [] }, now), true);
+});
+
 test('hashConcerts is order-independent and content-sensitive', () => {
   const a = [{ artist: 'X', date: '2026-01-01' }, { artist: 'Y', date: '2026-02-02' }];
   const b = [{ artist: 'Y', date: '2026-02-02' }, { artist: 'X', date: '2026-01-01' }];

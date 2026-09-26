@@ -12,6 +12,8 @@ export interface VenueCache {
   lastModified?: string;
   contentHash: string;
   scrapedAt: string;
+  /** Last successful source verification; advances on 200 and 304, never failure. */
+  verifiedAt?: string;
   concerts: Partial<Concert>[];
 }
 
@@ -67,7 +69,8 @@ export const MAX_CACHE_STALENESS_MS = 30 * 24 * 60 * 60 * 1000; // 30 days
 
 export function isCacheStale(entry: VenueCache | undefined, nowMs: number): boolean {
   if (!entry) return false;
-  const t = Date.parse(entry.scrapedAt);
+  const verifiedAt = entry.verifiedAt ? Date.parse(entry.verifiedAt) : Number.NaN;
+  const t = Number.isFinite(verifiedAt) ? verifiedAt : Date.parse(entry.scrapedAt);
   if (Number.isNaN(t)) return false; // no/invalid stamp -> can't judge, don't flag
   return nowMs - t > MAX_CACHE_STALENESS_MS;
 }

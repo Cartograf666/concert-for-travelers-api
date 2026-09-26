@@ -1,6 +1,7 @@
 import axios from 'axios';
 import * as fs from 'fs/promises';
 import { Concert } from '../schemas/concert.js';
+import { buildArtistSweepSourceHealth, type SourceHealthReport } from '../observability/source_health.js';
 import { sleep } from './sleep.js';
 
 /**
@@ -63,7 +64,10 @@ function escapeRegex(s: string): string {
 
 export interface EventbriteCache {
   [artistName: string]: {
-    fetchedAt: string;
+    fetchedAt?: string;
+    attemptedAt?: string;
+    verifiedAt?: string;
+    lastOutcome?: 'events' | 'empty' | 'failed';
     concerts: Partial<Concert>[];
   };
 }
@@ -176,6 +180,10 @@ export interface EventbriteSweepOptions {
   baseUrl?: string;
   fetchFn?: EbFetchFn;
   delayMs?: number;
+  /** Injected clock keeps health/freshness tests deterministic. */
+  now?: () => Date;
+  /** Optional reporting hook. It cannot affect sweep cadence or output. */
+  onHealth?: (report: SourceHealthReport) => void;
 }
 
 /**
@@ -196,29 +204,43 @@ export async function fetchEventbriteConcerts(
   const fetchFn = options.fetchFn ?? defaultEbFetch;
   const delayMs = options.delayMs ?? REQUEST_DELAY_MS;
 
-  const scrapedAt = new Date().toISOString();
-  const freshCutoff = Date.now() - freshnessDays * 24 * 60 * 60 * 1000;
+  const runNow = options.now?.() ?? new Date();
+  const scrapedAt = runNow.toISOString();
+  const freshCutoff = runNow.getTime() - freshnessDays * 24 * 60 * 60 * 1000;
 
   const unique = Array.from(new Set(artists.map((a) => a.trim()).filter(Boolean)));
   const staleness = (name: string): number => {
     const c = cache[name];
     if (!c) return -Infinity;
-    return new Date(c.fetchedAt).getTime();
+    const time = c.fetchedAt ? new Date(c.fetchedAt).getTime() : Number.NaN;
+    return Number.isFinite(time) ? time : -Infinity;
   };
   const ordered = [...unique].sort((a, b) => staleness(a) - staleness(b));
+  // Count every cadence-fresh target, including ones after the request cap would
+  // stop the loop. This is reporting-only and does not alter request selection.
+  const skippedFresh = unique.filter((artist) => {
+    const fetchedAt = cache[artist]?.fetchedAt;
+    return fetchedAt !== undefined && new Date(fetchedAt).getTime() > freshCutoff;
+  }).length;
 
   let fetched = 0;
   let attempted = 0;
+  let empty = 0;
+  let failed = 0;
+  let cacheFallbacks = 0;
   let lastError = '';
   let blockStreak = 0;
   let stopped = false;
+  const verifiedThisRun = new Set<string>();
+  const issueCounts = new Map<string, number>();
+  const addIssue = (reason: string) => issueCounts.set(reason, (issueCounts.get(reason) ?? 0) + 1);
 
   for (const artist of ordered) {
     if (stopped) break;
     if (fetched >= maxPerRun) break;
 
     const cached = cache[artist];
-    if (cached && new Date(cached.fetchedAt).getTime() > freshCutoff) {
+    if (cached?.fetchedAt && new Date(cached.fetchedAt).getTime() > freshCutoff) {
       continue;
     }
 
@@ -230,12 +252,31 @@ export async function fetchEventbriteConcerts(
         const c = mapEbResultToConcert(r, artist, scrapedAt);
         if (c) concerts.push(c);
       }
-      cache[artist] = { fetchedAt: scrapedAt, concerts };
+      cache[artist] = {
+        fetchedAt: scrapedAt,
+        attemptedAt: scrapedAt,
+        verifiedAt: scrapedAt,
+        lastOutcome: concerts.length > 0 ? 'events' : 'empty',
+        concerts
+      };
+      if (concerts.length === 0) empty++;
+      verifiedThisRun.add(artist);
       blockStreak = 0;
       fetched++;
       await sleep(delayMs);
     } catch (err: any) {
       blockStreak++;
+      failed++;
+      if (cache[artist]) {
+        cacheFallbacks++;
+        cache[artist] = { ...cache[artist], attemptedAt: scrapedAt, lastOutcome: 'failed' };
+      }
+      const status = err.response?.status;
+      const category = status === 405 ? 'method_not_allowed'
+        : status === 429 ? 'rate_limited'
+          : typeof status === 'number' && status >= 500 ? 'source_server_error'
+            : /SERVER_DATA/.test(String(err.message)) ? 'response_format_changed' : 'request_failed';
+      addIssue(category);
       lastError = String(err.response?.status ?? err.message);
       console.warn(`[Eventbrite] ${artist} failed (${lastError}); streak ${blockStreak}/${BLOCK_STREAK_LIMIT}. Keeping any cached events.`);
       if (blockStreak >= BLOCK_STREAK_LIMIT) {
@@ -264,6 +305,27 @@ export async function fetchEventbriteConcerts(
       `Republishing cached events only -- if this repeats, the source is broken rather than throttled.`
     );
   }
+
+  const report = buildArtistSweepSourceHealth('eventbrite', unique, cache, {
+    selected: attempted,
+    attempted,
+    succeeded: fetched,
+    failed,
+    empty,
+    unavailable: 0,
+    skippedFresh,
+    cacheFallbacks,
+    haltedCategory: stopped ? 'consecutive_failures' : undefined,
+    issues: Array.from(issueCounts, ([reason, count]) => ({
+      reason,
+      count,
+      action: reason === 'rate_limited' ? 'wait_for_source_cooldown'
+        : reason === 'method_not_allowed' || reason === 'response_format_changed' ? 'inspect_source_access_or_format'
+          : 'retry_next_scheduled_sweep'
+    })),
+    verifiedThisRun
+  }, { generatedAt: scrapedAt, revisitIntervalDays: freshnessDays });
+  options.onHealth?.(report);
 
   return all;
 }

@@ -6,6 +6,8 @@ import { Concert, ConcertSchema } from '../schemas/concert.js';
 import { loadApprovedArtists } from './artistDb.js';
 import { artistDiscoveryFor } from './artist_discovery.js';
 import type { ArtistDiscovery } from '../schemas/artist_discovery.js';
+import { ProcessingDiagnosticsCollector } from '../observability/processing_diagnostics.js';
+import type { ProcessingDiagnostics } from '../observability/processing_diagnostics.js';
 
 /** Format a Date as a timezone-safe YYYY-MM-DD using its local calendar fields. */
 function toLocalIso(d: Date): string {
@@ -1001,7 +1003,10 @@ export async function processConcerts(
   // Lets a caller that already needs the parsed whitelist for something else
   // (e.g. publishArtistCatalog) capture it from this call instead of paying for
   // its own separate read+parse of the same ~63k-entry file right afterward.
-  onApprovedArtistsLoaded?: (approvedArtists: any[]) => void
+  onApprovedArtistsLoaded?: (approvedArtists: any[]) => void,
+  // Optional bounded accounting for rejected records. This is deliberately
+  // observational: it must not alter matching, normalization, or output.
+  onDiagnostics?: (report: ProcessingDiagnostics) => void
 ): Promise<Concert[]> {
   let approvedArtists: any[] = [];
   try {
@@ -1014,6 +1019,7 @@ export async function processConcerts(
   // Compile the matcher once for the whole batch instead of per concert.
   const match = buildApprovedMatcher(approvedArtists);
   const processedMap = new Map<string, Concert>();
+  const diagnostics = onDiagnostics ? new ProcessingDiagnosticsCollector(rawConcerts.length, baseDateStr) : undefined;
   // Telemetry: why events are dropped, so silent losses are visible.
   const drops = { incomplete: 0, notApproved: 0, badDate: 0, pastDate: 0, zodFail: 0 };
   // Some venue pages list past shows alongside upcoming ones (an archive
@@ -1041,6 +1047,15 @@ export async function processConcerts(
 
     if (!raw.artist || !raw.date || !raw.venue || !raw.city || !raw.country || !raw.originalSource || !raw.scrapedAt) {
       drops.incomplete++;
+      diagnostics?.recordDrop('incomplete', raw, [
+        ...(!raw.artist ? ['artist'] : []),
+        ...(!raw.date ? ['date'] : []),
+        ...(!raw.venue ? ['venue'] : []),
+        ...(!raw.city ? ['city'] : []),
+        ...(!raw.country ? ['country'] : []),
+        ...(!raw.originalSource ? ['originalSource'] : []),
+        ...(!raw.scrapedAt ? ['scrapedAt'] : [])
+      ]);
       continue;
     }
 
@@ -1048,6 +1063,7 @@ export async function processConcerts(
     const matched = match(raw.artist);
     if (!matched) {
       drops.notApproved++;
+      diagnostics?.recordDrop('notApproved', raw);
       continue;
     }
 
@@ -1055,10 +1071,12 @@ export async function processConcerts(
     const normalizedDate = parseDate(raw.date, baseDateStr);
     if (!normalizedDate) {
       drops.badDate++;
+      diagnostics?.recordDrop('badDate', raw);
       continue;
     }
     if (normalizedDate < todayIso) {
       drops.pastDate++;
+      diagnostics?.recordDrop('pastDate', raw);
       continue;
     }
 
@@ -1096,6 +1114,8 @@ export async function processConcerts(
     const validation = ConcertSchema.safeParse(concertData);
     if (!validation.success) {
       drops.zodFail++;
+      diagnostics?.recordValidationIssues(validation.error.issues);
+      diagnostics?.recordDrop('zodFail', raw);
       console.warn(`[Pipeline] Concert failed Zod validation for "${concertData.artist}":`, validation.error.issues.map((i) => i.message).join('; '));
       continue;
     }
@@ -1106,12 +1126,19 @@ export async function processConcerts(
     const artistSlug = slugify(validatedConcert.artist);
     const citySlug = slugify(validatedConcert.city);
     const dedupeKey = `${artistSlug}_${validatedConcert.date}_${citySlug}`;
+    diagnostics?.recordAccepted(raw);
 
     if (processedMap.has(dedupeKey)) {
       const existing = processedMap.get(dedupeKey)!;
       // Merge: prefer record with a ticketUrl
       if (!existing.ticketUrl && validatedConcert.ticketUrl) {
+        // The existing record is discarded, so its source owns this duplicate
+        // outcome. This keeps every source's raw count reconcilable with its
+        // published, duplicate, and dropped counts.
+        diagnostics?.recordDuplicate(existing);
         processedMap.set(dedupeKey, validatedConcert);
+      } else {
+        diagnostics?.recordDuplicate(raw);
       }
     } else {
       processedMap.set(dedupeKey, validatedConcert);
@@ -1125,6 +1152,7 @@ export async function processConcerts(
     `Dropped ${totalDropped}: ${drops.notApproved} not-approved, ${drops.badDate} bad-date, ` +
     `${drops.pastDate} past-date, ${drops.incomplete} incomplete, ${drops.zodFail} zod-fail.`
   );
-
-  return Array.from(processedMap.values());
+  const published = Array.from(processedMap.values());
+  onDiagnostics?.(diagnostics!.build(published));
+  return published;
 }

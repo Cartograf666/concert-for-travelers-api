@@ -431,6 +431,10 @@ components:
           format: date-time
     Status:
       type: object
+      description: >-
+        Version 3 adds source verification and processing diagnostics. Existing
+        flat counters and version 2 cohort reports remain available. Processing
+        counters describe one pass, not a confirmed publication or deployment.
       required:
         - generatedAt
         - scrapersTotal
@@ -444,6 +448,56 @@ components:
         - publishedConcerts
         - conflictDropsLast7Days
       properties:
+        schemaVersion:
+          type: integer
+          example: 3
+        sourceHealth:
+          type: object
+          description: Reports keyed by venue, artist, bandsintown, eventbrite or ticketmaster. Missing reports mean unknown.
+          additionalProperties:
+            $ref: '#/components/schemas/SourceHealth'
+        processing:
+          type: object
+          nullable: true
+          description: Aggregate diagnostics only; representative rejected records stay in workflow artifacts.
+          properties:
+            schemaVersion:
+              type: integer
+              enum: [1]
+            generatedAt:
+              type: string
+              format: date-time
+            rawCount:
+              type: integer
+            publishedCount:
+              type: integer
+              description: Accepted by this processing pass; publication can still be blocked.
+            duplicatesMerged:
+              type: integer
+            dropped:
+              $ref: '#/components/schemas/ProcessingDropCounts'
+            sources:
+              type: object
+              additionalProperties:
+                type: object
+                properties:
+                  rawCount:
+                    type: integer
+                  publishedCount:
+                    type: integer
+                  duplicatesMerged:
+                    type: integer
+                  dropped:
+                    $ref: '#/components/schemas/ProcessingDropCounts'
+            validationIssues:
+              type: object
+              description: Counts by field path and validation code.
+              additionalProperties:
+                type: integer
+            missingFields:
+              type: object
+              additionalProperties:
+                type: integer
         generatedAt:
           type: string
           format: date-time
@@ -472,6 +526,102 @@ components:
           nullable: true
         conflictDropsLast7Days:
           type: integer
+    ProcessingDropCounts:
+      type: object
+      properties:
+        incomplete:
+          type: integer
+        notApproved:
+          type: integer
+        badDate:
+          type: integer
+        pastDate:
+          type: integer
+        zodFail:
+          type: integer
+    SourceHealth:
+      type: object
+      properties:
+        schemaVersion:
+          type: integer
+          enum: [1]
+        generatedAt:
+          type: string
+          format: date-time
+        source:
+          type: string
+          enum: [venue, artist, bandsintown, eventbrite, ticketmaster]
+        state:
+          type: string
+          enum: [healthy, degraded, unavailable, unknown, not_run]
+        completeness:
+          type: string
+          enum: [complete, partial, unknown]
+        counts:
+          type: object
+          description: >-
+            Target counts (countries for Ticketmaster, artists or scraper configs
+            otherwise), not HTTP request counts. Includes targets, selected,
+            attempted, succeeded, failed, empty, unavailable, skippedFresh,
+            missing (no cache), cacheFallbacks and partial.
+          additionalProperties:
+            type: integer
+            minimum: 0
+        freshness:
+          type: object
+          description: >-
+            Ages at report generation, based only on explicit successful
+            verification (verifiedAt). Legacy timestamps do not imply verification.
+            Revisit intervals govern request cadence, not a stale-data SLA.
+          properties:
+            basis:
+              type: string
+              enum: [verifiedAt]
+            classification:
+              type: string
+              enum: [revisit_interval, current_run]
+            revisitIntervalDays:
+              type: number
+            intervalMeaning:
+              type: string
+              enum: [minimum_revisit_interval_not_stale_sla]
+            fresh:
+              type: integer
+            old:
+              type: integer
+            unknown:
+              type: integer
+            latestVerifiedAt:
+              type: string
+              format: date-time
+              nullable: true
+            p50Days:
+              type: number
+              nullable: true
+            p95Days:
+              type: number
+              nullable: true
+            maxDays:
+              type: number
+              nullable: true
+        halted:
+          type: object
+          properties:
+            category:
+              type: string
+            count:
+              type: integer
+        issues:
+          type: array
+          items:
+            type: object
+            properties:
+              reason:
+                type: string
+              count:
+                type: integer
+              action:
+                type: string
     ChangeEntry:
       type: object
       required:

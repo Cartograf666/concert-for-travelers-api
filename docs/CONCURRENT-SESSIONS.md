@@ -14,6 +14,14 @@ suspect another session might be active.
 
 ## Recently active
 
+- 2026-09-25: Codex collector iteration 1. Root owns `src/run.ts`, status/dashboard,
+  workflows and docs integration; source-freshness worker owns engine diagnostics,
+  `run-artists.ts` and `observability/source_health.ts`; processing worker owns
+  `pipeline/process.ts` and processing diagnostics. Existing queue/checkpoint work
+  is preserved. API intervals, request limits and artist selection stay unchanged.
+  Local implementation and targeted verification completed 2026-09-26; writers
+  stopped. Working tree retained for review; no push/deploy. Evidence in BACKLOG.
+
 *(Log trimmed 2026-07-21 -- entries through 2026-07-08 archived to git history;
 see `BACKLOG.md` for what's actually shipped/in-progress, this log is only for
 "is someone else mid-edit right now" signal.)*

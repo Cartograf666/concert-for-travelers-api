@@ -157,10 +157,13 @@ test('Eventbrite - a run where every request fails raises an annotation', async 
   const originalLog = console.log;
   console.log = (...args: unknown[]) => { logged.push(args.join(' ')); };
 
+  let health: any;
   try {
     const cache = {};
     const fetchFn = async () => { throw Object.assign(new Error('blocked'), { response: { status: 405 } }); };
-    await fetchEventbriteConcerts(['A', 'B'], { cache, fetchFn, delayMs: 0 });
+    await fetchEventbriteConcerts(['A', 'B'], {
+      cache, fetchFn, delayMs: 0, onHealth: (report) => { health = report; }
+    });
   } finally {
     console.log = originalLog;
   }
@@ -169,6 +172,53 @@ test('Eventbrite - a run where every request fails raises an annotation', async 
   assert.ok(annotation, `expected an ::error:: annotation, got:\n${logged.join('\n')}`);
   assert.match(annotation!, /every one of 2 request\(s\) failed/);
   assert.match(annotation!, /405/);
+  assert.equal(health.state, 'unavailable');
+  assert.equal(health.counts.failed, 2);
+  assert.deepStrictEqual(health.issues, [{
+    reason: 'method_not_allowed', count: 2, action: 'inspect_source_access_or_format'
+  }]);
+});
+
+test('Eventbrite - an all-fresh verified cache needs no requests and is healthy', async () => {
+  const at = '2026-02-01T00:00:00.000Z';
+  let calls = 0;
+  let health: any;
+  const cache: EventbriteCache = {
+    A: { fetchedAt: at, verifiedAt: at, concerts: [] },
+    B: { fetchedAt: at, verifiedAt: at, concerts: [] }
+  };
+  await fetchEventbriteConcerts(['A', 'B'], {
+    cache,
+    fetchFn: async () => { calls++; return []; },
+    delayMs: 0,
+    freshnessDays: 6,
+    now: () => new Date(at),
+    onHealth: (report) => { health = report; }
+  });
+  assert.equal(calls, 0);
+  assert.equal(health.state, 'healthy');
+  assert.equal(health.counts.attempted, 0);
+  assert.equal(health.counts.skippedFresh, 2);
+  assert.equal(health.freshness.intervalMeaning, 'minimum_revisit_interval_not_stale_sla');
+});
+
+test('Eventbrite - skippedFresh covers fresh targets beyond the successful request cap', async () => {
+  const at = '2026-02-01T00:00:00.000Z';
+  let health: any;
+  const cache: EventbriteCache = {
+    FreshA: { fetchedAt: at, verifiedAt: at, concerts: [] },
+    FreshB: { fetchedAt: at, verifiedAt: at, concerts: [] }
+  };
+  await fetchEventbriteConcerts(['StaleA', 'FreshA', 'FreshB'], {
+    cache,
+    maxPerRun: 1,
+    delayMs: 0,
+    now: () => new Date(at),
+    fetchFn: async () => [],
+    onHealth: (report) => { health = report; }
+  });
+  assert.equal(health.counts.succeeded, 1);
+  assert.equal(health.counts.skippedFresh, 2);
 });
 
 test('Eventbrite - a partially successful run raises no annotation', async () => {

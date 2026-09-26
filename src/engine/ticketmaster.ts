@@ -1,6 +1,13 @@
 import axios from 'axios';
 import * as fs from 'fs/promises';
 import { Concert } from '../schemas/concert.js';
+import {
+  buildSourceFreshness,
+  emptySourceHealthCounts,
+  SOURCE_HEALTH_SCHEMA_VERSION,
+  type SourceHealthIssue,
+  type SourceHealthReport
+} from '../observability/source_health.js';
 import { sleep } from './sleep.js';
 
 const DISCOVERY_URL = 'https://app.ticketmaster.com/discovery/v2/events.json';
@@ -35,6 +42,8 @@ export const TICKETMASTER_COUNTRIES = [
 export interface TicketmasterCache {
   [countryCode: string]: {
     fetchedAt: string;
+    /** Last fully successful country sweep; failed/partial passes never advance it. */
+    verifiedAt?: string;
     concerts: Partial<Concert>[];
   };
 }
@@ -143,15 +152,89 @@ export async function fetchTicketmasterConcerts(
   apiKey: string,
   countries: string[] = TICKETMASTER_COUNTRIES,
   discoveryUrl: string = DISCOVERY_URL,
-  cache: TicketmasterCache = {}
+  cache: TicketmasterCache = {},
+  onHealth?: (report: SourceHealthReport) => void
 ): Promise<Partial<Concert>[]> {
   const scrapedAt = new Date().toISOString();
   const concerts: Partial<Concert>[] = [];
   let requestCount = 0;
+  const attemptedCountries = new Set<string>();
+  const succeededCountries = new Set<string>();
+  const emptyCountries = new Set<string>();
+  const failedCountries = new Set<string>();
+  const unavailableCountries = new Set<string>();
+  const partialCountries = new Set<string>();
+  const fallbackCountries = new Set<string>();
+  const paginationLimitedCountries = new Set<string>();
+  const verifiedThisRun = new Set<string>();
+  const issueCounts = new Map<string, number>();
+  const addIssue = (reason: string) => issueCounts.set(reason, (issueCounts.get(reason) ?? 0) + 1);
+  let haltedCategory: string | undefined;
 
-  for (const countryCode of countries) {
+  const emitHealth = (): void => {
+    const uniqueCountries = Array.from(new Set(countries));
+    if (uniqueCountries.length === 0) {
+      onHealth?.({
+        schemaVersion: SOURCE_HEALTH_SCHEMA_VERSION,
+        generatedAt: scrapedAt,
+        source: 'ticketmaster',
+        state: 'unknown',
+        counts: emptySourceHealthCounts(),
+        freshness: buildSourceFreshness([], {}, { now: new Date(scrapedAt) }),
+        completeness: 'unknown',
+        issues: [{ reason: 'no_targets', count: 1, action: 'configure_source_targets' }]
+      });
+      return;
+    }
+    const freshness = buildSourceFreshness(uniqueCountries, cache, {
+      now: new Date(scrapedAt),
+      verifiedThisRun
+    });
+    const missing = uniqueCountries.filter((country) => cache[country] === undefined).length;
+    const incomplete = failedCountries.size > 0 || unavailableCountries.size > 0 ||
+      partialCountries.size > 0 || paginationLimitedCountries.size > 0 || missing > 0 || freshness.unknown > 0;
+    const state = succeededCountries.size === 0 && (failedCountries.size > 0 || unavailableCountries.size > 0)
+      ? 'unavailable'
+      : incomplete ? 'degraded' : 'healthy';
+    if (paginationLimitedCountries.size > 0) {
+      issueCounts.set('pagination_limit', paginationLimitedCountries.size);
+    }
+    const issues: SourceHealthIssue[] = Array.from(issueCounts, ([reason, count]) => ({
+      reason,
+      count,
+      action: reason === 'pagination_limit' ? 'treat_source_coverage_as_partial'
+        : reason === 'authentication_failed' ? 'check_ticketmaster_api_key'
+          : 'retry_next_scheduled_sweep'
+    }));
+    onHealth?.({
+      schemaVersion: SOURCE_HEALTH_SCHEMA_VERSION,
+      generatedAt: scrapedAt,
+      source: 'ticketmaster',
+      state,
+      counts: emptySourceHealthCounts({
+        targets: uniqueCountries.length,
+        selected: uniqueCountries.length,
+        attempted: attemptedCountries.size,
+        succeeded: succeededCountries.size,
+        failed: failedCountries.size,
+        empty: emptyCountries.size,
+        unavailable: unavailableCountries.size,
+        missing,
+        cacheFallbacks: fallbackCountries.size,
+        partial: new Set([...partialCountries, ...paginationLimitedCountries]).size
+      }),
+      freshness,
+      completeness: incomplete ? 'partial' : 'complete',
+      ...(haltedCategory ? { halted: { category: haltedCategory, count: 1 } } : {}),
+      issues
+    });
+  };
+
+  for (let countryIndex = 0; countryIndex < countries.length; countryIndex++) {
+    const countryCode = countries[countryIndex];
     const countryConcerts: Partial<Concert>[] = [];
     let countryFailed = false;
+    attemptedCountries.add(countryCode);
 
     for (let page = 0; page < MAX_PAGES_PER_COUNTRY; page++) {
       try {
@@ -175,24 +258,35 @@ export async function fetchTicketmasterConcerts(
         }
 
         const totalPages = response.data?.page?.totalPages ?? 0;
+        if (totalPages > MAX_PAGES_PER_COUNTRY) paginationLimitedCountries.add(countryCode);
         if (events.length === 0 || page + 1 >= totalPages) break;
 
         await sleep(REQUEST_DELAY_MS);
       } catch (err: any) {
         const status = err.response?.status;
         if (status === 401 || status === 403) {
+          haltedCategory = 'authentication_failed';
+          addIssue('authentication_failed');
           console.error(`[Ticketmaster] Auth error (${status}) -- stopping sweep, check TICKETMASTER_API_KEY.`);
           // Nothing more will succeed with a dead key -- fall back to cache for
           // every remaining country (including this one) rather than returning
           // only what was collected before the key was confirmed bad.
-          for (const remaining of countries.slice(countries.indexOf(countryCode))) {
-            if (cache[remaining]) concerts.push(...cache[remaining].concerts);
+          for (const remaining of countries.slice(countryIndex)) {
+            unavailableCountries.add(remaining);
+            if (cache[remaining]) {
+              fallbackCountries.add(remaining);
+              concerts.push(...cache[remaining].concerts);
+            }
           }
           console.log(`[Ticketmaster] ${requestCount} requests across ${countries.length} countries -> ${concerts.length} raw events (cache fallback after auth error).`);
+          emitHealth();
           return concerts;
         }
+        failedCountries.add(countryCode);
+        addIssue(status === 429 ? 'rate_limited' : typeof status === 'number' && status >= 500 ? 'source_server_error' : 'request_failed');
         console.warn(`[Ticketmaster] ${countryCode} page ${page} failed: ${err.message}`);
         countryFailed = true;
+        if (countryConcerts.length > 0) partialCountries.add(countryCode);
         break;
       }
     }
@@ -200,8 +294,17 @@ export async function fetchTicketmasterConcerts(
     if (countryFailed && countryConcerts.length === 0 && cache[countryCode]) {
       console.warn(`[Ticketmaster] ${countryCode} failed with no results this run -- reusing ${cache[countryCode].concerts.length} cached events from ${cache[countryCode].fetchedAt}.`);
       concerts.push(...cache[countryCode].concerts);
+      fallbackCountries.add(countryCode);
     } else if (!countryFailed) {
-      cache[countryCode] = { fetchedAt: scrapedAt, concerts: countryConcerts };
+      const paginationLimited = paginationLimitedCountries.has(countryCode);
+      cache[countryCode] = {
+        fetchedAt: scrapedAt,
+        verifiedAt: paginationLimited ? cache[countryCode]?.verifiedAt : scrapedAt,
+        concerts: countryConcerts
+      };
+      succeededCountries.add(countryCode);
+      if (!paginationLimited) verifiedThisRun.add(countryCode);
+      if (countryConcerts.length === 0) emptyCountries.add(countryCode);
       concerts.push(...countryConcerts);
     } else {
       // Failed partway through but got some results, or failed with nothing
@@ -211,5 +314,6 @@ export async function fetchTicketmasterConcerts(
   }
 
   console.log(`[Ticketmaster] ${requestCount} requests across ${countries.length} countries -> ${concerts.length} raw events.`);
+  emitHealth();
   return concerts;
 }

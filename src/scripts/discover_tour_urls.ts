@@ -2,7 +2,8 @@ import * as fs from 'fs/promises';
 import * as path from 'path';
 import { loadApprovedArtists, saveApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from '../pipeline/artistDb.js';
 import { isBlockedHost } from '../schemas/config.js';
-import { ArtistEntry } from '../schemas/artist.js';
+import type { ArtistEntry } from '../schemas/artist.js';
+import { discoverWithCheckpoint } from './tourUrlDiscoveryCheckpoint.js';
 
 export interface ProbeResult {
   name: string;
@@ -315,7 +316,7 @@ export async function probeArtist(artist: { name: string; website: string }): Pr
   return { tourUrl: null, pathPattern: null, reason: 'No suffix matched content requirements' };
 }
 
-async function probeBatch(batch: { name: string; website: string }[], concurrency = 10): Promise<any[]> {
+export async function probeBatch(batch: { name: string; website: string }[], concurrency = 10, onSlice?: (results: ProbeResult[]) => Promise<void>): Promise<ProbeResult[]> {
   const results: any[] = [];
   for (let i = 0; i < batch.length; i += concurrency) {
     const slice = batch.slice(i, i + concurrency);
@@ -331,6 +332,7 @@ async function probeBatch(batch: { name: string; website: string }[], concurrenc
       })
     );
     results.push(...sliceResults);
+    await onSlice?.(sliceResults);
     console.log(`[discover-tour-urls] Probed batch ${Math.floor(i / concurrency) + 1}/${Math.ceil(batch.length / concurrency)}...`);
   }
   return results;
@@ -410,16 +412,15 @@ export function selectProbeQueue(artists: ArtistEntry[], n: number): { name: str
     .map((a) => ({ name: a.name, website: a.website! }));
 }
 
-async function appendToAuditFile(filePath: string, newHits: any[]): Promise<void> {
-  if (newHits.length === 0) return;
-  let hits: any[] = [];
-  try {
-    const content = await fs.readFile(filePath, 'utf-8');
-    hits = JSON.parse(content);
-    if (!Array.isArray(hits)) hits = [];
-  } catch {}
-  hits.push(...newHits);
-  await fs.writeFile(filePath, JSON.stringify(hits, null, 2), 'utf-8');
+function discoveryIo() {
+  return {
+    auditFile: path.join(process.cwd(), 'data', 'tour-url-probe-hits.json'),
+    loadDb,
+    saveDb,
+    select: selectProbeQueue,
+    eligible: isTourUrlProbeCandidate,
+    probeSlice: (candidates: { name: string; website: string }[]) => probeBatch(candidates, 10),
+  };
 }
 
 async function select(n: number, outFile?: string): Promise<void> {
@@ -443,64 +444,14 @@ async function probe(candidatesFile: string, resultsFile: string): Promise<void>
   }
   
   console.log(`[discover-tour-urls] Probing ${candidates.length} candidates...`);
-  const results = await probeBatch(candidates, 10);
-  await fs.writeFile(resultsFile, JSON.stringify(results, null, 2), 'utf-8');
+  await discoverWithCheckpoint({ ...discoveryIo(), mode: 'probe', candidates, resultsFile, checkpointFile: resultsFile + '.checkpoint.json' });
   console.log(`[discover-tour-urls] Probed all candidates and wrote results to ${resultsFile}`);
 }
 
 async function apply(resultsFile: string): Promise<void> {
-  const artists = await loadDb();
   const results: ProbeResult[] = JSON.parse(await fs.readFile(resultsFile, 'utf-8'));
-  
-  const byName = buildNameIndex(artists);
-
-  const now = new Date().toISOString();
-  let hitsCount = 0;
-  let missesCount = 0;
-  const unmatched: string[] = [];
-  const auditHits: any[] = [];
-
-  for (const r of results) {
-    const idx = resolveUniqueIndex(byName, r.name, 'apply');
-    if (idx === undefined) {
-      unmatched.push(r.name);
-      continue;
-    }
-
-    const entry = artists[idx];
-    entry.tourUrlProbeTriedAt = now;
-    
-    if (r.tourUrl) {
-      entry.tourUrl = r.tourUrl;
-      hitsCount++;
-      auditHits.push({
-        artist: entry.name,
-        website: entry.website,
-        tourUrl: r.tourUrl,
-        pathPattern: r.pathPattern,
-        reason: r.reason,
-        appliedAt: now
-      });
-    } else {
-      missesCount++;
-    }
-  }
-  
-  await saveDb(artists);
-  
-  const auditPath = path.join(process.cwd(), 'data', 'tour-url-probe-hits.json');
-  await appendToAuditFile(auditPath, auditHits);
-  
-  console.log(`[discover-tour-urls] apply complete:`);
-  console.log(`  candidates processed : ${results.length}`);
-  console.log(`  hits (tourUrls found): ${hitsCount}`);
-  console.log(`  misses               : ${missesCount}`);
-  if (unmatched.length) {
-    console.log(`  unmatched (not in DB, or ambiguous -- see warnings above): ${unmatched.length} -> ${unmatched.slice(0, 10).join(', ')}`);
-  }
-  if (auditHits.length) {
-    console.log(`  Audit log appended at ${auditPath}`);
-  }
+  await discoverWithCheckpoint({ ...discoveryIo(), mode: 'apply', results, checkpointFile: resultsFile + '.apply-checkpoint.json' });
+  console.log(`[discover-tour-urls] apply complete: ${results.length} saved results processed (fresh tour decisions and ambiguous names skipped).`);
 }
 
 async function stats(): Promise<void> {
@@ -523,60 +474,10 @@ async function stats(): Promise<void> {
 }
 
 async function runConvenience(n: number): Promise<void> {
-  const artists = await loadDb();
-  const pending = selectProbeQueue(artists, n);
-  
-  if (pending.length === 0) {
-    console.log('[discover-tour-urls] No pending candidates found.');
-    return;
-  }
-  
-  console.log(`[discover-tour-urls] Running probe on ${pending.length} candidates in single-pass mode...`);
-  const results = await probeBatch(pending, 10);
-  
-  const now = new Date().toISOString();
-  let hitsCount = 0;
-  let missesCount = 0;
-  const auditHits: any[] = [];
-  
-  const freshArtists = await loadDb();
-  const byName = buildNameIndex(freshArtists);
-
-  for (const r of results) {
-    const idx = resolveUniqueIndex(byName, r.name, 'runConvenience');
-    if (idx === undefined) continue;
-
-    const entry = freshArtists[idx];
-    entry.tourUrlProbeTriedAt = now;
-    
-    if (r.tourUrl) {
-      entry.tourUrl = r.tourUrl;
-      hitsCount++;
-      auditHits.push({
-        artist: entry.name,
-        website: entry.website,
-        tourUrl: r.tourUrl,
-        pathPattern: r.pathPattern,
-        reason: r.reason,
-        appliedAt: now
-      });
-    } else {
-      missesCount++;
-    }
-  }
-  
-  await saveDb(freshArtists);
-  
-  const auditPath = path.join(process.cwd(), 'data', 'tour-url-probe-hits.json');
-  await appendToAuditFile(auditPath, auditHits);
-  
-  console.log(`[discover-tour-urls] run complete:`);
-  console.log(`  processed            : ${results.length}`);
-  console.log(`  hits (tourUrls found): ${hitsCount}`);
-  console.log(`  misses               : ${missesCount}`);
-  if (auditHits.length) {
-    console.log(`  Audit log appended at ${auditPath}`);
-  }
+  const checkpointFile = path.join(process.cwd(), 'data', 'tour-url-discovery.checkpoint.json');
+  console.log(`[discover-tour-urls] Running/resuming up to ${n} candidates; checkpoint: ${checkpointFile}`);
+  const results = await discoverWithCheckpoint({ ...discoveryIo(), mode: 'run', limit: n, checkpointFile });
+  console.log(`[discover-tour-urls] run complete: ${results.length} candidates processed. Next run starts a fresh batch.`);
 }
 
 async function main() {
