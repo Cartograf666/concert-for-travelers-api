@@ -11,6 +11,54 @@ each concert in space and time, and (3) **rank** the options.
 
 Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
+## Source-specific recovery and retired-cache safety — 2026-09-26
+
+- Alex approved the full repair/release/normal-cycle verification plan with
+  “Все делаем”. Work remains isolated in `codex/collector-source-repairs-20260926`
+  at `/private/tmp/concert-live-fix.XPYzJe/source-repairs`; shared main is untouched.
+  Root owns integration/docs and release, senior debugger A38/GrandWest repairs,
+  another senior debugger the artist-cache ingestion guard, reviewer read-only
+  data-safety checks. No broad provider sweep or limit increase.
+- A38: previous layout extracted zero events; current official program rows
+  yield 66 on saved full HTML. Exclude cancelled and existing house-series rows,
+  retain old eventCard support. Previously cached 66 events included 27 future
+  dates, with a 51-day-old observation. GrandWest: the old JSON endpoint now
+  returns 404 HTML; its current official `/grandwest/events` page yields 16 cards.
+  Previous cache was 65 days old, with 11 future dates. Raw multi-date labels
+  still use the existing single-date pipeline; no speculative expansion here.
+  Evidence: `/tmp/a38-live-20260926.html`, `/tmp/grandwest-events-live-20260926.html`.
+- Alabama Symphony: remove the five-retry override, retaining standard two retries
+  and 2,000 ms spacing. Six 15-second attempts plus backoff already exceed the
+  90-second source deadline; this removes the known excessive retry budget, not
+  an assertion that external connectivity is repaired. Existing selectors were
+  confirmed against the official page by the diagnosis pass.
+- Retire only `artist-your-smiling-face` and `artist-youre-all-i-wanna-do` scraper
+  configs: both attributed the James Taylor schedule to a different name. Files
+  are recoverable from Git; canonical `artist-james-taylor` remains. Artist DB
+  entities are not deleted: a wrong website binding does not establish that an
+  artist identity is invalid. Existing `tourScraperTriedAt` fields prevent ordinary
+  extraction from automatically recreating these configs; website metadata needs
+  separate identity verification before future rediscovery/reset.
+- Daily ingestion now excludes artist-cache IDs with no remaining config. It
+  preserves last-good entries for active failures, follows usable config IDs
+  across filename changes, and retains malformed JSON's safe filename fallback.
+  Directory/read errors stop the run explicitly rather than silently dropping
+  coverage. Cache files are not deleted or rewritten by this guard. On the saved
+  real cache, 391 -> 390 entries: only the one `Your Smiling Face` raw duplicate is
+  excluded; the other retired config has no cache. Canonical James Taylor is kept.
+- Eventbrite limitation confirmed at 2026-09-26 06:19:05 UTC: HTTP 405 with
+  `x-amzn-waf-action: captcha`, Human Verification body, and GET in Allow. This is
+  AWS WAF CAPTCHA, not a wrong method. Evidence `/tmp/eventbrite-headers-20260926.txt`
+  and `/tmp/eventbrite-body-20260926.html`. No protection bypass, false healthy
+  label, or paid integration was introduced.
+- Red/green evidence: two source-recovery regressions fail before repair and pass
+  after it; 81 targeted custom/source/security tests passed. Five cache-membership
+  regressions pass (initial four failed before filtering). Build, focused lint,
+  schema checks and diff-check passed. Root's combined source/custom/cache/pipeline
+  run passed 112 tests; build and scoped lint passed (0 errors, 2 existing warnings).
+  Independent review found no blocking issues. Selector ratchet remains 131/131.
+  Hosted source recovery remains unverified until the next ordinary collection.
+
 ## Confirmed collector failures — recovery, 2026-09-26
 
 - ✅ Confirmed code defects fixed locally; hosted source recovery remains unverified.
@@ -89,6 +137,13 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   cap requires at least 26 runs for one whole-pool pass. Existing 20% active
   reservation and all provider limits are unchanged; a freshness-priority change
   remains a separate product decision after hosted recovery is measured.
+- Released via [PR #142](https://github.com/Cartograf666/concert-for-travelers-api/pull/142)
+  at 2026-09-26 06:35:47 UTC, merge `51d401a2a09010445a0a76a9cb5eabd8822c7a7c`.
+  Remote main tree equals tested head `4ee3b4a50b9259b15e6c8dec193ec412f71c2e61`.
+  [CI run 36223713753](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/36223713753):
+  551 passed, 0 failed, 1 harness-only SSRF skip (separate production-policy test
+  passed locally). Build/lint and 131/131 selector ratchet passed; no review
+  comments. Ordinary hosted collection/publication verification still pending.
 
 ## Collector clarity and freshness — iteration 1, 2026-09-25
 
