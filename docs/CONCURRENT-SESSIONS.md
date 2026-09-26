@@ -19,8 +19,11 @@ suspect another session might be active.
   `run-artists.ts` and `observability/source_health.ts`; processing worker owns
   `pipeline/process.ts` and processing diagnostics. Existing queue/checkpoint work
   is preserved. API intervals, request limits and artist selection stay unchanged.
-  Local implementation and targeted verification completed 2026-09-26; writers
-  stopped. Working tree retained for review; no push/deploy. Evidence in BACKLOG.
+  Released 2026-09-26 via PR #141, merge `c021403`; full CI passed. Shared checkout
+  returned to main. Hosted collection reports remain pending the ordinary cycle.
+  Separate real-data recovery work is isolated in `codex/collector-recovery-20260926`
+  under `/private/tmp/concert-live-fix.XPYzJe/worktree`; it is not part of PR #141.
+  Evidence and delivery boundaries in BACKLOG.
 
 *(Log trimmed 2026-07-21 -- entries through 2026-07-08 archived to git history;
 see `BACKLOG.md` for what's actually shipped/in-progress, this log is only for

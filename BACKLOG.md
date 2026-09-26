@@ -13,7 +13,7 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
 ## Collector clarity and freshness — iteration 1, 2026-09-25
 
-- ✅ Implemented locally; product review and hosted validation pending. Alex
+- ✅ Merged via PR #141; hosted collection validation pending. Alex
   approved this iteration with “Давай”, after explicitly preserving
   provider-driven request intervals and limits. Scope: integrate existing local
   queue/checkpoint work, expose source verification/cache age in the existing
@@ -25,8 +25,8 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 - Current baseline: safely fast-forwarded `main` from `04af08f` to `3607bf7`;
   remote changes were confined to data/configs. Full local tracked patch and all
   five untracked files preserved byte-for-byte; backup under
-  `/tmp/concert-iteration1-before`. Stage: working version for product review.
-  Checks below establish the local working version; no live collection was run.
+  `/tmp/concert-iteration1-before`. These checks established the local working
+  version before release; no live collection was run for them.
 - Implemented `status.json` v3 with backward-compatible flat/cohort fields,
   per-source verified age, fallback/empty/unavailable/partial counts and actions;
   artist reports persist with the existing manifest cache. Successful 304 checks
@@ -53,16 +53,34 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   and bytes (path + NUL + bytes + NUL):
   `ae262b874ca97629a4a3cfe86963a020facafaf223e470b1ed1aead2a6e76305`.
   Exact 41-file list/check summary: `/tmp/concert-iteration1-evidence.json`.
-  No commit, push or deployment. Next delivery step: product review, then publish
-  the agreed version and verify a real scheduled artist → daily run. Hosted cache
+  At that local handoff no commit, push or deployment had occurred. Hosted cache
   transport, checkpoint durability after hard kill and improved live data coverage
   remain unverified; local tests are not evidence of those outcomes.
 - 2026-09-26 continuation: Alex gave positive feedback and asked to continue.
   Release preparation is on `codex/collector-health-20260926`, based on `c2a8a0e`.
   Upstream changes since the tested baseline were data-only; the full tracked
   patch and all 10 untracked files were preserved byte-for-byte. Implementation
-  hash above is unchanged. Preparing a PR for the existing full GitHub gates;
+  hash above was unchanged before a staged whitespace-only cleanup. Prepared a
+  PR for the existing full GitHub gates;
   no extra provider sweeps or changed request schedules are needed for CI.
+- Released 2026-09-26: [PR #141](https://github.com/Cartograf666/concert-for-travelers-api/pull/141)
+  merged at 06:02:53 UTC as `c021403b6fbfba720947adb28e8601828d8bef42`.
+  Verified remote main and zero code/test/workflow/dashboard/API-doc diff from
+  tested PR head `c8f1f0acb2597c0063371dd12b54e8142593b067`.
+  [Full CI](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/36222253752):
+  build/lint passed, 538 tests passed, 1 production SSRF test intentionally skipped
+  under the localhost test harness. That test separately passed via
+  `npm run test:ssrf-policy`; selector ratchet remained 131/131. Artist-data ratchet
+  was correctly not applicable (PR did not modify the artist database).
+  [Workflow lint](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/36222253763)
+  also passed, including the hosted pinned validator supporting `queue: max`.
+  Main has no branch-protection rule; merge was explicitly pinned to the verified
+  PR head. No manual collector dispatch was added. Next verification is the
+  ordinary artist → daily → Pages cycle and its source reports; code rollout
+  alone does not establish fresher events or improved coverage.
+- Separate recovery work is isolated in `codex/collector-recovery-20260926`
+  under `/private/tmp/concert-live-fix.XPYzJe/worktree`. Its source/parser fixes
+  were not included in this release; that task owns its checks and delivery.
 
 ## Artist discovery calibration — 2026-09-11
 
