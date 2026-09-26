@@ -2,6 +2,7 @@ import * as fs from 'fs/promises';
 import * as path from 'path';
 import { loadConfigs, runAllScrapers, ScraperResult, closeBrowser } from './engine/runner.js';
 import { loadCache, saveCache, isCacheStale } from './engine/cache.js';
+import { filterArtistCacheForActiveConfigs } from './engine/artist_cache.js';
 import { Concert } from './schemas/concert.js';
 import { processConcerts, stampLastConcertSeenAt } from './pipeline/process.js';
 import { geocodeConcerts, loadGeocodeCacheWithBackup, saveGeocodeCache } from './pipeline/geocode.js';
@@ -210,13 +211,21 @@ async function main() {
     // artists/ itself, so artist-tour data still flows into today's publish even
     // on a day the artist-scrape job didn't run.
     const artistCache = await loadCache(path.join(reportsDir, 'artist-scrape-cache.json'));
+    const activeArtistCache = await filterArtistCacheForActiveConfigs(
+      artistCache,
+      path.join(scrapersDir, 'artists')
+    );
+    const ignoredArtistCacheEntries = Object.keys(artistCache).length - Object.keys(activeArtistCache).length;
+    if (ignoredArtistCacheEntries > 0) {
+      console.warn(`[Orchestrator] Ignored ${ignoredArtistCacheEntries} artist cache entries without an active scraper config.`);
+    }
     let artistConcertCount = 0;
-    for (const entry of Object.values(artistCache)) {
+    for (const entry of Object.values(activeArtistCache)) {
       allScrapedConcerts.push(...entry.concerts);
       artistConcertCount += entry.concerts.length;
     }
     if (artistConcertCount > 0) {
-      console.log(`[Orchestrator] Loaded ${artistConcertCount} cached events from ${Object.keys(artistCache).length} artist tour-page scrapers.`);
+      console.log(`[Orchestrator] Loaded ${artistConcertCount} cached events from ${Object.keys(activeArtistCache).length} active artist tour-page scrapers.`);
     }
 
     // 4d. Same read-only merge for the Bandsintown artist sweep cache (also owned
