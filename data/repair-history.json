@@ -22616,5 +22616,120 @@
     "failuresSinceRepair": 0,
     "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
     "verification": ""
+  },
+  {
+    "id": "artist-emancipator",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-emancipator.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-09-26T09:15:23.391Z",
+    "previousConfig": {
+      "id": "artist-emancipator",
+      "domain": "emancipatormusic.com",
+      "url": "http://emancipatormusic.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.gigpress-table.upcoming tr.gigpress-row",
+        "artistNameFallback": "Emancipator",
+        "date": ".gigpress-date",
+        "ticketUrl": "a.gigpress-tickets-link",
+        "venue": ".gigpress-venue",
+        "city": ".gigpress-city",
+        "country": ".gigpress-country",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on http://emancipatormusic.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached http://emancipatormusic.com/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-andrea-motis",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-andrea-motis.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-26T09:15:25.949Z",
+    "previousConfig": {
+      "id": "artist-andrea-motis",
+      "domain": "andreamotis.com",
+      "url": "https://andreamotis.com/agenda/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table tbody tr",
+        "artistNameFallback": "Andrea Motis",
+        "date": "td:nth-child(1)",
+        "ticketUrl": "td:nth-child(4) a@href",
+        "venue": "td:nth-child(3)",
+        "city": "td:nth-child(3)",
+        "country": "td:nth-child(3)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "ES"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: city_distinct_from_venue [15/15 rows have city identical to venue (100%, allow 20%)]; country_codes_valid [0/15 country values are 2-letter codes (0%, need 80%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-ivan-hussey",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-ivan-hussey.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-26T09:15:56.363Z",
+    "previousConfig": {
+      "id": "artist-ivan-hussey",
+      "domain": "www.celloman.co.uk",
+      "url": "http://www.celloman.co.uk/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.event",
+        "artistNameFallback": "Ivan Hussey",
+        "date": ".postdate",
+        "ticketUrl": "h2 a",
+        "venue": ".article-content",
+        "city": ".article-content",
+        "country": ".article-content",
+        "venueNameFallback": "See page content",
+        "cityNameFallback": "See page content",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: city_values_plausible [1/1 city values are longer than 60 chars or containing digits (100%, allow 20%)]; venue_values_plausible [1/1 venue values are longer than 200 chars (100%, allow 20%)]; city_distinct_from_venue [1/1 rows have city identical to venue (100%, allow 20%)]; country_codes_valid [0/1 country values are 2-letter codes (0%, need 80%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-paralamas-do-sucesso",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-paralamas-do-sucesso.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-26T09:16:59.134Z",
+    "previousConfig": {
+      "id": "artist-paralamas-do-sucesso",
+      "domain": "osparalamas.com.br",
+      "url": "https://osparalamas.com.br/agenda/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.event",
+        "artistNameFallback": "Paralamas do Sucesso",
+        "date": ".event-line-node:nth-child(1)",
+        "ticketUrl": "a.event-map-link",
+        "venue": ".event-line-node.medium:nth-child(2)",
+        "city": ".event-line-node.medium:nth-child(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "BR"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
+    "verification": ""
   }
 ]
