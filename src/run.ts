@@ -11,6 +11,8 @@ import { publishChangelog, loadChangelogCache, saveChangelogCache } from './gene
 import { fetchTicketmasterConcerts, loadTicketmasterCache, saveTicketmasterCache } from './engine/ticketmaster.js';
 import { PRODUCTION_ARTIST_DB_DIR, saveApprovedArtists } from './pipeline/artistDb.js';
 import { buildRunManifest, hashRunConfigs, readRunManifest, sourceHealth, writeRunManifest } from './observability/run_manifest.js';
+import { buildScraperSourceHealth, createUnknownSourceHealth, readArtistSourceHealthBundle, verifiedVenueCacheEntry, type SourceHealthReport } from './observability/source_health.js';
+import { processingDiagnosticsSummary, type ProcessingDiagnostics } from './observability/processing_diagnostics.js';
 
 /**
  * Writes dist/status.json — a small machine-readable health surface so a watchdog /
@@ -70,13 +72,15 @@ async function writeStatus(
   ticketmasterCount: number,
   publishedConcerts: number | null,
   staleVenueIds: string[],
-  artistManifest: Awaited<ReturnType<typeof readRunManifest>>
+  artistManifest: Awaited<ReturnType<typeof readRunManifest>>,
+  sourceReports: Record<string, SourceHealthReport>,
+  processing: ProcessingDiagnostics | undefined
 ): Promise<void> {
   const failed = results.filter((r) => !r.success);
   const status = {
     // Flat fields below are kept for existing API consumers. New clients should
     // prefer the grouped, versioned health surfaces.
-    schemaVersion: 2,
+    schemaVersion: 3,
     generatedAt: new Date().toISOString(),
     scrapersTotal: results.length,
     scrapersOk: results.length - failed.length,
@@ -114,7 +118,9 @@ async function writeStatus(
       publishedConcerts,
       healthGate: { state: 'not_evaluated' }
     },
-    repair: await loadRepairHealth()
+    repair: await loadRepairHealth(),
+    sourceHealth: sourceReports,
+    processing: processing ? processingDiagnosticsSummary(processing) : null
   };
   await fs.mkdir(distDir, { recursive: true });
   await fs.writeFile(path.join(distDir, 'status.json'), JSON.stringify(status, null, 2), 'utf-8');
@@ -149,6 +155,7 @@ async function main() {
     const cache = await loadCache(cachePath);
 
     const results = await runAllScrapers(configs, 5, cache);
+    const venuePassCompletedAt = new Date().toISOString();
 
     // 4. Build the effective concert set and update the cache. Changed venues use
     //    fresh events; unchanged (304/hash-match) and temporarily-failed venues reuse
@@ -159,13 +166,13 @@ async function main() {
       if (r.success) {
         if (!r.notModified) changedCount++;
         allScrapedConcerts.push(...r.concerts);
-        cache[r.configId] = {
+        cache[r.configId] = verifiedVenueCacheEntry({
           etag: r.etag,
           lastModified: r.lastModified,
           contentHash: r.contentHash ?? cache[r.configId]?.contentHash ?? '',
           scrapedAt: r.scrapedAt,
           concerts: r.concerts
-        };
+        }, r, venuePassCompletedAt);
       } else {
         const cached = cache[r.configId];
         if (cached) {
@@ -182,11 +189,12 @@ async function main() {
     // in one paginated pass per country instead of one scraper config per venue.
     // Goes through the same approved-artist whitelist filter as everything else.
     let ticketmasterCount = 0;
+    let ticketmasterHealth = createUnknownSourceHealth('ticketmaster', 'not_configured');
     const tmApiKey = process.env.TICKETMASTER_API_KEY;
     if (tmApiKey) {
       const tmCachePath = path.join(reportsDir, 'ticketmaster-cache.json');
       const tmCache = await loadTicketmasterCache(tmCachePath);
-      const tmConcerts = await fetchTicketmasterConcerts(tmApiKey, undefined, undefined, tmCache);
+      const tmConcerts = await fetchTicketmasterConcerts(tmApiKey, undefined, undefined, tmCache, report => { ticketmasterHealth = report; });
       await saveTicketmasterCache(tmCachePath, tmCache);
       ticketmasterCount = tmConcerts.length;
       allScrapedConcerts.push(...tmConcerts);
@@ -272,6 +280,13 @@ async function main() {
     });
     const venueManifestPath = await writeRunManifest(reportsDir, venueManifest);
     const artistManifest = await readRunManifest(reportsDir, 'artist');
+    const artistSourceHealth = await readArtistSourceHealthBundle(reportsDir);
+    const sourceReports: Record<string, SourceHealthReport> = {
+      venue: buildScraperSourceHealth('venue', results, cache, { generatedAt: venuePassCompletedAt }),
+      ...(artistSourceHealth?.sources ?? {}),
+      ticketmaster: ticketmasterHealth
+    };
+    await fs.writeFile(path.join(reportsDir, 'source-health.json'), JSON.stringify(sourceReports, null, 2) + '\n', 'utf-8');
     console.log(`[Orchestrator] Venue run manifest saved to: ${venueManifestPath}`);
 
     console.log(`[Orchestrator] Gathered ${allScrapedConcerts.length} raw events before processing.`);
@@ -290,7 +305,12 @@ async function main() {
     const captureApprovedArtists = (a: any[]) => { approvedArtistsSnapshot = a; };
 
     let passStart = Date.now();
-    const normalizedConcerts = await processConcerts(allScrapedConcerts, approvedArtistsPath, runDate, captureApprovedArtists);
+    let processing: ProcessingDiagnostics | undefined;
+    const normalizedConcerts = await processConcerts(allScrapedConcerts, approvedArtistsPath, runDate, captureApprovedArtists,
+      report => { processing = report; });
+    if (processing) {
+      await fs.writeFile(path.join(reportsDir, 'processing-diagnostics.json'), JSON.stringify(processing, null, 2) + '\n', 'utf-8');
+    }
     console.log(`[Orchestrator] First pass: parsed ${normalizedConcerts.length} valid events (${((Date.now() - passStart) / 1000).toFixed(1)}s).`);
 
     // 8. Network enrichment runs separately. Publication only applies the shared
@@ -318,7 +338,7 @@ async function main() {
     // 9. Write static API files to dist/
     console.log(`[Orchestrator] Publishing ${normalizedConcerts.length} concerts to ${distDir}...`);
     await publishConcerts(normalizedConcerts, distDir);
-    await writeStatus(distDir, results, changedCount, ticketmasterCount, normalizedConcerts.length, staleVenueIds, artistManifest);
+    await writeStatus(distDir, results, changedCount, ticketmasterCount, normalizedConcerts.length, staleVenueIds, artistManifest, sourceReports, processing);
 
     // 9a. Publish dist/changes.json: concerts new since last run, so the consumer
     // can show "N new concerts since your last visit" without diffing all of

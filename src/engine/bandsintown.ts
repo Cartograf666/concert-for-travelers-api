@@ -1,6 +1,7 @@
 import axios from 'axios';
 import * as fs from 'fs/promises';
 import { Concert } from '../schemas/concert.js';
+import { buildArtistSweepSourceHealth, type SourceHealthReport } from '../observability/source_health.js';
 import { sleep } from './sleep.js';
 
 const BIT_BASE = 'https://rest.bandsintown.com/artists';
@@ -125,10 +126,13 @@ export function bandsintownCountryToCode(name: string | undefined): string | nul
 
 export interface BandsintownCache {
   [artistName: string]: {
-    /** Last response that was usable for this artist (including 401/404 = known empty). */
+    /** Last response used for revisit cadence (including classified 401/404 outcomes). */
     fetchedAt?: string;
     /** Last network attempt. Optional so existing cache files remain readable. */
     attemptedAt?: string;
+    /** Last successful feed response. 401/404 never advance verification. */
+    verifiedAt?: string;
+    lastOutcome?: 'events' | 'empty' | 'unavailable' | 'failed';
     concerts: Partial<Concert>[];
   };
 }
@@ -240,6 +244,8 @@ export interface BandsintownSweepOptions {
   delayMs?: number;
   /** Injected by tests and schedulers that need deterministic queue selection. */
   now?: () => Date;
+  /** Optional reporting hook. It cannot affect sweep cadence or output. */
+  onHealth?: (report: SourceHealthReport) => void;
 }
 
 export type BandsintownCohort = 'active' | 'new' | 'cold';
@@ -368,11 +374,19 @@ export async function fetchBandsintownConcerts(
   const selection = selectBandsintownArtists(unique, cache, maxPerRun, freshnessDays, runNow);
 
   let attempts = 0;
+  let succeeded = 0;
+  let empty = 0;
+  let unavailable = 0;
+  let failed = 0;
+  let cacheFallbacks = 0;
   let yielded = 0;
   const attemptsByCohort: Record<BandsintownCohort, number> = { active: 0, new: 0, cold: 0 };
   const yieldByCohort: Record<BandsintownCohort, number> = { active: 0, new: 0, cold: 0 };
   let blockStreak = 0;
   let stopped = false;
+  const verifiedThisRun = new Set<string>();
+  const issueCounts = new Map<string, number>();
+  const addIssue = (reason: string) => issueCounts.set(reason, (issueCounts.get(reason) ?? 0) + 1);
 
   for (const artist of selection.artists) {
     if (stopped) break;
@@ -388,7 +402,16 @@ export async function fetchBandsintownConcerts(
         const c = mapBitEventToConcert(ev, artist, scrapedAt);
         if (c) concerts.push(c);
       }
-      cache[artist] = { fetchedAt: scrapedAt, attemptedAt: scrapedAt, concerts };
+      cache[artist] = {
+        fetchedAt: scrapedAt,
+        attemptedAt: scrapedAt,
+        verifiedAt: scrapedAt,
+        lastOutcome: concerts.length > 0 ? 'events' : 'empty',
+        concerts
+      };
+      succeeded++;
+      if (concerts.length === 0) empty++;
+      verifiedThisRun.add(artist);
       yielded += concerts.length;
       yieldByCohort[selection.cohortByArtist[artist]] += concerts.length;
       blockStreak = 0;
@@ -402,12 +425,39 @@ export async function fetchBandsintownConcerts(
       // never-fetched Russian names all 401'd in a row and wrongly halted the sweep).
       // Real throttling shows up as 429, which still counts toward the block streak.
       if (status === 404 || status === 401) {
-        cache[artist] = { fetchedAt: scrapedAt, attemptedAt: scrapedAt, concerts: [] };
+        const previousVerifiedAt = cache[artist]?.verifiedAt;
+        if (status === 404) {
+          unavailable++;
+          addIssue('artist_feed_not_found');
+          cache[artist] = {
+            fetchedAt: scrapedAt,
+            attemptedAt: scrapedAt,
+            verifiedAt: previousVerifiedAt,
+            lastOutcome: 'unavailable',
+            concerts: []
+          };
+        } else {
+          unavailable++;
+          addIssue('artist_feed_unavailable');
+          cache[artist] = {
+            fetchedAt: scrapedAt,
+            attemptedAt: scrapedAt,
+            verifiedAt: previousVerifiedAt,
+            lastOutcome: 'unavailable',
+            concerts: []
+          };
+        }
         blockStreak = 0;
       } else {
         // Preserve last-good concerts/fetchedAt for cache fallback. `attemptedAt`
         // prevents this failed artist from monopolising the oldest lane next run.
-        cache[artist] = { ...cache[artist], attemptedAt: scrapedAt, concerts: cache[artist]?.concerts ?? [] };
+        if (cache[artist]) cacheFallbacks++;
+        failed++;
+        const failureCategory = status === 429
+          ? 'rate_limited'
+          : typeof status === 'number' && status >= 500 ? 'source_server_error' : 'request_failed';
+        addIssue(failureCategory);
+        cache[artist] = { ...cache[artist], attemptedAt: scrapedAt, lastOutcome: 'failed', concerts: cache[artist]?.concerts ?? [] };
         blockStreak++;
         console.warn(`[Bandsintown] ${artist} failed (${status ?? err.message}); streak ${blockStreak}/${BLOCK_STREAK_LIMIT}. Keeping any cached events.`);
         if (blockStreak >= BLOCK_STREAK_LIMIT) {
@@ -443,5 +493,26 @@ export async function fetchBandsintownConcerts(
     rawEvents: all.length,
     cap: maxPerRun
   })}`);
+  const staleTargets = Object.values(selection.availableByCohort).reduce((sum, count) => sum + count, 0);
+  const report = buildArtistSweepSourceHealth('bandsintown', unique, cache, {
+    selected: selection.artists.length,
+    attempted: attempts,
+    succeeded,
+    failed,
+    empty,
+    unavailable,
+    skippedFresh: unique.length - staleTargets,
+    cacheFallbacks,
+    haltedCategory: stopped ? 'consecutive_failures' : undefined,
+    issues: Array.from(issueCounts, ([reason, count]) => ({
+      reason,
+      count,
+      action: reason === 'rate_limited' ? 'wait_for_source_cooldown'
+        : reason === 'source_server_error' || reason === 'request_failed' ? 'retry_next_scheduled_sweep'
+          : 'review_artist_source_identity'
+    })),
+    verifiedThisRun
+  }, { generatedAt: scrapedAt, revisitIntervalDays: freshnessDays });
+  options.onHealth?.(report);
   return all;
 }

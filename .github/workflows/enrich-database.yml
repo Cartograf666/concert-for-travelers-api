@@ -26,6 +26,7 @@ permissions:
 # data/artists/ (the sharded artist DB).
 concurrency:
   group: artist-db-write
+  queue: max # retain up to 100 pending writers instead of replacing their slots
   cancel-in-progress: false
 
 jobs:

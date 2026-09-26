@@ -62,7 +62,9 @@ jobs:
       - name: Restore artist run manifest
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
-          path: reports/artist-run-manifest.json
+          path: |
+            reports/artist-run-manifest.json
+            reports/artist-source-health.json
           key: artist-run-manifest-${{ github.run_id }}
           restore-keys: |
             artist-run-manifest-
@@ -129,7 +131,9 @@ jobs:
         if: always()
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
-          path: reports/artist-run-manifest.json
+          path: |
+            reports/artist-run-manifest.json
+            reports/artist-source-health.json
           key: artist-run-manifest-${{ github.run_id }}
 
       - name: Save Bandsintown cache
@@ -147,6 +151,7 @@ jobs:
           key: eventbrite-cache-${{ github.run_id }}
 
       - name: Upload reports
+        if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: artist-scrape-reports
@@ -156,6 +161,7 @@ jobs:
             reports/eventbrite-cache.json
             reports/fail-log.json
             reports/artist-run-manifest.json
+            reports/artist-source-health.json
           retention-days: 5
 
       # Turn a silent scheduled-run failure into a visible, deduplicated GitHub issue

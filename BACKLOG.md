@@ -11,6 +11,59 @@ each concert in space and time, and (3) **rank** the options.
 
 Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
+## Collector clarity and freshness — iteration 1, 2026-09-25
+
+- ✅ Implemented locally; product review and hosted validation pending. Alex
+  approved this iteration with “Давай”, after explicitly preserving
+  provider-driven request intervals and limits. Scope: integrate existing local
+  queue/checkpoint work, expose source verification/cache age in the existing
+  status/dashboard, and diagnose normalization rejects. No scheduling, caps,
+  artist selection, normalizer behavior, event identity or consumer-app changes.
+  Root owns orchestration/status/dashboard/workflows/docs; source worker owns
+  engine diagnostics and artist orchestration; processing worker owns diagnostic
+  counters/examples. Existing dirty work is protected.
+- Current baseline: safely fast-forwarded `main` from `04af08f` to `3607bf7`;
+  remote changes were confined to data/configs. Full local tracked patch and all
+  five untracked files preserved byte-for-byte; backup under
+  `/tmp/concert-iteration1-before`. Stage: working version for product review.
+  Checks below establish the local working version; no live collection was run.
+- Implemented `status.json` v3 with backward-compatible flat/cohort fields,
+  per-source verified age, fallback/empty/unavailable/partial counts and actions;
+  artist reports persist with the existing manifest cache. Successful 304 checks
+  advance verification while keeping the content observation time. Legacy cache
+  remains unknown; failed/skipped outcomes cannot fabricate recovery. Ticketmaster
+  pagination limits remain unchanged and are explicitly partial, not fully verified.
+  Publication `eligible` means gate eligibility, not a confirmed Pages deployment.
+- Processing reports account for input, accepted, duplicate and rejected records
+  by source/reason/field without changing normalized output. Bounded samples stay
+  in workflow artifacts; public status contains aggregates only. The existing
+  dashboard now exposes these reports, missing/old states and diagnostic actions.
+- Verified 2026-09-26: 131 distinct targeted tests passed (29 queue/checkpoint,
+  29 processing/pipeline, 48 source/cache, 12 Ticketmaster loopback, 13 dashboard/
+  workflow). `npm run build` passed; scoped ESLint had no errors, only existing
+  type-import warnings. Maintained `kjanat/actionlint` 1.17.0 passed workflow lint;
+  OpenAPI YAML parsed; `git diff --check` passed. Independent reviewer findings
+  on 304 staleness and Eventbrite skipped counts were fixed and regression-tested.
+- Browser checks: actual dashboard at 1280 and 390 px; source/processing details
+  and country expand/collapse work; no horizontal page overflow, no browser errors.
+  Preview at `http://127.0.0.1:8765/dashboard.html` uses explicitly labelled test
+  reports and a saved 2026-09-24 event snapshot, not live health measurements.
+- Tested base `3607bf77a9776e05fa3697d0ad9222c5c6f384a0` plus working changes;
+  SHA-256 over sorted changed code/test/workflow/dashboard/README/OpenAPI paths
+  and bytes (path + NUL + bytes + NUL):
+  `ae262b874ca97629a4a3cfe86963a020facafaf223e470b1ed1aead2a6e76305`.
+  Exact 41-file list/check summary: `/tmp/concert-iteration1-evidence.json`.
+  No commit, push or deployment. Next delivery step: product review, then publish
+  the agreed version and verify a real scheduled artist → daily run. Hosted cache
+  transport, checkpoint durability after hard kill and improved live data coverage
+  remain unverified; local tests are not evidence of those outcomes.
+- 2026-09-26 continuation: Alex gave positive feedback and asked to continue.
+  Release preparation is on `codex/collector-health-20260926`, based on `c2a8a0e`.
+  Upstream changes since the tested baseline were data-only; the full tracked
+  patch and all 10 untracked files were preserved byte-for-byte. Implementation
+  hash above is unchanged. Preparing a PR for the existing full GitHub gates;
+  no extra provider sweeps or changed request schedules are needed for CI.
+
 ## Artist discovery calibration — 2026-09-11
 
 - ✅ **Offline calibration, not a shipped filter.** Alex accepted the proposed
@@ -57,13 +110,28 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   `b17e5b81de760d00d1be1ab8451c66e33879eea263c7be6bb08d6841cc07edca`
   over sorted path+NUL+bytes+NUL for the two new discovery modules, concert schema,
   process, publisher, changelog, calibration CLI, their five test files and package.json.
-  Deployment is separate; no push/merge/workflow dispatch performed.
+  Release authorized by Alex's follow-up “выполни тогда” on 2026-09-11.
+  PR #111 passed GitHub verification and was squash-merged as
+  `04af08fe3e2cb53562281177e6e6a39c80533242`. Publication run `34624663345`
+  succeeded. Live smoke: index schemaVersion 2, lastRun 2026-09-11T17:04:14.022Z;
+  all 42,258 concerts and 62,941 catalog entries carry their discovery profiles;
+  all 25 currently published change entries do too. GitHub warned of 8 stale
+  venue caches (source freshness issue, not release failure). No rollback needed.
   Human relevance/precision and a default restrictive UI filter remain unverified.
-- ⬜ **Consumer follow-up:** the separate app at `/Users/alex/code/concerts-for-travelers`
-  needs profile propagation through `server/src/services/sources/cartograf.ts`
-  and server/client types, followed by the audience control in region browsing.
-  Inspection only here; no app edits. Preserve favorites/all-mode and handle
-  missing/unsupported profiles as unknown. Backend delivery does not complete UI.
+- ✅ **Consumer integration implemented and locally verified:** the separate app at
+  `/Users/alex/code/concerts-for-travelers` propagates strict v1 discovery profiles,
+  soft-migrates legacy Cartograf caches with last-good fallback, and offers
+  All/top 2/top 3 audience filtering in region browsing. Favourites bypass only
+  audience filtering; missing/unsupported profiles remain unknown. The control
+  is a form draft until submit to avoid resetting other unsaved parameters.
+  Final client/server build passed; 11 client and 53 server focused tests passed;
+  repeat review closed draft-reset and concurrent migration-write defects.
+  Live local browser: Germany 2026-09-18–2026-10-03 gives 204/264 (top 2),
+  246/264 (top 3), then 264 (All); form and map visually inspected. A source
+  failure warning remains visible; no full-coverage claim. Exact app input hash
+  and checks are retained in its existing destination-discovery plan milestone.
+  Existing dirty work preserved. App changes are not committed, pushed or deployed;
+  visual acceptance and app publication remain separate from the completed API release.
 
 ---
 
@@ -565,17 +633,55 @@ still current if much time has passed).
   still deliberately left open, see TS7 item below.
 
 ### ⬜ Open — critical
-- **`artist-db-write` concurrency group's actual queue-preemption is still
-  unfixed, only observed/mitigated.** The watchdog gives visibility; the
-  auto-retry workflow recovers `daily-scrape.yml`'s manual dispatches;
-  `reapply_artist_db_delta.ts` means a real conflict now costs at most one
-  skipped artist-row instead of a whole sub-chunk. But the 5 scheduled
-  enrich-* workflows can still lose their queued *slot* (never even start)
-  to each other with no automatic recovery — that's a different failure
-  mode than a mid-run conflict, still open. *A worktree
-  `.claude/worktrees/fix-daily-scrape-concurrency` existed earlier this
-  session (deleted — confirmed fully merged) — if a new one appears, check
-  it's not already mid-fix in a parallel session first.*
+- 🚧 **`artist-db-write` pending-slot loss: local native-queue fix prepared;
+  workflow validation blocked, not released.** Package
+  `vacation-20260917-concert-queue-recovery-01`, authorized by Alex through the
+  vacation coordinator on 2026-09-17 (local changes only). Root owns integration
+  and this status; one senior-debugger writer changed the workflow/test paths.
+  Existing unrelated BACKLOG changes are retained, not included in a commit.
+  Decision: ADOPT GitHub's native `queue: max`, preserving the shared group and
+  `cancel-in-progress: false`; no custom recovery service/dispatch loop.
+  [GitHub documentation](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/control-workflow-concurrency)
+  and [2026-05-07 announcement](https://github.blog/changelog/2026-05-07-github-actions-concurrency-groups-now-allow-larger-queues/)
+  establish one active writer and up to 100 pending requests. This supersedes
+  the assumption that GitHub only supports one pending slot. All 12 members
+  opt in uniformly: `.github/workflows/{daily-scrape,data-hygiene,discover-tour-urls,
+  enrich-auto,enrich-database,enrich-images,enrich-metadata,enrich-similar,
+  extract-tour-scrapers,integrity-baseline-refresh,prune-dead-scrapers,self-heal}.yml`.
+  Daily scrape retains its job-level lock; Pages concurrency is unchanged.
+  `src/scripts/check_concurrency_drops.ts` now guards direct execution so tests
+  can import the workflow list without invoking gh or writing drop history.
+  `tests/artist_db_queue.test.ts` checks actual configuration plus an explicit
+  model of documented scheduling semantics; it is not a hosted GitHub emulator.
+  Before the fix two regression assertions failed; after the fix five scheduled
+  slots and neighbouring writers survive contention and drain once per request.
+  Import safety, single-writer configuration and 100-slot overflow are covered.
+  Root verification (same checkout, 2026-09-17):
+  `node --import tsx --test tests/artist_db_queue.test.ts tests/concurrency_group_coverage.test.ts tests/optimization_workflows.test.ts tests/reapply_artist_db_delta.test.ts tests/reapply_tour_url_audit_delta.test.ts`
+  **14/14 pass**; `npm run build` pass; scoped eslint on changed TS pass;
+  `git diff --check` pass. Writer's full `npm run lint`: 0 errors, 110 warnings.
+  Independent reviewer found no blocking code defect; confirmed 7 targeted tests.
+  **Failed gate:** installed actionlint 1.7.12 rejects `concurrency.queue` in
+  all 12 files. The pinned CI action `d290e336d5a743810aef4404f757dc862276d2ae`
+  also installs 1.7.12. [Upstream issue #680](https://github.com/rhysd/actionlint/issues/680)
+  documents this unsupported official syntax. No suppression, gate weakening or
+  validator patch added. Full changed-workflow lint also reports SC2016 in the
+  unchanged extract-tour-scrapers shell body. Do not describe workflow lint as green.
+  Read-only live history found scheduled cancellations (e.g. image enrichment
+  run `33973383336`, 2026-09-05; metadata `32217146719`, 2026-08-19), with no jobs;
+  their cause annotations are unavailable, so queue-preemption is not proven for
+  these specific runs. An empty local drop log does not disprove the defect.
+  Tested input: HEAD `04af08fe3e2cb53562281177e6e6a39c80533242` plus local changes;
+  sorted path+NUL+bytes+NUL SHA-256 of the 12 workflows, watchdog and new test:
+  `2bf5ceb9d332e1dec778e16acbffe62e1a59be69ea18625e3237dcaf6cb30ef0`.
+  Protected artistDb/data shards/delta/checkpoint paths and consumer app unchanged.
+  No commit, push, schedule activation, dispatch, enrichment batch or deployment.
+  Stop: bounded local package handed off with validator compatibility blocker.
+  Next: resolve supported workflow validation without weakening checks, then
+  separately authorize publication and observe hosted queue behavior. This patch
+  prevents future pending replacement after adoption; it does not replay historic
+  cancellations, recover missed cron triggers, or guarantee against >100 backlog
+  overflow/manual cancellation. Existing watchdog and daily manual retry remain.
 
 ### ⬜ Open — high
 - **TypeScript v7 migration attempted and reverted.** `typescript-eslint@8.63.0`
@@ -591,11 +697,123 @@ still current if much time has passed).
   support — don't repeat the monkeypatch approach.
 
 ### ⬜ Open — medium
-- **`discover_tour_urls.ts` at 60/9,228 eligible artists** (eligible count
-  dropped from 20,187 now that candidate selection is scoped to the
-  professional tier). Validated batch only; intentionally not cron'd yet.
-  Default batch size stays 60 — no per-slice checkpointing exists yet (one
-  save at the very end), so don't raise the default until that's added.
+- ✅ **Workflow queue validator compatibility fixed locally; unpublished** —
+  `vacation-20260922-concert-validator-04`, 2026-09-22. Supersedes the local
+  actionlint compatibility blocker recorded in packages 01–03, not their hosted
+  verification limits. Branch main, HEAD `04af08fe3e2cb53562281177e6e6a39c80533242`;
+  existing dirty packages preserved. Only this entry and two workflows changed.
+  `.github/workflows/lint-workflows.yml` now pins reviewdog/action-actionlint
+  v1.76.3 commit `23bcc6aa6e2ccffe1e7730111b98ddcaf34cb098`, whose official
+  installer uses maintained `kjanat/actionlint` 1.17.0. This is an explicit
+  validator-provider change adopted by reviewdog, not a custom fork/patch here.
+  Fresh GitHub API checks found rhysd latest still 1.7.12 and PR 654 unmerged;
+  upgrading only within that provider would not fix queue support. New action's
+  immutable image: `sha256:4f5436c518b7d60d795e58b5fa57f2c190d08abda04e203264d28554905af8e4`.
+  Gate explicitly sets `filter_mode: nofilter`, `fail_level: any`; previous
+  defaults did not enforce nonzero exit for findings. No ignored rules, stripped
+  queue keys, disabled external linters, or changed triggers/counts. Existing
+  reporter/token permissions preserved; hosted reporting/permissions not tested.
+  `.github/workflows/extract-tour-scrapers.yml` report now uses quoted heredoc
+  instead of a shell single-quoted JS argument, resolving existing SC2016 without
+  suppression or JS changes. Before/after report execution returned identical
+  output and exit 0 against current local data (read-only).
+  Verification: old `actionlint -oneline` on 12 writer workflows FAIL (12 queue
+  errors plus SC2016); new 1.17.0 `actionlint -oneline` across the entire project
+  PASS after heredoc fix. Actual-parser negative fixtures reject invalid queue,
+  unknown concurrency key and invalid expression with exit 1; real discover
+  workflow passes with exit 0. `git diff --check` PASS. No application code
+  changed; application build/tests not rerun. CI Docker/GitHub runtime not run.
+  Local binary downloaded to `/private/tmp/concert-validator-04.4Ku46G`;
+  darwin-arm64 release archive SHA-256 matched GitHub asset digest
+  `f123b7ad57a0fe376dcc85e81b7e04e85eb39219184803fc25f989b255f569b4`.
+  System Homebrew actionlint remains 1.7.12; use the checked 1.17.0 binary for
+  equivalent local validation. Final file SHA-256: lint-workflows.yml
+  `ee18874f4e0a5a436a38cd9ed7e439e7ea7326918218a232ef2bfc3873f503a0`;
+  extract-tour-scrapers.yml (includes preserved prior queue addition)
+  `fb5879c6fb8625817b4a81901d5677d3ec3b3fb9189976b8920d56966d6d1e60`.
+  Sources: [reviewdog release](https://github.com/reviewdog/action-actionlint/releases/tag/v1.76.3),
+  [pinned installer](https://github.com/reviewdog/action-actionlint/blob/23bcc6aa6e2ccffe1e7730111b98ddcaf34cb098/scripts/install-actionlint.sh),
+  [validator release](https://github.com/kjanat/actionlint/releases/tag/v1.17.0).
+  No commit, push, deployment or enrichment. Stop after this package; publication
+  and hosted verification require separate authorization.
+- ✅ **Local cross-runner discovery integration verified; unpublished** — package
+  `vacation-20260917-concert-runner-checkpoint-03`, 2026-09-17. Supersedes package
+  02's deferred local workflow integration, not its unverified hosted durability.
+  Changed `.github/workflows/discover-tour-urls.yml`, added
+  `src/scripts/tourUrlDiscoveryRunner.ts`, exported a narrow validation hook from
+  `src/scripts/tourUrlDiscoveryCheckpoint.ts`, added
+  `tests/discover_tour_urls_runner.test.ts`. Single writer: senior_debugger; root
+  reviewed integration and owns this status. Checkout uses current main. Guarded
+  finalizer exports after success or ordinary failure; existing shared composite
+  commits DB, audit and `data/tour-url-discovery-state/checkpoint.json` together.
+  Restore validates the envelope against fresh DB/audit before restoring the
+  unchanged cursor/pending journal; it never restores an old DB snapshot.
+  Delta replay skipping a conflicting row fails restore explicitly, including
+  completed journals; manual changes to checked own fields/catalog identity also
+  require resolution. Fresh neighbouring fields remain protected.
+  Durability starts at confirmed remote push, not every local slice. Cancellation
+  finalization is best effort; hard kill/runner loss before push can lose all new
+  local slices, leaving only the last confirmed export. Hosted execution untested.
+  Verification: `node --import tsx --test --test-reporter=dot tests/discover_tour_urls_runner.test.ts tests/discover_tour_urls_checkpoint.test.ts tests/discover_tour_urls.test.ts tests/reapply_artist_db_delta.test.ts tests/reapply_tour_url_audit_delta.test.ts tests/optimization_workflows.test.ts`
+  **45/45 PASS**, including eight runner tests: disposable runtimes, pending audit
+  recovery, failed transport, corrupt/incompatible restore, exact delta conflicts
+  and local adapter CLI. `npm run build`, scoped ESLint on adapter/helper/new test,
+  and `git diff --check` PASS. Actionlint on discover workflow remains **FAIL**:
+  installed 1.7.12 rejects prior package's `concurrency.queue`; no suppression.
+  HEAD `04af08fe3e2cb53562281177e6e6a39c80533242` plus working tree; sorted
+  path+NUL+bytes+NUL SHA-256 of the four package paths listed above:
+  `1056cb212adcdda6a49629b7e5b656658f048757a30db98ad22e114d93d30662`.
+  Prior package hashes below describe their historical verification, not this
+  combined revision. Shared composite/storage, production data, other workflows,
+  selection/security rules, schedule and counts unchanged by this package.
+  No real enrichment, commit, push or deployment. Final quota check: 6% remaining,
+  above 5% reserve; no reset. Stop here; no next package started.
+- ✅ **Local discovery checkpoint/resume implemented and verified** — package
+  `vacation-20260917-concert-discovery-checkpoint-02`, coordinator authorization
+  2026-09-17; not published. Single code owner: senior_debugger; root integrates
+  and maintains this status. Changed `src/scripts/discover_tour_urls.ts`, narrow
+  `src/scripts/tourUrlDiscoveryCheckpoint.ts`, and
+  `tests/discover_tour_urls_checkpoint.test.ts`. CLI modes and default 60 retained;
+  selection/tier/SSRF/redirect rules and shared DB/delta architecture unchanged.
+  Completed ten-candidate slices are atomically journaled before advancing.
+  Run applies each saved slice to freshly loaded DB; write-ahead intent and stable
+  audit IDs let resume finish DB/audit boundaries without re-probing persisted
+  slices, duplicating audit, or overwriting fresh neighbour/tour fields.
+  State paths: `probe` uses `<resultsFile>.checkpoint.json`; `apply` uses
+  `<resultsFile>.apply-checkpoint.json`; `run` uses
+  `data/tour-url-discovery.checkpoint.json`. Keep these with the working copy.
+  Repeat the same command to resume. An unfinished run freezes its candidate
+  snapshot/limit; added candidates wait for the next batch. A completed run starts
+  a new batch (a different limit is then allowed). Completed probe/apply with the
+  same input are idempotent. Changed input/website/name multiplicity, bad digest or
+  unknown state version fail closed: inspect and explicitly move the sidecar aside
+  only when intentionally abandoning/restarting that work. Initial ambiguous names
+  retain the no-guess skip policy; durable skips never become false probe misses.
+  Verification on final inputs: `node --import tsx --test tests/discover_tour_urls_checkpoint.test.ts tests/discover_tour_urls.test.ts tests/artistDb.test.ts tests/reapply_artist_db_delta.test.ts tests/reapply_tour_url_audit_delta.test.ts tests/optimization_workflows.test.ts`
+  **45/45 pass**, also repeated with `--test-reporter=dot`; `npm run build`,
+  `npx eslint src/scripts/discover_tour_urls.ts src/scripts/tourUrlDiscoveryCheckpoint.ts tests/discover_tour_urls_checkpoint.test.ts`,
+  and `git diff --check` pass (existing ESLint package-module notice only).
+  The 16 new tests include interruption after one slice, each durable boundary,
+  an actual second-shard rename failure, fresh-field preservation, audit/probe
+  idempotence, skipped-result recovery, rename failure before checkpoint commit,
+  invalid state/input, and real CLI probe/apply subprocesses with fetch disabled.
+  Initial slice test failed before implementation. Independent reviewer identified
+  a persisted-skip eligibility bug; fixed and regression checked, no remaining
+  blocking findings. Root checked final combined inputs after that review.
+  Tested HEAD `04af08fe3e2cb53562281177e6e6a39c80533242` plus working tree;
+  sorted path+NUL+bytes+NUL SHA-256 of the three changed/new code/test files:
+  `8bbb5448c8c0c384bca5a7df52cb9e85b13cbea00396b9aee5e7fe954d8cfaca`.
+  Production data and protected queue package untouched; its fingerprint remains
+  `2bf5ceb9d332e1dec778e16acbffe62e1a59be69ea18625e3237dcaf6cb30ef0`.
+  Limits: existing single-writer and surviving local disk required; in-flight,
+  not-yet-journaled probes may repeat. Power-loss durability of existing DB storage
+  and recovery after runner disposal are not established. Existing workflow only
+  commits after success and does not retain the journal across GitHub runners;
+  that integration/publication needs a separate authorized package. The earlier
+  "not cron'd, 60/9,228" text was stale: inspected workflow already has daily cron,
+  dispatch default 300 and scheduled fallback 800; no schedule/count changed here,
+  no new live candidate-count claim. Previous actionlint FAIL remains unresolved
+  and was not retried. No real probing/DB writes, commit, push or deployment.
 - **`extract_tour_scrapers.ts` has no workflow yet** — needs the same
   real-batch validation pass before it earns one. When it does, keep it
   `workflow_dispatch`-only at first, same as `discover_tour_urls.ts` was.

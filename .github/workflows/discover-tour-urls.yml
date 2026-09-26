@@ -21,6 +21,7 @@ permissions:
 
 concurrency:
   group: artist-db-write
+  queue: max # retain up to 100 pending writers instead of replacing their slots
   cancel-in-progress: false
 
 jobs:
@@ -30,6 +31,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # A queued event SHA may predate the preceding writer's durable state.
+          ref: main
 
       - name: Setup Node.js
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
@@ -40,27 +44,51 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run Tour URL discovery
+      - name: Restore discovery journal and snapshot baseline
+        id: prepare
         env:
           ARTISTS_COUNT_INPUT: ${{ github.event.inputs.artists_count }}
         run: |
           set -eo pipefail
           COUNT=${ARTISTS_COUNT_INPUT:-800}
+          npx tsx src/scripts/tourUrlDiscoveryRunner.ts restore "$COUNT"
           rm -rf /tmp/artists-before /tmp/artists-after /tmp/tour-url-audit-before.json /tmp/tour-url-audit-after.json
           cp -R data/artists /tmp/artists-before
           cp data/tour-url-probe-hits.json /tmp/tour-url-audit-before.json
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
 
+      - name: Run Tour URL discovery
+        env:
+          COUNT: ${{ steps.prepare.outputs.count }}
+        run: |
+          set -eo pipefail
           npm run discover-tour-urls -- run "$COUNT" 2>&1 | tee /tmp/discover-tour-urls.log
+
+      # Ordinary probe/DB errors still export the valid partial journal, including
+      # pending intents. Cancellation is best effort; hard kill/runner loss before
+      # a confirmed push can only resume the preceding durable Git snapshot.
+      - name: Export partial discovery state and snapshot results
+        id: export
+        if: ${{ always() && steps.prepare.outcome == 'success' }}
+        env:
+          COUNT: ${{ steps.prepare.outputs.count }}
+        run: |
+          set -eo pipefail
+          npx tsx src/scripts/tourUrlDiscoveryRunner.ts export "$COUNT"
           cp -R data/artists /tmp/artists-after
           cp data/tour-url-probe-hits.json /tmp/tour-url-audit-after.json
+          cp -R data/tour-url-discovery-state /tmp/tour-url-discovery-state-after
 
       - name: Commit and push Tour URL discovery results
+        if: ${{ always() && steps.prepare.outcome == 'success' && steps.export.outcome == 'success' }}
         uses: ./.github/actions/commit-artist-db-delta
         with:
           before-artists-dir: /tmp/artists-before
           after-artists-dir: /tmp/artists-after
           audit-before-file: /tmp/tour-url-audit-before.json
           audit-after-file: /tmp/tour-url-audit-after.json
+          extra-path: data/tour-url-discovery-state
+          extra-after-dir: /tmp/tour-url-discovery-state-after
           commit-message: "auto: discover tour URLs [skip ci]"
 
       - name: Alert on failure

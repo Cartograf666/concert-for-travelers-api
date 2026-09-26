@@ -7,6 +7,14 @@ import { fetchEventbriteConcerts, loadEventbriteCache, saveEventbriteCache } fro
 import { loadApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from './pipeline/artistDb.js';
 import { getLlmFallbackUsageSummary } from './engine/llm_extraction_fallback.js';
 import { buildRunManifest, hashRunConfigs, writeRunManifest } from './observability/run_manifest.js';
+import {
+  buildScraperSourceHealth,
+  createArtistSourceHealthBundle,
+  createUnknownSourceHealth,
+  verifiedVenueCacheEntry,
+  writeArtistSourceHealthBundle,
+  type SourceHealthReport
+} from './observability/source_health.js';
 
 /** Reads the newline-delimited explicit artist target list, dropping blanks/dupes. */
 async function loadExplicitArtistTargets(filePath: string): Promise<string[]> {
@@ -71,13 +79,20 @@ export async function loadArtistTargets(filePath: string, artistDbPath = PRODUCT
 async function main() {
   const scrapersDir = path.join(process.cwd(), 'scrapers', 'artists');
   const reportsDir = path.join(process.cwd(), 'reports');
+  const healthBundle = createArtistSourceHealthBundle();
 
   console.log('[ArtistScrape] Starting artist tour-page scrape...');
 
   try {
     await fs.mkdir(scrapersDir, { recursive: true });
+    // Overwrite any restored report before doing work. If this process aborts,
+    // unfinished stages remain explicitly not_run instead of masquerading as a
+    // current successful pass from the shared Actions cache.
+    const healthReportPath = await writeArtistSourceHealthBundle(reportsDir, healthBundle);
     const configs = await loadConfigs(scrapersDir);
     if (configs.length === 0) {
+      healthBundle.sources.artist = createUnknownSourceHealth('artist', 'no_targets');
+      await writeArtistSourceHealthBundle(reportsDir, healthBundle);
       console.log('[ArtistScrape] No configs found in scrapers/artists/. Nothing to do.');
       return;
     }
@@ -88,19 +103,21 @@ async function main() {
     const cache = await loadCache(cachePath);
 
     const results = await runAllScrapers(configs, 5, cache);
+    const artistPassCompletedAt = new Date().toISOString();
 
     let changedCount = 0;
     let failedCount = 0;
     for (const r of results) {
       if (r.success) {
         if (!r.notModified) changedCount++;
-        cache[r.configId] = {
+        const nextEntry = {
           etag: r.etag,
           lastModified: r.lastModified,
           contentHash: r.contentHash ?? cache[r.configId]?.contentHash ?? '',
           scrapedAt: r.scrapedAt,
           concerts: r.concerts
         };
+        cache[r.configId] = verifiedVenueCacheEntry(nextEntry, r, artistPassCompletedAt);
       } else {
         failedCount++;
         // Leave any existing cache entry untouched -- same fallback-to-last-good
@@ -110,6 +127,10 @@ async function main() {
       }
     }
     await saveCache(cachePath, cache);
+    healthBundle.sources.artist = buildScraperSourceHealth('artist', results, cache, {
+      generatedAt: artistPassCompletedAt
+    });
+    await writeArtistSourceHealthBundle(reportsDir, healthBundle);
 
     // Record failures in the same shape run.ts uses, so self-heal and
     // prune-dead-scrapers can act on them.
@@ -155,9 +176,16 @@ async function main() {
       const maxPerRun = process.env.BANDSINTOWN_MAX_PER_RUN ? parseInt(process.env.BANDSINTOWN_MAX_PER_RUN, 10) : undefined;
       const bitCachePath = path.join(reportsDir, 'bandsintown-cache.json');
       const bitCache = await loadBandsintownCache(bitCachePath);
+      let bitHealth: SourceHealthReport | undefined;
       console.log(`[ArtistScrape] Starting Bandsintown sweep over ${artistTargets.length} artist targets...`);
-      const bitConcerts = await fetchBandsintownConcerts(artistTargets, { cache: bitCache, maxPerRun });
+      const bitConcerts = await fetchBandsintownConcerts(artistTargets, {
+        cache: bitCache,
+        maxPerRun,
+        onHealth: (report) => { bitHealth = report; }
+      });
       await saveBandsintownCache(bitCachePath, bitCache);
+      if (bitHealth) healthBundle.sources.bandsintown = bitHealth;
+      await writeArtistSourceHealthBundle(reportsDir, healthBundle);
       console.log(`[ArtistScrape] Bandsintown sweep done -> ${bitConcerts.length} raw events cached across ${Object.keys(bitCache).length} artists.`);
 
       // Eventbrite public-discovery-page sweep -- see src/engine/eventbrite.ts for
@@ -167,13 +195,24 @@ async function main() {
       const ebMaxPerRun = process.env.EVENTBRITE_MAX_PER_RUN ? parseInt(process.env.EVENTBRITE_MAX_PER_RUN, 10) : undefined;
       const ebCachePath = path.join(reportsDir, 'eventbrite-cache.json');
       const ebCache = await loadEventbriteCache(ebCachePath);
+      let ebHealth: SourceHealthReport | undefined;
       console.log(`[ArtistScrape] Starting Eventbrite sweep over ${artistTargets.length} artist targets...`);
-      const ebConcerts = await fetchEventbriteConcerts(artistTargets, { cache: ebCache, maxPerRun: ebMaxPerRun });
+      const ebConcerts = await fetchEventbriteConcerts(artistTargets, {
+        cache: ebCache,
+        maxPerRun: ebMaxPerRun,
+        onHealth: (report) => { ebHealth = report; }
+      });
       await saveEventbriteCache(ebCachePath, ebCache);
+      if (ebHealth) healthBundle.sources.eventbrite = ebHealth;
+      await writeArtistSourceHealthBundle(reportsDir, healthBundle);
       console.log(`[ArtistScrape] Eventbrite sweep done -> ${ebConcerts.length} raw events cached across ${Object.keys(ebCache).length} artists.`);
     } else {
+      healthBundle.sources.bandsintown = createUnknownSourceHealth('bandsintown', 'no_targets');
+      healthBundle.sources.eventbrite = createUnknownSourceHealth('eventbrite', 'no_targets');
+      await writeArtistSourceHealthBundle(reportsDir, healthBundle);
       console.log('[ArtistScrape] No artist targets found -- skipping Bandsintown/Eventbrite sweeps.');
     }
+    console.log(`[ArtistScrape] Source health saved to: ${healthReportPath}`);
   } catch (error: any) {
     console.error(`[ArtistScrape] Critical error: ${error.message}`);
     process.exit(1);

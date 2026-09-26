@@ -192,13 +192,91 @@ test('Ticketmaster - a country that fails falls back to its cached results inste
     }
   };
 
-  const concerts = await fetchTicketmasterConcerts('fake-key', ['DE', 'FR'], `http://localhost:${PORT}/events.json`, cache);
+  let health: any;
+  const concerts = await fetchTicketmasterConcerts(
+    'fake-key', ['DE', 'FR'], `http://localhost:${PORT}/events.json`, cache,
+    (report) => { health = report; }
+  );
 
   assert.deepStrictEqual(concerts.map((c) => c.artist).sort(), ['Cached DE Artist', 'Fresh Artist']);
   // Cache for the country that actually succeeded must be refreshed with the new data.
   assert.strictEqual(cache.FR.concerts[0].artist, 'Fresh Artist');
   // Cache for the failed country must be left untouched (still the old entry, not wiped).
   assert.strictEqual(cache.DE.concerts[0].artist, 'Cached DE Artist');
+  assert.equal(health.counts.failed, 1);
+  assert.equal(health.counts.cacheFallbacks, 1);
+  assert.equal(health.counts.succeeded, 1);
+  assert.equal(health.completeness, 'partial');
 
   await new Promise<void>((r) => server.close(() => r()));
+});
+
+test('Ticketmaster - a country failing after page one is reported as partial', async () => {
+  const PORT = 8344;
+  const server = createServer((req, res) => {
+    const url = new URL(req.url || '', `http://localhost:${PORT}`);
+    const page = Number(url.searchParams.get('page') || 0);
+    if (page === 1) {
+      res.writeHead(500);
+      res.end('server error');
+      return;
+    }
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({
+      _embedded: { events: [{
+        name: 'Partial Show', dates: { start: { localDate: '2026-09-05' } },
+        _embedded: { venues: [{ name: 'V', city: { name: 'Berlin' }, country: { countryCode: 'DE' } }] }
+      }] },
+      page: { totalPages: 2, number: 0 }
+    }));
+  });
+  await new Promise<void>((resolve) => server.listen(PORT, resolve));
+
+  let health: any;
+  const concerts = await fetchTicketmasterConcerts(
+    'fake-key', ['DE'], `http://localhost:${PORT}/events.json`, {},
+    (report) => { health = report; }
+  );
+  assert.equal(concerts.length, 1, 'preserve the existing partial-output behavior');
+  assert.equal(health.counts.failed, 1);
+  assert.equal(health.counts.partial, 1);
+  assert.equal(health.counts.cacheFallbacks, 0);
+  assert.equal(health.completeness, 'partial');
+  await new Promise<void>((resolve) => server.close(resolve));
+});
+
+test('Ticketmaster - API deep-pagination ceiling is explicit incomplete coverage', async () => {
+  const PORT = 8345;
+  const event = (page: number) => ({
+    name: `Show ${page}`,
+    dates: { start: { localDate: '2026-09-05' } },
+    _embedded: { venues: [{ name: 'V', city: { name: 'Berlin' }, country: { countryCode: 'DE' } }] }
+  });
+  const server = createServer((req, res) => {
+    const url = new URL(req.url || '', `http://localhost:${PORT}`);
+    const page = Number(url.searchParams.get('page') || 0);
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({
+      _embedded: { events: [event(page)] },
+      page: { totalPages: 6, number: page }
+    }));
+  });
+  await new Promise<void>((resolve) => server.listen(PORT, resolve));
+
+  let health: any;
+  const cache: TicketmasterCache = {
+    DE: { fetchedAt: '2025-01-01T00:00:00.000Z', verifiedAt: '2025-01-01T00:00:00.000Z', concerts: [] }
+  };
+  await fetchTicketmasterConcerts(
+    'fake-key', ['DE'], `http://localhost:${PORT}/events.json`, cache,
+    (report) => { health = report; }
+  );
+  assert.equal(health.counts.succeeded, 1, 'responses succeeded even though coverage is capped');
+  assert.equal(health.counts.partial, 1);
+  assert.equal(health.completeness, 'partial');
+  assert.equal(cache.DE.verifiedAt, '2025-01-01T00:00:00.000Z', 'partial pagination must not advance full verification');
+  assert.deepStrictEqual(health.issues, [{
+    reason: 'pagination_limit', count: 1, action: 'treat_source_coverage_as_partial'
+  }]);
+  await new Promise<void>((resolve) => server.close(resolve));
 });
