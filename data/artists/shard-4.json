@@ -366235,7 +366235,20 @@
     "wikidataSitelinks": 2,
     "enrichedAt": "2026-09-26T09:49:13.582Z",
     "enrichedBy": "wikidata-bulk",
-    "imageFallbackTriedAt": "2026-09-26T11:11:53.323Z"
+    "imageFallbackTriedAt": "2026-09-26T11:11:53.323Z",
+    "similarArtists": [
+      {
+        "name": "Jane Remover",
+        "slug": "jane-remover",
+        "match": 0.59325
+      },
+      {
+        "name": "Hi-C",
+        "slug": "hi-c",
+        "match": 0.213462
+      }
+    ],
+    "similarEnrichedAt": "2026-09-26T11:49:37.914Z"
   },
   {
     "name": "Lucy Brown",
@@ -377561,7 +377574,15 @@
     "imageSource": "audiodb",
     "imageFallbackTriedAt": "2026-09-26T11:11:53.777Z",
     "enrichedAt": "2026-09-26T11:39:59.335Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "similarArtists": [
+      {
+        "name": "La Fève",
+        "slug": "la-feve",
+        "match": 0.060429
+      }
+    ],
+    "similarEnrichedAt": "2026-09-26T11:49:38.295Z"
   },
   {
     "name": "Luther \"Guitar Junior\" Johnson",
