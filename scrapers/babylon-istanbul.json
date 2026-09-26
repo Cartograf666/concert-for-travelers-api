@@ -3,6 +3,8 @@
   "domain": "babylon.com.tr",
   "url": "https://babylon.com.tr/en",
   "type": "static_selectors",
+  "maxRetries": 5,
+  "requestDelayMs": 2000,
   "selectors": {
     "eventBlock": ".tickets__list-item",
     "artist": ".tickets__subheading:first-of-type",

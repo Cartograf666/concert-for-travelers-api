@@ -22731,5 +22731,99 @@
     "failuresSinceRepair": 0,
     "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
     "verification": ""
+  },
+  {
+    "id": "artist-justin-pierre",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-justin-pierre.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-26T09:25:22.750Z",
+    "previousConfig": {
+      "id": "artist-justin-pierre",
+      "domain": "www.justinpierre.com",
+      "url": "http://www.justinpierre.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour-list-item",
+        "artistNameFallback": "Justin Pierre",
+        "date": ".tour-date",
+        "ticketUrl": ".tour-tickets a",
+        "venue": ".tour-venue",
+        "city": ".tour-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "babylon-istanbul",
+    "cohort": "venue",
+    "configPath": "scrapers/babylon-istanbul.json",
+    "repairedConfigHash": "287638febd1972077b783563ac785c8c6993a0bae9052a0fa569f15b35485f14",
+    "strategy": "transient",
+    "repairedAt": "2026-09-26T09:25:25.701Z",
+    "previousConfig": {
+      "id": "babylon-istanbul",
+      "domain": "babylon.com.tr",
+      "url": "https://babylon.com.tr/en",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tickets__list-item",
+        "artist": ".tickets__subheading:first-of-type",
+        "date": ".tickets__subheading:nth-of-type(2)",
+        "ticketUrl": "a",
+        "venueNameFallback": "Babylon",
+        "cityNameFallback": "Istanbul",
+        "countryNameFallback": "TR",
+        "lat": 41.2506985,
+        "lng": 29.0638515
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay",
+    "verification": "PASS (33 events, 11 checks)"
+  },
+  {
+    "id": "osaka-jo-hall-osaka",
+    "cohort": "venue",
+    "configPath": "scrapers/osaka-jo-hall-osaka.json",
+    "repairedConfigHash": "69035d4c83041b544b02fddca10d6431546fd00ec9531ec92d894cd98cdcf001",
+    "strategy": "transient",
+    "repairedAt": "2026-09-26T09:25:27.016Z",
+    "previousConfig": {
+      "id": "osaka-jo-hall-osaka",
+      "domain": "osaka-johall.com",
+      "url": "https://www.osaka-johall.com/event/",
+      "type": "static_selectors",
+      "maxRetries": 2,
+      "requestDelayMs": 0,
+      "allowEmpty": false,
+      "selectors": {
+        "eventBlock": "dl",
+        "artist": "dt.event-ttl a",
+        "artistNameFallback": "",
+        "date": "dt.event-genre span.date",
+        "datePattern": "",
+        "ticketUrl": "dt.event-ttl a",
+        "venue": "",
+        "city": "",
+        "country": "",
+        "venueNameFallback": "Osaka-Jo Hall",
+        "cityNameFallback": "Osaka",
+        "countryNameFallback": "JP",
+        "lat": 34.6896442,
+        "lng": 135.5301038
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay",
+    "verification": "PASS (5 events, 11 checks)"
   }
 ]
