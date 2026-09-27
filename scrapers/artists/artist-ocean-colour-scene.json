@@ -2,15 +2,11 @@
   "id": "artist-ocean-colour-scene",
   "domain": "www.oceancolourscene.com",
   "url": "https://www.oceancolourscene.com/tour",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".EventListingListItem",
     "artistNameFallback": "Ocean Colour Scene",
     "date": ".EventListingListItem-date",
-    "ticketUrl": "a.EventListingListItem-link::attr(href)",
-    "venue": ".EventListingListItem-venue-room",
-    "city": ".EventListingListItem-venue-city",
-    "country": ".EventListingListItem-venue-city",
     "venueNameFallback": "",
     "cityNameFallback": "",
     "countryNameFallback": "GB"

@@ -2,15 +2,11 @@
   "id": "artist-puts-kevin",
   "domain": "www.kevinputs.com",
   "url": "https://www.kevinputs.com/events",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".schedule-text4_item",
     "artistNameFallback": "Puts, Kevin",
     "date": "h5.margin-vertical-0",
-    "ticketUrl": "a.button",
-    "venue": ".small-text",
-    "city": ".small-text",
-    "country": ".small-text",
     "venueNameFallback": "",
     "cityNameFallback": "",
     "countryNameFallback": "US"
