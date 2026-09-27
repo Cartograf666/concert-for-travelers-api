@@ -23130,5 +23130,32 @@
     "failuresSinceRepair": 0,
     "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: city_values_plausible [4/16 city values are longer than 60 chars or containing digits (25%, allow 20%)]; city_distinct_from_venue [16/16 rows have city identical to venue (100%, allow 20%)]",
     "verification": ""
+  },
+  {
+    "id": "artist-jorge-e-mateus",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-jorge-e-mateus.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-27T10:12:22.920Z",
+    "previousConfig": {
+      "id": "artist-jorge-e-mateus",
+      "domain": "jorgeemateus.com.br",
+      "url": "https://jorgeemateus.com.br/agenda/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.agenda-event",
+        "artistNameFallback": "Jorge e Mateus",
+        "date": "p.event-date",
+        "ticketUrl": "a.event-tickets",
+        "city": "p.event-local",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "BR"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://jorgeemateus.com.br/agenda/ but could not re-select on it",
+    "verification": ""
   }
 ]
