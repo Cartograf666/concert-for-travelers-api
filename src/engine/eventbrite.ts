@@ -274,7 +274,13 @@ export async function fetchEventbriteConcerts(
         cache[artist] = { ...cache[artist], attemptedAt: scrapedAt, lastOutcome: 'failed' };
       }
       const status = err.response?.status;
-      const category = status === 405 ? 'method_not_allowed'
+      // AWS WAF uses 405 for CAPTCHA responses too. Only an explicit challenge
+      // header distinguishes this from a real method/endpoint failure.
+      const wafAction = Object.entries(err.response?.headers ?? {})
+        .find(([name]) => name.toLowerCase() === 'x-amzn-waf-action')?.[1];
+      const accessChallenge = typeof wafAction === 'string' && /^(captcha|challenge)$/i.test(wafAction.trim());
+      const category = accessChallenge ? 'access_challenge'
+        : status === 405 ? 'method_not_allowed'
         : status === 429 ? 'rate_limited'
           : typeof status === 'number' && status >= 500 ? 'source_server_error'
             : /SERVER_DATA/.test(String(err.message)) ? 'response_format_changed' : 'request_failed';
@@ -321,7 +327,8 @@ export async function fetchEventbriteConcerts(
     issues: Array.from(issueCounts, ([reason, count]) => ({
       reason,
       count,
-      action: reason === 'rate_limited' ? 'wait_for_source_cooldown'
+      action: reason === 'access_challenge' ? 'obtain_authorized_source_access'
+        : reason === 'rate_limited' ? 'wait_for_source_cooldown'
         : reason === 'method_not_allowed' || reason === 'response_format_changed' ? 'inspect_source_access_or_format'
           : 'retry_next_scheduled_sweep'
     })),
