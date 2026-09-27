@@ -2,15 +2,14 @@
   "id": "artist-amorphis",
   "domain": "amorphis.net",
   "url": "https://amorphis.net/tour",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "ul.MuiList-root > li.MuiListItem-root",
     "artistNameFallback": "Amorphis",
     "date": "span.MuiTypography-caption",
-    "ticketUrl": "a[href*=\"ticket\"]@href",
+    "ticketUrl": "a[href*=\"ticket\"]",
     "venue": "h4.MuiTypography-body1",
     "city": "p.MuiTypography-body1 > span",
-    "country": "p.MuiTypography-body1 > span",
     "venueNameFallback": "",
     "cityNameFallback": "",
     "countryNameFallback": "GB"

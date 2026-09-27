@@ -10,6 +10,8 @@ import { Concert } from '../schemas/concert.js';
 export interface VenueCache {
   etag?: string;
   lastModified?: string;
+  /** Config + custom-parser implementation that produced this entry. */
+  cacheFingerprint?: string;
   contentHash: string;
   scrapedAt: string;
   /** Last successful source verification; advances on 200 and 304, never failure. */
@@ -18,6 +20,32 @@ export interface VenueCache {
 }
 
 export type ScrapeCache = Record<string, VenueCache>;
+
+function stableSerialize(value: unknown): string {
+  if (value === null || typeof value !== 'object') return JSON.stringify(value) ?? 'null';
+  if (Array.isArray(value)) return `[${value.map(stableSerialize).join(',')}]`;
+
+  const record = value as Record<string, unknown>;
+  return `{${Object.keys(record)
+    .filter((key) => record[key] !== undefined)
+    .sort()
+    .map((key) => `${JSON.stringify(key)}:${stableSerialize(record[key])}`)
+    .join(',')}}`;
+}
+
+/**
+ * Identifies the config and direct custom-module bytes that produced a cache
+ * entry. An unchanged page can require different parsed output after a selector,
+ * scraper type, or custom implementation changes. Shared helpers and runtime
+ * dependencies are intentionally outside this fingerprint.
+ */
+export function hashScraperCacheInput(config: unknown, customImplementation?: string | Buffer): string {
+  const hash = createHash('sha256').update('config\0').update(stableSerialize(config));
+  if (customImplementation !== undefined) {
+    hash.update('\0custom-implementation\0').update(customImplementation);
+  }
+  return hash.digest('hex');
+}
 
 /**
  * Stable content hash of a venue's PARSED events (not the raw HTML, which carries

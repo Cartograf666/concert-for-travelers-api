@@ -11,6 +11,56 @@ each concert in space and time, and (3) **rank** the options.
 
 Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
+## Collector release verified; location recovery — 2026-09-27
+
+- ✅ PRs #141, #142 and #143 are merged into main (`c021403`, `51d401a`,
+  `8d18e43`). Alex explicitly requested merging the collector work, running a
+  real cycle and continuing improvements. Provider intervals, request caps and
+  artist selection remain protected constraints.
+- The explicitly dispatched artist run [36230340345](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/36230340345)
+  was cancelled at 08:55 UTC on September 26. The scheduled artist run
+  [36231223233](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/36231223233)
+  completed successfully on checkout `734043955561302cc56f75a699490e46bf87f875`.
+  Its automatic daily run [36232170686](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/36232170686)
+  used checkout `9b88c14d7157b0dd14d158b35844a55dc741efaf`, restored all four
+  artist cache/manifest keys from `36231223233`, and successfully deployed Pages.
+  No second manual dispatch was made. The separate daily read-only heartbeat
+  paused itself after this confirmed result, as authorized.
+- Public `status.json`, rechecked September 26 at approximately 22:15 UTC:
+  schema 3, generated `2026-09-26T09:22:32.961Z`, 39,425 concerts. Artist success
+  is 378/415 versus 366/417 before release: 18 previously failed sources now
+  succeed, five new failures remain, and one previously failed config was
+  retired. The two removed misattributed configs are not counted as recoveries.
+  Venues remain 96/147: six recoveries offset six new failures; stale caches
+  fell from ten to five. These observations supersede the earlier pending
+  hosted-verification notes below, without asserting every source is healthy.
+- A38 and GrandWest now verify 66 and 16 raw events; 13 and five respectively
+  pass publication filters. SO36 verifies its cached 73 events with HTTP 304;
+  26 pass publication filters. A 304 is source verification, not a new response
+  body. Eventbrite still fails five requests and stops; its access limitation
+  remains unresolved. Ticketmaster reports partial pagination for eight markets.
+- Downloaded the actual daily `scraper-reports` into
+  `/tmp/concert-cycle-20260926/reports`. Manifests, logs and the public diagnostics
+  agree; all global and per-source processing totals balance. Public diagnostics
+  exclude samples. Replaying all 67,467 raw records with the run's exact artist
+  DB revision and clock reproduces 39,425 published, 558 schema rejects and 530
+  `country:too_big` issues. Evidence/scripts live in `/tmp/concert-cycle-20260926`.
+- 🚧 Next bounded correction is isolated in `codex/collector-location-recovery-20260927`
+  at `/tmp/concert-location-recovery-20260927`, based on main `b5dc822`.
+  Amorphis and UB40 put the same combined location in both city and country;
+  their 68 and 40 raw records all fail validation. Source-specific parsers now
+  split explicit country labels, preserve other fields, and reject unknown,
+  conflicting or ambiguous regions. The global normalizer stays strict.
+  Root owns integration, replay and docs; senior debugger owns the two source
+  adapters and the related cache invalidation fix. A changed parser config must
+  not reuse old parsed rows via 304 before the corrected parser can run.
+- Initial checks: 79 focused source/country/custom-parser tests and build pass.
+  Both official sites received one ordinary GET: Amorphis returned HTTP 200 but
+  the body timed out; UB40 returned 403. The source-shaped fixtures and raw-data
+  replay are explicitly offline evidence; complete live HTML extraction is still
+  unverified. No access bypass, extra sweep or parser-default country guess.
+  Remaining release checks and final deduplication delta are pending.
+
 ## Source-specific recovery and retired-cache safety — 2026-09-26
 
 - Alex approved the full repair/release/normal-cycle verification plan with
@@ -1126,3 +1176,27 @@ _(done — see ✅ Done above)_
   its coordinates merely because its stale record has more fields. Six focused
   artist-location tests pass. GitHub verification of `acfce50` passed; this does
   not clear the documented integration blocker.
+- Integration checkpoint, 2026-09-27: the reviewed companion snapshot is now
+  included in PR #150's worktree rather than requiring a second PR. Its pipeline
+  SHA-256 is `2b4556c97ccb909f34be64d1a7340632ac9d60499c7d742104d5c3051dd93b5b`.
+  Cache reuse is bound to config/direct-module bytes; orphan 304 responses fail
+  rather than claim success. Compatible same-venue/country duplicates can select
+  a strictly richer whole record, preserving ticket-presence priority and all
+  existing protected categories. No cross-source field splicing or speculative
+  venue alias matching was added. Both extra source adapters now also use the
+  shared safe ticket-URL helper, with an unsafe-scheme regression.
+- Combined September 27 artifact replay (source replacements plus the companion
+  location repairs aligned to today's exact raw rows) yields 38,846 published:
+  50 added keys, 51 removed malformed keys, all removed performances still
+  represented by artist/date. Country-length rejects fall 520 → 283; all schema
+  rejects fall 546 → 309. Without the duplicate fix, these source repairs would
+  lose metadata on 177 surviving keys; with it, 126 losses are prevented and 51
+  conservative conflicts remain (49 differing venue labels, two incomparable
+  same-venue records). These conflicts are explicit limitations, not zero-loss
+  recovery. Independent review accepted this bounded policy and confirmed the
+  Hannover relocation is preserved. Emancipator remains fixture/cache-only here.
+- Combined checks: 585 tests passed, one skipped; build, lint (zero errors),
+  production SSRF policy, selector ceiling (130/131), and diff checks passed.
+  This clears the earlier code-integration blocker, not the hosted verification
+  requirement. Next: commit the integrated snapshot, verify CI on its exact head,
+  merge, then one artist → daily → Pages cycle with checkout/cache/public evidence.

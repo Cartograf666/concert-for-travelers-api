@@ -10,8 +10,21 @@ import type { ScrapeCache } from '../src/engine/cache.js';
 import type { ScraperConfig } from '../src/schemas/config.js';
 import { scrape as scrapeInsomnium } from '../src/engine/custom/artist-insomnium.js';
 import { scrape as scrapeBethHart } from '../src/engine/custom/artist-beth-hart.js';
+import { scrape as scrapeAmorphis } from '../src/engine/custom/artist-amorphis.js';
+import { scrape as scrapeUb40 } from '../src/engine/custom/artist-ub40.js';
 
 const FIXTURES = path.join(process.cwd(), 'tests', 'fixtures');
+
+test('Amorphis and UB40 keep tour rows while dropping unsafe ticket URL schemes', async () => {
+  for (const [id, parser] of [['amorphis', scrapeAmorphis], ['ub40', scrapeUb40]] as const) {
+    const config = JSON.parse(await readFile(`scrapers/artists/artist-${id}.json`, 'utf8'));
+    const html = (await readFile(path.join(FIXTURES, `artist-${id}-tour.html`), 'utf8'))
+      .replace(/href="[^"]*"/g, 'href="javascript:ticket()"');
+    const events = await parser(config, html, '2026-09-27T00:00:00Z');
+    assert.ok(events.some(event => event.country?.length === 2));
+    assert.ok(events.every(event => event.ticketUrl === undefined));
+  }
+});
 
 test('artist adapters retain shows but reject unsafe ticket schemes', async () => {
   for (const [id, parser] of [['insomnium', scrapeInsomnium], ['beth-hart', scrapeBethHart]] as const) {

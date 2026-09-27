@@ -288,7 +288,7 @@ test('runScraper reuses cached events on a 304 Not Modified', async () => {
   assert.strictEqual(r1.etag, '"v1"');
   assert.strictEqual(r1.concerts.length, 1);
 
-  const cache = { etag: r1.etag, contentHash: r1.contentHash!, scrapedAt: r1.scrapedAt, concerts: r1.concerts };
+  const cache = { etag: r1.etag, cacheFingerprint: r1.cacheFingerprint, contentHash: r1.contentHash!, scrapedAt: r1.scrapedAt, concerts: r1.concerts };
   const r2 = await runScraper(config, cache);
   assert.strictEqual(r2.notModified, true, '304 -> notModified');
   assert.strictEqual(r2.concerts.length, 1, 'cached events reused');
