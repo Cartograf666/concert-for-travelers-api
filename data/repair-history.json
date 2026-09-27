@@ -22825,5 +22825,310 @@
     "failuresSinceRepair": 0,
     "note": "transient: raising maxRetries 2 -> 5 with a politeness delay",
     "verification": "PASS (5 events, 11 checks)"
+  },
+  {
+    "id": "artist-a-tribe-called-red",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-a-tribe-called-red.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-27T10:00:32.789Z",
+    "previousConfig": {
+      "id": "artist-a-tribe-called-red",
+      "domain": "atribecalledred.com",
+      "url": "https://atribecalledred.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".gigpress-row",
+        "artistNameFallback": "A Tribe Called Red",
+        "date": ".gigpress-date",
+        "ticketUrl": ".gigpress-venue a",
+        "venue": ".gigpress-venue a",
+        "city": ".gigpress-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.gigpress-row) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-adiemus",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-adiemus.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-27T10:00:39.383Z",
+    "previousConfig": {
+      "id": "artist-adiemus",
+      "domain": "www.karljenkins.com",
+      "url": "http://www.karljenkins.com/performances",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.col-md-7 > div.row.padding-bottom-4x.aos-item[data-aos=\"fade-up\"]",
+        "artistNameFallback": "Adiemus",
+        "date": ".performance-date",
+        "ticketUrl": "div.col-10 > a.btn.btn-primary@href",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-emancipator",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-emancipator.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-09-27T10:01:08.871Z",
+    "previousConfig": {
+      "id": "artist-emancipator",
+      "domain": "emancipatormusic.com",
+      "url": "http://emancipatormusic.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.gigpress-table.upcoming tr.gigpress-row",
+        "artistNameFallback": "Emancipator",
+        "date": ".gigpress-date",
+        "ticketUrl": "a.gigpress-tickets-link",
+        "venue": ".gigpress-venue",
+        "city": ".gigpress-city",
+        "country": ".gigpress-country",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on http://emancipatormusic.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached http://emancipatormusic.com/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-ircam",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-ircam.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-27T10:01:10.169Z",
+    "previousConfig": {
+      "id": "artist-ircam",
+      "domain": "www.ircam.fr",
+      "url": "https://www.ircam.fr/en/events",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".MediaCard-module__I7_2rG__card",
+        "artistNameFallback": "IRCAM",
+        "date": ".m_b6d8b162[data-size='md']:first-of-type",
+        "venue": ".m_b6d8b162[data-size='md']:last-of-type",
+        "venueNameFallback": "IRCAM",
+        "cityNameFallback": "Paris",
+        "countryNameFallback": "FR"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: dates_parse [0/34 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]; artist_names_plausible [34/34 artist values look like page chrome (100%, allow 20%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-james-taylor",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-james-taylor.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-27T10:01:17.240Z",
+    "previousConfig": {
+      "id": "artist-james-taylor",
+      "domain": "www.jamestaylor.com",
+      "url": "https://www.jamestaylor.com/schedule",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "ul.flex-col li",
+        "artistNameFallback": "James Taylor",
+        "date": "div.w-24",
+        "ticketUrl": "a",
+        "venue": "div.text-lg",
+        "city": "div.text-sm",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: dates_parse [0/1 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]; artist_names_plausible [1/1 artist values look like page chrome (100%, allow 20%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-john-mellencamp",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-john-mellencamp.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-27T10:01:24.728Z",
+    "previousConfig": {
+      "id": "artist-john-mellencamp",
+      "domain": "www.mellencamp.com",
+      "url": "https://www.mellencamp.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.card",
+        "artistNameFallback": "John Mellencamp",
+        "date": "time",
+        "ticketUrl": "a.dropdown-item[href^='http']",
+        "venue": ".h3",
+        "city": "h1 > div:first-of-type",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-brahman",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-brahman.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-27T10:01:25.629Z",
+    "previousConfig": {
+      "id": "artist-brahman",
+      "domain": "brahman-tc.com",
+      "url": "https://brahman-tc.com/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "#contents table tr:has(.date)",
+        "artistNameFallback": "Brahman",
+        "date": ".date",
+        "ticketUrl": ".liveDesc a[href*='eplus'], .liveDesc a[href*='pia']",
+        "venue": ".at",
+        "city": ".at",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: city_distinct_from_venue [5/5 rows have city identical to venue (100%, allow 20%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-paralamas-do-sucesso",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-paralamas-do-sucesso.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-27T10:03:11.747Z",
+    "previousConfig": {
+      "id": "artist-paralamas-do-sucesso",
+      "domain": "osparalamas.com.br",
+      "url": "https://osparalamas.com.br/agenda/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.event",
+        "artistNameFallback": "Paralamas do Sucesso",
+        "date": ".event-line-node:nth-child(1)",
+        "ticketUrl": "a.event-map-link",
+        "venue": ".event-line-node.medium:nth-child(2)",
+        "city": ".event-line-node.medium:nth-child(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "BR"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
+    "verification": ""
+  },
+  {
+    "id": "artist-kiroro",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-kiroro.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-27T10:03:12.872Z",
+    "previousConfig": {
+      "id": "artist-kiroro",
+      "domain": "www.kiroromusic.com",
+      "url": "https://www.kiroromusic.com/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.p-conts-wrap.c-archive-list",
+        "artistNameFallback": "Kiroro",
+        "date": ".c-conts-date time",
+        "ticketUrl": ".c-conts-ttl-lv1 a",
+        "venue": ".p-conts-section",
+        "city": ".p-conts-section",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: has_future_dates [0 event(s) dated today or later]; city_values_plausible [6/6 city values are longer than 60 chars or containing digits (100%, allow 20%)]; city_distinct_from_venue [6/6 rows have city identical to venue (100%, allow 20%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-stuts",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-stuts.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-27T10:03:14.152Z",
+    "previousConfig": {
+      "id": "artist-stuts",
+      "domain": "stutsbeats.com",
+      "url": "https://stutsbeats.com/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".box",
+        "artistNameFallback": "Stuts",
+        "date": "h2",
+        "ticketUrl": ".livepost-doc a",
+        "venue": ".livepost-doc",
+        "city": ".livepost-doc",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: dates_parse [0/10 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]; city_values_plausible [10/10 city values are longer than 60 chars or containing digits (100%, allow 20%)]; venue_values_plausible [9/10 venue values are longer than 200 chars (90%, allow 20%)]; city_distinct_from_venue [10/10 rows have city identical to venue (100%, allow 20%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-yuki-kajiura",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-yuki-kajiura.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-27T10:03:15.162Z",
+    "previousConfig": {
+      "id": "artist-yuki-kajiura",
+      "domain": "fictionjunction.com",
+      "url": "https://fictionjunction.com/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div#content table.alignleft tr:has(td:nth-child(2))",
+        "artistNameFallback": "Yuki Kajiura",
+        "date": "td:nth-child(1)",
+        "ticketUrl": "td:nth-child(2) a",
+        "venue": "td:nth-child(2)",
+        "city": "td:nth-child(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: city_values_plausible [4/16 city values are longer than 60 chars or containing digits (25%, allow 20%)]; city_distinct_from_venue [16/16 rows have city identical to venue (100%, allow 20%)]",
+    "verification": ""
   }
 ]
