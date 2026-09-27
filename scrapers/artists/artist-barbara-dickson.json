@@ -2,7 +2,7 @@
   "id": "artist-barbara-dickson",
   "domain": "www.barbaradickson.net",
   "url": "https://www.barbaradickson.net/tour",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "li[data-hook='event-list-item']",
     "artistNameFallback": "Barbara Dickson",

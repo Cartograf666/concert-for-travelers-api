@@ -1,19 +1,31 @@
 import * as cheerio from 'cheerio';
-import { ScraperConfig } from '../../schemas/config.js';
-import { Concert } from '../../schemas/concert.js';
+import type { ScraperConfig } from '../../schemas/config.js';
+import type { Concert } from '../../schemas/concert.js';
 
 const MONTHS: Record<string, number> = {
+  jan: 1,
   january: 1,
+  feb: 2,
   february: 2,
+  mar: 3,
   march: 3,
+  apr: 4,
   april: 4,
   may: 5,
+  jun: 6,
   june: 6,
+  jul: 7,
   july: 7,
+  aug: 8,
   august: 8,
+  sep: 9,
+  sept: 9,
   september: 9,
+  oct: 10,
   october: 10,
+  nov: 11,
   november: 11,
+  dec: 12,
   december: 12
 };
 
@@ -40,12 +52,16 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
   $('a.grid-item.m-card').each((_, el) => {
     const block = $(el);
     const artist = block.find('.m-card__description .h5').text().replace(/\s+/g, ' ').trim();
-    const monthName = block.find('.date__month').text().replace('.', '').trim().toLowerCase();
+    const monthLabel = block.find('.date__month').text().replace(/\./g, '').trim().toLowerCase();
+    const [monthName, displayedYear] = monthLabel.split(/\s+/);
     const day = Number(block.find('.date__day').text().replace('.', '').trim());
     const month = MONTHS[monthName];
     if (!artist || !month || !day) return;
 
-    const year = inferYear(month);
+    const explicitYear = Number(displayedYear);
+    const year = Number.isInteger(explicitYear) && explicitYear >= 2000 && explicitYear <= 2100
+      ? explicitYear
+      : inferYear(month);
     const date = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
 
     concerts.push({

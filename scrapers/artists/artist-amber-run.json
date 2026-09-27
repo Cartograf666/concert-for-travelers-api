@@ -2,7 +2,7 @@
   "id": "artist-amber-run",
   "domain": "www.amber-run.com",
   "url": "https://www.amber-run.com/live",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "article.EventListingListItem",
     "artistNameFallback": "Amber Run",

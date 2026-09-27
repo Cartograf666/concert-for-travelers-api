@@ -1057,3 +1057,61 @@ _(done — see ✅ Done above)_
   main docs, made on request — it is NOT kept in sync going forward. Don't
   update it when editing the English originals; if it drifts noticeably
   stale, that's expected, not a bug.
+
+## Remaining collector recovery — 2026-09-27
+
+- Alex requested implementation of the remaining recovery plan, access checks
+  up front, and completion reporting. Work is isolated in
+  `codex/collector-remaining-recovery-20260927` (base `1ef38d6`); shared main and
+  the sibling Amorphis/UB40/cache-invalidation worktree are protected. Root owns
+  integration and a single post-release collection; no duplicate dispatches.
+- Current baseline: scheduled artist run `36310041552`, daily/Pages run
+  `36311090978`, actual daily checkout `72a552035cc49bf4e6eb3a98b40d225c575fe09c`.
+  Public status generated `2026-09-27T10:09:52.496Z`: 38,847 published concerts,
+  venue 97/147 successful, artist 371/415 successful, 520 country-length rejects.
+  Full artifact replay with the exact checkout's artist DB and **TZ=UTC**
+  reproduces all totals: 66,265 raw, 38,847 published, 546 schema rejects.
+  Evidence lives in `/tmp/concert-cycle-20260927`; replay is not a new collection.
+- Sabaton now extracts the country label without its nested city/state. This
+  prevents Maryland's `MD` from being interpreted as conflicting Moldova
+  evidence. The official page still yields 75 rows. Full-array source replacement
+  adds exactly one National Harbor concert, removes none, and changes no existing
+  published fields except observation timestamps. Regression red/green confirmed;
+  missing country labels are rejected instead of using Sweden as a fallback.
+- Eventbrite reports an explicit AWS WAF CAPTCHA/challenge header as
+  `access_challenge` with `obtain_authorized_source_access`, not an HTTP-method
+  repair. Genuine 405/429/format errors retain their existing classification.
+  Request budgets, pacing, cache retention and verification timestamps are
+  unchanged. This does not restore Eventbrite access. Official public event
+  search is deprecated; a generic API key does not replace a licensed feed.
+- Insomnium and Beth Hart use source-specific location extraction. The wrong
+  `artist-insomnia` config is retired because it attributed Insomnium's official
+  schedule to another artist. Its DB identity and on-disk cache are preserved;
+  existing active-config filtering excludes that cache from publication. Removed
+  misattributed rows are not counted as recovered concerts.
+- Akvárium recognizes the official abbreviated month labels and displayed years;
+  Majestic retains its existing selectors and lowers its excessive retry override
+  to the standard two retries. Direct official-page checks yielded 97/16 raw and
+  12/7 approved future concerts respectively, not a measured net catalogue gain.
+- External failures remain explicit: Barby and Yugong challenge automated access,
+  Esplanade has a TLS certificate mismatch, and RUST returns HTTP 455. KT&G needs
+  a date-aware supported endpoint integration; no fixed-month URL, TLS bypass,
+  CAPTCHA bypass, relaxed country validation or assumed recovery was introduced.
+- Amber Run and Barbara Dickson now separate their source-provided city and
+  country fields. Emancipator uses explicit observed US/Canadian regions and
+  suppresses just-ended yearless ranges without dropping next-year dates. Its
+  fixture/cache checks passed, but a full live HTML fetch timed out; it is not
+  included in the measured live-capture replay gain.
+- Combined full-array replacement of the saved live captures yields 38,841
+  published concerts: 45 added keys and 51 removed malformed Insomnium city keys.
+  All 51 removed keys remain represented by the same artist/date after city
+  correction and deduplication; this is not a loss of 51 performances. Country
+  length rejects fall from 520 to 389 and total schema rejects from 546 to 415.
+  This excludes the sibling Amorphis/UB40 patch and fixture-only Emancipator.
+- Local checks: 572 tests passed, one skipped; production SSRF-policy test,
+  TypeScript build, lint (zero errors), diff check and independent review passed.
+  Duplicate city/venue-selector audit: 130 offenders, within the 131 ratchet.
+- In progress: sibling cache-invalidation integration, CI/release, then actual
+  publication verification. The cache guard covers configuration and direct
+  custom-module bytes, not shared helper/runtime changes. Local replay and green
+  checks alone do not establish hosted recovery.

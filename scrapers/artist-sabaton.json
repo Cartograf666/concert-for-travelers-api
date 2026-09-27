@@ -2,7 +2,7 @@
   "id": "artist-sabaton",
   "domain": "www.sabaton.net",
   "url": "https://www.sabaton.net/tour/",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "div.tour-wrapper table tr:has(span.tour-date)",
     "artistNameFallback": "Sabaton",
