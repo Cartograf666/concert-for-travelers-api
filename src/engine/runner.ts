@@ -113,7 +113,7 @@ export interface ScraperResult {
   notModified?: boolean; // events identical to the cached run (304 or matching hash)
 }
 
-async function scraperCacheFingerprint(config: ScraperConfig): Promise<string> {
+export async function scraperCacheFingerprint(config: ScraperConfig): Promise<string> {
   if (config.type !== 'custom_js') return hashScraperCacheInput(config);
   if (!/^[a-z0-9][a-z0-9-]{0,80}$/.test(config.id)) {
     throw new Error(`Refusing to read custom module for unsafe scraper id: ${config.id}`);
