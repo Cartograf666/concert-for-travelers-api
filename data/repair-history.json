@@ -23157,5 +23157,172 @@
     "failuresSinceRepair": 0,
     "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://jorgeemateus.com.br/agenda/ but could not re-select on it",
     "verification": ""
+  },
+  {
+    "id": "artist-a-tribe-called-red",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-a-tribe-called-red.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-27T14:55:41.313Z",
+    "previousConfig": {
+      "id": "artist-a-tribe-called-red",
+      "domain": "atribecalledred.com",
+      "url": "https://atribecalledred.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".gigpress-row",
+        "artistNameFallback": "A Tribe Called Red",
+        "date": ".gigpress-date",
+        "ticketUrl": ".gigpress-venue a",
+        "venue": ".gigpress-venue a",
+        "city": ".gigpress-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.gigpress-row) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-adiemus",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-adiemus.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-27T14:55:43.144Z",
+    "previousConfig": {
+      "id": "artist-adiemus",
+      "domain": "www.karljenkins.com",
+      "url": "http://www.karljenkins.com/performances",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.col-md-7 > div.row.padding-bottom-4x.aos-item[data-aos=\"fade-up\"]",
+        "artistNameFallback": "Adiemus",
+        "date": ".performance-date",
+        "ticketUrl": "div.col-10 > a.btn.btn-primary@href",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-hubert-laws",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-hubert-laws.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-27T14:55:49.089Z",
+    "previousConfig": {
+      "id": "artist-hubert-laws",
+      "domain": "hubertlaws.com",
+      "url": "https://hubertlaws.com/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tribe-events-calendar-latest-past__event-row",
+        "artistNameFallback": "Hubert Laws",
+        "date": ".tribe-events-calendar-latest-past__event-datetime",
+        "ticketUrl": ".tribe-events-calendar-latest-past__event-title-link",
+        "venue": ".tribe-events-calendar-latest-past__event-venue-title",
+        "city": ".tribe-events-calendar-latest-past__event-venue-address",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: has_future_dates [0 event(s) dated today or later]; city_values_plausible [1/2 city values are longer than 60 chars or containing digits (50%, allow 20%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-john-mellencamp",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-john-mellencamp.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-27T14:55:53.639Z",
+    "previousConfig": {
+      "id": "artist-john-mellencamp",
+      "domain": "www.mellencamp.com",
+      "url": "https://www.mellencamp.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.card",
+        "artistNameFallback": "John Mellencamp",
+        "date": "time",
+        "ticketUrl": "a.dropdown-item[href^='http']",
+        "venue": ".h3",
+        "city": "h1 > div:first-of-type",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.widget-events--default .event-row) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-james-taylor",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-james-taylor.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-27T14:55:55.339Z",
+    "previousConfig": {
+      "id": "artist-james-taylor",
+      "domain": "www.jamestaylor.com",
+      "url": "https://www.jamestaylor.com/schedule",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "ul.flex-col li",
+        "artistNameFallback": "James Taylor",
+        "date": "div.w-24",
+        "ticketUrl": "a",
+        "venue": "div.text-lg",
+        "city": "div.text-sm",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: dates_parse [0/1 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]; artist_names_plausible [1/1 artist values look like page chrome (100%, allow 20%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-param-vir",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-param-vir.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-27T14:56:15.403Z",
+    "previousConfig": {
+      "id": "artist-param-vir",
+      "domain": "paramvir.net",
+      "url": "https://paramvir.net/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-in-list",
+        "artistNameFallback": "Param Vir",
+        "date": ".meta-col h2",
+        "ticketUrl": "a.details-button",
+        "venue": ".mec-venue-details span strong",
+        "city": "",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: has_future_dates [0 event(s) dated today or later]",
+    "verification": ""
   }
 ]
