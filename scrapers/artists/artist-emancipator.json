@@ -2,7 +2,7 @@
   "id": "artist-emancipator",
   "domain": "emancipatormusic.com",
   "url": "http://emancipatormusic.com/tour/",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "table.gigpress-table.upcoming tr.gigpress-row",
     "artistNameFallback": "Emancipator",

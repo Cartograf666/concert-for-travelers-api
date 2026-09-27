@@ -170,6 +170,7 @@ async function main() {
         cache[r.configId] = verifiedVenueCacheEntry({
           etag: r.etag,
           lastModified: r.lastModified,
+          cacheFingerprint: r.cacheFingerprint,
           contentHash: r.contentHash ?? cache[r.configId]?.contentHash ?? '',
           scrapedAt: r.scrapedAt,
           concerts: r.concerts

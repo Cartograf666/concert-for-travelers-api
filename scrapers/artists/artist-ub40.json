@@ -2,7 +2,7 @@
   "id": "artist-ub40",
   "domain": "ub40.global",
   "url": "https://ub40.global/tour/",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "table.uk-table tbody tr.el-item",
     "artistNameFallback": "UB40",
@@ -10,7 +10,6 @@
     "ticketUrl": "a.el-link",
     "venue": ".el-title",
     "city": ".el-content p",
-    "country": ".el-content p",
     "venueNameFallback": "",
     "cityNameFallback": "",
     "countryNameFallback": "GB"

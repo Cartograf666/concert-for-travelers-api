@@ -2,7 +2,7 @@
   "id": "artist-insomnium",
   "domain": "www.insomnium.net",
   "url": "https://www.insomnium.net/tour",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".el-item",
     "artistNameFallback": "Insomnium",

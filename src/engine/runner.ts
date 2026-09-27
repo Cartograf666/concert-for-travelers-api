@@ -6,7 +6,7 @@ import { ScraperConfig, ScraperConfigSchema, isBlockedHost } from '../schemas/co
 import { Concert } from '../schemas/concert.js';
 import { extractJsonLd } from './structured.js';
 import { safeAbsoluteUrl } from './url.js';
-import { VenueCache, ScrapeCache, hashConcerts } from './cache.js';
+import { VenueCache, ScrapeCache, hashConcerts, hashScraperCacheInput } from './cache.js';
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import * as http from 'http';
@@ -108,8 +108,27 @@ export interface ScraperResult {
   // Change-detection metadata for the per-venue cache:
   etag?: string;
   lastModified?: string;
+  cacheFingerprint?: string;
   contentHash?: string;
   notModified?: boolean; // events identical to the cached run (304 or matching hash)
+}
+
+async function scraperCacheFingerprint(config: ScraperConfig): Promise<string> {
+  if (config.type !== 'custom_js') return hashScraperCacheInput(config);
+  if (!/^[a-z0-9][a-z0-9-]{0,80}$/.test(config.id)) {
+    throw new Error(`Refusing to read custom module for unsafe scraper id: ${config.id}`);
+  }
+
+  const base = path.join(__dirname, 'custom', config.id);
+  for (const extension of ['.js', '.ts']) {
+    try {
+      const implementation = await fs.readFile(`${base}${extension}`);
+      return hashScraperCacheInput(config, implementation);
+    } catch (error: any) {
+      if (error?.code !== 'ENOENT') throw error;
+    }
+  }
+  throw new Error(`Custom scraper implementation not found for cache fingerprint: ${config.id}`);
 }
 
 // Per-domain last-access timestamps for polite request throttling.
@@ -732,27 +751,36 @@ export async function runScraper(config: ScraperConfig, cached?: VenueCache): Pr
   const scrapedAt = new Date().toISOString();
   let responseData: any = null;
   try {
+    const cacheFingerprint = await scraperCacheFingerprint(config);
+    const reusableCache = cached?.cacheFingerprint === cacheFingerprint ? cached : undefined;
+    if (cached && !reusableCache) {
+      console.log(`[Runner] ${config.id}: cache extraction fingerprint changed or missing, requesting a fresh response.`);
+    }
     const response = await getBreaker(config.domain).execute(() =>
       config.type === 'playwright_render'
         ? renderWithPlaywright(config)
-        : fetchWithRetry(config, cached ? { etag: cached.etag, lastModified: cached.lastModified } : undefined)
+        : fetchWithRetry(config, reusableCache ? { etag: reusableCache.etag, lastModified: reusableCache.lastModified } : undefined)
     );
     const etag = typeof response.headers?.etag === 'string' ? response.headers.etag : undefined;
     const lastModified = typeof response.headers?.['last-modified'] === 'string' ? response.headers['last-modified'] : undefined;
 
     // 304 Not Modified: the server confirms nothing changed — reuse cached events, skip parsing.
-    if (response.status === 304 && cached) {
-      console.log(`[Runner] ${config.id}: 304 Not Modified, reusing ${cached.concerts.length} cached events.`);
+    if (response.status === 304 && reusableCache) {
+      console.log(`[Runner] ${config.id}: 304 Not Modified, reusing ${reusableCache.concerts.length} cached events.`);
       return {
         configId: config.id,
         success: true,
-        concerts: cached.concerts,
+        concerts: reusableCache.concerts,
         notModified: true,
-        etag: cached.etag,
-        lastModified: cached.lastModified,
-        contentHash: cached.contentHash,
-        scrapedAt: cached.scrapedAt
+        etag: reusableCache.etag,
+        lastModified: reusableCache.lastModified,
+        cacheFingerprint,
+        contentHash: reusableCache.contentHash,
+        scrapedAt: reusableCache.scrapedAt
       };
+    }
+    if (response.status === 304) {
+      throw new Error(`Received 304 without a cache entry produced by the current extraction fingerprint: ${config.id}`);
     }
 
     responseData = response.data;
@@ -829,7 +857,7 @@ export async function runScraper(config: ScraperConfig, cached?: VenueCache): Pr
         // This venue is known to have a genuinely sparse/seasonal schedule --
         // 0 events is a valid result, not a broken-selector signal for the healer.
         console.log(`[Runner] ${config.id}: 0 events, allowEmpty=true, treating as a valid empty schedule.`);
-        return { configId: config.id, success: true, concerts: [], reason: 'empty_schedule', scrapedAt };
+        return { configId: config.id, success: true, concerts: [], reason: 'empty_schedule', cacheFingerprint, scrapedAt };
       }
       // Classify why, so the healer can skip pages an LLM re-selector cannot fix.
       const isCsr = typeof responseData === 'string' && isLikelyCsr(responseData);
@@ -861,6 +889,7 @@ export async function runScraper(config: ScraperConfig, cached?: VenueCache): Pr
       scrapedAt,
       etag,
       lastModified,
+      cacheFingerprint,
       contentHash,
       notModified
     };

@@ -222,6 +222,40 @@ test('Eventbrite - a run where every request fails raises an annotation', async 
   }]);
 });
 
+test('Eventbrite - WAF CAPTCHA is an access restriction, not an HTTP method repair', async () => {
+  for (const headers of [
+    { 'x-amzn-waf-action': 'captcha' },
+    { 'X-Amzn-Waf-Action': 'captcha' },
+    { 'x-amzn-waf-action': 'challenge' }
+  ]) {
+    let health: any;
+    const cache: EventbriteCache = {
+      A: {
+        fetchedAt: '2026-01-01T00:00:00Z', verifiedAt: '2026-01-01T00:00:00Z',
+        concerts: [{ artist: 'A', venue: 'Cached venue', city: 'London', country: 'GB', date: '2026-10-01' }]
+      }
+    };
+    const previous = cache.A;
+    const concerts = await fetchEventbriteConcerts(['A'], {
+      cache,
+      delayMs: 0,
+      now: () => new Date('2026-09-27T00:00:00Z'),
+      fetchFn: async () => {
+        throw Object.assign(new Error('HTTP 405'), { response: { status: 405, headers } });
+      },
+      onHealth: (report) => { health = report; }
+    });
+    assert.equal(health.state, 'unavailable');
+    assert.deepStrictEqual(health.issues, [{
+      reason: 'access_challenge', count: 1, action: 'obtain_authorized_source_access'
+    }, { reason: 'previous_target_failures', count: 1, action: 'retry_next_scheduled_sweep' }]);
+    assert.equal(cache.A.verifiedAt, previous.verifiedAt);
+    assert.deepStrictEqual(concerts, previous.concerts);
+    assert.equal(health.counts.succeeded, 0);
+    assert.equal(health.counts.cacheFallbacks, 1);
+  }
+});
+
 test('Eventbrite - an all-fresh verified cache needs no requests and is healthy', async () => {
   const at = '2026-02-01T00:00:00.000Z';
   let calls = 0;

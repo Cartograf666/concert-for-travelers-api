@@ -1059,6 +1059,26 @@ function buildArtistSocials(socials: any): Concert['artistSocials'] {
   return Object.keys(out).length > 0 ? out : undefined;
 }
 
+/** Prefer a whole, strictly more informative record only for the same venue.
+ * Keeping conflicts stable is essential: a sparse official listing may name a
+ * new venue after a relocation, while an older feed still has the old coordinates.
+ * Never construct a record by combining metadata from different sources. */
+function isMoreCompleteDuplicate(existing: Concert, candidate: Concert): boolean {
+  if (existing.country !== candidate.country || slugify(existing.venue) !== slugify(candidate.venue)) return false;
+
+  let addsInformation = (existing.lat === undefined || existing.lng === undefined) &&
+    candidate.lat !== undefined && candidate.lng !== undefined;
+  for (const field of ['lat', 'lng', 'startTime', 'venueKind', 'festival', 'lineup', 'priceRange'] as const) {
+    const before = existing[field];
+    const after = candidate[field];
+    const hasBefore = before !== undefined && (!Array.isArray(before) || before.length > 0);
+    const hasAfter = after !== undefined && (!Array.isArray(after) || after.length > 0);
+    if (hasBefore && (!hasAfter || JSON.stringify(before) !== JSON.stringify(after))) return false;
+    if (!hasBefore && hasAfter && field !== 'lat' && field !== 'lng') addsInformation = true;
+  }
+  return addsInformation;
+}
+
 /**
  * Normalizes and processes raw scraped concerts, filters out non-approved artists,
  * standardizes dates, and deduplicates.
@@ -1197,8 +1217,11 @@ export async function processConcerts(
 
     if (processedMap.has(dedupeKey)) {
       const existing = processedMap.get(dedupeKey)!;
-      // Merge: prefer record with a ticketUrl
-      if (!existing.ticketUrl && validatedConcert.ticketUrl) {
+      // Preserve ticket-presence priority; a tie may select a strictly richer
+      // whole record for the same venue, without losing known metadata.
+      if ((!existing.ticketUrl && validatedConcert.ticketUrl) ||
+          (Boolean(existing.ticketUrl) === Boolean(validatedConcert.ticketUrl) &&
+            isMoreCompleteDuplicate(existing, validatedConcert))) {
         // The existing record is discarded, so its source owns this duplicate
         // outcome. This keeps every source's raw count reconcilable with its
         // published, duplicate, and dropped counts.
