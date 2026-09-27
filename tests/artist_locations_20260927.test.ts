@@ -97,6 +97,35 @@ test('recovered artist rows pass the unchanged whitelist and Concert schema', as
   assert.ok(processed.every((concert) => concert.country.length === 2));
 });
 
+test('Beth Hart venue relocation must not be replaced by richer stale coordinates', async () => {
+  // The current artist page and the organiser explicitly confirm the move from
+  // Swiss Life Hall to Kuppelsaal. Keeping the former venue's richer record is
+  // wrong even if no fields are spliced across sources.
+  // https://www.hannover-concerts.de/wp-content/uploads/2025/09/Beth-Hart-Verlegungsmailing.pdf
+  const config = JSON.parse(await readFile('scrapers/artists/artist-beth-hart.json', 'utf8'));
+  const current = await scrapeBethHart(config, `
+    <div class="event_item">
+      <div class="event_date">NOV 21, 2026</div>
+      <div class="event_venue">Kuppelsaal IM HCC</div>
+      <div class="event_geo">Hannover, Germany</div>
+      <div class="event_tickets"><a class="event_ticket-link" href="https://www.eventim.de/event/beth-hart-live-2025-swiss-life-hall-hannover-20011156/">TICKETS</a></div>
+    </div>`, '2026-09-27T13:02:48.636Z');
+  const processed = await processConcerts([
+    ...current,
+    {
+      artist: 'Beth Hart', date: '2026-11-21', venue: 'Swiss Life Hall',
+      city: 'Hannover', country: 'DE', lat: 52.3569433, lng: 9.729252900000006,
+      startTime: '20:00', venueKind: 'hall', ticketUrl: 'https://bethhart.com',
+      originalSource: 'bandsintown.com', scrapedAt: '2026-09-18T08:37:55.491Z'
+    }
+  ], path.join(FIXTURES, 'artist-location-approved-20260927.json'), '2026-09-27T00:00:00Z');
+  assert.equal(processed.length, 1);
+  assert.equal(processed[0].venue, 'Kuppelsaal IM HCC');
+  assert.equal(processed[0].originalSource, 'www.bethhart.com');
+  assert.equal(processed[0].lat, undefined, 'do not keep the former venue coordinates');
+  assert.equal(processed[0].lng, undefined, 'do not keep the former venue coordinates');
+});
+
 test('retired Insomnia misattribution is absent while canonical Insomnium and its cache remain active', async () => {
   const cache: ScrapeCache = {
     'artist-insomnium': {

@@ -1115,3 +1115,14 @@ _(done — see ✅ Done above)_
   publication verification. The cache guard covers configuration and direct
   custom-module bytes, not shared helper/runtime changes. Local replay and green
   checks alone do not establish hosted recovery.
+- Release blocker found after the source-parser review: on the combined replay,
+  86 surviving keys lose start time, 84 lose coordinates and two lose venue kind
+  through first-wins deduplication. PR #150 must not ship alone. The companion
+  patch owns duplicate selection; combined replay must distinguish unintended
+  metadata loss from confirmed venue corrections. In particular, the organiser
+  confirms Beth Hart's 2026-11-21 Hannover move from Swiss Life Hall to Kuppelsaal
+  (`https://www.hannover-concerts.de/wp-content/uploads/2025/09/Beth-Hart-Verlegungsmailing.pdf`).
+  A new source-to-pipeline regression forbids restoring that former venue and
+  its coordinates merely because its stale record has more fields. Six focused
+  artist-location tests pass. GitHub verification of `acfce50` passed; this does
+  not clear the documented integration blocker.
