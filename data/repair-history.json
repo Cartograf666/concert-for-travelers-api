@@ -23324,5 +23324,88 @@
     "failuresSinceRepair": 0,
     "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: has_future_dates [0 event(s) dated today or later]",
     "verification": ""
+  },
+  {
+    "id": "artist-james-pankow",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-james-pankow.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-27T15:03:53.206Z",
+    "previousConfig": {
+      "id": "artist-james-pankow",
+      "domain": "www.chicagotheband.com",
+      "url": "https://www.chicagotheband.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.tour-list__item",
+        "artistNameFallback": "Chicago",
+        "date": ".tour-list__date",
+        "ticketUrl": ".tour-list__item-links > a.button",
+        "venue": ".tour-list__venue",
+        "city": ".tour-list__city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-jun-shibata",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-jun-shibata.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-27T15:04:09.101Z",
+    "previousConfig": {
+      "id": "artist-jun-shibata",
+      "domain": "www.shibatajun.com",
+      "url": "https://www.shibatajun.com/schedule/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.live-schedule__list__item",
+        "artistNameFallback": "Jun Shibata",
+        "date": "p.live-schedule__list__item__date",
+        "ticketUrl": "a.live-schedule__list__item__link",
+        "city": "p.live-schedule__list__item__place",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.shibatajun.com/schedule/live/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-allan-stewart",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-allan-stewart.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-27T15:04:12.743Z",
+    "previousConfig": {
+      "id": "artist-allan-stewart",
+      "domain": "www.allanstewart.com",
+      "url": "https://www.allanstewart.com/shows/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.elementor-column.elementor-col-33.elementor-top-column.elementor-has-gap",
+        "artistNameFallback": "Allan Stewart",
+        "date": "div.elementor-widget-container h3",
+        "ticketUrl": "div.elementor-widget-container a.elementor-button",
+        "venue": "div.elementor-widget-container h4:nth-of-type(1)",
+        "city": "div.elementor-widget-container h4:nth-of-type(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.allanstewart.com/shows/ but could not re-select on it",
+    "verification": ""
   }
 ]
