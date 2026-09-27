@@ -1253,7 +1253,27 @@ _(done — see ✅ Done above)_
   official artist source must win as a whole record regardless of input order
   or aggregator completeness. Missing unverified optional fields are reported,
   not automatically classified as data loss; fields remain unspliced. That
-  task owns pipeline/trust/cache changes and Hue & Cry. Root will integrate
-  its handoff, explicitly opt in the verified sources, repeat the combined
-  replay and CI, and only then release and verify actual Pages output. The
-  source-only figures above do not validate that pending policy integration.
+  task supplied pipeline/trust/cache changes and Hue & Cry in `1c80084`,
+  integrated here as `53cf6c7`; root explicitly registered all five reviewed
+  sources. Authority requires the current config/module fingerprint, verified
+  cache timestamp and exact config URL/domain/artist, and follows object identity.
+  A matching previously verified last-good cache retains authority after a fetch
+  failure without refreshing its timestamps; that is not a fresh source read.
+- Combined offline verification supersedes the source-only candidate figures:
+  **39,109 → 39,153**, 44 added keys, zero removed, all 94 countries retained;
+  country-length rejects **283 → 192**, all schema rejects **309 → 218**.
+  All 66 valid official rows win as complete records in either input order:
+  Hue & Cry 14, Steve 5, Ocean 12, Kevin 24 and Andrea 11 at the fixed baseline.
+  Other artists are unchanged. After existing cache-only geocoding, 22 changed
+  existing records omit some former optional fields, intentionally under the
+  accepted official-source policy. No network geocoding or cross-source copying.
+  The complete baseline multiset equals the released public artifact. Evidence:
+  `/tmp/concert-combined-20260928/summary.json`; cache eligibility is simulated,
+  so this does not establish hosted freshness or predict the next daily total.
+- Integration regression checks real schema-loaded configs as well as adapters.
+  It caught missing required Steve selector fallback fields; the original fields
+  are restored, but the custom parser never uses the country fallback to guess
+  unknown locations. **605 tests passed, one skipped**; build, lint (zero errors,
+  106 existing warnings), production SSRF, selector ratchet and diff check pass.
+  Root owns the combined PR and one artist → automatic daily → Pages cycle;
+  exact checkout, fresh cache fingerprints and public-artifact proof are pending.

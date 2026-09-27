@@ -12,7 +12,11 @@ export interface OfficialArtistSource {
 export type OfficialArtistContext = WeakMap<Partial<Concert>, { artist: string }>;
 
 export const OFFICIAL_ARTIST_SOURCES: readonly OfficialArtistSource[] = [
-  { configId: 'artist-hue-cry', artist: 'Hue & Cry', url: 'https://hueandcry.co.uk/live/', domain: 'hueandcry.co.uk' }
+  { configId: 'artist-hue-cry', artist: 'Hue & Cry', url: 'https://hueandcry.co.uk/live/', domain: 'hueandcry.co.uk' },
+  { configId: 'artist-steve-cardenas', artist: 'Steve Cardenas', url: 'http://stevecardenasmusic.com/schedule/', domain: 'stevecardenasmusic.com' },
+  { configId: 'artist-ocean-colour-scene', artist: 'Ocean Colour Scene', url: 'https://www.oceancolourscene.com/tour', domain: 'www.oceancolourscene.com' },
+  { configId: 'artist-puts-kevin', artist: 'Puts, Kevin', url: 'https://www.kevinputs.com/events', domain: 'www.kevinputs.com' },
+  { configId: 'artist-andrea-motis', artist: 'Andrea Motis', url: 'https://andreamotis.com/agenda/', domain: 'andreamotis.com' }
 ];
 
 /** Trust belongs to row identity in the active, verified cache, never to fields copied onto raw rows. */

@@ -3,8 +3,8 @@ import assert from 'node:assert/strict';
 import { mkdtemp, mkdir, writeFile, rm } from 'node:fs/promises';
 import * as path from 'node:path';
 import * as os from 'node:os';
-import { buildOfficialArtistContext } from '../src/engine/official_artist_sources.js';
-import { scraperCacheFingerprint } from '../src/engine/runner.js';
+import { buildOfficialArtistContext, OFFICIAL_ARTIST_SOURCES } from '../src/engine/official_artist_sources.js';
+import { loadConfigs, scraperCacheFingerprint } from '../src/engine/runner.js';
 import { processConcerts } from '../src/pipeline/process.js';
 import type { ScrapeCache } from '../src/engine/cache.js';
 import type { ScraperConfig } from '../src/schemas/config.js';
@@ -141,5 +141,39 @@ test('invalid official row is filtered, and untrusted/equal-rank duplicates reta
     assert.equal(result[0].venue, 'Old Hall');
     const untrusted = await processConcerts([ordinary(), official()], f.approved, NOW);
     assert.equal(untrusted[0].venue, 'Old Hall');
+  } finally { await f.cleanup(); }
+});
+
+test('all curated sources match real configs and their verified whole records beat richer ordinary rows', async () => {
+  const f = await fixture();
+  try {
+    await writeFile(f.approved, JSON.stringify(OFFICIAL_ARTIST_SOURCES.map(({ artist }) => ({ name: artist }))));
+    const configsDir = path.resolve('scrapers/artists');
+    const configs = await loadConfigs(configsDir);
+    assert.equal(OFFICIAL_ARTIST_SOURCES.length, 5);
+    for (const source of OFFICIAL_ARTIST_SOURCES) {
+      const config = configs.find(c => c.id === source.configId)!;
+      assert.ok(config, source.configId);
+      assert.equal(config.url, source.url);
+      assert.equal(config.domain, source.domain);
+      const row = official({ artist: source.artist, originalSource: source.domain });
+      const cache: ScrapeCache = { [source.configId]: {
+        concerts: [row], contentHash: 'offline-test', scrapedAt: NOW, verifiedAt: NOW,
+        cacheFingerprint: await scraperCacheFingerprint(config)
+      } };
+      const context = await buildOfficialArtistContext(cache, configsDir, Date.parse(NOW));
+      assert.equal(context.has(row), true, source.configId);
+      const aggregate = ordinary({ artist: source.artist });
+      for (const rows of [[aggregate, row], [row, aggregate]]) {
+        const result = await processConcerts(rows, f.approved, NOW, undefined, undefined, context);
+        assert.equal(result.length, 1, source.configId);
+        assert.equal(result[0].originalSource, source.domain);
+        assert.equal(result[0].venue, 'New Room');
+        assert.equal(result[0].lat, undefined);
+        assert.equal(result[0].startTime, undefined);
+      }
+      cache[source.configId].cacheFingerprint = 'old-implementation';
+      assert.equal((await buildOfficialArtistContext(cache, configsDir, Date.parse(NOW))).has(row), false);
+    }
   } finally { await f.cleanup(); }
 });

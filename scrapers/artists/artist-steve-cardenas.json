@@ -6,6 +6,9 @@
   "selectors": {
     "eventBlock": "table tbody tr",
     "artistNameFallback": "Steve Cardenas",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US",
     "date": "td p span span[style*='color: #9c0000']"
   }
 }
