@@ -2,7 +2,7 @@
   "id": "artist-showaddywaddy",
   "domain": "www.showaddywaddy.net",
   "url": "https://www.showaddywaddy.net/gigs/",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "tr.tableBuilderRow:not(.uniqueStyleRow)",
     "artistNameFallback": "Showaddywaddy",
