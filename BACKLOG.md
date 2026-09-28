@@ -1277,3 +1277,115 @@ _(done — see ✅ Done above)_
   106 existing warnings), production SSRF, selector ratchet and diff check pass.
   Root owns the combined PR and one artist → automatic daily → Pages cycle;
   exact checkout, fresh cache fingerprints and public-artifact proof are pending.
+
+### 2026-09-28 — Showaddywaddy explicit-date candidate, local only
+
+- Package `vacation-20260928-concert-showaddywaddy-date-13`, isolated branch
+  `codex/showaddywaddy-date-20260928` from released PR #153 SHA
+  `5b9b7586f2bd6ff51eebb671189516e904bc3612`. The preceding pending-publication
+  note is historical: PR #153 was published and verified with artist run
+  `36361029016`, Daily/Pages `36362537149`, and 38,914 public records. This new
+  package stops at a local candidate; it does not change that hosted release.
+- Obtained original `https://showaddywaddy.net/gigs/` HTML by ordinary HTTPS,
+  HTTP 200 on 2026-09-28 at 01:51:28Z. SHA-256:
+  `f8086ecaaef7180c4e16897b9e4ffdf66d7594c357cc609b12e60bae0f575599`.
+  Port Talbot's `Sat 27h` belongs to **November 2027**, hence **2027-11-27**.
+  The full response and headers are preserved, and the checked-in compact
+  fixture produces exactly the same parser output as the original HTML.
+- Changed only this source to `custom_js` and added its date parser/fixture/tests.
+  Dates require an explicit month/year heading, a valid calendar date and a
+  matching weekday. Invalid headings reset context; nested tables are isolated.
+  The observed `27h` suffix is accepted without guessing a month/year or time.
+  Of 115 event rows, 114 parse; `Thu 24th` under September 2027 (Sevenoaks) is
+  rejected because September 24 is Friday. Missing/ambiguous date context fails.
+- Old selectors on the fetched HTML reproduce all 115 saved cache rows exactly
+  apart from observation timestamps. For all 114 accepted rows, every non-date
+  field is unchanged. In particular, the old unsupported `a@href` ticket selector
+  still yields no ticket URLs; no incidental link or location repair was included.
+  URL/domain, official-source registry, global parsing/validation/deduplication,
+  provider caps, schedules and other source configurations are unchanged.
+- Complete offline replays use each saved release's original input order, artist
+  DB, fixed clock and cache-only geocoding. Both baselines equal their complete
+  public artifacts. September 27: **39,109 → 39,212**, 104 additions/one removal.
+  September 28: **38,914 → 39,016**, 103 additions/one removal. Existing-key
+  record changes: zero. All additions/removals are Showaddywaddy; every other
+  artist's complete record multiset is identical, and country sets are unchanged.
+  Port Talbot is 2027-11-27 in both. Source processing is 114 rows → 104/103 valid,
+  with 10/11 past dates and zero schema/date failures. The single ambiguous row
+  is rejected by the source parser before those 114 rows enter the pipeline.
+- **Not publication-ready:** date recovery exposes inherited location problems.
+  Five new official rows still use GB despite overseas locations (including an
+  explicit Denmark row and Castlebar, whose retained Bandsintown record says IE).
+  Eight Showaddywaddy dates have both official and provider records because the
+  official city still includes the venue. These are records, not a claim of 103
+  unique recovered concerts. Resolving locations/event identity is a separate
+  source-specific follow-up; no country guesses or global dedupe changes here.
+- Checks: **610 tests passed, one skipped**; five targeted tests passed; build,
+  lint (zero errors/106 existing warnings), production SSRF test, selector ratchet
+  (127 <= 131), diff check and bounded independent review passed. Final successful
+  offline replays attempted zero network calls. Earlier harness failures (axios
+  module-instance mock and non-unique post-geocode keys) are recorded separately;
+  they were fixed in the evidence script, without changing product rules.
+- Evidence: `/private/tmp/concert-showaddywaddy-20260928-evidence/` contains
+  `source-manifest.json`, original HTML/headers, `replay-summary.json`, both full
+  before/after catalogues, per-row deltas, source rejection inventory and logs.
+  Source observation timestamps are held fixed in replay to isolate date changes;
+  this is not a fresh hosted cache or publication claim. The new parser/config
+  fingerprint differs from the old cache and requires a successful future refresh.
+  No commit, push, PR, merge, full collection or deployment was performed. Other
+  dirty worktrees were preserved. Stop condition: locally checked candidate and
+  explicit remaining location/identity limitations, now reached.
+
+### 2026-09-28 — Showaddywaddy verified locations and release candidate
+
+- Alex subsequently requested publication and a real collection check. This
+  supersedes the previous local-only stopping condition. The isolated branch
+  was fast-forwarded to current main `ae4fbbe` before release checks; other
+  worktrees remain untouched. Schedules, API caps and global processing rules
+  are unchanged.
+- The date parser now uses 13 exact location labels checked against official
+  artist/venue pages. Ireland is confirmed for Drogheda, Letterkenny, Dublin
+  and Castlebar; the Denmark venue is Hotel Fuglsøcentret in Knebel, not the
+  misspelled street name in the artist table. Port Talbot retains the artist's
+  Princess Royal Theatre alias (the operator now calls it Yr Aelwyd).
+  Seven UK event identities are corroborated by their official venues.
+- Unknown labels never inherit the configured GB fallback: 101 date-valid
+  rows retain their source location but omit country and are rejected as
+  incomplete by existing validation. The one explicit Castlebar performance
+  on 2026-12-06 is held because the provider calls its county Mayo the city;
+  inventing a matching city would be wrong and emitting Castlebar would add a
+  known duplicate. Its existing provider record remains unchanged. Sevenoaks
+  2027-09-24 remains rejected for the source's conflicting weekday.
+- Full saved-HTML fixture output is identical to the original response:
+  115 event rows produce 113 raw rows, 12 complete and 101 incomplete. The
+  date/weekday/calendar boundaries, exact Castlebar hold and unknown-country
+  behavior have regression tests. Existing ticket extraction is preserved;
+  the configured unsupported `a@href` still provides no ticket URLs.
+- Both full offline baselines reproduce their published artifacts exactly.
+  September 27: **39,109 → 39,113**; September 28: **38,914 → 38,918**.
+  Each has five added keys, one removed malformed Port Talbot key and five
+  changed existing records. Showaddywaddy grows **10 → 14** with no remaining
+  same-artist/date duplicate groups; all other artists' complete record
+  multisets and all 94 countries are unchanged. The correct Port Talbot date
+  is 2027-11-27. These controlled effects do not predict the next live total.
+- Existing dedupe selects ten official rows and four provider rows. Five
+  changed venue labels retain the whole official record, omitting former
+  provider times/coordinates (and one venue kind); no optional fields are
+  copied between sources. Two identical venue labels retain richer provider
+  records. This source is not added to the verified-authority registry.
+- Location evidence includes The TLT, Mount Errigal, The Helix, TF Royal,
+  Fuglsøcentret, WX Wakefield, Playhouse Whitley Bay, Picturedrome, Visit Derby,
+  Exeter Corn Exchange, Tivoli, Alhambra and the Port Talbot venue. Exact URLs,
+  saved responses/extracts and country evidence are retained in
+  `/private/tmp/concert-showaddywaddy-location-20260928/approved-locations.json`
+  and its `foreign/`, `duplicates/`, Castlebar and Port Talbot proof files.
+  Dunfermline's future event date conflicts with a taken-place banner, so its
+  booking status remains unresolved; only identity/location is corroborated.
+- Checks: **612 tests passed, one skipped**, seven targeted tests, build,
+  lint (zero errors, 106 existing warnings), production SSRF policy and full
+  two-clock offline replay passed. Every replay attempted zero network calls.
+  Evidence: `/private/tmp/concert-showaddywaddy-location-20260928/`, including
+  whole catalogues, per-row changes, explicit holds and processing diagnostics.
+  Independent release review found no blockers. Next: release the exact checked
+  snapshot, run one artist → automatic daily → Pages cycle and verify the
+  public artifacts.
