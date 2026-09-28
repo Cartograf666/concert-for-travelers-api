@@ -9,6 +9,7 @@ import type { ArtistDiscovery } from '../schemas/artist_discovery.js';
 import { ProcessingDiagnosticsCollector } from '../observability/processing_diagnostics.js';
 import type { ProcessingDiagnostics } from '../observability/processing_diagnostics.js';
 import type { OfficialArtistContext } from '../engine/official_artist_sources.js';
+import { isTheHuIdentity, isTheHuName, isVerifiedTheHuObservation, verifiedTheHuDublinSourceRank } from './thehu_identity.js';
 
 /** Format a Date as a timezone-safe YYYY-MM-DD using its local calendar fields. */
 function toLocalIso(d: Date): string {
@@ -1106,9 +1107,11 @@ export async function processConcerts(
   onApprovedArtistsLoaded?.(approvedArtists);
 
   // Compile the matcher once for the whole batch instead of per concert.
-  const match = buildApprovedMatcher(approvedArtists);
+  const match = buildApprovedMatcher(approvedArtists.filter(artist => !isTheHuIdentity(artist)));
+  const theHu = buildApprovedMatcher(approvedArtists.filter(isTheHuIdentity))('The HU');
   const processedMap = new Map<string, Concert>();
   const officialWinnerByKey = new Map<string, boolean>();
+  const theHuDublinWinnerRank = new Map<string, number>();
   const diagnostics = onDiagnostics ? new ProcessingDiagnosticsCollector(rawConcerts.length, baseDateStr) : undefined;
   // Telemetry: why events are dropped, so silent losses are visible.
   const drops = { incomplete: 0, notApproved: 0, badDate: 0, pastDate: 0, zodFail: 0 };
@@ -1150,7 +1153,9 @@ export async function processConcerts(
     }
 
     // 1. Artist Normalization & Filter
-    const matched = match(raw.artist);
+    const matched = isTheHuName(raw.artist)
+      ? (isVerifiedTheHuObservation(raw) ? theHu : null)
+      : match(raw.artist);
     if (!matched) {
       drops.notApproved++;
       diagnostics?.recordDrop('notApproved', raw);
@@ -1211,6 +1216,7 @@ export async function processConcerts(
     }
 
     const validatedConcert = validation.data;
+    const candidateTheHuDublinRank = verifiedTheHuDublinSourceRank(raw);
 
     // 3. Deduplication Key: (artist_slug, date, city_slug)
     const artistSlug = slugify(validatedConcert.artist);
@@ -1224,25 +1230,33 @@ export async function processConcerts(
     if (processedMap.has(dedupeKey)) {
       const existing = processedMap.get(dedupeKey)!;
       const existingOfficial = officialWinnerByKey.get(dedupeKey) === true;
+      const existingTheHuDublinRank = theHuDublinWinnerRank.get(dedupeKey) ?? 0;
+      // Canonical-site enrichment equalizes public URLs. For this verified
+      // pair only, preserve the prior Ticketmaster whole-record winner.
+      const theHuDublinPreferred = candidateTheHuDublinRank > 0 && existingTheHuDublinRank > 0 &&
+        candidateTheHuDublinRank !== existingTheHuDublinRank
+        ? candidateTheHuDublinRank > existingTheHuDublinRank : undefined;
       // A verified official row wins as a whole. Equal-rank rows retain the
-      // legacy ticket and same-venue completeness policy.
+      // legacy policy except for the verified The HU Dublin pair above.
       if ((candidateOfficial && !existingOfficial) ||
           (Boolean(candidateOfficial) === existingOfficial &&
-            ((!existing.ticketUrl && validatedConcert.ticketUrl) ||
+            (theHuDublinPreferred ?? ((!existing.ticketUrl && validatedConcert.ticketUrl) ||
               (Boolean(existing.ticketUrl) === Boolean(validatedConcert.ticketUrl) &&
-                isMoreCompleteDuplicate(existing, validatedConcert))))) {
+                isMoreCompleteDuplicate(existing, validatedConcert)))))) {
         // The existing record is discarded, so its source owns this duplicate
         // outcome. This keeps every source's raw count reconcilable with its
         // published, duplicate, and dropped counts.
         diagnostics?.recordDuplicate(existing);
         processedMap.set(dedupeKey, validatedConcert);
         officialWinnerByKey.set(dedupeKey, Boolean(candidateOfficial));
+        if (candidateTheHuDublinRank > 0) theHuDublinWinnerRank.set(dedupeKey, candidateTheHuDublinRank);
       } else {
         diagnostics?.recordDuplicate(raw);
       }
     } else {
       processedMap.set(dedupeKey, validatedConcert);
       officialWinnerByKey.set(dedupeKey, Boolean(candidateOfficial));
+      if (candidateTheHuDublinRank > 0) theHuDublinWinnerRank.set(dedupeKey, candidateTheHuDublinRank);
     }
   }
 

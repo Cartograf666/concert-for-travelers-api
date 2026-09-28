@@ -2122,3 +2122,90 @@ _(done — see ✅ Done above)_
   +25 Belgrade), no removed or modified existing records, zero network attempts.
   Independent integration review passed, including exact parser/fixture hashes
   and preservation of intervening enrichment. Hosted result remains pending.
+
+### 2026-09-28: The HU identity and Dublin survivor, isolated local package #40
+
+- Scope: independent checkout `/private/tmp/concert-thehu-identity-20260928`,
+  branch `codex/thehu-identity-local-20260928`, published baseline
+  `d53e0e436afd8aeb431f07a13c79b992410cffd1`. Prior local candidates are protected
+  and their code is not combined here. Alex explicitly authorized commit and
+  push on 2026-09-28, superseding the previous local-only stop for those actions.
+  API/provider intervals and scraper configs remain unchanged. Merge, hosted
+  collection and deployment are separate from this commit/push delivery.
+- Exact corpus audit: nine `The Hu` Ticketmaster observations in GB/IE plus one
+  `The HU` from 3Olympia become nine public `The Hub` concerts. Only Dublin
+  Oct6 2026 is duplicated: raw indices8/8303, same 3Olympia event. Ticketmaster
+  currently wins. No genuine The Hub raw/public event, alternate provider or
+  other conflicting The Hub event key was found in the 66,797-row saved corpus.
+- Primary evidence distinguishes The HU, the Mongolian quartet, from The Hub,
+  Tim Perkis' computer-network band. Official artist website is confirmed by its
+  readable page and a fresh link from 3Olympia. Nine primary HTML assets retain
+  hashes: 3Olympia, Tim Perkis, six exact O2 venue pages and Belfast promoter
+  Shine. O2/Shine pages bind dates/venues to the exact raw Ticketmaster purchase
+  IDs. Bristol venue and all nine exact ticket event pages are corroborated via
+  readable web pages. Guarded direct artist home/tour and Bristol reads timed
+  out; web evidence is qualified, not represented as fresh captured HTML.
+- Fresh 3Olympia page confirms The HU at Dublin Oct6, doors19:00, general
+  admission sold out with VIP/low availability. This is not cancellation.
+  No scoped cancellation or move was observed. Purchase URLs contain retail
+  IDs; no authenticated Discovery API status or universal future-status claim.
+- Implementation: add only canonical `The HU` and
+  `https://www.thehuofficial.com/` to shard4. Preserve the entire The Hub record
+  and all other catalog data. Ten exact source/date/HTTPS endpoint/venue/city/
+  country certificates cover both raw capitalizations and fresh/cached inputs.
+  Only exact `3olympia.ie` / `Tue 6th Oct 2026` / 3Olympia / Dublin / IE permits
+  absent ticketUrl; empty/null/unexpected URLs remain rejected. New or changed
+  exact-name observations stay on hold. The new canonical is excluded from the
+  general matcher candidate index; global fuzzy matching is unchanged.
+- Preflight found a real metadata risk: adding the official site fills both
+  public ticketUrl fields, removing the original Ticketmaster advantage. Venue
+  coordinates differ and the ordinary completeness rule would then retain the
+  earlier venue row without19:00. A narrow priority between the two verified
+  Dublin certificates preserves the complete Ticketmaster record, only when
+  official authority is equal. Higher artist-source authority still wins;
+  other event keys and same-rank records retain the previous dedupe policy.
+  Never merge fields across the two rows. Without Ticketmaster, verified venue
+  remains as its own whole record, without an invented startTime.
+- Full zero-network replay at saved Daily36401607058 base date
+  `2026-09-28T09:13:36.728Z`: baseline exactly reproduces39,529 public records.
+  Candidate also39,529: nine The Hub records replaced by The HU; all39,520
+  other records identical. All10 raw→before/after relations retained, including
+  Dublin pair. No lost events, other-field changes, duplicate count or source/
+  drop diagnostic changes. Current Dublin winner/time/coordinates remain exact.
+- Five additional full-corpus, zero-network Dublin variants pass: TM absent,
+  venue absent, both absent, TM absent with changed unverified venue, and valid
+  TM with changed venue. Each whole output equals the explicitly expected set;
+  no wrong The Hub resurrection or unexpected event changes. The two cases with
+  no verified input intentionally omit Dublin; this is not baseline event loss.
+- Seven focused tests pass, including both duplicate orders, either source,
+  changed certificate, authority precedence, serialized cache, missing canonical,
+  negative endpoint/date/location cases and synthetic genuine The Hub routing.
+  Five actual collector/cache/pipeline scenarios, eight modeled requests, pass
+  cold-cache success/failure and persisted500/403/401 fallback with zero network.
+  These are function-level transport simulations, not a hosted collection.
+- Local publisher seeded with old public data passes: master/city/artist/page
+  files equal replay. Four city files change; obsolete wrongly populated
+  `artists/the-hub.json` is removed and `artists/the-hu.json` holds nine shows.
+  All existing catalog entries, including The Hub, and other artist buckets are
+  identical. Zero failed writes. No genuine The Hub show exists in this corpus;
+  its preservation is proved by DB/catalog equality and synthetic routing.
+- Gates: focused7/7, unit631pass/1skip/0fail (632total), build pass, lint0errors
+  with106baseline warnings, productionSSRF1/1, artist-integrity141equalsbaseline,
+  duplicate city selectors127within ceiling131. No gates weakened.
+- Independent scanner `cure_source_scan` (runtime model not exposed) verified
+  corpus/survivor scope. Architect `allan_identity_architecture`
+  (`gpt-6-astra`, high) identified the Dublin risk, reviewed the final remedy,
+  and found no blocking issue. Its protection check verified30HEADs/branches/
+  statuses,83file entries (82hashes/sizes plus one deletion), and two absent
+  prunable registrations with zero mismatches. Root owns implementation and
+  final verification; all13 saved Daily inputs and protected copies unchanged.
+- Evidence: `/private/tmp/concert-thehu-identity-20260928-evidence/`, including
+  `identity-proof.json`, `primary-verification.json`, `corpus-audit.json`,
+  `before-raw-after-keys.json`, `replay-summary.json`, `dublin-survivor-check.json`,
+  `fallback-check.json`, `publish-check.json`, `checks.json`,
+  `independent-review.json`, `verification.json`, `diagnosis-summary.json`.
+- Result at local verification: implemented and checked without hosted collection
+  or publication. For the authorized commit/push, the separate branch
+  `codex/thehu-identity-20260928` contains the exact five verified product/test
+  files and this package section only. The source candidate retains its complete
+  local handoff history. Any combined integration needs a current-input replay.
