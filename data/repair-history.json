@@ -23826,5 +23826,88 @@
     "failuresSinceRepair": 0,
     "note": "repair failed: Scraper kitty-su-bangalore is not a static_selectors scraper or is missing selectors.",
     "verification": ""
+  },
+  {
+    "id": "artist-adiemus",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-adiemus.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-28T10:39:49.371Z",
+    "previousConfig": {
+      "id": "artist-adiemus",
+      "domain": "www.karljenkins.com",
+      "url": "http://www.karljenkins.com/performances",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.col-md-7 > div.row.padding-bottom-4x.aos-item[data-aos=\"fade-up\"]",
+        "artistNameFallback": "Adiemus",
+        "date": ".performance-date",
+        "ticketUrl": "div.col-10 > a.btn.btn-primary@href",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached http://www.karljenkins.com/performances but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-10cc",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-10cc.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-28T10:39:51.030Z",
+    "previousConfig": {
+      "id": "artist-10cc",
+      "domain": "www.10cc.world",
+      "url": "https://www.10cc.world/events",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.table tbody tr.row:not(:has(th))",
+        "artistNameFallback": "10cc",
+        "date": "td.cell:nth-child(1)",
+        "ticketUrl": "td.cell:nth-child(4) a",
+        "venue": "td.cell:nth-child(3)",
+        "city": "td.cell:nth-child(2)",
+        "country": "td.cell:nth-child(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.10cc.world/events but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-david-kikoski",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-david-kikoski.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-28T10:40:13.461Z",
+    "previousConfig": {
+      "id": "artist-david-kikoski",
+      "domain": "davekikoski.com",
+      "url": "https://davekikoski.com/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tribe-events-calendar-latest-past__event-row",
+        "artistNameFallback": "David Kikoski",
+        "date": ".tribe-events-calendar-latest-past__event-datetime",
+        "ticketUrl": ".tribe-events-calendar-latest-past__event-title-link::attr(href)",
+        "venue": ".tribe-events-calendar-latest-past__event-venue-title",
+        "city": ".tribe-events-calendar-latest-past__event-venue-address",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Maximum number of redirects exceeded]",
+    "verification": ""
   }
 ]
