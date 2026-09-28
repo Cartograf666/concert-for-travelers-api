@@ -23713,5 +23713,61 @@
     "failuresSinceRepair": 0,
     "note": "needs_render: switching type to 'playwright_render' so client-side events materialize; last candidate: FAIL: live_fetch [live run failed (reason=csr_detected): Parsed 0 concerts. Page appears client-side rendered (events absent from server HTML).]; reached https://theclientele.co.uk/shows but could not re-select on it",
     "verification": ""
+  },
+  {
+    "id": "artist-james-pankow",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-james-pankow.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-28T03:00:14.670Z",
+    "previousConfig": {
+      "id": "artist-james-pankow",
+      "domain": "www.chicagotheband.com",
+      "url": "https://www.chicagotheband.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.tour-list__item",
+        "artistNameFallback": "Chicago",
+        "date": ".tour-list__date",
+        "ticketUrl": ".tour-list__item-links > a.button",
+        "venue": ".tour-list__venue",
+        "city": ".tour-list__city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "kitty-su-bangalore",
+    "cohort": "venue",
+    "configPath": "scrapers/kitty-su-bangalore.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-28T03:00:14.856Z",
+    "previousConfig": {
+      "id": "kitty-su-bangalore",
+      "domain": "kittysu.com",
+      "url": "https://www.kittysu.com/events",
+      "type": "custom_js",
+      "requestDelayMs": 500,
+      "selectors": {
+        "eventBlock": "li",
+        "artist": "h3",
+        "date": "p",
+        "venueNameFallback": "Kitty Su",
+        "cityNameFallback": "Bangalore",
+        "countryNameFallback": "IN",
+        "lat": 12.9716,
+        "lng": 77.5946
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper kitty-su-bangalore is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
   }
 ]
