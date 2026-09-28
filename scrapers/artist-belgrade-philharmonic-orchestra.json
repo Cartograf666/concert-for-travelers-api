@@ -1,15 +1,16 @@
 {
   "id": "artist-belgrade-philharmonic-orchestra",
   "domain": "www.bgf.rs",
-  "url": "https://www.bgf.rs/en/concerts/",
-  "type": "static_selectors",
+  "url": "https://www.bgf.rs/en/kategorije-repertoar/concert-season-26-27/",
+  "type": "custom_js",
+  "httpClient": "got-scraping",
   "selectors": {
-    "eventBlock": "div.one-event-post",
+    "eventBlock": "#cd-timeline article.timeline-post",
     "artistNameFallback": "Belgrade Philharmonic Orchestra",
-    "date": "div.one-event-post .event-date",
-    "ticketUrl": "div.one-event-post .img-box a",
-    "venueNameFallback": "Kolarac Hall",
-    "cityNameFallback": "Belgrade",
+    "date": ".repertoire-date",
+    "venue": ".repertoire-place",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
     "countryNameFallback": "RS"
   }
 }

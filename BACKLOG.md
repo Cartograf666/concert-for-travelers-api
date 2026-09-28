@@ -1490,3 +1490,635 @@ _(done — see ✅ Done above)_
   `/private/tmp/concert-showaddywaddy-venues-gate-20260928/`. Next: merge only
   after exact-candidate CI, run artist → automatic Daily/Pages, and check actual
   source freshness and public-artifact equality. Hosted verification is pending.
+
+### 2026-09-28 — Eight-venue release and hosted verification completed
+
+- PR #159 merged as `00ad551019aaea043ac09ab093a955b694d9eb4c`. CI
+  `36374432520` passed 613 tests (one skipped), build, lint and selector ratchet;
+  the tested merge tree equals the released tree. Artist `36374621592` and
+  automatic Daily/Pages `36375902099` both actually checked out that release.
+  One artist dispatch, no manual Daily dispatch; intervals and caps unchanged.
+- The official Showaddywaddy page was freshly extracted at
+  `2026-09-28T03:42:24.685Z`, verified at 03:43:02.790Z with the matching new
+  parser fingerprint. Hosted output exactly matches the tested fixture after
+  JSON serialization: 113 raw rows, 21 complete and 92 held as incomplete.
+  Daily consumed the exact artist/Bandsintown/Eventbrite caches and artist
+  manifest from this producer. Castlebar and Sevenoaks holds are unchanged.
+- Pages completed at **04:09:10Z**; public generation **04:05:51.260Z** contains
+  **39,409 concerts across 94 countries**, including **23 Showaddywaddy**
+  concerts versus the previous 14. Root HTML plus concerts/index/status JSON
+  are byte-identical to the saved publication artifact. Catalogue SHA-256:
+  `7f2820c9c540b3752ad162fb04db1f70c66788e05a975f5e779dc71f7ca2dc8f`.
+- Complete offline replay of all **66,712 actual raw inputs** reproduces every
+  published record; all 64 valid whole records from the five registered official
+  sources survive. Holding inputs, artist DB, geocode cache, processing clock
+  and source observation time fixed, the previous mapping yields **39,400**:
+  this change contributes **nine additions**, zero removals or existing-record
+  changes, with identical other-artist records/country sets and no Showaddywaddy
+  same-date duplicates. The total live increase from 39,148 also contains other
+  source changes and must not all be attributed to this patch.
+- The initial comparison control retained the old source observation timestamp:
+  ten existing official rows therefore differed only in `scrapedAt`. The harness
+  now fixes that timestamp on both sides, explicitly checks unchanged non-location
+  raw fields and retains complete-record assertions. No production fix was needed;
+  the initial log and the ten timestamp-only differences remain in the evidence.
+- Fleet health remains **DEGRADED**: artists 374/414 successful, venues 93/147,
+  three stale venue caches; all five Eventbrite requests returned HTTP 405 and
+  reused its prior data. Schema rejects: 217, including 191 country-length
+  rejects. The 92 unverified Showaddywaddy locations remain held. Runcorn/Melton
+  dates retain the documented artist-calendar-only confirmation caveat.
+- Full release, source-freshness, public-equality and replay evidence:
+  `/private/tmp/concert-release-showaddywaddy-venues-20260928/`. Publication and
+  requested real-run verification are complete; no further source expansion was
+  performed. Other worktrees are preserved. Future work remains bounded source
+  recovery using official evidence, without relaxing validation or cadence.
+
+### 2026-09-28 — The Iron Maidens source recovery, local candidate
+
+- Package `vacation-20260928-concert-ironmaidens-source-17` is restricted to one
+  failing source, `scrapers/artist-iron-maidens-the.json`, on isolated branch
+  `codex/iron-maidens-recovery-20260928` at base `a654cbe`. The preceding release's
+  local verification journal was copied forward without modifying its worktree.
+  No general collection, commit, PR, merge or publication is part of this package.
+- Latest saved hosted evidence has `selectors_stale`: obsolete `.tour-item`
+  selectors return nothing. The fallback cache contains 11 incomplete rows with
+  venue names as artists, empty cities, a blind US country and malformed JSON-LD
+  date/time strings; none of this source's rows is present in the public catalogue.
+- Real official HTML from `https://theironmaidens.com/upcoming-events/` was saved
+  on `2026-09-28T04:39:57.460Z` through the configured `got-scraping` fetch path
+  and existing SSRF guards. A preceding ordinary urllib request returned 403;
+  no authentication/challenge bypass was used. The complete response is preserved
+  as the fixture (113,095 bytes, SHA-256
+  `e49582462e8931d30b7a9140068a385916402ea8bce6f2b4c780974d5b17131f`).
+- The custom parser uses explicit EventON card year/month/day with strict calendar
+  checks and the fixed artist name. Ten exact venue/full-address pairs establish
+  their cities and US states; no country or city is guessed for unknown/moved
+  addresses. `countryNameFallback: US` remains only because the existing custom
+  runner requires selectors and their legacy schema requires that field; the
+  custom parser deliberately never reads it. Global schema/runner are unchanged.
+- Jericho Cruise is held: the November 7–11 itinerary spans Miami, FL and Bimini,
+  Bahamas and has no defensible single performance date/city/country. Cancelled,
+  postponed, incomplete, conflicting date blocks and multi-day cards are held.
+  All-day records have no invented time; the five timed rows retain literal local
+  display times. Wildcatter explicitly says 07:00, not 19:00; the malformed JSON-LD
+  timezone offsets are not used, and show time/availability is not independently
+  confirmed with the venue.
+- Ten direct ticket URLs are retained in raw output only on seven exact observed
+  HTTPS hosts. Credentials, nondefault ports, unsafe schemes, private/unknown and
+  suffix-spoof hosts are rejected. All seven hosts resolved to public addresses
+  under the production SSRF predicate at verification time. This does not claim
+  ticket availability or safe redirect destinations. Existing global processing
+  still prefers the approved artist website for public `ticketUrl`; that behavior
+  was not changed, so direct ticket preservation is a source-cache result.
+- Complete offline replay starts from all **66,712 latest saved raw inputs** and
+  reproduces every public baseline record at its actual saved clock. Replacing
+  only this source's 11 incomplete rows with ten proven rows yields **66,711 raw**
+  and **39,409 → 39,419 published**. Every existing complete record is unchanged;
+  all ten additions are The Iron Maidens, without same-date duplicates or changes
+  to any other artist. All 94 countries remain. Incomplete rejections fall
+  1,826 → 1,815; every other rejection count is unchanged. No coordinates were
+  inferred and the replay made zero network requests. Every addition is linked
+  to its exact source row/date/address/ticket evidence in `changes.json`.
+- Checks on the final parser: six focused tests (including configured runner
+  dispatch), build, focused ESLint and diff check pass. Production SSRF policy
+  passes; selector ratchet remains 127 against baseline 131. Full offline replay
+  passes. The full project test suite and a new hosted run were not performed for
+  this local candidate. Evidence, proofs, hashes and whole replay catalogues:
+  `/private/tmp/concert-iron-maidens-20260928-evidence/`. Independent read-only
+  review found no blockers and independently confirmed the complete-record delta.
+  Stop condition reached: reviewable local candidate; publication remains outside
+  this package's scope.
+
+### 2026-09-28 — The Iron Maidens prepublication gate, local PASS
+
+- Package `vacation-20260928-concert-ironmaidens-gate-18` completes the previously
+  deferred full local checks for source-17. Branch remains
+  `codex/iron-maidens-recovery-20260928`, HEAD
+  `a654cbe5000f0986a56f8b7f712b9d66ee0f71d6`. The six original dirty files matched
+  the source-17 hashes exactly before checks. No source/config/test/fixture change
+  was needed; only this journal entry was added after verification.
+- `npm test`: **619 passed, zero failed, one intentional skip**. The skipped
+  production SSRF predicate was separately run with the localhost escape hatch
+  unset: **1/1 passed**. The full suite included the six source fixture/edge tests
+  and actual headless Chromium rendering against a local mock HTTP server.
+  `npm run build` passed. Full `npm run lint` returned zero errors and 106 warnings
+  outside this candidate's source/test files. Local runtime: Node v25.4.0 and
+  npm 11.7.0; hosted CI uses Node 22 and was not run for this local gate.
+- Selector ratchet passed at **127 <= 131**, with this source absent from the
+  offenders. Diff check passed. Independent read-only review rechecked actual
+  hashes, official HTML/proof/config alignment, the ten date/address/location
+  mappings, cruise/multi-day/cancelled/postponed/unknown guards, all-day omission
+  of time, literal Wildcatter 07:00 and exact HTTPS ticket-host restrictions.
+- The full offline processing replay was rerun on the same saved release inputs
+  and clock. Baseline equals all 39,409 public records; candidate has **39,419**:
+  exactly ten attributed The Iron Maidens additions, zero removals and zero
+  changes to existing complete records. Other artists and all 94 countries are
+  unchanged, with no target same-date duplicates or Iron Maiden collision.
+  Source raw rows change 11 incomplete to ten valid; global incomplete rejects
+  fall 1,826 to 1,815; all other rejection counts remain identical. Network
+  attempts during replay: zero. Every addition retains exact official/raw/final
+  attribution in the gate artifact's `replay/changes.json`.
+- Gate result is **PASS, reviewable local candidate only**. This supersedes the
+  source-17 full-suite not-run state, not its publication boundary. No new general
+  collection, commit, PR, merge, hosted run or publication was performed. Existing
+  caveats remain: ambiguous cruise and unknown locations are held; show times are
+  literal source claims; raw ticket URLs survive extraction, while the unchanged
+  public processor prefers the artist website. Ticket availability and redirects
+  remain unverified. Other worktrees were not changed.
+- Logs, commands, exit codes, initial/final file hashes, independent review and
+  replay outputs: `/private/tmp/concert-iron-maidens-20260928-gate18/gate.json`.
+  Stop here for Alex's decision on this local candidate.
+
+### 2026-09-28 — Belgrade Philharmonic 2026/27 season recovery, local candidate
+
+- Package `vacation-20260928-concert-belgrade-season-19` works independently of
+  the uncommitted Iron Maidens candidate. Clean worktree was created from freshly
+  fetched main at `a2a47fbbb7a2905c99105ea87ee77c23f65c7b27`, branch
+  `codex/belgrade-season-recovery-20260928`. The canonical prior journal was
+  carried forward without copying Iron Maidens code or altering that worktree.
+- Latest published Daily run is still `36375902099`, release `00ad551`, with
+  39,409 concerts. Current main's changes since that release affect artist data
+  and repair history, not runtime or scraper configs. The saved run manifest
+  reports `selectors_stale` for `artist-belgrade-philharmonic-orchestra`; its old
+  `/en/concerts/` configuration has no saved venue cache or public orchestra rows.
+- Ordinary guarded HTTP access captured the official English 2026/27 season on
+  `2026-09-28T05:30:58.244Z`: 213,231 bytes, SHA-256
+  `49ee9ec575687c90655d23aa1cbc855d7f5608aae8efb9ce3fd879e9d5ba7ce9`.
+  The complete HTML is preserved as `tests/fixtures/artist-belgrade-season-20260928.html`.
+  Twenty-five cards explicitly give full dates, 20:00, and Grand Hall of the
+  Kolarac Foundation, from 9 October 2026 through 11 June 2027. The venue's own
+  foundation page confirms its Belgrade address, Studentski trg 5; each accepted
+  exact venue label maps to Belgrade/RS, without a blanket Kolarac fallback.
+- A source-specific custom parser replaces obsolete selectors and pins the
+  observed season URL, canonical URL and season body marker. Artist identity is
+  always Belgrade Philharmonic Orchestra, never the programme's conductor or
+  soloist. Full explicit calendar dates and valid times are required; missing,
+  ambiguous, unknown-venue, cancelled/postponed and prior-local-date cards are
+  held. Observation date uses Europe/Belgrade. Identical cards collapse; differing
+  programme URLs/titles/times on one date are held rather than silently merged.
+- Season cards link to programme pages and contain no direct ticket URLs. The
+  parser deliberately emits no raw `ticketUrl`; it does not assign navigation,
+  conductor or programme links as tickets. A separately captured first programme
+  confirms a distinct event ticket URL, but this bounded parser adds no detail
+  fetches or hard-coded ticket mapping. The unchanged global processor still
+  supplies the approved artist website publicly. Direct ticket extraction and
+  automatic discovery of a later season remain outside this candidate.
+- Five focused tests passed, including the configured runner with frozen clock
+  and mocked HTTP, actual fixture, wrong-page/date/time/location/status cases and
+  duplicate conflicts. Build and focused ESLint passed. Initial test failure
+  exposed an actual cancellation-text boundary defect in compact markup; the
+  filter now covers text and card/container classes. Its failed log is retained
+  separately, and the final tests/build/lint were rerun after the fix. Production
+  SSRF test passed 1/1; selector ratchet passed 127 <= 131. No global validation,
+  schedules, request caps, provider logic or dependencies were changed.
+- Full offline replay uses all **66,712 saved raw records**, the saved approved
+  artist DB, geocode caches and the exact published clock. Baseline reproduces
+  every public record. Adding only the 25 new source rows gives **66,737 raw** and
+  **39,409 -> 39,434 published**: exactly 25 attributed orchestra additions,
+  zero removals and zero changes to existing complete records. Other artists,
+  all 94 countries and every processing rejection count remain unchanged. Target
+  same-date duplicates: zero; replay network requests: zero. Per-card evidence
+  links date/time/venue/country/programme URL to raw and final rows in `changes.json`.
+- Evidence and check logs: `/private/tmp/concert-belgrade-season-20260928-evidence/`.
+  Full project suite and a hosted candidate run were not performed for this
+  local source package. Independent read-only review found no blockers: all 25
+  official cards match the proof, and a separate complete-record multiset check
+  confirmed the exact catalogue delta. Final manifest, file hashes and limitations:
+  `verification.json` in that evidence directory. Stop condition reached at a
+  reviewable local candidate; no general collection, commit, PR, merge or
+  publication was performed. The protected Iron Maidens file hashes remain equal
+  to its completed gate-18 snapshot.
+
+### 2026-09-28 — Belgrade Philharmonic prepublication gate, local PASS
+
+- Package `vacation-20260928-concert-belgrade-gate-20` closes the full local-suite
+  gap left by source-19. Branch `codex/belgrade-season-recovery-20260928`, HEAD
+  `a2a47fbbb7a2905c99105ea87ee77c23f65c7b27`. All six dirty files matched the
+  source-19 manifest before checks; source, config, tests and fixtures remain
+  byte-identical. Only this journal entry changes in gate-20.
+- `npm test`: **618 passed, zero failed, one intentional skip**. The skipped
+  production SSRF predicate separately passed **1/1** without the localhost
+  escape hatch. The full suite includes the five Belgrade fixture/edge tests,
+  frozen-clock runner dispatch and real headless Chromium against local mocks.
+  `npm run build` passed; full `npm run lint` passed with zero errors and 106
+  warnings outside this candidate's source/test files. Selector ratchet remains
+  **127 <= 131**, this source is not an offender. Diff check passed.
+- Full saved-raw replay was repeated from all **66,712** original inputs at the
+  published clock with the same saved approved artist DB and geocode caches.
+  Baseline exactly reproduces 39,409 public records. Candidate has **66,737 raw**
+  and **39,434 published**: 25 orchestra additions, zero removals, zero changes to
+  existing complete records; all other artists, 94 countries and rejection counts
+  remain identical. Target same-date duplicates and replay network attempts: zero.
+  The 25 additions are attributed individually to official cards and proof, raw
+  records and final records in the new gate's `replay/changes.json`.
+- The source19 evidence still applies to the unchanged parser: explicit full
+  date/time, fixed orchestra identity, exact verified Kolarac label, prior-local-
+  date/cancelled/unknown/incomplete/conflicting-card holds. No programme, conductor
+  or navigation URL becomes a raw ticket link; public ticketUrl remains the
+  approved artist website under unchanged global processing. The source remains
+  deliberately pinned to season 2026/27; future season discovery is not included.
+- This supersedes source19's full-suite not-run status. Local environment was
+  Node v25.4.0/npm 11.7.0; hosted Node 22 CI was not run. No general collection,
+  commit, PR, merge or publication was performed. Iron Maidens candidate remains
+  protected and unchanged. Stop at a reviewable local candidate for Alex.
+- Initial/final snapshot hashes, actual commands/exit codes/logs, replay and
+  independent verification are recorded in
+  `/private/tmp/concert-belgrade-season-20260928-gate20/gate.json`.
+
+### 2026-09-28 — The Cure official-source diagnosis, HOLD without code changes
+
+- Package `vacation-20260928-concert-cure-source-21` inspects only
+  `artist-the-cure` from published release SHA
+  `00ad551019aaea043ac09ab093a955b694d9eb4c` (Daily run `36375902099`).
+  Isolated branch `codex/cure-source-diagnosis-20260928`; this journal retains
+  the preceding local source/gate history. Iron Maidens and Belgrade candidates
+  remain separate, dirty and protected; no candidate has been integrated here.
+- Ordinary guarded HTTP read of `https://www.thecure.com/shows/` succeeded at
+  `2026-09-28T06:26:05.802Z`, returning 68,776 bytes with SHA-256
+  `1cafa8ae0b353d925d17c5472810c149341c2d2c32dceba105bc7a1e28cd9e54`.
+  The official Shows page explicitly says **"No shows currently announced!"**
+  inside `#shows_large`. It contains zero configured MusicEvent blocks, zero
+  MusicEvent microdata nodes and no event JSON-LD. Diagnostic transport was the
+  existing guarded got-scraping helper; production configuration is unchanged.
+- Two resources directly linked by that page were read normally: first-party
+  theme `default.js?v=6` contains layout/navigation/news code and no show feed;
+  WordPress page metadata `/wp-json/wp/v2/pages/402` has empty rendered content
+  and supplies no future event records. There was no access barrier, browser
+  workaround, authentication or bypass. No unlinked endpoint or other artist
+  source was explored.
+- The saved published manifest marks this source `selectors_stale` with
+  `Parsed 0 concerts`. That alone does not establish broken selectors when the
+  current page explicitly announces no shows. Its saved cache has one The Cure
+  concert dated 30 August 2026, Rock En Seine, Paris/France. At the published
+  processing clock `2026-09-28T04:05:33.582Z`, diagnostics show raw 1, published 0,
+  past-date drops 1; direct inspection of all 39,409 public rows finds zero exact
+  `The Cure` records. The historical row is not an upcoming event to recover.
+- **HOLD:** no explicit future date/venue/country records are available in the
+  inspected official evidence, so there is no supported parser/config candidate.
+  No runtime, config, fixture or test file changed. Build, suite, SSRF test,
+  selector ratchet and offline candidate replay are N/A for this documentation-only
+  diagnosis and were not run. Diff check and protected-file hash checks passed.
+- Captured source bodies, URLs/timestamps/hashes, baseline diagnostics and
+  preservation checks are recorded in
+  `/private/tmp/concert-cure-source-20260928-evidence/source-diagnosis.json`.
+  No commit, PR, merge, publication, hosted run, general collection or schedule/
+  limit change was performed. Revisit this source when its official page contains
+  explicit upcoming shows; current emptiness must not be filled with inferred dates.
+
+### 2026-09-28 — Jane McDonald configured-source diagnosis, HOLD: parked domain
+
+- Package `vacation-20260928-concert-jane-source-22` starts from published release
+  SHA `00ad551019aaea043ac09ab093a955b694d9eb4c` in isolated branch
+  `codex/jane-source-recovery-20260928`. Prior journal entries are preserved.
+  Iron Maidens and Belgrade local candidates remain separate and unchanged.
+- The approved artist DB names Jane McDonald and records website
+  `https://www.janemcdonald.com/` and tour URL
+  `https://www.janemcdonald.com/tour-dates`; this establishes the configured target,
+  not present ownership or authenticity of content now served by that domain.
+- A normal guarded got-scraping request to the configured tour URL at
+  `2026-09-28T06:42:37.448Z` returned only a 114-byte HTML script pointing to
+  `/lander`, SHA-256
+  `6dc9c7fc93bb488bb0520a6c780a8d3c0fb5486a4711aca49b4c53fac7393023`.
+  The existing production-default axios backend returned identical bytes at
+  `2026-09-28T06:43:36.690Z`. Neither response has an artist name, tour content,
+  configured event blocks, MusicEvent microdata or event JSON-LD.
+- Only the explicitly referenced same-host `/lander` was followed, by another
+  ordinary guarded HTTP read without executing JavaScript. Its 252,640-byte body,
+  captured `2026-09-28T06:43:19.677Z`, SHA-256
+  `86ca52db555d61208638e9f9d3e776c0be870c2696c7e3b69ba06678a063143c`,
+  visibly advertises `janemcdonald.com` for sale via GoDaddy. Its JSON-LD is a
+  domain-sale Product/Offer, not an event. No sales form or third-party link was
+  submitted or followed; no authentication, access-control bypass or browser
+  workaround was used. The configured domain currently fails artist identity.
+- The saved published manifest reports `selectors_stale` for
+  `scrapers/artist-jane-mcdonald.json`. It has no venue-cache entry, no processing
+  diagnostics entry for `www.janemcdonald.com`, and none of the 39,409 published
+  concerts has exact artist `Jane McDonald`. Zero parsed rows alone therefore
+  does not establish a fixable selector change.
+- **HOLD: configured source unavailable as an artist source, not verified empty
+  tour.** No explicit future dates and reliable venue/city/country records are
+  available in the inspected responses. No parser/config/test/fixture change was
+  made; the existing UK fallback was not used to invent a country or any event.
+  Build, focused tests, production SSRF test, selector ratchet and candidate replay
+  were not run (N/A: no runtime candidate). Diff and protected-file hash checks
+  passed. This diagnosis does not claim that Jane McDonald has no future concerts.
+- Captured bodies, URLs/timestamps/hashes, configured identity, baseline facts,
+  unchanged file checks and limits are recorded in
+  `/private/tmp/concert-jane-source-20260928-evidence/source-diagnosis.json`.
+  No commit/push/PR, hosted run, publication, general collection, global processing,
+  artist DB, schedules or limits were changed. Next independent step, if authorized,
+  is verified rediscovery of the artist's current official website from trusted
+  artist-controlled references; it is not a selector repair on this parked domain.
+
+### 2026-09-28 — Jane McDonald official website rediscovery, local links-only PASS
+
+- Package `vacation-20260928-concert-jane-official-23` uses a new isolated branch
+  `codex/jane-official-source-20260928` at published release SHA
+  `00ad551019aaea043ac09ab093a955b694d9eb4c`. It follows source22's proven parked-
+  domain HOLD; no earlier package is rerun or integrated. Prior journal history,
+  Iron Maidens and Belgrade candidates are preserved.
+- The proposed hyphenated domain is now independently verified. Website creator
+  vtwo's own 2025 case study, `https://vtwo.co.uk/work/jane-mcdonald-rebrand`,
+  explicitly describes the artist commissioning her website and collaboration
+  with Jane and her team on the 2026 album/tour, and links its live site directly
+  to `https://jane-mcdonald.com`. Ordinary guarded HTTP captured the full primary
+  page at `2026-09-28T07:04:58.821Z`: 292,131 bytes, SHA-256
+  `47bacc87f4109e60190c895d638304a933f5e1d70ad286d8253e68917aa1a749`.
+  Channel 5's primary help article independently names the same website; its
+  displayed update is 14 October 2025 10:14. The web tool read that article, but
+  direct guarded access returned 403, so no fresh Channel 5 HTML capture is claimed.
+  X/MCD search excerpts are recorded as leads only, not decisive identity proof.
+- Exactly four source/data values change: Jane McDonald's `website` becomes
+  `https://jane-mcdonald.com/`, `tourUrl` becomes `https://jane-mcdonald.com/tour`,
+  and the existing source config receives that URL and `jane-mcdonald.com` domain.
+  No artist metadata timestamps are falsely refreshed. Every other artist and all
+  other config values, including existing selectors, are unchanged. No global
+  parsing, registry, provider, schedule, cap or dependency changes are included.
+- Guarded reads captured the home page, `/tour`, and its linked 17 November 2025
+  album/tour news article. The production-default axios backend also received the
+  tour page successfully. Current static tour HTML has generic August/September
+  2026 text and a Songkick widget, without explicit future dated venue/city/country
+  records. Embedded third-party widget data was not fetched or rendered. The home
+  page's cruise interval, 2–9 October 2026, is not a dated performance and adds no
+  concert. This does not establish that the artist has no future appearances.
+- Focused existing tests passed **17/17**; the production SSRF test separately
+  passed **1/1**. Four extra offline runner checks using saved tour/home/news HTML
+  and the actual candidate config all produce zero events and `selectors_stale`;
+  no false empty-success flag is introduced. LLM fallback was disabled only in
+  that verification process, with zero network attempts/calls; production LLM
+  settings are unchanged. The source is **not reported as collection recovered**.
+- Build and full lint passed (zero errors, 106 existing warnings). Artist integrity
+  passed at **141 existing errors**, equal to its baseline. The npm audit wrapper
+  first failed on a sandbox-denied tsx IPC pipe; the same audit entrypoint and
+  `--strict` gate passed via `node --import tsx`, without any source/tool change or
+  baseline weakening. Selector ratchet passed **127 <= 131**; Jane is not an
+  offender. Config schema, exact field diffs and diff whitespace checks passed.
+- Full offline replay reconstructed **66,712 raw records** from the same saved
+  release caches, approved artist DB and geocode caches at
+  `2026-09-28T04:05:33.582Z`. Baseline exactly reproduces all public records. The
+  candidate also has **39,409 concerts**, zero additions, removals or changed
+  complete records, unchanged 94 countries, all source diagnostics and rejection
+  counts, and zero network attempts. No new event rows were introduced.
+- Two locally generated artist catalogues, each with 62,973 entries, differ only
+  in Jane McDonald's website. This is an exact generated-before/after comparison,
+  not a claim of live/public artists.json verification; that public file was not
+  present in the saved baseline. Raw artist DB differs only in Jane's two URLs.
+- Primary identity proof, source-body URLs/times/hashes, exact four-field diff,
+  checks and replay are in
+  `/private/tmp/concert-jane-official-20260928-evidence/verification.json`.
+  Local runtime: Node v25.4.0/npm 11.7.0. Full suite belongs to a separate gate;
+  hosted Node 22 CI, commit/push/PR, general collection and publication were not
+  run. Stop at this verified local website/source-link candidate. Concrete event
+  extraction remains HOLD until explicit performance records can be validated.
+
+### 2026-09-28 — Jane McDonald links-only prepublication gate, local PASS
+
+- Package `vacation-20260928-concert-jane-links-gate-24` checks source23 in the
+  same isolated `codex/jane-official-source-20260928` worktree at HEAD
+  `00ad551019aaea043ac09ab093a955b694d9eb4c`. Before any checks all three dirty
+  file hashes matched source23 exactly. The two candidate data/config files stay
+  byte-identical throughout gate24; only this journal entry changes. Protected
+  Iron Maidens and Belgrade dirty files, branches and heads remain unchanged.
+- Full `npm test`: **613 passed, zero failed, one intentional skip**, including
+  actual headless Chromium against local mock pages. The production SSRF predicate
+  skipped under the suite's localhost setup separately passed **1/1** with that
+  escape hatch removed. Build passed. Full lint passed with zero errors and 106
+  existing warnings. Strict artist integrity passed at 141 existing errors, equal
+  to the unchanged baseline. It used the same audit entrypoint via
+  `node --import tsx` to avoid the known tsx CLI IPC sandbox restriction.
+  Selector ratchet passed **127 <= 131**; Jane is not an offender. Diff check passed.
+- Repeated offline replay uses all **66,712** saved release raw records, approved
+  artist DB, geocode caches and the exact published clock
+  `2026-09-28T04:05:33.582Z`. Baseline and candidate each match every one of the
+  **39,409** complete public records: zero additions, removals or modifications.
+  All 94 countries, rejection counts and per-source diagnostics remain equal;
+  only diagnostic generation timestamps differ. No new Jane concert is introduced.
+  fetch, axios, HTTP/HTTPS and socket/TLS request guards observed zero network
+  attempts. The two generated 62,973-entry artist catalogues differ only in
+  Jane's website. No public artists.json equality claim is made from this local
+  generated-catalogue comparison.
+- Independent read-only review checked the captured primary vtwo case study and
+  exact outbound domain, the four URL/domain field changes, all 11,521 shard-2
+  entries and complete replay/catalogue multisets. No blocking finding for this
+  links-only scope. vtwo's direct captured HTML is decisive identity evidence;
+  Channel 5 web extraction remains corroboration only, with its direct403 preserved.
+  No date, venue, country, ticket link or event was inferred from the cruise or
+  generic tour text. Original schedules, caps and global processing are untouched.
+- This closes source23's full-suite gap without changing its scope. The current
+  static runner still yields no deterministic concerts from the inspected tour
+  HTML, so **source collection remains HOLD**, not repaired or verified empty.
+  Third-party Songkick widget data and production LLM extraction were not exercised.
+- Evidence: `/private/tmp/concert-jane-links-20260928-gate24/gate.json`, including
+  initial/final hashes, command logs, independent review and repeated replay.
+  Local Node v25.4.0/npm 11.7.0; hosted Node22 CI was not run. No commit, push, PR,
+  merge, hosted run, publication or general collection occurred. Stop at this
+  reviewable local website/source-link candidate.
+
+### 2026-09-28 — Jorge e Mateus official agenda diagnosis, HOLD: dynamic data unavailable
+
+- Package `vacation-20260928-concert-jorge-source-25` starts in a new isolated
+  `codex/jorge-source-recovery-20260928` worktree from published release SHA
+  `00ad551019aaea043ac09ab093a955b694d9eb4c`. Prior journal history is preserved;
+  no runtime changes from the separate Iron Maidens, Belgrade or Jane candidates
+  are integrated. Their dirty files, statuses and heads remain unchanged.
+- Ordinary guarded HTTP using production-default axios read the configured
+  `https://jorgeemateus.com.br/agenda/` successfully at
+  `2026-09-28T07:37:12.380Z`: 42,480 bytes, SHA-256
+  `e13b8a9655687b00a8e5ef15078ee8a5e8910e34f95cfdfd7b0f241f4fc873c8`.
+  Its title and organization JSON-LD identify Jorge & Mateus; canonical URL is
+  `https://www.jorgeemateus.com.br/agenda/`. JSON-LD contains page/organization
+  metadata, not concerts. Its 2019 page metadata and the 2026 footer are not
+  evidence of a performance date or year.
+- The actual agenda list is a Vue template with `v-for="data in eventos"` and
+  unresolved `agenda_data`, `title` and `agenda_local` expressions. There are zero
+  configured `li.agenda-event` blocks and zero MusicEvent/Event microdata records.
+  Merely changing the selector to `li.data-evento` would extract template strings,
+  not a verified date, venue, city or country.
+- A single ordinary guarded request to the exact first-party agenda script linked
+  by this HTML, `https://www.jorgeemateus.com.br/wp-content/themes/jorgeemateus/customjs/page-agenda.js?ver=2.25.0`,
+  returned HTTP 403 at `2026-09-28T07:37:45.117Z`. No script body or linked event feed
+  could be inspected through that request. No access workaround, authentication,
+  JavaScript execution, guessed API endpoint or third-party source was used.
+- **HOLD:** the inspected source does not provide usable explicit future
+  date/venue/city/country records. This is unavailable dynamic schedule evidence,
+  not a verified empty tour or proof that the artist has no future performances.
+  No event, ticket URL or BR country value is inferred from template placeholders,
+  footer, contact address or configured fallback. No parser/config/test/fixture
+  changes were made. Build, focused tests, SSRF test, selector ratchet and candidate
+  replay are N/A and not run because there is no runtime candidate.
+- Source URLs/timestamps/hashes, saved baseline facts and protected-file checks are
+  preserved in `/private/tmp/concert-jorge-source-20260928-evidence/source-diagnosis.json`.
+  Diff check passed. No commit/push/PR, hosted run, publication, general collection,
+  artist DB, global processing, other source, schedule or limit change occurred.
+  Revisit only when the official dynamic schedule is ordinarily readable and
+  explicit performance/location evidence is available; do not fabricate a repair
+  from the stale-selector label alone.
+- Saved release baseline independently checked: manifest reports `selectors_stale`
+  for `scrapers/artist-jorge-e-mateus.json`; source cache is absent and processing
+  diagnostics contain neither bare nor www source host. None of the 39,409 public
+  records has exact artist `Jorge e Mateus` or `Jorge & Mateus`. The approved artist
+  spelling is `Jorge e Mateus`, with the same configured website and agenda URL.
+
+### 2026-09-28 — Harry Connick Jr official tour diagnosis, HOLD: explicitly empty tour
+
+- Package `vacation-20260928-concert-harry-source-26` uses a new isolated branch
+  `codex/harry-source-recovery-20260928` at published release SHA
+  `00ad551019aaea043ac09ab093a955b694d9eb4c`. Prior canonical journal history is
+  preserved; Iron Maidens, Belgrade, Jane and previous HOLD worktrees stay intact.
+  No pending candidate is integrated or published by this independent diagnosis.
+- The configured `https://www.harryconnickjr.com/tour/` was read normally through
+  guarded production-default axios at `2026-09-28T08:13:56.380Z`: 28,710 bytes,
+  SHA-256 `6218c93199c84005a62d17b0deebf809f888a568333cb80ed3e261ed33f50487`.
+  Page title identifies Harry Connick Jr's official site; canonical URL is
+  `https://www.harryconnickjr.com/tour`. The approved artist DB names
+  `Harry Connick, Jr.` and points to the same domain/tour URL.
+- The server-rendered tour block `.view-tour .view-empty .tour` explicitly says
+  **"Harry Connick, Jr. currently does not have any upcoming tour dates."**
+  There are zero configured `li.tour-item` blocks, zero event microdata nodes and
+  no JSON-LD events. This is a readable explicit empty-tour state on the official
+  page at observation time, not an inaccessible or unresolved client template.
+- Independent saved-baseline inspection found manifest `selectors_stale` and one
+  source-cache row, scraped `2026-07-25T05:45:51.277Z`, for `07.24.26` at Borgata,
+  Atlantic City, NJ, US. At published clock `2026-09-28T04:05:33.582Z`, diagnostics
+  show raw 1, published 0 and past-date drops 1. None of the 39,409 public concerts
+  belongs to Harry Connick. The stale cached row is not a future show to recover.
+- **HOLD without code changes.** The current explicit no-upcoming message gives
+  no supported future event to parse. `selectors_stale` alone does not prove that
+  selectors are broken. No performance date, venue, country or ticket URL is
+  inferred; the US fallback is not used as location evidence. No `allowEmpty`
+  change or false scraper-recovery claim is introduced.
+- Captured HTML, URL/time/hash, exact empty marker, saved source/cache diagnostics
+  and protected-file checks are recorded in
+  `/private/tmp/concert-harry-source-20260928-evidence/source-diagnosis.json`.
+  Only this journal changes; production config/runtime/tests/fixtures are intact.
+  Diff and protected-file hash checks passed. Focused tests, build/lint, SSRF,
+  selector ratchet, candidate replay and full suite were not run (N/A: no runtime
+  candidate). No access workaround, extra collection, commit/push/PR, hosted run
+  or publication occurred. Revisit when this official tour page announces explicit
+  future performances; the current observation does not rule out later additions.
+
+### 2026-09-28 — Ha*Ash official tour diagnosis, HOLD: ordinary requests timed out
+
+- Package `vacation-20260928-concert-haash-source-27` uses a new isolated branch
+  `codex/haash-source-recovery-20260928` at published release SHA
+  `00ad551019aaea043ac09ab093a955b694d9eb4c`. Prior journal history is preserved.
+  The separate Iron Maidens, Belgrade, Jane and previous HOLD copies remain
+  protected; this package does not integrate or publish their work.
+- The exact configured official URL `https://ha-ash.com/tour/` was requested by
+  existing guarded production-default axios. Attempt one ran from
+  `2026-09-28T08:31:55.624Z` to `08:32:10.645Z`; a single same-URL retry ran from
+  `2026-09-28T08:32:32.024Z` to `08:32:47.044Z`. Both failed with the existing
+  15,000 ms timeout. Each attempt's metadata/error is preserved separately.
+  The independent web tool also could not access this exact page.
+- No response body was captured, so there is **no HTML hash**, observed page title,
+  current live artist-identity confirmation or event count to report. A purported
+  tour 2026–27 heading, search excerpt or configured artist name cannot stand in
+  for retrieved concert evidence. No linked resource or ticket URL could be
+  discovered from an actual body; no alternate domain, guessed API, browser
+  workaround, authentication or access-control bypass was attempted.
+- **HOLD without code changes:** no explicit future date/venue/city/country
+  records can be verified from the unavailable source. This is not proof of an
+  empty schedule, domain relocation or permanent outage. No date, ticket link or
+  MX country is inferred from configuration/fallback. No `allowEmpty` change or
+  false scraper-recovery claim is introduced.
+- The only repository change is this journal. Parser/config/runtime/tests/fixtures
+  are untouched. Focused tests, build/lint, SSRF test, selector ratchet, candidate
+  replay and full suite are N/A and not run because no runtime candidate exists.
+  Diff and protected-file hash checks passed. No commit/push/PR, hosted run,
+  publication, general collection, other artist/source, global processing,
+  schedule or limit change occurred.
+- Request evidence, saved baseline facts and preservation checks are recorded in
+  `/private/tmp/concert-haash-source-20260928-evidence/source-diagnosis.json`.
+  Revisit when the same official source is ordinarily readable; any later parser
+  candidate still needs explicit performance dates and reliable place evidence.
+- Independent saved-baseline inspection found `artist-haash` failed with
+  `selectors_stale`, no source-specific venue-cache entry and no diagnostics entry
+  for `ha-ash.com`. The public catalogue already contains **14 Ha*Ash concerts**,
+  4 February–21 March 2027, all from Bandsintown. These records remain untouched;
+  aggregator data is not substituted for the missing official-page proof. The
+  approved artist name is `Ha*Ash`, with the same configured website/tour URL.
+
+### 2026-09-28 — The Fizz source diagnosis, HOLD: artist identity mapping is unsafe
+
+- Package `vacation-20260928-concert-fizz-source-28` uses a new isolated branch
+  `codex/fizz-source-recovery-20260928` from published release SHA
+  `00ad551019aaea043ac09ab093a955b694d9eb4c`. Prior canonical journal is retained;
+  all separate dirty candidates and previous HOLD copies are protected. No pending
+  candidate is integrated or published in this package.
+- Guarded production-default axios read the exact configured
+  `https://www.thefizzofficial.com/tour` at `2026-09-28T08:50:33.984Z`: 712,242
+  bytes, SHA-256 `834367513c9eeec11f7fd06cdb85fc5d1030c5674d161991998bc3a485d1d4a0`.
+  The page identifies The Fizz and gives 15 explicit dated text rows: one past
+  11 September 2026 row and 14 future rows, 8 November 2026–20 November 2027.
+  The old configured event selector matches zero. These observed rows are not
+  automatically approved events or proof of every venue/country.
+- The directly linked official biography `/bio`, captured
+  `2026-09-28T08:51:12.931Z`, 891,642 bytes, SHA-256
+  `398d4034d489d9f7f2577cb7bcf3bcd853e477abb38045b4f15cd65249e3d4df`, explains
+  The Fizz's connection to original Bucks Fizz members, but also distinguishes
+  it from Bobby G's group and records the later The Fizz rebrand. Historical
+  membership/connection does not establish an unambiguous canonical identity
+  mapping to either of the current approved database entries.
+- **Material existing data defect:** the saved source cache has 15 `THE FIZZ` rows;
+  all 14 future rows appear in the exact saved public catalogue as **The Firm**,
+  with The Firm's MBID `c08ced1f-d248-4368-90e5-bf579b3bf5de`, Spotify and socials.
+  Source diagnostics are raw 15, published 14, one past-date drop. Thus a healthy
+  published count would conceal an incorrect artist attribution.
+- Approved data has a `Buck's Fizz` entry with thefizzofficial.com website/tour URL
+  and no MBID, a separate `Bucks Fizz` entry with MBID
+  `81b9c72d-8d46-446b-a420-ba618d89636e` and alias `Buck's Fizz`, and a separate
+  `The Firm` entry. There is no approved canonical or alias `The Fizz`. Independent
+  read-only review confirmed the mismatch and identified the matcher's fuzzy tier
+  allowing two edits as the path to The Firm. Forcing the parser to emit the
+  website-linked `Buck's Fizz` name would technically choose that exact entry,
+  but would silently encode an unresolved identity decision in a source parser.
+- The directly linked `https://www.winterpride.com/` was also captured normally at
+  `2026-09-28T08:51:14.524Z`: 189,537 bytes, SHA-256
+  `19f597817a085a75902257ee18263b4634868f7aa8eddabe0589150aa2e5498c`.
+  Its visible current programme identifies Winter Pride, 2–8 November 2026,
+  Maspalomas, Gran Canaria/Canary Islands; the title still mentions 2025 and is not
+  used as current event evidence. The cache's UK / published GB for Maspalomas is
+  unsupported. No replacement country, exact stage or ticket link is invented.
+- **HOLD without code changes:** current dates are readable, but approved artist
+  identity is unresolved. Keeping The Fizz continues the wrong match; forcing a
+  different name solely in the parser is not a verified identity repair. A future
+  separately scoped correction must establish The Fizz's canonical record/mapping
+  and regression-check all 14 affected public records and the Maspalomas country.
+  Remaining venue/country checks stop at this identity blocker; they are not
+  claimed complete. No global matcher or artist DB edit is made in this package.
+- `row-attribution.json` links each observed dated line and actual href to its
+  saved raw row and exact public record (14 identity mismatches, one past row).
+  This is diagnostic attribution, not a pipeline replay or change to public data.
+  Evidence and independent review:
+  `/private/tmp/concert-fizz-source-20260928-evidence/source-diagnosis.json`.
+  Only this journal changes. Diff and protected-file hash checks passed; focused
+  tests/build/lint/SSRF/selector gate/replay/full suite are N/A, not run (no runtime
+  candidate). No commit/push/PR, hosted run, publication, general collection,
+  other artist/source, schedule or limit changes occurred.
+
+### 2026-09-28 — Authorized release of verified official-source candidates
+
+- Alex explicitly requested: “Публикуем и проверяем как отработает”. This replaces
+  the earlier local-only delivery boundary for Iron Maidens, Belgrade season and
+  the four Jane McDonald official-link values. Source HOLD diagnoses remain HOLD.
+- Composed on main `a2a47fbbb7a2905c99105ea87ee77c23f65c7b27` in an isolated branch;
+  original dirty candidates remain unchanged. No schedule, quota, global matcher
+  or normalization changes. The Jane data patch preserves intervening enrichment.
+- Iron Maidens and Belgrade use their individually verified parsers and fixtures.
+  Jane updates the proven official website/tour URL; concert recovery is not claimed.
+- Release gates: combined tests, build, lint, production SSRF policy, integrity and
+  selector ratchets, offline replay, then exact-PR-head hosted verification.
+  After merge, run the ordinary collector and verify Actions SHA, source cache
+  fingerprints/freshness, rejection counts and deployed Pages artifact equality.
+- Existing unresolved The Fizz/The Firm identity and Maspalomas-country defect is
+  explicitly retained as a separate repair; no unverified identity fix is released.
+- Combined validation passed: 624 tests, zero failures, one intentional SSRF skip;
+  independent production SSRF test passed 1/1; build passed; lint zero errors
+  (106 existing warnings); artist integrity 141 <= baseline 141; selector count
+  127 <= 131. `node --import tsx` supplied the equivalent offline integrity/selector
+  checks after the CLI IPC listener was sandbox-blocked.
+- Combined offline replay reproduced the saved public baseline and compared the
+  current main artist DB with the release DB: 39,409 -> 39,444 (+10 Iron Maidens,
+  +25 Belgrade), no removed or modified existing records, zero network attempts.
+  Independent integration review passed, including exact parser/fixture hashes
+  and preservation of intervening enrichment. Hosted result remains pending.
