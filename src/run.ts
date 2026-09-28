@@ -3,6 +3,7 @@ import * as path from 'path';
 import { loadConfigs, runAllScrapers, ScraperResult, closeBrowser } from './engine/runner.js';
 import { loadCache, saveCache, isCacheStale } from './engine/cache.js';
 import { filterArtistCacheForActiveConfigs } from './engine/artist_cache.js';
+import { buildOfficialArtistContext } from './engine/official_artist_sources.js';
 import { Concert } from './schemas/concert.js';
 import { processConcerts, stampLastConcertSeenAt } from './pipeline/process.js';
 import { geocodeConcerts, loadGeocodeCacheWithBackup, saveGeocodeCache } from './pipeline/geocode.js';
@@ -216,6 +217,9 @@ async function main() {
       artistCache,
       path.join(scrapersDir, 'artists')
     );
+    const officialArtistContext = await buildOfficialArtistContext(
+      activeArtistCache, path.join(scrapersDir, 'artists')
+    );
     const ignoredArtistCacheEntries = Object.keys(artistCache).length - Object.keys(activeArtistCache).length;
     if (ignoredArtistCacheEntries > 0) {
       console.warn(`[Orchestrator] Ignored ${ignoredArtistCacheEntries} artist cache entries without an active scraper config.`);
@@ -317,7 +321,7 @@ async function main() {
     let passStart = Date.now();
     let processing: ProcessingDiagnostics | undefined;
     const normalizedConcerts = await processConcerts(allScrapedConcerts, approvedArtistsPath, runDate, captureApprovedArtists,
-      report => { processing = report; });
+      report => { processing = report; }, officialArtistContext);
     if (processing) {
       await fs.writeFile(path.join(reportsDir, 'processing-diagnostics.json'), JSON.stringify(processing, null, 2) + '\n', 'utf-8');
     }

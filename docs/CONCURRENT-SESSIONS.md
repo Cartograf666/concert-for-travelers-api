@@ -14,6 +14,17 @@ suspect another session might be active.
 
 ## Recently active
 
+- 2026-09-28: Codex country-source recovery is isolated in
+  `codex/country-sources-recovery-20260928`, based on `8fc4b6b`. Root owns
+  Steve Cardenas and integration; separate writers own Andrea Motis and
+  Ocean Colour Scene/Kevin Puts. Shared pipeline, schemas, workflows and
+  artist DB are protected. A separate session owns local-only Hue & Cry
+  in `codex/huecry-country-recovery-20260928`; it does not publish or dispatch.
+  Root alone owns the next release and one artist → daily → Pages check.
+  The local Hue & Cry/official-priority handoff `1c80084` is now integrated as
+  `53cf6c7`; root owns the shared composition and five-source registry. The
+  companion session is read-only during publication, preventing duplicate runs.
+
 - 2026-09-25: Codex collector iteration 1. Root owns `src/run.ts`, status/dashboard,
   workflows and docs integration; source-freshness worker owns engine diagnostics,
   `run-artists.ts` and `observability/source_health.ts`; processing worker owns

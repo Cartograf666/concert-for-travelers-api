@@ -8,6 +8,7 @@ import { artistDiscoveryFor } from './artist_discovery.js';
 import type { ArtistDiscovery } from '../schemas/artist_discovery.js';
 import { ProcessingDiagnosticsCollector } from '../observability/processing_diagnostics.js';
 import type { ProcessingDiagnostics } from '../observability/processing_diagnostics.js';
+import type { OfficialArtistContext } from '../engine/official_artist_sources.js';
 
 /** Format a Date as a timezone-safe YYYY-MM-DD using its local calendar fields. */
 function toLocalIso(d: Date): string {
@@ -1093,7 +1094,8 @@ export async function processConcerts(
   onApprovedArtistsLoaded?: (approvedArtists: any[]) => void,
   // Optional bounded accounting for rejected records. This is deliberately
   // observational: it must not alter matching, normalization, or output.
-  onDiagnostics?: (report: ProcessingDiagnostics) => void
+  onDiagnostics?: (report: ProcessingDiagnostics) => void,
+  officialArtistContext?: OfficialArtistContext
 ): Promise<Concert[]> {
   let approvedArtists: any[] = [];
   try {
@@ -1106,6 +1108,7 @@ export async function processConcerts(
   // Compile the matcher once for the whole batch instead of per concert.
   const match = buildApprovedMatcher(approvedArtists);
   const processedMap = new Map<string, Concert>();
+  const officialWinnerByKey = new Map<string, boolean>();
   const diagnostics = onDiagnostics ? new ProcessingDiagnosticsCollector(rawConcerts.length, baseDateStr) : undefined;
   // Telemetry: why events are dropped, so silent losses are visible.
   const drops = { incomplete: 0, notApproved: 0, badDate: 0, pastDate: 0, zodFail: 0 };
@@ -1213,25 +1216,33 @@ export async function processConcerts(
     const artistSlug = slugify(validatedConcert.artist);
     const citySlug = slugify(validatedConcert.city);
     const dedupeKey = `${artistSlug}_${validatedConcert.date}_${citySlug}`;
+    // Authority is tied to the original cached object and the canonical
+    // approved artist. A raw flag, copied URL, or fuzzy alias cannot confer it.
+    const candidateOfficial = officialArtistContext?.get(raw)?.artist === matched.name;
     diagnostics?.recordAccepted(raw);
 
     if (processedMap.has(dedupeKey)) {
       const existing = processedMap.get(dedupeKey)!;
-      // Preserve ticket-presence priority; a tie may select a strictly richer
-      // whole record for the same venue, without losing known metadata.
-      if ((!existing.ticketUrl && validatedConcert.ticketUrl) ||
-          (Boolean(existing.ticketUrl) === Boolean(validatedConcert.ticketUrl) &&
-            isMoreCompleteDuplicate(existing, validatedConcert))) {
+      const existingOfficial = officialWinnerByKey.get(dedupeKey) === true;
+      // A verified official row wins as a whole. Equal-rank rows retain the
+      // legacy ticket and same-venue completeness policy.
+      if ((candidateOfficial && !existingOfficial) ||
+          (Boolean(candidateOfficial) === existingOfficial &&
+            ((!existing.ticketUrl && validatedConcert.ticketUrl) ||
+              (Boolean(existing.ticketUrl) === Boolean(validatedConcert.ticketUrl) &&
+                isMoreCompleteDuplicate(existing, validatedConcert))))) {
         // The existing record is discarded, so its source owns this duplicate
         // outcome. This keeps every source's raw count reconcilable with its
         // published, duplicate, and dropped counts.
         diagnostics?.recordDuplicate(existing);
         processedMap.set(dedupeKey, validatedConcert);
+        officialWinnerByKey.set(dedupeKey, Boolean(candidateOfficial));
       } else {
         diagnostics?.recordDuplicate(raw);
       }
     } else {
       processedMap.set(dedupeKey, validatedConcert);
+      officialWinnerByKey.set(dedupeKey, Boolean(candidateOfficial));
     }
   }
 

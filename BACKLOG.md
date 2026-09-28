@@ -1200,3 +1200,80 @@ _(done — see ✅ Done above)_
   This clears the earlier code-integration blocker, not the hosted verification
   requirement. Next: commit the integrated snapshot, verify CI on its exact head,
   merge, then one artist → daily → Pages cycle with checkout/cache/public evidence.
+
+- Hosted verification completed on 2026-09-27 (supersedes the pending step
+  above): PR #150 merged as `97d6f191f3d764b64a247ebd3f18769f47049c3b`;
+  artist run `36326264206` and automatic daily/Pages `36327597091` both
+  checked out that SHA. Public generatedAt `2026-09-27T15:01:59.619Z`:
+  39,109 concerts, artists 373/414 and venues 97/147 successful, 283 country
+  length rejects / 309 schema rejects. Public concerts/index/status exactly
+  matched the saved publication; all 94 country codes were retained.
+  Eventbrite remained WAF-blocked; Emancipator remained a stale-cache `/tour/`
+  404. The dashboard correctly remained DEGRADED. Evidence and complete
+  verification are in `/tmp/concert-release-20260927.bFSeVr/`.
+
+## Country-source continuation — 2026-09-28
+
+- Alex requested continued recovery. Isolated worktree
+  `/tmp/concert-country-sources-20260928`, branch
+  `codex/country-sources-recovery-20260928`, base `8fc4b6b`. Shared checkout
+  and the separate Hue & Cry worktree remain untouched. Root owns integration
+  and the single next release/collection. No collection has been started.
+- Fresh official HTML captures reproduce combined-location leakage for Steve
+  Cardenas, Ocean Colour Scene, Kevin Puts and Andrea Motis. Source-specific
+  adapters now separate venue/city/country without changing strict validators.
+  Steve's explicit 2026 heading prevents archived shows becoming 2027 events;
+  the workshop is excluded. Kevin's explicitly listed days are ISO dates,
+  including cross-month lists. Continuous ranges and unpaired multiple venues
+  remain incomplete rather than imply daily performances. Independent review
+  caught and regression-locked the former false `2027-09-26` Kevin event.
+- Full production-artifact baseline replay is exact: 67,166 raw → 39,109
+  published. Controlled replacements under the existing duplicate policy yield
+  67,181 raw → 39,150 published: **41 added keys, zero removed**, country-length
+  rejects **283 → 206**, all schema rejects **309 → 232**. These are offline
+  effects at the fixed publication date, not hosted recovery or a forecast of
+  the next daily total. Evidence: `/tmp/concert-country-replay-source-final-20260928.json`.
+- Three exact Ocean venue labels are verified against official artist, venue
+  and ticket listings; city/country-scoped mappings preserve compatible whole
+  records under the existing policy. No global venue aliases or field splicing.
+  One existing Andrea Madrid record changes from the false venue `ANDREA MOTIS`
+  to the organiser-confirmed Teatro Monumental. Its old time/coordinates are
+  deliberately not transferred. Regression tests cover both boundaries.
+- Source coverage is partial: Andrea parses 11 of 13 rows, excluding a missing
+  Washington venue and an ambiguous Portalblau location; Kevin expands 20 cards
+  to 29 records, with four incomplete. Steve has 52 explicit dated concerts,
+  only five future at the fixed baseline; the other 47 are past, not recovered
+  future shows. Ocean parses all 12 cards. Official Raimat sections disagree
+  on 7/8 October; the artist's explicit 8 October remains unchanged. Music Glue
+  detail-page times conflict with venue/ticket listings and are not imported.
+- Source-only checks: **595 tests passed, one skipped**, TypeScript build,
+  lint (zero errors, 106 existing warnings), production SSRF policy, selector
+  audit (127, below ceiling 131), diff check and independent review passed.
+- Subsequent accepted decision in the coordinated Hue & Cry task: a verified
+  official artist source must win as a whole record regardless of input order
+  or aggregator completeness. Missing unverified optional fields are reported,
+  not automatically classified as data loss; fields remain unspliced. That
+  task supplied pipeline/trust/cache changes and Hue & Cry in `1c80084`,
+  integrated here as `53cf6c7`; root explicitly registered all five reviewed
+  sources. Authority requires the current config/module fingerprint, verified
+  cache timestamp and exact config URL/domain/artist, and follows object identity.
+  A matching previously verified last-good cache retains authority after a fetch
+  failure without refreshing its timestamps; that is not a fresh source read.
+- Combined offline verification supersedes the source-only candidate figures:
+  **39,109 → 39,153**, 44 added keys, zero removed, all 94 countries retained;
+  country-length rejects **283 → 192**, all schema rejects **309 → 218**.
+  All 66 valid official rows win as complete records in either input order:
+  Hue & Cry 14, Steve 5, Ocean 12, Kevin 24 and Andrea 11 at the fixed baseline.
+  Other artists are unchanged. After existing cache-only geocoding, 22 changed
+  existing records omit some former optional fields, intentionally under the
+  accepted official-source policy. No network geocoding or cross-source copying.
+  The complete baseline multiset equals the released public artifact. Evidence:
+  `/tmp/concert-combined-20260928/summary.json`; cache eligibility is simulated,
+  so this does not establish hosted freshness or predict the next daily total.
+- Integration regression checks real schema-loaded configs as well as adapters.
+  It caught missing required Steve selector fallback fields; the original fields
+  are restored, but the custom parser never uses the country fallback to guess
+  unknown locations. **605 tests passed, one skipped**; build, lint (zero errors,
+  106 existing warnings), production SSRF, selector ratchet and diff check pass.
+  Root owns the combined PR and one artist → automatic daily → Pages cycle;
+  exact checkout, fresh cache fingerprints and public-artifact proof are pending.
