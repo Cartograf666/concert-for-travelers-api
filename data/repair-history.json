@@ -23630,5 +23630,88 @@
     "failuresSinceRepair": 0,
     "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.skipmarley.com/tour/ but could not re-select on it",
     "verification": ""
+  },
+  {
+    "id": "artist-adiemus",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-adiemus.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-28T02:51:09.290Z",
+    "previousConfig": {
+      "id": "artist-adiemus",
+      "domain": "www.karljenkins.com",
+      "url": "http://www.karljenkins.com/performances",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.col-md-7 > div.row.padding-bottom-4x.aos-item[data-aos=\"fade-up\"]",
+        "artistNameFallback": "Adiemus",
+        "date": ".performance-date",
+        "ticketUrl": "div.col-10 > a.btn.btn-primary@href",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached http://www.karljenkins.com/performances but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-hubert-laws",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-hubert-laws.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-28T02:51:37.363Z",
+    "previousConfig": {
+      "id": "artist-hubert-laws",
+      "domain": "hubertlaws.com",
+      "url": "https://hubertlaws.com/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tribe-events-calendar-latest-past__event-row",
+        "artistNameFallback": "Hubert Laws",
+        "date": ".tribe-events-calendar-latest-past__event-datetime",
+        "ticketUrl": ".tribe-events-calendar-latest-past__event-title-link",
+        "venue": ".tribe-events-calendar-latest-past__event-venue-title",
+        "city": ".tribe-events-calendar-latest-past__event-venue-address",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: has_future_dates [0 event(s) dated today or later]; city_values_plausible [1/2 city values are longer than 60 chars or containing digits (50%, allow 20%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-the-clientele",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-the-clientele.json",
+    "strategy": "needs_render",
+    "repairedAt": "2026-09-28T02:51:39.111Z",
+    "previousConfig": {
+      "id": "artist-the-clientele",
+      "domain": "theclientele.co.uk",
+      "url": "https://theclientele.co.uk/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table[aria-labelledby='table-label-upcoming'] tbody tr",
+        "artistNameFallback": "The Clientele",
+        "date": "time",
+        "ticketUrl": "td:nth-child(2) a",
+        "venue": "td:nth-child(2) > span",
+        "city": "td:nth-child(3)",
+        "country": "td:nth-child(4)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "needs_render: switching type to 'playwright_render' so client-side events materialize; last candidate: FAIL: live_fetch [live run failed (reason=csr_detected): Parsed 0 concerts. Page appears client-side rendered (events absent from server HTML).]; reached https://theclientele.co.uk/shows but could not re-select on it",
+    "verification": ""
   }
 ]
