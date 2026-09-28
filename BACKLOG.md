@@ -1366,7 +1366,8 @@ _(done — see ✅ Done above)_
   Each has five added keys, one removed malformed Port Talbot key and five
   changed existing records. Showaddywaddy grows **10 → 14** with no remaining
   same-artist/date duplicate groups; all other artists' complete record
-  multisets and all 94 countries are unchanged. The correct Port Talbot date
+  multisets and each country set are unchanged (94 on September 27, 93 on
+  September 28). The correct Port Talbot date
   is 2027-11-27. These controlled effects do not predict the next live total.
 - Existing dedupe selects ten official rows and four provider rows. Five
   changed venue labels retain the whole official record, omitting former
