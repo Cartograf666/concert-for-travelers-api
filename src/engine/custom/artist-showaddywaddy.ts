@@ -22,7 +22,16 @@ const VERIFIED_LOCATIONS: Record<string, { city: string; venue: string; country:
   'Exeter - Corn Exchange': { city: 'Exeter', venue: 'Corn Exchange', country: 'GB' },
   'Aberdeen - Tivoli Theatre': { city: 'Aberdeen', venue: 'Tivoli Theatre', country: 'GB' },
   'Dunfermline - Alhambra': { city: 'Dunfermline', venue: 'Alhambra', country: 'GB' },
-  'Port Talbot - Princess Royal Theatre': { city: 'Port Talbot', venue: 'Princess Royal Theatre', country: 'GB' }
+  'Port Talbot - Princess Royal Theatre': { city: 'Port Talbot', venue: 'Princess Royal Theatre', country: 'GB' },
+  // Official venue proof: tests/fixtures/artist-showaddywaddy-locations-20260928.json.
+  'Carlisle - The Sands': { city: 'Carlisle', venue: 'The Sands Centre', country: 'GB' },
+  'Rhyl - Pavilion Theatre': { city: 'Rhyl', venue: 'Pavilion Theatre', country: 'GB' },
+  'Runcorn - Brindley Theatre': { city: 'Runcorn', venue: 'The Brindley', country: 'GB' },
+  'Stockport - Plaza': { city: 'Stockport', venue: 'The Plaza', country: 'GB' },
+  'Leamington Spa - Royal Spa Centre': { city: 'Leamington Spa', venue: 'Royal Spa Centre', country: 'GB' },
+  'Folkestone - Leas Cliff Hall': { city: 'Folkestone', venue: 'Leas Cliff Hall', country: 'GB' },
+  'Paisley - Town Hall': { city: 'Paisley', venue: 'Paisley Town Hall', country: 'GB' },
+  'Melton Mowbray - Melton Theatre': { city: 'Melton Mowbray', venue: 'Melton Theatre', country: 'GB' }
 };
 
 function compact(text: string): string {

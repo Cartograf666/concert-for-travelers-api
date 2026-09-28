@@ -1,0 +1,192 @@
+{
+  "checkedOn": "2026-09-28",
+  "artistSchedule": "https://www.showaddywaddy.net/gigs/",
+  "artistSnapshotSha256": "f8086ecaaef7180c4e16897b9e4ffdf66d7594c357cc609b12e60bae0f575599",
+  "locations": [
+    {
+      "label": "Carlisle - The Sands",
+      "city": "Carlisle",
+      "venue": "The Sands Centre",
+      "country": "GB",
+      "dates": [
+        "2026-10-02"
+      ],
+      "checkedAtUtc": "2026-09-28T03:16:21Z",
+      "caveat": "Operator event page combines Carlisle 2 October and Kendal 3 October. The date-to-venue assignment is from the official artist schedule; do not infer both nights are in Carlisle.",
+      "sources": [
+        {
+          "url": "https://betterboxoffice.co.uk/the-sands-centre/whats-on/showaddywaddy",
+          "kind": "official_venue_operator_event",
+          "observed": "Showaddywaddy listed 2–3 October 2026 across The Sands Centre, Carlisle CA1 1JQ and Westmorland Hall, Kendal; the artist schedule assigns 2 October to Carlisle.",
+          "excerpt": "The Sands Centre - Carlisle, CA1 1JQ"
+        },
+        {
+          "url": "https://betterboxoffice.co.uk/the-sands-centre/find-us",
+          "kind": "official_venue_operator_address",
+          "observed": "The Sands Centre is in Carlisle near Hardwicke Circus and the M6; UK location supported by Carlisle address and CA1 postcode.",
+          "excerpt": "The Sands Centre is situated next to Hardwicke Circus"
+        }
+      ]
+    },
+    {
+      "label": "Rhyl - Pavilion Theatre",
+      "city": "Rhyl",
+      "venue": "Pavilion Theatre",
+      "country": "GB",
+      "dates": [
+        "2026-10-10"
+      ],
+      "checkedAtUtc": "2026-09-28T03:16:21Z",
+      "caveat": "The artist-linked individual event page returned a web fetch error. The venue's own current calendar and Visit Wales provide the identity and location.",
+      "sources": [
+        {
+          "url": "https://rhylpavilion.co.uk/whats-on/",
+          "kind": "official_venue_calendar",
+          "observed": "Venue calendar lists Showaddywaddy on 10 October among October 2026 shows; footer gives Pavilion Theatre, East Parade, Rhyl, Denbighshire LL18 3AQ.",
+          "excerpt": "Showaddywaddy Oct 10 Rhyl Pavilion 7.30pm"
+        },
+        {
+          "url": "https://www.visitwales.com/attraction/theatre-or-performing-arts-venue/pavilion-theatre-rhyl-553751",
+          "kind": "official_welsh_tourism_identity_country",
+          "observed": "Visit Wales identifies Pavilion Theatre Rhyl at the same LL18 3AQ address and links the venue website; Rhyl is in Wales, United Kingdom.",
+          "excerpt": "Pavilion Theatre Rhyl"
+        }
+      ]
+    },
+    {
+      "label": "Runcorn - Brindley Theatre",
+      "city": "Runcorn",
+      "venue": "The Brindley",
+      "country": "GB",
+      "dates": [
+        "2026-10-16",
+        "2027-11-05"
+      ],
+      "checkedAtUtc": "2026-09-28T03:16:21Z",
+      "caveat": "The linked Quay Tickets page enters a redirect loop. The 16 October 2026 performance is independently corroborated only to autumn 2026, without day. No venue/operator page independently confirms 5 November 2027; that date rests solely on the official artist schedule. Both dates use the same proven venue label and location.",
+      "sources": [
+        {
+          "url": "https://thebrindley.org.uk/",
+          "kind": "official_civic_venue_address",
+          "observed": "Official theatre site, built and managed by Halton Borough Council, gives High Street, Runcorn, Cheshire WA7 1BG; it uses both The Brindley and Brindley Theatre.",
+          "excerpt": "High Street, Runcorn, Cheshire WA7 1BG"
+        },
+        {
+          "url": "https://hbcnewsroom.co.uk/dazzling-season-at-the-new-look-brindley/",
+          "kind": "official_council_2026_artist_venue",
+          "observed": "Halton Borough Council's 2 September 2026 announcement names Showaddywaddy in The Brindley autumn programme in Runcorn; exact day comes from the artist's schedule.",
+          "excerpt": "The Drifters and Showaddywaddy return"
+        }
+      ]
+    },
+    {
+      "label": "Stockport - Plaza",
+      "city": "Stockport",
+      "venue": "The Plaza",
+      "country": "GB",
+      "dates": [
+        "2026-10-30"
+      ],
+      "checkedAtUtc": "2026-09-28T03:16:21Z",
+      "caveat": "The event page appeared in the live search index but direct web open returned HTTP 425; the official venue calendar also lists the same date.",
+      "sources": [
+        {
+          "url": "https://stockportplaza.co.uk/whats-on/showaddywaddy-4/",
+          "kind": "official_venue_event",
+          "observed": "Official Stockport Plaza event page lists Showaddywaddy on Friday 30 October 2026 at 19:30; search index reached the page while direct web fetch returned an error.",
+          "excerpt": "Friday 30th October 2026 at 7.30pm"
+        },
+        {
+          "url": "https://stockportplaza.co.uk/about-the-plaza/contact/",
+          "kind": "official_venue_address",
+          "observed": "The Plaza identifies its address as Mersey Square, Stockport SK1 1SP; its UK mailing information confirms country GB.",
+          "excerpt": "The Plaza Mersey Square Stockport SK1 1SP"
+        }
+      ]
+    },
+    {
+      "label": "Leamington Spa - Royal Spa Centre",
+      "city": "Leamington Spa",
+      "venue": "Royal Spa Centre",
+      "country": "GB",
+      "dates": [
+        "2026-10-31"
+      ],
+      "checkedAtUtc": "2026-09-28T03:17:25Z",
+      "caveat": "Venue Ticketsolve page inaccessible. Exact date from official artist schedule, additionally matched by regional destination operator; no readable venue event page.",
+      "sources": [
+        {
+          "url": "https://www.warwickdc.gov.uk/royalspacentre/contact",
+          "excerpt": "Royal Spa Centre, Newbold Terrace, Leamington Spa, CV32 4HN"
+        },
+        {
+          "url": "https://visitbirmingham.com/event/showaddywaddy/182364101/",
+          "excerpt": "Showaddywaddy; Royal Spa Centre, Newbold Terrace; Dates: 31 Oct 2026"
+        }
+      ]
+    },
+    {
+      "label": "Folkestone - Leas Cliff Hall",
+      "city": "Folkestone",
+      "venue": "Leas Cliff Hall",
+      "country": "GB",
+      "dates": [
+        "2026-11-07"
+      ],
+      "checkedAtUtc": "2026-09-28T03:17:25Z",
+      "caveat": "Venue operator confirms date/show; artist direct show URL rendered no useful text.",
+      "sources": [
+        {
+          "url": "https://www.atgtickets.com/venues/leas-cliff-hall/whats-on/",
+          "excerpt": "Showaddywaddy; Leas Cliff Hall, Folkestone; Sat 7 Nov 2026"
+        },
+        {
+          "url": "https://www.atgtickets.com/venues/leas-cliff-hall/venue-info/",
+          "excerpt": "Leas Cliff Hall, The Leas, Folkestone, Kent, CT20 2DZ"
+        }
+      ]
+    },
+    {
+      "label": "Paisley - Town Hall",
+      "city": "Paisley",
+      "venue": "Paisley Town Hall",
+      "country": "GB",
+      "dates": [
+        "2026-11-13"
+      ],
+      "checkedAtUtc": "2026-09-28T03:17:25Z",
+      "caveat": "Venue own event page confirms date/show; artist outgoing Ticketsolve page inaccessible.",
+      "sources": [
+        {
+          "url": "https://www.paisleytownhall.org/whats-on/showaddywaddy/",
+          "excerpt": "Showaddywaddy; 13 Nov 2026; Paisley Town Hall; Abbey Close; Paisley; PA1 1JF"
+        },
+        {
+          "url": "https://www.paisleytownhall.org/whats-on/showaddywaddy/",
+          "excerpt": "Showaddywaddy; 13 Nov 2026; Paisley Town Hall; Abbey Close; Paisley; PA1 1JF"
+        }
+      ]
+    },
+    {
+      "label": "Melton Mowbray - Melton Theatre",
+      "city": "Melton Mowbray",
+      "venue": "Melton Theatre",
+      "country": "GB",
+      "dates": [
+        "2026-11-15"
+      ],
+      "checkedAtUtc": "2026-09-28T03:17:25Z",
+      "caveat": "Date/performer from official artist calendar only; no independent venue event listing seen; outgoing Ticketsolve page inaccessible.",
+      "sources": [
+        {
+          "url": "https://www.meltontheatre.co.uk/contact-us/",
+          "excerpt": "Asfordby Road, Melton Mowbray, Leicestershire, LE13 0HJ"
+        },
+        {
+          "url": "https://www.meltontheatre.co.uk/contact-us/",
+          "excerpt": "Asfordby Road, Melton Mowbray, Leicestershire, LE13 0HJ"
+        }
+      ]
+    }
+  ]
+}

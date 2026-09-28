@@ -1390,3 +1390,103 @@ _(done — see ✅ Done above)_
   Independent release review found no blockers. Next: release the exact checked
   snapshot, run one artist → automatic daily → Pages cycle and verify the
   public artifacts.
+
+### 2026-09-28 — Showaddywaddy hosted verification completed
+
+- PR #156 merged as `da3384bfa4fbe0072b71daf62ff4d4cd8788d579` after CI
+  `36369857719` passed 612 tests (one skipped), build, lint and selector ratchet.
+  The CI merge tree exactly equals the released tree. This completes the
+  preceding release candidate's pending publication step.
+- One artist dispatch `36370020899` and automatic Daily/Pages `36371332504`
+  both actually checked out that release SHA. All six reviewed official pages
+  were freshly extracted after merge with matching config/module fingerprints.
+  The hosted Showaddywaddy cache exactly equals the tested fixture output:
+  113 raw rows, 12 complete and 101 incomplete. Daily consumed the exact artist
+  cache and run manifest from that producer. No schedule or cap was changed.
+- Public generation `2026-09-28T02:57:33.367Z`, Pages completed at 02:58:46Z:
+  **39,148 concerts across 93 countries**. Public root HTML and all three JSON
+  files (concerts/index/status) exactly equal the saved publication artifact.
+  Catalogue SHA-256: `0f23e229a6c149a81db00b98c5581d6ca18dfa02484502c20d982f091fed2806`.
+- Offline replay of all **66,839 fresh raw rows** reproduces every complete
+  published record. All **64 valid verified-authority records** from the five
+  registered official sources survive as complete records. Replacing only
+  Showaddywaddy with its previous cache yields 39,144 rather than 39,148; every
+  other artist is identical on those same fresh inputs. Showaddywaddy has 14
+  events instead of ten, no known same-date duplicates, correct IE/DK locations
+  and Port Talbot on 2027-11-27. The Castlebar provider record is unchanged.
+- Fleet health remains **DEGRADED**: artists 373/414 successful, venues 98/147.
+  Eventbrite returned HTTP 405 on all five attempted requests and retained old
+  cached data. Schema rejects remain 217, including 191 country-length rejects.
+  The 101 unverified Showaddywaddy locations and exact Castlebar official row
+  remain held; five official winners omit unconfirmed provider times/coordinates.
+  These limitations are not hidden by the successful publication gate.
+- Full evidence, logs, source freshness, public files and exact replay results:
+  `/private/tmp/concert-release-showaddywaddy-20260928/`. Requested publication
+  and hosted verification are complete. Next bounded improvement: verify more
+  source locations; the global validators, dedupe policy and intervals stay as-is.
+
+### 2026-09-28 — Showaddywaddy eight-venue continuation, local only
+
+- Package `vacation-20260928-concert-showaddywaddy-venues-15` adds only eight
+  exact, officially verified location labels: Carlisle/The Sands Centre,
+  Rhyl/Pavilion Theatre, Runcorn/The Brindley, Stockport/The Plaza,
+  Leamington Spa/Royal Spa Centre, Folkestone/Leas Cliff Hall,
+  Paisley/Paisley Town Hall and Melton Mowbray/Melton Theatre. All are GB by
+  official venue/civic address evidence, not the configured country fallback.
+  URLs, access dates, excerpts and caveats are preserved in
+  `tests/fixtures/artist-showaddywaddy-locations-20260928.json` and the evidence
+  directory's `proof-a/manifest.json`, `proof-b/manifest.json`.
+- Eight places recover nine dated rows because Runcorn appears on 2026-10-16
+  and 2027-11-05. Dates still come from the official artist calendar. Runcorn's
+  exact dates and Melton's date lack independent venue-event confirmation;
+  other venue-page limitations are documented per row. This does not claim
+  ticket availability or verified show times. Castlebar's hold is unchanged.
+- The fixture/full saved HTML yields the same 113 raw rows: complete locations
+  **12 → 21**, incomplete **101 → 92**. No dates or non-location source fields
+  change. Unknown and merely similar labels remain incomplete; Sevenoaks's
+  weekday conflict and the exact Castlebar exclusion still apply.
+- Latest artifact replay uses all **66,839 saved raw rows**, original ordering,
+  saved artist DB, existing cache-only geocoding and the actual publication
+  clock. Baseline equals the full released public artifact. Candidate:
+  **39,148 → 39,157**, Showaddywaddy **14 → 23**, nine additions, zero removals
+  and zero existing-record changes. All other artists' complete records and all
+  93 countries are identical; there are no same-artist/date duplicate groups.
+  Incomplete rejects fall 1,835 → 1,826; all other rejection counts are unchanged.
+- The same latest inputs also pass both earlier saved-clock regressions:
+  September 27 clock 39,572 → 39,581; September 28 clock 39,148 → 39,157.
+  These are controlled clock simulations, not historical-publication claims.
+  Existing optional fields never change. New Paisley coordinates come from the
+  existing exact geocode-cache key; no coordinates are added elsewhere and no
+  start times are inferred. Existing website ticket fallback and venueKind
+  derivation remain unchanged; there is no cross-source field copying.
+- Checks: all eight focused parser tests (including both clocks), TypeScript
+  build, focused ESLint and diff check pass. Three complete baseline/candidate
+  replays and independent delta validation pass with zero network attempts.
+  The full test suite was not rerun for this mapping-only local candidate.
+  Evidence: `/private/tmp/concert-showaddywaddy-venues-20260928/` contains
+  source proofs, all before/after catalogues, complete Showaddywaddy deltas,
+  optional-field/rejection checks and input hashes. Earlier dirty BACKLOG work
+  is preserved. No collection, commit, push, PR, merge or publication was done;
+  global validators/dedupe, registry, schedules and caps are untouched. Stop:
+  locally verified candidate; any hosted verification remains a later step.
+
+### 2026-09-28 — Eight-venue candidate approved for publication
+
+- Alex explicitly requested publication and a real run check, superseding the
+  preceding local-only stopping condition. The release branch
+  `codex/showaddywaddy-venues-20260928` is based on current main `a11532d`;
+  existing hosted-verification notes and other worktrees are preserved.
+- Full release checks pass: **613 tests, one skipped**, build, lint with zero
+  errors (106 existing warnings), production SSRF policy and selector ratchet
+  (127 offenders, baseline 131). The exact source/fixture diff was independently
+  reviewed; no blockers were found. This supersedes the previous full-suite
+  not-run limitation. No runtime, schedule, API cap or global validation changed.
+- Fresh offline replay of all 66,839 saved rows passes at all three saved clocks:
+  nine additions, zero removals/changed records, other artists and country sets
+  unchanged. The actual-publication-clock control is 39,148 → 39,157 and
+  Showaddywaddy 14 → 23. The earlier clocks remain counterfactual simulations.
+  Runcorn/Melton date caveats and all existing holds remain as documented above.
+- Full logs, input hashes, dirty snapshot, independent review and replay results:
+  `/private/tmp/concert-showaddywaddy-venues-gate-20260928/`. Next: merge only
+  after exact-candidate CI, run artist → automatic Daily/Pages, and check actual
+  source freshness and public-artifact equality. Hosted verification is pending.

@@ -52,8 +52,8 @@ test('official table uses heading years and survives both strict processing cloc
   const result = await runScraper(cfg);
   assert.equal(result.success, true);
   assert.equal(result.concerts.length, 113, '115 official rows less a weekday conflict and the Castlebar hold');
-  assert.equal(result.concerts.filter(c => c.country !== undefined).length, 12);
-  assert.equal(result.concerts.filter(c => c.country === undefined).length, 101);
+  assert.equal(result.concerts.filter(c => c.country !== undefined).length, 21);
+  assert.equal(result.concerts.filter(c => c.country === undefined).length, 92);
   assert.equal(result.concerts.some(c => c.city === 'Castlebar'), false,
     'the dated Castlebar provider conflict remains held');
   assert.equal(result.concerts.filter(c => c.ticketUrl !== undefined).length, 0,
@@ -78,7 +78,7 @@ test('official table uses heading years and survives both strict processing cloc
   await writeFile(approved, JSON.stringify([{ name: 'Showaddywaddy' }]));
   for (const clock of clocks) {
     const processed = await processConcerts(result.concerts, approved, clock);
-    assert.equal(processed.length, 12);
+    assert.equal(processed.length, 21);
     assert.equal(processed.find(c => c.venue === 'Princess Royal Theatre')?.date, '2027-11-27');
   }
 });
@@ -133,6 +133,26 @@ test('only the conflicting Castlebar date is held', async () => {
   ), clocks[0]);
   assert.deepEqual(concerts.map(c => [c.date, c.city, c.venue, c.country]),
     [['2027-11-27', 'Castlebar', 'TF Royal Theatre', 'IE']]);
+});
+
+test('eight proven venue labels recover their exact dates without trusting nearby labels', async () => {
+  const proof = JSON.parse(await readFile('tests/fixtures/artist-showaddywaddy-locations-20260928.json', 'utf8')) as {
+    locations: { label: string; city: string; venue: string; country: string; dates: string[] }[];
+  };
+  assert.equal(proof.locations.length, 8);
+  const cfg = await config();
+  const concerts = await scrape(cfg, await readFile('tests/fixtures/artist-showaddywaddy-gigs.html', 'utf8'), clocks[0]);
+  for (const location of proof.locations) {
+    const recovered = concerts.filter(c => c.city === location.city && c.venue === location.venue);
+    assert.deepEqual(recovered.map(c => c.date), location.dates);
+    assert.ok(recovered.every(c => c.country === location.country && c.startTime === undefined &&
+      c.lat === undefined && c.lng === undefined && c.ticketUrl === undefined));
+  }
+  const unknown = await scrape(cfg, table(heading('October 2026'),
+    ...proof.locations.map(place => row('Fri 2nd', `${place.label} Annex`))
+  ), clocks[0]);
+  assert.equal(unknown.length, 8);
+  assert.ok(unknown.every(c => c.country === undefined), 'proof for one venue must not extend to a similar label');
 });
 
 test('ticket URLs are resolved safely while verified location fields retain their source identity', async () => {
