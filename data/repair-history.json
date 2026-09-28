@@ -23769,5 +23769,34 @@
     "failuresSinceRepair": 0,
     "note": "repair failed: Scraper kitty-su-bangalore is not a static_selectors scraper or is missing selectors.",
     "verification": ""
+  },
+  {
+    "id": "artist-the-clientele",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-the-clientele.json",
+    "strategy": "needs_render",
+    "repairedAt": "2026-09-28T04:09:32.701Z",
+    "previousConfig": {
+      "id": "artist-the-clientele",
+      "domain": "theclientele.co.uk",
+      "url": "https://theclientele.co.uk/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table[aria-labelledby='table-label-upcoming'] tbody tr",
+        "artistNameFallback": "The Clientele",
+        "date": "time",
+        "ticketUrl": "td:nth-child(2) a",
+        "venue": "td:nth-child(2) > span",
+        "city": "td:nth-child(3)",
+        "country": "td:nth-child(4)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "needs_render: switching type to 'playwright_render' so client-side events materialize; last candidate: FAIL: live_fetch [live run failed (reason=csr_detected): Parsed 0 concerts. Page appears client-side rendered (events absent from server HTML).]; reached https://theclientele.co.uk/shows but could not re-select on it",
+    "verification": ""
   }
 ]
