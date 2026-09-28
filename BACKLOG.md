@@ -2122,3 +2122,43 @@ _(done — see ✅ Done above)_
   +25 Belgrade), no removed or modified existing records, zero network attempts.
   Independent integration review passed, including exact parser/fixture hashes
   and preservation of intervening enrichment. Hosted result remains pending.
+
+### 2026-09-28 — Official-source release published and verified
+
+- PR [#162](https://github.com/Cartograf666/concert-for-travelers-api/pull/162) merged
+  as `d53e0e436afd8aeb431f07a13c79b992410cffd1`. All 13 merged files matched the
+  locally tested candidate byte-for-byte. GitHub Node 22 verification run
+  `36401313334` passed at PR head `887561bcc0639d485786a2a2690e435530a4df2c`.
+- Manually dispatched Daily Concert Scrape
+  [36401607058](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/36401607058)
+  checked out the exact release SHA; scrape and Pages deployment both succeeded.
+  Published status generated `2026-09-28T09:13:53.453Z`. The deployed root HTML
+  and `status.json`, `index.json`, `concerts.json`, `artists.json` equal the
+  completed run artifacts. The health gate was eligible and actual deployment
+  is separately confirmed by the successful deploy job and public reads.
+- Iron Maidens: 10 fresh raw events -> 10 published, zero processing drops or
+  merges. Belgrade: 25 fresh raw -> 25 published, zero drops or merges. Both
+  source config hashes and cache fingerprints match the released parser/config;
+  fresh `scrapedAt` and `verifiedAt` prove extraction instead of cache-only reuse.
+  Every published date/artist/venue/city/country/time matches the checked replay.
+- Jane McDonald's corrected website is present in public `artists.json`. Her
+  source still returns `selectors_stale` and publishes zero concerts; link repair
+  is verified, concert collection remains unresolved.
+- Overall catalogue: 39,409 -> 39,529 (+120 net), 94 countries. Venue cohort:
+  93/147 -> 100/147 succeeded, 23 changed and 77 unchanged; 47 failures remain.
+  All source-level raw/published/duplicate/drop accounting reconciles. Schema
+  rejects remain 217, including 191 `country:too_big` issues.
+- Fleet health remains DEGRADED. Three stale-cache sources remain (Harry Connick
+  Jr, Philip Labonte, Barby Tel Aviv). The separate artist/Bandsintown/Eventbrite
+  cohorts were not rerun; their existing manifest is run `36374621592` at SHA
+  `00ad551019aaea043ac09ab093a955b694d9eb4c`. Intervals and limits are unchanged.
+- Known The Fizz/The Firm attribution issue remains a separate HOLD. Original
+  candidate/HOLD worktrees retain their prior heads, dirty state and file hashes.
+  Post-release automatic main commits changed artist enrichment/repair history;
+  this evidence refers to the exact collector/deploy SHA above.
+- Local release evidence: `/private/tmp/concert-publish-sources-20260928-evidence/`
+  (`release-evidence.json`, `publication-verification.json`, reports and logs).
+- Event identity comparison (artist/date/city) found 147 additions and 27 removed
+  prior identities, net +120. The 27 removals are outside the three changed
+  sources: Chicago 14, Ticketmaster 10, Bandsintown 1, Tvornica 1, Lexington 1.
+  Disappearance from a fresh feed is not treated as proof of cancellation.
