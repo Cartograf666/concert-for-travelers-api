@@ -23993,5 +23993,175 @@
     "failuresSinceRepair": 0,
     "note": "repair failed: Scraper kitty-su-bangalore is not a static_selectors scraper or is missing selectors.",
     "verification": ""
+  },
+  {
+    "id": "armenian-national-opera-yerevan",
+    "cohort": "venue",
+    "configPath": "scrapers/armenian-national-opera-yerevan.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-09-29T10:47:00.961Z",
+    "previousConfig": {
+      "id": "armenian-national-opera-yerevan",
+      "domain": "opera.am",
+      "url": "https://www.opera.am/en/repertoire",
+      "type": "static_selectors",
+      "maxRetries": 5,
+      "requestDelayMs": 2000,
+      "selectors": {
+        "eventBlock": ".card.js-card",
+        "artist": ".card__title-wrap h2 a",
+        "date": ".card__date",
+        "ticketUrl": ".card__title-wrap a.button",
+        "venueNameFallback": "Armenian National Academic Theatre of Opera and Ballet",
+        "cityNameFallback": "Yerevan",
+        "countryNameFallback": "AM"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]",
+    "verification": ""
+  },
+  {
+    "id": "artist-bucks-fizz",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-bucks-fizz.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-29T10:47:08.906Z",
+    "previousConfig": {
+      "id": "artist-bucks-fizz",
+      "domain": "thefizzofficial.com",
+      "url": "https://www.thefizzofficial.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.html-section-item.html-section-event-row",
+        "artistNameFallback": "The Fizz",
+        "date": ".html-section-event-date",
+        "ticketUrl": ".html-section-event-tickets a",
+        "venue": ".html-section-event-venue",
+        "city": ".html-section-event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "UK"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.thefizzofficial.com/tour but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-james-alexander",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-james-alexander.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-29T10:47:14.103Z",
+    "previousConfig": {
+      "id": "artist-james-alexander",
+      "domain": "www.jamesalexanderbright.com",
+      "url": "https://www.jamesalexanderbright.com/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-list-item",
+        "artistNameFallback": "James Alexander Bright",
+        "date": ".event-date",
+        "ticketUrl": ".event-tickets a",
+        "venue": ".event-venue",
+        "city": ".event-location-city",
+        "country": ".event-location-country",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "UK"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.jamesalexanderbright.com/live but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "helitehas-tallinn",
+    "cohort": "venue",
+    "configPath": "scrapers/helitehas-tallinn.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-29T10:47:19.802Z",
+    "previousConfig": {
+      "id": "helitehas-tallinn",
+      "domain": "helitehas.ee",
+      "url": "https://helitehas.ee/en/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.archive-event:has(.event_address:contains('Helitehas'))",
+        "artist": ".event_title",
+        "date": ".event_date",
+        "ticketUrl": "a[rel=bookmark]",
+        "venueNameFallback": "Helitehas",
+        "cityNameFallback": "Tallinn",
+        "countryNameFallback": "EE",
+        "lat": 59.4308696,
+        "lng": 24.7212409
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (#boardrows .row) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-patti-smith-group",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-patti-smith-group.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-29T10:47:22.009Z",
+    "previousConfig": {
+      "id": "artist-patti-smith-group",
+      "domain": "www.pattismith.net",
+      "url": "https://www.pattismith.net/shows.html",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "p.show",
+        "artistNameFallback": "Patti Smith Group",
+        "date": "strong:nth-of-type(1)",
+        "ticketUrl": "a",
+        "venue": "strong:nth-of-type(3)",
+        "city": "strong:nth-of-type(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.pattismith.net/shows.html but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-pharis-and-jason-romero",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-pharis-and-jason-romero.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-29T10:47:25.783Z",
+    "previousConfig": {
+      "id": "artist-pharis-and-jason-romero",
+      "domain": "pharisandjason.com",
+      "url": "https://pharisandjason.com/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.sqs-block-content > div.event-item",
+        "artistNameFallback": "Pharis and Jason Romero",
+        "date": "time[itemprop='startDate']",
+        "ticketUrl": "a.event-ticket-button",
+        "venue": "span.event-venue",
+        "city": "span.event-city",
+        "country": "span.event-country",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://pharisandjason.com/shows but could not re-select on it",
+    "verification": ""
   }
 ]
