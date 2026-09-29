@@ -1,0 +1,17 @@
+{
+  "id": "artist-rainey",
+  "domain": "stephanieraineymusic.com",
+  "url": "https://stephanieraineymusic.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour-item",
+    "artistNameFallback": "Stephanie Rainey",
+    "date": ".tour-item-date",
+    "ticketUrl": ".tour-item-tickets a",
+    "venue": ".tour-item-venue",
+    "city": ".tour-item-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "IE"
+  }
+}
