@@ -24163,5 +24163,87 @@
     "failuresSinceRepair": 0,
     "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://pharisandjason.com/shows but could not re-select on it",
     "verification": ""
+  },
+  {
+    "id": "artist-heino",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-heino.json",
+    "strategy": "tls_broken",
+    "repairedAt": "2026-09-30T10:29:33.820Z",
+    "previousConfig": {
+      "id": "artist-heino",
+      "domain": "www.heino.de",
+      "url": "https://www.heino.de/termine",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "main .grid > div",
+        "artistNameFallback": "Heino",
+        "date": "div.space-y-3 > div:nth-of-type(1) span",
+        "ticketUrl": ".mt-auto a[href]",
+        "venue": "div.space-y-3 > div:nth-of-type(2) span",
+        "city": "div.space-y-3 > div:nth-of-type(3) span",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "DE"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "tls_broken: trying the www/apex variant, which usually holds the valid certificate; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): write EPROTO C09CAAAE337F0000:error:0A000458:SSL routines:ssl3_read_bytes:tlsv1 unrecognized name:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:918:SSL alert number 112\n]",
+    "verification": ""
+  },
+  {
+    "id": "artist-ircam",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-ircam.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-30T10:29:35.264Z",
+    "previousConfig": {
+      "id": "artist-ircam",
+      "domain": "www.ircam.fr",
+      "url": "https://www.ircam.fr/en/events",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".MediaCard-module__I7_2rG__card",
+        "artistNameFallback": "IRCAM",
+        "date": ".m_b6d8b162[data-size='md']:first-of-type",
+        "venue": ".m_b6d8b162[data-size='md']:last-of-type",
+        "venueNameFallback": "IRCAM",
+        "cityNameFallback": "Paris",
+        "countryNameFallback": "FR"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: dates_parse [0/34 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]; artist_names_plausible [34/34 artist values look like page chrome (100%, allow 20%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-giora-feidman",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-giora-feidman.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-30T10:29:39.014Z",
+    "previousConfig": {
+      "id": "artist-giora-feidman",
+      "domain": "www.giorafeidman-online.com",
+      "url": "https://www.giorafeidman-online.com/termine",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".listItem",
+        "artistNameFallback": "Giora Feidman",
+        "date": ".itemName",
+        "ticketUrl": "a.biglink",
+        "venue": ".itemText .rteBlock:nth-of-type(3)",
+        "city": ".itemName",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "DE"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.giorafeidman-online.com/termine but could not re-select on it",
+    "verification": ""
   }
 ]
