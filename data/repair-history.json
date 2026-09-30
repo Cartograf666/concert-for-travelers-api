@@ -24245,5 +24245,116 @@
     "failuresSinceRepair": 0,
     "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.giorafeidman-online.com/termine but could not re-select on it",
     "verification": ""
+  },
+  {
+    "id": "artist-jorge-palma",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-jorge-palma.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-09-30T10:42:43.682Z",
+    "previousConfig": {
+      "id": "artist-jorge-palma",
+      "domain": "jorgepalma.pt",
+      "url": "https://jorgepalma.pt/espetaculos/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-item",
+        "artistNameFallback": "Jorge Palma",
+        "date": "p.event-date",
+        "ticketUrl": "a.tickets-button",
+        "city": "p.event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "PT"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://jorgepalma.pt; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
+    "verification": ""
+  },
+  {
+    "id": "helitehas-tallinn",
+    "cohort": "venue",
+    "configPath": "scrapers/helitehas-tallinn.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-30T10:42:51.706Z",
+    "previousConfig": {
+      "id": "helitehas-tallinn",
+      "domain": "helitehas.ee",
+      "url": "https://helitehas.ee/en/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.archive-event:has(.event_address:contains('Helitehas'))",
+        "artist": ".event_title",
+        "date": ".event_date",
+        "ticketUrl": "a[rel=bookmark]",
+        "venueNameFallback": "Helitehas",
+        "cityNameFallback": "Tallinn",
+        "countryNameFallback": "EE",
+        "lat": 59.4308696,
+        "lng": 24.7212409
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (#boardrows .row) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-jun-shibata",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-jun-shibata.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-30T10:43:03.706Z",
+    "previousConfig": {
+      "id": "artist-jun-shibata",
+      "domain": "www.shibatajun.com",
+      "url": "https://www.shibatajun.com/schedule/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.live-schedule__list__item",
+        "artistNameFallback": "Jun Shibata",
+        "date": "p.live-schedule__list__item__date",
+        "ticketUrl": "a.live-schedule__list__item__link",
+        "city": "p.live-schedule__list__item__place",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.shibatajun.com/schedule/live/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-pharis-and-jason-romero",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-pharis-and-jason-romero.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-30T10:43:08.601Z",
+    "previousConfig": {
+      "id": "artist-pharis-and-jason-romero",
+      "domain": "pharisandjason.com",
+      "url": "https://pharisandjason.com/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.sqs-block-content > div.event-item",
+        "artistNameFallback": "Pharis and Jason Romero",
+        "date": "time[itemprop='startDate']",
+        "ticketUrl": "a.event-ticket-button",
+        "venue": "span.event-venue",
+        "city": "span.event-city",
+        "country": "span.event-country",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://pharisandjason.com/shows but could not re-select on it",
+    "verification": ""
   }
 ]
