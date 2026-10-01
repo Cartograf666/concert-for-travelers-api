@@ -24356,5 +24356,33 @@
     "failuresSinceRepair": 0,
     "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://pharisandjason.com/shows but could not re-select on it",
     "verification": ""
+  },
+  {
+    "id": "artist-giora-feidman",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-giora-feidman.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-01T10:57:17.048Z",
+    "previousConfig": {
+      "id": "artist-giora-feidman",
+      "domain": "www.giorafeidman-online.com",
+      "url": "https://www.giorafeidman-online.com/termine",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".listItem",
+        "artistNameFallback": "Giora Feidman",
+        "date": ".itemName",
+        "ticketUrl": "a.biglink",
+        "venue": ".itemText .rteBlock:nth-of-type(3)",
+        "city": ".itemName",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "DE"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.giorafeidman-online.com/termine but could not re-select on it",
+    "verification": ""
   }
 ]
