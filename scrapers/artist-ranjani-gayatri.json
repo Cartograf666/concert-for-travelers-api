@@ -1,0 +1,17 @@
+{
+  "id": "artist-ranjani-gayatri",
+  "domain": "ranjanigayatri.com",
+  "url": "https://ranjanigayatri.com/concerts",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".concert-item",
+    "artistNameFallback": "Ranjani-Gayatri",
+    "date": ".concert-date",
+    "ticketUrl": "a.ticket-button",
+    "venue": ".concert-venue",
+    "city": ".concert-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "IN"
+  }
+}
