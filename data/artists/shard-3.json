@@ -314208,7 +314208,20 @@
       "vk": null
     },
     "enrichedAt": "2026-10-03T11:53:31.082Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "Seedhe Maut",
+        "slug": "seedhe-maut",
+        "match": 1
+      },
+      {
+        "name": "Shubh",
+        "slug": "shubh",
+        "match": 0.312422
+      }
+    ],
+    "similarEnrichedAt": "2026-10-03T12:03:43.902Z"
   },
   {
     "name": "Kraan",
@@ -473486,7 +473499,25 @@
     "imageFallbackTriedAt": "2026-10-03T11:30:34.061Z",
     "mbid": "48c90f46-880e-459f-8875-f91e5735e58a",
     "enrichedAt": "2026-10-03T11:53:33.723Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "Kapitány Máté",
+        "slug": "kapitany-mate",
+        "match": 0.623327
+      },
+      {
+        "name": "Mirror Glimpse",
+        "slug": "mirror-glimpse",
+        "match": 0.081398
+      },
+      {
+        "name": "Co Lee",
+        "slug": "co-lee",
+        "match": 0.079929
+      }
+    ],
+    "similarEnrichedAt": "2026-10-03T12:03:44.469Z"
   },
   {
     "name": "Sisira Senaratne",
@@ -635456,7 +635487,40 @@
     "imageFallbackTriedAt": "2026-10-03T11:30:34.451Z",
     "mbid": "08c7741c-1285-4f84-86fe-7afde5cdb82a",
     "enrichedAt": "2026-10-03T11:53:36.296Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "赵雷",
+        "slug": "赵雷",
+        "match": 1
+      },
+      {
+        "name": "陈粒",
+        "slug": "陈粒",
+        "match": 0.573832
+      },
+      {
+        "name": "许巍",
+        "slug": "许巍",
+        "match": 0.536078
+      },
+      {
+        "name": "郭顶",
+        "slug": "郭顶",
+        "match": 0.455794
+      },
+      {
+        "name": "李荣浩",
+        "slug": "李荣浩",
+        "match": 0.404652
+      },
+      {
+        "name": "逃跑计划",
+        "slug": "逃跑计划",
+        "match": 0.323649
+      }
+    ],
+    "similarEnrichedAt": "2026-10-03T12:03:45.018Z"
   },
   {
     "name": "毛不易",

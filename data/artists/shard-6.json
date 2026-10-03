@@ -201410,7 +201410,50 @@
     "imageSource": "audiodb",
     "imageFallbackTriedAt": "2026-10-03T11:30:36.013Z",
     "enrichedAt": "2026-10-03T11:53:43.930Z",
-    "enrichedBy": "auto"
+    "enrichedBy": "auto",
+    "similarArtists": [
+      {
+        "name": "Royal Blood",
+        "slug": "royal-blood",
+        "match": 0.522609
+      },
+      {
+        "name": "YONAKA",
+        "slug": "yonaka",
+        "match": 0.31554
+      },
+      {
+        "name": "Muse",
+        "slug": "muse",
+        "match": 0.272234
+      },
+      {
+        "name": "PVRIS",
+        "slug": "pvris",
+        "match": 0.238901
+      },
+      {
+        "name": "Biffy Clyro",
+        "slug": "biffy-clyro",
+        "match": 0.225651
+      },
+      {
+        "name": "Circa Waves",
+        "slug": "circa-waves",
+        "match": 0.224877
+      },
+      {
+        "name": "Catfish and the Bottlemen",
+        "slug": "catfish-and-the-bottlemen",
+        "match": 0.209663
+      },
+      {
+        "name": "The Wombats",
+        "slug": "the-wombats",
+        "match": 0.209491
+      }
+    ],
+    "similarEnrichedAt": "2026-10-03T12:03:47.028Z"
   },
   {
     "name": "Nothing Til Blood",

@@ -175414,7 +175414,50 @@
     "wdAliasesTriedAt": "2026-10-03T10:28:06.019Z",
     "mbidBackfillTriedAt": "2026-10-03T10:28:14.180Z",
     "imageFallbackTriedAt": "2026-10-03T11:30:35.232Z",
-    "autoTriedAt": "2026-10-03T11:53:41.221Z"
+    "autoTriedAt": "2026-10-03T11:53:41.221Z",
+    "similarArtists": [
+      {
+        "name": "RAPROJECT SIX",
+        "slug": "raproject-six",
+        "match": 1
+      },
+      {
+        "name": "Jin DC",
+        "slug": "jin-dc",
+        "match": 0.8247
+      },
+      {
+        "name": "Yeng Constantino",
+        "slug": "yeng-constantino",
+        "match": 0.635398
+      },
+      {
+        "name": "Alex Crichton",
+        "slug": "alex-crichton",
+        "match": 0.529775
+      },
+      {
+        "name": "Up Dharma Down",
+        "slug": "up-dharma-down",
+        "match": 0.471387
+      },
+      {
+        "name": "DENȲ",
+        "slug": "deny",
+        "match": 0.460636
+      },
+      {
+        "name": "Gat Putch",
+        "slug": "gat-putch",
+        "match": 0.43845
+      },
+      {
+        "name": "Kyle Raphael",
+        "slug": "kyle-raphael",
+        "match": 0.434218
+      }
+    ],
+    "similarEnrichedAt": "2026-10-03T12:03:45.905Z"
   },
   {
     "name": "Mariam Wafa",
@@ -259458,7 +259501,50 @@
       "vk": null
     },
     "enrichedAt": "2026-10-03T11:53:43.930Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "SadTurs",
+        "slug": "sadturs",
+        "match": 0.931768
+      },
+      {
+        "name": "Glocky",
+        "slug": "glocky",
+        "match": 0.833724
+      },
+      {
+        "name": "Artie 5ive",
+        "slug": "artie-5ive",
+        "match": 0.728459
+      },
+      {
+        "name": "Tony Boy",
+        "slug": "tony-boy",
+        "match": 0.702888
+      },
+      {
+        "name": "Nerissima Serpe",
+        "slug": "nerissima-serpe",
+        "match": 0.63844
+      },
+      {
+        "name": "SIMBA LA RUE",
+        "slug": "simba-la-rue",
+        "match": 0.614275
+      },
+      {
+        "name": "Papa V",
+        "slug": "papa-v",
+        "match": 0.561852
+      },
+      {
+        "name": "NIGHT SKINNY",
+        "slug": "night-skinny",
+        "match": 0.539001
+      }
+    ],
+    "similarEnrichedAt": "2026-10-03T12:03:46.282Z"
   },
   {
     "name": "Melora Creager",
@@ -390409,7 +390495,50 @@
     "enrichedBy": "wikidata-bulk",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/U2%20on%20Joshua%20Tree%20Tour%202017%20Brussels%208-1-17.jpg",
     "imageSource": "wikidata",
-    "imageFallbackTriedAt": "2026-10-03T11:30:35.624Z"
+    "imageFallbackTriedAt": "2026-10-03T11:30:35.624Z",
+    "similarArtists": [
+      {
+        "name": "Passengers",
+        "slug": "passengers",
+        "match": 1
+      },
+      {
+        "name": "Bono",
+        "slug": "bono",
+        "match": 0.833949
+      },
+      {
+        "name": "INXS",
+        "slug": "inxs",
+        "match": 0.396769
+      },
+      {
+        "name": "Simple Minds",
+        "slug": "simple-minds",
+        "match": 0.374816
+      },
+      {
+        "name": "R.E.M.",
+        "slug": "rem",
+        "match": 0.339489
+      },
+      {
+        "name": "Coldplay",
+        "slug": "coldplay",
+        "match": 0.321186
+      },
+      {
+        "name": "Sting",
+        "slug": "sting",
+        "match": 0.290439
+      },
+      {
+        "name": "Bruce Springsteen",
+        "slug": "bruce-springsteen",
+        "match": 0.270882
+      }
+    ],
+    "similarEnrichedAt": "2026-10-03T12:03:46.614Z"
   },
   {
     "name": "UAE Philharmonic Orchestra",

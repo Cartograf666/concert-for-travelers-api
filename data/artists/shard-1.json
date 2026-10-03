@@ -327384,7 +327384,50 @@
       "vk": null
     },
     "enrichedAt": "2026-10-03T11:53:28.413Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "Migos",
+        "slug": "migos",
+        "match": 0.981405
+      },
+      {
+        "name": "Gunna",
+        "slug": "gunna",
+        "match": 0.619291
+      },
+      {
+        "name": "Rich The Kid",
+        "slug": "rich-the-kid",
+        "match": 0.558524
+      },
+      {
+        "name": "Lil Baby",
+        "slug": "lil-baby",
+        "match": 0.49804
+      },
+      {
+        "name": "21 Savage",
+        "slug": "21-savage",
+        "match": 0.490476
+      },
+      {
+        "name": "Roddy Ricch",
+        "slug": "roddy-ricch",
+        "match": 0.445042
+      },
+      {
+        "name": "Metro Boomin",
+        "slug": "metro-boomin",
+        "match": 0.435001
+      },
+      {
+        "name": "Future",
+        "slug": "future",
+        "match": 0.423575
+      }
+    ],
+    "similarEnrichedAt": "2026-10-03T12:03:42.783Z"
   },
   {
     "name": "Quazedelic",
