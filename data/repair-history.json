@@ -24579,5 +24579,61 @@
     "failuresSinceRepair": 0,
     "note": "repair failed: Selector \"eventBlock\" (#boardrows > .row) matched 0 elements.",
     "verification": ""
+  },
+  {
+    "id": "artist-aust",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-aust.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-04T10:39:08.310Z",
+    "previousConfig": {
+      "id": "artist-aust",
+      "domain": "www.austmusic.net",
+      "url": "https://www.austmusic.net/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div[role='listitem']",
+        "artistNameFallback": "Aust",
+        "date": "p.wixui-rich-text__text",
+        "venue": "p.wixui-rich-text__text",
+        "city": "p.wixui-rich-text__text",
+        "country": "p.wixui-rich-text__text",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CH"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.austmusic.net; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://www.austmusic.net/shows but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-partenaire-particulier",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-partenaire-particulier.json",
+    "repairedConfigHash": "2829505019cee26adc5509c1968409ec5e27d1a730a7cbb3c4599172a5327d21",
+    "strategy": "transient",
+    "repairedAt": "2026-10-04T10:39:11.395Z",
+    "previousConfig": {
+      "id": "artist-partenaire-particulier",
+      "domain": "partenaireparticulier.com",
+      "url": "https://partenaireparticulier.com/concerts/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".e-loop-item.concert",
+        "artistNameFallback": "Partenaire Particulier",
+        "date": ".show_date",
+        "venue": ".show_place",
+        "city": ".show_city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "FR"
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay",
+    "verification": "PASS (9 events, 9 checks)"
   }
 ]
