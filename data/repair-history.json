@@ -24635,5 +24635,88 @@
     "failuresSinceRepair": 0,
     "note": "transient: raising maxRetries 2 -> 5 with a politeness delay",
     "verification": "PASS (9 events, 9 checks)"
+  },
+  {
+    "id": "artist-bruce-thomas",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-bruce-thomas.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-04T10:47:13.193Z",
+    "previousConfig": {
+      "id": "artist-bruce-thomas",
+      "domain": "brucethomasmusic.com",
+      "url": "https://brucethomasmusic.com/schedule",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "#calendar tbody .with-events li",
+        "artist": ".event-name",
+        "date": ".calendar-placeholder",
+        "datePattern": "MMM DD",
+        "ticketUrl": ".event_details",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: dates_parse [0/35 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]; artist_names_plausible [35/35 artist values look like page chrome (100%, allow 20%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-jane-mcdonald",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-jane-mcdonald.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-04T10:47:17.943Z",
+    "previousConfig": {
+      "id": "artist-jane-mcdonald",
+      "domain": "jane-mcdonald.com",
+      "url": "https://jane-mcdonald.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour-date-item",
+        "artistNameFallback": "Jane McDonald",
+        "date": ".tour-date-item__date",
+        "ticketUrl": ".tour-date-item__button a",
+        "venue": ".tour-date-item__venue",
+        "city": ".tour-date-item__city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "UK"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://jane-mcdonald.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://jane-mcdonald.com/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-joe-hutton",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-joe-hutton.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-04T10:47:20.910Z",
+    "previousConfig": {
+      "id": "artist-joe-hutton",
+      "domain": "thekingblues.com",
+      "url": "https://thekingblues.com/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.wp-block-the-king-blues-event-item",
+        "artistNameFallback": "The King Blues",
+        "date": "time",
+        "ticketUrl": "div.event-buttons a",
+        "venue": "h4.event-venue",
+        "city": "h4.event-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: has_future_dates [0 event(s) dated today or later]",
+    "verification": ""
   }
 ]
