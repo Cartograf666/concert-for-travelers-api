@@ -24747,5 +24747,87 @@
     "failuresSinceRepair": 0,
     "note": "repair failed: Selector \"eventBlock\" (dl.accordion-menu) matched 0 elements.",
     "verification": ""
+  },
+  {
+    "id": "artist-bruce-thomas",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-bruce-thomas.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-05T11:28:48.597Z",
+    "previousConfig": {
+      "id": "artist-bruce-thomas",
+      "domain": "brucethomasmusic.com",
+      "url": "https://brucethomasmusic.com/schedule",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "#calendar tbody .with-events li",
+        "artist": ".event-name",
+        "date": ".calendar-placeholder",
+        "datePattern": "MMM DD",
+        "ticketUrl": ".event_details",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-jane-mcdonald",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-jane-mcdonald.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-05T11:28:54.395Z",
+    "previousConfig": {
+      "id": "artist-jane-mcdonald",
+      "domain": "jane-mcdonald.com",
+      "url": "https://jane-mcdonald.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour-date-item",
+        "artistNameFallback": "Jane McDonald",
+        "date": ".tour-date-item__date",
+        "ticketUrl": ".tour-date-item__button a",
+        "venue": ".tour-date-item__venue",
+        "city": ".tour-date-item__city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "UK"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://jane-mcdonald.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://jane-mcdonald.com/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "meetfactory-prague",
+    "cohort": "venue",
+    "configPath": "scrapers/meetfactory-prague.json",
+    "repairedConfigHash": "bd0026fa67951c024f0915c791b475d381a08fd2e961957116fd6394f588eb44",
+    "strategy": "transient",
+    "repairedAt": "2026-10-05T11:28:56.353Z",
+    "previousConfig": {
+      "id": "meetfactory-prague",
+      "domain": "www.meetfactory.cz",
+      "url": "https://www.meetfactory.cz/en/program/hudba",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "script[type=\"application/ld+json\"]",
+        "date": "startDate",
+        "venueNameFallback": "MeetFactory",
+        "cityNameFallback": "Prague",
+        "countryNameFallback": "CZ",
+        "lat": 50.0536,
+        "lng": 14.4099
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay",
+    "verification": "PASS (10 events, 11 checks)"
   }
 ]
