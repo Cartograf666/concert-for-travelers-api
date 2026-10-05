@@ -3,6 +3,8 @@
   "domain": "www.meetfactory.cz",
   "url": "https://www.meetfactory.cz/en/program/hudba",
   "type": "custom_js",
+  "maxRetries": 5,
+  "requestDelayMs": 2000,
   "selectors": {
     "eventBlock": "script[type=\"application/ld+json\"]",
     "date": "startDate",
