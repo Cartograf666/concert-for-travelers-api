@@ -24718,5 +24718,34 @@
     "failuresSinceRepair": 0,
     "note": "re-selection rejected by live verification -- FAIL: has_future_dates [0 event(s) dated today or later]",
     "verification": ""
+  },
+  {
+    "id": "artist-psycho-le-cemu",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-psycho-le-cemu.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-05T11:20:27.260Z",
+    "previousConfig": {
+      "id": "artist-psycho-le-cemu",
+      "domain": "psycholecemu.com",
+      "url": "http://psycholecemu.com/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "dl.accordion-menu",
+        "artistNameFallback": "Psycho le Cému",
+        "date": "dt.acHeader h3:nth-of-type(1)",
+        "ticketUrl": "dd.acBody a",
+        "venue": "dt.acHeader h3:nth-of-type(2)",
+        "city": "",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (dl.accordion-menu) matched 0 elements.",
+    "verification": ""
   }
 ]
