@@ -43,9 +43,16 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   Ellen ten Damme and Hubert Laws newly fail. Astrid and Marmalade still return
   HTTP 403 from the hosted environment despite local access. These are actual
   hosted outcomes, not the local recovery projection.
+- PR #192 is merged as `7a2b656`; current CI verifies 718 pass/1 skip, build
+  and lint with zero errors on the exact reviewed code.
 - Alabama 3 and Scotty have current official HTML changes with explicit machine
   dates. Follow-up restores 20/10 future rows, verifies GB/IE and US/CA per row,
   and rejects unknown geography or an empty city instead of publishing a guess.
+- Ellen ten Damme subsequently succeeds over ordinary official HTTP, exposing
+  a real date-quality defect: the old cell glues year and time and shared Dutch
+  parsing accepts only 32/62 dates. A source-specific parser now verifies all
+  62 current upcoming rows, printed years, valid time and known Dutch locations;
+  a new unknown city fails for verification. Hosted confirmation is pending.
 - Provider coverage diagnosis also proves an existing published identity error:
   BIT event 1038425781 is a distinct Montpellier Sum 41 tribute, incorrectly
   assigned the Canadian Pain For Pleasure MBID. The exclusion is bound to that
@@ -59,7 +66,7 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   Code review: harness-native fallback; independent review found and rechecked
   the external purchase-link bypass and empty-city bug. Full CE nested dispatch
   is prohibited by the reviewer role. New network failures stay explicit.
-- Next: merge the reviewed follow-up, run the ordinary hosted artist plus
+- Next: finish Ellen review/merge, run the ordinary hosted artist plus
   automatic daily cycle, and reconcile completed outcomes and public status
   into this existing state/report.
 

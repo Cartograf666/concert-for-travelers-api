@@ -3124,6 +3124,22 @@
       "durableProviderIdentityAndDiagnostics": {
         "pass": 23,
         "fail": 0
+      },
+      "followupHostedCI": {
+        "runId": 37500876439,
+        "headSha": "f0d754cf0cf130b6d12e5b9b8495c15c0d75145e",
+        "total": 719,
+        "pass": 718,
+        "skip": 1,
+        "fail": 0,
+        "build": "pass",
+        "lintErrors": 0,
+        "existingLintWarnings": 103
+      },
+      "ellenTargeted": {
+        "pass": 2,
+        "fail": 0,
+        "includes": "actual62/62, explicit future year, unknown city, missing/invalid date, invalid time, wrong identity and empty table"
       }
     },
     "firstHostedArtistVerification": {
@@ -3159,7 +3175,8 @@
       "state": "implemented_local_hosted_pending",
       "sourceIds": [
         "artist-alabama-3",
-        "artist-scotty-mccreery"
+        "artist-scotty-mccreery",
+        "artist-ellen-ten-damme"
       ],
       "alabama3": {
         "futureRows": 20,
@@ -3174,9 +3191,29 @@
         "proof": "Current official tour page changed to .event with explicit time datetime. Nonempty city precedes final region code; verified US/CA region selects country; unknown region fails."
       },
       "newUnchangedNetworkFailures": [
-        "artist-ellen-ten-damme",
         "artist-hubert-laws"
-      ]
+      ],
+      "ellenTenDamme": {
+        "checkedAt": "2026-10-06T17:12:05Z",
+        "id": "artist-ellen-ten-damme",
+        "sourceUrl": "https://ellentendamme.nl/tour",
+        "previousHosted": "fetch_error ETIMEDOUT in first producer; later self-heal evidence saw 62 raw rows but only 32/62 dates parseable (52%, rejected below 60%)",
+        "diagnosis": "Ordinary official GET HTTP 200, 57694 bytes. 62 table.shows.show-upcoming tr are actual upcoming concert rows, not headers. Each has printed DD DutchMonth YYYY in td.event-field-datetime strong and local HH:MM after br; old whole-cell selector glued year and time. Shared parseDate on exact old field text yields 32/62; Dutch mrt and the glued okt/mei forms account for missing 30.",
+        "implemented": "Source-specific custom parser reads printed date/year and start time, validates calendar date and per-row venue/city, and refuses unverified country rather than applying NL fallback to an unknown future city. Current 60 distinct city names are checked NL; a new city requires verification.",
+        "actualRun": "node --import tsx src/scripts/test_config.ts artist-ellen-ten-damme: OK 62 events extracted, dates 2026-10-09 through 2027-05-29, NL 62; sample Wassenaar 2026-10-09 20:15.",
+        "checks": [
+          "node --import tsx --test tests/remaining_ellen_ten_damme_tour.test.ts 2/2 pass; regression proves old 32/62 versus new 62/62, printed future year, wrong identity, unknown city, missing year, empty table",
+          "npm run build pass",
+          "git diff --check pass"
+        ],
+        "changedFiles": [
+          "scrapers/artists/artist-ellen-ten-damme.json",
+          "src/engine/custom/artist-ellen-ten-damme.ts",
+          "tests/fixtures/remaining_ellen_ten_damme_tour.html",
+          "tests/remaining_ellen_ten_damme_tour.test.ts"
+        ],
+        "remainingLimit": "A newly listed city not in the verified NL set fails until its country is established. No cross-country rows currently appear; no automatic geocoder or broad pipeline change added."
+      }
     },
     "identityFollowup": {
       "state": "implemented_local_hosted_pending",
