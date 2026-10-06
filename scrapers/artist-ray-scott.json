@@ -1,0 +1,17 @@
+{
+  "id": "artist-ray-scott",
+  "domain": "www.rayscott.com",
+  "url": "https://www.rayscott.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-item",
+    "artistNameFallback": "Ray Scott",
+    "date": "div.date",
+    "ticketUrl": "a.ticket-link",
+    "venue": "div.venue",
+    "city": "div.city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

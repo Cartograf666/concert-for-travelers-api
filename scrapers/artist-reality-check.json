@@ -1,0 +1,17 @@
+{
+  "id": "artist-reality-check",
+  "domain": "therealitycheckexperiment.com",
+  "url": "https://therealitycheckexperiment.com/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-item",
+    "artistNameFallback": "The Reality Check Experiment",
+    "date": ".event-date-block",
+    "ticketUrl": ".event-links a",
+    "venue": ".event-venue",
+    "city": ".event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

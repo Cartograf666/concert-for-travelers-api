@@ -1,0 +1,17 @@
+{
+  "id": "artist-ray-davies",
+  "domain": "www.raydavies.info",
+  "url": "https://www.raydavies.info/live",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event",
+    "artistNameFallback": "Ray Davies",
+    "date": "div.event-date",
+    "ticketUrl": "a.event-tickets",
+    "venue": "div.event-venue",
+    "city": "div.event-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}
