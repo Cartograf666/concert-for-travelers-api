@@ -11,6 +11,60 @@ each concert in space and time, and (3) **rank** the options.
 
 Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
+## All-branch integration and source recovery — 2026-10-06 (in progress)
+
+- Alex explicitly requested integrating all remaining branch work into main and
+  repairing all sources. The implementation is isolated in
+  `codex/all-sources-recovery-20261006`, based on main `b81dd86`; the original
+  checkout contains independent uncommitted backlog work.
+- The HU's missing canonical identity is added through `artistDb`. The recovered
+  historical Dublin duplicate preference is retained, while the old branch's
+  frozen ten-observation gate is superseded by ordinary canonical matching for
+  future shows. Replaying the actual October 6 venue/Ticketmaster caches yields
+  five correctly attributed shows from six observations; future-show and legacy
+  cache regressions pass. The three unique rejected-repair observations from
+  PR #161 are preserved in chronological order, without replaying stale configs.
+- Dependency changes from PRs #121-125 and #168 are consolidated. Four high
+  transitive advisories are fixed with compatible resolutions, without overrides.
+  The first combined build exposed mismatched AI SDK provider types; the lockfile
+  now aligns Google and AI packages on one provider version. Reinstall, build and
+  the zero-vulnerability audit pass.
+- Ticketmaster now recursively splits crowded future date windows, overlaps
+  boundaries and deduplicates by provider event ID. Malformed, truncated and
+  failed passes retain previous country caches and verification timestamps.
+  The request budget and unresolved dense-window limit remain explicit in health.
+  Nineteen mocked connector regressions pass, including malformed event rows,
+  last-good cache preservation, valid TBA dates and truly empty countries; a
+  hosted sweep is still pending.
+- Source repairs use current official HTML or feeds observed in official widgets.
+  Explicit empty notices are required for the newly repaired empty HTML pages;
+  changed layouts remain failures. Browser extraction can wait for a visible
+  loaded calendar and then use a source-specific parser under the same network
+  policy. Sangsangmadang live extraction confirms OurR on October 11.
+  Barby now captures the ordinary page's own public JSON response under the same
+  browser network policy: 66 future events retain explicit years.
+- The Bassnectar, L. Subramaniam and Legs Diamond parsers now read printed years
+  correctly; their currently observed schedules are archives, with zero events
+  publishable on October 6. This is parser recovery, not new concert coverage.
+- The source-by-source evidence is in `docs/source-recovery-20261006.json`:
+  26 sources now return future shows, 19 have a verified current empty schedule,
+  and three are parsed archives with no future publication. The other 49 remain
+  external access, incomplete evidence or identity/source-binding gaps. Observed
+  iframe emptiness alone is not runner recovery. Eventbrite access remains blocked;
+  no account token or supported cross-organizer search API is available here.
+- Combined verification: 693 tests pass, one remains skipped; build passes;
+  ESLint reports zero errors and 103 warnings. The production SSRF check passes,
+  artist integrity is 144 errors against the unchanged 152 baseline, and city/venue
+  duplicate selectors are 126 against 131. Independent review found incomplete Emancipator feeds, hidden empty notices
+  and stale empty-cache hashes; all three are fixed and regression-checked.
+  Rendered empty notices use computed browser visibility; static pages reject
+  hidden/aria-hidden and inline-hidden notices. Merge and a hosted artist/daily
+  publication cycle remain pending. All 18 outstanding remote heads are
+  integrated after content audit; local Hue & Cry is patch-equivalent and its
+  ancestry is included separately. No unique local committed patch remains. External blocks and invalid
+  source bindings remain visible; no blanket empty flag, guessed year/location,
+  disabled security rule or fabricated historical fixture is used to hide them.
+
 ## Collector release verified; location recovery — 2026-09-27
 
 - ✅ PRs #141, #142 and #143 are merged into main (`c021403`, `51d401a`,

@@ -284,7 +284,7 @@ test('custom/kitty-su-bangalore.ts', async (t) => {
           </div>
           <div class="event-list-text">
             <h3>Girish and The Chronicles | Bangalore</h3>
-            <p>Bangalore | India | 12 July - 13 July | 08:30 PM</p>
+            <p>Bangalore | India | 12 July 2026 - 13 July 2026 | 08:30 PM</p>
           </div>
         </li>
         <li>
@@ -301,6 +301,12 @@ test('custom/kitty-su-bangalore.ts', async (t) => {
     assert.strictEqual(result[0].artist, 'Girish and The Chronicles');
     assert.match(result[0].date || '', /^12 July/);
     assert.strictEqual(result[0].ticketUrl, 'https://www.kittysu.com/event-slug');
+  });
+
+  await t.test('rejects a yearless event instead of inventing its year', async () => {
+    const html = '<ul class="event-list"><li><div class="event-list-text"><h3>Girish | Bangalore</h3><p>Bangalore | India | 12 July | 08:30 PM</p></div></li></ul>';
+    const config = dummyConfig('kitty-su', 'www.kittysu.com', 'https://www.kittysu.com/bangalore');
+    assert.deepEqual(await kittySuScrape(config, html, scrapedAt), []);
   });
 
   await t.test('edge case - malformed pText split', async () => {

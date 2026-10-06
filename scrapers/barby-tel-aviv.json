@@ -1,7 +1,7 @@
 {
   "id": "barby-tel-aviv",
   "domain": "barby.co.il",
-  "url": "https://www.barby.co.il/show/history",
+  "url": "https://barby.co.il/",
   "type": "playwright_render",
   "selectors": {
     "eventBlock": "div.col-lg-3",
@@ -12,5 +12,8 @@
     "countryNameFallback": "IL",
     "lat": 32.0633,
     "lng": 34.7697
-  }
+  },
+  "renderWaitSelector": "#show-cards .card-show-title-home",
+  "renderParser": "custom_js",
+  "renderResponseUrl": "https://barby.co.il/api/shows/find"
 }

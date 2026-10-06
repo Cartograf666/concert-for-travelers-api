@@ -1,72 +1,79 @@
-import * as cheerio from 'cheerio';
 import type { ScraperConfig } from '../../schemas/config.js';
 import type { Concert } from '../../schemas/concert.js';
-import { safeAbsoluteUrl } from '../url.js';
 
-// Codes observed on the current official schedule. Keeping this evidence-bounded
-// avoids treating an unfamiliar two-letter suffix as either a US subdivision or
-// an ISO country when those namespaces collide (for example CA and DE).
-const CURRENT_US_REGIONS = new Set(['MO', 'MA', 'NY', 'PA', 'OR', 'WA', 'CA', 'GA', 'TN', 'NC']);
-const CURRENT_CA_REGIONS = new Set(['BC']);
-const MONTHS: Record<string, number> = {
-  Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
-  Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11
+const TOUR_ID = '0410bcb7-a835-464c-b3ef-d7855c3ecbdc';
+const OBSERVED_US_REGIONS = new Set(['MA', 'NY', 'PA', 'OR', 'WA', 'CA', 'GA', 'TN', 'NC']);
+const OBSERVED_CA_REGIONS = new Set(['BC']);
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+type TourEvent = {
+  id?: unknown;
+  type?: unknown;
+  attributes?: Record<string, unknown>;
 };
 
-function clean(value: string): string {
-  return value.replace(/\s+/g, ' ').trim();
-}
+type TourResponse = {
+  data?: {
+    id?: unknown;
+    attributes?: { name?: unknown };
+    relationships?: { 'tour-events'?: { data?: Array<{ id?: unknown; type?: unknown }> } };
+  };
+  included?: TourEvent[];
+};
 
-function parseLocation(value: string): { city: string; country: 'US' | 'CA' } | null {
-  const match = clean(value).match(/^(.+?),\s*([A-Z]{2})$/);
-  if (!match) return null;
-  const city = clean(match[1]);
-  if (!city) return null;
-  if (CURRENT_US_REGIONS.has(match[2])) return { city, country: 'US' };
-  if (CURRENT_CA_REGIONS.has(match[2])) return { city, country: 'CA' };
-  return null;
-}
-
-/**
- * The generic date parser interprets a just-ended yearless range such as
- * "Sep 24 - Sep 26" as next year. GigPress leaves that range visible briefly,
- * so suppress only the unambiguous same-month range whose end is already past.
- */
-function isExpiredSameMonthRange(value: string, scrapedAt: string): boolean {
-  const match = clean(value).match(/^([A-Z][a-z]{2})\s+\d{1,2}\s*-\s*\1\s+(\d{1,2})$/);
-  if (!match || MONTHS[match[1]] === undefined) return false;
-  const scraped = new Date(scrapedAt);
-  if (Number.isNaN(scraped.getTime())) return false;
-  const end = new Date(Date.UTC(scraped.getUTCFullYear(), MONTHS[match[1]], Number(match[2]), 23, 59, 59));
-  const ageMs = scraped.getTime() - end.getTime();
-  // Mirror the pipeline's 31-day yearless-date grace boundary. An older month
-  // belongs to the next tour year; only a range that has just ended is stale.
-  return ageMs > 0 && ageMs <= 31 * 24 * 60 * 60 * 1000;
-}
-
-export async function scrape(config: ScraperConfig, html: string, scrapedAt: string): Promise<Partial<Concert>[]> {
-  const $ = cheerio.load(html);
+export async function scrape(config: ScraperConfig, body: string, scrapedAt: string): Promise<Partial<Concert>[]> {
+  const tour = JSON.parse(body) as TourResponse;
+  if (tour.data?.id !== TOUR_ID || tour.data.attributes?.name !== 'Emancipator' || !Array.isArray(tour.included)) {
+    throw new Error('Emancipator official Seated tour identity or event list changed');
+  }
+  const relationships = tour.data.relationships?.['tour-events']?.data;
+  if (!Array.isArray(relationships)) {
+    throw new Error('Emancipator official Seated tour-event relationships are missing');
+  }
+  const referenced = new Set<string>();
+  for (const item of relationships) {
+    if (item?.type !== 'tour-events' || typeof item.id !== 'string' || !UUID.test(item.id) || referenced.has(item.id)) {
+      throw new Error('Emancipator official Seated tour-event relationship is invalid or duplicated');
+    }
+    referenced.add(item.id);
+  }
+  if (!referenced.size) return [];
+  const included = new Map<string, TourEvent>();
+  for (const event of tour.included) {
+    if (event?.type !== 'tour-events' || typeof event.id !== 'string' || !referenced.has(event.id)) continue;
+    if (included.has(event.id)) throw new Error(`Emancipator official Seated tour-event ${event.id} is duplicated`);
+    included.set(event.id, event);
+  }
   const concerts: Partial<Concert>[] = [];
-
-  $('table.gigpress-table.upcoming tr.gigpress-row').each((_, element) => {
-    const block = $(element);
-    const date = clean(block.find('.gigpress-date').first().text());
-    const venue = clean(block.find('.gigpress-venue').first().text());
-    const location = parseLocation(block.find('.gigpress-city').first().text());
-    if (!date || !venue || !location || isExpiredSameMonthRange(date, scrapedAt)) return;
-
-    const href = block.find('a.gigpress-tickets-link').first().attr('href');
+  for (const id of referenced) {
+    const event = included.get(id);
+    if (!event) throw new Error(`Emancipator official Seated tour-event ${id} is missing`);
+    const attributes = event.attributes || {};
+    const date = attributes['starts-at-date-local'];
+    if (typeof date !== 'string' || !/^20\d{2}-\d{2}-\d{2}$/.test(date)) {
+      throw new Error(`Emancipator official Seated tour-event ${id} has an invalid date`);
+    }
+    const parsed = new Date(`${date}T00:00:00Z`);
+    if (Number.isNaN(parsed.getTime()) || parsed.toISOString().slice(0, 10) !== date) {
+      throw new Error(`Emancipator official Seated tour-event ${id} has an invalid date`);
+    }
+    // A fully validated past date is the only referenced event excluded from today's feed.
+    if (date < scrapedAt.slice(0, 10)) continue;
+    const venue = attributes['venue-name'];
+    const location = typeof attributes['formatted-address'] === 'string'
+      ? attributes['formatted-address'].trim().match(/^(.+?),\s*([A-Z]{2})$/) : null;
+    if (typeof venue !== 'string' || !venue.trim() || !location || !location[1].trim()) {
+      throw new Error(`Emancipator official Seated tour-event ${id} has an invalid venue or location`);
+    }
+    const country = OBSERVED_CA_REGIONS.has(location[2]) ? 'CA' : OBSERVED_US_REGIONS.has(location[2]) ? 'US' : undefined;
+    if (!country) throw new Error(`Emancipator official Seated tour-event ${id} has an unrecognized country or region`);
     concerts.push({
-      artist: config.selectors?.artistNameFallback || 'Emancipator',
-      date,
-      venue,
-      city: location.city,
-      country: location.country,
-      ticketUrl: href ? safeAbsoluteUrl(href, config.url) : undefined,
-      originalSource: config.domain,
-      scrapedAt
+      artist: config.selectors?.artistNameFallback || 'Emancipator', date,
+      venue: venue.trim(), city: location[1].trim(), country,
+      // All twelve current links were observed in the artist's rendered Seated widget.
+      ticketUrl: `https://link.seated.com/${id}`,
+      originalSource: config.domain, scrapedAt
     });
-  });
-
-  return concerts;
+  }
+  return concerts.sort((a, b) => String(a.date).localeCompare(String(b.date)));
 }

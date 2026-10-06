@@ -2,14 +2,13 @@
   "id": "artist-bassnectar",
   "domain": "bassnectar.net",
   "url": "https://bassnectar.net/shows/",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".bn-show-show-row",
     "artistNameFallback": "Bassnectar",
     "date": ".bn-show-date-inline",
-    "ticketUrl": "self::a/@href",
+    "ticketUrl": "a[href]",
     "venue": ".bn-show-venue",
-    "city": ".bn-show-venue",
     "venueNameFallback": "",
     "cityNameFallback": "",
     "countryNameFallback": "US"

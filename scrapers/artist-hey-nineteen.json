@@ -1,8 +1,8 @@
 {
   "id": "artist-hey-nineteen",
   "domain": "www.hey19band.com",
-  "url": "http://www.hey19band.com/fans",
-  "type": "static_selectors",
+  "url": "https://rest.bandsintown.com/artists/id_6478037/events?app_id=js_www.hey19band.com&date=upcoming",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".gigpress-row",
     "artistNameFallback": "Hey Nineteen",

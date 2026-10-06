@@ -6,10 +6,10 @@
   "selectors": {
     "eventBlock": "main ul > li",
     "artistNameFallback": "Anna Depenbusch",
-    "date": "span:nth-child(1)",
-    "ticketUrl": "a.bg-(--anna-highlight)",
-    "venue": "div.space-y-0.5 > div.text-sm.text-gray-500",
-    "city": "div.space-y-0.5 > span.font-semibold",
+    "date": "span.text-sm.font-medium",
+    "ticketUrl": "a[href]",
+    "venue": "div > div.text-sm.text-gray-500",
+    "city": "div > span.font-semibold",
     "venueNameFallback": "",
     "cityNameFallback": "",
     "countryNameFallback": "DE"

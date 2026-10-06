@@ -4,7 +4,7 @@
   "url": "https://astridwilliamson.com/live/",
   "type": "static_selectors",
   "selectors": {
-    "eventBlock": ".listingswrap .lentry",
+    "eventBlock": ".post-textwrap:has(h4:contains(\"Upcoming Shows\")) .lentry",
     "artistNameFallback": "Astrid Williamson",
     "date": "#date",
     "venue": "#venue",
@@ -13,5 +13,7 @@
     "venueNameFallback": "",
     "cityNameFallback": "",
     "countryNameFallback": "GB"
-  }
+  },
+  "allowEmpty": true,
+  "emptyScheduleText": "There are currently no upcoming events to list, please check back soon."
 }

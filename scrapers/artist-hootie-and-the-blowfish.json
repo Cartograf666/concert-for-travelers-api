@@ -1,17 +1,19 @@
 {
   "id": "artist-hootie-and-the-blowfish",
   "domain": "www.hootie.com",
-  "url": "https://www.hootie.com/tour",
-  "type": "static_selectors",
+  "url": "https://rest.bandsintown.com/artists/id_3749/events?app_id=js_www.hootie.com&date=upcoming",
+  "type": "custom_js",
+  "requestDelayMs": 1100,
+  "allowEmpty": true,
   "selectors": {
-    "eventBlock": ".tour-date-row",
+    "eventBlock": ".bit-event",
     "artistNameFallback": "Hootie & The Blowfish",
-    "date": ".tour-date-row .date",
-    "ticketUrl": ".tour-date-row .button.tickets",
-    "venue": ".tour-date-row .venue-name",
-    "city": ".tour-date-row .city-state",
+    "date": ".bit-mobile-date",
+    "ticketUrl": ".bit-offers::attr(href)",
+    "venue": ".bit-venue-vertical",
+    "city": ".bit-location-under-desktop",
     "venueNameFallback": "",
     "cityNameFallback": "",
-    "countryNameFallback": "US"
+    "countryNameFallback": "ZZ"
   }
 }

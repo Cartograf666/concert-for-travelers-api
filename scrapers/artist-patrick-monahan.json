@@ -1,11 +1,11 @@
 {
   "id": "artist-patrick-monahan",
-  "domain": "www.patmonahan.com",
-  "url": "https://www.patmonahan.com/tour-dates/",
-  "type": "static_selectors",
+  "domain": "savemesanfrancisco.com",
+  "url": "https://cdn.seated.com/api/tour/b116c51e-7bc6-4c38-9ed5-c375196a7ec3?include=tour-events",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".tour_date",
-    "artistNameFallback": "Patrick Monahan",
+    "artistNameFallback": "Train",
     "date": ".tour_date_date",
     "ticketUrl": ".tour_date_tickets a",
     "venue": ".tour_date_venue",

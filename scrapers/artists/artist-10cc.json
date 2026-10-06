@@ -2,7 +2,7 @@
   "id": "artist-10cc",
   "domain": "www.10cc.world",
   "url": "https://www.10cc.world/events",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "table.table tbody tr.row:not(:has(th))",
     "artistNameFallback": "10cc",

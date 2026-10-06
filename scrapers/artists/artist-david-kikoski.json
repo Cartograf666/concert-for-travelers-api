@@ -1,8 +1,8 @@
 {
   "id": "artist-david-kikoski",
-  "domain": "davekikoski.com",
-  "url": "https://davekikoski.com/events/",
-  "type": "static_selectors",
+  "domain": "www.davidkikoski.com",
+  "url": "https://www.davidkikoski.com/events",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".tribe-events-calendar-latest-past__event-row",
     "artistNameFallback": "David Kikoski",

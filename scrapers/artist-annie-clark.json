@@ -1,8 +1,8 @@
 {
   "id": "artist-annie-clark",
   "domain": "ilovestvincent.com",
-  "url": "https://ilovestvincent.com/tour",
-  "type": "static_selectors",
+  "url": "https://rest.bandsintown.com/V3.1/artists/st.%20Vincent/events/?app_id=js_ilovestvincent.com",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".tour-item",
     "artistNameFallback": "St. Vincent",

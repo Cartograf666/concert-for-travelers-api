@@ -23800,6 +23800,89 @@
     "verification": ""
   },
   {
+    "id": "artist-jorge-palma",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-jorge-palma.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-09-28T04:16:00.428Z",
+    "previousConfig": {
+      "id": "artist-jorge-palma",
+      "domain": "jorgepalma.pt",
+      "url": "https://jorgepalma.pt/espetaculos/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-item",
+        "artistNameFallback": "Jorge Palma",
+        "date": "p.event-date",
+        "ticketUrl": "a.tickets-button",
+        "city": "p.event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "PT"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://jorgepalma.pt; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
+    "verification": ""
+  },
+  {
+    "id": "kitty-su-bangalore",
+    "cohort": "venue",
+    "configPath": "scrapers/kitty-su-bangalore.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-09-28T04:16:00.530Z",
+    "previousConfig": {
+      "id": "kitty-su-bangalore",
+      "domain": "kittysu.com",
+      "url": "https://www.kittysu.com/events",
+      "type": "custom_js",
+      "requestDelayMs": 500,
+      "selectors": {
+        "eventBlock": "li",
+        "artist": "h3",
+        "date": "p",
+        "venueNameFallback": "Kitty Su",
+        "cityNameFallback": "Bangalore",
+        "countryNameFallback": "IN",
+        "lat": 12.9716,
+        "lng": 77.5946
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper kitty-su-bangalore is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-joan-jett-and-the-blackhearts",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-joan-jett-and-the-blackhearts.json",
+    "strategy": "transient",
+    "repairedAt": "2026-09-28T04:16:09.771Z",
+    "previousConfig": {
+      "id": "artist-joan-jett-and-the-blackhearts",
+      "domain": "www.joanjett.com",
+      "url": "https://www.joanjett.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.show-item",
+        "artistNameFallback": "Joan Jett and The Blackhearts",
+        "date": "div.show-date",
+        "ticketUrl": "a.tickets-link",
+        "venue": "div.show-venue",
+        "city": "div.show-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.joanjett.com/tour but could not re-select on it",
+    "verification": ""
+  },
+  {
     "id": "kitty-su-bangalore",
     "cohort": "venue",
     "configPath": "scrapers/kitty-su-bangalore.json",

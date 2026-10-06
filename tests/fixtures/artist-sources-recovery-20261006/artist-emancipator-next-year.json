@@ -1,0 +1,49 @@
+{
+  "data": {
+    "attributes": {
+      "image-url": "https://image.seated.com/cdd3b0d6-f8f0-4bba-9d44-8c8f5efd70c9/Emancipator.jpeg",
+      "is-widget-follow-button-enabled": false,
+      "name": "Emancipator"
+    },
+    "id": "0410bcb7-a835-464c-b3ef-d7855c3ecbdc",
+    "relationships": {
+      "tour-events": {
+        "data": [
+          {
+            "id": "8b645a4b-0126-461f-b551-81fe61ba3c39",
+            "type": "tour-events"
+          }
+        ]
+      }
+    },
+    "type": "tours"
+  },
+  "included": [
+    {
+      "attributes": {
+        "details": null,
+        "ends-at": null,
+        "ends-at-date-local": "2026-11-05",
+        "ends-at-short": "Nov 5, 2026",
+        "exchange-listing-url": null,
+        "formatted-address": "Somerville, MA",
+        "has-vip": false,
+        "is-collecting-waitlist": true,
+        "is-sold-out": false,
+        "is-starts-at-known": true,
+        "on-sale-date-name": "Tickets",
+        "promoted-on-sale-date-name": null,
+        "starts-at": "2026-11-06T01:00:00Z",
+        "starts-at-date-local": "2027-01-02",
+        "starts-at-short": "Nov 5, 2026",
+        "venue-name": "Crystal Ballroom at Somerville Theatre",
+        "vip-link-url": null
+      },
+      "id": "8b645a4b-0126-461f-b551-81fe61ba3c39",
+      "type": "tour-events"
+    }
+  ],
+  "jsonapi": {
+    "version": "1.0"
+  }
+}

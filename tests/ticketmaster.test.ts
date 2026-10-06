@@ -144,13 +144,14 @@ test('Ticketmaster - fetchTicketmasterConcerts paginates within a country and st
   const PORT = 8341;
   const server = await startMockDiscoveryServer(PORT, {
     DE: [
-      [{ name: 'Show A', dates: { start: { localDate: '2026-09-01' } }, _embedded: { venues: [{ name: 'V1', city: { name: 'Berlin' }, country: { countryCode: 'DE' } }], attractions: [{ name: 'Artist A' }] } }],
-      [{ name: 'Show B', dates: { start: { localDate: '2026-09-02' } }, _embedded: { venues: [{ name: 'V2', city: { name: 'Berlin' }, country: { countryCode: 'DE' } }], attractions: [{ name: 'Artist B' }] } }]
+      Array.from({ length: 200 }, (_, index) => ({ id: `a-${index}`, name: 'Show A', dates: { start: { localDate: '2026-09-01' } }, _embedded: { venues: [{ name: 'V1', city: { name: 'Berlin' }, country: { countryCode: 'DE' } }], attractions: [{ name: 'Artist A' }] } })),
+      [{ id: 'b-0', name: 'Show B', dates: { start: { localDate: '2026-09-02' } }, _embedded: { venues: [{ name: 'V2', city: { name: 'Berlin' }, country: { countryCode: 'DE' } }], attractions: [{ name: 'Artist B' }] } }]
     ]
   });
   const concerts = await fetchTicketmasterConcerts('fake-key', ['DE'], `http://localhost:${PORT}/events.json`);
-  assert.strictEqual(concerts.length, 2);
-  assert.deepStrictEqual(concerts.map((c) => c.artist), ['Artist A', 'Artist B']);
+  assert.strictEqual(concerts.length, 201);
+  assert.equal(concerts[0].artist, 'Artist A');
+  assert.equal(concerts.at(-1)?.artist, 'Artist B');
   await new Promise<void>((r) => server.close(() => r()));
 });
 
@@ -167,6 +168,29 @@ test('Ticketmaster - fetchTicketmasterConcerts stops the whole sweep on a 401/40
   await new Promise<void>((r) => server.close(() => r()));
 });
 
+test('Ticketmaster - rate limit halts remaining countries and uses their caches', async () => {
+  const PORT = 8348;
+  let requests = 0;
+  const server = createServer((_req, res) => {
+    requests++;
+    res.writeHead(429);
+    res.end('rate limited');
+  });
+  await new Promise<void>((resolve) => server.listen(PORT, resolve));
+  const cache: TicketmasterCache = {
+    DE: { fetchedAt: '2025-01-01T00:00:00.000Z', concerts: [{ artist: 'Cached DE' }] },
+    FR: { fetchedAt: '2025-01-01T00:00:00.000Z', concerts: [{ artist: 'Cached FR' }] }
+  };
+  let health: any;
+  const concerts = await fetchTicketmasterConcerts('fake-key', ['DE', 'FR'], `http://localhost:${PORT}/events.json`, cache,
+    (report) => { health = report; });
+  assert.equal(requests, 1);
+  assert.deepStrictEqual(concerts.map((concert) => concert.artist), ['Cached DE', 'Cached FR']);
+  assert.equal(health.halted.category, 'rate_limited');
+  assert.equal(health.counts.cacheFallbacks, 2);
+  await new Promise<void>((resolve) => server.close(resolve));
+});
+
 test('Ticketmaster - a country that fails falls back to its cached results instead of contributing nothing', async () => {
   const PORT = 8343;
   // DE always 500s; FR succeeds normally.
@@ -179,7 +203,7 @@ test('Ticketmaster - a country that fails falls back to its cached results inste
     }
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({
-      _embedded: { events: [{ name: 'Fresh FR Show', dates: { start: { localDate: '2026-09-05' } }, _embedded: { venues: [{ name: 'V3', city: { name: 'Paris' }, country: { countryCode: 'FR' } }], attractions: [{ name: 'Fresh Artist' }] } }] },
+      _embedded: { events: [{ id: 'fr-0', name: 'Fresh FR Show', dates: { start: { localDate: '2026-09-05' } }, _embedded: { venues: [{ name: 'V3', city: { name: 'Paris' }, country: { countryCode: 'FR' } }], attractions: [{ name: 'Fresh Artist' }] } }] },
       page: { size: 200, totalElements: 1, totalPages: 1, number: 0 }
     }));
   });
@@ -223,11 +247,11 @@ test('Ticketmaster - a country failing after page one is reported as partial', a
     }
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({
-      _embedded: { events: [{
-        name: 'Partial Show', dates: { start: { localDate: '2026-09-05' } },
+      _embedded: { events: Array.from({ length: 200 }, (_, index) => ({
+        id: `partial-${index}`, name: 'Partial Show', dates: { start: { localDate: '2026-09-05' } },
         _embedded: { venues: [{ name: 'V', city: { name: 'Berlin' }, country: { countryCode: 'DE' } }] }
-      }] },
-      page: { totalPages: 2, number: 0 }
+      })) },
+      page: { size: 200, totalElements: 201, totalPages: 2, number: 0 }
     }));
   });
   await new Promise<void>((resolve) => server.listen(PORT, resolve));
@@ -237,7 +261,7 @@ test('Ticketmaster - a country failing after page one is reported as partial', a
     'fake-key', ['DE'], `http://localhost:${PORT}/events.json`, {},
     (report) => { health = report; }
   );
-  assert.equal(concerts.length, 1, 'preserve the existing partial-output behavior');
+  assert.equal(concerts.length, 200, 'preserve partial output without a cache');
   assert.equal(health.counts.failed, 1);
   assert.equal(health.counts.partial, 1);
   assert.equal(health.counts.cacheFallbacks, 0);
@@ -245,36 +269,233 @@ test('Ticketmaster - a country failing after page one is reported as partial', a
   await new Promise<void>((resolve) => server.close(resolve));
 });
 
-test('Ticketmaster - API deep-pagination ceiling is explicit incomplete coverage', async () => {
+test('Ticketmaster - splits more than 1000 future events and deduplicates the overlap by event ID', async () => {
   const PORT = 8345;
-  const event = (page: number) => ({
-    name: `Show ${page}`,
-    dates: { start: { localDate: '2026-09-05' } },
-    _embedded: { venues: [{ name: 'V', city: { name: 'Berlin' }, country: { countryCode: 'DE' } }] }
-  });
+  let events: Array<any> = [];
+  let splitRequests = 0;
   const server = createServer((req, res) => {
     const url = new URL(req.url || '', `http://localhost:${PORT}`);
+    const start = url.searchParams.get('startDateTime')!;
+    const end = url.searchParams.get('endDateTime');
+    if (events.length === 0) {
+      const base = Date.parse(start);
+      events = Array.from({ length: 1201 }, (_, index) => {
+        const instant = new Date(base + (index + 1) * 24 * 60 * 60 * 1000).toISOString();
+        return {
+          id: `event-${index}`,
+          instant,
+          name: `Show ${index}`,
+          url: `https://ticketmaster.example/event/${index}`,
+          dates: { start: { localDate: instant.slice(0, 10) } },
+          _embedded: { venues: [{ name: 'V', city: { name: 'Berlin' }, country: { countryCode: 'DE' } }] }
+        };
+      });
+    }
+    if (end) splitRequests++;
+    const matches = events.filter((event) => event.instant >= start && (!end || event.instant <= end));
     const page = Number(url.searchParams.get('page') || 0);
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({
-      _embedded: { events: [event(page)] },
-      page: { totalPages: 6, number: page }
+      _embedded: { events: matches.slice(page * 200, (page + 1) * 200) },
+      page: { size: 200, totalElements: matches.length, totalPages: Math.ceil(matches.length / 200), number: page }
     }));
   });
   await new Promise<void>((resolve) => server.listen(PORT, resolve));
 
   let health: any;
-  const cache: TicketmasterCache = {
-    DE: { fetchedAt: '2025-01-01T00:00:00.000Z', verifiedAt: '2025-01-01T00:00:00.000Z', concerts: [] }
-  };
-  await fetchTicketmasterConcerts(
+  const cache: TicketmasterCache = {};
+  const concerts = await fetchTicketmasterConcerts(
     'fake-key', ['DE'], `http://localhost:${PORT}/events.json`, cache,
     (report) => { health = report; }
   );
-  assert.equal(health.counts.succeeded, 1, 'responses succeeded even though coverage is capped');
+  assert.ok(splitRequests > 0, 'dense country was split into date windows');
+  assert.equal(concerts.length, 1201);
+  assert.equal(new Set(concerts.map((event) => event.ticketUrl)).size, 1201);
+  assert.equal(health.counts.succeeded, 1);
+  assert.equal(health.counts.partial, 0);
+  assert.equal(health.completeness, 'complete');
+  assert.equal(cache.DE.concerts.length, 1201);
+  assert.ok(cache.DE.verifiedAt);
+  await new Promise<void>((resolve) => server.close(resolve));
+});
+
+test('Ticketmaster - incomplete split keeps last-good cache and verification time', async () => {
+  const PORT = 8346;
+  const server = createServer((req, res) => {
+    const url = new URL(req.url || '', `http://localhost:${PORT}`);
+    const page = Number(url.searchParams.get('page') || 0);
+    if (url.searchParams.has('endDateTime') && page === 1) {
+      res.writeHead(500);
+      res.end('server error');
+      return;
+    }
+    const start = Date.parse(url.searchParams.get('startDateTime')!);
+    const end = url.searchParams.get('endDateTime');
+    const count = end ? 600 : 1201;
+    const events = Array.from({ length: Math.min(200, count - page * 200) }, (_, index) => ({
+      id: `event-${start}-${page * 200 + index}`,
+      name: 'Fresh partial', dates: { start: { localDate: new Date(start + 86400000).toISOString().slice(0, 10) } },
+      _embedded: { venues: [{ name: 'V', city: { name: 'Berlin' }, country: { countryCode: 'DE' } }] }
+    }));
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ _embedded: { events }, page: { size: 200, totalElements: count, totalPages: Math.ceil(count / 200), number: page } }));
+  });
+  await new Promise<void>((resolve) => server.listen(PORT, resolve));
+  const previous = {
+    fetchedAt: '2025-01-01T00:00:00.000Z', verifiedAt: '2025-01-01T00:00:00.000Z',
+    concerts: [{ artist: 'Last good', date: '2027-01-01', venue: 'V', city: 'Berlin', country: 'DE' }]
+  };
+  const cache: TicketmasterCache = { DE: structuredClone(previous) };
+  let health: any;
+  const concerts = await fetchTicketmasterConcerts('fake-key', ['DE'], `http://localhost:${PORT}/events.json`, cache,
+    (report) => { health = report; });
+  assert.deepStrictEqual(cache.DE, previous);
+  assert.deepStrictEqual(concerts, previous.concerts);
+  assert.equal(health.counts.cacheFallbacks, 1);
+  assert.equal(health.completeness, 'partial');
+  await new Promise<void>((resolve) => server.close(resolve));
+});
+
+test('Ticketmaster - malformed 200 and short or drifting pages preserve last-good cache', async () => {
+  const PORT = 8349;
+  let mode: 'missing_metadata' | 'short_last_page' | 'drifting_total' = 'missing_metadata';
+  const rawEvent = (id: string) => ({
+    id, name: 'Fresh', dates: { start: { localDate: '2027-09-05' } },
+    _embedded: { venues: [{ name: 'V', city: { name: 'Berlin' }, country: { countryCode: 'DE' } }] }
+  });
+  const server = createServer((req, res) => {
+    const page = Number(new URL(req.url || '', `http://localhost:${PORT}`).searchParams.get('page') || 0);
+    const events = page === 0 ? Array.from({ length: 200 }, (_, index) => rawEvent(`fresh-${index}`)) :
+      mode === 'short_last_page' ? [] : [rawEvent('fresh-last'), rawEvent('extra')];
+    const metadata = mode === 'missing_metadata' ? undefined : {
+      size: 200, totalElements: mode === 'drifting_total' && page === 1 ? 202 : 201,
+      totalPages: 2, number: page
+    };
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ _embedded: { events }, page: metadata }));
+  });
+  await new Promise<void>((resolve) => server.listen(PORT, resolve));
+  for (const nextMode of ['missing_metadata', 'short_last_page', 'drifting_total'] as const) {
+    mode = nextMode;
+    const previous = {
+      fetchedAt: '2025-01-01T00:00:00.000Z', verifiedAt: '2025-01-01T00:00:00.000Z',
+      concerts: [{ artist: 'Last good', date: '2027-01-01', venue: 'V', city: 'Berlin', country: 'DE' }]
+    };
+    const cache: TicketmasterCache = { DE: structuredClone(previous) };
+    let health: any;
+    const concerts = await fetchTicketmasterConcerts('fake-key', ['DE'], `http://localhost:${PORT}/events.json`, cache,
+      (report) => { health = report; });
+    assert.deepStrictEqual(cache.DE, previous, `${mode} must not replace the cache`);
+    assert.deepStrictEqual(concerts, previous.concerts);
+    assert.equal(health.counts.failed, 1);
+    assert.equal(health.completeness, 'partial');
+    assert.deepStrictEqual(health.issues, [{ reason: 'invalid_response', count: 1, action: 'retry_next_scheduled_sweep' }]);
+  }
+  await new Promise<void>((resolve) => server.close(resolve));
+});
+
+test('Ticketmaster - malformed event rows do not erase last-good cache or advance verification', async () => {
+  const PORT = 8351;
+  let row: unknown = {};
+  const server = createServer((_req, res) => {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ _embedded: { events: [row] },
+      page: { size: 200, totalElements: 1, totalPages: 1, number: 0 } }));
+  });
+  await new Promise<void>((resolve) => server.listen(PORT, resolve));
+  const previous = {
+    fetchedAt: '2026-10-05T00:00:00.000Z', verifiedAt: '2026-10-05T00:00:00.000Z',
+    concerts: [{ artist: 'Last good', date: '2027-01-01', venue: 'V', city: 'Berlin', country: 'DE' }]
+  };
+  for (const invalidRow of [{}, [], { id: 'truncated' },
+    { id: 'truncated', name: 'No dates' }, { id: 'truncated', name: 'Bad dates', dates: { start: {} } }]) {
+    row = invalidRow;
+    const cache: TicketmasterCache = { DE: structuredClone(previous) };
+    let health: any;
+    const concerts = await fetchTicketmasterConcerts('fake-key', ['DE'], `http://localhost:${PORT}/events.json`, cache,
+      (report) => { health = report; });
+    assert.deepStrictEqual(concerts, previous.concerts);
+    assert.deepStrictEqual(cache.DE, previous);
+    assert.equal(health.counts.failed, 1);
+    assert.equal(health.counts.cacheFallbacks, 1);
+    assert.equal(health.counts.succeeded, 0);
+    assert.equal(health.completeness, 'partial');
+    assert.deepStrictEqual(health.issues, [{ reason: 'invalid_response', count: 1, action: 'retry_next_scheduled_sweep' }]);
+  }
+  await new Promise<void>((resolve) => server.close(resolve));
+});
+
+test('Ticketmaster - valid date-TBA event without venue is not a malformed response', async () => {
+  const PORT = 8352;
+  const server = createServer((_req, res) => {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ _embedded: { events: [
+      { id: 'tba-1', name: 'Upcoming Music Show', dates: { start: { dateTBA: true } } }
+    ] }, page: { size: 200, totalElements: 1, totalPages: 1, number: 0 } }));
+  });
+  await new Promise<void>((resolve) => server.listen(PORT, resolve));
+  const cache: TicketmasterCache = {};
+  let health: any;
+  const concerts = await fetchTicketmasterConcerts('fake-key', ['DE'], `http://localhost:${PORT}/events.json`, cache,
+    (report) => { health = report; });
+  assert.deepStrictEqual(concerts, [], 'a TBA event is not a dated concert');
+  assert.deepStrictEqual(cache.DE.concerts, []);
+  assert.ok(cache.DE.verifiedAt);
+  assert.equal(health.counts.succeeded, 1);
+  assert.equal(health.counts.failed, 0);
+  assert.equal(health.completeness, 'complete');
+  await new Promise<void>((resolve) => server.close(resolve));
+});
+
+test('Ticketmaster - valid zero-event envelope can verify an empty country', async () => {
+  const PORT = 8350;
+  const server = createServer((_req, res) => {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ page: { size: 200, totalElements: 0, totalPages: 0, number: 0 } }));
+  });
+  await new Promise<void>((resolve) => server.listen(PORT, resolve));
+  const cache: TicketmasterCache = { DE: {
+    fetchedAt: '2026-10-05T00:00:00.000Z', verifiedAt: '2026-10-05T00:00:00.000Z',
+    concerts: [{ artist: 'Last good' }]
+  } };
+  let health: any;
+  const concerts = await fetchTicketmasterConcerts('fake-key', ['DE'], `http://localhost:${PORT}/events.json`, cache,
+    (report) => { health = report; });
+  assert.deepStrictEqual(concerts, []);
+  assert.deepStrictEqual(cache.DE.concerts, []);
+  assert.notEqual(cache.DE.verifiedAt, '2026-10-05T00:00:00.000Z');
+  assert.equal(health.counts.cacheFallbacks, 0);
+  assert.equal(health.counts.empty, 1);
+  assert.equal(health.completeness, 'complete');
+  await new Promise<void>((resolve) => server.close(resolve));
+});
+
+test('Ticketmaster - same-instant density stays partial instead of claiming full coverage', async () => {
+  const PORT = 8347;
+  let eventInstant: number | undefined;
+  const server = createServer((req, res) => {
+    const url = new URL(req.url || '', `http://localhost:${PORT}`);
+    const start = Date.parse(url.searchParams.get('startDateTime')!);
+    if (eventInstant === undefined) eventInstant = start + 1;
+    const end = url.searchParams.get('endDateTime');
+    const hasDenseInstant = start <= eventInstant && (!end || Date.parse(end) >= eventInstant);
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({
+      _embedded: { events: hasDenseInstant ? Array.from({ length: 200 }, (_, index) => ({ id: `dense-${index}`, name: 'Dense', dates: { start: { localDate: '2027-09-05' } } })) : [] },
+      page: { size: 200, totalElements: hasDenseInstant ? 1001 : 0, totalPages: hasDenseInstant ? 6 : 0, number: 0 }
+    }));
+  });
+  await new Promise<void>((resolve) => server.listen(PORT, resolve));
+  let health: any;
+  const cache: TicketmasterCache = {
+    DE: { fetchedAt: '2025-01-01T00:00:00.000Z', verifiedAt: '2025-01-01T00:00:00.000Z', concerts: [] }
+  };
+  await fetchTicketmasterConcerts('fake-key', ['DE'], `http://localhost:${PORT}/events.json`, cache,
+    (report) => { health = report; });
+  assert.equal(health.counts.succeeded, 0);
   assert.equal(health.counts.partial, 1);
   assert.equal(health.completeness, 'partial');
-  assert.equal(cache.DE.verifiedAt, '2025-01-01T00:00:00.000Z', 'partial pagination must not advance full verification');
+  assert.equal(cache.DE.verifiedAt, '2025-01-01T00:00:00.000Z');
   assert.deepStrictEqual(health.issues, [{
     reason: 'pagination_limit', count: 1, action: 'treat_source_coverage_as_partial'
   }]);

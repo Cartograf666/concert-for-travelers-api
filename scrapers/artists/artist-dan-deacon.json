@@ -2,7 +2,7 @@
   "id": "artist-dan-deacon",
   "domain": "dandeacon.com",
   "url": "https://dandeacon.com/live-dates/",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".entry-content > p:has(a)",
     "artistNameFallback": "Dan Deacon",

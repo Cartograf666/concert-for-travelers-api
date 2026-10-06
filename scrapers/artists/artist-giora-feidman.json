@@ -2,7 +2,7 @@
   "id": "artist-giora-feidman",
   "domain": "www.giorafeidman-online.com",
   "url": "https://www.giorafeidman-online.com/termine",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".listItem",
     "artistNameFallback": "Giora Feidman",

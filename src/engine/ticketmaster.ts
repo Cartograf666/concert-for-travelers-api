@@ -12,18 +12,16 @@ import { sleep } from './sleep.js';
 
 const DISCOVERY_URL = 'https://app.ticketmaster.com/discovery/v2/events.json';
 
-// Discovery API's own deep-pagination limit: page*size tops out around 1000
-// results for a single query, regardless of how many more actually match. A
-// country with more music events in the window than that gets truncated --
-// acceptable (this sweep runs daily and self-corrects), not worth the extra
-// complexity of splitting into narrower date windows per country.
+// Discovery API only allows page * size < 1000 for one query. Dense date
+// windows must be split before paging; otherwise later events disappear.
 const MAX_PAGES_PER_COUNTRY = 5;
 const PAGE_SIZE = 200;
+const MAX_REQUESTS_PER_SWEEP = 750;
+const WINDOW_OVERLAP_MS = 1000;
+const YEAR_MS = 365 * 24 * 60 * 60 * 1000;
 
-// Free-tier budget is 5000 requests/day and 100/minute (per the app's Ticketmaster
-// developer console). A daily sweep across ~50 countries at up to 5 requests each
-// is a few hundred requests -- comfortably inside both limits -- but the delay
-// still keeps individual request spacing polite and under the per-minute cap.
+// Free-tier budget is 5000 requests/day; the per-sweep cap leaves room for other
+// consumers. The delay also respects the app's lower 100/minute console limit.
 const REQUEST_DELAY_MS = 700;
 
 // Countries where Ticketmaster (or its international brands) actually operates.
@@ -61,9 +59,10 @@ export async function saveTicketmasterCache(cachePath: string, cache: Ticketmast
 }
 
 interface TmEvent {
+  id?: string;
   name?: string;
   url?: string;
-  dates?: { start?: { localDate?: string; localTime?: string } };
+  dates?: { start?: { localDate?: string; localTime?: string; dateTime?: string; dateTBD?: boolean; dateTBA?: boolean } };
   priceRanges?: Array<{ min?: number; max?: number; currency?: string }>;
   _embedded?: {
     venues?: Array<{
@@ -74,6 +73,21 @@ interface TmEvent {
     }>;
     attractions?: Array<{ name?: string }>;
   };
+}
+
+// A 200 envelope with a valid count can still contain truncated event rows.
+// Keep the provider's event identity and date status distinct from the stricter
+// fields mapEventToConcert needs; a TBA date or missing venue is a valid row.
+function isDiscoveryEvent(value: unknown): value is TmEvent {
+  if (value === null || typeof value !== 'object' || Array.isArray(value)) return false;
+  const event = value as TmEvent;
+  const start = event.dates?.start;
+  return typeof event.id === 'string' && event.id.trim().length > 0 &&
+    typeof event.name === 'string' && event.name.trim().length > 0 &&
+    start !== null && typeof start === 'object' && !Array.isArray(start) &&
+    (typeof start.localDate === 'string' && start.localDate.trim().length > 0 ||
+      typeof start.dateTime === 'string' && start.dateTime.trim().length > 0 ||
+      start.dateTBD === true || start.dateTBA === true);
 }
 
 /** Ticketmaster's own priceRanges array can list more than one tier (e.g.
@@ -166,6 +180,7 @@ export async function fetchTicketmasterConcerts(
   const partialCountries = new Set<string>();
   const fallbackCountries = new Set<string>();
   const paginationLimitedCountries = new Set<string>();
+  const budgetLimitedCountries = new Set<string>();
   const verifiedThisRun = new Set<string>();
   const issueCounts = new Map<string, number>();
   const addIssue = (reason: string) => issueCounts.set(reason, (issueCounts.get(reason) ?? 0) + 1);
@@ -192,12 +207,16 @@ export async function fetchTicketmasterConcerts(
     });
     const missing = uniqueCountries.filter((country) => cache[country] === undefined).length;
     const incomplete = failedCountries.size > 0 || unavailableCountries.size > 0 ||
-      partialCountries.size > 0 || paginationLimitedCountries.size > 0 || missing > 0 || freshness.unknown > 0;
+      partialCountries.size > 0 || paginationLimitedCountries.size > 0 ||
+      budgetLimitedCountries.size > 0 || missing > 0 || freshness.unknown > 0;
     const state = succeededCountries.size === 0 && (failedCountries.size > 0 || unavailableCountries.size > 0)
       ? 'unavailable'
       : incomplete ? 'degraded' : 'healthy';
     if (paginationLimitedCountries.size > 0) {
       issueCounts.set('pagination_limit', paginationLimitedCountries.size);
+    }
+    if (budgetLimitedCountries.size > 0) {
+      issueCounts.set('request_budget_exhausted', budgetLimitedCountries.size);
     }
     const issues: SourceHealthIssue[] = Array.from(issueCounts, ([reason, count]) => ({
       reason,
@@ -221,7 +240,7 @@ export async function fetchTicketmasterConcerts(
         unavailable: unavailableCountries.size,
         missing,
         cacheFallbacks: fallbackCountries.size,
-        partial: new Set([...partialCountries, ...paginationLimitedCountries]).size
+        partial: new Set([...partialCountries, ...paginationLimitedCountries, ...budgetLimitedCountries]).size
       }),
       freshness,
       completeness: incomplete ? 'partial' : 'complete',
@@ -230,85 +249,134 @@ export async function fetchTicketmasterConcerts(
     });
   };
 
+  // Query each window's first page before paging it. A crowded window is
+  // divided until every leaf fits inside Discovery's deep-paging ceiling.
+  // The unbounded right-hand window preserves the API's full future horizon.
+  const fetchPage = async (countryCode: string, page: number, startMs: number, endMs?: number): Promise<any> => {
+    if (requestCount >= MAX_REQUESTS_PER_SWEEP) {
+      budgetLimitedCountries.add(countryCode);
+      return null;
+    }
+    if (requestCount > 0) await sleep(REQUEST_DELAY_MS);
+    requestCount++;
+    return axios.get(discoveryUrl, {
+      params: {
+        apikey: apiKey,
+        countryCode,
+        classificationName: 'music',
+        size: PAGE_SIZE,
+        page,
+        sort: 'date,asc',
+        startDateTime: new Date(startMs).toISOString(),
+        ...(endMs === undefined ? {} : { endDateTime: new Date(endMs).toISOString() })
+      },
+      timeout: 15000
+    });
+  };
+
   for (let countryIndex = 0; countryIndex < countries.length; countryIndex++) {
     const countryCode = countries[countryIndex];
     const countryConcerts: Partial<Concert>[] = [];
-    let countryFailed = false;
     attemptedCountries.add(countryCode);
 
-    for (let page = 0; page < MAX_PAGES_PER_COUNTRY; page++) {
-      try {
-        const response = await axios.get(discoveryUrl, {
-          params: {
-            apikey: apiKey,
-            countryCode,
-            classificationName: 'music',
-            size: PAGE_SIZE,
-            page,
-            sort: 'date,asc'
-          },
-          timeout: 15000
-        });
-        requestCount++;
-
-        const events: TmEvent[] = response.data?._embedded?.events || [];
+    const seenIds = new Set<string>();
+    const readPage = (response: any, requestedPage: number, expected?: { totalElements: number; totalPages: number }):
+      { events: TmEvent[]; totalElements: number; totalPages: number } => {
+      const metadata = response.data?.page;
+      const { size, number, totalElements, totalPages } = metadata ?? {};
+      const rawEvents = response.data?._embedded?.events;
+      const validMetadata = size === PAGE_SIZE && Number.isSafeInteger(number) && number === requestedPage &&
+        Number.isSafeInteger(totalElements) && totalElements >= 0 &&
+        Number.isSafeInteger(totalPages) && totalPages === Math.ceil(totalElements / PAGE_SIZE) &&
+        (!expected || (totalElements === expected.totalElements && totalPages === expected.totalPages));
+      const events = rawEvents === undefined ? [] : rawEvents;
+      const expectedCount = Math.min(PAGE_SIZE, Math.max(0, totalElements - requestedPage * PAGE_SIZE));
+      if (!validMetadata || !Array.isArray(events) || events.length !== expectedCount ||
+        events.some((event) => !isDiscoveryEvent(event))) {
+        throw Object.assign(new Error(`Invalid Ticketmaster page ${requestedPage} for ${countryCode}`),
+          { ticketmasterIssue: 'invalid_response' });
+      }
+      return { events, totalElements, totalPages };
+    };
+    const collectWindow = async (startMs: number, endMs?: number): Promise<boolean> => {
+      const first = await fetchPage(countryCode, 0, startMs, endMs);
+      if (!first) return false;
+      const firstPage = readPage(first, 0);
+      const { totalElements, totalPages } = firstPage;
+      if (totalElements > PAGE_SIZE * MAX_PAGES_PER_COUNTRY || totalPages > MAX_PAGES_PER_COUNTRY) {
+        // A one-second overlap avoids losing events exactly at the boundary.
+        // If the same instant is still too dense, declare partial coverage.
+        if (endMs !== undefined && endMs - startMs <= 2 * WINDOW_OVERLAP_MS) {
+          paginationLimitedCountries.add(countryCode);
+          return false;
+        }
+        const splitMs = endMs === undefined
+          ? startMs + YEAR_MS
+          : startMs + Math.floor((endMs - startMs) / 2);
+        if (!Number.isFinite(splitMs) || splitMs - WINDOW_OVERLAP_MS <= startMs) {
+          paginationLimitedCountries.add(countryCode);
+          return false;
+        }
+        const left = await collectWindow(startMs, splitMs);
+        const right = await collectWindow(splitMs - WINDOW_OVERLAP_MS, endMs);
+        return left && right;
+      }
+      for (let page = 0; page < totalPages; page++) {
+        const response = page === 0 ? first : await fetchPage(countryCode, page, startMs, endMs);
+        if (!response) return false;
+        const events = page === 0 ? firstPage.events :
+          readPage(response, page, { totalElements, totalPages }).events;
         for (const event of events) {
+          if (event.id && seenIds.has(event.id)) continue;
+          if (event.id) seenIds.add(event.id);
           const concert = mapEventToConcert(event, scrapedAt);
           if (concert) countryConcerts.push(concert);
         }
-
-        const totalPages = response.data?.page?.totalPages ?? 0;
-        if (totalPages > MAX_PAGES_PER_COUNTRY) paginationLimitedCountries.add(countryCode);
-        if (events.length === 0 || page + 1 >= totalPages) break;
-
-        await sleep(REQUEST_DELAY_MS);
-      } catch (err: any) {
-        const status = err.response?.status;
-        if (status === 401 || status === 403) {
-          haltedCategory = 'authentication_failed';
-          addIssue('authentication_failed');
-          console.error(`[Ticketmaster] Auth error (${status}) -- stopping sweep, check TICKETMASTER_API_KEY.`);
-          // Nothing more will succeed with a dead key -- fall back to cache for
-          // every remaining country (including this one) rather than returning
-          // only what was collected before the key was confirmed bad.
-          for (const remaining of countries.slice(countryIndex)) {
-            unavailableCountries.add(remaining);
-            if (cache[remaining]) {
-              fallbackCountries.add(remaining);
-              concerts.push(...cache[remaining].concerts);
-            }
-          }
-          console.log(`[Ticketmaster] ${requestCount} requests across ${countries.length} countries -> ${concerts.length} raw events (cache fallback after auth error).`);
-          emitHealth();
-          return concerts;
-        }
-        failedCountries.add(countryCode);
-        addIssue(status === 429 ? 'rate_limited' : typeof status === 'number' && status >= 500 ? 'source_server_error' : 'request_failed');
-        console.warn(`[Ticketmaster] ${countryCode} page ${page} failed: ${err.message}`);
-        countryFailed = true;
-        if (countryConcerts.length > 0) partialCountries.add(countryCode);
-        break;
       }
+      return true;
+    };
+
+    let complete = false;
+    try {
+      complete = await collectWindow(Date.parse(scrapedAt));
+    } catch (err: any) {
+      const status = err.response?.status;
+      if (status === 401 || status === 403 || status === 429) {
+        haltedCategory = status === 429 ? 'rate_limited' : 'authentication_failed';
+        addIssue(haltedCategory);
+        console.error(`[Ticketmaster] ${haltedCategory} (${status}) -- stopping sweep.`);
+        for (const remaining of countries.slice(countryIndex)) {
+          unavailableCountries.add(remaining);
+          if (cache[remaining]) {
+            fallbackCountries.add(remaining);
+            concerts.push(...cache[remaining].concerts);
+          }
+        }
+        emitHealth();
+        return concerts;
+      }
+      failedCountries.add(countryCode);
+      addIssue(err.ticketmasterIssue ?? (typeof status === 'number' && status >= 500 ? 'source_server_error' : 'request_failed'));
+      console.warn(`[Ticketmaster] ${countryCode} failed: ${err.message}`);
     }
 
-    if (countryFailed && countryConcerts.length === 0 && cache[countryCode]) {
-      console.warn(`[Ticketmaster] ${countryCode} failed with no results this run -- reusing ${cache[countryCode].concerts.length} cached events from ${cache[countryCode].fetchedAt}.`);
+    if (!complete && countryConcerts.length > 0) partialCountries.add(countryCode);
+    if (!complete && cache[countryCode]) {
+      console.warn(`[Ticketmaster] ${countryCode} incomplete -- reusing ${cache[countryCode].concerts.length} cached events from ${cache[countryCode].fetchedAt}.`);
       concerts.push(...cache[countryCode].concerts);
       fallbackCountries.add(countryCode);
-    } else if (!countryFailed) {
-      const paginationLimited = paginationLimitedCountries.has(countryCode);
+    } else if (complete) {
       cache[countryCode] = {
         fetchedAt: scrapedAt,
-        verifiedAt: paginationLimited ? cache[countryCode]?.verifiedAt : scrapedAt,
+        verifiedAt: scrapedAt,
         concerts: countryConcerts
       };
       succeededCountries.add(countryCode);
-      if (!paginationLimited) verifiedThisRun.add(countryCode);
+      verifiedThisRun.add(countryCode);
       if (countryConcerts.length === 0) emptyCountries.add(countryCode);
       concerts.push(...countryConcerts);
     } else {
-      // Failed partway through but got some results, or failed with nothing
-      // and no cache to fall back on -- use whatever was actually collected.
+      // No last-good cache exists. Expose what was fetched, but report partial.
       concerts.push(...countryConcerts);
     }
   }

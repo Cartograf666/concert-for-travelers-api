@@ -1,7 +1,7 @@
 {
   "id": "kt-g-sangsangmadang-seoul",
   "domain": "sangsangmadang.com",
-  "url": "https://www.sangsangmadang.com/calendar/list",
+  "url": "https://www.sangsangmadang.com/show/selectShowList/HD/soon?spaceCd=HD&status=soon&page=1",
   "type": "custom_js",
   "requestDelayMs": 500,
   "selectors": {
@@ -12,5 +12,6 @@
     "countryNameFallback": "KR",
     "lat": 37.5515,
     "lng": 126.9256
-  }
+  },
+  "allowEmpty": true
 }

@@ -13,5 +13,7 @@
     "venueNameFallback": "",
     "cityNameFallback": "",
     "countryNameFallback": "CA"
-  }
+  },
+  "allowEmpty": true,
+  "emptyScheduleText": "No shows booked at the moment."
 }

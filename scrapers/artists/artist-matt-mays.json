@@ -14,5 +14,7 @@
     "venueNameFallback": "",
     "cityNameFallback": "",
     "countryNameFallback": "CA"
-  }
+  },
+  "allowEmpty": true,
+  "emptyScheduleText": "No tour dates currently announced."
 }
