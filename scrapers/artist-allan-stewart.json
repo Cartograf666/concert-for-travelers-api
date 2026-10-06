@@ -2,7 +2,9 @@
   "id": "artist-allan-stewart",
   "domain": "www.allanstewart.com",
   "url": "https://www.allanstewart.com/shows/",
-  "type": "static_selectors",
+  "type": "playwright_render",
+  "renderParser": "custom_js",
+  "renderWaitSelector": "div[data-testid='richTextElement'] h5",
   "selectors": {
     "eventBlock": "div.elementor-column.elementor-col-33.elementor-top-column.elementor-has-gap",
     "artistNameFallback": "Allan Stewart",
