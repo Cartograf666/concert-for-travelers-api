@@ -2094,7 +2094,14 @@
           "reason": "selectors_stale",
           "error": "Parsed 0 concerts. Website layout might have changed."
         },
-        "hostedAfterRepair": "not_run",
+        "hostedAfterRepair": {
+          "id": "antoha-mc-tour",
+          "configPath": "scrapers/artists/antoha-mc-tour.json",
+          "configHash": "8f31397a5d56fe5bc7247eca65faec5f0af4dcb970933f0d3d25fda7fca8e98a",
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
         "localOutcome": "blocked_current_source_unverified",
         "sourceUrl": "https://antoha-mc.ru/",
         "proof": "HTTP 200 306206 bytes; Tilda page has concert heading and film promos but no extractable concert records",
@@ -2111,7 +2118,14 @@
           "reason": "selectors_stale",
           "error": "Parsed 0 concerts. Website layout might have changed."
         },
-        "hostedAfterRepair": "not_run",
+        "hostedAfterRepair": {
+          "id": "artist-amanda-forsyth",
+          "configPath": "scrapers/artists/artist-amanda-forsyth.json",
+          "configHash": "0ce421d6cc48efbbabafa7ca5b58bb8d3674f4b9dfc040eb0730821259454f37",
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
         "localOutcome": "blocked_current_source_unverified",
         "sourceUrl": "https://www.amandaforsyth.com/concerts",
         "proof": "HTTP 200 97386 bytes; both season summary blocks empty placeholders",
@@ -2128,7 +2142,14 @@
           "reason": "fetch_error",
           "error": "Request failed with status code 403"
         },
-        "hostedAfterRepair": "not_run",
+        "hostedAfterRepair": {
+          "id": "artist-astrid-williamson",
+          "configPath": "scrapers/artists/artist-astrid-williamson.json",
+          "configHash": "fd5a98bd3f7a06609d052518b5263b3b06fdff23ae70bd9e553b9a421a918b2a",
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
+        },
         "localOutcome": "verified_empty_no_edit",
         "sourceUrl": "https://astridwilliamson.com/live/",
         "proof": "Official Astrid Williamson live page explicitly says There are currently no upcoming events to list, please check back soon.",
@@ -2146,7 +2167,14 @@
           "reason": "selectors_stale",
           "error": "Parsed 0 concerts. Website layout might have changed."
         },
-        "hostedAfterRepair": "not_run",
+        "hostedAfterRepair": {
+          "id": "artist-avantasia",
+          "configPath": "scrapers/artists/artist-avantasia.json",
+          "configHash": "a80c73baf81e757d5a928ca8608c2a0de3577d1527e49a611345e521bce79372",
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
         "localOutcome": "blocked_current_source_unverified",
         "sourceUrl": "https://avantasia.com/tour/",
         "proof": "HTML partial HTTP 200 7550 bytes then timeout; WordPress /wp-json/wp/v2/pages?slug=tour HTTP 200 11050 bytes containing slider/poster only, no text event rows; poster GET timeout",
@@ -2163,7 +2191,14 @@
           "reason": "selectors_stale",
           "error": "Parsed 0 concerts. Website layout might have changed."
         },
-        "hostedAfterRepair": "not_run",
+        "hostedAfterRepair": {
+          "id": "artist-andy-cairns",
+          "configPath": "scrapers/artists/artist-andy-cairns.json",
+          "configHash": "41d9999ef4a006b495c6d426e572c1fe229eed3e161f454f9d27d91dc5d6b917",
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
         "localOutcome": "blocked_current_source_unverified",
         "sourceUrl": "https://therapyquestionmark.co.uk/tour/",
         "proof": "partial HTTP 200 8192 bytes then timeout; official band page says There are no dates yet, wrong solo identity",
@@ -2180,7 +2215,14 @@
           "reason": "selectors_stale",
           "error": "Parsed 0 concerts. Website layout might have changed."
         },
-        "hostedAfterRepair": "not_run",
+        "hostedAfterRepair": {
+          "id": "artist-adiemus",
+          "configPath": "scrapers/artists/artist-adiemus.json",
+          "configHash": "c77ad07130cec062225eb622ecafe142b3f15589e9a47a1b1e29742528c1b9e6",
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
         "localOutcome": "blocked_current_source_unverified",
         "sourceUrl": "https://www.karljenkins.com/performances",
         "proof": "TLS hostname mismatch on www and apex; public crawl shows Karl Jenkins performances only, most recent 26 Sep 2026",
@@ -2197,7 +2239,12 @@
           "reason": "fetch_error",
           "error": "Scraper exceeded 90s wall-clock timeout"
         },
-        "hostedAfterRepair": "not_run",
+        "hostedAfterRepair": {
+          "id": "artist-alabama-symphony-orchestra",
+          "configPath": "scrapers/artists/artist-alabama-symphony-orchestra.json",
+          "configHash": "cd377f5f6e84417ee0b7121f69734aab78a8d5d89c266e6acc2439b2fb2329b4",
+          "status": "succeeded"
+        },
         "localOutcome": "recovered_by_prior_retry_fix_no_edit",
         "sourceUrl": "http://alabamasymphony.org/concert/",
         "proof": "Official Alabama Symphony Orchestra concert cards list date, venue and Birmingham location.",
@@ -2215,7 +2262,14 @@
           "reason": "selectors_stale",
           "error": "Parsed 0 concerts. Website layout might have changed."
         },
-        "hostedAfterRepair": "not_run",
+        "hostedAfterRepair": {
+          "id": "artist-john-mellencamp",
+          "configPath": "scrapers/artists/artist-john-mellencamp.json",
+          "configHash": "4517d3c36860fccb3d927deb6a7fdab0297c2b233e708853e808ede79c6d23e7",
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
         "localOutcome": "archive_evidence_not_continuous_source",
         "sourceUrl": "https://www.mellencamp.com/tour",
         "proof": "current /tour HTTP 200 30505 bytes, server-side widget empty; official Jan 14 2026 news announcement HTTP 200 36062 bytes with 19 complete past route rows",
@@ -2232,7 +2286,14 @@
           "reason": "fetch_error",
           "error": "Request failed with status code 403"
         },
-        "hostedAfterRepair": "not_run",
+        "hostedAfterRepair": {
+          "id": "artist-limahl",
+          "configPath": "scrapers/artists/artist-limahl.json",
+          "configHash": "7e61a46c0425eb796ca15e8ffbaa4c84263082574192ae1f238222ca90f15887",
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
+        },
         "localOutcome": "external_access_block_no_edit",
         "sourceUrl": "https://www.limahl.com/tour-all-events/",
         "proof": "Limahl official homepage search index identifies www.limahl.com and Live navigation; direct homepage returned HTTP 401 Security Verification, configured tour-all-events HTTP 403; no current official feed/rows verified.",
@@ -2250,7 +2311,12 @@
           "reason": "fetch_error",
           "error": "Request failed with status code 403"
         },
-        "hostedAfterRepair": "not_run",
+        "hostedAfterRepair": {
+          "id": "artist-lobao",
+          "configPath": "scrapers/artists/artist-lobao.json",
+          "configHash": "1ad30846a79dfc126c7d1f5ac03b537dc3ca74ae9b94a9d8da4acbf8b4c3e8b0",
+          "status": "succeeded"
+        },
         "localOutcome": "external_access_block_no_edit",
         "sourceUrl": "https://lobao.com.br/agenda/",
         "proof": "Official Lobão agenda search index shows old 2006 and Aug 2026 rows; direct runner HTTP 403. Third-party future listings do not prove an official feed.",
@@ -2268,7 +2334,14 @@
           "reason": "fetch_error",
           "error": "Request failed with status code 404"
         },
-        "hostedAfterRepair": "not_run",
+        "hostedAfterRepair": {
+          "id": "artist-marina-satti",
+          "configPath": "scrapers/artists/artist-marina-satti.json",
+          "configHash": "22743ec018ca68ab2647c83d4ca093c0b9e148f09ab67f4ade585df255dd4083",
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 404"
+        },
         "localOutcome": "dead_schedule_address_no_edit",
         "sourceUrl": "https://marinasatti.com/tour/",
         "proof": "Official site marinasatti.com has indexed alternate /tour-3 with Tour Dates/Past Dates but live alternate returned HTTP 404 after timeout; original /tour HTTP 404.",
@@ -2286,7 +2359,14 @@
           "reason": "fetch_error",
           "error": "Request failed with status code 403"
         },
-        "hostedAfterRepair": "not_run",
+        "hostedAfterRepair": {
+          "id": "artist-marmalade",
+          "configPath": "scrapers/artists/artist-marmalade.json",
+          "configHash": "420328511c2bd84291952ddd4d0fc4c1da969f06656e2436739d3b45a5a32d81",
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
+        },
         "localOutcome": "recovered_local",
         "sourceUrl": "https://themarmalade.net/tour-dates/",
         "proof": "Current official page HTTP 200 contains two table rows dated Jan 16 and Mar 13 2027.",
@@ -2304,7 +2384,14 @@
           "reason": "parse_error",
           "error": "Unmatched selector: =.//p/text()[contains(., ',')][1]"
         },
-        "hostedAfterRepair": "not_run",
+        "hostedAfterRepair": {
+          "id": "artist-nine-inch-nails",
+          "configPath": "scrapers/artists/artist-nine-inch-nails.json",
+          "configHash": "b7e14c835a199ff8b11526a832b1525ae8a2b1518620d1ad200fdc6846a33824",
+          "status": "failed",
+          "reason": "parse_error",
+          "error": "Unmatched selector: =.//p/text()[contains(., ',')][1]"
+        },
         "localOutcome": "blocked_current_source_unverified",
         "sourceUrl": "https://www.nin.com/live/",
         "proof": "current /live HTTP 403 Cloudflare HTML 5332 bytes; configured tickets2018 is archived and invalid XPath remains",
@@ -2321,7 +2408,14 @@
           "reason": "selectors_stale",
           "error": "Parsed 0 concerts. Website layout might have changed."
         },
-        "hostedAfterRepair": "not_run",
+        "hostedAfterRepair": {
+          "id": "artist-nick-cave-the-bad-seeds",
+          "configPath": "scrapers/artists/artist-nick-cave-the-bad-seeds.json",
+          "configHash": "fc44a308a0b05be56963ea0f9205045072ede243d6302c58f349940cde964d39",
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
         "localOutcome": "archive_evidence_not_continuous_source",
         "sourceUrl": "https://www.nickcave.com/tour-dates/",
         "proof": "current /tour-dates HTTP 200 122129 bytes, #blog-grid empty; official Apr 8 2026 announcement HTTP 200 135996 bytes with 32 complete past route rows",
@@ -2338,7 +2432,14 @@
           "reason": "fetch_error",
           "error": "Request failed with status code 403"
         },
-        "hostedAfterRepair": "not_run",
+        "hostedAfterRepair": {
+          "id": "artist-pequot",
+          "configPath": "scrapers/artists/artist-pequot.json",
+          "configHash": "a5a6e2ee75e2279890fa0a74d70cbcf65357a1edf5f5821103125032e1808c0d",
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
+        },
         "localOutcome": "wrong_entity_and_dns_no_edit",
         "sourceUrl": "https://www.pequotmuseum.org/explore/events/",
         "proof": "Canonical artist entry is Pequot, hardcore/metal from Minsk; configured Mashantucket Pequot Museum is a different US entity.",
@@ -2356,7 +2457,14 @@
           "reason": "fetch_error",
           "error": "Request failed with status code 403"
         },
-        "hostedAfterRepair": "not_run",
+        "hostedAfterRepair": {
+          "id": "artist-philip-lindholm",
+          "configPath": "scrapers/artists/artist-philip-lindholm.json",
+          "configHash": "938a3c283f9549f6de0158fbe937a446d738ae3732e9b8299179ecddef251461",
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
+        },
         "localOutcome": "wrong_event_context_no_edit",
         "sourceUrl": "https://philiplindholm.com/events/",
         "proof": "Canonical entry is singer-songwriter Philip Lindholm; live /events returns Promote Theme political campaign event search and no music concert records.",
@@ -2374,7 +2482,14 @@
           "reason": "selectors_stale",
           "error": "Parsed 0 concerts. Website layout might have changed."
         },
-        "hostedAfterRepair": "not_run",
+        "hostedAfterRepair": {
+          "id": "artist-poetry",
+          "configPath": "scrapers/artists/artist-poetry.json",
+          "configHash": "f0d74765334b9bc33524f5c5253028923d077b987879d4fa63e4b2c7d9d27dc1",
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Scraper exceeded 90s wall-clock timeout"
+        },
         "localOutcome": "blocked_current_source_unverified",
         "sourceUrl": "https://www.poemsband.com/#poems",
         "proof": "HTTP 200 56741 bytes; page title Poems confirms wrong configured Poetry identity",
@@ -2391,7 +2506,14 @@
           "reason": "selectors_stale",
           "error": "Parsed 0 concerts. Website layout might have changed."
         },
-        "hostedAfterRepair": "not_run",
+        "hostedAfterRepair": {
+          "id": "artist-psycho-le-cemu",
+          "configPath": "scrapers/artists/artist-psycho-le-cemu.json",
+          "configHash": "b35f0c7a4633a2bdbfca0a3844b59361b739a0d97c0eb997ba866e327b04c2d7",
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
         "localOutcome": "blocked_current_source_unverified",
         "sourceUrl": "https://psycholecemu.com/live",
         "proof": "HTTP 200 24814 bytes; LIVE page has news only, no current dated rows; indexed older tour list ended Oct 4",
@@ -2408,7 +2530,14 @@
           "reason": "fetch_error",
           "error": "Request failed with status code 404"
         },
-        "hostedAfterRepair": "not_run",
+        "hostedAfterRepair": {
+          "id": "artist-shelby-lynne",
+          "configPath": "scrapers/artists/artist-shelby-lynne.json",
+          "configHash": "a31003ee683df7a7cda2e64acb704beefdab51bec2abfaed57d32ad07b774ae4",
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 404"
+        },
         "localOutcome": "hijacked_domain_no_edit",
         "sourceUrl": "https://www.shelbylynne.com/tour",
         "proof": "Original singer website index is stale; current domain homepage HTTP 200 title is Thai casino/slot content, and /tour HTTP 404.",
@@ -2426,7 +2555,14 @@
           "reason": "fetch_error",
           "error": "Request failed with status code 404"
         },
-        "hostedAfterRepair": "not_run",
+        "hostedAfterRepair": {
+          "id": "artist-twin-atlantic",
+          "configPath": "scrapers/artists/artist-twin-atlantic.json",
+          "configHash": "02c731373ee219eb8c2536e2ad404a50f9917018201d70ea2b6c3844196777c9",
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 404"
+        },
         "localOutcome": "official_widget_absent_no_edit",
         "sourceUrl": "https://twinatlantic.com/shows",
         "proof": "Current official homepage HTTP 200 has no schedule/embed and /shows HTTP 404; search index from prior crawl showed seven Oct 2026 dates, also listed by ticket sellers, but current first-party feed is absent.",
@@ -2444,7 +2580,14 @@
           "reason": "selectors_stale",
           "error": "Parsed 0 concerts. Website layout might have changed."
         },
-        "hostedAfterRepair": "not_run",
+        "hostedAfterRepair": {
+          "id": "artist-robin-thicke",
+          "configPath": "scrapers/artists/artist-robin-thicke.json",
+          "configHash": "604620d510f582472f6597efd1f8b4a590b6f7607b81aef9436ed38787da7cf3",
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
         "localOutcome": "blocked_current_source_unverified",
         "sourceUrl": "https://www.robinthicke.com/tour/",
         "proof": "tour HTTP 200 94249 bytes, no date cards; linked /live-horizon HTTP 200 94998 bytes and yearless 12/31",
@@ -2963,10 +3106,90 @@
         "errors": 0,
         "existingWarnings": 103
       },
-      "codeReview": "harness-native fallback; ce-code-review full dispatch blocked by reviewer-role prohibition on nested agents; independent reviewer reads standards/spec and reproduces pipeline failures.",
+      "codeReview": "Code review: harness-native fallback. Independent Standards/Spec reviewer verifies provider mapping/cache/pipeline and both added current tour parsers; two concrete findings fixed and rechecked. Full CE nested dispatch is prohibited by reviewer role.",
       "finalTargeted": {
         "pass": 14,
         "fail": 0
+      },
+      "combinedFullSuiteBeforeFinalCityReviewFix": {
+        "total": 719,
+        "pass": 718,
+        "skip": 1,
+        "fail": 0
+      },
+      "finalTargetedAfterCityAndProviderReviewFixes": {
+        "pass": 7,
+        "fail": 0
+      },
+      "durableProviderIdentityAndDiagnostics": {
+        "pass": 23,
+        "fail": 0
+      }
+    },
+    "firstHostedArtistVerification": {
+      "run": {
+        "id": "37495123310",
+        "attempt": 1,
+        "sha": "ea6828208e046cdc1b10301670886b48d62085d3",
+        "workflow": "Artist Tour-Page Scrape"
+      },
+      "complete": true,
+      "generatedAt": "2026-10-06T16:25:46.839Z",
+      "scrapers": {
+        "total": 415,
+        "succeeded": 392,
+        "failed": 23,
+        "changed": 10,
+        "unchanged": 382,
+        "staleIds": []
+      },
+      "supersededAfterFollowupRun": false,
+      "recoveredFromPrecedingSlice": [
+        "artist-alabama-symphony-orchestra",
+        "artist-lobao"
+      ],
+      "newFailures": [
+        "artist-alabama-3",
+        "artist-scotty-mccreery",
+        "artist-ellen-ten-damme",
+        "artist-hubert-laws"
+      ]
+    },
+    "newRegressionRepairs": {
+      "state": "implemented_local_hosted_pending",
+      "sourceIds": [
+        "artist-alabama-3",
+        "artist-scotty-mccreery"
+      ],
+      "alabama3": {
+        "futureRows": 20,
+        "countries": {
+          "GB": 16,
+          "IE": 4
+        },
+        "proof": "Current official live page changed to article.show with explicit time datetime. Unknown city fails instead of inheriting GB."
+      },
+      "scottyMcCreery": {
+        "futureRows": 10,
+        "proof": "Current official tour page changed to .event with explicit time datetime. Nonempty city precedes final region code; verified US/CA region selects country; unknown region fails."
+      },
+      "newUnchangedNetworkFailures": [
+        "artist-ellen-ten-damme",
+        "artist-hubert-laws"
+      ]
+    },
+    "identityFollowup": {
+      "state": "implemented_local_hosted_pending",
+      "canonicalMbid": "60d0d63e-5404-4c13-b01e-d024f71a43b2",
+      "provider": "bandsintown.com",
+      "providerEventId": "1038425781",
+      "proofUrl": "https://shotgun.live/en/events/nice-guys-pain-for-pleasure",
+      "proof": "Organizer identifies the 2026-10-17 Secret Place show as the distinct Montpellier Sum 41 tribute band founded 2025. Public row incorrectly inherits Canadian Sum 41 alter-ego canonical MBID. Exact canonical/provider/event exclusion preserves other events and identities.",
+      "rawProvenance": "sourceEventUrl persists separately from purchase URL in provider raw cache; omitted from public schema. Legacy raw purchase/event URL remains usable.",
+      "canceledIntermediateDaily": {
+        "runId": "37498109196",
+        "state": "cancelled",
+        "reason": "Our automatic daily was stopped before deployment to replace it with a checked publish containing the verified identity correction. It had started collection; it is not treated as a completed hosted/public outcome."
       }
     }
   }

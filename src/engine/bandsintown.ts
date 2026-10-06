@@ -1,6 +1,6 @@
 import axios from 'axios';
 import * as fs from 'fs/promises';
-import { Concert } from '../schemas/concert.js';
+import { Concert, type RawConcert } from '../schemas/concert.js';
 import { buildArtistSweepSourceHealth, type SourceHealthReport } from '../observability/source_health.js';
 import { sleep } from './sleep.js';
 
@@ -182,7 +182,7 @@ function isTemplatedArtistCityVenueName(venueName: string, artistName: string): 
   return new RegExp(`^${escapedArtist}\\s+(в|in)\\s+\\S`, 'iu').test(venueName.trim());
 }
 
-export function mapBitEventToConcert(event: BitEvent, queriedArtist: string, scrapedAt: string): Partial<Concert> | null {
+export function mapBitEventToConcert(event: BitEvent, queriedArtist: string, scrapedAt: string): RawConcert | null {
   // Prefer the queried name (guaranteed to match a whitelist entry when the target
   // list overlaps the approved list) over Bandsintown's own spelling, which can
   // differ in casing/punctuation and slip past the matcher.
@@ -216,6 +216,7 @@ export function mapBitEventToConcert(event: BitEvent, queriedArtist: string, scr
     lat: Number.isFinite(lat) ? lat : undefined,
     lng: Number.isFinite(lng) ? lng : undefined,
     ticketUrl: event.offers?.[0]?.url || event.url,
+    ...(event.url ? { sourceEventUrl: event.url } : {}),
     originalSource: 'bandsintown.com',
     scrapedAt
   };

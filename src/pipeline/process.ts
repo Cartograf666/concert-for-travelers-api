@@ -10,6 +10,7 @@ import { ProcessingDiagnosticsCollector } from '../observability/processing_diag
 import type { ProcessingDiagnostics } from '../observability/processing_diagnostics.js';
 import type { OfficialArtistContext } from '../engine/official_artist_sources.js';
 import { isTheHuIdentity, isTheHuName, verifiedTheHuDublinSourceRank } from './thehu_identity.js';
+import { isVerifiedSourceIdentityCollision } from './provider_identity_exclusions.js';
 
 /** Format a Date as a timezone-safe YYYY-MM-DD using its local calendar fields. */
 function toLocalIso(d: Date): string {
@@ -1154,7 +1155,7 @@ export async function processConcerts(
 
     // 1. Artist Normalization & Filter
     const matched = isTheHuName(raw.artist) && !hasTheHuCanonical ? null : match(raw.artist);
-    if (!matched) {
+    if (!matched || isVerifiedSourceIdentityCollision(raw, matched.mbid)) {
       drops.notApproved++;
       diagnostics?.recordDrop('notApproved', raw);
       continue;
