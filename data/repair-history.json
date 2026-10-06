@@ -25541,5 +25541,145 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.office-augusta.com/yama/live/ but could not re-select on it",
     "verification": ""
+  },
+  {
+    "id": "artist-alabama-3",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-alabama-3.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-06T16:52:52.705Z",
+    "previousConfig": {
+      "id": "artist-alabama-3",
+      "domain": "alabama3.co.uk",
+      "url": "https://alabama3.co.uk/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.vc_row.row-internal.row-container",
+        "artistNameFallback": "Alabama 3",
+        "date": "div.wpb_column.col-lg-3:first-child h3 span",
+        "ticketUrl": "div.wpb_column.col-lg-3:last-child a@href",
+        "venue": "div.wpb_column.col-lg-6 h3 span",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-ellen-ten-damme",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-ellen-ten-damme.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-06T16:52:53.760Z",
+    "previousConfig": {
+      "id": "artist-ellen-ten-damme",
+      "domain": "ellentendamme.nl",
+      "url": "https://ellentendamme.nl/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.shows.show-upcoming tr",
+        "artistNameFallback": "Ellen ten Damme",
+        "date": "td.event-field-datetime",
+        "ticketUrl": "td.event-field-info a.ticket-link",
+        "venue": "td.event-field-venue .venue-name a",
+        "city": "td.event-field-city a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "NL"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: dates_parse [32/62 date strings parsed (52%, need 60%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-psycho-le-cemu",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-psycho-le-cemu.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-06T16:52:58.210Z",
+    "previousConfig": {
+      "id": "artist-psycho-le-cemu",
+      "domain": "psycholecemu.com",
+      "url": "http://psycholecemu.com/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "dl.accordion-menu",
+        "artistNameFallback": "Psycho le Cému",
+        "date": "dt.acHeader h3:nth-of-type(1)",
+        "ticketUrl": "dd.acBody a",
+        "venue": "dt.acHeader h3:nth-of-type(2)",
+        "city": "",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (dl.accordion-menu) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-shelby-lynne",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-shelby-lynne.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-06T16:53:03.523Z",
+    "previousConfig": {
+      "id": "artist-shelby-lynne",
+      "domain": "www.shelbylynne.com",
+      "url": "https://www.shelbylynne.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "section.elementor-inner-section[data-id][class*='elementor-element-']",
+        "artistNameFallback": "Shelby Lynne",
+        "date": ".elementor-widget-heading .elementor-heading-title",
+        "ticketUrl": "a.elementor-button-link",
+        "venue": ".elementor-image-box-title",
+        "city": ".elementor-image-box-description",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.shelbylynne.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://www.shelbylynne.com/events.html but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-poetry",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-poetry.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-06T16:53:07.658Z",
+    "previousConfig": {
+      "id": "artist-poetry",
+      "domain": "www.poemsband.com",
+      "url": "https://www.poemsband.com/#poems",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".calendar_feature table tbody tr",
+        "artistNameFallback": "poetry",
+        "date": ".event-date .date-long",
+        "ticketUrl": "a.event_details",
+        "venue": ".event-location .text",
+        "city": ".event-location .text",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.poemsband.com/#poems but could not re-select on it",
+    "verification": ""
   }
 ]
