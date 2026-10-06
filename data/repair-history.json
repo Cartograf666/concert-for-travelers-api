@@ -25851,5 +25851,32 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Empty response body from https://www.paradiso.nl/en/landing/concertagenda-paradiso/2069817 (HTTP 200)]",
     "verification": ""
+  },
+  {
+    "id": "artist-angel-heart",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-angel-heart.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-06T19:11:38.917Z",
+    "previousConfig": {
+      "id": "artist-angel-heart",
+      "domain": "www.angelheart.rocks",
+      "url": "https://www.angelheart.rocks/events",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.s2-blog-item",
+        "artistNameFallback": "Angel Heart",
+        "date": ".s2-blog-item__date",
+        "ticketUrl": "a.s2-button",
+        "city": ".s2-blog-item__title",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "UK"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.angelheart.rocks/events but could not re-select on it",
+    "verification": ""
   }
 ]
