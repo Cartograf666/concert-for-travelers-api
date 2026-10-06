@@ -11,10 +11,12 @@ each concert in space and time, and (3) **rank** the options.
 
 Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
-## All-branch integration and source recovery — 2026-10-06 (in progress)
+## All-branch integration and source recovery — 2026-10-06 (hosted verification in progress)
 
 - Alex explicitly requested integrating all remaining branch work into main and
-  repairing all sources. The implementation is isolated in
+  repairing all sources. PR #182 is merged into main `37e8a3e`; all 63 local and
+  remote branch refs are ancestors of main, and PRs #121-125, #161 and #168 are
+  also MERGED. The main implementation was isolated in
   `codex/all-sources-recovery-20261006`, based on main `b81dd86`; the original
   checkout contains independent uncommitted backlog work.
 - The HU's missing canonical identity is added through `artistDb`. The recovered
@@ -46,9 +48,13 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 - The Bassnectar, L. Subramaniam and Legs Diamond parsers now read printed years
   correctly; their currently observed schedules are archives, with zero events
   publishable on October 6. This is parser recovery, not new concert coverage.
+- Follow-on Ivar Grydeland repair reads all six actual Australian Upcoming
+  shows from the official page, using printed 2026 dates and explicit locations.
+  All ended by June 7; the future-year fixture stays readable and changed/malformed
+  calendars fail. This is one further parsed archive, not future concert coverage.
 - The source-by-source evidence is in `docs/source-recovery-20261006.json`:
   26 sources now return future shows, 19 have a verified current empty schedule,
-  and three are parsed archives with no future publication. The other 49 remain
+  and four are parsed archives with no future publication. The other 48 remain
   external access, incomplete evidence or identity/source-binding gaps. Observed
   iframe emptiness alone is not runner recovery. Eventbrite access remains blocked;
   no account token or supported cross-organizer search API is available here.
@@ -58,8 +64,8 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   duplicate selectors are 126 against 131. Independent review found incomplete Emancipator feeds, hidden empty notices
   and stale empty-cache hashes; all three are fixed and regression-checked.
   Rendered empty notices use computed browser visibility; static pages reject
-  hidden/aria-hidden and inline-hidden notices. Merge and a hosted artist/daily
-  publication cycle remain pending. All 18 outstanding remote heads are
+  hidden/aria-hidden and inline-hidden notices. Artist collection `37471384116` runs on merged main; its automatic daily
+  collection and published result remain pending. All 18 outstanding remote heads are
   integrated after content audit; local Hue & Cry is patch-equivalent and its
   ancestry is included separately. No unique local committed patch remains. External blocks and invalid
   source bindings remain visible; no blanket empty flag, guessed year/location,

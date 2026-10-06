@@ -7,8 +7,8 @@
     "recovered": 26,
     "observed-empty-only": 1,
     "verified-empty": 19,
-    "unresolved": 32,
-    "archive-only": 3
+    "unresolved": 31,
+    "archive-only": 4
   },
   "sources": [
     {
@@ -516,11 +516,13 @@
     {
       "cohort": "venue",
       "id": "artist-ivar-grydeland",
-      "status": "unresolved",
+      "status": "archive-only",
       "beforeCache": 36,
       "afterFutureVerified": null,
       "sourceUrl": "https://www.ivargrydeland.com/concerts",
-      "proof": "official concerts page visible 2026 entries end in June, no future rows"
+      "proof": "Full official Upcoming section contains six explicitly dated 2026 Australian shows, 2026-05-31 through 2026-06-07. Strict parser reads all six, uses printed year/venue/city/country, and rejects missing or malformed calendar structure. Zero future concerts on October 6; future-year regression remains readable.",
+      "count": "6",
+      "additionalEvidence": "tests/fixtures/ivar-grydeland-recovery-20261006/official-upcoming.html; tests/ivar_grydeland_recovery_20261006.test.ts"
     },
     {
       "cohort": "venue",
