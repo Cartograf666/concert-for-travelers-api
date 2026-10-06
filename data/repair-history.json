@@ -24829,5 +24829,89 @@
     "failuresSinceRepair": 0,
     "note": "transient: raising maxRetries 2 -> 5 with a politeness delay",
     "verification": "PASS (10 events, 11 checks)"
+  },
+  {
+    "id": "antoha-mc-tour",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/antoha-mc-tour.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-10-06T11:14:40.951Z",
+    "previousConfig": {
+      "id": "antoha-mc-tour",
+      "domain": "antoha-mc.ru",
+      "url": "http://antoha-mc.ru",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".t396__artboard:has([data-elem-id=\"1762508321256\"])",
+        "artistNameFallback": "Антоха МС",
+        "date": "[data-elem-id=\"1762508321256\"]",
+        "venue": "[data-elem-id=\"1762508321263\"]",
+        "city": "[data-elem-id=\"1762508321260\"]",
+        "ticketUrl": "[data-elem-id=\"1762508349918\"] a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "RU"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached http://antoha-mc.ru but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-acdc",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-acdc.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-06T11:15:17.778Z",
+    "previousConfig": {
+      "id": "artist-acdc",
+      "domain": "www.acdc.com",
+      "url": "https://www.acdc.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".row.bg-transparent-black.mb-1.border.border-dark",
+        "artistNameFallback": "ACDC",
+        "date": ".col-lg-2",
+        "ticketUrl": ".tour-buttons a",
+        "venue": ".col-lg-3:nth-of-type(3)",
+        "city": ".col-lg-3:nth-of-type(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.row.bg-transparent-black.mb-1.border.border-dark) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-shelby-lynne",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-shelby-lynne.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-06T11:15:22.311Z",
+    "previousConfig": {
+      "id": "artist-shelby-lynne",
+      "domain": "www.shelbylynne.com",
+      "url": "https://www.shelbylynne.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "section.elementor-inner-section[data-id][class*='elementor-element-']",
+        "artistNameFallback": "Shelby Lynne",
+        "date": ".elementor-widget-heading .elementor-heading-title",
+        "ticketUrl": "a.elementor-button-link",
+        "venue": ".elementor-image-box-title",
+        "city": ".elementor-image-box-description",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.shelbylynne.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://www.shelbylynne.com/events.html but could not re-select on it",
+    "verification": ""
   }
 ]
