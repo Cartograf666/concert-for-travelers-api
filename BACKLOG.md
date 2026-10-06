@@ -11,118 +11,105 @@ each concert in space and time, and (3) **rank** the options.
 
 Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
-## All-branch integration and source recovery — 2026-10-06 (hosted verification in progress)
+## All-branch integration and source recovery — 2026-10-06 (published; explicit source gaps remain)
 
-- Alex explicitly requested integrating all remaining branch work into main and
-  repairing all sources. PR #182 is merged into main `37e8a3e`; all 63 local and
-  remote branch refs are ancestors of main, and PRs #121-125, #161 and #168 are
-  also MERGED. The main implementation was isolated in
-  `codex/all-sources-recovery-20261006`, based on main `b81dd86`; the original
-  checkout contains independent uncommitted backlog work.
-- The HU's missing canonical identity is added through `artistDb`. The recovered
-  historical Dublin duplicate preference is retained, while the old branch's
-  frozen ten-observation gate is superseded by ordinary canonical matching for
-  future shows. Replaying the actual October 6 venue/Ticketmaster caches yields
-  five correctly attributed shows from six observations; future-show and legacy
-  cache regressions pass. The three unique rejected-repair observations from
-  PR #161 are preserved in chronological order, without replaying stale configs.
-- Dependency changes from PRs #121-125 and #168 are consolidated. Four high
-  transitive advisories are fixed with compatible resolutions, without overrides.
-  The first combined build exposed mismatched AI SDK provider types; the lockfile
-  now aligns Google and AI packages on one provider version. Reinstall, build and
-  the zero-vulnerability audit pass.
-- Ticketmaster now recursively splits crowded future date windows, overlaps
-  boundaries and deduplicates by provider event ID. Malformed, truncated and
-  failed passes retain previous country caches and verification timestamps.
-  The request budget and unresolved dense-window limit remain explicit in health.
-  Twenty mocked connector regressions pass, including malformed event rows,
-  last-good cache preservation, valid TBA dates and truly empty countries. The
-  first hosted sweep returned HTTP 400 for all 27 first requests and retained
-  every last-good country cache and verification timestamp. The follow-on repair
-  uses documented second-precision UTC dates, rounding bounds outward; the strict
-  date-format split regression recovers 1,201/1,201 events. A second hosted sweep
-  must confirm the live cause and fresh country coverage. HTTP 400 diagnostics
-  expose only bounded structured provider codes/messages, with keys and URLs
-  redacted; the secret-bearing failure regression also preserves last-good cache.
-- Ticketmaster follow-on PR #186 is merged as `703862e`; all checks succeeded.
-  Its CI reports 697 passes, one skipped, zero failures. The deterministic
-  transient-healing strategy that reintroduced `maxRetries: 5` in Alabama
-  Symphony (PR #172) and Progresja (PR #185) is now repaired locally: conservative
-  15-second attempt, politeness and worst-jitter backoff totals must fit below
-  the unchanged 90-second ceiling. Already excessive configs get a safe candidate;
-  delays that leave no safe retry budget get none. Both sources return to default
-  two retries, retaining 2,000 ms politeness. Eleven strategy regressions, config
-  validation, TypeScript and scoped lint pass; source access remains separate.
-  The same excessive five-retry settings in another 16 static sources are also
-  fixed, including Philippine Philharmonic's actual 90-second failure. All 18
-  configs retain identical extraction/URLs and 2,000 ms politeness; only the
-  excessive retry override is removed. Dead-domain and anti-bot escalation now
-  share the same budget calculation. The 485 static configs pass schema and
-  budget audit, with no explicit >2-retry sequence reaching 90s. Alabama's existing
-  one-source runner verifies 12 raw events locally at `2026-10-06T14:31:47.813Z`;
-  raw retrieval is not a claim of their publication. Hosted access remains separate. Root owns release/docs and senior debugger
-  owns this strategy/config repair. No timeout, interval or security gate is raised.
-- Source repairs use current official HTML or feeds observed in official widgets.
-  Explicit empty notices are required for the newly repaired empty HTML pages;
-  changed layouts remain failures. Browser extraction can wait for a visible
-  loaded calendar and then use a source-specific parser under the same network
-  policy. Sangsangmadang live extraction confirms OurR on October 11.
-  Barby now captures the ordinary page's own public JSON response under the same
-  browser network policy: 66 future events retain explicit years.
-- The Bassnectar, L. Subramaniam and Legs Diamond parsers now read printed years
-  correctly; their currently observed schedules are archives, with zero events
-  publishable on October 6. This is parser recovery, not new concert coverage.
-- Follow-on Ivar Grydeland repair reads all six actual Australian Upcoming
-  shows from the official page, using printed 2026 dates and explicit locations.
-  All ended by June 7; the future-year fixture stays readable and changed/malformed
-  calendars fail. This is one further parsed archive, not future concert coverage.
-- The source-by-source evidence is in `docs/source-recovery-20261006.json`:
-  26 sources now return future shows, 19 have a verified current empty schedule,
-  and four are parsed archives with no future publication. The other 48 remain
-  external access, incomplete evidence or identity/source-binding gaps. Observed
-  iframe emptiness alone is not runner recovery. Eventbrite access remains blocked;
-  no account token or supported cross-organizer search API is available here.
-- Combined release verification after the Ivar repair: 696 tests pass, one
-  remains skipped (PR #183 Actions log); build passes;
-  ESLint reports zero errors and 103 warnings. The production SSRF check passes,
-  artist integrity is 144 errors against the unchanged 152 baseline, and city/venue
-  duplicate selectors are 126 against 131. Independent review found incomplete Emancipator feeds, hidden empty notices
-  and stale empty-cache hashes; all three are fixed and regression-checked.
-  Rendered empty notices use computed browser visibility; static pages reject
-  hidden/aria-hidden and inline-hidden notices. All 18 outstanding remote heads
-  are integrated after content audit; local Hue & Cry is patch-equivalent and its
-  ancestry is included separately. No unique local committed patch remains.
+- Alex explicitly requested integrating all branch work into main and repairing
+  sources. PRs #182, #183, #186 and #187 are merged. All 63 originally audited
+  local/remote branch refs are included; the final refreshed audit checks 64
+  current refs plus all 18 frozen remote heads with no missing ancestry. PRs
+  #121-125, #161 and #168 are also MERGED. No unique committed local patch remains.
+  The original checkout's independent uncommitted `BACKLOG.md` is preserved;
+  implementation/release used the attached `all-sources-recovery` worktree.
+- The missing canonical The HU identity is added through `artistDb`; ordinary
+  canonical matching supersedes the historical branch's frozen ten-observation
+  gate. The exact Dublin duplicate preference remains. The final public artist
+  file contains 19 shows, all attributed to The HU and its approved official
+  website. Public ticket links still follow the project's accepted preference
+  for the artist website. Three unique rejected-repair records from PR #161 are
+  retained chronologically, without replaying obsolete configurations.
+- Dependency updates from PRs #121-125/#168 are consolidated. Compatible
+  resolutions remove four high transitive advisories without overrides. The
+  lockfile aligns the Google/AI SDK provider types; install, build and the
+  zero-vulnerability audit pass.
+- Ticketmaster splits crowded future windows, overlaps boundaries, deduplicates
+  provider event IDs and preserves last-good country caches on malformed,
+  truncated or failed responses. The first hosted pass exposed 27 HTTP 400s;
+  it retained all country concerts and verification timestamps. PR #186 uses
+  documented second-precision UTC bounds with outward rounding. Twenty mocked
+  regressions cover full 1,201-event splits, malformed rows, TBA, empty countries,
+  unchanged fallback caches and sanitized structured HTTP 400 diagnostics.
+- Final daily run [37481742565](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37481742565)
+  completed collection and Pages deployment successfully on main `cffcd3c`.
+  Actual Ticketmaster cache/health/public status agree: 27/27 countries freshly
+  verified, healthy/complete, zero failed/fallback/partial, 57,686 raw events
+  versus 12,316 before. The log records 445 requests, below the unchanged 750 cap;
+  no Ticketmaster HTTP 400/invalid-response/incomplete failures remain. US grows
+  999 -> 33,262 and GB 1,000 -> 10,824. FR/PT are valid empty countries. This is
+  complete configured-country collection, not proof that the provider lists all
+  concerts in the world.
+- Public `status.json` generated `2026-10-06T14:59:39.476Z` is byte-identical to
+  the final run's saved publication (SHA-256
+  `3d5fd2dd0d471699e8e207a31ed7d0f80dc8a37f09cf012d921d7bc03d42d5de`).
+  It contains 51,072 published concerts versus 38,944 before: +12,128. Processing
+  balances 112,392 raw observations, 51,072 published, 12,529 merged duplicates
+  and explicit rejection buckets; publication is eligible/schema 3.
 - Hosted artist run [37471384116](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37471384116)
-  completed on `37e8a3e`: 394/415 succeeded, versus 372/415 before; 25 former
-  failures recovered and three formerly successful sources failed. All nine
-  locally repaired future artist sources succeeded; Astrid Williamson's locally
-  verified empty schedule is now inaccessible with HTTP 403. Emancipator verified
-  12 complete future raw rows; this is not a claim of 12 published concerts.
-- Pending automatic daily run `37474396837` was canceled before any scrape step,
-  then replaced by [37474755563](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37474755563)
-  on Ivar-enabled main `8bdcaeda`. Collection and Pages deployment succeeded:
-  121/152 venue sources succeeded, versus 95/149 before. Twenty-nine former
-  failures recovered; three old successes and three new configs failed. All 17
-  repaired future venue sources and seven verified-empty sources succeeded.
-  Ivar verified six archive rows and contributes no future event. The combined
-  cohorts recovered 54 baseline failures; 52 configs currently fail.
-- Public `status.json` generated `2026-10-06T14:01:25.332Z` independently confirms
-  39,261 concerts, versus 38,944 before. Ticketmaster's unchanged 12,316 cached
-  rows are explicitly unavailable/partial, with zero freshly verified countries;
-  green deployment does not establish a healthy source. PR #184 changes only
-  repair history. Artist extraction remains unchanged after its successful run;
-  the next daily run reuses that source data. Later retry-only edits change seven
-  artist configs, preserving every extraction field; their new hosted retry
-  behavior awaits the next artist sweep. Alabama is checked separately locally.
-- Psycho le Cému's LIVE page is reachable but contains no dated shows or explicit
-  empty notice; its old cached news date is not a concert date. No selector or
-  empty-result change is supported by the available evidence. The three new
-  configs are also diagnosed: Ray Davies redirects to an unrelated sports site,
-  Ray Scott exposes only an Angular shell and its bounded rendered load times
-  out, and Reality Check returns HTTP 429. No reliable official schedule or
-  explicit empty evidence supports a repair. External blocks
-  and invalid source bindings remain visible; no blanket empty flag, guessed
-  year/location, disabled security rule or fabricated historical fixture hides them.
+  completed on `37e8a3e`: 394/415 succeeded versus 372/415 before; 25 original
+  failures recovered and three prior successes failed. Emancipator verified 12
+  complete future raw rows. Final venues are 121/152 versus 95/149 before: 28
+  original failures recovered, two prior successes and three added configs fail.
+  Progresja now succeeds; James Pankow, successful in the first post-repair run,
+  now returns HTTP 403 and retains its last-good data. Across both cohorts, 53
+  of the 97 baseline failures succeed in the latest observed runs; 52 configs
+  currently fail, including five old successes and three added sources. The
+  first daily's 54-recovery figure is historical and superseded by this slice.
+- The source-by-source report `docs/source-recovery-20261006.json` preserves
+  local proof separately from latest hosted outcomes. Local recovery found 26
+  future schedules, 19 explicit empty schedules and four readable archives;
+  the other 48 local cases had access, identity or incomplete-evidence limits.
+  These local categories are not claims that every source is currently reachable.
+  Astrid Williamson and James Pankow now face HTTP 403. Bassnectar, L. Subramaniam,
+  Legs Diamond and Ivar Grydeland return dated archives, not future coverage.
+  Ivar's six Australian shows ended June 7; explicit future-year/German-location
+  fixtures prove the parser is not restricted to that archive or fallback country.
+- Repairs use official HTML/observed widget feeds, exact visible empty notices
+  and source-specific rendered/public-response parsing. Hidden empty notices,
+  incomplete Emancipator relationships and stale empty-cache hashes found by
+  review are fixed and regression-checked. Barby verifies 66 future raw events;
+  Sangsangmadang confirms its loaded calendar. No guessed date/year/location,
+  blanket empty flag or security-policy change conceals a source failure.
+- PR #187 repairs recurring overlong retries: transient/dead-domain/anti-bot
+  candidates share a conservative 15-second request, retained politeness and
+  jittered backoff budget below the unchanged 90-second source ceiling. All 18
+  excessive five-retry configs retain identical URLs/selectors/delays and use
+  default two retries. Schema/budget checks pass for 485 static configs; 11
+  strategy regressions pass. Alabama's ordinary local runner verifies 12 raw
+  events; this is local access, not a fresh hosted artist success. Seven artist
+  configs have retry-only edits after their producer run; new hosted retry
+  behavior awaits the next ordinary artist sweep. Existing raw observations
+  stay usable because all extraction fields remain unchanged.
+- Final combined CI: 697 tests pass, one skipped, zero failures; build and lint
+  pass (zero errors/103 warnings), selector ratchet passes. Production SSRF
+  passes; integrated artist integrity is 144 against unchanged baseline 152,
+  and duplicate city/venue selectors 126 against 131. Those local data-audit
+  counts precede the final run's automated enrichment commit; they are not a
+  fresh audit of every later bot data change.
+- Remaining source limits are explicit: Eventbrite's five HTTP 405/CAPTCHA
+  failures need authorized supported access; Bandsintown lacks feeds for 159
+  attempted identities. Several official pages have no trustworthy full future
+  rows or explicit empty statement, or have unsupported artist bindings. Psycho
+  le Cému's LIVE page has no dated schedule; its cached news date is not a show.
+  Ray Davies redirects to an unrelated site, Ray Scott exposes an unreadable
+  Angular shell, and Reality Check's ordinary request returns 429.
+- After the verified publication, auto-healing PR #188 changed only operational
+  retries for Philippine Philharmonic and Majestic from two to safe three, with
+  identical extraction/URLs/politeness. Main `e2fd56c` includes those changes and
+  this run's enrichment/history; the exact deployed collection remains `cffcd3c`.
+  Their new retry settings need the next ordinary venue collection. This later
+  operational delta is not asserted deployed by the earlier run. Next work is
+  authorized-access/source-identity evidence for the remaining failures and
+  ordinary hosted confirmation of the retry-only deltas; no redundant full
+  provider sweep is needed just to restate an unchanged successful observation.
 
 ## Collector release verified; location recovery — 2026-09-27
 
