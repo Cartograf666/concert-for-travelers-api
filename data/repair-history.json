@@ -25905,5 +25905,61 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://brucethomasmusic.com/schedule but could not re-select on it",
     "verification": ""
+  },
+  {
+    "id": "artist-ircam",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-ircam.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-06T21:17:46.516Z",
+    "previousConfig": {
+      "id": "artist-ircam",
+      "domain": "www.ircam.fr",
+      "url": "https://www.ircam.fr/en/events",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".MediaCard-module__I7_2rG__card",
+        "artistNameFallback": "IRCAM",
+        "date": ".m_b6d8b162[data-size='md']:first-of-type",
+        "venue": ".m_b6d8b162[data-size='md']:last-of-type",
+        "venueNameFallback": "IRCAM",
+        "cityNameFallback": "Paris",
+        "countryNameFallback": "FR"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: dates_parse [0/32 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]; artist_names_plausible [32/32 artist values look like page chrome (100%, allow 20%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-hermann-nitsch",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-hermann-nitsch.json",
+    "repairedConfigHash": "dc0a5adb9a621fde9009e0d802dbf0be427756756ec8b9b83a117691f6686284",
+    "strategy": "transient",
+    "repairedAt": "2026-10-06T21:17:47.386Z",
+    "previousConfig": {
+      "id": "artist-hermann-nitsch",
+      "domain": "www.nitsch.org",
+      "url": "https://www.nitsch.org/events/",
+      "type": "static_selectors",
+      "requestDelayMs": 2000,
+      "selectors": {
+        "eventBlock": "table tbody tr",
+        "artistNameFallback": "Hermann Nitsch",
+        "date": "td:nth-child(1)",
+        "venue": "td:nth-child(3)",
+        "city": "td:nth-child(4)",
+        "country": "td:nth-child(5)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget",
+    "verification": "PASS (1398 events, 9 checks)"
   }
 ]
