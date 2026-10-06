@@ -810,13 +810,14 @@ export async function runScraper(config: ScraperConfig, cached?: VenueCache): Pr
     const response = await getBreaker(config.domain).execute(() =>
       config.type === 'playwright_render'
         ? renderWithPlaywright(config)
-        : fetchWithRetry(config, reusableCache ? { etag: reusableCache.etag, lastModified: reusableCache.lastModified } : undefined)
+        : fetchWithRetry(config, reusableCache && !config.skipConditionalRequests
+          ? { etag: reusableCache.etag, lastModified: reusableCache.lastModified } : undefined)
     );
     const etag = typeof response.headers?.etag === 'string' ? response.headers.etag : undefined;
     const lastModified = typeof response.headers?.['last-modified'] === 'string' ? response.headers['last-modified'] : undefined;
 
     // 304 Not Modified: the server confirms nothing changed — reuse cached events, skip parsing.
-    if (response.status === 304 && reusableCache) {
+    if (response.status === 304 && reusableCache && !config.skipConditionalRequests) {
       console.log(`[Runner] ${config.id}: 304 Not Modified, reusing ${reusableCache.concerts.length} cached events.`);
       return {
         configId: config.id,
@@ -831,7 +832,7 @@ export async function runScraper(config: ScraperConfig, cached?: VenueCache): Pr
       };
     }
     if (response.status === 304) {
-      throw new Error(`Received 304 without a cache entry produced by the current extraction fingerprint: ${config.id}`);
+      throw new Error(`Received 304 without permitted conditional cache reuse: ${config.id}`);
     }
 
     responseData = response.data;

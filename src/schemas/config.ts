@@ -188,6 +188,7 @@ export const ScraperConfigSchema = z.object({
   // minutes is far beyond any real politeness need and still bounded.
   requestDelayMs: z.number().int().min(0).max(600000).optional().describe("Minimum delay between successive requests to this domain (politeness throttle), max 10 minutes."),
   allowEmpty: z.boolean().optional().describe("Set true for venues with a genuinely sparse/seasonal schedule, so 0 parsed events is treated as a valid (empty) result instead of a broken-selector failure."),
+  skipConditionalRequests: z.boolean().optional().describe("Always fetch the source page before custom extraction when live data is loaded from separate endpoints; an unchanged HTML shell cannot prove unchanged events."),
   emptyScheduleText: z.string().trim().min(1).max(1000).optional().describe("When allowEmpty is true, require this visible first-party message before accepting zero events. Missing text remains a source failure."),
   renderWaitSelector: z.string().trim().min(1).max(2000).optional().describe("For playwright_render, wait up to 15 seconds for a visible event row or explicit empty state before extraction."),
   renderResponseUrl: z.string().url().refine(u => {
