@@ -24913,5 +24913,88 @@
     "failuresSinceRepair": 0,
     "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.shelbylynne.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://www.shelbylynne.com/events.html but could not re-select on it",
     "verification": ""
+  },
+  {
+    "id": "artist-joe-hutton",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-joe-hutton.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-06T11:25:17.869Z",
+    "previousConfig": {
+      "id": "artist-joe-hutton",
+      "domain": "thekingblues.com",
+      "url": "https://thekingblues.com/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.wp-block-the-king-blues-event-item",
+        "artistNameFallback": "The King Blues",
+        "date": "time",
+        "ticketUrl": "div.event-buttons a",
+        "venue": "h4.event-venue",
+        "city": "h4.event-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: has_future_dates [0 event(s) dated today or later]",
+    "verification": ""
+  },
+  {
+    "id": "artist-ranjani-gayatri",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-ranjani-gayatri.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-06T11:26:50.117Z",
+    "previousConfig": {
+      "id": "artist-ranjani-gayatri",
+      "domain": "ranjanigayatri.com",
+      "url": "https://ranjanigayatri.com/concerts",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".concert-item",
+        "artistNameFallback": "Ranjani-Gayatri",
+        "date": ".concert-date",
+        "ticketUrl": "a.ticket-button",
+        "venue": ".concert-venue",
+        "city": ".concert-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "IN"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" ([data-testid=\"repeater-item\"], [data-testid=\"event-card\"]) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-peter-smith",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-peter-smith.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-06T11:26:55.770Z",
+    "previousConfig": {
+      "id": "artist-peter-smith",
+      "domain": "www.petersmithmusic.com",
+      "url": "https://www.petersmithmusic.com/calendar",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-item",
+        "artistNameFallback": "Peter Smith",
+        "date": "div.event-date",
+        "ticketUrl": "a.more-info-link",
+        "city": "p.event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.petersmithmusic.com/calendar but could not re-select on it",
+    "verification": ""
   }
 ]
