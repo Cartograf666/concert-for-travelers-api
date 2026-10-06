@@ -44,12 +44,12 @@ const CASES: Case[] = [
   },
   {
     id: 'artist-emancipator',
-    fixture: 'artist-emancipator-location.html',
+    fixture: 'artist-sources-recovery-20261006/artist-emancipator.json',
     artist: 'Emancipator',
     rawCount: 12,
     futureCount: 12,
     samples: [
-      { venue: 'Crystal Ballroom', city: 'Somerville', country: 'US' },
+      { venue: 'Crystal Ballroom at Somerville Theatre', city: 'Somerville', country: 'US' },
       { venue: 'Hollywood Theatre', city: 'Vancouver', country: 'CA' },
       { venue: 'The Ave Live', city: 'Philadelphia', country: 'US' }
     ]
@@ -93,14 +93,14 @@ for (const c of CASES) {
   });
 }
 
-test('artist-emancipator keeps an older-month range for the next tour year', async (t) => {
+test('artist-emancipator preserves the API explicit next-year date', async (t) => {
   const c: Case = {
     id: 'artist-emancipator',
-    fixture: 'artist-emancipator-next-year-range.html',
+    fixture: 'artist-sources-recovery-20261006/artist-emancipator-next-year.json',
     artist: 'Emancipator',
     rawCount: 1,
     futureCount: 1,
-    samples: [{ venue: 'Crystal Ballroom', city: 'Somerville', country: 'US' }]
+    samples: [{ venue: 'Crystal Ballroom at Somerville Theatre', city: 'Somerville', country: 'US' }]
   };
   const result = await runFixture(t, c);
   assert.equal(result.success, true);

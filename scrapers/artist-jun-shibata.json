@@ -1,8 +1,8 @@
 {
   "id": "artist-jun-shibata",
-  "domain": "www.shibatajun.com",
-  "url": "https://www.shibatajun.com/schedule/live/",
-  "type": "static_selectors",
+  "domain": "www.shibajun.jp",
+  "url": "https://www.shibajun.jp/schedule/live/",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "div.live-schedule__list__item",
     "artistNameFallback": "Jun Shibata",

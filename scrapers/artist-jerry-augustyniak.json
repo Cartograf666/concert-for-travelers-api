@@ -1,8 +1,8 @@
 {
   "id": "artist-jerry-augustyniak",
-  "domain": "www.10000maniacs.com",
-  "url": "http://www.10000maniacs.com/shows/",
-  "type": "static_selectors",
+  "domain": "maniacs.com",
+  "url": "https://rest.bandsintown.com/artists/id_47037/events?app_id=0574c8b4e3fb7314c5189f30daa283cb&date=upcoming",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "div.shows-list__item",
     "artistNameFallback": "10,000 Maniacs",

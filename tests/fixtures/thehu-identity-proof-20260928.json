@@ -1,0 +1,437 @@
+{
+  "schemaVersion": 1,
+  "canonical": {
+    "name": "The HU",
+    "website": "https://www.thehuofficial.com/"
+  },
+  "identityBasis": "The HU official website and 3Olympia-linked official domain identify the Mongolian rock quartet. Fresh cofounder Tim Perkis project page identifies The Hub as a different computer-network band. Existing The Hub MBID7f67acbf-4b15-471a-833a-6bdd338c2fbe is retained, with no inferred IDs or socials for The HU.",
+  "primaryAssets": [
+    {
+      "id": "belfast",
+      "url": "https://www.shine.net/",
+      "startedAt": "2026-09-28T14:52:43.012Z",
+      "transport": "existing guarded production-default axios",
+      "capturedAt": "2026-09-28T14:52:43.538Z",
+      "bytes": 56644,
+      "sha256": "2dbff84159be7c3d5ed51a1396033429df2faecff62ca508d142a44d7ba4e213",
+      "result": "received"
+    },
+    {
+      "id": "birmingham",
+      "url": "https://www.academymusicgroup.com/o2academybirmingham/events/the-hu-tickets-ae1261719",
+      "startedAt": "2026-09-28T14:52:41.694Z",
+      "transport": "existing guarded production-default axios",
+      "capturedAt": "2026-09-28T14:52:42.041Z",
+      "bytes": 548445,
+      "sha256": "11878c9e7cfb1cde57b7601c96f53e2694d90fa0aba799752b59fb865bf17c3a",
+      "result": "received"
+    },
+    {
+      "id": "bournemouth",
+      "url": "https://www.academymusicgroup.com/o2academybournemouth/events/the-hu-tickets-ae1261719",
+      "startedAt": "2026-09-28T14:52:40.580Z",
+      "transport": "existing guarded production-default axios",
+      "capturedAt": "2026-09-28T14:52:41.213Z",
+      "bytes": 546304,
+      "sha256": "98abff566dd7a73f140ac0286a02693568f3268d6ba10253312c3aefc0b928f8",
+      "result": "received"
+    },
+    {
+      "id": "dublin",
+      "url": "https://www.3olympia.ie/whats-on/the-hu",
+      "startedAt": "2026-09-28T14:49:06.524Z",
+      "transport": "existing guarded production-default axios",
+      "capturedAt": "2026-09-28T14:49:07.017Z",
+      "bytes": 48335,
+      "sha256": "93138fea3a79ff608393f010c6f5a7533fc407c5a6632e7b105bee325aa97de1",
+      "result": "received"
+    },
+    {
+      "id": "glasgow",
+      "url": "https://www.academymusicgroup.com/o2academyglasgow/events/the-hu-tickets-ae1261719",
+      "startedAt": "2026-09-28T14:51:07.110Z",
+      "transport": "existing guarded production-default axios",
+      "capturedAt": "2026-09-28T14:51:07.888Z",
+      "bytes": 544298,
+      "sha256": "7f2c0121a33dd9301695fd19067000e93e7bcd0d70c439ec47415d28eadfd0a1",
+      "result": "received"
+    },
+    {
+      "id": "london",
+      "url": "https://www.academymusicgroup.com/o2academybrixton/events/the-hu-tickets-ae1261719",
+      "startedAt": "2026-09-28T14:52:42.044Z",
+      "transport": "existing guarded production-default axios",
+      "capturedAt": "2026-09-28T14:52:42.555Z",
+      "bytes": 544465,
+      "sha256": "a2498138ef1f3d36080d5d62ab1dc8fd8dd4bc07f253fd46e41884f6b97e9bbd",
+      "result": "received"
+    },
+    {
+      "id": "manchester",
+      "url": "https://www.academymusicgroup.com/o2apollomanchester/events/the-hu-tickets-ae1261719",
+      "startedAt": "2026-09-28T14:52:42.558Z",
+      "transport": "existing guarded production-default axios",
+      "capturedAt": "2026-09-28T14:52:43.010Z",
+      "bytes": 545552,
+      "sha256": "3cca027bb074025f4653dce1512c1307244a68fc3ef303b3268531a932b31beb",
+      "result": "received"
+    },
+    {
+      "id": "newcastle",
+      "url": "https://www.academymusicgroup.com/o2cityhallnewcastle/events/the-hu-tickets-ae1261719",
+      "startedAt": "2026-09-28T14:52:41.215Z",
+      "transport": "existing guarded production-default axios",
+      "capturedAt": "2026-09-28T14:52:41.693Z",
+      "bytes": 547606,
+      "sha256": "00a5269ff1458794734885f665b8e8661ad41d9805ab87b01d99f74a1001a2f8",
+      "result": "received"
+    },
+    {
+      "id": "thehub",
+      "url": "https://perkis.com/wpc/projects/index.html",
+      "startedAt": "2026-09-28T14:49:07.018Z",
+      "transport": "existing guarded production-default axios",
+      "capturedAt": "2026-09-28T14:49:07.868Z",
+      "bytes": 8195,
+      "sha256": "1922e1750cbe6806fe32559a7135ea48821f225c84da191a4f5bc9619582c173",
+      "result": "received"
+    }
+  ],
+  "unavailablePrimaryReads": [
+    {
+      "id": "bristol",
+      "url": "https://www.theprospectbuilding.com/events/thehu",
+      "startedAt": "2026-09-28T14:51:07.891Z",
+      "transport": "existing guarded production-default axios",
+      "result": "unavailable",
+      "error": "timeout of 15000ms exceeded"
+    },
+    {
+      "id": "thehu",
+      "url": "https://www.thehuofficial.com/",
+      "startedAt": "2026-09-28T14:48:36.497Z",
+      "transport": "existing guarded production-default axios",
+      "result": "unavailable",
+      "error": "timeout of 15000ms exceeded"
+    },
+    {
+      "id": "tour",
+      "url": "https://www.thehuofficial.com/tour",
+      "startedAt": "2026-09-28T14:48:51.515Z",
+      "transport": "existing guarded production-default axios",
+      "result": "unavailable",
+      "error": "timeout of 15000ms exceeded"
+    }
+  ],
+  "bindings": [
+    {
+      "rawIndex": 8,
+      "cohort": "venue",
+      "cacheId": "3olympia-theatre-dublin",
+      "raw": {
+        "artist": "The HU",
+        "date": "Tue 6th Oct 2026",
+        "venue": "3Olympia Theatre",
+        "city": "Dublin",
+        "country": "IE",
+        "lat": 53.3445707,
+        "lng": -6.2660593,
+        "originalSource": "3olympia.ie",
+        "scrapedAt": "2026-09-28T09:09:34.600Z"
+      },
+      "primaryPage": "https://www.3olympia.ie/whats-on/the-hu",
+      "asset": "dublin",
+      "observed": "The HU, 3Olympia Dublin, Tue6Oct2026,doors19:00; general tickets sold out, VIP available / low availability. These are not cancellation markers.",
+      "artistWebsiteLinked": "https://www.thehuofficial.com/",
+      "ticketArtistListing": "https://www.ticketmaster.ie/venueartist/198239/5301858?brand=ie_3olympia",
+      "exactEventBinding": "Ticketmaster artist5301858 links raw purchase1800645A88B58FAF for the same date/time/venue; exact event page corroborated via web.",
+      "exactTicketUrl": null,
+      "purchaseId": null,
+      "discoveryId": null
+    },
+    {
+      "rawIndex": 7291,
+      "cohort": "ticketmaster",
+      "cacheId": "GB",
+      "raw": {
+        "artist": "The Hu",
+        "date": "2026-09-29",
+        "startTime": "19:00",
+        "venue": "O2 Academy Glasgow",
+        "city": "Glasgow",
+        "country": "GB",
+        "lat": 55.8504496,
+        "lng": -4.2587809,
+        "ticketUrl": "https://www.ticketmaster.co.uk/the-hu-warrior-chant-tour-glasgow-29-09-2026/event/3E00645A9EEC31E3",
+        "originalSource": "ticketmaster.com",
+        "scrapedAt": "2026-09-28T09:12:07.543Z"
+      },
+      "primaryPage": "https://www.academymusicgroup.com/o2academyglasgow/events/the-hu-tickets-ae1261719",
+      "asset": "glasgow",
+      "purchaseLink": "https://www.ticketmaster.co.uk/event/3E00645A9EEC31E3?brand=o2academyglasgow&camefrom=CFC_AMG_GLASGOW&thehu26",
+      "observed": "Exact venue event page names The HU Mongolian quartet, same date/venue,doors19:00 and general onsale link; no event-specific cancel/move notice observed.",
+      "exactTicketUrl": "https://www.ticketmaster.co.uk/the-hu-warrior-chant-tour-glasgow-29-09-2026/event/3E00645A9EEC31E3",
+      "purchaseId": "3E00645A9EEC31E3",
+      "discoveryId": null
+    },
+    {
+      "rawIndex": 7398,
+      "cohort": "ticketmaster",
+      "cacheId": "GB",
+      "raw": {
+        "artist": "The Hu",
+        "date": "2026-10-01",
+        "startTime": "19:00",
+        "venue": "The Prospect Building",
+        "city": "Bristol",
+        "country": "GB",
+        "lat": 51.44896002,
+        "lng": -2.57363452,
+        "ticketUrl": "https://www.ticketmaster.co.uk/the-hu-bristol-01-10-2026/event/3500645AE9C5735C",
+        "originalSource": "ticketmaster.com",
+        "scrapedAt": "2026-09-28T09:12:07.543Z"
+      },
+      "transport": "Web-rendered primary venue and exact Ticketmaster pages; guarded venue GET timed out",
+      "primaryPage": "https://www.theprospectbuilding.com/events/thehu",
+      "observed": "The HU, Bristol, Thursday1October2026,19:00-23:00; exact raw Ticketmaster page matches date/venue.",
+      "exactTicketUrl": "https://www.ticketmaster.co.uk/the-hu-bristol-01-10-2026/event/3500645AE9C5735C",
+      "purchaseId": "3500645AE9C5735C",
+      "discoveryId": null
+    },
+    {
+      "rawIndex": 7506,
+      "cohort": "ticketmaster",
+      "cacheId": "GB",
+      "raw": {
+        "artist": "The Hu",
+        "date": "2026-10-02",
+        "startTime": "19:00",
+        "venue": "O2 Academy Bournemouth",
+        "city": "Bournemouth",
+        "country": "GB",
+        "lat": 50.72671,
+        "lng": -1.839878,
+        "festival": {
+          "name": "The Hu - Warrior Chant Tour",
+          "url": "https://www.ticketmaster.co.uk/the-hu-warrior-chant-tour-bournemouth-02-10-2026/event/3E006459E974688E"
+        },
+        "lineup": [
+          "SKÁLD"
+        ],
+        "ticketUrl": "https://www.ticketmaster.co.uk/the-hu-warrior-chant-tour-bournemouth-02-10-2026/event/3E006459E974688E",
+        "originalSource": "ticketmaster.com",
+        "scrapedAt": "2026-09-28T09:12:07.543Z"
+      },
+      "primaryPage": "https://www.academymusicgroup.com/o2academybournemouth/events/the-hu-tickets-ae1261719",
+      "asset": "bournemouth",
+      "purchaseLink": "https://www.ticketmaster.co.uk/event/3E006459E974688E?brand=o2academybournemouth&camefrom=CFC_AMG_BOURNEMOUTH&thehu26",
+      "observed": "Exact venue event page names The HU Mongolian quartet, same date/venue,doors19:00 and general onsale link; no event-specific cancel/move notice observed.",
+      "exactTicketUrl": "https://www.ticketmaster.co.uk/the-hu-warrior-chant-tour-bournemouth-02-10-2026/event/3E006459E974688E",
+      "purchaseId": "3E006459E974688E",
+      "discoveryId": null
+    },
+    {
+      "rawIndex": 7639,
+      "cohort": "ticketmaster",
+      "cacheId": "GB",
+      "raw": {
+        "artist": "The Hu",
+        "date": "2026-10-03",
+        "startTime": "19:00",
+        "venue": "O2 City Hall Newcastle",
+        "city": "Newcastle Upon Tyne",
+        "country": "GB",
+        "lat": 54.977346,
+        "lng": -1.610213,
+        "ticketUrl": "https://www.ticketmaster.co.uk/the-hu-newcastle-upon-tyne-03-10-2026/event/3E006459DEE361BB",
+        "originalSource": "ticketmaster.com",
+        "scrapedAt": "2026-09-28T09:12:07.543Z"
+      },
+      "primaryPage": "https://www.academymusicgroup.com/o2cityhallnewcastle/events/the-hu-tickets-ae1261719",
+      "asset": "newcastle",
+      "purchaseLink": "https://www.ticketmaster.co.uk/event/3E006459DEE361BB?brand=o2cityhallnewcastle&camefrom=CFC_AMG_CHN&thhu26",
+      "observed": "Exact venue event page names The HU Mongolian quartet, same date/venue,doors19:00 and general onsale link; no event-specific cancel/move notice observed.",
+      "exactTicketUrl": "https://www.ticketmaster.co.uk/the-hu-newcastle-upon-tyne-03-10-2026/event/3E006459DEE361BB",
+      "purchaseId": "3E006459DEE361BB",
+      "discoveryId": null
+    },
+    {
+      "rawIndex": 7765,
+      "cohort": "ticketmaster",
+      "cacheId": "GB",
+      "raw": {
+        "artist": "The Hu",
+        "date": "2026-10-05",
+        "startTime": "19:00",
+        "venue": "The Telegraph Building",
+        "city": "Belfast",
+        "country": "GB",
+        "lat": 54.602427,
+        "lng": -5.932275,
+        "ticketUrl": "https://www.ticketmaster.ie/the-hu-belfast-05-10-2026/event/38006459955D191E",
+        "originalSource": "ticketmaster.com",
+        "scrapedAt": "2026-09-28T09:12:07.543Z"
+      },
+      "primaryPage": "https://www.shine.net/",
+      "asset": "belfast",
+      "observedEvent": {
+        "id": 10514,
+        "title": "The Hu",
+        "subTitle": "+ Skald",
+        "recurringDayOfWeek": [
+          "7"
+        ],
+        "startDate": {
+          "date": "2026-10-05 19:00:00.000000",
+          "timezone_type": 3,
+          "timezone": "Europe/Dublin"
+        },
+        "doors": "7pm / 18+",
+        "ticketsUrl": "https://www.ticketmaster.ie/the-hu-belfast-05-10-2026/event/38006459955D191E",
+        "websiteImage": "uploads/accounts/27/events/10514_website.png",
+        "venue": "The Telegraph Building",
+        "categories": [
+          "Live Gigs",
+          "All Shows"
+        ]
+      },
+      "exactTicketUrl": "https://www.ticketmaster.ie/the-hu-belfast-05-10-2026/event/38006459955D191E",
+      "purchaseId": "38006459955D191E",
+      "discoveryId": null
+    },
+    {
+      "rawIndex": 7960,
+      "cohort": "ticketmaster",
+      "cacheId": "GB",
+      "raw": {
+        "artist": "The Hu",
+        "date": "2026-10-08",
+        "startTime": "19:00",
+        "venue": "O2 Academy Birmingham",
+        "city": "Birmingham",
+        "country": "GB",
+        "lat": 52.473277,
+        "lng": -1.900215,
+        "festival": {
+          "name": "The Hu - Warrior Chant Tour",
+          "url": "https://www.ticketmaster.co.uk/the-hu-warrior-chant-tour-birmingham-08-10-2026/event/3E0064599E4F3D02"
+        },
+        "lineup": [
+          "SKÁLD"
+        ],
+        "ticketUrl": "https://www.ticketmaster.co.uk/the-hu-warrior-chant-tour-birmingham-08-10-2026/event/3E0064599E4F3D02",
+        "originalSource": "ticketmaster.com",
+        "scrapedAt": "2026-09-28T09:12:07.543Z"
+      },
+      "primaryPage": "https://www.academymusicgroup.com/o2academybirmingham/events/the-hu-tickets-ae1261719",
+      "asset": "birmingham",
+      "purchaseLink": "https://www.ticketmaster.co.uk/event/3E0064599E4F3D02?brand=o2academybirmingham&camefrom=CFC_AMG_BIRMINGHAM&thehu26",
+      "observed": "Exact venue event page names The HU Mongolian quartet, same date/venue,doors19:00 and general onsale link; no event-specific cancel/move notice observed.",
+      "exactTicketUrl": "https://www.ticketmaster.co.uk/the-hu-warrior-chant-tour-birmingham-08-10-2026/event/3E0064599E4F3D02",
+      "purchaseId": "3E0064599E4F3D02",
+      "discoveryId": null
+    },
+    {
+      "rawIndex": 8071,
+      "cohort": "ticketmaster",
+      "cacheId": "GB",
+      "raw": {
+        "artist": "The Hu",
+        "date": "2026-10-09",
+        "startTime": "19:00",
+        "venue": "O2 Academy Brixton",
+        "city": "London",
+        "country": "GB",
+        "lat": 51.465355,
+        "lng": -0.115176,
+        "festival": {
+          "name": "The Hu",
+          "url": "https://www.ticketmaster.co.uk/the-hu-london-09-10-2026/event/3E006459F14C6D61"
+        },
+        "lineup": [
+          "SKÁLD"
+        ],
+        "ticketUrl": "https://www.ticketmaster.co.uk/the-hu-london-09-10-2026/event/3E006459F14C6D61",
+        "originalSource": "ticketmaster.com",
+        "scrapedAt": "2026-09-28T09:12:07.543Z"
+      },
+      "primaryPage": "https://www.academymusicgroup.com/o2academybrixton/events/the-hu-tickets-ae1261719",
+      "asset": "london",
+      "purchaseLink": "https://www.ticketmaster.co.uk/event/3E006459F14C6D61?brand=o2academybrixton&camefrom=CFC_AMG_BRIXTON&thhu26",
+      "observed": "Exact venue event page names The HU Mongolian quartet, same date/venue,doors19:00 and general onsale link; no event-specific cancel/move notice observed.",
+      "exactTicketUrl": "https://www.ticketmaster.co.uk/the-hu-london-09-10-2026/event/3E006459F14C6D61",
+      "purchaseId": "3E006459F14C6D61",
+      "discoveryId": null
+    },
+    {
+      "rawIndex": 8204,
+      "cohort": "ticketmaster",
+      "cacheId": "GB",
+      "raw": {
+        "artist": "The Hu",
+        "date": "2026-10-10",
+        "startTime": "19:00",
+        "venue": "O2 Apollo Manchester",
+        "city": "Manchester",
+        "country": "GB",
+        "lat": 53.469422,
+        "lng": -2.221964,
+        "ticketUrl": "https://www.ticketmaster.co.uk/the-hu-manchester-10-10-2026/event/3600645B93833A65",
+        "originalSource": "ticketmaster.com",
+        "scrapedAt": "2026-09-28T09:12:07.543Z"
+      },
+      "primaryPage": "https://www.academymusicgroup.com/o2apollomanchester/events/the-hu-tickets-ae1261719",
+      "asset": "manchester",
+      "purchaseLink": "https://www.ticketmaster.co.uk/the-hu-manchester-10-10-2026/event/3600645B93833A65?brand=o2apollomanchester&camefrom=LN_MANCHESTER&thhu26",
+      "observed": "Exact venue event page names The HU Mongolian quartet, same date/venue,doors19:00 and general onsale link; no event-specific cancel/move notice observed.",
+      "exactTicketUrl": "https://www.ticketmaster.co.uk/the-hu-manchester-10-10-2026/event/3600645B93833A65",
+      "purchaseId": "3600645B93833A65",
+      "discoveryId": null
+    },
+    {
+      "rawIndex": 8303,
+      "cohort": "ticketmaster",
+      "cacheId": "IE",
+      "raw": {
+        "artist": "The Hu",
+        "date": "2026-10-06",
+        "startTime": "19:00",
+        "venue": "3Olympia Theatre",
+        "city": "Dublin",
+        "country": "IE",
+        "lat": 53.344318,
+        "lng": -6.266114,
+        "ticketUrl": "https://www.ticketmaster.ie/the-hu-dublin-06-10-2026/event/1800645A88B58FAF",
+        "originalSource": "ticketmaster.com",
+        "scrapedAt": "2026-09-28T09:12:07.543Z"
+      },
+      "primaryPage": "https://www.3olympia.ie/whats-on/the-hu",
+      "asset": "dublin",
+      "observed": "The HU, 3Olympia Dublin, Tue6Oct2026,doors19:00; general tickets sold out, VIP available / low availability. These are not cancellation markers.",
+      "artistWebsiteLinked": "https://www.thehuofficial.com/",
+      "ticketArtistListing": "https://www.ticketmaster.ie/venueartist/198239/5301858?brand=ie_3olympia",
+      "exactEventBinding": "Ticketmaster artist5301858 links raw purchase1800645A88B58FAF for the same date/time/venue; exact event page corroborated via web.",
+      "exactTicketUrl": "https://www.ticketmaster.ie/the-hu-dublin-06-10-2026/event/1800645A88B58FAF",
+      "purchaseId": "1800645A88B58FAF",
+      "discoveryId": null
+    }
+  ],
+  "duplicatePair": {
+    "rawIndices": [
+      8,
+      8303
+    ],
+    "date": "2026-10-06",
+    "city": "Dublin",
+    "venue": "3Olympia Theatre",
+    "baselineWinner": 8303,
+    "reason": "Legacy ticket-link preference selects the whole Ticketmaster record. Adding a canonical site equalizes public URLs and would otherwise select venue coordinates without19:00. A source-specific exact pair preference preserves the whole baseline winner; venue remains if Ticketmaster absent."
+  },
+  "limitations": [
+    "Official artist home/tour and Bristol guarded GETs timed out; readable web-rendered primary pages and fresh3Olympia artist-domain link provide qualified corroboration.",
+    "No authenticated provider API status read. Purchase IDs are URL IDs, not assumed Discovery IDs. No cancellation or move was observed for scoped events; this is not a future status guarantee.",
+    "Only the exact10 saved observations are admitted; new dates/URLs/locations stay on hold.",
+    "Only exact3Olympia Dublin6Oct2026 source/date/venue/city/country permits absent ticketUrl. Empty/null/malformed or unexpected provided URLs remain rejected.",
+    "No genuine The Hub event exists in saved corpus; DB/catalog equality and synthetic routing verify preservation."
+  ]
+}

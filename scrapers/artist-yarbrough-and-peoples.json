@@ -1,11 +1,10 @@
 {
   "id": "artist-yarbrough-and-peoples",
   "domain": "jacobspavilion.com",
-  "url": "https://jacobspavilion.com/calendar/",
-  "type": "static_selectors",
+  "url": "https://aegwebprod.blob.core.windows.net/json/events/224/events.json",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".event-card",
-    "artistNameFallback": "Yarbrough and Peoples",
     "date": ".date-time span:first-child",
     "ticketUrl": ".buy-tickets-btn",
     "venueNameFallback": "Jacobs Pavilion",

@@ -1,0 +1,888 @@
+{
+  "date": "2026-10-06",
+  "scope": "97 failures in the downloaded artist and venue baseline runs; newly discovered main configs are checked by the hosted cycle.",
+  "verification": "Local official live extraction and offline regressions. Hosted integration/publication pending. Successful raw retrieval is not published concert coverage.",
+  "counts": {
+    "external-block": 16,
+    "recovered": 26,
+    "observed-empty-only": 1,
+    "verified-empty": 19,
+    "unresolved": 32,
+    "archive-only": 3
+  },
+  "sources": [
+    {
+      "cohort": "artist",
+      "id": "antoha-mc-tour",
+      "status": "unresolved",
+      "count": "unverified_live",
+      "sourceUrl": "http://antoha-mc.ru",
+      "proof": "official concerts page: two future film screenings, not concerts; old URL HTTP 403; no verified future concert",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-10cc",
+      "status": "recovered",
+      "count": "42",
+      "sourceUrl": "https://www.10cc.world/events",
+      "proof": "official five year-headed event tables; 2026/27 future rows",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-a-tribe-called-red",
+      "status": "verified-empty",
+      "count": "0",
+      "sourceUrl": "https://atribecalledred.com/tour/",
+      "proof": "official exact visible phrase: No shows booked at the moment.",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-acdc",
+      "status": "verified-empty",
+      "count": "0",
+      "sourceUrl": "https://www.acdc.com/tour",
+      "proof": "official exact visible phrase: No Tour Dates right now",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-adiemus",
+      "status": "unresolved",
+      "count": "unverified_live",
+      "sourceUrl": "http://www.karljenkins.com/performances",
+      "proof": "Karl Jenkins /performances page is not verified Adiemus artist-specific schedule; no current whole records",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-amanda-forsyth",
+      "status": "unresolved",
+      "count": "unverified_live",
+      "sourceUrl": "https://www.amandaforsyth.com/concerts",
+      "proof": "Upcoming area only Squarespace Summary Block placeholder, no explicit empty claim",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-andy-cairns",
+      "status": "unresolved",
+      "count": "unverified_live",
+      "sourceUrl": "https://therapyquestionmark.co.uk/tour/",
+      "proof": "/tour is Therapy? band page; band shows not attributable to solo Andy Cairns; page says no dates yet",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-andy-timmons",
+      "status": "verified-empty",
+      "count": "0",
+      "sourceUrl": "https://andytimmons.com/shows/",
+      "proof": "official exact visible phrase: No shows booked at the moment.",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-anna-depenbusch",
+      "status": "recovered",
+      "count": 1,
+      "sourceUrl": "https://www.annadepenbusch.de/termine/",
+      "proof": "Live official current selectors: Hamburg December 8."
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-astrid-williamson",
+      "status": "verified-empty",
+      "count": "0",
+      "sourceUrl": "https://astridwilliamson.com/live/",
+      "proof": "official exact visible phrase: There are currently no upcoming events to list, please check back soon.",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-aust",
+      "status": "recovered",
+      "count": "1",
+      "sourceUrl": "https://www.austmusic.net/",
+      "proof": "official homepage Next Event; Oct 11 Zurich Papiersaal",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-avantasia",
+      "status": "unresolved",
+      "count": "unverified_live",
+      "sourceUrl": "https://avantasia.com/tour/",
+      "proof": "official /tour HTTP 406; 2025 Here Be Dragons tour dates cannot be assigned to 2026",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-bassnectar",
+      "status": "archive-only",
+      "count": 510,
+      "sourceUrl": "https://bassnectar.net/shows/",
+      "proof": "Source prints 2008-2026 years; current extraction succeeds but pipeline has zero future events."
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-beatsteaks",
+      "status": "verified-empty",
+      "count": "0",
+      "sourceUrl": "https://beatsteaks.com/live/",
+      "proof": "official exact visible phrase: No shows booked at the moment.",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-dan-deacon",
+      "status": "external-block",
+      "count": "unverified_live",
+      "sourceUrl": "https://dandeacon.com/live-dates/",
+      "proof": "6 offline current official rows parse; live runner HTTP 403; original 403",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-david-kikoski",
+      "status": "recovered",
+      "count": "11",
+      "sourceUrl": "https://www.davidkikoski.com/events",
+      "proof": "current official events domain; 13 raw rows, 11 future",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-emancipator",
+      "status": "recovered",
+      "count": "12",
+      "sourceUrl": "https://cdn.seated.com/api/tour/0410bcb7-a835-464c-b3ef-d7855c3ecbdc?include=tour-events",
+      "proof": "official homepage embedded Seated widget UUID; 12 future tour-events",
+      "additionalEvidence": "https://www.emancipatormusic.com/ embeds source URL"
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-giora-feidman",
+      "status": "recovered",
+      "count": "61",
+      "sourceUrl": "https://www.giorafeidman-online.com/termine",
+      "proof": "official Termine page rows; date/city/country/venue preserved",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-james-taylor",
+      "status": "verified-empty",
+      "count": "0",
+      "sourceUrl": "https://www.jamestaylor.com/schedule",
+      "proof": "official exact visible phrase: No tour dates announced yet. Check back soon.",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-john-mellencamp",
+      "status": "unresolved",
+      "count": "unverified_live",
+      "sourceUrl": "https://www.mellencamp.com/tour",
+      "proof": "current /tour has no dated cards or explicit empty statement; most recent official live news Sep 26 2026",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-julie-fowlis",
+      "status": "recovered",
+      "count": 1,
+      "sourceUrl": "https://www.juliefowlis.com/wp-json/tribe/events/v1/events?per_page=100",
+      "proof": "Live official WordPress Tribe API: Glasgow December 12, explicit date and country."
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-l-subramaniam",
+      "status": "archive-only",
+      "count": 6,
+      "sourceUrl": "https://indianviolin.com/events/",
+      "proof": "Official observed dates are 2020; parser recovery, no future publication."
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-lady-antebellum",
+      "status": "recovered",
+      "count": "9 (8 full, 1 incomplete:venue)",
+      "sourceUrl": "https://rest.bandsintown.com/artists/id_6132/events?app_id=umg_BMLG_Lady&date=upcoming",
+      "proof": "official embedded Bandsintown id_6132: all 9 validated rows emitted; 8 Ticketmaster-proven physical venues, cruise row has venue undefined and is visible to pipeline as incomplete:venue",
+      "additionalEvidence": "https://www.ladyamusic.com/tour/ widget; https://www.ticketmaster.com/lady-a-tickets/artist/1173672 venue proof"
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-legs-diamond",
+      "status": "archive-only",
+      "count": 5,
+      "sourceUrl": "https://legsdiamond.com/tours/",
+      "proof": "Official observed dates are 2005-2006; parser recovery, no future publication."
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-limahl",
+      "status": "unresolved",
+      "count": "unverified_live",
+      "sourceUrl": "https://www.limahl.com/tour-all-events/",
+      "proof": "tour-all-events returns 401 Security Verification",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-marina-satti",
+      "status": "unresolved",
+      "count": "unverified_live",
+      "sourceUrl": "https://marinasatti.com/tour/",
+      "proof": "old /tour 404/timeout; official-indexed /tour-3 also timeout, no verifiable records",
+      "additionalEvidence": "also checked https://marinasatti.com/tour-3/"
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-marmalade",
+      "status": "unresolved",
+      "count": "unverified_live",
+      "sourceUrl": "https://themarmalade.net/tour-dates/",
+      "proof": "tour-dates returns HTTP 403",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-matt-mays",
+      "status": "verified-empty",
+      "count": "0",
+      "sourceUrl": "https://www.mattmays.com/tour/",
+      "proof": "official exact visible phrase: No tour dates currently announced.",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-nick-cave-the-bad-seeds",
+      "status": "unresolved",
+      "count": "unverified_live",
+      "sourceUrl": "https://www.nickcave.com/tour-dates/",
+      "proof": "official LIVE UK & EUROPE 2026 page renders empty #blog-grid; known tour ended Aug 28; no explicit empty statement",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-nine-inch-nails",
+      "status": "external-block",
+      "count": null,
+      "sourceUrl": "https://www.nin.com/tickets2018/",
+      "proof": "Current official site Cloudflare 403; old tickets page is an archive and cannot prove a current empty schedule."
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-paralamas-do-sucesso",
+      "status": "external-block",
+      "count": "unverified_live",
+      "sourceUrl": "https://osparalamas.com.br/agenda/",
+      "proof": "10 raw rows; 8 normal dated/location rows parse offline; 2 cruises skipped; live runner timeout",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-pequot",
+      "status": "unresolved",
+      "count": "unverified_live",
+      "sourceUrl": "https://www.pequotmuseum.org/explore/events/",
+      "proof": "configured Pequot Museum events URL DNS failure and museum is wrong artist entity",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-philip-lindholm",
+      "status": "unresolved",
+      "count": "unverified_live",
+      "sourceUrl": "https://philiplindholm.com/events/",
+      "proof": "configured domain is political campaign, Food with Philip is not music performance",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-poetry",
+      "status": "unresolved",
+      "count": "unverified_live",
+      "sourceUrl": "https://www.poemsband.com/#poems",
+      "proof": "configured poemsband.com belongs to band Poems, not configured Poetry artist identity",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-primal-scream",
+      "status": "verified-empty",
+      "count": "0",
+      "sourceUrl": "https://www.primalscream.net/events/",
+      "proof": "official exact visible phrase: No Shows Currently Announced",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-rick-braun",
+      "status": "recovered",
+      "count": "3",
+      "sourceUrl": "https://rest.bandsintown.com/artists/id_46323/events?app_id=59d8a8ceccd5155dc457cf3b2cad249b&date=upcoming",
+      "proof": "official embedded Bandsintown id_46323; 16 raw; 3 verified actual venues, 13 generic tour/cruise titles skipped",
+      "additionalEvidence": "https://rickbraun.com/tour/ widget; https://yoshis.com/events/buy-tickets/rick-braun-4/detail ; https://www.trilithlive.com/events/detail/rick-braun"
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-robin-thicke",
+      "status": "unresolved",
+      "count": "unverified_live",
+      "sourceUrl": "https://www.robinthicke.com/tour",
+      "proof": "current /tour empty; /live-horizon 12/31 lacks year; venue primary evidence shows Dec 31 2025, past",
+      "additionalEvidence": "also checked official /live-horizon and venue 2025 event"
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-scissor-sisters",
+      "status": "verified-empty",
+      "count": "0",
+      "sourceUrl": "https://www.scissorsisters.com/tour/",
+      "proof": "official exact visible phrase: Sorry, no shows currently. Click below to be notified when new tour dates are announced.",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-shelby-lynne",
+      "status": "unresolved",
+      "count": "unverified_live",
+      "sourceUrl": "https://www.shelbylynne.com/tour",
+      "proof": "old /tour 404; current domain content is Thai casino, not official artist schedule",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-skip-marley",
+      "status": "verified-empty",
+      "count": "0",
+      "sourceUrl": "https://www.skipmarley.com/tour/",
+      "proof": "official exact visible phrase: Sorry, there are no shows currently available. To be notified of new tour dates when they are announced, click the RSVP link below.",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-the-clientele",
+      "status": "verified-empty",
+      "count": "0",
+      "sourceUrl": "https://theclientele.co.uk/shows",
+      "proof": "official exact visible phrase: No shows scheduled.",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-the-cure",
+      "status": "verified-empty",
+      "count": "0",
+      "sourceUrl": "https://www.thecure.com/shows/",
+      "proof": "official exact visible phrase: No shows currently announced!",
+      "additionalEvidence": ""
+    },
+    {
+      "cohort": "artist",
+      "id": "artist-twin-atlantic",
+      "status": "unresolved",
+      "count": "unverified_live",
+      "sourceUrl": "https://twinatlantic.com/shows",
+      "proof": "official /shows 404 and current homepage has no live widget; Bandsintown lists 7 future but no observed official embedded feed/app_id for safe config",
+      "additionalEvidence": "also checked https://www.bandsintown.com/a/159845-twin-atlantic"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-angel-heart",
+      "status": "observed-empty-only",
+      "beforeCache": 0,
+      "afterFutureVerified": 0,
+      "sourceUrl": "https://www.angelheart.rocks/events",
+      "proof": "Official Google Sites /events embeds Ents24 artist widget NY5d1. Ordinary browser widget visibly says No current tour dates.; embedded public api.ents24.com/artist/widget?id=NY5d1 returns events:[]. Runner cannot use iframe phrase for guarded allowEmpty yet, so source is observed-empty but not healthy.",
+      "emptyVerification": "observed_empty_only"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-annie-clark",
+      "status": "recovered",
+      "beforeCache": 0,
+      "afterFutureVerified": 8,
+      "sourceUrl": "https://ilovestvincent.com/tour",
+      "proof": "official ilovestvincent.com Tour widget requests rest.bandsintown.com artist 7133 feed; live 8 future dated events"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-antones-records",
+      "status": "external-block",
+      "beforeCache": 0,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://antonesnightclub.com/calendar/",
+      "proof": "calendar AJAX returned HTTP 403 after public HTML 200"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-babbu-mann",
+      "status": "unresolved",
+      "beforeCache": 0,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://www.babbumaan.com/shows.html",
+      "proof": "configured URL returns 114-byte blank page"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-bird-and-the-bee-the",
+      "status": "verified-empty",
+      "beforeCache": 0,
+      "afterFutureVerified": 0,
+      "sourceUrl": "https://www.thebirdandthebee.com/tour",
+      "proof": "There are no upcoming tour dates.",
+      "emptyVerification": "verified_runner_empty"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-bruce-thomas",
+      "status": "unresolved",
+      "beforeCache": 1,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://brucethomasmusic.com/schedule",
+      "proof": "Official October 2026 calendar and /schedule-and-booking show date grid without booked event entries. /gigs only lists past venues, no dated future events; no visible empty phrase."
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-haash",
+      "status": "recovered",
+      "beforeCache": 0,
+      "afterFutureVerified": 32,
+      "sourceUrl": "https://ha-ash.com/tour/",
+      "proof": "official ha-ash.com Tour widget requests rest.bandsintown.com artist 1107757 feed; live 32 future dated events"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-harley-flanagan",
+      "status": "recovered",
+      "beforeCache": 0,
+      "afterFutureVerified": 2,
+      "sourceUrl": "https://realcromags.com/tour-dates-bookings/",
+      "proof": "Cro-Mags official TOUR DATES & BOOKINGS page lists explicit 2026 dates, aligned city/venue columns; live runner extracted Dec 4 Denver and Dec 12 Los Angeles."
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-harold-jones",
+      "status": "unresolved",
+      "beforeCache": 0,
+      "afterFutureVerified": null,
+      "sourceUrl": "http://haroldjones.com/tour-dates/",
+      "proof": "configured URL returns 114-byte blank page"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-harry-connick-jr",
+      "status": "verified-empty",
+      "beforeCache": 1,
+      "afterFutureVerified": 0,
+      "sourceUrl": "https://www.harryconnickjr.com/tour/",
+      "proof": "Harry Connick, Jr. currently does not have any upcoming tour dates.",
+      "emptyVerification": "verified_runner_empty"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-hey-nineteen",
+      "status": "recovered",
+      "beforeCache": 0,
+      "afterFutureVerified": 6,
+      "sourceUrl": "https://www.hey19band.com/hey-nineteen-steely-dan-tribute-shows/",
+      "proof": "Official shows page embeds Bandsintown artist id_6478037. Public feed returns 6 future concerts with explicit dates/venues/cities; live runner 6, first 2026-10-16 Pawtucket, last 2027-05-15 Annapolis."
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-hootie-and-the-blowfish",
+      "status": "verified-empty",
+      "beforeCache": 0,
+      "afterFutureVerified": 0,
+      "sourceUrl": "https://www.hootie.com/tour",
+      "proof": "Handoff worker observed public Bandsintown feed with 0 upcoming shows. Root reconciled with tour_widgets_recovery live runScraper proof: success, empty_schedule, 0 rows.",
+      "emptyVerification": "observed_empty_only"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-iron-maidens-the",
+      "status": "external-block",
+      "beforeCache": 10,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://theironmaidens.com/upcoming-events/",
+      "proof": "live official URL HTTP 202 challenge (187 bytes)"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-ivar-grydeland",
+      "status": "unresolved",
+      "beforeCache": 36,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://www.ivargrydeland.com/concerts",
+      "proof": "official concerts page visible 2026 entries end in June, no future rows"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-james-alexander",
+      "status": "recovered",
+      "beforeCache": 3,
+      "afterFutureVerified": 3,
+      "sourceUrl": "https://www.jamesalexanderbright.com/live",
+      "proof": "three verified November 2026 official live rows"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-james-pankow",
+      "status": "recovered",
+      "beforeCache": 23,
+      "afterFutureVerified": 23,
+      "sourceUrl": "https://chicagotheband.com/tour/",
+      "proof": "official Chicago band tour, 23 future rows, not James Pankow solo"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-jane-mcdonald",
+      "status": "unresolved",
+      "beforeCache": 0,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://jane-mcdonald.com/explorer",
+      "proof": "Official /tour now HTTP 404. Current /explorer announces 2027-09-24 to 2027-10-01 cruise with headline shows but provides no individual performance dates or fixed concert location, so no concert row can be safely emitted."
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-jerry-augustyniak",
+      "status": "recovered",
+      "beforeCache": 0,
+      "afterFutureVerified": 13,
+      "sourceUrl": "http://www.10000maniacs.com/shows/",
+      "proof": "official maniacs.com widget identifies Jerome Augustyniak in 10,000 Maniacs and fetches artist 47037 feed; 13 future band events"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-jerry-depizzo",
+      "status": "external-block",
+      "beforeCache": 0,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://ofarevolution.com/tour-dates/",
+      "proof": "configured ofarevolution.com TLS mismatch; official liveoar.com/pages/tour found but current fetch HTTP 429"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-joan-jett-and-the-blackhearts",
+      "status": "verified-empty",
+      "beforeCache": 0,
+      "afterFutureVerified": 0,
+      "sourceUrl": "https://www.joanjett.com/tour",
+      "proof": "Handoff worker found official Blackheart empty schedule. Root reconciled with tour_widgets_recovery live runScraper proof: success, empty_schedule, 0 rows.",
+      "emptyVerification": "guard_configured_handoff"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-joe-hutton",
+      "status": "unresolved",
+      "beforeCache": 0,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://thekingblues.com/live/",
+      "proof": "configured TheKingBlues domain is for sale at HugeDomains, wrong source"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-john-keane",
+      "status": "unresolved",
+      "beforeCache": 0,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://johnkeane.com/tour/",
+      "proof": "configured URL returns 114-byte blank page"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-jorge-e-mateus",
+      "status": "unresolved",
+      "beforeCache": 0,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://www.jorgeemateus.com.br/agenda/",
+      "proof": "Official page Angular markup draws from /wp-json/agenda/v1/eventos/month/M/year/Y. Public API returned [] for Oct-Dec 2026 and Jan 2027; no global empty statement, so no allowEmpty and no confirmed future event."
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-jorge-palma",
+      "status": "unresolved",
+      "beforeCache": 0,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://portugal.gov.pt/pt/gc25/comunicacao/noticias/luis-montenegro-jorge-palma-parte-mas-a-sua-musica-fica",
+      "proof": "Retired artist: Portugal government and University of Lisbon confirm Jorge Palma died 2026-09-21; official old calendar URL 404. Preserve cache and quarantine source; do not fabricate future concerts or delete artist DB."
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-juan-garcia-herreros",
+      "status": "external-block",
+      "beforeCache": 0,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://www.juan-garcia-herreros.com/tour-dates",
+      "proof": "configured domain DNS ENOTFOUND"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-judith-rijnveld",
+      "status": "external-block",
+      "beforeCache": 0,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://www.judithrijnveld.com/agenda",
+      "proof": "configured domain DNS ENOTFOUND"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-jun-shibata",
+      "status": "recovered",
+      "beforeCache": 0,
+      "afterFutureVerified": 6,
+      "sourceUrl": "https://www.shibajun.jp/schedule/live/",
+      "proof": "replaced hijacked old domain with official shibajun.jp"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-justin-pierre",
+      "status": "recovered",
+      "beforeCache": 0,
+      "afterFutureVerified": 2,
+      "sourceUrl": "https://motioncitysoundtrack.com/tour",
+      "proof": "Official Motion City Soundtrack tour page embeds Seated artist 4c0db77d-a5a9-41d1-80d4-910bc9a4054c; live runner yields 2026-11-07 Pensacola and 2026-11-14 Orlando, with band artist identity."
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-pain-for-pleasure",
+      "status": "unresolved",
+      "beforeCache": 0,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://www.painforpleasure.com/gigs",
+      "proof": "configured URL returns 114-byte blank page"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-painflow",
+      "status": "unresolved",
+      "beforeCache": 0,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://painflow.com/shows",
+      "proof": "configured URL returns 114-byte blank page"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-patrick-monahan",
+      "status": "recovered",
+      "beforeCache": 0,
+      "afterFutureVerified": 1,
+      "sourceUrl": "https://www.savemesanfrancisco.com/tour",
+      "proof": "Official Train tour embeds Seated UUID b116c51e-7bc6-4c38-9ed5-c375196a7ec3; live feed and runner returned explicit 2027-02-11 Miami Beach FL event."
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-patti-smith-group",
+      "status": "unresolved",
+      "beforeCache": 0,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://www.pattismith.net/shows.html",
+      "proof": "Configured official shows.html returns 131-byte blank; current official intro-new and /jobs indexed, but /jobs lists legacy undated-year events and /wegottofly archival tour. Current ticket vendor listings do not establish official-calendar link or Patti Smith Group identity."
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-paul-halley",
+      "status": "external-block",
+      "beforeCache": 1,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://paulhalley.com/concerts-and-workshops/",
+      "proof": "configured URL HTTP 403, redirects to artist biography"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-peter-smith",
+      "status": "unresolved",
+      "beforeCache": 0,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://www.petersmithmusic.com/calendar",
+      "proof": "official /calendar 200, only machine-readable time found was 2022-06-21; no future event proved"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-pharis-and-jason-romero",
+      "status": "recovered",
+      "beforeCache": 0,
+      "afterFutureVerified": 1,
+      "sourceUrl": "https://pharisandjason.com/shows",
+      "proof": "Handoff worker verified 1 future official show."
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-philip-labonte",
+      "status": "external-block",
+      "beforeCache": 10,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://allthatremainsonline.com/pages/tour",
+      "proof": "live official URL HTTP 429"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-philippine-philharmonic-orchestra",
+      "status": "external-block",
+      "beforeCache": 3,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://culturalcenter.gov.ph/events",
+      "proof": "live official URL timed out"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-rainey",
+      "status": "external-block",
+      "beforeCache": 0,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://stephanieraineymusic.com/tour",
+      "proof": "configured domain DNS ENOTFOUND"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-ranjani-gayatri",
+      "status": "recovered",
+      "beforeCache": 4,
+      "afterFutureVerified": 2,
+      "sourceUrl": "https://ranjanigayatri.com/concerts",
+      "proof": "two future official cards: Chennai and Dubai"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-the-cure",
+      "status": "verified-empty",
+      "beforeCache": 1,
+      "afterFutureVerified": 0,
+      "sourceUrl": "https://www.thecure.com/shows/",
+      "proof": "No shows currently announced!",
+      "emptyVerification": "verified_runner_empty"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-yamazaki-masayoshi",
+      "status": "unresolved",
+      "beforeCache": 1,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://www.office-augusta.com/yama/live/",
+      "proof": "Corrected official artist section /yama/live/ serves 200 and lists latest 2026.08.14 Augusta Camp announcement, whose concert took place Aug 15; no future dated Yamazaki concert currently published. Previous /yamazaki/live/ redirected to agency home with other artists."
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-yanagi-nagi",
+      "status": "recovered",
+      "beforeCache": 11,
+      "afterFutureVerified": 1,
+      "sourceUrl": "https://yanaginagi.net/live/",
+      "proof": "official listing/detail confirm Yanagi guest 2027-07-17 at live music club PADOMA; venue official access confirms Kobe"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-yarbrough-and-peoples",
+      "status": "recovered",
+      "beforeCache": 0,
+      "afterFutureVerified": 1,
+      "sourceUrl": "https://jacobspavilion.com/calendar/",
+      "proof": "official Jacobs Pavilion calendar requests AXS venue 224 feed; one future Jacobs event after excluding event explicitly moved to Agora Theatre"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-yosei-teikoku",
+      "status": "verified-empty",
+      "beforeCache": 0,
+      "afterFutureVerified": 0,
+      "sourceUrl": "https://dasfeenreich.com/live/",
+      "proof": "Replacement official site says No upcoming events scheduled yet. Stay tuned! in current HTML; live runner reports verified empty-schedule contract. Past Events list ends May 2026.",
+      "emptyVerification": "verified_runner_empty"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-you-used-to-hold-me-so-tight",
+      "status": "verified-empty",
+      "beforeCache": 4,
+      "afterFutureVerified": 0,
+      "sourceUrl": "https://www.sharonvanetten.com/tour",
+      "proof": "Sharon Van Etten official rendered tour page says There are no upcoming events.; corrected artist fallback to Sharon Van Etten & The Attachment Theory",
+      "emptyVerification": "verified_runner_empty"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-yusa-mimori",
+      "status": "recovered",
+      "beforeCache": 3,
+      "afterFutureVerified": 8,
+      "sourceUrl": "https://www.mimoriyusa.net/concert/",
+      "proof": "eight future verified official Japanese concerts"
+    },
+    {
+      "cohort": "venue",
+      "id": "artist-yuta-and-the-bushido-boys",
+      "status": "unresolved",
+      "beforeCache": 0,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://nct-jp.net/live/tour.php?id=1002270",
+      "proof": "configured URL redirects to /404.php"
+    },
+    {
+      "cohort": "venue",
+      "id": "barby-tel-aviv",
+      "status": "recovered",
+      "beforeCache": 24,
+      "afterFutureVerified": 66,
+      "sourceUrl": "https://barby.co.il/",
+      "proof": "Ordinary homepage browser XHR GET https://barby.co.il/api/shows/find returns 67 dated cards including one customer-service sentinel; live runner with renderResponseUrl extracted 66 valid 2026-10 to 2027-01 events with explicit DD/MM/YYYY dates and Tel Aviv venue identity."
+    },
+    {
+      "cohort": "venue",
+      "id": "botanique-brussels",
+      "status": "external-block",
+      "beforeCache": 3,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://botanique.be/en/concerts",
+      "proof": "live official URL HTTP 500"
+    },
+    {
+      "cohort": "venue",
+      "id": "cartagena-festival-de-musica-cartagena",
+      "status": "external-block",
+      "beforeCache": 35,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://cartagenamusicfestival.com/programacion/?lang=en",
+      "proof": "collector HTTP 403; separate live browser request returned 200"
+    },
+    {
+      "cohort": "venue",
+      "id": "esplanade-theatres-singapore-singapore",
+      "status": "external-block",
+      "count": null,
+      "sourceUrl": "https://www.esplanade.com/whats-on?category=Music",
+      "proof": "Official domain corrected from invalid TLS .com.sg; current HTML/data repeatedly stall. Current calendar parsing remains unverified."
+    },
+    {
+      "cohort": "venue",
+      "id": "kitty-su-bangalore",
+      "status": "unresolved",
+      "beforeCache": 1,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://www.kittysu.com/events",
+      "proof": "current official /events lists only Kolkata; corrected parser now refuses yearless dates and preserves Bangalore-only identity, no Bangalore event verified"
+    },
+    {
+      "cohort": "venue",
+      "id": "kt-g-sangsangmadang-seoul",
+      "status": "recovered",
+      "count": 1,
+      "sourceUrl": "https://www.sangsangmadang.com/show/selectShowList/HD/soon?spaceCd=HD&status=soon&page=1",
+      "proof": "Live strict official showListInfo API extraction: OurR October 11; count/pagination validated."
+    },
+    {
+      "cohort": "venue",
+      "id": "yugong-yishan-beijing",
+      "status": "external-block",
+      "beforeCache": 2,
+      "afterFutureVerified": null,
+      "sourceUrl": "https://theatrebeijing.com/whats_on/live/",
+      "proof": "live URL HTTP 202 challenge (187 bytes)"
+    }
+  ]
+}

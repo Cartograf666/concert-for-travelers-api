@@ -1,11 +1,11 @@
 {
   "id": "artist-justin-pierre",
-  "domain": "www.justinpierre.com",
-  "url": "http://www.justinpierre.com/tour/",
-  "type": "static_selectors",
+  "domain": "motioncitysoundtrack.com",
+  "url": "https://cdn.seated.com/api/tour/4c0db77d-a5a9-41d1-80d4-910bc9a4054c?include=tour-events",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".tour-list-item",
-    "artistNameFallback": "Justin Pierre",
+    "artistNameFallback": "Motion City Soundtrack",
     "date": ".tour-date",
     "ticketUrl": ".tour-tickets a",
     "venue": ".tour-venue",

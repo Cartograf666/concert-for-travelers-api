@@ -1,8 +1,8 @@
 {
   "id": "artist-aust",
   "domain": "www.austmusic.net",
-  "url": "https://www.austmusic.net/tour",
-  "type": "static_selectors",
+  "url": "https://www.austmusic.net/",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "div[role='listitem']",
     "artistNameFallback": "Aust",

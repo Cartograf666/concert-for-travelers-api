@@ -1,8 +1,8 @@
 {
   "id": "artist-yusa-mimori",
   "domain": "www.mimoriyusa.net",
-  "url": "http://www.mimoriyusa.net/concert/",
-  "type": "static_selectors",
+  "url": "https://www.mimoriyusa.net/concert/",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "div.concert_block_list > article",
     "artistNameFallback": "Mimori Yusa",

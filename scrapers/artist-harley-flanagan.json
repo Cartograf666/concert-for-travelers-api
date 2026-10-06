@@ -1,11 +1,11 @@
 {
   "id": "artist-harley-flanagan",
-  "domain": "harleyflanagan.com",
-  "url": "https://harleyflanagan.com/tour/",
-  "type": "static_selectors",
+  "domain": "realcromags.com",
+  "url": "https://realcromags.com/tour-dates-bookings/",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "div.list-item",
-    "artistNameFallback": "Harley Flanagan",
+    "artistNameFallback": "Cro-Mags",
     "date": "div.list-item__date",
     "ticketUrl": "a.btn.btn-primary",
     "city": "div.list-item__location",

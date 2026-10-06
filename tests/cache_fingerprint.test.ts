@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createServer } from 'node:http';
 import { hashScraperCacheInput, type VenueCache } from '../src/engine/cache.js';
-import { runScraper } from '../src/engine/runner.js';
+import { runScraper, scraperCacheFingerprint } from '../src/engine/runner.js';
+import { readFile } from 'node:fs/promises';
 import type { ScraperConfig } from '../src/schemas/config.js';
 
 const PAGE = `
@@ -120,4 +121,16 @@ test('fingerprinting rejects an unvalidated custom ID before reading a module or
   });
   assert.equal(result.success, false);
   assert.match(result.error ?? '', /Refusing to read custom module for unsafe scraper id/);
+});
+
+test('rendered custom extraction fingerprints its module and rejects unsafe IDs before browser access', async () => {
+  const config: ScraperConfig = {
+    ...staticConfig('https://helitehas.ee/kava.php'), id: 'helitehas-tallinn',
+    type: 'playwright_render', renderParser: 'custom_js', renderWaitSelector: '.ready'
+  };
+  const implementation = await readFile('src/engine/custom/helitehas-tallinn.ts');
+  assert.equal(await scraperCacheFingerprint(config), hashScraperCacheInput(config, implementation));
+  const invalid = await runScraper({...config, id: '../runner'});
+  assert.equal(invalid.success, false);
+  assert.match(invalid.error ?? '', /Refusing to read custom module for unsafe scraper id/);
 });

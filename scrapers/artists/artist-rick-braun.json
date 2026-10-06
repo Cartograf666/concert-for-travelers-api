@@ -1,8 +1,8 @@
 {
   "id": "artist-rick-braun",
-  "domain": "www.rickbraun.com",
-  "url": "https://www.rickbraun.com/tour",
-  "type": "static_selectors",
+  "domain": "rest.bandsintown.com",
+  "url": "https://rest.bandsintown.com/artists/id_46323/events?app_id=59d8a8ceccd5155dc457cf3b2cad249b&date=upcoming",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "div[data-framer-name='Schedule']",
     "artistNameFallback": "Rick Braun",

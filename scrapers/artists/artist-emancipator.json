@@ -1,7 +1,7 @@
 {
   "id": "artist-emancipator",
-  "domain": "emancipatormusic.com",
-  "url": "http://emancipatormusic.com/tour/",
+  "domain": "cdn.seated.com",
+  "url": "https://cdn.seated.com/api/tour/0410bcb7-a835-464c-b3ef-d7855c3ecbdc?include=tour-events",
   "type": "custom_js",
   "selectors": {
     "eventBlock": "table.gigpress-table.upcoming tr.gigpress-row",

@@ -2,7 +2,7 @@
   "id": "artist-james-alexander",
   "domain": "www.jamesalexanderbright.com",
   "url": "https://www.jamesalexanderbright.com/live",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".event-list-item",
     "artistNameFallback": "James Alexander Bright",

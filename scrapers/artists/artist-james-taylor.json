@@ -13,5 +13,7 @@
     "venueNameFallback": "",
     "cityNameFallback": "",
     "countryNameFallback": "US"
-  }
+  },
+  "allowEmpty": true,
+  "emptyScheduleText": "No tour dates announced yet. Check back soon."
 }

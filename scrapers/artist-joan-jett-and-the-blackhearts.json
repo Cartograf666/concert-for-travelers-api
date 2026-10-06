@@ -1,17 +1,20 @@
 {
   "id": "artist-joan-jett-and-the-blackhearts",
-  "domain": "www.joanjett.com",
-  "url": "https://www.joanjett.com/tour",
-  "type": "static_selectors",
+  "domain": "blackheart.com",
+  "url": "https://blackheart.com/joan-jett-and-the-blackhearts-1",
+  "type": "playwright_render",
+  "renderWaitSelector": ".sqs-tourdates-bandsintown-list.loaded",
+  "renderParser": "custom_js",
+  "allowEmpty": true,
+  "emptyScheduleText": "There are no upcoming tour dates.",
   "selectors": {
-    "eventBlock": "div.show-item",
+    "eventBlock": ".sqs-tourdates__item",
     "artistNameFallback": "Joan Jett and The Blackhearts",
-    "date": "div.show-date",
-    "ticketUrl": "a.tickets-link",
-    "venue": "div.show-venue",
-    "city": "div.show-city",
+    "date": ".sqs-tourdates__timeframe::attr(data-tour-datetime)",
+    "venue": ".sqs-tourdates__venue-name",
+    "city": ".sqs-tourdates__location",
     "venueNameFallback": "",
     "cityNameFallback": "",
-    "countryNameFallback": "US"
+    "countryNameFallback": "ZZ"
   }
 }

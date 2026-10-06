@@ -1,6 +1,6 @@
 import * as cheerio from 'cheerio';
-import { ScraperConfig } from '../../schemas/config.js';
-import { Concert } from '../../schemas/concert.js';
+import type { ScraperConfig } from '../../schemas/config.js';
+import type { Concert } from '../../schemas/concert.js';
 
 export async function scrape(config: ScraperConfig, html: string, scrapedAt: string): Promise<Partial<Concert>[]> {
   const $ = cheerio.load(html);
@@ -38,7 +38,9 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
       const parts = pText.split('|').map(s => s.trim());
 
       let dateStr = '';
-      let year = new Date().getFullYear().toString();
+      // A yearless event card is ambiguous around New Year. Use only a year stated by the source.
+      const year = pText.match(/\b20\d{2}\b/)?.[0] ?? h3Text.match(/\b20\d{2}\b/)?.[0];
+      if (!year) return;
 
       if (parts.length >= 3) {
         // The date is typically in parts[2]
@@ -57,7 +59,7 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
 
       // Extract ticket URL from the link
       const ticketUrl = block.find('.event-list-img a').attr('href');
-      const fullTicketUrl = ticketUrl ? `https://www.kittysu.com${ticketUrl}` : undefined;
+      const fullTicketUrl = ticketUrl ? new URL(ticketUrl, config.url).href : config.url;
 
       concerts.push({
         artist: eventName,
@@ -71,7 +73,7 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
         originalSource: config.domain,
         scrapedAt
       });
-    } catch (e) {
+    } catch {
       // Skip this event if parsing fails
     }
   });

@@ -2,17 +2,17 @@
   "id": "artist-pharis-and-jason-romero",
   "domain": "pharisandjason.com",
   "url": "https://pharisandjason.com/shows",
-  "type": "static_selectors",
+  "type": "playwright_render",
+  "renderWaitSelector": ".sqs-tourdates-bandsintown-list.loaded",
+  "renderParser": "custom_js",
   "selectors": {
-    "eventBlock": "div.sqs-block-content > div.event-item",
+    "eventBlock": ".sqs-tourdates__item",
     "artistNameFallback": "Pharis and Jason Romero",
-    "date": "time[itemprop='startDate']",
-    "ticketUrl": "a.event-ticket-button",
-    "venue": "span.event-venue",
-    "city": "span.event-city",
-    "country": "span.event-country",
+    "date": ".sqs-tourdates__timeframe::attr(data-tour-datetime)",
+    "venue": ".sqs-tourdates__venue-name",
+    "city": ".sqs-tourdates__location",
     "venueNameFallback": "",
     "cityNameFallback": "",
-    "countryNameFallback": "CA"
+    "countryNameFallback": "ZZ"
   }
 }

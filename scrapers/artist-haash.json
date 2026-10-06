@@ -1,8 +1,8 @@
 {
   "id": "artist-haash",
   "domain": "ha-ash.com",
-  "url": "https://ha-ash.com/tour/",
-  "type": "static_selectors",
+  "url": "https://rest.bandsintown.com/artists/Ha%252AAsh/events?app_id=squarespace-ha-ash&date=upcoming",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "div.event-item",
     "artistNameFallback": "Ha*Ash",

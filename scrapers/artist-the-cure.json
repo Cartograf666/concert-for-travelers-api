@@ -14,5 +14,7 @@
     "venueNameFallback": "",
     "cityNameFallback": "",
     "countryNameFallback": "GB"
-  }
+  },
+  "allowEmpty": true,
+  "emptyScheduleText": "No shows currently announced!"
 }

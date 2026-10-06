@@ -114,7 +114,9 @@ export interface ScraperResult {
 }
 
 export async function scraperCacheFingerprint(config: ScraperConfig): Promise<string> {
-  if (config.type !== 'custom_js') return hashScraperCacheInput(config);
+  if (config.type !== 'custom_js' && !(config.type === 'playwright_render' && config.renderParser === 'custom_js')) {
+    return hashScraperCacheInput(config);
+  }
   if (!/^[a-z0-9][a-z0-9-]{0,80}$/.test(config.id)) {
     throw new Error(`Refusing to read custom module for unsafe scraper id: ${config.id}`);
   }
@@ -451,6 +453,7 @@ interface FetchResponse {
   status: number;
   data: any;
   headers: Record<string, any>;
+  emptyNoticeVisible?: boolean;
 }
 
 export type HttpBackend = 'axios' | 'got-scraping';
@@ -745,9 +748,48 @@ async function renderWithPlaywright(config: ScraperConfig): Promise<FetchRespons
     // domcontentloaded (not networkidle): many venue pages poll/stream forever so
     // networkidle never settles and hangs the goto until timeout; the page.route SSRF
     // guard + explicit selector waits elsewhere don't need a fully-idle network.
+    // Capture only a response the ordinary page itself requests. The existing
+    // route policy checks this request exactly like every other subresource.
+    const pendingResponse = config.renderResponseUrl
+      ? page.waitForResponse(response => response.url() === config.renderResponseUrl &&
+          ['xhr', 'fetch'].includes(response.request().resourceType()), { timeout: 20000 })
+        .then(response => ({ response }), error => ({ error }))
+      : undefined;
     await page.goto(config.url, { waitUntil: 'domcontentloaded', timeout: 20000 });
+    if (config.renderWaitSelector) {
+      await page.waitForSelector(config.renderWaitSelector, { state: 'visible', timeout: 15000 });
+    }
+    if (pendingResponse) {
+      const captured = await pendingResponse;
+      if ('error' in captured) throw captured.error;
+      const response = captured.response;
+      if (!response.ok()) throw new Error(`Rendered schedule API returned HTTP ${response.status()}`);
+      const headers = response.headers();
+      if (!/application\/(?:[\w.-]+\+)?json\b/i.test(headers['content-type'] || '')) {
+        throw new Error('Rendered schedule API did not return JSON');
+      }
+      const data = await response.text();
+      if (!data.trim()) throw new Error('Rendered schedule API returned an empty body');
+      return { status: response.status(), data, headers };
+    }
+    let emptyNoticeVisible: boolean | undefined;
+    if (config.emptyScheduleText) {
+      const pattern = new RegExp(config.emptyScheduleText.trim().split(/\s+/)
+        .map(word => word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('\\s+'), 'i');
+      emptyNoticeVisible = await page.getByText(pattern).evaluateAll(elements => elements.some(element => {
+        if (!element.getClientRects().length) return false;
+        for (let ancestor: typeof element | null = element; ancestor; ancestor = ancestor.parentElement) {
+          const style = ancestor.ownerDocument.defaultView?.getComputedStyle(ancestor);
+          if (!style) return false;
+          if (ancestor.hasAttribute('hidden') || ancestor.getAttribute('aria-hidden') === 'true' ||
+              style.display === 'none' || ['hidden', 'collapse'].includes(style.visibility) ||
+              Number(style.opacity) === 0) return false;
+        }
+        return true;
+      }));
+    }
     const html = await page.content();
-    return { status: 200, data: html, headers: {} };
+    return { status: 200, data: html, headers: {}, emptyNoticeVisible };
   } finally {
     await page.close();
   }
@@ -793,6 +835,32 @@ export async function runScraper(config: ScraperConfig, cached?: VenueCache): Pr
     }
 
     responseData = response.data;
+    // An explicit empty notice must survive layout changes; zero selector hits
+    // alone cannot prove a source with this contract is still working.
+    const emptyMessage = config.emptyScheduleText;
+    let emptyAccepted: boolean | undefined;
+    const acceptsEmpty = () => {
+      if (emptyAccepted !== undefined) return emptyAccepted;
+      emptyAccepted = config.allowEmpty === true && !emptyMessage;
+      if (config.allowEmpty && emptyMessage && typeof responseData === 'string') {
+        const $ = cheerio.load(responseData);
+        $('script, style, template, [hidden], [aria-hidden="true"]').remove();
+        $('[style]').each((_, element) => {
+          const declarations = ($(element).attr('style') || '').replace(/\/\*[\s\S]*?\*\//g, '').split(';');
+          const hidden = declarations.some(declaration => {
+            const [property, ...rest] = declaration.split(':');
+            const value = rest.join(':').replace(/!important\s*$/i, '').trim().toLowerCase();
+            return (property.trim().toLowerCase() === 'display' && value === 'none') ||
+              (property.trim().toLowerCase() === 'visibility' && ['hidden', 'collapse'].includes(value)) ||
+              (property.trim().toLowerCase() === 'opacity' && value !== '' && Number(value) === 0);
+          });
+          if (hidden) $(element).remove();
+        });
+        const normalize = (text: string) => text.replace(/\s+/g, ' ').trim().toLowerCase();
+        emptyAccepted = response.emptyNoticeVisible ?? normalize($.root().text()).includes(normalize(emptyMessage));
+      }
+      return emptyAccepted;
+    };
 
     const expectString = () => {
       if (typeof responseData !== 'string') {
@@ -820,7 +888,7 @@ export async function runScraper(config: ScraperConfig, cached?: VenueCache): Pr
       // LLM to read the same HTML sample directly rather than reporting a hard
       // miss for today. heal.ts still gets the identical fail-log entry and
       // still repairs the selector for tomorrow's free static-selector run.
-      if (concerts.length === 0 && !config.allowEmpty && !isLikelyCsr(responseData)) {
+      if (concerts.length === 0 && !acceptsEmpty() && !isLikelyCsr(responseData)) {
         const fallback = await tryLlmExtractionFallback(config, responseData, scrapedAt);
         if (fallback.length > 0) concerts = fallback;
       }
@@ -840,8 +908,10 @@ export async function runScraper(config: ScraperConfig, cached?: VenueCache): Pr
       // Same CSS-selector extraction as static_selectors, just against HTML that
       // was rendered by a real browser instead of a plain HTTP GET.
       expectString();
-      concerts = await runStaticScraper(config, responseData, scrapedAt);
-      if (concerts.length === 0) {
+      concerts = config.renderParser === 'custom_js'
+        ? await runCustomJsScraper(config, responseData, scrapedAt)
+        : await runStaticScraper(config, responseData, scrapedAt);
+      if (concerts.length === 0 && config.renderParser !== 'custom_js') {
         const jsonLd = extractJsonLd(config, responseData, scrapedAt);
         if (jsonLd.length > 0) {
           console.log(`[Runner] ${config.id}: selectors matched 0, recovered ${jsonLd.length} via JSON-LD fallback.`);
@@ -850,7 +920,7 @@ export async function runScraper(config: ScraperConfig, cached?: VenueCache): Pr
       }
       // Same budget-capped LLM fallback as static_selectors above -- the rendered
       // HTML is already in hand, no second Playwright render needed.
-      if (concerts.length === 0 && !config.allowEmpty && !isLikelyCsr(responseData)) {
+      if (concerts.length === 0 && !acceptsEmpty() && !isLikelyCsr(responseData)) {
         const fallback = await tryLlmExtractionFallback(config, responseData, scrapedAt);
         if (fallback.length > 0) concerts = fallback;
       }
@@ -862,11 +932,14 @@ export async function runScraper(config: ScraperConfig, cached?: VenueCache): Pr
     }
 
     if (concerts.length === 0) {
-      if (config.allowEmpty) {
+      if (acceptsEmpty()) {
         // This venue is known to have a genuinely sparse/seasonal schedule --
         // 0 events is a valid result, not a broken-selector signal for the healer.
-        console.log(`[Runner] ${config.id}: 0 events, allowEmpty=true, treating as a valid empty schedule.`);
-        return { configId: config.id, success: true, concerts: [], reason: 'empty_schedule', cacheFingerprint, scrapedAt };
+        console.log(`[Runner] ${config.id}: 0 events, verified empty-schedule contract.`);
+        const contentHash = hashConcerts([]);
+        return { configId: config.id, success: true, concerts: [], reason: 'empty_schedule',
+          contentHash, notModified: cached?.contentHash === contentHash,
+          etag, lastModified, cacheFingerprint, scrapedAt };
       }
       // Classify why, so the healer can skip pages an LLM re-selector cannot fix.
       const isCsr = typeof responseData === 'string' && isLikelyCsr(responseData);
