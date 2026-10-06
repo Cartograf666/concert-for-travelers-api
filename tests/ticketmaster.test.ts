@@ -168,6 +168,40 @@ test('Ticketmaster - fetchTicketmasterConcerts stops the whole sweep on a 401/40
   await new Promise<void>((r) => server.close(() => r()));
 });
 
+test('Ticketmaster - HTTP 400 logs only bounded structured errors without the API key', async (t) => {
+  const PORT = 8353;
+  const key = 'private-test-key-123';
+  const server = createServer((_req, res) => {
+    res.writeHead(400, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({
+      errors: [
+        { code: 'INVALID_DATE', message: `Invalid startDateTime https://example.test/events?apikey=${key} apiKey=${key}` },
+        { code: 'INVALID_RANGE', message: 'endDateTime must be later' },
+        { code: 'UNRELATED', message: '<html>do not log raw HTML</html>' }
+      ],
+      headers: { Authorization: 'Bearer must-not-log' },
+      url: `https://example.test/events?apikey=${key}`
+    }));
+  });
+  await new Promise<void>((resolve) => server.listen(PORT, resolve));
+  const warnings: string[] = [];
+  t.mock.method(console, 'warn', (message: string) => { warnings.push(message); });
+  const previous = { fetchedAt: '2026-10-05T00:00:00.000Z', verifiedAt: '2026-10-05T00:00:00.000Z',
+    concerts: [{ artist: 'Last good' }] };
+  const cache: TicketmasterCache = { DE: structuredClone(previous) };
+  try {
+    const concerts = await fetchTicketmasterConcerts(key, ['DE'], `http://localhost:${PORT}/events.json`, cache);
+    assert.deepStrictEqual(concerts, previous.concerts);
+    assert.deepStrictEqual(cache.DE, previous);
+    const output = warnings.join('\n');
+    assert.match(output, /HTTP 400.*code=INVALID_DATE.*Invalid startDateTime/);
+    assert.match(output, /code=INVALID_RANGE.*endDateTime must be later/);
+    assert.doesNotMatch(output, /private-test-key|https?:\/\/|Authorization|Bearer|UNRELATED|<html>/);
+  } finally {
+    await new Promise<void>((resolve) => server.close(resolve));
+  }
+});
+
 test('Ticketmaster - rate limit halts remaining countries and uses their caches', async () => {
   const PORT = 8348;
   let requests = 0;
@@ -273,10 +307,21 @@ test('Ticketmaster - splits more than 1000 future events and deduplicates the ov
   const PORT = 8345;
   let events: Array<any> = [];
   let splitRequests = 0;
+  let firstStart: number | undefined;
+  let firstBoundedEnd: number | undefined;
   const server = createServer((req, res) => {
     const url = new URL(req.url || '', `http://localhost:${PORT}`);
     const start = url.searchParams.get('startDateTime')!;
     const end = url.searchParams.get('endDateTime');
+    // Enforce Discovery's documented shape; fractional query dates preceded the hosted HTTP 400 failures.
+    const discoveryDate = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/;
+    if (!discoveryDate.test(start) || (end !== null && !discoveryDate.test(end))) {
+      res.writeHead(400);
+      res.end('invalid date format');
+      return;
+    }
+    if (firstStart === undefined) firstStart = Date.parse(start);
+    if (end !== null && firstBoundedEnd === undefined) firstBoundedEnd = Date.parse(end);
     if (events.length === 0) {
       const base = Date.parse(start);
       events = Array.from({ length: 1201 }, (_, index) => {
@@ -292,7 +337,8 @@ test('Ticketmaster - splits more than 1000 future events and deduplicates the ov
       });
     }
     if (end) splitRequests++;
-    const matches = events.filter((event) => event.instant >= start && (!end || event.instant <= end));
+    const matches = events.filter((event) => Date.parse(event.instant) >= Date.parse(start) &&
+      (!end || Date.parse(event.instant) <= Date.parse(end)));
     const page = Number(url.searchParams.get('page') || 0);
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({
@@ -316,6 +362,11 @@ test('Ticketmaster - splits more than 1000 future events and deduplicates the ov
   assert.equal(health.completeness, 'complete');
   assert.equal(cache.DE.concerts.length, 1201);
   assert.ok(cache.DE.verifiedAt);
+  const sweptAt = Date.parse(cache.DE.verifiedAt!);
+  assert.ok(firstStart! <= sweptAt && sweptAt - firstStart! < 1000, 'start rounds down without skipping the first second');
+  assert.ok(firstBoundedEnd! >= sweptAt + 365 * 24 * 60 * 60 * 1000 &&
+    firstBoundedEnd! - (sweptAt + 365 * 24 * 60 * 60 * 1000) < 1000,
+  'split end rounds up without leaving a boundary gap');
   await new Promise<void>((resolve) => server.close(resolve));
 });
 
