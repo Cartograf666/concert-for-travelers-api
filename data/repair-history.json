@@ -26018,5 +26018,34 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget",
     "verification": "PASS (12 events, 10 checks)"
+  },
+  {
+    "id": "botanique-brussels",
+    "cohort": "venue",
+    "configPath": "scrapers/botanique-brussels.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-06T22:27:00.806Z",
+    "previousConfig": {
+      "id": "botanique-brussels",
+      "domain": "botanique.be",
+      "url": "https://botanique.be/en/concerts",
+      "type": "static_selectors",
+      "requestDelayMs": 2000,
+      "allowEmpty": false,
+      "selectors": {
+        "eventBlock": "div.node-type-event",
+        "artist": "div.node-type-event__title h2 a span",
+        "date": "div.node-date__wrapper",
+        "venueNameFallback": "Botanique",
+        "cityNameFallback": "Brussels",
+        "countryNameFallback": "BE",
+        "lat": 50.8540268,
+        "lng": 4.3656393
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 500]",
+    "verification": ""
   }
 ]
