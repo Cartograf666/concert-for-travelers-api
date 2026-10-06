@@ -25681,5 +25681,146 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.poemsband.com/#poems but could not re-select on it",
     "verification": ""
+  },
+  {
+    "id": "artist-ray-scott",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-ray-scott.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-06T18:02:55.444Z",
+    "previousConfig": {
+      "id": "artist-ray-scott",
+      "domain": "www.rayscott.com",
+      "url": "https://www.rayscott.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-item",
+        "artistNameFallback": "Ray Scott",
+        "date": "div.date",
+        "ticketUrl": "a.ticket-link",
+        "venue": "div.venue",
+        "city": "div.city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-ray-davies",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-ray-davies.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-06T18:07:16.343Z",
+    "previousConfig": {
+      "id": "artist-ray-davies",
+      "domain": "www.raydavies.info",
+      "url": "https://www.raydavies.info/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event",
+        "artistNameFallback": "Ray Davies",
+        "date": "div.event-date",
+        "ticketUrl": "a.event-tickets",
+        "venue": "div.event-venue",
+        "city": "div.event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: dates_parse [0/31 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]",
+    "verification": ""
+  },
+  {
+    "id": "artist-reality-check",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-reality-check.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-06T18:07:40.871Z",
+    "previousConfig": {
+      "id": "artist-reality-check",
+      "domain": "therealitycheckexperiment.com",
+      "url": "https://therealitycheckexperiment.com/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-item",
+        "artistNameFallback": "The Reality Check Experiment",
+        "date": ".event-date-block",
+        "ticketUrl": ".event-links a",
+        "venue": ".event-venue",
+        "city": ".event-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "esplanade-theatres-singapore-singapore",
+    "cohort": "venue",
+    "configPath": "scrapers/esplanade-theatres-singapore-singapore.json",
+    "strategy": "needs_render",
+    "repairedAt": "2026-10-06T18:07:43.871Z",
+    "previousConfig": {
+      "id": "esplanade-theatres-singapore-singapore",
+      "domain": "esplanade.com",
+      "url": "https://www.esplanade.com/whats-on?category=Music",
+      "type": "static_selectors",
+      "maxRetries": 3,
+      "requestDelayMs": 1000,
+      "selectors": {
+        "eventBlock": "[itemtype*='Event'], article[data-event-id], .event-card, .show-item, li[data-show], div[class*='event-item']",
+        "artist": "[itemprop='name'], .show-title, .event-title, h2.title, h3.title",
+        "date": "[itemprop='startDate'], .event-date, .date-time, .show-date, time",
+        "ticketUrl": "[itemprop='url'], a[href*='ticket'], a[href*='booking'], .ticket-link",
+        "venueNameFallback": "Esplanade - Theatres on the Bay",
+        "cityNameFallback": "Singapore",
+        "countryNameFallback": "SG",
+        "lat": 1.2905,
+        "lng": 103.8597
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "needs_render: switching type to 'playwright_render' so client-side events materialize; last candidate: FAIL: live_fetch [live run failed (reason=csr_detected): Parsed 0 concerts. Page appears client-side rendered (events absent from server HTML).]; reached https://www.esplanade.com/whats-on?category=Music but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-bruce-thomas",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-bruce-thomas.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-06T18:07:45.989Z",
+    "previousConfig": {
+      "id": "artist-bruce-thomas",
+      "domain": "brucethomasmusic.com",
+      "url": "https://brucethomasmusic.com/schedule",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "#calendar tbody .with-events li",
+        "artist": ".event-name",
+        "date": ".calendar-placeholder",
+        "datePattern": "MMM DD",
+        "ticketUrl": ".event_details",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://brucethomasmusic.com/schedule but could not re-select on it",
+    "verification": ""
   }
 ]
