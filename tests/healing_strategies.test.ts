@@ -98,6 +98,15 @@ test('strategies - dead domain retires only when DNS confirms it', async () => {
   assert.strictEqual(alive.retire, false);
   assert.strictEqual(alive.candidates.length, 1);
   assert.strictEqual(alive.candidates[0].maxRetries, 4);
+
+  const polite = await proposeRepairCandidates(
+    { ...base, requestDelayMs: 2000 }, classification, deps({ resolves: true }));
+  assert.strictEqual(polite.candidates[0].maxRetries, 3);
+  assert.strictEqual(polite.candidates[0].requestDelayMs, 2000);
+  const tooSlow = await proposeRepairCandidates(
+    { ...base, requestDelayMs: 30000 }, classification, deps({ resolves: true }));
+  assert.strictEqual(tooSlow.retire, false);
+  assert.strictEqual(tooSlow.candidates.length, 0);
 });
 
 test('strategies - anti_bot escalates to the got-scraping backend', async () => {
@@ -109,6 +118,21 @@ test('strategies - anti_bot escalates to the got-scraping backend', async () => 
   assert.strictEqual(plan.candidates[0].httpClient, 'got-scraping');
   assert.strictEqual(plan.candidates[1].requestDelayMs, 3000);
 
+  // An inherited five-retry config must be bounded before the backend probe.
+  // At 8s politeness, only the default two retries fit; no duplicate probe.
+  const slow = await proposeRepairCandidates(
+    { ...base, maxRetries: 5, requestDelayMs: 8000 },
+    classifyFailure({ reason: 'fetch_error', error: 'Request failed with status code 403' }), deps());
+  assert.strictEqual(slow.candidates.length, 1);
+  assert.strictEqual(slow.candidates[0].httpClient, 'got-scraping');
+  assert.strictEqual(slow.candidates[0].maxRetries, 2);
+  assert.strictEqual(slow.candidates[0].requestDelayMs, 8000);
+  const tooSlow = await proposeRepairCandidates(
+    { ...base, requestDelayMs: 30000 },
+    classifyFailure({ reason: 'fetch_error', error: 'Request failed with status code 403' }), deps());
+  assert.strictEqual(tooSlow.candidates.length, 0);
+  assert.strictEqual(tooSlow.retire, false);
+
   // Already escalated: nothing further to try, and it must not loop.
   const already = await proposeRepairCandidates(
     { ...base, httpClient: 'got-scraping' },
@@ -118,14 +142,34 @@ test('strategies - anti_bot escalates to the got-scraping backend', async () => 
   assert.strictEqual(already.candidates.length, 0);
 });
 
-test('strategies - transient raises retries but never past the schema maximum', async () => {
+test('strategies - transient candidates fit the scraper wall clock and preserve politeness', async () => {
   const classification = classifyFailure({ reason: 'fetch_error', error: 'timeout of 15000ms exceeded' });
 
   const plan = await proposeRepairCandidates(base, classification, deps());
-  assert.strictEqual(plan.candidates[0].maxRetries, 5);
+  assert.strictEqual(plan.candidates.length, 1);
+  assert.strictEqual(plan.candidates[0].maxRetries, 3);
+  assert.strictEqual(plan.candidates[0].requestDelayMs, 2000);
+  assert.strictEqual(plan.candidates[0].url, base.url);
 
-  const maxed = await proposeRepairCandidates({ ...base, maxRetries: 5 }, classification, deps());
-  assert.strictEqual(maxed.candidates.length, 0);
+  // A previous healer could persist five retries: six 15s requests already
+  // exhaust the 90s runner ceiling before backoff. Correct that config too.
+  const overBudget = await proposeRepairCandidates(
+    { ...base, maxRetries: 5, requestDelayMs: 2000 }, classification, deps());
+  assert.strictEqual(overBudget.candidates[0].maxRetries, 3);
+  assert.strictEqual(overBudget.candidates[0].requestDelayMs, 2000);
+
+  // More politeness can leave room for only the default retry count, or none.
+  const slower = await proposeRepairCandidates(
+    { ...base, maxRetries: 5, requestDelayMs: 8000 }, classification, deps());
+  assert.strictEqual(slower.candidates[0].maxRetries, 2);
+  assert.strictEqual(slower.candidates[0].requestDelayMs, 8000);
+  const tooSlow = await proposeRepairCandidates(
+    { ...base, requestDelayMs: 30000 }, classification, deps());
+  assert.strictEqual(tooSlow.candidates.length, 0);
+
+  const alreadySafe = await proposeRepairCandidates(
+    { ...base, maxRetries: 3, requestDelayMs: 2000 }, classification, deps());
+  assert.strictEqual(alreadySafe.candidates.length, 0);
 });
 
 test('strategies - csr switches the scraper to rendering', async () => {

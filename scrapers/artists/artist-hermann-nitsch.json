@@ -3,7 +3,6 @@
   "domain": "www.nitsch.org",
   "url": "https://www.nitsch.org/events/",
   "type": "static_selectors",
-  "maxRetries": 5,
   "requestDelayMs": 2000,
   "selectors": {
     "eventBlock": "table tbody tr",

@@ -44,6 +44,24 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   must confirm the live cause and fresh country coverage. HTTP 400 diagnostics
   expose only bounded structured provider codes/messages, with keys and URLs
   redacted; the secret-bearing failure regression also preserves last-good cache.
+- Ticketmaster follow-on PR #186 is merged as `703862e`; all checks succeeded.
+  Its CI reports 697 passes, one skipped, zero failures. The deterministic
+  transient-healing strategy that reintroduced `maxRetries: 5` in Alabama
+  Symphony (PR #172) and Progresja (PR #185) is now repaired locally: conservative
+  15-second attempt, politeness and worst-jitter backoff totals must fit below
+  the unchanged 90-second ceiling. Already excessive configs get a safe candidate;
+  delays that leave no safe retry budget get none. Both sources return to default
+  two retries, retaining 2,000 ms politeness. Eleven strategy regressions, config
+  validation, TypeScript and scoped lint pass; source access remains separate.
+  The same excessive five-retry settings in another 16 static sources are also
+  fixed, including Philippine Philharmonic's actual 90-second failure. All 18
+  configs retain identical extraction/URLs and 2,000 ms politeness; only the
+  excessive retry override is removed. Dead-domain and anti-bot escalation now
+  share the same budget calculation. The 485 static configs pass schema and
+  budget audit, with no explicit >2-retry sequence reaching 90s. Alabama's existing
+  one-source runner verifies 12 raw events locally at `2026-10-06T14:31:47.813Z`;
+  raw retrieval is not a claim of their publication. Hosted access remains separate. Root owns release/docs and senior debugger
+  owns this strategy/config repair. No timeout, interval or security gate is raised.
 - Source repairs use current official HTML or feeds observed in official widgets.
   Explicit empty notices are required for the newly repaired empty HTML pages;
   changed layouts remain failures. Browser extraction can wait for a visible
@@ -92,8 +110,10 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   39,261 concerts, versus 38,944 before. Ticketmaster's unchanged 12,316 cached
   rows are explicitly unavailable/partial, with zero freshly verified countries;
   green deployment does not establish a healthy source. PR #184 changes only
-  repair history. No artist code changed after the successful artist run, so the
-  next daily run reuses that fresh evidence rather than repeating the artist sweep.
+  repair history. Artist extraction remains unchanged after its successful run;
+  the next daily run reuses that source data. Later retry-only edits change seven
+  artist configs, preserving every extraction field; their new hosted retry
+  behavior awaits the next artist sweep. Alabama is checked separately locally.
 - Psycho le Cému's LIVE page is reachable but contains no dated shows or explicit
   empty notice; its old cached news date is not a concert date. No selector or
   empty-result change is supported by the available evidence. The three new

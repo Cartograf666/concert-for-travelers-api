@@ -3,7 +3,6 @@
   "domain": "botanique.be",
   "url": "https://botanique.be/en/concerts",
   "type": "static_selectors",
-  "maxRetries": 5,
   "requestDelayMs": 2000,
   "allowEmpty": false,
   "selectors": {

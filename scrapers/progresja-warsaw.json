@@ -3,7 +3,6 @@
   "domain": "progresja.com",
   "url": "https://progresja.com/en/events/",
   "type": "static_selectors",
-  "maxRetries": 5,
   "requestDelayMs": 2000,
   "selectors": {
     "eventBlock": "div.el-item",
