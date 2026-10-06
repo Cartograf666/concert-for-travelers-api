@@ -25136,5 +25136,206 @@
     "failuresSinceRepair": 0,
     "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.shelbylynne.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://www.shelbylynne.com/events.html but could not re-select on it",
     "verification": ""
+  },
+  {
+    "id": "artist-joe-hutton",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-joe-hutton.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-06T14:05:05.851Z",
+    "previousConfig": {
+      "id": "artist-joe-hutton",
+      "domain": "thekingblues.com",
+      "url": "https://thekingblues.com/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.wp-block-the-king-blues-event-item",
+        "artistNameFallback": "The King Blues",
+        "date": "time",
+        "ticketUrl": "div.event-buttons a",
+        "venue": "h4.event-venue",
+        "city": "h4.event-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: has_future_dates [0 event(s) dated today or later]",
+    "verification": ""
+  },
+  {
+    "id": "artist-ray-scott",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-ray-scott.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-06T14:05:07.985Z",
+    "previousConfig": {
+      "id": "artist-ray-scott",
+      "domain": "www.rayscott.com",
+      "url": "https://www.rayscott.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-item",
+        "artistNameFallback": "Ray Scott",
+        "date": "div.date",
+        "ticketUrl": "a.ticket-link",
+        "venue": "div.venue",
+        "city": "div.city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.tour-date-item) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-reality-check",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-reality-check.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-06T14:05:14.907Z",
+    "previousConfig": {
+      "id": "artist-reality-check",
+      "domain": "therealitycheckexperiment.com",
+      "url": "https://therealitycheckexperiment.com/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-item",
+        "artistNameFallback": "The Reality Check Experiment",
+        "date": ".event-date-block",
+        "ticketUrl": ".event-links a",
+        "venue": ".event-venue",
+        "city": ".event-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-ray-davies",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-ray-davies.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-06T14:05:17.201Z",
+    "previousConfig": {
+      "id": "artist-ray-davies",
+      "domain": "www.raydavies.info",
+      "url": "https://www.raydavies.info/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event",
+        "artistNameFallback": "Ray Davies",
+        "date": "div.event-date",
+        "ticketUrl": "a.event-tickets",
+        "venue": "div.event-venue",
+        "city": "div.event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: dates_parse [0/31 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]",
+    "verification": ""
+  },
+  {
+    "id": "esplanade-theatres-singapore-singapore",
+    "cohort": "venue",
+    "configPath": "scrapers/esplanade-theatres-singapore-singapore.json",
+    "strategy": "needs_render",
+    "repairedAt": "2026-10-06T14:05:21.086Z",
+    "previousConfig": {
+      "id": "esplanade-theatres-singapore-singapore",
+      "domain": "esplanade.com",
+      "url": "https://www.esplanade.com/whats-on?category=Music",
+      "type": "static_selectors",
+      "maxRetries": 3,
+      "requestDelayMs": 1000,
+      "selectors": {
+        "eventBlock": "[itemtype*='Event'], article[data-event-id], .event-card, .show-item, li[data-show], div[class*='event-item']",
+        "artist": "[itemprop='name'], .show-title, .event-title, h2.title, h3.title",
+        "date": "[itemprop='startDate'], .event-date, .date-time, .show-date, time",
+        "ticketUrl": "[itemprop='url'], a[href*='ticket'], a[href*='booking'], .ticket-link",
+        "venueNameFallback": "Esplanade - Theatres on the Bay",
+        "cityNameFallback": "Singapore",
+        "countryNameFallback": "SG",
+        "lat": 1.2905,
+        "lng": 103.8597
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "needs_render: switching type to 'playwright_render' so client-side events materialize; last candidate: FAIL: live_fetch [live run failed (reason=csr_detected): Parsed 0 concerts. Page appears client-side rendered (events absent from server HTML).]; reached https://www.esplanade.com/whats-on?category=Music but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "majestic-music-club-bratislava",
+    "cohort": "venue",
+    "configPath": "scrapers/majestic-music-club-bratislava.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-06T14:07:07.169Z",
+    "previousConfig": {
+      "id": "majestic-music-club-bratislava",
+      "domain": "majestic.sk",
+      "url": "https://majestic.sk/program/",
+      "type": "static_selectors",
+      "maxRetries": 2,
+      "requestDelayMs": 2000,
+      "selectors": {
+        "eventBlock": ".tt-evt-li",
+        "artist": ".tt-evt-li__name",
+        "date": ".tt-evt-li__sub-info--BeginDate",
+        "ticketUrl": ".tt-evt-li__btn-holder a",
+        "venueNameFallback": "Majestic Music Club",
+        "cityNameFallback": "Bratislava",
+        "countryNameFallback": "SK",
+        "lat": 48.148194,
+        "lng": 17.107558
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
+    "verification": ""
+  },
+  {
+    "id": "progresja-warsaw",
+    "cohort": "venue",
+    "configPath": "scrapers/progresja-warsaw.json",
+    "repairedConfigHash": "f751fecf4a6b6dfe315f2f4235f4255b3dd797167ee18845be7c910c8dfc716e",
+    "strategy": "transient",
+    "repairedAt": "2026-10-06T14:07:08.244Z",
+    "previousConfig": {
+      "id": "progresja-warsaw",
+      "domain": "progresja.com",
+      "url": "https://progresja.com/en/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.el-item",
+        "artist": "a.el-link",
+        "date": ".uk-grid-item-match.uk-flex-middle.uk-width-large\\@m",
+        "ticketUrl": "a.el-link",
+        "venueNameFallback": "Progresja",
+        "cityNameFallback": "Warsaw",
+        "countryNameFallback": "PL",
+        "lat": 52.3301356,
+        "lng": 20.950673
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "transient: raising maxRetries 2 -> 5 with a politeness delay",
+    "verification": "PASS (93 events, 11 checks)"
   }
 ]
