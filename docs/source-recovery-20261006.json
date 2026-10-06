@@ -711,8 +711,8 @@
         "configPath": "scrapers/artist-angel-heart.json",
         "configHash": "bffd9c3869a90493ce219bb36e57f23381f63ec9bfcd0b843807b94d0ace5e80",
         "status": "failed",
-        "reason": "selectors_stale",
-        "error": "Parsed 0 concerts. Website layout might have changed."
+        "reason": "fetch_error",
+        "error": "Scraper exceeded 90s wall-clock timeout"
       }
     },
     {
@@ -775,8 +775,7 @@
         "id": "artist-bird-and-the-bee-the",
         "configPath": "scrapers/artist-bird-and-the-bee-the.json",
         "configHash": "f2d1af9874f72f86b0b93a84ca53398f0c09fad6bfbe37eff8c5c4162b026301",
-        "status": "succeeded",
-        "reason": "empty_schedule"
+        "status": "succeeded"
       }
     },
     {
@@ -903,7 +902,9 @@
         "id": "artist-iron-maidens-the",
         "configPath": "scrapers/artist-iron-maidens-the.json",
         "configHash": "d91e3aae1cd6e6d10466a30e4778f5718b5ae3683befcb5cb60fd97d25fcd273",
-        "status": "succeeded"
+        "status": "failed",
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed."
       }
     },
     {
@@ -950,7 +951,9 @@
         "id": "artist-james-pankow",
         "configPath": "scrapers/artist-james-pankow.json",
         "configHash": "5aba909edc81026fc6feaf014c3db6267933c3eb6343bba4363e03a9183abe63",
-        "status": "succeeded"
+        "status": "failed",
+        "reason": "fetch_error",
+        "error": "Request failed with status code 403"
       }
     },
     {
@@ -1064,8 +1067,8 @@
         "configPath": "scrapers/artist-jorge-e-mateus.json",
         "configHash": "d930d4070c0145752b66f054d6d9852be013c76d6b986c1d2d985c3000709fbe",
         "status": "failed",
-        "reason": "selectors_stale",
-        "error": "Parsed 0 concerts. Website layout might have changed."
+        "reason": "fetch_error",
+        "error": "Request failed with status code 403"
       }
     },
     {
@@ -1225,7 +1228,9 @@
         "id": "artist-paul-halley",
         "configPath": "scrapers/artist-paul-halley.json",
         "configHash": "eecb3573814cb8d1de42f507bf75df15a68c89a9adbb5d02e6ca3631586bca07",
-        "status": "succeeded"
+        "status": "failed",
+        "reason": "fetch_error",
+        "error": "Request failed with status code 403"
       }
     },
     {
@@ -1287,7 +1292,9 @@
         "id": "artist-philippine-philharmonic-orchestra",
         "configPath": "scrapers/artist-philippine-philharmonic-orchestra.json",
         "configHash": "f3ee26eaf313e26c4fb31a659667877c314833ef0e325eece017f25ae46f5882",
-        "status": "succeeded"
+        "status": "failed",
+        "reason": "fetch_error",
+        "error": "timeout of 15000ms exceeded"
       }
     },
     {
@@ -1414,8 +1421,9 @@
         "id": "artist-you-used-to-hold-me-so-tight",
         "configPath": "scrapers/artist-you-used-to-hold-me-so-tight.json",
         "configHash": "d46c86dc58d6d8c6e93b5b86f3b7265fcfbc3f04d7c53868423552b19174aa66",
-        "status": "succeeded",
-        "reason": "empty_schedule"
+        "status": "failed",
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed."
       }
     },
     {
@@ -1492,7 +1500,9 @@
         "id": "cartagena-festival-de-musica-cartagena",
         "configPath": "scrapers/cartagena-festival-de-musica-cartagena.json",
         "configHash": "3873ab8e17bd65c1a640bd427cb438168b68e51cfca6f7ce862350abe12d875d",
-        "status": "succeeded"
+        "status": "failed",
+        "reason": "fetch_error",
+        "error": "Request failed with status code 403"
       }
     },
     {
@@ -1554,7 +1564,9 @@
         "id": "yugong-yishan-beijing",
         "configPath": "scrapers/yugong-yishan-beijing.json",
         "configHash": "8db5fe588ce3a82e2023d732fedc470655f008efc2412fab2fb27012d3ecd283",
-        "status": "succeeded"
+        "status": "failed",
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed."
       }
     }
   ],
@@ -2347,9 +2359,9 @@
     "supersededBy": "remainingPass.finalHostedVerification"
   },
   "remainingPass": {
-    "observedAtUtc": "2026-10-06T18:33:04.484Z",
+    "observedAtUtc": "2026-10-06T19:07:38.864Z",
     "scope": "All 52 failures in the immediately preceding hosted slice: 21/415 artists and 31/152 venues. Denominators/configs preserved.",
-    "state": "published_slice_verified_followup_train_provider_identity_patch_pending",
+    "state": "hosted_and_published_verified_with_explicit_source_gaps",
     "localSuccesses": 12,
     "newConfigRepairs": 9,
     "localSuccessDoesNotProveHostedOrPublished": true,
@@ -2909,8 +2921,8 @@
           "configPath": "scrapers/artist-angel-heart.json",
           "configHash": "bffd9c3869a90493ce219bb36e57f23381f63ec9bfcd0b843807b94d0ace5e80",
           "status": "failed",
-          "reason": "selectors_stale",
-          "error": "Parsed 0 concerts. Website layout might have changed."
+          "reason": "fetch_error",
+          "error": "Scraper exceeded 90s wall-clock timeout"
         },
         "localOutcome": "unresolved",
         "sourceUrl": "https://www.angelheart.rocks/events",
@@ -2954,7 +2966,9 @@
           "id": "artist-james-pankow",
           "configPath": "scrapers/artist-james-pankow.json",
           "configHash": "5aba909edc81026fc6feaf014c3db6267933c3eb6343bba4363e03a9183abe63",
-          "status": "succeeded"
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
         },
         "localOutcome": "transient_access_recovered_no_edit",
         "sourceUrl": "https://chicagotheband.com/tour/",
@@ -3022,8 +3036,8 @@
           "configPath": "scrapers/artist-jorge-e-mateus.json",
           "configHash": "d930d4070c0145752b66f054d6d9852be013c76d6b986c1d2d985c3000709fbe",
           "status": "failed",
-          "reason": "selectors_stale",
-          "error": "Parsed 0 concerts. Website layout might have changed."
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
         },
         "localOutcome": "blocked_current_source_unverified",
         "sourceUrl": "https://www.jorgeemateus.com.br/agenda/",
@@ -3201,7 +3215,9 @@
           "id": "artist-paul-halley",
           "configPath": "scrapers/artist-paul-halley.json",
           "configHash": "eecb3573814cb8d1de42f507bf75df15a68c89a9adbb5d02e6ca3631586bca07",
-          "status": "succeeded"
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
         },
         "localOutcome": "archive_only_recovered_local",
         "sourceUrl": "https://pelagosmusic.com/event-schedule",
@@ -3517,7 +3533,9 @@
           "id": "artist-philippine-philharmonic-orchestra",
           "configPath": "scrapers/artist-philippine-philharmonic-orchestra.json",
           "configHash": "f3ee26eaf313e26c4fb31a659667877c314833ef0e325eece017f25ae46f5882",
-          "status": "succeeded"
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "timeout of 15000ms exceeded"
         },
         "proof": "Official events URL and 42nd-season press-release GETs timed out; public press index is not live-fetch verification.",
         "localOutcome": "unresolved",
@@ -3559,7 +3577,9 @@
           "id": "majestic-music-club-bratislava",
           "configPath": "scrapers/majestic-music-club-bratislava.json",
           "configHash": "c2fbe5376723a137917b560dee52f0b0ab0caf97471299f1f413e5c92b6a4509",
-          "status": "succeeded"
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "timeout of 15000ms exceeded"
         },
         "proof": "Official 24-row current program now parses all explicit dates, including the three Slovak Monday strings previously dropped. 24 complete rows, 24 current/future; no shared date-parser or retry change.",
         "localOutcome": "recovered_local",
@@ -3659,6 +3679,19 @@
         "build": "pass",
         "lintErrors": 0,
         "existingLintWarnings": 103
+      },
+      "providerIdentityHostedCI": {
+        "runId": 37513897208,
+        "headSha": "833d3a2596a8e70f4864efb50d75762705f50158",
+        "total": 728,
+        "pass": 727,
+        "skip": 1,
+        "fail": 0,
+        "build": "pass",
+        "lintErrors": 0,
+        "existingLintWarnings": 103,
+        "selectorRatchet": "pass",
+        "url": "https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37513897208"
       }
     },
     "firstHostedArtistVerification": {
@@ -3805,17 +3838,13 @@
         "publicationVerification": {
           "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/train.json",
           "httpStatus": 200,
-          "rows": 8,
+          "rows": 4,
           "names": [
             "Train"
           ],
           "dates": [
-            "2026-11-04",
-            "2026-11-07",
             "2026-11-14",
             "2027-01-23",
-            "2027-01-30",
-            "2027-02-11",
             "2027-02-11",
             "2027-02-11"
           ],
@@ -3825,7 +3854,13 @@
             "2027-01-23 La Quinta": true,
             "2027-02-11 Miami Beach": true
           },
-          "venueComparisonNote": "The verified Agoura Hills event is deduplicated with the existing Bandsintown row, whose venue is spelled The Canyon - Agoura Hills. The three official feed shows are checked individually; this does not validate every other provider row in the card."
+          "venueComparisonNote": "The verified Agoura Hills event is deduplicated with the existing Bandsintown row, whose venue is spelled The Canyon - Agoura Hills. The three official feed shows are checked individually; this does not validate every other provider row in the card.",
+          "incorrectOrganizerEventsAbsent": {
+            "2026-11-04 HeadQuarters": true,
+            "2026-11-07 HeadQuarters": true,
+            "2027-01-30 VinDanmark": true,
+            "2027-02-11 VinDanmark": true
+          }
         }
       }
     },
@@ -3980,10 +4015,43 @@
           }
         ],
         "verificationLimit": "Exact dates, venues, cities and times from real Bandsintown cache agree with primary venue/promoter and ticketing pages. The four Bandsintown event pages themselves were unavailable through web access. No country-wide or name-only exclusion is justified."
+      },
+      "latestPublicationBeforeWixRepair": {
+        "runId": 37514703457,
+        "headSha": "934b10bc2790ac22e708249abd569abe8e9fa093",
+        "generatedAt": "2026-10-06T19:07:38.864Z",
+        "artists": 393,
+        "artistTotal": 415,
+        "venues": 121,
+        "venueTotal": 152,
+        "published": 51524,
+        "statusSha256": "b29552e5b68a6295a731c3bd0ae34919dd1885559fadba05e47ebe367226b699",
+        "publicArtifactBytesIdentical": true,
+        "allThreeOfficialTrainFeedShowsPresent": true,
+        "allFourWrongTrainOrganizerRowsAbsent": true
+      },
+      "venueRegressionDiagnosis": {
+        "runId": 37514703457,
+        "comparedWithRunId": 37510468650,
+        "cacheBugConfirmed": false,
+        "proof": "Allan Stewart, Iron Maidens, Bucks Fizz, Sharon Van Etten and Yugong Yishan retain identical configHash, cacheFingerprint and contentHash between the two runs. The previous caches were nonempty except Sharon explicit empty. HTTP 304 reuse would have returned success before parsing; latest failures came from newly fetched responses.",
+        "sourceLimits": {
+          "artist-iron-maidens": "Latest 553-byte response is sgcaptcha refresh challenge, not a proven layout change. No bypass.",
+          "yugong-yishan-beijing": "Latest 186-byte response is sgcaptcha refresh challenge, not a proven layout change. No bypass.",
+          "artist-you-used-to-hold-me-so-tight": "Latest official render no longer contains the verified empty-schedule notice. No blanket empty acceptance.",
+          "artist-allan-stewart": "Official source now Wix instead of configured Elementor. Pinocchio explicit date range and Big Big Variety year-only require complete per-performance dates before concert records.",
+          "artist-bucks-fizz": "Official Wix page visibly contains complete dated events in 2026/2027. Narrow extractor repair in progress; truncated fail-log sample does not establish full DOM contract."
+        }
+      },
+      "yamazakiFollowup": {
+        "sourceUrl": "https://www.office-augusta.com/yama/live/",
+        "detailUrl": "https://www.office-augusta.com/yama/live/ac2026/",
+        "proof": "Bounded primary-source search/detail inspection shows Augusta Camp performance dates 2026-08-14 and 2026-08-15 at Pia Arena MM, Yokohama; both past. Index dates are publication dates. No complete upcoming row found.",
+        "verificationLimit": "Search/detail evidence only; not a successful live scraper run or an explicit empty future schedule."
       }
     },
     "mainAncestryVerification": {
-      "checkedMain": "6a2bc9df174bd2d007bf74bbc412db97a654f3af",
+      "checkedMain": "934b10bc2790ac22e708249abd569abe8e9fa093",
       "sourceRepairMerges": {
         "PR190": {
           "sha": "ea6828208e046cdc1b10301670886b48d62085d3",
@@ -3999,6 +4067,10 @@
         },
         "PR195": {
           "sha": "924228f3f8b5cb05ccff4df1ea2b57a02662747b",
+          "includedInMain": true
+        },
+        "PR197": {
+          "sha": "934b10bc2790ac22e708249abd569abe8e9fa093",
           "includedInMain": true
         }
       }
@@ -4209,18 +4281,18 @@
         },
         "venue": {
           "run": {
-            "id": "37510468650",
+            "id": "37514703457",
             "attempt": 1,
-            "sha": "6a2bc9df174bd2d007bf74bbc412db97a654f3af",
+            "sha": "934b10bc2790ac22e708249abd569abe8e9fa093",
             "workflow": "Daily Concert Scrape"
           },
-          "generatedAt": "2026-10-06T18:32:31.628Z",
+          "generatedAt": "2026-10-06T19:07:05.708Z",
           "scrapers": {
             "total": 152,
-            "succeeded": 130,
-            "failed": 22,
-            "changed": 4,
-            "unchanged": 126,
+            "succeeded": 121,
+            "failed": 31,
+            "changed": 1,
+            "unchanged": 120,
             "staleIds": [
               "artist-philip-labonte"
             ]
@@ -4228,82 +4300,27 @@
           "recoveredSincePrevious": [
             "artist-antones-records",
             "artist-jerry-depizzo",
-            "artist-james-pankow",
-            "artist-paul-halley",
             "artist-judith-rijnveld",
             "artist-peter-smith",
             "artist-rainey",
-            "artist-philippine-philharmonic-orchestra",
-            "majestic-music-club-bratislava",
             "rust-copenhagen"
           ],
           "regressedSincePrevious": [
-            "paradiso-amsterdam"
+            "artist-allan-stewart",
+            "artist-iron-maidens-the",
+            "artist-bucks-fizz",
+            "artist-you-used-to-hold-me-so-tight",
+            "cartagena-festival-de-musica-cartagena",
+            "yugong-yishan-beijing"
           ],
           "failures": [
             {
-              "id": "artist-harold-jones",
-              "configPath": "scrapers/artist-harold-jones.json",
-              "configHash": "66cba332db462bf1da20af5bdac99106878ef30740297b499a0a448acc49ba78",
+              "id": "artist-allan-stewart",
+              "configPath": "scrapers/artist-allan-stewart.json",
+              "configHash": "b076abe7a4b143f83446d8b6d16ef066c842b68f21d916d8921309ddcbe4ddfd",
               "status": "failed",
               "reason": "selectors_stale",
               "error": "Parsed 0 concerts. Website layout might have changed."
-            },
-            {
-              "id": "artist-jane-mcdonald",
-              "configPath": "scrapers/artist-jane-mcdonald.json",
-              "configHash": "67eca1e3b7611d0adcffbf0d21ac1120fb0b1e57f21885406394d5b6df46a0c9",
-              "status": "failed",
-              "reason": "fetch_error",
-              "error": "Request failed with status code 404"
-            },
-            {
-              "id": "artist-babbu-mann",
-              "configPath": "scrapers/artist-babbu-mann.json",
-              "configHash": "00ad07fa8ed0c0056213269d10de437b40be8561f4bd256a3d6cacb12e22dcb0",
-              "status": "failed",
-              "reason": "selectors_stale",
-              "error": "Parsed 0 concerts. Website layout might have changed."
-            },
-            {
-              "id": "artist-angel-heart",
-              "configPath": "scrapers/artist-angel-heart.json",
-              "configHash": "bffd9c3869a90493ce219bb36e57f23381f63ec9bfcd0b843807b94d0ace5e80",
-              "status": "failed",
-              "reason": "selectors_stale",
-              "error": "Parsed 0 concerts. Website layout might have changed."
-            },
-            {
-              "id": "artist-jorge-palma",
-              "configPath": "scrapers/artist-jorge-palma.json",
-              "configHash": "625274b9ed09b9c77b04774dc6c19ee5f2526a3fbdb5d3732573e5f08703cd8b",
-              "status": "failed",
-              "reason": "fetch_error",
-              "error": "Request failed with status code 404"
-            },
-            {
-              "id": "artist-jorge-e-mateus",
-              "configPath": "scrapers/artist-jorge-e-mateus.json",
-              "configHash": "d930d4070c0145752b66f054d6d9852be013c76d6b986c1d2d985c3000709fbe",
-              "status": "failed",
-              "reason": "selectors_stale",
-              "error": "Parsed 0 concerts. Website layout might have changed."
-            },
-            {
-              "id": "artist-joe-hutton",
-              "configPath": "scrapers/artist-joe-hutton.json",
-              "configHash": "58bc569c263a0fd9df8b27b38a8d96ca2cc952d257ffe47e92febb827ea98507",
-              "status": "failed",
-              "reason": "selectors_stale",
-              "error": "Parsed 0 concerts. Website layout might have changed."
-            },
-            {
-              "id": "artist-juan-garcia-herreros",
-              "configPath": "scrapers/artist-juan-garcia-herreros.json",
-              "configHash": "584459ab387ccbb2fdef981c186ec9682c14c166dfc9ae8a9bc9bafaf76d5b9d",
-              "status": "failed",
-              "reason": "fetch_error",
-              "error": "getaddrinfo ENOTFOUND www.juan-garcia-herreros.com"
             },
             {
               "id": "artist-bruce-thomas",
@@ -4314,12 +4331,100 @@
               "error": "Parsed 0 concerts. Website layout might have changed."
             },
             {
+              "id": "artist-babbu-mann",
+              "configPath": "scrapers/artist-babbu-mann.json",
+              "configHash": "00ad07fa8ed0c0056213269d10de437b40be8561f4bd256a3d6cacb12e22dcb0",
+              "status": "failed",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-iron-maidens-the",
+              "configPath": "scrapers/artist-iron-maidens-the.json",
+              "configHash": "d91e3aae1cd6e6d10466a30e4778f5718b5ae3683befcb5cb60fd97d25fcd273",
+              "status": "failed",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-james-pankow",
+              "configPath": "scrapers/artist-james-pankow.json",
+              "configHash": "5aba909edc81026fc6feaf014c3db6267933c3eb6343bba4363e03a9183abe63",
+              "status": "failed",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 403"
+            },
+            {
+              "id": "artist-jane-mcdonald",
+              "configPath": "scrapers/artist-jane-mcdonald.json",
+              "configHash": "67eca1e3b7611d0adcffbf0d21ac1120fb0b1e57f21885406394d5b6df46a0c9",
+              "status": "failed",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 404"
+            },
+            {
               "id": "artist-john-keane",
               "configPath": "scrapers/artist-john-keane.json",
               "configHash": "6bb7a1d118be973cd3c08a988afacc44208ec3d0d6dfd541182ce5503a35abec",
               "status": "failed",
               "reason": "selectors_stale",
               "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-jorge-e-mateus",
+              "configPath": "scrapers/artist-jorge-e-mateus.json",
+              "configHash": "d930d4070c0145752b66f054d6d9852be013c76d6b986c1d2d985c3000709fbe",
+              "status": "failed",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 403"
+            },
+            {
+              "id": "artist-jorge-palma",
+              "configPath": "scrapers/artist-jorge-palma.json",
+              "configHash": "625274b9ed09b9c77b04774dc6c19ee5f2526a3fbdb5d3732573e5f08703cd8b",
+              "status": "failed",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 404"
+            },
+            {
+              "id": "artist-juan-garcia-herreros",
+              "configPath": "scrapers/artist-juan-garcia-herreros.json",
+              "configHash": "584459ab387ccbb2fdef981c186ec9682c14c166dfc9ae8a9bc9bafaf76d5b9d",
+              "status": "failed",
+              "reason": "fetch_error",
+              "error": "getaddrinfo ENOTFOUND www.juan-garcia-herreros.com"
+            },
+            {
+              "id": "artist-joe-hutton",
+              "configPath": "scrapers/artist-joe-hutton.json",
+              "configHash": "58bc569c263a0fd9df8b27b38a8d96ca2cc952d257ffe47e92febb827ea98507",
+              "status": "failed",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-pain-for-pleasure",
+              "configPath": "scrapers/artist-pain-for-pleasure.json",
+              "configHash": "e4147ea6a3e37b9071d9477fe12d4db1aa04029c388c5f8e35dfe1665a3fc5ec",
+              "status": "failed",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-harold-jones",
+              "configPath": "scrapers/artist-harold-jones.json",
+              "configHash": "66cba332db462bf1da20af5bdac99106878ef30740297b499a0a448acc49ba78",
+              "status": "failed",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-paul-halley",
+              "configPath": "scrapers/artist-paul-halley.json",
+              "configHash": "eecb3573814cb8d1de42f507bf75df15a68c89a9adbb5d02e6ca3631586bca07",
+              "status": "failed",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 403"
             },
             {
               "id": "artist-patti-smith-group",
@@ -4338,17 +4443,17 @@
               "error": "Parsed 0 concerts. Website layout might have changed."
             },
             {
-              "id": "artist-pain-for-pleasure",
-              "configPath": "scrapers/artist-pain-for-pleasure.json",
-              "configHash": "e4147ea6a3e37b9071d9477fe12d4db1aa04029c388c5f8e35dfe1665a3fc5ec",
+              "id": "artist-bucks-fizz",
+              "configPath": "scrapers/artist-bucks-fizz.json",
+              "configHash": "d3f2eb49365e95fe5cf8b96c87d9f645d4931f6a809111ca1af262f63408be90",
               "status": "failed",
               "reason": "selectors_stale",
               "error": "Parsed 0 concerts. Website layout might have changed."
             },
             {
-              "id": "artist-ray-davies",
-              "configPath": "scrapers/artist-ray-davies.json",
-              "configHash": "5b7f4c1eb5dbb8b388f7dae6361dc5a2dc32b640a36b5ad802fd641940835c37",
+              "id": "artist-painflow",
+              "configPath": "scrapers/artist-painflow.json",
+              "configHash": "d5271494de1a66b5b080062218d8e7d79471fdf939a48d5108a336a464247421",
               "status": "failed",
               "reason": "selectors_stale",
               "error": "Parsed 0 concerts. Website layout might have changed."
@@ -4362,6 +4467,14 @@
               "error": "Parsed 0 concerts. Website layout might have changed."
             },
             {
+              "id": "artist-angel-heart",
+              "configPath": "scrapers/artist-angel-heart.json",
+              "configHash": "bffd9c3869a90493ce219bb36e57f23381f63ec9bfcd0b843807b94d0ace5e80",
+              "status": "failed",
+              "reason": "fetch_error",
+              "error": "Scraper exceeded 90s wall-clock timeout"
+            },
+            {
               "id": "artist-reality-check",
               "configPath": "scrapers/artist-reality-check.json",
               "configHash": "c380704bc946d3950aed00f591d478d2a3760bb457db912da6c074f67c18a81b",
@@ -4370,9 +4483,9 @@
               "error": "Parsed 0 concerts. Website layout might have changed."
             },
             {
-              "id": "artist-yamazaki-masayoshi",
-              "configPath": "scrapers/artist-yamazaki-masayoshi.json",
-              "configHash": "eeff2bb633caa3dacb8cb4261b3e4b4a717e65dbe800e26c8ceb2a7fb8f5b433",
+              "id": "artist-you-used-to-hold-me-so-tight",
+              "configPath": "scrapers/artist-you-used-to-hold-me-so-tight.json",
+              "configHash": "d46c86dc58d6d8c6e93b5b86f3b7265fcfbc3f04d7c53868423552b19174aa66",
               "status": "failed",
               "reason": "selectors_stale",
               "error": "Parsed 0 concerts. Website layout might have changed."
@@ -4384,6 +4497,30 @@
               "status": "failed",
               "reason": "selectors_stale",
               "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-ray-davies",
+              "configPath": "scrapers/artist-ray-davies.json",
+              "configHash": "5b7f4c1eb5dbb8b388f7dae6361dc5a2dc32b640a36b5ad802fd641940835c37",
+              "status": "failed",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-philippine-philharmonic-orchestra",
+              "configPath": "scrapers/artist-philippine-philharmonic-orchestra.json",
+              "configHash": "f3ee26eaf313e26c4fb31a659667877c314833ef0e325eece017f25ae46f5882",
+              "status": "failed",
+              "reason": "fetch_error",
+              "error": "timeout of 15000ms exceeded"
+            },
+            {
+              "id": "cartagena-festival-de-musica-cartagena",
+              "configPath": "scrapers/cartagena-festival-de-musica-cartagena.json",
+              "configHash": "3873ab8e17bd65c1a640bd427cb438168b68e51cfca6f7ce862350abe12d875d",
+              "status": "failed",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 403"
             },
             {
               "id": "esplanade-theatres-singapore-singapore",
@@ -4402,52 +4539,60 @@
               "error": "Parsed 0 concerts. Website layout might have changed."
             },
             {
-              "id": "paradiso-amsterdam",
-              "configPath": "scrapers/paradiso-amsterdam.json",
-              "configHash": "bf91b64e4c6dcfd0ebc5e9349e54b7adf8997460e7245a31e8d23c99c9a9a2db",
-              "status": "failed",
-              "reason": "fetch_error",
-              "error": "Empty response body from https://www.paradiso.nl/en/landing/concertagenda-paradiso/2069817 (HTTP 200)"
-            },
-            {
-              "id": "artist-painflow",
-              "configPath": "scrapers/artist-painflow.json",
-              "configHash": "d5271494de1a66b5b080062218d8e7d79471fdf939a48d5108a336a464247421",
+              "id": "yugong-yishan-beijing",
+              "configPath": "scrapers/yugong-yishan-beijing.json",
+              "configHash": "8db5fe588ce3a82e2023d732fedc470655f008efc2412fab2fb27012d3ecd283",
               "status": "failed",
               "reason": "selectors_stale",
               "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-yamazaki-masayoshi",
+              "configPath": "scrapers/artist-yamazaki-masayoshi.json",
+              "configHash": "eeff2bb633caa3dacb8cb4261b3e4b4a717e65dbe800e26c8ceb2a7fb8f5b433",
+              "status": "failed",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "majestic-music-club-bratislava",
+              "configPath": "scrapers/majestic-music-club-bratislava.json",
+              "configHash": "c2fbe5376723a137917b560dee52f0b0ab0caf97471299f1f413e5c92b6a4509",
+              "status": "failed",
+              "reason": "fetch_error",
+              "error": "timeout of 15000ms exceeded"
             }
           ]
         }
       },
       "publication": {
-        "generatedAt": "2026-10-06T18:33:04.484Z",
+        "generatedAt": "2026-10-06T19:07:38.864Z",
         "previousPublished": 51072,
-        "published": 51515,
-        "publishedDelta": 443,
-        "statusSha256": "be2a5d29a34d7cc1f8153f7c44d4663e439fd35307996569d4b352b9bad3339c",
+        "published": 51524,
+        "publishedDelta": 452,
+        "statusSha256": "b29552e5b68a6295a731c3bd0ae34919dd1885559fadba05e47ebe367226b699",
         "publicArtifactBytesIdentical": true,
         "gate": {
           "schemaVersion": 1,
           "state": "eligible",
-          "generatedAt": "2026-10-06T18:33:04.484Z",
-          "publishedConcerts": 51515,
+          "generatedAt": "2026-10-06T19:07:38.864Z",
+          "publishedConcerts": 51524,
           "healthGate": {
             "state": "eligible",
             "reason": "Current publication passed the existing health gate.",
-            "evaluatedAt": "2026-10-06T18:33:07.934Z"
+            "evaluatedAt": "2026-10-06T19:07:43.250Z"
           }
         },
         "processing": {
           "schemaVersion": 1,
-          "generatedAt": "2026-10-06T18:33:00.269Z",
-          "baseDate": "2026-10-06T18:32:31.632Z",
-          "rawCount": 112829,
-          "publishedCount": 51515,
-          "duplicatesMerged": 12614,
+          "generatedAt": "2026-10-06T19:07:34.725Z",
+          "baseDate": "2026-10-06T19:07:05.711Z",
+          "rawCount": 112844,
+          "publishedCount": 51524,
+          "duplicatesMerged": 12613,
           "dropped": {
             "incomplete": 1811,
-            "notApproved": 35957,
+            "notApproved": 35964,
             "badDate": 1871,
             "pastDate": 8853,
             "zodFail": 208
@@ -4468,43 +4613,43 @@
         "sourceHealth": {
           "venue": {
             "schemaVersion": 1,
-            "generatedAt": "2026-10-06T18:22:30.272Z",
+            "generatedAt": "2026-10-06T18:57:09.399Z",
             "source": "venue",
             "state": "degraded",
             "counts": {
               "targets": 152,
               "selected": 152,
               "attempted": 152,
-              "succeeded": 130,
-              "failed": 22,
-              "empty": 8,
+              "succeeded": 121,
+              "failed": 31,
+              "empty": 7,
               "unavailable": 0,
               "skippedFresh": 0,
               "missing": 17,
-              "cacheFallbacks": 5,
+              "cacheFallbacks": 14,
               "partial": 0
             },
             "freshness": {
               "basis": "verifiedAt",
               "classification": "current_run",
-              "fresh": 130,
-              "old": 4,
+              "fresh": 121,
+              "old": 13,
               "unknown": 18,
-              "latestVerifiedAt": "2026-10-06T18:22:30.272Z",
+              "latestVerifiedAt": "2026-10-06T18:57:09.399Z",
               "p50Days": 0,
-              "p95Days": 0,
-              "maxDays": 9.14
+              "p95Days": 0.02,
+              "maxDays": 9.16
             },
             "completeness": "partial",
             "issues": [
               {
                 "reason": "selectors_stale",
-                "count": 17,
+                "count": 20,
                 "action": "repair_source_extraction"
               },
               {
                 "reason": "fetch_error",
-                "count": 4,
+                "count": 10,
                 "action": "retry_and_inspect_source_access"
               },
               {
@@ -4653,7 +4798,7 @@
           },
           "ticketmaster": {
             "schemaVersion": 1,
-            "generatedAt": "2026-10-06T18:22:30.493Z",
+            "generatedAt": "2026-10-06T18:57:09.619Z",
             "source": "ticketmaster",
             "state": "healthy",
             "counts": {
@@ -4675,7 +4820,7 @@
               "fresh": 27,
               "old": 0,
               "unknown": 0,
-              "latestVerifiedAt": "2026-10-06T18:22:30.493Z",
+              "latestVerifiedAt": "2026-10-06T18:57:09.619Z",
               "p50Days": 0,
               "p95Days": 0,
               "maxDays": 0
@@ -4689,8 +4834,8 @@
         "status": {
           "url": "https://cartograf666.github.io/concert-for-travelers-api/status.json",
           "httpStatus": 200,
-          "generatedAt": "2026-10-06T18:33:04.484Z",
-          "publishedConcerts": 51515
+          "generatedAt": "2026-10-06T19:07:38.864Z",
+          "publishedConcerts": 51524
         },
         "peter-smith": {
           "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/peter-smith.json",
@@ -4941,17 +5086,13 @@
         "train": {
           "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/train.json",
           "httpStatus": 200,
-          "rows": 8,
+          "rows": 4,
           "names": [
             "Train"
           ],
           "dates": [
-            "2026-11-04",
-            "2026-11-07",
             "2026-11-14",
             "2027-01-23",
-            "2027-01-30",
-            "2027-02-11",
             "2027-02-11",
             "2027-02-11"
           ],
@@ -4963,10 +5104,10 @@
           },
           "venueComparisonNote": "The verified Agoura Hills event is deduplicated with the existing Bandsintown row, whose venue is spelled The Canyon - Agoura Hills. The three official feed shows are checked individually; this does not validate every other provider row in the card.",
           "incorrectOrganizerEventsAbsent": {
-            "2026-11-04 HeadQuarters": false,
-            "2026-11-07 HeadQuarters": false,
-            "2027-01-30 VinDanmark": false,
-            "2027-02-11 VinDanmark": false
+            "2026-11-04 HeadQuarters": true,
+            "2026-11-07 HeadQuarters": true,
+            "2027-01-30 VinDanmark": true,
+            "2027-02-11 VinDanmark": true
           }
         },
         "paralamas-do-sucesso": {
@@ -4999,8 +5140,8 @@
           "incorrectKnownEventAbsent": true
         }
       },
-      "dailyUrl": "https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37510468650",
-      "currentMain": "f457a1a081635e8814d8f5a0e41490900e167687",
+      "dailyUrl": "https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37514703457",
+      "currentMain": "d0a1c28e4fa20831ea0bd31feb65fb7fd71073b5",
       "precedingPublishedBaseline": {
         "artists": 394,
         "artistTotal": 415,
@@ -5012,7 +5153,7 @@
       "allSourceOutcomesEnumerated": true
     },
     "trainProviderIdentity": {
-      "state": "implemented_local_verified_pending_ci_merge_and_publication",
+      "state": "hosted_and_published_verified",
       "evidence": {
         "canonicalSpotifyArtistId": "3RqgnylU44Y6V4fF05p1Wp",
         "provider": "bandsintown.com",
@@ -5059,7 +5200,211 @@
         "actualCacheFixtureRows": 6,
         "fixtureRowsExactlyMatchDownloadedCache": true
       },
-      "scope": "Exclude only four exact Bandsintown event URLs when matched canonical Spotify artist is American Train. Preserve three official US shows, legitimate provider events, other providers, other events and distinct same-name canonical identities."
+      "scope": "Exclude only four exact Bandsintown event URLs when matched canonical Spotify artist is American Train. Preserve three official US shows, legitimate provider events, other providers, other events and distinct same-name canonical identities.",
+      "publicCheck": {
+        "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/train.json",
+        "httpStatus": 200,
+        "rows": 4,
+        "names": [
+          "Train"
+        ],
+        "dates": [
+          "2026-11-14",
+          "2027-01-23",
+          "2027-02-11",
+          "2027-02-11"
+        ],
+        "internalMetadataAbsent": true,
+        "verifiedFeedEventsPresent": {
+          "2026-11-14 Agoura Hills": true,
+          "2027-01-23 La Quinta": true,
+          "2027-02-11 Miami Beach": true
+        },
+        "venueComparisonNote": "The verified Agoura Hills event is deduplicated with the existing Bandsintown row, whose venue is spelled The Canyon - Agoura Hills. The three official feed shows are checked individually; this does not validate every other provider row in the card.",
+        "incorrectOrganizerEventsAbsent": {
+          "2026-11-04 HeadQuarters": true,
+          "2026-11-07 HeadQuarters": true,
+          "2027-01-30 VinDanmark": true,
+          "2027-02-11 VinDanmark": true
+        }
+      },
+      "hostedCI": {
+        "runId": 37513897208,
+        "headSha": "833d3a2596a8e70f4864efb50d75762705f50158",
+        "total": 728,
+        "pass": 727,
+        "skip": 1,
+        "fail": 0,
+        "build": "pass",
+        "lintErrors": 0,
+        "existingLintWarnings": 103,
+        "selectorRatchet": "pass",
+        "url": "https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37513897208"
+      }
+    },
+    "wixCalendarFollowup": {
+      "state": "implemented_local_verified_pending_ci_merge_and_publication",
+      "sourceId": "artist-bucks-fizz",
+      "sourceUrl": "https://www.thefizzofficial.com/tour",
+      "previousHosted": {
+        "runId": 37514703457,
+        "status": "failed",
+        "reason": "selectors_stale"
+      },
+      "diagnosis": "Stale html-section-event-row selector does not occur on the current Wix page. The complete official GET is 712659 bytes and contains one richText calendar with full printed dates, venue and city.",
+      "actualLocalRun": {
+        "rows": 15,
+        "futureRows": 14,
+        "pastRows": 1,
+        "countries": {
+          "GB": 14,
+          "ES": 1
+        }
+      },
+      "countryEvidence": {
+        "GB": "Current printed cities St. Helens, Treccobay, Milton Keynes, Selby, Stockport, Tonbridge, Blackpool, Bognor, Minehead, Skegness and Much Wenlock were verified as British locations. New cities fail pending evidence.",
+        "ES": {
+          "url": "https://www.winterpride.com/es/events-info/",
+          "proof": "Primary Winter Pride organizer identifies Maspalomas, Gran Canaria."
+        }
+      },
+      "identity": "Preserves configured The Fizz group name and requires matching official title plus canonical tour URL. No replacement with individual members or historical Bucks Fizz identity.",
+      "checks": {
+        "targetedTestsPass": 3,
+        "targetedTestsFail": 0,
+        "rootFullAndFixtureRowsExactlyMatch": true,
+        "fullOfficialBytes": 712659,
+        "fixtureBytes": 34273,
+        "typecheck": "pass",
+        "build": "pass",
+        "targetedLint": "pass",
+        "diff": "pass",
+        "negativeCases": "Unknown city/country, missing city/venue/year, invalid calendar date, wrong identity, absent/empty calendar all fail; a newly printed valid year succeeds."
+      },
+      "changedFiles": [
+        "scrapers/artist-bucks-fizz.json",
+        "src/engine/custom/artist-bucks-fizz.ts",
+        "tests/remaining_bucks_fizz_wix.test.ts",
+        "tests/fixtures/artist-bucks-fizz-tour-20261006.html"
+      ],
+      "remainingLimit": "No blanket empty acceptance. The current explicit UK/Spain city set requires evidence for future new locations. A local pass does not establish hosted reachability.",
+      "identityCorrection": {
+        "state": "implemented_local_verified_pending_ci_and_publication",
+        "previousCanonicalName": "Buck's Fizz",
+        "canonicalName": "The Fizz",
+        "officialSpotify": "https://open.spotify.com/artist/1fyj6rE8Dw2eLkmdflawvG",
+        "primaryProofs": [
+          "https://www.thefizzofficial.com/bio",
+          "https://www.thefizzofficial.com/tour",
+          "https://open.spotify.com/artist/1fyj6rE8Dw2eLkmdflawvG"
+        ],
+        "before": {
+          "publicArtist": "The Firm",
+          "wrongFutureRows": 14,
+          "publicCardVerified": true,
+          "rawDateVenueCityCountryMatch": true,
+          "wrongMbid": "c08ced1f-d248-4368-90e5-bf579b3bf5de"
+        },
+        "implemented": "Rename the existing website-owned Buck's Fizz entry and replace its stored Spotify URL with the official-linked The Fizz artist ID. No alias to legacy Bucks Fizz, no global fuzzy-rule change. Other entry contents remain unchanged.",
+        "checks": {
+          "realCatalogPipelineRows": 14,
+          "targetedIdentityTestsPass": 2,
+          "otherCatalogEntriesUnchanged": true,
+          "totalEntriesUnchanged": 63378,
+          "integrityErrors": 144,
+          "integrityBaseline": 144,
+          "integrityGate": "pass",
+          "separateLegacyBucksFizzAndTheFirmIdentityMatches": "preserved"
+        },
+        "metadataLimit": "Existing derived popularity/genres/recommendations of the renamed website-owned entry were retained and not independently revalidated."
+      },
+      "sources": [
+        {
+          "state": "implemented_local_verified_pending_ci_merge_and_publication",
+          "sourceId": "artist-bucks-fizz",
+          "sourceUrl": "https://www.thefizzofficial.com/tour",
+          "previousHosted": {
+            "runId": 37514703457,
+            "status": "failed",
+            "reason": "selectors_stale"
+          },
+          "diagnosis": "Stale html-section-event-row selector does not occur on the current Wix page. The complete official GET is 712659 bytes and contains one richText calendar with full printed dates, venue and city.",
+          "actualLocalRun": {
+            "rows": 15,
+            "futureRows": 14,
+            "pastRows": 1,
+            "countries": {
+              "GB": 14,
+              "ES": 1
+            }
+          },
+          "countryEvidence": {
+            "GB": "Current printed cities St. Helens, Treccobay, Milton Keynes, Selby, Stockport, Tonbridge, Blackpool, Bognor, Minehead, Skegness and Much Wenlock were verified as British locations. New cities fail pending evidence.",
+            "ES": {
+              "url": "https://www.winterpride.com/es/events-info/",
+              "proof": "Primary Winter Pride organizer identifies Maspalomas, Gran Canaria."
+            }
+          },
+          "identity": "Preserves configured The Fizz group name and requires matching official title plus canonical tour URL. No replacement with individual members or historical Bucks Fizz identity.",
+          "checks": {
+            "targetedTestsPass": 3,
+            "targetedTestsFail": 0,
+            "rootFullAndFixtureRowsExactlyMatch": true,
+            "fullOfficialBytes": 712659,
+            "fixtureBytes": 34273,
+            "typecheck": "pass",
+            "build": "pass",
+            "targetedLint": "pass",
+            "diff": "pass",
+            "negativeCases": "Unknown city/country, missing city/venue/year, invalid calendar date, wrong identity, absent/empty calendar all fail; a newly printed valid year succeeds."
+          },
+          "changedFiles": [
+            "scrapers/artist-bucks-fizz.json",
+            "src/engine/custom/artist-bucks-fizz.ts",
+            "tests/remaining_bucks_fizz_wix.test.ts",
+            "tests/fixtures/artist-bucks-fizz-tour-20261006.html"
+          ],
+          "remainingLimit": "No blanket empty acceptance. The current explicit UK/Spain city set requires evidence for future new locations. A local pass does not establish hosted reachability."
+        },
+        {
+          "sourceId": "artist-allan-stewart",
+          "state": "implemented_local_verified_pending_ci_merge_and_publication",
+          "sourceUrl": "https://www.allanstewart.com/shows/",
+          "primaryCalendar": "https://www.capitaltheatres.com/shows/allan-stewarts-big-big-variety-show/",
+          "scope": "Current artist-page discovery plus linked primary venue calendar for the named headline comedy/music variety show. Pinocchio is a verified pantomime cast role, not relabeled as artist concerts; archived productions are excluded. Unknown current show types or missing identity/date/venue evidence fail explicitly.",
+          "dates": "2027-03-23 through 2027-03-27",
+          "actualLocalRun": {
+            "rawPerformances": 7,
+            "uniquePublishedDates": 5,
+            "venue": "Kings Theatre",
+            "city": "Edinburgh",
+            "country": "GB"
+          },
+          "sourceFollowing": "Existing playwright_render/custom_js keeps main discovery fresh without conditional-304 reuse; at most two fixed observed primary venue URLs use existing SSRF/DNS/redirect/response-size/15-second-timeout policy. One-second politeness delay between venue requests; no new network policy.",
+          "lifecycle": "Headline card remains required. Pinocchio is verified/excluded only while listed. A printed past-year archive boundary replaces the frozen 2024 requirement; removing completed/archived cards is tested.",
+          "checks": {
+            "targetedPass": 5,
+            "targetedFail": 0,
+            "realConfiguredLiveRunRows": 7,
+            "pipelineUniqueDates": 5,
+            "typecheck": "pass",
+            "build": "pass",
+            "targetedLint": "pass",
+            "productionSsrfPolicy": "pass",
+            "diff": "pass"
+          },
+          "changedFiles": [
+            "scrapers/artist-allan-stewart.json",
+            "src/engine/custom/artist-allan-stewart.ts",
+            "tests/remaining_allan_stewart_tour.test.ts",
+            "tests/fixtures/artist-allan-stewart-shows-20261006.html",
+            "tests/fixtures/artist-allan-stewart-big-big-20261006.html",
+            "tests/fixtures/artist-allan-stewart-pinocchio-20261006.html"
+          ],
+          "review": "Bounded independent gpt-6-sol contract/code review. Original pruning dependency corrected and covered by current fixture variants. Inclusion of the named mixed comedy/music show follows project concert scope; no new all-theatre event policy.",
+          "remainingLimit": "Only primary linked calendar dates are supported. The existing global deduplication collapses same-day performances to one artist/date/city record, so seven bookings produce five public entries. No global dedupe change."
+        }
+      ]
     }
   },
   "countsScope": "Historical local classifications of the original 97 failures. Current complete hosted cohort totals are in remainingPass.finalHostedVerification.cohorts."

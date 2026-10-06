@@ -2,7 +2,7 @@
   "id": "artist-bucks-fizz",
   "domain": "thefizzofficial.com",
   "url": "https://www.thefizzofficial.com/tour",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "div.html-section-item.html-section-event-row",
     "artistNameFallback": "The Fizz",

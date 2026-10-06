@@ -20,14 +20,14 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   `docs/source-recovery-20261006.json`.
 - Final hosted artist run [37502871972](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37502871972)
   on `7fe13ee` verifies **393/415** (preceding public slice 394/415).
-  Final daily [37510468650](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37510468650)
-  on `6a2bc9d` verifies **130/152** (preceding slice 121/152)
+  Final daily [37514703457](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37514703457)
+  on `934b10b` verifies **121/152** (preceding slice 121/152)
   and completes Pages deployment. Both manifests enumerate every original ID;
-  no config is removed to shrink a denominator. 44 current failures remain;
+  no config is removed to shrink a denominator. 53 current failures remain;
   latest outcomes replace local success projections and the intermediate 392/415.
-- Public status generated `2026-10-06T18:33:04.484Z` is byte-identical to
-  this daily's publication artifact (SHA-256 `be2a5d29a34d7cc1f8153f7c44d4663e439fd35307996569d4b352b9bad3339c`). The API contains
-  **51,515 published concerts**, +443 against 51,072 before this continuation.
+- Public status generated `2026-10-06T19:07:38.864Z` is byte-identical to
+  this daily's publication artifact (SHA-256 `b29552e5b68a6295a731c3bd0ae34919dd1885559fadba05e47ebe367226b699`). The API contains
+  **51,524 published concerts**, +452 against 51,072 before this continuation.
   Publication gate and rejection/duplicate diagnostics are preserved in the report.
 - Current-date fixes cover RUST, Majestic, Antone's, Marmalade, O.A.R., Kingfisher
   Sky, Peter Smith, Stephanie Rainey, Paul Halley and the three new regressions.
@@ -44,22 +44,40 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   confirms the wrong attribution is absent. Other same-name identities/events
   remain allowed. Cancelled intermediate daily 37498109196 started collection
   but never deployed; its partial output is historical, not a final result.
-- CI on the Train calendar head: **724 pass / one skip / zero failures**, build,
+- Four exact Bandsintown events belonging to the Aarhus TRAIN venue/promoter
+  are excluded from the American Train identity using its canonical Spotify ID.
+  Primary venue/promoter and ticketing pages identify other performers. Final
+  public checks confirm those four rows are absent while all three official
+  US feed shows remain. The rule does not exclude countries or artist names.
+- CI on the final provider-identity head: **727 pass / one skip / zero failures**, build,
   lint and selector ratchet pass; lint retains 103 existing warnings. Code review:
   harness-native fallback. Independent gpt-6-sol review found/rechecked the
   external purchase-link identity loss and empty-city bug and passed Ellen's
   explicit-date parser; root checked the Train state/date change against the
-  captured and live three-event feed. Full CE nested dispatch is prohibited by reviewer role.
-- Follow-up provider identity correction is locally verified and awaits CI,
-  main merge and a new publication. Four Bandsintown events in Aarhus belong
-  to the TRAIN venue/promoter and name other performers in primary calendars;
-  they currently appear in the American Train card. The exclusion is limited
-  to those four exact provider IDs plus the American band's canonical Spotify
-  ID. Forty-seven focused tests and six independent root identity tests pass;
-  official US shows and unrelated identities/providers remain allowed. The
-  51,515 publication above predates this correction and still contains those
-  four erroneous rows. Per-source success counts are independent of this
-  provider attribution correction.
+  captured and live three-event feed and independently verified the four exact
+  provider collisions against six unchanged real-cache fixtures. Full CE nested
+  dispatch was prohibited by reviewer role in the earlier review attempt;
+  no full CE receipt is claimed.
+- The Fizz follow-up is implemented and locally verified against the complete
+  current official Wix page: 15 printed shows, 14 future; root confirms all rows
+  match the captured calendar fixture. Three targeted tests, type check, build and
+  lint pass. The group identity and per-row country evidence are preserved;
+  invalid dates, new unverified cities and empty/ambiguous calendars fail. This
+  follow-up awaits exact-head CI, main merge and ordinary hosted/public verification.
+- The Fizz identity correction is locally verified and awaits publication: the
+  current public The Firm card incorrectly contains all 14 future The Fizz dates.
+  The site-owned Buck's Fizz catalog entry is renamed to The Fizz and receives
+  the official-linked Spotify ID. Exact matching now preserves all 14 dates
+  under their correct group; legacy Bucks Fizz and genuine The Firm matches remain
+  unchanged. Two real-catalog regression tests and the unchanged 144-error
+  artist-integrity ratchet pass. No broad alias or fuzzy-matching change is added.
+- Allan Stewart follow-up is implemented and locally verified: seven timed
+  Big Big Variety performances on five March 2027 dates come from the primary
+  venue calendar discovered on the artist page. Pinocchio is verified as a
+  pantomime cast role and excluded. Five tests, real configured live extraction,
+  build, types, lint and production SSRF checks pass. Completed/archived-card
+  removal is covered; no global date/city dedupe or network policy changes.
+  Exact-head CI, main merge and hosted/public verification remain pending.
 - Remaining source gaps have current explicit evidence: blocked/server-error
   access, absent trustworthy dated schedules and unsupported/wrong identity
   bindings. Existing provider coverage does not turn a failed official scraper
