@@ -35,6 +35,18 @@ export interface CandidatePlan {
 /** Ceiling on live probes per broken scraper, so one dead site can't eat the job's budget. */
 export const MAX_CANDIDATES = 6;
 
+/** Keep an isolated retry sequence inside runner's 90s per-scraper ceiling.
+ * Runner uses 15s per GET, up to 250ms jitter on each backoff, and applies
+ * requestDelayMs before every attempt. Existing politeness is never reduced. */
+function safeRetryCount(delayMs: number, preferred: number): number | undefined {
+  for (let retries = preferred; retries >= Math.min(preferred, 2); retries--) {
+    const backoffMs = Array.from({ length: retries }, (_, index) =>
+      Math.min(15000, 500 * 2 ** index) + 250).reduce((sum, wait) => sum + wait, 0);
+    if ((retries + 1) * (15000 + delayMs) + backoffMs < 90000) return retries;
+  }
+  return undefined;
+}
+
 /** Path fragments that name a schedule page, most specific first. */
 const TOUR_PATH_KEYWORDS = [
   'tour-dates', 'tourdates', 'tour', 'shows', 'events', 'concerts', 'gigs',
@@ -192,11 +204,14 @@ async function planDeadDomain(config: ScraperConfig, deps: StrategyDeps): Promis
     return { candidates: [], retire: true, note: `dead_domain: ${hostname} does not resolve` };
   }
   // DNS answers now -- the fail-log entry was a resolver blip or the domain came
-  // back. Do not retire; re-probe the original URL with escalated retries.
+  // back. Keep the original URL and politeness, but fit retries inside runner.
+  const retries = safeRetryCount(config.requestDelayMs ?? 0, 4);
   return {
-    candidates: [ScraperConfigSchema.parse({ ...config, maxRetries: 4 })],
+    candidates: retries === undefined ? [] : [ScraperConfigSchema.parse({ ...config, maxRetries: retries })],
     retire: false,
-    note: `dead_domain reclassified: ${hostname} resolves now, retrying instead of retiring`
+    note: retries === undefined
+      ? `dead_domain reclassified: ${hostname} resolves now, but retry budget is exhausted`
+      : `dead_domain reclassified: ${hostname} resolves now, retrying instead of retiring`
   };
 }
 
@@ -232,37 +247,49 @@ function planAntiBot(config: ScraperConfig): CandidatePlan {
       note: 'anti_bot: already on the got-scraping backend, no further escalation available'
     };
   }
+  const current = config.maxRetries ?? 2;
+  const firstRetries = safeRetryCount(config.requestDelayMs ?? 0, current);
+  if (firstRetries === undefined) {
+    return { candidates: [], retire: false, note: 'anti_bot: politeness delay leaves no safe retry budget' };
+  }
+  const candidates = [ScraperConfigSchema.parse({
+    ...config, httpClient: 'got-scraping',
+    ...(firstRetries === current ? {} : { maxRetries: firstRetries })
+  })];
+  // Second pass adds politeness: some filters key on request rate, not headers.
+  const politeDelayMs = Math.max(config.requestDelayMs ?? 0, 3000);
+  const politeRetries = safeRetryCount(politeDelayMs, 3);
+  if (politeRetries !== undefined &&
+      (politeDelayMs !== (config.requestDelayMs ?? 0) || politeRetries !== firstRetries)) {
+    candidates.push(ScraperConfigSchema.parse({
+      ...config, httpClient: 'got-scraping', maxRetries: politeRetries,
+      requestDelayMs: politeDelayMs
+    }));
+  }
   return {
-    candidates: [
-      ScraperConfigSchema.parse({ ...config, httpClient: 'got-scraping' }),
-      // Second pass adds politeness: some filters key on request rate, not headers.
-      ScraperConfigSchema.parse({
-        ...config,
-        httpClient: 'got-scraping',
-        maxRetries: 3,
-        requestDelayMs: Math.max(config.requestDelayMs ?? 0, 3000)
-      })
-    ],
+    candidates,
     retire: false,
     note: 'anti_bot: escalating to the got-scraping header-fingerprint backend'
   };
 }
 
 function planTransient(config: ScraperConfig): CandidatePlan {
+  // Runner caps each scraper at 90s and each HTTP attempt at 15s. Include
+  // worst-case backoff jitter and each configured politeness wait, keeping
+  // an isolated fetch sequence inside that ceiling. Never lower the delay.
+  const delayMs = Math.max(config.requestDelayMs ?? 0, 2000);
+  const retries = safeRetryCount(delayMs, 3);
+  if (retries === undefined) {
+    return { candidates: [], retire: false, note: 'transient: politeness delay leaves no safe retry budget' };
+  }
   const current = config.maxRetries ?? 2;
-  if (current >= 5) {
-    return { candidates: [], retire: false, note: 'transient: retries already at the schema maximum' };
+  if (current === retries && (config.requestDelayMs ?? 0) >= 2000) {
+    return { candidates: [], retire: false, note: 'transient: retries and politeness already fit the 90s budget' };
   }
   return {
-    candidates: [
-      ScraperConfigSchema.parse({
-        ...config,
-        maxRetries: 5,
-        requestDelayMs: Math.max(config.requestDelayMs ?? 0, 2000)
-      })
-    ],
+    candidates: [ScraperConfigSchema.parse({ ...config, maxRetries: retries, requestDelayMs: delayMs })],
     retire: false,
-    note: `transient: raising maxRetries ${current} -> 5 with a politeness delay`
+    note: `transient: setting maxRetries ${current} -> ${retries} within the 90s budget`
   };
 }
 

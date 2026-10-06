@@ -3,7 +3,6 @@
   "domain": "stanleyclarke.com",
   "url": "https://stanleyclarke.com/events/",
   "type": "static_selectors",
-  "maxRetries": 5,
   "requestDelayMs": 2000,
   "selectors": {
     "eventBlock": "ul#events-index > li.event",

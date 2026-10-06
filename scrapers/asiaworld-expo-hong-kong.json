@@ -3,7 +3,6 @@
   "domain": "asiaworld-expo.com",
   "url": "https://www.asiaworld-expo.com/whats-on/upcoming-events",
   "type": "static_selectors",
-  "maxRetries": 5,
   "requestDelayMs": 2000,
   "selectors": {
     "eventBlock": "div.event-filter-tab",

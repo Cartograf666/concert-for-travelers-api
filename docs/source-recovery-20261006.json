@@ -1683,6 +1683,57 @@
       "artist-ray-davies": "Configured https://www.raydavies.info/live redirects to unrelated prnewschannel.com sports site; no verified official artist schedule.",
       "artist-ray-scott": "Configured https://www.rayscott.com/tour returns an Angular shell with no schedule data; bounded rendered load times out. No reliable concert or explicit empty evidence.",
       "artist-reality-check": "Official configured https://therealitycheckexperiment.com/ returns HTTP 429; no last-good source cache or access bypass."
+    },
+    "retryBudgetFollowon": {
+      "state": "locally_fixed_release_pending",
+      "cause": "Deterministic transient healing raises maxRetries to5. Six15s attempts plus backoff exceed90s source wall-clock ceiling; autoPR172 reintroduced this in Alabama Symphony and autoPR185 in Progresja. Same118750ms isolated retry budget found in16 other static sources; Philippine Philharmonic also failed at90s in the actual first daily run. Dead-domain and inherited anti-bot politeness can produce the same overrun.",
+      "ticketmasterMergedMain": "703862e06e19ec1d6f505090813e86cdf3ac31e2",
+      "scope": [
+        "src/healing/strategies.ts",
+        "tests/healing_strategies.test.ts",
+        "scrapers/armenian-national-opera-yerevan.json",
+        "scrapers/artist-philippine-philharmonic-orchestra.json",
+        "scrapers/artists/artist-abdee-negara.json",
+        "scrapers/artists/artist-alabama-symphony-orchestra.json",
+        "scrapers/artists/artist-froukje.json",
+        "scrapers/artists/artist-hermann-nitsch.json",
+        "scrapers/artists/artist-partenaire-particulier.json",
+        "scrapers/artists/artist-patricia-barber.json",
+        "scrapers/artists/artist-stanley-clarke.json",
+        "scrapers/asiaworld-expo-hong-kong.json",
+        "scrapers/babylon-istanbul.json",
+        "scrapers/baku-convention-center-baku.json",
+        "scrapers/botanique-brussels.json",
+        "scrapers/osaka-jo-hall-osaka.json",
+        "scrapers/progresja-warsaw.json",
+        "scrapers/teatro-pablo-tobon-uribe-medellin.json",
+        "scrapers/the-o2-arena-london.json",
+        "scrapers/yugong-yishan-beijing.json"
+      ],
+      "liveSourceRecovery": "unverified",
+      "implementation": "All18 excessive source configs restored to default2 retries, retaining identical extraction fields and2000ms politeness. Transient, dead-domain and anti-bot repair candidates share a conservative15s attempt+retained delay+jittered backoff budget below unchanged90s ceiling.",
+      "checks": {
+        "strategyTests": {
+          "passed": 11,
+          "failed": 0
+        },
+        "typecheck": "pass",
+        "scopedLint": "zero_errors_two_existing_warnings",
+        "staticConfigsSchemaAndBudgetAudit": {
+          "total": 485,
+          "explicitMoreThanTwoRetriesWithEstimatedBudgetAtLeast90s": 0
+        },
+        "changedConfigsExtractionAndPolitenessIdentical": 18,
+        "diffCheck": "pass"
+      },
+      "artistVerification": "Retry-only edits change7 artist configs after the completed producer run. Their extraction fields/URLs/politeness remain identical, so previous raw observations stay usable; new hosted retry behavior awaits the next artist sweep. Alabama is checked separately locally.",
+      "affectedConfigCount": 18,
+      "localAlabama": {
+        "state": "succeeded",
+        "scrapedAt": "2026-10-06T14:31:47.813Z",
+        "publishedCount": "not_inferred_from_raw_test_config",
+        "rawCount": 12
+      }
     }
   }
 }
