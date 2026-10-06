@@ -25961,5 +25961,33 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget",
     "verification": "PASS (1398 events, 9 checks)"
+  },
+  {
+    "id": "artist-yamazaki-masayoshi",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-yamazaki-masayoshi.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-06T21:36:33.751Z",
+    "previousConfig": {
+      "id": "artist-yamazaki-masayoshi",
+      "domain": "www.office-augusta.com",
+      "url": "https://www.office-augusta.com/yama/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.list_item",
+        "artistNameFallback": "Masayoshi Yamazaki",
+        "date": ".date",
+        "ticketUrl": "a",
+        "venue": ".place",
+        "city": ".place",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.office-augusta.com/yama/live/ but could not re-select on it",
+    "verification": ""
   }
 ]
