@@ -13,21 +13,21 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
 ## Remaining-source repair continuation — 2026-10-06 (published; explicit source gaps remain)
 
-- All 52 preceding failures were inspected. Thirteen source extractors were adjusted
-  in PRs #190, #192, #193 and #195; Alabama 3, Scotty McCreery and Ellen ten Damme were
+- All 52 preceding failures were inspected. Fifteen source extractors were adjusted
+  in PRs #190, #192, #193 and #195 plus the latest Wix follow-up; Alabama 3, Scotty McCreery and Ellen ten Damme were
   newly regressed sources discovered by the first hosted follow-up. Current
   source, identity and date evidence is preserved per source in
   `docs/source-recovery-20261006.json`.
 - Final hosted artist run [37502871972](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37502871972)
   on `7fe13ee` verifies **393/415** (preceding public slice 394/415).
-  Final daily [37514703457](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37514703457)
-  on `934b10b` verifies **121/152** (preceding slice 121/152)
+  Final daily [37521897489](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37521897489)
+  on `7155737` verifies **128/152** (preceding slice 121/152)
   and completes Pages deployment. Both manifests enumerate every original ID;
-  no config is removed to shrink a denominator. 53 current failures remain;
+  no config is removed to shrink a denominator. 46 current failures remain;
   latest outcomes replace local success projections and the intermediate 392/415.
-- Public status generated `2026-10-06T19:07:38.864Z` is byte-identical to
-  this daily's publication artifact (SHA-256 `b29552e5b68a6295a731c3bd0ae34919dd1885559fadba05e47ebe367226b699`). The API contains
-  **51,524 published concerts**, +452 against 51,072 before this continuation.
+- Public status generated `2026-10-06T20:04:33.934Z` is byte-identical to
+  this daily's publication artifact (SHA-256 `e5a442cbf488d6aadd88ce0536c28e2352a9cf769d57f1afd31f19160cada723`). The API contains
+  **51,544 published concerts**, +472 against 51,072 before this continuation.
   Publication gate and rejection/duplicate diagnostics are preserved in the report.
 - Current-date fixes cover RUST, Majestic, Antone's, Marmalade, O.A.R., Kingfisher
   Sky, Peter Smith, Stephanie Rainey, Paul Halley and the three new regressions.
@@ -49,7 +49,10 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   Primary venue/promoter and ticketing pages identify other performers. Final
   public checks confirm those four rows are absent while all three official
   US feed shows remain. The rule does not exclude countries or artist names.
-- CI on the final provider-identity head: **727 pass / one skip / zero failures**, build,
+- CI on the latest Wix head: **737 pass / 1 skip / 0 failures**, build, lint,
+  selector and artist-data integrity gates pass. Integrity retains the unchanged
+  144-error baseline; lint retains 103 existing warnings.
+- CI on the preceding provider-identity head: **727 pass / one skip / zero failures**, build,
   lint and selector ratchet pass; lint retains 103 existing warnings. Code review:
   harness-native fallback. Independent gpt-6-sol review found/rechecked the
   external purchase-link identity loss and empty-city bug and passed Ellen's
@@ -58,26 +61,16 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   provider collisions against six unchanged real-cache fixtures. Full CE nested
   dispatch was prohibited by reviewer role in the earlier review attempt;
   no full CE receipt is claimed.
-- The Fizz follow-up is implemented and locally verified against the complete
-  current official Wix page: 15 printed shows, 14 future; root confirms all rows
-  match the captured calendar fixture. Three targeted tests, type check, build and
-  lint pass. The group identity and per-row country evidence are preserved;
-  invalid dates, new unverified cities and empty/ambiguous calendars fail. This
-  follow-up awaits exact-head CI, main merge and ordinary hosted/public verification.
-- The Fizz identity correction is locally verified and awaits publication: the
-  current public The Firm card incorrectly contains all 14 future The Fizz dates.
-  The site-owned Buck's Fizz catalog entry is renamed to The Fizz and receives
-  the official-linked Spotify ID. Exact matching now preserves all 14 dates
-  under their correct group; legacy Bucks Fizz and genuine The Firm matches remain
-  unchanged. Two real-catalog regression tests and the unchanged 144-error
-  artist-integrity ratchet pass. No broad alias or fuzzy-matching change is added.
-- Allan Stewart follow-up is implemented and locally verified: seven timed
-  Big Big Variety performances on five March 2027 dates come from the primary
-  venue calendar discovered on the artist page. Pinocchio is verified as a
-  pantomime cast role and excluded. Five tests, real configured live extraction,
-  build, types, lint and production SSRF checks pass. Completed/archived-card
-  removal is covered; no global date/city dedupe or network policy changes.
-  Exact-head CI, main merge and hosted/public verification remain pending.
+- The latest Wix follow-up repairs The Fizz and Allan Stewart with current
+  first-party calendar evidence. The Fizz yields 15 printed events, 14 future;
+  its exact catalog identity and official Spotify are corrected. Final public
+  checks preserve all 14 dates under The Fizz and remove their attribution to
+  The Firm. Legacy Bucks Fizz and genuine The Firm identity matches remain intact.
+  Allan reads seven explicitly timed music/comedy performances from the linked
+  venue calendar; existing publication merges same-day performances into five
+  dates. Pinocchio is verified as a pantomime cast role and excluded. Per-source
+  hosted outcomes and actual public checks are retained in the report; this is
+  not a guarantee of permanent reachability.
 - Remaining source gaps have current explicit evidence: blocked/server-error
   access, absent trustworthy dated schedules and unsupported/wrong identity
   bindings. Existing provider coverage does not turn a failed official scraper
@@ -87,9 +80,10 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   year/country, blanket empty flag or access/security bypass hides these gaps.
 - Next concrete needs for 415/415 and 152/152: a current supported calendar or
   provider access for blocked/absent sources, and canonical evidence for ambiguous
-  identities. Jorge & Mateus also needs a monthly API adapter that validates real
-  populated rows; its current official months are empty, and this integration
-  remains unimplemented. Those limits are recorded; the current release is published and
+  identities. Jorge & Mateus has a monthly API adapter under verification before release;
+  current official months are empty, and freshness on repeated collection has
+  passed local regression checks. CI, main integration and hosted verification
+  are pending; this change is not included in these hosted totals. Those limits are recorded; the current release is published and
   verified, while 100% source health remains unachieved.
 
 ## All-branch integration and source recovery — 2026-10-06 (preceding publication; superseded above)
