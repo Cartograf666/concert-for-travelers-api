@@ -1155,7 +1155,9 @@ export async function processConcerts(
 
     // 1. Artist Normalization & Filter
     const matched = isTheHuName(raw.artist) && !hasTheHuCanonical ? null : match(raw.artist);
-    if (!matched || isVerifiedSourceIdentityCollision(raw, matched.mbid)) {
+    const artistSocials = matched ? buildArtistSocials(matched.socials) : undefined;
+    const spotifyId = parseSpotifyArtistId(artistSocials?.spotify);
+    if (!matched || isVerifiedSourceIdentityCollision(raw, matched.mbid, spotifyId)) {
       drops.notApproved++;
       diagnostics?.recordDrop('notApproved', raw);
       continue;
@@ -1175,13 +1177,12 @@ export async function processConcerts(
     }
 
     // Prepare full concert model
-    const artistSocials = buildArtistSocials(matched.socials);
     const concertData: Concert = {
       artist: matched.name,
       artistDiscovery: matched.artistDiscovery,
       artistWebsite: matched.website || undefined,
       artistSocials,
-      spotifyId: parseSpotifyArtistId(artistSocials?.spotify),
+      spotifyId,
       mbid: matched.mbid || undefined,
       date: normalizedDate,
       startTime: raw.startTime || extractTimeFromRawDate(raw.date),

@@ -11,66 +11,70 @@ each concert in space and time, and (3) **rank** the options.
 
 Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
-## Remaining-source repair continuation — 2026-10-06 (local; hosted verification pending)
+## Remaining-source repair continuation — 2026-10-06 (published; explicit source gaps remain)
 
-- Scope: all 52 failures from the preceding hosted slice (21 artists / 31 venues).
-  Every source was checked against current official access, identity and event
-  evidence; per-source results extend the existing source-recovery JSON report.
-- Nine current-source configs repaired: Marmalade, Jerry DePizzo/O.A.R., Paul
-  Halley, Judith Rijnveld/Kingfisher Sky, Peter Smith, Rainey/Stephanie Rainey,
-  RUST Copenhagen, Antone's and Majestic. Three unchanged sources also succeed locally:
-  Astrid Williamson, Alabama Symphony and James Pankow/Chicago.
-  These observations do not yet establish hosted success or published coverage.
-- RUST's old text dates became null despite raw success. New extraction uses
-  the explicit machine startDate and existing HTTP backend: 95 full rows, 94
-  current/future. Majestic's three Monday dates previously became null; all
-  24 rows now have valid dates, with 24 current/future. Antone's loaded current month yields 17 concert records;
-  guided venue visits are excluded, and multi-month completeness is not claimed.
-  Blue Monday series rows use the explicit performer Soul Man Sam, avoiding a
-  wrong match to the homonymous hardcore band. Marmalade rejects an unverified
-  new city instead of silently assigning it a UK country.
-- Stephanie Rainey is added as a separate minimal canonical identity; existing
-  Rainey is preserved. Peter Smith's Spotify link is corrected through artistDb from the official
-  site's current Spotify album-to-artist link; existing unrelated metadata
-  fields are preserved. Group shows keep Kingfisher Sky and O.A.R. names rather
-  than being assigned to their individual members. Paul Halley's live publisher
-  schedule currently has two genuine archived appearances and no future rows.
-- Three fixed 2026 news/month archive candidates were removed: they would miss
-  the next schedule. Remaining limits include genuine access blocks, absent
-  schedules and incorrect entity bindings, not concealed successful emptiness.
-- PR #190 is merged as `ea68282`. Hosted artist run 37495123310 completes with
-  392/415: Alabama Symphony and Lobao recover, while Alabama 3, Scotty McCreery,
-  Ellen ten Damme and Hubert Laws newly fail. Astrid and Marmalade still return
-  HTTP 403 from the hosted environment despite local access. These are actual
-  hosted outcomes, not the local recovery projection.
-- PR #192 is merged as `7a2b656`; current CI verifies 718 pass/1 skip, build
-  and lint with zero errors on the exact reviewed code.
-- Alabama 3 and Scotty have current official HTML changes with explicit machine
-  dates. Follow-up restores 20/10 future rows, verifies GB/IE and US/CA per row,
-  and rejects unknown geography or an empty city instead of publishing a guess.
-- Ellen ten Damme subsequently succeeds over ordinary official HTTP, exposing
-  a real date-quality defect: the old cell glues year and time and shared Dutch
-  parsing accepts only 32/62 dates. A source-specific parser now verifies all
-  62 current upcoming rows, printed years, valid time and known Dutch locations;
-  a new unknown city fails for verification. Hosted confirmation is pending.
-- Provider coverage diagnosis also proves an existing published identity error:
-  BIT event 1038425781 is a distinct Montpellier Sum 41 tribute, incorrectly
-  assigned the Canadian Pain For Pleasure MBID. The exclusion is bound to that
-  canonical MBID, provider and exact event; sourceEventUrl persists in raw cache
-  independently of the purchase URL and is absent from the public schema.
-  Other events and distinct same-name identities remain allowed. Our already
-  collecting automatic daily 37498109196 was cancelled before deployment to
-  replace it with the checked follow-up; its partial output is not a final count.
-- Checks: combined suite 718 pass/1 skip before final city review adjustment;
-  seven final targeted tests pass, emitting build and lint have zero errors.
-  Code review: harness-native fallback; independent review found and rechecked
-  the external purchase-link bypass and empty-city bug. Full CE nested dispatch
-  is prohibited by the reviewer role. New network failures stay explicit.
-- Next: finish Ellen review/merge, run the ordinary hosted artist plus
-  automatic daily cycle, and reconcile completed outcomes and public status
-  into this existing state/report.
+- All 52 preceding failures were inspected. Thirteen source extractors were adjusted
+  in PRs #190, #192, #193 and #195; Alabama 3, Scotty McCreery and Ellen ten Damme were
+  newly regressed sources discovered by the first hosted follow-up. Current
+  source, identity and date evidence is preserved per source in
+  `docs/source-recovery-20261006.json`.
+- Final hosted artist run [37502871972](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37502871972)
+  on `7fe13ee` verifies **393/415** (preceding public slice 394/415).
+  Final daily [37510468650](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37510468650)
+  on `6a2bc9d` verifies **130/152** (preceding slice 121/152)
+  and completes Pages deployment. Both manifests enumerate every original ID;
+  no config is removed to shrink a denominator. 44 current failures remain;
+  latest outcomes replace local success projections and the intermediate 392/415.
+- Public status generated `2026-10-06T18:33:04.484Z` is byte-identical to
+  this daily's publication artifact (SHA-256 `be2a5d29a34d7cc1f8153f7c44d4663e439fd35307996569d4b352b9bad3339c`). The API contains
+  **51,515 published concerts**, +443 against 51,072 before this continuation.
+  Publication gate and rejection/duplicate diagnostics are preserved in the report.
+- Current-date fixes cover RUST, Majestic, Antone's, Marmalade, O.A.R., Kingfisher
+  Sky, Peter Smith, Stephanie Rainey, Paul Halley and the three new regressions.
+  Ellen preserves all 62 printed Dutch dates instead of 32. Train now accepts
+  verified US states rather than only Florida; its live three-show feed and latest
+  hosted outcome are recorded in the report. Unknown geography
+  or invalid dates fail explicitly; group performances keep their group names.
+  Stephanie Rainey has a separate canonical identity; Peter Smith's Spotify
+  link is corrected without replacing unrelated metadata.
+- The exact wrong Bandsintown event 1038425781 is excluded for the Canadian
+  Pain For Pleasure MBID. Organizer evidence identifies a distinct French
+  tribute band. Raw cache retains provider identity independently of purchase
+  links; internal metadata is absent from public output. Final public verification
+  confirms the wrong attribution is absent. Other same-name identities/events
+  remain allowed. Cancelled intermediate daily 37498109196 started collection
+  but never deployed; its partial output is historical, not a final result.
+- CI on the Train calendar head: **724 pass / one skip / zero failures**, build,
+  lint and selector ratchet pass; lint retains 103 existing warnings. Code review:
+  harness-native fallback. Independent gpt-6-sol review found/rechecked the
+  external purchase-link identity loss and empty-city bug and passed Ellen's
+  explicit-date parser; root checked the Train state/date change against the
+  captured and live three-event feed. Full CE nested dispatch is prohibited by reviewer role.
+- Follow-up provider identity correction is locally verified and awaits CI,
+  main merge and a new publication. Four Bandsintown events in Aarhus belong
+  to the TRAIN venue/promoter and name other performers in primary calendars;
+  they currently appear in the American Train card. The exclusion is limited
+  to those four exact provider IDs plus the American band's canonical Spotify
+  ID. Forty-seven focused tests and six independent root identity tests pass;
+  official US shows and unrelated identities/providers remain allowed. The
+  51,515 publication above predates this correction and still contains those
+  four erroneous rows. Per-source success counts are independent of this
+  provider attribution correction.
+- Remaining source gaps have current explicit evidence: blocked/server-error
+  access, absent trustworthy dated schedules and unsupported/wrong identity
+  bindings. Existing provider coverage does not turn a failed official scraper
+  into a healthy one. Antone's proves the loaded month, Paul Halley currently
+  lists only archived appearances, and readable sources do not guarantee future
+  concerts or complete worldwide coverage. No frozen month/news archive, guessed
+  year/country, blanket empty flag or access/security bypass hides these gaps.
+- Next concrete needs for 415/415 and 152/152: a current supported calendar or
+  provider access for blocked/absent sources, and canonical evidence for ambiguous
+  identities. Jorge & Mateus also needs a monthly API adapter that validates real
+  populated rows; its current official months are empty, and this integration
+  remains unimplemented. Those limits are recorded; the current release is published and
+  verified, while 100% source health remains unachieved.
 
-## All-branch integration and source recovery — 2026-10-06 (published; explicit source gaps remain)
+## All-branch integration and source recovery — 2026-10-06 (preceding publication; superseded above)
 
 - Alex explicitly requested integrating all branch work into main and repairing
   sources. PRs #182, #183, #186 and #187 are merged. All 63 originally audited
