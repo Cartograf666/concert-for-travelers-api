@@ -4053,6 +4053,635 @@
         "detailUrl": "https://www.office-augusta.com/yama/live/ac2026/",
         "proof": "Bounded primary-source search/detail inspection shows Augusta Camp performance dates 2026-08-14 and 2026-08-15 at Pia Arena MM, Yokohama; both past. Index dates are publication dates. No complete upcoming row found.",
         "verificationLimit": "Search/detail evidence only; not a successful live scraper run or an explicit empty future schedule."
+      },
+      "jorgePalmaCurrentEvidence": {
+        "checkedAtUtc": "2026-10-06T20:40:00Z",
+        "configuredCalendar": "https://jorgepalma.pt/espetaculos/",
+        "configuredHttpOutcome": "404 in the bounded guarded backend probe",
+        "primaryContemporaryIdentitySources": [
+          "https://spn.pt/Artigo/jorge-palma-1950-2026",
+          "https://antena1.rtp.pt/rtpantena1/jorge-palma-1950-2026/"
+        ],
+        "identityEvidence": "Contemporary SPN condolence and RTP tribute dated22Sep2026 independently support the earlier deceased-artist note. No current primary future calendar was located; older concert and ticket announcements do not prove a future performance.",
+        "sourceDenominatorUnchanged": true
+      },
+      "venueBackendOnlyRecheck": {
+        "checkedAt": "2026-10-07",
+        "manifest": {
+          "generatedAt": "2026-10-06T20:40:44.377Z",
+          "run": {
+            "id": "37526646520",
+            "attempt": 1,
+            "sha": "ac47018219d0ad80b70b64624d07924283f24e96",
+            "workflow": "Daily Concert Scrape"
+          },
+          "failedCount": 23
+        },
+        "control": {
+          "url": "https://www.10cc.world/events",
+          "backend": "got-scraping",
+          "status": "ok"
+        },
+        "protocol": {
+          "config": "in-memory httpClient got-scraping override only",
+          "runScraper": "existing guarded implementation, no cache",
+          "parallelism": "at most 2 distinct domains",
+          "llmFallback": "disabled for this diagnostic to ensure HTTP backend + configured parser only",
+          "repoWrites": false
+        },
+        "counts": {
+          "failedSources": 23,
+          "eligibleAttempted": 17,
+          "excluded": 6,
+          "gotScraperSuccessWithRows": 1,
+          "validRecoveredCandidates": 0
+        },
+        "onlyRowsFromAttemptedSources": {
+          "id": "artist-yamazaki-masayoshi",
+          "url": "https://www.office-augusta.com/yama/live/",
+          "nativeHeading": "LIVE | 山崎まさよし Official Web Site",
+          "rawCount": 5,
+          "records": [
+            {
+              "artistField": "Yamazaki, Masayoshi",
+              "date": "10月6日（火）LIVE",
+              "venue": "あらきゆうこ CORNELIUS REFRACTIONS TOUR 2026 新宿",
+              "city": "",
+              "country": "JP",
+              "ticketUrl": "https://www.office-augusta.com/araki/live.html",
+              "identity": "Araki Yuko; title/ticket target do not identify Yamazaki as performer"
+            },
+            {
+              "artistField": "Yamazaki, Masayoshi",
+              "date": "10月6日（火）LIVE",
+              "venue": "スキマスイッチ TOUR 2026 “POPMAN’S CARNIVAL vol.3” 大阪",
+              "city": "",
+              "country": "JP",
+              "ticketUrl": "https://www.office-augusta.com/sukimaswitch/live/",
+              "identity": "Sukima Switch, not Yamazaki"
+            },
+            {
+              "artistField": "Yamazaki, Masayoshi",
+              "date": "10月6日（火）LIVE",
+              "venue": "竹原ピストル 全国ツアー2026 FIRST CRY!! 弾き語り編 宮古",
+              "city": "",
+              "country": "JP",
+              "ticketUrl": "https://www.office-augusta.com/pistol/live.html",
+              "identity": "Takehara Pistol, not Yamazaki"
+            },
+            {
+              "artistField": "Yamazaki, Masayoshi",
+              "date": "10月6日（火）RADIO",
+              "venue": "NakamuraEmi FM福岡 Hyper Night Program GOW!!",
+              "city": "",
+              "country": "JP",
+              "ticketUrl": "https://www.office-augusta.com/nakamuraemi/media.html",
+              "identity": "NakamuraEmi radio appearance, not Yamazaki concert"
+            },
+            {
+              "artistField": "Yamazaki, Masayoshi",
+              "date": "10月6日（火）RADIO",
+              "venue": "NakamuraEmi FM FUJI ACTUS",
+              "city": "",
+              "country": "JP",
+              "ticketUrl": "https://www.office-augusta.com/nakamuraemi/media.html",
+              "identity": "NakamuraEmi radio appearance, not Yamazaki concert"
+            }
+          ],
+          "fullProcessConcerts": {
+            "dataPath": "data/artists",
+            "baseDate": "2026-10-07T12:00:00.000Z",
+            "rawCount": 5,
+            "publishedCount": 0,
+            "drops": {
+              "incomplete": 5,
+              "notApproved": 0,
+              "badDate": 0,
+              "pastDate": 0,
+              "zodFail": 0
+            },
+            "missingFields": {
+              "city": 5
+            }
+          },
+          "reason": "wrong act attribution (artist fallback applied to agency-wide LIVE page), blank cities, includes RADIO items, and raw dates omit year; not a recoverable source by backend alone."
+        },
+        "otherAttemptedOutcomes": {
+          "parsedZeroWithNoHTTPFetchError": [
+            "artist-angel-heart",
+            "artist-joe-hutton",
+            "artist-harold-jones",
+            "artist-babbu-mann",
+            "artist-john-keane",
+            "artist-bruce-thomas",
+            "artist-patti-smith-group",
+            "artist-pain-for-pleasure",
+            "artist-painflow",
+            "artist-philip-labonte",
+            "artist-ray-davies",
+            "artist-ray-scott",
+            "artist-reality-check",
+            "artist-yuta-and-the-bushido-boys",
+            "kitty-su-bangalore"
+          ],
+          "httpOrTransportFailure": [
+            {
+              "id": "artist-philippine-philharmonic-orchestra",
+              "error": "Timeout awaiting 'request' for 15000ms"
+            }
+          ],
+          "summary": "15 sources fetched but configured parsing returned zero; Joe Hutton now reaches parsing but remains stale after prior TLS failure. Philippine Philharmonic still times out. No exact native empty-schedule contract succeeded."
+        },
+        "excluded": {
+          "artist-jane-mcdonald": "latest result is HTTP 404; backend header change is not a targeted recovery",
+          "artist-juan-garcia-herreros": "configured host is ENOTFOUND",
+          "artist-jorge-palma": "Configured schedule URL https://jorgepalma.pt/espetaculos/ returned HTTP 404; no verified dated schedule. Institutional tributes published 2026-09-22 identify Jorge Palma as 1950-2026; this summary makes no claim about the exact death date and proposes no quarantine.",
+          "artist-you-used-to-hold-me-so-tight": "playwright_render; HTTP backend override is ignored by the rendering path",
+          "cartagena-festival-de-musica-cartagena": "prior exact run parsed program-title labels as artists; identity invalid, already got-scraping research showed this",
+          "esplanade-theatres-singapore-singapore": "CSR detection; plain HTTP header backend cannot render client JavaScript"
+        },
+        "rawResultsPath": "/private/tmp/concert-remaining-20261006/venue-backend-check.raw.json",
+        "logPath": "/private/tmp/concert-remaining-20261006/venue-backend-check.log",
+        "conclusion": "No genuine backend-only candidate from these 23 failures. Yamazaki produced five unsafe/misattributed incomplete rows. No repo/config/data changes."
+      },
+      "allThatRemainsOfficialWidget": {
+        "checkedAt": "2026-10-06T21:06:52.335351+00:00",
+        "scope": "Read-only current source verification. No repository, config, database or cache writes.",
+        "officialPage": {
+          "url": "https://allthatremainsonline.com/pages/tour",
+          "title": "Tour – All That Remains Official",
+          "h1": "Tour",
+          "bytes": 313786,
+          "officialMetaUrl": "https://allthatremainsonline.com/pages/tour",
+          "embed": {
+            "script": "https://widget.bandsintown.com/main.min.js",
+            "element": "a.bit-widget-initializer",
+            "dataArtistName": "All That Remains",
+            "dataDisplayLocalDates": false,
+            "dataDisplayPastDates": false,
+            "dataDisplayLimit": 15,
+            "dataDisplayLineup": false
+          }
+        },
+        "providerContract": {
+          "scriptSnippet": "https://rest.bandsintown.com/V3.1/artists/{escaped data-artist-name}/events?app_id={embed appId or js_ + window.location.hostname}",
+          "appIdObserved": "js_allthatremainsonline.com",
+          "source": "official embedded widget JS; it sets app_id to js_ plus page hostname when no appId override is supplied. No auth or consumer credentials used."
+        },
+        "freshNativeRequests": {
+          "eventsUrl": "https://rest.bandsintown.com/V3.1/artists/All%20That%20Remains/events/?app_id=js_allthatremainsonline.com",
+          "transport": "fetchHtmlForHealing(..., got-scraping), existing guarded request path",
+          "response": "HTTP-success JSON array []",
+          "eventCount": 0,
+          "artistUrl": "https://rest.bandsintown.com/V3.1/artists/All%20That%20Remains?app_id=js_allthatremainsonline.com",
+          "artistProfile": {
+            "id": "513",
+            "name": "All That Remains",
+            "mbid": "4f8b7186-b2a2-40db-97ae-6e1cd46d57b1",
+            "upcoming_event_count": 0,
+            "websiteLink": "http://www.allthatremainsonline.com"
+          }
+        },
+        "catalogIdentity": {
+          "providerArtistId": "513",
+          "providerName": "All That Remains",
+          "providerMbid": "4f8b7186-b2a2-40db-97ae-6e1cd46d57b1",
+          "canonicalDataPath": "data/artists/shard-1.json (top-level All That Remains entry with same MBID)",
+          "separatePhilipLabonteRecord": {
+            "canonicalName": "Philip Labonte",
+            "mbid": "ed3fdcca-5deb-440c-89b6-639d0c5184ef",
+            "sourceFile": "data/artists/shard-0.json",
+            "note": "Distinct artist identity, despite shared official website/tourUrl."
+          },
+          "meaning": "The official embed and provider profile name the group All That Remains. Keep events attached to that group; never attribute this feed to Philip Labonte solo."
+        },
+        "currentResult": {
+          "eventFeedEmpty": true,
+          "profileUpcomingEventCount": 0,
+          "nativeEmptySupported": true,
+          "futureEvents": 0,
+          "schemaRows": 0,
+          "doNotInferPastEvents": true
+        },
+        "existingCodeReferences": {
+          "customParserExamples": [
+            "src/engine/custom/artist-peter-smith.ts",
+            "src/engine/custom/artist-haash.ts",
+            "src/engine/custom/artist-hey-nineteen.ts"
+          ],
+          "mappingAndCountry": "src/engine/bandsintown.ts",
+          "existingConfigPath": "scrapers/artist-philip-labonte.json",
+          "existingConfigType": "static_selectors",
+          "existingFallbackGroup": "All That Remains",
+          "existingConfiguredUrl": "https://allthatremainsonline.com/pages/tour"
+        },
+        "files": {
+          "officialHtml": "/private/tmp/concert-remaining-20261006/all-that-remains-current-root.html",
+          "widgetScript": "/private/tmp/concert-remaining-20261006/all-that-remains-bandsintown-widget.js",
+          "eventFeed": "/private/tmp/concert-remaining-20261006/all-that-remains-bandsintown-widget-events.json",
+          "artistProfile": "/private/tmp/concert-remaining-20261006/all-that-remains-bandsintown-widget-artist.json"
+        },
+        "decisionEvidence": "Verified native public-widget empty: official embedded group name resolves to provider id 513, profile has upcoming_event_count 0, and same official widget events endpoint returns the proper empty JSON array. This supports explicit current empty handling without inventing an event or changing identity."
+      },
+      "newHostedFailures": {
+        "checkedAt": "2026-10-06T21:23:10.209437+00:00",
+        "scope": "six hosted failures; read only; no config/code edits; at most two probe workers",
+        "hostedWorkflow": {
+          "id": "37529964747",
+          "attempt": 1,
+          "sha": "9806b507d89895723f4762f69764461b301ccbeb",
+          "workflow": "Artist Tour-Page Scrape"
+        },
+        "officialIdentityEvidence": {
+          "bso": "https://www.bsomusic.org/live/ says orchestra does not appear on series; current source wrong for BSO",
+          "ircam": "https://www.ircam.fr/en/events is general agenda; includes workshops, lectures, concerts; https://www.ircam.fr/en/events/on-tour separate",
+          "bsoAlternate": "https://my.bsomusic.org/ guarded fetch returned 1033-byte Incapsula challenge"
+        },
+        "sources": [
+          {
+            "id": "artist-dan-deacon",
+            "officialUrl": "https://dandeacon.com/live-dates/",
+            "hosted": {
+              "workflowRun": "37529964747",
+              "status": "failed",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 403"
+            },
+            "localProbes": [
+              {
+                "backend": "axios",
+                "ok": false,
+                "elapsedMs": 540,
+                "error": "Request failed with status code 403"
+              },
+              {
+                "backend": "got-scraping",
+                "ok": true,
+                "bytes": 85454,
+                "elapsedMs": 571,
+                "title": "LIVE DATES &#8211; Dan Deacon",
+                "danRows": "entry-content .post-likes-widget,.post-likes-widget{border-width:0;margin:0}.comment-likes-widget-placeholder,.post-likes-widget-placeholder{border-width:0;margin:0;position:relative}.comment-likes-widget-placeholder{display:flex;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sa",
+                "eventMarkerCounts": {
+                  "marmalade": 0,
+                  "astridEmpty": 0,
+                  "bsoCard": 0,
+                  "ircamCard": 0,
+                  "nitschTable": 0
+                }
+              }
+            ],
+            "priorCacheRawCount": 6,
+            "classification": "confirmed_transport_mismatch",
+            "evidence": "host axios HTTP403; local axios HTTP403; guarded got-scraping HTTP200; exact existing custom parser returns 6 full future rows",
+            "safeNextAction": "Set httpClient got-scraping for this one config, then verify hosted cohort and full pipeline",
+            "verifiedFutureRows": [
+              {
+                "artist": "Dan Deacon",
+                "date": "2026-11-06",
+                "venue": "29th Street Ballroom",
+                "city": "Austin",
+                "country": "US",
+                "ticketUrl": "https://www.etix.com/ticket/p/53817016/dan-deacon-austin-resound-presents"
+              },
+              {
+                "artist": "Dan Deacon",
+                "date": "2026-11-07",
+                "venue": "Space Cadet Fest at Walter Studios",
+                "city": "Phoenix",
+                "country": "US",
+                "ticketUrl": "https://wl.eventim.us/event/space-cadet-fest/690841?afflky=WalterStudios"
+              },
+              {
+                "artist": "Dan Deacon",
+                "date": "2026-11-08",
+                "venue": "The Basement East",
+                "city": "Nashville",
+                "country": "US",
+                "ticketUrl": "https://www.ticketweb.com/event/dan-deacon-the-basement-east-tickets/14977903"
+              },
+              {
+                "artist": "Dan Deacon",
+                "date": "2026-11-14",
+                "venue": "The 8×10",
+                "city": "Baltimore",
+                "country": "US",
+                "ticketUrl": "https://www.tixr.com/groups/the8x10/events/dan-deacon-202264"
+              },
+              {
+                "artist": "Dan Deacon",
+                "date": "2026-11-15",
+                "venue": "The 8×10",
+                "city": "Baltimore",
+                "country": "US",
+                "ticketUrl": "https://www.tixr.com/groups/the8x10/events/dan-deacon-202264"
+              },
+              {
+                "artist": "Dan Deacon",
+                "date": "2027-03-18",
+                "venue": "Blue Note Hawaii",
+                "city": "Honolulu",
+                "country": "US",
+                "ticketUrl": "https://www.bluenotejazz.com/hawaii/tm-event/dan-deacon-2/"
+              }
+            ]
+          },
+          {
+            "id": "artist-ircam",
+            "officialUrl": "https://www.ircam.fr/en/events",
+            "hosted": {
+              "workflowRun": "37529964747",
+              "status": "failed",
+              "reason": "fetch_error",
+              "error": "connect ETIMEDOUT 129.102.1.40:443; connect ENETUNREACH 2001:660:3004:4000::40:80:443 - Local (:::0)"
+            },
+            "localProbes": [
+              {
+                "backend": "axios",
+                "ok": true,
+                "bytes": 889048,
+                "elapsedMs": 782,
+                "title": "Agenda | Ircam",
+                "eventMarkerCounts": {
+                  "marmalade": 0,
+                  "astridEmpty": 0,
+                  "bsoCard": 0,
+                  "ircamCard": 128,
+                  "nitschTable": 0
+                }
+              },
+              {
+                "backend": "got-scraping",
+                "ok": true,
+                "bytes": 889048,
+                "elapsedMs": 751,
+                "title": "Agenda | Ircam",
+                "eventMarkerCounts": {
+                  "marmalade": 0,
+                  "astridEmpty": 0,
+                  "bsoCard": 0,
+                  "ircamCard": 128,
+                  "nitschTable": 0
+                }
+              }
+            ],
+            "priorCacheRawCount": 32,
+            "classification": "transient_network_plus_semantic_gap",
+            "evidence": "host IPv4 connect timeout/IPv6 unreachable; both guarded local backends HTTP200; prior cache 32 rows mix workshops/encounters/exhibits/concerts",
+            "safeNextAction": "No backend change on one transient failure; existing broad agenda requires distinct music/source contract review",
+            "verifiedFutureRows": null
+          },
+          {
+            "id": "artist-hermann-nitsch",
+            "officialUrl": "https://www.nitsch.org/events/",
+            "hosted": {
+              "workflowRun": "37529964747",
+              "status": "failed",
+              "reason": "fetch_error",
+              "error": "timeout of 15000ms exceeded"
+            },
+            "localProbes": [
+              {
+                "backend": "axios",
+                "ok": true,
+                "bytes": 908729,
+                "elapsedMs": 462,
+                "title": "Veranstaltungen &laquo; nitsch.org",
+                "eventMarkerCounts": {
+                  "marmalade": 0,
+                  "astridEmpty": 0,
+                  "bsoCard": 0,
+                  "ircamCard": 0,
+                  "nitschTable": 375
+                }
+              },
+              {
+                "backend": "got-scraping",
+                "ok": true,
+                "bytes": 908729,
+                "elapsedMs": 472,
+                "title": "Veranstaltungen &laquo; nitsch.org",
+                "eventMarkerCounts": {
+                  "marmalade": 0,
+                  "astridEmpty": 0,
+                  "bsoCard": 0,
+                  "ircamCard": 0,
+                  "nitschTable": 375
+                }
+              }
+            ],
+            "priorCacheRawCount": 1398,
+            "classification": "transient_network_plus_semantic_gap",
+            "evidence": "host request timeout15s; both guarded local backends HTTP200; prior cache 1398 rows includes exhibition date ranges",
+            "safeNextAction": "No backend change on one transient failure; source identity/date range and concert relevance require review",
+            "verifiedFutureRows": null
+          },
+          {
+            "id": "artist-marmalade",
+            "officialUrl": "https://themarmalade.net/tour-dates/",
+            "hosted": {
+              "workflowRun": "37529964747",
+              "status": "failed",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 401"
+            },
+            "localProbes": [
+              {
+                "backend": "got-scraping",
+                "ok": true,
+                "bytes": 53910,
+                "elapsedMs": 1310,
+                "title": "Tour Dates &#8211; Marmalade",
+                "eventMarkerCounts": {
+                  "marmalade": 1,
+                  "astridEmpty": 0,
+                  "bsoCard": 0,
+                  "ircamCard": 0,
+                  "nitschTable": 1
+                }
+              },
+              {
+                "backend": "axios",
+                "ok": true,
+                "bytes": 53910,
+                "elapsedMs": 827,
+                "title": "Tour Dates &#8211; Marmalade",
+                "eventMarkerCounts": {
+                  "marmalade": 1,
+                  "astridEmpty": 0,
+                  "bsoCard": 0,
+                  "ircamCard": 0,
+                  "nitschTable": 1
+                }
+              }
+            ],
+            "priorCacheRawCount": 2,
+            "classification": "host_specific_401",
+            "evidence": "host got HTTP401; local got and axios HTTP200 current page with two future dates previously full-pipeline validated",
+            "safeNextAction": "No parser/backend claim of hosted repair; server egress/WAF difference unresolved",
+            "verifiedFutureRows": null
+          },
+          {
+            "id": "artist-astrid-williamson",
+            "officialUrl": "https://astridwilliamson.com/live/",
+            "hosted": {
+              "workflowRun": "37529964747",
+              "status": "failed",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 401"
+            },
+            "localProbes": [
+              {
+                "backend": "got-scraping",
+                "ok": true,
+                "bytes": 41968,
+                "elapsedMs": 306,
+                "title": " Live &middot; Astrid Williamson ",
+                "eventMarkerCounts": {
+                  "marmalade": 0,
+                  "astridEmpty": 1,
+                  "bsoCard": 0,
+                  "ircamCard": 0,
+                  "nitschTable": 0
+                }
+              },
+              {
+                "backend": "axios",
+                "ok": true,
+                "bytes": 41968,
+                "elapsedMs": 182,
+                "title": " Live &middot; Astrid Williamson ",
+                "eventMarkerCounts": {
+                  "marmalade": 0,
+                  "astridEmpty": 1,
+                  "bsoCard": 0,
+                  "ircamCard": 0,
+                  "nitschTable": 0
+                }
+              }
+            ],
+            "priorCacheRawCount": 31,
+            "classification": "host_specific_401",
+            "evidence": "host got HTTP401; local got and axios HTTP200 current page with visible exact empty notice",
+            "safeNextAction": "No parser/backend claim of hosted repair; server egress/WAF difference unresolved",
+            "verifiedFutureRows": null
+          },
+          {
+            "id": "artist-baltimore-symphony-orchestra",
+            "officialUrl": "https://www.bsomusic.org/live/",
+            "hosted": {
+              "workflowRun": "37529964747",
+              "status": "failed",
+              "reason": "fetch_error",
+              "error": "Scraper exceeded 90s wall-clock timeout"
+            },
+            "localProbes": [
+              {
+                "backend": "axios",
+                "ok": false,
+                "elapsedMs": 18485,
+                "error": "aborted"
+              },
+              {
+                "backend": "got-scraping",
+                "ok": false,
+                "elapsedMs": 15300,
+                "error": "Timeout awaiting 'request' for 15000ms"
+              }
+            ],
+            "priorCacheRawCount": 5,
+            "classification": "endpoint_timeout_and_wrong_source_identity",
+            "evidence": "host wallclock90s; local axios aborted18.5s, got timeout15.3s; current official /live page expressly excludes Baltimore Symphony Orchestra; prior cached 5 guest shows with month-day only; alternate official calendar guarded fetch Incapsula challenge",
+            "safeNextAction": "Replace source with independently verified current orchestra program; do not raise timeout or count old source as success",
+            "verifiedFutureRows": null
+          }
+        ],
+        "bsoIdentityClarification": "Cached raw performers are explicit guests. No BSO-attributed row survives; the single Evgeny Kissin row and 2027-04-30 date are independently primary-verified in publishedSourceRiskAdjudication. The configured source is still not a calendar of performances by the orchestra."
+      },
+      "publishedSourceRiskAdjudication": {
+        "checkedAt": "2026-10-06T21:29:01.581891+00:00",
+        "scope": "four published rows in two sources, read only",
+        "findings": {
+          "baltimoreSymphonySource": {
+            "rawCount": 5,
+            "processedCount": 1,
+            "actualPerformer": "Evgeny Kissin",
+            "date": "2027-04-30",
+            "venue": "Joseph Meyerhoff Symphony Hall",
+            "city": "Baltimore",
+            "classification": "valid_Kissin_recital_non_BSO_performance",
+            "primaryDateVenueArtist": "https://my.bsomusic.org/20557/20558",
+            "primaryOrchestraExclusion": "https://www.bsomusic.org/wp-content/uploads/2026/02/2627_SeasonBrochure_LORES-Pages.pdf",
+            "fetchLimitation": "guarded Node my.bsomusic.org root returns Incapsula challenge; web index saw primary ticket content; current /live source fetch times out",
+            "scopeCaution": "Kissin event verified; BSO artist source is not a validated calendar for orchestra performances"
+          },
+          "hermannNitsch": {
+            "rawCount": 1398,
+            "processedCount": 3,
+            "officialTable": "https://www.nitsch.org/events/",
+            "nativeRows": [
+              {
+                "index": 3,
+                "cells": [
+                  "21.3—29.11.2026",
+                  "von sonnenaufgang an",
+                  "nitsch museum",
+                  "Mistelbach",
+                  "at"
+                ],
+                "links": []
+              },
+              {
+                "index": 5,
+                "cells": [
+                  "18.1—12.4.2026",
+                  "Crossing Into Darkness, kuratiert von Tracey Emin",
+                  "Carl Freedman Gallery",
+                  "Margate",
+                  "gb"
+                ],
+                "links": []
+              },
+              {
+                "index": 8,
+                "cells": [
+                  "11.10.2026",
+                  "Streichquartett",
+                  "im Freien bei der Skulptur von Pietro Fortuna",
+                  "Gibellina",
+                  "it"
+                ],
+                "links": []
+              }
+            ],
+            "publishedRows": [
+              {
+                "date": "2026-11-29",
+                "venue": "nitsch museum",
+                "city": "Mistelbach",
+                "classification": "false_concert",
+                "why": "21Mar–29Nov exhibition range; processor turned range endpoint into an event date",
+                "primary": "https://www.nitschmuseum.at/de/programm/ausstellungen/aktuelle-ausstellung"
+              },
+              {
+                "date": "2026-12-04",
+                "venue": "Carl Freedman Gallery",
+                "city": "Margate",
+                "classification": "false_concert_and_wrong_date",
+                "why": "18Jan–12Apr 2026 group art exhibition; processor interpreted 12.4 as Dec4 instead of April12",
+                "primary": "https://hallartfoundation.org/exhibitions/458-crossing-into-darkness-carl-freedman-gallery-margate-england/"
+              },
+              {
+                "date": "2026-10-11",
+                "venue": "im Freien bei der Skulptur von Pietro Fortuna",
+                "city": "Gibellina",
+                "classification": "unverified_artist_credit",
+                "why": "official Nitsch table says Streichquartett at this date/place, a music title, but gives no performer/composer credit in the row; do not attribute a live Nitsch appearance",
+                "primary": "https://www.nitsch.org/events/"
+              }
+            ],
+            "safeFixContract": "Source-local: only single-day music events with verified Nitsch music/performer credit; reject exhibition ranges and do not reinterpret a date range endpoint or US-style switch in D.M.Y dates. Full pipeline must publish zero known false rows."
+          }
+        }
       }
     },
     "mainAncestryVerification": {
@@ -5586,7 +6215,7 @@
       }
     },
     "backendFollowup": {
-      "state": "main_merged_hosted_artist_sweep_pending",
+      "state": "full_hosted_artist_sweep_verified_publication_pending",
       "sourceIds": [
         "artist-marmalade",
         "artist-paralamas-do-sucesso",
@@ -5905,15 +6534,209 @@
         "duplicateCitySelectorBaseline": 131,
         "artistIntegrity": "skipped: no artist catalog changes in this PR"
       },
-      "pendingArtistSweep": {
-        "id": 37529964747,
-        "sha": "9806b507d89895723f4762f69764461b301ccbeb",
-        "url": "https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37529964747"
+      "hostedArtistVerification": {
+        "run": {
+          "id": "37529964747",
+          "attempt": 1,
+          "sha": "9806b507d89895723f4762f69764461b301ccbeb",
+          "workflow": "Artist Tour-Page Scrape"
+        },
+        "generatedAt": "2026-10-06T20:57:37.448Z",
+        "scrapers": {
+          "total": 415,
+          "succeeded": 392,
+          "failed": 23,
+          "changed": 4,
+          "unchanged": 388,
+          "staleIds": []
+        },
+        "denominatorsUnchanged": true,
+        "recovered": [
+          "artist-hubert-laws",
+          "artist-lobao",
+          "artist-paralamas-do-sucesso"
+        ],
+        "regressed": [
+          "artist-dan-deacon",
+          "artist-ircam",
+          "artist-hermann-nitsch",
+          "artist-baltimore-symphony-orchestra"
+        ],
+        "fourBackendOutcomes": {
+          "artist-marmalade": {
+            "id": "artist-marmalade",
+            "configPath": "scrapers/artists/artist-marmalade.json",
+            "configHash": "a208ba68a8e30c15a69a171eab147fcdd0eab945b900bddc227436f4201171f7",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 401"
+          },
+          "artist-paralamas-do-sucesso": {
+            "id": "artist-paralamas-do-sucesso",
+            "configPath": "scrapers/artists/artist-paralamas-do-sucesso.json",
+            "configHash": "60ef4596b9d776f1581f08dbe8b723cd059beddefeef134fb0e0b684fd83a4f9",
+            "status": "succeeded"
+          },
+          "artist-astrid-williamson": {
+            "id": "artist-astrid-williamson",
+            "configPath": "scrapers/artists/artist-astrid-williamson.json",
+            "configHash": "115bf1713e849e249b7202f7d06f8d728e0aa7110a6d1cd76c602a2a287c38f3",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 401"
+          },
+          "artist-lobao": {
+            "id": "artist-lobao",
+            "configPath": "scrapers/artists/artist-lobao.json",
+            "configHash": "7a0d0aa3b2e0044ff5dd30d4e77651a7f7f59f64ef45dede36fab13a07a4011a",
+            "status": "succeeded"
+          }
+        },
+        "failures": [
+          {
+            "id": "antoha-mc-tour",
+            "configPath": "scrapers/artists/antoha-mc-tour.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-adiemus",
+            "configPath": "scrapers/artists/artist-adiemus.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-amanda-forsyth",
+            "configPath": "scrapers/artists/artist-amanda-forsyth.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-astrid-williamson",
+            "configPath": "scrapers/artists/artist-astrid-williamson.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 401"
+          },
+          {
+            "id": "artist-avantasia",
+            "configPath": "scrapers/artists/artist-avantasia.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-andy-cairns",
+            "configPath": "scrapers/artists/artist-andy-cairns.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-dan-deacon",
+            "configPath": "scrapers/artists/artist-dan-deacon.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 403"
+          },
+          {
+            "id": "artist-ircam",
+            "configPath": "scrapers/artists/artist-ircam.json",
+            "reason": "fetch_error",
+            "error": "connect ETIMEDOUT 129.102.1.40:443; connect ENETUNREACH 2001:660:3004:4000::40:80:443 - Local (:::0)"
+          },
+          {
+            "id": "artist-limahl",
+            "configPath": "scrapers/artists/artist-limahl.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 403"
+          },
+          {
+            "id": "artist-marina-satti",
+            "configPath": "scrapers/artists/artist-marina-satti.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 404"
+          },
+          {
+            "id": "artist-marmalade",
+            "configPath": "scrapers/artists/artist-marmalade.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 401"
+          },
+          {
+            "id": "artist-nine-inch-nails",
+            "configPath": "scrapers/artists/artist-nine-inch-nails.json",
+            "reason": "parse_error",
+            "error": "Unmatched selector: =.//p/text()[contains(., ',')][1]"
+          },
+          {
+            "id": "artist-hermann-nitsch",
+            "configPath": "scrapers/artists/artist-hermann-nitsch.json",
+            "reason": "fetch_error",
+            "error": "timeout of 15000ms exceeded"
+          },
+          {
+            "id": "artist-nick-cave-the-bad-seeds",
+            "configPath": "scrapers/artists/artist-nick-cave-the-bad-seeds.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-baltimore-symphony-orchestra",
+            "configPath": "scrapers/artists/artist-baltimore-symphony-orchestra.json",
+            "reason": "fetch_error",
+            "error": "Scraper exceeded 90s wall-clock timeout"
+          },
+          {
+            "id": "artist-pequot",
+            "configPath": "scrapers/artists/artist-pequot.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 403"
+          },
+          {
+            "id": "artist-philip-lindholm",
+            "configPath": "scrapers/artists/artist-philip-lindholm.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 403"
+          },
+          {
+            "id": "artist-poetry",
+            "configPath": "scrapers/artists/artist-poetry.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-shelby-lynne",
+            "configPath": "scrapers/artists/artist-shelby-lynne.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 404"
+          },
+          {
+            "id": "artist-psycho-le-cemu",
+            "configPath": "scrapers/artists/artist-psycho-le-cemu.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-john-mellencamp",
+            "configPath": "scrapers/artists/artist-john-mellencamp.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-robin-thicke",
+            "configPath": "scrapers/artists/artist-robin-thicke.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-twin-atlantic",
+            "configPath": "scrapers/artists/artist-twin-atlantic.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 404"
+          }
+        ]
       }
     },
     "allThatRemainsCalendarFollowup": {
       "sourceId": "artist-philip-labonte",
-      "state": "local_configured_collection_verified_pending_ci_and_hosted",
+      "state": "main_merged_hosted_publication_pending",
       "checkedAt": "2026-10-06T21:14:30.918Z",
       "officialWidgetEvidence": {
         "checkedAt": "2026-10-06T21:06:52.335351+00:00",
@@ -6056,7 +6879,262 @@
         "Native current future-event count is zero; no future shows fabricated.",
         "Populated handling is contract-tested with synthetic native-schema records, not observed live future shows.",
         "Source ID and all 415/152 denominators retained; group events never attached to separate Philip Labonte identity."
-      ]
+      ],
+      "merge": {
+        "pr": 203,
+        "sha": "405b06619e1ca2702ee665121f35972b68948679",
+        "head": "951d01f3edec7e1d944a3ff3656f642ffa2cc30e",
+        "mergedAt": "2026-10-06T21:22:08Z",
+        "baseParent": "cce07b54b197e97eaf6d5e4f273956c4eb4afd80",
+        "interveningAutoRepair": "PR204 only Hermann maxRetries3 and repair-history"
+      },
+      "hostedCI": {
+        "total": 751,
+        "pass": 750,
+        "fail": 0,
+        "skip": 1,
+        "runId": 37532644307,
+        "headSha": "951d01f3edec7e1d944a3ff3656f642ffa2cc30e",
+        "url": "https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37532644307",
+        "build": "pass",
+        "lintErrors": 0,
+        "existingLintWarnings": 103,
+        "duplicateCitySelectorCount": 126,
+        "duplicateCitySelectorBaseline": 131,
+        "artistIntegrity": "skipped: no artist catalog changes in this PR"
+      }
+    },
+    "latestSourceAndPublicationRepair": {
+      "state": "local_changes_verified_independent_recheck_pending",
+      "danDeacon": {
+        "sourceId": "artist-dan-deacon",
+        "state": "configured_local_repair_verified_hosted_pending",
+        "checkedAt": "2026-10-06T21:28:16.092Z",
+        "httpClient": "got-scraping",
+        "success": true,
+        "rawCount": 6,
+        "processedCount": 6,
+        "events": [
+          {
+            "artist": "Dan Deacon",
+            "date": "2026-11-06",
+            "venue": "29th Street Ballroom",
+            "city": "Austin",
+            "country": "US"
+          },
+          {
+            "artist": "Dan Deacon",
+            "date": "2026-11-07",
+            "venue": "Space Cadet Fest at Walter Studios",
+            "city": "Phoenix",
+            "country": "US"
+          },
+          {
+            "artist": "Dan Deacon",
+            "date": "2026-11-08",
+            "venue": "The Basement East",
+            "city": "Nashville",
+            "country": "US"
+          },
+          {
+            "artist": "Dan Deacon",
+            "date": "2026-11-14",
+            "venue": "The 8×10",
+            "city": "Baltimore",
+            "country": "US"
+          },
+          {
+            "artist": "Dan Deacon",
+            "date": "2026-11-15",
+            "venue": "The 8×10",
+            "city": "Baltimore",
+            "country": "US"
+          },
+          {
+            "artist": "Dan Deacon",
+            "date": "2027-03-18",
+            "venue": "Blue Note Hawaii",
+            "city": "Honolulu",
+            "country": "US"
+          }
+        ],
+        "diagnostics": {
+          "schemaVersion": 1,
+          "generatedAt": "2026-10-06T21:28:16.092Z",
+          "baseDate": "2026-10-06T21:28:15.642Z",
+          "rawCount": 6,
+          "publishedCount": 6,
+          "duplicatesMerged": 0,
+          "dropped": {
+            "incomplete": 0,
+            "notApproved": 0,
+            "badDate": 0,
+            "pastDate": 0,
+            "zodFail": 0
+          },
+          "sources": {
+            "dandeacon.com": {
+              "rawCount": 6,
+              "publishedCount": 6,
+              "duplicatesMerged": 0,
+              "dropped": {
+                "incomplete": 0,
+                "notApproved": 0,
+                "badDate": 0,
+                "pastDate": 0,
+                "zodFail": 0
+              }
+            }
+          },
+          "validationIssues": {},
+          "missingFields": {},
+          "samples": []
+        }
+      },
+      "nitschPublicationGuard": {
+        "scope": "Nitsch canonical identity and exact source only; exhibition periods are not single concert dates, one exact quartet row awaits verified musical attribution",
+        "knownInvalidExhibitionEvents": 2,
+        "knownUnverifiedMusicRows": 1,
+        "sourceIdsAndDenominatorsPreserved": true,
+        "rawCachePreserved": true,
+        "globalDateParserUnchanged": true,
+        "primaryEvidence": {
+          "checkedAt": "2026-10-06T21:29:01.581891+00:00",
+          "scope": "four published rows in two sources, read only",
+          "findings": {
+            "baltimoreSymphonySource": {
+              "rawCount": 5,
+              "processedCount": 1,
+              "actualPerformer": "Evgeny Kissin",
+              "date": "2027-04-30",
+              "venue": "Joseph Meyerhoff Symphony Hall",
+              "city": "Baltimore",
+              "classification": "valid_Kissin_recital_non_BSO_performance",
+              "primaryDateVenueArtist": "https://my.bsomusic.org/20557/20558",
+              "primaryOrchestraExclusion": "https://www.bsomusic.org/wp-content/uploads/2026/02/2627_SeasonBrochure_LORES-Pages.pdf",
+              "fetchLimitation": "guarded Node my.bsomusic.org root returns Incapsula challenge; web index saw primary ticket content; current /live source fetch times out",
+              "scopeCaution": "Kissin event verified; BSO artist source is not a validated calendar for orchestra performances"
+            },
+            "hermannNitsch": {
+              "rawCount": 1398,
+              "processedCount": 3,
+              "officialTable": "https://www.nitsch.org/events/",
+              "nativeRows": [
+                {
+                  "index": 3,
+                  "cells": [
+                    "21.3—29.11.2026",
+                    "von sonnenaufgang an",
+                    "nitsch museum",
+                    "Mistelbach",
+                    "at"
+                  ],
+                  "links": []
+                },
+                {
+                  "index": 5,
+                  "cells": [
+                    "18.1—12.4.2026",
+                    "Crossing Into Darkness, kuratiert von Tracey Emin",
+                    "Carl Freedman Gallery",
+                    "Margate",
+                    "gb"
+                  ],
+                  "links": []
+                },
+                {
+                  "index": 8,
+                  "cells": [
+                    "11.10.2026",
+                    "Streichquartett",
+                    "im Freien bei der Skulptur von Pietro Fortuna",
+                    "Gibellina",
+                    "it"
+                  ],
+                  "links": []
+                }
+              ],
+              "publishedRows": [
+                {
+                  "date": "2026-11-29",
+                  "venue": "nitsch museum",
+                  "city": "Mistelbach",
+                  "classification": "false_concert",
+                  "why": "21Mar–29Nov exhibition range; processor turned range endpoint into an event date",
+                  "primary": "https://www.nitschmuseum.at/de/programm/ausstellungen/aktuelle-ausstellung"
+                },
+                {
+                  "date": "2026-12-04",
+                  "venue": "Carl Freedman Gallery",
+                  "city": "Margate",
+                  "classification": "false_concert_and_wrong_date",
+                  "why": "18Jan–12Apr 2026 group art exhibition; processor interpreted 12.4 as Dec4 instead of April12",
+                  "primary": "https://hallartfoundation.org/exhibitions/458-crossing-into-darkness-carl-freedman-gallery-margate-england/"
+                },
+                {
+                  "date": "2026-10-11",
+                  "venue": "im Freien bei der Skulptur von Pietro Fortuna",
+                  "city": "Gibellina",
+                  "classification": "unverified_artist_credit",
+                  "why": "official Nitsch table says Streichquartett at this date/place, a music title, but gives no performer/composer credit in the row; do not attribute a live Nitsch appearance",
+                  "primary": "https://www.nitsch.org/events/"
+                }
+              ],
+              "safeFixContract": "Source-local: only single-day music events with verified Nitsch music/performer credit; reject exhibition ranges and do not reinterpret a date range endpoint or US-style switch in D.M.Y dates. Full pipeline must publish zero known false rows."
+            }
+          }
+        },
+        "writerChecks": {
+          "targetedPass": 36,
+          "targetedFail": 0,
+          "build": "pass",
+          "lintErrors": 0,
+          "existingProcessWarnings": 9,
+          "compactHyphenReviewFix": "fixed, three targeted tests re-run and passed; build/lint/diff pass"
+        },
+        "actualCacheVerification": {
+          "sourceId": "artist-hermann-nitsch",
+          "sourceCache": "backend-artist-final/artist-scrape-cache.json",
+          "baseDate": "2026-10-06T21:26:20.054Z",
+          "approvedCatalog": "data/artists",
+          "rawCount": 1398,
+          "previouslyPublished": 3,
+          "currentlyPublished": 0,
+          "published": [],
+          "diagnostics": {
+            "rawCount": 1398,
+            "publishedCount": 0,
+            "dropped": {
+              "incomplete": 22,
+              "notApproved": 347,
+              "badDate": 150,
+              "pastDate": 879,
+              "zodFail": 0
+            },
+            "source": {
+              "rawCount": 1398,
+              "publishedCount": 0,
+              "duplicatesMerged": 0,
+              "dropped": {
+                "incomplete": 22,
+                "notApproved": 347,
+                "badDate": 150,
+                "pastDate": 879,
+                "zodFail": 0
+              }
+            }
+          },
+          "scope": "Current saved official Nitsch cache, source-local date period and exact unverified Gibellina provenance guard; no source cache mutation."
+        }
+      },
+      "bsoCorrectRecitalPreserved": {
+        "artist": "Evgeny Kissin",
+        "date": "2027-04-30",
+        "city": "Baltimore",
+        "country": "US",
+        "venue": "Joseph Meyerhoff Symphony Hall",
+        "primaryTicket": "https://my.bsomusic.org/20557/20558"
+      }
     }
   },
   "countsScope": "Historical local classifications of the original 97 failures. Current complete hosted cohort totals are in remainingPass.finalHostedVerification.cohorts."

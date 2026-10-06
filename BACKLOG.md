@@ -102,6 +102,19 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   contract fixtures only; none are claimed from the current live empty feed.
   Hosted CI, main integration and the next ordinary publication are pending.
 
+- Latest complete artist sweep 37529964747 records 392/415: two of the four
+  access changes succeed on the runner, while Marmalade and Astrid receive 401;
+  four previously successful sources newly fail. This is not a 100% result.
+  Dan Deacon's guarded-client repair preserves six actual future shows with no
+  processing drops locally. A source-specific Nitsch publication guard rejects
+  exhibition date periods and one exact quartet row with unverified attribution,
+  including restored caches. Three prior published rows are removed from the
+  1,398-row saved cache; two are proven invalid and one remains unverified.
+  The independently primary-verified Evgeny Kissin recital on 2027-04-30 is
+  preserved. 36 focused checks passed; compact-hyphen and alias cases were then
+  fixed and all three affected tests rerun successfully, with build/lint passing.
+  Server CI, main integration and final ordinary publication are pending.
+
 ## All-branch integration and source recovery — 2026-10-06 (preceding publication; superseded above)
 
 - Alex explicitly requested integrating all branch work into main and repairing
