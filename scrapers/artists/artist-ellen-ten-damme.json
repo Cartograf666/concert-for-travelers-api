@@ -2,11 +2,11 @@
   "id": "artist-ellen-ten-damme",
   "domain": "ellentendamme.nl",
   "url": "https://ellentendamme.nl/tour",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "table.shows.show-upcoming tr",
     "artistNameFallback": "Ellen ten Damme",
-    "date": "td.event-field-datetime",
+    "date": "td.event-field-datetime strong",
     "ticketUrl": "td.event-field-info a.ticket-link",
     "venue": "td.event-field-venue .venue-name a",
     "city": "td.event-field-city a",
