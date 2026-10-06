@@ -25079,5 +25079,62 @@
     "failuresSinceRepair": 0,
     "note": "transient: raising maxRetries 2 -> 5 with a politeness delay; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.petersmithmusic.com/calendar but could not re-select on it",
     "verification": ""
+  },
+  {
+    "id": "artist-psycho-le-cemu",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-psycho-le-cemu.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-06T13:55:03.885Z",
+    "previousConfig": {
+      "id": "artist-psycho-le-cemu",
+      "domain": "psycholecemu.com",
+      "url": "http://psycholecemu.com/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "dl.accordion-menu",
+        "artistNameFallback": "Psycho le Cému",
+        "date": "dt.acHeader h3:nth-of-type(1)",
+        "ticketUrl": "dd.acBody a",
+        "venue": "dt.acHeader h3:nth-of-type(2)",
+        "city": "",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-shelby-lynne",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-shelby-lynne.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-06T13:55:18.603Z",
+    "previousConfig": {
+      "id": "artist-shelby-lynne",
+      "domain": "www.shelbylynne.com",
+      "url": "https://www.shelbylynne.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "section.elementor-inner-section[data-id][class*='elementor-element-']",
+        "artistNameFallback": "Shelby Lynne",
+        "date": ".elementor-widget-heading .elementor-heading-title",
+        "ticketUrl": "a.elementor-button-link",
+        "venue": ".elementor-image-box-title",
+        "city": ".elementor-image-box-description",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.shelbylynne.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://www.shelbylynne.com/events.html but could not re-select on it",
+    "verification": ""
   }
 ]
