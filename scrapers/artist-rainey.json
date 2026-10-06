@@ -1,8 +1,8 @@
 {
   "id": "artist-rainey",
-  "domain": "stephanieraineymusic.com",
-  "url": "https://stephanieraineymusic.com/tour",
-  "type": "static_selectors",
+  "domain": "stephanierainey.com",
+  "url": "https://stephanierainey.com/tour/",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".tour-item",
     "artistNameFallback": "Stephanie Rainey",

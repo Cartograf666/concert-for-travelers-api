@@ -2,7 +2,7 @@
   "id": "artist-marmalade",
   "domain": "themarmalade.net",
   "url": "https://themarmalade.net/tour-dates/",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "table.hc_rse_events_table tr:not(:has(td[colspan]))",
     "artistNameFallback": "Marmalade",

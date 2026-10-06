@@ -1,8 +1,8 @@
 {
   "id": "artist-jerry-depizzo",
-  "domain": "ofarevolution.com",
-  "url": "https://ofarevolution.com/tour-dates/",
-  "type": "static_selectors",
+  "domain": "cdn.seated.com",
+  "url": "https://cdn.seated.com/api/tour/fc4e0166-09b2-48ad-87b8-c352fcc73bb5?include=tour-events",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".tour_date",
     "artistNameFallback": "O.A.R.",

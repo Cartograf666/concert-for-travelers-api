@@ -2,7 +2,7 @@
   "id": "majestic-music-club-bratislava",
   "domain": "majestic.sk",
   "url": "https://majestic.sk/program/",
-  "type": "static_selectors",
+  "type": "custom_js",
   "maxRetries": 3,
   "requestDelayMs": 2000,
   "selectors": {
