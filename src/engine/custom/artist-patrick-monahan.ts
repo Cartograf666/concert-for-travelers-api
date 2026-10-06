@@ -3,6 +3,13 @@ import type { Concert } from '../../schemas/concert.js';
 
 type SeatedEvent = {id?: unknown; type?: unknown; attributes?: Record<string, unknown>};
 type Feed = {data?: {id?: unknown; attributes?: {name?: unknown}; relationships?: {'tour-events'?: {data?: {id?: unknown}[]}}}; included?: SeatedEvent[]};
+const US_STATES = new Set('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY DC'.split(' '));
+
+function isValidDate(value: unknown): value is string {
+  if (typeof value !== 'string' || !/^20\d{2}-\d{2}-\d{2}$/.test(value)) return false;
+  const [year, month, day] = value.split('-').map(Number);
+  return new Date(Date.UTC(year, month - 1, day)).toISOString().slice(0, 10) === value;
+}
 
 export async function scrape(config: ScraperConfig, body: string, scrapedAt: string): Promise<Partial<Concert>[]> {
   const feed: Feed = JSON.parse(body);
@@ -19,12 +26,14 @@ export async function scrape(config: ScraperConfig, body: string, scrapedAt: str
     const date = fields?.['starts-at-date-local'];
     const venue = fields?.['venue-name'];
     const location = fields?.['formatted-address'];
-    if (event?.type !== 'tour-events' || typeof date !== 'string' || !/^20\d{2}-\d{2}-\d{2}$/.test(date) ||
-        typeof venue !== 'string' || !venue || typeof location !== 'string' || !/^([^,]+), FL$/.test(location)) {
+    const cityState = typeof location === 'string' ? /^([^,]+),\s*([A-Z]{2})$/.exec(location) : null;
+    const city = cityState?.[1].trim();
+    if (event?.type !== 'tour-events' || !isValidDate(date) ||
+        typeof venue !== 'string' || !venue.trim() || !cityState || !city || !US_STATES.has(cityState[2])) {
       throw new Error('Train event lacks explicit date, venue or supported location');
     }
     return {
-      artist: 'Train', date, venue, city: location.split(',')[0], country: 'US',
+      artist: 'Train', date, venue, city, country: 'US',
       ticketUrl: 'https://www.savemesanfrancisco.com/tour', originalSource: config.domain, scrapedAt
     };
   });
