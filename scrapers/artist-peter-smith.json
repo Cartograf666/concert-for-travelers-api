@@ -1,8 +1,8 @@
 {
   "id": "artist-peter-smith",
   "domain": "www.petersmithmusic.com",
-  "url": "https://www.petersmithmusic.com/calendar",
-  "type": "static_selectors",
+  "url": "https://rest.bandsintown.com/artists/id_3022742/events?app_id=e1afd5b10c0543ae214801f5b3013b4b&date=upcoming",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "div.event-item",
     "artistNameFallback": "Peter Smith",
@@ -12,5 +12,6 @@
     "venueNameFallback": "",
     "cityNameFallback": "",
     "countryNameFallback": "CA"
-  }
+  },
+  "requestDelayMs": 1100
 }

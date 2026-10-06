@@ -2,14 +2,16 @@
   "id": "artist-antones-records",
   "domain": "antonesnightclub.com",
   "url": "https://antonesnightclub.com/calendar/",
-  "type": "static_selectors",
+  "type": "playwright_render",
   "selectors": {
     "eventBlock": "div.event-item-wrapper",
     "date": "div.event-date",
     "ticketUrl": "a.event-tickets-button",
     "venue": "span.event-location",
-    "venueNameFallback": "",
+    "venueNameFallback": "Antone's Nightclub",
     "cityNameFallback": "Austin",
     "countryNameFallback": "US"
-  }
+  },
+  "renderParser": "custom_js",
+  "renderResponseUrl": "https://antonesnightclub.com/wp-admin/admin-ajax.php"
 }

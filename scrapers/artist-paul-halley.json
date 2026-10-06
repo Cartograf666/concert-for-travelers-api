@@ -1,8 +1,8 @@
 {
   "id": "artist-paul-halley",
-  "domain": "paulhalley.com",
-  "url": "https://paulhalley.com/concerts-and-workshops/",
-  "type": "static_selectors",
+  "domain": "pelagosmusic.com",
+  "url": "https://pelagosmusic.com/event-schedule",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".paragraph-id--43",
     "artist": "h2.text-h2",

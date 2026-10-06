@@ -2069,5 +2069,905 @@
       "frozenRemoteHeadsChecked": 18,
       "frozenRemoteHeadsNotIncluded": []
     }
+  },
+  "remainingPass": {
+    "observedAtUtc": "2026-10-06T15:54:32.507515+00:00",
+    "scope": "All 52 failures in the immediately preceding hosted slice: 21/415 artists and 31/152 venues. Denominators/configs preserved.",
+    "state": "implemented_local_hosted_pending",
+    "localSuccesses": 12,
+    "newConfigRepairs": 9,
+    "localSuccessDoesNotProveHostedOrPublished": true,
+    "constraints": [
+      "No fixed historical-news or month URL replaces current schedule.",
+      "No blanket empty flags, invented year/country, source deletion, TLS/CAPTCHA bypass.",
+      "Paul Halley live publisher schedule currently contains only two genuine past performances.",
+      "Antones observed coverage is the loaded current month.",
+      "Distinct Stephanie Rainey identity preserves original Rainey."
+    ],
+    "sources": [
+      {
+        "cohort": "artist",
+        "id": "antoha-mc-tour",
+        "configPath": "scrapers/artists/antoha-mc-tour.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "blocked_current_source_unverified",
+        "sourceUrl": "https://antoha-mc.ru/",
+        "proof": "HTTP 200 306206 bytes; Tilda page has concert heading and film promos but no extractable concert records",
+        "futureRows": 0,
+        "pastRows": null,
+        "blocker": "HTTP 200 306206 bytes; Tilda page has concert heading and film promos but no extractable concert records"
+      },
+      {
+        "cohort": "artist",
+        "id": "artist-amanda-forsyth",
+        "configPath": "scrapers/artists/artist-amanda-forsyth.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "blocked_current_source_unverified",
+        "sourceUrl": "https://www.amandaforsyth.com/concerts",
+        "proof": "HTTP 200 97386 bytes; both season summary blocks empty placeholders",
+        "futureRows": 0,
+        "pastRows": null,
+        "blocker": "HTTP 200 97386 bytes; both season summary blocks empty placeholders"
+      },
+      {
+        "cohort": "artist",
+        "id": "artist-astrid-williamson",
+        "configPath": "scrapers/artists/artist-astrid-williamson.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "verified_empty_no_edit",
+        "sourceUrl": "https://astridwilliamson.com/live/",
+        "proof": "Official Astrid Williamson live page explicitly says There are currently no upcoming events to list, please check back soon.",
+        "localRunner": "success: verified empty-schedule text",
+        "futureRows": 0,
+        "pastRows": 0,
+        "blocker": null
+      },
+      {
+        "cohort": "artist",
+        "id": "artist-avantasia",
+        "configPath": "scrapers/artists/artist-avantasia.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "blocked_current_source_unverified",
+        "sourceUrl": "https://avantasia.com/tour/",
+        "proof": "HTML partial HTTP 200 7550 bytes then timeout; WordPress /wp-json/wp/v2/pages?slug=tour HTTP 200 11050 bytes containing slider/poster only, no text event rows; poster GET timeout",
+        "futureRows": 0,
+        "pastRows": null,
+        "blocker": "HTML partial HTTP 200 7550 bytes then timeout; WordPress /wp-json/wp/v2/pages?slug=tour HTTP 200 11050 bytes containing slider/poster only, no text event rows; poster GET timeout"
+      },
+      {
+        "cohort": "artist",
+        "id": "artist-andy-cairns",
+        "configPath": "scrapers/artists/artist-andy-cairns.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "blocked_current_source_unverified",
+        "sourceUrl": "https://therapyquestionmark.co.uk/tour/",
+        "proof": "partial HTTP 200 8192 bytes then timeout; official band page says There are no dates yet, wrong solo identity",
+        "futureRows": 0,
+        "pastRows": null,
+        "blocker": "partial HTTP 200 8192 bytes then timeout; official band page says There are no dates yet, wrong solo identity"
+      },
+      {
+        "cohort": "artist",
+        "id": "artist-adiemus",
+        "configPath": "scrapers/artists/artist-adiemus.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "blocked_current_source_unverified",
+        "sourceUrl": "https://www.karljenkins.com/performances",
+        "proof": "TLS hostname mismatch on www and apex; public crawl shows Karl Jenkins performances only, most recent 26 Sep 2026",
+        "futureRows": 0,
+        "pastRows": null,
+        "blocker": "TLS hostname mismatch on www and apex; public crawl shows Karl Jenkins performances only, most recent 26 Sep 2026"
+      },
+      {
+        "cohort": "artist",
+        "id": "artist-alabama-symphony-orchestra",
+        "configPath": "scrapers/artists/artist-alabama-symphony-orchestra.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Scraper exceeded 90s wall-clock timeout"
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "recovered_by_prior_retry_fix_no_edit",
+        "sourceUrl": "http://alabamasymphony.org/concert/",
+        "proof": "Official Alabama Symphony Orchestra concert cards list date, venue and Birmingham location.",
+        "localRunner": "success: 12 raw events; all 12 dates normalized as future",
+        "futureRows": 12,
+        "pastRows": 0,
+        "blocker": "new hosted artist run after prior retry fix not observed here"
+      },
+      {
+        "cohort": "artist",
+        "id": "artist-john-mellencamp",
+        "configPath": "scrapers/artists/artist-john-mellencamp.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "archive_evidence_not_continuous_source",
+        "sourceUrl": "https://www.mellencamp.com/tour",
+        "proof": "current /tour HTTP 200 30505 bytes, server-side widget empty; official Jan 14 2026 news announcement HTTP 200 36062 bytes with 19 complete past route rows",
+        "futureRows": 0,
+        "pastRows": 19,
+        "blocker": "Current official schedule has no complete dated rows or explicit empty notice; fixed historical archive would not detect new events."
+      },
+      {
+        "cohort": "artist",
+        "id": "artist-limahl",
+        "configPath": "scrapers/artists/artist-limahl.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "external_access_block_no_edit",
+        "sourceUrl": "https://www.limahl.com/tour-all-events/",
+        "proof": "Limahl official homepage search index identifies www.limahl.com and Live navigation; direct homepage returned HTTP 401 Security Verification, configured tour-all-events HTTP 403; no current official feed/rows verified.",
+        "localRunner": "failed: HTTP 403",
+        "futureRows": null,
+        "pastRows": null,
+        "blocker": "first-party access challenge; no confirmed replacement schedule or empty marker"
+      },
+      {
+        "cohort": "artist",
+        "id": "artist-lobao",
+        "configPath": "scrapers/artists/artist-lobao.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "external_access_block_no_edit",
+        "sourceUrl": "https://lobao.com.br/agenda/",
+        "proof": "Official Lobão agenda search index shows old 2006 and Aug 2026 rows; direct runner HTTP 403. Third-party future listings do not prove an official feed.",
+        "localRunner": "failed: HTTP 403",
+        "futureRows": null,
+        "pastRows": null,
+        "blocker": "official schedule blocked and current first-party rows not verified"
+      },
+      {
+        "cohort": "artist",
+        "id": "artist-marina-satti",
+        "configPath": "scrapers/artists/artist-marina-satti.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 404"
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "dead_schedule_address_no_edit",
+        "sourceUrl": "https://marinasatti.com/tour/",
+        "proof": "Official site marinasatti.com has indexed alternate /tour-3 with Tour Dates/Past Dates but live alternate returned HTTP 404 after timeout; original /tour HTTP 404.",
+        "localRunner": "failed: HTTP 404",
+        "futureRows": null,
+        "pastRows": null,
+        "blocker": "no live official date-bearing replacement or explicit empty notice"
+      },
+      {
+        "cohort": "artist",
+        "id": "artist-marmalade",
+        "configPath": "scrapers/artists/artist-marmalade.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "recovered_local",
+        "sourceUrl": "https://themarmalade.net/tour-dates/",
+        "proof": "Current official page HTTP 200 contains two table rows dated Jan 16 and Mar 13 2027.",
+        "localRunner": "success: 2 future events with venue/city split; before edit raw rows lacked city and pipeline would drop both",
+        "futureRows": 2,
+        "pastRows": 0,
+        "blocker": "hosted run after edit not observed"
+      },
+      {
+        "cohort": "artist",
+        "id": "artist-nine-inch-nails",
+        "configPath": "scrapers/artists/artist-nine-inch-nails.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "parse_error",
+          "error": "Unmatched selector: =.//p/text()[contains(., ',')][1]"
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "blocked_current_source_unverified",
+        "sourceUrl": "https://www.nin.com/live/",
+        "proof": "current /live HTTP 403 Cloudflare HTML 5332 bytes; configured tickets2018 is archived and invalid XPath remains",
+        "futureRows": 0,
+        "pastRows": null,
+        "blocker": "current /live HTTP 403 Cloudflare HTML 5332 bytes; configured tickets2018 is archived and invalid XPath remains"
+      },
+      {
+        "cohort": "artist",
+        "id": "artist-nick-cave-the-bad-seeds",
+        "configPath": "scrapers/artists/artist-nick-cave-the-bad-seeds.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "archive_evidence_not_continuous_source",
+        "sourceUrl": "https://www.nickcave.com/tour-dates/",
+        "proof": "current /tour-dates HTTP 200 122129 bytes, #blog-grid empty; official Apr 8 2026 announcement HTTP 200 135996 bytes with 32 complete past route rows",
+        "futureRows": 0,
+        "pastRows": 32,
+        "blocker": "Current official schedule has no complete dated rows or explicit empty notice; fixed historical archive would not detect new events."
+      },
+      {
+        "cohort": "artist",
+        "id": "artist-pequot",
+        "configPath": "scrapers/artists/artist-pequot.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "wrong_entity_and_dns_no_edit",
+        "sourceUrl": "https://www.pequotmuseum.org/explore/events/",
+        "proof": "Canonical artist entry is Pequot, hardcore/metal from Minsk; configured Mashantucket Pequot Museum is a different US entity.",
+        "localRunner": "failed: ENOTFOUND www.pequotmuseum.org",
+        "futureRows": null,
+        "pastRows": null,
+        "blocker": "no verified official band schedule; identity cannot be inferred from museum events"
+      },
+      {
+        "cohort": "artist",
+        "id": "artist-philip-lindholm",
+        "configPath": "scrapers/artists/artist-philip-lindholm.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "wrong_event_context_no_edit",
+        "sourceUrl": "https://philiplindholm.com/events/",
+        "proof": "Canonical entry is singer-songwriter Philip Lindholm; live /events returns Promote Theme political campaign event search and no music concert records.",
+        "localRunner": "failed: selectors_stale, zero events",
+        "futureRows": null,
+        "pastRows": null,
+        "blocker": "current page does not provide verified musical performances; no alternate official schedule"
+      },
+      {
+        "cohort": "artist",
+        "id": "artist-poetry",
+        "configPath": "scrapers/artists/artist-poetry.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "blocked_current_source_unverified",
+        "sourceUrl": "https://www.poemsband.com/#poems",
+        "proof": "HTTP 200 56741 bytes; page title Poems confirms wrong configured Poetry identity",
+        "futureRows": 0,
+        "pastRows": null,
+        "blocker": "HTTP 200 56741 bytes; page title Poems confirms wrong configured Poetry identity"
+      },
+      {
+        "cohort": "artist",
+        "id": "artist-psycho-le-cemu",
+        "configPath": "scrapers/artists/artist-psycho-le-cemu.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "blocked_current_source_unverified",
+        "sourceUrl": "https://psycholecemu.com/live",
+        "proof": "HTTP 200 24814 bytes; LIVE page has news only, no current dated rows; indexed older tour list ended Oct 4",
+        "futureRows": 0,
+        "pastRows": null,
+        "blocker": "HTTP 200 24814 bytes; LIVE page has news only, no current dated rows; indexed older tour list ended Oct 4"
+      },
+      {
+        "cohort": "artist",
+        "id": "artist-shelby-lynne",
+        "configPath": "scrapers/artists/artist-shelby-lynne.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 404"
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "hijacked_domain_no_edit",
+        "sourceUrl": "https://www.shelbylynne.com/tour",
+        "proof": "Original singer website index is stale; current domain homepage HTTP 200 title is Thai casino/slot content, and /tour HTTP 404.",
+        "localRunner": "failed: HTTP 404",
+        "futureRows": null,
+        "pastRows": null,
+        "blocker": "no verified current first-party artist schedule or safe alternate domain"
+      },
+      {
+        "cohort": "artist",
+        "id": "artist-twin-atlantic",
+        "configPath": "scrapers/artists/artist-twin-atlantic.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 404"
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "official_widget_absent_no_edit",
+        "sourceUrl": "https://twinatlantic.com/shows",
+        "proof": "Current official homepage HTTP 200 has no schedule/embed and /shows HTTP 404; search index from prior crawl showed seven Oct 2026 dates, also listed by ticket sellers, but current first-party feed is absent.",
+        "localRunner": "failed: HTTP 404",
+        "futureRows": null,
+        "pastRows": null,
+        "blocker": "cannot safely bind public third-party dates to an observed official feed"
+      },
+      {
+        "cohort": "artist",
+        "id": "artist-robin-thicke",
+        "configPath": "scrapers/artists/artist-robin-thicke.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "blocked_current_source_unverified",
+        "sourceUrl": "https://www.robinthicke.com/tour/",
+        "proof": "tour HTTP 200 94249 bytes, no date cards; linked /live-horizon HTTP 200 94998 bytes and yearless 12/31",
+        "futureRows": 0,
+        "pastRows": null,
+        "blocker": "tour HTTP 200 94249 bytes, no date cards; linked /live-horizon HTTP 200 94998 bytes and yearless 12/31"
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-babbu-mann",
+        "configPath": "scrapers/artist-babbu-mann.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "unresolved",
+        "sourceUrl": "https://www.thebabbumaan.com/",
+        "proof": "configured URL HTTP 200 but 114-byte redirect shell; babbumaan.net HTTP 200 Coming Soon; thebabbumaan.com HTTP 200 archival 2022 UK tour thebabbumaan.com brands itself BABBU MAAN OFFICIAL SITE; m.babbumaan.net/about-us describes Babbu Maan, but mobile host TLS unavailable",
+        "blocker": "No accessible current first-party future calendar; promoter pages found only past 2026 dates. Do not infer a whole empty schedule from archival 2022 page."
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-angel-heart",
+        "configPath": "scrapers/artist-angel-heart.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "unresolved",
+        "sourceUrl": "https://www.angelheart.rocks/events",
+        "proof": "official Google Sites HTML HTTP 200 and contains Ents24 embed id NY5d1; direct widget endpoint returned HTTP 403 at 15:34 UTC; ordinary embedded frame displayed only AngelHeart Tour Dates & Tickets on recheck first-party /events HTML data-code names Ents24 artist id NY5d1 and title AngelHeart Tour Dates",
+        "blocker": "Current widget availability changed to HTTP 403, so a fresh whole-widget empty schedule is not verified."
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-bruce-thomas",
+        "configPath": "scrapers/artist-bruce-thomas.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "archive_evidence_not_continuous_source",
+        "sourceUrl": "https://brucethomasmusic.com/schedule",
+        "proof": "Current October 2026, next November/December 2026 and January 2027 official month GETs each show 0 events and no explicit empty notice; Sep 2026 has 1 boundary archive row, Aug 2026 has 26 official past rows.",
+        "futureRows": 0,
+        "pastRows": 26,
+        "blocker": "Current official schedule has no complete dated rows or explicit empty notice; fixed historical archive would not detect new events."
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-james-pankow",
+        "configPath": "scrapers/artist-james-pankow.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "transient_access_recovered_no_edit",
+        "sourceUrl": "https://chicagotheband.com/tour/",
+        "proof": "Chicago official tour page contains 23 complete future rows; James Pankow is a band member, records retain artist Chicago.",
+        "localRunner": "success: 23 raw events; all 23 normalized dates future",
+        "futureRows": 23,
+        "pastRows": 0,
+        "blocker": "hosted retry not observed here"
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-jane-mcdonald",
+        "configPath": "scrapers/artist-jane-mcdonald.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 404"
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "unresolved",
+        "sourceUrl": "https://jane-mcdonald.com/explorer",
+        "proof": "official /tour HTTP 404; /explorer HTTP 200 first-party jane-mcdonald.com/explorer explicitly names Jane McDonald",
+        "blocker": "2027-09-24 to 2027-10-01 cruise advertises headline shows, but no individual performance date or fixed venue; 2026 Living The Dream tour ended in September. Do not turn cruise departure into concert date."
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-antones-records",
+        "configPath": "scrapers/artist-antones-records.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "proof": "Ordinary official calendar browser response contains linked event and detail IDs; 17 full current-month music events after excluding guided history visits. Loaded month only; not full multi-month coverage. Blue Monday weekly series uses its explicit Soul Man Sam attraction to prevent matching the unrelated hardcore band.",
+        "localOutcome": "recovered_local",
+        "rawRows": 17,
+        "futureRows": 17,
+        "localRunner": "succeeded",
+        "blocker": "Hosted post-repair verification pending."
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-jorge-e-mateus",
+        "configPath": "scrapers/artist-jorge-e-mateus.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "blocked_current_source_unverified",
+        "sourceUrl": "https://www.jorgeemateus.com.br/agenda/",
+        "proof": "agenda HTTP 200 42355 bytes Angular shell; official page-agenda.js proves monthly API; month 7–12/2026 endpoint all HTTP 200 []",
+        "futureRows": 0,
+        "pastRows": null,
+        "blocker": "agenda HTTP 200 42355 bytes Angular shell; official page-agenda.js proves monthly API; month 7–12/2026 endpoint all HTTP 200 []"
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-harold-jones",
+        "configPath": "scrapers/artist-harold-jones.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "unresolved",
+        "sourceUrl": "http://haroldjonesbigband.com/performances.htm",
+        "proof": "configured domain 114-byte lander; http://haroldjonesbigband.com/ HTTP 200 frameset; /performances.htm HTTP 200 but dated For 2015 haroldjonesbigband.com title Harold Jones - Drummer and linked Performances frame",
+        "blocker": "Alternate first-party performances page points to Tony Bennett 2015 tour and has no current dates; do not infer retirement or a current empty schedule from archival page."
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-jerry-depizzo",
+        "configPath": "scrapers/artist-jerry-depizzo.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Hostname/IP does not match certificate's altnames: Host: ofarevolution.com. is not in the cert's altnames: DNS:*.liveoar.com, DNS:liveoar.com"
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "recovered_local",
+        "sourceUrl": "https://cdn.seated.com/api/tour/fc4e0166-09b2-48ad-87b8-c352fcc73bb5?include=tour-events",
+        "proof": "Official liveoar.com FAQ calls the site O.A.R. official and biography names Jerry DePizzo; live official /pages/tour HTML embeds Seated artist-id fc4e0166-09b2-48ad-87b8-c352fcc73bb5. Old ofarevolution.com TLS certificate matched liveoar.com, not old host.",
+        "localRunner": "success: official feed 12 rows, parser emits 4 O.A.R. band shows and excludes 8 explicitly billed Marc Roberge solo dates",
+        "futureRows": 4,
+        "pastRows": 0,
+        "blocker": "hosted run after edit not observed"
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-joe-hutton",
+        "configPath": "scrapers/artist-joe-hutton.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Client network socket disconnected before secure TLS connection was established"
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "unresolved",
+        "sourceUrl": "https://thekingblues.com/live/",
+        "proof": "configured domain currently unreachable/previous parked; alternate kingbluesofficial.com HTTP 200 163-byte shell; The King Blues has current concerts on third-party listings No first-party link found between Joe Hutton and The King Blues. Search results identify multiple distinct Joe Hutton musicians, including a Hammers of Misfortune vocalist and a Northumbrian piper.",
+        "blocker": "Artist-to-band mapping is unverified; cannot assign The King Blues concerts to Joe Hutton or choose a same-name musician without canonical identity evidence."
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-john-keane",
+        "configPath": "scrapers/artist-john-keane.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "unresolved",
+        "sourceUrl": "https://johnkeanestudios.com/html/about",
+        "proof": "configured johnkeane.com HTTP 200 114-byte lander; johnkeanestudios.com/html/about accessible johnkeanestudios.com/html/about identifies John Keane as producer, engineer and musician in Athens, Georgia",
+        "blocker": "Current first-party studio site has biography and discography, no tour/calendar; do not conflate with unrelated Keane band or John Keene pianist."
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-juan-garcia-herreros",
+        "configPath": "scrapers/artist-juan-garcia-herreros.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "getaddrinfo ENOTFOUND www.juan-garcia-herreros.com"
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "unresolved",
+        "sourceUrl": "https://www.the-snow-owl.com/",
+        "proof": "configured host DNS failure; https://www.the-snow-owl.com/ HTTP 200 the-snow-owl.com current first-party text explicitly names bassist Juan Garcia-Herreros as Snow Owl; Austrian Music Export links the same official domain",
+        "blocker": "Accessible alternate official site has Home/Bio/Owl Gear/Interviews and older news, but no live calendar, embed or dated future event. Bandsintown artist exists but no first-party link to it was found."
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-judith-rijnveld",
+        "configPath": "scrapers/artist-judith-rijnveld.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "getaddrinfo ENOTFOUND www.judithrijnveld.com"
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "recovered_local",
+        "sourceUrl": "https://www.kingfishersky.com/shows/",
+        "proof": "Official Kingfisher Sky biography proves Judith founding vocalist; current shows page yields two future dated shows under Kingfisher Sky, not solo Judith.",
+        "blocker": "Hosted post-repair verification pending.",
+        "rawRows": 2,
+        "futureRows": 2,
+        "localRunner": "succeeded"
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-paul-halley",
+        "configPath": "scrapers/artist-paul-halley.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "archive_only_recovered_local",
+        "sourceUrl": "https://pelagosmusic.com/event-schedule",
+        "proof": "Pelagos Music identifies itself as Paul Halley music publisher; official event schedule explicitly bills Halley directing 14 Dec 2025 and playing 21 Sep 2025 at Cathedral Church of All Saints, Halifax. No dated future rows on current schedule.",
+        "localRunner": "success: 2 real archived performances, 0 future; excludes composition-only credits",
+        "futureRows": 0,
+        "pastRows": 2,
+        "blocker": "no confirmed future concert; hosted run after edit not observed"
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-pain-for-pleasure",
+        "configPath": "scrapers/artist-pain-for-pleasure.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "unresolved",
+        "sourceUrl": "https://www.painforpleasure.com/gigs",
+        "proof": "configured domain 114-byte lander; no established active first-party original-band site Name collision: original Sum 41 metal parody side project called Pain for Pleasure; a distinct French Sum 41 tribute band founded 2025 uses the same name in current 2026 tickets",
+        "blocker": "Do not attach 2026 French tribute-band show or Sum 41 concerts to original artist identity. Original project future activity not established."
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-patti-smith-group",
+        "configPath": "scrapers/artist-patti-smith-group.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "unresolved",
+        "sourceUrl": "https://www.pattismith.net/shows.html",
+        "proof": "configured /shows.html 131-byte blank; first-party pattismith.net/intro-new accessible/indexed; /jobs and /wegottofly contain legacy undated-year listings Current ticket/venue events bill Patti Smith or Patti Smith Quartet, not necessarily the historic Patti Smith Group source identity; Patty Smyth is a different artist",
+        "blocker": "No current accessible first-party PSG schedule or exact identity bridge to current Quartet performances. Do not silently change performer identity or infer current year for legacy date lists."
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-painflow",
+        "configPath": "scrapers/artist-painflow.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "unresolved",
+        "sourceUrl": "https://painflow.com/shows",
+        "proof": "configured URL 114-byte lander; search finds no current first-party music site Historical Finnish industrial metal Painflow recorded Frontline/Audio-Visual-Aids; 2026 PainFlow chronic-pain app is unrelated name collision",
+        "blocker": "No accessible current official calendar or future show evidence; secondary music biographies describe 1997-2001 activity only. Do not repoint to health app."
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-rainey",
+        "configPath": "scrapers/artist-rainey.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "getaddrinfo ENOTFOUND stephanieraineymusic.com"
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "recovered_local",
+        "sourceUrl": "https://stephanierainey.com/tour/",
+        "proof": "Two future official Stephanie Rainey performances; added distinct minimal canonical Stephanie Rainey without merging or modifying existing Rainey metadata.",
+        "blocker": "Hosted post-repair verification pending.",
+        "rawRows": 2,
+        "futureRows": 2,
+        "localRunner": "succeeded"
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-peter-smith",
+        "configPath": "scrapers/artist-peter-smith.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "localOutcome": "recovered_local",
+        "sourceUrl": "https://petersmithmusic.com/calendar/",
+        "proof": "Official calendar embeds Bandsintown artist3022742 and observed app ID; six complete future rows. Official homepage Spotify album6bYEjyB10LtNnsL3GbGRUl is Smitty Straightens Out and its current Spotify album page links artist23jWVc6JrQ2evxGEi5pQKG by name Peter Smith. Corrected only canonical socials.spotify through artistDb; MBID/site/other metadata preserved.",
+        "blocker": "Hosted post-repair verification pending.",
+        "rawRows": 6,
+        "futureRows": 6,
+        "localRunner": "succeeded",
+        "identityEvidenceUrls": [
+          "https://petersmithmusic.com/",
+          "https://open.spotify.com/album/6bYEjyB10LtNnsL3GbGRUl",
+          "https://open.spotify.com/artist/23jWVc6JrQ2evxGEi5pQKG"
+        ]
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-ray-davies",
+        "configPath": "scrapers/artist-ray-davies.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "proof": "Official legacy domain redirects to unrelated sports/news site; no verified replacement calendar.",
+        "localOutcome": "unresolved",
+        "sourceUrl": "https://www.raydavies.info/live",
+        "blocker": "Official legacy domain redirects to unrelated sports/news site; no verified replacement calendar."
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-philip-labonte",
+        "configPath": "scrapers/artist-philip-labonte.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "proof": "All That Remains official tour GET returned HTTP 429; no complete current embedded schedule verified.",
+        "localOutcome": "unresolved",
+        "sourceUrl": "https://allthatremainsonline.com/pages/tour",
+        "blocker": "All That Remains official tour GET returned HTTP 429; no complete current embedded schedule verified."
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-ray-scott",
+        "configPath": "scrapers/artist-ray-scott.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "proof": "Official tour page returns Angular shell; ordinary browser timed out without a loaded event response.",
+        "localOutcome": "unresolved",
+        "sourceUrl": "https://www.rayscott.com/tour",
+        "blocker": "Official tour page returns Angular shell; ordinary browser timed out without a loaded event response."
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-reality-check",
+        "configPath": "scrapers/artist-reality-check.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "proof": "Configured site is The Reality Check Experiment (Philadelphia 2022), not the canonical Christian rock Reality Check entity; HTTP 429 also observed.",
+        "localOutcome": "unresolved",
+        "sourceUrl": "https://therealitycheckexperiment.com/",
+        "blocker": "Configured site is The Reality Check Experiment (Philadelphia 2022), not the canonical Christian rock Reality Check entity; HTTP 429 also observed."
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-yuta-and-the-bushido-boys",
+        "configPath": "scrapers/artist-yuta-and-the-bushido-boys.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "proof": "Configured NCT tour URL redirects to 404.php; no first-party identity bridge to Yuta and the Bushido Boys.",
+        "localOutcome": "unresolved",
+        "sourceUrl": "https://nct-jp.net/live/tour.php?id=1002270",
+        "blocker": "Configured NCT tour URL redirects to 404.php; no first-party identity bridge to Yuta and the Bushido Boys."
+      },
+      {
+        "cohort": "venue",
+        "id": "esplanade-theatres-singapore-singapore",
+        "configPath": "scrapers/esplanade-theatres-singapore-singapore.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "csr_detected",
+          "error": "Parsed 0 concerts. Page appears client-side rendered (events absent from server HTML)."
+        },
+        "hostedAfterRepair": "not_run",
+        "proof": "Full Music calendar HTTP/browser read timeouts; narrower Mosaic series page is not replacement coverage for all music.",
+        "localOutcome": "unresolved",
+        "sourceUrl": "https://www.esplanade.com/whats-on?category=Music",
+        "blocker": "Full Music calendar HTTP/browser read timeouts; narrower Mosaic series page is not replacement coverage for all music."
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-jorge-palma",
+        "configPath": "scrapers/artist-jorge-palma.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "timeout of 15000ms exceeded"
+        },
+        "hostedAfterRepair": "not_run",
+        "proof": "Old espetaculos URL HTTP 404; current official homepage has album/contact links without a dated schedule.",
+        "localOutcome": "unresolved",
+        "sourceUrl": "https://jorgepalma.pt/espetaculos/",
+        "blocker": "Old espetaculos URL HTTP 404; current official homepage has album/contact links without a dated schedule."
+      },
+      {
+        "cohort": "venue",
+        "id": "kitty-su-bangalore",
+        "configPath": "scrapers/kitty-su-bangalore.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        "hostedAfterRepair": "not_run",
+        "proof": "Current official event cards are Kolkata with yearless dates; they cannot be published as Bangalore concerts.",
+        "localOutcome": "unresolved",
+        "sourceUrl": "https://www.kittysu.com/events",
+        "blocker": "Current official event cards are Kolkata with yearless dates; they cannot be published as Bangalore concerts."
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-philippine-philharmonic-orchestra",
+        "configPath": "scrapers/artist-philippine-philharmonic-orchestra.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "timeout of 15000ms exceeded"
+        },
+        "hostedAfterRepair": "not_run",
+        "proof": "Official events URL and 42nd-season press-release GETs timed out; public press index is not live-fetch verification.",
+        "localOutcome": "unresolved",
+        "sourceUrl": "https://culturalcenter.gov.ph/events",
+        "blocker": "Official events URL and 42nd-season press-release GETs timed out; public press index is not live-fetch verification."
+      },
+      {
+        "cohort": "venue",
+        "id": "rust-copenhagen",
+        "configPath": "scrapers/rust-copenhagen.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 454"
+        },
+        "hostedAfterRepair": "not_run",
+        "proof": "Official full RUST cards via existing got-scraping backend; machine-readable startDate supplies explicit year. 95 complete rows, 94 current/future. Previous text dates normalized to null.",
+        "localOutcome": "recovered_local",
+        "rawRows": 95,
+        "futureRows": 94,
+        "localRunner": "succeeded",
+        "blocker": "Hosted post-repair verification pending."
+      },
+      {
+        "cohort": "venue",
+        "id": "majestic-music-club-bratislava",
+        "configPath": "scrapers/majestic-music-club-bratislava.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "timeout of 15000ms exceeded"
+        },
+        "hostedAfterRepair": "not_run",
+        "proof": "Official 24-row current program now parses all explicit dates, including the three Slovak Monday strings previously dropped. 24 complete rows, 24 current/future; no shared date-parser or retry change.",
+        "localOutcome": "recovered_local",
+        "rawRows": 24,
+        "futureRows": 24,
+        "localRunner": "succeeded",
+        "blocker": "Hosted post-repair verification pending."
+      },
+      {
+        "cohort": "venue",
+        "id": "artist-yamazaki-masayoshi",
+        "configPath": "scrapers/artist-yamazaki-masayoshi.json",
+        "previousHosted": {
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Scraper exceeded 90s wall-clock timeout"
+        },
+        "hostedAfterRepair": "not_run",
+        "proof": "Official live page contains announcement publication dates; these cannot be used as performance dates.",
+        "localOutcome": "unresolved",
+        "sourceUrl": "https://www.office-augusta.com/yama/live/",
+        "blocker": "Official live page contains announcement publication dates; these cannot be used as performance dates."
+      }
+    ],
+    "checks": {
+      "fullSuiteBeforeFinalLocalReviewFixes": {
+        "total": 710,
+        "pass": 709,
+        "skip": 1,
+        "fail": 0
+      },
+      "build": "passed",
+      "lint": {
+        "errors": 0,
+        "existingWarnings": 103
+      },
+      "codeReview": "harness-native fallback; ce-code-review full dispatch blocked by reviewer-role prohibition on nested agents; independent reviewer reads standards/spec and reproduces pipeline failures.",
+      "finalTargeted": {
+        "pass": 14,
+        "fail": 0
+      }
+    }
   }
 }

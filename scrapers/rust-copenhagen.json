@@ -2,15 +2,17 @@
   "id": "rust-copenhagen",
   "domain": "rust.dk",
   "url": "https://rust.dk/",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "article.event",
     "artist": "h2.event-title",
-    "date": "p.event-meta",
+    "date": "meta[itemprop=startDate]::attr(content)",
     "venueNameFallback": "RUST",
     "cityNameFallback": "Copenhagen",
     "countryNameFallback": "DK",
     "lat": 55.6912,
-    "lng": 12.5593
-  }
+    "lng": 12.5593,
+    "ticketUrl": "a.event-ticket-link"
+  },
+  "httpClient": "got-scraping"
 }

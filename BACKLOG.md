@@ -11,6 +11,37 @@ each concert in space and time, and (3) **rank** the options.
 
 Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
+## Remaining-source repair continuation — 2026-10-06 (local; hosted verification pending)
+
+- Scope: all 52 failures from the preceding hosted slice (21 artists / 31 venues).
+  Every source was checked against current official access, identity and event
+  evidence; per-source results extend the existing source-recovery JSON report.
+- Nine current-source configs repaired: Marmalade, Jerry DePizzo/O.A.R., Paul
+  Halley, Judith Rijnveld/Kingfisher Sky, Peter Smith, Rainey/Stephanie Rainey,
+  RUST Copenhagen, Antone's and Majestic. Three unchanged sources also succeed locally:
+  Astrid Williamson, Alabama Symphony and James Pankow/Chicago.
+  These observations do not yet establish hosted success or published coverage.
+- RUST's old text dates became null despite raw success. New extraction uses
+  the explicit machine startDate and existing HTTP backend: 95 full rows, 94
+  current/future. Majestic's three Monday dates previously became null; all
+  24 rows now have valid dates, with 24 current/future. Antone's loaded current month yields 17 concert records;
+  guided venue visits are excluded, and multi-month completeness is not claimed.
+  Blue Monday series rows use the explicit performer Soul Man Sam, avoiding a
+  wrong match to the homonymous hardcore band. Marmalade rejects an unverified
+  new city instead of silently assigning it a UK country.
+- Stephanie Rainey is added as a separate minimal canonical identity; existing
+  Rainey is preserved. Peter Smith's Spotify link is corrected through artistDb from the official
+  site's current Spotify album-to-artist link; existing unrelated metadata
+  fields are preserved. Group shows keep Kingfisher Sky and O.A.R. names rather
+  than being assigned to their individual members. Paul Halley's live publisher
+  schedule currently has two genuine archived appearances and no future rows.
+- Three fixed 2026 news/month archive candidates were removed: they would miss
+  the next schedule. Remaining limits include genuine access blocks, absent
+  schedules and incorrect entity bindings, not concealed successful emptiness.
+- Next: complete regression/build/lint and independent review, merge the checked
+  package, run the ordinary hosted artist + automatic daily cycle and reconcile
+  actual outcomes and public status into this existing state/report.
+
 ## All-branch integration and source recovery — 2026-10-06 (published; explicit source gaps remain)
 
 - Alex explicitly requested integrating all branch work into main and repairing
