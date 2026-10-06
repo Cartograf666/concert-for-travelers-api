@@ -5586,7 +5586,7 @@
       }
     },
     "backendFollowup": {
-      "state": "implemented_live_verified_pending_ci_main_hosted",
+      "state": "main_merged_hosted_artist_sweep_pending",
       "sourceIds": [
         "artist-marmalade",
         "artist-paralamas-do-sucesso",
@@ -5781,14 +5781,6 @@
           }
         ]
       },
-      "checks": {
-        "targetedTests": {
-          "pass": 5,
-          "fail": 0
-        },
-        "configurationOnly": true
-      },
-      "acceptedScope": "Only the installed guarded HTTP backend changes; parser, artist identity, dates, country and explicit-empty contract remain unchanged. Local source success is not a new hosted cohort total.",
       "lobaoRootVerification": {
         "id": "artist-lobao",
         "url": "https://lobao.com.br/agenda/",
@@ -5876,10 +5868,195 @@
         },
         "scope": "Live native agenda contains two explicit past shows; no future shows are claimed. No empty flag or date changes."
       },
-      "nonCandidates": {
-        "artist-paul-halley": "Primary schedule is an archive headed by 2025 and earlier; no 2026 current calendar is proven.",
-        "artist-hubert-laws": "latest-past selector and 2023 rows include missing fields, invalid date and state-only city; no clean backend-only recovery."
+      "targetedTests": {
+        "pass": 5,
+        "fail": 0
+      },
+      "precedingJorgePublication": {
+        "runId": 37526646520,
+        "sourceHead": "ac47018219d0ad80b70b64624d07924283f24e96",
+        "artistHealthy": 393,
+        "venueHealthy": 129,
+        "published": 51554,
+        "statusSha256": "4f802aa6073b0a960cc88fa19ade8ccf31f7b17cfd5a3ba1b09fef10ac8b6e48",
+        "publicArtifactBytesIdentical": true
+      },
+      "limits": "Marmalade/Paralamas supply 10 current future events; Astrid exact empty notice; Lobão native agenda has two printed past dates and claims zero future coverage. Getter change does not rewrite dates, identities, countries or security policy.",
+      "pullRequest": {
+        "number": 202,
+        "url": "https://github.com/Cartograf666/concert-for-travelers-api/pull/202",
+        "state": "MERGED",
+        "headSha": "6c244b539302d352d253798c2a7a36fcd038cbb0",
+        "mergeSha": "9806b507d89895723f4762f69764461b301ccbeb",
+        "mergedAt": "2026-10-06T20:53:41Z"
+      },
+      "hostedCI": {
+        "total": 744,
+        "pass": 743,
+        "fail": 0,
+        "skip": 1,
+        "runId": 37528390477,
+        "headSha": "6c244b539302d352d253798c2a7a36fcd038cbb0",
+        "url": "https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37528390477",
+        "build": "pass",
+        "lintErrors": 0,
+        "existingLintWarnings": 103,
+        "duplicateCitySelectorCount": 126,
+        "duplicateCitySelectorBaseline": 131,
+        "artistIntegrity": "skipped: no artist catalog changes in this PR"
+      },
+      "pendingArtistSweep": {
+        "id": 37529964747,
+        "sha": "9806b507d89895723f4762f69764461b301ccbeb",
+        "url": "https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37529964747"
       }
+    },
+    "allThatRemainsCalendarFollowup": {
+      "sourceId": "artist-philip-labonte",
+      "state": "local_configured_collection_verified_pending_ci_and_hosted",
+      "checkedAt": "2026-10-06T21:14:30.918Z",
+      "officialWidgetEvidence": {
+        "checkedAt": "2026-10-06T21:06:52.335351+00:00",
+        "scope": "Read-only current source verification. No repository, config, database or cache writes.",
+        "officialPage": {
+          "url": "https://allthatremainsonline.com/pages/tour",
+          "title": "Tour – All That Remains Official",
+          "h1": "Tour",
+          "bytes": 313786,
+          "officialMetaUrl": "https://allthatremainsonline.com/pages/tour",
+          "embed": {
+            "script": "https://widget.bandsintown.com/main.min.js",
+            "element": "a.bit-widget-initializer",
+            "dataArtistName": "All That Remains",
+            "dataDisplayLocalDates": false,
+            "dataDisplayPastDates": false,
+            "dataDisplayLimit": 15,
+            "dataDisplayLineup": false
+          }
+        },
+        "providerContract": {
+          "scriptSnippet": "https://rest.bandsintown.com/V3.1/artists/{escaped data-artist-name}/events?app_id={embed appId or js_ + window.location.hostname}",
+          "appIdObserved": "js_allthatremainsonline.com",
+          "source": "official embedded widget JS; it sets app_id to js_ plus page hostname when no appId override is supplied. No auth or consumer credentials used."
+        },
+        "freshNativeRequests": {
+          "eventsUrl": "https://rest.bandsintown.com/V3.1/artists/All%20That%20Remains/events/?app_id=js_allthatremainsonline.com",
+          "transport": "fetchHtmlForHealing(..., got-scraping), existing guarded request path",
+          "response": "HTTP-success JSON array []",
+          "eventCount": 0,
+          "artistUrl": "https://rest.bandsintown.com/V3.1/artists/All%20That%20Remains?app_id=js_allthatremainsonline.com",
+          "artistProfile": {
+            "id": "513",
+            "name": "All That Remains",
+            "mbid": "4f8b7186-b2a2-40db-97ae-6e1cd46d57b1",
+            "upcoming_event_count": 0,
+            "websiteLink": "http://www.allthatremainsonline.com"
+          }
+        },
+        "catalogIdentity": {
+          "providerArtistId": "513",
+          "providerName": "All That Remains",
+          "providerMbid": "4f8b7186-b2a2-40db-97ae-6e1cd46d57b1",
+          "canonicalDataPath": "data/artists/shard-1.json (top-level All That Remains entry with same MBID)",
+          "separatePhilipLabonteRecord": {
+            "canonicalName": "Philip Labonte",
+            "mbid": "ed3fdcca-5deb-440c-89b6-639d0c5184ef",
+            "sourceFile": "data/artists/shard-0.json",
+            "note": "Distinct artist identity, despite shared official website/tourUrl."
+          },
+          "meaning": "The official embed and provider profile name the group All That Remains. Keep events attached to that group; never attribute this feed to Philip Labonte solo."
+        },
+        "currentResult": {
+          "eventFeedEmpty": true,
+          "profileUpcomingEventCount": 0,
+          "nativeEmptySupported": true,
+          "futureEvents": 0,
+          "schemaRows": 0,
+          "doNotInferPastEvents": true
+        },
+        "existingCodeReferences": {
+          "customParserExamples": [
+            "src/engine/custom/artist-peter-smith.ts",
+            "src/engine/custom/artist-haash.ts",
+            "src/engine/custom/artist-hey-nineteen.ts"
+          ],
+          "mappingAndCountry": "src/engine/bandsintown.ts",
+          "existingConfigPath": "scrapers/artist-philip-labonte.json",
+          "existingConfigType": "static_selectors",
+          "existingFallbackGroup": "All That Remains",
+          "existingConfiguredUrl": "https://allthatremainsonline.com/pages/tour"
+        },
+        "files": {
+          "officialHtml": "/private/tmp/concert-remaining-20261006/all-that-remains-current-root.html",
+          "widgetScript": "/private/tmp/concert-remaining-20261006/all-that-remains-bandsintown-widget.js",
+          "eventFeed": "/private/tmp/concert-remaining-20261006/all-that-remains-bandsintown-widget-events.json",
+          "artistProfile": "/private/tmp/concert-remaining-20261006/all-that-remains-bandsintown-widget-artist.json"
+        },
+        "decisionEvidence": "Verified native public-widget empty: official embedded group name resolves to provider id 513, profile has upcoming_event_count 0, and same official widget events endpoint returns the proper empty JSON array. This supports explicit current empty handling without inventing an event or changing identity."
+      },
+      "rootVerification": {
+        "runs": [
+          {
+            "success": true,
+            "reason": "empty_schedule",
+            "rawCount": 0,
+            "scrapedAt": "2026-10-06T21:14:24.924Z",
+            "notModified": false,
+            "cacheFingerprint": "fa5bab3eb922a6d79e92e439d1ca6801f3b31ab79d8d70685ab8e4d7c4233af6",
+            "contentHash": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+          },
+          {
+            "success": true,
+            "reason": "empty_schedule",
+            "rawCount": 0,
+            "scrapedAt": "2026-10-06T21:14:27.917Z",
+            "notModified": true,
+            "cacheFingerprint": "fa5bab3eb922a6d79e92e439d1ca6801f3b31ab79d8d70685ab8e4d7c4233af6",
+            "contentHash": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+          }
+        ],
+        "unchangedHtmlStillFetchesLinkedApis": true,
+        "processedCount": 0,
+        "diagnostics": {
+          "schemaVersion": 1,
+          "generatedAt": "2026-10-06T21:14:30.918Z",
+          "baseDate": "2026-10-06T21:14:30.484Z",
+          "rawCount": 0,
+          "publishedCount": 0,
+          "duplicatesMerged": 0,
+          "dropped": {
+            "incomplete": 0,
+            "notApproved": 0,
+            "badDate": 0,
+            "pastDate": 0,
+            "zodFail": 0
+          },
+          "sources": {},
+          "validationIssues": {},
+          "missingFields": {},
+          "samples": []
+        }
+      },
+      "writerChecks": {
+        "targetedPass": 11,
+        "targetedFail": 0,
+        "build": "pass",
+        "targetedLintErrors": 0,
+        "diffCheck": "pass",
+        "scope": "writer execution evidence, CI pending"
+      },
+      "review": {
+        "owner": "allan_scope_review",
+        "model": "gpt-6-sol",
+        "route": "harness-native scoped read-only",
+        "countryGapFixed": true,
+        "remainingActionableBlockers": 0
+      },
+      "limits": [
+        "Native current future-event count is zero; no future shows fabricated.",
+        "Populated handling is contract-tested with synthetic native-schema records, not observed live future shows.",
+        "Source ID and all 415/152 denominators retained; group events never attached to separate Philip Labonte identity."
+      ]
     }
   },
   "countsScope": "Historical local classifications of the original 97 failures. Current complete hosted cohort totals are in remainingPass.finalHostedVerification.cohorts."
