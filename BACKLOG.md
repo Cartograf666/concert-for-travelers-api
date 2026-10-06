@@ -54,12 +54,14 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   no account token or supported cross-organizer search API is available here.
 - Combined verification: 693 tests pass, one remains skipped; build passes;
   ESLint reports zero errors and 103 warnings. The production SSRF check passes,
-  artist integrity is 149 errors against the unchanged 152 baseline, and city/venue
+  artist integrity is 144 errors against the unchanged 152 baseline, and city/venue
   duplicate selectors are 126 against 131. Independent review found incomplete Emancipator feeds, hidden empty notices
   and stale empty-cache hashes; all three are fixed and regression-checked.
   Rendered empty notices use computed browser visibility; static pages reject
   hidden/aria-hidden and inline-hidden notices. Merge and a hosted artist/daily
-  publication cycle remain pending. External blocks and invalid
+  publication cycle remain pending. All 18 outstanding remote heads are
+  integrated after content audit; local Hue & Cry is patch-equivalent and its
+  ancestry is included separately. No unique local committed patch remains. External blocks and invalid
   source bindings remain visible; no blanket empty flag, guessed year/location,
   disabled security rule or fabricated historical fixture is used to hide them.
 
