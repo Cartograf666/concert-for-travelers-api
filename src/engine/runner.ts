@@ -172,7 +172,7 @@ function getBreaker(domain: string): ReturnType<typeof circuitBreaker> {
 /** True for transient failures worth retrying (network drop, timeout, 429, 5xx). */
 export function isRetryableError(err: any): boolean {
   if (!err) return false;
-  if (err.code === 'ECONNABORTED' || err.code === 'ECONNRESET' || err.code === 'ETIMEDOUT') {
+  if (err.code === 'ECONNABORTED' || err.code === 'ECONNRESET' || err.code === 'ETIMEDOUT' || err.code === 'ERR_EMPTY_RESPONSE_BODY') {
     return true;
   }
   const status = err.response?.status;
@@ -630,7 +630,16 @@ async function fetchWithRetry(config: ScraperConfig, conditional?: { etag?: stri
     }
     await politeDelay(config);
     try {
-      return await performGet(config.url, backend, conditionalHeaders, axiosUserAgent);
+      const response = await performGet(config.url, backend, conditionalHeaders, axiosUserAgent);
+      // Some sources intermittently return HTTP 200 with no page at all. Parsing
+      // that as a schedule reports stale selectors (or a valid allowEmpty result),
+      // so retry it as a transient fetch failure. A 304 has no body by design.
+      if (response.status !== 304 && typeof response.data === 'string' && response.data.trim() === '') {
+        const error: Error & { code?: string } = new Error(`Empty response body from ${config.url} (HTTP ${response.status})`);
+        error.code = 'ERR_EMPTY_RESPONSE_BODY';
+        throw error;
+      }
+      return response;
     } catch (err: any) {
       lastErr = err;
       if (!isRetryableError(err) || attempt === maxRetries) throw err;
