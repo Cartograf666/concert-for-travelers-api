@@ -80,10 +80,15 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   year/country, blanket empty flag or access/security bypass hides these gaps.
 - Next concrete needs for 415/415 and 152/152: a current supported calendar or
   provider access for blocked/absent sources, and canonical evidence for ambiguous
-  identities. Jorge & Mateus has a monthly API adapter under verification before release;
-  current official months are empty, and freshness on repeated collection has
-  passed local regression checks. CI, main integration and hosted verification
-  are pending; this change is not included in these hosted totals. Those limits are recorded; the current release is published and
+  identities. Jorge & Mateus is merged in PR #201 with **743 passing tests / one skip**,
+  native two-month coverage and repeat-collection freshness checks. Ordinary
+  daily run 37526646520 is still running; this change is not yet included in
+  these hosted totals. A subsequent backend-only follow-up has live full-catalog
+  proof for Marmalade (2 future rows), Paralamas do Sucesso (8 future rows) and
+  Astrid Williamson (the exact visible empty-calendar notice) and Lobão
+  (the current native agenda has two explicit past dates; zero future rows are
+  claimed). Its CI, main
+  integration and full hosted artist sweep remain pending. Those limits are recorded; the current release is published and
   verified, while 100% source health remains unachieved.
 
 ## All-branch integration and source recovery — 2026-10-06 (preceding publication; superseded above)
