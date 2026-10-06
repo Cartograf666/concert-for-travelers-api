@@ -5547,16 +5547,338 @@
         "targetedTests": "10/10 PASS including 6 source + 4 existing cache fingerprint",
         "build": "npm run build PASS",
         "lint": "0 errors, 3 pre-existing runner type-import warnings",
-        "diffCheck": "PASS",
-        "rootVerification": "6 source tests + 4 cache fingerprint tests PASS; changed-file ESLint 0 errors / 3 existing runner warnings; diff check PASS"
+        "diffCheck": "PASS"
       },
       "coverageLimit": "Current and next UTC calendar months only; this is not all future months. Future populated records with missing or ambiguous geography/venue cause source failure instead of partial publication.",
-      "state": "implemented_local_verified_pending_ci_main_hosted",
+      "state": "main_merged_pending_hosted_verification",
+      "merge": {
+        "pr": 201,
+        "url": "https://github.com/Cartograf666/concert-for-travelers-api/pull/201",
+        "mergeSha": "ac47018219d0ad80b70b64624d07924283f24e96",
+        "mergedAt": "2026-10-06T20:27:01Z"
+      },
+      "hostedCI": {
+        "total": 744,
+        "pass": 743,
+        "fail": 0,
+        "skip": 1,
+        "runId": 37525748635,
+        "headSha": "45ad7f581d3554304dbda46ec6d1e35fd849facf",
+        "url": "https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37525748635",
+        "build": "pass",
+        "lintErrors": 0,
+        "existingLintWarnings": 103,
+        "duplicateCitySelectorCount": 126,
+        "duplicateCitySelectorBaseline": 131,
+        "artistIntegrity": "skipped: PR contains no artist catalog changes"
+      },
       "review": {
         "mode": "harness-native read-only",
         "agent": "allan_scope_review",
         "model": "gpt-6-sol",
-        "findings": "No blocking findings after explicit cache-refresh and ambiguous-country fixes; primary script supports title as displayed city/state; root added and passed its blank agenda_cidade regression."
+        "findings": "No blockers; root added and passed explicit source-backed title fallback regression."
+      },
+      "rootVerification": "6 source + 4 cache fingerprint tests PASS; changed-file ESLint 0 errors and 3 existing warnings",
+      "dailyVerification": {
+        "runId": 37526646520,
+        "headSha": "ac47018219d0ad80b70b64624d07924283f24e96",
+        "state": "running"
+      }
+    },
+    "backendFollowup": {
+      "state": "implemented_live_verified_pending_ci_main_hosted",
+      "sourceIds": [
+        "artist-marmalade",
+        "artist-paralamas-do-sucesso",
+        "artist-astrid-williamson",
+        "artist-lobao"
+      ],
+      "rootLiveVerification": {
+        "checkedAt": "2026-10-06T20:32:31.682Z",
+        "receipts": [
+          {
+            "id": "artist-marmalade",
+            "url": "https://themarmalade.net/tour-dates/",
+            "httpClient": "got-scraping",
+            "success": true,
+            "rawCount": 2,
+            "processedCount": 2,
+            "events": [
+              {
+                "artist": "Marmalade",
+                "date": "2027-01-16",
+                "venue": "Butlins",
+                "city": "Skegness",
+                "country": "GB"
+              },
+              {
+                "artist": "Marmalade",
+                "date": "2027-03-13",
+                "venue": "Unity Beach, Holiday Park",
+                "city": "Burnham-on-Sea",
+                "country": "GB"
+              }
+            ],
+            "diagnostics": {
+              "schemaVersion": 1,
+              "generatedAt": "2026-10-06T20:32:14.141Z",
+              "baseDate": "2026-10-06T20:32:13.663Z",
+              "rawCount": 2,
+              "publishedCount": 2,
+              "duplicatesMerged": 0,
+              "dropped": {
+                "incomplete": 0,
+                "notApproved": 0,
+                "badDate": 0,
+                "pastDate": 0,
+                "zodFail": 0
+              },
+              "sources": {
+                "themarmalade.net": {
+                  "rawCount": 2,
+                  "publishedCount": 2,
+                  "duplicatesMerged": 0,
+                  "dropped": {
+                    "incomplete": 0,
+                    "notApproved": 0,
+                    "badDate": 0,
+                    "pastDate": 0,
+                    "zodFail": 0
+                  }
+                }
+              },
+              "validationIssues": {},
+              "missingFields": {},
+              "samples": []
+            }
+          },
+          {
+            "id": "artist-paralamas-do-sucesso",
+            "url": "https://osparalamas.com.br/agenda/",
+            "httpClient": "got-scraping",
+            "success": true,
+            "rawCount": 8,
+            "processedCount": 8,
+            "events": [
+              {
+                "artist": "Paralamas do Sucesso",
+                "date": "2026-10-08",
+                "venue": "Auditório do Multicenter Sebrae (SESSÃO EXTRA)",
+                "city": "São Luís",
+                "country": "BR"
+              },
+              {
+                "artist": "Paralamas do Sucesso",
+                "date": "2026-10-09",
+                "venue": "Auditório do Multicenter Sebrae",
+                "city": "São Luís",
+                "country": "BR"
+              },
+              {
+                "artist": "Paralamas do Sucesso",
+                "date": "2026-10-11",
+                "venue": "Theresina Hall",
+                "city": "Teresina",
+                "country": "BR"
+              },
+              {
+                "artist": "Paralamas do Sucesso",
+                "date": "2026-10-17",
+                "venue": "Londrina Rock Festival 2026 no Parque de Exposições Ney Braga",
+                "city": "Londrina",
+                "country": "BR"
+              },
+              {
+                "artist": "Paralamas do Sucesso",
+                "date": "2026-10-30",
+                "venue": "Salão de Atos da PUCRS",
+                "city": "Porto Alegre",
+                "country": "BR"
+              },
+              {
+                "artist": "Paralamas do Sucesso",
+                "date": "2026-11-08",
+                "venue": "Rock Festival 2026 no Espaço de Eventos da Dutra",
+                "city": "Nova Iguaçu",
+                "country": "BR"
+              },
+              {
+                "artist": "Paralamas do Sucesso",
+                "date": "2026-12-06",
+                "venue": "Marina da Glória - Festival Clássicos do Brasil",
+                "city": "Rio de Janeiro",
+                "country": "BR"
+              },
+              {
+                "artist": "Paralamas do Sucesso",
+                "date": "2027-03-06",
+                "venue": "Rock in Moc Brasil no Estacionamento Montes Claros Shopping",
+                "city": "Montes Claros",
+                "country": "BR"
+              }
+            ],
+            "diagnostics": {
+              "schemaVersion": 1,
+              "generatedAt": "2026-10-06T20:32:30.950Z",
+              "baseDate": "2026-10-06T20:32:30.534Z",
+              "rawCount": 8,
+              "publishedCount": 8,
+              "duplicatesMerged": 0,
+              "dropped": {
+                "incomplete": 0,
+                "notApproved": 0,
+                "badDate": 0,
+                "pastDate": 0,
+                "zodFail": 0
+              },
+              "sources": {
+                "osparalamas.com.br": {
+                  "rawCount": 8,
+                  "publishedCount": 8,
+                  "duplicatesMerged": 0,
+                  "dropped": {
+                    "incomplete": 0,
+                    "notApproved": 0,
+                    "badDate": 0,
+                    "pastDate": 0,
+                    "zodFail": 0
+                  }
+                }
+              },
+              "validationIssues": {},
+              "missingFields": {},
+              "samples": []
+            }
+          },
+          {
+            "id": "artist-astrid-williamson",
+            "url": "https://astridwilliamson.com/live/",
+            "httpClient": "got-scraping",
+            "success": true,
+            "reason": "empty_schedule",
+            "rawCount": 0,
+            "processedCount": 0,
+            "events": [],
+            "diagnostics": {
+              "schemaVersion": 1,
+              "generatedAt": "2026-10-06T20:32:31.682Z",
+              "baseDate": "2026-10-06T20:32:31.268Z",
+              "rawCount": 0,
+              "publishedCount": 0,
+              "duplicatesMerged": 0,
+              "dropped": {
+                "incomplete": 0,
+                "notApproved": 0,
+                "badDate": 0,
+                "pastDate": 0,
+                "zodFail": 0
+              },
+              "sources": {},
+              "validationIssues": {},
+              "missingFields": {},
+              "samples": []
+            }
+          }
+        ]
+      },
+      "checks": {
+        "targetedTests": {
+          "pass": 5,
+          "fail": 0
+        },
+        "configurationOnly": true
+      },
+      "acceptedScope": "Only the installed guarded HTTP backend changes; parser, artist identity, dates, country and explicit-empty contract remain unchanged. Local source success is not a new hosted cohort total.",
+      "lobaoRootVerification": {
+        "id": "artist-lobao",
+        "url": "https://lobao.com.br/agenda/",
+        "httpClient": "got-scraping",
+        "checkedAt": "2026-10-06T20:38:02.728Z",
+        "success": true,
+        "rawCount": 2,
+        "processedCount": 0,
+        "rawRows": [
+          {
+            "artist": "Lobão",
+            "date": "16.05.2006",
+            "venue": "Teatro de Arena Jaime Zeiger",
+            "city": "Ribeirão Preto, SP",
+            "country": "BR",
+            "originalSource": "lobao.com.br",
+            "scrapedAt": "2026-10-06T20:38:01.218Z"
+          },
+          {
+            "artist": "Lobão",
+            "date": "01.08.2026",
+            "venue": "Palácio das Artes",
+            "city": "Belo Horizonte, MG",
+            "country": "BR",
+            "ticketUrl": "https://bileto.sympla.com.br/event/116165/d/365227",
+            "originalSource": "lobao.com.br",
+            "scrapedAt": "2026-10-06T20:38:01.218Z"
+          }
+        ],
+        "matchedIdentity": {
+          "name": "Lobão",
+          "mbid": "7e3f7bff-eb80-40a9-a335-956d74bee54c",
+          "website": "http://www.lobao.com.br/"
+        },
+        "diagnostics": {
+          "schemaVersion": 1,
+          "generatedAt": "2026-10-06T20:38:02.728Z",
+          "baseDate": "2026-10-06T20:38:02.349Z",
+          "rawCount": 2,
+          "publishedCount": 0,
+          "duplicatesMerged": 0,
+          "dropped": {
+            "incomplete": 0,
+            "notApproved": 0,
+            "badDate": 0,
+            "pastDate": 2,
+            "zodFail": 0
+          },
+          "sources": {
+            "lobao.com.br": {
+              "rawCount": 2,
+              "publishedCount": 0,
+              "duplicatesMerged": 0,
+              "dropped": {
+                "incomplete": 0,
+                "notApproved": 0,
+                "badDate": 0,
+                "pastDate": 2,
+                "zodFail": 0
+              }
+            }
+          },
+          "validationIssues": {},
+          "missingFields": {},
+          "samples": [
+            {
+              "reason": "pastDate",
+              "artist": "Lobão",
+              "date": "16.05.2006",
+              "venue": "Teatro de Arena Jaime Zeiger",
+              "city": "Ribeirão Preto, SP",
+              "country": "BR",
+              "originalSource": "lobao.com.br"
+            },
+            {
+              "reason": "pastDate",
+              "artist": "Lobão",
+              "date": "01.08.2026",
+              "venue": "Palácio das Artes",
+              "city": "Belo Horizonte, MG",
+              "country": "BR",
+              "originalSource": "lobao.com.br"
+            }
+          ]
+        },
+        "scope": "Live native agenda contains two explicit past shows; no future shows are claimed. No empty flag or date changes."
+      },
+      "nonCandidates": {
+        "artist-paul-halley": "Primary schedule is an archive headed by 2025 and earlier; no 2026 current calendar is proven.",
+        "artist-hubert-laws": "latest-past selector and 2023 rows include missing fields, invalid date and state-only city; no clean backend-only recovery."
       }
     }
   },

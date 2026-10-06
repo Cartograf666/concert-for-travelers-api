@@ -15,5 +15,6 @@
     "countryNameFallback": "GB"
   },
   "allowEmpty": true,
-  "emptyScheduleText": "There are currently no upcoming events to list, please check back soon."
+  "emptyScheduleText": "There are currently no upcoming events to list, please check back soon.",
+  "httpClient": "got-scraping"
 }
