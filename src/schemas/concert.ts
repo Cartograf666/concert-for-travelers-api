@@ -81,3 +81,6 @@ export const ConcertSchema = z.object({
 });
 
 export type Concert = z.infer<typeof ConcertSchema>;
+
+/** Internal provider provenance survives raw caches; it is not part of the public schema. */
+export type RawConcert = Partial<Concert> & { sourceEventUrl?: string };

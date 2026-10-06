@@ -38,9 +38,30 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 - Three fixed 2026 news/month archive candidates were removed: they would miss
   the next schedule. Remaining limits include genuine access blocks, absent
   schedules and incorrect entity bindings, not concealed successful emptiness.
-- Next: complete regression/build/lint and independent review, merge the checked
-  package, run the ordinary hosted artist + automatic daily cycle and reconcile
-  actual outcomes and public status into this existing state/report.
+- PR #190 is merged as `ea68282`. Hosted artist run 37495123310 completes with
+  392/415: Alabama Symphony and Lobao recover, while Alabama 3, Scotty McCreery,
+  Ellen ten Damme and Hubert Laws newly fail. Astrid and Marmalade still return
+  HTTP 403 from the hosted environment despite local access. These are actual
+  hosted outcomes, not the local recovery projection.
+- Alabama 3 and Scotty have current official HTML changes with explicit machine
+  dates. Follow-up restores 20/10 future rows, verifies GB/IE and US/CA per row,
+  and rejects unknown geography or an empty city instead of publishing a guess.
+- Provider coverage diagnosis also proves an existing published identity error:
+  BIT event 1038425781 is a distinct Montpellier Sum 41 tribute, incorrectly
+  assigned the Canadian Pain For Pleasure MBID. The exclusion is bound to that
+  canonical MBID, provider and exact event; sourceEventUrl persists in raw cache
+  independently of the purchase URL and is absent from the public schema.
+  Other events and distinct same-name identities remain allowed. Our already
+  collecting automatic daily 37498109196 was cancelled before deployment to
+  replace it with the checked follow-up; its partial output is not a final count.
+- Checks: combined suite 718 pass/1 skip before final city review adjustment;
+  seven final targeted tests pass, emitting build and lint have zero errors.
+  Code review: harness-native fallback; independent review found and rechecked
+  the external purchase-link bypass and empty-city bug. Full CE nested dispatch
+  is prohibited by the reviewer role. New network failures stay explicit.
+- Next: merge the reviewed follow-up, run the ordinary hosted artist plus
+  automatic daily cycle, and reconcile completed outcomes and public status
+  into this existing state/report.
 
 ## All-branch integration and source recovery — 2026-10-06 (published; explicit source gaps remain)
 
