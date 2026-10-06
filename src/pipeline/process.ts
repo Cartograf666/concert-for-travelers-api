@@ -23,6 +23,24 @@ function toLocalIso(d: Date): string {
 const ISO_COUNTRY_CODES = `AD AE AF AG AI AL AM AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BM BN BO BQ BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CW CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR SS ST SV SX SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VA VC VE VG VI VN VU WF WS YE YT ZA ZM ZW`.split(' ');
 const ISO_COUNTRY_CODE_SET = new Set(ISO_COUNTRY_CODES);
 
+const NITSCH_MBID = 'cbadeb12-bb3c-490f-95f4-f6444c111f32';
+
+/** The official Nitsch events table mixes performances and exhibition periods.
+ * Date ranges are not single concerts; its one current Gibellina quartet listing
+ * does not identify Nitsch as performer or composer. Keep this bound to the
+ * captured source and canonical artist, before the general date parser can turn
+ * a range endpoint into a future show. */
+function isUnverifiedNitschEvent(raw: Partial<Concert>, matchedMbid?: string | null): boolean {
+  if (matchedMbid !== NITSCH_MBID || !raw.originalSource ||
+      !['nitsch.org', 'www.nitsch.org'].includes(raw.originalSource.trim().toLowerCase())) return false;
+  const printedDate = raw.date || '';
+  if (/[—–−]|\s-\s|\d\.-(?=\d)/u.test(printedDate) ||
+      /(?:^|\D)\d{1,2}\.\d{1,2}(?:\.\d{4})?-\d{1,2}\.\d{1,2}(?:\.\d{4})?(?:$|\D)/u.test(printedDate)) return true;
+  return printedDate === '11.10.2026' &&
+    raw.city === 'Gibellina' && raw.venue === 'im Freien bei der Skulptur von Pietro Fortuna' &&
+    raw.country?.toUpperCase() === 'IT';
+}
+
 const COUNTRY_NAME_LOCALES = ['en', 'nl', 'fr', 'de', 'it', 'es', 'no', 'tr'];
 
 function countryLookupKey(value: string): string {
@@ -1157,7 +1175,8 @@ export async function processConcerts(
     const matched = isTheHuName(raw.artist) && !hasTheHuCanonical ? null : match(raw.artist);
     const artistSocials = matched ? buildArtistSocials(matched.socials) : undefined;
     const spotifyId = parseSpotifyArtistId(artistSocials?.spotify);
-    if (!matched || isVerifiedSourceIdentityCollision(raw, matched.mbid, spotifyId)) {
+    if (!matched || isVerifiedSourceIdentityCollision(raw, matched.mbid, spotifyId) ||
+        isUnverifiedNitschEvent(raw, matched.mbid)) {
       drops.notApproved++;
       diagnostics?.recordDrop('notApproved', raw);
       continue;
