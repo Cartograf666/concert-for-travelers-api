@@ -4,6 +4,7 @@ import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { scrape as scrapeAkvarium } from '../src/engine/custom/akvarium-klub-budapest.js';
 import { runScraper } from '../src/engine/runner.js';
+import { parseDate } from '../src/pipeline/process.js';
 import { ScraperConfigSchema, type ScraperConfig } from '../src/schemas/config.js';
 
 const FIXTURES = 'tests/fixtures/venue-recovery-20260927';
@@ -65,7 +66,8 @@ test('Majestic keeps its current event-card extraction inside the 90-second scra
   assert.equal(result.success, true, result.error);
   assert.equal(result.concerts.length, 1);
   assert.equal(result.concerts[0].artist, 'OZZY FOREVER TRIBUTE TO THE LEGENDARY PRINCE OF DARKNESS');
-  assert.equal(result.concerts[0].date, 'nedeľa 27.09.2026 @20:00');
+  assert.equal(parseDate(result.concerts[0].date!, '2026-09-27'), '2026-09-27',
+    'the public calendar date must be preserved regardless of the source weekday label');
   assert.equal(result.concerts[0].country, 'SK');
   assert.equal(
     result.concerts[0].ticketUrl,
