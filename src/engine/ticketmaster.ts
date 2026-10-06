@@ -90,6 +90,34 @@ function isDiscoveryEvent(value: unknown): value is TmEvent {
       start.dateTBD === true || start.dateTBA === true);
 }
 
+// Only structured provider errors are useful here. Never log Axios config,
+// request URLs, headers or an unstructured response body (which may echo the key).
+function badRequestDetails(data: unknown, apiKey: string): string {
+  if (!data || typeof data !== 'object' || Array.isArray(data)) return '';
+  const errors = (data as { errors?: unknown }).errors;
+  if (!Array.isArray(errors)) return '';
+  const scrub = (value: string): string => {
+    let safe = value.replace(/https?:\/\/[^\s"'<>]+/gi, '[URL]');
+    if (apiKey) {
+      safe = safe.replaceAll(apiKey, '[REDACTED]')
+        .replaceAll(encodeURIComponent(apiKey), '[REDACTED]');
+    }
+    return safe.replace(/api[_-]?key\s*[=:]\s*[^\s,;&]+/gi, 'apiKey=[REDACTED]')
+      .replace(/[\x00-\x1f\x7f]/g, ' ').trim().slice(0, 160);
+  };
+  return errors.slice(0, 2).flatMap((value: unknown) => {
+    if (!value || typeof value !== 'object' || Array.isArray(value)) return [];
+    const entry = value as { code?: unknown; message?: unknown };
+    const code = typeof entry.code === 'string' && /^[a-z0-9_.:-]{1,64}$/i.test(entry.code)
+      ? scrub(entry.code) : '';
+    const message = typeof entry.message === 'string' && !/<[a-z!/]/i.test(entry.message) &&
+      !/\b(?:authorization|cookie|bearer|secret|token)\b/i.test(entry.message)
+      ? scrub(entry.message) : '';
+    const fields = [code && `code=${code}`, message && `message=${message}`].filter(Boolean);
+    return fields.length ? [fields.join(' ')] : [];
+  }).join('; ');
+}
+
 /** Ticketmaster's own priceRanges array can list more than one tier (e.g.
  * "standard" + "VIP") -- collapse to the overall min/max across all of them.
  * Returns undefined when the array is absent/empty or has no numeric values. */
@@ -249,6 +277,13 @@ export async function fetchTicketmasterConcerts(
     });
   };
 
+  // Discovery accepts second-precision UTC timestamps. Expand each query
+  // outward when an internal window boundary has milliseconds, so rounding
+  // cannot leave a gap; overlapping event IDs are already deduplicated.
+  const discoveryDateTime = (timeMs: number, upperBound = false): string =>
+    new Date((upperBound ? Math.ceil(timeMs / 1000) : Math.floor(timeMs / 1000)) * 1000)
+      .toISOString().replace('.000Z', 'Z');
+
   // Query each window's first page before paging it. A crowded window is
   // divided until every leaf fits inside Discovery's deep-paging ceiling.
   // The unbounded right-hand window preserves the API's full future horizon.
@@ -267,8 +302,8 @@ export async function fetchTicketmasterConcerts(
         size: PAGE_SIZE,
         page,
         sort: 'date,asc',
-        startDateTime: new Date(startMs).toISOString(),
-        ...(endMs === undefined ? {} : { endDateTime: new Date(endMs).toISOString() })
+        startDateTime: discoveryDateTime(startMs),
+        ...(endMs === undefined ? {} : { endDateTime: discoveryDateTime(endMs, true) })
       },
       timeout: 15000
     });
@@ -357,7 +392,12 @@ export async function fetchTicketmasterConcerts(
       }
       failedCountries.add(countryCode);
       addIssue(err.ticketmasterIssue ?? (typeof status === 'number' && status >= 500 ? 'source_server_error' : 'request_failed'));
-      console.warn(`[Ticketmaster] ${countryCode} failed: ${err.message}`);
+      if (status === 400) {
+        const details = badRequestDetails(err.response?.data, apiKey);
+        console.warn(`[Ticketmaster] ${countryCode} failed: HTTP 400${details ? ` (${details})` : ''}`);
+      } else {
+        console.warn(`[Ticketmaster] ${countryCode} failed: ${err.message}`);
+      }
     }
 
     if (!complete && countryConcerts.length > 0) partialCountries.add(countryCode);

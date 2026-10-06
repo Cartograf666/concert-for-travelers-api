@@ -35,9 +35,15 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   boundaries and deduplicates by provider event ID. Malformed, truncated and
   failed passes retain previous country caches and verification timestamps.
   The request budget and unresolved dense-window limit remain explicit in health.
-  Nineteen mocked connector regressions pass, including malformed event rows,
-  last-good cache preservation, valid TBA dates and truly empty countries; a
-  hosted sweep is still pending.
+  Twenty mocked connector regressions pass, including malformed event rows,
+  last-good cache preservation, valid TBA dates and truly empty countries. The
+  first hosted sweep returned HTTP 400 for all 27 first requests and retained
+  every last-good country cache and verification timestamp. The follow-on repair
+  uses documented second-precision UTC dates, rounding bounds outward; the strict
+  date-format split regression recovers 1,201/1,201 events. A second hosted sweep
+  must confirm the live cause and fresh country coverage. HTTP 400 diagnostics
+  expose only bounded structured provider codes/messages, with keys and URLs
+  redacted; the secret-bearing failure regression also preserves last-good cache.
 - Source repairs use current official HTML or feeds observed in official widgets.
   Explicit empty notices are required for the newly repaired empty HTML pages;
   changed layouts remain failures. Browser extraction can wait for a visible
@@ -58,18 +64,45 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   external access, incomplete evidence or identity/source-binding gaps. Observed
   iframe emptiness alone is not runner recovery. Eventbrite access remains blocked;
   no account token or supported cross-organizer search API is available here.
-- Combined verification: 693 tests pass, one remains skipped; build passes;
+- Combined release verification after the Ivar repair: 696 tests pass, one
+  remains skipped (PR #183 Actions log); build passes;
   ESLint reports zero errors and 103 warnings. The production SSRF check passes,
   artist integrity is 144 errors against the unchanged 152 baseline, and city/venue
   duplicate selectors are 126 against 131. Independent review found incomplete Emancipator feeds, hidden empty notices
   and stale empty-cache hashes; all three are fixed and regression-checked.
   Rendered empty notices use computed browser visibility; static pages reject
-  hidden/aria-hidden and inline-hidden notices. Artist collection `37471384116` runs on merged main; its automatic daily
-  collection and published result remain pending. All 18 outstanding remote heads are
-  integrated after content audit; local Hue & Cry is patch-equivalent and its
-  ancestry is included separately. No unique local committed patch remains. External blocks and invalid
-  source bindings remain visible; no blanket empty flag, guessed year/location,
-  disabled security rule or fabricated historical fixture is used to hide them.
+  hidden/aria-hidden and inline-hidden notices. All 18 outstanding remote heads
+  are integrated after content audit; local Hue & Cry is patch-equivalent and its
+  ancestry is included separately. No unique local committed patch remains.
+- Hosted artist run [37471384116](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37471384116)
+  completed on `37e8a3e`: 394/415 succeeded, versus 372/415 before; 25 former
+  failures recovered and three formerly successful sources failed. All nine
+  locally repaired future artist sources succeeded; Astrid Williamson's locally
+  verified empty schedule is now inaccessible with HTTP 403. Emancipator verified
+  12 complete future raw rows; this is not a claim of 12 published concerts.
+- Pending automatic daily run `37474396837` was canceled before any scrape step,
+  then replaced by [37474755563](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37474755563)
+  on Ivar-enabled main `8bdcaeda`. Collection and Pages deployment succeeded:
+  121/152 venue sources succeeded, versus 95/149 before. Twenty-nine former
+  failures recovered; three old successes and three new configs failed. All 17
+  repaired future venue sources and seven verified-empty sources succeeded.
+  Ivar verified six archive rows and contributes no future event. The combined
+  cohorts recovered 54 baseline failures; 52 configs currently fail.
+- Public `status.json` generated `2026-10-06T14:01:25.332Z` independently confirms
+  39,261 concerts, versus 38,944 before. Ticketmaster's unchanged 12,316 cached
+  rows are explicitly unavailable/partial, with zero freshly verified countries;
+  green deployment does not establish a healthy source. PR #184 changes only
+  repair history. No artist code changed after the successful artist run, so the
+  next daily run reuses that fresh evidence rather than repeating the artist sweep.
+- Psycho le Cému's LIVE page is reachable but contains no dated shows or explicit
+  empty notice; its old cached news date is not a concert date. No selector or
+  empty-result change is supported by the available evidence. The three new
+  configs are also diagnosed: Ray Davies redirects to an unrelated sports site,
+  Ray Scott exposes only an Angular shell and its bounded rendered load times
+  out, and Reality Check returns HTTP 429. No reliable official schedule or
+  explicit empty evidence supports a repair. External blocks
+  and invalid source bindings remain visible; no blanket empty flag, guessed
+  year/location, disabled security rule or fabricated historical fixture hides them.
 
 ## Collector release verified; location recovery — 2026-09-27
 
