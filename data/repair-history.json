@@ -25822,5 +25822,34 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://brucethomasmusic.com/schedule but could not re-select on it",
     "verification": ""
+  },
+  {
+    "id": "paradiso-amsterdam",
+    "cohort": "venue",
+    "configPath": "scrapers/paradiso-amsterdam.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-06T18:39:28.491Z",
+    "previousConfig": {
+      "id": "paradiso-amsterdam",
+      "domain": "paradiso.nl",
+      "url": "https://www.paradiso.nl/en/landing/concertagenda-paradiso/2069817",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.css-8tb23n",
+        "artist": "h3.css-lc3xen",
+        "date": "p.css-nlja75",
+        "datePattern": "EEE d MMM",
+        "ticketUrl": "a.css-mesnsh",
+        "venueNameFallback": "Paradiso",
+        "cityNameFallback": "Amsterdam",
+        "countryNameFallback": "NL",
+        "lat": 52.3621554,
+        "lng": 4.8837824
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Empty response body from https://www.paradiso.nl/en/landing/concertagenda-paradiso/2069817 (HTTP 200)]",
+    "verification": ""
   }
 ]
