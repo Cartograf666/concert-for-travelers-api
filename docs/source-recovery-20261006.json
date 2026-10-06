@@ -26,7 +26,8 @@
         "status": "failed",
         "reason": "selectors_stale",
         "error": "Parsed 0 concerts. Website layout might have changed."
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -41,7 +42,8 @@
         "configPath": "scrapers/artists/artist-10cc.json",
         "configHash": "e13d7e99c0bbaf7ae9fb3ee8c2af3b87ae62bc415b326c86f1c270ee50ff19c6",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -57,7 +59,8 @@
         "configHash": "cbc64f983288584f033178fc955bc2e087465208340e129112b654d64c16c7ea",
         "status": "succeeded",
         "reason": "empty_schedule"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -72,7 +75,8 @@
         "configPath": "scrapers/artists/artist-acdc.json",
         "configHash": "71e7ede7c0d32ee33ade6044722c14608ec6bc244165b8737d6dba16c1bc8889",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -89,7 +93,8 @@
         "status": "failed",
         "reason": "selectors_stale",
         "error": "Parsed 0 concerts. Website layout might have changed."
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -106,7 +111,8 @@
         "status": "failed",
         "reason": "selectors_stale",
         "error": "Parsed 0 concerts. Website layout might have changed."
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -123,7 +129,8 @@
         "status": "failed",
         "reason": "selectors_stale",
         "error": "Parsed 0 concerts. Website layout might have changed."
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -137,9 +144,9 @@
         "id": "artist-andy-timmons",
         "configPath": "scrapers/artists/artist-andy-timmons.json",
         "configHash": "443a959f8ce8b6bd74b7cdad08d43791e1419b367c84b7461f39fa8bc455987d",
-        "status": "succeeded",
-        "reason": "empty_schedule"
-      }
+        "status": "succeeded"
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -153,7 +160,8 @@
         "configPath": "scrapers/artists/artist-anna-depenbusch.json",
         "configHash": "47a90dbad74222cd5f93b0c42469834d058388e54f2be905714532c4f7d8f94b",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -166,11 +174,12 @@
       "hosted": {
         "id": "artist-astrid-williamson",
         "configPath": "scrapers/artists/artist-astrid-williamson.json",
-        "configHash": "fd5a98bd3f7a06609d052518b5263b3b06fdff23ae70bd9e553b9a421a918b2a",
+        "configHash": "115bf1713e849e249b7202f7d06f8d728e0aa7110a6d1cd76c602a2a287c38f3",
         "status": "failed",
         "reason": "fetch_error",
         "error": "Request failed with status code 401"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -185,7 +194,8 @@
         "configPath": "scrapers/artists/artist-aust.json",
         "configHash": "dce135d8735524fb62cf026bcd9b03803b17872dfb73a58081d776cb283984de",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -202,7 +212,8 @@
         "status": "failed",
         "reason": "selectors_stale",
         "error": "Parsed 0 concerts. Website layout might have changed."
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -216,7 +227,8 @@
         "configPath": "scrapers/artists/artist-bassnectar.json",
         "configHash": "69c971245202615ff76a2412699ea833440e9bbaee3682185cd8862ba2180061",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -232,7 +244,8 @@
         "configHash": "9f625dde883d7577f41fe866b3d9e562f8f787d153dc47f1de0199aa2964461b",
         "status": "succeeded",
         "reason": "empty_schedule"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -245,9 +258,10 @@
       "hosted": {
         "id": "artist-dan-deacon",
         "configPath": "scrapers/artists/artist-dan-deacon.json",
-        "configHash": "ff12c744685c9eefe66da725a6ac4b8c5670680e04340ef2de2cf7902e1b85dd",
+        "configHash": "2e4fe7499d9c26fee0ed4c9f69722961813e912cd6aef3862488e95ece59aa64",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -262,7 +276,8 @@
         "configPath": "scrapers/artists/artist-david-kikoski.json",
         "configHash": "d4048d919643988875417d9a136049d4b7d854b2fbee4c6ea279ac574fdf2392",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -277,7 +292,8 @@
         "configPath": "scrapers/artists/artist-emancipator.json",
         "configHash": "44ad0db33011936157fed40081ff594651b9ddfa2d49b38ce4205acd81592fc2",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -292,7 +308,8 @@
         "configPath": "scrapers/artists/artist-giora-feidman.json",
         "configHash": "791077d4106d63b8fdfe08224722d30026531e70eeb563567741f6156d973258",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -308,7 +325,8 @@
         "configHash": "415ec7d9845e9131b833204f38b4433a66c87a673a422bb25b142255d86bf29b",
         "status": "succeeded",
         "reason": "empty_schedule"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -325,7 +343,8 @@
         "status": "failed",
         "reason": "selectors_stale",
         "error": "Parsed 0 concerts. Website layout might have changed."
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -339,7 +358,8 @@
         "configPath": "scrapers/artists/artist-julie-fowlis.json",
         "configHash": "3ae3ed7abd2f3047dfeeaf76728119f4c8c11ea137ad7730d55901f0965c390d",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -353,7 +373,8 @@
         "configPath": "scrapers/artists/artist-l-subramaniam.json",
         "configHash": "3461740182e3c9566c85a5154ea926fdaf62554dd761a95e9c5daeda615ea12d",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -368,7 +389,8 @@
         "configPath": "scrapers/artists/artist-lady-antebellum.json",
         "configHash": "68d41c2762abf435fdb56c05c352a984a13b391a8e2944134a25c7532c6d9ad5",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -382,7 +404,8 @@
         "configPath": "scrapers/artists/artist-legs-diamond.json",
         "configHash": "9d2a59e60481020c426981d4c719b88c0e68d10adc37fd21d4f94e8a309db3f6",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -399,7 +422,8 @@
         "status": "failed",
         "reason": "fetch_error",
         "error": "Request failed with status code 403"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -416,7 +440,8 @@
         "status": "failed",
         "reason": "fetch_error",
         "error": "Request failed with status code 404"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -429,11 +454,12 @@
       "hosted": {
         "id": "artist-marmalade",
         "configPath": "scrapers/artists/artist-marmalade.json",
-        "configHash": "420328511c2bd84291952ddd4d0fc4c1da969f06656e2436739d3b45a5a32d81",
+        "configHash": "a208ba68a8e30c15a69a171eab147fcdd0eab945b900bddc227436f4201171f7",
         "status": "failed",
         "reason": "fetch_error",
-        "error": "Request failed with status code 403"
-      }
+        "error": "Request failed with status code 401"
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -449,7 +475,8 @@
         "configHash": "0f08d0d909250d58f9e9d6abc4425c73e23c0d5ad24848ee66fb56a3003555eb",
         "status": "succeeded",
         "reason": "empty_schedule"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -466,7 +493,8 @@
         "status": "failed",
         "reason": "selectors_stale",
         "error": "Parsed 0 concerts. Website layout might have changed."
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -482,7 +510,8 @@
         "status": "failed",
         "reason": "parse_error",
         "error": "Unmatched selector: =.//p/text()[contains(., ',')][1]"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -495,11 +524,10 @@
       "hosted": {
         "id": "artist-paralamas-do-sucesso",
         "configPath": "scrapers/artists/artist-paralamas-do-sucesso.json",
-        "configHash": "97120651741352d6d365801459605c66186d7c2fae5818aa543bc55627cc78c0",
-        "status": "failed",
-        "reason": "fetch_error",
-        "error": "timeout of 15000ms exceeded"
-      }
+        "configHash": "60ef4596b9d776f1581f08dbe8b723cd059beddefeef134fb0e0b684fd83a4f9",
+        "status": "succeeded"
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -516,7 +544,8 @@
         "status": "failed",
         "reason": "fetch_error",
         "error": "Request failed with status code 403"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -533,7 +562,8 @@
         "status": "failed",
         "reason": "fetch_error",
         "error": "Request failed with status code 403"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -550,7 +580,8 @@
         "status": "failed",
         "reason": "selectors_stale",
         "error": "Parsed 0 concerts. Website layout might have changed."
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -566,7 +597,8 @@
         "configHash": "7457ca7404135fe9b40625b48122bbddd027b9715c91ef9fd4c7a6690ae9c786",
         "status": "succeeded",
         "reason": "empty_schedule"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -581,7 +613,8 @@
         "configPath": "scrapers/artists/artist-rick-braun.json",
         "configHash": "62bcf74468640555e68fdc8a2ba737e1c3e976086fee83acb1e23274a963bd8e",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -598,7 +631,8 @@
         "status": "failed",
         "reason": "selectors_stale",
         "error": "Parsed 0 concerts. Website layout might have changed."
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -614,7 +648,8 @@
         "configHash": "672959620242380ba160ab8e1fa53b005e129c9264f523b101716f2d7ff5789a",
         "status": "succeeded",
         "reason": "empty_schedule"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -631,7 +666,8 @@
         "status": "failed",
         "reason": "fetch_error",
         "error": "Request failed with status code 404"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -647,7 +683,8 @@
         "configHash": "5b4910d93145c4445e871313c761415f2036938d125c9545bb6b4ac619b2490b",
         "status": "succeeded",
         "reason": "empty_schedule"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -662,7 +699,8 @@
         "configPath": "scrapers/artists/artist-the-clientele.json",
         "configHash": "230f85f3aed793a59def676346634f90915e20f1a105e386a26e93abdf1c59d9",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -678,7 +716,8 @@
         "configHash": "faad45d5f4e28eddf9a69942a46639bfe822f98204787700d59f24c5e87259c7",
         "status": "succeeded",
         "reason": "empty_schedule"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "artist",
@@ -695,7 +734,8 @@
         "status": "failed",
         "reason": "fetch_error",
         "error": "Request failed with status code 404"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -713,7 +753,8 @@
         "status": "failed",
         "reason": "selectors_stale",
         "error": "Parsed 0 concerts. Website layout might have changed."
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -728,7 +769,8 @@
         "configPath": "scrapers/artist-annie-clark.json",
         "configHash": "9ca51eb88d1df9395d7e9df28529b11e4fb69c5488795c29506027d5930deb6b",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -743,7 +785,8 @@
         "configPath": "scrapers/artist-antones-records.json",
         "configHash": "576dcd3d8ea715d4c2f9d55a08c7d8aeb61b7e9e342762ef7f287406520ce14c",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -760,7 +803,8 @@
         "status": "failed",
         "reason": "selectors_stale",
         "error": "Parsed 0 concerts. Website layout might have changed."
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -776,7 +820,8 @@
         "configPath": "scrapers/artist-bird-and-the-bee-the.json",
         "configHash": "f2d1af9874f72f86b0b93a84ca53398f0c09fad6bfbe37eff8c5c4162b026301",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -791,9 +836,10 @@
         "configPath": "scrapers/artist-bruce-thomas.json",
         "configHash": "cc21aa3ba2c09b904056a840b0a79c892f699287cccbc33970d1152523b1a4e3",
         "status": "failed",
-        "reason": "fetch_error",
-        "error": "Scraper exceeded 90s wall-clock timeout"
-      }
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed."
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -808,7 +854,8 @@
         "configPath": "scrapers/artist-haash.json",
         "configHash": "f465fa5b0e6d5875ab81d5d181324a288df544877f96cc67b29bcffa55bad6f6",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -823,7 +870,8 @@
         "configPath": "scrapers/artist-harley-flanagan.json",
         "configHash": "3f6bd3b0c97f11858a8010163b8feb0dd77a7dad6070d212d9c594b92410237d",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -840,7 +888,8 @@
         "status": "failed",
         "reason": "selectors_stale",
         "error": "Parsed 0 concerts. Website layout might have changed."
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -856,7 +905,8 @@
         "configPath": "scrapers/artist-harry-connick-jr.json",
         "configHash": "968480e7862597bf6a647e773e4ffe00b4ce3687c38c16c67c02f9a36d07feb9",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -871,7 +921,8 @@
         "configPath": "scrapers/artist-hey-nineteen.json",
         "configHash": "f9013cdf6b0171a2a1ae8c2173e48234ce262e6ec846c9c219c50475da15184a",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -888,7 +939,8 @@
         "configHash": "55d6669c5b0ee3b4d7cc03cb92a5c4371453d94ccbc7c97b1b1f99d3090ab1d9",
         "status": "succeeded",
         "reason": "empty_schedule"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -903,7 +955,8 @@
         "configPath": "scrapers/artist-iron-maidens-the.json",
         "configHash": "d91e3aae1cd6e6d10466a30e4778f5718b5ae3683befcb5cb60fd97d25fcd273",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -920,7 +973,8 @@
         "configPath": "scrapers/artist-ivar-grydeland.json",
         "configHash": "a0acc87db63ba605f014395662b97980f33522437fad79dca1d6471051b5507d",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -935,7 +989,8 @@
         "configPath": "scrapers/artist-james-alexander.json",
         "configHash": "843cd5b8688d419380bc91494ebbc5d16c15e35a553d254686650da715dc741e",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -949,8 +1004,11 @@
         "id": "artist-james-pankow",
         "configPath": "scrapers/artist-james-pankow.json",
         "configHash": "5aba909edc81026fc6feaf014c3db6267933c3eb6343bba4363e03a9183abe63",
-        "status": "succeeded"
-      }
+        "status": "failed",
+        "reason": "fetch_error",
+        "error": "Request failed with status code 403"
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -967,7 +1025,8 @@
         "status": "failed",
         "reason": "fetch_error",
         "error": "Request failed with status code 404"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -982,7 +1041,8 @@
         "configPath": "scrapers/artist-jerry-augustyniak.json",
         "configHash": "ce3b71fa5d3f3759f9c7556bbbf8c89f2c7b95c261a1d112d9174411357ef8c5",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -997,7 +1057,8 @@
         "configPath": "scrapers/artist-jerry-depizzo.json",
         "configHash": "7cb894a28493831e3c3d36af45a17bd668d580725bbed359bf1bec23d780298d",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1014,7 +1075,8 @@
         "configHash": "b3dd1df60656277ceca131bd65532e9ad16c0db7cbc1abbbc5241bbc51d9c161",
         "status": "succeeded",
         "reason": "empty_schedule"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1031,7 +1093,8 @@
         "status": "failed",
         "reason": "selectors_stale",
         "error": "Parsed 0 concerts. Website layout might have changed."
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1048,7 +1111,8 @@
         "status": "failed",
         "reason": "selectors_stale",
         "error": "Parsed 0 concerts. Website layout might have changed."
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1061,11 +1125,11 @@
       "hosted": {
         "id": "artist-jorge-e-mateus",
         "configPath": "scrapers/artist-jorge-e-mateus.json",
-        "configHash": "d930d4070c0145752b66f054d6d9852be013c76d6b986c1d2d985c3000709fbe",
-        "status": "failed",
-        "reason": "fetch_error",
-        "error": "Request failed with status code 403"
-      }
+        "configHash": "4bbf7a28cf620242868cecef949e721d94331f397322dc2e3db95663ae0b8308",
+        "status": "succeeded",
+        "reason": "empty_schedule"
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1082,7 +1146,8 @@
         "status": "failed",
         "reason": "fetch_error",
         "error": "timeout of 15000ms exceeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1099,7 +1164,8 @@
         "status": "failed",
         "reason": "fetch_error",
         "error": "getaddrinfo ENOTFOUND www.juan-garcia-herreros.com"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1114,7 +1180,8 @@
         "configPath": "scrapers/artist-judith-rijnveld.json",
         "configHash": "96324af07c11fba193437f0ef2fec9c47bfb4df0ea83e05ed6c8921df154c512",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1129,7 +1196,8 @@
         "configPath": "scrapers/artist-jun-shibata.json",
         "configHash": "ff90c92ec7198fb898d7123fec3ca2f5adbc2b2425082c320b975bfc6de46226",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1144,7 +1212,8 @@
         "configPath": "scrapers/artist-justin-pierre.json",
         "configHash": "bbf9625f28f0c360ef53c12717f995df121d3fd23081d2886aed5d357c5a2ff4",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1161,7 +1230,8 @@
         "status": "failed",
         "reason": "selectors_stale",
         "error": "Parsed 0 concerts. Website layout might have changed."
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1178,7 +1248,8 @@
         "status": "failed",
         "reason": "selectors_stale",
         "error": "Parsed 0 concerts. Website layout might have changed."
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1193,7 +1264,8 @@
         "configPath": "scrapers/artist-patrick-monahan.json",
         "configHash": "c422217a01597b84a030959128bd51341b36e97dfb1b0b177b8509ae793432ff",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1210,7 +1282,8 @@
         "status": "failed",
         "reason": "selectors_stale",
         "error": "Parsed 0 concerts. Website layout might have changed."
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1227,7 +1300,8 @@
         "status": "failed",
         "reason": "fetch_error",
         "error": "Request failed with status code 403"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1242,7 +1316,8 @@
         "configPath": "scrapers/artist-peter-smith.json",
         "configHash": "ae6db1e1b47d903b404e9107b4fa6b65439986e91fe60265d648c01de41e93b8",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1257,7 +1332,8 @@
         "configPath": "scrapers/artist-pharis-and-jason-romero.json",
         "configHash": "4b76ac69375ed2dd3cc8c60e43849fe6aeb83038c5e6c1c0f6799baf3d4e052c",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1270,11 +1346,11 @@
       "hosted": {
         "id": "artist-philip-labonte",
         "configPath": "scrapers/artist-philip-labonte.json",
-        "configHash": "f5ec64212cf28501609c1ced029664e89941ba61c0a7282bd999d8171ef65129",
-        "status": "failed",
-        "reason": "selectors_stale",
-        "error": "Parsed 0 concerts. Website layout might have changed."
-      }
+        "configHash": "391afdb5519d4f7903ff506924f08d2f7884941c72c2e690cf95290d0b2b806d",
+        "status": "succeeded",
+        "reason": "empty_schedule"
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1288,8 +1364,11 @@
         "id": "artist-philippine-philharmonic-orchestra",
         "configPath": "scrapers/artist-philippine-philharmonic-orchestra.json",
         "configHash": "f3ee26eaf313e26c4fb31a659667877c314833ef0e325eece017f25ae46f5882",
-        "status": "succeeded"
-      }
+        "status": "failed",
+        "reason": "fetch_error",
+        "error": "timeout of 15000ms exceeded"
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1304,7 +1383,8 @@
         "configPath": "scrapers/artist-rainey.json",
         "configHash": "7c11a05baafff7814b0c79b96604346b99aa0cc92cb229f6ae646d77c3a414b2",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1319,7 +1399,8 @@
         "configPath": "scrapers/artist-ranjani-gayatri.json",
         "configHash": "70c8973e0f78aca8ee1dc764d7d4a1dff82ecab7810fc5ab03dbea67cf251327",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1336,7 +1417,8 @@
         "configHash": "efce58468667b9eb51d938143762a3dacf63857e5e2525eeb86fadaf1d9d68ca",
         "status": "succeeded",
         "reason": "empty_schedule"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1353,7 +1435,8 @@
         "status": "failed",
         "reason": "selectors_stale",
         "error": "Parsed 0 concerts. Website layout might have changed."
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1368,7 +1451,8 @@
         "configPath": "scrapers/artist-yanagi-nagi.json",
         "configHash": "ddabaea5593804ca23976ff8df5b1d11162164d7222a7d828e971d950a37abef",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1383,7 +1467,8 @@
         "configPath": "scrapers/artist-yarbrough-and-peoples.json",
         "configHash": "d3a45660d6e99f1c4b67e6976833aff9d6c4053217ba3deb0460dc07c7f90b30",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1400,7 +1485,8 @@
         "configHash": "ad26897557278a0b0c1ed664f5f97d1d5f2c07d3030a8878ae705f4efeeda749",
         "status": "succeeded",
         "reason": "empty_schedule"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1415,10 +1501,10 @@
         "id": "artist-you-used-to-hold-me-so-tight",
         "configPath": "scrapers/artist-you-used-to-hold-me-so-tight.json",
         "configHash": "d46c86dc58d6d8c6e93b5b86f3b7265fcfbc3f04d7c53868423552b19174aa66",
-        "status": "failed",
-        "reason": "selectors_stale",
-        "error": "Parsed 0 concerts. Website layout might have changed."
-      }
+        "status": "succeeded",
+        "reason": "empty_schedule"
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1433,7 +1519,8 @@
         "configPath": "scrapers/artist-yusa-mimori.json",
         "configHash": "0083f0af6056dc2d34b51c4b088d6c9cb5cd5abd8c0f2fc5a35a79fc832b2189",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1450,7 +1537,8 @@
         "status": "failed",
         "reason": "selectors_stale",
         "error": "Parsed 0 concerts. Website layout might have changed."
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1465,7 +1553,8 @@
         "configPath": "scrapers/barby-tel-aviv.json",
         "configHash": "88102eb75fb598e4f6c5f51df129fe81436a53bacf0eaf88e4bc257bcca09b11",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1479,8 +1568,11 @@
         "id": "botanique-brussels",
         "configPath": "scrapers/botanique-brussels.json",
         "configHash": "d09b807d6fe4e59815f573b5c65308d3bca1da533f464a55e8cc4747eed34dd8",
-        "status": "succeeded"
-      }
+        "status": "failed",
+        "reason": "fetch_error",
+        "error": "Request failed with status code 500"
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1497,7 +1589,8 @@
         "status": "failed",
         "reason": "fetch_error",
         "error": "Request failed with status code 403"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1513,7 +1606,8 @@
         "status": "failed",
         "reason": "csr_detected",
         "error": "Parsed 0 concerts. Page appears client-side rendered (events absent from server HTML)."
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1530,7 +1624,8 @@
         "status": "failed",
         "reason": "selectors_stale",
         "error": "Parsed 0 concerts. Website layout might have changed."
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1544,7 +1639,8 @@
         "configPath": "scrapers/kt-g-sangsangmadang-seoul.json",
         "configHash": "1784af448d191c70707a6230f72dc767d7217043836318ab0e580fbd21e5a1c9",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     },
     {
       "cohort": "venue",
@@ -1559,7 +1655,8 @@
         "configPath": "scrapers/yugong-yishan-beijing.json",
         "configHash": "8db5fe588ce3a82e2023d732fedc470655f008efc2412fab2fb27012d3ecd283",
         "status": "succeeded"
-      }
+      },
+      "localClassificationHistorical": true
     }
   ],
   "hostedVerification": {
@@ -2351,7 +2448,7 @@
     "supersededBy": "remainingPass.finalHostedVerification"
   },
   "remainingPass": {
-    "observedAtUtc": "2026-10-06T20:04:33.934Z",
+    "observedAtUtc": "2026-10-06T22:24:12.717Z",
     "scope": "All 52 failures in the immediately preceding hosted slice: 21/415 artists and 31/152 venues. Denominators/configs preserved.",
     "state": "hosted_and_published_verified_with_explicit_source_gaps",
     "localSuccesses": 12,
@@ -2387,7 +2484,9 @@
         "proof": "HTTP 200 306206 bytes; Tilda page has concert heading and film promos but no extractable concert records",
         "futureRows": 0,
         "pastRows": null,
-        "blocker": "HTTP 200 306206 bytes; Tilda page has concert heading and film promos but no extractable concert records"
+        "blocker": "Latest hosted run: selectors_stale — Parsed 0 concerts. Website layout might have changed.. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "HTTP 200 306206 bytes; Tilda page has concert heading and film promos but no extractable concert records",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "artist",
@@ -2411,7 +2510,9 @@
         "proof": "HTTP 200 97386 bytes; both season summary blocks empty placeholders",
         "futureRows": 0,
         "pastRows": null,
-        "blocker": "HTTP 200 97386 bytes; both season summary blocks empty placeholders"
+        "blocker": "Latest hosted run: selectors_stale — Parsed 0 concerts. Website layout might have changed.. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "HTTP 200 97386 bytes; both season summary blocks empty placeholders",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "artist",
@@ -2425,7 +2526,7 @@
         "hostedAfterRepair": {
           "id": "artist-astrid-williamson",
           "configPath": "scrapers/artists/artist-astrid-williamson.json",
-          "configHash": "fd5a98bd3f7a06609d052518b5263b3b06fdff23ae70bd9e553b9a421a918b2a",
+          "configHash": "115bf1713e849e249b7202f7d06f8d728e0aa7110a6d1cd76c602a2a287c38f3",
           "status": "failed",
           "reason": "fetch_error",
           "error": "Request failed with status code 401"
@@ -2436,7 +2537,9 @@
         "localRunner": "success: verified empty-schedule text",
         "futureRows": 0,
         "pastRows": 0,
-        "blocker": null
+        "blocker": "Latest hosted run: fetch_error — Request failed with status code 401. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": null,
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "artist",
@@ -2460,7 +2563,9 @@
         "proof": "HTML partial HTTP 200 7550 bytes then timeout; WordPress /wp-json/wp/v2/pages?slug=tour HTTP 200 11050 bytes containing slider/poster only, no text event rows; poster GET timeout",
         "futureRows": 0,
         "pastRows": null,
-        "blocker": "HTML partial HTTP 200 7550 bytes then timeout; WordPress /wp-json/wp/v2/pages?slug=tour HTTP 200 11050 bytes containing slider/poster only, no text event rows; poster GET timeout"
+        "blocker": "Latest hosted run: selectors_stale — Parsed 0 concerts. Website layout might have changed.. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "HTML partial HTTP 200 7550 bytes then timeout; WordPress /wp-json/wp/v2/pages?slug=tour HTTP 200 11050 bytes containing slider/poster only, no text event rows; poster GET timeout",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "artist",
@@ -2484,7 +2589,9 @@
         "proof": "partial HTTP 200 8192 bytes then timeout; official band page says There are no dates yet, wrong solo identity",
         "futureRows": 0,
         "pastRows": null,
-        "blocker": "partial HTTP 200 8192 bytes then timeout; official band page says There are no dates yet, wrong solo identity"
+        "blocker": "Latest hosted run: selectors_stale — Parsed 0 concerts. Website layout might have changed.. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "partial HTTP 200 8192 bytes then timeout; official band page says There are no dates yet, wrong solo identity",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "artist",
@@ -2508,7 +2615,9 @@
         "proof": "TLS hostname mismatch on www and apex; public crawl shows Karl Jenkins performances only, most recent 26 Sep 2026",
         "futureRows": 0,
         "pastRows": null,
-        "blocker": "TLS hostname mismatch on www and apex; public crawl shows Karl Jenkins performances only, most recent 26 Sep 2026"
+        "blocker": "Latest hosted run: selectors_stale — Parsed 0 concerts. Website layout might have changed.. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "TLS hostname mismatch on www and apex; public crawl shows Karl Jenkins performances only, most recent 26 Sep 2026",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "artist",
@@ -2523,7 +2632,9 @@
           "id": "artist-alabama-symphony-orchestra",
           "configPath": "scrapers/artists/artist-alabama-symphony-orchestra.json",
           "configHash": "cd377f5f6e84417ee0b7121f69734aab78a8d5d89c266e6acc2439b2fb2329b4",
-          "status": "succeeded"
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "timeout of 15000ms exceeded"
         },
         "localOutcome": "recovered_by_prior_retry_fix_no_edit",
         "sourceUrl": "http://alabamasymphony.org/concert/",
@@ -2531,7 +2642,9 @@
         "localRunner": "success: 12 raw events; all 12 dates normalized as future",
         "futureRows": 12,
         "pastRows": 0,
-        "blocker": "new hosted artist run after prior retry fix not observed here"
+        "blocker": "Latest hosted run: fetch_error — timeout of 15000ms exceeded. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "new hosted artist run after prior retry fix not observed here",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "artist",
@@ -2555,7 +2668,9 @@
         "proof": "current /tour HTTP 200 30505 bytes, server-side widget empty; official Jan 14 2026 news announcement HTTP 200 36062 bytes with 19 complete past route rows",
         "futureRows": 0,
         "pastRows": 19,
-        "blocker": "Current official schedule has no complete dated rows or explicit empty notice; fixed historical archive would not detect new events."
+        "blocker": "Latest hosted run: selectors_stale — Parsed 0 concerts. Website layout might have changed.. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "Current official schedule has no complete dated rows or explicit empty notice; fixed historical archive would not detect new events.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "artist",
@@ -2580,7 +2695,9 @@
         "localRunner": "failed: HTTP 403",
         "futureRows": null,
         "pastRows": null,
-        "blocker": "first-party access challenge; no confirmed replacement schedule or empty marker"
+        "blocker": "Latest hosted run: fetch_error — Request failed with status code 403. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "first-party access challenge; no confirmed replacement schedule or empty marker",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "artist",
@@ -2594,10 +2711,8 @@
         "hostedAfterRepair": {
           "id": "artist-lobao",
           "configPath": "scrapers/artists/artist-lobao.json",
-          "configHash": "1ad30846a79dfc126c7d1f5ac03b537dc3ca74ae9b94a9d8da4acbf8b4c3e8b0",
-          "status": "failed",
-          "reason": "fetch_error",
-          "error": "Request failed with status code 403"
+          "configHash": "7a0d0aa3b2e0044ff5dd30d4e77651a7f7f59f64ef45dede36fab13a07a4011a",
+          "status": "succeeded"
         },
         "localOutcome": "external_access_block_no_edit",
         "sourceUrl": "https://lobao.com.br/agenda/",
@@ -2605,7 +2720,9 @@
         "localRunner": "failed: HTTP 403",
         "futureRows": null,
         "pastRows": null,
-        "blocker": "official schedule blocked and current first-party rows not verified"
+        "blocker": null,
+        "localBlockerAtDiagnosis": "official schedule blocked and current first-party rows not verified",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "artist",
@@ -2630,7 +2747,9 @@
         "localRunner": "failed: HTTP 404",
         "futureRows": null,
         "pastRows": null,
-        "blocker": "no live official date-bearing replacement or explicit empty notice"
+        "blocker": "Latest hosted run: fetch_error — Request failed with status code 404. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "no live official date-bearing replacement or explicit empty notice",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "artist",
@@ -2644,10 +2763,10 @@
         "hostedAfterRepair": {
           "id": "artist-marmalade",
           "configPath": "scrapers/artists/artist-marmalade.json",
-          "configHash": "420328511c2bd84291952ddd4d0fc4c1da969f06656e2436739d3b45a5a32d81",
+          "configHash": "a208ba68a8e30c15a69a171eab147fcdd0eab945b900bddc227436f4201171f7",
           "status": "failed",
           "reason": "fetch_error",
-          "error": "Request failed with status code 403"
+          "error": "Request failed with status code 401"
         },
         "localOutcome": "recovered_local",
         "sourceUrl": "https://themarmalade.net/tour-dates/",
@@ -2655,7 +2774,9 @@
         "localRunner": "success: 2 future events with venue/city split; before edit raw rows lacked city and pipeline would drop both",
         "futureRows": 2,
         "pastRows": 0,
-        "blocker": "hosted run after edit not observed"
+        "blocker": "Latest hosted run: fetch_error — Request failed with status code 401. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "hosted run after edit not observed",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "artist",
@@ -2679,7 +2800,9 @@
         "proof": "current /live HTTP 403 Cloudflare HTML 5332 bytes; configured tickets2018 is archived and invalid XPath remains",
         "futureRows": 0,
         "pastRows": null,
-        "blocker": "current /live HTTP 403 Cloudflare HTML 5332 bytes; configured tickets2018 is archived and invalid XPath remains"
+        "blocker": "Latest hosted run: parse_error — Unmatched selector: =.//p/text()[contains(., ',')][1]. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "current /live HTTP 403 Cloudflare HTML 5332 bytes; configured tickets2018 is archived and invalid XPath remains",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "artist",
@@ -2703,7 +2826,9 @@
         "proof": "current /tour-dates HTTP 200 122129 bytes, #blog-grid empty; official Apr 8 2026 announcement HTTP 200 135996 bytes with 32 complete past route rows",
         "futureRows": 0,
         "pastRows": 32,
-        "blocker": "Current official schedule has no complete dated rows or explicit empty notice; fixed historical archive would not detect new events."
+        "blocker": "Latest hosted run: selectors_stale — Parsed 0 concerts. Website layout might have changed.. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "Current official schedule has no complete dated rows or explicit empty notice; fixed historical archive would not detect new events.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "artist",
@@ -2728,7 +2853,9 @@
         "localRunner": "failed: ENOTFOUND www.pequotmuseum.org",
         "futureRows": null,
         "pastRows": null,
-        "blocker": "no verified official band schedule; identity cannot be inferred from museum events"
+        "blocker": "Latest hosted run: fetch_error — Request failed with status code 403. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "no verified official band schedule; identity cannot be inferred from museum events",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "artist",
@@ -2753,7 +2880,9 @@
         "localRunner": "failed: selectors_stale, zero events",
         "futureRows": null,
         "pastRows": null,
-        "blocker": "current page does not provide verified musical performances; no alternate official schedule"
+        "blocker": "Latest hosted run: fetch_error — Request failed with status code 403. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "current page does not provide verified musical performances; no alternate official schedule",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "artist",
@@ -2777,7 +2906,9 @@
         "proof": "HTTP 200 56741 bytes; page title Poems confirms wrong configured Poetry identity",
         "futureRows": 0,
         "pastRows": null,
-        "blocker": "HTTP 200 56741 bytes; page title Poems confirms wrong configured Poetry identity"
+        "blocker": "Latest hosted run: selectors_stale — Parsed 0 concerts. Website layout might have changed.. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "HTTP 200 56741 bytes; page title Poems confirms wrong configured Poetry identity",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "artist",
@@ -2801,7 +2932,9 @@
         "proof": "HTTP 200 24814 bytes; LIVE page has news only, no current dated rows; indexed older tour list ended Oct 4",
         "futureRows": 0,
         "pastRows": null,
-        "blocker": "HTTP 200 24814 bytes; LIVE page has news only, no current dated rows; indexed older tour list ended Oct 4"
+        "blocker": "Latest hosted run: selectors_stale — Parsed 0 concerts. Website layout might have changed.. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "HTTP 200 24814 bytes; LIVE page has news only, no current dated rows; indexed older tour list ended Oct 4",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "artist",
@@ -2826,7 +2959,9 @@
         "localRunner": "failed: HTTP 404",
         "futureRows": null,
         "pastRows": null,
-        "blocker": "no verified current first-party artist schedule or safe alternate domain"
+        "blocker": "Latest hosted run: fetch_error — Request failed with status code 404. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "no verified current first-party artist schedule or safe alternate domain",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "artist",
@@ -2851,7 +2986,9 @@
         "localRunner": "failed: HTTP 404",
         "futureRows": null,
         "pastRows": null,
-        "blocker": "cannot safely bind public third-party dates to an observed official feed"
+        "blocker": "Latest hosted run: fetch_error — Request failed with status code 404. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "cannot safely bind public third-party dates to an observed official feed",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "artist",
@@ -2875,7 +3012,9 @@
         "proof": "tour HTTP 200 94249 bytes, no date cards; linked /live-horizon HTTP 200 94998 bytes and yearless 12/31",
         "futureRows": 0,
         "pastRows": null,
-        "blocker": "tour HTTP 200 94249 bytes, no date cards; linked /live-horizon HTTP 200 94998 bytes and yearless 12/31"
+        "blocker": "Latest hosted run: selectors_stale — Parsed 0 concerts. Website layout might have changed.. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "tour HTTP 200 94249 bytes, no date cards; linked /live-horizon HTTP 200 94998 bytes and yearless 12/31",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -2897,7 +3036,9 @@
         "localOutcome": "unresolved",
         "sourceUrl": "https://www.thebabbumaan.com/",
         "proof": "configured URL HTTP 200 but 114-byte redirect shell; babbumaan.net HTTP 200 Coming Soon; thebabbumaan.com HTTP 200 archival 2022 UK tour thebabbumaan.com brands itself BABBU MAAN OFFICIAL SITE; m.babbumaan.net/about-us describes Babbu Maan, but mobile host TLS unavailable",
-        "blocker": "No accessible current first-party future calendar; promoter pages found only past 2026 dates. Do not infer a whole empty schedule from archival 2022 page."
+        "blocker": "Latest hosted run: selectors_stale — Parsed 0 concerts. Website layout might have changed.. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "No accessible current first-party future calendar; promoter pages found only past 2026 dates. Do not infer a whole empty schedule from archival 2022 page.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -2919,7 +3060,9 @@
         "localOutcome": "unresolved",
         "sourceUrl": "https://www.angelheart.rocks/events",
         "proof": "official Google Sites HTML HTTP 200 and contains Ents24 embed id NY5d1; direct widget endpoint returned HTTP 403 at 15:34 UTC; ordinary embedded frame displayed only AngelHeart Tour Dates & Tickets on recheck first-party /events HTML data-code names Ents24 artist id NY5d1 and title AngelHeart Tour Dates",
-        "blocker": "Current widget availability changed to HTTP 403, so a fresh whole-widget empty schedule is not verified."
+        "blocker": "Latest hosted run: selectors_stale — Parsed 0 concerts. Website layout might have changed.. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "Current widget availability changed to HTTP 403, so a fresh whole-widget empty schedule is not verified.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -2935,15 +3078,17 @@
           "configPath": "scrapers/artist-bruce-thomas.json",
           "configHash": "cc21aa3ba2c09b904056a840b0a79c892f699287cccbc33970d1152523b1a4e3",
           "status": "failed",
-          "reason": "fetch_error",
-          "error": "Scraper exceeded 90s wall-clock timeout"
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
         },
         "localOutcome": "archive_evidence_not_continuous_source",
         "sourceUrl": "https://brucethomasmusic.com/schedule",
         "proof": "Current October 2026, next November/December 2026 and January 2027 official month GETs each show 0 events and no explicit empty notice; Sep 2026 has 1 boundary archive row, Aug 2026 has 26 official past rows.",
         "futureRows": 0,
         "pastRows": 26,
-        "blocker": "Current official schedule has no complete dated rows or explicit empty notice; fixed historical archive would not detect new events."
+        "blocker": "Latest hosted run: selectors_stale — Parsed 0 concerts. Website layout might have changed.. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "Current official schedule has no complete dated rows or explicit empty notice; fixed historical archive would not detect new events.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -2958,7 +3103,9 @@
           "id": "artist-james-pankow",
           "configPath": "scrapers/artist-james-pankow.json",
           "configHash": "5aba909edc81026fc6feaf014c3db6267933c3eb6343bba4363e03a9183abe63",
-          "status": "succeeded"
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
         },
         "localOutcome": "transient_access_recovered_no_edit",
         "sourceUrl": "https://chicagotheband.com/tour/",
@@ -2966,7 +3113,9 @@
         "localRunner": "success: 23 raw events; all 23 normalized dates future",
         "futureRows": 23,
         "pastRows": 0,
-        "blocker": "hosted retry not observed here"
+        "blocker": "Latest hosted run: fetch_error — Request failed with status code 403. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "hosted retry not observed here",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -2988,7 +3137,9 @@
         "localOutcome": "unresolved",
         "sourceUrl": "https://jane-mcdonald.com/explorer",
         "proof": "official /tour HTTP 404; /explorer HTTP 200 first-party jane-mcdonald.com/explorer explicitly names Jane McDonald",
-        "blocker": "2027-09-24 to 2027-10-01 cruise advertises headline shows, but no individual performance date or fixed venue; 2026 Living The Dream tour ended in September. Do not turn cruise departure into concert date."
+        "blocker": "Latest hosted run: fetch_error — Request failed with status code 404. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "2027-09-24 to 2027-10-01 cruise advertises headline shows, but no individual performance date or fixed venue; 2026 Living The Dream tour ended in September. Do not turn cruise departure into concert date.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3010,7 +3161,9 @@
         "rawRows": 17,
         "futureRows": 17,
         "localRunner": "succeeded",
-        "blocker": "Hosted post-repair verification pending."
+        "blocker": null,
+        "localBlockerAtDiagnosis": "Hosted post-repair verification pending.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3024,17 +3177,16 @@
         "hostedAfterRepair": {
           "id": "artist-jorge-e-mateus",
           "configPath": "scrapers/artist-jorge-e-mateus.json",
-          "configHash": "d930d4070c0145752b66f054d6d9852be013c76d6b986c1d2d985c3000709fbe",
-          "status": "failed",
-          "reason": "fetch_error",
-          "error": "Request failed with status code 403"
+          "configHash": "4bbf7a28cf620242868cecef949e721d94331f397322dc2e3db95663ae0b8308",
+          "status": "succeeded",
+          "reason": "empty_schedule"
         },
-        "localOutcome": "blocked_current_source_unverified",
+        "localOutcome": "repaired_native_current_and_next_monthly_calendar",
         "sourceUrl": "https://www.jorgeemateus.com.br/agenda/",
         "proof": "agenda HTTP 200 42355 bytes Angular shell; official page-agenda.js proves monthly API; month 7–12/2026 endpoint all HTTP 200 []",
         "futureRows": 0,
         "pastRows": null,
-        "blocker": "agenda HTTP 200 42355 bytes Angular shell; official page-agenda.js proves monthly API; month 7–12/2026 endpoint all HTTP 200 []",
+        "blocker": null,
         "additionalCurrentEvidence": {
           "sourceId": "artist-jorge-e-mateus",
           "officialAgenda": "https://www.jorgeemateus.com.br/agenda/",
@@ -3055,9 +3207,12 @@
             "agenda_cidade",
             "agenda_local"
           ],
-          "remainingLimit": "Current static adapter does not consume monthly API. Current/next official months are genuinely empty, but populated records include missing venues or event labels; no fully verified future-row adapter was implemented. This source remains unresolved, rather than marking an empty-only parser fully repaired."
+          "remainingLimit": "Current static adapter does not consume monthly API. Current/next official months are genuinely empty, but populated records include missing venues or event labels; no fully verified future-row adapter was implemented. This source remains unresolved, rather than marking an empty-only parser fully repaired.",
+          "supersededBy": "remainingPass.jorgeCalendarFollowup"
         },
-        "implementationFollowup": "remainingPass.jorgeCalendarFollowup; prior unresolved/source-outcome claims remain historical for the recorded runs"
+        "implementationFollowup": "remainingPass.jorgeCalendarFollowup",
+        "localBlockerAtDiagnosis": "agenda HTTP 200 42355 bytes Angular shell; official page-agenda.js proves monthly API; month 7–12/2026 endpoint all HTTP 200 []",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3079,7 +3234,9 @@
         "localOutcome": "unresolved",
         "sourceUrl": "http://haroldjonesbigband.com/performances.htm",
         "proof": "configured domain 114-byte lander; http://haroldjonesbigband.com/ HTTP 200 frameset; /performances.htm HTTP 200 but dated For 2015 haroldjonesbigband.com title Harold Jones - Drummer and linked Performances frame",
-        "blocker": "Alternate first-party performances page points to Tony Bennett 2015 tour and has no current dates; do not infer retirement or a current empty schedule from archival page."
+        "blocker": "Latest hosted run: selectors_stale — Parsed 0 concerts. Website layout might have changed.. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "Alternate first-party performances page points to Tony Bennett 2015 tour and has no current dates; do not infer retirement or a current empty schedule from archival page.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3102,7 +3259,9 @@
         "localRunner": "success: official feed 12 rows, parser emits 4 O.A.R. band shows and excludes 8 explicitly billed Marc Roberge solo dates",
         "futureRows": 4,
         "pastRows": 0,
-        "blocker": "hosted run after edit not observed"
+        "blocker": null,
+        "localBlockerAtDiagnosis": "hosted run after edit not observed",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3124,7 +3283,9 @@
         "localOutcome": "unresolved",
         "sourceUrl": "https://thekingblues.com/live/",
         "proof": "configured domain currently unreachable/previous parked; alternate kingbluesofficial.com HTTP 200 163-byte shell; The King Blues has current concerts on third-party listings No first-party link found between Joe Hutton and The King Blues. Search results identify multiple distinct Joe Hutton musicians, including a Hammers of Misfortune vocalist and a Northumbrian piper.",
-        "blocker": "Artist-to-band mapping is unverified; cannot assign The King Blues concerts to Joe Hutton or choose a same-name musician without canonical identity evidence."
+        "blocker": "Latest hosted run: selectors_stale — Parsed 0 concerts. Website layout might have changed.. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "Artist-to-band mapping is unverified; cannot assign The King Blues concerts to Joe Hutton or choose a same-name musician without canonical identity evidence.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3146,7 +3307,9 @@
         "localOutcome": "unresolved",
         "sourceUrl": "https://johnkeanestudios.com/html/about",
         "proof": "configured johnkeane.com HTTP 200 114-byte lander; johnkeanestudios.com/html/about accessible johnkeanestudios.com/html/about identifies John Keane as producer, engineer and musician in Athens, Georgia",
-        "blocker": "Current first-party studio site has biography and discography, no tour/calendar; do not conflate with unrelated Keane band or John Keene pianist."
+        "blocker": "Latest hosted run: selectors_stale — Parsed 0 concerts. Website layout might have changed.. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "Current first-party studio site has biography and discography, no tour/calendar; do not conflate with unrelated Keane band or John Keene pianist.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3168,7 +3331,9 @@
         "localOutcome": "unresolved",
         "sourceUrl": "https://www.the-snow-owl.com/",
         "proof": "configured host DNS failure; https://www.the-snow-owl.com/ HTTP 200 the-snow-owl.com current first-party text explicitly names bassist Juan Garcia-Herreros as Snow Owl; Austrian Music Export links the same official domain",
-        "blocker": "Accessible alternate official site has Home/Bio/Owl Gear/Interviews and older news, but no live calendar, embed or dated future event. Bandsintown artist exists but no first-party link to it was found."
+        "blocker": "Latest hosted run: fetch_error — getaddrinfo ENOTFOUND www.juan-garcia-herreros.com. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "Accessible alternate official site has Home/Bio/Owl Gear/Interviews and older news, but no live calendar, embed or dated future event. Bandsintown artist exists but no first-party link to it was found.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3188,10 +3353,12 @@
         "localOutcome": "recovered_local",
         "sourceUrl": "https://www.kingfishersky.com/shows/",
         "proof": "Official Kingfisher Sky biography proves Judith founding vocalist; current shows page yields two future dated shows under Kingfisher Sky, not solo Judith.",
-        "blocker": "Hosted post-repair verification pending.",
+        "blocker": null,
         "rawRows": 2,
         "futureRows": 2,
-        "localRunner": "succeeded"
+        "localRunner": "succeeded",
+        "localBlockerAtDiagnosis": "Hosted post-repair verification pending.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3216,7 +3383,9 @@
         "localRunner": "success: 2 real archived performances, 0 future; excludes composition-only credits",
         "futureRows": 0,
         "pastRows": 2,
-        "blocker": "no confirmed future concert; hosted run after edit not observed"
+        "blocker": "Latest hosted run: fetch_error — Request failed with status code 403. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "no confirmed future concert; hosted run after edit not observed",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3238,7 +3407,9 @@
         "localOutcome": "unresolved",
         "sourceUrl": "https://www.painforpleasure.com/gigs",
         "proof": "configured domain 114-byte lander; no established active first-party original-band site Name collision: original Sum 41 metal parody side project called Pain for Pleasure; a distinct French Sum 41 tribute band founded 2025 uses the same name in current 2026 tickets",
-        "blocker": "Do not attach 2026 French tribute-band show or Sum 41 concerts to original artist identity. Original project future activity not established."
+        "blocker": "Latest hosted run: selectors_stale — Parsed 0 concerts. Website layout might have changed.. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "Do not attach 2026 French tribute-band show or Sum 41 concerts to original artist identity. Original project future activity not established.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3260,7 +3431,9 @@
         "localOutcome": "unresolved",
         "sourceUrl": "https://www.pattismith.net/shows.html",
         "proof": "configured /shows.html 131-byte blank; first-party pattismith.net/intro-new accessible/indexed; /jobs and /wegottofly contain legacy undated-year listings Current ticket/venue events bill Patti Smith or Patti Smith Quartet, not necessarily the historic Patti Smith Group source identity; Patty Smyth is a different artist",
-        "blocker": "No current accessible first-party PSG schedule or exact identity bridge to current Quartet performances. Do not silently change performer identity or infer current year for legacy date lists."
+        "blocker": "Latest hosted run: selectors_stale — Parsed 0 concerts. Website layout might have changed.. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "No current accessible first-party PSG schedule or exact identity bridge to current Quartet performances. Do not silently change performer identity or infer current year for legacy date lists.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3282,7 +3455,9 @@
         "localOutcome": "unresolved",
         "sourceUrl": "https://painflow.com/shows",
         "proof": "configured URL 114-byte lander; search finds no current first-party music site Historical Finnish industrial metal Painflow recorded Frontline/Audio-Visual-Aids; 2026 PainFlow chronic-pain app is unrelated name collision",
-        "blocker": "No accessible current official calendar or future show evidence; secondary music biographies describe 1997-2001 activity only. Do not repoint to health app."
+        "blocker": "Latest hosted run: selectors_stale — Parsed 0 concerts. Website layout might have changed.. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "No accessible current official calendar or future show evidence; secondary music biographies describe 1997-2001 activity only. Do not repoint to health app.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3302,10 +3477,12 @@
         "localOutcome": "recovered_local",
         "sourceUrl": "https://stephanierainey.com/tour/",
         "proof": "Two future official Stephanie Rainey performances; added distinct minimal canonical Stephanie Rainey without merging or modifying existing Rainey metadata.",
-        "blocker": "Hosted post-repair verification pending.",
+        "blocker": null,
         "rawRows": 2,
         "futureRows": 2,
-        "localRunner": "succeeded"
+        "localRunner": "succeeded",
+        "localBlockerAtDiagnosis": "Hosted post-repair verification pending.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3325,7 +3502,7 @@
         "localOutcome": "recovered_local",
         "sourceUrl": "https://petersmithmusic.com/calendar/",
         "proof": "Official calendar embeds Bandsintown artist3022742 and observed app ID; six complete future rows. Official homepage Spotify album6bYEjyB10LtNnsL3GbGRUl is Smitty Straightens Out and its current Spotify album page links artist23jWVc6JrQ2evxGEi5pQKG by name Peter Smith. Corrected only canonical socials.spotify through artistDb; MBID/site/other metadata preserved.",
-        "blocker": "Hosted post-repair verification pending.",
+        "blocker": null,
         "rawRows": 6,
         "futureRows": 6,
         "localRunner": "succeeded",
@@ -3333,7 +3510,9 @@
           "https://petersmithmusic.com/",
           "https://open.spotify.com/album/6bYEjyB10LtNnsL3GbGRUl",
           "https://open.spotify.com/artist/23jWVc6JrQ2evxGEi5pQKG"
-        ]
+        ],
+        "localBlockerAtDiagnosis": "Hosted post-repair verification pending.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3355,7 +3534,9 @@
         "proof": "Official legacy domain redirects to unrelated sports/news site; no verified replacement calendar.",
         "localOutcome": "unresolved",
         "sourceUrl": "https://www.raydavies.info/live",
-        "blocker": "Official legacy domain redirects to unrelated sports/news site; no verified replacement calendar."
+        "blocker": "Latest hosted run: selectors_stale — Parsed 0 concerts. Website layout might have changed.. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "Official legacy domain redirects to unrelated sports/news site; no verified replacement calendar.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3369,15 +3550,16 @@
         "hostedAfterRepair": {
           "id": "artist-philip-labonte",
           "configPath": "scrapers/artist-philip-labonte.json",
-          "configHash": "f5ec64212cf28501609c1ced029664e89941ba61c0a7282bd999d8171ef65129",
-          "status": "failed",
-          "reason": "selectors_stale",
-          "error": "Parsed 0 concerts. Website layout might have changed."
+          "configHash": "391afdb5519d4f7903ff506924f08d2f7884941c72c2e690cf95290d0b2b806d",
+          "status": "succeeded",
+          "reason": "empty_schedule"
         },
         "proof": "All That Remains official tour GET returned HTTP 429; no complete current embedded schedule verified.",
         "localOutcome": "unresolved",
         "sourceUrl": "https://allthatremainsonline.com/pages/tour",
-        "blocker": "All That Remains official tour GET returned HTTP 429; no complete current embedded schedule verified."
+        "blocker": null,
+        "localBlockerAtDiagnosis": "All That Remains official tour GET returned HTTP 429; no complete current embedded schedule verified.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3399,7 +3581,9 @@
         "proof": "Official tour page returns Angular shell; ordinary browser timed out without a loaded event response.",
         "localOutcome": "unresolved",
         "sourceUrl": "https://www.rayscott.com/tour",
-        "blocker": "Official tour page returns Angular shell; ordinary browser timed out without a loaded event response."
+        "blocker": "Latest hosted run: selectors_stale — Parsed 0 concerts. Website layout might have changed.. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "Official tour page returns Angular shell; ordinary browser timed out without a loaded event response.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3421,7 +3605,9 @@
         "proof": "Configured site is The Reality Check Experiment (Philadelphia 2022), not the canonical Christian rock Reality Check entity; HTTP 429 also observed.",
         "localOutcome": "unresolved",
         "sourceUrl": "https://therealitycheckexperiment.com/",
-        "blocker": "Configured site is The Reality Check Experiment (Philadelphia 2022), not the canonical Christian rock Reality Check entity; HTTP 429 also observed."
+        "blocker": "Latest hosted run: selectors_stale — Parsed 0 concerts. Website layout might have changed.. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "Configured site is The Reality Check Experiment (Philadelphia 2022), not the canonical Christian rock Reality Check entity; HTTP 429 also observed.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3443,7 +3629,9 @@
         "proof": "Configured NCT tour URL redirects to 404.php; no first-party identity bridge to Yuta and the Bushido Boys.",
         "localOutcome": "unresolved",
         "sourceUrl": "https://nct-jp.net/live/tour.php?id=1002270",
-        "blocker": "Configured NCT tour URL redirects to 404.php; no first-party identity bridge to Yuta and the Bushido Boys."
+        "blocker": "Latest hosted run: selectors_stale — Parsed 0 concerts. Website layout might have changed.. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "Configured NCT tour URL redirects to 404.php; no first-party identity bridge to Yuta and the Bushido Boys.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3465,7 +3653,9 @@
         "proof": "Full Music calendar HTTP/browser read timeouts; narrower Mosaic series page is not replacement coverage for all music.",
         "localOutcome": "unresolved",
         "sourceUrl": "https://www.esplanade.com/whats-on?category=Music",
-        "blocker": "Full Music calendar HTTP/browser read timeouts; narrower Mosaic series page is not replacement coverage for all music."
+        "blocker": "Latest hosted run: csr_detected — Parsed 0 concerts. Page appears client-side rendered (events absent from server HTML).. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "Full Music calendar HTTP/browser read timeouts; narrower Mosaic series page is not replacement coverage for all music.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3487,7 +3677,9 @@
         "proof": "Old espetaculos URL HTTP 404; current official homepage has album/contact links without a dated schedule.",
         "localOutcome": "unresolved",
         "sourceUrl": "https://jorgepalma.pt/espetaculos/",
-        "blocker": "Old espetaculos URL HTTP 404; current official homepage has album/contact links without a dated schedule."
+        "blocker": "Latest hosted run: fetch_error — timeout of 15000ms exceeded. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "Old espetaculos URL HTTP 404; current official homepage has album/contact links without a dated schedule.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3509,7 +3701,9 @@
         "proof": "Current official event cards are Kolkata with yearless dates; they cannot be published as Bangalore concerts.",
         "localOutcome": "unresolved",
         "sourceUrl": "https://www.kittysu.com/events",
-        "blocker": "Current official event cards are Kolkata with yearless dates; they cannot be published as Bangalore concerts."
+        "blocker": "Latest hosted run: selectors_stale — Parsed 0 concerts. Website layout might have changed.. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "Current official event cards are Kolkata with yearless dates; they cannot be published as Bangalore concerts.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3524,12 +3718,16 @@
           "id": "artist-philippine-philharmonic-orchestra",
           "configPath": "scrapers/artist-philippine-philharmonic-orchestra.json",
           "configHash": "f3ee26eaf313e26c4fb31a659667877c314833ef0e325eece017f25ae46f5882",
-          "status": "succeeded"
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "timeout of 15000ms exceeded"
         },
         "proof": "Official events URL and 42nd-season press-release GETs timed out; public press index is not live-fetch verification.",
         "localOutcome": "unresolved",
         "sourceUrl": "https://culturalcenter.gov.ph/events",
-        "blocker": "Official events URL and 42nd-season press-release GETs timed out; public press index is not live-fetch verification."
+        "blocker": "Latest hosted run: fetch_error — timeout of 15000ms exceeded. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "Official events URL and 42nd-season press-release GETs timed out; public press index is not live-fetch verification.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3551,7 +3749,9 @@
         "rawRows": 95,
         "futureRows": 94,
         "localRunner": "succeeded",
-        "blocker": "Hosted post-repair verification pending."
+        "blocker": null,
+        "localBlockerAtDiagnosis": "Hosted post-repair verification pending.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3573,7 +3773,9 @@
         "rawRows": 24,
         "futureRows": 24,
         "localRunner": "succeeded",
-        "blocker": "Hosted post-repair verification pending."
+        "blocker": null,
+        "localBlockerAtDiagnosis": "Hosted post-repair verification pending.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       },
       {
         "cohort": "venue",
@@ -3595,7 +3797,9 @@
         "proof": "Official live page contains announcement publication dates; these cannot be used as performance dates.",
         "localOutcome": "unresolved",
         "sourceUrl": "https://www.office-augusta.com/yama/live/",
-        "blocker": "Official live page contains announcement publication dates; these cannot be used as performance dates."
+        "blocker": "Latest hosted run: selectors_stale — Parsed 0 concerts. Website layout might have changed.. Local calendar/identity evidence limits remain in proof and localBlockerAtDiagnosis.",
+        "localBlockerAtDiagnosis": "Official live page contains announcement publication dates; these cannot be used as performance dates.",
+        "localEvidenceScope": "Historical local diagnosis; current source health is the latest hostedAfterRepair outcome."
       }
     ],
     "checks": {
@@ -3697,6 +3901,80 @@
         "duplicateCityVenueSelectors": 126,
         "selectorBaseline": 131,
         "selectorGate": "pass"
+      },
+      "jorgeHostedCI": {
+        "total": 744,
+        "pass": 743,
+        "fail": 0,
+        "skip": 1,
+        "runId": 37525748635,
+        "headSha": "45ad7f581d3554304dbda46ec6d1e35fd849facf",
+        "url": "https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37525748635",
+        "build": "pass",
+        "lintErrors": 0,
+        "existingLintWarnings": 103,
+        "duplicateCitySelectorCount": 126,
+        "duplicateCitySelectorBaseline": 131,
+        "artistIntegrity": "skipped: PR contains no artist catalog changes"
+      },
+      "paralamasHistoricalSnapshotPreservation": {
+        "state": "blocked_external",
+        "passed": false,
+        "missing": [
+          {
+            "artist": "Paralamas do Sucesso",
+            "date": "2027-03-06",
+            "city": "Montes Claros",
+            "country": "BR"
+          }
+        ],
+        "currentHostedRawPublication": "all eight latest rows preserved",
+        "reason": "unresolved: official agenda and exact event URLs timed out via installed guarded client; independent web reads of apex/www also failed"
+      },
+      "artistAccessBackendCI": {
+        "total": 744,
+        "pass": 743,
+        "fail": 0,
+        "skip": 1,
+        "runId": 37528390477,
+        "headSha": "6c244b539302d352d253798c2a7a36fcd038cbb0",
+        "url": "https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37528390477",
+        "build": "pass",
+        "lintErrors": 0,
+        "existingLintWarnings": 103,
+        "duplicateCitySelectorCount": 126,
+        "duplicateCitySelectorBaseline": 131,
+        "artistIntegrity": "skipped: no artist catalog changes in this PR"
+      },
+      "allThatRemainsHostedCI": {
+        "total": 751,
+        "pass": 750,
+        "fail": 0,
+        "skip": 1,
+        "runId": 37532644307,
+        "headSha": "951d01f3edec7e1d944a3ff3656f642ffa2cc30e",
+        "url": "https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37532644307",
+        "build": "pass",
+        "lintErrors": 0,
+        "existingLintWarnings": 103,
+        "duplicateCitySelectorCount": 126,
+        "duplicateCitySelectorBaseline": 131,
+        "artistIntegrity": "skipped: no artist catalog changes in this PR"
+      },
+      "latestSourceHostedCI": {
+        "total": 754,
+        "pass": 753,
+        "fail": 0,
+        "skip": 1,
+        "runId": 37535620874,
+        "headSha": "2d6f1fbbcabb639770dfdeb496733541351b504d",
+        "url": "https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37535620874",
+        "build": "pass",
+        "lintErrors": 0,
+        "existingLintWarnings": 103,
+        "duplicateCitySelectorCount": 126,
+        "duplicateCitySelectorBaseline": 131,
+        "artistIntegrity": "skipped: no artist catalog changes in this PR"
       }
     },
     "firstHostedArtistVerification": {
@@ -3913,7 +4191,8 @@
           "agenda_cidade",
           "agenda_local"
         ],
-        "remainingLimit": "Current static adapter does not consume monthly API. Current/next official months are genuinely empty, but populated records include missing venues or event labels; no fully verified future-row adapter was implemented. This source remains unresolved, rather than marking an empty-only parser fully repaired."
+        "remainingLimit": "Current static adapter does not consume monthly API. Current/next official months are genuinely empty, but populated records include missing venues or event labels; no fully verified future-row adapter was implemented. This source remains unresolved, rather than marking an empty-only parser fully repaired.",
+        "supersededBy": "remainingPass.jorgeCalendarFollowup"
       },
       "hubertLaws": {
         "sourceId": "artist-hubert-laws",
@@ -4682,10 +4961,538 @@
             "safeFixContract": "Source-local: only single-day music events with verified Nitsch music/performer credit; reject exhibition ranges and do not reinterpret a date range endpoint or US-style switch in D.M.Y dates. Full pipeline must publish zero known false rows."
           }
         }
+      },
+      "latestAlabamaSymphonyRegression": {
+        "url": "http://alabamasymphony.org/concert/",
+        "checkedAt": "2026-10-06T22:09:03.989Z",
+        "backend": "axios",
+        "hostedError": "timeout of 15000ms exceeded",
+        "hostedRun": "37536188687",
+        "fetch": {
+          "ok": true,
+          "elapsedMs": 1678,
+          "bytes": 235937,
+          "title": "concerts Archive - Alabama Symphony Orchestra",
+          "eventCount": 33,
+          "eventSamples": [
+            {
+              "date": "October 7, 2026 9:30 am",
+              "venue": "Thompson High School Performing Arts Center",
+              "title": "Explorer Concert: The Symphony Is All Around You",
+              "ticketUrl": "https://alabamasymphony.org/education/education-concert-registration/"
+            },
+            {
+              "date": "October 8, 2026 6:30 pm",
+              "venue": "Saturn Birmingham",
+              "title": "Symphony @ Saturn"
+            },
+            {
+              "date": "October 13, 2026 7:30 pm",
+              "venue": "Canterbury United Methodist Church",
+              "title": "America 250",
+              "ticketUrl": "https://my.alysstephens.org/4308"
+            },
+            {
+              "date": "October 23, 2026 7:00 pm",
+              "venue": "UAB’s Alys Stephens Center — Jemison Concert Hall",
+              "title": "Requiem",
+              "ticketUrl": "https://my.alysstephens.org/4186/4206"
+            },
+            {
+              "date": "October 30, 2026 7:00 pm",
+              "venue": "UAB’s Alys Stephens Center — Jemison Concert Hall",
+              "title": "After Dark: A Symphony of Shivers",
+              "ticketUrl": "https://my.alysstephens.org/4300"
+            },
+            {
+              "date": "November 6, 2026 11:00 am",
+              "venue": "UAB’s Alys Stephens Center — Jemison Concert Hall",
+              "title": "Levity",
+              "ticketUrl": "https://my.alysstephens.org/4180"
+            },
+            {
+              "date": "November 6, 2026 7:00 pm",
+              "venue": "UAB’s Alys Stephens Center — Jemison Concert Hall",
+              "title": "Levity",
+              "ticketUrl": "https://my.alysstephens.org/4187/4208"
+            },
+            {
+              "date": "November 7, 2026 2:00 pm",
+              "venue": "UAB’s Alys Stephens Center — Jemison Concert Hall",
+              "title": "ASYO Fall Concert"
+            }
+          ]
+        },
+        "previousRun": {
+          "id": "37529964747",
+          "outcome": "succeeded",
+          "cacheScrapedAt": "2026-10-06T20:55:12.649Z",
+          "cachedRawEvents": 12,
+          "configHash": "cd377f5f6e84417ee0b7121f69734aab78a8d5d89c266e6acc2439b2fb2329b4"
+        },
+        "currentRun": {
+          "id": "37536188687",
+          "outcome": "failed",
+          "reason": "fetch_error",
+          "error": "timeout of 15000ms exceeded",
+          "sameConfigHash": true
+        },
+        "classification": "transient_hosted_fetch_timeout",
+        "conclusion": "One guarded default-client request to same official configured URL succeeded in 1.678s and returned 33 article.type-concert cards with dated/venue fields; previous hosted run succeeded with unchanged config. No evidence of parser regression, but this single local fetch does not prove Actions network recovered or all 33 cards are approved Alabama Symphony performances.",
+        "fixProposal": "No source code/config change justified by this one intermittent hosted timeout. Keep final hosted failed outcome; subsequent ordinary scheduled run can establish recovery without an artificial count-seeking rerun."
+      },
+      "finalArtistHostedRun": {
+        "runId": 37536188687,
+        "sha": "465b936bfb96b75cea38204c24a9a20bda4a9ec3",
+        "succeeded": 395,
+        "total": 415,
+        "failed": 20,
+        "recoveredSince392": [
+          "artist-baltimore-symphony-orchestra",
+          "artist-dan-deacon",
+          "artist-hermann-nitsch",
+          "artist-ircam"
+        ],
+        "newFailureSince392": "artist-alabama-symphony-orchestra",
+        "classification": "Alabama current local success does not erase hosted timeout; no count-only rerun"
+      },
+      "postArtistRunAutomaticRetry": {
+        "pr": 207,
+        "mergeSha": "f40e7feedc9c52a821b87a9813276bdb02fb50ae",
+        "mergedAt": "2026-10-06T22:10:23Z",
+        "changedPaths": [
+          "scrapers/artists/artist-alabama-symphony-orchestra.json",
+          "data/repair-history.json"
+        ],
+        "semanticChange": "maxRetries3 only; no parser, venue, workflow, identity or catalog change",
+        "healerReported": "PASS (12 events, 10 checks)",
+        "fullArtistManifestPredatesChange": true,
+        "fullArtistHealthRemains": {
+          "succeeded": 395,
+          "failed": 20,
+          "total": 415
+        },
+        "dailyArtistCacheMembershipUnchanged": true,
+        "separateReadOnlyAudit": {
+          "agent": "remaining_backend_check",
+          "model": "gpt-6-luna"
+        }
+      },
+      "alabamaSymphonyRetainedCacheIdentityReview": {
+        "checkedAt": "2026-10-06T22:15:16.211352+00:00",
+        "scope": "12 actual cached Alabama Symphony Orchestra raw rows, plus ASYO caution; no new HTTP scrape",
+        "cachedRawCount": 12,
+        "currentHostedStatus": "fetch_error timeout15s, retains 12 prior cache rows",
+        "officialCalendar": "https://alabamasymphony.org/concert/",
+        "cachedRows": [
+          {
+            "dateText": "October 7, 2026 11:00 am",
+            "venue": "Thompson High School Performing Arts Center",
+            "titleOnOfficialCalendar": "Explorer Concert: The Symphony Is All Around You",
+            "artistFallback": "Alabama Symphony Orchestra"
+          },
+          {
+            "dateText": "October 24, 2026 7:00 pm",
+            "venue": "UAB’s Alys Stephens Center — Jemison Concert Hall",
+            "titleOnOfficialCalendar": "Requiem",
+            "artistFallback": "Alabama Symphony Orchestra"
+          },
+          {
+            "dateText": "November 7, 2026 7:00 pm",
+            "venue": "UAB’s Alys Stephens Center — Jemison Concert Hall",
+            "titleOnOfficialCalendar": "Levity",
+            "artistFallback": "Alabama Symphony Orchestra"
+          },
+          {
+            "dateText": "November 21, 2026 7:00 pm",
+            "venue": "UAB’s Alys Stephens Center — Jemison Concert Hall",
+            "titleOnOfficialCalendar": "English Light",
+            "artistFallback": "Alabama Symphony Orchestra"
+          },
+          {
+            "dateText": "December 19, 2026 2:30 pm",
+            "venue": "UAB’s Alys Stephens Center — Jemison Concert Hall",
+            "titleOnOfficialCalendar": "Handel’s Messiah",
+            "artistFallback": "Alabama Symphony Orchestra"
+          },
+          {
+            "dateText": "January 30, 2027 7:00 pm",
+            "venue": "UAB’s Alys Stephens Center — Jemison Concert Hall",
+            "titleOnOfficialCalendar": "Cave to Palace",
+            "artistFallback": "Alabama Symphony Orchestra"
+          },
+          {
+            "dateText": "February 20, 2027 7:00 pm",
+            "venue": "UAB’s Alys Stephens Center — Jemison Concert Hall",
+            "titleOnOfficialCalendar": "American Ground",
+            "artistFallback": "Alabama Symphony Orchestra"
+          },
+          {
+            "dateText": "March 6, 2027 11:00 am",
+            "venue": "Birmingham Children's Theatre",
+            "titleOnOfficialCalendar": "Young People’s Concert: The Trumpet of the Swan",
+            "artistFallback": "Alabama Symphony Orchestra"
+          },
+          {
+            "dateText": "March 20, 2027 7:00 pm",
+            "venue": "UAB’s Alys Stephens Center — Jemison Concert Hall",
+            "titleOnOfficialCalendar": "Seven",
+            "artistFallback": "Alabama Symphony Orchestra"
+          },
+          {
+            "dateText": "April 10, 2027 7:00 pm",
+            "venue": "UAB’s Alys Stephens Center — Jemison Concert Hall",
+            "titleOnOfficialCalendar": "Rivers",
+            "artistFallback": "Alabama Symphony Orchestra"
+          },
+          {
+            "dateText": "May 8, 2027 7:00 pm",
+            "venue": "UAB’s Alys Stephens Center — Jemison Concert Hall",
+            "titleOnOfficialCalendar": "Planets",
+            "artistFallback": "Alabama Symphony Orchestra"
+          },
+          {
+            "dateText": "May 22, 2027 7:00 pm",
+            "venue": "UAB’s Alys Stephens Center — Jemison Concert Hall",
+            "titleOnOfficialCalendar": "The Emperor & The Revolutionary",
+            "artistFallback": "Alabama Symphony Orchestra"
+          }
+        ],
+        "distinctYouthCard": {
+          "title": "ASYO Fall Concert",
+          "dateTime": "2026-11-07 14:00",
+          "venue": "UAB Alys Stephens Center — Jemison Concert Hall",
+          "sourceSays": "Alabama Symphony Youth Orchestra takes the stage",
+          "officialCalendar": "https://alabamasymphony.org/concert/",
+          "matchToCached12": false,
+          "closestCachedAdultShow": "Levity, 2026-11-07 19:00, same hall"
+        },
+        "checkedSpecialCachedRow": {
+          "title": "Young People’s Concert: The Trumpet of the Swan",
+          "dateTime": "2027-03-06 11:00",
+          "officialDetail": "https://alabamasymphony.org/concert/young-peoples-concert-the-trumpet-of-the-swan/",
+          "primaryAttribution": "performed by Alabama Symphony Orchestra (adult), not youth orchestra"
+        },
+        "conclusion": "NO: none of the 12 actual retained cached rows matches the separate ASYO Fall Concert. The 12 cache rows have official calendar names corresponding to ASO events; specific ambiguous family event identifies adult ASO on its official detail page. Because current unfiltered archive contains an ASYO card, a future successful fresh fetch could fallback-attribute this distinct youth event; this risk is prospective, not proven in the retained 12.",
+        "suggestedNarrowProtection": "Before a fresh full scrape publishes newly parsed rows, reject article titles or body explicitly identifying Alabama Symphony Youth Orchestra/ASYO while preserving adult ASO family concerts. Do not drop all education or children’s events."
+      },
+      "latestVenueFetchRegressions": {
+        "checkedAt": "2026-10-07",
+        "repo": "/Users/alex/.codex/worktrees/all-sources-recovery/concert-for-travelers-api",
+        "readonly": true,
+        "method": "Existing guarded fetch/runScraper; no repo edits, no LLM fallback (GEMINI_API_KEY set to whitespace), no cache.",
+        "results": [
+          {
+            "id": "artist-james-pankow",
+            "configuredUrl": "https://chicagotheband.com/tour/",
+            "config": "scrapers/artist-james-pankow.json",
+            "currentAxiosFetch": "200 HTML, 128506 bytes",
+            "fullRunScraper": {
+              "success": true,
+              "rawEvents": 23,
+              "futureEventsFrom2026-10-07": 23,
+              "drops": 0
+            },
+            "events": [
+              [
+                "2026-11-05",
+                "The Wind Creek Event Center",
+                "Bethlehem, PA",
+                "US"
+              ],
+              [
+                "2026-11-06",
+                "Hard Rock Live at Etess Arena",
+                "Atlantic City, NJ",
+                "US"
+              ],
+              [
+                "2026-11-07",
+                "Hard Rock Live at Etess Arena",
+                "Atlantic City, NJ",
+                "US"
+              ],
+              [
+                "2026-11-10",
+                "The Capitol Theatre",
+                "Port Chester, NY",
+                "US"
+              ],
+              [
+                "2026-11-11",
+                "Toyota Oakdale Theatre",
+                "Wallingford, CT",
+                "US"
+              ],
+              [
+                "2026-11-13",
+                "Flagstar at Westbury Music Fair",
+                "Westbury, NY",
+                "US"
+              ],
+              [
+                "2026-11-14",
+                "Seneca Allegany Resort & Casino Event Center",
+                "Salamanca, NY",
+                "US"
+              ],
+              [
+                "2026-11-15",
+                "DeYor Performing Arts Center",
+                "Youngstown, OH",
+                "US"
+              ],
+              [
+                "2026-11-17",
+                "Mershon Auditorium",
+                "Columbus, OH",
+                "US"
+              ],
+              [
+                "2026-11-18",
+                "Soaring Eagle Casino and Resort",
+                "Mt Pleasant, MI",
+                "US"
+              ],
+              [
+                "2027-01-29",
+                "Pensacola Saenger Theatre",
+                "Pensacola, FL",
+                "US"
+              ],
+              [
+                "2027-01-30",
+                "Dothan Civic Center",
+                "Dothan, AL",
+                "US"
+              ],
+              [
+                "2027-01-31",
+                "VBC Mark C. Smith Concert Hall",
+                "Huntsville, AL",
+                "US"
+              ],
+              [
+                "2027-02-02",
+                "Township Auditorium",
+                "Columbia, SC",
+                "US"
+              ],
+              [
+                "2027-02-04",
+                "DPAC",
+                "Durham, NC",
+                "US"
+              ],
+              [
+                "2027-02-05",
+                "The Classic Center Theatre",
+                "Athens, GA",
+                "US"
+              ],
+              [
+                "2027-02-07",
+                "King Center for the Performing Arts",
+                "Melbourne, FL",
+                "US"
+              ],
+              [
+                "2027-02-08",
+                "Peabody Auditorium",
+                "Daytona Beach, FL",
+                "US"
+              ],
+              [
+                "2027-02-11",
+                "Hard Rock Live",
+                "Hollywood, FL",
+                "US"
+              ],
+              [
+                "2027-02-12",
+                "Barbara B. Mann Performing Arts Hall at FSW",
+                "Fort Myers, FL",
+                "US"
+              ],
+              [
+                "2027-02-13",
+                "Ruth Eckerd Hall",
+                "Clearwater, FL",
+                "US"
+              ],
+              [
+                "2027-04-01",
+                "Mercedes-Benz Amphitheater",
+                "Tuscaloosa, AL",
+                "US"
+              ],
+              [
+                "2027-04-02",
+                "EACC Fine Arts Center",
+                "Forrest City, AR",
+                "US"
+              ]
+            ],
+            "classification": "Current configured default backend succeeds; this does not evidence a got-scraping-only repair. Native source/config identify performer as Chicago (artistNameFallback), so do not describe these as James Pankow solo dates without separate identity validation."
+          },
+          {
+            "id": "artist-paul-halley",
+            "configuredUrl": "https://pelagosmusic.com/event-schedule",
+            "config": "scrapers/artist-paul-halley.json",
+            "currentAxiosFetch": "200 HTML, 122455 bytes",
+            "fullRunScraper": {
+              "success": true,
+              "rawEvents": 2,
+              "futureEventsFrom2026-10-07": 0,
+              "drops": 0
+            },
+            "events": [
+              [
+                "2025-09-21",
+                "The Cathedral Church of All Saints",
+                "Halifax",
+                "CA"
+              ],
+              [
+                "2025-12-14",
+                "The Cathedral Church of All Saints",
+                "Halifax",
+                "CA"
+              ]
+            ],
+            "classification": "Working HTTP/custom parser, but archive-era past performances only; not a current schedule proving zero-future contract and not a backend-only repair candidate."
+          },
+          {
+            "id": "botanique-brussels",
+            "configuredUrl": "https://botanique.be/en/concerts",
+            "config": "scrapers/botanique-brussels.json",
+            "currentAxiosFetch": "HTTP 500",
+            "gotScrapingFetch": "HTTP 500",
+            "classification": "Both guarded backends fail identically; no backend-only repair evidence. Current status is origin/upstream/server-side 500 or common edge failure, exact layer not distinguishable from these responses. No HTML/events to parse."
+          }
+        ],
+        "historicalContext": "Daily 37538576063 had reported fetch regressions HTTP 403/500; live bounded checks on 2026-10-07 differ for James Pankow and Paul Halley."
+      },
+      "productionPublicationReceipt": {
+        "runId": 37538576063,
+        "actionsReportedHead": "465b936bfb96b75cea38204c24a9a20bda4a9ec3",
+        "actualRepositoryCheckout": "465b936bfb96b75cea38204c24a9a20bda4a9ec3",
+        "checkoutProvenByCompletedJobLog": true,
+        "artifactId": 11447629238,
+        "state": "deployed_and_public_bytes_verified",
+        "generatedAt": "2026-10-06T22:24:12.717Z"
+      },
+      "paralamasCurrentCalendarReview": {
+        "scope": "Read-only classification of the 2027-03-06 Paralamas event missing after the latest full artist scrape",
+        "source_config": {
+          "path": "scrapers/artists/artist-paralamas-do-sucesso.json",
+          "url": "https://osparalamas.com.br/agenda/",
+          "httpClient": "got-scraping",
+          "type": "custom_js",
+          "eventBlock": "li.event",
+          "pagination_configured": false
+        },
+        "previous_native_observation": {
+          "receipt": "/private/tmp/concert-remaining-20261006/backend-repair-root-verification.json",
+          "observedAt": "2026-10-06T20:32:31.682Z",
+          "rawCount": 8,
+          "event": {
+            "date": "2027-03-06",
+            "city": "Montes Claros",
+            "venue": "Rock in Moc Brasil no Estacionamento Montes Claros Shopping",
+            "country": "BR",
+            "nativeEventUrl": "https://www.osparalamas.com.br/evento/montes-claros-mg/#top"
+          }
+        },
+        "latest_cache_observation": {
+          "path": "/private/tmp/concert-remaining-20261006/final-artist/artist-scrape-cache.json",
+          "scrapedAt": "2026-10-06T21:48:04.896Z",
+          "paralamasRawCount": 8,
+          "march6_present": false,
+          "replacement_event": {
+            "date": "2026-12-19",
+            "city": "São Paulo",
+            "venue": "Juventus Live Hall",
+            "ticketUrl": "https://www.osparalamas.com.br/evento/sao-paulo-sp-15/#top"
+          },
+          "allEightLatestCacheEventsPublished": true
+        },
+        "pagination_capability": {
+          "path": "src/engine/runner.ts",
+          "symbols": [
+            "fetchHtmlForHealing",
+            "runScraper"
+          ],
+          "finding": "fetchHtmlForHealing uses normal guarded performGet; generic custom_js run parses the fetched response body with configured selectors. No generic pagination traversal is present/configured for this source. A source-specific module would need to explicitly follow a navigation link observed in HTML."
+        },
+        "live_fetches": [
+          {
+            "url": "https://osparalamas.com.br/agenda/",
+            "backend": "got-scraping via exported guarded fetchHtmlForHealing",
+            "result": "ETIMEDOUT after 15000ms; no HTML or navigation links observed"
+          },
+          {
+            "url": "https://www.osparalamas.com.br/evento/montes-claros-mg/",
+            "backend": "got-scraping via exported guarded fetchHtmlForHealing",
+            "result": "ETIMEDOUT after 15000ms; cancellation/removal status unobserved"
+          }
+        ],
+        "classification": "UNRESOLVED: latest cache replaced the March 6 event with a new December 19 event at the same raw count; no live HTML/navigation links or old event page could be obtained due guarded timeouts. This evidence does not establish either pagination omission or event cancellation/removal.",
+        "repair_decision": "No pagination repair justified until current native page exposes an actual next link containing more events, or the exact March 6 page/primary source confirms it remains an upcoming event.",
+        "working_tree": "No repository files modified."
+      },
+      "paralamasRawPublicationComparison": {
+        "sourceId": "artist-paralamas-do-sucesso",
+        "scrapedAt": "2026-10-06T21:48:04.896Z",
+        "hostedRawCount": 8,
+        "publishedCardCount": 9,
+        "allLatestHostedRowsPresent": true,
+        "missingSinceEarlierNativeSnapshot": [
+          {
+            "artist": "Paralamas do Sucesso",
+            "date": "2027-03-06",
+            "city": "Montes Claros",
+            "country": "BR"
+          }
+        ],
+        "addedSinceEarlierNativeSnapshot": [
+          {
+            "artist": "Paralamas do Sucesso",
+            "date": "2026-12-19",
+            "city": "São Paulo",
+            "country": "BR"
+          }
+        ],
+        "nativeCalendarDifferenceClassification": "unresolved: official agenda and exact event URLs timed out via installed guarded client; independent web reads of apex/www also failed",
+        "historicalSnapshotPreservation": "not_confirmed",
+        "currentHostedRawPublication": "verified_all_eight",
+        "fullCalendarCoverageClaimed": false
+      },
+      "postPublicationMainDiff": {
+        "producerCheckout": "465b936bfb96b75cea38204c24a9a20bda4a9ec3",
+        "mainAfterPublication": "b4530c7931b74a6bb62a518e0e4e3c8a0613fe1d",
+        "artistCatalogFieldChanges": {
+          "lastConcertSeenAt": 7084
+        },
+        "artistIdentityChanges": [],
+        "otherObservedChanges": [
+          "AlabamaSymphonymaxRetries3",
+          "repair-history.json"
+        ],
+        "artistManifestPredatesAlabamaRetryChange": true
+      },
+      "postPublicationBotHistoryOnly": {
+        "pr": 208,
+        "changedPaths": [
+          "data/repair-history.json"
+        ],
+        "sourceOrParserChanges": false,
+        "outcome": "Botanique500candidateRejected",
+        "rootAudit": "exactGitHubPRfilediffchecked; no sourceconfigchanged"
       }
     },
     "mainAncestryVerification": {
-      "checkedMain": "7155737eef1253338095234d17b3da8a7df8abb2",
+      "checkedMain": "817439d64873f76356a7fa9b672132f51e030244",
       "sourceRepairMerges": {
         "PR190": {
           "sha": "ea6828208e046cdc1b10301670886b48d62085d3",
@@ -4710,6 +5517,39 @@
         "PR199": {
           "sha": "7155737eef1253338095234d17b3da8a7df8abb2",
           "includedInMain": true
+        },
+        "PR201": {
+          "sha": "ac47018219d0ad80b70b64624d07924283f24e96",
+          "includedInMain": true
+        },
+        "PR202": {
+          "sha": "9806b507d89895723f4762f69764461b301ccbeb",
+          "includedInMain": true
+        },
+        "PR203": {
+          "sha": "405b06619e1ca2702ee665121f35972b68948679",
+          "includedInMain": true
+        },
+        "botPR204": {
+          "sha": "cce07b54b197e97eaf6d5e4f273956c4eb4afd80",
+          "includedInMain": true
+        },
+        "botPR205": {
+          "sha": "03c9113c4c9cd3e42c5aa7353675e63e7347eeb5",
+          "includedInMain": true
+        },
+        "PR206": {
+          "sha": "465b936bfb96b75cea38204c24a9a20bda4a9ec3",
+          "includedInMain": true
+        },
+        "botPR207": {
+          "sha": "f40e7feedc9c52a821b87a9813276bdb02fb50ae",
+          "includedInMain": true
+        },
+        "botPR208": {
+          "sha": "817439d64873f76356a7fa9b672132f51e030244",
+          "scope": "repair-history only; rejectedBotanique500candidate",
+          "includedInMain": true
         }
       }
     },
@@ -4717,36 +5557,25 @@
       "cohorts": {
         "artist": {
           "run": {
-            "id": "37502871972",
+            "id": "37536188687",
             "attempt": 1,
-            "sha": "7fe13eed34b342ae90dd641ed85a6dfe4f7a71ed",
+            "sha": "465b936bfb96b75cea38204c24a9a20bda4a9ec3",
             "workflow": "Artist Tour-Page Scrape"
           },
-          "generatedAt": "2026-10-06T17:24:03.097Z",
+          "generatedAt": "2026-10-06T21:48:41.821Z",
           "scrapers": {
             "total": 415,
-            "succeeded": 393,
-            "failed": 22,
-            "changed": 9,
-            "unchanged": 384,
+            "succeeded": 395,
+            "failed": 20,
+            "changed": 6,
+            "unchanged": 389,
             "staleIds": []
           },
           "recoveredSincePrevious": [
-            "artist-alabama-symphony-orchestra"
+            "artist-lobao"
           ],
-          "regressedSincePrevious": [
-            "artist-hubert-laws",
-            "artist-paralamas-do-sucesso"
-          ],
+          "regressedSincePrevious": [],
           "failures": [
-            {
-              "id": "artist-adiemus",
-              "configPath": "scrapers/artists/artist-adiemus.json",
-              "configHash": "c77ad07130cec062225eb622ecafe142b3f15589e9a47a1b1e29742528c1b9e6",
-              "status": "failed",
-              "reason": "selectors_stale",
-              "error": "Parsed 0 concerts. Website layout might have changed."
-            },
             {
               "id": "artist-andy-cairns",
               "configPath": "scrapers/artists/artist-andy-cairns.json",
@@ -4756,12 +5585,12 @@
               "error": "Parsed 0 concerts. Website layout might have changed."
             },
             {
-              "id": "artist-astrid-williamson",
-              "configPath": "scrapers/artists/artist-astrid-williamson.json",
-              "configHash": "fd5a98bd3f7a06609d052518b5263b3b06fdff23ae70bd9e553b9a421a918b2a",
+              "id": "artist-adiemus",
+              "configPath": "scrapers/artists/artist-adiemus.json",
+              "configHash": "c77ad07130cec062225eb622ecafe142b3f15589e9a47a1b1e29742528c1b9e6",
               "status": "failed",
-              "reason": "fetch_error",
-              "error": "Request failed with status code 401"
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
             },
             {
               "id": "antoha-mc-tour",
@@ -4772,6 +5601,14 @@
               "error": "Parsed 0 concerts. Website layout might have changed."
             },
             {
+              "id": "artist-astrid-williamson",
+              "configPath": "scrapers/artists/artist-astrid-williamson.json",
+              "configHash": "115bf1713e849e249b7202f7d06f8d728e0aa7110a6d1cd76c602a2a287c38f3",
+              "status": "failed",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 401"
+            },
+            {
               "id": "artist-avantasia",
               "configPath": "scrapers/artists/artist-avantasia.json",
               "configHash": "a80c73baf81e757d5a928ca8608c2a0de3577d1527e49a611345e521bce79372",
@@ -4780,17 +5617,25 @@
               "error": "Parsed 0 concerts. Website layout might have changed."
             },
             {
-              "id": "artist-hubert-laws",
-              "configPath": "scrapers/artists/artist-hubert-laws.json",
-              "configHash": "1ee753efb0775a6c0420f9e76f119f55fc77ca495eaa259fc3f25603f5f8299d",
-              "status": "failed",
-              "reason": "fetch_error",
-              "error": "Request failed with status code 500"
-            },
-            {
               "id": "artist-amanda-forsyth",
               "configPath": "scrapers/artists/artist-amanda-forsyth.json",
               "configHash": "0ce421d6cc48efbbabafa7ca5b58bb8d3674f4b9dfc040eb0730821259454f37",
+              "status": "failed",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-alabama-symphony-orchestra",
+              "configPath": "scrapers/artists/artist-alabama-symphony-orchestra.json",
+              "configHash": "cd377f5f6e84417ee0b7121f69734aab78a8d5d89c266e6acc2439b2fb2329b4",
+              "status": "failed",
+              "reason": "fetch_error",
+              "error": "timeout of 15000ms exceeded"
+            },
+            {
+              "id": "artist-john-mellencamp",
+              "configPath": "scrapers/artists/artist-john-mellencamp.json",
+              "configHash": "4517d3c36860fccb3d927deb6a7fdab0297c2b233e708853e808ede79c6d23e7",
               "status": "failed",
               "reason": "selectors_stale",
               "error": "Parsed 0 concerts. Website layout might have changed."
@@ -4804,28 +5649,20 @@
               "error": "Request failed with status code 403"
             },
             {
-              "id": "artist-lobao",
-              "configPath": "scrapers/artists/artist-lobao.json",
-              "configHash": "1ad30846a79dfc126c7d1f5ac03b537dc3ca74ae9b94a9d8da4acbf8b4c3e8b0",
-              "status": "failed",
-              "reason": "fetch_error",
-              "error": "Request failed with status code 403"
-            },
-            {
-              "id": "artist-marmalade",
-              "configPath": "scrapers/artists/artist-marmalade.json",
-              "configHash": "420328511c2bd84291952ddd4d0fc4c1da969f06656e2436739d3b45a5a32d81",
-              "status": "failed",
-              "reason": "fetch_error",
-              "error": "Request failed with status code 403"
-            },
-            {
               "id": "artist-marina-satti",
               "configPath": "scrapers/artists/artist-marina-satti.json",
               "configHash": "22743ec018ca68ab2647c83d4ca093c0b9e148f09ab67f4ade585df255dd4083",
               "status": "failed",
               "reason": "fetch_error",
               "error": "Request failed with status code 404"
+            },
+            {
+              "id": "artist-marmalade",
+              "configPath": "scrapers/artists/artist-marmalade.json",
+              "configHash": "a208ba68a8e30c15a69a171eab147fcdd0eab945b900bddc227436f4201171f7",
+              "status": "failed",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 401"
             },
             {
               "id": "artist-nine-inch-nails",
@@ -4836,20 +5673,20 @@
               "error": "Unmatched selector: =.//p/text()[contains(., ',')][1]"
             },
             {
-              "id": "artist-nick-cave-the-bad-seeds",
-              "configPath": "scrapers/artists/artist-nick-cave-the-bad-seeds.json",
-              "configHash": "fc44a308a0b05be56963ea0f9205045072ede243d6302c58f349940cde964d39",
-              "status": "failed",
-              "reason": "selectors_stale",
-              "error": "Parsed 0 concerts. Website layout might have changed."
-            },
-            {
               "id": "artist-pequot",
               "configPath": "scrapers/artists/artist-pequot.json",
               "configHash": "a5a6e2ee75e2279890fa0a74d70cbcf65357a1edf5f5821103125032e1808c0d",
               "status": "failed",
               "reason": "fetch_error",
               "error": "Request failed with status code 403"
+            },
+            {
+              "id": "artist-nick-cave-the-bad-seeds",
+              "configPath": "scrapers/artists/artist-nick-cave-the-bad-seeds.json",
+              "configHash": "fc44a308a0b05be56963ea0f9205045072ede243d6302c58f349940cde964d39",
+              "status": "failed",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
             },
             {
               "id": "artist-philip-lindholm",
@@ -4860,6 +5697,14 @@
               "error": "Request failed with status code 403"
             },
             {
+              "id": "artist-psycho-le-cemu",
+              "configPath": "scrapers/artists/artist-psycho-le-cemu.json",
+              "configHash": "b35f0c7a4633a2bdbfca0a3844b59361b739a0d97c0eb997ba866e327b04c2d7",
+              "status": "failed",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
               "id": "artist-poetry",
               "configPath": "scrapers/artists/artist-poetry.json",
               "configHash": "f0d74765334b9bc33524f5c5253028923d077b987879d4fa63e4b2c7d9d27dc1",
@@ -4868,9 +5713,9 @@
               "error": "Parsed 0 concerts. Website layout might have changed."
             },
             {
-              "id": "artist-psycho-le-cemu",
-              "configPath": "scrapers/artists/artist-psycho-le-cemu.json",
-              "configHash": "b35f0c7a4633a2bdbfca0a3844b59361b739a0d97c0eb997ba866e327b04c2d7",
+              "id": "artist-robin-thicke",
+              "configPath": "scrapers/artists/artist-robin-thicke.json",
+              "configHash": "604620d510f582472f6597efd1f8b4a590b6f7607b81aef9436ed38787da7cf3",
               "status": "failed",
               "reason": "selectors_stale",
               "error": "Parsed 0 concerts. Website layout might have changed."
@@ -4884,71 +5729,45 @@
               "error": "Request failed with status code 404"
             },
             {
-              "id": "artist-robin-thicke",
-              "configPath": "scrapers/artists/artist-robin-thicke.json",
-              "configHash": "604620d510f582472f6597efd1f8b4a590b6f7607b81aef9436ed38787da7cf3",
-              "status": "failed",
-              "reason": "selectors_stale",
-              "error": "Parsed 0 concerts. Website layout might have changed."
-            },
-            {
-              "id": "artist-paralamas-do-sucesso",
-              "configPath": "scrapers/artists/artist-paralamas-do-sucesso.json",
-              "configHash": "97120651741352d6d365801459605c66186d7c2fae5818aa543bc55627cc78c0",
-              "status": "failed",
-              "reason": "fetch_error",
-              "error": "timeout of 15000ms exceeded"
-            },
-            {
               "id": "artist-twin-atlantic",
               "configPath": "scrapers/artists/artist-twin-atlantic.json",
               "configHash": "02c731373ee219eb8c2536e2ad404a50f9917018201d70ea2b6c3844196777c9",
               "status": "failed",
               "reason": "fetch_error",
               "error": "Request failed with status code 404"
-            },
-            {
-              "id": "artist-john-mellencamp",
-              "configPath": "scrapers/artists/artist-john-mellencamp.json",
-              "configHash": "4517d3c36860fccb3d927deb6a7fdab0297c2b233e708853e808ede79c6d23e7",
-              "status": "failed",
-              "reason": "selectors_stale",
-              "error": "Parsed 0 concerts. Website layout might have changed."
             }
           ]
         },
         "venue": {
           "run": {
-            "id": "37521897489",
+            "id": "37538576063",
             "attempt": 1,
-            "sha": "7155737eef1253338095234d17b3da8a7df8abb2",
+            "sha": "465b936bfb96b75cea38204c24a9a20bda4a9ec3",
             "workflow": "Daily Concert Scrape"
           },
-          "generatedAt": "2026-10-06T20:03:54.754Z",
+          "generatedAt": "2026-10-06T22:23:49.745Z",
           "scrapers": {
             "total": 152,
             "succeeded": 128,
             "failed": 24,
-            "changed": 6,
-            "unchanged": 122,
-            "staleIds": [
-              "artist-philip-labonte"
-            ]
+            "changed": 8,
+            "unchanged": 120,
+            "staleIds": []
           },
           "recoveredSincePrevious": [
             "artist-antones-records",
-            "artist-james-pankow",
             "artist-jerry-depizzo",
             "artist-judith-rijnveld",
+            "artist-jorge-e-mateus",
             "artist-peter-smith",
-            "artist-philippine-philharmonic-orchestra",
+            "artist-philip-labonte",
             "artist-rainey",
             "majestic-music-club-bratislava",
             "rust-copenhagen"
           ],
           "regressedSincePrevious": [
             "cartagena-festival-de-musica-cartagena",
-            "artist-you-used-to-hold-me-so-tight"
+            "botanique-brussels"
           ],
           "failures": [
             {
@@ -4960,14 +5779,6 @@
               "error": "Parsed 0 concerts. Website layout might have changed."
             },
             {
-              "id": "artist-jane-mcdonald",
-              "configPath": "scrapers/artist-jane-mcdonald.json",
-              "configHash": "67eca1e3b7611d0adcffbf0d21ac1120fb0b1e57f21885406394d5b6df46a0c9",
-              "status": "failed",
-              "reason": "fetch_error",
-              "error": "Request failed with status code 404"
-            },
-            {
               "id": "artist-babbu-mann",
               "configPath": "scrapers/artist-babbu-mann.json",
               "configHash": "00ad07fa8ed0c0056213269d10de437b40be8561f4bd256a3d6cacb12e22dcb0",
@@ -4976,12 +5787,36 @@
               "error": "Parsed 0 concerts. Website layout might have changed."
             },
             {
-              "id": "artist-jorge-e-mateus",
-              "configPath": "scrapers/artist-jorge-e-mateus.json",
-              "configHash": "d930d4070c0145752b66f054d6d9852be013c76d6b986c1d2d985c3000709fbe",
+              "id": "artist-bruce-thomas",
+              "configPath": "scrapers/artist-bruce-thomas.json",
+              "configHash": "cc21aa3ba2c09b904056a840b0a79c892f699287cccbc33970d1152523b1a4e3",
+              "status": "failed",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-harold-jones",
+              "configPath": "scrapers/artist-harold-jones.json",
+              "configHash": "66cba332db462bf1da20af5bdac99106878ef30740297b499a0a448acc49ba78",
+              "status": "failed",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-james-pankow",
+              "configPath": "scrapers/artist-james-pankow.json",
+              "configHash": "5aba909edc81026fc6feaf014c3db6267933c3eb6343bba4363e03a9183abe63",
               "status": "failed",
               "reason": "fetch_error",
               "error": "Request failed with status code 403"
+            },
+            {
+              "id": "artist-jane-mcdonald",
+              "configPath": "scrapers/artist-jane-mcdonald.json",
+              "configHash": "67eca1e3b7611d0adcffbf0d21ac1120fb0b1e57f21885406394d5b6df46a0c9",
+              "status": "failed",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 404"
             },
             {
               "id": "artist-john-keane",
@@ -5000,25 +5835,25 @@
               "error": "getaddrinfo ENOTFOUND www.juan-garcia-herreros.com"
             },
             {
+              "id": "artist-joe-hutton",
+              "configPath": "scrapers/artist-joe-hutton.json",
+              "configHash": "58bc569c263a0fd9df8b27b38a8d96ca2cc952d257ffe47e92febb827ea98507",
+              "status": "failed",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-painflow",
+              "configPath": "scrapers/artist-painflow.json",
+              "configHash": "d5271494de1a66b5b080062218d8e7d79471fdf939a48d5108a336a464247421",
+              "status": "failed",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
               "id": "artist-pain-for-pleasure",
               "configPath": "scrapers/artist-pain-for-pleasure.json",
               "configHash": "e4147ea6a3e37b9071d9477fe12d4db1aa04029c388c5f8e35dfe1665a3fc5ec",
-              "status": "failed",
-              "reason": "selectors_stale",
-              "error": "Parsed 0 concerts. Website layout might have changed."
-            },
-            {
-              "id": "artist-harold-jones",
-              "configPath": "scrapers/artist-harold-jones.json",
-              "configHash": "66cba332db462bf1da20af5bdac99106878ef30740297b499a0a448acc49ba78",
-              "status": "failed",
-              "reason": "selectors_stale",
-              "error": "Parsed 0 concerts. Website layout might have changed."
-            },
-            {
-              "id": "artist-patti-smith-group",
-              "configPath": "scrapers/artist-patti-smith-group.json",
-              "configHash": "e7859ff2d2a11c3ac7aceefb1c76aa464ca2667d2f64ba1e2545d62eb8cf77e4",
               "status": "failed",
               "reason": "selectors_stale",
               "error": "Parsed 0 concerts. Website layout might have changed."
@@ -5032,65 +5867,17 @@
               "error": "Request failed with status code 403"
             },
             {
-              "id": "artist-painflow",
-              "configPath": "scrapers/artist-painflow.json",
-              "configHash": "d5271494de1a66b5b080062218d8e7d79471fdf939a48d5108a336a464247421",
+              "id": "artist-patti-smith-group",
+              "configPath": "scrapers/artist-patti-smith-group.json",
+              "configHash": "e7859ff2d2a11c3ac7aceefb1c76aa464ca2667d2f64ba1e2545d62eb8cf77e4",
               "status": "failed",
               "reason": "selectors_stale",
               "error": "Parsed 0 concerts. Website layout might have changed."
-            },
-            {
-              "id": "artist-philip-labonte",
-              "configPath": "scrapers/artist-philip-labonte.json",
-              "configHash": "f5ec64212cf28501609c1ced029664e89941ba61c0a7282bd999d8171ef65129",
-              "status": "failed",
-              "reason": "selectors_stale",
-              "error": "Parsed 0 concerts. Website layout might have changed."
-            },
-            {
-              "id": "artist-jorge-palma",
-              "configPath": "scrapers/artist-jorge-palma.json",
-              "configHash": "625274b9ed09b9c77b04774dc6c19ee5f2526a3fbdb5d3732573e5f08703cd8b",
-              "status": "failed",
-              "reason": "fetch_error",
-              "error": "timeout of 15000ms exceeded"
             },
             {
               "id": "artist-ray-scott",
               "configPath": "scrapers/artist-ray-scott.json",
               "configHash": "45f73b3fe4dffa89ce1a315ea82ac885cd7a30932b8c8a9e3ad9858a36f53deb",
-              "status": "failed",
-              "reason": "selectors_stale",
-              "error": "Parsed 0 concerts. Website layout might have changed."
-            },
-            {
-              "id": "artist-yamazaki-masayoshi",
-              "configPath": "scrapers/artist-yamazaki-masayoshi.json",
-              "configHash": "eeff2bb633caa3dacb8cb4261b3e4b4a717e65dbe800e26c8ceb2a7fb8f5b433",
-              "status": "failed",
-              "reason": "selectors_stale",
-              "error": "Parsed 0 concerts. Website layout might have changed."
-            },
-            {
-              "id": "artist-joe-hutton",
-              "configPath": "scrapers/artist-joe-hutton.json",
-              "configHash": "58bc569c263a0fd9df8b27b38a8d96ca2cc952d257ffe47e92febb827ea98507",
-              "status": "failed",
-              "reason": "selectors_stale",
-              "error": "Parsed 0 concerts. Website layout might have changed."
-            },
-            {
-              "id": "artist-bruce-thomas",
-              "configPath": "scrapers/artist-bruce-thomas.json",
-              "configHash": "cc21aa3ba2c09b904056a840b0a79c892f699287cccbc33970d1152523b1a4e3",
-              "status": "failed",
-              "reason": "fetch_error",
-              "error": "Scraper exceeded 90s wall-clock timeout"
-            },
-            {
-              "id": "artist-ray-davies",
-              "configPath": "scrapers/artist-ray-davies.json",
-              "configHash": "5b7f4c1eb5dbb8b388f7dae6361dc5a2dc32b640a36b5ad802fd641940835c37",
               "status": "failed",
               "reason": "selectors_stale",
               "error": "Parsed 0 concerts. Website layout might have changed."
@@ -5104,9 +5891,25 @@
               "error": "Parsed 0 concerts. Website layout might have changed."
             },
             {
+              "id": "artist-ray-davies",
+              "configPath": "scrapers/artist-ray-davies.json",
+              "configHash": "5b7f4c1eb5dbb8b388f7dae6361dc5a2dc32b640a36b5ad802fd641940835c37",
+              "status": "failed",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
               "id": "artist-yuta-and-the-bushido-boys",
               "configPath": "scrapers/artist-yuta-and-the-bushido-boys.json",
               "configHash": "94ec4415afdf3d87ad6d92e2153f74c334269c0bc58c9a7a97f2e64b4964825b",
+              "status": "failed",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-yamazaki-masayoshi",
+              "configPath": "scrapers/artist-yamazaki-masayoshi.json",
+              "configHash": "eeff2bb633caa3dacb8cb4261b3e4b4a717e65dbe800e26c8ceb2a7fb8f5b433",
               "status": "failed",
               "reason": "selectors_stale",
               "error": "Parsed 0 concerts. Website layout might have changed."
@@ -5118,6 +5921,14 @@
               "status": "failed",
               "reason": "fetch_error",
               "error": "Request failed with status code 403"
+            },
+            {
+              "id": "botanique-brussels",
+              "configPath": "scrapers/botanique-brussels.json",
+              "configHash": "d09b807d6fe4e59815f573b5c65308d3bca1da533f464a55e8cc4747eed34dd8",
+              "status": "failed",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 500"
             },
             {
               "id": "esplanade-theatres-singapore-singapore",
@@ -5136,46 +5947,63 @@
               "error": "Parsed 0 concerts. Website layout might have changed."
             },
             {
-              "id": "artist-you-used-to-hold-me-so-tight",
-              "configPath": "scrapers/artist-you-used-to-hold-me-so-tight.json",
-              "configHash": "d46c86dc58d6d8c6e93b5b86f3b7265fcfbc3f04d7c53868423552b19174aa66",
+              "id": "artist-jorge-palma",
+              "configPath": "scrapers/artist-jorge-palma.json",
+              "configHash": "625274b9ed09b9c77b04774dc6c19ee5f2526a3fbdb5d3732573e5f08703cd8b",
               "status": "failed",
-              "reason": "selectors_stale",
-              "error": "Parsed 0 concerts. Website layout might have changed."
+              "reason": "fetch_error",
+              "error": "timeout of 15000ms exceeded"
+            },
+            {
+              "id": "artist-philippine-philharmonic-orchestra",
+              "configPath": "scrapers/artist-philippine-philharmonic-orchestra.json",
+              "configHash": "f3ee26eaf313e26c4fb31a659667877c314833ef0e325eece017f25ae46f5882",
+              "status": "failed",
+              "reason": "fetch_error",
+              "error": "timeout of 15000ms exceeded"
             }
           ]
         }
       },
       "publication": {
-        "generatedAt": "2026-10-06T20:04:33.934Z",
+        "generatedAt": "2026-10-06T22:24:12.717Z",
         "previousPublished": 51072,
-        "published": 51544,
-        "publishedDelta": 472,
-        "statusSha256": "e5a442cbf488d6aadd88ce0536c28e2352a9cf769d57f1afd31f19160cada723",
+        "published": 51799,
+        "publishedDelta": 727,
+        "statusSha256": "6d3ed6de716d50524f7d21514836dcb330e7a351ea014769847abdeceaf13eb9",
         "publicArtifactBytesIdentical": true,
+        "publicIndexArtifactBytesIdentical": true,
+        "publicIndexSha256": "697a430589d344f3d897e0f31d2a4ebc35c51fce494b55c018efc37dea6c4fa1",
+        "publicIndexStats": {
+          "totalConcerts": 51799,
+          "uniqueArtists": 7084,
+          "uniqueCities": 2880,
+          "pageCount": 104,
+          "pageSize": 500
+        },
         "gate": {
           "schemaVersion": 1,
           "state": "eligible",
-          "generatedAt": "2026-10-06T20:04:33.934Z",
-          "publishedConcerts": 51544,
+          "generatedAt": "2026-10-06T22:24:12.718Z",
+          "publishedConcerts": 51799,
           "healthGate": {
             "state": "eligible",
             "reason": "Current publication passed the existing health gate.",
-            "evaluatedAt": "2026-10-06T20:04:39.532Z"
+            "evaluatedAt": "2026-10-06T22:24:15.690Z"
           }
         },
         "processing": {
           "schemaVersion": 1,
-          "generatedAt": "2026-10-06T20:04:28.928Z",
-          "baseDate": "2026-10-06T20:03:54.758Z",
-          "rawCount": 112859,
-          "publishedCount": 51544,
-          "duplicatesMerged": 12612,
+          "generatedAt": "2026-10-06T22:24:09.436Z",
+          "baseDate": "2026-10-06T22:23:49.747Z",
+          "rawCount": 112683,
+          "publishedCount": 51799,
+          "duplicatesMerged": 12680,
           "dropped": {
-            "incomplete": 1811,
-            "notApproved": 35968,
-            "badDate": 1870,
-            "pastDate": 8846,
+            "incomplete": 1820,
+            "notApproved": 36321,
+            "badDate": 1853,
+            "pastDate": 8002,
             "zodFail": 208
           },
           "validationIssues": {
@@ -5187,14 +6015,14 @@
           "missingFields": {
             "venue": 870,
             "city": 1536,
-            "country": 129,
+            "country": 138,
             "date": 3
           }
         },
         "sourceHealth": {
           "venue": {
             "schemaVersion": 1,
-            "generatedAt": "2026-10-06T19:54:23.498Z",
+            "generatedAt": "2026-10-06T22:13:33.246Z",
             "source": "venue",
             "state": "degraded",
             "counts": {
@@ -5203,34 +6031,34 @@
               "attempted": 152,
               "succeeded": 128,
               "failed": 24,
-              "empty": 7,
+              "empty": 10,
               "unavailable": 0,
               "skippedFresh": 0,
-              "missing": 17,
-              "cacheFallbacks": 7,
+              "missing": 16,
+              "cacheFallbacks": 8,
               "partial": 0
             },
             "freshness": {
               "basis": "verifiedAt",
               "classification": "current_run",
               "fresh": 128,
-              "old": 6,
-              "unknown": 18,
-              "latestVerifiedAt": "2026-10-06T19:54:23.498Z",
+              "old": 8,
+              "unknown": 16,
+              "latestVerifiedAt": "2026-10-06T22:13:33.246Z",
               "p50Days": 0,
-              "p95Days": 0,
-              "maxDays": 9.2
+              "p95Days": 0.03,
+              "maxDays": 9.3
             },
             "completeness": "partial",
             "issues": [
               {
                 "reason": "selectors_stale",
-                "count": 16,
+                "count": 15,
                 "action": "repair_source_extraction"
               },
               {
                 "reason": "fetch_error",
-                "count": 7,
+                "count": 8,
                 "action": "retry_and_inspect_source_access"
               },
               {
@@ -5242,32 +6070,32 @@
           },
           "artist": {
             "schemaVersion": 1,
-            "generatedAt": "2026-10-06T17:24:02.913Z",
+            "generatedAt": "2026-10-06T21:48:41.718Z",
             "source": "artist",
             "state": "degraded",
             "counts": {
               "targets": 415,
               "selected": 415,
               "attempted": 415,
-              "succeeded": 393,
-              "failed": 22,
+              "succeeded": 395,
+              "failed": 20,
               "empty": 11,
               "unavailable": 0,
               "skippedFresh": 0,
               "missing": 3,
-              "cacheFallbacks": 19,
+              "cacheFallbacks": 17,
               "partial": 0
             },
             "freshness": {
               "basis": "verifiedAt",
               "classification": "current_run",
-              "fresh": 393,
-              "old": 7,
+              "fresh": 395,
+              "old": 5,
               "unknown": 15,
-              "latestVerifiedAt": "2026-10-06T17:24:02.913Z",
+              "latestVerifiedAt": "2026-10-06T21:48:41.718Z",
               "p50Days": 0,
               "p95Days": 0,
-              "maxDays": 10.35
+              "maxDays": 10.53
             },
             "completeness": "partial",
             "issues": [
@@ -5278,7 +6106,7 @@
               },
               {
                 "reason": "fetch_error",
-                "count": 11,
+                "count": 9,
                 "action": "retry_and_inspect_source_access"
               },
               {
@@ -5290,18 +6118,18 @@
           },
           "bandsintown": {
             "schemaVersion": 1,
-            "generatedAt": "2026-10-06T17:24:04.130Z",
+            "generatedAt": "2026-10-06T21:48:42.566Z",
             "source": "bandsintown",
             "state": "degraded",
             "counts": {
               "targets": 20765,
               "selected": 800,
               "attempted": 800,
-              "succeeded": 666,
+              "succeeded": 634,
               "failed": 0,
-              "empty": 490,
-              "unavailable": 134,
-              "skippedFresh": 6400,
+              "empty": 466,
+              "unavailable": 166,
+              "skippedFresh": 8000,
               "missing": 0,
               "cacheFallbacks": 0,
               "partial": 0
@@ -5311,31 +6139,31 @@
               "classification": "revisit_interval",
               "revisitIntervalDays": 6,
               "intervalMeaning": "minimum_revisit_interval_not_stale_sla",
-              "fresh": 5828,
+              "fresh": 7106,
               "old": 6772,
-              "unknown": 8165,
-              "latestVerifiedAt": "2026-10-06T17:24:04.130Z",
-              "p50Days": 6.3,
-              "p95Days": 10.35,
-              "maxDays": 10.35
+              "unknown": 6887,
+              "latestVerifiedAt": "2026-10-06T21:48:42.566Z",
+              "p50Days": 5.47,
+              "p95Days": 10.53,
+              "maxDays": 10.53
             },
             "completeness": "partial",
             "issues": [
               {
                 "reason": "artist_feed_not_found",
-                "count": 134,
+                "count": 166,
                 "action": "review_artist_source_identity"
               },
               {
                 "reason": "previous_target_failures",
-                "count": 1800,
+                "count": 2122,
                 "action": "retry_next_scheduled_sweep"
               }
             ]
           },
           "eventbrite": {
             "schemaVersion": 1,
-            "generatedAt": "2026-10-06T17:41:52.131Z",
+            "generatedAt": "2026-10-06T22:07:20.746Z",
             "source": "eventbrite",
             "state": "unavailable",
             "counts": {
@@ -5379,7 +6207,7 @@
           },
           "ticketmaster": {
             "schemaVersion": 1,
-            "generatedAt": "2026-10-06T19:54:23.726Z",
+            "generatedAt": "2026-10-06T22:13:33.456Z",
             "source": "ticketmaster",
             "state": "healthy",
             "counts": {
@@ -5401,7 +6229,7 @@
               "fresh": 27,
               "old": 0,
               "unknown": 0,
-              "latestVerifiedAt": "2026-10-06T19:54:23.726Z",
+              "latestVerifiedAt": "2026-10-06T22:13:33.456Z",
               "p50Days": 0,
               "p95Days": 0,
               "maxDays": 0
@@ -5415,8 +6243,21 @@
         "status": {
           "url": "https://cartograf666.github.io/concert-for-travelers-api/status.json",
           "httpStatus": 200,
-          "generatedAt": "2026-10-06T20:04:33.934Z",
-          "publishedConcerts": 51544
+          "generatedAt": "2026-10-06T22:24:12.717Z",
+          "publishedConcerts": 51799
+        },
+        "index": {
+          "url": "https://cartograf666.github.io/concert-for-travelers-api/index.json",
+          "httpStatus": 200,
+          "lastRun": "2026-10-06T22:24:12.714Z",
+          "schemaVersion": 2,
+          "stats": {
+            "totalConcerts": 51799,
+            "uniqueArtists": 7084,
+            "uniqueCities": 2880,
+            "pageCount": 104,
+            "pageSize": 500
+          }
         },
         "peter-smith": {
           "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/peter-smith.json",
@@ -5479,6 +6320,40 @@
             "2026-11-15"
           ],
           "internalMetadataAbsent": true
+        },
+        "marmalade": {
+          "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/marmalade.json",
+          "httpStatus": 200,
+          "rows": 1,
+          "names": [
+            "Marmalade"
+          ],
+          "dates": [
+            "2026-10-09"
+          ],
+          "internalMetadataAbsent": true,
+          "allVerifiedOfficialEventsPresent": false,
+          "missingVerifiedOfficialEvents": [
+            {
+              "artist": "Marmalade",
+              "date": "2027-01-16",
+              "city": "Skegness",
+              "country": "GB"
+            },
+            {
+              "artist": "Marmalade",
+              "date": "2027-03-13",
+              "city": "Burnham-on-Sea",
+              "country": "GB"
+            }
+          ],
+          "officialEventsChecked": 2,
+          "comparisonFields": [
+            "artist",
+            "date",
+            "city",
+            "country"
+          ]
         },
         "ellen-ten-damme": {
           "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/ellen-ten-damme.json",
@@ -5707,10 +6582,55 @@
             "2026-10-30",
             "2026-11-08",
             "2026-12-06",
-            "2027-01-23",
-            "2027-03-06"
+            "2026-12-19",
+            "2027-01-23"
           ],
-          "internalMetadataAbsent": true
+          "internalMetadataAbsent": true,
+          "allVerifiedOfficialEventsPresent": false,
+          "missingVerifiedOfficialEvents": [
+            {
+              "artist": "Paralamas do Sucesso",
+              "date": "2027-03-06",
+              "city": "Montes Claros",
+              "country": "BR"
+            }
+          ],
+          "officialEventsChecked": 8,
+          "comparisonFields": [
+            "artist",
+            "date",
+            "city",
+            "country"
+          ],
+          "latestHostedEventsChecked": 8,
+          "allLatestHostedEventsPresent": true,
+          "historicalCalendarCoverageVerification": {
+            "sourceId": "artist-paralamas-do-sucesso",
+            "scrapedAt": "2026-10-06T21:48:04.896Z",
+            "hostedRawCount": 8,
+            "publishedCardCount": 9,
+            "allLatestHostedRowsPresent": true,
+            "missingSinceEarlierNativeSnapshot": [
+              {
+                "artist": "Paralamas do Sucesso",
+                "date": "2027-03-06",
+                "city": "Montes Claros",
+                "country": "BR"
+              }
+            ],
+            "addedSinceEarlierNativeSnapshot": [
+              {
+                "artist": "Paralamas do Sucesso",
+                "date": "2026-12-19",
+                "city": "São Paulo",
+                "country": "BR"
+              }
+            ],
+            "nativeCalendarDifferenceClassification": "unresolved: official agenda and exact event URLs timed out via installed guarded client; independent web reads of apex/www also failed",
+            "historicalSnapshotPreservation": "not_confirmed",
+            "currentHostedRawPublication": "verified_all_eight",
+            "fullCalendarCoverageClaimed": false
+          }
         },
         "the-fizz": {
           "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/the-fizz.json",
@@ -5766,6 +6686,58 @@
           "allFiveVerifiedShowDatesPresent": true,
           "pantomimeNotRelabeledAsConcert": true
         },
+        "all-that-remains": {
+          "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/all-that-remains.json",
+          "httpStatus": 404,
+          "rows": 0,
+          "names": [],
+          "dates": [],
+          "internalMetadataAbsent": true,
+          "groupIdentityPreserved": true,
+          "nativeEmptyDoesNotExcludeOtherProviders": true
+        },
+        "dan-deacon": {
+          "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/dan-deacon.json",
+          "httpStatus": 200,
+          "rows": 6,
+          "names": [
+            "Dan Deacon"
+          ],
+          "dates": [
+            "2026-11-06",
+            "2026-11-07",
+            "2026-11-08",
+            "2026-11-14",
+            "2026-11-15",
+            "2027-03-18"
+          ],
+          "internalMetadataAbsent": true,
+          "allSixVerifiedOfficialEventsPresent": true,
+          "missingVerifiedOfficialEvents": []
+        },
+        "hermann-nitsch": {
+          "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/hermann-nitsch.json",
+          "httpStatus": 404,
+          "rows": 0,
+          "names": [],
+          "dates": [],
+          "internalMetadataAbsent": true,
+          "knownInvalidOrUnverifiedSourceEventsAbsent": true
+        },
+        "evgeny-kissin": {
+          "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/evgeny-kissin.json",
+          "httpStatus": 200,
+          "rows": 2,
+          "names": [
+            "Evgeny Kissin"
+          ],
+          "dates": [
+            "2027-04-25",
+            "2027-04-30"
+          ],
+          "internalMetadataAbsent": true,
+          "verifiedBaltimoreRecitalPreserved": true
+        },
         "painForPleasure": {
           "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/pain-for-pleasure.json",
           "httpStatus": 404,
@@ -5776,8 +6748,8 @@
           "incorrectKnownEventAbsent": true
         }
       },
-      "dailyUrl": "https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37521897489",
-      "currentMain": "7155737eef1253338095234d17b3da8a7df8abb2",
+      "dailyUrl": "https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37538576063",
+      "currentMain": "817439d64873f76356a7fa9b672132f51e030244",
       "precedingPublishedBaseline": {
         "artists": 394,
         "artistTotal": 415,
@@ -6006,6 +6978,18 @@
             "configPath": "scrapers/artist-bucks-fizz.json",
             "configHash": "c24a26f8cfe9cb52919eb37287d604e6aacfe3b4b58a8cdcd9bc68de0473f54b",
             "status": "succeeded"
+          },
+          "firstVerifiedHostedOutcome": {
+            "id": "artist-bucks-fizz",
+            "configPath": "scrapers/artist-bucks-fizz.json",
+            "configHash": "c24a26f8cfe9cb52919eb37287d604e6aacfe3b4b58a8cdcd9bc68de0473f54b",
+            "status": "succeeded"
+          },
+          "latestHostedOutcome": {
+            "id": "artist-bucks-fizz",
+            "configPath": "scrapers/artist-bucks-fizz.json",
+            "configHash": "c24a26f8cfe9cb52919eb37287d604e6aacfe3b4b58a8cdcd9bc68de0473f54b",
+            "status": "succeeded"
           }
         },
         {
@@ -6046,6 +7030,18 @@
           "review": "Bounded independent gpt-6-sol contract/code review. Original pruning dependency corrected and covered by current fixture variants. Inclusion of the named mixed comedy/music show follows project concert scope; no new all-theatre event policy.",
           "remainingLimit": "Only primary linked calendar dates are supported. The existing global deduplication collapses same-day performances to one artist/date/city record, so seven bookings produce five public entries. No global dedupe change.",
           "hostedOutcome": {
+            "id": "artist-allan-stewart",
+            "configPath": "scrapers/artist-allan-stewart.json",
+            "configHash": "484a44876e4963850f75f22a30169daaf4086ec75cb7d28f48a184edc402a998",
+            "status": "succeeded"
+          },
+          "firstVerifiedHostedOutcome": {
+            "id": "artist-allan-stewart",
+            "configPath": "scrapers/artist-allan-stewart.json",
+            "configHash": "484a44876e4963850f75f22a30169daaf4086ec75cb7d28f48a184edc402a998",
+            "status": "succeeded"
+          },
+          "latestHostedOutcome": {
             "id": "artist-allan-stewart",
             "configPath": "scrapers/artist-allan-stewart.json",
             "configHash": "484a44876e4963850f75f22a30169daaf4086ec75cb7d28f48a184edc402a998",
@@ -6179,7 +7175,7 @@
         "diffCheck": "PASS"
       },
       "coverageLimit": "Current and next UTC calendar months only; this is not all future months. Future populated records with missing or ambiguous geography/venue cause source failure instead of partial publication.",
-      "state": "main_merged_pending_hosted_verification",
+      "state": "hosted_and_published_verified_current_and_next_months",
       "merge": {
         "pr": 201,
         "url": "https://github.com/Cartograf666/concert-for-travelers-api/pull/201",
@@ -6211,11 +7207,57 @@
       "dailyVerification": {
         "runId": 37526646520,
         "headSha": "ac47018219d0ad80b70b64624d07924283f24e96",
-        "state": "running"
+        "state": "completed_and_published"
+      },
+      "hostedOutcome": {
+        "id": "artist-jorge-e-mateus",
+        "configPath": "scrapers/artist-jorge-e-mateus.json",
+        "configHash": "4bbf7a28cf620242868cecef949e721d94331f397322dc2e3db95663ae0b8308",
+        "status": "succeeded",
+        "reason": "empty_schedule"
+      },
+      "hostedEmptyMonthVerification": {
+        "nativeCurrentAndNextMonthsVerified": true,
+        "source": {
+          "id": "artist-jorge-e-mateus",
+          "configPath": "scrapers/artist-jorge-e-mateus.json",
+          "configHash": "4bbf7a28cf620242868cecef949e721d94331f397322dc2e3db95663ae0b8308",
+          "status": "succeeded",
+          "reason": "empty_schedule"
+        },
+        "cacheFingerprint": "e21909f0d04e641b9a0d283cc753a29d0403e028d851b49ab6e1a13bf16ad7e2",
+        "scrapedAt": "2026-10-06T20:29:23.966Z",
+        "verifiedAt": "2026-10-06T20:30:55.375Z",
+        "rawCount": 0,
+        "monthScope": [
+          "2026-10",
+          "2026-11"
+        ],
+        "run": {
+          "id": "37526646520",
+          "attempt": 1,
+          "sha": "ac47018219d0ad80b70b64624d07924283f24e96",
+          "workflow": "Daily Concert Scrape"
+        },
+        "proof": "Fresh exact-head ordinary collector calls the strict identity-bound adapter and both monthly endpoints; native empty result is retained as fresh zero-event cache and source succeeded."
+      },
+      "firstVerifiedHostedOutcome": {
+        "id": "artist-jorge-e-mateus",
+        "configPath": "scrapers/artist-jorge-e-mateus.json",
+        "configHash": "4bbf7a28cf620242868cecef949e721d94331f397322dc2e3db95663ae0b8308",
+        "status": "succeeded",
+        "reason": "empty_schedule"
+      },
+      "latestHostedOutcome": {
+        "id": "artist-jorge-e-mateus",
+        "configPath": "scrapers/artist-jorge-e-mateus.json",
+        "configHash": "4bbf7a28cf620242868cecef949e721d94331f397322dc2e3db95663ae0b8308",
+        "status": "succeeded",
+        "reason": "empty_schedule"
       }
     },
     "backendFollowup": {
-      "state": "full_hosted_artist_sweep_verified_publication_pending",
+      "state": "historical_local_verification_superseded",
       "sourceIds": [
         "artist-marmalade",
         "artist-paralamas-do-sucesso",
@@ -6732,11 +7774,12 @@
             "error": "Request failed with status code 404"
           }
         ]
-      }
+      },
+      "supersededBy": "remainingPass.artistAccessBackendFollowup"
     },
     "allThatRemainsCalendarFollowup": {
       "sourceId": "artist-philip-labonte",
-      "state": "main_merged_hosted_publication_pending",
+      "state": "hosted_native_empty_verified",
       "checkedAt": "2026-10-06T21:14:30.918Z",
       "officialWidgetEvidence": {
         "checkedAt": "2026-10-06T21:06:52.335351+00:00",
@@ -6902,13 +7945,30 @@
         "duplicateCitySelectorCount": 126,
         "duplicateCitySelectorBaseline": 131,
         "artistIntegrity": "skipped: no artist catalog changes in this PR"
+      },
+      "hostedOutcome": {
+        "id": "artist-philip-labonte",
+        "configPath": "scrapers/artist-philip-labonte.json",
+        "configHash": "391afdb5519d4f7903ff506924f08d2f7884941c72c2e690cf95290d0b2b806d",
+        "status": "succeeded",
+        "reason": "empty_schedule"
+      },
+      "publicCheck": {
+        "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/all-that-remains.json",
+        "httpStatus": 404,
+        "rows": 0,
+        "names": [],
+        "dates": [],
+        "internalMetadataAbsent": true,
+        "groupIdentityPreserved": true,
+        "nativeEmptyDoesNotExcludeOtherProviders": true
       }
     },
     "latestSourceAndPublicationRepair": {
-      "state": "local_changes_verified_independent_recheck_pending",
+      "state": "hosted_and_published_verified_with_actual_source_gaps",
       "danDeacon": {
         "sourceId": "artist-dan-deacon",
-        "state": "configured_local_repair_verified_hosted_pending",
+        "state": "hosted_and_published_verified",
         "checkedAt": "2026-10-06T21:28:16.092Z",
         "httpClient": "got-scraping",
         "success": true,
@@ -6989,6 +8049,31 @@
           "validationIssues": {},
           "missingFields": {},
           "samples": []
+        },
+        "hostedOutcome": {
+          "id": "artist-dan-deacon",
+          "configPath": "scrapers/artists/artist-dan-deacon.json",
+          "configHash": "2e4fe7499d9c26fee0ed4c9f69722961813e912cd6aef3862488e95ece59aa64",
+          "status": "succeeded"
+        },
+        "publicCheck": {
+          "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/dan-deacon.json",
+          "httpStatus": 200,
+          "rows": 6,
+          "names": [
+            "Dan Deacon"
+          ],
+          "dates": [
+            "2026-11-06",
+            "2026-11-07",
+            "2026-11-08",
+            "2026-11-14",
+            "2026-11-15",
+            "2027-03-18"
+          ],
+          "internalMetadataAbsent": true,
+          "allSixVerifiedOfficialEventsPresent": true,
+          "missingVerifiedOfficialEvents": []
         }
       },
       "nitschPublicationGuard": {
@@ -7125,6 +8210,22 @@
             }
           },
           "scope": "Current saved official Nitsch cache, source-local date period and exact unverified Gibellina provenance guard; no source cache mutation."
+        },
+        "state": "published_known_false_or_unverified_rows_excluded",
+        "publicCheck": {
+          "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/hermann-nitsch.json",
+          "httpStatus": 404,
+          "rows": 0,
+          "names": [],
+          "dates": [],
+          "internalMetadataAbsent": true,
+          "knownInvalidOrUnverifiedSourceEventsAbsent": true
+        },
+        "hostedOutcome": {
+          "id": "artist-hermann-nitsch",
+          "configPath": "scrapers/artists/artist-hermann-nitsch.json",
+          "configHash": "dc0a5adb9a621fde9009e0d802dbf0be427756756ec8b9b83a117691f6686284",
+          "status": "succeeded"
         }
       },
       "bsoCorrectRecitalPreserved": {
@@ -7134,6 +8235,1008 @@
         "country": "US",
         "venue": "Joseph Meyerhoff Symphony Hall",
         "primaryTicket": "https://my.bsomusic.org/20557/20558"
+      },
+      "independentReview": {
+        "agent": "allan_scope_review",
+        "model": "gpt-6-sol",
+        "route": "harness-native scoped read-only review",
+        "result": "recheck passed: compact ASCII date periods and canonical artist alias both handled; single ISO date and foreign identity remain allowed",
+        "fullCENestedReceiptClaimed": false
+      },
+      "pullRequest": {
+        "number": 206,
+        "url": "https://github.com/Cartograf666/concert-for-travelers-api/pull/206",
+        "headSha": "2d6f1fbbcabb639770dfdeb496733541351b504d",
+        "state": "merged",
+        "mergedAt": "2026-10-06T21:45:42Z",
+        "mergeSha": "465b936bfb96b75cea38204c24a9a20bda4a9ec3"
+      },
+      "hostedCI": {
+        "total": 754,
+        "pass": 753,
+        "fail": 0,
+        "skip": 1,
+        "runId": 37535620874,
+        "headSha": "2d6f1fbbcabb639770dfdeb496733541351b504d",
+        "url": "https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37535620874",
+        "build": "pass",
+        "lintErrors": 0,
+        "existingLintWarnings": 103,
+        "duplicateCitySelectorCount": 126,
+        "duplicateCitySelectorBaseline": 131,
+        "artistIntegrity": "skipped: no artist catalog changes in this PR"
+      },
+      "hostedArtistVerification": {
+        "run": {
+          "id": "37536188687",
+          "attempt": 1,
+          "sha": "465b936bfb96b75cea38204c24a9a20bda4a9ec3",
+          "workflow": "Artist Tour-Page Scrape"
+        },
+        "generatedAt": "2026-10-06T21:48:41.821Z",
+        "scrapers": {
+          "total": 415,
+          "succeeded": 395,
+          "failed": 20,
+          "changed": 6,
+          "unchanged": 389,
+          "staleIds": []
+        },
+        "allOriginalIdsPreserved": true,
+        "recoveredSincePrevious392": [
+          "artist-baltimore-symphony-orchestra",
+          "artist-dan-deacon",
+          "artist-hermann-nitsch",
+          "artist-ircam"
+        ],
+        "regressedSincePrevious392": [
+          "artist-alabama-symphony-orchestra"
+        ],
+        "selectedOutcomes": {
+          "artist-astrid-williamson": {
+            "id": "artist-astrid-williamson",
+            "configPath": "scrapers/artists/artist-astrid-williamson.json",
+            "configHash": "115bf1713e849e249b7202f7d06f8d728e0aa7110a6d1cd76c602a2a287c38f3",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 401"
+          },
+          "artist-baltimore-symphony-orchestra": {
+            "id": "artist-baltimore-symphony-orchestra",
+            "configPath": "scrapers/artists/artist-baltimore-symphony-orchestra.json",
+            "configHash": "09775bbb124ca38089a49a06c386998fce7dd40c55729cd09401c9c7795bbf8f",
+            "status": "succeeded"
+          },
+          "artist-dan-deacon": {
+            "id": "artist-dan-deacon",
+            "configPath": "scrapers/artists/artist-dan-deacon.json",
+            "configHash": "2e4fe7499d9c26fee0ed4c9f69722961813e912cd6aef3862488e95ece59aa64",
+            "status": "succeeded"
+          },
+          "artist-hermann-nitsch": {
+            "id": "artist-hermann-nitsch",
+            "configPath": "scrapers/artists/artist-hermann-nitsch.json",
+            "configHash": "dc0a5adb9a621fde9009e0d802dbf0be427756756ec8b9b83a117691f6686284",
+            "status": "succeeded"
+          },
+          "artist-ircam": {
+            "id": "artist-ircam",
+            "configPath": "scrapers/artists/artist-ircam.json",
+            "configHash": "16d96da673123fd519e125ec7bca5d4b1c8165381128efd869e845b7e9f51fac",
+            "status": "succeeded"
+          },
+          "artist-lobao": {
+            "id": "artist-lobao",
+            "configPath": "scrapers/artists/artist-lobao.json",
+            "configHash": "7a0d0aa3b2e0044ff5dd30d4e77651a7f7f59f64ef45dede36fab13a07a4011a",
+            "status": "succeeded"
+          },
+          "artist-marmalade": {
+            "id": "artist-marmalade",
+            "configPath": "scrapers/artists/artist-marmalade.json",
+            "configHash": "a208ba68a8e30c15a69a171eab147fcdd0eab945b900bddc227436f4201171f7",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 401"
+          },
+          "artist-paralamas-do-sucesso": {
+            "id": "artist-paralamas-do-sucesso",
+            "configPath": "scrapers/artists/artist-paralamas-do-sucesso.json",
+            "configHash": "60ef4596b9d776f1581f08dbe8b723cd059beddefeef134fb0e0b684fd83a4f9",
+            "status": "succeeded"
+          }
+        },
+        "failures": [
+          {
+            "id": "artist-andy-cairns",
+            "configPath": "scrapers/artists/artist-andy-cairns.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-adiemus",
+            "configPath": "scrapers/artists/artist-adiemus.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "antoha-mc-tour",
+            "configPath": "scrapers/artists/antoha-mc-tour.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-astrid-williamson",
+            "configPath": "scrapers/artists/artist-astrid-williamson.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 401"
+          },
+          {
+            "id": "artist-avantasia",
+            "configPath": "scrapers/artists/artist-avantasia.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-amanda-forsyth",
+            "configPath": "scrapers/artists/artist-amanda-forsyth.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-alabama-symphony-orchestra",
+            "configPath": "scrapers/artists/artist-alabama-symphony-orchestra.json",
+            "reason": "fetch_error",
+            "error": "timeout of 15000ms exceeded"
+          },
+          {
+            "id": "artist-john-mellencamp",
+            "configPath": "scrapers/artists/artist-john-mellencamp.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-limahl",
+            "configPath": "scrapers/artists/artist-limahl.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 403"
+          },
+          {
+            "id": "artist-marina-satti",
+            "configPath": "scrapers/artists/artist-marina-satti.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 404"
+          },
+          {
+            "id": "artist-marmalade",
+            "configPath": "scrapers/artists/artist-marmalade.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 401"
+          },
+          {
+            "id": "artist-nine-inch-nails",
+            "configPath": "scrapers/artists/artist-nine-inch-nails.json",
+            "reason": "parse_error",
+            "error": "Unmatched selector: =.//p/text()[contains(., ',')][1]"
+          },
+          {
+            "id": "artist-pequot",
+            "configPath": "scrapers/artists/artist-pequot.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 403"
+          },
+          {
+            "id": "artist-nick-cave-the-bad-seeds",
+            "configPath": "scrapers/artists/artist-nick-cave-the-bad-seeds.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-philip-lindholm",
+            "configPath": "scrapers/artists/artist-philip-lindholm.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 403"
+          },
+          {
+            "id": "artist-psycho-le-cemu",
+            "configPath": "scrapers/artists/artist-psycho-le-cemu.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-poetry",
+            "configPath": "scrapers/artists/artist-poetry.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-robin-thicke",
+            "configPath": "scrapers/artists/artist-robin-thicke.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-shelby-lynne",
+            "configPath": "scrapers/artists/artist-shelby-lynne.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 404"
+          },
+          {
+            "id": "artist-twin-atlantic",
+            "configPath": "scrapers/artists/artist-twin-atlantic.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 404"
+          }
+        ]
+      },
+      "hostedDanOutcome": {
+        "id": "artist-dan-deacon",
+        "configPath": "scrapers/artists/artist-dan-deacon.json",
+        "configHash": "2e4fe7499d9c26fee0ed4c9f69722961813e912cd6aef3862488e95ece59aa64",
+        "status": "succeeded"
+      },
+      "publicChecks": {
+        "dan-deacon": {
+          "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/dan-deacon.json",
+          "httpStatus": 200,
+          "rows": 6,
+          "names": [
+            "Dan Deacon"
+          ],
+          "dates": [
+            "2026-11-06",
+            "2026-11-07",
+            "2026-11-08",
+            "2026-11-14",
+            "2026-11-15",
+            "2027-03-18"
+          ],
+          "internalMetadataAbsent": true,
+          "allSixVerifiedOfficialEventsPresent": true,
+          "missingVerifiedOfficialEvents": []
+        },
+        "hermann-nitsch": {
+          "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/hermann-nitsch.json",
+          "httpStatus": 404,
+          "rows": 0,
+          "names": [],
+          "dates": [],
+          "internalMetadataAbsent": true,
+          "knownInvalidOrUnverifiedSourceEventsAbsent": true
+        },
+        "evgeny-kissin": {
+          "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/evgeny-kissin.json",
+          "httpStatus": 200,
+          "rows": 2,
+          "names": [
+            "Evgeny Kissin"
+          ],
+          "dates": [
+            "2027-04-25",
+            "2027-04-30"
+          ],
+          "internalMetadataAbsent": true,
+          "verifiedBaltimoreRecitalPreserved": true
+        }
+      }
+    },
+    "verificationGaps": {
+      "paralamasHistoricalOfficialEvent": {
+        "sourceId": "artist-paralamas-do-sucesso",
+        "scrapedAt": "2026-10-06T21:48:04.896Z",
+        "hostedRawCount": 8,
+        "publishedCardCount": 9,
+        "allLatestHostedRowsPresent": true,
+        "missingSinceEarlierNativeSnapshot": [
+          {
+            "artist": "Paralamas do Sucesso",
+            "date": "2027-03-06",
+            "city": "Montes Claros",
+            "country": "BR"
+          }
+        ],
+        "addedSinceEarlierNativeSnapshot": [
+          {
+            "artist": "Paralamas do Sucesso",
+            "date": "2026-12-19",
+            "city": "São Paulo",
+            "country": "BR"
+          }
+        ],
+        "nativeCalendarDifferenceClassification": "unresolved: official agenda and exact event URLs timed out via installed guarded client; independent web reads of apex/www also failed",
+        "historicalSnapshotPreservation": "not_confirmed",
+        "currentHostedRawPublication": "verified_all_eight",
+        "fullCalendarCoverageClaimed": false
+      }
+    },
+    "artistAccessBackendFollowup": {
+      "state": "hosted_observed_with_remaining_source_failures",
+      "sourceIds": [
+        "artist-marmalade",
+        "artist-paralamas-do-sucesso",
+        "artist-astrid-williamson",
+        "artist-lobao"
+      ],
+      "rootLiveVerification": {
+        "checkedAt": "2026-10-06T20:32:31.682Z",
+        "receipts": [
+          {
+            "id": "artist-marmalade",
+            "url": "https://themarmalade.net/tour-dates/",
+            "httpClient": "got-scraping",
+            "success": true,
+            "rawCount": 2,
+            "processedCount": 2,
+            "events": [
+              {
+                "artist": "Marmalade",
+                "date": "2027-01-16",
+                "venue": "Butlins",
+                "city": "Skegness",
+                "country": "GB"
+              },
+              {
+                "artist": "Marmalade",
+                "date": "2027-03-13",
+                "venue": "Unity Beach, Holiday Park",
+                "city": "Burnham-on-Sea",
+                "country": "GB"
+              }
+            ],
+            "diagnostics": {
+              "schemaVersion": 1,
+              "generatedAt": "2026-10-06T20:32:14.141Z",
+              "baseDate": "2026-10-06T20:32:13.663Z",
+              "rawCount": 2,
+              "publishedCount": 2,
+              "duplicatesMerged": 0,
+              "dropped": {
+                "incomplete": 0,
+                "notApproved": 0,
+                "badDate": 0,
+                "pastDate": 0,
+                "zodFail": 0
+              },
+              "sources": {
+                "themarmalade.net": {
+                  "rawCount": 2,
+                  "publishedCount": 2,
+                  "duplicatesMerged": 0,
+                  "dropped": {
+                    "incomplete": 0,
+                    "notApproved": 0,
+                    "badDate": 0,
+                    "pastDate": 0,
+                    "zodFail": 0
+                  }
+                }
+              },
+              "validationIssues": {},
+              "missingFields": {},
+              "samples": []
+            }
+          },
+          {
+            "id": "artist-paralamas-do-sucesso",
+            "url": "https://osparalamas.com.br/agenda/",
+            "httpClient": "got-scraping",
+            "success": true,
+            "rawCount": 8,
+            "processedCount": 8,
+            "events": [
+              {
+                "artist": "Paralamas do Sucesso",
+                "date": "2026-10-08",
+                "venue": "Auditório do Multicenter Sebrae (SESSÃO EXTRA)",
+                "city": "São Luís",
+                "country": "BR"
+              },
+              {
+                "artist": "Paralamas do Sucesso",
+                "date": "2026-10-09",
+                "venue": "Auditório do Multicenter Sebrae",
+                "city": "São Luís",
+                "country": "BR"
+              },
+              {
+                "artist": "Paralamas do Sucesso",
+                "date": "2026-10-11",
+                "venue": "Theresina Hall",
+                "city": "Teresina",
+                "country": "BR"
+              },
+              {
+                "artist": "Paralamas do Sucesso",
+                "date": "2026-10-17",
+                "venue": "Londrina Rock Festival 2026 no Parque de Exposições Ney Braga",
+                "city": "Londrina",
+                "country": "BR"
+              },
+              {
+                "artist": "Paralamas do Sucesso",
+                "date": "2026-10-30",
+                "venue": "Salão de Atos da PUCRS",
+                "city": "Porto Alegre",
+                "country": "BR"
+              },
+              {
+                "artist": "Paralamas do Sucesso",
+                "date": "2026-11-08",
+                "venue": "Rock Festival 2026 no Espaço de Eventos da Dutra",
+                "city": "Nova Iguaçu",
+                "country": "BR"
+              },
+              {
+                "artist": "Paralamas do Sucesso",
+                "date": "2026-12-06",
+                "venue": "Marina da Glória - Festival Clássicos do Brasil",
+                "city": "Rio de Janeiro",
+                "country": "BR"
+              },
+              {
+                "artist": "Paralamas do Sucesso",
+                "date": "2027-03-06",
+                "venue": "Rock in Moc Brasil no Estacionamento Montes Claros Shopping",
+                "city": "Montes Claros",
+                "country": "BR"
+              }
+            ],
+            "diagnostics": {
+              "schemaVersion": 1,
+              "generatedAt": "2026-10-06T20:32:30.950Z",
+              "baseDate": "2026-10-06T20:32:30.534Z",
+              "rawCount": 8,
+              "publishedCount": 8,
+              "duplicatesMerged": 0,
+              "dropped": {
+                "incomplete": 0,
+                "notApproved": 0,
+                "badDate": 0,
+                "pastDate": 0,
+                "zodFail": 0
+              },
+              "sources": {
+                "osparalamas.com.br": {
+                  "rawCount": 8,
+                  "publishedCount": 8,
+                  "duplicatesMerged": 0,
+                  "dropped": {
+                    "incomplete": 0,
+                    "notApproved": 0,
+                    "badDate": 0,
+                    "pastDate": 0,
+                    "zodFail": 0
+                  }
+                }
+              },
+              "validationIssues": {},
+              "missingFields": {},
+              "samples": []
+            }
+          },
+          {
+            "id": "artist-astrid-williamson",
+            "url": "https://astridwilliamson.com/live/",
+            "httpClient": "got-scraping",
+            "success": true,
+            "reason": "empty_schedule",
+            "rawCount": 0,
+            "processedCount": 0,
+            "events": [],
+            "diagnostics": {
+              "schemaVersion": 1,
+              "generatedAt": "2026-10-06T20:32:31.682Z",
+              "baseDate": "2026-10-06T20:32:31.268Z",
+              "rawCount": 0,
+              "publishedCount": 0,
+              "duplicatesMerged": 0,
+              "dropped": {
+                "incomplete": 0,
+                "notApproved": 0,
+                "badDate": 0,
+                "pastDate": 0,
+                "zodFail": 0
+              },
+              "sources": {},
+              "validationIssues": {},
+              "missingFields": {},
+              "samples": []
+            }
+          }
+        ]
+      },
+      "lobaoRootVerification": {
+        "id": "artist-lobao",
+        "url": "https://lobao.com.br/agenda/",
+        "httpClient": "got-scraping",
+        "checkedAt": "2026-10-06T20:38:02.728Z",
+        "success": true,
+        "rawCount": 2,
+        "processedCount": 0,
+        "rawRows": [
+          {
+            "artist": "Lobão",
+            "date": "16.05.2006",
+            "venue": "Teatro de Arena Jaime Zeiger",
+            "city": "Ribeirão Preto, SP",
+            "country": "BR",
+            "originalSource": "lobao.com.br",
+            "scrapedAt": "2026-10-06T20:38:01.218Z"
+          },
+          {
+            "artist": "Lobão",
+            "date": "01.08.2026",
+            "venue": "Palácio das Artes",
+            "city": "Belo Horizonte, MG",
+            "country": "BR",
+            "ticketUrl": "https://bileto.sympla.com.br/event/116165/d/365227",
+            "originalSource": "lobao.com.br",
+            "scrapedAt": "2026-10-06T20:38:01.218Z"
+          }
+        ],
+        "matchedIdentity": {
+          "name": "Lobão",
+          "mbid": "7e3f7bff-eb80-40a9-a335-956d74bee54c",
+          "website": "http://www.lobao.com.br/"
+        },
+        "diagnostics": {
+          "schemaVersion": 1,
+          "generatedAt": "2026-10-06T20:38:02.728Z",
+          "baseDate": "2026-10-06T20:38:02.349Z",
+          "rawCount": 2,
+          "publishedCount": 0,
+          "duplicatesMerged": 0,
+          "dropped": {
+            "incomplete": 0,
+            "notApproved": 0,
+            "badDate": 0,
+            "pastDate": 2,
+            "zodFail": 0
+          },
+          "sources": {
+            "lobao.com.br": {
+              "rawCount": 2,
+              "publishedCount": 0,
+              "duplicatesMerged": 0,
+              "dropped": {
+                "incomplete": 0,
+                "notApproved": 0,
+                "badDate": 0,
+                "pastDate": 2,
+                "zodFail": 0
+              }
+            }
+          },
+          "validationIssues": {},
+          "missingFields": {},
+          "samples": [
+            {
+              "reason": "pastDate",
+              "artist": "Lobão",
+              "date": "16.05.2006",
+              "venue": "Teatro de Arena Jaime Zeiger",
+              "city": "Ribeirão Preto, SP",
+              "country": "BR",
+              "originalSource": "lobao.com.br"
+            },
+            {
+              "reason": "pastDate",
+              "artist": "Lobão",
+              "date": "01.08.2026",
+              "venue": "Palácio das Artes",
+              "city": "Belo Horizonte, MG",
+              "country": "BR",
+              "originalSource": "lobao.com.br"
+            }
+          ]
+        },
+        "scope": "Live native agenda contains two explicit past shows; no future shows are claimed. No empty flag or date changes."
+      },
+      "targetedTests": {
+        "pass": 5,
+        "fail": 0
+      },
+      "precedingJorgePublication": {
+        "runId": 37526646520,
+        "sourceHead": "ac47018219d0ad80b70b64624d07924283f24e96",
+        "artistHealthy": 393,
+        "venueHealthy": 129,
+        "published": 51554,
+        "statusSha256": "4f802aa6073b0a960cc88fa19ade8ccf31f7b17cfd5a3ba1b09fef10ac8b6e48",
+        "publicArtifactBytesIdentical": true
+      },
+      "limits": "Marmalade/Paralamas supply 10 current future events; Astrid exact empty notice; Lobão native agenda has two printed past dates and claims zero future coverage. Getter change does not rewrite dates, identities, countries or security policy.",
+      "pullRequest": {
+        "number": 202,
+        "url": "https://github.com/Cartograf666/concert-for-travelers-api/pull/202",
+        "state": "MERGED",
+        "headSha": "6c244b539302d352d253798c2a7a36fcd038cbb0",
+        "mergeSha": "9806b507d89895723f4762f69764461b301ccbeb",
+        "mergedAt": "2026-10-06T20:53:41Z"
+      },
+      "hostedCI": {
+        "total": 744,
+        "pass": 743,
+        "fail": 0,
+        "skip": 1,
+        "runId": 37528390477,
+        "headSha": "6c244b539302d352d253798c2a7a36fcd038cbb0",
+        "url": "https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37528390477",
+        "build": "pass",
+        "lintErrors": 0,
+        "existingLintWarnings": 103,
+        "duplicateCitySelectorCount": 126,
+        "duplicateCitySelectorBaseline": 131,
+        "artistIntegrity": "skipped: no artist catalog changes in this PR"
+      },
+      "hostedArtistVerification": {
+        "run": {
+          "id": "37529964747",
+          "attempt": 1,
+          "sha": "9806b507d89895723f4762f69764461b301ccbeb",
+          "workflow": "Artist Tour-Page Scrape"
+        },
+        "generatedAt": "2026-10-06T20:57:37.448Z",
+        "scrapers": {
+          "total": 415,
+          "succeeded": 392,
+          "failed": 23,
+          "changed": 4,
+          "unchanged": 388,
+          "staleIds": []
+        },
+        "denominatorsUnchanged": true,
+        "recovered": [
+          "artist-hubert-laws",
+          "artist-lobao",
+          "artist-paralamas-do-sucesso"
+        ],
+        "regressed": [
+          "artist-dan-deacon",
+          "artist-ircam",
+          "artist-hermann-nitsch",
+          "artist-baltimore-symphony-orchestra"
+        ],
+        "fourBackendOutcomes": {
+          "artist-marmalade": {
+            "id": "artist-marmalade",
+            "configPath": "scrapers/artists/artist-marmalade.json",
+            "configHash": "a208ba68a8e30c15a69a171eab147fcdd0eab945b900bddc227436f4201171f7",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 401"
+          },
+          "artist-paralamas-do-sucesso": {
+            "id": "artist-paralamas-do-sucesso",
+            "configPath": "scrapers/artists/artist-paralamas-do-sucesso.json",
+            "configHash": "60ef4596b9d776f1581f08dbe8b723cd059beddefeef134fb0e0b684fd83a4f9",
+            "status": "succeeded"
+          },
+          "artist-astrid-williamson": {
+            "id": "artist-astrid-williamson",
+            "configPath": "scrapers/artists/artist-astrid-williamson.json",
+            "configHash": "115bf1713e849e249b7202f7d06f8d728e0aa7110a6d1cd76c602a2a287c38f3",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 401"
+          },
+          "artist-lobao": {
+            "id": "artist-lobao",
+            "configPath": "scrapers/artists/artist-lobao.json",
+            "configHash": "7a0d0aa3b2e0044ff5dd30d4e77651a7f7f59f64ef45dede36fab13a07a4011a",
+            "status": "succeeded"
+          }
+        },
+        "failures": [
+          {
+            "id": "antoha-mc-tour",
+            "configPath": "scrapers/artists/antoha-mc-tour.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-adiemus",
+            "configPath": "scrapers/artists/artist-adiemus.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-amanda-forsyth",
+            "configPath": "scrapers/artists/artist-amanda-forsyth.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-astrid-williamson",
+            "configPath": "scrapers/artists/artist-astrid-williamson.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 401"
+          },
+          {
+            "id": "artist-avantasia",
+            "configPath": "scrapers/artists/artist-avantasia.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-andy-cairns",
+            "configPath": "scrapers/artists/artist-andy-cairns.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-dan-deacon",
+            "configPath": "scrapers/artists/artist-dan-deacon.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 403"
+          },
+          {
+            "id": "artist-ircam",
+            "configPath": "scrapers/artists/artist-ircam.json",
+            "reason": "fetch_error",
+            "error": "connect ETIMEDOUT 129.102.1.40:443; connect ENETUNREACH 2001:660:3004:4000::40:80:443 - Local (:::0)"
+          },
+          {
+            "id": "artist-limahl",
+            "configPath": "scrapers/artists/artist-limahl.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 403"
+          },
+          {
+            "id": "artist-marina-satti",
+            "configPath": "scrapers/artists/artist-marina-satti.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 404"
+          },
+          {
+            "id": "artist-marmalade",
+            "configPath": "scrapers/artists/artist-marmalade.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 401"
+          },
+          {
+            "id": "artist-nine-inch-nails",
+            "configPath": "scrapers/artists/artist-nine-inch-nails.json",
+            "reason": "parse_error",
+            "error": "Unmatched selector: =.//p/text()[contains(., ',')][1]"
+          },
+          {
+            "id": "artist-hermann-nitsch",
+            "configPath": "scrapers/artists/artist-hermann-nitsch.json",
+            "reason": "fetch_error",
+            "error": "timeout of 15000ms exceeded"
+          },
+          {
+            "id": "artist-nick-cave-the-bad-seeds",
+            "configPath": "scrapers/artists/artist-nick-cave-the-bad-seeds.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-baltimore-symphony-orchestra",
+            "configPath": "scrapers/artists/artist-baltimore-symphony-orchestra.json",
+            "reason": "fetch_error",
+            "error": "Scraper exceeded 90s wall-clock timeout"
+          },
+          {
+            "id": "artist-pequot",
+            "configPath": "scrapers/artists/artist-pequot.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 403"
+          },
+          {
+            "id": "artist-philip-lindholm",
+            "configPath": "scrapers/artists/artist-philip-lindholm.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 403"
+          },
+          {
+            "id": "artist-poetry",
+            "configPath": "scrapers/artists/artist-poetry.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-shelby-lynne",
+            "configPath": "scrapers/artists/artist-shelby-lynne.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 404"
+          },
+          {
+            "id": "artist-psycho-le-cemu",
+            "configPath": "scrapers/artists/artist-psycho-le-cemu.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-john-mellencamp",
+            "configPath": "scrapers/artists/artist-john-mellencamp.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-robin-thicke",
+            "configPath": "scrapers/artists/artist-robin-thicke.json",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-twin-atlantic",
+            "configPath": "scrapers/artists/artist-twin-atlantic.json",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 404"
+          }
+        ]
+      },
+      "hostedOutcomes": {
+        "artist-marmalade": {
+          "id": "artist-marmalade",
+          "configPath": "scrapers/artists/artist-marmalade.json",
+          "configHash": "a208ba68a8e30c15a69a171eab147fcdd0eab945b900bddc227436f4201171f7",
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 401"
+        },
+        "artist-paralamas-do-sucesso": {
+          "id": "artist-paralamas-do-sucesso",
+          "configPath": "scrapers/artists/artist-paralamas-do-sucesso.json",
+          "configHash": "60ef4596b9d776f1581f08dbe8b723cd059beddefeef134fb0e0b684fd83a4f9",
+          "status": "succeeded"
+        },
+        "artist-astrid-williamson": {
+          "id": "artist-astrid-williamson",
+          "configPath": "scrapers/artists/artist-astrid-williamson.json",
+          "configHash": "115bf1713e849e249b7202f7d06f8d728e0aa7110a6d1cd76c602a2a287c38f3",
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 401"
+        },
+        "artist-lobao": {
+          "id": "artist-lobao",
+          "configPath": "scrapers/artists/artist-lobao.json",
+          "configHash": "7a0d0aa3b2e0044ff5dd30d4e77651a7f7f59f64ef45dede36fab13a07a4011a",
+          "status": "succeeded"
+        }
+      },
+      "publicChecks": {
+        "marmalade": {
+          "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/marmalade.json",
+          "httpStatus": 200,
+          "rows": 1,
+          "names": [
+            "Marmalade"
+          ],
+          "dates": [
+            "2026-10-09"
+          ],
+          "internalMetadataAbsent": true,
+          "allVerifiedOfficialEventsPresent": false,
+          "missingVerifiedOfficialEvents": [
+            {
+              "artist": "Marmalade",
+              "date": "2027-01-16",
+              "city": "Skegness",
+              "country": "GB"
+            },
+            {
+              "artist": "Marmalade",
+              "date": "2027-03-13",
+              "city": "Burnham-on-Sea",
+              "country": "GB"
+            }
+          ],
+          "officialEventsChecked": 2,
+          "comparisonFields": [
+            "artist",
+            "date",
+            "city",
+            "country"
+          ]
+        },
+        "paralamas-do-sucesso": {
+          "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/paralamas-do-sucesso.json",
+          "httpStatus": 200,
+          "rows": 9,
+          "names": [
+            "Paralamas do Sucesso"
+          ],
+          "dates": [
+            "2026-10-08",
+            "2026-10-09",
+            "2026-10-11",
+            "2026-10-17",
+            "2026-10-30",
+            "2026-11-08",
+            "2026-12-06",
+            "2026-12-19",
+            "2027-01-23"
+          ],
+          "internalMetadataAbsent": true,
+          "allVerifiedOfficialEventsPresent": false,
+          "missingVerifiedOfficialEvents": [
+            {
+              "artist": "Paralamas do Sucesso",
+              "date": "2027-03-06",
+              "city": "Montes Claros",
+              "country": "BR"
+            }
+          ],
+          "officialEventsChecked": 8,
+          "comparisonFields": [
+            "artist",
+            "date",
+            "city",
+            "country"
+          ],
+          "latestHostedEventsChecked": 8,
+          "allLatestHostedEventsPresent": true,
+          "historicalCalendarCoverageVerification": {
+            "sourceId": "artist-paralamas-do-sucesso",
+            "scrapedAt": "2026-10-06T21:48:04.896Z",
+            "hostedRawCount": 8,
+            "publishedCardCount": 9,
+            "allLatestHostedRowsPresent": true,
+            "missingSinceEarlierNativeSnapshot": [
+              {
+                "artist": "Paralamas do Sucesso",
+                "date": "2027-03-06",
+                "city": "Montes Claros",
+                "country": "BR"
+              }
+            ],
+            "addedSinceEarlierNativeSnapshot": [
+              {
+                "artist": "Paralamas do Sucesso",
+                "date": "2026-12-19",
+                "city": "São Paulo",
+                "country": "BR"
+              }
+            ],
+            "nativeCalendarDifferenceClassification": "unresolved: official agenda and exact event URLs timed out via installed guarded client; independent web reads of apex/www also failed",
+            "historicalSnapshotPreservation": "not_confirmed",
+            "currentHostedRawPublication": "verified_all_eight",
+            "fullCalendarCoverageClaimed": false
+          }
+        }
+      },
+      "historicalCalendarCoverageGap": {
+        "sourceId": "artist-paralamas-do-sucesso",
+        "scrapedAt": "2026-10-06T21:48:04.896Z",
+        "hostedRawCount": 8,
+        "publishedCardCount": 9,
+        "allLatestHostedRowsPresent": true,
+        "missingSinceEarlierNativeSnapshot": [
+          {
+            "artist": "Paralamas do Sucesso",
+            "date": "2027-03-06",
+            "city": "Montes Claros",
+            "country": "BR"
+          }
+        ],
+        "addedSinceEarlierNativeSnapshot": [
+          {
+            "artist": "Paralamas do Sucesso",
+            "date": "2026-12-19",
+            "city": "São Paulo",
+            "country": "BR"
+          }
+        ],
+        "nativeCalendarDifferenceClassification": "unresolved: official agenda and exact event URLs timed out via installed guarded client; independent web reads of apex/www also failed",
+        "historicalSnapshotPreservation": "not_confirmed",
+        "currentHostedRawPublication": "verified_all_eight",
+        "fullCalendarCoverageClaimed": false
+      },
+      "artistRun": {
+        "id": "37536188687",
+        "attempt": 1,
+        "sha": "465b936bfb96b75cea38204c24a9a20bda4a9ec3",
+        "workflow": "Artist Tour-Page Scrape"
+      },
+      "dailyRun": {
+        "id": "37538576063",
+        "attempt": 1,
+        "sha": "465b936bfb96b75cea38204c24a9a20bda4a9ec3",
+        "workflow": "Daily Concert Scrape"
       }
     }
   },

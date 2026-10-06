@@ -13,21 +13,21 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
 ## Remaining-source repair continuation — 2026-10-06 (published; explicit source gaps remain)
 
-- All 52 preceding failures were inspected. Fifteen source extractors were adjusted
-  in PRs #190, #192, #193 and #195 plus the latest Wix follow-up; Alabama 3, Scotty McCreery and Ellen ten Damme were
+- All 52 preceding failures were inspected. Seventeen source extractors were adjusted
+  in PRs #190, #192, #193 and #195 plus Wix, Jorge and All That Remains follow-ups; Alabama 3, Scotty McCreery and Ellen ten Damme were
   newly regressed sources discovered by the first hosted follow-up. Current
   source, identity and date evidence is preserved per source in
   `docs/source-recovery-20261006.json`.
-- Final hosted artist run [37502871972](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37502871972)
-  on `7fe13ee` verifies **393/415** (preceding public slice 394/415).
-  Final daily [37521897489](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37521897489)
-  on `7155737` verifies **128/152** (preceding slice 121/152)
+- Final hosted artist run [37536188687](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37536188687)
+  on `465b936` verifies **395/415** (preceding public slice 394/415).
+  Final daily [37538576063](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37538576063)
+  on `465b936` verifies **128/152** (preceding slice 121/152)
   and completes Pages deployment. Both manifests enumerate every original ID;
-  no config is removed to shrink a denominator. 46 current failures remain;
+  no config is removed to shrink a denominator. 44 current failures remain;
   latest outcomes replace local success projections and the intermediate 392/415.
-- Public status generated `2026-10-06T20:04:33.934Z` is byte-identical to
-  this daily's publication artifact (SHA-256 `e5a442cbf488d6aadd88ce0536c28e2352a9cf769d57f1afd31f19160cada723`). The API contains
-  **51,544 published concerts**, +472 against 51,072 before this continuation.
+- Public status generated `2026-10-06T22:24:12.717Z` is byte-identical to
+  this daily's publication artifact (SHA-256 `6d3ed6de716d50524f7d21514836dcb330e7a351ea014769847abdeceaf13eb9`). The API contains
+  **51,799 published concerts**, +727 against 51,072 before this continuation.
   Publication gate and rejection/duplicate diagnostics are preserved in the report.
 - Current-date fixes cover RUST, Majestic, Antone's, Marmalade, O.A.R., Kingfisher
   Sky, Peter Smith, Stephanie Rainey, Paul Halley and the three new regressions.
@@ -80,40 +80,21 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   year/country, blanket empty flag or access/security bypass hides these gaps.
 - Next concrete needs for 415/415 and 152/152: a current supported calendar or
   provider access for blocked/absent sources, and canonical evidence for ambiguous
-  identities. Jorge & Mateus is merged in PR #201 with **743 passing tests / one skip**,
-  native two-month coverage and repeat-collection freshness checks. Ordinary
-  daily run 37526646520 is still running; this change is not yet included in
-  these hosted totals. A subsequent backend-only follow-up has live full-catalog
-  proof for Marmalade (2 future rows), Paralamas do Sucesso (8 future rows) and
-  Astrid Williamson (the exact visible empty-calendar notice) and Lobão
-  (the current native agenda has two explicit past dates; zero future rows are
-  claimed). Its CI, main
-  integration and full hosted artist sweep remain pending. Those limits are recorded; the current release is published and
+  identities. Jorge & Mateus has verified the native current and next UTC months,
+  including a genuinely empty preceding hosted result. Both monthly payloads
+  are checked on every collection even when the agenda HTML is unchanged;
+  other sources preserve their existing conditional-cache behavior. The real
+  populated contract, missing venue rejection, source identity and ambiguous
+  country cases are covered. This is two-month coverage, not all future months. Those limits are recorded; the current release is published and
   verified, while 100% source health remains unachieved.
-
-- Additional current first-party follow-up: the All That Remains Tour page
-  embeds its own Bandsintown calendar. Its exact group profile (ID 513 and
-  canonical MBID) currently reports zero upcoming events and its events API
-  returns an actual empty array. A guarded adapter preserves that group identity,
-  rejects incorrect profiles, incomplete events and unknown countries, and checks
-  both linked APIs on repeated collection. Two actual configured local runs,
-  eleven targeted/cache tests, build and targeted lint pass. Independent scoped
-  review found and rechecked the invalid-country case. Populated future rows are
-  contract fixtures only; none are claimed from the current live empty feed.
-  Hosted CI, main integration and the next ordinary publication are pending.
-
-- Latest complete artist sweep 37529964747 records 392/415: two of the four
-  access changes succeed on the runner, while Marmalade and Astrid receive 401;
-  four previously successful sources newly fail. This is not a 100% result.
-  Dan Deacon's guarded-client repair preserves six actual future shows with no
-  processing drops locally. A source-specific Nitsch publication guard rejects
-  exhibition date periods and one exact quartet row with unverified attribution,
-  including restored caches. Three prior published rows are removed from the
-  1,398-row saved cache; two are proven invalid and one remains unverified.
-  The independently primary-verified Evgeny Kissin recital on 2027-04-30 is
-  preserved. 36 focused checks passed; compact-hyphen and alias cases were then
-  fixed and all three affected tests rerun successfully, with build/lint passing.
-  Server CI, main integration and final ordinary publication are pending.
+- CI on the latest Jorge head: **743 pass / 1 skip / 0 failures**; build, lint and selector gates pass. No artist catalog changes are in this PR, so the conditional artist-integrity step is skipped. Ten targeted/cache checks also passed locally. PR #201 is merged; actual hosted outcome and current/next-month empty evidence are recorded in the report.
+- Four existing artist source configurations now use the guarded scraping HTTP client: Marmalade, Paralamas do Sucesso, Astrid Williamson and Lobão. Local official-calendar checks found 2 and 8 future events for the first two, an explicit empty notice for Astrid, and two printed past events with no claimed future coverage for Lobão. The latest full artist manifest records their actual outcomes: marmalade: failed, paralamas-do-sucesso: succeeded, astrid-williamson: failed, lobao: succeeded. Public cards are compared with all ten official event dates and locations; the report explicitly records any missing rows and distinguishes failed fresh collection from cached/provider coverage. CI on PR #202: **743 pass / 1 skip / 0 failures**; build, lint and selector gates pass. Artist integrity is skipped because the artist catalog did not change. These are four access configurations, not four new extractors.
+- The All That Remains official Tour page now reads its actual Bandsintown widget. Exact group profile 513 and canonical group MBID are validated independently of the distinct Philip Labonte identity. Native profile count zero plus an actual empty events array establish the current empty calendar; API errors, identity mismatches and incomplete/unknown geography fail explicitly. Linked API requests stay fresh on repeated collection. Latest hosted outcome: succeeded (empty_schedule). Current native future-event count is zero; populated behavior is covered by contract fixtures, not observed future shows. CI: **750 pass / 1 skip / 0 failures**, with build, lint and selector gates passing.
+- The newly regressed Dan Deacon source uses the existing guarded scraping client; actual local collection preserves six official future shows with zero processing drops. Latest full artist outcome: succeeded. The source-specific Nitsch provenance guard prevents exhibition periods from becoming single concert dates and quarantines one exact music row without verified artist attribution, including restored caches. Public verification removes those known records; the independently primary-verified Evgeny Kissin recital on 2027-04-30 remains. Latest CI: **753 pass / 1 skip / 0 failures**, with build, lint and selector gates passing. Fresh-source failures, archived raw rows and future concert coverage remain distinct.
+- Unresolved calendar-coverage check: Paralamas latest hosted snapshot has eight events, all eight published; the prior official 2027-03-06 Montes Claros event is absent before processing and a new 2026-12-19 Sao Paulo event appears instead. The agenda and exact native event page timed out in current guarded fetches; independent primary web reads also failed. Removal versus unobserved pagination is unconfirmed. The historical-snapshot preservation check is explicitly blocked/not passed, and full calendar coverage is not claimed. No guessed pagination, resurrected date or cache edit hides this gap.
+- Published provider health — ticketmaster: healthy, completeness complete; selected 27, attempted 27, succeeded 27, failed 0, unavailable 0, cache fallbacks 0. Full current freshness and actionable access/identity issues remain in finalHostedVerification.publication.sourceHealth. Source-cohort success does not claim complete upstream coverage.
+- Published provider health — bandsintown: degraded, completeness partial; selected 800, attempted 800, succeeded 634, failed 0, unavailable 166, cache fallbacks 0. Full current freshness and actionable access/identity issues remain in finalHostedVerification.publication.sourceHealth. Source-cohort success does not claim complete upstream coverage.
+- Published provider health — eventbrite: unavailable, completeness partial; selected 5, attempted 5, succeeded 0, failed 5, unavailable 0, cache fallbacks 0. Full current freshness and actionable access/identity issues remain in finalHostedVerification.publication.sourceHealth. Source-cohort success does not claim complete upstream coverage.
 
 ## All-branch integration and source recovery — 2026-10-06 (preceding publication; superseded above)
 
