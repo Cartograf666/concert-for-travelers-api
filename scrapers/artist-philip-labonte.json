@@ -2,16 +2,16 @@
   "id": "artist-philip-labonte",
   "domain": "allthatremainsonline.com",
   "url": "https://allthatremainsonline.com/pages/tour",
-  "type": "static_selectors",
+  "type": "custom_js",
+  "httpClient": "got-scraping",
+  "skipConditionalRequests": true,
+  "allowEmpty": true,
   "selectors": {
-    "eventBlock": "div.show-grid-item",
+    "eventBlock": "a.bit-widget-initializer",
     "artistNameFallback": "All That Remains",
-    "date": "span.grid-date",
-    "ticketUrl": "a.grid-tickets",
-    "venue": "span.grid-venue",
-    "city": "span.grid-location",
+    "date": "time",
     "venueNameFallback": "",
     "cityNameFallback": "",
-    "countryNameFallback": "US"
+    "countryNameFallback": "ZZ"
   }
 }

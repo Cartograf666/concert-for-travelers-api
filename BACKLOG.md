@@ -91,6 +91,17 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   integration and full hosted artist sweep remain pending. Those limits are recorded; the current release is published and
   verified, while 100% source health remains unachieved.
 
+- Additional current first-party follow-up: the All That Remains Tour page
+  embeds its own Bandsintown calendar. Its exact group profile (ID 513 and
+  canonical MBID) currently reports zero upcoming events and its events API
+  returns an actual empty array. A guarded adapter preserves that group identity,
+  rejects incorrect profiles, incomplete events and unknown countries, and checks
+  both linked APIs on repeated collection. Two actual configured local runs,
+  eleven targeted/cache tests, build and targeted lint pass. Independent scoped
+  review found and rechecked the invalid-country case. Populated future rows are
+  contract fixtures only; none are claimed from the current live empty feed.
+  Hosted CI, main integration and the next ordinary publication are pending.
+
 ## All-branch integration and source recovery — 2026-10-06 (preceding publication; superseded above)
 
 - Alex explicitly requested integrating all branch work into main and repairing
