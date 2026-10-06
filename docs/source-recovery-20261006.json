@@ -1,7 +1,7 @@
 {
   "date": "2026-10-06",
   "scope": "97 failures in the downloaded artist and venue baseline runs; newly discovered main configs are checked by the hosted cycle.",
-  "verification": "Local official extraction and offline regressions, followed by completed hosted artist/daily runs. Per-source hosted outcomes below supersede local access observations for those runs. Successful raw retrieval is not published concert coverage. Ticketmaster follow-on format repair awaits its next hosted sweep.",
+  "verification": "Local official extraction and offline regressions followed by completed hosted artist and final daily runs. Latest per-source hosted outcomes supersede local access observations for those runs. Public status is byte-identical to the final publication artifact. Raw retrieval is not published coverage; later operational retry-only deltas await ordinary hosted observation.",
   "counts": {
     "external-block": 16,
     "recovered": 26,
@@ -699,8 +699,7 @@
       "proof": "Harry Connick, Jr. currently does not have any upcoming tour dates.",
       "emptyVerification": "verified_runner_empty",
       "hosted": {
-        "status": "succeeded",
-        "reason": "empty_schedule"
+        "status": "succeeded"
       }
     },
     {
@@ -776,7 +775,9 @@
       "sourceUrl": "https://chicagotheband.com/tour/",
       "proof": "official Chicago band tour, 23 future rows, not James Pankow solo",
       "hosted": {
-        "status": "succeeded"
+        "status": "failed",
+        "reason": "fetch_error",
+        "error": "Request failed with status code 403"
       }
     },
     {
@@ -843,8 +844,8 @@
       "proof": "configured TheKingBlues domain is for sale at HugeDomains, wrong source",
       "hosted": {
         "status": "failed",
-        "reason": "selectors_stale",
-        "error": "Parsed 0 concerts. Website layout might have changed."
+        "reason": "fetch_error",
+        "error": "Client network socket disconnected before secure TLS connection was established"
       }
     },
     {
@@ -871,8 +872,8 @@
       "proof": "Official page Angular markup draws from /wp-json/agenda/v1/eventos/month/M/year/Y. Public API returned [] for Oct-Dec 2026 and Jan 2027; no global empty statement, so no allowEmpty and no confirmed future event.",
       "hosted": {
         "status": "failed",
-        "reason": "selectors_stale",
-        "error": "Parsed 0 concerts. Website layout might have changed."
+        "reason": "fetch_error",
+        "error": "Request failed with status code 403"
       }
     },
     {
@@ -1060,7 +1061,7 @@
       "hosted": {
         "status": "failed",
         "reason": "fetch_error",
-        "error": "Scraper exceeded 90s wall-clock timeout"
+        "error": "timeout of 15000ms exceeded"
       }
     },
     {
@@ -1113,8 +1114,8 @@
       "proof": "Corrected official artist section /yama/live/ serves 200 and lists latest 2026.08.14 Augusta Camp announcement, whose concert took place Aug 15; no future dated Yamazaki concert currently published. Previous /yamazaki/live/ redirected to agency home with other artists.",
       "hosted": {
         "status": "failed",
-        "reason": "selectors_stale",
-        "error": "Parsed 0 concerts. Website layout might have changed."
+        "reason": "fetch_error",
+        "error": "Scraper exceeded 90s wall-clock timeout"
       }
     },
     {
@@ -1283,7 +1284,7 @@
     }
   ],
   "hostedVerification": {
-    "state": "completed_source_sweeps_ticketmaster_followon_pending",
+    "state": "published_with_explicit_source_and_operational_verification_gaps",
     "artist": {
       "run": {
         "id": "37471384116",
@@ -1412,24 +1413,35 @@
     },
     "venue": {
       "run": {
-        "id": "37474755563",
+        "id": "37481742565",
         "attempt": 1,
-        "sha": "8bdcaeda2a8e4be99e79fde56d4f4fca482ffc4c",
+        "sha": "cffcd3c410f169fc541c70935281851fa237128d",
         "workflow": "Daily Concert Scrape"
       },
-      "url": "https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37474755563",
+      "url": "https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37481742565",
       "complete": true,
       "counts": {
         "targets": 152,
+        "selected": 152,
+        "attempted": 152,
         "succeeded": 121,
         "failed": 31,
         "empty": 8,
+        "unavailable": 0,
+        "skippedFresh": 0,
         "missing": 22,
-        "cacheFallbacks": 9
+        "cacheFallbacks": 9,
+        "partial": 0
       },
+      "previousFailuresRecoveredCount": 28,
       "currentFailures": [
         {
-          "id": "artist-antones-records",
+          "id": "artist-babbu-mann",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        {
+          "id": "artist-angel-heart",
           "reason": "selectors_stale",
           "error": "Parsed 0 concerts. Website layout might have changed."
         },
@@ -1439,9 +1451,9 @@
           "error": "Parsed 0 concerts. Website layout might have changed."
         },
         {
-          "id": "artist-harold-jones",
-          "reason": "selectors_stale",
-          "error": "Parsed 0 concerts. Website layout might have changed."
+          "id": "artist-james-pankow",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
         },
         {
           "id": "artist-jane-mcdonald",
@@ -1449,17 +1461,32 @@
           "error": "Request failed with status code 404"
         },
         {
-          "id": "artist-jerry-depizzo",
-          "reason": "fetch_error",
-          "error": "Hostname/IP does not match certificate's altnames: Host: ofarevolution.com. is not in the cert's altnames: DNS:*.liveoar.com, DNS:liveoar.com"
-        },
-        {
-          "id": "artist-angel-heart",
+          "id": "artist-antones-records",
           "reason": "selectors_stale",
           "error": "Parsed 0 concerts. Website layout might have changed."
         },
         {
           "id": "artist-jorge-e-mateus",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
+        },
+        {
+          "id": "artist-harold-jones",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        {
+          "id": "artist-jerry-depizzo",
+          "reason": "fetch_error",
+          "error": "Hostname/IP does not match certificate's altnames: Host: ofarevolution.com. is not in the cert's altnames: DNS:*.liveoar.com, DNS:liveoar.com"
+        },
+        {
+          "id": "artist-joe-hutton",
+          "reason": "fetch_error",
+          "error": "Client network socket disconnected before secure TLS connection was established"
+        },
+        {
+          "id": "artist-john-keane",
           "reason": "selectors_stale",
           "error": "Parsed 0 concerts. Website layout might have changed."
         },
@@ -1474,27 +1501,12 @@
           "error": "getaddrinfo ENOTFOUND www.judithrijnveld.com"
         },
         {
-          "id": "artist-pain-for-pleasure",
-          "reason": "selectors_stale",
-          "error": "Parsed 0 concerts. Website layout might have changed."
-        },
-        {
-          "id": "artist-painflow",
-          "reason": "selectors_stale",
-          "error": "Parsed 0 concerts. Website layout might have changed."
-        },
-        {
-          "id": "artist-babbu-mann",
-          "reason": "selectors_stale",
-          "error": "Parsed 0 concerts. Website layout might have changed."
-        },
-        {
           "id": "artist-paul-halley",
           "reason": "fetch_error",
           "error": "Request failed with status code 403"
         },
         {
-          "id": "artist-peter-smith",
+          "id": "artist-pain-for-pleasure",
           "reason": "selectors_stale",
           "error": "Parsed 0 concerts. Website layout might have changed."
         },
@@ -1504,12 +1516,7 @@
           "error": "Parsed 0 concerts. Website layout might have changed."
         },
         {
-          "id": "artist-joe-hutton",
-          "reason": "selectors_stale",
-          "error": "Parsed 0 concerts. Website layout might have changed."
-        },
-        {
-          "id": "artist-philip-labonte",
+          "id": "artist-painflow",
           "reason": "selectors_stale",
           "error": "Parsed 0 concerts. Website layout might have changed."
         },
@@ -1517,6 +1524,21 @@
           "id": "artist-rainey",
           "reason": "fetch_error",
           "error": "getaddrinfo ENOTFOUND stephanieraineymusic.com"
+        },
+        {
+          "id": "artist-peter-smith",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        {
+          "id": "artist-ray-davies",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        {
+          "id": "artist-philip-labonte",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
         },
         {
           "id": "artist-ray-scott",
@@ -1529,27 +1551,7 @@
           "error": "Parsed 0 concerts. Website layout might have changed."
         },
         {
-          "id": "artist-ray-davies",
-          "reason": "selectors_stale",
-          "error": "Parsed 0 concerts. Website layout might have changed."
-        },
-        {
-          "id": "artist-john-keane",
-          "reason": "selectors_stale",
-          "error": "Parsed 0 concerts. Website layout might have changed."
-        },
-        {
-          "id": "artist-jorge-palma",
-          "reason": "fetch_error",
-          "error": "timeout of 15000ms exceeded"
-        },
-        {
           "id": "artist-yuta-and-the-bushido-boys",
-          "reason": "selectors_stale",
-          "error": "Parsed 0 concerts. Website layout might have changed."
-        },
-        {
-          "id": "artist-yamazaki-masayoshi",
           "reason": "selectors_stale",
           "error": "Parsed 0 concerts. Website layout might have changed."
         },
@@ -1559,9 +1561,19 @@
           "error": "Parsed 0 concerts. Page appears client-side rendered (events absent from server HTML)."
         },
         {
+          "id": "artist-jorge-palma",
+          "reason": "fetch_error",
+          "error": "timeout of 15000ms exceeded"
+        },
+        {
           "id": "kitty-su-bangalore",
           "reason": "selectors_stale",
           "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        {
+          "id": "artist-philippine-philharmonic-orchestra",
+          "reason": "fetch_error",
+          "error": "timeout of 15000ms exceeded"
         },
         {
           "id": "rust-copenhagen",
@@ -1574,17 +1586,27 @@
           "error": "timeout of 15000ms exceeded"
         },
         {
-          "id": "progresja-warsaw",
-          "reason": "fetch_error",
-          "error": "timeout of 15000ms exceeded"
-        },
-        {
-          "id": "artist-philippine-philharmonic-orchestra",
+          "id": "artist-yamazaki-masayoshi",
           "reason": "fetch_error",
           "error": "Scraper exceeded 90s wall-clock timeout"
         }
       ],
-      "previousFailuresRecoveredCount": 29
+      "changesFromIntermediate": [
+        {
+          "id": "artist-james-pankow",
+          "from": "succeeded",
+          "to": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
+        },
+        {
+          "id": "progresja-warsaw",
+          "from": "failed",
+          "to": "succeeded",
+          "reason": null,
+          "error": null
+        }
+      ]
     },
     "publication": {
       "baseline": {
@@ -1596,22 +1618,22 @@
         "publishedConcerts": 38944
       },
       "after": {
-        "generatedAt": "2026-10-06T14:01:25.332Z",
+        "generatedAt": "2026-10-06T14:59:39.476Z",
         "scrapersTotal": 152,
         "scrapersOk": 121,
         "scrapersFailed": 31,
-        "ticketmasterEvents": 12316,
-        "publishedConcerts": 39261
+        "ticketmasterEvents": 57686,
+        "publishedConcerts": 51072
       },
       "gate": {
         "schemaVersion": 1,
         "state": "eligible",
-        "generatedAt": "2026-10-06T14:01:25.332Z",
-        "publishedConcerts": 39261,
+        "generatedAt": "2026-10-06T14:59:39.477Z",
+        "publishedConcerts": 51072,
         "healthGate": {
           "state": "eligible",
           "reason": "Current publication passed the existing health gate.",
-          "evaluatedAt": "2026-10-06T14:01:27.913Z"
+          "evaluatedAt": "2026-10-06T14:59:42.488Z"
         }
       },
       "baselineProcessing": {
@@ -1619,53 +1641,307 @@
         "publishedCount": 38944
       },
       "afterProcessing": {
-        "rawCount": 67019,
-        "publishedCount": 39261
+        "rawCount": 112392,
+        "publishedCount": 51072,
+        "duplicatesMerged": 12529,
+        "dropped": {
+          "incomplete": 1840,
+          "notApproved": 35483,
+          "badDate": 1913,
+          "pastDate": 9349,
+          "zodFail": 206
+        }
+      },
+      "publicArtifactBytesIdentical": true,
+      "statusSha256": "3d5fd2dd0d471699e8e207a31ed7d0f80dc8a37f09cf012d921d7bc03d42d5de",
+      "publishedDeltaFromBaseline": 12128,
+      "theHu": {
+        "publicRows": 19,
+        "allNames": "The HU",
+        "allArtistWebsites": "https://www.thehuofficial.com/"
       }
     },
     "ticketmaster": {
       "health": {
         "schemaVersion": 1,
-        "generatedAt": "2026-10-06T14:00:44.893Z",
+        "generatedAt": "2026-10-06T14:49:14.390Z",
         "source": "ticketmaster",
-        "state": "unavailable",
+        "state": "healthy",
         "counts": {
           "targets": 27,
           "selected": 27,
           "attempted": 27,
-          "succeeded": 0,
-          "failed": 27,
-          "empty": 0,
+          "succeeded": 27,
+          "failed": 0,
+          "empty": 2,
           "unavailable": 0,
           "skippedFresh": 0,
           "missing": 0,
-          "cacheFallbacks": 27,
+          "cacheFallbacks": 0,
           "partial": 0
         },
         "freshness": {
           "basis": "verifiedAt",
           "classification": "current_run",
-          "fresh": 0,
-          "old": 19,
-          "unknown": 8,
-          "latestVerifiedAt": "2026-10-06T11:19:59.756Z",
-          "p50Days": 0.11,
-          "p95Days": 0.11,
-          "maxDays": 0.11
+          "fresh": 27,
+          "old": 0,
+          "unknown": 0,
+          "latestVerifiedAt": "2026-10-06T14:49:14.390Z",
+          "p50Days": 0,
+          "p95Days": 0,
+          "maxDays": 0
         },
-        "completeness": "partial",
-        "issues": [
-          {
-            "reason": "request_failed",
-            "count": 27,
-            "action": "retry_next_scheduled_sweep"
+        "completeness": "complete",
+        "issues": []
+      },
+      "rawEvents": 57686,
+      "baselineRawEvents": 12316,
+      "requests": 445,
+      "requestCap": 750,
+      "allConfiguredCountryCacheDatesAdvanced": true,
+      "observedHttp400AfterFix": 0,
+      "verificationReceiptSummary": {
+        "run": {
+          "id": "37481742565",
+          "attempt": 1,
+          "sha": "cffcd3c410f169fc541c70935281851fa237128d",
+          "workflow": "Daily Concert Scrape"
+        },
+        "artifactGeneratedAt": "2026-10-06T14:58:59.651Z",
+        "ticketmasterHealthGeneratedAt": "2026-10-06T14:49:14.390Z",
+        "publicGeneratedAt": "2026-10-06T14:59:39.476Z",
+        "checks": {
+          "configuredCountriesMatchCache": true,
+          "everyCountryFetchedAndVerifiedThisRun": true,
+          "healthHealthyComplete": true,
+          "publicHealthMatchesArtifact": true,
+          "publicRawCountMatchesCache": true,
+          "logSummaryMatchesArtifact": true,
+          "requestBudgetRespected": true,
+          "noTicketmasterErrorLines": true,
+          "runIdentity": true,
+          "priorCacheUnchangedAcrossIntermediateFailure": true
+        },
+        "counts": {
+          "configuredCountries": 27,
+          "countriesWithNonzeroRaw": 25,
+          "emptyCountries": [
+            "FR",
+            "PT"
+          ],
+          "requests": 445,
+          "requestCap": 750,
+          "baselineRaw": 12316,
+          "intermediateRaw": 12316,
+          "finalRaw": 57686,
+          "increaseRaw": 45370
+        },
+        "countryRaw": {
+          "US": {
+            "baseline": 999,
+            "intermediate": 999,
+            "final": 33262,
+            "delta": 32263
+          },
+          "CA": {
+            "baseline": 1000,
+            "intermediate": 1000,
+            "final": 2951,
+            "delta": 1951
+          },
+          "MX": {
+            "baseline": 712,
+            "intermediate": 712,
+            "final": 712,
+            "delta": 0
+          },
+          "GB": {
+            "baseline": 1000,
+            "intermediate": 1000,
+            "final": 10824,
+            "delta": 9824
+          },
+          "IE": {
+            "baseline": 1000,
+            "intermediate": 1000,
+            "final": 1271,
+            "delta": 271
+          },
+          "DE": {
+            "baseline": 425,
+            "intermediate": 425,
+            "final": 531,
+            "delta": 106
+          },
+          "AT": {
+            "baseline": 59,
+            "intermediate": 59,
+            "final": 59,
+            "delta": 0
+          },
+          "CH": {
+            "baseline": 122,
+            "intermediate": 122,
+            "final": 122,
+            "delta": 0
+          },
+          "NL": {
+            "baseline": 690,
+            "intermediate": 690,
+            "final": 691,
+            "delta": 1
+          },
+          "BE": {
+            "baseline": 712,
+            "intermediate": 712,
+            "final": 712,
+            "delta": 0
+          },
+          "FR": {
+            "baseline": 0,
+            "intermediate": 0,
+            "final": 0,
+            "delta": 0
+          },
+          "ES": {
+            "baseline": 1000,
+            "intermediate": 1000,
+            "final": 1269,
+            "delta": 269
+          },
+          "PT": {
+            "baseline": 0,
+            "intermediate": 0,
+            "final": 0,
+            "delta": 0
+          },
+          "IT": {
+            "baseline": 442,
+            "intermediate": 442,
+            "final": 444,
+            "delta": 2
+          },
+          "PL": {
+            "baseline": 783,
+            "intermediate": 783,
+            "final": 785,
+            "delta": 2
+          },
+          "CZ": {
+            "baseline": 349,
+            "intermediate": 349,
+            "final": 349,
+            "delta": 0
+          },
+          "SE": {
+            "baseline": 115,
+            "intermediate": 115,
+            "final": 115,
+            "delta": 0
+          },
+          "NO": {
+            "baseline": 224,
+            "intermediate": 224,
+            "final": 222,
+            "delta": -2
+          },
+          "DK": {
+            "baseline": 209,
+            "intermediate": 209,
+            "final": 209,
+            "delta": 0
+          },
+          "FI": {
+            "baseline": 81,
+            "intermediate": 81,
+            "final": 82,
+            "delta": 1
+          },
+          "AU": {
+            "baseline": 1000,
+            "intermediate": 1000,
+            "final": 1401,
+            "delta": 401
+          },
+          "NZ": {
+            "baseline": 276,
+            "intermediate": 276,
+            "final": 275,
+            "delta": -1
+          },
+          "ZA": {
+            "baseline": 13,
+            "intermediate": 13,
+            "final": 13,
+            "delta": 0
+          },
+          "AE": {
+            "baseline": 43,
+            "intermediate": 43,
+            "final": 43,
+            "delta": 0
+          },
+          "TR": {
+            "baseline": 999,
+            "intermediate": 999,
+            "final": 1281,
+            "delta": 282
+          },
+          "SG": {
+            "baseline": 59,
+            "intermediate": 59,
+            "final": 59,
+            "delta": 0
+          },
+          "PH": {
+            "baseline": 4,
+            "intermediate": 4,
+            "final": 4,
+            "delta": 0
           }
+        },
+        "countryChanges": {
+          "increased": [
+            "US",
+            "CA",
+            "GB",
+            "IE",
+            "DE",
+            "NL",
+            "ES",
+            "IT",
+            "PL",
+            "FI",
+            "AU",
+            "TR"
+          ],
+          "decreased": [
+            "NO",
+            "NZ"
+          ],
+          "unchanged": [
+            "MX",
+            "AT",
+            "CH",
+            "BE",
+            "FR",
+            "PT",
+            "CZ",
+            "SE",
+            "DK",
+            "ZA",
+            "AE",
+            "SG",
+            "PH"
+          ]
+        },
+        "ticketmasterErrorLines": [],
+        "limits": [
+          "Healthy/complete is the collector report for this run; it does not independently prove the external provider has every possible event.",
+          "Country counts are raw cache events; publishedConcerts is a different post-processing count."
         ]
       },
-      "rawEvents": 12316,
-      "previousConcertsAndVerificationTimestampsPreserved": true,
-      "observedError": "All 27 first requests returned HTTP 400; response bodies unavailable in Actions logs.",
-      "followon": "Use documented second-precision UTC date bounds with outward rounding. Strict-format split regression reproduces the old rejection and recovers 1201/1201 events. Live cause and freshness remain unverified until another hosted sweep."
+      "providerCoverageCaveat": "Complete collection in configured countries is not independent proof of all possible provider events; raw events differ from published concerts."
     },
     "eventbrite": {
       "state": "unavailable",
@@ -1685,7 +1961,7 @@
       "artist-reality-check": "Official configured https://therealitycheckexperiment.com/ returns HTTP 429; no last-good source cache or access bypass."
     },
     "retryBudgetFollowon": {
-      "state": "locally_fixed_release_pending",
+      "state": "merged_final_venue_checked_artist_operations_await_ordinary_run",
       "cause": "Deterministic transient healing raises maxRetries to5. Six15s attempts plus backoff exceed90s source wall-clock ceiling; autoPR172 reintroduced this in Alabama Symphony and autoPR185 in Progresja. Same118750ms isolated retry budget found in16 other static sources; Philippine Philharmonic also failed at90s in the actual first daily run. Dead-domain and inherited anti-bot politeness can produce the same overrun.",
       "ticketmasterMergedMain": "703862e06e19ec1d6f505090813e86cdf3ac31e2",
       "scope": [
@@ -1733,7 +2009,65 @@
         "scrapedAt": "2026-10-06T14:31:47.813Z",
         "publishedCount": "not_inferred_from_raw_test_config",
         "rawCount": 12
+      },
+      "mergedMain": "cffcd3c410f169fc541c70935281851fa237128d",
+      "combinedCI": {
+        "runId": "37481207539",
+        "tests": 698,
+        "passed": 697,
+        "failed": 0,
+        "skipped": 1,
+        "build": "pass",
+        "lint": "pass",
+        "selectorRatchet": "pass"
+      },
+      "laterAutoRetryOnlyDelta": {
+        "pr": 188,
+        "main": "e2fd56c52047ee2dd7356006c130e6565fb3b231",
+        "ids": [
+          "artist-philippine-philharmonic-orchestra",
+          "majestic-music-club-bratislava"
+        ],
+        "retries": 3,
+        "extractionAndPolitenessUnchanged": true,
+        "hostedVerification": "next_ordinary_venue_run"
       }
+    },
+    "finalDaily": {
+      "runId": "37481742565",
+      "sha": "cffcd3c410f169fc541c70935281851fa237128d",
+      "url": "https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37481742565",
+      "state": "completed",
+      "createdAt": "2026-10-06T14:46:12Z",
+      "conclusion": "success",
+      "scrape": "success",
+      "deploy": "success",
+      "completedAt": "2026-10-06T15:01:04Z"
+    },
+    "intermediateDaily": {
+      "runId": "37474755563",
+      "sha": "8bdcaeda2a8e4be99e79fde56d4f4fca482ffc4c",
+      "generatedAt": "2026-10-06T14:01:25.332Z",
+      "publishedConcerts": 39261,
+      "originalFailuresRecovered": 54,
+      "ticketmaster": "All27 first requests HTTP400, all last-good country caches/timestamps retained."
+    },
+    "currentObservedCohorts": {
+      "baselineFailures": 97,
+      "baselineFailuresNowSucceeded": 53,
+      "currentConfigFailures": 52,
+      "originalFailuresRemaining": 44,
+      "previousSuccessesNowFailed": 5,
+      "addedSourcesFailed": 3,
+      "artistProducerRun": "37471384116",
+      "venueProducerRun": "37481742565"
+    },
+    "branchIntegration": {
+      "main": "e2fd56c52047ee2dd7356006c130e6565fb3b231",
+      "refsChecked": 64,
+      "notIncluded": [],
+      "frozenRemoteHeadsChecked": 18,
+      "frozenRemoteHeadsNotIncluded": []
     }
   }
 }
