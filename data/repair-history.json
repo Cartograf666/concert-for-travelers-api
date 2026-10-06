@@ -25878,5 +25878,32 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.angelheart.rocks/events but could not re-select on it",
     "verification": ""
+  },
+  {
+    "id": "artist-bruce-thomas",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-bruce-thomas.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-06T20:07:25.268Z",
+    "previousConfig": {
+      "id": "artist-bruce-thomas",
+      "domain": "brucethomasmusic.com",
+      "url": "https://brucethomasmusic.com/schedule",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "#calendar tbody .with-events li",
+        "artist": ".event-name",
+        "date": ".calendar-placeholder",
+        "datePattern": "MMM DD",
+        "ticketUrl": ".event_details",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://brucethomasmusic.com/schedule but could not re-select on it",
+    "verification": ""
   }
 ]
