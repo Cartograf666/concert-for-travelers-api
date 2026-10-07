@@ -13,20 +13,20 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
 ## Calendar and cancellation continuation — 2026-10-07 (published and verified; source gaps remain)
 
-- PRs #212/#214/#215/#217 and dependency PRs #209/#210/#211 are merged.
-  Automatic PRs #213/#216/#218/#219/#220 are also included: retry settings,
+- PRs #212/#214/#215/#217/#221 and dependency PRs #209/#210/#211 are merged.
+  Automatic PRs #213/#216/#218/#219/#220/#222 are also included: retry settings,
   repair history and
   Giora Feidman's existing supported HTTP client selection. These configuration
   changes do not by themselves prove source recovery.
   Full artist run [37596243814](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37596243814)
-  verifies **393/415**; automatic daily
-  [37598893453](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37598893453)
-  verifies **127/152** and completes Pages deployment.
-  Every original source ID is preserved; 47 current failures remain.
-- Public status generated `2026-10-07T09:30:51.226Z` and public index are byte-identical
-  to this daily's producer artifact. **51,839 concerts** are published;
+  verifies **393/415**; full daily
+  [37603538228](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37603538228)
+  verifies **128/152** and completes Pages deployment.
+  Every original source ID is preserved; 46 current failures remain.
+- Public status generated `2026-10-07T10:05:23.170Z` and public index are byte-identical
+  to this daily's producer artifact. **51,836 concerts** are published;
   the health gate is eligible and processing totals balance. The observed net
-  change is +40 versus the pre-continuation
+  change is +37 versus the pre-continuation
   51,799; day expiry, provider rotation, cancellations and fresh data all contribute.
 - Alabama Symphony's official adult calendar preserves its 39
   distinct future date/city tuples, including verified Alabaster, Hoover and
@@ -58,14 +58,16 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 - AngelHeart candidate was withdrawn: the catalog website/calendar and music
   metadata belong to different same-name entities. Canonical target remains
   unresolved; no unrelated empty calendar or catalog edit improves health.
-- Fresh install and latest hosted CI: **773 pass / 1 skip / 0 failures**; build,
-  lint and selector ratchet pass. Lint retains 103 existing warnings; npm audit
+- Fresh install and latest hosted CI: **776 pass / 1 skip / 0 failures**; build,
+  lint and selector ratchet pass. Lint reports 103 warnings; npm audit
   reports zero vulnerabilities. Independent gpt-6-sol review covered parsing,
   cancellation scope and pagination. Artist integrity is skipped for this PR
   because the artist catalog is unchanged.
-- Final regression diagnosis found Sharon Van Etten's official page now embeds
-  an identity-checked Seated tour with an explicit empty event list. A narrow
-  adapter repair is in progress; it is not yet a hosted source success.
+- Sharon Van Etten's exact first-party embedded Seated tour succeeds with a
+  verified native empty relationship. The legacy source ID remains unchanged;
+  the catalog entry named You Used to Hold Me So Tight is still unresolved.
+  Any future nonempty group schedule fails explicitly until canonical identity
+  is established; no group-to-solo attribution or unpublishable healthy rows.
 - Current source failures, provider health, producer/public hashes, exact
   source outcomes and verification limits are in `docs/source-recovery-20261006.json`
   under `continuation20261007`. 415/415 and 152/152 remain unachieved: blocked

@@ -9414,6 +9414,27 @@
           "configHash": "4a86008f65b52763f9ea205b298337aa2e348fe011500bc73ff29548ee9beaa2",
           "status": "succeeded"
         }
+      },
+      {
+        "id": "artist-you-used-to-hold-me-so-tight",
+        "cohort": "venue",
+        "primaryUrl": "https://www.sharonvanetten.com/tour",
+        "nativeFeedUrl": "https://cdn.seated.com/api/tour/b19bb52c-bf1a-4e6f-beb8-abb33a5ea505?include=tour-events",
+        "change": "Replace obsolete rendered selectors with the exact first-party embedded Seated identity and explicit native empty relationship. Reject every nonempty schedule until the canonical group identity is resolved.",
+        "localResult": {
+          "success": true,
+          "reason": "empty_schedule",
+          "rawEvents": 0,
+          "targetedTestsPassed": 3
+        },
+        "identityLimit": "Verifies configured Sharon Van Etten & The Attachment Theory endpoint only. The legacy catalog record named You Used to Hold Me So Tight remains unresolved and artist data is unchanged; future populated group schedules explicitly fail.",
+        "hostedOutcome": {
+          "id": "artist-you-used-to-hold-me-so-tight",
+          "configPath": "scrapers/artist-you-used-to-hold-me-so-tight.json",
+          "configHash": "53b26c9376bfcd286f93d4312812af4807f314bec60c05f84a084a63bf3b8fff",
+          "status": "succeeded",
+          "reason": "empty_schedule"
+        }
       }
     ],
     "cancellations": {
@@ -9465,19 +9486,22 @@
       },
       "independentReview": "gpt-6-sol reviewed source parsing, provenance/cancellation guards and pagination; postponed-status finding was fixed and tests rerun. Angel candidate subsequently withdrawn due to new identity conflict.",
       "hostedCi": {
-        "runId": 37595794783,
-        "testedHead": "f389721ef9fe4aeda0fa14e05ed9dc839363078c",
+        "runId": 37603067618,
+        "testedHead": "af71a400e6c9e0af0b547af1a78c07f6489b0c01",
         "nodeMajor": 22,
-        "passed": 773,
+        "passed": 776,
         "failed": 0,
         "skipped": 1,
         "buildPassed": true,
         "lintPassed": true,
+        "lintWarnings": 103,
         "selectorRatchetPassed": true,
-        "artistIntegrity": "not_run_catalog_unchanged"
+        "artistIntegrity": "not_run_catalog_unchanged",
+        "npmAuditVulnerabilities": 0
       }
     },
     "remainingLimits": [
+      "Sharon configured Seated endpoint succeeds with verified native emptiness, but the legacy catalog identity remains unresolved; any future nonempty group feed fails explicitly rather than producing healthy-but-unpublished shows.",
       "Remaining current failed sources are enumerated in hostedVerification.cohorts; blocked access, missing supported current calendars and unresolved artist identity remain explicit.",
       "Paralamas native pagination parses nine verified events in isolation, but the complete source run fails upstream access and retains eight older rows. March 6 Montes Claros remains an explicit public coverage gap unless the final source-specific check records recovery.",
       "Ray Scott profile count eight versus seven actual native widget/feed events remains a coverage gap.",
@@ -9788,6 +9812,62 @@
         "state": "MERGED",
         "title": "Self-heal: repair broken scrapers",
         "url": "https://github.com/Cartograf666/concert-for-travelers-api/pull/220"
+      },
+      {
+        "files": [
+          {
+            "path": "scrapers/artist-you-used-to-hold-me-so-tight.json",
+            "additions": 3,
+            "deletions": 4,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": "src/engine/custom/artist-you-used-to-hold-me-so-tight.ts",
+            "additions": 34,
+            "deletions": 0,
+            "changeType": "ADDED"
+          },
+          {
+            "path": "tests/artist_sharon_van_etten_seated_20261007.test.ts",
+            "additions": 61,
+            "deletions": 0,
+            "changeType": "ADDED"
+          },
+          {
+            "path": "tests/fixtures/artist-sharon-van-etten-seated-empty-20261007.json",
+            "additions": 1,
+            "deletions": 0,
+            "changeType": "ADDED"
+          }
+        ],
+        "headRefOid": "af71a400e6c9e0af0b547af1a78c07f6489b0c01",
+        "mergeCommit": {
+          "oid": "c4afadf27f7853fe8b196881f32fec83b994c8b0"
+        },
+        "mergedAt": "2026-10-07T09:51:46Z",
+        "number": 221,
+        "state": "MERGED",
+        "title": "Verify Sharon official Seated empty schedule",
+        "url": "https://github.com/Cartograf666/concert-for-travelers-api/pull/221"
+      },
+      {
+        "files": [
+          {
+            "path": "data/repair-history.json",
+            "additions": 56,
+            "deletions": 0,
+            "changeType": "MODIFIED"
+          }
+        ],
+        "headRefOid": "b095d3b51d024dabf00c2f9146eaeafed42974a4",
+        "mergeCommit": {
+          "oid": "da9c140e014a5dbc30f9742053d6600403fbbed4"
+        },
+        "mergedAt": "2026-10-07T10:09:17Z",
+        "number": 222,
+        "state": "MERGED",
+        "title": "Self-heal: repair broken scrapers",
+        "url": "https://github.com/Cartograf666/concert-for-travelers-api/pull/222"
       }
     ],
     "secondHostedArtistAttempt": {
@@ -10348,6 +10428,13 @@
             "status": "succeeded"
           },
           {
+            "id": "artist-you-used-to-hold-me-so-tight",
+            "configPath": "scrapers/artist-you-used-to-hold-me-so-tight.json",
+            "configHash": "d46c86dc58d6d8c6e93b5b86f3b7265fcfbc3f04d7c53868423552b19174aa66",
+            "status": "succeeded",
+            "reason": "empty_schedule"
+          },
+          {
             "id": "yugong-yishan-beijing",
             "configPath": "scrapers/yugong-yishan-beijing.json",
             "configHash": "8db5fe588ce3a82e2023d732fedc470655f008efc2412fab2fb27012d3ecd283",
@@ -10789,25 +10876,26 @@
         },
         "venue": {
           "run": {
-            "id": "37598893453",
+            "id": "37603538228",
             "attempt": 1,
-            "sha": "eb700f0384d7b46304d9672012ee524c861645ae",
+            "sha": "c4afadf27f7853fe8b196881f32fec83b994c8b0",
             "workflow": "Daily Concert Scrape"
           },
-          "generatedAt": "2026-10-07T09:30:09.982Z",
+          "generatedAt": "2026-10-07T10:04:44.977Z",
           "scrapers": {
             "total": 152,
-            "succeeded": 127,
-            "failed": 25,
-            "changed": 9,
-            "unchanged": 118,
+            "succeeded": 128,
+            "failed": 24,
+            "changed": 3,
+            "unchanged": 125,
             "staleIds": []
           },
           "recoveredSincePrevious": [
             "artist-antones-records",
+            "artist-james-pankow",
             "artist-jerry-depizzo",
+            "artist-jorge-e-mateus",
             "artist-judith-rijnveld",
-            "artist-paul-halley",
             "artist-peter-smith",
             "artist-philip-labonte",
             "artist-rainey",
@@ -10817,15 +10905,23 @@
           ],
           "regressedSincePrevious": [
             "artist-iron-maidens-the",
-            "artist-you-used-to-hold-me-so-tight",
-            "yugong-yishan-beijing",
-            "meo-arena-lisbon"
+            "cartagena-festival-de-musica-cartagena",
+            "meo-arena-lisbon",
+            "yugong-yishan-beijing"
           ],
           "failures": [
             {
               "id": "artist-babbu-mann",
               "configPath": "scrapers/artist-babbu-mann.json",
               "configHash": "00ad07fa8ed0c0056213269d10de437b40be8561f4bd256a3d6cacb12e22dcb0",
+              "status": "failed",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-angel-heart",
+              "configPath": "scrapers/artist-angel-heart.json",
+              "configHash": "bffd9c3869a90493ce219bb36e57f23381f63ec9bfcd0b843807b94d0ace5e80",
               "status": "failed",
               "reason": "selectors_stale",
               "error": "Parsed 0 concerts. Website layout might have changed."
@@ -10847,14 +10943,6 @@
               "error": "Parsed 0 concerts. Website layout might have changed."
             },
             {
-              "id": "artist-james-pankow",
-              "configPath": "scrapers/artist-james-pankow.json",
-              "configHash": "5aba909edc81026fc6feaf014c3db6267933c3eb6343bba4363e03a9183abe63",
-              "status": "failed",
-              "reason": "fetch_error",
-              "error": "Request failed with status code 403"
-            },
-            {
               "id": "artist-jane-mcdonald",
               "configPath": "scrapers/artist-jane-mcdonald.json",
               "configHash": "67eca1e3b7611d0adcffbf0d21ac1120fb0b1e57f21885406394d5b6df46a0c9",
@@ -10863,20 +10951,12 @@
               "error": "Request failed with status code 404"
             },
             {
-              "id": "artist-joe-hutton",
-              "configPath": "scrapers/artist-joe-hutton.json",
-              "configHash": "58bc569c263a0fd9df8b27b38a8d96ca2cc952d257ffe47e92febb827ea98507",
+              "id": "artist-bruce-thomas",
+              "configPath": "scrapers/artist-bruce-thomas.json",
+              "configHash": "cc21aa3ba2c09b904056a840b0a79c892f699287cccbc33970d1152523b1a4e3",
               "status": "failed",
-              "reason": "fetch_error",
-              "error": "Client network socket disconnected before secure TLS connection was established"
-            },
-            {
-              "id": "artist-jorge-e-mateus",
-              "configPath": "scrapers/artist-jorge-e-mateus.json",
-              "configHash": "4bbf7a28cf620242868cecef949e721d94331f397322dc2e3db95663ae0b8308",
-              "status": "failed",
-              "reason": "parse_error",
-              "error": "Failed to execute custom JS scraper for artist-jorge-e-mateus: Request failed with status code 403"
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
             },
             {
               "id": "artist-john-keane",
@@ -10887,6 +10967,14 @@
               "error": "Parsed 0 concerts. Website layout might have changed."
             },
             {
+              "id": "artist-joe-hutton",
+              "configPath": "scrapers/artist-joe-hutton.json",
+              "configHash": "58bc569c263a0fd9df8b27b38a8d96ca2cc952d257ffe47e92febb827ea98507",
+              "status": "failed",
+              "reason": "fetch_error",
+              "error": "Client network socket disconnected before secure TLS connection was established"
+            },
+            {
               "id": "artist-juan-garcia-herreros",
               "configPath": "scrapers/artist-juan-garcia-herreros.json",
               "configHash": "584459ab387ccbb2fdef981c186ec9682c14c166dfc9ae8a9bc9bafaf76d5b9d",
@@ -10895,9 +10983,33 @@
               "error": "getaddrinfo ENOTFOUND www.juan-garcia-herreros.com"
             },
             {
+              "id": "artist-paul-halley",
+              "configPath": "scrapers/artist-paul-halley.json",
+              "configHash": "eecb3573814cb8d1de42f507bf75df15a68c89a9adbb5d02e6ca3631586bca07",
+              "status": "failed",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 403"
+            },
+            {
+              "id": "artist-painflow",
+              "configPath": "scrapers/artist-painflow.json",
+              "configHash": "d5271494de1a66b5b080062218d8e7d79471fdf939a48d5108a336a464247421",
+              "status": "failed",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
               "id": "artist-pain-for-pleasure",
               "configPath": "scrapers/artist-pain-for-pleasure.json",
               "configHash": "e4147ea6a3e37b9071d9477fe12d4db1aa04029c388c5f8e35dfe1665a3fc5ec",
+              "status": "failed",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-reality-check",
+              "configPath": "scrapers/artist-reality-check.json",
+              "configHash": "c380704bc946d3950aed00f591d478d2a3760bb457db912da6c074f67c18a81b",
               "status": "failed",
               "reason": "selectors_stale",
               "error": "Parsed 0 concerts. Website layout might have changed."
@@ -10911,12 +11023,36 @@
               "error": "Parsed 0 concerts. Website layout might have changed."
             },
             {
-              "id": "artist-painflow",
-              "configPath": "scrapers/artist-painflow.json",
-              "configHash": "d5271494de1a66b5b080062218d8e7d79471fdf939a48d5108a336a464247421",
+              "id": "artist-yamazaki-masayoshi",
+              "configPath": "scrapers/artist-yamazaki-masayoshi.json",
+              "configHash": "eeff2bb633caa3dacb8cb4261b3e4b4a717e65dbe800e26c8ceb2a7fb8f5b433",
               "status": "failed",
               "reason": "selectors_stale",
               "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-yuta-and-the-bushido-boys",
+              "configPath": "scrapers/artist-yuta-and-the-bushido-boys.json",
+              "configHash": "94ec4415afdf3d87ad6d92e2153f74c334269c0bc58c9a7a97f2e64b4964825b",
+              "status": "failed",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "cartagena-festival-de-musica-cartagena",
+              "configPath": "scrapers/cartagena-festival-de-musica-cartagena.json",
+              "configHash": "3873ab8e17bd65c1a640bd427cb438168b68e51cfca6f7ce862350abe12d875d",
+              "status": "failed",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 403"
+            },
+            {
+              "id": "esplanade-theatres-singapore-singapore",
+              "configPath": "scrapers/esplanade-theatres-singapore-singapore.json",
+              "configHash": "e1e83cfe644453943cdb7756b0b11a5dc03f664cb2fd5cda112ed2983f4d8896",
+              "status": "failed",
+              "reason": "csr_detected",
+              "error": "Parsed 0 concerts. Page appears client-side rendered (events absent from server HTML)."
             },
             {
               "id": "artist-jorge-palma",
@@ -10927,33 +11063,17 @@
               "error": "timeout of 15000ms exceeded"
             },
             {
-              "id": "artist-reality-check",
-              "configPath": "scrapers/artist-reality-check.json",
-              "configHash": "c380704bc946d3950aed00f591d478d2a3760bb457db912da6c074f67c18a81b",
+              "id": "kitty-su-bangalore",
+              "configPath": "scrapers/kitty-su-bangalore.json",
+              "configHash": "59b5f274d78a781099a07d892d91ad756c168451f9073fec7ca6051277b91bf0",
               "status": "failed",
               "reason": "selectors_stale",
               "error": "Parsed 0 concerts. Website layout might have changed."
             },
             {
-              "id": "artist-angel-heart",
-              "configPath": "scrapers/artist-angel-heart.json",
-              "configHash": "bffd9c3869a90493ce219bb36e57f23381f63ec9bfcd0b843807b94d0ace5e80",
-              "status": "failed",
-              "reason": "fetch_error",
-              "error": "Scraper exceeded 90s wall-clock timeout"
-            },
-            {
-              "id": "artist-bruce-thomas",
-              "configPath": "scrapers/artist-bruce-thomas.json",
-              "configHash": "cc21aa3ba2c09b904056a840b0a79c892f699287cccbc33970d1152523b1a4e3",
-              "status": "failed",
-              "reason": "fetch_error",
-              "error": "Scraper exceeded 90s wall-clock timeout"
-            },
-            {
-              "id": "artist-yuta-and-the-bushido-boys",
-              "configPath": "scrapers/artist-yuta-and-the-bushido-boys.json",
-              "configHash": "94ec4415afdf3d87ad6d92e2153f74c334269c0bc58c9a7a97f2e64b4964825b",
+              "id": "meo-arena-lisbon",
+              "configPath": "scrapers/meo-arena-lisbon.json",
+              "configHash": "2e088d5a9ccf0cd7a4af2daf47bb8e04d8f7adb142a917df22fdddb6022df543",
               "status": "failed",
               "reason": "selectors_stale",
               "error": "Parsed 0 concerts. Website layout might have changed."
@@ -10967,46 +11087,6 @@
               "error": "timeout of 15000ms exceeded"
             },
             {
-              "id": "esplanade-theatres-singapore-singapore",
-              "configPath": "scrapers/esplanade-theatres-singapore-singapore.json",
-              "configHash": "e1e83cfe644453943cdb7756b0b11a5dc03f664cb2fd5cda112ed2983f4d8896",
-              "status": "failed",
-              "reason": "csr_detected",
-              "error": "Parsed 0 concerts. Page appears client-side rendered (events absent from server HTML)."
-            },
-            {
-              "id": "kitty-su-bangalore",
-              "configPath": "scrapers/kitty-su-bangalore.json",
-              "configHash": "59b5f274d78a781099a07d892d91ad756c168451f9073fec7ca6051277b91bf0",
-              "status": "failed",
-              "reason": "selectors_stale",
-              "error": "Parsed 0 concerts. Website layout might have changed."
-            },
-            {
-              "id": "artist-ray-davies",
-              "configPath": "scrapers/artist-ray-davies.json",
-              "configHash": "5b7f4c1eb5dbb8b388f7dae6361dc5a2dc32b640a36b5ad802fd641940835c37",
-              "status": "failed",
-              "reason": "fetch_error",
-              "error": "Scraper exceeded 90s wall-clock timeout"
-            },
-            {
-              "id": "artist-you-used-to-hold-me-so-tight",
-              "configPath": "scrapers/artist-you-used-to-hold-me-so-tight.json",
-              "configHash": "d46c86dc58d6d8c6e93b5b86f3b7265fcfbc3f04d7c53868423552b19174aa66",
-              "status": "failed",
-              "reason": "selectors_stale",
-              "error": "Parsed 0 concerts. Website layout might have changed."
-            },
-            {
-              "id": "artist-yamazaki-masayoshi",
-              "configPath": "scrapers/artist-yamazaki-masayoshi.json",
-              "configHash": "eeff2bb633caa3dacb8cb4261b3e4b4a717e65dbe800e26c8ceb2a7fb8f5b433",
-              "status": "failed",
-              "reason": "selectors_stale",
-              "error": "Parsed 0 concerts. Website layout might have changed."
-            },
-            {
               "id": "yugong-yishan-beijing",
               "configPath": "scrapers/yugong-yishan-beijing.json",
               "configHash": "c08b1a47d4a761e85636cc1fadd36e7ac70cf40b809694cbd9ab678a7de216bf",
@@ -11015,12 +11095,12 @@
               "error": "Source access blocked by SGCaptcha challenge"
             },
             {
-              "id": "meo-arena-lisbon",
-              "configPath": "scrapers/meo-arena-lisbon.json",
-              "configHash": "2e088d5a9ccf0cd7a4af2daf47bb8e04d8f7adb142a917df22fdddb6022df543",
+              "id": "artist-ray-davies",
+              "configPath": "scrapers/artist-ray-davies.json",
+              "configHash": "5b7f4c1eb5dbb8b388f7dae6361dc5a2dc32b640a36b5ad802fd641940835c37",
               "status": "failed",
-              "reason": "selectors_stale",
-              "error": "Parsed 0 concerts. Website layout might have changed."
+              "reason": "fetch_error",
+              "error": "Scraper exceeded 90s wall-clock timeout"
             }
           ],
           "comparedWithPreContinuationRun": {
@@ -11039,17 +11119,14 @@
               "staleIds": []
             },
             "recovered": [
-              "artist-paul-halley",
+              "artist-james-pankow",
               "artist-ray-scott",
-              "botanique-brussels",
-              "cartagena-festival-de-musica-cartagena"
+              "botanique-brussels"
             ],
             "regressed": [
               "artist-iron-maidens-the",
-              "artist-jorge-e-mateus",
-              "artist-you-used-to-hold-me-so-tight",
-              "yugong-yishan-beijing",
-              "meo-arena-lisbon"
+              "meo-arena-lisbon",
+              "yugong-yishan-beijing"
             ]
           },
           "sameOriginalIdsVerified": true,
@@ -11057,17 +11134,17 @@
         }
       },
       "publication": {
-        "generatedAt": "2026-10-07T09:30:51.226Z",
+        "generatedAt": "2026-10-07T10:05:23.170Z",
         "previousPublished": 51072,
-        "published": 51839,
-        "publishedDelta": 767,
-        "statusSha256": "e9759b8913cccde18ff62774c7b24569433a88fb6b3f610cd6e20b35c743504d",
+        "published": 51836,
+        "publishedDelta": 764,
+        "statusSha256": "ba0f3038f6e9c9a52b11c2d3e38d40c371009875258a06017d483461db767d38",
         "publicArtifactBytesIdentical": true,
         "publicIndexArtifactBytesIdentical": true,
-        "publicIndexSha256": "0db5945019971a1bda90347b047765950dcf76053df9a0c338197b741d95357e",
+        "publicIndexSha256": "e9b9b497d8dc1a6c4bf195ecff9c9ea95412363c7245a25aff7f4f687bf571e6",
         "publicIndexStats": {
-          "totalConcerts": 51839,
-          "uniqueArtists": 7112,
+          "totalConcerts": 51836,
+          "uniqueArtists": 7109,
           "uniqueCities": 2869,
           "pageCount": 104,
           "pageSize": 500
@@ -11075,24 +11152,24 @@
         "gate": {
           "schemaVersion": 1,
           "state": "eligible",
-          "generatedAt": "2026-10-07T09:30:51.226Z",
-          "publishedConcerts": 51839,
+          "generatedAt": "2026-10-07T10:05:23.170Z",
+          "publishedConcerts": 51836,
           "healthGate": {
             "state": "eligible",
             "reason": "Current publication passed the existing health gate.",
-            "evaluatedAt": "2026-10-07T09:30:55.845Z"
+            "evaluatedAt": "2026-10-07T10:05:27.744Z"
           }
         },
         "processing": {
           "schemaVersion": 1,
-          "generatedAt": "2026-10-07T09:30:46.256Z",
-          "baseDate": "2026-10-07T09:30:09.986Z",
-          "rawCount": 112243,
-          "publishedCount": 51839,
+          "generatedAt": "2026-10-07T10:05:18.189Z",
+          "baseDate": "2026-10-07T10:04:44.981Z",
+          "rawCount": 112260,
+          "publishedCount": 51836,
           "duplicatesMerged": 12685,
           "dropped": {
             "incomplete": 1808,
-            "notApproved": 36291,
+            "notApproved": 36311,
             "badDate": 1854,
             "pastDate": 7563,
             "zodFail": 203
@@ -11113,49 +11190,44 @@
         "sourceHealth": {
           "venue": {
             "schemaVersion": 1,
-            "generatedAt": "2026-10-07T09:20:19.034Z",
+            "generatedAt": "2026-10-07T09:55:09.461Z",
             "source": "venue",
             "state": "degraded",
             "counts": {
               "targets": 152,
               "selected": 152,
               "attempted": 152,
-              "succeeded": 127,
-              "failed": 25,
-              "empty": 8,
+              "succeeded": 128,
+              "failed": 24,
+              "empty": 10,
               "unavailable": 0,
               "skippedFresh": 0,
               "missing": 15,
-              "cacheFallbacks": 10,
+              "cacheFallbacks": 9,
               "partial": 0
             },
             "freshness": {
               "basis": "verifiedAt",
               "classification": "current_run",
-              "fresh": 127,
-              "old": 10,
+              "fresh": 128,
+              "old": 9,
               "unknown": 15,
-              "latestVerifiedAt": "2026-10-07T09:20:19.034Z",
+              "latestVerifiedAt": "2026-10-07T09:55:09.461Z",
               "p50Days": 0,
-              "p95Days": 0.03,
-              "maxDays": 9.76
+              "p95Days": 0.02,
+              "maxDays": 9.79
             },
             "completeness": "partial",
             "issues": [
               {
                 "reason": "selectors_stale",
-                "count": 12,
+                "count": 13,
                 "action": "repair_source_extraction"
               },
               {
                 "reason": "fetch_error",
-                "count": 11,
+                "count": 10,
                 "action": "retry_and_inspect_source_access"
-              },
-              {
-                "reason": "parse_error",
-                "count": 1,
-                "action": "inspect_source_format_change"
               },
               {
                 "reason": "csr_detected",
@@ -11303,7 +11375,7 @@
           },
           "ticketmaster": {
             "schemaVersion": 1,
-            "generatedAt": "2026-10-07T09:20:19.375Z",
+            "generatedAt": "2026-10-07T09:55:09.810Z",
             "source": "ticketmaster",
             "state": "healthy",
             "counts": {
@@ -11325,7 +11397,7 @@
               "fresh": 27,
               "old": 0,
               "unknown": 0,
-              "latestVerifiedAt": "2026-10-07T09:20:19.375Z",
+              "latestVerifiedAt": "2026-10-07T09:55:09.810Z",
               "p50Days": 0,
               "p95Days": 0,
               "maxDays": 0
@@ -11335,24 +11407,24 @@
           }
         },
         "preContinuationPublished": 51799,
-        "deltaFromPreContinuationPublished": 40,
+        "deltaFromPreContinuationPublished": 37,
         "deltaInterpretation": "Observed net change only; date expiry, provider rotation, cancellations, new data and normalization all contribute. Not attributed solely to code."
       },
       "publicChecks": {
         "status": {
           "url": "https://cartograf666.github.io/concert-for-travelers-api/status.json",
           "httpStatus": 200,
-          "generatedAt": "2026-10-07T09:30:51.226Z",
-          "publishedConcerts": 51839
+          "generatedAt": "2026-10-07T10:05:23.170Z",
+          "publishedConcerts": 51836
         },
         "index": {
           "url": "https://cartograf666.github.io/concert-for-travelers-api/index.json",
           "httpStatus": 200,
-          "lastRun": "2026-10-07T09:30:51.223Z",
+          "lastRun": "2026-10-07T10:05:23.167Z",
           "schemaVersion": 2,
           "stats": {
-            "totalConcerts": 51839,
-            "uniqueArtists": 7112,
+            "totalConcerts": 51836,
+            "uniqueArtists": 7109,
             "uniqueCities": 2869,
             "pageCount": 104,
             "pageSize": 500
@@ -11965,30 +12037,50 @@
           "dates": [],
           "internalMetadataAbsent": true,
           "incorrectKnownEventAbsent": true
+        },
+        "sharon-van-etten-configured-source": {
+          "hostedSourceSucceeded": true,
+          "hostedOutcome": {
+            "id": "artist-you-used-to-hold-me-so-tight",
+            "configPath": "scrapers/artist-you-used-to-hold-me-so-tight.json",
+            "configHash": "53b26c9376bfcd286f93d4312812af4807f314bec60c05f84a084a63bf3b8fff",
+            "status": "succeeded",
+            "reason": "empty_schedule"
+          },
+          "originalSourceId": "artist-you-used-to-hold-me-so-tight",
+          "nativeTourId": "b19bb52c-bf1a-4e6f-beb8-abb33a5ea505",
+          "nativeArtistName": "Sharon Van Etten & The Attachment Theory",
+          "verifiedNativeEmptySchedule": true,
+          "cachedRows": 0,
+          "cacheScrapedAt": "2026-10-07T09:53:50.845Z",
+          "legacyCatalogIdentityResolved": false,
+          "populatedBehaviorEvidence": "explicitly_rejected_until_canonical_group_identity_is_resolved",
+          "scope": "Proves the configured Sharon endpoint is readable and its strict native tour relationship is empty. Does not resolve the catalog record named You Used to Hold Me So Tight, guarantee future group-to-catalog matching, or imply every provider has an empty artist card."
         }
       },
       "productionReceipt": {
-        "runId": 37598893453,
-        "actionsReportedHead": "eb700f0384d7b46304d9672012ee524c861645ae",
-        "actualRepositoryCheckout": "eb700f0384d7b46304d9672012ee524c861645ae",
-        "actualDeployCheckout": "eb700f0384d7b46304d9672012ee524c861645ae",
-        "artifactId": 11472338775,
-        "pagesArtifactId": 11472298802,
-        "generatedAt": "2026-10-07T09:30:51.226Z",
-        "publishedConcerts": 51839,
+        "runId": 37603538228,
+        "actionsReportedHead": "c4afadf27f7853fe8b196881f32fec83b994c8b0",
+        "actualRepositoryCheckout": "c4afadf27f7853fe8b196881f32fec83b994c8b0",
+        "actualDeployCheckout": "c4afadf27f7853fe8b196881f32fec83b994c8b0",
+        "artifactId": 11474910394,
+        "pagesArtifactId": 11474641358,
+        "generatedAt": "2026-10-07T10:05:23.170Z",
+        "publishedConcerts": 51836,
         "state": "deployed_and_public_bytes_verified",
         "checks": {
           "status.json": {
             "producerPublicBytesIdentical": true,
-            "sha256": "e9759b8913cccde18ff62774c7b24569433a88fb6b3f610cd6e20b35c743504d"
+            "sha256": "ba0f3038f6e9c9a52b11c2d3e38d40c371009875258a06017d483461db767d38"
           },
           "index.json": {
             "producerPublicBytesIdentical": true,
-            "sha256": "0db5945019971a1bda90347b047765950dcf76053df9a0c338197b741d95357e"
+            "sha256": "e9b9b497d8dc1a6c4bf195ecff9c9ea95412363c7245a25aff7f4f687bf571e6"
           }
         },
+        "restoredArtistProducerBytesIdentical": true,
         "mainParity": {
-          "mainBeforeFinalEvidenceCommit": "2ca9de5512bbebc0a0cfda4f9920f4ef89f409a9",
+          "mainBeforeFinalEvidenceCommit": "da9c140e014a5dbc30f9742053d6600403fbbed4",
           "runtimeAndSourceConfigurationIdentical": true,
           "differentPaths": [
             "data/artists/shard-0.json",
@@ -12001,37 +12093,31 @@
             "data/artists/shard-7.json",
             "data/repair-history.json"
           ],
-          "metadataCommit": {
-            "sha": "d827ffaefc1c5a8d7410866d33b37c3e2003a0ad",
-            "origin": "This same completed daily run wrote lastConcertSeenAt run markers after producing the payload, then rebased over history-only PR219 and pushed successfully. The commit title mentions website/social enrichment, but those fields are unchanged.",
-            "logEvidence": "final-daily.log lines1720-1738",
-            "semanticReview": {
-              "reviewer": "remaining_backend_check",
-              "model": "gpt-6-luna",
-              "commit": "d827ffaefc1c5a8d7410866d33b37c3e2003a0ad",
-              "parent": "df1ced35f4f3b4716472a7c7db1133df4d133b72",
-              "recordsCompared": 63378,
-              "arraysOrderAndLengthUnchanged": true,
-              "addedOrRemovedArtists": 0,
-              "identityFieldsUnchanged": true,
-              "websiteSocialFieldsUnchanged": true,
-              "onlyChangedField": "lastConcertSeenAt",
-              "changedRecords": 7112,
-              "addedFields": 7,
-              "updatedFields": 7105,
-              "newValue": "2026-10-07T09:30:09.986Z",
-              "meaning": "Run marker for an artist matched to a concert surviving normalization; not an event date.",
-              "runtimeAndSourceConfigurationChanged": false
-            }
+          "metadataReview": {
+            "recordsCompared": 63378,
+            "onlyAllowedChangedField": "lastConcertSeenAt",
+            "changedRecords": 7109,
+            "addedFields": 0,
+            "updatedFields": 7109,
+            "newValue": "2026-10-07T10:04:44.981Z",
+            "identityProfilesOrderAndLengthUnchanged": true,
+            "websiteSocialFieldsUnchanged": true,
+            "origin": "Ancillary run-marker writeback from this same completed daily collection; runtime/source configuration is identical to the actual producer checkout."
           },
-          "repairHistoryOnlyPrs": [
-            219,
-            220
+          "repairHistoryOnlyPrsAfterCheckout": [
+            {
+              "number": 222,
+              "mergeSha": "da9c140e014a5dbc30f9742053d6600403fbbed4",
+              "paths": [
+                "data/repair-history.json"
+              ],
+              "runtimeOrConfigChanged": false
+            }
           ]
         }
       },
       "mainAncestryVerification": {
-        "checkedMain": "2ca9de5512bbebc0a0cfda4f9920f4ef89f409a9",
+        "checkedMain": "da9c140e014a5dbc30f9742053d6600403fbbed4",
         "sourceRepairMerges": {
           "PR190": {
             "sha": "ea6828208e046cdc1b10301670886b48d62085d3",
@@ -12136,11 +12222,19 @@
           "PR220": {
             "sha": "2ca9de5512bbebc0a0cfda4f9920f4ef89f409a9",
             "includedInMain": true
+          },
+          "PR221": {
+            "sha": "c4afadf27f7853fe8b196881f32fec83b994c8b0",
+            "includedInMain": true
+          },
+          "PR222": {
+            "sha": "da9c140e014a5dbc30f9742053d6600403fbbed4",
+            "includedInMain": true
           }
         },
         "currentBranchAudit": {
-          "refsChecked": 100,
-          "main": "2ca9de5512bbebc0a0cfda4f9920f4ef89f409a9",
+          "refsChecked": 103,
+          "main": "da9c140e014a5dbc30f9742053d6600403fbbed4",
           "missingUniquePatches": [],
           "squashEquivalentRefs": [
             {
@@ -12151,6 +12245,17 @@
                 "pr": 217,
                 "mergeCommit": "16f0c16e9a848fa0fd7576ba9ed337d75021ef8e",
                 "reviewedHead": "f389721ef9fe4aeda0fa14e05ed9dc839363078c",
+                "combinedPatchIdentical": true
+              }
+            },
+            {
+              "ref": "refs/heads/codex/sharon-native-seated-20261007",
+              "sha": "af71a400e6c9e0af0b547af1a78c07f6489b0c01",
+              "includedByAncestry": false,
+              "includedByVerifiedSquashMerge": {
+                "pr": 221,
+                "mergeCommit": "c4afadf27f7853fe8b196881f32fec83b994c8b0",
+                "reviewedHead": "af71a400e6c9e0af0b547af1a78c07f6489b0c01",
                 "combinedPatchIdentical": true
               }
             },
@@ -12199,6 +12304,17 @@
               }
             },
             {
+              "ref": "refs/remotes/origin/codex/sharon-native-seated-20261007",
+              "sha": "af71a400e6c9e0af0b547af1a78c07f6489b0c01",
+              "includedByAncestry": false,
+              "includedByVerifiedSquashMerge": {
+                "pr": 221,
+                "mergeCommit": "c4afadf27f7853fe8b196881f32fec83b994c8b0",
+                "reviewedHead": "af71a400e6c9e0af0b547af1a78c07f6489b0c01",
+                "combinedPatchIdentical": true
+              }
+            },
+            {
               "ref": "refs/remotes/origin/codex/source-access-challenge-20261007",
               "sha": "feee3e4901c9e075107f938b1b2fe608b9dc6a4d",
               "includedByAncestry": false,
@@ -12242,7 +12358,481 @@
         }
       }
     },
-    "latestVenueRegressionsDiagnosis": {
+    "sharonSeatedFollowup": {
+      "state": "configured_endpoint_native_empty_verified_catalog_identity_open",
+      "pr": 221,
+      "latestPublicCheck": {
+        "hostedSourceSucceeded": true,
+        "hostedOutcome": {
+          "id": "artist-you-used-to-hold-me-so-tight",
+          "configPath": "scrapers/artist-you-used-to-hold-me-so-tight.json",
+          "configHash": "53b26c9376bfcd286f93d4312812af4807f314bec60c05f84a084a63bf3b8fff",
+          "status": "succeeded",
+          "reason": "empty_schedule"
+        },
+        "originalSourceId": "artist-you-used-to-hold-me-so-tight",
+        "nativeTourId": "b19bb52c-bf1a-4e6f-beb8-abb33a5ea505",
+        "nativeArtistName": "Sharon Van Etten & The Attachment Theory",
+        "verifiedNativeEmptySchedule": true,
+        "cachedRows": 0,
+        "cacheScrapedAt": "2026-10-07T09:53:50.845Z",
+        "legacyCatalogIdentityResolved": false,
+        "populatedBehaviorEvidence": "explicitly_rejected_until_canonical_group_identity_is_resolved",
+        "scope": "Proves the configured Sharon endpoint is readable and its strict native tour relationship is empty. Does not resolve the catalog record named You Used to Hold Me So Tight, guarantee future group-to-catalog matching, or imply every provider has an empty artist card."
+      },
+      "review": "Independent gpt-6-sol review required and confirmed explicit failure for nonempty group schedules; no group-to-solo or song attribution.",
+      "localRun": {
+        "success": true,
+        "reason": "empty_schedule",
+        "rawEvents": 0,
+        "scrapedAt": "2026-10-07T09:46:51.792Z"
+      },
+      "targetedTestsPassed": 3,
+      "catalogChanged": false
+    },
+    "thirdDailyAttempt": {
+      "manifest": {
+        "run": {
+          "id": "37598893453",
+          "attempt": 1,
+          "sha": "eb700f0384d7b46304d9672012ee524c861645ae",
+          "workflow": "Daily Concert Scrape"
+        },
+        "generatedAt": "2026-10-07T09:30:09.982Z",
+        "complete": true,
+        "scrapers": {
+          "total": 152,
+          "succeeded": 127,
+          "failed": 25,
+          "changed": 9,
+          "unchanged": 118,
+          "staleIds": []
+        },
+        "failedOutcomes": [
+          {
+            "id": "artist-babbu-mann",
+            "configPath": "scrapers/artist-babbu-mann.json",
+            "configHash": "00ad07fa8ed0c0056213269d10de437b40be8561f4bd256a3d6cacb12e22dcb0",
+            "status": "failed",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-iron-maidens-the",
+            "configPath": "scrapers/artist-iron-maidens-the.json",
+            "configHash": "0a7e44d3a1a25c1aa477ea3aef291a1542c0a6eda5616270af667063bc83e62c",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "Source access blocked by SGCaptcha challenge"
+          },
+          {
+            "id": "artist-harold-jones",
+            "configPath": "scrapers/artist-harold-jones.json",
+            "configHash": "66cba332db462bf1da20af5bdac99106878ef30740297b499a0a448acc49ba78",
+            "status": "failed",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-james-pankow",
+            "configPath": "scrapers/artist-james-pankow.json",
+            "configHash": "5aba909edc81026fc6feaf014c3db6267933c3eb6343bba4363e03a9183abe63",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 403"
+          },
+          {
+            "id": "artist-jane-mcdonald",
+            "configPath": "scrapers/artist-jane-mcdonald.json",
+            "configHash": "67eca1e3b7611d0adcffbf0d21ac1120fb0b1e57f21885406394d5b6df46a0c9",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 404"
+          },
+          {
+            "id": "artist-joe-hutton",
+            "configPath": "scrapers/artist-joe-hutton.json",
+            "configHash": "58bc569c263a0fd9df8b27b38a8d96ca2cc952d257ffe47e92febb827ea98507",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "Client network socket disconnected before secure TLS connection was established"
+          },
+          {
+            "id": "artist-jorge-e-mateus",
+            "configPath": "scrapers/artist-jorge-e-mateus.json",
+            "configHash": "4bbf7a28cf620242868cecef949e721d94331f397322dc2e3db95663ae0b8308",
+            "status": "failed",
+            "reason": "parse_error",
+            "error": "Failed to execute custom JS scraper for artist-jorge-e-mateus: Request failed with status code 403"
+          },
+          {
+            "id": "artist-john-keane",
+            "configPath": "scrapers/artist-john-keane.json",
+            "configHash": "6bb7a1d118be973cd3c08a988afacc44208ec3d0d6dfd541182ce5503a35abec",
+            "status": "failed",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-juan-garcia-herreros",
+            "configPath": "scrapers/artist-juan-garcia-herreros.json",
+            "configHash": "584459ab387ccbb2fdef981c186ec9682c14c166dfc9ae8a9bc9bafaf76d5b9d",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "getaddrinfo ENOTFOUND www.juan-garcia-herreros.com"
+          },
+          {
+            "id": "artist-pain-for-pleasure",
+            "configPath": "scrapers/artist-pain-for-pleasure.json",
+            "configHash": "e4147ea6a3e37b9071d9477fe12d4db1aa04029c388c5f8e35dfe1665a3fc5ec",
+            "status": "failed",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-patti-smith-group",
+            "configPath": "scrapers/artist-patti-smith-group.json",
+            "configHash": "e7859ff2d2a11c3ac7aceefb1c76aa464ca2667d2f64ba1e2545d62eb8cf77e4",
+            "status": "failed",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-painflow",
+            "configPath": "scrapers/artist-painflow.json",
+            "configHash": "d5271494de1a66b5b080062218d8e7d79471fdf939a48d5108a336a464247421",
+            "status": "failed",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-jorge-palma",
+            "configPath": "scrapers/artist-jorge-palma.json",
+            "configHash": "625274b9ed09b9c77b04774dc6c19ee5f2526a3fbdb5d3732573e5f08703cd8b",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "timeout of 15000ms exceeded"
+          },
+          {
+            "id": "artist-reality-check",
+            "configPath": "scrapers/artist-reality-check.json",
+            "configHash": "c380704bc946d3950aed00f591d478d2a3760bb457db912da6c074f67c18a81b",
+            "status": "failed",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-angel-heart",
+            "configPath": "scrapers/artist-angel-heart.json",
+            "configHash": "bffd9c3869a90493ce219bb36e57f23381f63ec9bfcd0b843807b94d0ace5e80",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "Scraper exceeded 90s wall-clock timeout"
+          },
+          {
+            "id": "artist-bruce-thomas",
+            "configPath": "scrapers/artist-bruce-thomas.json",
+            "configHash": "cc21aa3ba2c09b904056a840b0a79c892f699287cccbc33970d1152523b1a4e3",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "Scraper exceeded 90s wall-clock timeout"
+          },
+          {
+            "id": "artist-yuta-and-the-bushido-boys",
+            "configPath": "scrapers/artist-yuta-and-the-bushido-boys.json",
+            "configHash": "94ec4415afdf3d87ad6d92e2153f74c334269c0bc58c9a7a97f2e64b4964825b",
+            "status": "failed",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-philippine-philharmonic-orchestra",
+            "configPath": "scrapers/artist-philippine-philharmonic-orchestra.json",
+            "configHash": "f3ee26eaf313e26c4fb31a659667877c314833ef0e325eece017f25ae46f5882",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "timeout of 15000ms exceeded"
+          },
+          {
+            "id": "esplanade-theatres-singapore-singapore",
+            "configPath": "scrapers/esplanade-theatres-singapore-singapore.json",
+            "configHash": "e1e83cfe644453943cdb7756b0b11a5dc03f664cb2fd5cda112ed2983f4d8896",
+            "status": "failed",
+            "reason": "csr_detected",
+            "error": "Parsed 0 concerts. Page appears client-side rendered (events absent from server HTML)."
+          },
+          {
+            "id": "kitty-su-bangalore",
+            "configPath": "scrapers/kitty-su-bangalore.json",
+            "configHash": "59b5f274d78a781099a07d892d91ad756c168451f9073fec7ca6051277b91bf0",
+            "status": "failed",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-ray-davies",
+            "configPath": "scrapers/artist-ray-davies.json",
+            "configHash": "5b7f4c1eb5dbb8b388f7dae6361dc5a2dc32b640a36b5ad802fd641940835c37",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "Scraper exceeded 90s wall-clock timeout"
+          },
+          {
+            "id": "artist-you-used-to-hold-me-so-tight",
+            "configPath": "scrapers/artist-you-used-to-hold-me-so-tight.json",
+            "configHash": "d46c86dc58d6d8c6e93b5b86f3b7265fcfbc3f04d7c53868423552b19174aa66",
+            "status": "failed",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "artist-yamazaki-masayoshi",
+            "configPath": "scrapers/artist-yamazaki-masayoshi.json",
+            "configHash": "eeff2bb633caa3dacb8cb4261b3e4b4a717e65dbe800e26c8ceb2a7fb8f5b433",
+            "status": "failed",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "yugong-yishan-beijing",
+            "configPath": "scrapers/yugong-yishan-beijing.json",
+            "configHash": "c08b1a47d4a761e85636cc1fadd36e7ac70cf40b809694cbd9ab678a7de216bf",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "Source access blocked by SGCaptcha challenge"
+          },
+          {
+            "id": "meo-arena-lisbon",
+            "configPath": "scrapers/meo-arena-lisbon.json",
+            "configHash": "2e088d5a9ccf0cd7a4af2daf47bb8e04d8f7adb142a917df22fdddb6022df543",
+            "status": "failed",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          }
+        ],
+        "changedSourceOutcomes": [
+          {
+            "id": "artist-iron-maidens-the",
+            "configPath": "scrapers/artist-iron-maidens-the.json",
+            "configHash": "0a7e44d3a1a25c1aa477ea3aef291a1542c0a6eda5616270af667063bc83e62c",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "Source access blocked by SGCaptcha challenge"
+          },
+          {
+            "id": "artist-ray-scott",
+            "configPath": "scrapers/artist-ray-scott.json",
+            "configHash": "a419b67ef3c33fd6a9cc7df60c5190883ee3d774b2d048d74a8caefda1516251",
+            "status": "succeeded"
+          },
+          {
+            "id": "artist-you-used-to-hold-me-so-tight",
+            "configPath": "scrapers/artist-you-used-to-hold-me-so-tight.json",
+            "configHash": "d46c86dc58d6d8c6e93b5b86f3b7265fcfbc3f04d7c53868423552b19174aa66",
+            "status": "failed",
+            "reason": "selectors_stale",
+            "error": "Parsed 0 concerts. Website layout might have changed."
+          },
+          {
+            "id": "yugong-yishan-beijing",
+            "configPath": "scrapers/yugong-yishan-beijing.json",
+            "configHash": "c08b1a47d4a761e85636cc1fadd36e7ac70cf40b809694cbd9ab678a7de216bf",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "Source access blocked by SGCaptcha challenge"
+          }
+        ]
+      },
+      "publication": {
+        "runId": 37598893453,
+        "actionsReportedHead": "eb700f0384d7b46304d9672012ee524c861645ae",
+        "actualRepositoryCheckout": "eb700f0384d7b46304d9672012ee524c861645ae",
+        "actualDeployCheckout": "eb700f0384d7b46304d9672012ee524c861645ae",
+        "artifactId": 11472338775,
+        "pagesArtifactId": 11472298802,
+        "generatedAt": "2026-10-07T09:30:51.226Z",
+        "publishedConcerts": 51839,
+        "state": "deployed_and_public_bytes_verified",
+        "checks": {
+          "status.json": {
+            "producerPublicBytesIdentical": true,
+            "sha256": "e9759b8913cccde18ff62774c7b24569433a88fb6b3f610cd6e20b35c743504d"
+          },
+          "index.json": {
+            "producerPublicBytesIdentical": true,
+            "sha256": "0db5945019971a1bda90347b047765950dcf76053df9a0c338197b741d95357e"
+          }
+        },
+        "mainParity": {
+          "mainBeforeFinalEvidenceCommit": "2ca9de5512bbebc0a0cfda4f9920f4ef89f409a9",
+          "runtimeAndSourceConfigurationIdentical": true,
+          "differentPaths": [
+            "data/artists/shard-0.json",
+            "data/artists/shard-1.json",
+            "data/artists/shard-2.json",
+            "data/artists/shard-3.json",
+            "data/artists/shard-4.json",
+            "data/artists/shard-5.json",
+            "data/artists/shard-6.json",
+            "data/artists/shard-7.json",
+            "data/repair-history.json"
+          ],
+          "metadataCommit": {
+            "sha": "d827ffaefc1c5a8d7410866d33b37c3e2003a0ad",
+            "origin": "This same completed daily run wrote lastConcertSeenAt run markers after producing the payload, then rebased over history-only PR219 and pushed successfully. The commit title mentions website/social enrichment, but those fields are unchanged.",
+            "logEvidence": "final-daily.log lines1720-1738",
+            "semanticReview": {
+              "reviewer": "remaining_backend_check",
+              "model": "gpt-6-luna",
+              "commit": "d827ffaefc1c5a8d7410866d33b37c3e2003a0ad",
+              "parent": "df1ced35f4f3b4716472a7c7db1133df4d133b72",
+              "recordsCompared": 63378,
+              "arraysOrderAndLengthUnchanged": true,
+              "addedOrRemovedArtists": 0,
+              "identityFieldsUnchanged": true,
+              "websiteSocialFieldsUnchanged": true,
+              "onlyChangedField": "lastConcertSeenAt",
+              "changedRecords": 7112,
+              "addedFields": 7,
+              "updatedFields": 7105,
+              "newValue": "2026-10-07T09:30:09.986Z",
+              "meaning": "Run marker for an artist matched to a concert surviving normalization; not an event date.",
+              "runtimeAndSourceConfigurationChanged": false
+            }
+          },
+          "repairHistoryOnlyPrs": [
+            219,
+            220
+          ]
+        }
+      },
+      "diagnosis": {
+        "checkedAt": "2026-10-07T09:39:14.174930+00:00",
+        "compared": {
+          "priorRunId": 37594481024,
+          "finalRunId": 37598893453,
+          "priorVenueOk": 129,
+          "finalVenueOk": 127
+        },
+        "sources": {
+          "artist-james-pankow": {
+            "officialUrl": "https://chicagotheband.com/tour/",
+            "normalFetchHttp": 406,
+            "evidence": "Non-2xx response body still contains li.single_event_list and Chicago tour rows; final hosted request was 403. Prior success was unchanged-hash reuse of 23 events. Access failure, not proved selector regression.",
+            "next": "Keep fetch_error and cached events; only investigate permitted ordinary access reliability.",
+            "priorCache": {
+              "cacheFingerprint": "597519be4f10198dbccbec8af8e62dfa884e3b41a5587b78a920c6141db8fa72",
+              "contentHash": "072e3592ff01863a20a29ad890248e8f4d88aac2",
+              "scrapedAt": "2026-10-07T08:38:34.570Z",
+              "verifiedAt": "2026-10-07T08:39:43.659Z"
+            },
+            "priorCachedRows": 23,
+            "priorFailed": false,
+            "finalFailed": true,
+            "priorRunnerLines": [
+              "scrape\tRun Scraper\t2026-10-07T08:38:34.5712883Z [Runner] Starting scraper: artist-james-pankow (https://chicagotheband.com/tour/)",
+              "scrape\tRun Scraper\t2026-10-07T08:38:34.9019469Z [Runner] artist-james-pankow: content unchanged (hash match), 23 events.",
+              "scrape\tRun Scraper\t2026-10-07T08:38:34.9020613Z [Runner] Success: artist-james-pankow extracted 23 events."
+            ],
+            "finalRunnerLines": [
+              "scrape\tRun Scraper\t2026-10-07T09:17:34.8242154Z [Runner] Starting scraper: artist-james-pankow (https://chicagotheband.com/tour/)",
+              "scrape\tRun Scraper\t2026-10-07T09:17:34.9207623Z [Runner] Failed: artist-james-pankow - Error: Request failed with status code 403",
+              "scrape\tRun Scraper\t2026-10-07T09:20:19.0352347Z [Orchestrator] artist-james-pankow failed (fetch_error); reusing 23 cached events."
+            ]
+          },
+          "artist-jorge-e-mateus": {
+            "officialUrl": "https://www.jorgeemateus.com.br/agenda/",
+            "normalFetchHttp": 200,
+            "nativeCurrentMonthHttp": 200,
+            "nativeCurrentMonthBody": "[]",
+            "evidence": "Final hosted agenda request 403 was wrapped as parse_error by custom_js. Current page has exact identity markers, and native October endpoint returns []. Prior run verified empty current/next month. November not rechecked in this bounded diagnosis.",
+            "next": "Keep fail-closed on hosted 403; next ordinary run can confirm both months. Do not reuse old empty result as fresh verification.",
+            "priorCache": {
+              "cacheFingerprint": "e21909f0d04e641b9a0d283cc753a29d0403e028d851b49ab6e1a13bf16ad7e2",
+              "contentHash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+              "scrapedAt": "2026-10-07T08:38:35.981Z",
+              "verifiedAt": "2026-10-07T08:39:43.659Z"
+            },
+            "priorCachedRows": 0,
+            "priorFailed": false,
+            "finalFailed": true,
+            "priorRunnerLines": [
+              "scrape\tRun Scraper\t2026-10-07T08:38:35.9835553Z [Runner] Starting scraper: artist-jorge-e-mateus (https://www.jorgeemateus.com.br/agenda/)",
+              "scrape\tRun Scraper\t2026-10-07T08:38:39.0418703Z [Runner] artist-jorge-e-mateus: 0 events, verified empty-schedule contract.",
+              "scrape\tRun Scraper\t2026-10-07T08:38:39.0419806Z [Runner] Success: artist-jorge-e-mateus extracted 0 events."
+            ],
+            "finalRunnerLines": [
+              "scrape\tRun Scraper\t2026-10-07T09:17:37.4235056Z [Runner] Starting scraper: artist-jorge-e-mateus (https://www.jorgeemateus.com.br/agenda/)",
+              "scrape\tRun Scraper\t2026-10-07T09:17:38.0326077Z [Runner] Failed: artist-jorge-e-mateus - Error: Failed to execute custom JS scraper for artist-jorge-e-mateus: Request failed with status code 403",
+              "scrape\tRun Scraper\t2026-10-07T09:20:19.0365289Z [Orchestrator] artist-jorge-e-mateus failed (parse_error); reusing 0 cached events."
+            ]
+          },
+          "artist-you-used-to-hold-me-so-tight": {
+            "officialUrl": "https://www.sharonvanetten.com/tour",
+            "normalFetchHttp": 200,
+            "evidence": "Current official Squarespace page embeds Seated widget div#seated-55fdf2c0 data-artist-id=b19bb52c-bf1a-4e6f-beb8-abb33a5ea505 and widget.seated.com/app.js. It has no prior li.tour-dates-list-item and no exact empty notice. Previous 0 was verified only against earlier page state.",
+            "next": "Actionable narrow config/custom adapter: use the first-party embedded Seated UUID, validate exact feed ID/type/name and tour-events list. Current feed proves zero events for that artist; future populated feed must validate each dated venue/location row or fail closed. Existing Train/O.A.R./Emancipator Seated parsers provide the supported pattern. No implementation done in this read-only diagnosis.",
+            "priorCache": {
+              "cacheFingerprint": "2363a361c8a300a41a271021301ff7eee225004acff68973b7fae34e3698726a",
+              "contentHash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+              "scrapedAt": "2026-10-07T08:38:46.516Z",
+              "verifiedAt": "2026-10-07T08:39:43.659Z"
+            },
+            "priorCachedRows": 0,
+            "priorFailed": false,
+            "finalFailed": true,
+            "priorRunnerLines": [
+              "scrape\tRun Scraper\t2026-10-07T08:38:46.5164358Z [Runner] Starting scraper: artist-you-used-to-hold-me-so-tight (https://www.sharonvanetten.com/tour)",
+              "scrape\tRun Scraper\t2026-10-07T08:38:47.6506563Z [Runner] artist-you-used-to-hold-me-so-tight: 0 events, verified empty-schedule contract.",
+              "scrape\tRun Scraper\t2026-10-07T08:38:47.6507513Z [Runner] Success: artist-you-used-to-hold-me-so-tight extracted 0 events."
+            ],
+            "finalRunnerLines": [
+              "scrape\tRun Scraper\t2026-10-07T09:18:59.3738624Z [Runner] Starting scraper: artist-you-used-to-hold-me-so-tight (https://www.sharonvanetten.com/tour)",
+              "scrape\tRun Scraper\t2026-10-07T09:19:38.8424357Z [Runner] Failed: artist-you-used-to-hold-me-so-tight - Error: Parsed 0 concerts. Website layout might have changed.",
+              "scrape\tRun Scraper\t2026-10-07T09:20:19.0368965Z [Orchestrator] artist-you-used-to-hold-me-so-tight failed (selectors_stale); reusing 0 cached events."
+            ],
+            "seatedOfficialEmbed": {
+              "widgetArtistId": "b19bb52c-bf1a-4e6f-beb8-abb33a5ea505",
+              "nativeFeedUrl": "https://cdn.seated.com/api/tour/b19bb52c-bf1a-4e6f-beb8-abb33a5ea505?include=tour-events",
+              "normalFetchHttp": 200,
+              "dataId": "b19bb52c-bf1a-4e6f-beb8-abb33a5ea505",
+              "dataType": "tours",
+              "name": "Sharon Van Etten & The Attachment Theory",
+              "relationshipTourEvents": [],
+              "includedAbsent": true
+            }
+          },
+          "meo-arena-lisbon": {
+            "officialUrl": "https://arena.meo.pt/en/full-agenda",
+            "normalFetchHttp": 200,
+            "evidence": "Current primary HTML says Full Agenda | MEO Arena but .containerEvents is empty and no div.agendaDestaquesUn. Prior unchanged-hash reuse had 33 events. No explicit native empty notice.",
+            "next": "Keep selectors_stale and cached 33; investigate source delivery/content availability before changing selectors.",
+            "priorCache": {
+              "cacheFingerprint": "ce7bc1678d0c0fd7a7ca6f4e4d2fc5fc881e7753cef3079ef87dc9b8e692a5db",
+              "contentHash": "6f855a00cb8ef2aa653cc65c0279c6f2f283cb21",
+              "scrapedAt": "2026-10-07T08:39:11.023Z",
+              "verifiedAt": "2026-10-07T08:39:43.659Z"
+            },
+            "priorCachedRows": 33,
+            "priorFailed": false,
+            "finalFailed": true,
+            "priorRunnerLines": [
+              "scrape\tRun Scraper\t2026-10-07T08:39:11.0241747Z [Runner] Starting scraper: meo-arena-lisbon (https://arena.meo.pt/en/full-agenda)",
+              "scrape\tRun Scraper\t2026-10-07T08:39:12.3817765Z [Runner] meo-arena-lisbon: content unchanged (hash match), 33 events.",
+              "scrape\tRun Scraper\t2026-10-07T08:39:12.3818817Z [Runner] Success: meo-arena-lisbon extracted 33 events."
+            ],
+            "finalRunnerLines": [
+              "scrape\tRun Scraper\t2026-10-07T09:19:40.5441609Z [Runner] Starting scraper: meo-arena-lisbon (https://arena.meo.pt/en/full-agenda)",
+              "scrape\tRun Scraper\t2026-10-07T09:20:19.0348338Z [Runner] Failed: meo-arena-lisbon - Error: Parsed 0 concerts. Website layout might have changed.",
+              "scrape\tRun Scraper\t2026-10-07T09:20:19.0371202Z [Orchestrator] meo-arena-lisbon failed (selectors_stale); reusing 33 cached events."
+            ]
+          }
+        },
+        "scope": "Read-only source diagnosis; one ordinary official-page fetch per host, one official Jorge current-month API fetch, and one Seated feed fetch for the exact ID embedded on Sharon Van Etten official page. No code changes or access bypass."
+      },
+      "interpretation": "127/152 venues and 51839 concerts, complete successful deployment and exact public byte proof. The subsequent confirmed Sharon Seated source repair is verified in the latest complete collection below."
+    },
+    "thirdDailyRegressionsDiagnosis": {
       "checkedAt": "2026-10-07T09:39:14.174930+00:00",
       "compared": {
         "priorRunId": 37594481024,
@@ -12364,13 +12954,66 @@
           ]
         }
       },
-      "scope": "Read-only source diagnosis; one ordinary official-page fetch per host, one official Jorge current-month API fetch, and one Seated feed fetch for the exact ID embedded on Sharon Van Etten official page. No code changes or access bypass."
+      "scope": "Read-only source diagnosis; one ordinary official-page fetch per host, one official Jorge current-month API fetch, and one Seated feed fetch for the exact ID embedded on Sharon Van Etten official page. No code changes or access bypass.",
+      "historicalSnapshotOnly": true,
+      "supersededBy": "continuation20261007.hostedVerification"
     },
-    "sharonSeatedFollowup": {
-      "state": "implementation_in_progress",
-      "originalSourceId": "artist-you-used-to-hold-me-so-tight",
-      "observedNativeTourId": "b19bb52c-bf1a-4e6f-beb8-abb33a5ea505",
-      "reason": "The official page now embeds an identity-checked Seated tour whose explicit event relationships are empty; the old rendered selectors/empty text no longer describe the native schedule. A narrow adapter is in progress. This is not yet a hosted source success."
+    "latestVenueOutcomeChanges": {
+      "comparedWithRun": {
+        "id": "37598893453",
+        "attempt": 1,
+        "sha": "eb700f0384d7b46304d9672012ee524c861645ae",
+        "workflow": "Daily Concert Scrape"
+      },
+      "latestRun": {
+        "id": "37603538228",
+        "attempt": 1,
+        "sha": "c4afadf27f7853fe8b196881f32fec83b994c8b0",
+        "workflow": "Daily Concert Scrape"
+      },
+      "changedOutcomes": [
+        {
+          "id": "artist-james-pankow",
+          "configPath": "scrapers/artist-james-pankow.json",
+          "configHash": "5aba909edc81026fc6feaf014c3db6267933c3eb6343bba4363e03a9183abe63",
+          "status": "succeeded"
+        },
+        {
+          "id": "artist-jorge-e-mateus",
+          "configPath": "scrapers/artist-jorge-e-mateus.json",
+          "configHash": "4bbf7a28cf620242868cecef949e721d94331f397322dc2e3db95663ae0b8308",
+          "status": "succeeded",
+          "reason": "empty_schedule"
+        },
+        {
+          "id": "artist-paul-halley",
+          "configPath": "scrapers/artist-paul-halley.json",
+          "configHash": "eecb3573814cb8d1de42f507bf75df15a68c89a9adbb5d02e6ca3631586bca07",
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
+        },
+        {
+          "id": "artist-you-used-to-hold-me-so-tight",
+          "configPath": "scrapers/artist-you-used-to-hold-me-so-tight.json",
+          "configHash": "53b26c9376bfcd286f93d4312812af4807f314bec60c05f84a084a63bf3b8fff",
+          "status": "succeeded",
+          "reason": "empty_schedule"
+        },
+        {
+          "id": "cartagena-festival-de-musica-cartagena",
+          "configPath": "scrapers/cartagena-festival-de-musica-cartagena.json",
+          "configHash": "3873ab8e17bd65c1a640bd427cb438168b68e51cfca6f7ce862350abe12d875d",
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
+        }
+      ],
+      "interpretation": "The configured Sharon native empty schedule now succeeds. Other flips are separate source availability, not evidence of code recovery/regression.",
+      "sameConfigurationAccessFailures": [
+        "artist-paul-halley",
+        "cartagena-festival-de-musica-cartagena"
+      ]
     }
   }
 }
