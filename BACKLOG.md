@@ -11,6 +11,28 @@ each concert in space and time, and (3) **rank** the options.
 
 Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
+## Source access corrections — 2026-10-07 (implemented; hosted verification pending)
+
+- Antoha MC now reads the official `https://antoha-mc.ru/concerts` page. The fresh
+  complete page has two upcoming KARO/ART film screenings (October 15 Moscow and
+  October 17 Saint Petersburg), then the native past-events boundary. The repaired
+  collector verifies that structure and returns `empty_schedule` with zero live
+  concerts. Three targeted tests and an independent full-HTML review pass; real
+  stock runner succeeds. Complete hosted collection and publication are pending.
+- Several previous access failures are intermittent: guarded requests now reach
+  Astrid Williamson, Marmalade and Cartagena. Ordinary browser navigation passes
+  NIN's automatic Cloudflare check, but the resulting Live page has no calendar
+  or explicit empty-schedule statement. Iron Maidens still shows Robot Challenge.
+- `komnata-kultury-tour` and `zhenya-trofimov-tour` intentionally share one website.
+  Both remain configured; the website is currently reachable again, and both
+  collectors are being rechecked. Earlier domain failures are historical.
+- Pain For Pleasure's old `/gigs` URL redirects to a GoDaddy sale destination;
+  there is no verified concert calendar there. Parking must not count as a healthy
+  empty source. A canonical replacement has not been verified.
+- Current follow-up evidence is in `docs/source-recovery-20261006.json` under
+  `userCorrections20261007`; the complete publication proof below remains the
+  last verified snapshot until the next hosted cycle finishes.
+
 ## Calendar and cancellation continuation — 2026-10-07 (published and verified; source gaps remain)
 
 - PRs #212/#214/#215/#217/#221 and dependency PRs #209/#210/#211 are merged.
