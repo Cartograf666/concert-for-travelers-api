@@ -26411,5 +26411,167 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget",
     "verification": "PASS (2 events, 11 checks)"
+  },
+  {
+    "id": "artist-shelby-lynne",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-shelby-lynne.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-10-07T09:12:48.765Z",
+    "previousConfig": {
+      "id": "artist-shelby-lynne",
+      "domain": "www.shelbylynne.com",
+      "url": "https://www.shelbylynne.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "section.elementor-inner-section[data-id][class*='elementor-element-']",
+        "artistNameFallback": "Shelby Lynne",
+        "date": ".elementor-widget-heading .elementor-heading-title",
+        "ticketUrl": "a.elementor-button-link",
+        "venue": ".elementor-image-box-title",
+        "city": ".elementor-image-box-description",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]",
+    "verification": ""
+  },
+  {
+    "id": "artist-nick-cave-the-bad-seeds",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-nick-cave-the-bad-seeds.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T09:13:10.576Z",
+    "previousConfig": {
+      "id": "artist-nick-cave-the-bad-seeds",
+      "domain": "www.nickcave.com",
+      "url": "https://www.nickcave.com/tour-dates/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".live-event",
+        "artistNameFallback": "Nick Cave & The Bad Seeds",
+        "date": ".live-date p",
+        "ticketUrl": ".buytickets-button::attr(href)",
+        "venue": ".venue",
+        "city": ".venue",
+        "country": ".venue",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.nickcave.com/tour-dates/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "komnata-kultury-tour",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/komnata-kultury-tour.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T09:13:48.986Z",
+    "previousConfig": {
+      "id": "komnata-kultury-tour",
+      "domain": "komnatakultury.ru",
+      "url": "https://komnatakultury.ru",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "custom",
+        "date": "custom",
+        "artistNameFallback": "Комната культуры",
+        "venueNameFallback": "Unknown Venue",
+        "cityNameFallback": "Unknown City",
+        "countryNameFallback": "RU"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): getaddrinfo EAI_AGAIN komnatakultury.ru]",
+    "verification": ""
+  },
+  {
+    "id": "artist-poetry",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-poetry.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T09:14:07.037Z",
+    "previousConfig": {
+      "id": "artist-poetry",
+      "domain": "www.poemsband.com",
+      "url": "https://www.poemsband.com/#poems",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".calendar_feature table tbody tr",
+        "artistNameFallback": "poetry",
+        "date": ".event-date .date-long",
+        "ticketUrl": "a.event_details",
+        "venue": ".event-location .text",
+        "city": ".event-location .text",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.poemsband.com/#poems but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "zhenya-trofimov-tour",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/zhenya-trofimov-tour.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T09:14:43.325Z",
+    "previousConfig": {
+      "id": "zhenya-trofimov-tour",
+      "domain": "komnatakultury.ru",
+      "url": "https://komnatakultury.ru",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "custom",
+        "date": "custom",
+        "artistNameFallback": "Женя Трофимов",
+        "venueNameFallback": "Unknown Venue",
+        "cityNameFallback": "Unknown City",
+        "countryNameFallback": "RU"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): getaddrinfo EAI_AGAIN komnatakultury.ru]",
+    "verification": ""
+  },
+  {
+    "id": "artist-yanagi-nagi",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-yanagi-nagi.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T09:14:44.559Z",
+    "previousConfig": {
+      "id": "artist-yanagi-nagi",
+      "domain": "yanaginagi.net",
+      "url": "https://yanaginagi.net/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".c-live_list__item",
+        "artistNameFallback": "Yanagi, Nagi",
+        "date": ".c-live_list__date-period",
+        "ticketUrl": "a.c-live_list__link",
+        "venue": ".c-live_list__ttl",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: dates_parse [0/11 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]",
+    "verification": ""
   }
 ]
