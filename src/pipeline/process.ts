@@ -11,6 +11,7 @@ import type { ProcessingDiagnostics } from '../observability/processing_diagnost
 import type { OfficialArtistContext } from '../engine/official_artist_sources.js';
 import { isTheHuIdentity, isTheHuName, verifiedTheHuDublinSourceRank } from './thehu_identity.js';
 import { isVerifiedSourceIdentityCollision } from './provider_identity_exclusions.js';
+import { isVerifiedCancelledTwinAtlanticEvent } from './twin_atlantic_cancellations.js';
 
 /** Format a Date as a timezone-safe YYYY-MM-DD using its local calendar fields. */
 function toLocalIso(d: Date): string {
@@ -1192,6 +1193,12 @@ export async function processConcerts(
     if (normalizedDate < todayIso) {
       drops.pastDate++;
       diagnostics?.recordDrop('pastDate', raw);
+      continue;
+    }
+
+    if (isVerifiedCancelledTwinAtlanticEvent(raw, normalizedDate, matched.mbid)) {
+      drops.notApproved++;
+      diagnostics?.recordDrop('notApproved', raw);
       continue;
     }
 
