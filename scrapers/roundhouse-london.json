@@ -3,6 +3,8 @@
   "domain": "roundhouse.org.uk",
   "url": "https://www.roundhouse.org.uk/whats-on/",
   "type": "static_selectors",
+  "maxRetries": 3,
+  "requestDelayMs": 2000,
   "selectors": {
     "eventBlock": ".event-card, .featured-card",
     "artist": ".event-card__title, .featured-card__title",

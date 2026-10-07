@@ -26770,5 +26770,62 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('div.iron_widget_events:has(> h3.widgettitle:text-is(\"Upcoming Events\")) > ul#post-list.concerts-list > li.nothing-found, div.iron_widget_events:has(> h3.widgettitle:text-is(\"Upcoming Events\")) > ul#post-list.concerts-list > li.event') to be visible\n]",
     "verification": ""
+  },
+  {
+    "id": "meo-arena-lisbon",
+    "cohort": "venue",
+    "configPath": "scrapers/meo-arena-lisbon.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-07T11:44:39.302Z",
+    "previousConfig": {
+      "id": "meo-arena-lisbon",
+      "domain": "arena.meo.pt",
+      "url": "https://arena.meo.pt/en/full-agenda",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.agendaDestaquesUn",
+        "artist": ".destaquesNome",
+        "date": ".data-abrev",
+        "ticketUrl": ".comprar",
+        "venueNameFallback": "MEO Arena",
+        "cityNameFallback": "Lisbon",
+        "countryNameFallback": "PT",
+        "lat": 38.7684689,
+        "lng": -9.0939002
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (div.containerEvents > div.event-item) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "roundhouse-london",
+    "cohort": "venue",
+    "configPath": "scrapers/roundhouse-london.json",
+    "repairedConfigHash": "4792c9638f34f54f1262fe8d2cc52294bed31f4c5d19260ea9caef998550b0c0",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T11:44:40.629Z",
+    "previousConfig": {
+      "id": "roundhouse-london",
+      "domain": "roundhouse.org.uk",
+      "url": "https://www.roundhouse.org.uk/whats-on/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-card, .featured-card",
+        "artist": ".event-card__title, .featured-card__title",
+        "date": ".event-card__date, .featured-card__date",
+        "ticketUrl": "a.event-card__link, a.featured-card",
+        "venueNameFallback": "Roundhouse",
+        "cityNameFallback": "London",
+        "countryNameFallback": "GB",
+        "lat": 51.543111,
+        "lng": -0.151752
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget",
+    "verification": "PASS (10 events, 11 checks)"
   }
 ]
