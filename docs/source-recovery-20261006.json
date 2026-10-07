@@ -1,7 +1,7 @@
 {
   "date": "2026-10-06",
   "scope": "97 failures in the downloaded artist and venue baseline runs; newly discovered main configs are checked by the hosted cycle.",
-  "verification": "Latest complete hosted cohorts, source-specific outcomes, completed Pages deployment and byte-identical public status/index are recorded in continuation20261007.hostedVerification. Earlier run snapshots remain historical. Original source IDs and denominators are preserved. Source health, native emptiness, publication presence and provider completeness remain distinct.",
+  "verification": "Latest complete hosted cohorts, completed Pages deployment, exact producer/public status/index bytes and current failure URLs are recorded in userCorrections20261007.hostedVerification. Earlier snapshots remain historical. Original source IDs and denominators are preserved; source health, empty schedules, publication and complete coverage remain distinct.",
   "counts": {
     "external-block": 16,
     "recovered": 26,
@@ -9247,7 +9247,7 @@
       }
     }
   },
-  "countsScope": "Historical local classifications of the original 97 failures. Current complete hosted cohort totals are in continuation20261007.hostedVerification.cohorts.",
+  "countsScope": "Historical classifications of the original failure set. Current complete hosted source totals are in userCorrections20261007.hostedVerification.cohorts.",
   "continuation20261007": {
     "state": "published_verified_remaining_source_gaps",
     "scope": "Four confirmed source repairs, current pagination completeness, and verified concert cancellation handling; original 415/152 denominators preserved.",
@@ -12356,7 +12356,8 @@
             "historicalDiffEquality": "not_verified_no_initial_hash_recorded"
           }
         }
-      }
+      },
+      "supersededBy": "userCorrections20261007.hostedVerification"
     },
     "sharonSeatedFollowup": {
       "state": "configured_endpoint_native_empty_verified_catalog_identity_open",
@@ -13017,8 +13018,8 @@
     }
   },
   "userCorrections20261007": {
-    "state": "implemented; hosted verification pending",
-    "scope": "Antoha MC official concerts URL, current source-access recheck and shared-domain explanation; original 415/152 source cohorts remain unchanged.",
+    "state": "published and verified; remaining source failures and provider coverage gaps remain explicit",
+    "scope": "Antoha MC official concerts page, Limahl native Upcoming Events, Iron Maidens browser transport, shared-domain collection, current access diagnostics and complete original 415/152 source cohorts.",
     "supersedes": "Earlier claim that every remaining source failure is an external permanent limit. Access outcomes vary by time and client; current ordinary-browser and HTTP observations must not be confused with complete hosted collection.",
     "antoha": {
       "sourceUrl": "https://antoha-mc.ru/concerts",
@@ -13036,7 +13037,19 @@
         "TypeScript --noEmit and ESLint pass",
         "real stock test_config returns empty_schedule, zero concerts"
       ],
-      "evidence": "/private/tmp/concert-remaining-20261007/antoha-followup/"
+      "evidence": "/private/tmp/concert-remaining-20261007/antoha-followup/",
+      "hostedOutcome": {
+        "outcome": {
+          "id": "antoha-mc-tour",
+          "configPath": "scrapers/artists/antoha-mc-tour.json",
+          "configHash": "6d8848ee130c988f6a8ed9c03c272bbbefff04e0fec618c49be05e67ef72579d",
+          "status": "succeeded",
+          "reason": "empty_schedule"
+        },
+        "cacheConcerts": 0,
+        "scrapedAt": "2026-10-07T10:56:28.824Z",
+        "hostedRecoveryVerified": true
+      }
     },
     "sharedDomain": {
       "url": "https://komnatakultury.ru",
@@ -13045,7 +13058,33 @@
         "zhenya-trofimov-tour"
       ],
       "explanation": "One website may serve several configured artists. Both collectors are retained. A shared host failure affects both; it is not a duplicate-source defect.",
-      "latestAccess": "Guarded HTTP now returns the artist site (200); both stock collectors are being rechecked. Earlier DNS/expired-domain observations are historical."
+      "latestAccess": "Both stock collectors independently returned 24 native rows from the same current reachable artist website. Their separate latest hosted outcomes and cache timestamps are recorded below; no domain or artist-cohort deduplication was introduced.",
+      "hostedOutcomes": {
+        "komnata-kultury-tour": {
+          "outcome": {
+            "id": "komnata-kultury-tour",
+            "configPath": "scrapers/artists/komnata-kultury-tour.json",
+            "configHash": "1e3af9acd1b18772e4a8d5f854b29461367fcdf960b61276aae47dd988aaa8b0",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "getaddrinfo EAI_AGAIN komnatakultury.ru"
+          },
+          "cacheConcerts": 24,
+          "scrapedAt": "2026-10-06T20:57:35.621Z"
+        },
+        "zhenya-trofimov-tour": {
+          "outcome": {
+            "id": "zhenya-trofimov-tour",
+            "configPath": "scrapers/artists/zhenya-trofimov-tour.json",
+            "configHash": "ccbaf6a66ea6747d02b98bb741da8a302f33e4aa0c76ec23c855bcda2f94e078",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "getaddrinfo EAI_AGAIN komnatakultury.ru"
+          },
+          "cacheConcerts": 24,
+          "scrapedAt": "2026-10-06T21:48:40.293Z"
+        }
+      }
     },
     "painForPleasure": {
       "sourceUrl": "https://www.painforpleasure.com/gigs",
@@ -13077,9 +13116,3061 @@
           "calendarAvailable": false,
           "explicitEmptySchedule": false,
           "advertisedCalendarWidgetsFound": []
+        },
+        {
+          "url": "https://www.limahl.com/tour-all-events/",
+          "initialTitle": "Проверка безопасности",
+          "automaticCheckCompleted": true,
+          "finalTitle": "Live – All Events – www.limahl.com",
+          "canonical": "https://www.limahl.com/tour-all-events/",
+          "upcomingSection": "Upcoming Events",
+          "explicitEmptyNotice": "No upcoming events scheduled yet. Stay tuned!",
+          "noticeSelector": "div.iron_widget_events h3.widgettitle + span + ul.concerts-list li.nothing-found",
+          "pastSection": "Past Events, latest visible row May 28, 2022; separate widget",
+          "calendarAvailable": true,
+          "noChallengeInteraction": true
+        },
+        {
+          "url": "https://www.shelbylynne.com/tour",
+          "initialTitle": "Один момент…",
+          "automaticCheckCompleted": true,
+          "finalTitle": "Page Not Found",
+          "visibleErrorCode": 404,
+          "calendarAvailable": false
+        },
+        {
+          "url": "https://www.shelbylynne.com/",
+          "title": "สล็อตเว็บตรง ฝากถอน SLOT WALLET รวม 4 ข้อผิดพลาดมือใหม่ 2569",
+          "visibleContent": "Thai-language gambling/casino page, pgbet888 promotion and gaming links; no singer or concert calendar",
+          "calendarAvailable": false,
+          "classification": "Configured domain currently serves unrelated gambling content; no assertion about cause/ownership"
+        },
+        {
+          "url": "https://theironmaidens.com/upcoming-events/",
+          "method": "later ordinary navigation, automatic browser check only",
+          "calendarAvailable": true,
+          "visibleSingleDayShows": 10,
+          "additionalMultiDayEvent": "Jericho Cruise, Nov 7–11 2026, Miami to Bimini; not normalized into invented one-day/city show",
+          "stockRunnerReceipt": "/private/tmp/concert-remaining-20261007/iron-maidens-followup/receipt.json",
+          "limit": "IAB access succeeded; two stock runner attempts produced success10 then fetch_error"
+        },
+        {
+          "url": "https://theatrebeijing.com/whats_on/live/",
+          "method": "ordinary browser automatic check completed without interaction",
+          "calendarAvailable": true,
+          "visibleEvents": [
+            {
+              "artist": "AMORPHIS",
+              "date": "2026-09-19",
+              "venue": "OMNI SPACE",
+              "past": true
+            },
+            {
+              "artist": "Karen Souza",
+              "nativeDate": "Nov 4-7, 2026",
+              "venue": "Urban Theatre",
+              "city": "Beijing"
+            }
+          ],
+          "stockRunnerReceipt": "/private/tmp/concert-remaining-20261007/yugong-followup/receipt.json",
+          "limit": "Stock headless runner timed out; no source transport change justified by this observation alone"
         }
-      ]
+      ],
+      "recordUpdatedAtUtc": "2026-10-07T11:25:47.619944+00:00",
+      "timingNote": "observedAtUtc identifies the initial observation batch; later explicitly marked follow-up entries and stock receipts supersede the initial access-only result."
     },
-    "observedAtUtc": "2026-10-07T10:42:01.137931+00:00"
+    "observedAtUtc": "2026-10-07T11:40:49.877127+00:00",
+    "repairPrs": [
+      {
+        "headRefOid": "9950ca6518ed1084c1c50f69018d247789df630c",
+        "mergeCommit": {
+          "oid": "a2015f3ee13626df05aed636d91be0ede0156c4c"
+        },
+        "mergedAt": "2026-10-07T10:47:22Z",
+        "number": 223,
+        "state": "MERGED",
+        "url": "https://github.com/Cartograf666/concert-for-travelers-api/pull/223"
+      },
+      {
+        "headRefOid": "3baa8110c7d81d8b89655c2636633c8ffeb843a6",
+        "mergeCommit": {
+          "oid": "e8d6729ff7c01fff862641842ac4cee237ac460a"
+        },
+        "mergedAt": "2026-10-07T10:54:46Z",
+        "number": 224,
+        "state": "MERGED",
+        "url": "https://github.com/Cartograf666/concert-for-travelers-api/pull/224"
+      },
+      {
+        "headRefOid": "258ccb0d1efef4b665cf502eeec06d44504d22b6",
+        "mergeCommit": {
+          "oid": "fe754b25613e7c0e0f8f48e9480ed699f1eae149"
+        },
+        "mergedAt": "2026-10-07T11:07:19Z",
+        "number": 225,
+        "state": "MERGED",
+        "url": "https://github.com/Cartograf666/concert-for-travelers-api/pull/225"
+      },
+      {
+        "headRefOid": "8c691c931b853d944deadc528eb0d6f309d783ce",
+        "mergeCommit": {
+          "oid": "84db951d1e361e6c443bac1d658e0b6bc53fca80"
+        },
+        "mergedAt": "2026-10-07T11:19:29Z",
+        "number": 226,
+        "state": "MERGED",
+        "url": "https://github.com/Cartograf666/concert-for-travelers-api/pull/226"
+      }
+    ],
+    "checks": {
+      "latestHostedCi": {
+        "runId": "37611534315",
+        "tests": 781,
+        "pass": 780,
+        "skip": 1,
+        "fail": 0,
+        "build": "pass",
+        "lintErrors": 0,
+        "lintWarnings": 103,
+        "selectorRatchet": "pass"
+      },
+      "publication": "complete producer/public status and index bytes match; protected public source checks pass",
+      "originalSourceIds": "all 415 artist and 152 venue source IDs preserved"
+    },
+    "currentAccessDiagnostics": {
+      "checkedAt": "2026-10-07",
+      "scope": "Bounded current access/status check and exact stock test_config run for seven current-200 sources; no code/config/catalog/state/Git edits.",
+      "network": "Configured guarded Axios or got-scraping clients, one direct request per configured URL. For ordinary test_config runs, GEMINI_API_KEY was whitespace so the LLM fallback skipped. No CAPTCHA/challenge interaction, proxy/IP rotation, TLS relaxation, or challenge bypass.",
+      "directResponses": [
+        {
+          "id": "artist-astrid-williamson",
+          "url": "https://astridwilliamson.com/live/",
+          "client": "got-scraping",
+          "status": 200,
+          "title": "Live · Astrid Williamson",
+          "runResult": "401 from hosted artifact is not reproduced currently; exact test_config verifies native empty schedule, see below."
+        },
+        {
+          "id": "artist-limahl",
+          "url": "https://www.limahl.com/tour-all-events/",
+          "client": "axios",
+          "status": 403,
+          "body": "No HTML body exposed by guarded client; no official alternative calendar/feed established from this response."
+        },
+        {
+          "id": "artist-marmalade",
+          "url": "https://themarmalade.net/tour-dates/",
+          "client": "got-scraping",
+          "status": 200,
+          "title": "Tour Dates – Marmalade",
+          "runResult": "2 events with explicit 2027 dates, see below."
+        },
+        {
+          "id": "artist-nine-inch-nails",
+          "url": "https://www.nin.com/tickets2018/",
+          "client": "axios",
+          "status": 403,
+          "runArtifact": "Prior hosted fail-log captured HTML title Tickets2018 - nine inch nails, parse_error from unsupported XPath selector (not a source fetch failure). It advertises https://www.nin.com/live/, https://www.nin.com/feed/, and https://www.nin.com/wp-json/wp/v2/pages/1479. Root ordinary-browser observation for /live/ after automatic Cloudflare check: title Live - nine inch nails, nav/footer only; no events/widgets and no explicit empty state. Browser evidence file: /private/tmp/concert-remaining-20261007/access-followup/root-browser-observations.json.",
+          "advertisedAlternatives": [
+            {
+              "url": "https://www.nin.com/live/",
+              "method": "root ordinary browser navigation completed automatic Cloudflare check; page shows only nav/footer, no event calendar/widget, no explicit empty state"
+            },
+            {
+              "url": "https://www.nin.com/wp-json/wp/v2/pages/1479",
+              "guardedAxios": "403"
+            },
+            {
+              "url": "https://www.nin.com/feed/",
+              "guardedAxios": "403"
+            }
+          ]
+        },
+        {
+          "id": "artist-pequot",
+          "url": "https://www.pequotmuseum.org/explore/events/",
+          "client": "axios",
+          "status": "DNS ENOTFOUND",
+          "note": "Earlier hosted status was 403; current domain lookup failed before HTTP, so no current page/feed advertised."
+        },
+        {
+          "id": "artist-philip-lindholm",
+          "url": "https://philiplindholm.com/events/",
+          "client": "axios",
+          "status": 200,
+          "title": "Upcoming Events - Promote Theme",
+          "runResult": "Exact test_config still returns selectors_stale / 0. Title and result do not prove an official event calendar or current empty contract."
+        },
+        {
+          "id": "artist-shelby-lynne",
+          "url": "https://www.shelbylynne.com/tour",
+          "client": "axios",
+          "status": 403,
+          "body": "No HTML body exposed; no official alternative calendar/feed established from this response."
+        },
+        {
+          "id": "artist-paul-halley",
+          "url": "https://pelagosmusic.com/event-schedule",
+          "client": "axios",
+          "status": 200,
+          "title": "Event Schedule | Pelagos Music",
+          "runResult": "2 past dates in 2025 only; no future calendar established."
+        },
+        {
+          "id": "cartagena-festival-de-musica-cartagena",
+          "url": "https://cartagenamusicfestival.com/programacion/?lang=en",
+          "client": "axios",
+          "status": 200,
+          "title": "Programación Cartagena Festival de Música 2027 | 9–17 enero",
+          "runResult": "42 rows extracted. Rows have venue/city/country (Teatro Adolfo Mejia, Cartagena, CO), but printed row dates omit year (e.g. 09 January). Page title explicitly states 2027 and 9–17 January; exact row year still should not be inferred silently from a publication timestamp."
+        },
+        {
+          "id": "artist-iron-maidens-the",
+          "url": "https://theironmaidens.com/upcoming-events/",
+          "client": "got-scraping",
+          "status": 200,
+          "body": "187-byte meta-refresh stub to same-origin /.well-known/sgcaptcha/; not source HTML. Root ordinary browser observation: Robot Challenge Screen, requires cookies; no interaction."
+        },
+        {
+          "id": "yugong-yishan-beijing",
+          "url": "https://theatrebeijing.com/whats_on/live/",
+          "client": "got-scraping",
+          "status": 200,
+          "body": "187-byte meta-refresh stub to same-origin /.well-known/sgcaptcha/; not source HTML."
+        }
+      ],
+      "stockTestConfigResults": [
+        {
+          "id": "komnata-kultury-tour",
+          "status": "OK",
+          "count": 24,
+          "identity": "Комната культуры",
+          "example": {
+            "date": "12/10",
+            "venue": "ДС Олимп",
+            "city": "Краснодар",
+            "country": "RU",
+            "ticketUrl": "https://olympconcert.intickets.ru/seance/71123196"
+          },
+          "limit": "Date string has no year in scraper output; do not infer without accepted current page date contract."
+        },
+        {
+          "id": "zhenya-trofimov-tour",
+          "status": "OK",
+          "count": 24,
+          "identity": "Женя Трофимов",
+          "example": {
+            "date": "12/10",
+            "venue": "ДС Олимп",
+            "city": "Краснодар",
+            "country": "RU",
+            "ticketUrl": "https://olympconcert.intickets.ru/seance/71123196"
+          },
+          "limit": "Same first-party page/shared event list as Komnata Kultury; date string has no year in scraper output."
+        },
+        {
+          "id": "artist-astrid-williamson",
+          "status": "OK",
+          "count": 0,
+          "reason": "verified empty-schedule contract; configured visible notice matches allowEmpty contract"
+        },
+        {
+          "id": "artist-marmalade",
+          "status": "OK",
+          "count": 2,
+          "events": [
+            [
+              "Saturday 16th Jan 2027",
+              "Butlins",
+              "Skegness",
+              "GB"
+            ],
+            [
+              "Saturday 13th Mar 2027",
+              "Unity Beach, Holiday Park",
+              "Burnham-on-Sea",
+              "GB"
+            ]
+          ]
+        },
+        {
+          "id": "artist-paul-halley",
+          "status": "OK",
+          "count": 2,
+          "events": [
+            [
+              "2025-09-21",
+              "The Cathedral Church of All Saints",
+              "Halifax",
+              "CA"
+            ],
+            [
+              "2025-12-14",
+              "The Cathedral Church of All Saints",
+              "Halifax",
+              "CA"
+            ]
+          ],
+          "futureCountFrom2026-10-07": 0
+        },
+        {
+          "id": "cartagena-festival-de-musica-cartagena",
+          "status": "OK",
+          "count": 42,
+          "representative": {
+            "artist": "Fuego y Geometría",
+            "date": "09 January",
+            "venue": "Teatro Adolfo Mejia",
+            "city": "Cartagena",
+            "country": "CO",
+            "ticketUrl": "https://cartagenamusicfestival.com/tc-events/fuego-y-geometria/?lang=en"
+          },
+          "limit": "Raw row date has no year; official page title supplies 2027 schedule heading/range."
+        },
+        {
+          "id": "artist-philip-lindholm",
+          "status": "FAIL",
+          "reason": "selectors_stale",
+          "count": 0,
+          "note": "HTTP 200 title is generic theme page; no current rows or explicit empty contract."
+        }
+      ],
+      "painForPleasure": {
+        "configuredUrl": "https://www.painforpleasure.com/gigs",
+        "guardedFetch": "114-byte JS redirects window.location to /lander",
+        "browser": "Ordinary Playwright navigation followed site JS to https://forsale.godaddy.com/forsale/www.painforpleasure.com?... (HTTP 200 transport, title Access Denied from Akamai). Confirms parked/for-sale landing path; no concert calendar."
+      },
+      "sharedKomnataDomain": {
+        "url": "https://komnatakultury.ru",
+        "status": 200,
+        "title": "Комната культуры",
+        "htmlBytes": 982101,
+        "note": "Both exact stock configs parse the same 24 rows under different configured artist labels; per-row date text lacks year. This validates current shared host and parser output, but not year normalization beyond printed text."
+      },
+      "officialAlternativeDisposition": "No accessible public alternative feed/API is proven for current Limahl/Shelby 403 or Pequot DNS failure. NIN advertises /live/, RSS, and page JSON; browser /live/ has no calendar, while current guarded requests to the advertised RSS and WP page JSON both return 403. Astrid/Marmalade/Paul/Cartagena configured official pages are accessible now; only Marmalade and Cartagena yield upcoming rows in exact test_config, and Cartagena row years are omitted. Challenge sources remain external barriers, not empty schedules."
+    },
+    "limahl": {
+      "sourceUrl": "https://www.limahl.com/tour-all-events/",
+      "contract": "Use the ordinary browser renderer and only the native Upcoming Events widget. Accept zero only when that widget shows the exact explicit empty message; ignore the separate Past Events archive and reject challenge placeholders.",
+      "nativeMessage": "No upcoming events scheduled yet. Stay tuned!",
+      "localRunner": {
+        "success": true,
+        "reason": "empty_schedule",
+        "concerts": 0
+      },
+      "checks": "Three guarded browser-runner tests: current native empty plus archive exclusion, synthetic future row, security placeholder rejection.",
+      "hostedOutcome": {
+        "outcome": {
+          "id": "artist-limahl",
+          "configPath": "scrapers/artists/artist-limahl.json",
+          "configHash": "fdd0df346e82c02c7478f4baa3c89225f531ddb212c1a32f6493b47c5e02dd14",
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('div.iron_widget_events:has(> h3.widgettitle:text-is(\"Upcoming Events\")) > ul#post-list.concerts-list > li.nothing-found, div.iron_widget_events:has(> h3.widgettitle:text-is(\"Upcoming Events\")) > ul#post-list.concerts-list > li.event') to be visible\n"
+        },
+        "cacheConcerts": 20,
+        "scrapedAt": "2026-08-26T04:31:06.287Z",
+        "hostedRecoveryVerified": false
+      },
+      "limitation": "The latest complete hosted run still times out waiting for the native page. Local browser success proves the extraction contract but does not count as hosted recovery."
+    },
+    "ironMaidens": {
+      "checkedAt": "2026-10-07T10:59:55.327690+00:00",
+      "source": "https://theironmaidens.com/upcoming-events/",
+      "change": "config transport custom_js got-scraping -> playwright_render custom_js; existing strict EventON parser unchanged",
+      "stockGuardedPlaywright": [
+        {
+          "scrapedAt": "2026-10-07T10:57:40.742Z",
+          "config": "runtime override identical to candidate",
+          "status": "success",
+          "rawRows": 10,
+          "dates": [
+            "2026-10-23",
+            "2026-10-29",
+            "2026-10-30",
+            "2026-11-05",
+            "2026-11-13",
+            "2026-11-14",
+            "2026-11-15",
+            "2026-12-04",
+            "2026-12-13",
+            "2027-04-09"
+          ],
+          "excluded": "multi-day Jericho Cruise 2026-11-07 to 2026-11-11, location spans Miami/Bimini"
+        },
+        {
+          "scrapedAt": "2026-10-07T10:58:32.659Z",
+          "config": "exact saved candidate",
+          "status": "fetch_error",
+          "error": "page.waitForSelector .eventon_list_event.scheduled timed out after 15000ms"
+        }
+      ],
+      "ordinaryHttp": {
+        "status": 202,
+        "bytes": 187,
+        "bodyPath": "ordinary-response.html",
+        "body": "SGCaptcha meta refresh stub; no interaction or evasion"
+      },
+      "html": {
+        "currentCompleteCaptured": false,
+        "priorCompletePath": "prior-official-20260928.html",
+        "priorCompleteSourceFixture": "tests/fixtures/artist-iron-maidens-upcoming-20260928.html",
+        "note": "Current successful Playwright runner returned parsed rows, not page HTML; subsequent ordinary fetch was challenge stub. Prior complete page is explicitly dated and cannot prove current markup alone."
+      },
+      "checks": {
+        "sourceTests": "6/6 pass",
+        "tscNoEmit": "pass",
+        "changedEslint": "pass",
+        "diffCheck": "pass"
+      },
+      "productionLimit": "Hosted Chrome access unverified and local access intermittent; do not count recovery before hosted daily manifest shows succeeded with 10 rows.",
+      "hostedOutcome": {
+        "outcome": {
+          "id": "artist-iron-maidens-the",
+          "configPath": "scrapers/artist-iron-maidens-the.json",
+          "configHash": "9d3aafe12cf05054703990643e60daec2730de57d1b4a4ce80ae459fd15b89bb",
+          "status": "succeeded"
+        },
+        "cacheConcerts": 10,
+        "scrapedAt": "2026-10-07T11:21:32.587Z",
+        "browserAccessIntermittent": true,
+        "publishedNativeTuplesChecked": 10,
+        "allNativeTuplesPublished": true,
+        "deduplicationNote": "San Antonio November 13 Sam's Burger Joint retains the equivalent Ticketmaster row with coordinates/time; official source label is not required to survive deduplication."
+      }
+    },
+    "yugong": {
+      "checkedAt": "2026-10-07T11:03:58.855478+00:00",
+      "sourceId": "yugong-yishan-beijing",
+      "configuredUrl": "https://theatrebeijing.com/whats_on/live/",
+      "stockGuardedPlaywright": {
+        "candidate": "type=playwright_render, renderWaitSelector=div.events, selectors otherwise unchanged",
+        "scrapedAt": "2026-10-07T11:03:09.932Z",
+        "success": false,
+        "reason": "fetch_error",
+        "error": "page.waitForSelector div.events timed out at 15000ms",
+        "parsedRows": 0
+      },
+      "ordinaryHttp": {
+        "status": 202,
+        "bytes": 187,
+        "sha256": "cc3563965c1d252a62008087110fe094b4ab9b1bc9b4cf6a85f7c4878cd60307",
+        "bodyPath": "/private/tmp/concert-remaining-20261007/yugong-followup/ordinary-response.html",
+        "classification": "sgcaptcha meta-refresh security stub; no interaction attempted"
+      },
+      "visibleIABFromRoot": {
+        "status": "passed after passive check",
+        "observed": "Amorphis Sep 19 2026 OMNISPACE past; Karen Souza Nov 4-7 2026 Urban Theatre range; neither certifies a single future concert date"
+      },
+      "configRisk": {
+        "existingLatLng": "Yugong Yishan coordinates attached as fallback to different theatres",
+        "dateRange": "No per-day duplication from Nov 4-7 without event-level evidence"
+      },
+      "decision": "No config/code edits: hosted-compatible guarded browser access and valid rows not proven. Do not weaken CAPTCHA/SSRF protections or count as recovered.",
+      "implementation": "No unproven transport change. Local proposed headless transport failed, but the unchanged ordinary HTTP collector succeeded in the latest full Daily run. Multi-day Karen Souza dates were not invented as individual concerts.",
+      "latestHosted": {
+        "outcome": {
+          "id": "yugong-yishan-beijing",
+          "configPath": "scrapers/yugong-yishan-beijing.json",
+          "configHash": "c08b1a47d4a761e85636cc1fadd36e7ac70cf40b809694cbd9ab678a7de216bf",
+          "status": "succeeded"
+        },
+        "cacheConcerts": 2,
+        "scrapedAt": "2026-10-07T11:22:18.206Z",
+        "publicationProcessing": {
+          "rawCount": 2,
+          "publishedCount": 0,
+          "duplicatesMerged": 0,
+          "dropped": {
+            "incomplete": 0,
+            "notApproved": 2,
+            "badDate": 0,
+            "pastDate": 0,
+            "zodFail": 0
+          }
+        },
+        "coverageLimit": "Native raw titles do not pass the existing approved-artist match. Latest fetch succeeds with two rows, but zero rows are published. No calendar coverage claim or manual approval was introduced."
+      }
+    },
+    "hostedVerification": {
+      "state": "verified complete fresh publication",
+      "cohorts": {
+        "artist": {
+          "run": {
+            "id": "37610540555",
+            "attempt": 1,
+            "sha": "e8d6729ff7c01fff862641842ac4cee237ac460a",
+            "workflow": "Artist Tour-Page Scrape"
+          },
+          "generatedAt": "2026-10-07T10:59:07.893Z",
+          "scrapers": {
+            "total": 415,
+            "succeeded": 395,
+            "failed": 20,
+            "changed": 8,
+            "unchanged": 387,
+            "staleIds": []
+          },
+          "recovered": [
+            "antoha-mc-tour",
+            "artist-paralamas-do-sucesso",
+            "artist-yanagi-nagi"
+          ],
+          "regressed": [
+            "artist-baltimore-symphony-orchestra"
+          ],
+          "failures": [
+            {
+              "id": "artist-adiemus",
+              "configPath": "scrapers/artists/artist-adiemus.json",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-astrid-williamson",
+              "configPath": "scrapers/artists/artist-astrid-williamson.json",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 401"
+            },
+            {
+              "id": "artist-andy-cairns",
+              "configPath": "scrapers/artists/artist-andy-cairns.json",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-avantasia",
+              "configPath": "scrapers/artists/artist-avantasia.json",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-amanda-forsyth",
+              "configPath": "scrapers/artists/artist-amanda-forsyth.json",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-marina-satti",
+              "configPath": "scrapers/artists/artist-marina-satti.json",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 404"
+            },
+            {
+              "id": "artist-marmalade",
+              "configPath": "scrapers/artists/artist-marmalade.json",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 401"
+            },
+            {
+              "id": "artist-nine-inch-nails",
+              "configPath": "scrapers/artists/artist-nine-inch-nails.json",
+              "reason": "parse_error",
+              "error": "Unmatched selector: =.//p/text()[contains(., ',')][1]"
+            },
+            {
+              "id": "artist-nick-cave-the-bad-seeds",
+              "configPath": "scrapers/artists/artist-nick-cave-the-bad-seeds.json",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-limahl",
+              "configPath": "scrapers/artists/artist-limahl.json",
+              "reason": "fetch_error",
+              "error": "page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('div.iron_widget_events:has(> h3.widgettitle:text-is(\"Upcoming Events\")) > ul#post-list.concerts-list > li.nothing-found, div.iron_widget_events:has(> h3.widgettitle:text-is(\"Upcoming Events\")) > ul#post-list.concerts-list > li.event') to be visible\n"
+            },
+            {
+              "id": "artist-pequot",
+              "configPath": "scrapers/artists/artist-pequot.json",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 403"
+            },
+            {
+              "id": "artist-philip-lindholm",
+              "configPath": "scrapers/artists/artist-philip-lindholm.json",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 403"
+            },
+            {
+              "id": "artist-poetry",
+              "configPath": "scrapers/artists/artist-poetry.json",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-psycho-le-cemu",
+              "configPath": "scrapers/artists/artist-psycho-le-cemu.json",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-shelby-lynne",
+              "configPath": "scrapers/artists/artist-shelby-lynne.json",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 403"
+            },
+            {
+              "id": "artist-robin-thicke",
+              "configPath": "scrapers/artists/artist-robin-thicke.json",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-baltimore-symphony-orchestra",
+              "configPath": "scrapers/artists/artist-baltimore-symphony-orchestra.json",
+              "reason": "fetch_error",
+              "error": "Scraper exceeded 90s wall-clock timeout"
+            },
+            {
+              "id": "artist-twin-atlantic",
+              "configPath": "scrapers/artists/artist-twin-atlantic.json",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 404"
+            },
+            {
+              "id": "komnata-kultury-tour",
+              "configPath": "scrapers/artists/komnata-kultury-tour.json",
+              "reason": "fetch_error",
+              "error": "getaddrinfo EAI_AGAIN komnatakultury.ru"
+            },
+            {
+              "id": "zhenya-trofimov-tour",
+              "configPath": "scrapers/artists/zhenya-trofimov-tour.json",
+              "reason": "fetch_error",
+              "error": "getaddrinfo EAI_AGAIN komnatakultury.ru"
+            }
+          ]
+        },
+        "venue": {
+          "run": {
+            "id": "37612944746",
+            "attempt": 1,
+            "sha": "909856d1c0392cb70a40a8ae94df6a1fd53c7514",
+            "workflow": "Daily Concert Scrape"
+          },
+          "generatedAt": "2026-10-07T11:32:25.579Z",
+          "scrapers": {
+            "total": 152,
+            "succeeded": 130,
+            "failed": 22,
+            "changed": 5,
+            "unchanged": 125,
+            "staleIds": []
+          },
+          "recovered": [
+            "artist-iron-maidens-the",
+            "artist-philippine-philharmonic-orchestra",
+            "yugong-yishan-beijing"
+          ],
+          "regressed": [
+            "roundhouse-london"
+          ],
+          "failures": [
+            {
+              "id": "artist-angel-heart",
+              "configPath": "scrapers/artist-angel-heart.json",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-babbu-mann",
+              "configPath": "scrapers/artist-babbu-mann.json",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-bruce-thomas",
+              "configPath": "scrapers/artist-bruce-thomas.json",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-harold-jones",
+              "configPath": "scrapers/artist-harold-jones.json",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-jane-mcdonald",
+              "configPath": "scrapers/artist-jane-mcdonald.json",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 404"
+            },
+            {
+              "id": "artist-john-keane",
+              "configPath": "scrapers/artist-john-keane.json",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-joe-hutton",
+              "configPath": "scrapers/artist-joe-hutton.json",
+              "reason": "fetch_error",
+              "error": "Client network socket disconnected before secure TLS connection was established"
+            },
+            {
+              "id": "artist-jorge-palma",
+              "configPath": "scrapers/artist-jorge-palma.json",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 404"
+            },
+            {
+              "id": "artist-pain-for-pleasure",
+              "configPath": "scrapers/artist-pain-for-pleasure.json",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-paul-halley",
+              "configPath": "scrapers/artist-paul-halley.json",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 403"
+            },
+            {
+              "id": "artist-juan-garcia-herreros",
+              "configPath": "scrapers/artist-juan-garcia-herreros.json",
+              "reason": "fetch_error",
+              "error": "getaddrinfo ENOTFOUND www.juan-garcia-herreros.com"
+            },
+            {
+              "id": "artist-painflow",
+              "configPath": "scrapers/artist-painflow.json",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-patti-smith-group",
+              "configPath": "scrapers/artist-patti-smith-group.json",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-ray-davies",
+              "configPath": "scrapers/artist-ray-davies.json",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-reality-check",
+              "configPath": "scrapers/artist-reality-check.json",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-yuta-and-the-bushido-boys",
+              "configPath": "scrapers/artist-yuta-and-the-bushido-boys.json",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "artist-yamazaki-masayoshi",
+              "configPath": "scrapers/artist-yamazaki-masayoshi.json",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "cartagena-festival-de-musica-cartagena",
+              "configPath": "scrapers/cartagena-festival-de-musica-cartagena.json",
+              "reason": "fetch_error",
+              "error": "Request failed with status code 403"
+            },
+            {
+              "id": "esplanade-theatres-singapore-singapore",
+              "configPath": "scrapers/esplanade-theatres-singapore-singapore.json",
+              "reason": "csr_detected",
+              "error": "Parsed 0 concerts. Page appears client-side rendered (events absent from server HTML)."
+            },
+            {
+              "id": "kitty-su-bangalore",
+              "configPath": "scrapers/kitty-su-bangalore.json",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "meo-arena-lisbon",
+              "configPath": "scrapers/meo-arena-lisbon.json",
+              "reason": "selectors_stale",
+              "error": "Parsed 0 concerts. Website layout might have changed."
+            },
+            {
+              "id": "roundhouse-london",
+              "configPath": "scrapers/roundhouse-london.json",
+              "reason": "fetch_error",
+              "error": "Maximum number of redirects exceeded"
+            }
+          ]
+        }
+      },
+      "sources": {
+        "antoha-mc-tour": {
+          "outcome": {
+            "id": "antoha-mc-tour",
+            "configPath": "scrapers/artists/antoha-mc-tour.json",
+            "configHash": "6d8848ee130c988f6a8ed9c03c272bbbefff04e0fec618c49be05e67ef72579d",
+            "status": "succeeded",
+            "reason": "empty_schedule"
+          },
+          "cacheConcerts": 0,
+          "scrapedAt": "2026-10-07T10:56:28.824Z",
+          "hostedRecoveryVerified": true
+        },
+        "artist-limahl": {
+          "outcome": {
+            "id": "artist-limahl",
+            "configPath": "scrapers/artists/artist-limahl.json",
+            "configHash": "fdd0df346e82c02c7478f4baa3c89225f531ddb212c1a32f6493b47c5e02dd14",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('div.iron_widget_events:has(> h3.widgettitle:text-is(\"Upcoming Events\")) > ul#post-list.concerts-list > li.nothing-found, div.iron_widget_events:has(> h3.widgettitle:text-is(\"Upcoming Events\")) > ul#post-list.concerts-list > li.event') to be visible\n"
+          },
+          "cacheConcerts": 20,
+          "scrapedAt": "2026-08-26T04:31:06.287Z",
+          "hostedRecoveryVerified": false
+        },
+        "komnata-kultury-tour": {
+          "outcome": {
+            "id": "komnata-kultury-tour",
+            "configPath": "scrapers/artists/komnata-kultury-tour.json",
+            "configHash": "1e3af9acd1b18772e4a8d5f854b29461367fcdf960b61276aae47dd988aaa8b0",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "getaddrinfo EAI_AGAIN komnatakultury.ru"
+          },
+          "cacheConcerts": 24,
+          "scrapedAt": "2026-10-06T20:57:35.621Z"
+        },
+        "zhenya-trofimov-tour": {
+          "outcome": {
+            "id": "zhenya-trofimov-tour",
+            "configPath": "scrapers/artists/zhenya-trofimov-tour.json",
+            "configHash": "ccbaf6a66ea6747d02b98bb741da8a302f33e4aa0c76ec23c855bcda2f94e078",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "getaddrinfo EAI_AGAIN komnatakultury.ru"
+          },
+          "cacheConcerts": 24,
+          "scrapedAt": "2026-10-06T21:48:40.293Z"
+        },
+        "artist-marmalade": {
+          "outcome": {
+            "id": "artist-marmalade",
+            "configPath": "scrapers/artists/artist-marmalade.json",
+            "configHash": "a208ba68a8e30c15a69a171eab147fcdd0eab945b900bddc227436f4201171f7",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 401"
+          },
+          "cacheConcerts": 2,
+          "scrapedAt": "2026-08-26T04:31:12.572Z"
+        },
+        "artist-astrid-williamson": {
+          "outcome": {
+            "id": "artist-astrid-williamson",
+            "configPath": "scrapers/artists/artist-astrid-williamson.json",
+            "configHash": "115bf1713e849e249b7202f7d06f8d728e0aa7110a6d1cd76c602a2a287c38f3",
+            "status": "failed",
+            "reason": "fetch_error",
+            "error": "Request failed with status code 401"
+          },
+          "cacheConcerts": 31,
+          "scrapedAt": "2026-08-26T04:30:28.632Z"
+        },
+        "artist-iron-maidens-the": {
+          "outcome": {
+            "id": "artist-iron-maidens-the",
+            "configPath": "scrapers/artist-iron-maidens-the.json",
+            "configHash": "9d3aafe12cf05054703990643e60daec2730de57d1b4a4ce80ae459fd15b89bb",
+            "status": "succeeded"
+          },
+          "cacheConcerts": 10,
+          "scrapedAt": "2026-10-07T11:21:32.587Z",
+          "browserAccessIntermittent": true,
+          "publishedNativeTuplesChecked": 10,
+          "allNativeTuplesPublished": true,
+          "deduplicationNote": "San Antonio November 13 Sam's Burger Joint retains the equivalent Ticketmaster row with coordinates/time; official source label is not required to survive deduplication."
+        },
+        "yugong-yishan-beijing": {
+          "outcome": {
+            "id": "yugong-yishan-beijing",
+            "configPath": "scrapers/yugong-yishan-beijing.json",
+            "configHash": "c08b1a47d4a761e85636cc1fadd36e7ac70cf40b809694cbd9ab678a7de216bf",
+            "status": "succeeded"
+          },
+          "cacheConcerts": 2,
+          "scrapedAt": "2026-10-07T11:22:18.206Z",
+          "publicationProcessing": {
+            "rawCount": 2,
+            "publishedCount": 0,
+            "duplicatesMerged": 0,
+            "dropped": {
+              "incomplete": 0,
+              "notApproved": 2,
+              "badDate": 0,
+              "pastDate": 0,
+              "zodFail": 0
+            }
+          },
+          "coverageLimit": "Native raw titles do not pass the existing approved-artist match. Latest fetch succeeds with two rows, but zero rows are published. No calendar coverage claim or manual approval was introduced."
+        }
+      },
+      "publication": {
+        "generatedAt": "2026-10-07T11:33:04.915Z",
+        "publishedConcerts": 51921,
+        "statusSha256": "f5150bcec944b1677a38a7b10564a2cb4dc2f820468bad143675576b8b7710c3",
+        "indexSha256": "a99b67849e9bfe9dd2a00f55c276d21fe5cce358b26ad2335ba8591d9d5e5d94",
+        "protectedPublicChecks": {
+          "status": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/status.json",
+            "httpStatus": 200,
+            "generatedAt": "2026-10-07T11:33:04.915Z",
+            "publishedConcerts": 51921
+          },
+          "index": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/index.json",
+            "httpStatus": 200,
+            "lastRun": "2026-10-07T11:33:04.913Z",
+            "schemaVersion": 2,
+            "stats": {
+              "totalConcerts": 51921,
+              "uniqueArtists": 7115,
+              "uniqueCities": 2871,
+              "pageCount": 104,
+              "pageSize": 500
+            }
+          },
+          "peter-smith": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/peter-smith.json",
+            "httpStatus": 200,
+            "rows": 6,
+            "names": [
+              "Peter Smith"
+            ],
+            "dates": [
+              "2026-10-08",
+              "2026-10-11",
+              "2026-10-18",
+              "2026-10-25",
+              "2026-10-28",
+              "2026-11-08"
+            ],
+            "internalMetadataAbsent": true,
+            "canonicalIdentityVerified": true
+          },
+          "kingfisher-sky": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/kingfisher-sky.json",
+            "httpStatus": 200,
+            "rows": 2,
+            "names": [
+              "Kingfisher Sky"
+            ],
+            "dates": [
+              "2026-12-12",
+              "2026-12-19"
+            ],
+            "internalMetadataAbsent": true
+          },
+          "stephanie-rainey": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/stephanie-rainey.json",
+            "httpStatus": 200,
+            "rows": 3,
+            "names": [
+              "Stephanie Rainey"
+            ],
+            "dates": [
+              "2026-10-10",
+              "2026-10-10",
+              "2026-12-12"
+            ],
+            "internalMetadataAbsent": true
+          },
+          "oar": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/oar.json",
+            "httpStatus": 200,
+            "rows": 6,
+            "names": [
+              "O.A.R."
+            ],
+            "dates": [
+              "2026-11-12",
+              "2026-11-12",
+              "2026-11-13",
+              "2026-11-14",
+              "2026-11-14",
+              "2026-11-15"
+            ],
+            "internalMetadataAbsent": true
+          },
+          "marmalade": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/marmalade.json",
+            "httpStatus": 200,
+            "rows": 1,
+            "names": [
+              "Marmalade"
+            ],
+            "dates": [
+              "2026-10-09"
+            ],
+            "internalMetadataAbsent": true,
+            "hostedSourceStatus": "failed",
+            "historicalLocalOfficialFutureRowsMissing": [
+              [
+                "Marmalade",
+                "2027-01-16",
+                "Skegness",
+                "GB"
+              ],
+              [
+                "Marmalade",
+                "2027-03-13",
+                "Burnham-on-Sea",
+                "GB"
+              ]
+            ],
+            "officialSourceCoverageVerified": false,
+            "allVerifiedOfficialEventsPresent": false,
+            "officialEventsChecked": 2,
+            "missingVerifiedOfficialEvents": [
+              {
+                "artist": "Marmalade",
+                "date": "2027-01-16",
+                "city": "Skegness",
+                "country": "GB"
+              },
+              {
+                "artist": "Marmalade",
+                "date": "2027-03-13",
+                "city": "Burnham-on-Sea",
+                "country": "GB"
+              }
+            ],
+            "comparisonFields": [
+              "artist",
+              "date",
+              "city",
+              "country"
+            ]
+          },
+          "ellen-ten-damme": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/ellen-ten-damme.json",
+            "httpStatus": 200,
+            "rows": 62,
+            "names": [
+              "Ellen ten Damme"
+            ],
+            "dates": [
+              "2026-10-09",
+              "2026-10-15",
+              "2026-10-16",
+              "2026-10-17",
+              "2026-10-24",
+              "2026-11-13",
+              "2026-11-14",
+              "2026-11-19",
+              "2026-11-22",
+              "2026-11-26",
+              "2026-11-28",
+              "2026-12-02",
+              "2026-12-11",
+              "2026-12-13",
+              "2026-12-16",
+              "2027-02-13",
+              "2027-02-18",
+              "2027-02-19",
+              "2027-02-20",
+              "2027-02-24",
+              "2027-02-25",
+              "2027-02-27",
+              "2027-03-03",
+              "2027-03-04",
+              "2027-03-05",
+              "2027-03-10",
+              "2027-03-11",
+              "2027-03-12",
+              "2027-03-13",
+              "2027-03-17",
+              "2027-03-18",
+              "2027-03-19",
+              "2027-03-20",
+              "2027-03-31",
+              "2027-04-01",
+              "2027-04-02",
+              "2027-04-03",
+              "2027-04-07",
+              "2027-04-09",
+              "2027-04-10",
+              "2027-04-15",
+              "2027-04-16",
+              "2027-04-17",
+              "2027-04-19",
+              "2027-04-22",
+              "2027-04-23",
+              "2027-04-24",
+              "2027-04-29",
+              "2027-04-30",
+              "2027-05-01",
+              "2027-05-06",
+              "2027-05-08",
+              "2027-05-12",
+              "2027-05-13",
+              "2027-05-14",
+              "2027-05-19",
+              "2027-05-20",
+              "2027-05-21",
+              "2027-05-22",
+              "2027-05-27",
+              "2027-05-28",
+              "2027-05-29"
+            ],
+            "internalMetadataAbsent": true
+          },
+          "scotty-mccreery": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/scotty-mccreery.json",
+            "httpStatus": 200,
+            "rows": 12,
+            "names": [
+              "Scotty McCreery"
+            ],
+            "dates": [
+              "2026-10-15",
+              "2026-10-16",
+              "2026-10-16",
+              "2026-10-17",
+              "2026-10-18",
+              "2026-11-05",
+              "2026-11-06",
+              "2026-11-07",
+              "2026-11-21",
+              "2026-12-03",
+              "2026-12-05",
+              "2026-12-10"
+            ],
+            "internalMetadataAbsent": true
+          },
+          "alabama-3": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/alabama-3.json",
+            "httpStatus": 200,
+            "rows": 21,
+            "names": [
+              "Alabama 3"
+            ],
+            "dates": [
+              "2026-10-16",
+              "2026-10-17",
+              "2026-10-22",
+              "2026-10-23",
+              "2026-10-24",
+              "2026-10-29",
+              "2026-10-30",
+              "2026-10-31",
+              "2026-11-01",
+              "2026-11-05",
+              "2026-11-06",
+              "2026-11-07",
+              "2026-11-08",
+              "2026-11-14",
+              "2026-11-15",
+              "2026-12-09",
+              "2026-12-10",
+              "2026-12-10",
+              "2026-12-11",
+              "2026-12-12",
+              "2026-12-13"
+            ],
+            "internalMetadataAbsent": true
+          },
+          "pain-for-pleasure": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/pain-for-pleasure.json",
+            "httpStatus": 404,
+            "rows": 0,
+            "names": [],
+            "dates": [],
+            "internalMetadataAbsent": true,
+            "incorrectKnownEventAbsent": true
+          },
+          "the-hu": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/the-hu.json",
+            "httpStatus": 200,
+            "rows": 18,
+            "names": [
+              "The HU"
+            ],
+            "dates": [
+              "2026-10-08",
+              "2026-10-09",
+              "2026-10-10",
+              "2026-10-11",
+              "2026-10-14",
+              "2026-10-15",
+              "2026-10-17",
+              "2026-10-18",
+              "2026-10-19",
+              "2026-10-20",
+              "2026-10-22",
+              "2026-10-23",
+              "2026-10-24",
+              "2026-10-27",
+              "2026-10-28",
+              "2026-10-30",
+              "2026-10-31",
+              "2026-11-01"
+            ],
+            "internalMetadataAbsent": true,
+            "canonicalIdentityPreserved": true,
+            "priorStillFutureShowsPreserved": true,
+            "priorStillFutureShowsChecked": 18
+          },
+          "twin-atlantic": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/twin-atlantic.json",
+            "httpStatus": 200,
+            "rows": 1,
+            "names": [
+              "Twin Atlantic"
+            ],
+            "dates": [
+              "2026-10-16"
+            ],
+            "internalMetadataAbsent": true,
+            "sixConfirmedCancelledDateCityTuplesAbsent": {
+              "2026-10-17 Birmingham": true,
+              "2026-10-18 Newcastle Upon Tyne": true,
+              "2026-10-20 London": true,
+              "2026-10-21 Manchester": true,
+              "2026-10-23 Glasgow": true,
+              "2026-10-24 Dundee": true
+            },
+            "verifiedLeedsOctober16Retained": true
+          },
+          "train": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/train.json",
+            "httpStatus": 200,
+            "rows": 4,
+            "names": [
+              "Train"
+            ],
+            "dates": [
+              "2026-11-14",
+              "2027-01-23",
+              "2027-02-11",
+              "2027-02-11"
+            ],
+            "internalMetadataAbsent": true,
+            "verifiedFeedEventsPresent": {
+              "2026-11-14 Agoura Hills": true,
+              "2027-01-23 La Quinta": true,
+              "2027-02-11 Miami Beach": true
+            },
+            "venueComparisonNote": "The verified Agoura Hills event is deduplicated with the existing Bandsintown row, whose venue is spelled The Canyon - Agoura Hills. The three official feed shows are checked individually; this does not validate every other provider row in the card.",
+            "incorrectOrganizerEventsAbsent": {
+              "2026-11-04 HeadQuarters": true,
+              "2026-11-07 HeadQuarters": true,
+              "2027-01-30 VinDanmark": true,
+              "2027-02-11 VinDanmark": true
+            }
+          },
+          "paralamas-do-sucesso": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/paralamas-do-sucesso.json",
+            "httpStatus": 200,
+            "rows": 10,
+            "names": [
+              "Paralamas do Sucesso"
+            ],
+            "dates": [
+              "2026-10-08",
+              "2026-10-09",
+              "2026-10-11",
+              "2026-10-17",
+              "2026-10-30",
+              "2026-11-08",
+              "2026-12-06",
+              "2026-12-19",
+              "2027-01-23",
+              "2027-03-06"
+            ],
+            "internalMetadataAbsent": true,
+            "hostedSourceSucceeded": true,
+            "nativeFutureRowsChecked": 9,
+            "allCurrentOfficialEventsPresent": true,
+            "montesClarosMarch6Present": true,
+            "previousHistoricalMarch6GapResolved": true,
+            "allVerifiedOfficialEventsPresent": true,
+            "officialEventsChecked": 9,
+            "allLatestHostedEventsPresent": true,
+            "latestHostedEventsChecked": 9,
+            "comparisonFields": [
+              "artist",
+              "date",
+              "venue",
+              "city",
+              "country"
+            ]
+          },
+          "the-fizz": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/the-fizz.json",
+            "httpStatus": 200,
+            "rows": 14,
+            "names": [
+              "The Fizz"
+            ],
+            "dates": [
+              "2026-11-08",
+              "2026-11-13",
+              "2026-11-18",
+              "2026-11-20",
+              "2026-11-21",
+              "2026-11-28",
+              "2027-04-17",
+              "2027-04-25",
+              "2027-09-10",
+              "2027-09-18",
+              "2027-10-16",
+              "2027-10-17",
+              "2027-10-30",
+              "2027-11-20"
+            ],
+            "internalMetadataAbsent": true,
+            "canonicalIdentityVerified": true,
+            "allFourteenOfficialEventsPreserved": true
+          },
+          "the-firm": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/the-firm.json",
+            "httpStatus": 404,
+            "rows": 0,
+            "names": [],
+            "dates": [],
+            "internalMetadataAbsent": true,
+            "incorrectTheFizzRowsAbsent": true
+          },
+          "allan-stewart": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/allan-stewart.json",
+            "httpStatus": 200,
+            "rows": 5,
+            "names": [
+              "Allan Stewart"
+            ],
+            "dates": [
+              "2027-03-23",
+              "2027-03-24",
+              "2027-03-25",
+              "2027-03-26",
+              "2027-03-27"
+            ],
+            "internalMetadataAbsent": true,
+            "allFiveVerifiedShowDatesPresent": true,
+            "pantomimeNotRelabeledAsConcert": true
+          },
+          "all-that-remains": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/all-that-remains.json",
+            "httpStatus": 404,
+            "rows": 0,
+            "names": [],
+            "dates": [],
+            "internalMetadataAbsent": true,
+            "groupIdentityPreserved": null,
+            "nativeEmptyDoesNotExcludeOtherProviders": true,
+            "hostedSourceSucceeded": true
+          },
+          "dan-deacon": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/dan-deacon.json",
+            "httpStatus": 200,
+            "rows": 6,
+            "names": [
+              "Dan Deacon"
+            ],
+            "dates": [
+              "2026-11-06",
+              "2026-11-07",
+              "2026-11-08",
+              "2026-11-14",
+              "2026-11-15",
+              "2027-03-18"
+            ],
+            "internalMetadataAbsent": true,
+            "allSixVerifiedOfficialEventsPresent": true,
+            "missingVerifiedOfficialEvents": []
+          },
+          "hermann-nitsch": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/hermann-nitsch.json",
+            "httpStatus": 404,
+            "rows": 0,
+            "names": [],
+            "dates": [],
+            "internalMetadataAbsent": true,
+            "knownInvalidOrUnverifiedSourceEventsAbsent": true
+          },
+          "evgeny-kissin": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/evgeny-kissin.json",
+            "httpStatus": 200,
+            "rows": 2,
+            "names": [
+              "Evgeny Kissin"
+            ],
+            "dates": [
+              "2027-04-25",
+              "2027-04-30"
+            ],
+            "internalMetadataAbsent": true,
+            "verifiedBaltimoreRecitalPreserved": true
+          },
+          "alabama-symphony-orchestra": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/alabama-symphony-orchestra.json",
+            "httpStatus": 200,
+            "rows": 39,
+            "names": [
+              "Alabama Symphony Orchestra"
+            ],
+            "dates": [
+              "2026-10-07",
+              "2026-10-08",
+              "2026-10-13",
+              "2026-10-23",
+              "2026-10-24",
+              "2026-10-30",
+              "2026-11-06",
+              "2026-11-07",
+              "2026-11-12",
+              "2026-11-20",
+              "2026-11-21",
+              "2026-12-01",
+              "2026-12-04",
+              "2026-12-18",
+              "2026-12-19",
+              "2026-12-31",
+              "2027-01-15",
+              "2027-01-29",
+              "2027-01-30",
+              "2027-02-11",
+              "2027-02-16",
+              "2027-02-19",
+              "2027-02-20",
+              "2027-03-02",
+              "2027-03-03",
+              "2027-03-06",
+              "2027-03-11",
+              "2027-03-19",
+              "2027-03-20",
+              "2027-04-03",
+              "2027-04-09",
+              "2027-04-10",
+              "2027-05-07",
+              "2027-05-08",
+              "2027-05-11",
+              "2027-05-14",
+              "2027-05-15",
+              "2027-05-21",
+              "2027-05-22"
+            ],
+            "internalMetadataAbsent": true,
+            "hostedSourceSucceeded": true,
+            "nativeRawRows": 45,
+            "distinctNativeFutureDatesAndCitiesChecked": 39,
+            "allOfficialDateCityCountryTuplesPresent": true,
+            "alabasterHooverTrussvilleNativeCitiesPresent": true,
+            "correctedGeographyNativeVenuesPresent": true,
+            "venueComparisonScope": "Exact venues are checked for corrected Alabaster/Hoover/Trussville geography. Other rows compare date/city/country because the existing provider deduplication can retain alternate venue names.",
+            "asyoNovember7At1400NotAttributedToAdultASO": true
+          },
+          "ray-scott": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/ray-scott.json",
+            "httpStatus": 200,
+            "rows": 7,
+            "names": [
+              "Ray Scott"
+            ],
+            "dates": [
+              "2026-10-07",
+              "2026-10-08",
+              "2026-10-22",
+              "2026-10-24",
+              "2026-11-07",
+              "2026-11-27",
+              "2026-11-28"
+            ],
+            "internalMetadataAbsent": true,
+            "hostedSourceSucceeded": true,
+            "nativeArtistFeedRows": 7,
+            "nativeCalendarCountPreviouslyObserved": 8,
+            "nativeCountScope": "The public artist feed proves seven identity-checked entries; the eighth native calendar item is not claimed as published.",
+            "futureRowsChecked": 7,
+            "comparisonFields": [
+              "artist",
+              "date",
+              "venue",
+              "city",
+              "country"
+            ],
+            "allSevenArtistFeedEventsPresentIfFuture": true,
+            "escambiaCountyAbsent": true
+          },
+          "ai-kawashima": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/ai-kawashima.json",
+            "httpStatus": 200,
+            "rows": 2,
+            "names": [
+              "Ai Kawashima"
+            ],
+            "dates": [
+              "2026-10-31",
+              "2026-11-15"
+            ],
+            "internalMetadataAbsent": true,
+            "hostedSourceSucceeded": true,
+            "verifiedNativeFutureRows": 2,
+            "sakuraAndTokaiPublished": true,
+            "exactLegacyBadRowsAbsent": true
+          },
+          "painForPleasure": {
+            "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/pain-for-pleasure.json",
+            "httpStatus": 404,
+            "rows": 0,
+            "names": [],
+            "dates": [],
+            "internalMetadataAbsent": true,
+            "incorrectKnownEventAbsent": true
+          },
+          "sharon-van-etten-configured-source": {
+            "hostedSourceSucceeded": true,
+            "hostedOutcome": {
+              "id": "artist-you-used-to-hold-me-so-tight",
+              "configPath": "scrapers/artist-you-used-to-hold-me-so-tight.json",
+              "configHash": "53b26c9376bfcd286f93d4312812af4807f314bec60c05f84a084a63bf3b8fff",
+              "status": "succeeded",
+              "reason": "empty_schedule"
+            },
+            "originalSourceId": "artist-you-used-to-hold-me-so-tight",
+            "nativeTourId": "b19bb52c-bf1a-4e6f-beb8-abb33a5ea505",
+            "nativeArtistName": "Sharon Van Etten & The Attachment Theory",
+            "verifiedNativeEmptySchedule": true,
+            "cachedRows": 0,
+            "cacheScrapedAt": "2026-10-07T11:21:46.758Z",
+            "legacyCatalogIdentityResolved": false,
+            "populatedBehaviorEvidence": "explicitly_rejected_until_canonical_group_identity_is_resolved",
+            "scope": "Proves the configured Sharon endpoint is readable and its strict native tour relationship is empty. Does not resolve the catalog record named You Used to Hold Me So Tight, guarantee future group-to-catalog matching, or imply every provider has an empty artist card."
+          }
+        }
+      },
+      "publicCards": {
+        "антоха-мс": {
+          "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/%D0%B0%D0%BD%D1%82%D0%BE%D1%85%D0%B0-%D0%BC%D1%81.json",
+          "httpStatus": 404,
+          "rows": 0,
+          "producerBytesIdentical": true,
+          "officialRows": 0
+        },
+        "limahl": {
+          "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/limahl.json",
+          "httpStatus": 404,
+          "rows": 0,
+          "producerBytesIdentical": true,
+          "officialRows": 0
+        },
+        "комната-культуры": {
+          "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/%D0%BA%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D0%B0-%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D1%8B.json",
+          "httpStatus": 200,
+          "rows": 24,
+          "producerBytesIdentical": true,
+          "officialRows": 24
+        },
+        "женя-трофимов": {
+          "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/%D0%B6%D0%B5%D0%BD%D1%8F-%D1%82%D1%80%D0%BE%D1%84%D0%B8%D0%BC%D0%BE%D0%B2.json",
+          "httpStatus": 200,
+          "rows": 24,
+          "producerBytesIdentical": true,
+          "officialRows": 24
+        },
+        "marmalade": {
+          "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/marmalade.json",
+          "httpStatus": 200,
+          "rows": 1,
+          "producerBytesIdentical": true,
+          "officialRows": 0
+        },
+        "the-iron-maidens": {
+          "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/the-iron-maidens.json",
+          "httpStatus": 200,
+          "rows": 12,
+          "producerBytesIdentical": true,
+          "officialRows": 9
+        }
+      },
+      "producerPublicReconciliation": {
+        "generatedAt": "2026-10-07T11:33:04.915Z",
+        "previousPublished": 51072,
+        "published": 51921,
+        "publishedDelta": 849,
+        "statusSha256": "f5150bcec944b1677a38a7b10564a2cb4dc2f820468bad143675576b8b7710c3",
+        "publicArtifactBytesIdentical": true,
+        "publicIndexArtifactBytesIdentical": true,
+        "publicIndexSha256": "a99b67849e9bfe9dd2a00f55c276d21fe5cce358b26ad2335ba8591d9d5e5d94",
+        "publicIndexStats": {
+          "totalConcerts": 51921,
+          "uniqueArtists": 7115,
+          "uniqueCities": 2871,
+          "pageCount": 104,
+          "pageSize": 500
+        },
+        "gate": {
+          "schemaVersion": 1,
+          "state": "eligible",
+          "generatedAt": "2026-10-07T11:33:04.916Z",
+          "publishedConcerts": 51921,
+          "healthGate": {
+            "state": "eligible",
+            "reason": "Current publication passed the existing health gate.",
+            "evaluatedAt": "2026-10-07T11:33:08.584Z"
+          }
+        },
+        "processing": {
+          "schemaVersion": 1,
+          "generatedAt": "2026-10-07T11:32:59.845Z",
+          "baseDate": "2026-10-07T11:32:25.583Z",
+          "rawCount": 112247,
+          "publishedCount": 51921,
+          "duplicatesMerged": 12698,
+          "dropped": {
+            "incomplete": 1808,
+            "notApproved": 36328,
+            "badDate": 1855,
+            "pastDate": 7433,
+            "zodFail": 204
+          },
+          "validationIssues": {
+            "country:too_big": 178,
+            "venue:too_big": 24,
+            "city:too_big": 18,
+            "venue:too_small": 2
+          },
+          "missingFields": {
+            "venue": 870,
+            "city": 1533,
+            "country": 129,
+            "date": 3
+          }
+        },
+        "sourceHealth": {
+          "venue": {
+            "schemaVersion": 1,
+            "generatedAt": "2026-10-07T11:22:30.856Z",
+            "source": "venue",
+            "state": "degraded",
+            "counts": {
+              "targets": 152,
+              "selected": 152,
+              "attempted": 152,
+              "succeeded": 130,
+              "failed": 22,
+              "empty": 10,
+              "unavailable": 0,
+              "skippedFresh": 0,
+              "missing": 15,
+              "cacheFallbacks": 7,
+              "partial": 0
+            },
+            "freshness": {
+              "basis": "verifiedAt",
+              "classification": "current_run",
+              "fresh": 130,
+              "old": 7,
+              "unknown": 15,
+              "latestVerifiedAt": "2026-10-07T11:22:30.856Z",
+              "p50Days": 0,
+              "p95Days": 0,
+              "maxDays": 9.85
+            },
+            "completeness": "partial",
+            "issues": [
+              {
+                "reason": "selectors_stale",
+                "count": 14,
+                "action": "repair_source_extraction"
+              },
+              {
+                "reason": "fetch_error",
+                "count": 7,
+                "action": "retry_and_inspect_source_access"
+              },
+              {
+                "reason": "csr_detected",
+                "count": 1,
+                "action": "use_supported_rendered_source_path"
+              }
+            ]
+          },
+          "artist": {
+            "schemaVersion": 1,
+            "generatedAt": "2026-10-07T10:59:07.756Z",
+            "source": "artist",
+            "state": "degraded",
+            "counts": {
+              "targets": 415,
+              "selected": 415,
+              "attempted": 415,
+              "succeeded": 395,
+              "failed": 20,
+              "empty": 13,
+              "unavailable": 0,
+              "skippedFresh": 0,
+              "missing": 3,
+              "cacheFallbacks": 17,
+              "partial": 0
+            },
+            "freshness": {
+              "basis": "verifiedAt",
+              "classification": "current_run",
+              "fresh": 395,
+              "old": 6,
+              "unknown": 14,
+              "latestVerifiedAt": "2026-10-07T10:59:07.756Z",
+              "p50Days": 0,
+              "p95Days": 0,
+              "maxDays": 11.08
+            },
+            "completeness": "partial",
+            "issues": [
+              {
+                "reason": "selectors_stale",
+                "count": 8,
+                "action": "repair_source_extraction"
+              },
+              {
+                "reason": "fetch_error",
+                "count": 11,
+                "action": "retry_and_inspect_source_access"
+              },
+              {
+                "reason": "parse_error",
+                "count": 1,
+                "action": "inspect_source_format_change"
+              }
+            ]
+          },
+          "bandsintown": {
+            "schemaVersion": 1,
+            "generatedAt": "2026-10-07T10:59:08.910Z",
+            "source": "bandsintown",
+            "state": "degraded",
+            "counts": {
+              "targets": 20765,
+              "selected": 800,
+              "attempted": 800,
+              "succeeded": 612,
+              "failed": 0,
+              "empty": 446,
+              "unavailable": 188,
+              "skippedFresh": 10400,
+              "missing": 0,
+              "cacheFallbacks": 0,
+              "partial": 0
+            },
+            "freshness": {
+              "basis": "verifiedAt",
+              "classification": "revisit_interval",
+              "revisitIntervalDays": 6,
+              "intervalMeaning": "minimum_revisit_interval_not_stale_sla",
+              "fresh": 8967,
+              "old": 7186,
+              "unknown": 4612,
+              "latestVerifiedAt": "2026-10-07T10:59:08.910Z",
+              "p50Days": 4.06,
+              "p95Days": 10.05,
+              "maxDays": 11.08
+            },
+            "completeness": "partial",
+            "issues": [
+              {
+                "reason": "artist_feed_not_found",
+                "count": 188,
+                "action": "review_artist_source_identity"
+              },
+              {
+                "reason": "previous_target_failures",
+                "count": 2807,
+                "action": "retry_next_scheduled_sweep"
+              }
+            ]
+          },
+          "eventbrite": {
+            "schemaVersion": 1,
+            "generatedAt": "2026-10-07T11:15:54.400Z",
+            "source": "eventbrite",
+            "state": "unavailable",
+            "counts": {
+              "targets": 20765,
+              "selected": 5,
+              "attempted": 5,
+              "succeeded": 0,
+              "failed": 5,
+              "empty": 0,
+              "unavailable": 0,
+              "skippedFresh": 0,
+              "missing": 20689,
+              "cacheFallbacks": 0,
+              "partial": 0
+            },
+            "freshness": {
+              "basis": "verifiedAt",
+              "classification": "revisit_interval",
+              "revisitIntervalDays": 6,
+              "intervalMeaning": "minimum_revisit_interval_not_stale_sla",
+              "fresh": 0,
+              "old": 0,
+              "unknown": 20765,
+              "latestVerifiedAt": null,
+              "p50Days": null,
+              "p95Days": null,
+              "maxDays": null
+            },
+            "completeness": "partial",
+            "halted": {
+              "category": "consecutive_failures",
+              "count": 1
+            },
+            "issues": [
+              {
+                "reason": "access_challenge",
+                "count": 5,
+                "action": "obtain_authorized_source_access"
+              }
+            ]
+          },
+          "ticketmaster": {
+            "schemaVersion": 1,
+            "generatedAt": "2026-10-07T11:22:31.108Z",
+            "source": "ticketmaster",
+            "state": "healthy",
+            "counts": {
+              "targets": 27,
+              "selected": 27,
+              "attempted": 27,
+              "succeeded": 27,
+              "failed": 0,
+              "empty": 2,
+              "unavailable": 0,
+              "skippedFresh": 0,
+              "missing": 0,
+              "cacheFallbacks": 0,
+              "partial": 0
+            },
+            "freshness": {
+              "basis": "verifiedAt",
+              "classification": "current_run",
+              "fresh": 27,
+              "old": 0,
+              "unknown": 0,
+              "latestVerifiedAt": "2026-10-07T11:22:31.108Z",
+              "p50Days": 0,
+              "p95Days": 0,
+              "maxDays": 0
+            },
+            "completeness": "complete",
+            "issues": []
+          }
+        }
+      },
+      "release": {
+        "actualCheckouts": {
+          "scrape": "909856d1c0392cb70a40a8ae94df6a1fd53c7514",
+          "deploy": "909856d1c0392cb70a40a8ae94df6a1fd53c7514"
+        },
+        "runtimeCodeAndConfigsMatchCurrentMain": true,
+        "latestMain": "6e09f71ac8eed0aeed07d4eacaab842b57b2e906",
+        "prs": [
+          {
+            "headRefOid": "9950ca6518ed1084c1c50f69018d247789df630c",
+            "mergeCommit": {
+              "oid": "a2015f3ee13626df05aed636d91be0ede0156c4c"
+            },
+            "mergedAt": "2026-10-07T10:47:22Z",
+            "number": 223,
+            "state": "MERGED",
+            "url": "https://github.com/Cartograf666/concert-for-travelers-api/pull/223"
+          },
+          {
+            "headRefOid": "3baa8110c7d81d8b89655c2636633c8ffeb843a6",
+            "mergeCommit": {
+              "oid": "e8d6729ff7c01fff862641842ac4cee237ac460a"
+            },
+            "mergedAt": "2026-10-07T10:54:46Z",
+            "number": 224,
+            "state": "MERGED",
+            "url": "https://github.com/Cartograf666/concert-for-travelers-api/pull/224"
+          },
+          {
+            "headRefOid": "258ccb0d1efef4b665cf502eeec06d44504d22b6",
+            "mergeCommit": {
+              "oid": "fe754b25613e7c0e0f8f48e9480ed699f1eae149"
+            },
+            "mergedAt": "2026-10-07T11:07:19Z",
+            "number": 225,
+            "state": "MERGED",
+            "url": "https://github.com/Cartograf666/concert-for-travelers-api/pull/225"
+          },
+          {
+            "headRefOid": "8c691c931b853d944deadc528eb0d6f309d783ce",
+            "mergeCommit": {
+              "oid": "84db951d1e361e6c443bac1d658e0b6bc53fca80"
+            },
+            "mergedAt": "2026-10-07T11:19:29Z",
+            "number": 226,
+            "state": "MERGED",
+            "url": "https://github.com/Cartograf666/concert-for-travelers-api/pull/226"
+          }
+        ],
+        "interveningMainChanges": {
+          "from": "fe754b25613e7c0e0f8f48e9480ed699f1eae149",
+          "to": "84db951d1e361e6c443bac1d658e0b6bc53fca80",
+          "files": [
+            "data/artists/shard-0.json",
+            "data/artists/shard-2.json",
+            "data/artists/shard-3.json",
+            "data/artists/shard-4.json",
+            "data/artists/shard-5.json",
+            "data/repair-history.json",
+            "data/tour-url-discovery-state/checkpoint.json",
+            "data/tour-url-probe-hits.json"
+          ],
+          "changedArtistRecords": 460,
+          "changedArtistKeys": {
+            "tourUrlProbeTriedAt": 460,
+            "tourUrl": 90
+          },
+          "scraperCodeAndConfigsUnchanged": true
+        },
+        "artist": {
+          "conclusion": "success",
+          "createdAt": "2026-10-07T10:54:58Z",
+          "databaseId": 37610540555,
+          "headSha": "e8d6729ff7c01fff862641842ac4cee237ac460a",
+          "status": "completed",
+          "updatedAt": "2026-10-07T11:16:12Z",
+          "url": "https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37610540555",
+          "workflowName": "Artist Tour-Page Scrape",
+          "jobs": [
+            {
+              "databaseId": 112756631031,
+              "name": "scrape",
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-07T10:55:31Z",
+              "completedAt": "2026-10-07T11:16:12Z"
+            }
+          ]
+        },
+        "daily": {
+          "conclusion": "success",
+          "createdAt": "2026-10-07T11:16:15Z",
+          "databaseId": 37612944746,
+          "headSha": "909856d1c0392cb70a40a8ae94df6a1fd53c7514",
+          "status": "completed",
+          "updatedAt": "2026-10-07T11:34:18Z",
+          "url": "https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37612944746",
+          "workflowName": "Daily Concert Scrape",
+          "jobs": [
+            {
+              "databaseId": 112764345539,
+              "name": "scrape",
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-07T11:20:03Z",
+              "completedAt": "2026-10-07T11:33:47Z"
+            },
+            {
+              "databaseId": 112770820671,
+              "name": "deploy",
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-07T11:33:52Z",
+              "completedAt": "2026-10-07T11:34:17Z"
+            }
+          ]
+        }
+      },
+      "branchAudit": {
+        "main": "6e09f71ac8eed0aeed07d4eacaab842b57b2e906",
+        "refsChecked": 112,
+        "missingUniquePatches": [],
+        "refs": [
+          {
+            "ref": "refs/heads/codex/access-corrections-proof-20261007",
+            "sha": "6e09f71ac8eed0aeed07d4eacaab842b57b2e906",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/access-followup-production-proof-20261007",
+            "sha": "e8d6729ff7c01fff862641842ac4cee237ac460a",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/all-sources-recovery-20261006",
+            "sha": "baa62447066fe2efac0a5521de0b348db85dccde",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/all-that-remains-calendar-20261007",
+            "sha": "405b06619e1ca2702ee665121f35972b68948679",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/allan-multisession-local-20260928",
+            "sha": "d53e0e436afd8aeb431f07a13c79b992410cffd1",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/allan-stewart-source-20260928",
+            "sha": "00ad551019aaea043ac09ab093a955b694d9eb4c",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/amble-identity-local-20260928",
+            "sha": "d53e0e436afd8aeb431f07a13c79b992410cffd1",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/antoha-access-followup-20261007",
+            "sha": "9950ca6518ed1084c1c50f69018d247789df630c",
+            "includedByAncestry": false,
+            "patches": [
+              "- 9950ca6518ed1084c1c50f69018d247789df630c"
+            ],
+            "allUniquePatchesAlreadyIncluded": true
+          },
+          {
+            "ref": "refs/heads/codex/artemas-identity-local-20260928",
+            "sha": "d53e0e436afd8aeb431f07a13c79b992410cffd1",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/artist-audience-api",
+            "sha": "16bfd77efc75c1ef0e650b155ada5e098e8b829d",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/artist-backends-20261006",
+            "sha": "9806b507d89895723f4762f69764461b301ccbeb",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/belgrade-season-recovery-20260928",
+            "sha": "a2a47fbbb7a2905c99105ea87ee77c23f65c7b27",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/coldplace-identity-local-20260928",
+            "sha": "d53e0e436afd8aeb431f07a13c79b992410cffd1",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/collector-health-20260926",
+            "sha": "c8f1f0acb2597c0063371dd12b54e8142593b067",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/collector-location-recovery-20260927",
+            "sha": "b5dc8228a591cc0267486aba12560ab51e7c78f7",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/collector-recovery-20260926",
+            "sha": "4ee3b4a50b9259b15e6c8dec193ec412f71c2e61",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/collector-recovery-20261006",
+            "sha": "23dbdb192f4b3c6752fa73b15710a7b93acdd5ab",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/collector-recovery-review-20261006",
+            "sha": "79298c9af93c9b976a2fb89e737f263578f8822e",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/collector-remaining-recovery-20260927",
+            "sha": "7ef07d3fbf224fc8292e4772bda341ab70a11bbb",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/collector-source-repairs-20260926",
+            "sha": "7830d256d2b02face1268c46dbcc93a6c2a5417a",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/country-sources-recovery-20260928",
+            "sha": "03f269673788da41f7f2b897f95f464912b3949b",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/cure-source-diagnosis-20260928",
+            "sha": "00ad551019aaea043ac09ab093a955b694d9eb4c",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/dan-deacon-backend-20261007",
+            "sha": "b4530c7931b74a6bb62a518e0e4e3c8a0613fe1d",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/ellen-tour-20261006",
+            "sha": "9d85e80b80c7241431cbb3f312f421cfc8475d3c",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/fizz-identity-local-20260928",
+            "sha": "d53e0e436afd8aeb431f07a13c79b992410cffd1",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/fizz-source-recovery-20260928",
+            "sha": "00ad551019aaea043ac09ab093a955b694d9eb4c",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/fuzzy-mapping-diagnostic-20260928",
+            "sha": "d53e0e436afd8aeb431f07a13c79b992410cffd1",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/haash-source-recovery-20260928",
+            "sha": "00ad551019aaea043ac09ab093a955b694d9eb4c",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/harry-source-recovery-20260928",
+            "sha": "00ad551019aaea043ac09ab093a955b694d9eb4c",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/hosted-source-recovery-20261006",
+            "sha": "519a42ecce8cc4471779f78750bcc0ece96e1bd0",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/huecry-country-recovery-20260928",
+            "sha": "1c800842dd0257f89051b9c6bacabad47df95a82",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/iron-maidens-access-followup-20261007",
+            "sha": "258ccb0d1efef4b665cf502eeec06d44504d22b6",
+            "includedByAncestry": false,
+            "patches": [
+              "- 258ccb0d1efef4b665cf502eeec06d44504d22b6"
+            ],
+            "allUniquePatchesAlreadyIncluded": true
+          },
+          {
+            "ref": "refs/heads/codex/iron-maidens-recovery-20260928",
+            "sha": "a654cbe5000f0986a56f8b7f712b9d66ee0f71d6",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/jane-official-source-20260928",
+            "sha": "00ad551019aaea043ac09ab093a955b694d9eb4c",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/jane-source-recovery-20260928",
+            "sha": "00ad551019aaea043ac09ab093a955b694d9eb4c",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/jorge-calendar-20261006",
+            "sha": "ac47018219d0ad80b70b64624d07924283f24e96",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/jorge-source-recovery-20260928",
+            "sha": "00ad551019aaea043ac09ab093a955b694d9eb4c",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/limahl-access-followup-20261007",
+            "sha": "3baa8110c7d81d8b89655c2636633c8ffeb843a6",
+            "includedByAncestry": false,
+            "patches": [
+              "- 3baa8110c7d81d8b89655c2636633c8ffeb843a6"
+            ],
+            "allUniquePatchesAlreadyIncluded": true
+          },
+          {
+            "ref": "refs/heads/codex/mike-cancel-local-20260928",
+            "sha": "d53e0e436afd8aeb431f07a13c79b992410cffd1",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/mike-denver-identity-local-20260928",
+            "sha": "d53e0e436afd8aeb431f07a13c79b992410cffd1",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/official-sources-release-20260928",
+            "sha": "887561bcc0639d485786a2a2690e435530a4df2c",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/official-sources-release-results-20260928",
+            "sha": "4e7557301e031437ba55b6540185ea97800b5dd0",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/organisation-placeholder-local-20260928",
+            "sha": "d53e0e436afd8aeb431f07a13c79b992410cffd1",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/organisation-residual-local-20260928",
+            "sha": "d53e0e436afd8aeb431f07a13c79b992410cffd1",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/paralamas-hosted-transport-20261007",
+            "sha": "f389721ef9fe4aeda0fa14e05ed9dc839363078c",
+            "includedByAncestry": false,
+            "includedByVerifiedSquashMerge": {
+              "pr": 217,
+              "mergeCommit": "16f0c16e9a848fa0fd7576ba9ed337d75021ef8e",
+              "reviewedHead": "f389721ef9fe4aeda0fa14e05ed9dc839363078c",
+              "combinedPatchIdentical": true
+            }
+          },
+          {
+            "ref": "refs/heads/codex/paul-placeholder-local-20260928",
+            "sha": "d53e0e436afd8aeb431f07a13c79b992410cffd1",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/pipeline-reliability-optimization",
+            "sha": "bc9c034a90655ac3f22da85eafd76668343abb3d",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/provider-identity-20261006",
+            "sha": "f0d754cf0cf130b6d12e5b9b8495c15c0d75145e",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/remaining-calendar-recovery-20261006",
+            "sha": "29553a4f970a4f0593574391e10dbb05424d51e1",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/remaining-sources-20261006",
+            "sha": "99cabdad11d1e55a138735ee37164596330b8b99",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/ruel-identity-local-20260928",
+            "sha": "d53e0e436afd8aeb431f07a13c79b992410cffd1",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/sharon-native-seated-20261007",
+            "sha": "af71a400e6c9e0af0b547af1a78c07f6489b0c01",
+            "includedByAncestry": false,
+            "includedByVerifiedSquashMerge": {
+              "pr": 221,
+              "mergeCommit": "c4afadf27f7853fe8b196881f32fec83b994c8b0",
+              "reviewedHead": "af71a400e6c9e0af0b547af1a78c07f6489b0c01",
+              "combinedPatchIdentical": true
+            }
+          },
+          {
+            "ref": "refs/heads/codex/showaddywaddy-date-20260928",
+            "sha": "c2e7c23730e58c40740162c25e0ea0accf2cf906",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/showaddywaddy-venues-20260928",
+            "sha": "ecbf2a31f4b38fdb954c2368f9e9e3bc72c4bef1",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/source-access-challenge-20261007",
+            "sha": "feee3e4901c9e075107f938b1b2fe608b9dc6a4d",
+            "includedByAncestry": false,
+            "includedByVerifiedSquashMerge": {
+              "pr": 215,
+              "mergeCommit": "3dcb820abb460e31d116a1e9934348691872a543",
+              "reviewedHead": "feee3e4901c9e075107f938b1b2fe608b9dc6a4d",
+              "combinedPatchIdentical": true
+            }
+          },
+          {
+            "ref": "refs/heads/codex/source-access-geography-20261007",
+            "sha": "1ce085f7daa49d22df3257a0a8150e6b95e397f0",
+            "includedByAncestry": false,
+            "includedByVerifiedSquashMerge": {
+              "pr": 214,
+              "mergeCommit": "2555c3587b78b327c648743b48e80caf97e25e08",
+              "reviewedHead": "1ce085f7daa49d22df3257a0a8150e6b95e397f0",
+              "combinedPatchIdentical": true
+            }
+          },
+          {
+            "ref": "refs/heads/codex/source-calendar-publication-proof-20261007",
+            "sha": "3dcb820abb460e31d116a1e9934348691872a543",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/source-calendar-recovery-20261007",
+            "sha": "7b882f52c957ac16538bc79019bf469cee39a7cf",
+            "includedByAncestry": false,
+            "includedByVerifiedSquashMerge": {
+              "pr": 212,
+              "mergeCommit": "31c0941b9c0d801bcf86940312b3ac441b48858e",
+              "reviewedHead": "7b882f52c957ac16538bc79019bf469cee39a7cf",
+              "combinedPatchIdentical": true
+            }
+          },
+          {
+            "ref": "refs/heads/codex/source-dates-locations-20260928",
+            "sha": "17f2424ced68d1ee1de3504eeb17069ee8fe8be7",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/source-final-publication-proof-20261007",
+            "sha": "9531a25c3fc96e7585574b2bf421c82577dbf14f",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/source-post-sharon-proof-20261007",
+            "sha": "fc39ca252a9e388804e36b45684e10f0918cf246",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/source-recovery-final-20261006",
+            "sha": "7fe13eed34b342ae90dd641ed85a6dfe4f7a71ed",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/source-recovery-final-report-20261007",
+            "sha": "dbf33e3bb369a444375c6fc8ffb0bfae3d37bead",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/source-recovery-published-20261006",
+            "sha": "d0a1c28e4fa20831ea0bd31feb65fb7fd71073b5",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/source-recovery-results-20261006",
+            "sha": "0dce9cd8242e21791617e4510b919d282a0cd027",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/source-retry-budget-20261006",
+            "sha": "3ab0cc20c055f485b05434884c81f955b9e88f84",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/thehu-identity-20260928",
+            "sha": "5c9e5913852cdc77a7d026d5bbd046bcd743d2d2",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/thehu-identity-local-20260928",
+            "sha": "d53e0e436afd8aeb431f07a13c79b992410cffd1",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/train-calendar-20261006",
+            "sha": "41a21778a5c18ca45e6297ea6cbd3989c31ff0f5",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/train-provider-identity-20261006",
+            "sha": "833d3a2596a8e70f4864efb50d75762705f50158",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/codex/wix-calendars-20261006",
+            "sha": "7155737eef1253338095234d17b3da8a7df8abb2",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/heads/main",
+            "sha": "8d18e43498f9d1503ad7374d4f488130ab6cfc13",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/auto/self-heal-34748138352",
+            "sha": "7e776ea9c8c0936b6be032fd671e55c62c0f4af9",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/auto/self-heal-36375902099",
+            "sha": "9ca7c7b37c31235fb8f070b80cff8e965678f55b",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/auto/self-heal-37610540555",
+            "sha": "8c691c931b853d944deadc528eb0d6f309d783ce",
+            "includedByAncestry": false,
+            "patches": [
+              "- 8c691c931b853d944deadc528eb0d6f309d783ce"
+            ],
+            "allUniquePatchesAlreadyIncluded": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/all-sources-recovery-20261006",
+            "sha": "baa62447066fe2efac0a5521de0b348db85dccde",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/all-that-remains-calendar-20261007",
+            "sha": "951d01f3edec7e1d944a3ff3656f642ffa2cc30e",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/antoha-access-followup-20261007",
+            "sha": "9950ca6518ed1084c1c50f69018d247789df630c",
+            "includedByAncestry": false,
+            "patches": [
+              "- 9950ca6518ed1084c1c50f69018d247789df630c"
+            ],
+            "allUniquePatchesAlreadyIncluded": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/artist-audience-api",
+            "sha": "16bfd77efc75c1ef0e650b155ada5e098e8b829d",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/artist-backends-20261006",
+            "sha": "6c244b539302d352d253798c2a7a36fcd038cbb0",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/collector-health-20260926",
+            "sha": "c8f1f0acb2597c0063371dd12b54e8142593b067",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/collector-recovery-20260926",
+            "sha": "4ee3b4a50b9259b15e6c8dec193ec412f71c2e61",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/collector-recovery-review-20261006",
+            "sha": "79298c9af93c9b976a2fb89e737f263578f8822e",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/collector-remaining-recovery-20260927",
+            "sha": "7ef07d3fbf224fc8292e4772bda341ab70a11bbb",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/collector-source-repairs-20260926",
+            "sha": "7830d256d2b02face1268c46dbcc93a6c2a5417a",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/country-sources-recovery-20260928",
+            "sha": "03f269673788da41f7f2b897f95f464912b3949b",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/dan-deacon-backend-20261007",
+            "sha": "2d6f1fbbcabb639770dfdeb496733541351b504d",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/ellen-tour-20261006",
+            "sha": "9d85e80b80c7241431cbb3f312f421cfc8475d3c",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/hosted-source-recovery-20261006",
+            "sha": "519a42ecce8cc4471779f78750bcc0ece96e1bd0",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/iron-maidens-access-followup-20261007",
+            "sha": "258ccb0d1efef4b665cf502eeec06d44504d22b6",
+            "includedByAncestry": false,
+            "patches": [
+              "- 258ccb0d1efef4b665cf502eeec06d44504d22b6"
+            ],
+            "allUniquePatchesAlreadyIncluded": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/jorge-calendar-20261006",
+            "sha": "45ad7f581d3554304dbda46ec6d1e35fd849facf",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/limahl-access-followup-20261007",
+            "sha": "3baa8110c7d81d8b89655c2636633c8ffeb843a6",
+            "includedByAncestry": false,
+            "patches": [
+              "- 3baa8110c7d81d8b89655c2636633c8ffeb843a6"
+            ],
+            "allUniquePatchesAlreadyIncluded": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/official-sources-release-20260928",
+            "sha": "887561bcc0639d485786a2a2690e435530a4df2c",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/official-sources-release-results-20260928",
+            "sha": "4e7557301e031437ba55b6540185ea97800b5dd0",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/paralamas-hosted-transport-20261007",
+            "sha": "f389721ef9fe4aeda0fa14e05ed9dc839363078c",
+            "includedByAncestry": false,
+            "includedByVerifiedSquashMerge": {
+              "pr": 217,
+              "mergeCommit": "16f0c16e9a848fa0fd7576ba9ed337d75021ef8e",
+              "reviewedHead": "f389721ef9fe4aeda0fa14e05ed9dc839363078c",
+              "combinedPatchIdentical": true
+            }
+          },
+          {
+            "ref": "refs/remotes/origin/codex/pipeline-reliability-optimization",
+            "sha": "bc9c034a90655ac3f22da85eafd76668343abb3d",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/provider-identity-20261006",
+            "sha": "f0d754cf0cf130b6d12e5b9b8495c15c0d75145e",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/remaining-calendar-recovery-20261006",
+            "sha": "29553a4f970a4f0593574391e10dbb05424d51e1",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/remaining-sources-20261006",
+            "sha": "99cabdad11d1e55a138735ee37164596330b8b99",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/sharon-native-seated-20261007",
+            "sha": "af71a400e6c9e0af0b547af1a78c07f6489b0c01",
+            "includedByAncestry": false,
+            "includedByVerifiedSquashMerge": {
+              "pr": 221,
+              "mergeCommit": "c4afadf27f7853fe8b196881f32fec83b994c8b0",
+              "reviewedHead": "af71a400e6c9e0af0b547af1a78c07f6489b0c01",
+              "combinedPatchIdentical": true
+            }
+          },
+          {
+            "ref": "refs/remotes/origin/codex/showaddywaddy-date-20260928",
+            "sha": "c2e7c23730e58c40740162c25e0ea0accf2cf906",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/showaddywaddy-venues-20260928",
+            "sha": "ecbf2a31f4b38fdb954c2368f9e9e3bc72c4bef1",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/source-access-challenge-20261007",
+            "sha": "feee3e4901c9e075107f938b1b2fe608b9dc6a4d",
+            "includedByAncestry": false,
+            "includedByVerifiedSquashMerge": {
+              "pr": 215,
+              "mergeCommit": "3dcb820abb460e31d116a1e9934348691872a543",
+              "reviewedHead": "feee3e4901c9e075107f938b1b2fe608b9dc6a4d",
+              "combinedPatchIdentical": true
+            }
+          },
+          {
+            "ref": "refs/remotes/origin/codex/source-access-geography-20261007",
+            "sha": "1ce085f7daa49d22df3257a0a8150e6b95e397f0",
+            "includedByAncestry": false,
+            "includedByVerifiedSquashMerge": {
+              "pr": 214,
+              "mergeCommit": "2555c3587b78b327c648743b48e80caf97e25e08",
+              "reviewedHead": "1ce085f7daa49d22df3257a0a8150e6b95e397f0",
+              "combinedPatchIdentical": true
+            }
+          },
+          {
+            "ref": "refs/remotes/origin/codex/source-calendar-recovery-20261007",
+            "sha": "7b882f52c957ac16538bc79019bf469cee39a7cf",
+            "includedByAncestry": false,
+            "includedByVerifiedSquashMerge": {
+              "pr": 212,
+              "mergeCommit": "31c0941b9c0d801bcf86940312b3ac441b48858e",
+              "reviewedHead": "7b882f52c957ac16538bc79019bf469cee39a7cf",
+              "combinedPatchIdentical": true
+            }
+          },
+          {
+            "ref": "refs/remotes/origin/codex/source-recovery-results-20261006",
+            "sha": "0dce9cd8242e21791617e4510b919d282a0cd027",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/source-retry-budget-20261006",
+            "sha": "3ab0cc20c055f485b05434884c81f955b9e88f84",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/thehu-identity-20260928",
+            "sha": "5c9e5913852cdc77a7d026d5bbd046bcd743d2d2",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/train-calendar-20261006",
+            "sha": "41a21778a5c18ca45e6297ea6cbd3989c31ff0f5",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/train-provider-identity-20261006",
+            "sha": "833d3a2596a8e70f4864efb50d75762705f50158",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/codex/wix-calendars-20261006",
+            "sha": "22b6c50d5687feaccdd43ff610b206a25d4b4dcb",
+            "includedByAncestry": true
+          },
+          {
+            "ref": "refs/remotes/origin/main",
+            "sha": "6e09f71ac8eed0aeed07d4eacaab842b57b2e906",
+            "includedByAncestry": true
+          }
+        ]
+      },
+      "evidenceDirectory": "/private/tmp/concert-remaining-20261007/user-corrections-hosted"
+    },
+    "currentFailuresWithUrls": [
+      {
+        "id": "artist-adiemus",
+        "configPath": "scrapers/artists/artist-adiemus.json",
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed.",
+        "cohort": "artist",
+        "url": "http://www.karljenkins.com/performances",
+        "domain": "www.karljenkins.com"
+      },
+      {
+        "id": "artist-astrid-williamson",
+        "configPath": "scrapers/artists/artist-astrid-williamson.json",
+        "reason": "fetch_error",
+        "error": "Request failed with status code 401",
+        "cohort": "artist",
+        "url": "https://astridwilliamson.com/live/",
+        "domain": "astridwilliamson.com"
+      },
+      {
+        "id": "artist-andy-cairns",
+        "configPath": "scrapers/artists/artist-andy-cairns.json",
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed.",
+        "cohort": "artist",
+        "url": "https://therapyquestionmark.co.uk/tour/",
+        "domain": "therapyquestionmark.co.uk"
+      },
+      {
+        "id": "artist-avantasia",
+        "configPath": "scrapers/artists/artist-avantasia.json",
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed.",
+        "cohort": "artist",
+        "url": "https://avantasia.com/tour/",
+        "domain": "avantasia.com"
+      },
+      {
+        "id": "artist-amanda-forsyth",
+        "configPath": "scrapers/artists/artist-amanda-forsyth.json",
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed.",
+        "cohort": "artist",
+        "url": "https://www.amandaforsyth.com/concerts",
+        "domain": "www.amandaforsyth.com"
+      },
+      {
+        "id": "artist-marina-satti",
+        "configPath": "scrapers/artists/artist-marina-satti.json",
+        "reason": "fetch_error",
+        "error": "Request failed with status code 404",
+        "cohort": "artist",
+        "url": "https://marinasatti.com/tour/",
+        "domain": "marinasatti.com"
+      },
+      {
+        "id": "artist-marmalade",
+        "configPath": "scrapers/artists/artist-marmalade.json",
+        "reason": "fetch_error",
+        "error": "Request failed with status code 401",
+        "cohort": "artist",
+        "url": "https://themarmalade.net/tour-dates/",
+        "domain": "themarmalade.net"
+      },
+      {
+        "id": "artist-nine-inch-nails",
+        "configPath": "scrapers/artists/artist-nine-inch-nails.json",
+        "reason": "parse_error",
+        "error": "Unmatched selector: =.//p/text()[contains(., ',')][1]",
+        "cohort": "artist",
+        "url": "https://www.nin.com/tickets2018/",
+        "domain": "www.nin.com"
+      },
+      {
+        "id": "artist-nick-cave-the-bad-seeds",
+        "configPath": "scrapers/artists/artist-nick-cave-the-bad-seeds.json",
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed.",
+        "cohort": "artist",
+        "url": "https://www.nickcave.com/tour-dates/",
+        "domain": "www.nickcave.com"
+      },
+      {
+        "id": "artist-limahl",
+        "configPath": "scrapers/artists/artist-limahl.json",
+        "reason": "fetch_error",
+        "error": "page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('div.iron_widget_events:has(> h3.widgettitle:text-is(\"Upcoming Events\")) > ul#post-list.concerts-list > li.nothing-found, div.iron_widget_events:has(> h3.widgettitle:text-is(\"Upcoming Events\")) > ul#post-list.concerts-list > li.event') to be visible\n",
+        "cohort": "artist",
+        "url": "https://www.limahl.com/tour-all-events/",
+        "domain": "www.limahl.com"
+      },
+      {
+        "id": "artist-pequot",
+        "configPath": "scrapers/artists/artist-pequot.json",
+        "reason": "fetch_error",
+        "error": "Request failed with status code 403",
+        "cohort": "artist",
+        "url": "https://www.pequotmuseum.org/explore/events/",
+        "domain": "www.pequotmuseum.org"
+      },
+      {
+        "id": "artist-philip-lindholm",
+        "configPath": "scrapers/artists/artist-philip-lindholm.json",
+        "reason": "fetch_error",
+        "error": "Request failed with status code 403",
+        "cohort": "artist",
+        "url": "https://philiplindholm.com/events/",
+        "domain": "philiplindholm.com"
+      },
+      {
+        "id": "artist-poetry",
+        "configPath": "scrapers/artists/artist-poetry.json",
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed.",
+        "cohort": "artist",
+        "url": "https://www.poemsband.com/#poems",
+        "domain": "www.poemsband.com"
+      },
+      {
+        "id": "artist-psycho-le-cemu",
+        "configPath": "scrapers/artists/artist-psycho-le-cemu.json",
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed.",
+        "cohort": "artist",
+        "url": "http://psycholecemu.com/live",
+        "domain": "psycholecemu.com"
+      },
+      {
+        "id": "artist-shelby-lynne",
+        "configPath": "scrapers/artists/artist-shelby-lynne.json",
+        "reason": "fetch_error",
+        "error": "Request failed with status code 403",
+        "cohort": "artist",
+        "url": "https://www.shelbylynne.com/tour",
+        "domain": "www.shelbylynne.com"
+      },
+      {
+        "id": "artist-robin-thicke",
+        "configPath": "scrapers/artists/artist-robin-thicke.json",
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed.",
+        "cohort": "artist",
+        "url": "https://www.robinthicke.com/tour",
+        "domain": "www.robinthicke.com"
+      },
+      {
+        "id": "artist-baltimore-symphony-orchestra",
+        "configPath": "scrapers/artists/artist-baltimore-symphony-orchestra.json",
+        "reason": "fetch_error",
+        "error": "Scraper exceeded 90s wall-clock timeout",
+        "cohort": "artist",
+        "url": "https://www.bsomusic.org/live/",
+        "domain": "www.bsomusic.org"
+      },
+      {
+        "id": "artist-twin-atlantic",
+        "configPath": "scrapers/artists/artist-twin-atlantic.json",
+        "reason": "fetch_error",
+        "error": "Request failed with status code 404",
+        "cohort": "artist",
+        "url": "https://twinatlantic.com/shows",
+        "domain": "twinatlantic.com"
+      },
+      {
+        "id": "komnata-kultury-tour",
+        "configPath": "scrapers/artists/komnata-kultury-tour.json",
+        "reason": "fetch_error",
+        "error": "getaddrinfo EAI_AGAIN komnatakultury.ru",
+        "cohort": "artist",
+        "url": "https://komnatakultury.ru",
+        "domain": "komnatakultury.ru"
+      },
+      {
+        "id": "zhenya-trofimov-tour",
+        "configPath": "scrapers/artists/zhenya-trofimov-tour.json",
+        "reason": "fetch_error",
+        "error": "getaddrinfo EAI_AGAIN komnatakultury.ru",
+        "cohort": "artist",
+        "url": "https://komnatakultury.ru",
+        "domain": "komnatakultury.ru"
+      },
+      {
+        "id": "artist-angel-heart",
+        "configPath": "scrapers/artist-angel-heart.json",
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed.",
+        "cohort": "venue",
+        "url": "https://www.angelheart.rocks/events",
+        "domain": "www.angelheart.rocks"
+      },
+      {
+        "id": "artist-babbu-mann",
+        "configPath": "scrapers/artist-babbu-mann.json",
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed.",
+        "cohort": "venue",
+        "url": "https://www.babbumaan.com/shows.html",
+        "domain": "www.babbumaan.com"
+      },
+      {
+        "id": "artist-bruce-thomas",
+        "configPath": "scrapers/artist-bruce-thomas.json",
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed.",
+        "cohort": "venue",
+        "url": "https://brucethomasmusic.com/schedule",
+        "domain": "brucethomasmusic.com"
+      },
+      {
+        "id": "artist-harold-jones",
+        "configPath": "scrapers/artist-harold-jones.json",
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed.",
+        "cohort": "venue",
+        "url": "http://haroldjones.com/tour-dates/",
+        "domain": "haroldjones.com"
+      },
+      {
+        "id": "artist-jane-mcdonald",
+        "configPath": "scrapers/artist-jane-mcdonald.json",
+        "reason": "fetch_error",
+        "error": "Request failed with status code 404",
+        "cohort": "venue",
+        "url": "https://jane-mcdonald.com/tour",
+        "domain": "jane-mcdonald.com"
+      },
+      {
+        "id": "artist-john-keane",
+        "configPath": "scrapers/artist-john-keane.json",
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed.",
+        "cohort": "venue",
+        "url": "https://johnkeane.com/tour/",
+        "domain": "johnkeane.com"
+      },
+      {
+        "id": "artist-joe-hutton",
+        "configPath": "scrapers/artist-joe-hutton.json",
+        "reason": "fetch_error",
+        "error": "Client network socket disconnected before secure TLS connection was established",
+        "cohort": "venue",
+        "url": "https://thekingblues.com/live/",
+        "domain": "thekingblues.com"
+      },
+      {
+        "id": "artist-jorge-palma",
+        "configPath": "scrapers/artist-jorge-palma.json",
+        "reason": "fetch_error",
+        "error": "Request failed with status code 404",
+        "cohort": "venue",
+        "url": "https://jorgepalma.pt/espetaculos/",
+        "domain": "jorgepalma.pt"
+      },
+      {
+        "id": "artist-pain-for-pleasure",
+        "configPath": "scrapers/artist-pain-for-pleasure.json",
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed.",
+        "cohort": "venue",
+        "url": "https://www.painforpleasure.com/gigs",
+        "domain": "www.painforpleasure.com"
+      },
+      {
+        "id": "artist-paul-halley",
+        "configPath": "scrapers/artist-paul-halley.json",
+        "reason": "fetch_error",
+        "error": "Request failed with status code 403",
+        "cohort": "venue",
+        "url": "https://pelagosmusic.com/event-schedule",
+        "domain": "pelagosmusic.com"
+      },
+      {
+        "id": "artist-juan-garcia-herreros",
+        "configPath": "scrapers/artist-juan-garcia-herreros.json",
+        "reason": "fetch_error",
+        "error": "getaddrinfo ENOTFOUND www.juan-garcia-herreros.com",
+        "cohort": "venue",
+        "url": "https://www.juan-garcia-herreros.com/tour-dates",
+        "domain": "www.juan-garcia-herreros.com"
+      },
+      {
+        "id": "artist-painflow",
+        "configPath": "scrapers/artist-painflow.json",
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed.",
+        "cohort": "venue",
+        "url": "https://painflow.com/shows",
+        "domain": "painflow.com"
+      },
+      {
+        "id": "artist-patti-smith-group",
+        "configPath": "scrapers/artist-patti-smith-group.json",
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed.",
+        "cohort": "venue",
+        "url": "https://www.pattismith.net/shows.html",
+        "domain": "www.pattismith.net"
+      },
+      {
+        "id": "artist-ray-davies",
+        "configPath": "scrapers/artist-ray-davies.json",
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed.",
+        "cohort": "venue",
+        "url": "https://www.raydavies.info/live",
+        "domain": "www.raydavies.info"
+      },
+      {
+        "id": "artist-reality-check",
+        "configPath": "scrapers/artist-reality-check.json",
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed.",
+        "cohort": "venue",
+        "url": "https://therealitycheckexperiment.com/",
+        "domain": "therealitycheckexperiment.com"
+      },
+      {
+        "id": "artist-yuta-and-the-bushido-boys",
+        "configPath": "scrapers/artist-yuta-and-the-bushido-boys.json",
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed.",
+        "cohort": "venue",
+        "url": "https://nct-jp.net/live/tour.php?id=1002270",
+        "domain": "nct-jp.net"
+      },
+      {
+        "id": "artist-yamazaki-masayoshi",
+        "configPath": "scrapers/artist-yamazaki-masayoshi.json",
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed.",
+        "cohort": "venue",
+        "url": "https://www.office-augusta.com/yama/live/",
+        "domain": "www.office-augusta.com"
+      },
+      {
+        "id": "cartagena-festival-de-musica-cartagena",
+        "configPath": "scrapers/cartagena-festival-de-musica-cartagena.json",
+        "reason": "fetch_error",
+        "error": "Request failed with status code 403",
+        "cohort": "venue",
+        "url": "https://cartagenamusicfestival.com/programacion/?lang=en",
+        "domain": "cartagenamusicfestival.com"
+      },
+      {
+        "id": "esplanade-theatres-singapore-singapore",
+        "configPath": "scrapers/esplanade-theatres-singapore-singapore.json",
+        "reason": "csr_detected",
+        "error": "Parsed 0 concerts. Page appears client-side rendered (events absent from server HTML).",
+        "cohort": "venue",
+        "url": "https://www.esplanade.com/whats-on?category=Music",
+        "domain": "esplanade.com"
+      },
+      {
+        "id": "kitty-su-bangalore",
+        "configPath": "scrapers/kitty-su-bangalore.json",
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed.",
+        "cohort": "venue",
+        "url": "https://www.kittysu.com/events",
+        "domain": "kittysu.com"
+      },
+      {
+        "id": "meo-arena-lisbon",
+        "configPath": "scrapers/meo-arena-lisbon.json",
+        "reason": "selectors_stale",
+        "error": "Parsed 0 concerts. Website layout might have changed.",
+        "cohort": "venue",
+        "url": "https://arena.meo.pt/en/full-agenda",
+        "domain": "arena.meo.pt"
+      },
+      {
+        "id": "roundhouse-london",
+        "configPath": "scrapers/roundhouse-london.json",
+        "reason": "fetch_error",
+        "error": "Maximum number of redirects exceeded",
+        "cohort": "venue",
+        "url": "https://www.roundhouse.org.uk/whats-on/",
+        "domain": "roundhouse.org.uk"
+      }
+    ],
+    "limits": [
+      "Source health does not imply complete artist coverage across every provider. Existing provider degradation and all failed source outcomes remain visible.",
+      "Pain For Pleasure is parked; Shelby Lynne configured domain currently serves unrelated gambling content; NIN live page has no verifiable calendar or explicit empty statement. No unverified replacement artist or calendar was accepted.",
+      "Iron Maidens has ten supported single-day official events; the multi-day Miami/Bimini cruise is excluded. A successful hosted run is evidence for that run, not a promise that upstream browser challenges will stop.",
+      "Marmalade still has two locally verified UK events missing from public data because hosted access fails. Ray Scott native profile advertises eight while its feed/public card contains seven. Beijing fetches two rows but the current approved-artist filter publishes zero. The legacy Sharon catalog identity remains unresolved even when its exact configured embedded tour is natively empty."
+    ],
+    "paralamas": {
+      "state": "previous March 6 coverage gap resolved",
+      "hostedSourceSucceeded": true,
+      "nativeFutureRows": 9,
+      "allNativeDateVenueCityCountryTuplesPublished": true,
+      "montesClaros20270306Published": true,
+      "publicCheck": {
+        "url": "https://cartograf666.github.io/concert-for-travelers-api/artists/paralamas-do-sucesso.json",
+        "httpStatus": 200,
+        "rows": 10,
+        "names": [
+          "Paralamas do Sucesso"
+        ],
+        "dates": [
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-11",
+          "2026-10-17",
+          "2026-10-30",
+          "2026-11-08",
+          "2026-12-06",
+          "2026-12-19",
+          "2027-01-23",
+          "2027-03-06"
+        ],
+        "internalMetadataAbsent": true,
+        "hostedSourceSucceeded": true,
+        "nativeFutureRowsChecked": 9,
+        "allCurrentOfficialEventsPresent": true,
+        "montesClarosMarch6Present": true,
+        "previousHistoricalMarch6GapResolved": true,
+        "allVerifiedOfficialEventsPresent": true,
+        "officialEventsChecked": 9,
+        "allLatestHostedEventsPresent": true,
+        "latestHostedEventsChecked": 9,
+        "comparisonFields": [
+          "artist",
+          "date",
+          "venue",
+          "city",
+          "country"
+        ]
+      }
+    }
   }
 }
