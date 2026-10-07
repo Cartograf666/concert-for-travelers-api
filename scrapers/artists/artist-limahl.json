@@ -2,9 +2,10 @@
   "id": "artist-limahl",
   "domain": "www.limahl.com",
   "url": "https://www.limahl.com/tour-all-events/",
-  "type": "static_selectors",
+  "type": "playwright_render",
+  "renderWaitSelector": "div.iron_widget_events:has(> h3.widgettitle:text-is(\"Upcoming Events\")) > ul#post-list.concerts-list > li.nothing-found, div.iron_widget_events:has(> h3.widgettitle:text-is(\"Upcoming Events\")) > ul#post-list.concerts-list > li.event",
   "selectors": {
-    "eventBlock": "ul.concerts-list li.event",
+    "eventBlock": "div.iron_widget_events:has(> h3.widgettitle:contains(\"Upcoming Events\")) > ul#post-list.concerts-list > li.event",
     "artistNameFallback": "Limahl",
     "date": ".event-line-wrap > a > .event-line-node:nth-of-type(2)",
     "ticketUrl": ".event-line-wrap > a@href",
@@ -13,5 +14,7 @@
     "venueNameFallback": "",
     "cityNameFallback": "",
     "countryNameFallback": "GB"
-  }
+  },
+  "allowEmpty": true,
+  "emptyScheduleText": "No upcoming events scheduled yet. Stay tuned!"
 }
