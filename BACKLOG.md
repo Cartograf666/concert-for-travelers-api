@@ -30,6 +30,19 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   install: **766 pass / 1 skip / 0 failures**, build and lint pass (103 existing
   warnings); selector ratchet 126 <= 131; npm audit reports zero vulnerabilities.
   Independent gpt-6-sol review covered parsing, cancellation scope and pagination.
+- First new hosted attempt 37586548469 verifies 391/415: Alabama and Mellencamp
+  recover, while six old successes fail on current network access. Paralamas'
+  `/evento/` times out before pagination. Follow-up uses the prior hosted-working
+  `/agenda/` route and its observed native second page (nine local events).
+- Ai Kawashima follow-up reads official event details and verified venue cities
+  Sakura/Tokai instead of headlines/prefectures. Two exact old bad cache rows are
+  quarantined independently of fresh fetch success. Local combined follow-up:
+  **771 pass / 1 skip / 0 failures**, build/lint pass; independent review has no
+  P1/P2. New hosted/publication verification remains pending.
+- Two network regressions share an expired official `komnatakultury.ru` domain;
+  the registrar parking page and connection refusal confirm an external gap.
+  Baltimore currently times out with both supported clients; Interface reads an
+  archive, not future coverage. These observations do not justify fake emptiness.
 - The original 415 artist and 152 venue IDs remain. Full hosted collection,
   completed Pages deployment and producer/public artifact comparison are next;
   the preceding published counts below are historical, not a new projection.

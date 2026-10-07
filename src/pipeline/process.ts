@@ -12,6 +12,7 @@ import type { OfficialArtistContext } from '../engine/official_artist_sources.js
 import { isTheHuIdentity, isTheHuName, verifiedTheHuDublinSourceRank } from './thehu_identity.js';
 import { isVerifiedSourceIdentityCollision } from './provider_identity_exclusions.js';
 import { isVerifiedCancelledTwinAtlanticEvent } from './twin_atlantic_cancellations.js';
+import { isInvalidLegacyAiKawashimaEvent } from './ai_kawashima_provenance.js';
 
 /** Format a Date as a timezone-safe YYYY-MM-DD using its local calendar fields. */
 function toLocalIso(d: Date): string {
@@ -1196,7 +1197,8 @@ export async function processConcerts(
       continue;
     }
 
-    if (isVerifiedCancelledTwinAtlanticEvent(raw, normalizedDate, matched.mbid)) {
+    if (isVerifiedCancelledTwinAtlanticEvent(raw, normalizedDate, matched.mbid) ||
+        isInvalidLegacyAiKawashimaEvent(raw, normalizedDate, matched.mbid)) {
       drops.notApproved++;
       diagnostics?.recordDrop('notApproved', raw);
       continue;

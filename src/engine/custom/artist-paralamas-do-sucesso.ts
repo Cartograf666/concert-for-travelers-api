@@ -4,7 +4,8 @@ import type { Concert } from '../../schemas/concert.js';
 import { fetchHtmlForHealing, isRetryableError } from '../runner.js';
 import { sleep } from '../sleep.js';
 
-const ARCHIVE = 'https://www.osparalamas.com.br/evento/';
+const ARCHIVE = 'https://www.osparalamas.com.br/agenda/';
+const ENTRY = 'https://osparalamas.com.br/agenda/';
 const HOST = 'www.osparalamas.com.br';
 const MAX_PAGES = 12;
 const MONTHS: Record<string, string> = {
@@ -82,30 +83,34 @@ function parsePage(config: ScraperConfig, html: string, scrapedAt: string, page:
   const $ = cheerio.load(html);
   const expected = archivePageUrl(page);
   const canonical = $('link[rel="canonical"]');
-  if (config.url !== ARCHIVE || config.domain !== HOST ||
+  if (config.url !== ENTRY || config.domain !== 'osparalamas.com.br' ||
       config.selectors?.artistNameFallback !== 'Paralamas do Sucesso' ||
-      canonical.length !== 1 || firstPartyUrl(canonical.attr('href'), expected) !== expected) {
+      canonical.length !== 1 || firstPartyUrl(canonical.attr('href'), expected) !== ARCHIVE) {
     throw new Error('Paralamas official paginated archive identity is missing');
   }
   const title = $('head > title').text().replace(/\s+/g, ' ').trim();
-  const pageTitle = /^Arquivo Events - Página (\d+) de (\d+) - Os Paralamas do Sucesso$/.exec(title);
-  if (page === 1 ? title !== 'Arquivo Events - Os Paralamas do Sucesso'
-      : !pageTitle || Number(pageTitle[1]) !== page || Number(pageTitle[2]) < page) {
+  // This WordPress page template keeps the root canonical and title on every page.
+  // The paged body class and native Previous/Next Events links identify the page.
+  if (title !== 'Agenda - Os Paralamas do Sucesso' ||
+      !$('body').hasClass('page-template-archive-event') ||
+      (page === 1 ? $('body').hasClass('paged') :
+        !$('body').hasClass('paged') || !$('body').hasClass(`paged-${page}`))) {
     throw new Error('Paralamas official paginated archive title is missing');
   }
   const rows = eventRows(config, html, scrapedAt);
   const nextLinks = $('link[rel="next"]');
   const nextAnchors = $('a').filter((_, node) => $(node).text().replace(/\s+/g, ' ').trim() === 'Next Events »');
-  if (nextLinks.length > 1 || nextAnchors.length > 1 || nextLinks.length !== nextAnchors.length) {
+  const previousAnchors = $('a').filter((_, node) => $(node).text().replace(/\s+/g, ' ').trim() === '« Previous Events');
+  if (nextLinks.length > 1 || nextAnchors.length > 1 ||
+      (nextLinks.length > 0 && nextAnchors.length === 0) ||
+      previousAnchors.length !== (page === 1 ? 0 : 1) ||
+      (page > 1 && firstPartyUrl(previousAnchors.attr('href'), expected) !== archivePageUrl(page - 1))) {
     throw new Error('Paralamas official archive pagination links disagree');
   }
-  const next = nextLinks.length ? firstPartyUrl(nextLinks.attr('href'), expected) : undefined;
+  const next = nextAnchors.length ? firstPartyUrl(nextAnchors.attr('href'), expected) : undefined;
   if (next && (next !== archivePageUrl(page + 1) ||
-      firstPartyUrl(nextAnchors.attr('href'), expected) !== next)) {
+      (nextLinks.length > 0 && firstPartyUrl(nextLinks.attr('href'), expected) !== next))) {
     throw new Error('Paralamas official archive pagination does not advance one page');
-  }
-  if (pageTitle && Boolean(next) !== (page < Number(pageTitle[2]))) {
-    throw new Error('Paralamas official archive page count and pagination disagree');
   }
   return { ...rows, next };
 }
