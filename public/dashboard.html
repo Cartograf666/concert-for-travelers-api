@@ -152,7 +152,8 @@ const ACTION_NAMES = {
   check_ticketmaster_api_key: 'Check the Ticketmaster API configuration.',
   retry_next_scheduled_sweep: 'Check the next scheduled sweep using the existing request limits.',
   review_artist_source_identity: 'Check whether the source has a usable feed for the affected artist.',
-  inspect_source_access_or_format: 'Inspect source access and the response format.'
+  inspect_source_access_or_format: 'Inspect source access and the response format.',
+  obtain_authorized_source_access: 'Restore authorized access to this source; the latest requests were challenged.'
 };
 const actionText = action => ACTION_NAMES[action] || 'Inspect the latest source report; keep the existing request limits.';
 const DROP_NAMES = { incomplete: 'Missing required fields', notApproved: 'Artist not in approved catalog', badDate: 'Date not recognized', pastDate: 'Past event', zodFail: 'Invalid field format' };
@@ -171,7 +172,7 @@ function renderSourceHealth(reports) {
     return `<article class="source-item"><div class="source-heading"><h3>${label}</h3><span class="badge ${css}">${badge}</span></div>
       <p>Pass ${esc(ago(r.generatedAt))} · ${fmt(c.attempted)} ${key === 'ticketmaster' ? 'countries' : 'targets'} attempted · ${fmt(c.succeeded)} successful · ${fmt(c.failed)} failed · ${fmt(c.unavailable)} unavailable</p>
       <p>Verification age at pass: median ${esc(days(f.p50Days))} · 95th percentile ${esc(days(f.p95Days))} · oldest ${esc(days(f.maxDays))} · ${fmt(f.unknown)} unknown</p>
-      <details><summary>Coverage and collection details</summary><p>${fmt(c.targets)} targets · ${fmt(c.empty)} successful empty responses · ${fmt(c.skippedFresh)} skipped within interval · ${fmt(c.cacheFallbacks)} fallbacks after failure · ${fmt(c.missing)} without cached data · ${fmt(c.partial)} partial results</p><p>Completeness: ${esc(r.completeness || 'unknown')} · latest verified target ${esc(ago(f.latestVerifiedAt))}</p>${interval}${issues.map(i => `<p>${esc(String(i.reason).replace(/_/g, ' '))}: ${fmt(i.count)}</p>`).join('')}</details>
+      <details><summary>Coverage and collection details</summary><p>${fmt(c.targets)} targets · ${fmt(c.empty)} successful empty responses · ${fmt(c.skippedFresh)} skipped within interval · ${fmt(c.cacheFallbacks)} fallbacks after failure · ${fmt(c.missing)} without cached data · ${fmt(c.partial)} partial results</p><p>Completeness: ${esc(r.completeness || 'unknown')} · latest verified target ${esc(ago(f.latestVerifiedAt))}</p><p>Verification coverage across all ${fmt(c.targets)} targets: ${fmt(f.fresh)} within this pass or interval · ${fmt(f.old)} older · ${fmt(f.unknown)} unknown. Unknown means no successful verification timestamp is recorded; it does not establish that the calendar is empty.</p>${interval}${issues.map(i => `<p>${esc(String(i.reason).replace(/_/g, ' '))}: ${fmt(i.count)}</p>`).join('')}</details>
       ${action ? `<p class="action">Next step: ${esc(action)}</p>` : ''}</article>`;
   }).join('');
 }
@@ -268,10 +269,14 @@ async function load() {
     'API dataset built ' + ago(index.lastRun) + ' · Collection report ' + ago(status.generatedAt) + (!concertsAvailable ? ' · Concert feed unavailable' : '');
 
   const totalConcerts = concertsAvailable ? concerts.length : (index.stats && index.stats.totalConcerts);
+  // The publisher groups city aliases and metro labels. Raw city/country
+  // strings in concerts.json do not reproduce that grouping.
+  const canonicalCityCount = index.stats && index.stats.uniqueCities;
+  const hasCanonicalCityCount = Number.isInteger(canonicalCityCount) && canonicalCityCount >= 0;
   const cards = [
     ['Concerts live', totalConcerts],
     ['Artists', concertsAvailable ? artistSet.size : (index.stats && index.stats.uniqueArtists)],
-    ['Cities', concertsAvailable ? citySet.size : (index.stats && index.stats.uniqueCities)],
+    [hasCanonicalCityCount ? 'Cities' : 'City labels (ungrouped)', hasCanonicalCityCount ? canonicalCityCount : (concertsAvailable ? citySet.size : null)],
     ['Countries', concertsAvailable ? byCountry.length : null],
     ['Venue parsers OK', (statusAvailable && venueHealth.succeeded != null ? venueHealth.succeeded + '/' + venueHealth.total : null)],
     // Keep the empty-state card compact. The detailed health panel below

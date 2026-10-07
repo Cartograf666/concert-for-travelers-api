@@ -232,7 +232,10 @@ const defaultBitFetch: BitFetchFn = async (artist, appId, baseUrl) => {
     timeout: 15000,
     headers: { 'User-Agent': 'Mozilla/5.0' }
   });
-  return Array.isArray(res.data) ? res.data : [];
+  // Only the native event array proves a feed response. A 200 error object or
+  // challenge page must fall back to last-good data, not become verified empty.
+  if (!Array.isArray(res.data)) throw new Error('Bandsintown returned a non-array event feed');
+  return res.data;
 };
 
 export interface BandsintownSweepOptions {

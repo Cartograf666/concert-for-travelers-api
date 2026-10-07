@@ -63,3 +63,31 @@ test('expired provider report is visible even with successful past outcomes', as
   assert.notEqual(el.get('health')?.textContent, 'HEALTHY');
   assert.match(el.get('source-health')!.innerHTML, /OLD REPORT/);
 });
+
+test('city metric uses publisher canonical grouping rather than raw city labels', async () => {
+  const concerts = [
+    { artist: 'A', city: 'Tokyo', country: 'JP' },
+    { artist: 'B', city: '東京都', country: 'JP' },
+    { artist: 'C', city: 'London', country: 'GB' }
+  ];
+  const el = await render({ './status.json': status(), './concerts.json': concerts, './index.json': { stats: { uniqueCities: 2 } } });
+  assert.match(el.get('cards')!.innerHTML, /class="n">2<\/div><div class="l">Cities/);
+  assert.doesNotMatch(el.get('cards')!.innerHTML, /class="n">3<\/div><div class="l">Cities/);
+});
+
+test('missing publisher city count labels the ungrouped fallback explicitly', async () => {
+  const el = await render({ './status.json': status(), './concerts.json': [{ artist: 'A', city: 'Tokyo', country: 'JP' }] });
+  assert.match(el.get('cards')!.innerHTML, /class="n">1<\/div><div class="l">City labels \(ungrouped\)/);
+});
+
+test('access challenge shows its specific recovery action and unknown age meaning', async () => {
+  const s = status();
+  Object.assign(s.sourceHealth.eventbrite, {
+    state: 'unavailable', counts: { targets: 20765, attempted: 5, failed: 5 },
+    freshness: { fresh: 0, old: 0, unknown: 20765 },
+    issues: [{ reason: 'access_challenge', count: 5, action: 'obtain_authorized_source_access' }]
+  });
+  const el = await render({ './status.json': s, './concerts.json': [] });
+  assert.match(el.get('source-health')!.innerHTML, /authorized access/);
+  assert.match(el.get('source-health')!.innerHTML, /Unknown means no successful verification timestamp/);
+});

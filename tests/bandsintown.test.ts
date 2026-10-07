@@ -1,5 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert';
+import { createServer } from 'node:http';
+import { once } from 'node:events';
 import {
   mapBitEventToConcert,
   bandsintownCountryToCode,
@@ -363,4 +365,53 @@ test('Bandsintown - a sustained failure streak stops the sweep (likely a block)'
 
   // Stops at the 5-consecutive-failure limit rather than grinding all 20.
   assert.strictEqual(calls, 5, `expected to stop after 5 consecutive 429s, made ${calls} calls`);
+});
+
+test('Bandsintown - HTTP 200 error objects and HTML cannot erase last-good concerts or verify an empty schedule', async (t) => {
+  const payloads = new Map([
+    ['Error object', { body: JSON.stringify({ error: 'Temporary feed failure' }), type: 'application/json' }],
+    ['Challenge HTML', { body: '<html><title>Just a moment...</title></html>', type: 'text/html' }],
+    ['Native empty', { body: '[]', type: 'application/json' }]
+  ]);
+  const server = createServer((request, response) => {
+    const artist = decodeURIComponent(request.url!.split('/')[2]);
+    const payload = payloads.get(artist)!;
+    response.writeHead(200, { 'Content-Type': payload.type });
+    response.end(payload.body);
+  });
+  server.listen(0, '127.0.0.1');
+  await once(server, 'listening');
+  t.after(() => new Promise<void>((resolve, reject) => server.close((error) => error ? reject(error) : resolve())));
+  const address = server.address();
+  assert.ok(address && typeof address !== 'string');
+  const previous = '2026-01-01T00:00:00.000Z';
+  const now = '2026-02-01T00:00:00.000Z';
+  const cache: BandsintownCache = Object.fromEntries([...payloads.keys()].map((artist) => [artist, {
+    fetchedAt: previous,
+    verifiedAt: previous,
+    lastOutcome: 'events',
+    concerts: [{ artist, date: '2026-09-10', venue: 'Last good', city: 'London', country: 'GB' }]
+  }]));
+  let health: any;
+  const concerts = await fetchBandsintownConcerts([...payloads.keys()], {
+    cache,
+    baseUrl: `http://127.0.0.1:${address.port}/artists`,
+    delayMs: 0,
+    now: () => new Date(now),
+    onHealth: (report) => { health = report; }
+  });
+  for (const artist of ['Error object', 'Challenge HTML']) {
+    assert.equal(cache[artist].verifiedAt, previous, `${artist} must not advance verification`);
+    assert.equal(cache[artist].fetchedAt, previous, `${artist} must retain the last good fetch timestamp`);
+    assert.equal(cache[artist].attemptedAt, now);
+    assert.equal(cache[artist].lastOutcome, 'failed');
+    assert.equal(cache[artist].concerts[0].venue, 'Last good');
+  }
+  assert.deepStrictEqual(cache['Native empty'].concerts, [], 'a real [] can replace the old schedule');
+  assert.equal(cache['Native empty'].verifiedAt, now);
+  assert.equal(health.counts.failed, 2);
+  assert.equal(health.counts.cacheFallbacks, 2);
+  assert.equal(health.counts.succeeded, 1);
+  assert.equal(health.counts.empty, 1);
+  assert.equal(concerts.length, 2);
 });
