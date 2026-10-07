@@ -26827,5 +26827,93 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget",
     "verification": "PASS (10 events, 11 checks)"
+  },
+  {
+    "id": "artist-avantasia",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-avantasia.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T12:31:29.906Z",
+    "previousConfig": {
+      "id": "artist-avantasia",
+      "domain": "avantasia.com",
+      "url": "https://avantasia.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.single_event_list",
+        "artistNameFallback": "Avantasia",
+        "date": "div.event_list_entry.event_date div.text_center.event_list_date_container",
+        "ticketUrl": "div.event_list_entry.event_buy div.event_buy_btn::attr(data-href)",
+        "venue": "div.event_list_entry.event_venue a",
+        "city": "div.event_list_entry.event_title_img div.event_list_title",
+        "country": "div.event_list_entry.event_title_img div.event_list_title",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://avantasia.com/tour/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-limahl",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-limahl.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T12:31:45.795Z",
+    "previousConfig": {
+      "id": "artist-limahl",
+      "domain": "www.limahl.com",
+      "url": "https://www.limahl.com/tour-all-events/",
+      "type": "playwright_render",
+      "renderWaitSelector": "div.iron_widget_events:has(> h3.widgettitle:text-is(\"Upcoming Events\")) > ul#post-list.concerts-list > li.nothing-found, div.iron_widget_events:has(> h3.widgettitle:text-is(\"Upcoming Events\")) > ul#post-list.concerts-list > li.event",
+      "selectors": {
+        "eventBlock": "div.iron_widget_events:has(> h3.widgettitle:contains(\"Upcoming Events\")) > ul#post-list.concerts-list > li.event",
+        "artistNameFallback": "Limahl",
+        "date": ".event-line-wrap > a > .event-line-node:nth-of-type(2)",
+        "ticketUrl": ".event-line-wrap > a@href",
+        "venue": ".event-line-wrap > a > .event-line-node:nth-of-type(4)",
+        "city": ".event-line-wrap > a > .event-line-node:nth-of-type(3)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      },
+      "allowEmpty": true,
+      "emptyScheduleText": "No upcoming events scheduled yet. Stay tuned!"
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('div.iron_widget_events:has(> h3.widgettitle:text-is(\"Upcoming Events\")) > ul#post-list.concerts-list > li.nothing-found, div.iron_widget_events:has(> h3.widgettitle:text-is(\"Upcoming Events\")) > ul#post-list.concerts-list > li.event') to be visible\n]",
+    "verification": ""
+  },
+  {
+    "id": "artist-poetry",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-poetry.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T12:31:47.565Z",
+    "previousConfig": {
+      "id": "artist-poetry",
+      "domain": "www.poemsband.com",
+      "url": "https://www.poemsband.com/#poems",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".calendar_feature table tbody tr",
+        "artistNameFallback": "poetry",
+        "date": ".event-date .date-long",
+        "ticketUrl": "a.event_details",
+        "venue": ".event-location .text",
+        "city": ".event-location .text",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.poemsband.com/#poems but could not re-select on it",
+    "verification": ""
   }
 ]
