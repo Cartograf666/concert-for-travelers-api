@@ -26349,5 +26349,67 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): getaddrinfo EAI_AGAIN komnatakultury.ru]",
     "verification": ""
+  },
+  {
+    "id": "artist-iron-maidens-the",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-iron-maidens-the.json",
+    "repairedConfigHash": "0a7e44d3a1a25c1aa477ea3aef291a1542c0a6eda5616270af667063bc83e62c",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T08:52:22.637Z",
+    "previousConfig": {
+      "id": "artist-iron-maidens-the",
+      "domain": "www.theironmaidens.com",
+      "url": "https://theironmaidens.com/upcoming-events/",
+      "type": "custom_js",
+      "httpClient": "got-scraping",
+      "selectors": {
+        "eventBlock": ".eventon_list_event.scheduled",
+        "artistNameFallback": "The Iron Maidens",
+        "date": ".evcal_cblock .evo_start .date",
+        "ticketUrl": "a.evo_cusmeta_btn",
+        "venue": ".evcal_desc[data-location_name][data-location_address]",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget",
+    "verification": "PASS (10 events, 11 checks)"
+  },
+  {
+    "id": "yugong-yishan-beijing",
+    "cohort": "venue",
+    "configPath": "scrapers/yugong-yishan-beijing.json",
+    "repairedConfigHash": "c08b1a47d4a761e85636cc1fadd36e7ac70cf40b809694cbd9ab678a7de216bf",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T08:52:24.243Z",
+    "previousConfig": {
+      "id": "yugong-yishan-beijing",
+      "domain": "theatrebeijing.com",
+      "url": "https://theatrebeijing.com/whats_on/live/",
+      "type": "static_selectors",
+      "httpClient": "got-scraping",
+      "requestDelayMs": 2000,
+      "allowEmpty": false,
+      "selectors": {
+        "eventBlock": "div.events",
+        "artist": "h2 a",
+        "date": "ul.eventsTag li:nth-child(2)",
+        "ticketUrl": "h2 a",
+        "venue": "ul.eventsTag li:nth-child(3) a",
+        "venueNameFallback": "Yugong Yishan",
+        "cityNameFallback": "Beijing",
+        "countryNameFallback": "CN",
+        "lat": 39.9356,
+        "lng": 116.4065
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget",
+    "verification": "PASS (2 events, 11 checks)"
   }
 ]

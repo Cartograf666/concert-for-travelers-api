@@ -4,6 +4,8 @@
   "url": "https://theironmaidens.com/upcoming-events/",
   "type": "custom_js",
   "httpClient": "got-scraping",
+  "maxRetries": 3,
+  "requestDelayMs": 2000,
   "selectors": {
     "eventBlock": ".eventon_list_event.scheduled",
     "artistNameFallback": "The Iron Maidens",
