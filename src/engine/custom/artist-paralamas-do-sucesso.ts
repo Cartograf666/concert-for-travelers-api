@@ -121,7 +121,10 @@ async function fetchNext(url: string, config: ScraperConfig,
   for (let attempt = 0; ; attempt++) {
     await sleep(attempt === 0 ? config.requestDelayMs ?? 500 : Math.min(15000, 500 * 2 ** (attempt - 1)));
     try { return await fetchPage(url); } catch (error) {
-      if (attempt >= retries || !isRetryableError(error)) throw error;
+      if (attempt >= retries || !isRetryableError(error)) {
+        const cause = error as { message?: string; code?: string };
+        throw new Error(`Paralamas pagination fetch failed at ${url}: ${cause?.message ?? String(error)}${cause?.code ? ` (${cause.code})` : ''}`);
+      }
     }
   }
 }
