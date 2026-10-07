@@ -1,8 +1,8 @@
 {
   "id": "artist-you-used-to-hold-me-so-tight",
   "domain": "sharonvanetten.com",
-  "url": "https://www.sharonvanetten.com/tour",
-  "type": "playwright_render",
+  "url": "https://cdn.seated.com/api/tour/b19bb52c-bf1a-4e6f-beb8-abb33a5ea505?include=tour-events",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "li.tour-dates-list-item",
     "artistNameFallback": "Sharon Van Etten & The Attachment Theory",
@@ -14,6 +14,5 @@
     "cityNameFallback": "",
     "countryNameFallback": "US"
   },
-  "allowEmpty": true,
-  "emptyScheduleText": "There are no upcoming events."
+  "allowEmpty": true
 }
