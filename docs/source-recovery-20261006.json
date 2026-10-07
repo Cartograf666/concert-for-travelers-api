@@ -13015,5 +13015,71 @@
         "cartagena-festival-de-musica-cartagena"
       ]
     }
+  },
+  "userCorrections20261007": {
+    "state": "implemented; hosted verification pending",
+    "scope": "Antoha MC official concerts URL, current source-access recheck and shared-domain explanation; original 415/152 source cohorts remain unchanged.",
+    "supersedes": "Earlier claim that every remaining source failure is an external permanent limit. Access outcomes vary by time and client; current ordinary-browser and HTTP observations must not be confused with complete hosted collection.",
+    "antoha": {
+      "sourceUrl": "https://antoha-mc.ru/concerts",
+      "previousUrl": "http://antoha-mc.ru",
+      "localRunner": {
+        "success": true,
+        "reason": "empty_schedule",
+        "concerts": 0
+      },
+      "nativeEvidence": "Fresh complete HTML: visible year 2026, exactly two upcoming rows (October 15 Moscow and October 17 Saint Petersburg), both explicitly KARO/ART film screenings with karofilm.ru film links; remaining cards follow the native past-events heading.",
+      "contract": "Read the current page, verify its identity/year/past boundary and each event. Exclude confirmed films. Genuine supported future concerts use the visible year/date/place/ticket. Unknown cities, ambiguous screening labels, stale upcoming dates and incomplete page fail explicitly.",
+      "independentReview": "calendar_review: no blocking finding; full HTML matches fixture and both upcoming rows are films. If the site leaves expired rows in upcoming, source fails until the page is maintained.",
+      "checks": [
+        "3 source-specific tests pass",
+        "TypeScript --noEmit and ESLint pass",
+        "real stock test_config returns empty_schedule, zero concerts"
+      ],
+      "evidence": "/private/tmp/concert-remaining-20261007/antoha-followup/"
+    },
+    "sharedDomain": {
+      "url": "https://komnatakultury.ru",
+      "sourceIds": [
+        "komnata-kultury-tour",
+        "zhenya-trofimov-tour"
+      ],
+      "explanation": "One website may serve several configured artists. Both collectors are retained. A shared host failure affects both; it is not a duplicate-source defect.",
+      "latestAccess": "Guarded HTTP now returns the artist site (200); both stock collectors are being rechecked. Earlier DNS/expired-domain observations are historical."
+    },
+    "painForPleasure": {
+      "sourceUrl": "https://www.painforpleasure.com/gigs",
+      "latestObservation": "Old gigs endpoint redirects via /lander to a GoDaddy domain-for-sale destination. Browser destination body can itself be Access Denied. There is no verified calendar at the configured old domain.",
+      "classification": "parked domain; no replacement official calendar verified",
+      "identityGuard": "Do not replace with a same-name unrelated artist or accept parking as a healthy empty calendar."
+    },
+    "browserObservations": {
+      "observedAtUtc": "2026-10-07T10:38:32.660944+00:00",
+      "method": "ordinary Codex in-app browser navigation; no challenge interaction",
+      "observations": [
+        {
+          "url": "https://theironmaidens.com/upcoming-events/",
+          "finalPath": "/.well-known/sgcaptcha/",
+          "title": "Robot Challenge Screen",
+          "visible": [
+            "Checking the site connection security",
+            "This page requires cookies to be enabled in your browser settings. Please check this setting and enable cookies (if disabled)"
+          ],
+          "calendarAvailable": false
+        },
+        {
+          "url": "https://www.nin.com/live/",
+          "initialTitle": "Один момент…",
+          "initialVisible": "Выполнение проверки безопасности (Cloudflare)",
+          "automaticCheckCompleted": true,
+          "finalTitle": "Live - nine inch nails",
+          "finalVisible": "Logo, News, Discography, Live, Store, Follow, Site Credits; no event calendar",
+          "calendarAvailable": false,
+          "explicitEmptySchedule": false,
+          "advertisedCalendarWidgetsFound": []
+        }
+      ]
+    },
+    "observedAtUtc": "2026-10-07T10:42:01.137931+00:00"
   }
 }
