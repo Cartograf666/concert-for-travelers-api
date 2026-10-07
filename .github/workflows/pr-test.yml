@@ -52,6 +52,27 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Diagnose Paralamas hosted pagination transport
+        run: |
+          node <<'JS'
+          const fs = require('node:fs');
+          const { fetchHtmlForHealing, closeBrowser } = require('./dist-compiled/engine/runner.js');
+          const { scrape } = require('./dist-compiled/engine/custom/artist-paralamas-do-sucesso.js');
+          (async () => {
+            const config = JSON.parse(fs.readFileSync('scrapers/artists/artist-paralamas-do-sucesso.json', 'utf8'));
+            const html = await fetchHtmlForHealing(config.url);
+            for (const backend of ['axios', 'got-scraping']) {
+              const started = Date.now();
+              try {
+                const rows = await scrape(config, html, new Date().toISOString(), url => fetchHtmlForHealing(url, backend));
+                console.log(JSON.stringify({backend, elapsedMs: Date.now() - started, success: true, count: rows.length, march6: rows.filter(row => row.date === '2027-03-06')}));
+              } catch (error) {
+                console.log(JSON.stringify({backend, elapsedMs: Date.now() - started, success: false, message: error.message, code: error.code}));
+              }
+            }
+          })().catch(error => { console.error(error); process.exitCode = 1; }).finally(closeBrowser);
+          JS
+
       # `continue-on-error: true` meant this could never block anything, so a lint
       # error could land on main unnoticed. The config currently reports 0 errors
       # and 109 warnings, and eslint exits non-zero only on errors -- so enforcing
