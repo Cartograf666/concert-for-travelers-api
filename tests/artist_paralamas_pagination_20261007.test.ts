@@ -47,7 +47,12 @@ test('unchanged first page never substitutes stale complete data when page two f
     assert.equal(url, nextUrl);
     requested++;
     throw Object.assign(new Error('second page timed out'), { code: 'ETIMEDOUT' });
-  }), /second page timed out/);
+  }), error => {
+    assert.ok(error instanceof Error);
+    assert.ok(error.message.includes(nextUrl), 'failed pagination URL remains visible in hosted reports');
+    assert.match(error.message, /second page timed out.*ETIMEDOUT/);
+    return true;
+  });
   assert.equal(requested, 1);
   assert.equal(config.skipConditionalRequests, true,
     'runner must fetch unchanged first-page HTML again instead of accepting its HTTP 304 cache');
