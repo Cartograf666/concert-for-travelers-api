@@ -3,6 +3,8 @@
   "domain": "kawashimaai.com",
   "url": "https://kawashimaai.com/live",
   "type": "static_selectors",
+  "maxRetries": 3,
+  "requestDelayMs": 2000,
   "selectors": {
     "eventBlock": "#live_index table tr",
     "artistNameFallback": "Ai Kawashima",

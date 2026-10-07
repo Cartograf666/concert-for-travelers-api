@@ -26047,5 +26047,140 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 500]",
     "verification": ""
+  },
+  {
+    "id": "artist-ai-kawashima",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-ai-kawashima.json",
+    "repairedConfigHash": "3dbf945f9695033b787dad4194d2074a17841583221ef01161bfe6fa9ccb7b08",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T07:42:20.787Z",
+    "previousConfig": {
+      "id": "artist-ai-kawashima",
+      "domain": "kawashimaai.com",
+      "url": "https://kawashimaai.com/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "#live_index table tr",
+        "artistNameFallback": "Ai Kawashima",
+        "date": "th.date",
+        "ticketUrl": "td.text a",
+        "venue": "td.text a",
+        "city": "td.place span",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget",
+    "verification": "PASS (3 events, 10 checks)"
+  },
+  {
+    "id": "artist-interface",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-interface.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T07:42:23.028Z",
+    "previousConfig": {
+      "id": "artist-interface",
+      "domain": "interfacemusic.net",
+      "url": "http://interfacemusic.net/tour-dates",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour.past table tr",
+        "artistNameFallback": "Interface",
+        "date": ".tour-date",
+        "ticketUrl": ".tour-more a@href",
+        "venue": ".tour-venue",
+        "city": ".tour-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: has_future_dates [0 event(s) dated today or later]",
+    "verification": ""
+  },
+  {
+    "id": "artist-shelby-lynne",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-shelby-lynne.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-10-07T07:42:23.414Z",
+    "previousConfig": {
+      "id": "artist-shelby-lynne",
+      "domain": "www.shelbylynne.com",
+      "url": "https://www.shelbylynne.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "section.elementor-inner-section[data-id][class*='elementor-element-']",
+        "artistNameFallback": "Shelby Lynne",
+        "date": ".elementor-widget-heading .elementor-heading-title",
+        "ticketUrl": "a.elementor-button-link",
+        "venue": ".elementor-image-box-title",
+        "city": ".elementor-image-box-description",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]",
+    "verification": ""
+  },
+  {
+    "id": "zhenya-trofimov-tour",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/zhenya-trofimov-tour.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T07:43:00.459Z",
+    "previousConfig": {
+      "id": "zhenya-trofimov-tour",
+      "domain": "komnatakultury.ru",
+      "url": "https://komnatakultury.ru",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "custom",
+        "date": "custom",
+        "artistNameFallback": "Женя Трофимов",
+        "venueNameFallback": "Unknown Venue",
+        "cityNameFallback": "Unknown City",
+        "countryNameFallback": "RU"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): connect ENETUNREACH 2a00:f940:4::10:443 - Local (:::0)]",
+    "verification": ""
+  },
+  {
+    "id": "komnata-kultury-tour",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/komnata-kultury-tour.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T07:43:07.056Z",
+    "previousConfig": {
+      "id": "komnata-kultury-tour",
+      "domain": "komnatakultury.ru",
+      "url": "https://komnatakultury.ru",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "custom",
+        "date": "custom",
+        "artistNameFallback": "Комната культуры",
+        "venueNameFallback": "Unknown Venue",
+        "cityNameFallback": "Unknown City",
+        "countryNameFallback": "RU"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): connect ECONNREFUSED 194.67.71.99:443; connect ENETUNREACH 2a00:f940:4::10:443 - Local (:::0)]",
+    "verification": ""
   }
 ]
