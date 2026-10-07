@@ -1,10 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
+import { createServer } from 'node:http';
 import * as cheerio from 'cheerio';
-import axios from 'axios';
 import { ScraperConfigSchema, type ScraperConfig } from '../src/schemas/config.js';
-import { runScraper } from '../src/engine/runner.js';
+import { runScraper, closeBrowser } from '../src/engine/runner.js';
 import { scrape } from '../src/engine/custom/artist-iron-maidens-the.js';
 
 const SCRAPED_AT = '2026-09-28T06:00:00.000Z';
@@ -20,8 +20,9 @@ async function source() {
 
 test('official EventON fixture yields ten verified single-day shows and holds the cruise', async () => {
   const { html, config } = await source();
-  assert.equal(config.type, 'custom_js');
-  assert.equal(config.httpClient, 'got-scraping');
+  assert.equal(config.type, 'playwright_render');
+  assert.equal(config.renderParser, 'custom_js');
+  assert.equal(config.renderWaitSelector, '.eventon_list_event.scheduled');
   const concerts = await scrape(config, html, SCRAPED_AT);
   assert.deepEqual(concerts.map(({ date, city, venue, country, startTime }) =>
     ({ date, city, venue, country, startTime })), [
@@ -55,10 +56,18 @@ test('official EventON fixture yields ten verified single-day shows and holds th
 
 test('configured runner dispatches to the custom parser on saved HTML', async (t) => {
   const { html, config } = await source();
-  // Only switch transport for the offline runner test. Production keeps the
-  // configured got-scraping backend, whose HTTP behavior is covered separately.
-  t.mock.method(axios, 'get', async () => ({ status: 200, data: html, headers: {} }));
-  const result = await runScraper({ ...config, httpClient: 'axios' });
+  const server = createServer((_, response) => {
+    response.setHeader('content-type', 'text/html; charset=utf-8');
+    response.end(html);
+  });
+  await new Promise<void>(resolve => server.listen(0, '127.0.0.1', resolve));
+  t.after(async () => {
+    await closeBrowser();
+    await new Promise<void>(resolve => server.close(() => resolve()));
+  });
+  const address = server.address();
+  assert.ok(address && typeof address === 'object');
+  const result = await runScraper({ ...config, url: `http://127.0.0.1:${address.port}/events` });
   assert.equal(result.success, true);
   assert.equal(result.concerts.length, 10);
   assert.equal(result.concerts[0].artist, 'The Iron Maidens');
