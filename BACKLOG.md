@@ -43,6 +43,16 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   the registrar parking page and connection refusal confirm an external gap.
   Baltimore currently times out with both supported clients; Interface reads an
   archive, not future coverage. These observations do not justify fake emptiness.
+- First automatic daily 37588828520 is deployed and byte-verified: 129/152
+  venue sources, 51,605 concerts. Ray's seven dates and Alabama's 39 dates are
+  public; six cancelled Twin Atlantic shows are absent, Leeds retained. This is
+  intermediate evidence while the `/agenda/` and Ai geography follow-up awaits
+  full hosted verification.
+- New Iron Maidens / Yugong failures are actual same-origin SGCaptcha access
+  challenges returned as HTTP 200, not observed selector changes. The runner now
+  classifies those captured responses as fetch errors before extraction, healing
+  or empty acceptance. No challenge is followed or bypassed. Local combined
+  suite: **773 pass / 1 skip / 0 failures**, build/lint pass.
 - The original 415 artist and 152 venue IDs remain. Full hosted collection,
   completed Pages deployment and producer/public artifact comparison are next;
   the preceding published counts below are historical, not a new projection.

@@ -795,6 +795,21 @@ async function renderWithPlaywright(config: ScraperConfig): Promise<FetchRespons
   }
 }
 
+/** An HTTP-200 SGCaptcha refresh page is an access gate, not calendar HTML. */
+function isSgCaptchaChallenge(html: string, sourceUrl: string): boolean {
+  const $ = cheerio.load(html);
+  return $('meta[http-equiv]').toArray().some(element => {
+    if ($(element).attr('http-equiv')?.trim().toLowerCase() !== 'refresh') return false;
+    const refresh = /^\s*\d+(?:\.\d+)?\s*;\s*(?:url\s*=\s*)?(.+?)\s*$/i.exec(
+      $(element).attr('content') || '');
+    if (!refresh) return false;
+    try {
+      const target = new URL(refresh[1].replace(/^['"]|['"]$/g, ''), sourceUrl);
+      return target.origin === new URL(sourceUrl).origin && target.pathname === '/.well-known/sgcaptcha/';
+    } catch { return false; }
+  });
+}
+
 /**
  * Runs a single scraper config.
  */
@@ -836,6 +851,13 @@ export async function runScraper(config: ScraperConfig, cached?: VenueCache): Pr
     }
 
     responseData = response.data;
+    // Do this before empty acceptance, parser/LLM fallback and healing samples.
+    // Re-selecting an access challenge cannot repair the original calendar.
+    if (typeof responseData === 'string' && isSgCaptchaChallenge(responseData, config.url)) {
+      return { configId: config.id, success: false, concerts: [], reason: 'fetch_error',
+        error: 'Source access blocked by SGCaptcha challenge',
+        htmlSample: responseData.slice(0, HTML_SAMPLE_LIMIT), scrapedAt };
+    }
     // An explicit empty notice must survive layout changes; zero selector hits
     // alone cannot prove a source with this contract is still working.
     const emptyMessage = config.emptyScheduleText;

@@ -9475,6 +9475,45 @@
         "existingLintWarnings": 103,
         "independentReview": "gpt-6-sol bounded read-only review found no P1/P2; hosted and public evidence remain pending."
       }
+    },
+    "firstDailyAttempt": {
+      "state": "intermediate_publication_verified",
+      "runId": 37588828520,
+      "artifactId": 11469055215,
+      "generatedAt": "2026-10-07T07:58:52.598Z",
+      "published": 51605,
+      "statusSha256": "56f8f35baf8b5d16107c0a82db25d7e20fc8c78733a59888ba4989bb05c282a3",
+      "indexSha256": "6f8326711415176562834ed2a473199615730f20d83bd08fe8105817533b7f71",
+      "statusAndIndexBytesMatchProducer": true,
+      "scrapers": {
+        "total": 152,
+        "succeeded": 129,
+        "failed": 23,
+        "changed": 23,
+        "unchanged": 106,
+        "staleIds": []
+      }
+    },
+    "sourceAccessClassificationFollowup": {
+      "state": "implemented_local_checks_passed_hosted_pending",
+      "cause": "Two previously healthy sources returned HTTP-200 meta refresh pages to /.well-known/sgcaptcha/; the engine incorrectly reported selectors_stale and could invoke parser/healing fallback.",
+      "sources": [
+        "artist-iron-maidens-the",
+        "yugong-yishan-beijing"
+      ],
+      "change": "Recognize the exact observed same-origin SGCaptcha meta refresh before parsing, LLM extraction or empty acceptance; return explicit fetch_error and preserve raw debugging sample. No challenge request is followed and no access protection is bypassed.",
+      "checks": {
+        "capturedHostedResponses": "Both exact hosted htmlSamples fail as access errors, including when allowEmpty is true. Ordinary pages mentioning the path or unrelated meta refresh remain accepted.",
+        "tests": {
+          "passed": 773,
+          "failed": 0,
+          "skipped": 1
+        },
+        "buildPassed": true,
+        "lintPassed": true,
+        "existingLintWarnings": 103
+      },
+      "limit": "Classification is repaired; actual upstream access remains unavailable until the source/CDN allows ordinary requests."
     }
   }
 }
