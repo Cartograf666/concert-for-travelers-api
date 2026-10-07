@@ -3,6 +3,8 @@
   "domain": "www.10cc.world",
   "url": "https://www.10cc.world/events",
   "type": "custom_js",
+  "maxRetries": 3,
+  "requestDelayMs": 2000,
   "selectors": {
     "eventBlock": "table.table tbody tr.row:not(:has(th))",
     "artistNameFallback": "10cc",
