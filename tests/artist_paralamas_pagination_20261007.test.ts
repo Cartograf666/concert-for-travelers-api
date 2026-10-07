@@ -8,14 +8,14 @@ import { scrape } from '../src/engine/custom/artist-paralamas-do-sucesso.js';
 const config = ScraperConfigSchema.parse(JSON.parse(readFileSync(join(process.cwd(),
   'scrapers/artists/artist-paralamas-do-sucesso.json'), 'utf8')));
 const first = readFileSync(join(process.cwd(),
-  'tests/fixtures/paralamas-archive-page1-20261007.html'), 'utf8');
+  'tests/fixtures/paralamas-agenda-page1-20261007.html'), 'utf8');
 const second = readFileSync(join(process.cwd(),
-  'tests/fixtures/paralamas-archive-page2-20261007.html'), 'utf8');
-const nextUrl = 'https://www.osparalamas.com.br/evento/page/2/';
+  'tests/fixtures/paralamas-agenda-page2-20261007.html'), 'utf8');
+const nextUrl = 'https://www.osparalamas.com.br/agenda/page/2/';
 const at = '2026-10-07T00:00:00.000Z';
 
 test('Paralamas follows its actual official next page and retains Montes Claros', async () => {
-  assert.equal(config.url, 'https://www.osparalamas.com.br/evento/');
+  assert.equal(config.url, 'https://osparalamas.com.br/agenda/');
   assert.equal(config.httpClient, 'got-scraping');
   assert.equal(config.skipConditionalRequests, true);
   const requested: string[] = [];
@@ -55,13 +55,14 @@ test('unchanged first page never substitutes stale complete data when page two f
 
 test('a changed, off-site or repeated pagination path fails the entire source', async () => {
   const current = { ...config, requestDelayMs: 0, maxRetries: 0 };
-  const wrongHost = first.replaceAll(nextUrl, 'https://evil.example/evento/page/2/');
+  const wrongHost = first.replaceAll(nextUrl, 'https://evil.example/agenda/page/2/');
   await assert.rejects(scrape(current, wrongHost, at, async () => second), /outside its first-party archive/);
-  const skippedPage = first.replaceAll(nextUrl, 'https://www.osparalamas.com.br/evento/page/3/');
+  const skippedPage = first.replaceAll(nextUrl, 'https://www.osparalamas.com.br/agenda/page/3/');
   await assert.rejects(scrape(current, skippedPage, at, async () => second), /does not advance one page/);
   const repeated = second.replace('montes-claros-mg', 'sao-luis-ma-3');
   await assert.rejects(scrape(current, first, at, async () => repeated), /repeats an event or page/);
   const missingCity = second.replace('Montes Claros (MG), Rock in Moc Brasil no Estacionamento Montes Claros Shopping',
     'Rock in Moc Brasil');
   await assert.rejects(scrape(current, first, at, async () => missingCity), /no complete city and venue/);
+  await assert.rejects(scrape(current, first, at, async () => first), /title is missing/);
 });

@@ -9357,6 +9357,123 @@
       "Hosted network access and final publication have not yet been checked for this continuation.",
       "Existing blocked, missing-calendar and unresolved-identity sources remain failures; no denominator reduction or blanket empty status.",
       "Eventbrite access challenge and partial Bandsintown coverage remain separate provider gaps."
-    ]
+    ],
+    "firstHostedArtistAttempt": {
+      "run": {
+        "id": "37586548469",
+        "attempt": 1,
+        "sha": "31c0941b9c0d801bcf86940312b3ac441b48858e",
+        "workflow": "Artist Tour-Page Scrape"
+      },
+      "generatedAt": "2026-10-07T07:22:18.741Z",
+      "scrapers": {
+        "total": 415,
+        "succeeded": 391,
+        "failed": 24,
+        "changed": 21,
+        "unchanged": 370,
+        "staleIds": []
+      },
+      "allOriginal415IdsPreserved": true,
+      "recovered": [
+        "artist-alabama-symphony-orchestra",
+        "artist-john-mellencamp"
+      ],
+      "regressions": [
+        {
+          "id": "artist-ai-kawashima",
+          "configPath": "scrapers/artists/artist-ai-kawashima.json",
+          "configHash": "f4e72d33891470c2a8c7d8236b0ffb531d70331d51cd39f2d13e568663b82cc0",
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "timeout of 15000ms exceeded"
+        },
+        {
+          "id": "artist-interface",
+          "configPath": "scrapers/artists/artist-interface.json",
+          "configHash": "93165df9288f156f76ed2a958ded3e6f05b876180f7d979c21f16dcd5f945689",
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "timeout of 15000ms exceeded"
+        },
+        {
+          "id": "artist-baltimore-symphony-orchestra",
+          "configPath": "scrapers/artists/artist-baltimore-symphony-orchestra.json",
+          "configHash": "09775bbb124ca38089a49a06c386998fce7dd40c55729cd09401c9c7795bbf8f",
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Scraper exceeded 90s wall-clock timeout"
+        },
+        {
+          "id": "artist-paralamas-do-sucesso",
+          "configPath": "scrapers/artists/artist-paralamas-do-sucesso.json",
+          "configHash": "8d382707220cbce4a3947662065d47c272b834d28fbe7b5a2c5bd42157aa7084",
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "Timeout awaiting 'request' for 15000ms"
+        },
+        {
+          "id": "zhenya-trofimov-tour",
+          "configPath": "scrapers/artists/zhenya-trofimov-tour.json",
+          "configHash": "ccbaf6a66ea6747d02b98bb741da8a302f33e4aa0c76ec23c855bcda2f94e078",
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "connect ECONNREFUSED 194.67.71.198:443"
+        },
+        {
+          "id": "komnata-kultury-tour",
+          "configPath": "scrapers/artists/komnata-kultury-tour.json",
+          "configHash": "1e3af9acd1b18772e4a8d5f854b29461367fcdf960b61276aae47dd988aaa8b0",
+          "status": "failed",
+          "reason": "fetch_error",
+          "error": "connect ECONNREFUSED 194.67.71.198:443"
+        }
+      ],
+      "state": "intermediate_attempt_superseded_after_new_hosted_verification"
+    },
+    "accessAndGeographyFollowup": {
+      "state": "implemented_local_checks_passed_hosted_pending",
+      "baseRevision": "cc2239b",
+      "paralamas": {
+        "cause": "Hosted /evento/ first page timed out three times at 15 seconds; pagination code was never entered.",
+        "change": "Use exact prior hosted-successful official apex /agenda/, follow its observed native /agenda/page/2/, validate shared WordPress canonical/title via paged body class and native Previous/Next links.",
+        "localResult": {
+          "events": 9,
+          "durationSeconds": 21.1
+        }
+      },
+      "aiKawashima": {
+        "cause": "Old static selectors extracted headlines as venue and prefectures as city, including restored legacy cache.",
+        "change": "Read observed native detail pages; cross-check index/detail/body dates, prefecture and title; extract actual venue and map only independently verified venue municipality. Unknown geography fails.",
+        "localResult": {
+          "rawEvents": 2,
+          "validEvents": 2,
+          "dropped": 0
+        },
+        "nativeSource": "https://kawashimaai.com/live",
+        "venuePrimarySources": [
+          "https://www.aeontown.co.jp/yukarigaoka/access/",
+          "https://www.tokaikanko.com/play/place/ooyanehiroba/"
+        ],
+        "legacyCacheGuard": "Exact canonical MBID/native host/date/prefecture/headline tuples reject two captured wrong rows; corrected cities/venues, other artists/dates/providers remain allowed."
+      },
+      "newExternalGaps": {
+        "komnata-kultury-tour": "Official domain expired; HTTP registrar parking page, HTTPS connection refused. Official group channel still links the same expired domain.",
+        "zhenya-trofimov-tour": "Shares the same expired official domain and group parser; cache retained separately from current access.",
+        "artist-baltimore-symphony-orchestra": "Both guarded clients currently time out; no fresh HTML establishes a safe backend/selector repair.",
+        "artist-interface": "Current local fetch again succeeds, but selected rows are archived 2025 and earlier; no future coverage claimed."
+      },
+      "checks": {
+        "tests": {
+          "passed": 771,
+          "failed": 0,
+          "skipped": 1
+        },
+        "buildPassed": true,
+        "lintPassed": true,
+        "existingLintWarnings": 103,
+        "independentReview": "gpt-6-sol bounded read-only review found no P1/P2; hosted and public evidence remain pending."
+      }
+    }
   }
 }

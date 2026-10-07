@@ -2,7 +2,7 @@
   "id": "artist-ai-kawashima",
   "domain": "kawashimaai.com",
   "url": "https://kawashimaai.com/live",
-  "type": "static_selectors",
+  "type": "custom_js",
   "maxRetries": 3,
   "requestDelayMs": 2000,
   "selectors": {
@@ -10,8 +10,6 @@
     "artistNameFallback": "Ai Kawashima",
     "date": "th.date",
     "ticketUrl": "td.text a",
-    "venue": "td.text a",
-    "city": "td.place span",
     "venueNameFallback": "",
     "cityNameFallback": "",
     "countryNameFallback": "JP"
