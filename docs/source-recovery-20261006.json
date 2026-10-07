@@ -16172,5 +16172,65 @@
         ]
       }
     }
+  },
+  "providerHealthRepair20261007": {
+    "stage": "implemented_hosted_verification_pending",
+    "baseRevision": "c67a5f4",
+    "scope": "Preserve original 415 artist and 152 venue IDs; prevent false empty provider results and correct dashboard metrics; merge and verify production.",
+    "changes": [
+      "Bandsintown non-array HTTP200 rejection preserving last-good cache and verifiedAt",
+      "Eventbrite missing/non-array discovery results rejection preserving last-good cache and verifiedAt",
+      "Canonical published city count; explicitly labelled raw fallback",
+      "Unknown verification age explanation; specific Eventbrite access action"
+    ],
+    "checks": {
+      "localTests": {
+        "total": 786,
+        "pass": 785,
+        "skip": 1,
+        "fail": 0
+      },
+      "build": "pass",
+      "lint": {
+        "errors": 0,
+        "warnings": 103
+      },
+      "independentReview": "no_blockers",
+      "browser": {
+        "desktop": "pass",
+        "width390": "pass",
+        "disclosure": "pass"
+      },
+      "hostedCollection": "pending",
+      "publication": "pending"
+    },
+    "before": {
+      "generatedAt": "2026-10-07T11:33:04.915Z",
+      "concerts": 51921,
+      "artistSucceeded": 395,
+      "artistTargets": 415,
+      "venueSucceeded": 130,
+      "venueTargets": 152,
+      "bandsintownSucceeded": 612,
+      "bandsintownAttempted": 800,
+      "bandsintownUnavailable": 188,
+      "eventbriteFailed": 5,
+      "canonicalCities": 2871,
+      "rawCityCountryLabels": 6696
+    },
+    "remaining": [
+      "Current 188 Bandsintown feed-not-found outcomes are not fixed by response validation; questionable target identities remain unverified",
+      "Eventbrite hosted AWS WAF challenge; no verified replacement global discovery route",
+      "Direct source failures retain access/DNS/calendar gaps; no further convergent source fix confirmed",
+      "Roundhouse retry config from PR228 awaits hosted recheck"
+    ],
+    "rejectedHypotheses": [
+      "Limahl heading span does not invalidate direct-child UL selector; no change justified"
+    ],
+    "officialEventbriteSources": [
+      "https://www.eventbrite.com/platform/new/api",
+      "https://www.eventbrite.com/help/en-us/articles/849962/generate-an-api-key/"
+    ],
+    "evidenceDirectory": "/private/tmp/concert-dashboard-repair-20261007"
   }
 }

@@ -1,5 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert';
+import { createServer } from 'node:http';
+import { once } from 'node:events';
+import type { AddressInfo } from 'node:net';
 import {
   mapEbResultToConcert,
   extractEbServerData,
@@ -317,4 +320,41 @@ test('Eventbrite - a partially successful run raises no annotation', async () =>
   }
 
   assert.strictEqual(logged.some((l) => l.startsWith('::error::[Eventbrite]')), false);
+});
+
+test('Eventbrite - changed discovery payload cannot clear cache or advance verification', async t => {
+  let payload: unknown;
+  const server = createServer((_request, response) => {
+    response.setHeader('Content-Type', 'text/html');
+    response.end(`<script>window.__SERVER_DATA__ = ${JSON.stringify(payload)};\n</script>`);
+  });
+  server.listen(0, '127.0.0.1');
+  await once(server, 'listening');
+  t.after(() => new Promise<void>((resolve, reject) => server.close(error => error ? reject(error) : resolve())));
+  const baseUrl = `http://127.0.0.1:${(server.address() as AddressInfo).port}`;
+  const verifiedAt = '2026-01-01T00:00:00.000Z';
+  const retained = { artist: 'A', date: '2027-01-01', venue: 'V', city: 'London', country: 'GB' };
+  for (payload of [{ unrelated: true }, { search_data: { events: {} } }, { search_data: { events: { results: null } } }, { search_data: { events: { results: {} } } }]) {
+    const cache: EventbriteCache = { A: { fetchedAt: verifiedAt, verifiedAt, concerts: [retained] } };
+    let health: any;
+    const concerts = await fetchEventbriteConcerts(['A'], {
+      cache, baseUrl, delayMs: 0, now: () => new Date('2026-10-07T00:00:00Z'),
+      onHealth: report => { health = report; }
+    });
+    assert.deepStrictEqual(concerts, [retained]);
+    assert.equal(cache.A.verifiedAt, verifiedAt);
+    assert.equal(health.counts.succeeded, 0);
+    assert.equal(health.counts.failed, 1);
+    assert.equal(health.issues[0].reason, 'response_format_changed');
+  }
+  payload = { search_data: { events: { results: [] } } };
+  const cache: EventbriteCache = { A: { fetchedAt: verifiedAt, verifiedAt, concerts: [retained] } };
+  let health: any;
+  const concerts = await fetchEventbriteConcerts(['A'], {
+    cache, baseUrl, delayMs: 0, now: () => new Date('2026-10-07T00:00:00Z'),
+    onHealth: report => { health = report; }
+  });
+  assert.deepStrictEqual(concerts, []);
+  assert.equal(cache.A.verifiedAt, '2026-10-07T00:00:00.000Z');
+  assert.equal(health.counts.empty, 1);
 });

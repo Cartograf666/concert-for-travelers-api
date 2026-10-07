@@ -169,7 +169,11 @@ const defaultEbFetch: EbFetchFn = async (artist, locationSlug, baseUrl) => {
     // "genuinely zero results".
     throw new Error('Could not find/parse window.__SERVER_DATA__ in the Eventbrite response.');
   }
-  return data?.search_data?.events?.results ?? [];
+  const results = data?.search_data?.events?.results;
+  if (!Array.isArray(results)) {
+    throw new Error('Could not find the search results array in window.__SERVER_DATA__ in the Eventbrite response.');
+  }
+  return results;
 };
 
 export interface EventbriteSweepOptions {

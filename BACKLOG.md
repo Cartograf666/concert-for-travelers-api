@@ -11,6 +11,36 @@ each concert in space and time, and (3) **rank** the options.
 
 Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
+## Provider response validation and dashboard corrections — 2026-10-07 (implemented; hosted verification pending)
+
+- Bandsintown and Eventbrite now reject successful HTTP responses whose payload
+  is not the expected event array. Previously an error object, challenge HTML or
+  changed discovery envelope could be converted to a verified empty calendar and
+  erase last-good events. The native empty array still succeeds. This latent
+  defect is reproduced over real local HTTP/axios; occurrence in the current
+  hosted cache is not established, and the fix does not recover missing feeds.
+- The dashboard uses the publisher's canonical city grouping: the current
+  snapshot has 2,871 grouped cities versus 6,696 raw city/country labels. Its
+  ungrouped fallback is explicitly labelled. Verification details explain that
+  unknown ages mean no successful verification timestamp, and Eventbrite's WAF
+  challenge has its specific access action. Source health is not made greener.
+- Local verification: 785 passed / 1 existing skip / 0 failed; build and lint pass
+  (103 existing warnings, no errors). Independent scoped review found no blockers.
+  Ordinary browser rendering, disclosure interaction and 390px responsive view
+  pass on the latest public data. Limits, intervals and identity/network checks
+  are unchanged; all original 415 artist and 152 venue IDs remain configured.
+- Current 188 Bandsintown unavailable targets are native feed-not-found responses;
+  some catalog names need independent identity verification. No artist records
+  were deleted or relabelled. Eventbrite still challenges hosted requests; the
+  documented global search API is deprecated and scoped API access needs known
+  IDs and a token. No replacement access or fresh Eventbrite coverage is claimed.
+- Remaining direct sources were re-triaged using retained native evidence. No new
+  safe source-specific fix was confirmed; a suggested Limahl selector change was
+  rejected because the existing selector already matches the fixture structure.
+  Next: merge this tested change, complete artist and Daily collection, verify
+  Pages output and preserve actual external failures. Prior publication below
+  remains the last verified live snapshot until that completes.
+
 ## Source access corrections — 2026-10-07 (published and verified; source gaps remain)
 
 - PRs #223 (Antoha MC), #224 (Limahl) and #225 (The Iron Maidens browser
