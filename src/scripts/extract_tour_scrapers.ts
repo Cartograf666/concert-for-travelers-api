@@ -67,16 +67,46 @@ export async function loadExistingArtistScraperNames(dir = SCRAPERS_ARTISTS_DIR)
   return names;
 }
 
+export async function loadExistingDirectArtistScraperSources(
+  dir = path.dirname(SCRAPERS_ARTISTS_DIR)
+): Promise<Map<string, Set<string>>> {
+  const sources = new Map<string, Set<string>>();
+  try {
+    const files = (await fs.readdir(dir)).filter((f) => f.endsWith('.json'));
+    for (const file of files) {
+      try {
+        const config = JSON.parse(await fs.readFile(path.join(dir, file), 'utf-8'));
+        const name = config?.selectors?.artistNameFallback;
+        const url = config?.url;
+        if (typeof name !== 'string' || !name.trim() || typeof url !== 'string' || !url.trim()) continue;
+        const key = name.trim().toLowerCase();
+        const urls = sources.get(key) ?? new Set<string>();
+        urls.add(url.trim());
+        sources.set(key, urls);
+      } catch {
+        // Ignore malformed configs here; the scraper loader reports them.
+      }
+    }
+  } catch {
+    // No direct scraper directory yet.
+  }
+  return sources;
+}
+
 export function selectTourScraperCandidates(
   artists: ArtistEntry[],
   existingScraperNames: Set<string>,
-  limit: number
+  limit: number,
+  existingDirectSources: Map<string, Set<string>> = new Map()
 ): TourScraperCandidate[] {
   const pending: TourScraperCandidate[] = [];
   for (const artist of artists) {
     if (!artist.tourUrl || artist.tourScraperTriedAt) continue;
     if (artist.tier && artist.tier !== 'professional') continue;
+    // Generated IDs depend on artist name, so preserve the artist-directory
+    // guard even if discovery later changes that artist's tour URL.
     if (existingScraperNames.has(artist.name.toLowerCase())) continue;
+    if (existingDirectSources.get(artist.name.trim().toLowerCase())?.has(artist.tourUrl.trim())) continue;
     pending.push({ name: artist.name, tourUrl: artist.tourUrl });
     if (pending.length >= limit) break;
   }
@@ -289,8 +319,11 @@ async function run(limit: number): Promise<void> {
   if (apiKeys.length === 0) throw new Error('No Gemini API key set for tour scraper extraction.');
 
   const artists = await loadDb();
-  const existing = await loadExistingArtistScraperNames();
-  const candidates = selectTourScraperCandidates(artists, existing, limit);
+  const [existing, directSources] = await Promise.all([
+    loadExistingArtistScraperNames(),
+    loadExistingDirectArtistScraperSources()
+  ]);
+  const candidates = selectTourScraperCandidates(artists, existing, limit, directSources);
   if (candidates.length === 0) {
     console.log('[tour-scraper] No pending tourUrl scraper candidates.');
     return;
@@ -344,8 +377,11 @@ async function run(limit: number): Promise<void> {
 
 async function select(limit: number): Promise<void> {
   const artists = await loadDb();
-  const existing = await loadExistingArtistScraperNames();
-  const candidates = selectTourScraperCandidates(artists, existing, limit);
+  const [existing, directSources] = await Promise.all([
+    loadExistingArtistScraperNames(),
+    loadExistingDirectArtistScraperSources()
+  ]);
+  const candidates = selectTourScraperCandidates(artists, existing, limit, directSources);
   process.stdout.write(JSON.stringify(candidates, null, 2) + '\n');
 }
 

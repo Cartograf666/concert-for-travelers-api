@@ -415,3 +415,42 @@ test('Bandsintown - HTTP 200 error objects and HTML cannot erase last-good conce
   assert.equal(health.counts.empty, 1);
   assert.equal(concerts.length, 2);
 });
+
+test('Bandsintown - slash, question mark and asterisk names use the documented double-encoded path without changing artist identity', async (t) => {
+  const artists = ['20/20', 'Yamantaka // Sonic Titan', 'Therapy?', 'Star*Artist', 'Björk & Friends'];
+  const expectedPaths = [
+    '/artists/20%252F20/events',
+    '/artists/Yamantaka%20%252F%252F%20Sonic%20Titan/events',
+    '/artists/Therapy%253F/events',
+    '/artists/Star%252AArtist/events',
+    '/artists/Bj%C3%B6rk%20%26%20Friends/events'
+  ];
+  const paths: string[] = [];
+  const server = createServer((request, response) => {
+    const path = request.url!.split('?')[0];
+    paths.push(path);
+    response.writeHead(200, { 'Content-Type': 'application/json' });
+    // The provider can return a JSON error with HTTP 200 for a misrouted name.
+    response.end(JSON.stringify(expectedPaths.includes(path) ? [] : { errorMessage: 'Artist not found' }));
+  });
+  server.listen(0, '127.0.0.1');
+  await once(server, 'listening');
+  t.after(() => new Promise<void>((resolve, reject) => server.close((error) => error ? reject(error) : resolve())));
+  const address = server.address();
+  assert.ok(address && typeof address !== 'string');
+  const cache: BandsintownCache = {};
+  let health: any;
+  await fetchBandsintownConcerts(artists, {
+    cache,
+    baseUrl: `http://127.0.0.1:${address.port}/artists`,
+    delayMs: 0,
+    now: () => new Date('2026-10-07T12:00:00.000Z'),
+    onHealth: (report) => { health = report; }
+  });
+  assert.deepStrictEqual(paths.sort(), expectedPaths.sort());
+  assert.deepStrictEqual(Object.keys(cache).sort(), artists.sort(), 'retain the exact queried artist names');
+  assert.equal(health.counts.succeeded, artists.length);
+  assert.equal(health.counts.empty, artists.length);
+  assert.equal(health.counts.failed, 0);
+  assert.ok(Object.values(cache).every((entry) => entry.lastOutcome === 'empty' && entry.verifiedAt === '2026-10-07T12:00:00.000Z'));
+});

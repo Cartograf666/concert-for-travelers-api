@@ -11,35 +11,44 @@ each concert in space and time, and (3) **rank** the options.
 
 Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
-## Provider response validation and dashboard corrections — 2026-10-07 (implemented; hosted verification pending)
+## Provider response validation and dashboard corrections — 2026-10-07 (guards merged; final follow-up verification pending)
 
-- Bandsintown and Eventbrite now reject successful HTTP responses whose payload
-  is not the expected event array. Previously an error object, challenge HTML or
-  changed discovery envelope could be converted to a verified empty calendar and
-  erase last-good events. The native empty array still succeeds. This latent
-  defect is reproduced over real local HTTP/axios; occurrence in the current
-  hosted cache is not established, and the fix does not recover missing feeds.
-- The dashboard uses the publisher's canonical city grouping: the current
-  snapshot has 2,871 grouped cities versus 6,696 raw city/country labels. Its
-  ungrouped fallback is explicitly labelled. Verification details explain that
-  unknown ages mean no successful verification timestamp, and Eventbrite's WAF
-  challenge has its specific access action. Source health is not made greener.
-- Local verification: 785 passed / 1 existing skip / 0 failed; build and lint pass
-  (103 existing warnings, no errors). Independent scoped review found no blockers.
-  Ordinary browser rendering, disclosure interaction and 390px responsive view
-  pass on the latest public data. Limits, intervals and identity/network checks
-  are unchanged; all original 415 artist and 152 venue IDs remain configured.
-- Current 188 Bandsintown unavailable targets are native feed-not-found responses;
-  some catalog names need independent identity verification. No artist records
-  were deleted or relabelled. Eventbrite still challenges hosted requests; the
-  documented global search API is deprecated and scoped API access needs known
-  IDs and a token. No replacement access or fresh Eventbrite coverage is claimed.
-- Remaining direct sources were re-triaged using retained native evidence. No new
-  safe source-specific fix was confirmed; a suggested Limahl selector change was
-  rejected because the existing selector already matches the fixture structure.
-  Next: merge this tested change, complete artist and Daily collection, verify
-  Pages output and preserve actual external failures. Prior publication below
-  remains the last verified live snapshot until that completes.
+- PR #229 is merged and CI passes: 785 tests passed, one existing skip, no
+  failures; build/lint pass. Bandsintown and Eventbrite reject malformed event
+  envelopes instead of clearing last-good data or marking them verified empty.
+  The first full artist run [37618684498](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37618684498)
+  confirms the Bandsintown guard caught two real non-array responses and retained
+  their previous cache state. Direct artist checks are 394/415; Baltimore Symphony
+  recovered while Hubert Laws and Paralamas had new access failures. Older source
+  data is retained. This run does not verify the URI follow-up below.
+- Those two Bandsintown failures expose a separate routing bug for slash names.
+  The follow-up applies the provider's documented double encoding for `/`, `?`
+  and `*`, preserving exact artist keys. One paired live request for `20/20`
+  changes HTTP404 to HTTP200 with a native empty array. Question mark and asterisk
+  behavior is verified against the official Swagger and local HTTP transport;
+  no new live feed coverage is claimed for them.
+- Automatic extraction added a second Stephanie Rainey config after collection.
+  The follow-up removes only that newly added duplicate, preserves the original
+  custom source and all original 415 artist/152 venue IDs, and skips exact
+  artist+URL matches already in the root source set. Existing artist-directory
+  filename protection remains in place. Different artists sharing one website
+  remain independently eligible. A broader pair replacement was rejected because
+  it could overwrite existing same-name files after a metadata URL change.
+- The dashboard uses canonical grouped city counts, labels the raw fallback,
+  explains unknown verification ages and shows a specific Eventbrite access
+  action. Desktop, disclosure interaction and 390px rendering pass. Follow-up:
+  60 targeted tests pass, build/scoped lint pass, independent review found no
+  blockers. Provider limits, intervals and network/identity checks are unchanged.
+- The first run still has 180 Bandsintown feed-not-found targets and five
+  Eventbrite WAF failures. One ordinary browser attempt also reached Human
+  Verification without a calendar. Official indexed documentation provides no
+  verified global replacement; direct documentation reads were unavailable.
+  Direct-source re-triage confirmed no additional safe extraction fix. Limahl's
+  suggested selector change was rejected because its existing selector matches.
+- Next: merge the narrow follow-up, run fresh artist and Daily collection, then
+  compare Pages output with its exact producer. The pending interim Daily
+  [37621465286](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37621465286)
+  predates the URI follow-up. Earlier publication below remains historical.
 
 ## Source access corrections — 2026-10-07 (published and verified; source gaps remain)
 
