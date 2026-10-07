@@ -11,29 +11,48 @@ each concert in space and time, and (3) **rank** the options.
 
 Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
-## Source access corrections — 2026-10-07 (implemented; hosted verification pending)
+## Source access corrections — 2026-10-07 (published and verified; source gaps remain)
 
-- Antoha MC now reads the official `https://antoha-mc.ru/concerts` page. The fresh
-  complete page has two upcoming KARO/ART film screenings (October 15 Moscow and
-  October 17 Saint Petersburg), then the native past-events boundary. The repaired
-  collector verifies that structure and returns `empty_schedule` with zero live
-  concerts. Three targeted tests and an independent full-HTML review pass; real
-  stock runner succeeds. Complete hosted collection and publication are pending.
-- Several previous access failures are intermittent: guarded requests now reach
-  Astrid Williamson, Marmalade and Cartagena. Ordinary browser navigation passes
-  NIN's automatic Cloudflare check, but the resulting Live page has no calendar
-  or explicit empty-schedule statement. Iron Maidens still shows Robot Challenge.
-- `komnata-kultury-tour` and `zhenya-trofimov-tour` intentionally share one website.
-  Both remain configured; the website is currently reachable again, and both
-  collectors are being rechecked. Earlier domain failures are historical.
-- Pain For Pleasure's old `/gigs` URL redirects to a GoDaddy sale destination;
-  there is no verified concert calendar there. Parking must not count as a healthy
-  empty source. A canonical replacement has not been verified.
-- Current follow-up evidence is in `docs/source-recovery-20261006.json` under
-  `userCorrections20261007`; the complete publication proof below remains the
-  last verified snapshot until the next hosted cycle finishes.
+- PRs #223 (Antoha MC), #224 (Limahl) and #225 (The Iron Maidens browser
+  transport) are merged. Latest CI passes: **780 tests / 1 skip / 0 failures**,
+  build, lint and selector ratchet; lint has 103 existing warnings and no errors.
+- Complete artist run [37610540555](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37610540555)
+  verifies **395/415**; complete Daily
+  [37612944746](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37612944746) verifies
+  **130/152** and completes Pages deployment. Every original source
+  ID remains present. Public status/index are byte-identical to the producer:
+  **51,921 concerts**, generated `2026-10-07T11:33:04.915Z`.
+- Antoha MC reads the official `/concerts` page. Its only two upcoming rows
+  are explicitly KARO/ART film screenings; the verified result is zero live
+  concerts. The old August 5 row incorrectly projected into 2027 is absent from
+  the new public card. Limahl has a locally verified browser/parser correction
+  for its exact native Upcoming Events empty statement and separate archive;
+  hosted access still fails, so it is not counted as recovered. Outcomes: Antoha
+  `succeeded`, Limahl `failed`.
+- Komnata Kultury and Zhenya Trofimov intentionally use the same website.
+  Both stock collectors independently obtain 24 rows. Latest hosted outcomes:
+  Komnata `failed`, Zhenya
+  `failed`; fresh outcomes are distinct from older cache.
+- The Iron Maidens uses the existing browser renderer with its strict parser
+  unchanged. Ten single-day shows are supported; the multi-day cruise remains
+  excluded. Local browser access is intermittent. Latest hosted outcome:
+  `succeeded`; this does not promise future access.
+  Beijing's unchanged HTTP collector also succeeds in the latest full run,
+  despite the failed local headless diagnostic. Its two full event-title rows
+  fail the existing approved-artist match and publish zero rows; native calendar
+  coverage remains unverified. No invented individual range dates were published.
+- Pain For Pleasure's old domain redirects to GoDaddy sale parking. Shelby
+  Lynne's configured homepage serves unrelated gambling content and `/tour`
+  returns 404. NIN's live page opens after its automatic check but has no
+  verified calendar or explicit empty statement. These are not healthy empty
+  sources; replacements remain unverified.
+- All current failures with URLs, complete source manifests, protected public
+  checks, deployment revision, hashes and branch reconciliation are recorded in
+  `docs/source-recovery-20261006.json` under `userCorrections20261007`.
+  Earlier publication snapshots below remain historical. 415/415 and 152/152
+  have not been achieved; current failures and provider coverage gaps are explicit.
 
-## Calendar and cancellation continuation — 2026-10-07 (published and verified; source gaps remain)
+## Calendar and cancellation continuation — 2026-10-07 (preceding verified publication; superseded above)
 
 - PRs #212/#214/#215/#217/#221 and dependency PRs #209/#210/#211 are merged.
   Automatic PRs #213/#216/#218/#219/#220/#222 are also included: retry settings,
