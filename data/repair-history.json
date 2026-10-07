@@ -26683,5 +26683,61 @@
     "failuresSinceRepair": 0,
     "note": "repair failed: Selector \"eventBlock\" (.containerEvents > div) matched 0 elements.",
     "verification": ""
+  },
+  {
+    "id": "meo-arena-lisbon",
+    "cohort": "venue",
+    "configPath": "scrapers/meo-arena-lisbon.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-07T10:07:27.720Z",
+    "previousConfig": {
+      "id": "meo-arena-lisbon",
+      "domain": "arena.meo.pt",
+      "url": "https://arena.meo.pt/en/full-agenda",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.agendaDestaquesUn",
+        "artist": ".destaquesNome",
+        "date": ".data-abrev",
+        "ticketUrl": ".comprar",
+        "venueNameFallback": "MEO Arena",
+        "cityNameFallback": "Lisbon",
+        "countryNameFallback": "PT",
+        "lat": 38.7684689,
+        "lng": -9.0939002
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (section.agendaDestaques .containerEvents .event-item) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-ray-davies",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-ray-davies.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T10:07:29.667Z",
+    "previousConfig": {
+      "id": "artist-ray-davies",
+      "domain": "www.raydavies.info",
+      "url": "https://www.raydavies.info/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event",
+        "artistNameFallback": "Ray Davies",
+        "date": "div.event-date",
+        "ticketUrl": "a.event-tickets",
+        "venue": "div.event-venue",
+        "city": "div.event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.raydavies.info/live but could not re-select on it",
+    "verification": ""
   }
 ]
