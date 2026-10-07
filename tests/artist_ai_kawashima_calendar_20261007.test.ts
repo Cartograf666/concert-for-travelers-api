@@ -20,6 +20,7 @@ async function context() {
 test('official index/detail agreement yields two future shows with verified municipalities', async () => {
   const { config, fixture, fetch } = await context();
   assert.equal(config.type, 'custom_js');
+  assert.equal(config.skipConditionalRequests, true, 'Detail pages must refresh even when the index is unchanged');
   assert.equal(config.maxRetries, 3);
   assert.equal(config.requestDelayMs, 2000);
   assert.notEqual(config.allowEmpty, true);
@@ -34,6 +35,7 @@ test('official index/detail agreement yields two future shows with verified muni
 test('unknown municipality, conflicting detail date or mismatched official identity rejects the feed', async () => {
   const { config, fixture } = await context();
   const secondUrl = Object.keys(fixture.details)[1];
+  await scrape(config, fixture.indexHtml, '2026-10-07T07:00:00Z', async url => fixture.details[url]);
   for (const detail of [
     fixture.details[secondUrl].replace('太田川駅前 大屋根広場', '未確認会場'),
     fixture.details[secondUrl].replace('2026年10月31日', '2026年11月1日'),

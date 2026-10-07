@@ -9455,7 +9455,8 @@
           "https://www.aeontown.co.jp/yukarigaoka/access/",
           "https://www.tokaikanko.com/play/place/ooyanehiroba/"
         ],
-        "legacyCacheGuard": "Exact canonical MBID/native host/date/prefecture/headline tuples reject two captured wrong rows; corrected cities/venues, other artists/dates/providers remain allowed."
+        "legacyCacheGuard": "Exact canonical MBID/native host/date/prefecture/headline tuples reject two captured wrong rows; corrected cities/venues, other artists/dates/providers remain allowed.",
+        "linkedFreshness": "Conditional cache reuse is disabled so unchanged index HTML/ETag cannot hide updated event-detail pages; existing runner semantics apply."
       },
       "newExternalGaps": {
         "komnata-kultury-tour": "Official domain expired; HTTP registrar parking page, HTTPS connection refused. Official group channel still links the same expired domain.",
