@@ -27003,5 +27003,91 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('div.iron_widget_events:has(> h3.widgettitle:text-is(\"Upcoming Events\")) > ul#post-list.concerts-list > li.nothing-found, div.iron_widget_events:has(> h3.widgettitle:text-is(\"Upcoming Events\")) > ul#post-list.concerts-list > li.event') to be visible\n]",
     "verification": ""
+  },
+  {
+    "id": "artist-ray-davies",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-ray-davies.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T13:34:41.050Z",
+    "previousConfig": {
+      "id": "artist-ray-davies",
+      "domain": "www.raydavies.info",
+      "url": "https://www.raydavies.info/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event",
+        "artistNameFallback": "Ray Davies",
+        "date": "div.event-date",
+        "ticketUrl": "a.event-tickets",
+        "venue": "div.event-venue",
+        "city": "div.event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.raydavies.info/live but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "bimhuis-amsterdam",
+    "cohort": "venue",
+    "configPath": "scrapers/bimhuis-amsterdam.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T13:34:51.882Z",
+    "previousConfig": {
+      "id": "bimhuis-amsterdam",
+      "domain": "bimhuis.nl",
+      "url": "https://www.bimhuis.nl/en/calendar/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.agenda-tile-overview__item",
+        "artist": ".agenda-tile__link h3",
+        "date": "time.agenda-tile__dates",
+        "ticketUrl": "a.agenda-tile__btn",
+        "venueNameFallback": "BIMHUIS",
+        "cityNameFallback": "Amsterdam",
+        "countryNameFallback": "NL",
+        "lat": 52.377926,
+        "lng": 4.914282
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 500]",
+    "verification": ""
+  },
+  {
+    "id": "botanique-brussels",
+    "cohort": "venue",
+    "configPath": "scrapers/botanique-brussels.json",
+    "repairedConfigHash": "b143017fb99558c97b71c8c4f2e44b054f703ae48868579b36c2e1c39599932a",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T13:34:52.816Z",
+    "previousConfig": {
+      "id": "botanique-brussels",
+      "domain": "botanique.be",
+      "url": "https://botanique.be/en/concerts",
+      "type": "static_selectors",
+      "requestDelayMs": 2000,
+      "allowEmpty": false,
+      "selectors": {
+        "eventBlock": "div.node-type-event",
+        "artist": "div.node-type-event__title h2 a span",
+        "date": "div.node-date__wrapper",
+        "venueNameFallback": "Botanique",
+        "cityNameFallback": "Brussels",
+        "countryNameFallback": "BE",
+        "lat": 50.8540268,
+        "lng": 4.3656393
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget",
+    "verification": "PASS (3 events, 10 checks)"
   }
 ]
