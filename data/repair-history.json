@@ -26573,5 +26573,115 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: dates_parse [0/11 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]",
     "verification": ""
+  },
+  {
+    "id": "artist-angel-heart",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-angel-heart.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T09:34:12.886Z",
+    "previousConfig": {
+      "id": "artist-angel-heart",
+      "domain": "www.angelheart.rocks",
+      "url": "https://www.angelheart.rocks/events",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.s2-blog-item",
+        "artistNameFallback": "Angel Heart",
+        "date": ".s2-blog-item__date",
+        "ticketUrl": "a.s2-button",
+        "city": ".s2-blog-item__title",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "UK"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.angelheart.rocks/events but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-bruce-thomas",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-bruce-thomas.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T09:34:20.135Z",
+    "previousConfig": {
+      "id": "artist-bruce-thomas",
+      "domain": "brucethomasmusic.com",
+      "url": "https://brucethomasmusic.com/schedule",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "#calendar tbody .with-events li",
+        "artist": ".event-name",
+        "date": ".calendar-placeholder",
+        "datePattern": "MMM DD",
+        "ticketUrl": ".event_details",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://brucethomasmusic.com/schedule but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-ray-davies",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-ray-davies.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T09:34:31.840Z",
+    "previousConfig": {
+      "id": "artist-ray-davies",
+      "domain": "www.raydavies.info",
+      "url": "https://www.raydavies.info/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event",
+        "artistNameFallback": "Ray Davies",
+        "date": "div.event-date",
+        "ticketUrl": "a.event-tickets",
+        "venue": "div.event-venue",
+        "city": "div.event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.raydavies.info/live but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "meo-arena-lisbon",
+    "cohort": "venue",
+    "configPath": "scrapers/meo-arena-lisbon.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-07T09:34:50.450Z",
+    "previousConfig": {
+      "id": "meo-arena-lisbon",
+      "domain": "arena.meo.pt",
+      "url": "https://arena.meo.pt/en/full-agenda",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.agendaDestaquesUn",
+        "artist": ".destaquesNome",
+        "date": ".data-abrev",
+        "ticketUrl": ".comprar",
+        "venueNameFallback": "MEO Arena",
+        "cityNameFallback": "Lisbon",
+        "countryNameFallback": "PT",
+        "lat": 38.7684689,
+        "lng": -9.0939002
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.containerEvents > div) matched 0 elements.",
+    "verification": ""
   }
 ]
