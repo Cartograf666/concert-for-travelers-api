@@ -26915,5 +26915,62 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.poemsband.com/#poems but could not re-select on it",
     "verification": ""
+  },
+  {
+    "id": "botanique-brussels",
+    "cohort": "venue",
+    "configPath": "scrapers/botanique-brussels.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T12:51:13.674Z",
+    "previousConfig": {
+      "id": "botanique-brussels",
+      "domain": "botanique.be",
+      "url": "https://botanique.be/en/concerts",
+      "type": "static_selectors",
+      "requestDelayMs": 2000,
+      "allowEmpty": false,
+      "selectors": {
+        "eventBlock": "div.node-type-event",
+        "artist": "div.node-type-event__title h2 a span",
+        "date": "div.node-date__wrapper",
+        "venueNameFallback": "Botanique",
+        "cityNameFallback": "Brussels",
+        "countryNameFallback": "BE",
+        "lat": 50.8540268,
+        "lng": 4.3656393
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 500]",
+    "verification": ""
+  },
+  {
+    "id": "artist-painflow",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-painflow.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T12:51:19.663Z",
+    "previousConfig": {
+      "id": "artist-painflow",
+      "domain": "painflow.com",
+      "url": "https://painflow.com/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event_list_widget_content .event-item",
+        "artistNameFallback": "Painflow",
+        "date": ".event-date",
+        "ticketUrl": ".event-button a",
+        "venue": ".event-location .venue",
+        "city": ".event-location .city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://painflow.com/shows but could not re-select on it",
+    "verification": ""
   }
 ]
