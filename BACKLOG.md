@@ -11,55 +11,68 @@ each concert in space and time, and (3) **rank** the options.
 
 Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
-## Calendar and cancellation continuation — 2026-10-07 (implemented; hosted verification pending)
+## Calendar and cancellation continuation — 2026-10-07 (published and verified; source gaps remain)
 
-- Four source repairs: Alabama Symphony's native adult calendar and verified venue
-  cities; Mellencamp's strictly verified native empty calendar; Paralamas native
-  pagination, including the missing 2027-03-06 Montes Claros event; Ray Scott's
-  rendered first-party widget with seven observed concerts and verified Pensacola
-  Beach geography. Ray's profile-count mismatch (eight versus seven actual widget
-  events) remains explicit. Local success is not a hosted/publication claim.
-- Six Twin Atlantic October shows are explicitly cancelled by the promoter.
-  Exact artist/date/place guards remove restored stale rows and preserve Leeds
-  October 16. Ticketmaster native cancelled/postponed statuses are now excluded;
-  offsale and rescheduled events retain their existing behavior.
-- AngelHeart candidate withdrawn: current catalog website/calendar and music
-  metadata belong to different same-name entities. Canonical target is unresolved;
-  no unrelated empty calendar or catalog edit improves the health counter.
-- Dependency PRs #209/#210/#211 are merged. Combined local checks after fresh
-  install: **766 pass / 1 skip / 0 failures**, build and lint pass (103 existing
-  warnings); selector ratchet 126 <= 131; npm audit reports zero vulnerabilities.
-  Independent gpt-6-sol review covered parsing, cancellation scope and pagination.
-- First new hosted attempt 37586548469 verifies 391/415: Alabama and Mellencamp
-  recover, while six old successes fail on current network access. Paralamas'
-  `/evento/` times out before pagination. Follow-up uses the prior hosted-working
-  `/agenda/` route and its observed native second page (nine local events).
-- Ai Kawashima follow-up reads official event details and verified venue cities
-  Sakura/Tokai instead of headlines/prefectures. Two exact old bad cache rows are
-  quarantined independently of fresh fetch success. Local combined follow-up:
-  **771 pass / 1 skip / 0 failures**, build/lint pass; independent review has no
-  P1/P2. New hosted/publication verification remains pending.
-- Two network regressions share an expired official `komnatakultury.ru` domain;
-  the registrar parking page and connection refusal confirm an external gap.
-  Baltimore currently times out with both supported clients; Interface reads an
-  archive, not future coverage. These observations do not justify fake emptiness.
-- First automatic daily 37588828520 is deployed and byte-verified: 129/152
-  venue sources, 51,605 concerts. Ray's seven dates and Alabama's 39 dates are
-  public; six cancelled Twin Atlantic shows are absent, Leeds retained. This is
-  intermediate evidence while the `/agenda/` and Ai geography follow-up awaits
-  full hosted verification.
-- New Iron Maidens / Yugong failures are actual same-origin SGCaptcha access
-  challenges returned as HTTP 200, not observed selector changes. The runner now
-  classifies those captured responses as fetch errors before extraction, healing
-  or empty acceptance. No challenge is followed or bypassed. Local combined
-  suite: **773 pass / 1 skip / 0 failures**, build/lint pass.
-- The original 415 artist and 152 venue IDs remain. Full hosted collection,
-  completed Pages deployment and producer/public artifact comparison are next;
-  the preceding published counts below are historical, not a new projection.
-  Current evidence and rejected candidate are in `docs/source-recovery-20261006.json`
-  under `continuation20261007`.
+- PRs #212/#214/#215/#217 and dependency PRs #209/#210/#211 are merged.
+  Automatic PRs #213/#216/#218/#219/#220 are also included: retry settings,
+  repair history and
+  Giora Feidman's existing supported HTTP client selection. These configuration
+  changes do not by themselves prove source recovery.
+  Full artist run [37596243814](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37596243814)
+  verifies **393/415**; automatic daily
+  [37598893453](https://github.com/Cartograf666/concert-for-travelers-api/actions/runs/37598893453)
+  verifies **127/152** and completes Pages deployment.
+  Every original source ID is preserved; 47 current failures remain.
+- Public status generated `2026-10-07T09:30:51.226Z` and public index are byte-identical
+  to this daily's producer artifact. **51,839 concerts** are published;
+  the health gate is eligible and processing totals balance. The observed net
+  change is +40 versus the pre-continuation
+  51,799; day expiry, provider rotation, cancellations and fresh data all contribute.
+- Alabama Symphony's official adult calendar preserves its 39
+  distinct future date/city tuples, including verified Alabaster, Hoover and
+  Trussville geography, without attributing the ASYO youth concert to the adult
+  orchestra. John Mellencamp succeeds with a strictly verified native empty
+  calendar; populated behavior remains fixture-only.
+- Paralamas pagination is implemented and the isolated hosted diagnostic
+  parsed nine official events, including **2027-03-06 Montes Claros**. The latest
+  complete source run still fails to fetch the site and preserves eight older
+  official rows; **the March 6 public coverage gap remains OPEN**. Both clients
+  intermittently fail, so the unproven Axios switch was withdrawn. Advertised
+  WordPress REST/feed endpoints expose no equivalent calendar event objects.
+  Exact failed pagination URLs and available network codes remain visible.
+- Ray Scott's rendered official widget succeeds and all seven observed dates
+  are published, with Pensacola Beach correctly located. Its native profile
+  advertises eight while the actual widget/feed contains seven; that coverage
+  discrepancy remains explicit.
+- Six promoter-cancelled Twin Atlantic October shows are absent from the public
+  card; Leeds October 16 remains. Exact canonical artist/date/place guards remove
+  restored stale rows. Ticketmaster rejects native cancelled/postponed events
+  while retaining offsale and rescheduled events. Prior The HU, Fizz/Firm,
+  Peter Smith, Train, Pain For Pleasure, Nitsch and Kissin public checks pass.
+- Ai Kawashima publishes both verified native shows in Sakura and Tokai.
+  The two exact old headline/prefecture rows are absent; corrected venue cities
+  survive fallback/cache processing. Linked detail pages refresh on every run.
+- HTTP-200 same-origin SGCaptcha refresh pages are classified as access failures
+  before parsing, LLM healing or empty acceptance. This fixes misleading error
+  classification, while upstream access challenges remain unresolved.
+- AngelHeart candidate was withdrawn: the catalog website/calendar and music
+  metadata belong to different same-name entities. Canonical target remains
+  unresolved; no unrelated empty calendar or catalog edit improves health.
+- Fresh install and latest hosted CI: **773 pass / 1 skip / 0 failures**; build,
+  lint and selector ratchet pass. Lint retains 103 existing warnings; npm audit
+  reports zero vulnerabilities. Independent gpt-6-sol review covered parsing,
+  cancellation scope and pagination. Artist integrity is skipped for this PR
+  because the artist catalog is unchanged.
+- Final regression diagnosis found Sharon Van Etten's official page now embeds
+  an identity-checked Seated tour with an explicit empty event list. A narrow
+  adapter repair is in progress; it is not yet a hosted source success.
+- Current source failures, provider health, producer/public hashes, exact
+  source outcomes and verification limits are in `docs/source-recovery-20261006.json`
+  under `continuation20261007`. 415/415 and 152/152 remain unachieved: blocked
+  access, missing trustworthy current calendars and unresolved identities still
+  require supported upstream data or canonical evidence.
 
-## Remaining-source repair continuation — 2026-10-06 (published; explicit source gaps remain)
+## Remaining-source repair continuation — 2026-10-06 (preceding publication; superseded above)
 
 - All 52 preceding failures were inspected. Seventeen source extractors were adjusted
   in PRs #190, #192, #193 and #195 plus Wix, Jorge and All That Remains follow-ups; Alabama 3, Scotty McCreery and Ellen ten Damme were
