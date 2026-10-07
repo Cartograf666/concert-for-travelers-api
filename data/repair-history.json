@@ -26972,5 +26972,36 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://painflow.com/shows but could not re-select on it",
     "verification": ""
+  },
+  {
+    "id": "artist-limahl",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-limahl.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T13:14:33.705Z",
+    "previousConfig": {
+      "id": "artist-limahl",
+      "domain": "www.limahl.com",
+      "url": "https://www.limahl.com/tour-all-events/",
+      "type": "playwright_render",
+      "renderWaitSelector": "div.iron_widget_events:has(> h3.widgettitle:text-is(\"Upcoming Events\")) > ul#post-list.concerts-list > li.nothing-found, div.iron_widget_events:has(> h3.widgettitle:text-is(\"Upcoming Events\")) > ul#post-list.concerts-list > li.event",
+      "selectors": {
+        "eventBlock": "div.iron_widget_events:has(> h3.widgettitle:contains(\"Upcoming Events\")) > ul#post-list.concerts-list > li.event",
+        "artistNameFallback": "Limahl",
+        "date": ".event-line-wrap > a > .event-line-node:nth-of-type(2)",
+        "ticketUrl": ".event-line-wrap > a@href",
+        "venue": ".event-line-wrap > a > .event-line-node:nth-of-type(4)",
+        "city": ".event-line-wrap > a > .event-line-node:nth-of-type(3)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      },
+      "allowEmpty": true,
+      "emptyScheduleText": "No upcoming events scheduled yet. Stay tuned!"
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('div.iron_widget_events:has(> h3.widgettitle:text-is(\"Upcoming Events\")) > ul#post-list.concerts-list > li.nothing-found, div.iron_widget_events:has(> h3.widgettitle:text-is(\"Upcoming Events\")) > ul#post-list.concerts-list > li.event') to be visible\n]",
+    "verification": ""
   }
 ]
