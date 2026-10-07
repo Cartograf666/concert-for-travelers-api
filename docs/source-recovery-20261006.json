@@ -16174,14 +16174,17 @@
     }
   },
   "providerHealthRepair20261007": {
-    "stage": "implemented_hosted_verification_pending",
+    "stage": "response_guards_merged_followup_ready_final_hosted_verification_pending",
     "baseRevision": "c67a5f4",
     "scope": "Preserve original 415 artist and 152 venue IDs; prevent false empty provider results and correct dashboard metrics; merge and verify production.",
     "changes": [
       "Bandsintown non-array HTTP200 rejection preserving last-good cache and verifiedAt",
       "Eventbrite missing/non-array discovery results rejection preserving last-good cache and verifiedAt",
       "Canonical published city count; explicitly labelled raw fallback",
-      "Unknown verification age explanation; specific Eventbrite access action"
+      "Unknown verification age explanation; specific Eventbrite access action",
+      "Bandsintown documented double encoding for slash, question mark and asterisk; exact artist identity retained",
+      "Tour extractor exact artist+URL duplicate suppression for root sources while preserving existing artist-directory name/filename guard",
+      "Remove only newly generated duplicate artists/artist-stephanie-rainey.json from 9727d93; preserve original root artist-rainey.json and all original cohorts"
     ],
     "checks": {
       "localTests": {
@@ -16219,18 +16222,211 @@
       "rawCityCountryLabels": 6696
     },
     "remaining": [
-      "Current 188 Bandsintown feed-not-found outcomes are not fixed by response validation; questionable target identities remain unverified",
+      "Latest first artist run has 180 Bandsintown feed-not-found outcomes; response validation and URI fix do not establish missing feed or catalog identity recovery",
       "Eventbrite hosted AWS WAF challenge; no verified replacement global discovery route",
       "Direct source failures retain access/DNS/calendar gaps; no further convergent source fix confirmed",
       "Roundhouse retry config from PR228 awaits hosted recheck"
     ],
     "rejectedHypotheses": [
-      "Limahl heading span does not invalidate direct-child UL selector; no change justified"
+      "Limahl heading span does not invalidate direct-child UL selector; no change justified",
+      "Broad artist+URL replacement of artist-directory name guard rejected: changed metadata URLs could overwrite same-name generated files. Original name guard restored."
     ],
     "officialEventbriteSources": [
       "https://www.eventbrite.com/platform/new/api",
       "https://www.eventbrite.com/help/en-us/articles/849962/generate-an-api-key/"
     ],
-    "evidenceDirectory": "/private/tmp/concert-dashboard-repair-20261007"
+    "evidenceDirectory": "/private/tmp/concert-dashboard-repair-20261007",
+    "responseGuardRelease": {
+      "pr": 229,
+      "mergeRevision": "c317d25a4e0c1331456a572adce360f6b728587f",
+      "ciRun": 37618164758,
+      "ci": "success",
+      "artistRun": 37618684498,
+      "artistSucceeded": 394,
+      "artistTargets": 415,
+      "bandsintownSucceeded": 618,
+      "bandsintownAttempted": 800,
+      "bandsintownUnavailable": 180,
+      "bandsintownFailed": 2,
+      "guardObservedInHostedRun": [
+        "Yamantaka // Sonic Titan",
+        "20/20"
+      ],
+      "guardEvidence": "Both non-array responses failed while prior empty cache, fetchedAt and absent verifiedAt were retained; nonempty-cache protection is proven by HTTP regression fixtures.",
+      "interimDailyRun": 37621465286,
+      "publication": "pending"
+    },
+    "followupChecks": {
+      "targetedTests": {
+        "pass": 60,
+        "fail": 0
+      },
+      "build": "pass",
+      "scopedLint": {
+        "errors": 0,
+        "warnings": 4
+      },
+      "independentReview": "no_blockers; independent two-file tests 32/32",
+      "sourceConfigFiles": {
+        "artist": 415,
+        "venue": 152
+      },
+      "bandsintownLivePair": "20/20: single encoding HTTP404 error object; documented double encoding HTTP200 native empty array",
+      "questionMarkAndAsterisk": "primary Swagger contract and real local HTTP/axios only; no live feed recovery claimed",
+      "finalHostedCollection": "pending"
+    },
+    "externalVerificationLimits": {
+      "antigravity": "One bounded invocation stopped at CLI_GUARD_UNVERIFIED before any model attempt; no retry or authentication.",
+      "eventbriteDocs": "Official indexed search excerpts only; direct page reads returned errors or HTTP429. No verified replacement global discovery endpoint.",
+      "eventbriteBrowser": "One ordinary browser search navigation reached Human Verification without an observable calendar; no CAPTCHA interaction.",
+      "enrichmentQueue": "Run37615295359 cancelled after preserving its already committed metadata to unblock artist-db-write publication; incomplete generated subchunk can retry on schedule."
+    },
+    "firstHostedArtistManifest": {
+      "generatedAt": "2026-10-07T12:11:04.580Z",
+      "complete": true,
+      "run": {
+        "id": "37618684498",
+        "attempt": 1,
+        "sha": "c317d25a4e0c1331456a572adce360f6b728587f",
+        "workflow": "Artist Tour-Page Scrape"
+      },
+      "scrapers": {
+        "total": 415,
+        "succeeded": 394,
+        "failed": 21,
+        "changed": 6,
+        "unchanged": 388,
+        "staleIds": []
+      },
+      "failures": [
+        {
+          "id": "artist-adiemus",
+          "configPath": "scrapers/artists/artist-adiemus.json",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        {
+          "id": "artist-amanda-forsyth",
+          "configPath": "scrapers/artists/artist-amanda-forsyth.json",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        {
+          "id": "artist-astrid-williamson",
+          "configPath": "scrapers/artists/artist-astrid-williamson.json",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 401"
+        },
+        {
+          "id": "artist-andy-cairns",
+          "configPath": "scrapers/artists/artist-andy-cairns.json",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        {
+          "id": "artist-hubert-laws",
+          "configPath": "scrapers/artists/artist-hubert-laws.json",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 500"
+        },
+        {
+          "id": "artist-marina-satti",
+          "configPath": "scrapers/artists/artist-marina-satti.json",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 404"
+        },
+        {
+          "id": "artist-marmalade",
+          "configPath": "scrapers/artists/artist-marmalade.json",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 401"
+        },
+        {
+          "id": "artist-avantasia",
+          "configPath": "scrapers/artists/artist-avantasia.json",
+          "reason": "fetch_error",
+          "error": "Scraper exceeded 90s wall-clock timeout"
+        },
+        {
+          "id": "artist-nine-inch-nails",
+          "configPath": "scrapers/artists/artist-nine-inch-nails.json",
+          "reason": "parse_error",
+          "error": "Unmatched selector: =.//p/text()[contains(., ',')][1]"
+        },
+        {
+          "id": "artist-nick-cave-the-bad-seeds",
+          "configPath": "scrapers/artists/artist-nick-cave-the-bad-seeds.json",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        {
+          "id": "artist-limahl",
+          "configPath": "scrapers/artists/artist-limahl.json",
+          "reason": "fetch_error",
+          "error": "page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('div.iron_widget_events:has(> h3.widgettitle:text-is(\"Upcoming Events\")) > ul#post-list.concerts-list > li.nothing-found, div.iron_widget_events:has(> h3.widgettitle:text-is(\"Upcoming Events\")) > ul#post-list.concerts-list > li.event') to be visible\n"
+        },
+        {
+          "id": "artist-pequot",
+          "configPath": "scrapers/artists/artist-pequot.json",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
+        },
+        {
+          "id": "artist-philip-lindholm",
+          "configPath": "scrapers/artists/artist-philip-lindholm.json",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
+        },
+        {
+          "id": "artist-paralamas-do-sucesso",
+          "configPath": "scrapers/artists/artist-paralamas-do-sucesso.json",
+          "reason": "fetch_error",
+          "error": "Timeout awaiting 'request' for 15000ms"
+        },
+        {
+          "id": "artist-shelby-lynne",
+          "configPath": "scrapers/artists/artist-shelby-lynne.json",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 403"
+        },
+        {
+          "id": "artist-robin-thicke",
+          "configPath": "scrapers/artists/artist-robin-thicke.json",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        {
+          "id": "artist-twin-atlantic",
+          "configPath": "scrapers/artists/artist-twin-atlantic.json",
+          "reason": "fetch_error",
+          "error": "Request failed with status code 404"
+        },
+        {
+          "id": "artist-psycho-le-cemu",
+          "configPath": "scrapers/artists/artist-psycho-le-cemu.json",
+          "reason": "selectors_stale",
+          "error": "Parsed 0 concerts. Website layout might have changed."
+        },
+        {
+          "id": "komnata-kultury-tour",
+          "configPath": "scrapers/artists/komnata-kultury-tour.json",
+          "reason": "fetch_error",
+          "error": "getaddrinfo EAI_AGAIN komnatakultury.ru"
+        },
+        {
+          "id": "zhenya-trofimov-tour",
+          "configPath": "scrapers/artists/zhenya-trofimov-tour.json",
+          "reason": "fetch_error",
+          "error": "getaddrinfo EAI_AGAIN komnatakultury.ru"
+        },
+        {
+          "id": "artist-poetry",
+          "configPath": "scrapers/artists/artist-poetry.json",
+          "reason": "fetch_error",
+          "error": "Scraper exceeded 90s wall-clock timeout"
+        }
+      ],
+      "fileSha256": "95b816688c3f987c5a0641d7478b8dd03baa82688f26ea67653d9cb4c642b6e0"
+    }
   }
 }

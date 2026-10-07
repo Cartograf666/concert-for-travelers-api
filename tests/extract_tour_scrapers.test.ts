@@ -1,7 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert';
+import * as fs from 'node:fs/promises';
+import * as os from 'node:os';
+import * as path from 'node:path';
 import {
   buildScraperConfig,
+  loadExistingArtistScraperNames,
+  loadExistingDirectArtistScraperSources,
   fetchTourHtml,
   selectTourScraperCandidates,
   validateStaticSelectorsAgainstHtml,
@@ -22,6 +27,55 @@ test('extract_tour_scrapers - selects only professional or legacy untiered tourU
 
   const selected = selectTourScraperCandidates(artists, new Set(['covered']), 10);
   assert.deepStrictEqual(selected.map((artist) => artist.name), ['Professional', 'Legacy']);
+});
+
+test('extract_tour_scrapers - skips exact direct-cohort duplicates and protects existing artist configs', async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'tour-scraper-sources-'));
+  const artistsDir = path.join(root, 'artists');
+  await fs.mkdir(artistsDir);
+  try {
+    await fs.writeFile(path.join(root, 'artist-rainey.json'), JSON.stringify({
+      url: 'https://stephanierainey.com/tour/',
+      selectors: { artistNameFallback: ' Stephanie Rainey ' }
+    }));
+    await fs.writeFile(path.join(artistsDir, 'artist-existing.json'), JSON.stringify({
+      url: 'https://existing.example/tour', selectors: { artistNameFallback: 'Existing' }
+    }));
+    await fs.writeFile(path.join(root, 'malformed.json'), '{');
+    const existing = await loadExistingArtistScraperNames(artistsDir);
+    const directSources = await loadExistingDirectArtistScraperSources(root);
+    const selected = selectTourScraperCandidates([
+      { name: 'Stephanie Rainey', tourUrl: 'https://stephanierainey.com/tour/' },
+      { name: 'Other Artist', tourUrl: 'https://stephanierainey.com/tour/' },
+      { name: 'Stephanie Rainey', tourUrl: 'https://stephanierainey.com/other-tour/' },
+      { name: 'Existing', tourUrl: 'https://existing.example/tour' },
+      { name: 'Existing', tourUrl: 'https://existing.example/new-tour' }
+    ] as any[], existing, 10, directSources);
+    assert.deepStrictEqual(selected, [
+      { name: 'Other Artist', tourUrl: 'https://stephanierainey.com/tour/' },
+      { name: 'Stephanie Rainey', tourUrl: 'https://stephanierainey.com/other-tour/' }
+    ]);
+  } finally {
+    await fs.rm(root, { recursive: true, force: true });
+  }
+});
+
+test('extract_tour_scrapers - missing root scraper directory does not lose artist sources', async () => {
+  const artistsDir = await fs.mkdtemp(path.join(os.tmpdir(), 'tour-scraper-artists-'));
+  try {
+    await fs.writeFile(path.join(artistsDir, 'artist-existing.json'), JSON.stringify({
+      url: 'https://existing.example/tour', selectors: { artistNameFallback: 'Existing' }
+    }));
+    const existing = await loadExistingArtistScraperNames(artistsDir);
+    const directSources = await loadExistingDirectArtistScraperSources(path.join(artistsDir, 'missing'));
+    assert.strictEqual(directSources.size, 0);
+    assert.deepStrictEqual(selectTourScraperCandidates([
+      { name: 'Existing', tourUrl: 'https://existing.example/tour' },
+      { name: 'New', tourUrl: 'https://new.example/tour' }
+    ] as any[], existing, 10, directSources), [{ name: 'New', tourUrl: 'https://new.example/tour' }]);
+  } finally {
+    await fs.rm(artistsDir, { recursive: true, force: true });
+  }
 });
 
 test('extract_tour_scrapers - builds and validates a static artist scraper config', () => {

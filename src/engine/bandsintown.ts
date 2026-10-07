@@ -225,8 +225,14 @@ export function mapBitEventToConcert(event: BitEvent, queriedArtist: string, scr
 export type BitFetchFn = (artist: string, appId: string, baseUrl: string) => Promise<BitEvent[]>;
 
 const defaultBitFetch: BitFetchFn = async (artist, appId, baseUrl) => {
-  // Bandsintown's path segment: '/' in a name breaks the route, so encode it.
-  const url = `${baseUrl}/${encodeURIComponent(artist)}/events`;
+  // Bandsintown's artist path requires double encoding for /, ? and *:
+  // https://api.swaggerhub.com/apis/Bandsintown/PublicAPI/3.0.0/swagger.yaml
+  // Standard URI encoding alone does not preserve these names for its lookup.
+  const artistPath = encodeURIComponent(artist)
+    .replace(/%2F/g, '%252F')
+    .replace(/%3F/g, '%253F')
+    .replace(/\*/g, '%252A');
+  const url = `${baseUrl}/${artistPath}/events`;
   const res = await axios.get(url, {
     params: { app_id: appId },
     timeout: 15000,
