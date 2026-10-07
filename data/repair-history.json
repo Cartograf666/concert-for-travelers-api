@@ -26182,5 +26182,172 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): connect ECONNREFUSED 194.67.71.99:443; connect ENETUNREACH 2a00:f940:4::10:443 - Local (:::0)]",
     "verification": ""
+  },
+  {
+    "id": "artist-10cc",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-10cc.json",
+    "repairedConfigHash": "1d665b1886d5504b920586ce907cc508a35a62a88d9c62dffc21c0f9d3a04eb1",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T08:34:18.780Z",
+    "previousConfig": {
+      "id": "artist-10cc",
+      "domain": "www.10cc.world",
+      "url": "https://www.10cc.world/events",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "table.table tbody tr.row:not(:has(th))",
+        "artistNameFallback": "10cc",
+        "date": "td.cell:nth-child(1)",
+        "ticketUrl": "td.cell:nth-child(4) a",
+        "venue": "td.cell:nth-child(3)",
+        "city": "td.cell:nth-child(2)",
+        "country": "td.cell:nth-child(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget",
+    "verification": "PASS (42 events, 10 checks)"
+  },
+  {
+    "id": "artist-giora-feidman",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-giora-feidman.json",
+    "repairedConfigHash": "58538e5f53096516ed4f5e743c1626d64211fdba1663b65e25e166043ebca1e5",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-10-07T08:34:19.693Z",
+    "previousConfig": {
+      "id": "artist-giora-feidman",
+      "domain": "www.giorafeidman-online.com",
+      "url": "https://www.giorafeidman-online.com/termine",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": ".listItem",
+        "artistNameFallback": "Giora Feidman",
+        "date": ".itemName",
+        "ticketUrl": "a.biglink",
+        "venue": ".itemText .rteBlock:nth-of-type(3)",
+        "city": ".itemName",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "DE"
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend",
+    "verification": "PASS (61 events, 10 checks)"
+  },
+  {
+    "id": "artist-shelby-lynne",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-shelby-lynne.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-10-07T08:34:20.531Z",
+    "previousConfig": {
+      "id": "artist-shelby-lynne",
+      "domain": "www.shelbylynne.com",
+      "url": "https://www.shelbylynne.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "section.elementor-inner-section[data-id][class*='elementor-element-']",
+        "artistNameFallback": "Shelby Lynne",
+        "date": ".elementor-widget-heading .elementor-heading-title",
+        "ticketUrl": "a.elementor-button-link",
+        "venue": ".elementor-image-box-title",
+        "city": ".elementor-image-box-description",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]",
+    "verification": ""
+  },
+  {
+    "id": "komnata-kultury-tour",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/komnata-kultury-tour.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T08:34:59.568Z",
+    "previousConfig": {
+      "id": "komnata-kultury-tour",
+      "domain": "komnatakultury.ru",
+      "url": "https://komnatakultury.ru",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "custom",
+        "date": "custom",
+        "artistNameFallback": "Комната культуры",
+        "venueNameFallback": "Unknown Venue",
+        "cityNameFallback": "Unknown City",
+        "countryNameFallback": "RU"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): getaddrinfo EAI_AGAIN komnatakultury.ru]",
+    "verification": ""
+  },
+  {
+    "id": "artist-paralamas-do-sucesso",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-paralamas-do-sucesso.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-07T08:34:59.603Z",
+    "previousConfig": {
+      "id": "artist-paralamas-do-sucesso",
+      "domain": "osparalamas.com.br",
+      "url": "https://osparalamas.com.br/agenda/",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "li.event",
+        "artistNameFallback": "Paralamas do Sucesso",
+        "date": ".event-line-node:nth-child(1)",
+        "ticketUrl": "a.event-map-link",
+        "venue": ".event-line-node.medium:nth-child(2)",
+        "city": ".event-line-node.medium:nth-child(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "BR"
+      },
+      "httpClient": "got-scraping",
+      "skipConditionalRequests": true
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper artist-paralamas-do-sucesso is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "zhenya-trofimov-tour",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/zhenya-trofimov-tour.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-07T08:35:35.546Z",
+    "previousConfig": {
+      "id": "zhenya-trofimov-tour",
+      "domain": "komnatakultury.ru",
+      "url": "https://komnatakultury.ru",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "custom",
+        "date": "custom",
+        "artistNameFallback": "Женя Трофимов",
+        "venueNameFallback": "Unknown Venue",
+        "cityNameFallback": "Unknown City",
+        "countryNameFallback": "RU"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): getaddrinfo EAI_AGAIN komnatakultury.ru]",
+    "verification": ""
   }
 ]

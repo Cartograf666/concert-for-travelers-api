@@ -3,6 +3,7 @@
   "domain": "www.giorafeidman-online.com",
   "url": "https://www.giorafeidman-online.com/termine",
   "type": "custom_js",
+  "httpClient": "got-scraping",
   "selectors": {
     "eventBlock": ".listItem",
     "artistNameFallback": "Giora Feidman",
