@@ -2,7 +2,9 @@
   "id": "artist-ray-scott",
   "domain": "www.rayscott.com",
   "url": "https://www.rayscott.com/tour",
-  "type": "static_selectors",
+  "type": "playwright_render",
+  "renderParser": "custom_js",
+  "renderWaitSelector": "rr-bandsintown-widget .bit-event",
   "selectors": {
     "eventBlock": "div.event-item",
     "artistNameFallback": "Ray Scott",

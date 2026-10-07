@@ -62,7 +62,10 @@ interface TmEvent {
   id?: string;
   name?: string;
   url?: string;
-  dates?: { start?: { localDate?: string; localTime?: string; dateTime?: string; dateTBD?: boolean; dateTBA?: boolean } };
+  dates?: {
+    start?: { localDate?: string; localTime?: string; dateTime?: string; dateTBD?: boolean; dateTBA?: boolean };
+    status?: { code?: string };
+  };
   priceRanges?: Array<{ min?: number; max?: number; currency?: string }>;
   _embedded?: {
     venues?: Array<{
@@ -132,6 +135,10 @@ function extractPriceRange(priceRanges: TmEvent['priceRanges']): Concert['priceR
 }
 
 export function mapEventToConcert(event: TmEvent, scrapedAt: string): Partial<Concert> | null {
+  // Discovery API dates.status.code is independent of ticket availability.
+  // Canceled/postponed events no longer take place on the listed date. Offsale
+  // is still valid; rescheduled events carry the provider's replacement date.
+  if (['canceled', 'postponed'].includes(event.dates?.status?.code || '')) return null;
   const venue = event._embedded?.venues?.[0];
   const attractions = event._embedded?.attractions ?? [];
   const attraction = attractions[0];

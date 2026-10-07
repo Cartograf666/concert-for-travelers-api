@@ -2,7 +2,7 @@
   "id": "artist-john-mellencamp",
   "domain": "www.mellencamp.com",
   "url": "https://www.mellencamp.com/tour",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "article.card",
     "artistNameFallback": "John Mellencamp",
@@ -13,5 +13,6 @@
     "venueNameFallback": "",
     "cityNameFallback": "",
     "countryNameFallback": "US"
-  }
+  },
+  "allowEmpty": true
 }

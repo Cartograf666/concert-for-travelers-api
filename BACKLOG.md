@@ -11,6 +11,31 @@ each concert in space and time, and (3) **rank** the options.
 
 Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
+## Calendar and cancellation continuation — 2026-10-07 (implemented; hosted verification pending)
+
+- Four source repairs: Alabama Symphony's native adult calendar and verified venue
+  cities; Mellencamp's strictly verified native empty calendar; Paralamas native
+  pagination, including the missing 2027-03-06 Montes Claros event; Ray Scott's
+  rendered first-party widget with seven observed concerts and verified Pensacola
+  Beach geography. Ray's profile-count mismatch (eight versus seven actual widget
+  events) remains explicit. Local success is not a hosted/publication claim.
+- Six Twin Atlantic October shows are explicitly cancelled by the promoter.
+  Exact artist/date/place guards remove restored stale rows and preserve Leeds
+  October 16. Ticketmaster native cancelled/postponed statuses are now excluded;
+  offsale and rescheduled events retain their existing behavior.
+- AngelHeart candidate withdrawn: current catalog website/calendar and music
+  metadata belong to different same-name entities. Canonical target is unresolved;
+  no unrelated empty calendar or catalog edit improves the health counter.
+- Dependency PRs #209/#210/#211 are merged. Combined local checks after fresh
+  install: **766 pass / 1 skip / 0 failures**, build and lint pass (103 existing
+  warnings); selector ratchet 126 <= 131; npm audit reports zero vulnerabilities.
+  Independent gpt-6-sol review covered parsing, cancellation scope and pagination.
+- The original 415 artist and 152 venue IDs remain. Full hosted collection,
+  completed Pages deployment and producer/public artifact comparison are next;
+  the preceding published counts below are historical, not a new projection.
+  Current evidence and rejected candidate are in `docs/source-recovery-20261006.json`
+  under `continuation20261007`.
+
 ## Remaining-source repair continuation — 2026-10-06 (published; explicit source gaps remain)
 
 - All 52 preceding failures were inspected. Seventeen source extractors were adjusted

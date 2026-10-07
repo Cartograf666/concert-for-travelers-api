@@ -140,6 +140,39 @@ test('Ticketmaster - mapEventToConcert rejects an event missing required fields'
   assert.strictEqual(mapEventToConcert({ name: 'No Date Event', _embedded: { venues: [{ name: 'V', city: { name: 'C' }, country: { countryCode: 'DE' } }] } }, 'now'), null);
 });
 
+test('Ticketmaster - canceled and postponed events are not mapped; offsale and rescheduled events remain', () => {
+  const event = {
+    id: 'cancelled-show', name: 'Twin Atlantic',
+    dates: { start: { localDate: '2026-10-17' }, status: { code: 'canceled' } },
+    _embedded: { venues: [{ name: 'O2 Institute2 Birmingham', city: { name: 'Birmingham' }, country: { countryCode: 'GB' } }] }
+  };
+  assert.equal(mapEventToConcert(event, '2026-10-07T07:00:00Z'), null);
+  assert.equal(mapEventToConcert({ ...event, dates: { ...event.dates, status: { code: 'postponed' } } }, '2026-10-07T07:00:00Z'), null);
+  for (const code of ['onsale', 'offsale', 'rescheduled']) {
+    assert.ok(mapEventToConcert({ ...event, dates: { ...event.dates, status: { code } } }, '2026-10-07T07:00:00Z'));
+  }
+});
+
+test('Ticketmaster - complete fresh sweep replaces old cache without the canceled show', async () => {
+  const event = {
+    id: 'cancelled-show', name: 'Twin Atlantic',
+    dates: { start: { localDate: '2026-10-17' }, status: { code: 'canceled' } },
+    _embedded: { venues: [{ name: 'O2 Institute2 Birmingham', city: { name: 'Birmingham' }, country: { countryCode: 'GB' } }] }
+  };
+  const active = { ...event, id: 'active-show', dates: { start: { localDate: '2026-10-16' }, status: { code: 'onsale' } } };
+  const postponed = { ...event, id: 'postponed-show', dates: { ...event.dates, status: { code: 'postponed' } } };
+  const server = await startMockDiscoveryServer(0, { GB: [[event, postponed, active]] });
+  const address = server.address();
+  assert.ok(address && typeof address !== 'string');
+  const cache: TicketmasterCache = { GB: { fetchedAt: '2026-09-28T00:00:00Z', concerts: [{ artist: 'Old canceled show' }] } };
+  try {
+    const result = await fetchTicketmasterConcerts('test-key', ['GB'], `http://127.0.0.1:${address.port}/events`, cache);
+    assert.deepEqual(result.map(row => row.date), ['2026-10-16']);
+    assert.deepEqual(cache.GB.concerts, result);
+    assert.notEqual(cache.GB.fetchedAt, '2026-09-28T00:00:00Z');
+  } finally { await new Promise<void>(resolve => server.close(() => resolve())); }
+});
+
 test('Ticketmaster - fetchTicketmasterConcerts paginates within a country and stops at totalPages', async () => {
   const PORT = 8341;
   const server = await startMockDiscoveryServer(PORT, {

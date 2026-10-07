@@ -14,7 +14,7 @@ import { scrape as scrapeLadyA } from '../src/engine/custom/artist-lady-antebell
 import { scrape as scrapeRick } from '../src/engine/custom/artist-rick-braun.js';
 import { scrape as scrapeEmancipator } from '../src/engine/custom/artist-emancipator.js';
 import { scrape as scrapeGiora } from '../src/engine/custom/artist-giora-feidman.js';
-import { scrape as scrapeParalamas } from '../src/engine/custom/artist-paralamas-do-sucesso.js';
+import { parseEventRows as parseParalamasEventRows } from '../src/engine/custom/artist-paralamas-do-sucesso.js';
 
 const fixtures = path.join(process.cwd(), 'tests/fixtures/artist-sources-recovery-20261006');
 const scrapedAt = '2026-10-06T12:00:00.000Z';
@@ -204,7 +204,7 @@ test('Giora Feidman rows preserve explicit dates and distinguish LI, CH and DE',
 });
 
 test('Paralamas parses Portuguese dates and excludes cruises without a concert city', async () => {
-  const concerts = await scrapeParalamas(await config('artist-paralamas-do-sucesso'), await fixture('artist-paralamas-do-sucesso'), scrapedAt);
+  const concerts = parseParalamasEventRows(await config('artist-paralamas-do-sucesso'), await fixture('artist-paralamas-do-sucesso'), scrapedAt);
   assert.equal(concerts.length, 8);
   assert.deepEqual([concerts[0].date, concerts[0].venue, concerts[0].city, concerts[0].country],
     ['2026-10-08', 'Auditório do Multicenter Sebrae (SESSÃO EXTRA)', 'São Luís', 'BR']);

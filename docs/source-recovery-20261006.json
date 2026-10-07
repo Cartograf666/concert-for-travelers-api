@@ -9240,5 +9240,123 @@
       }
     }
   },
-  "countsScope": "Historical local classifications of the original 97 failures. Current complete hosted cohort totals are in remainingPass.finalHostedVerification.cohorts."
+  "countsScope": "Historical local classifications of the original 97 failures. Current complete hosted cohort totals are in remainingPass.finalHostedVerification.cohorts.",
+  "continuation20261007": {
+    "state": "implemented_local_checks_passed_hosted_and_publication_pending",
+    "scope": "Four confirmed source repairs, current pagination completeness, and verified concert cancellation handling; original 415/152 denominators preserved.",
+    "baseRevision": "dbf33e3bb369a444375c6fc8ffb0bfae3d37bead",
+    "dependencyPrsMerged": [
+      209,
+      210,
+      211
+    ],
+    "sources": [
+      {
+        "id": "artist-alabama-symphony-orchestra",
+        "cohort": "artist",
+        "change": "Read the current official calendar; exclude explicit youth orchestra events, preserve adult family/education concerts and verified venue cities; unknown venues fail explicitly.",
+        "localResult": {
+          "success": true,
+          "rawEvents": 45,
+          "validEvents": 39,
+          "duplicatesMerged": 6
+        },
+        "primaryUrl": "https://alabamasymphony.org/concert/"
+      },
+      {
+        "id": "artist-john-mellencamp",
+        "cohort": "artist",
+        "change": "Require exact official Tour identity and matching native widget/schema empty state; populated concerts validate performer, date and geography.",
+        "localResult": {
+          "success": true,
+          "reason": "empty_schedule",
+          "events": 0
+        },
+        "primaryUrl": "https://www.mellencamp.com/tour",
+        "limit": "Populated contract is fixture-verified; no future official dates observed."
+      },
+      {
+        "id": "artist-paralamas-do-sucesso",
+        "cohort": "artist",
+        "change": "Follow observed native next-page links on the official event archive, validate canonical identity/order, reject partial page failures, and bypass first-page conditional cache.",
+        "localResult": {
+          "success": true,
+          "events": 9,
+          "restoredEvent": {
+            "date": "2027-03-06",
+            "city": "Montes Claros",
+            "country": "BR"
+          }
+        },
+        "primaryUrl": "https://www.osparalamas.com.br/evento/",
+        "supersedes": "Earlier historical calendar gap is now diagnosed as first-page truncation; the previous hosted/public snapshot still historically missed the event. Current production resolution is pending."
+      },
+      {
+        "id": "artist-ray-scott",
+        "cohort": "venue",
+        "change": "Render the native first-party widget and validate artist 4110, visible rows and structured event identity. Exact Pensacola Beach Yacht Club address establishes Pensacola Beach instead of provider county.",
+        "localResult": {
+          "success": true,
+          "events": 7
+        },
+        "primaryUrl": "https://www.rayscott.com/tour",
+        "cityPrimaryUrl": "https://www.pensacolabeachyachtclub.org/contact",
+        "limit": "Native profile advertises eight while its actual widget/feed contains seven. Only the seven observed events are verified."
+      }
+    ],
+    "cancellations": {
+      "twinAtlantic": {
+        "canonicalMbid": "98a819b7-2634-4987-815b-bc66182dc97f",
+        "cancelledDates": [
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-23",
+          "2026-10-24"
+        ],
+        "preservedDate": "2026-10-16",
+        "scope": "Exact canonical artist/date/city/country/venue combinations, including restored provider caches.",
+        "primaryUrl": "https://www.livenation.co.uk/twin-atlantic-tickets-adp3019",
+        "corroborationUrl": "https://www.ticketmaster.co.uk/twin-atlantic-tickets/artist/1402457"
+      },
+      "ticketmaster": "Exclude native canceled and postponed status; preserve offsale and rescheduled status.",
+      "ticketmasterDocumentation": "https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/"
+    },
+    "rejectedCandidate": {
+      "id": "artist-angel-heart",
+      "state": "candidate_rejected_identity_conflict",
+      "reason": "Catalog website/calendar identify a British cover band while music metadata describe another same-name entity; intended canonical target remains unresolved. Ents24 also subsequently returned HTTP 403. Candidate changes reverted; no empty schedule counted and no catalog edits made."
+    },
+    "checks": {
+      "npmCi": {
+        "passed": true,
+        "vulnerabilities": 0
+      },
+      "build": {
+        "passed": true
+      },
+      "lint": {
+        "passed": true,
+        "errors": 0,
+        "existingWarnings": 103
+      },
+      "tests": {
+        "passed": 766,
+        "failed": 0,
+        "skipped": 1
+      },
+      "selectorRatchet": {
+        "passed": true,
+        "offenders": 126,
+        "baseline": 131
+      },
+      "independentReview": "gpt-6-sol reviewed source parsing, provenance/cancellation guards and pagination; postponed-status finding was fixed and tests rerun. Angel candidate subsequently withdrawn due to new identity conflict."
+    },
+    "remainingLimits": [
+      "Hosted network access and final publication have not yet been checked for this continuation.",
+      "Existing blocked, missing-calendar and unresolved-identity sources remain failures; no denominator reduction or blanket empty status.",
+      "Eventbrite access challenge and partial Bandsintown coverage remain separate provider gaps."
+    ]
+  }
 }
