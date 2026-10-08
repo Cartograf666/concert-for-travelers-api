@@ -1,9 +1,9 @@
 {
-  "digest": "cb3894bf68b71e6b9ad78d351604b861847f9a0e71b8d19d609d2e22eb92700a",
+  "digest": "03cbfb358404ffd998121c0378453abf40e3e143171e930f1dca08749a16f265",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "5cdccdfd89ee2b65742c5fb686ed305e050aacf171f7c5ed8ad86cfae9600a04",
+      "digest": "20943da0ef1c9f33fc22cfd17fc13be11ed15da31882d1b70cb2f6920cf474e6",
       "state": {
         "version": 1,
         "mode": "run",
@@ -6199,12 +6199,943 @@
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Matt Dusk",
+            "website": "http://www.mattdusk.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Matt Minglewood",
+            "website": "http://www.mattminglewood.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Matt Pryor",
+            "website": "http://mattpryormusic.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Max Stalling",
+            "website": "http://www.maxstalling.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "MC Lyte",
+            "website": "http://www.mclytenow.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Megan Hilty",
+            "website": "http://www.meganhiltyonline.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Mehida",
+            "website": "http://www.mehida.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Melissa Errico",
+            "website": "http://www.melissaerrico.com/",
+            "tourUrl": "https://melissaerrico.com/music/concerts/",
+            "pathPattern": "/concerts",
+            "reason": "score=32 (years=2, numericDates=0, months=23, days=0, keywords=17, widget=0)"
+          },
+          {
+            "name": "Men Without Hats",
+            "website": "https://www.safetydance.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Meow Meow",
+            "website": "https://meowmeowrevolution.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Metis",
+            "website": "http://metis-web.jp/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Mic Michaeli",
+            "website": "http://www.europetheband.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Michael W. Smith",
+            "website": "http://michaelwsmith.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Michale Graves",
+            "website": "https://officialmichalegraves.com",
+            "tourUrl": "https://officialmichalegraves.com/tour/",
+            "pathPattern": "/tour",
+            "reason": "score=25.5 (years=3, numericDates=0, months=14, days=1, keywords=14, widget=0)"
+          },
+          {
+            "name": "Mickey Guyton",
+            "website": "http://mickeyguyton.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Mighty Mystic",
+            "website": "http://www.mightymystic.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Mike Keneally",
+            "website": "http://www.keneally.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Milly Quezada",
+            "website": "http://www.millyquezadaonline.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Milo",
+            "website": "http://miloraps.com/",
+            "tourUrl": "https://miloraps.com/shows",
+            "pathPattern": "/shows",
+            "reason": "score=15.5 (years=0, numericDates=6, months=1, days=1, keywords=2, widget=0)"
+          },
+          {
+            "name": "Mindi Abair",
+            "website": "https://www.mindiabair.com",
+            "tourUrl": "https://www.mindiabair.com/tour",
+            "pathPattern": "/tour",
+            "reason": "score=14 (years=4, numericDates=0, months=1, days=0, keywords=5, widget=0)"
+          },
+          {
+            "name": "Miniature Tigers",
+            "website": "http://www.miniaturetigers.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Minnie Driver",
+            "website": "http://www.minniedriver.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Miori Takimoto",
+            "website": "https://mioritakimoto.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Mitsuko Uchida",
+            "website": "http://www.mitsukouchida.com",
+            "tourUrl": "https://mitsukouchida.com/events/",
+            "pathPattern": "/events",
+            "reason": "score=42 (years=5, numericDates=0, months=27, days=0, keywords=13, widget=0)"
+          },
+          {
+            "name": "Mob 47",
+            "website": "http://www.mob47.se",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Mono",
+            "website": "https://www.monoofjapan.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Moonshine Bandits",
+            "website": "http://moonshinebandits.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Moony",
+            "website": "http://www.moony.it/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Mopreme Shakur",
+            "website": "http://www.mopremeshakur.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Mormon Tabernacle Choir",
+            "website": "https://www.thetabernaclechoir.org/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Moss",
+            "website": "http://www.mosstheband.com/",
+            "tourUrl": "https://www.mosstheband.com/tour",
+            "pathPattern": "/tour",
+            "reason": "score=17 (years=3, numericDates=0, months=8, days=0, keywords=3, widget=0)"
+          },
+          {
+            "name": "Musiq Soulchild",
+            "website": "http://www.musiqsoulchild.com/",
+            "tourUrl": "https://musiqsoulchild.com/tour-grid/",
+            "pathPattern": "/tour",
+            "reason": "score=8 (years=0, numericDates=0, months=6, days=0, keywords=2, widget=0)"
+          },
+          {
+            "name": "Muzio Clementi",
+            "website": "http://www.clementisociety.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Unbelievable Truth",
+            "website": "http://www.unbelievable-truth.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Unshine",
+            "website": "http://www.unshine.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Faith Nolan",
+            "website": "https://www.faithnolan.org/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Feed Me",
+            "website": "http://feedme.uk.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Felix Cartal",
+            "website": "http://www.felixcartal.com/",
+            "tourUrl": "https://www.felixcartal.com/tour",
+            "pathPattern": "/tour",
+            "reason": "score=13 (years=0, numericDates=0, months=0, days=0, keywords=9, widget=1)"
+          },
+          {
+            "name": "Field Day",
+            "website": "https://fielddayfestivals.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Final Fantasy",
+            "website": "http://www.owenpalletteternal.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Finger Eleven",
+            "website": "http://www.fingereleven.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Fionn Regan",
+            "website": "http://www.fionnregan.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Firewind",
+            "website": "http://www.firewind.gr/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Fisherman's Friends",
+            "website": "https://portisaacsfishermansfriends.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Flatfoot 56",
+            "website": "https://www.flatfoot56.com/",
+            "tourUrl": "https://www.flatfoot56.com/shows",
+            "pathPattern": "/shows",
+            "reason": "score=23 (years=0, numericDates=0, months=14, days=8, keywords=9, widget=0)"
+          },
+          {
+            "name": "Focus",
+            "website": "http://www.focustheband.com/",
+            "tourUrl": "https://www.focustheband.com/liverpool-semble-serieusement-decide-a-recruter-une-star-de-ligue-1-des-janvier/",
+            "pathPattern": "/live",
+            "reason": "score=13 (years=0, numericDates=3, months=7, days=0, keywords=0, widget=0)"
+          },
+          {
+            "name": "Fountains of Wayne",
+            "website": "http://www.fountainsofwayne.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Frank Foster",
+            "website": "https://frankfostermusic.com",
+            "tourUrl": "https://frankfostermusic.com/tours/",
+            "pathPattern": "/tour",
+            "reason": "score=96 (years=24, numericDates=0, months=35, days=16, keywords=68, widget=0)"
+          },
+          {
+            "name": "Frankie Avalon",
+            "website": "http://www.frankieavalon.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Frazey Ford",
+            "website": "http://frazeyford.com/",
+            "tourUrl": "https://www.frazeyford.com/tour-dates",
+            "pathPattern": "/tour-dates",
+            "reason": "score=176 (years=28, numericDates=0, months=92, days=46, keywords=143, widget=0)"
+          },
+          {
+            "name": "Fred Eaglesmith",
+            "website": "http://www.fredeaglesmith.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Fred Hersch",
+            "website": "https://fredhersch.com",
+            "tourUrl": "https://fredhersch.com/tour/",
+            "pathPattern": "/tour",
+            "reason": "score=17 (years=5, numericDates=0, months=4, days=0, keywords=3, widget=0)"
+          },
+          {
+            "name": "Fred Tackett",
+            "website": "http://www.paulandfred.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Frost",
+            "website": "https://frost.life/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Full Blown Chaos",
+            "website": "http://www.fullblownchaos.net/home.cfm",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Nagi Yanagi",
+            "website": "http://yanaginagi.net/",
+            "tourUrl": "https://yanaginagi.net/live/",
+            "pathPattern": "/live",
+            "reason": "score=43 (years=15, numericDates=0, months=0, days=16, keywords=13, widget=0)"
+          },
+          {
+            "name": "Natacha Atlas",
+            "website": "https://www.natachaatlasofficial.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Ne Obliviscaris",
+            "website": "https://www.neobliviscaris.com.au/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Nellie McKay",
+            "website": "http://www.nelliemckay.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Neon Indian",
+            "website": "http://neonindian.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Neurosis",
+            "website": "http://www.neurosis.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Nevermore",
+            "website": "http://www.nevermore.tv",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Nick Moss",
+            "website": "http://www.nickmoss.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Nicole Atkins",
+            "website": "https://www.nicoleatkins.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Night Moves",
+            "website": "http://nightmovesmpls.com/",
+            "tourUrl": "https://nightmovesmpls.com/tour",
+            "pathPattern": "/tour",
+            "reason": "score=13 (years=0, numericDates=0, months=8, days=0, keywords=7, widget=0)"
+          },
+          {
+            "name": "Nikita",
+            "website": "http://nikita.fm/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Nine Below Zero",
+            "website": "http://www.ninebelowzero.com/",
+            "tourUrl": "https://www.ninebelowzero.com/tour",
+            "pathPattern": "/tour",
+            "reason": "score=62 (years=1, numericDates=0, months=55, days=0, keywords=47, widget=0)"
+          },
+          {
+            "name": "Nine Pound Hammer",
+            "website": "http://www.ninepoundhammer.net/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Nizlopi",
+            "website": "http://www.nizlopi.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Noah Gundersen",
+            "website": "http://noahgundersenmusic.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Noel Paul Stookey",
+            "website": "http://www.noelpaulstookey.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Nora O'Connor",
+            "website": "http://www.noraoconnor.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Vampires Everywhere!",
+            "website": "http://www.vampireseverywhere.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Vandenberg",
+            "website": "https://vandenbergband.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Vigilante",
+            "website": "http://www.vigilante.cn/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Vincent Vallières",
+            "website": "http://www.vincentvallieres.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Viva",
+            "website": "http://www.tankfilthhounds.net/viva/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Gaelic Storm",
+            "website": "http://www.gaelicstorm.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Garaj Mahal",
+            "website": "https://www.garajmahal.us/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Gary Hoey",
+            "website": "http://www.garyhoey.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Gatsbys American Dream",
+            "website": "http://www.gatsbysamerican.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Geoff Keezer",
+            "website": "https://geoffreykeezer.com",
+            "tourUrl": "https://geoffreykeezer.com/tour/",
+            "pathPattern": "/tour",
+            "reason": "score=13 (years=0, numericDates=0, months=0, days=0, keywords=6, widget=1)"
+          },
+          {
+            "name": "George Porter, Jr.",
+            "website": "http://www.georgeporterjr.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Gil Shohat",
+            "website": "http://gilshohat.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Ginuwine",
+            "website": "http://www.ginuwine.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Girlschool",
+            "website": "http://www.girlschoolband.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Gizz Butt",
+            "website": "http://www.gizzbutt.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Glassjaw",
+            "website": "https://www.glassjaw.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Glasvegas",
+            "website": "http://glasvegas.net/",
+            "tourUrl": "https://www.glasvegas.net/live",
+            "pathPattern": "/live",
+            "reason": "score=10.5 (years=2, numericDates=0, months=1, days=1, keywords=5, widget=0)"
+          },
+          {
+            "name": "Glen Phillips",
+            "website": "http://www.glenphillips.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Glenn Miller Orchestra",
+            "website": "http://glennmillerorchestra.com/",
+            "tourUrl": "https://glennmillerorchestra.com/tour-schedule/",
+            "pathPattern": "/tour",
+            "reason": "score=405 (years=85, numericDates=76, months=78, days=0, keywords=27, widget=0)"
+          },
+          {
+            "name": "Gloria Estefan",
+            "website": "http://www.gloriaestefan.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Glykeria",
+            "website": "http://www.glykeria.net",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Goat",
+            "website": "https://goat.band/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "God Street Wine",
+            "website": "http://godstreetwine.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Goldfinger",
+            "website": "https://goldfinger.band/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Goldie",
+            "website": "http://www.goldie.co.uk/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Grace Kelly",
+            "website": "http://www.gracekellymusic.com/",
+            "tourUrl": "https://www.gracekellymusic.com/pages/tour",
+            "pathPattern": "/tour",
+            "reason": "score=15 (years=1, numericDates=0, months=0, days=0, keywords=8, widget=1)"
+          },
+          {
+            "name": "Graham Coxon",
+            "website": "http://www.grahamcoxon.co.uk",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Graveland",
+            "website": "http://www.graveland.org/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Green Jellÿ",
+            "website": "http://www.greenjellosuxx.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Greg Howe",
+            "website": "http://www.greghowe.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Gregg Allman",
+            "website": "https://greggallman.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Gregorian",
+            "website": "https://www.gregorian.de/",
+            "tourUrl": "https://www.gregorian.de/dates/",
+            "pathPattern": "/dates",
+            "reason": "score=173 (years=55, numericDates=2, months=53, days=2, keywords=94, widget=0)"
+          },
+          {
+            "name": "Griffin House",
+            "website": "http://griffinhousemusic.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Gwen Stefani",
+            "website": "https://gwenstefani.com",
+            "tourUrl": "https://www.gwenstefani.com/events/",
+            "pathPattern": "/events",
+            "reason": "score=8 (years=1, numericDates=0, months=3, days=0, keywords=3, widget=0)"
+          },
+          {
+            "name": "Ogie Alcasid",
+            "website": "http://www.ogiealcasid.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Olly Murs",
+            "website": "https://www.ollymurs.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "One Night Only",
+            "website": "https://www.onenightonlyonline.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Ooklah The Moc",
+            "website": "http://www.myspace.com/ooklahstylee",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Orphaned Land",
+            "website": "https://orphaned-land.com/",
+            "tourUrl": "https://orphaned-land.com/tour/",
+            "pathPattern": "/tour",
+            "reason": "score=17 (years=0, numericDates=0, months=4, days=0, keywords=6, widget=1)"
+          },
+          {
+            "name": "Osibisa",
+            "website": "http://www.osibisa.co.uk/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Over It",
+            "website": "http://www.overitmusic.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Waka Flocka Flame",
+            "website": "https://www.wakaflocka.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Wale",
+            "website": "http://www.walemusic.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Wallace Roney",
+            "website": "http://www.wallaceroney.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Walter Beasley",
+            "website": "http://www.walterbeasley.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Wang Leehom",
+            "website": "https://www.wangleehom.com/",
+            "tourUrl": "https://wangleehom.com/tour/",
+            "pathPattern": "/tour",
+            "reason": "score=11 (years=2, numericDates=0, months=2, days=0, keywords=20, widget=0)"
+          },
+          {
+            "name": "Warren G",
+            "website": "http://warreng.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Washed Out",
+            "website": "http://washedout.net/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "We Came As Romans",
+            "website": "https://iamdarkbloom.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Wig Wam",
+            "website": "https://www.wigwamofficial.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Will Downing",
+            "website": "http://www.willdowning.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "William Elliott Whitmore",
+            "website": "http://www.williamelliottwhitmore.com/",
+            "tourUrl": "https://www.williamelliottwhitmore.com/tour",
+            "pathPattern": "/tour",
+            "reason": "score=17.5 (years=2, numericDates=0, months=0, days=17, keywords=6, widget=0)"
+          },
+          {
+            "name": "Willy Porter",
+            "website": "http://www.willyporter.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Wilma Landkroon",
+            "website": "http://www.wlandkroon.nl",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Withered",
+            "website": "http://www.withered.net",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Wormrot",
+            "website": "http://www.myspace.com/wormrotgrind",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Wyclef Jean",
+            "website": "https://www.wyclef.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Myles Kennedy",
+            "website": "https://myleskennedy.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Wolf Eyes",
+            "website": "http://www.wolfeyes.net/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Jerry Cantrell",
+            "website": "https://jerrycantrell.com",
+            "tourUrl": "https://jerrycantrell.com/tour",
+            "pathPattern": "/tour",
+            "reason": "score=12 (years=0, numericDates=0, months=0, days=0, keywords=4, widget=1)"
+          },
+          {
+            "name": "Reason to Believe",
+            "website": "https://reasons.org/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
           }
         ],
         "skipped": [],
-        "applied": 460,
+        "applied": 593,
         "pending": null,
-        "complete": false
+        "complete": true
       }
     },
     "rows": [
@@ -8507,6 +9438,671 @@
         "index": 459,
         "tourUrl": null,
         "triedAt": "2026-10-07T11:13:59.580Z"
+      },
+      {
+        "index": 460,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:09:19.526Z"
+      },
+      {
+        "index": 461,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:09:19.542Z"
+      },
+      {
+        "index": 462,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:09:19.557Z"
+      },
+      {
+        "index": 463,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:09:19.572Z"
+      },
+      {
+        "index": 464,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:09:19.590Z"
+      },
+      {
+        "index": 465,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:09:19.606Z"
+      },
+      {
+        "index": 466,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:09:19.621Z"
+      },
+      {
+        "index": 467,
+        "tourUrl": "https://melissaerrico.com/music/concerts/",
+        "triedAt": "2026-10-08T11:09:19.636Z"
+      },
+      {
+        "index": 468,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:09:19.653Z"
+      },
+      {
+        "index": 469,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:09:19.668Z"
+      },
+      {
+        "index": 470,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:09:41.119Z"
+      },
+      {
+        "index": 471,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:09:41.139Z"
+      },
+      {
+        "index": 472,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:09:41.155Z"
+      },
+      {
+        "index": 473,
+        "tourUrl": "https://officialmichalegraves.com/tour/",
+        "triedAt": "2026-10-08T11:09:41.171Z"
+      },
+      {
+        "index": 474,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:09:41.188Z"
+      },
+      {
+        "index": 475,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:09:41.203Z"
+      },
+      {
+        "index": 476,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:09:41.219Z"
+      },
+      {
+        "index": 477,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:09:41.234Z"
+      },
+      {
+        "index": 478,
+        "tourUrl": "https://miloraps.com/shows",
+        "triedAt": "2026-10-08T11:09:41.250Z"
+      },
+      {
+        "index": 479,
+        "tourUrl": "https://www.mindiabair.com/tour",
+        "triedAt": "2026-10-08T11:09:41.266Z"
+      },
+      {
+        "index": 480,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:10:03.809Z"
+      },
+      {
+        "index": 481,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:10:03.824Z"
+      },
+      {
+        "index": 482,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:10:03.840Z"
+      },
+      {
+        "index": 483,
+        "tourUrl": "https://mitsukouchida.com/events/",
+        "triedAt": "2026-10-08T11:10:03.855Z"
+      },
+      {
+        "index": 484,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:10:03.872Z"
+      },
+      {
+        "index": 485,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:10:03.887Z"
+      },
+      {
+        "index": 486,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:10:03.903Z"
+      },
+      {
+        "index": 487,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:10:03.918Z"
+      },
+      {
+        "index": 488,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:10:03.935Z"
+      },
+      {
+        "index": 489,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:10:03.951Z"
+      },
+      {
+        "index": 490,
+        "tourUrl": "https://www.mosstheband.com/tour",
+        "triedAt": "2026-10-08T11:10:27.160Z"
+      },
+      {
+        "index": 491,
+        "tourUrl": "https://musiqsoulchild.com/tour-grid/",
+        "triedAt": "2026-10-08T11:10:27.180Z"
+      },
+      {
+        "index": 492,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:10:27.195Z"
+      },
+      {
+        "index": 493,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:10:27.210Z"
+      },
+      {
+        "index": 494,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:10:27.227Z"
+      },
+      {
+        "index": 495,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:10:27.242Z"
+      },
+      {
+        "index": 496,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:10:27.256Z"
+      },
+      {
+        "index": 497,
+        "tourUrl": "https://www.felixcartal.com/tour",
+        "triedAt": "2026-10-08T11:10:27.271Z"
+      },
+      {
+        "index": 498,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:10:27.286Z"
+      },
+      {
+        "index": 499,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:10:27.300Z"
+      },
+      {
+        "index": 500,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:10:55.017Z"
+      },
+      {
+        "index": 501,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:10:55.033Z"
+      },
+      {
+        "index": 502,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:10:55.048Z"
+      },
+      {
+        "index": 503,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:10:55.063Z"
+      },
+      {
+        "index": 504,
+        "tourUrl": "https://www.flatfoot56.com/shows",
+        "triedAt": "2026-10-08T11:10:55.081Z"
+      },
+      {
+        "index": 505,
+        "tourUrl": "https://www.focustheband.com/liverpool-semble-serieusement-decide-a-recruter-une-star-de-ligue-1-des-janvier/",
+        "triedAt": "2026-10-08T11:10:55.096Z"
+      },
+      {
+        "index": 506,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:10:55.112Z"
+      },
+      {
+        "index": 507,
+        "tourUrl": "https://frankfostermusic.com/tours/",
+        "triedAt": "2026-10-08T11:10:55.128Z"
+      },
+      {
+        "index": 508,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:10:55.144Z"
+      },
+      {
+        "index": 509,
+        "tourUrl": "https://www.frazeyford.com/tour-dates",
+        "triedAt": "2026-10-08T11:10:55.159Z"
+      },
+      {
+        "index": 510,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:12:01.714Z"
+      },
+      {
+        "index": 511,
+        "tourUrl": "https://fredhersch.com/tour/",
+        "triedAt": "2026-10-08T11:12:01.729Z"
+      },
+      {
+        "index": 512,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:12:01.744Z"
+      },
+      {
+        "index": 513,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:12:01.759Z"
+      },
+      {
+        "index": 514,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:12:01.776Z"
+      },
+      {
+        "index": 515,
+        "tourUrl": "https://yanaginagi.net/live/",
+        "triedAt": "2026-10-08T11:12:01.791Z"
+      },
+      {
+        "index": 516,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:12:01.807Z"
+      },
+      {
+        "index": 517,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:12:01.822Z"
+      },
+      {
+        "index": 518,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:12:01.839Z"
+      },
+      {
+        "index": 519,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:12:01.855Z"
+      },
+      {
+        "index": 520,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:13:47.358Z"
+      },
+      {
+        "index": 521,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:13:47.378Z"
+      },
+      {
+        "index": 522,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:13:47.393Z"
+      },
+      {
+        "index": 523,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:13:47.408Z"
+      },
+      {
+        "index": 524,
+        "tourUrl": "https://nightmovesmpls.com/tour",
+        "triedAt": "2026-10-08T11:13:47.426Z"
+      },
+      {
+        "index": 525,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:13:47.441Z"
+      },
+      {
+        "index": 526,
+        "tourUrl": "https://www.ninebelowzero.com/tour",
+        "triedAt": "2026-10-08T11:13:47.456Z"
+      },
+      {
+        "index": 527,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:13:47.472Z"
+      },
+      {
+        "index": 528,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:13:47.488Z"
+      },
+      {
+        "index": 529,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:13:47.503Z"
+      },
+      {
+        "index": 530,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:14:11.888Z"
+      },
+      {
+        "index": 531,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:14:11.903Z"
+      },
+      {
+        "index": 532,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:14:11.919Z"
+      },
+      {
+        "index": 533,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:14:11.935Z"
+      },
+      {
+        "index": 534,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:14:11.950Z"
+      },
+      {
+        "index": 535,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:14:11.964Z"
+      },
+      {
+        "index": 536,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:14:11.978Z"
+      },
+      {
+        "index": 537,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:14:11.993Z"
+      },
+      {
+        "index": 538,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:14:12.007Z"
+      },
+      {
+        "index": 539,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:14:12.021Z"
+      },
+      {
+        "index": 540,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:14:45.092Z"
+      },
+      {
+        "index": 541,
+        "tourUrl": "https://geoffreykeezer.com/tour/",
+        "triedAt": "2026-10-08T11:14:45.111Z"
+      },
+      {
+        "index": 542,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:14:45.127Z"
+      },
+      {
+        "index": 543,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:14:45.142Z"
+      },
+      {
+        "index": 544,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:14:45.158Z"
+      },
+      {
+        "index": 545,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:14:45.174Z"
+      },
+      {
+        "index": 546,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:14:45.190Z"
+      },
+      {
+        "index": 547,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:14:45.206Z"
+      },
+      {
+        "index": 548,
+        "tourUrl": "https://www.glasvegas.net/live",
+        "triedAt": "2026-10-08T11:14:45.222Z"
+      },
+      {
+        "index": 549,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:14:45.238Z"
+      },
+      {
+        "index": 550,
+        "tourUrl": "https://glennmillerorchestra.com/tour-schedule/",
+        "triedAt": "2026-10-08T11:15:16.306Z"
+      },
+      {
+        "index": 551,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:15:16.321Z"
+      },
+      {
+        "index": 552,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:15:16.336Z"
+      },
+      {
+        "index": 553,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:15:16.351Z"
+      },
+      {
+        "index": 554,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:15:16.369Z"
+      },
+      {
+        "index": 555,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:15:16.384Z"
+      },
+      {
+        "index": 556,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:15:16.398Z"
+      },
+      {
+        "index": 557,
+        "tourUrl": "https://www.gracekellymusic.com/pages/tour",
+        "triedAt": "2026-10-08T11:15:16.413Z"
+      },
+      {
+        "index": 558,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:15:16.429Z"
+      },
+      {
+        "index": 559,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:15:16.444Z"
+      },
+      {
+        "index": 560,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:16:10.710Z"
+      },
+      {
+        "index": 561,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:16:10.725Z"
+      },
+      {
+        "index": 562,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:16:10.740Z"
+      },
+      {
+        "index": 563,
+        "tourUrl": "https://www.gregorian.de/dates/",
+        "triedAt": "2026-10-08T11:16:10.755Z"
+      },
+      {
+        "index": 564,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:16:10.773Z"
+      },
+      {
+        "index": 565,
+        "tourUrl": "https://www.gwenstefani.com/events/",
+        "triedAt": "2026-10-08T11:16:10.789Z"
+      },
+      {
+        "index": 566,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:16:10.804Z"
+      },
+      {
+        "index": 567,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:16:10.819Z"
+      },
+      {
+        "index": 568,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:16:10.835Z"
+      },
+      {
+        "index": 569,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:16:10.851Z"
+      },
+      {
+        "index": 570,
+        "tourUrl": "https://orphaned-land.com/tour/",
+        "triedAt": "2026-10-08T11:16:44.702Z"
+      },
+      {
+        "index": 571,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:16:44.717Z"
+      },
+      {
+        "index": 572,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:16:44.732Z"
+      },
+      {
+        "index": 573,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:16:44.748Z"
+      },
+      {
+        "index": 574,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:16:44.766Z"
+      },
+      {
+        "index": 575,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:16:44.781Z"
+      },
+      {
+        "index": 576,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:16:44.797Z"
+      },
+      {
+        "index": 577,
+        "tourUrl": "https://wangleehom.com/tour/",
+        "triedAt": "2026-10-08T11:16:44.812Z"
+      },
+      {
+        "index": 578,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:16:44.829Z"
+      },
+      {
+        "index": 579,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:16:44.844Z"
+      },
+      {
+        "index": 580,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:17:22.523Z"
+      },
+      {
+        "index": 581,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:17:22.537Z"
+      },
+      {
+        "index": 582,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:17:22.552Z"
+      },
+      {
+        "index": 583,
+        "tourUrl": "https://www.williamelliottwhitmore.com/tour",
+        "triedAt": "2026-10-08T11:17:22.570Z"
+      },
+      {
+        "index": 584,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:17:22.586Z"
+      },
+      {
+        "index": 585,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:17:22.601Z"
+      },
+      {
+        "index": 586,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:17:22.616Z"
+      },
+      {
+        "index": 587,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:17:22.631Z"
+      },
+      {
+        "index": 588,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:17:22.647Z"
+      },
+      {
+        "index": 589,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:17:22.663Z"
+      },
+      {
+        "index": 590,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:17:29.326Z"
+      },
+      {
+        "index": 591,
+        "tourUrl": "https://jerrycantrell.com/tour",
+        "triedAt": "2026-10-08T11:17:29.340Z"
+      },
+      {
+        "index": 592,
+        "tourUrl": null,
+        "triedAt": "2026-10-08T11:17:29.355Z"
       }
     ],
     "audit": [
@@ -9319,6 +10915,240 @@
         "reason": "score=89.5 (years=24, numericDates=0, months=24, days=25, keywords=37, widget=0)",
         "appliedAt": "2026-10-07T11:13:59.567Z",
         "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:457"
+      },
+      {
+        "artist": "Melissa Errico",
+        "website": "http://www.melissaerrico.com/",
+        "tourUrl": "https://melissaerrico.com/music/concerts/",
+        "pathPattern": "/concerts",
+        "reason": "score=32 (years=2, numericDates=0, months=23, days=0, keywords=17, widget=0)",
+        "appliedAt": "2026-10-08T11:09:19.636Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:467"
+      },
+      {
+        "artist": "Michale Graves",
+        "website": "https://officialmichalegraves.com",
+        "tourUrl": "https://officialmichalegraves.com/tour/",
+        "pathPattern": "/tour",
+        "reason": "score=25.5 (years=3, numericDates=0, months=14, days=1, keywords=14, widget=0)",
+        "appliedAt": "2026-10-08T11:09:41.171Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:473"
+      },
+      {
+        "artist": "Milo",
+        "website": "http://miloraps.com/",
+        "tourUrl": "https://miloraps.com/shows",
+        "pathPattern": "/shows",
+        "reason": "score=15.5 (years=0, numericDates=6, months=1, days=1, keywords=2, widget=0)",
+        "appliedAt": "2026-10-08T11:09:41.250Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:478"
+      },
+      {
+        "artist": "Mindi Abair",
+        "website": "https://www.mindiabair.com",
+        "tourUrl": "https://www.mindiabair.com/tour",
+        "pathPattern": "/tour",
+        "reason": "score=14 (years=4, numericDates=0, months=1, days=0, keywords=5, widget=0)",
+        "appliedAt": "2026-10-08T11:09:41.266Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:479"
+      },
+      {
+        "artist": "Mitsuko Uchida",
+        "website": "http://www.mitsukouchida.com",
+        "tourUrl": "https://mitsukouchida.com/events/",
+        "pathPattern": "/events",
+        "reason": "score=42 (years=5, numericDates=0, months=27, days=0, keywords=13, widget=0)",
+        "appliedAt": "2026-10-08T11:10:03.855Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:483"
+      },
+      {
+        "artist": "Moss",
+        "website": "http://www.mosstheband.com/",
+        "tourUrl": "https://www.mosstheband.com/tour",
+        "pathPattern": "/tour",
+        "reason": "score=17 (years=3, numericDates=0, months=8, days=0, keywords=3, widget=0)",
+        "appliedAt": "2026-10-08T11:10:27.160Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:490"
+      },
+      {
+        "artist": "Musiq Soulchild",
+        "website": "http://www.musiqsoulchild.com/",
+        "tourUrl": "https://musiqsoulchild.com/tour-grid/",
+        "pathPattern": "/tour",
+        "reason": "score=8 (years=0, numericDates=0, months=6, days=0, keywords=2, widget=0)",
+        "appliedAt": "2026-10-08T11:10:27.180Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:491"
+      },
+      {
+        "artist": "Felix Cartal",
+        "website": "http://www.felixcartal.com/",
+        "tourUrl": "https://www.felixcartal.com/tour",
+        "pathPattern": "/tour",
+        "reason": "score=13 (years=0, numericDates=0, months=0, days=0, keywords=9, widget=1)",
+        "appliedAt": "2026-10-08T11:10:27.271Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:497"
+      },
+      {
+        "artist": "Flatfoot 56",
+        "website": "https://www.flatfoot56.com/",
+        "tourUrl": "https://www.flatfoot56.com/shows",
+        "pathPattern": "/shows",
+        "reason": "score=23 (years=0, numericDates=0, months=14, days=8, keywords=9, widget=0)",
+        "appliedAt": "2026-10-08T11:10:55.081Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:504"
+      },
+      {
+        "artist": "Focus",
+        "website": "http://www.focustheband.com/",
+        "tourUrl": "https://www.focustheband.com/liverpool-semble-serieusement-decide-a-recruter-une-star-de-ligue-1-des-janvier/",
+        "pathPattern": "/live",
+        "reason": "score=13 (years=0, numericDates=3, months=7, days=0, keywords=0, widget=0)",
+        "appliedAt": "2026-10-08T11:10:55.096Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:505"
+      },
+      {
+        "artist": "Frank Foster",
+        "website": "https://frankfostermusic.com",
+        "tourUrl": "https://frankfostermusic.com/tours/",
+        "pathPattern": "/tour",
+        "reason": "score=96 (years=24, numericDates=0, months=35, days=16, keywords=68, widget=0)",
+        "appliedAt": "2026-10-08T11:10:55.128Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:507"
+      },
+      {
+        "artist": "Frazey Ford",
+        "website": "http://frazeyford.com/",
+        "tourUrl": "https://www.frazeyford.com/tour-dates",
+        "pathPattern": "/tour-dates",
+        "reason": "score=176 (years=28, numericDates=0, months=92, days=46, keywords=143, widget=0)",
+        "appliedAt": "2026-10-08T11:10:55.159Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:509"
+      },
+      {
+        "artist": "Fred Hersch",
+        "website": "https://fredhersch.com",
+        "tourUrl": "https://fredhersch.com/tour/",
+        "pathPattern": "/tour",
+        "reason": "score=17 (years=5, numericDates=0, months=4, days=0, keywords=3, widget=0)",
+        "appliedAt": "2026-10-08T11:12:01.729Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:511"
+      },
+      {
+        "artist": "Nagi Yanagi",
+        "website": "http://yanaginagi.net/",
+        "tourUrl": "https://yanaginagi.net/live/",
+        "pathPattern": "/live",
+        "reason": "score=43 (years=15, numericDates=0, months=0, days=16, keywords=13, widget=0)",
+        "appliedAt": "2026-10-08T11:12:01.791Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:515"
+      },
+      {
+        "artist": "Night Moves",
+        "website": "http://nightmovesmpls.com/",
+        "tourUrl": "https://nightmovesmpls.com/tour",
+        "pathPattern": "/tour",
+        "reason": "score=13 (years=0, numericDates=0, months=8, days=0, keywords=7, widget=0)",
+        "appliedAt": "2026-10-08T11:13:47.426Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:524"
+      },
+      {
+        "artist": "Nine Below Zero",
+        "website": "http://www.ninebelowzero.com/",
+        "tourUrl": "https://www.ninebelowzero.com/tour",
+        "pathPattern": "/tour",
+        "reason": "score=62 (years=1, numericDates=0, months=55, days=0, keywords=47, widget=0)",
+        "appliedAt": "2026-10-08T11:13:47.456Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:526"
+      },
+      {
+        "artist": "Geoff Keezer",
+        "website": "https://geoffreykeezer.com",
+        "tourUrl": "https://geoffreykeezer.com/tour/",
+        "pathPattern": "/tour",
+        "reason": "score=13 (years=0, numericDates=0, months=0, days=0, keywords=6, widget=1)",
+        "appliedAt": "2026-10-08T11:14:45.111Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:541"
+      },
+      {
+        "artist": "Glasvegas",
+        "website": "http://glasvegas.net/",
+        "tourUrl": "https://www.glasvegas.net/live",
+        "pathPattern": "/live",
+        "reason": "score=10.5 (years=2, numericDates=0, months=1, days=1, keywords=5, widget=0)",
+        "appliedAt": "2026-10-08T11:14:45.222Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:548"
+      },
+      {
+        "artist": "Glenn Miller Orchestra",
+        "website": "http://glennmillerorchestra.com/",
+        "tourUrl": "https://glennmillerorchestra.com/tour-schedule/",
+        "pathPattern": "/tour",
+        "reason": "score=405 (years=85, numericDates=76, months=78, days=0, keywords=27, widget=0)",
+        "appliedAt": "2026-10-08T11:15:16.306Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:550"
+      },
+      {
+        "artist": "Grace Kelly",
+        "website": "http://www.gracekellymusic.com/",
+        "tourUrl": "https://www.gracekellymusic.com/pages/tour",
+        "pathPattern": "/tour",
+        "reason": "score=15 (years=1, numericDates=0, months=0, days=0, keywords=8, widget=1)",
+        "appliedAt": "2026-10-08T11:15:16.413Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:557"
+      },
+      {
+        "artist": "Gregorian",
+        "website": "https://www.gregorian.de/",
+        "tourUrl": "https://www.gregorian.de/dates/",
+        "pathPattern": "/dates",
+        "reason": "score=173 (years=55, numericDates=2, months=53, days=2, keywords=94, widget=0)",
+        "appliedAt": "2026-10-08T11:16:10.755Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:563"
+      },
+      {
+        "artist": "Gwen Stefani",
+        "website": "https://gwenstefani.com",
+        "tourUrl": "https://www.gwenstefani.com/events/",
+        "pathPattern": "/events",
+        "reason": "score=8 (years=1, numericDates=0, months=3, days=0, keywords=3, widget=0)",
+        "appliedAt": "2026-10-08T11:16:10.789Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:565"
+      },
+      {
+        "artist": "Orphaned Land",
+        "website": "https://orphaned-land.com/",
+        "tourUrl": "https://orphaned-land.com/tour/",
+        "pathPattern": "/tour",
+        "reason": "score=17 (years=0, numericDates=0, months=4, days=0, keywords=6, widget=1)",
+        "appliedAt": "2026-10-08T11:16:44.702Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:570"
+      },
+      {
+        "artist": "Wang Leehom",
+        "website": "https://www.wangleehom.com/",
+        "tourUrl": "https://wangleehom.com/tour/",
+        "pathPattern": "/tour",
+        "reason": "score=11 (years=2, numericDates=0, months=2, days=0, keywords=20, widget=0)",
+        "appliedAt": "2026-10-08T11:16:44.812Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:577"
+      },
+      {
+        "artist": "William Elliott Whitmore",
+        "website": "http://www.williamelliottwhitmore.com/",
+        "tourUrl": "https://www.williamelliottwhitmore.com/tour",
+        "pathPattern": "/tour",
+        "reason": "score=17.5 (years=2, numericDates=0, months=0, days=17, keywords=6, widget=0)",
+        "appliedAt": "2026-10-08T11:17:22.570Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:583"
+      },
+      {
+        "artist": "Jerry Cantrell",
+        "website": "https://jerrycantrell.com",
+        "tourUrl": "https://jerrycantrell.com/tour",
+        "pathPattern": "/tour",
+        "reason": "score=12 (years=0, numericDates=0, months=0, days=0, keywords=4, widget=1)",
+        "appliedAt": "2026-10-08T11:17:29.340Z",
+        "discoveryOperationId": "4f6d3daf-6148-47d0-8312-4b2ee740ee5b:591"
       }
     ]
   }
