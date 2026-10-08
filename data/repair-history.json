@@ -27089,5 +27089,62 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget",
     "verification": "PASS (3 events, 10 checks)"
+  },
+  {
+    "id": "cafe-del-mar-bali",
+    "cohort": "venue",
+    "configPath": "scrapers/cafe-del-mar-bali.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-08T11:43:01.470Z",
+    "previousConfig": {
+      "id": "cafe-del-mar-bali",
+      "domain": "cafedelmarbali.co.id",
+      "url": "https://www.cafedelmarbali.co.id/whats-on/",
+      "type": "static_selectors",
+      "allowEmpty": true,
+      "selectors": {
+        "eventBlock": ".bc-area",
+        "artist": "h3",
+        "date": ".wo-row-date",
+        "ticketUrl": ".bc-btn-book",
+        "venueNameFallback": "Cafe del Mar Bali",
+        "cityNameFallback": "Canggu",
+        "countryNameFallback": "ID",
+        "lat": -8.670710459596695,
+        "lng": 115.144450569321
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]",
+    "verification": ""
+  },
+  {
+    "id": "vicar-street-dublin",
+    "cohort": "venue",
+    "configPath": "scrapers/vicar-street-dublin.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-10-08T11:43:02.888Z",
+    "previousConfig": {
+      "id": "vicar-street-dublin",
+      "domain": "vicarstreet.com",
+      "url": "https://www.vicarstreet.com/all-shows-at-vicar-street.html",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.upcomingShowWrap",
+        "artist": "span.name_col strong",
+        "date": "span.date_col",
+        "ticketUrl": "a.btn.btn-success",
+        "venueNameFallback": "Vicar Street",
+        "cityNameFallback": "Dublin",
+        "countryNameFallback": "IE",
+        "lat": 53.3421,
+        "lng": -6.2788
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]",
+    "verification": ""
   }
 ]
