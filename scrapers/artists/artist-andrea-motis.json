@@ -3,6 +3,8 @@
   "domain": "andreamotis.com",
   "url": "https://andreamotis.com/agenda/",
   "type": "custom_js",
+  "maxRetries": 3,
+  "requestDelayMs": 2000,
   "selectors": {
     "eventBlock": "table tbody tr",
     "artistNameFallback": "Andrea Motis",

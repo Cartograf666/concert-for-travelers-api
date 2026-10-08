@@ -27089,5 +27089,146 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget",
     "verification": "PASS (3 events, 10 checks)"
+  },
+  {
+    "id": "artist-andrea-motis",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-andrea-motis.json",
+    "repairedConfigHash": "203f4d34154580290772792d8bd0ade30cf5deb07271c58c800c3233f5970ce3",
+    "strategy": "transient",
+    "repairedAt": "2026-10-08T11:39:23.140Z",
+    "previousConfig": {
+      "id": "artist-andrea-motis",
+      "domain": "andreamotis.com",
+      "url": "https://andreamotis.com/agenda/",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "table tbody tr",
+        "artistNameFallback": "Andrea Motis",
+        "date": "td:nth-child(1)",
+        "ticketUrl": "td:nth-child(4) a@href",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "ES"
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget",
+    "verification": "PASS (9 events, 10 checks)"
+  },
+  {
+    "id": "artist-ellen-ten-damme",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-ellen-ten-damme.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-08T11:39:23.143Z",
+    "previousConfig": {
+      "id": "artist-ellen-ten-damme",
+      "domain": "ellentendamme.nl",
+      "url": "https://ellentendamme.nl/tour",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "table.shows.show-upcoming tr",
+        "artistNameFallback": "Ellen ten Damme",
+        "date": "td.event-field-datetime strong",
+        "ticketUrl": "td.event-field-info a.ticket-link",
+        "venue": "td.event-field-venue .venue-name a",
+        "city": "td.event-field-city a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "NL"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper artist-ellen-ten-damme is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-hermann-nitsch",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-hermann-nitsch.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-08T11:39:31.053Z",
+    "previousConfig": {
+      "id": "artist-hermann-nitsch",
+      "domain": "www.nitsch.org",
+      "url": "https://www.nitsch.org/events/",
+      "type": "static_selectors",
+      "maxRetries": 3,
+      "requestDelayMs": 2000,
+      "selectors": {
+        "eventBlock": "table tbody tr",
+        "artistNameFallback": "Hermann Nitsch",
+        "date": "td:nth-child(1)",
+        "venue": "td:nth-child(3)",
+        "city": "td:nth-child(4)",
+        "country": "td:nth-child(5)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.event-item) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-shelby-lynne",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-shelby-lynne.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-08T11:39:55.791Z",
+    "previousConfig": {
+      "id": "artist-shelby-lynne",
+      "domain": "www.shelbylynne.com",
+      "url": "https://www.shelbylynne.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "section.elementor-inner-section[data-id][class*='elementor-element-']",
+        "artistNameFallback": "Shelby Lynne",
+        "date": ".elementor-widget-heading .elementor-heading-title",
+        "ticketUrl": "a.elementor-button-link",
+        "venue": ".elementor-image-box-title",
+        "city": ".elementor-image-box-description",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (section.elementor-inner-section) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "bravo-tour",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/bravo-tour.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-08T11:40:03.987Z",
+    "previousConfig": {
+      "id": "bravo-tour",
+      "domain": "www.bravogroup.ru",
+      "url": "http://www.bravogroup.ru/show_all.htm",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "ul.afishaTable li",
+        "artistNameFallback": "Браво",
+        "date": "div.date",
+        "venue": "div.name",
+        "city": "div.name",
+        "ticketUrl": "a.buyButton",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "RU"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): connect ETIMEDOUT 90.156.201.35:80; connect ENETUNREACH 2a00:15f8:a000:5:1:14:0:c39c:80 - Local (:::0); connect ETIMEDOUT 90.156.201.84:80; connect ENETUNREACH 2a00:15f8:a000:5:1:12:0:c39c:80 - Local (:::0); connect ETIMEDOUT 90.156.201.36:80; connect ENETUNREACH 2a00:15f8:a000:5:1:11:0:c39c:80 - Local (:::0); connect ETIMEDOUT 90.156.201.34:80; connect ENETUNREACH 2a00:15f8:a000:5:1:13:0:c39c:80 - Local (:::0)]",
+    "verification": ""
   }
 ]
