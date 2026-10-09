@@ -27230,5 +27230,177 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): connect ETIMEDOUT 90.156.201.35:80; connect ENETUNREACH 2a00:15f8:a000:5:1:14:0:c39c:80 - Local (:::0); connect ETIMEDOUT 90.156.201.84:80; connect ENETUNREACH 2a00:15f8:a000:5:1:12:0:c39c:80 - Local (:::0); connect ETIMEDOUT 90.156.201.36:80; connect ENETUNREACH 2a00:15f8:a000:5:1:11:0:c39c:80 - Local (:::0); connect ETIMEDOUT 90.156.201.34:80; connect ENETUNREACH 2a00:15f8:a000:5:1:13:0:c39c:80 - Local (:::0)]",
     "verification": ""
+  },
+  {
+    "id": "artist-billy-bragg",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-billy-bragg.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-09T11:17:10.763Z",
+    "previousConfig": {
+      "id": "artist-billy-bragg",
+      "domain": "www.billybragg.co.uk",
+      "url": "https://www.billybragg.co.uk/js_albums/live-and-dubious-ep-promo/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "#footer_sidebar4 .widget_slide_next_events ul li",
+        "artistNameFallback": "Billy Bragg",
+        "date": ".wg_event_date",
+        "ticketUrl": "a@href",
+        "venue": "a",
+        "city": "a",
+        "country": "GB",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.gig_list_container .single_event_row) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-ellen-ten-damme",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-ellen-ten-damme.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-09T11:17:10.765Z",
+    "previousConfig": {
+      "id": "artist-ellen-ten-damme",
+      "domain": "ellentendamme.nl",
+      "url": "https://ellentendamme.nl/tour",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "table.shows.show-upcoming tr",
+        "artistNameFallback": "Ellen ten Damme",
+        "date": "td.event-field-datetime strong",
+        "ticketUrl": "td.event-field-info a.ticket-link",
+        "venue": "td.event-field-venue .venue-name a",
+        "city": "td.event-field-city a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "NL"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper artist-ellen-ten-damme is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-hermann-nitsch",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-hermann-nitsch.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-09T11:17:12.026Z",
+    "previousConfig": {
+      "id": "artist-hermann-nitsch",
+      "domain": "www.nitsch.org",
+      "url": "https://www.nitsch.org/events/",
+      "type": "static_selectors",
+      "maxRetries": 3,
+      "requestDelayMs": 2000,
+      "selectors": {
+        "eventBlock": "table tbody tr",
+        "artistNameFallback": "Hermann Nitsch",
+        "date": "td:nth-child(1)",
+        "venue": "td:nth-child(3)",
+        "city": "td:nth-child(4)",
+        "country": "td:nth-child(5)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.event-list-item) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-ivan-hussey",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-ivan-hussey.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-09T11:17:19.385Z",
+    "previousConfig": {
+      "id": "artist-ivan-hussey",
+      "domain": "www.celloman.co.uk",
+      "url": "http://www.celloman.co.uk/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.event",
+        "artistNameFallback": "Ivan Hussey",
+        "date": ".postdate",
+        "ticketUrl": "h2 a",
+        "venue": ".article-content",
+        "city": ".article-content",
+        "country": ".article-content",
+        "venueNameFallback": "See page content",
+        "cityNameFallback": "See page content",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: dates_parse [0/1 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]; city_distinct_from_venue [1/1 rows have city identical to venue (100%, allow 20%)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-mia",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-mia.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-09T11:17:21.493Z",
+    "previousConfig": {
+      "id": "artist-mia",
+      "domain": "www.miarockt.de",
+      "url": "https://www.miarockt.de/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".events-container .item",
+        "artistNameFallback": "MIA.",
+        "date": ".time",
+        "ticketUrl": ".event-actions a.btn-secondary",
+        "venue": ".location a",
+        "city": ".event-title",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "DE"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Expected name, found .",
+    "verification": ""
+  },
+  {
+    "id": "artist-shelby-lynne",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-shelby-lynne.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-09T11:17:23.195Z",
+    "previousConfig": {
+      "id": "artist-shelby-lynne",
+      "domain": "www.shelbylynne.com",
+      "url": "https://www.shelbylynne.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "section.elementor-inner-section[data-id][class*='elementor-element-']",
+        "artistNameFallback": "Shelby Lynne",
+        "date": ".elementor-widget-heading .elementor-heading-title",
+        "ticketUrl": "a.elementor-button-link",
+        "venue": ".elementor-image-box-title",
+        "city": ".elementor-image-box-description",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (section.footer-description-section .site-description nav li) matched 0 elements.",
+    "verification": ""
   }
 ]
