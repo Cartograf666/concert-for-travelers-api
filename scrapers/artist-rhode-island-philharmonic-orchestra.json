@@ -1,0 +1,15 @@
+{
+  "id": "artist-rhode-island-philharmonic-orchestra",
+  "domain": "riphil.org",
+  "url": "https://riphil.org/2025-2026-season/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-block",
+    "artistNameFallback": "Rhode Island Philharmonic Orchestra",
+    "date": "h3",
+    "ticketUrl": "a.button",
+    "venueNameFallback": "The VETS",
+    "cityNameFallback": "Providence",
+    "countryNameFallback": "US"
+  }
+}
