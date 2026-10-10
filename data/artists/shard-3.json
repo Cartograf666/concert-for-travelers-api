@@ -136891,14 +136891,17 @@
       "spotify": "https://open.spotify.com/artist/1LdD89Xk9r5c1xQ5wM8k4A",
       "instagram": null,
       "facebook": null,
-      "youtube": null,
+      "youtube": "https://www.youtube.com/channel/UC0Lraa8vhm003yImLsPOY3g",
       "telegram": null,
       "vk": null
     },
     "wdBulkTriedAt": "2026-10-10T11:13:00.022Z",
     "wdAliasesTriedAt": "2026-10-10T11:13:00.022Z",
     "mbidBackfillTriedAt": "2026-10-10T11:13:09.815Z",
-    "imageFallbackTriedAt": "2026-10-10T12:17:27.040Z"
+    "imageFallbackTriedAt": "2026-10-10T12:17:27.040Z",
+    "mbid": "3fd88e2b-8e09-4a42-bf37-738ae07abc88",
+    "enrichedAt": "2026-10-10T12:52:26.138Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "clarinet",
@@ -532574,11 +532577,22 @@
   },
   {
     "name": "spazma",
-    "website": null,
+    "website": "https://www.spazma.net/",
     "wdBulkTriedAt": "2026-10-10T11:13:00.022Z",
     "wdAliasesTriedAt": "2026-10-10T11:13:00.022Z",
     "mbidBackfillTriedAt": "2026-10-10T11:13:09.815Z",
-    "imageFallbackTriedAt": "2026-10-10T12:17:27.448Z"
+    "imageFallbackTriedAt": "2026-10-10T12:17:27.448Z",
+    "mbid": "2e01f487-1c65-489f-bc33-431b249095d5",
+    "socials": {
+      "spotify": null,
+      "instagram": "https://www.instagram.com/spazmofonika/",
+      "facebook": null,
+      "youtube": "https://www.youtube.com/@spazmofonika",
+      "telegram": null,
+      "vk": null
+    },
+    "enrichedAt": "2026-10-10T12:52:28.688Z",
+    "enrichedBy": "musicbrainz"
   },
   {
     "name": "Spazz",
