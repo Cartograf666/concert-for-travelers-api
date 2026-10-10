@@ -27402,5 +27402,205 @@
     "failuresSinceRepair": 0,
     "note": "repair failed: Selector \"eventBlock\" (section.footer-description-section .site-description nav li) matched 0 elements.",
     "verification": ""
+  },
+  {
+    "id": "artist-billy-bragg",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-billy-bragg.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-10T10:39:08.258Z",
+    "previousConfig": {
+      "id": "artist-billy-bragg",
+      "domain": "www.billybragg.co.uk",
+      "url": "https://www.billybragg.co.uk/js_albums/live-and-dubious-ep-promo/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "#footer_sidebar4 .widget_slide_next_events ul li",
+        "artistNameFallback": "Billy Bragg",
+        "date": ".wg_event_date",
+        "ticketUrl": "a@href",
+        "venue": "a",
+        "city": "a",
+        "country": "GB",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.single_event_list) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-ellen-ten-damme",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-ellen-ten-damme.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-10T10:39:08.261Z",
+    "previousConfig": {
+      "id": "artist-ellen-ten-damme",
+      "domain": "ellentendamme.nl",
+      "url": "https://ellentendamme.nl/tour",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "table.shows.show-upcoming tr",
+        "artistNameFallback": "Ellen ten Damme",
+        "date": "td.event-field-datetime strong",
+        "ticketUrl": "td.event-field-info a.ticket-link",
+        "venue": "td.event-field-venue .venue-name a",
+        "city": "td.event-field-city a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "NL"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper artist-ellen-ten-damme is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-eskimo-joe",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-eskimo-joe.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-10T10:39:23.464Z",
+    "previousConfig": {
+      "id": "artist-eskimo-joe",
+      "domain": "www.eskimojoe.net",
+      "url": "https://www.eskimojoe.net/tours",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "a.EventLink",
+        "artistNameFallback": "Eskimo Joe",
+        "date": ".eventDate",
+        "ticketUrl": "a.EventLink",
+        "venue": ".venue",
+        "city": ".city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "AU"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-hermann-nitsch",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-hermann-nitsch.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-10T10:39:39.986Z",
+    "previousConfig": {
+      "id": "artist-hermann-nitsch",
+      "domain": "www.nitsch.org",
+      "url": "https://www.nitsch.org/events/",
+      "type": "static_selectors",
+      "maxRetries": 3,
+      "requestDelayMs": 2000,
+      "selectors": {
+        "eventBlock": "table tbody tr",
+        "artistNameFallback": "Hermann Nitsch",
+        "date": "td:nth-child(1)",
+        "venue": "td:nth-child(3)",
+        "city": "td:nth-child(4)",
+        "country": "td:nth-child(5)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.event-item) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-ivan-hussey",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-ivan-hussey.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-10T10:39:40.728Z",
+    "previousConfig": {
+      "id": "artist-ivan-hussey",
+      "domain": "www.celloman.co.uk",
+      "url": "http://www.celloman.co.uk/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.event",
+        "artistNameFallback": "Ivan Hussey",
+        "date": ".postdate",
+        "ticketUrl": "h2 a",
+        "venue": ".article-content",
+        "city": ".article-content",
+        "country": ".article-content",
+        "venueNameFallback": "See page content",
+        "cityNameFallback": "See page content",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-shelby-lynne",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-shelby-lynne.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-10T10:39:41.772Z",
+    "previousConfig": {
+      "id": "artist-shelby-lynne",
+      "domain": "www.shelbylynne.com",
+      "url": "https://www.shelbylynne.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "section.elementor-inner-section[data-id][class*='elementor-element-']",
+        "artistNameFallback": "Shelby Lynne",
+        "date": ".elementor-widget-heading .elementor-heading-title",
+        "ticketUrl": "a.elementor-button-link",
+        "venue": ".elementor-image-box-title",
+        "city": ".elementor-image-box-description",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.seo-content .seo-table tbody tr) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-stuts",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-stuts.json",
+    "strategy": "tls_broken",
+    "repairedAt": "2026-10-10T10:39:45.791Z",
+    "previousConfig": {
+      "id": "artist-stuts",
+      "domain": "stutsbeats.com",
+      "url": "https://stutsbeats.com/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".box",
+        "artistNameFallback": "Stuts",
+        "date": "h2",
+        "ticketUrl": ".livepost-doc a",
+        "venue": ".livepost-doc",
+        "city": ".livepost-doc",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "tls_broken: trying the www/apex variant, which usually holds the valid certificate; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): certificate has expired]",
+    "verification": ""
   }
 ]
