@@ -227229,7 +227229,35 @@
     "mbidBackfillTriedAt": "2026-10-10T11:13:09.815Z",
     "image": "https://r2.theaudiodb.com/images/media/artist/thumb/hduaqv1594835696.jpg",
     "imageSource": "audiodb",
-    "imageFallbackTriedAt": "2026-10-10T12:17:25.406Z"
+    "imageFallbackTriedAt": "2026-10-10T12:17:25.406Z",
+    "similarArtists": [
+      {
+        "name": "Gracie Abrams",
+        "slug": "gracie-abrams",
+        "match": 0.546805
+      },
+      {
+        "name": "Niall Horan",
+        "slug": "niall-horan",
+        "match": 0.432537
+      },
+      {
+        "name": "Conan Gray",
+        "slug": "conan-gray",
+        "match": 0.425741
+      },
+      {
+        "name": "Kelsea Ballerini",
+        "slug": "kelsea-ballerini",
+        "match": 0.363436
+      },
+      {
+        "name": "Lizzy McAlpine",
+        "slug": "lizzy-mcalpine",
+        "match": 0.328472
+      }
+    ],
+    "similarEnrichedAt": "2026-10-10T13:04:26.488Z"
   },
   {
     "name": "Ashely Cooper",
@@ -287196,7 +287224,50 @@
     "enrichedBy": "wikidata-bulk",
     "image": "https://r2.theaudiodb.com/images/media/artist/thumb/a4go9e1628599838.jpg",
     "imageSource": "audiodb",
-    "imageFallbackTriedAt": "2026-10-10T12:17:25.815Z"
+    "imageFallbackTriedAt": "2026-10-10T12:17:25.815Z",
+    "similarArtists": [
+      {
+        "name": "The Plot in You",
+        "slug": "the-plot-in-you",
+        "match": 0.84775
+      },
+      {
+        "name": "Architects",
+        "slug": "architects",
+        "match": 0.771435
+      },
+      {
+        "name": "Silent Planet",
+        "slug": "silent-planet",
+        "match": 0.769303
+      },
+      {
+        "name": "Fit for a King",
+        "slug": "fit-for-a-king",
+        "match": 0.723113
+      },
+      {
+        "name": "Polaris",
+        "slug": "polaris",
+        "match": 0.709695
+      },
+      {
+        "name": "Invent, Animate",
+        "slug": "invent-animate",
+        "match": 0.686837
+      },
+      {
+        "name": "Bury Tomorrow",
+        "slug": "bury-tomorrow",
+        "match": 0.651478
+      },
+      {
+        "name": "Like Moths to Flames",
+        "slug": "like-moths-to-flames",
+        "match": 0.605558
+      }
+    ],
+    "similarEnrichedAt": "2026-10-10T13:04:26.923Z"
   },
   {
     "name": "Imminent",

@@ -407000,7 +407000,25 @@
       "vk": null
     },
     "enrichedAt": "2026-10-10T12:52:31.322Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "Pabllo Vittar",
+        "slug": "pabllo-vittar",
+        "match": 0.838425
+      },
+      {
+        "name": "Marina Sena",
+        "slug": "marina-sena",
+        "match": 0.735679
+      },
+      {
+        "name": "Anitta",
+        "slug": "anitta",
+        "match": 0.342018
+      }
+    ],
+    "similarEnrichedAt": "2026-10-10T13:04:30.386Z"
   },
   {
     "name": "Uriel (band)",

@@ -136901,7 +136901,50 @@
     "imageFallbackTriedAt": "2026-10-10T12:17:27.040Z",
     "mbid": "3fd88e2b-8e09-4a42-bf37-738ae07abc88",
     "enrichedAt": "2026-10-10T12:52:26.138Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "Omar Courtz",
+        "slug": "omar-courtz",
+        "match": 0.811601
+      },
+      {
+        "name": "Yan Block",
+        "slug": "yan-block",
+        "match": 0.772436
+      },
+      {
+        "name": "Anuel AA",
+        "slug": "anuel-aa",
+        "match": 0.630528
+      },
+      {
+        "name": "Myke Towers",
+        "slug": "myke-towers",
+        "match": 0.573543
+      },
+      {
+        "name": "Eladio Carrion",
+        "slug": "eladio-carrion",
+        "match": 0.536486
+      },
+      {
+        "name": "Mora",
+        "slug": "mora",
+        "match": 0.492722
+      },
+      {
+        "name": "JHAYCO",
+        "slug": "jhayco",
+        "match": 0.447864
+      },
+      {
+        "name": "Jay Wheeler",
+        "slug": "jay-wheeler",
+        "match": 0.399172
+      }
+    ],
+    "similarEnrichedAt": "2026-10-10T13:04:29.155Z"
   },
   {
     "name": "clarinet",
@@ -532592,7 +532635,30 @@
       "vk": null
     },
     "enrichedAt": "2026-10-10T12:52:28.688Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "fakemink",
+        "slug": "fakemink",
+        "match": 0.965246
+      },
+      {
+        "name": "Wane",
+        "slug": "wane",
+        "match": 0.598965
+      },
+      {
+        "name": "nettspend",
+        "slug": "nettspend",
+        "match": 0.321873
+      },
+      {
+        "name": "EsDeeKid",
+        "slug": "esdeekid",
+        "match": 0.292541
+      }
+    ],
+    "similarEnrichedAt": "2026-10-10T13:04:29.560Z"
   },
   {
     "name": "Spazz",
