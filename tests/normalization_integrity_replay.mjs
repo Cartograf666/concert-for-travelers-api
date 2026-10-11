@@ -54,7 +54,7 @@ for (const [id, entry] of Object.entries(proof.sources)) {
   const before = id === 'artist-showaddywaddy'
     ? JSON.parse(await fs.readFile(path.join(fixtureDir, 'showaddywaddy-before.json'), 'utf8')).raw
     : await extract(beforeConfig, originalHtml);
-  assert.deepEqual(before, saved.beforeRaw, `${id}: frozen beforeRaw must still equal original consumed bytes`);
+  assert.deepEqual(JSON.parse(JSON.stringify(before)), saved.beforeRaw, `${id}: frozen beforeRaw must still equal original consumed bytes`);
   beforeRaw.push(...saved.beforeRaw); reviewedRaw.push(...saved.afterRaw);
   const config = ScraperConfigSchema.parse(JSON.parse(await fs.readFile(path.join(root, entry.configPath), 'utf8')));
   const fullFile = id === 'artist-shelly-berg' ? id + '-native.json' : id + '.html';

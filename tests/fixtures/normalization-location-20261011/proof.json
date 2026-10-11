@@ -656,22 +656,6 @@
   },
   "sourceHolds": [
     {
-      "source": "Rachael Sage",
-      "date": "2026-10-30",
-      "venue": "The Castle Hotel",
-      "nativeCity": "Manchester",
-      "publicCity": "Greater",
-      "reason": "actual shared provider raw city conflict; root owns reconciliation"
-    },
-    {
-      "source": "Bonnie Pink",
-      "date": "2026-10-11",
-      "venue": "六呂師高原",
-      "nativeCity": "Ono",
-      "publicCity": "Katsuyama",
-      "reason": "native address explicitly Ono; provider conflict requires root reconciliation"
-    },
-    {
       "source": "Oasis",
       "venue": "Gillette Stadium",
       "nativeCity": "Boston",
@@ -717,6 +701,32 @@
       "country": "GB",
       "address": "Grand Parade, Skegness, Lincolnshire, PE25 2UG; operator explicitly registered in England and Wales",
       "url": "https://embassytheatre.co.uk/shows/showaddywaddy/"
+    }
+  ],
+  "reconciledSourceHolds": [
+    {
+      "source": "Rachael Sage",
+      "date": "2026-10-30",
+      "venue": "The Castle Hotel",
+      "nativeCity": "Manchester",
+      "publicCity": "Greater",
+      "reason": "actual shared provider raw city conflict; root owns reconciliation",
+      "supersedes": "Native source omission pending root reconciliation",
+      "resolution": "Native raw retained; finite proved occurrence selects native whole record in both orders",
+      "evidence": "../normalization-integrity-20261011/occurrence-proof.json",
+      "correctedOn": "2026-10-11"
+    },
+    {
+      "source": "Bonnie Pink",
+      "date": "2026-10-11",
+      "venue": "六呂師高原",
+      "nativeCity": "Ono",
+      "publicCity": "Katsuyama",
+      "reason": "native address explicitly Ono; provider conflict requires root reconciliation",
+      "supersedes": "Native source omission pending root reconciliation",
+      "resolution": "Native raw retained; finite proved occurrence selects native whole record in both orders",
+      "evidence": "../normalization-integrity-20261011/occurrence-proof.json",
+      "correctedOn": "2026-10-11"
     }
   ]
 }

@@ -114,4 +114,10 @@ test('new primary proof keeps original capture bytes and explicitly documents mo
   const port = cheerio.load(await readFile(`${DIR}/randy-port-charlotte-linked.html`, 'utf8'));
   assert.match(port.text(), /The Charlotte County Fair/);
   assert.match(port.text(), /2333 El Jobean/);
+  const portEvent = port('script[type="application/ld+json"]').toArray()
+    .map(element => JSON.parse(port(element).text())).find(row => row['@type'] === 'Event');
+  assert.equal(portEvent.startDate.slice(0, 10), '2026-12-31');
+  assert.deepEqual([portEvent.location.name, portEvent.location.address.addressLocality,
+    portEvent.location.address.addressRegion, portEvent.location.address.addressCountry],
+  ['The Charlotte County Fair', 'Port Charlotte', 'FL', 'US']);
 });
