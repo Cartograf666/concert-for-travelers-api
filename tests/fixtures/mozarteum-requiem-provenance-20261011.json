@@ -1,0 +1,124 @@
+{
+  "sources": [
+    {
+      "url": "https://mozarteum.at/page-data/konzerte/page-data.json",
+      "status": 200,
+      "capturedAt": "2026-10-11T06:01:14.041365+00:00",
+      "sha256": "09a5a7c84e93336c3ca0f369dda949fbbe488ca0f09fe3286f9951abeca9a2c8"
+    },
+    {
+      "url": "https://mozarteum.at/en/events/mozart-requiem-mozarteumorchester-salzburg-pinnock",
+      "status": 200,
+      "capturedAt": "2026-10-11T06:01:41.191103+00:00",
+      "sha256": "e82eb65af25f79a4b070e94a3f5ab8f5955bd7036627179549db900b6836fb98"
+    }
+  ],
+  "nativeEvent": {
+    "slugEn": "mozart-requiem-mozarteumorchester-salzburg-pinnock",
+    "infoEn": "<p><strong>Jean Sibelius</strong><br>Scene with Cranes, op. 44 No. 2</p>\r\n<p><strong>Mozart</strong><br>Requiem in D minor, KV 626<br>Completion by Franz Xaver S&uuml;ssmayr</p>\r\n<p>Premiered in 1903, the drama Kuolema (Death) by the Finnish writer Arvid J&auml;rnefelt became known above all through its incidental music. The six compositions accompanying the play were written by Jean Sibelius, the author&rsquo;s brother-in-law. In 1906, Sibelius revised Nos. 3 and 4 and combined them under the title Scene with Cranes. With its sombre atmosphere and closing bars that seem to drift into the beyond like the soul of the protagonist herself, the work forms a symbolic and deeply evocative link to the restrained opening measures of Mozart&rsquo;s ever-moving Requiem.</p>",
+    "titleEn": "Mozart Requiem\r\nMozarteumorchester Salzburg | Pinnock",
+    "firstDate": "2026-12-05T19:00",
+    "artists": [
+      {
+        "nameDe": "Mozarteumorchester Salzburg",
+        "nameEn": "Mozarteumorchester Salzburg",
+        "professionDe": "",
+        "professionEn": "",
+        "sortOrder": 0
+      },
+      {
+        "nameDe": "Bachchor Salzburg",
+        "nameEn": "Bachchor Salzburg",
+        "professionDe": "",
+        "professionEn": "",
+        "sortOrder": 1
+      },
+      {
+        "nameDe": "Trevor Pinnock",
+        "nameEn": "Trevor Pinnock",
+        "professionDe": "Dirigent",
+        "professionEn": "Conductor",
+        "sortOrder": 2
+      },
+      {
+        "nameDe": "Lauryna Bendžiūnaitė",
+        "nameEn": "Lauryna Bendžiūnaitė",
+        "professionDe": "Sopran",
+        "professionEn": "Soprano",
+        "sortOrder": 3
+      },
+      {
+        "nameDe": "Catriona Morison",
+        "nameEn": "Catriona Morison",
+        "professionDe": "Alt",
+        "professionEn": "Alto",
+        "sortOrder": 4
+      },
+      {
+        "nameDe": "Richard Croft",
+        "nameEn": "Richard Croft",
+        "professionDe": "Tenor",
+        "professionEn": "Tenor",
+        "sortOrder": 5
+      },
+      {
+        "nameDe": "Tareq Nazmi",
+        "nameEn": "Tareq Nazmi",
+        "professionDe": "Bass",
+        "professionEn": "Bass",
+        "sortOrder": 6
+      },
+      {
+        "nameDe": "Michael Schneider",
+        "nameEn": "Michael Schneider",
+        "professionDe": "Choreinstudierung",
+        "professionEn": "Chorus preparation",
+        "sortOrder": 7
+      }
+    ],
+    "concertLocationTimes": [
+      {
+        "id": "bd62b149-17c2-470b-aaf7-a7426157059a",
+        "concertNumber": "",
+        "date": "2026-12-05",
+        "startTime": "19:00",
+        "endTime": null,
+        "location": {
+          "nameDe": "Stiftung Mozarteum, Großer Saal",
+          "nameEn": "Stiftung Mozarteum, Grosser Saal"
+        }
+      }
+    ],
+    "category": {
+      "id": "0fae5a78-f921-50bc-b706-f4378d3dcf83",
+      "remoteId": "10a7c2e3-c00c-43df-bed7-93aba775f7f2",
+      "displayOrder": 1,
+      "nameDe": "Meisterkonzerte",
+      "nameEn": "Masters concert",
+      "isSubcategoryOf": {
+        "id": "848e19ef-9deb-561a-a206-a341eae72a2a",
+        "remoteId": "e8bf079a-8fcc-412d-b455-964c4615847a",
+        "displayOrder": 3,
+        "nameDe": "Saisonkonzerte",
+        "nameEn": "Season Concerts"
+      }
+    }
+  },
+  "rawContract": {
+    "artist": "Wolfgang Amadeus Mozart",
+    "date": "2026-12-05",
+    "startTime": "19:00",
+    "venue": "Stiftung Mozarteum, Grosser Saal",
+    "city": "Salzburg",
+    "country": "AT",
+    "originalSource": "mozarteum.at",
+    "sourceEventUrl": "https://mozarteum.at/en/events/mozart-requiem-mozarteumorchester-salzburg-pinnock",
+    "ticketUrl": "https://mozarteum.at/en/events/mozart-requiem-mozarteumorchester-salzburg-pinnock",
+    "scrapedAt": "2026-10-11T06:01:41.191Z"
+  },
+  "locationBasis": {
+    "existingSource": "scrapers/artists/artist-wolfgang-amadeus-mozart.json",
+    "contactCapture": "/Users/alex/agent-hub/concert-data-quality/coordinator/work/root-official-evidence/moz-contact.html",
+    "sha256": "b902692da2e9092d7a20c5e2dccccca80ffec5b80cb675506e888d61d7923a04"
+  }
+}
