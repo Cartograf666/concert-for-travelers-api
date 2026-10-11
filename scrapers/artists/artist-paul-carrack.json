@@ -2,7 +2,7 @@
   "id": "artist-paul-carrack",
   "domain": "paulcarrack.net",
   "url": "https://paulcarrack.net/live",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".LiveDates-Item",
     "artistNameFallback": "Paul Carrack",

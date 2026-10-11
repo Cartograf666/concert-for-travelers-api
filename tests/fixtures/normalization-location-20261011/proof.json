@@ -440,6 +440,99 @@
       },
       "fixtureSha256": "899f5781c568332068be5c7777a4003bd62073757d25fac65b0b1f01faccc8a1",
       "fixtureScope": "All native event blocks, unchanged date/text/attributes/order"
+    },
+    "artist-aaron-copland": {
+      "configPath": "scrapers/artists/artist-aaron-copland.json",
+      "beforeConfig": {
+        "id": "artist-aaron-copland",
+        "domain": "www.aaroncopland.com",
+        "url": "https://www.aaroncopland.com/events",
+        "type": "static_selectors",
+        "selectors": {
+          "eventBlock": ".event-item",
+          "artistNameFallback": "Aaron Copland",
+          "date": ".event-dates span",
+          "ticketUrl": ".event-links a",
+          "venue": ".event-location",
+          "city": ".event-location",
+          "country": ".event-location",
+          "venueNameFallback": "",
+          "cityNameFallback": "",
+          "countryNameFallback": "US"
+        }
+      },
+      "meta": {
+        "url": "https://www.aaroncopland.com/events",
+        "observedAt": "2026-10-11T05:48:53.511926+00:00",
+        "result": "200 https://www.aaroncopland.com/events",
+        "exitCode": 0,
+        "error": "",
+        "sha256": "567d1ad6a66f393e764daae009b64a9417382f1ac7c8d8b2e8afff54574eda25"
+      },
+      "fixtureSha256": "3fa2d6e4bab18d2e555975ffca8f33163d8342b25d333c8ce20fd0ff81450c01",
+      "fixtureScope": "All eight native events with literal COPLAND program credits, actual performer names, official work links, exact individual/paired dates and full country addresses",
+      "artistSemantics": "Existing composer binding retained; source demonstrates performances of his works, not physical appearances by Aaron Copland"
+    },
+    "artist-showaddywaddy": {
+      "configPath": "scrapers/artists/artist-showaddywaddy.json",
+      "beforeConfig": {
+        "id": "artist-showaddywaddy",
+        "domain": "www.showaddywaddy.net",
+        "url": "https://www.showaddywaddy.net/gigs/",
+        "type": "custom_js",
+        "selectors": {
+          "eventBlock": "tr.tableBuilderRow:not(.uniqueStyleRow)",
+          "artistNameFallback": "Showaddywaddy",
+          "date": ".tableBuilderCell1",
+          "ticketUrl": ".tableBuilderCell3 a@href",
+          "venue": ".tableBuilderCell2",
+          "city": ".tableBuilderCell2",
+          "venueNameFallback": "",
+          "cityNameFallback": "",
+          "countryNameFallback": "GB"
+        }
+      },
+      "meta": {
+        "url": "https://www.showaddywaddy.net/gigs/",
+        "observedAt": "2026-10-11T05:48:54.266520+00:00",
+        "result": "200 https://www.showaddywaddy.net/gigs/",
+        "exitCode": 0,
+        "error": "",
+        "sha256": "9dcf5e81cd3b151a9eb223453620c3dd16d4cef4b305dbf819af9f8729235fc1"
+      },
+      "fixtureSha256": "b945f8a48e0bf14c486d45679aff8249d259cdeb5455adac6ecd71403176afdf",
+      "fixtureScope": "All native calendar tables; pre-edit stock custom module raw output captured and replayed at pinned base in showaddywaddy-before.json"
+    },
+    "artist-paul-carrack": {
+      "configPath": "scrapers/artists/artist-paul-carrack.json",
+      "beforeConfig": {
+        "id": "artist-paul-carrack",
+        "domain": "paulcarrack.net",
+        "url": "https://paulcarrack.net/live",
+        "type": "static_selectors",
+        "selectors": {
+          "eventBlock": ".LiveDates-Item",
+          "artistNameFallback": "Paul Carrack",
+          "date": ".LiveDates-Date time",
+          "ticketUrl": ".LiveDates-Tickets a",
+          "venue": ".LiveDates-Venue",
+          "city": ".LiveDates-Location",
+          "country": ".LiveDates-Location",
+          "venueNameFallback": "",
+          "cityNameFallback": "",
+          "countryNameFallback": "GB"
+        }
+      },
+      "meta": {
+        "url": "https://paulcarrack.net/live",
+        "observedAt": "2026-10-11T05:48:48.499867+00:00",
+        "result": "200 https://paulcarrack.net/live",
+        "exitCode": 0,
+        "error": "",
+        "sha256": "51b3b9107b4d4e75bb0e2c6a21d1b33edc1ab5066d6677b62e9ae558e23f9be8"
+      },
+      "fixtureSha256": "476835b4310c142c84a268ac5d0284c9ce7325f75530d028a23cf270b27ac63a",
+      "fixtureScope": "All eight native records; two exact venue-city tuples and same-row official links explicitly identify Germany Live 2026; no source-global year or GB default inference"
     }
   },
   "venueProofs": {
@@ -472,7 +565,7 @@
     "bonniePink": [
       {
         "label": "Zepp DiverCity(TOKYO)",
-        "city": "Tokyo",
+        "city": "Koto-ku",
         "country": "JP",
         "url": "https://www.zepp.co.jp/hall/divercity/"
       },
@@ -485,11 +578,16 @@
         ],
         "country": "JP",
         "url": "https://www.billboard-live.com/",
-        "nativeAddressEvidence": "RSC address dictionary: Tokyo Minato Akasaka 9-7-4, Osaka Kita Umeda 2-2-22, Yokohama Naka Kitanaka-dori 5-57-2"
+        "nativeAddressEvidence": "RSC address dictionary: Tokyo Minato Akasaka 9-7-4, Osaka Kita Umeda 2-2-22, Yokohama Naka Kitanaka-dori 5-57-2",
+        "municipalities": [
+          "Minato-ku",
+          "Osaka",
+          "Yokohama"
+        ]
       },
       {
         "label": "恵比寿リキッドルーム",
-        "city": "Tokyo",
+        "city": "Shibuya-ku",
         "country": "JP",
         "url": "https://www.liquidroom.net/access"
       },
@@ -525,5 +623,56 @@
       }
     ],
     "countryRule": "JP is bounded to exact venue labels with verified Japanese municipality/prefecture addresses; unknown or foreign labels cannot inherit JP. No broad domain/default-country inference."
-  }
+  },
+  "sourceHolds": [
+    {
+      "source": "Rachael Sage",
+      "date": "2026-10-30",
+      "venue": "The Castle Hotel",
+      "nativeCity": "Manchester",
+      "publicCity": "Greater",
+      "reason": "actual shared provider raw city conflict; root owns reconciliation"
+    },
+    {
+      "source": "Bonnie Pink",
+      "date": "2026-10-11",
+      "venue": "六呂師高原",
+      "nativeCity": "Ono",
+      "publicCity": "Katsuyama",
+      "reason": "native address explicitly Ono; provider conflict requires root reconciliation"
+    },
+    {
+      "source": "Oasis",
+      "venue": "Gillette Stadium",
+      "nativeCity": "Boston",
+      "publicCity": "Foxborough",
+      "reason": "primary directions page timed out; no inferred venue city"
+    }
+  ],
+  "showaddyVenueProofs": [
+    {
+      "label": "Wimborne - Tivoli Theatre",
+      "city": "Wimborne Minster",
+      "venue": "Tivoli Theatre",
+      "country": "GB",
+      "address": "West Borough, Wimborne Minster, Dorset, BH21 1LT",
+      "url": "https://www.tivoliwimborne.co.uk/events/showaddywaddy-in-concert-november-2026/"
+    },
+    {
+      "label": "Christchurch - The Regent",
+      "city": "Christchurch",
+      "venue": "The Regent",
+      "country": "GB",
+      "address": "51 High St, Christchurch, BH23 1AS",
+      "url": "https://www.theregent.co.uk/whats-on/showaddywaddy/"
+    },
+    {
+      "label": "Skegness - Embassy Theatre",
+      "city": "Skegness",
+      "venue": "Embassy Theatre",
+      "country": "GB",
+      "address": "Grand Parade, Skegness, Lincolnshire, PE25 2UG; operator explicitly registered in England and Wales",
+      "url": "https://embassytheatre.co.uk/shows/showaddywaddy/"
+    }
+  ]
 }

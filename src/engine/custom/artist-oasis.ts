@@ -18,7 +18,10 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
       ? normalizeCountry(parts[1]) : undefined;
     const label = parts[0];
     // The source labels these two counties, not the actual concert municipality.
-    const city = label && !['Hertfordshire', 'Co. Meath'].includes(label) ? label : undefined;
+    let city = label && !['Hertfordshire', 'Co. Meath'].includes(label) ? label : undefined;
+    // Boston is the marketed region; the public venue is in Foxborough and its
+    // primary directions page is currently unavailable. Do not create that alias.
+    if (city === 'Boston' && lines[1] === 'Gillette Stadium' && country === 'US') city = undefined;
     return { artist: 'Oasis', date, venue: lines[1], city,
       country: country && /^[A-Z]{2}$/.test(country) ? country : undefined,
       originalSource: config.domain, scrapedAt };

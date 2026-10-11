@@ -2,7 +2,7 @@
   "id": "artist-aaron-copland",
   "domain": "www.aaroncopland.com",
   "url": "https://www.aaroncopland.com/events",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".event-item",
     "artistNameFallback": "Aaron Copland",

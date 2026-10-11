@@ -14,7 +14,10 @@ const DIR = 'tests/fixtures/normalization-location-20261011';
 const CASES = [
   ['artist-randy-houser', 16, 16], ['artist-excision', 6, 6], ['artist-bastille', 8, 8],
   ['artist-admiral-fallow', 5, 5], ['artist-iration', 8, 8], ['artist-rachael-sage', 7, 7],
-  ['artist-burak-yeter', 7, 4], ['artist-shelly-berg', 6, 4], ['artist-turmion-katilot', 34, 11]
+  ['artist-burak-yeter', 7, 2], ['artist-shelly-berg', 6, 4], ['artist-turmion-katilot', 34, 11],
+  ['artist-suchmos', 8, 8], ['artist-bonnie-pink', 5, 5], ['artist-ann-reed', 11, 4],
+  ['artist-josh-nelson', 4, 4], ['artist-oasis', 40, 29], ['artist-aaron-copland', 23, 22],
+  ['artist-showaddywaddy', 115, 25], ['artist-paul-carrack', 8, 2]
 ] as const;
 
 async function config(id: string) {
@@ -27,7 +30,7 @@ async function parser(id: string) {
   return import(`../src/engine/custom/${id}.js`);
 }
 
-test('nine real native calendars recover locations through the stock runner and strict pipeline without network', async t => {
+test('seventeen real native calendars recover locations through the stock runner and strict pipeline without network', async t => {
   t.mock.timers.enable({ apis: ['Date'], now: Date.parse(AT) });
   let attempts = 0;
   const blocked = () => { attempts++; throw new Error('Network forbidden in native fixture replay'); };
@@ -117,4 +120,82 @@ test('verified city spellings preserve provider identities and the exact unresol
   assert.equal(rows.some((row: { date: string }) => row.date === '2026-10-30'), false);
   const nearby = await (await parser(id)).scrape(await config(id), body.replace('10/30/2026', '10/30/2027'), AT);
   assert.ok(nearby.some((row: { date: string; city: string }) => row.date === '2027-10-30' && row.city === 'Manchester'));
+});
+
+test('exact Japanese venue proofs replace blurbs without extending JP to an unknown or foreign venue', async () => {
+  for (const [id, printed, foreign] of [
+    ['artist-suchmos', 'Kアリーナ横浜 (神奈川県)', 'K-Arena Berlin (Germany)'],
+    ['artist-bonnie-pink', 'ビルボードライブ東京', 'ビルボードライブBerlin']
+  ]) {
+    const body = await fixture(id);
+    assert.ok(body.includes(printed));
+    const rows = await (await parser(id)).scrape(await config(id), body.replaceAll(printed, foreign), AT);
+    const dates = id === 'artist-suchmos' ? ['2027-04-24', '2027-04-25'] : ['2026-12-06'];
+    assert.ok(rows.filter((row: { date: string }) => dates.includes(row.date)).every((row: { country?: string; city?: string }) => row.country === undefined && row.city === undefined));
+  }
+  const bonnie = await (await parser('artist-bonnie-pink')).scrape(await config('artist-bonnie-pink'), await fixture('artist-bonnie-pink'), AT);
+  assert.equal(bonnie.find((row: { date: string }) => row.date === '2027-04-15')?.city, 'Koto-ku', 'the postponed Zepp date survives its past cancellation notice');
+  assert.equal(bonnie.some((row: { date: string }) => row.date === '2026-09-21'), false);
+  assert.equal(bonnie.some((row: { date: string }) => row.date === '2026-10-11'), false, 'the precise Ono/Katsuyama provider collision stays held');
+});
+
+test('physical-show extraction cannot invent venues, countries, county cities or a single date from a period', async () => {
+  const ann = await (await parser('artist-ann-reed')).scrape(await config('artist-ann-reed'), await fixture('artist-ann-reed'), AT);
+  assert.equal(ann.some((row: { date: string }) => row.date === '2026-10-15'), false, 'the explicit livestream is not a physical concert');
+  assert.equal(ann.find((row: { date: string }) => row.date === '2026-10-24')?.venue, undefined, 'details-coming-soon has no invented venue');
+  const josh = await (await parser('artist-josh-nelson')).scrape(await config('artist-josh-nelson'), await fixture('artist-josh-nelson'), AT);
+  assert.equal(josh.length, 4);
+  assert.equal(josh.some((row: { date: string }) => row.date === '2026-11-20'), false, 'Tokyo period does not establish one performance day');
+  assert.equal(josh.find((row: { date: string }) => row.date === '2026-10-27')?.city, 'Los Angeles');
+  const id = 'artist-oasis';
+  const body = await fixture(id);
+  const oasis = await (await parser(id)).scrape(await config(id), body, AT);
+  assert.ok(oasis.filter((row: { venue: string }) => row.venue === 'Knebworth Park' || row.venue === 'Slane Castle' || row.venue === 'Gillette Stadium').every((row: { city?: string }) => row.city === undefined));
+  const falseCountry = await (await parser(id)).scrape(await config(id), body.replaceAll('Rome, Italy', 'Rome, CA'), AT);
+  assert.ok(falseCountry.filter((row: { city: string }) => row.city === 'Rome').every((row: { country?: string }) => row.country === undefined));
+  const burak = await (await parser('artist-burak-yeter')).scrape(await config('artist-burak-yeter'), await fixture('artist-burak-yeter'), AT);
+  assert.equal(burak.find((row: { date: string }) => row.date === '2026-10-24')?.city, undefined, 'Hatay province is not a proven city');
+  assert.equal(burak.find((row: { date: string }) => row.date === '2027-05-29')?.venue, undefined, 'an event-series title is not a proven physical venue');
+});
+
+test('Copland program credits and exact enumerated dates are required; no mixed-program attribution or range endpoint guessing', async () => {
+  const id = 'artist-aaron-copland';
+  const body = await fixture(id);
+  const cfg = await config(id);
+  const rows = await (await parser(id)).scrape(cfg, body, AT);
+  assert.deepEqual(rows.filter((row: { city: string }) => row.city === 'Singapore').map((row: { date: string; startTime: string; country: string }) => [row.date, row.startTime, row.country]), [['2026-11-27', '19:30', 'SG'], ['2026-11-28', '19:30', 'SG']]);
+  assert.equal(rows.find((row: { date: string; city: string }) => row.date === '2026-10-16' && row.city === 'Frankfurt (Oder)')?.country, 'DE');
+  await assert.rejects((await parser(id)).scrape(cfg, body.replaceAll('COPLAND', 'OTHER').replaceAll('Aaron Copland', 'Other Composer'), AT), /credit|performers/);
+  await assert.rejects((await parser(id)).scrape(cfg, body.replace('Nov 27th &amp; 28th, 2026', 'Nov 27th - 28th, 2026'), AT), /date/);
+  await assert.rejects((await parser(id)).scrape(cfg, body.replace('Oct 16th, 2026', 'Feb 30th, 2026'), AT), /impossible/);
+  await assert.rejects((await parser(id)).scrape(cfg, body.replaceAll('Germany', 'Atlantis'), AT), /country/);
+});
+
+test('three exact Showaddywaddy venue proofs recover six native dates without extending GB to similar labels', async () => {
+  const id = 'artist-showaddywaddy';
+  const body = await fixture(id);
+  const cfg = await config(id);
+  const rows = await (await parser(id)).scrape(cfg, body, AT);
+  const locations = ['Wimborne Minster', 'Christchurch', 'Skegness'];
+  const added = rows.filter((row: { city: string; country?: string }) => locations.includes(row.city) && row.country === 'GB');
+  assert.deepEqual(added.map((row: { date: string }) => row.date), ['2026-11-27', '2027-01-21', '2027-05-28', '2027-11-26', '2028-01-08', '2028-05-26']);
+  const variants = body.replaceAll('Wimborne - Tivoli Theatre', 'Wimborne - Tivoli Theatre Annex')
+    .replaceAll('Christchurch - The Regent', 'Christchurch - The Regent Abroad')
+    .replaceAll('Skegness - Embassy Theatre', 'Skegness - Embassy Theatre Annex');
+  const unknown = await (await parser(id)).scrape(cfg, variants, AT);
+  assert.ok(unknown.filter((row: { venue: string }) => /Annex|Abroad/.test(row.venue)).every((row: { country?: string }) => row.country === undefined));
+  assert.equal(rows.some((row: { city: string; date: string }) => row.city === 'Castlebar' && row.date === '2026-12-06'), false);
+});
+
+test('Paul Carrack can only use the explicit same-record Germany Live year with matching venue/city evidence', async () => {
+  const id = 'artist-paul-carrack';
+  const body = await fixture(id);
+  const cfg = await config(id);
+  const rows = await (await parser(id)).scrape(cfg, body, AT);
+  assert.deepEqual(rows.filter((row: { date?: string }) => row.date).map((row: { date: string; city: string; country: string }) => [row.date, row.city, row.country]), [['2026-10-18', 'Berlin', 'DE'], ['2026-10-19', 'Zwickau', 'DE']]);
+  assert.ok(rows.filter((row: { date?: string }) => !row.date).every((row: { country?: string }) => row.country === undefined));
+  const noYear = await (await parser(id)).scrape(cfg, body.replaceAll('germany-live-2026-', 'germany-live-'), AT);
+  assert.ok(noYear.every((row: { date?: string; country?: string }) => row.date === undefined && row.country === undefined));
+  const wrongCity = await (await parser(id)).scrape(cfg, body.replace('Berlin', 'London'), AT);
+  assert.equal(wrongCity.find((row: { city: string }) => row.city === 'London')?.country, undefined);
 });
