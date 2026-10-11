@@ -25,6 +25,18 @@ const SALZBURG_VENUES = new Set([
 
 function hasMozartProgramme(html: string): boolean {
   const $ = cheerio.load(html);
+  $('br').before(' ');
+  const name = '(?:Wolfgang (?:Amadeus|Amadé) Mozart|W\\.?\\s*A\\.?\\s*Mozart|Mozart)';
+  const catalogue = /\bK(?:V|\.)\s*\d+/i;
+  if ($('p').toArray().some(element => {
+    const text = compact($(element).text());
+    if (new RegExp(`^${name}(?:\\s*:|\\s+)`, 'i').test(text) && catalogue.test(text)) return true;
+    if (new RegExp(`^${name}$`, 'i').test(text) && catalogue.test(compact($(element).next('p').text()))) return true;
+    if (new RegExp(`^Musik von ${name}(?:\\s|[&,]|$)`, 'i').test(text)) return true;
+    if (/^Werke\b/i.test(text) && /\bvon Wolfgang (?:Amadeus|Amadé) Mozart(?:,|\s+und|$)/i.test(text)) return true;
+    return /\b(?:Einleitung|Introduction) (?:von|by) Wolfgang (?:Amadeus|Amadé) Mozart\b/i.test(text) &&
+      /\b(?:Symphonie|Sinfonie|Symphony|Konzert|Concerto)\b/i.test(text);
+  })) return true;
   return $('strong,b').toArray().some(element => {
     const label = compact($(element).text());
     if (!/^(?:Mozart|Wolfgang (?:Amadeus|Amadé) Mozart|W\.?\s*A\.?\s*Mozart)$/i.test(label)) return false;
@@ -33,11 +45,10 @@ function hasMozartProgramme(html: string): boolean {
     const paragraph = $(element).closest('p');
     if (!paragraph.length) return false;
     const text = compact(paragraph.text());
-    if (/\bMusik von\b/i.test(text) && text.includes(label)) return true;
     // Native programmes also place several composer credits in one paragraph,
     // or put the composer heading in a separate paragraph before the work.
     const work = text.length > label.length ? text : compact(paragraph.next('p').text());
-    return /\bK(?:V|\.)\s*\d+/i.test(work);
+    return (text === label || $(element).next().is('br')) && catalogue.test(work);
   });
 }
 
@@ -51,8 +62,8 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
   for (const event of feed.result.data.events) {
     if (event.archived || !event.infoDe || !hasMozartProgramme(event.infoDe)) continue;
     const category = compact(event.category.nameDe);
-    if (/Führung|Ausstellung|Filmsammlung|Vortrag/i.test(category)) continue;
-    if (!/^[a-z0-9][a-z0-9-]*$/.test(event.slugDe)) throw new Error('Mozarteum unsafe native event slug');
+    if (/Führung|Ausstellung|Filmsammlung|Vortrag/i.test(category) || /^Filme?$/i.test(category)) continue;
+    if (!/^[a-zA-Z0-9][a-zA-Z0-9-]*$/.test(event.slugDe)) throw new Error('Mozarteum unsafe native event slug');
     const eventUrl = `https://mozarteum.at/events/${event.slugDe}`;
     for (const slot of event.concertLocationTimes) {
       const date = new Date(`${slot.date}T00:00:00Z`);

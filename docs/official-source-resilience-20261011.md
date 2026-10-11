@@ -57,7 +57,7 @@ This supersedes the research report's overly strict same-street-number unknown
 for that room; it grants no authority to Villa Vicina or Heckentheater, which
 remain unknown. Other rooms have their own primary address chains.
 
-The fixed-clock actual source replay gives **53 credited date/time slots → 24
+The fixed-clock actual source replay gives **59 credited date/time slots → 28
 public artist/date/city records**, with five raw slots missing verified geography.
 The existing public identity collapses multiple composer performances in the
 same city/day; this repair preserves distinct raw slots and does not redesign the
@@ -75,13 +75,23 @@ the actual required DOM/fields, with presentation/navigation cropped mechanicall
 and the transformation documented in `provenance.json`. No missing original
 inputs were fabricated or relabelled as live.
 
-`tests/official_source_resilience.test.ts` passes all seven source checks through
+`tests/official_source_resilience.test.ts` passes all eight source checks through
 the real catalogue and stock custom runner: complete Blue extraction, country
 and move negatives, exact dated/sold-out/archival Teenage cases, native Requiem,
 mixed composer credits, metadata-only negatives, invalid year/source/feed and
 zero provider-request transport replay. Integrated whole-record/event-pair
 checks are performed separately; an earlier replay that appended still-rejected
 source rows is not evidence for these corrected inputs.
+
+Independent review identified and root corrected two concrete classification
+errors: unbolded composer/work and works-by/introduction credits were omitted,
+and the native `Film` category admitted a 2019/2020 recorded performance as a
+January2027 live concert. Regression cases use the actual primary event objects;
+all five pointed-out dates reach the public pipeline individually, recorded film
+does not emit a raw concert, and the complete native feed reproduces the counts
+above. Mixed credits and non-bold school performances remain supported; markup
+style is not an attribution requirement. Exact native mixed-case slugs are kept
+without allowing path/query/credential characters.
 
 The legacy schema still requires `countryNameFallback`; original required values
 are retained for compatibility. None of these custom parsers reads that fallback.

@@ -97,6 +97,27 @@ test('Mozarteum native full-date programme retains Mozart Requiem and omits muse
   assert.deepEqual(await moz(c, JSON.stringify(parsed), at), []);
   native.infoDe = '<p>A lecture about <strong>Mozart</strong> and his childhood.</p>';
   assert.deepEqual(await moz(c, JSON.stringify(parsed), at), []);
+  native.infoDe = '<p>A lecture about <strong>Mozart</strong> and the history of KV 425.</p>';
+  assert.deepEqual(await moz(c, JSON.stringify(parsed), at), []);
+});
+
+test('actual unbolded/mixed works-by/introduction programmes publish; archival film screenings do not', async () => {
+  const c = await config('artist-wolfgang-amadeus-mozart');
+  const parsed = JSON.parse(await captured('mozarteum.json'));
+  const source = parsed.result.data.events;
+  for (const [slug, date] of [
+    ['the-management-symphony', '2027-04-25'], ['traumerwachen', '2027-01-16'],
+    ['donnerstagskonzert-03', '2026-11-26'], ['meisterkonzert-janoska-ensemble', '2027-06-01'],
+    ['die-schule-der-liebenden-fuer-schulklassen', '2027-01-28'],
+  ]) {
+    parsed.result.data.events = source.filter((event: { slugDe: string }) => event.slugDe === slug);
+    const rows = await moz(c, JSON.stringify(parsed), at);
+    assert.ok(rows.some(row => row.date === date), `${slug} retains its explicit native composer/work credit`);
+    const pub = await processConcerts(rows, 'data/artists', at);
+    assert.ok(pub.some(row => row.date === date), `${slug} reaches the actual public pipeline`);
+  }
+  parsed.result.data.events = source.filter((event: { slugDe: string }) => event.slugDe === 'film-oksana-lyniv-dirigiert-mozarts');
+  assert.deepEqual(await moz(c, JSON.stringify(parsed), at), [], '2019/2020 filmed performances are not January2027 live concerts');
 });
 
 test('Mozarteum rejects year-less native dates, foreign source identity and malformed feed', async () => {
