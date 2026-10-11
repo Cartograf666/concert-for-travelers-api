@@ -2,6 +2,9 @@ import test from 'node:test';
 import assert from 'node:assert';
 import { verifyEvents, verifyConfigLive, formatVerifyReport } from '../src/healing/verify.js';
 import { ScraperConfig } from '../src/schemas/config.js';
+import { mkdtemp, writeFile, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 
 const NOW = new Date('2026-07-28T00:00:00.000Z');
 
@@ -127,13 +130,21 @@ test('verify - live gate surfaces a thrown scraper error instead of crashing', a
 });
 
 test('verify - live gate passes a healthy scrape', async () => {
-  const report = await verifyConfigLive(
-    config,
-    async () => ({ success: true, concerts: goodEvents(7) }),
-    { now: NOW, baselineCount: 7 }
-  );
-  assert.strictEqual(report.ok, true, formatVerifyReport(report));
-  assert.strictEqual(report.checks[0].name, 'live_fetch');
+  const dir = await mkdtemp(join(tmpdir(), 'healing-verify-'));
+  try {
+    const rows = goodEvents(7).map(row => ({
+      ...row, venue: 'Test Venue', city: 'Berlin', country: 'DE',
+      originalSource: config.domain, scrapedAt: NOW.toISOString()
+    }));
+    const approvedArtistsPath = join(dir, 'approved.json');
+    await writeFile(approvedArtistsPath, JSON.stringify(rows.map(row => ({ name: row.artist }))));
+    const report = await verifyConfigLive(config, async () => ({ success: true, concerts: rows }), {
+      now: NOW, baselineCount: 7, approvedArtistsPath
+    });
+    assert.strictEqual(report.ok, true, formatVerifyReport(report));
+    assert.strictEqual(report.publicEventCount, 7);
+    assert.strictEqual(report.checks[0].name, 'live_fetch');
+  } finally { await rm(dir, { recursive: true, force: true }); }
 });
 
 // --- The outage class the gate used to be blind to ---

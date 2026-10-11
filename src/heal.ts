@@ -5,7 +5,7 @@ import { createHash } from 'crypto';
 import { repairScraperConfig } from './healing/repair.js';
 import { classifyFailure, FailureEntry, RepairStrategy } from './healing/classify.js';
 import { proposeRepairCandidates, StrategyDeps } from './healing/strategies.js';
-import { verifyConfigLive, formatVerifyReport, VerifyReport } from './healing/verify.js';
+import { verifyConfigLive, formatVerifyReport, VerifyReport, loadVerificationBaselines } from './healing/verify.js';
 import { chainSelectorRepair } from './healing/chain.js';
 import {
   loadRepairHistory, saveRepairHistory, failedStrategiesFor, RepairRecord,
@@ -14,7 +14,6 @@ import {
 import { getGeminiKeys } from './engine/gemini_keys.js';
 import { runScraper, closeBrowser, fetchHtmlForHealing, resetDomainCircuit } from './engine/runner.js';
 import { resetLlmFallbackBudget } from './engine/llm_extraction_fallback.js';
-import { loadCache } from './engine/cache.js';
 import { ScraperConfig, ScraperConfigSchema } from './schemas/config.js';
 import { failureLogMatchesManifest, readRunManifest, ScrapeCohort } from './observability/run_manifest.js';
 
@@ -148,15 +147,8 @@ async function main() {
 
   // Last good event counts, so the verification gate can reject a "repair" that
   // extracts three teaser links where the venue used to yield forty shows.
-  const baselineCounts = new Map<string, number>();
-  try {
-    const cache = await loadCache(path.join(reportsDir, 'scrape-cache.json'));
-    for (const [id, entry] of Object.entries(cache)) {
-      if (Array.isArray((entry as any)?.concerts)) baselineCounts.set(id, (entry as any).concerts.length);
-    }
-  } catch {
-    console.warn('[Healer] No scrape cache in the artifact — verifying without a volume baseline.');
-  }
+  const baselines = await loadVerificationBaselines(reportsDir, cohort);
+  if (baselines.size === 0) console.warn('[Healer] No cohort scrape cache in the artifact — verifying without a volume baseline.');
 
   const history = await loadRepairHistory(historyPath);
   // Set by any path that mutates `history`, so the save below is driven by
@@ -256,7 +248,8 @@ async function main() {
         continue;
       }
 
-      const verifyOptions = { baselineCount: baselineCounts.get(id) };
+      const baselineEvents = baselines.get(id);
+      const verifyOptions = { baselineCount: baselineEvents?.length, baselineEvents };
       let accepted: { config: ScraperConfig; report: VerifyReport; note: string } | null = null;
       let lastNote = '';
 
