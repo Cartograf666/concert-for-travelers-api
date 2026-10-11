@@ -12,7 +12,19 @@ const VERIFIED_COUNTRIES: Record<string, string> = {
   'Zaragoza|Jardin de Invierno': 'ES', 'Pamplona|Zentral': 'ES',
   'Madrid|Sala Wagon': 'ES', 'Valencia|Sala Moon': 'ES',
   'Barcelona|Razzmatazz 2': 'ES', 'Lyon|Marché Gare': 'FR',
-  'Bruges|Cactus Club': 'BE',
+  'Strasbourg|La Laiterie': 'FR', 'Bruges|Cactus Club': 'BE',
+  'Cologne|Gebäude 9': 'DE', 'Hamburg|Knust': 'DE',
+  'Sneek|Het Bolwerk': 'NL', 'Amsterdam|Paradiso': 'NL',
+  // The official publicist explicitly declares United Kingdom for these exact
+  // venue/city bindings; an .ie ticket link alone would mislabel Belfast.
+  'Cambridge|Junction': 'GB', 'Bristol|Trinity': 'GB',
+  'Brighton|Concorde 2': 'GB', 'London|Hackney Church': 'GB',
+  'Manchester|New Century Hall': 'GB', 'Leeds|Project House': 'GB',
+  'Newcastle|Boiler Shop': 'GB', 'Aberdeen|Lemon Tree': 'GB',
+  'Glasgow|Saint Luke’s': 'GB', 'Edinburgh|La Belle Angele': 'GB',
+  'Belfast|Empire Music Hall': 'GB', 'Dublin|Academy': 'IE',
+  'Cardiff|Y Plas': 'GB', 'Birmingham|The Crossing': 'GB',
+  'Glasgow|SWG3 Warehouse': 'GB',
 };
 
 export async function scrape(config: ScraperConfig, html: string, scrapedAt: string): Promise<RawConcert[]> {
@@ -45,9 +57,14 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
       const href = block.find('a[href]').first().attr('href');
       const url = href ? safeAbsoluteUrl(href, config.url) : undefined;
       const country = VERIFIED_COUNTRIES[`${city}|${venue}`];
+      // The artist listing says Paradiso, but the linked operator record says
+      // Tolhuistuin. Keep the dated raw row without asserting a disputed venue;
+      // live placement confirmation is unavailable, so it cannot publish.
+      const disputedVenue = date === '2026-11-01' && city === 'Amsterdam' && venue === 'Paradiso' &&
+        url === 'https://www.paradiso.nl/programma/teenage-fanclub/2867949';
       // Unknown countries remain observable raw rows, not a guessed GB fallback.
       concerts.push({
-        artist: 'Teenage Fanclub', date, venue, city, country,
+        artist: 'Teenage Fanclub', date, venue: disputedVenue ? undefined : venue, city, country,
         ticketUrl: url, sourceEventUrl: url, originalSource: config.domain, scrapedAt,
       });
     });

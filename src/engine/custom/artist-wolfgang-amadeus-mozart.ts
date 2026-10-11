@@ -14,11 +14,13 @@ const Event = z.object({
 });
 const Feed = z.object({ path: z.literal('/konzerte'), result: z.object({ data: z.object({ events: z.array(Event) }) }) });
 const compact = (value: string) => value.replace(/\s+/g, ' ').trim();
-// Primary institution/venue address: mozarteum.at/en/contact, Salzburg, Austria.
+// Primary venue/room addresses are retained in docs/official-source-resilience-20261011.md.
 // This closed venue list cannot assign that location to an unfamiliar venue.
 const SALZBURG_VENUES = new Set([
   'Stiftung Mozarteum, Wiener Saal', 'Stiftung Mozarteum, Großer Saal',
-  'Stiftung Mozarteum, Villa Vicina', 'Mozart-Wohnhaus, Tanzmeistersaal',
+  'Mozart-Wohnhaus, Tanzmeistersaal', 'Haus für Mozart', 'Max Schlereth Saal',
+  'Großes Festspielhaus', 'Salzburger Marionettentheater', 'Mozart Ton- und Filmsammlung',
+  'DomQuartier Salzburg, Rittersaal der Residenz', 'OVAL - Die Bühne im Europark',
 ]);
 
 function hasMozartProgramme(html: string): boolean {
@@ -29,8 +31,13 @@ function hasMozartProgramme(html: string): boolean {
     // A composer label needs a work in that programme paragraph. Brand names,
     // page titles and a mention in descriptive prose cannot grant attribution.
     const paragraph = $(element).closest('p');
-    return paragraph.length > 0 && compact(paragraph.text()).startsWith(label) &&
-      $(element).next().is('br') && compact(paragraph.text()).length > label.length;
+    if (!paragraph.length) return false;
+    const text = compact(paragraph.text());
+    if (/\bMusik von\b/i.test(text) && text.includes(label)) return true;
+    // Native programmes also place several composer credits in one paragraph,
+    // or put the composer heading in a separate paragraph before the work.
+    const work = text.length > label.length ? text : compact(paragraph.next('p').text());
+    return /\bK(?:V|\.)\s*\d+/i.test(work);
   });
 }
 

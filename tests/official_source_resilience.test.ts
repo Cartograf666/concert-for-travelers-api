@@ -52,6 +52,10 @@ test('Teenage Fanclub parses 41 exact current-heading dates, sold-out rows and r
   assert.equal(raw.find(row => row.date === '2026-10-19')?.venue, 'Marché Gare');
   assert.equal(raw.find(row => row.date === '2026-10-10')?.country, 'ES');
   assert.equal(raw.find(row => row.date === '2026-10-24')?.country, 'BE');
+  assert.equal(raw.find(row => row.date === '2026-11-16')?.country, 'GB');
+  assert.equal(raw.find(row => row.date === '2026-11-17')?.country, 'IE');
+  assert.equal(raw.find(row => row.date === '2026-10-21')?.country, undefined);
+  assert.equal(raw.find(row => row.date === '2026-11-01')?.venue, undefined);
   assert.ok(raw.every(row => row.date?.startsWith('2026-')));
   assert.ok(raw.every(row => !/Tickets|SOLD OUT/.test(row.venue || '')));
 });
@@ -83,6 +87,8 @@ test('Mozarteum native full-date programme retains Mozart Requiem and omits muse
   assert.equal(requiem?.venue, 'Stiftung Mozarteum, Großer Saal');
   assert.ok(!raw.some(row => row.sourceEventUrl?.includes('fuehrung-zu-mozarts-todestag')));
   assert.ok(raw.every(row => /^20\d{2}-\d{2}-\d{2}$/.test(row.date || '')));
+  assert.ok(raw.some(row => row.sourceEventUrl?.endsWith('/kammerorchester-basel-bezuidenhout-ibragimova')),
+    'a mixed-composer paragraph still credits the native Mozart work');
   assert.ok((await processConcerts(raw, 'data/artists', at)).some(row => row.date === '2026-12-05'));
   const parsed = JSON.parse(json);
   const native = parsed.result.data.events.find((event: { slugDe: string }) => event.slugDe === 'mozart-requiem-mozarteumorchester-salzburg-pinnock');
