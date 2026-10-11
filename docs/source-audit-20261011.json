@@ -9649,37 +9649,29 @@
   "verificationScope": "Frozen completed Actions cohorts and bounded 2026-10-11 native captures. No dispatch, provider collection, production deployment or success-rate claim. Local capture replay uses stock runner, LLM budget zero; real pipeline/catalog fixed base date 2026-10-11.",
   "evidenceDirectory": "/Users/alex/agent-hub/concert-data-quality/coordinator/work/fleet-evidence",
   "verification": {
-    "checkedAt": "2026-10-11T05:59:39.504778+00:00",
+    "checkedAt": "2026-10-11T06:21:53.723212+00:00",
+    "testedSourceRevision": "edbde11",
     "build": "passed npm run build",
-    "scopedLint": "passed, 0 errors",
-    "fullLint": "passed, 0 errors / 103 existing warnings",
+    "fullLint": "passed0 errors /103 existing warnings",
     "targetedTests": {
-      "passed": 7,
+      "passed": 12,
       "failed": 0,
-      "command": "node --import tsx --test tests/fleet_recovery_20261011.test.ts tests/remaining_ellen_ten_damme_tour.test.ts"
+      "command": "node --import tsx --test tests/riphil_calendar_20261011.test.ts tests/fleet_recovery_20261011.test.ts tests/remaining_ellen_ten_damme_tour.test.ts"
     },
     "fullTests": {
-      "passed": 793,
+      "passed": 798,
       "failed": 0,
       "skipped": 1,
-      "durationMs": 50053.118,
-      "command": "npm test"
+      "durationMs": 49850.396625
     },
     "duplicateCitySelectors": {
       "count": 125,
-      "baseline": 131,
-      "passed": true
+      "baseline": 131
     },
-    "artistIntegrity": "not applicable: no artist data changes",
+    "standaloneSsrfPolicy": "Prior1/1PASS reused: shared HTTP/SSRF code unchanged; current full suite deliberately skips this separate gate.",
+    "artistIntegrity": "N/A: no catalog changes",
     "production": "not run / not authorized",
-    "liveCollection": "not run / no dispatch / no providers / no LLM",
-    "backgroundProcesses": "all started commands completed, stock browser diagnostic closed",
-    "standaloneSsrfPolicy": {
-      "passed": 1,
-      "failed": 0,
-      "skipped": 0,
-      "command": "npm run test:ssrf-policy"
-    }
+    "backgroundProcesses": "all three final gate sessions completed; temporary scripts moved out after completion"
   },
   "primarySupplementaryEvidence": [
     {
@@ -10041,6 +10033,63 @@
         ]
       }
     },
-    "checks": "Targeted/build/scoped lint completed earlier; final gates pending after last parser access-error context and cache negative assertions."
+    "checks": {
+      "checkedAt": "2026-10-11T06:21:53.723212+00:00",
+      "testedSourceRevision": "edbde11",
+      "build": "passed npm run build",
+      "fullLint": "passed0 errors /103 existing warnings",
+      "targetedTests": {
+        "passed": 12,
+        "failed": 0,
+        "command": "node --import tsx --test tests/riphil_calendar_20261011.test.ts tests/fleet_recovery_20261011.test.ts tests/remaining_ellen_ten_damme_tour.test.ts"
+      },
+      "fullTests": {
+        "passed": 798,
+        "failed": 0,
+        "skipped": 1,
+        "durationMs": 49850.396625
+      },
+      "duplicateCitySelectors": {
+        "count": 125,
+        "baseline": 131
+      },
+      "standaloneSsrfPolicy": "Prior1/1PASS reused: shared HTTP/SSRF code unchanged; current full suite deliberately skips this separate gate.",
+      "artistIntegrity": "N/A: no catalog changes",
+      "production": "not run / not authorized",
+      "backgroundProcesses": "all three final gate sessions completed; temporary scripts moved out after completion"
+    }
+  },
+  "verificationBeforeRiphilContinuation": {
+    "checkedAt": "2026-10-11T05:59:39.504778+00:00",
+    "build": "passed npm run build",
+    "scopedLint": "passed, 0 errors",
+    "fullLint": "passed, 0 errors / 103 existing warnings",
+    "targetedTests": {
+      "passed": 7,
+      "failed": 0,
+      "command": "node --import tsx --test tests/fleet_recovery_20261011.test.ts tests/remaining_ellen_ten_damme_tour.test.ts"
+    },
+    "fullTests": {
+      "passed": 793,
+      "failed": 0,
+      "skipped": 1,
+      "durationMs": 50053.118,
+      "command": "npm test"
+    },
+    "duplicateCitySelectors": {
+      "count": 125,
+      "baseline": 131,
+      "passed": true
+    },
+    "artistIntegrity": "not applicable: no artist data changes",
+    "production": "not run / not authorized",
+    "liveCollection": "not run / no dispatch / no providers / no LLM",
+    "backgroundProcesses": "all started commands completed, stock browser diagnostic closed",
+    "standaloneSsrfPolicy": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "command": "npm run test:ssrf-policy"
+    }
   }
 }
