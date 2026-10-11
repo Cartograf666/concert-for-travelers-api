@@ -11,14 +11,14 @@ each concert in space and time, and (3) **rank** the options.
 
 Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
-## Data quality continuation — 2026-10-11 (local main integration prepared; verification pending)
+## Data quality continuation — 2026-10-11 (local main integration candidate verified; not published)
 
 - Alex authorized completing the existing Delamain `concert-data-quality` stage
   locally (P-QUALITY-002), then explicitly authorized local main integration. This
   supersedes the stage prohibition on local main integration for this task only.
   The prepared candidate merges reviewed coordinator `b7663df` onto fetched
   upstream `13b2175` (base `9624768`), retaining all auto artist, tour-discovery and
-  repair-history updates. Integration checks are pending on this combined tree.
+  repair-history updates. Integration checks pass on this combined tree.
   Original main and Alex's uncommitted BACKLOG archive remain separate and
   preserved; root owns the final fast-forward and restoration of that dirty delta.
   No push, PR mutation, production merge/deploy, account/payment/limit change or
@@ -60,6 +60,17 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   (0 errors, 103 existing warnings), separate production SSRF 1/1 covers the skip,
   selector ratchet 125 <= 131 and changed-workflow actionlint pass. Subsequent
   status/document-only commits do not invalidate these code checks.
+- Combined local main candidate independently passes **859 total / 858 pass /
+  0 fail / 1 expected skip**, build/lint (0 errors, 103 existing warnings),
+  production SSRF 1/1 without the localhost override, selector ratchet 125 <= 131
+  and actionlint for both changed workflows. Original-capture/native-cache replay
+  passes all six orders with zero network attempts; all replay JSON equals the
+  reviewed run despite the fetched artist DB updates. Production code/configs/
+  workflows/fixtures are identical to reviewed `1cb9c07`; differences are only
+  the eleven fetched upstream data files and this audited status section.
+  Root still owns applying the candidate to original local main and restoring
+  Alex's archive as an uncommitted delta. Evidence: stage coordinator's
+  `local-main-integration/REPORT.md` and `local-main-integration/integrated-checks/`.
 - Root independently repeats full-original native and actual cache save/load,
   active-config filter and official-context replay in all six source orders,
   with zero network attempts and an isolated immutable `1758848` baseline.
