@@ -97,7 +97,7 @@ test('unknown venue does not inherit a provider winner or a city alias; existing
     'A new/moved venue cannot inherit provider rank; preserve the existing whole-record conflict policy');
 });
 
-test('nine primary-complete Teenage records preserve Bruges source-only and all provider metadata in both orders', async () => {
+test('twenty-nine primary-complete Teenage records preserve Bruges source-only and all provider metadata in both orders', async () => {
   const teen = JSON.parse(await readFile('tests/fixtures/teenage-fanclub-event-pairs-20261011.json','utf8')) as {
     pairs: Pair[]; allRaw: RawConcert[];
   };
@@ -105,9 +105,9 @@ test('nine primary-complete Teenage records preserve Bruges source-only and all 
   const native = teen.pairs.map(p=>p.native);
   const only = await processConcerts(teen.allRaw,DB,NOW);
   assert.equal(teen.allRaw.length,41);
-  assert.equal(only.length,9,'Unknown primary-country cohort is not declared recovered');
+  assert.equal(only.length,29,'Unknown primary-country cohort is not declared recovered');
   assert.equal(only.find(row=>row.date==='2026-10-24')?.city,'Bruges');
-  assert.ok(only.every(row=>['ES','FR','BE'].includes(row.country)));
+  assert.ok(only.every(row=>['ES','FR','BE','DE','NL','GB','IE'].includes(row.country)));
   const expected = records(await processConcerts(baseline,DB,NOW));
   for (const input of [[...baseline,...native],[...native,...baseline],
     [...blue.map(p=>p.native),...teen.allRaw,...baseline],[...baseline,...teen.allRaw,...blue.map(p=>p.native)]]) {
@@ -121,5 +121,47 @@ test('nine primary-complete Teenage records preserve Bruges source-only and all 
     {sourceEventUrl:'https://teenage.fanclub.tickets.cactusmusic.be/other'},
     {sourceEventUrl:'https://teenage.fanclub.tickets.cactusmusic.be.evil.example/selection'}]) {
     assert.equal(verifiedOfficialSourceEventIdentity({...cactus.native,...change},{...output,...change}),undefined);
+  }
+});
+
+
+test('Newcastle exact event alias preserves peer metadata; Amsterdam and Belfast/Dublin country boundaries remain explicit', async () => {
+  const teen = JSON.parse(await readFile('tests/fixtures/teenage-fanclub-event-pairs-20261011.json','utf8')) as {
+    pairs: Pair[]; allRaw: RawConcert[];
+  };
+  const newcastle = teen.pairs.find(p=>p.native.date==='2026-11-10')!;
+  const [native] = await processConcerts([newcastle.native],DB,NOW);
+  assert.equal(native.city,'Newcastle');
+  assert.equal(native.venue,'Boiler Shop');
+  assert.equal(verifiedOfficialSourceEventIdentity(newcastle.native,native)?.dedupeCity,'Newcastle Upon Tyne');
+  const expected = await processConcerts([newcastle.provider],DB,NOW);
+  for(const rows of [[newcastle.native,newcastle.provider],[newcastle.provider,newcastle.native]]) {
+    assert.deepEqual(await processConcerts(rows,DB,NOW),expected);
+  }
+  for(const change of [{date:'2027-11-10'},{venue:'Moved Boiler Shop Event'},{city:'Newcastle Upon Tyne'},
+    {sourceEventUrl:'https://www.seetickets.com/event/teenage-fanclub/boiler-shop/other'}]) {
+    assert.equal(verifiedOfficialSourceEventIdentity({...newcastle.native,...change},{...native,...change}),undefined);
+  }
+  const amsterdam=teen.allRaw.find(row=>row.city==='Amsterdam' && row.date==='2026-11-01')!;
+  assert.equal(amsterdam.venue,undefined,'Artist/operator placement contradiction is retained as unresolved raw');
+  assert.deepEqual(await processConcerts([amsterdam],DB,NOW),[]);
+  assert.ok(!teen.pairs.some(p=>p.native.date===amsterdam.date),'No priority/pair registry for disputed Amsterdam');
+  const forced={...amsterdam,venue:'Paradiso'};
+  const [forcedPublic]=await processConcerts([forced],DB,NOW);
+  assert.equal(verifiedOfficialSourceEventIdentity(forced,forcedPublic),undefined,'No invented proof even if a raw venue is supplied');
+  const {baseline}=await fixture();
+  const peer=baseline.find(row=>row.artist==='Teenage Fanclub' && row.date==='2026-11-01')!;
+  const peerOnly=await processConcerts([peer],DB,NOW);
+  for(const rows of [[amsterdam,peer],[peer,amsterdam]]) {
+    assert.deepEqual(await processConcerts(rows,DB,NOW),peerOnly,'Do not override peer placement or coordinates with disputed official row');
+  }
+  for(const [date,country] of [['2026-11-16','GB'],['2026-11-17','IE']]) {
+    const pair=teen.pairs.find(p=>p.native.date===date)!;
+    assert.equal(pair.native.country,country);
+    const [published]=await processConcerts([pair.native],DB,NOW);
+    assert.equal(published.country,country);
+    assert.ok(verifiedOfficialSourceEventIdentity(pair.native,published));
+    const wrongCountry=country==='GB'?'IE':'GB';
+    assert.equal(verifiedOfficialSourceEventIdentity({...pair.native,country:wrongCountry},{...published,country:wrongCountry}),undefined);
   }
 });

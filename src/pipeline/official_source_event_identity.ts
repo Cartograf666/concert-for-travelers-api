@@ -79,8 +79,8 @@ const BLUE_OCTOBER_PAIRS = [
   ["2027-03-14", "/tour-dates-detail/hard-rock-live-rockford", "US", "Rockford", "Hard Rock Live Rockford", "ticketmaster.com", "Rockford", "Hard Rock Live Rockford"],
 ] as const;
 
-// Nine primary-complete Teenage Fanclub records (ES/FR/BE); incomplete
-// countries and later proof cohorts are deliberately absent from this registry.
+// Twenty-nine primary-complete Teenage Fanclub occurrences. Amsterdam's
+// disputed venue and unknown country cohorts have no pair/rank in this registry.
 const TEENAGE_FANCLUB_PAIRS = [
   ["2026-10-10", "https://justlifemusic.com/teenage/", "ES", "Oviedo", "Almacenes Kuivi", "bandsintown.com", "Oviedo", "Kuivi Pop Up"],
   ["2026-10-11", "https://justlifemusic.com/teenage/", "ES", "Bilbao", "Antzokia", "bandsintown.com", "Bilbao", "Kafe Antzokia"],
@@ -90,7 +90,27 @@ const TEENAGE_FANCLUB_PAIRS = [
   ["2026-10-16", "https://justlifemusic.com/teenage/", "ES", "Valencia", "Sala Moon", "bandsintown.com", "Valencia", "Moon Valencia"],
   ["2026-10-17", "https://justlifemusic.com/teenage/", "ES", "Barcelona", "Razzmatazz 2", "bandsintown.com", "Barcelona", "Razzmatazz 2"],
   ["2026-10-19", "https://marchegare.fr/agenda/teenage-fanclub", "FR", "Lyon", "Marché Gare", "bandsintown.com", "Lyon", "Le Marché Gare"],
+  ["2026-10-20", "https://www.artefact.org/la-laiterie/evenements/teenage-fanclub", "FR", "Strasbourg", "La Laiterie", "bandsintown.com", "Strasbourg", "La Laiterie"],
   ["2026-10-24", "https://teenage.fanclub.tickets.cactusmusic.be/selection", "BE", "Bruges", "Cactus Club", "bandsintown.com", "Brugge", "Cactus Club"],
+  ["2026-10-26", "https://www.eventim.de/event/teenage-fanclub-gebaeude-9-21398335/", "DE", "Cologne", "Gebäude 9", "bandsintown.com", "Cologne", "Gebäude 9"],
+  ["2026-10-29", "https://www.eventim.de/event/teenage-fanclub-knust-21477011/", "DE", "Hamburg", "Knust", "bandsintown.com", "Hamburg", "Knust"],
+  ["2026-10-31", "https://tickets.ontdekpoort.nl/nl-NL/Show/Details/94932/", "NL", "Sneek", "Het Bolwerk", "bandsintown.com", "Sneek", "Poppodium Bolwerk"],
+  ["2026-11-03", "https://crosstownconcerts.gigantic.com/teenage-fanclub-tickets/cambridge-cambridge-junction/2026-11-03-19-00", "GB", "Cambridge", "Junction", "bandsintown.com", "Cambridge", "Cambridge Junction"],
+  ["2026-11-04", "https://crosstownconcerts.gigantic.com/teenage-fanclub-tickets/bristol-trinity-centre/2026-11-04-19-00", "GB", "Bristol", "Trinity", "bandsintown.com", "Bristol", "Trinity Centre, Bristol"],
+  ["2026-11-05", "https://www.concorde2.co.uk/event/teenage-fanclub", "GB", "Brighton", "Concorde 2", "ticketmaster.com", "Brighton", "Brighton Concorde 2"],
+  ["2026-11-06", "https://www.universe.com/events/teenage-fanclub-tickets-D7J3NM?unii-trigger-open=D7J3NM", "GB", "London", "Hackney Church", "ticketmaster.com", "London", "Hackney Church"],
+  ["2026-11-07", "https://lnk.to/TFmcr", "GB", "Manchester", "New Century Hall", "ticketmaster.com", "Manchester", "Manchester New Century Hall"],
+  ["2026-11-09", "https://futuresound.seetickets.com/event/teenage-fanclub/project-house/3481726", "GB", "Leeds", "Project House", "bandsintown.com", "Leeds", "Project House"],
+  ["2026-11-10", "https://www.seetickets.com/event/teenage-fanclub/boiler-shop/3617058", "GB", "Newcastle", "Boiler Shop", "bandsintown.com", "Newcastle Upon Tyne", "Boiler Shop"],
+  ["2026-11-11", "https://www.ticketmaster.co.uk/event/36006473C8AD552A", "GB", "Aberdeen", "Lemon Tree", "ticketmaster.com", "Aberdeen", "The Lemon Tree"],
+  ["2026-11-13", "https://www.ticketmaster.co.uk/event/36006473D89761B2", "GB", "Glasgow", "Saint Luke’s", "ticketmaster.com", "Glasgow", "Saint Luke's"],
+  ["2026-11-14", "https://www.ticketweb.uk/event/teenage-fanclub-saint-lukes-tickets/14795423?pl=wingedox", "GB", "Glasgow", "Saint Luke’s", "ticketmaster.com", "Glasgow", "Saint Luke's"],
+  ["2026-11-15", "https://www.ticketweb.uk/event/teenage-fanclub-la-belle-angele-tickets/14795263?pl=gigsinscotland", "GB", "Edinburgh", "La Belle Angele", "ticketmaster.com", "Edinburgh", "La Belle Angèle"],
+  ["2026-11-16", "https://www.ticketmaster.ie/artist/736268?venueId=459510", "GB", "Belfast", "Empire Music Hall", "ticketmaster.com", "Belfast", "Empire Music Hall"],
+  ["2026-11-17", "https://www.ticketmaster.ie/artist/736268?venueId=198465", "IE", "Dublin", "Academy", "theacademydublin.com", "Dublin", "The Academy"],
+  ["2026-11-19", "https://www.seetickets.com/event/teenage-fanclub/cardiff-students-union-y-plas/3626058", "GB", "Cardiff", "Y Plas", "ticketmaster.com", "Cardiff", "Y Plas, Cardiff Students Union"],
+  ["2026-11-20", "https://www.seetickets.com/event/teenage-fanclub-the-nightingales/the-crossing/3630232", "GB", "Birmingham", "The Crossing", "bandsintown.com", "Birmingham", "The Crossing"],
+  ["2026-11-21", "https://www.ticketweb.uk/event/teenage-fanclub-warehouse-swg3-tickets/14860433?pl=gigsinscotland", "GB", "Glasgow", "SWG3 Warehouse", "bandsintown.com", "Glasgow", "SWG3"],
 ] as const;
 
 /** Match only a captured event occurrence and exact location/source labels.
