@@ -27628,5 +27628,175 @@
     "failuresSinceRepair": 0,
     "note": "repair failed: Selector \"eventBlock\" (.dmPhotoGallery .photoGalleryThumbs) matched 0 elements.",
     "verification": ""
+  },
+  {
+    "id": "artist-billy-bragg",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-billy-bragg.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-11T10:48:50.765Z",
+    "previousConfig": {
+      "id": "artist-billy-bragg",
+      "domain": "www.billybragg.co.uk",
+      "url": "https://www.billybragg.co.uk/js_albums/live-and-dubious-ep-promo/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "#footer_sidebar4 .widget_slide_next_events ul li",
+        "artistNameFallback": "Billy Bragg",
+        "date": ".wg_event_date",
+        "ticketUrl": "a@href",
+        "venue": "a",
+        "city": "a",
+        "country": "GB",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.single_event_list) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-eskimo-joe",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-eskimo-joe.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-11T10:48:51.629Z",
+    "previousConfig": {
+      "id": "artist-eskimo-joe",
+      "domain": "www.eskimojoe.net",
+      "url": "https://www.eskimojoe.net/tours",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "a.EventLink",
+        "artistNameFallback": "Eskimo Joe",
+        "date": ".eventDate",
+        "ticketUrl": "a.EventLink",
+        "venue": ".venue",
+        "city": ".city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "AU"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.EventList-item, .Event) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-ivan-hussey",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-ivan-hussey.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-11T10:48:52.350Z",
+    "previousConfig": {
+      "id": "artist-ivan-hussey",
+      "domain": "www.celloman.co.uk",
+      "url": "http://www.celloman.co.uk/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.event",
+        "artistNameFallback": "Ivan Hussey",
+        "date": ".postdate",
+        "ticketUrl": "h2 a",
+        "venue": ".article-content",
+        "city": ".article-content",
+        "country": ".article-content",
+        "venueNameFallback": "See page content",
+        "cityNameFallback": "See page content",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-pat-benatar",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-pat-benatar.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-11T10:48:53.333Z",
+    "previousConfig": {
+      "id": "artist-pat-benatar",
+      "domain": "www.benatargiraldo.com",
+      "url": "https://www.benatargiraldo.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.tourdates-block",
+        "artistNameFallback": "Pat Benatar",
+        "date": ".tourdates-date",
+        "ticketUrl": "a.tourdates-tickets",
+        "venue": ".tourdates-headline",
+        "city": ".tourdates-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-stuts",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-stuts.json",
+    "strategy": "tls_broken",
+    "repairedAt": "2026-10-11T10:48:57.108Z",
+    "previousConfig": {
+      "id": "artist-stuts",
+      "domain": "stutsbeats.com",
+      "url": "https://stutsbeats.com/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".box",
+        "artistNameFallback": "Stuts",
+        "date": "h2",
+        "ticketUrl": ".livepost-doc a",
+        "venue": ".livepost-doc",
+        "city": ".livepost-doc",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "tls_broken: trying the www/apex variant, which usually holds the valid certificate; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): certificate has expired]",
+    "verification": ""
+  },
+  {
+    "id": "artist-tracey-thorn",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-tracey-thorn.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-11T10:50:00.722Z",
+    "previousConfig": {
+      "id": "artist-tracey-thorn",
+      "domain": "traceythorn.com",
+      "url": "http://traceythorn.com/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.listing__item.event",
+        "artistNameFallback": "Tracey Thorn",
+        "date": "div.bordered",
+        "ticketUrl": "a",
+        "venue": "h2.heading",
+        "city": "h2.heading",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
+    "verification": ""
   }
 ]
