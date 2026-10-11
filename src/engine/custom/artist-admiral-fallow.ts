@@ -1,10 +1,10 @@
 import * as cheerio from 'cheerio';
 import type { ScraperConfig } from '../../schemas/config.js';
-import type { Concert } from '../../schemas/concert.js';
+import type { RawConcert } from '../../schemas/concert.js';
 import { normalizeCountry, parseDate } from '../../pipeline/process.js';
 import { safeAbsoluteUrl } from '../url.js';
 
-export async function scrape(config: ScraperConfig, html: string, scrapedAt: string): Promise<Partial<Concert>[]> {
+export async function scrape(config: ScraperConfig, html: string, scrapedAt: string): Promise<RawConcert[]> {
   const $ = cheerio.load(html);
   return $('.EventListingListItem').map((_, element) => {
     const row = $(element);
@@ -20,6 +20,6 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
     }
     const href = row.find('.EventListingListItem-ticketsLink').first().attr('href');
     return { artist: 'Admiral Fallow', date, venue, city, country,
-      ticketUrl: href ? safeAbsoluteUrl(href, config.url) : undefined, originalSource: config.domain, scrapedAt };
+      ticketUrl: href ? safeAbsoluteUrl(href, config.url) : undefined, sourceEventUrl: config.url, originalSource: config.domain, scrapedAt };
   }).get();
 }

@@ -14,6 +14,7 @@ import { isVerifiedSourceIdentityCollision } from './provider_identity_exclusion
 import { isVerifiedCancelledTwinAtlanticEvent } from './twin_atlantic_cancellations.js';
 import { isInvalidLegacyAiKawashimaEvent } from './ai_kawashima_provenance.js';
 import { verifiedOfficialSourceEventIdentity } from './official_source_event_identity.js';
+import { verifiedNormalizationOccurrence } from './normalization_occurrence_identity.js';
 import { mozarteumProvenanceDropReason } from './mozarteum_provenance.js';
 
 /** Format a Date as a timezone-safe YYYY-MM-DD using its local calendar fields. */
@@ -1268,7 +1269,8 @@ export async function processConcerts(
     // 3. Deduplication Key: (artist_slug, date, city_slug)
     const artistSlug = slugify(validatedConcert.artist);
     const citySlug = slugify(validatedConcert.city);
-    const verifiedEvent = verifiedOfficialSourceEventIdentity(raw, validatedConcert);
+    const verifiedEvent = verifiedOfficialSourceEventIdentity(raw, validatedConcert) ??
+      verifiedNormalizationOccurrence(raw, validatedConcert);
     const dedupeCity = verifiedEvent ? slugify(verifiedEvent.dedupeCity) : citySlug;
     const dedupeKey = `${artistSlug}_${validatedConcert.date}_${dedupeCity}`;
     // Authority is tied to the original cached object and the canonical

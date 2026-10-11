@@ -1,6 +1,6 @@
 import * as cheerio from 'cheerio';
 import type { ScraperConfig } from '../../schemas/config.js';
-import type { Concert } from '../../schemas/concert.js';
+import type { RawConcert } from '../../schemas/concert.js';
 import { safeAbsoluteUrl } from '../url.js';
 
 const MONTHS = 'JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC'.split(' ');
@@ -9,7 +9,7 @@ const GERMAN_VENUES: Record<string, string> = {
   'Konzert- und Ballhaus Neue Welt': 'Zwickau'
 };
 
-export async function scrape(config: ScraperConfig, html: string, scrapedAt: string): Promise<Partial<Concert>[]> {
+export async function scrape(config: ScraperConfig, html: string, scrapedAt: string): Promise<RawConcert[]> {
   const $ = cheerio.load(html);
   return $('.LiveDates-Item').map((_, element) => {
     const row = $(element);
@@ -34,6 +34,6 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
         country = 'DE';
       }
     }
-    return { artist: 'Paul Carrack', date, venue, city, country, ticketUrl, originalSource: config.domain, scrapedAt };
+    return { artist: 'Paul Carrack', date, venue, city, country, ticketUrl, sourceEventUrl: config.url, originalSource: config.domain, scrapedAt };
   }).get();
 }

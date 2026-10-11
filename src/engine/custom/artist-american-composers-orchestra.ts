@@ -1,6 +1,6 @@
 import * as cheerio from 'cheerio';
 import type { ScraperConfig } from '../../schemas/config.js';
-import type { Concert } from '../../schemas/concert.js';
+import type { RawConcert } from '../../schemas/concert.js';
 import { safeAbsoluteUrl } from '../url.js';
 
 const MONTHS = 'January February March April May June July August September October November December'.split(' ');
@@ -12,9 +12,9 @@ const VERIFIED_PROGRAMS = new Set([
   '/performances-events/new-virtuoso-low-end-theory'
 ]);
 
-export async function scrape(config: ScraperConfig, html: string, scrapedAt: string): Promise<Partial<Concert>[]> {
+export async function scrape(config: ScraperConfig, html: string, scrapedAt: string): Promise<RawConcert[]> {
   const $ = cheerio.load(html);
-  const concerts: Partial<Concert>[] = [];
+  const concerts: RawConcert[] = [];
   $('.p-e-item').each((_, element) => {
     const row = $(element);
     const href = row.find('.event-title a').first().attr('href');
@@ -41,7 +41,7 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
     const ticket = row.find('a.event-tickets-button').first().attr('href');
     concerts.push({ artist: 'American Composers Orchestra', date, startTime: `${String(hour).padStart(2, '0')}:${clock[2]}`,
       venue, city, country: 'US', ticketUrl: ticket ? safeAbsoluteUrl(ticket, config.url) : undefined,
-      originalSource: config.domain, scrapedAt });
+      sourceEventUrl: config.url, originalSource: config.domain, scrapedAt });
   });
   return concerts;
 }

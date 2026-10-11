@@ -1,6 +1,6 @@
 import * as cheerio from 'cheerio';
 import type { ScraperConfig } from '../../schemas/config.js';
-import type { Concert } from '../../schemas/concert.js';
+import type { RawConcert } from '../../schemas/concert.js';
 import { parseDate } from '../../pipeline/process.js';
 import { safeAbsoluteUrl } from '../url.js';
 
@@ -12,10 +12,10 @@ const VENUES: Record<string, { venue: string; city: string; country: string }> =
   '恵比寿リキッドルーム': { venue: 'LIQUIDROOM', city: 'Shibuya-ku', country: 'JP' }
 };
 
-export async function scrape(config: ScraperConfig, html: string, scrapedAt: string): Promise<Partial<Concert>[]> {
+export async function scrape(config: ScraperConfig, html: string, scrapedAt: string): Promise<RawConcert[]> {
   const $ = cheerio.load(html);
   if (!/BONNIE PINK/i.test($('title').text())) throw new Error('Bonnie Pink calendar identity missing');
-  const concerts: Partial<Concert>[] = [];
+  const concerts: RawConcert[] = [];
   $('.text-list__item').each((_, element) => {
     const row = $(element);
     const printed = row.find('.data-head__date').first().text().trim();
@@ -31,16 +31,16 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
     const normalized = label?.replace(/^会場:/, '会場：');
     const billboard = normalized?.match(/ビルボードライブ(?:東京|大阪|横浜)$/)?.[0];
     let place = normalized ? VENUES[billboard || normalized] : undefined;
+    let startTime: string | undefined;
     // The festival explicitly credits Bonnie Pink's October 11 SORA performance.
     if (normalized === '会場：六呂師高原(福井県大野市南六呂師169字東上谷野)' &&
         date === '2026-10-11' && lines.some(line => /11日.*19時.*SORA STAGE出演/.test(line))) {
-      // The public provider labels this same site Katsuyama, conflicting with
-      // the primary Ono address. Hold this exact event for hub-owned reconciliation.
-      return;
+      place = { venue: '六呂師高原', city: 'Ono', country: 'JP' };
+      startTime = '19:00';
     }
     const href = row.find('.text-list__body a').first().attr('href');
-    concerts.push({ artist: 'Bonnie Pink', date, venue: place?.venue, city: place?.city, country: place?.country,
-      ticketUrl: href ? safeAbsoluteUrl(href, config.url) : undefined, originalSource: config.domain, scrapedAt });
+    concerts.push({ artist: 'Bonnie Pink', date, startTime, venue: place?.venue, city: place?.city, country: place?.country,
+      ticketUrl: href ? safeAbsoluteUrl(href, config.url) : undefined, sourceEventUrl: config.url, originalSource: config.domain, scrapedAt });
   });
   return concerts;
 }

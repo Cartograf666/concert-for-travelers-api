@@ -1,5 +1,5 @@
 import type { ScraperConfig } from '../../schemas/config.js';
-import type { Concert } from '../../schemas/concert.js';
+import type { RawConcert } from '../../schemas/concert.js';
 import { normalizeCountry, parseDate } from '../../pipeline/process.js';
 import { safeAbsoluteUrl } from '../url.js';
 
@@ -10,7 +10,7 @@ interface NativeEvent {
   location?: { addressTitle?: string; addressLine2?: string; addressCountry?: string };
 }
 
-export async function scrape(config: ScraperConfig, body: string, scrapedAt: string): Promise<Partial<Concert>[]> {
+export async function scrape(config: ScraperConfig, body: string, scrapedAt: string): Promise<RawConcert[]> {
   const data = JSON.parse(body) as { website?: { primaryDomain?: string; timeZone?: string }; upcoming?: NativeEvent[] };
   if (data.website?.primaryDomain !== 'www.shellyberg.com' || !Array.isArray(data.upcoming) || !data.website.timeZone) {
     throw new Error('Shelly Berg native calendar identity, timezone or upcoming events missing');
@@ -18,7 +18,7 @@ export async function scrape(config: ScraperConfig, body: string, scrapedAt: str
   const calendarDay = (timestamp: number): string => new Intl.DateTimeFormat('en-CA', {
     timeZone: data.website!.timeZone, year: 'numeric', month: '2-digit', day: '2-digit'
   }).format(new Date(timestamp));
-  const concerts: Partial<Concert>[] = [];
+  const concerts: RawConcert[] = [];
   for (const event of data.upcoming) {
     const match = /^\/tour\/(20\d{2})\/(\d{1,2})\/(\d{1,2})\//.exec(event.fullUrl || '');
     const printed = match ? `${match[1]}-${match[2].padStart(2, '0')}-${match[3].padStart(2, '0')}` : '';
@@ -35,7 +35,7 @@ export async function scrape(config: ScraperConfig, body: string, scrapedAt: str
     concerts.push({ artist: 'Shelly Berg', date, venue, city,
       country: country && /^[A-Z]{2}$/.test(country) ? country : undefined,
       ticketUrl: event.fullUrl ? safeAbsoluteUrl(event.fullUrl, config.url) : undefined,
-      originalSource: config.domain, scrapedAt });
+      sourceEventUrl: config.url, originalSource: config.domain, scrapedAt });
   }
   return concerts;
 }

@@ -1,15 +1,15 @@
 import * as cheerio from 'cheerio';
 import type { ScraperConfig } from '../../schemas/config.js';
-import type { Concert } from '../../schemas/concert.js';
+import type { RawConcert } from '../../schemas/concert.js';
 import { normalizeCountry, parseDate } from '../../pipeline/process.js';
 import { safeAbsoluteUrl } from '../url.js';
 
 const US_STATES = new Set('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY DC'.split(' '));
 const CA_PROVINCES = new Set('AB BC MB NB NL NS NT NU ON PE QC SK YT'.split(' '));
 
-export async function scrape(config: ScraperConfig, html: string, scrapedAt: string): Promise<Partial<Concert>[]> {
+export async function scrape(config: ScraperConfig, html: string, scrapedAt: string): Promise<RawConcert[]> {
   const $ = cheerio.load(html);
-  const concerts: Partial<Concert>[] = [];
+  const concerts: RawConcert[] = [];
   $('.events-list .event').each((_, element) => {
     const row = $(element);
     const printed = row.find('.event-day-text').first().text().trim();
@@ -26,7 +26,7 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
     }
     const href = row.find('.event-ticket-link').first().attr('href');
     concerts.push({ artist: 'Excision', date, venue, city: parts[0], country,
-      ticketUrl: href ? safeAbsoluteUrl(href, config.url) : undefined, originalSource: config.domain, scrapedAt });
+      ticketUrl: href ? safeAbsoluteUrl(href, config.url) : undefined, sourceEventUrl: config.url, originalSource: config.domain, scrapedAt });
   });
   return concerts;
 }

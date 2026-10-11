@@ -13,9 +13,9 @@ const AT = '2026-10-11T05:00:00.000Z';
 const DIR = 'tests/fixtures/normalization-location-20261011';
 const CASES = [
   ['artist-randy-houser', 15, 15], ['artist-excision', 6, 6], ['artist-bastille', 8, 8],
-  ['artist-admiral-fallow', 5, 5], ['artist-iration', 7, 7], ['artist-rachael-sage', 7, 7],
+  ['artist-admiral-fallow', 5, 5], ['artist-iration', 7, 7], ['artist-rachael-sage', 8, 8],
   ['artist-burak-yeter', 7, 2], ['artist-shelly-berg', 6, 4], ['artist-turmion-katilot', 34, 11],
-  ['artist-suchmos', 8, 8], ['artist-bonnie-pink', 5, 5], ['artist-ann-reed', 11, 4],
+  ['artist-suchmos', 8, 8], ['artist-bonnie-pink', 6, 6], ['artist-ann-reed', 11, 4],
   ['artist-josh-nelson', 4, 4], ['artist-oasis', 40, 29], ['artist-aaron-copland', 23, 22],
   ['artist-showaddywaddy', 115, 25], ['artist-paul-carrack', 8, 2],
   ['artist-american-composers-orchestra', 3, 3]
@@ -114,7 +114,7 @@ test('native years, source calendar timezone, missing locations and festival/cru
   assert.equal(iration.some((row: { venue: string }) => row.venue === 'Closer To The Sun'), false);
 });
 
-test('verified city spellings preserve provider identities and the exact unresolved Castle Hotel collision stays held', async () => {
+test('verified city spellings and primary Castle Hotel row retain native geography', async () => {
   const randy = await (await parser('artist-randy-houser')).scrape(await config('artist-randy-houser'), await fixture('artist-randy-houser'), AT);
   assert.equal(randy.find((row: { date: string }) => row.date === '2027-05-06')?.city, 'Fort Worth');
   const turmion = await (await parser('artist-turmion-katilot')).scrape(await config('artist-turmion-katilot'), await fixture('artist-turmion-katilot'), AT);
@@ -124,7 +124,7 @@ test('verified city spellings preserve provider identities and the exact unresol
   const rows = await (await parser(id)).scrape(await config(id), body, AT);
   assert.equal(rows.find((row: { city: string }) => row.city === 'Kingston')?.date, '2026-10-11',
     'the native US date 10/11 must not become November 10');
-  assert.equal(rows.some((row: { date: string }) => row.date === '2026-10-30'), false);
+  assert.equal(rows.find((row: { date: string; city: string }) => row.date === '2026-10-30')?.city, 'Manchester');
   const nearby = await (await parser(id)).scrape(await config(id), body.replace('10/30/2026', '10/30/2027'), AT);
   assert.ok(nearby.some((row: { date: string; city: string }) => row.date === '2027-10-30' && row.city === 'Manchester'));
 });
@@ -143,7 +143,7 @@ test('exact Japanese venue proofs replace blurbs without extending JP to an unkn
   const bonnie = await (await parser('artist-bonnie-pink')).scrape(await config('artist-bonnie-pink'), await fixture('artist-bonnie-pink'), AT);
   assert.equal(bonnie.find((row: { date: string }) => row.date === '2027-04-15')?.city, 'Koto-ku', 'the postponed Zepp date survives its past cancellation notice');
   assert.equal(bonnie.some((row: { date: string }) => row.date === '2026-09-21'), false);
-  assert.equal(bonnie.some((row: { date: string }) => row.date === '2026-10-11'), false, 'the precise Ono/Katsuyama provider collision stays held');
+  assert.deepEqual(bonnie.filter((row: { date: string }) => row.date === '2026-10-11').map((row: { city: string; startTime: string }) => [row.city, row.startTime]), [['Ono', '19:00']]);
 });
 
 test('physical-show extraction cannot invent venues, countries, county cities or a single date from a period', async () => {
