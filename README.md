@@ -129,6 +129,11 @@ are bounded and stored only in `reports/processing-diagnostics.json` in workflow
 artifacts; the public status contains aggregate counts without those samples.
 Collection schedules, provider request limits and event normalization are unchanged.
 
+For per-artist requests, prefer the exact published `slug` from `artists.json`.
+Do not approximate it with an ASCII-only slug generator: punctuation, accents and
+non-Latin names can produce different filenames. The [consumer contract audit](docs/consumer-contract-audit-20261011.md)
+records this compatibility gap without changing API filenames or schema.
+
 Each concert object follows `src/schemas/concert.ts`: `artist`, `artistWebsite?`, `spotifyId?`, `mbid?`, `artistSocials?` (spotify/instagram/facebook/youtube/telegram/vk), `date` (`YYYY-MM-DD`), `startTime?` (`HH:MM`), `venue`, `venueKind?` (stadium/arena/club/theatre/hall/open-air/other), `city`, `country` (ISO 3166-1 alpha-2), `lat?`/`lng?`, `festival?` (`{name, url?}`), `lineup?`, `priceRange?` (`{min, max, currency}`, Ticketmaster only), `ticketUrl?` (the artist's own site when known, not a ticket-vendor link -- see below), `originalSource`, `scrapedAt`.
 
 **Note on `ticketUrl`**: despite the name, this is the artist's own official website when we know it, not a ticket-purchase page — source-specific ticket/aggregator links are frequently an unlabeled widget or a generic city-listing page with no indication of what it is. It only falls back to the raw source ticket link when no artist website is known for that artist.
