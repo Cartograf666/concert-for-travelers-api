@@ -11,7 +11,7 @@ each concert in space and time, and (3) **rank** the options.
 
 Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
-## Data quality continuation — 2026-10-11 (local main integration candidate verified; not published)
+## Data quality continuation — 2026-10-11 (merged into local main; not published)
 
 - Alex authorized completing the existing Delamain `concert-data-quality` stage
   locally (P-QUALITY-002), then explicitly authorized local main integration. This
@@ -19,8 +19,9 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   The prepared candidate merges reviewed coordinator `b7663df` onto fetched
   upstream `13b2175` (base `9624768`), retaining all auto artist, tour-discovery and
   repair-history updates. Integration checks pass on this combined tree.
-  Original main and Alex's uncommitted BACKLOG archive remain separate and
-  preserved; root owns the final fast-forward and restoration of that dirty delta.
+  Root fast-forwarded local main to the verified candidate `98f9749` on
+  2026-10-11. Alex's exact 48-line archive section is retained as uncommitted
+  work; it is excluded from this integration and documentation commit.
   No push, PR mutation, production merge/deploy, account/payment/limit change or
   WAF bypass is authorized or performed.
 - Failed-source inventory covers all 568 configs and the frozen 22 root / 25
