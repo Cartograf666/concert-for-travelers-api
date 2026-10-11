@@ -2,7 +2,7 @@
   "id": "artist-bastille",
   "domain": "www.bastillebastille.com",
   "url": "https://www.bastillebastille.com/tour/",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "umg-event",
     "artistNameFallback": "Bastille",

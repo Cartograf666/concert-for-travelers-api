@@ -2,7 +2,7 @@
   "id": "artist-turmion-katilot",
   "domain": "turmionkatilot.com",
   "url": "https://turmionkatilot.com/shows/",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".fl-rich-text p:has(strong)",
     "artistNameFallback": "Turmion Kätilöt",
