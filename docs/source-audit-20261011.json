@@ -1731,7 +1731,7 @@
       },
       "assigned": false,
       "disposition": "protected_other_worker",
-      "explanation": "Cartagena source-contract ownership; no inspection or modification by fleet."
+      "explanation": "Protected source-contract ownership; frozen artifact failure recorded, no fresh source diagnostic or modification by fleet."
     },
     {
       "cohort": "root",
@@ -3500,6 +3500,62 @@
         "reason": "selectors_stale",
         "error": "Parsed 0 concerts. Website layout might have changed.",
         "note": "Before final patch unless explicitly superseded by repairChecks; transport stub is fixture replay, not fresh production."
+      },
+      "repairChecks": {
+        "id": "artist-andy-cairns",
+        "baseDate": "2026-10-11T00:00:00.000Z",
+        "runner": {
+          "success": true,
+          "reason": "empty_schedule"
+        },
+        "priorRawCount": 1,
+        "rawCount": 0,
+        "priorPublicCount": 0,
+        "publicCount": 0,
+        "diagnostics": {
+          "schemaVersion": 1,
+          "generatedAt": "2026-10-11T05:57:45.187Z",
+          "baseDate": "2026-10-11T00:00:00.000Z",
+          "rawCount": 0,
+          "publishedCount": 0,
+          "duplicatesMerged": 0,
+          "dropped": {
+            "incomplete": 0,
+            "notApproved": 0,
+            "badDate": 0,
+            "pastDate": 0,
+            "zodFail": 0
+          },
+          "sources": {},
+          "validationIssues": {},
+          "missingFields": {},
+          "samples": []
+        },
+        "identityDeltaCounts": {
+          "added": 0,
+          "removed": 0
+        },
+        "wholeRecordDeltaCounts": {
+          "added": 0,
+          "removed": 0
+        },
+        "fullRecordsEvidence": "coordinator/work/fleet-evidence/final-repair-replay.json",
+        "deltaInterpretation": "Prior sole cached August22 2026 row is already past at fixed audit date; no current valid public record removed."
+      },
+      "finalConfigHash": "08c19fe2478aeeab0f1ffde6d84405a6ef74b0bc63291f0c6ca3f604b3cea1cb",
+      "finalConfig": {
+        "url": "https://therapyquestionmark.co.uk/tour/",
+        "type": "static_selectors",
+        "allowEmpty": true,
+        "emptyScheduleText": "There are no dates yet."
+      },
+      "nativeRepairEvidence": {
+        "url": "https://therapyquestionmark.co.uk/tour/",
+        "capturedAt": "2026-10-11T05:46:01.340790+00:00",
+        "originalCaptureSha256": "f15db2df43fe39ab5c23ac47baad199c0146345adba825a6c938bade6cc85e9d",
+        "fixturePath": "tests/fixtures/fleet-recovery-20261011/artist-andy-cairns.html",
+        "fixtureSha256": "1949b3d7024ccbfe6f07c92d7bf1b2424869c84bcb64af661b7b81fd10957b24",
+        "fixtureScope": "Native title and complete relevant listing/table cropped; scripts/styles/navigation omitted. Original bytes retained in stage evidence."
       }
     },
     {
@@ -3558,6 +3614,73 @@
         "reason": null,
         "error": null,
         "note": "Before final patch unless explicitly superseded by repairChecks; transport stub is fixture replay, not fresh production."
+      },
+      "repairChecks": {
+        "id": "artist-andy-timmons",
+        "baseDate": "2026-10-11T00:00:00.000Z",
+        "runner": {
+          "success": true
+        },
+        "priorRawCount": 0,
+        "rawCount": 1,
+        "priorPublicCount": 0,
+        "publicCount": 1,
+        "diagnostics": {
+          "schemaVersion": 1,
+          "generatedAt": "2026-10-11T05:57:39.591Z",
+          "baseDate": "2026-10-11T00:00:00.000Z",
+          "rawCount": 1,
+          "publishedCount": 1,
+          "duplicatesMerged": 0,
+          "dropped": {
+            "incomplete": 0,
+            "notApproved": 0,
+            "badDate": 0,
+            "pastDate": 0,
+            "zodFail": 0
+          },
+          "sources": {
+            "andytimmons.com": {
+              "rawCount": 1,
+              "publishedCount": 1,
+              "duplicatesMerged": 0,
+              "dropped": {
+                "incomplete": 0,
+                "notApproved": 0,
+                "badDate": 0,
+                "pastDate": 0,
+                "zodFail": 0
+              }
+            }
+          },
+          "validationIssues": {},
+          "missingFields": {},
+          "samples": []
+        },
+        "identityDeltaCounts": {
+          "added": 1,
+          "removed": 0
+        },
+        "wholeRecordDeltaCounts": {
+          "added": 1,
+          "removed": 0
+        },
+        "fullRecordsEvidence": "coordinator/work/fleet-evidence/final-repair-replay.json"
+      },
+      "finalConfigHash": "5f2dd0d910c70e9e4763bc14f08ff8e8c3416de76086cb7ec25d2ceef23149f9",
+      "finalConfig": {
+        "url": "https://andytimmons.com/shows/",
+        "type": "custom_js",
+        "allowEmpty": true,
+        "emptyScheduleText": "No shows booked at the moment."
+      },
+      "nativeRepairEvidence": {
+        "url": "https://andytimmons.com/shows/",
+        "capturedAt": "2026-10-11T05:46:00.724396+00:00",
+        "originalCaptureSha256": "1c702510512b3f164d2cd77f345ceb9f747239729a69d607c13ee5b3257bf4a3",
+        "fixturePath": "tests/fixtures/fleet-recovery-20261011/artist-andy-timmons.html",
+        "fixtureSha256": "974f95ad61d712f0947c9cf120b389775b9e992673f40c93fe4bedc4a8f768c4",
+        "fixtureScope": "Native title and complete relevant listing/table cropped; scripts/styles/navigation omitted. Original bytes retained in stage evidence."
       }
     },
     {
@@ -4228,6 +4351,74 @@
         "reason": "selectors_stale",
         "error": "Parsed 0 concerts. Website layout might have changed.",
         "note": "Before final patch unless explicitly superseded by repairChecks; transport stub is fixture replay, not fresh production."
+      },
+      "repairChecks": {
+        "id": "artist-billy-bragg",
+        "baseDate": "2026-10-11T00:00:00.000Z",
+        "runner": {
+          "success": true
+        },
+        "priorRawCount": 3,
+        "rawCount": 18,
+        "priorPublicCount": 3,
+        "publicCount": 18,
+        "diagnostics": {
+          "schemaVersion": 1,
+          "generatedAt": "2026-10-11T05:57:43.507Z",
+          "baseDate": "2026-10-11T00:00:00.000Z",
+          "rawCount": 18,
+          "publishedCount": 18,
+          "duplicatesMerged": 0,
+          "dropped": {
+            "incomplete": 0,
+            "notApproved": 0,
+            "badDate": 0,
+            "pastDate": 0,
+            "zodFail": 0
+          },
+          "sources": {
+            "www.billybragg.co.uk": {
+              "rawCount": 18,
+              "publishedCount": 18,
+              "duplicatesMerged": 0,
+              "dropped": {
+                "incomplete": 0,
+                "notApproved": 0,
+                "badDate": 0,
+                "pastDate": 0,
+                "zodFail": 0
+              }
+            }
+          },
+          "validationIssues": {},
+          "missingFields": {},
+          "samples": []
+        },
+        "identityDeltaCounts": {
+          "added": 18,
+          "removed": 3
+        },
+        "wholeRecordDeltaCounts": {
+          "added": 18,
+          "removed": 3
+        },
+        "fullRecordsEvidence": "coordinator/work/fleet-evidence/final-repair-replay.json",
+        "deltaInterpretation": "Previous three rows had yearless dates and duplicated combined venue/city strings. The same native Glasgow/Blackpool/Nottingham shows remain with complete printed years and split locations, plus fifteen additional fully dated native performances. One multiday festival lacks exact artist performance day and is excluded."
+      },
+      "finalConfigHash": "6642a04024daee4f367f3420f7bbe30267df022888ea49aa5e44644278c470e7",
+      "finalConfig": {
+        "url": "https://www.billybragg.co.uk/giglistings/",
+        "type": "custom_js",
+        "allowEmpty": null,
+        "emptyScheduleText": null
+      },
+      "nativeRepairEvidence": {
+        "url": "https://www.billybragg.co.uk/giglistings/",
+        "capturedAt": "2026-10-11T05:47:01.386321+00:00",
+        "originalCaptureSha256": "38f2866fa6899db9104d50172ff73dbec3c89a2be277e13d8556a4259d6a32ed",
+        "fixturePath": "tests/fixtures/fleet-recovery-20261011/artist-billy-bragg.html",
+        "fixtureSha256": "8e66f192bce367013ec8535e5d44adb7d44c12ba4f6c8073979cd90e7d9e8d05",
+        "fixtureScope": "Native title and complete relevant listing/table cropped; scripts/styles/navigation omitted. Original bytes retained in stage evidence."
       }
     },
     {
@@ -4904,6 +5095,74 @@
         "reason": null,
         "error": null,
         "note": "Before final patch unless explicitly superseded by repairChecks; transport stub is fixture replay, not fresh production."
+      },
+      "repairChecks": {
+        "id": "artist-ellen-ten-damme",
+        "baseDate": "2026-10-11T00:00:00.000Z",
+        "runner": {
+          "success": true
+        },
+        "priorRawCount": 62,
+        "rawCount": 62,
+        "priorPublicCount": 61,
+        "publicCount": 62,
+        "diagnostics": {
+          "schemaVersion": 1,
+          "generatedAt": "2026-10-11T05:57:41.228Z",
+          "baseDate": "2026-10-11T00:00:00.000Z",
+          "rawCount": 62,
+          "publishedCount": 62,
+          "duplicatesMerged": 0,
+          "dropped": {
+            "incomplete": 0,
+            "notApproved": 0,
+            "badDate": 0,
+            "pastDate": 0,
+            "zodFail": 0
+          },
+          "sources": {
+            "ellentendamme.nl": {
+              "rawCount": 62,
+              "publishedCount": 62,
+              "duplicatesMerged": 0,
+              "dropped": {
+                "incomplete": 0,
+                "notApproved": 0,
+                "badDate": 0,
+                "pastDate": 0,
+                "zodFail": 0
+              }
+            }
+          },
+          "validationIssues": {},
+          "missingFields": {},
+          "samples": []
+        },
+        "identityDeltaCounts": {
+          "added": 1,
+          "removed": 0
+        },
+        "wholeRecordDeltaCounts": {
+          "added": 1,
+          "removed": 0
+        },
+        "fullRecordsEvidence": "coordinator/work/fleet-evidence/final-repair-replay.json",
+        "deltaInterpretation": "All 61 still-future prior full records retained at artist/date/location identity. Prior native 2026-10-09 row is past at fixed audit date; current source adds fully dated Spaarndam 2026-11-12. Detailed full-record deltas retained."
+      },
+      "finalConfigHash": "7d7b3fc75955df8ae425c30e8bf4b853aa613fa90075cadd8ae7adc3b8187208",
+      "finalConfig": {
+        "url": "https://ellentendamme.nl/tour",
+        "type": "custom_js",
+        "allowEmpty": null,
+        "emptyScheduleText": null
+      },
+      "nativeRepairEvidence": {
+        "url": "https://ellentendamme.nl/tour",
+        "capturedAt": "2026-10-11T05:46:03.867381+00:00",
+        "originalCaptureSha256": "1c8ccf79b9a767542682a99599ca400c480b23c904d0fbcdefa603b71034fa13",
+        "fixturePath": "tests/fixtures/fleet-recovery-20261011/artist-ellen-ten-damme.html",
+        "fixtureSha256": "94064eeb101093242594355ea8f41cb27a47d8757b0186db77ca17b91776a6a5",
+        "fixtureScope": "Native title and complete relevant listing/table cropped; scripts/styles/navigation omitted. Original bytes retained in stage evidence."
       }
     },
     {
@@ -5004,6 +5263,62 @@
         "reason": "selectors_stale",
         "error": "Parsed 0 concerts. Website layout might have changed.",
         "note": "Before final patch unless explicitly superseded by repairChecks; transport stub is fixture replay, not fresh production."
+      },
+      "repairChecks": {
+        "id": "artist-eskimo-joe",
+        "baseDate": "2026-10-11T00:00:00.000Z",
+        "runner": {
+          "success": true,
+          "reason": "empty_schedule"
+        },
+        "priorRawCount": 1,
+        "rawCount": 0,
+        "priorPublicCount": 1,
+        "publicCount": 0,
+        "diagnostics": {
+          "schemaVersion": 1,
+          "generatedAt": "2026-10-11T05:57:46.717Z",
+          "baseDate": "2026-10-11T00:00:00.000Z",
+          "rawCount": 0,
+          "publishedCount": 0,
+          "duplicatesMerged": 0,
+          "dropped": {
+            "incomplete": 0,
+            "notApproved": 0,
+            "badDate": 0,
+            "pastDate": 0,
+            "zodFail": 0
+          },
+          "sources": {},
+          "validationIssues": {},
+          "missingFields": {},
+          "samples": []
+        },
+        "identityDeltaCounts": {
+          "added": 0,
+          "removed": 1
+        },
+        "wholeRecordDeltaCounts": {
+          "added": 0,
+          "removed": 1
+        },
+        "fullRecordsEvidence": "coordinator/work/fleet-evidence/final-repair-replay.json",
+        "deltaInterpretation": "Prior Fri, Oct9 raw row has native ticket URL /events/2026-10-09-...; real fixed-date pipeline rolled yearless date to 2027-10-09. Source explicit No upcoming events now permits empty, removing stale ambiguous cached record, not a verified 2027 gig."
+      },
+      "finalConfigHash": "52c6a2ffcba07189cffb67ac3a24be14670ca2698ee1a3ef61aecaa4a3ccc0b2",
+      "finalConfig": {
+        "url": "https://www.eskimojoe.net/tours",
+        "type": "static_selectors",
+        "allowEmpty": true,
+        "emptyScheduleText": "No upcoming events"
+      },
+      "nativeRepairEvidence": {
+        "url": "https://www.eskimojoe.net/tours",
+        "capturedAt": "2026-10-11T05:46:04.767125+00:00",
+        "originalCaptureSha256": "3afa76d2e166a3871a14b8df94a3c9d920931e361abd09236953a13dbb032a9d",
+        "fixturePath": "tests/fixtures/fleet-recovery-20261011/artist-eskimo-joe.html",
+        "fixtureSha256": "8ebfe1b3f43d91904ea9676ac98af6b428165ddd5dc814257adeebb1cb9161d1",
+        "fixtureScope": "Native title and complete relevant listing/table cropped; scripts/styles/navigation omitted. Original bytes retained in stage evidence."
       }
     },
     {
@@ -9266,5 +9581,62 @@
     "unrelated_nonconcert_content": 1
   },
   "verificationScope": "Frozen completed Actions cohorts and bounded 2026-10-11 native captures. No dispatch, provider collection, production deployment or success-rate claim. Local capture replay uses stock runner, LLM budget zero; real pipeline/catalog fixed base date 2026-10-11.",
-  "evidenceDirectory": "/Users/alex/agent-hub/concert-data-quality/coordinator/work/fleet-evidence"
+  "evidenceDirectory": "/Users/alex/agent-hub/concert-data-quality/coordinator/work/fleet-evidence",
+  "verification": {
+    "checkedAt": "2026-10-11T05:59:39.504778+00:00",
+    "build": "passed npm run build",
+    "scopedLint": "passed, 0 errors",
+    "fullLint": "passed, 0 errors / 103 existing warnings",
+    "targetedTests": {
+      "passed": 7,
+      "failed": 0,
+      "command": "node --import tsx --test tests/fleet_recovery_20261011.test.ts tests/remaining_ellen_ten_damme_tour.test.ts"
+    },
+    "fullTests": {
+      "passed": 793,
+      "failed": 0,
+      "skipped": 1,
+      "durationMs": 50053.118,
+      "command": "npm test"
+    },
+    "duplicateCitySelectors": {
+      "count": 125,
+      "baseline": 131,
+      "passed": true
+    },
+    "artistIntegrity": "not applicable: no artist data changes",
+    "production": "not run / not authorized",
+    "liveCollection": "not run / no dispatch / no providers / no LLM",
+    "backgroundProcesses": "all started commands completed, stock browser diagnostic closed"
+  },
+  "primarySupplementaryEvidence": [
+    {
+      "url": "https://www.squeezeofficial.com/tried-tested-and-trixies-squeeze-headline-tour-in-2026/",
+      "checkedAt": "2026-10-11",
+      "supports": "Native band announcement explicitly identifies November/December2026 UK shows with Billy Bragg, corresponding named city/date rows. Country guard applies only to checked current city/year cohort."
+    },
+    {
+      "url": "https://shop.ikbenaanwezig.nl/tickets/event/ellen-ten-damme-medusa-try-out",
+      "checkedAt": "2026-10-11",
+      "supports": "Linked native 12November2026 20:30 El Theatro Ringweg12 Spaarndam event."
+    },
+    {
+      "url": "https://visithaarlemmermeer.nl/zien-doen/kunst-cultuur/el-theatro",
+      "checkedAt": "2026-10-11",
+      "supports": "Municipality-operated visitor page explicitly gives El Theatro Ringweg12 Spaarndam Nederland."
+    },
+    {
+      "url": "https://www.portsmouthguildhall.org.uk/whats-on/event/squeeze/",
+      "checkedAt": "2026-10-11",
+      "supports": "Native venue confirms 3December2026 Billy Bragg/Squeeze performance and identifies it as part of the UK run; closes Portsmouth omission in initial Squeeze news list."
+    }
+  ],
+  "nativeEvidenceBoundaries": {
+    "kitty": "Unresolved DJ Kish to DJ Krush stock matcher collision. Rejected parser is outside branch and cannot be integrated alone; needs hub-owned identity guard/approval policy.",
+    "riphil": "Current complete native details unavailable for five of nine observed nav pages. Four readable current native program captures stored. No complete supported extraction repair yet.",
+    "nin": "Configured source403 blocks native replacement for historically invalid XPath/CSS.",
+    "esplanade": "One guarded HTTP capture aborted; one standard stock rendered read timed out20s. Browser closed, no repeated backend/UA/domain changes.",
+    "other": "All named source-specific native errors and no-calendar/redirect/archive/unrelated cases remain in configs entries, never counted as verified empty."
+  },
+  "baselineConfigHashMatches": 568
 }
