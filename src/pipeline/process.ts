@@ -305,7 +305,7 @@ export function cleanArtistName(name: string): string {
 }
 
 export type ArtistMatch = { name: string; website?: string | null; socials?: any; mbid?: string | null; artistDiscovery: ArtistDiscovery };
-export type ApprovedMatcher = (scrapedName: string) => ArtistMatch | null;
+export type ApprovedMatcher = (scrapedName: string, mode?: 'exact') => ArtistMatch | null;
 
 // Names this short are matched only by exact equality, never as a whole-word
 // substring or fuzzy candidate — otherwise "10cc"/"M83"/two-letter names hit
@@ -628,7 +628,13 @@ export function buildApprovedMatcher(approvedArtists: any[]): ApprovedMatcher {
         artistDiscovery: artistDiscoveryFor(e.approved)
       };
 
-  return (scrapedName: string): ArtistMatch | null => {
+  return (scrapedName: string, mode?: 'exact'): ArtistMatch | null => {
+    // Native performer fields must match the complete canonical name/approved
+    // alias, before title/suffix cleanup can turn unrelated text into a match.
+    if (mode === 'exact') {
+      const exact = exactByLower.get(scrapedName.trim().toLowerCase());
+      return exact ? toMatch(exact) : null;
+    }
     const cleaned = cleanArtistName(scrapedName);
     const lowerCleaned = cleaned.toLowerCase();
 
@@ -1174,7 +1180,10 @@ export async function processConcerts(
     }
 
     // 1. Artist Normalization & Filter
-    const matched = isTheHuName(raw.artist) && !hasTheHuCanonical ? null : match(raw.artist);
+    const source = raw.originalSource.trim().toLowerCase();
+    const matchMode = ['cartagenamusicfestival.com', 'www.cartagenamusicfestival.com'].includes(source)
+      ? 'exact' : undefined;
+    const matched = isTheHuName(raw.artist) && !hasTheHuCanonical ? null : match(raw.artist, matchMode);
     const artistSocials = matched ? buildArtistSocials(matched.socials) : undefined;
     const spotifyId = parseSpotifyArtistId(artistSocials?.spotify);
     if (!matched || isVerifiedSourceIdentityCollision(raw, matched.mbid, spotifyId) ||
