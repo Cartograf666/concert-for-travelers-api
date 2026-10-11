@@ -1,8 +1,8 @@
 {
   "id": "artist-wolfgang-amadeus-mozart",
   "domain": "mozarteum.at",
-  "url": "https://mozarteum.at/konzerte",
-  "type": "static_selectors",
+  "url": "https://mozarteum.at/page-data/konzerte/page-data.json",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".event-card",
     "artistNameFallback": "Wolfgang Amadeus Mozart",

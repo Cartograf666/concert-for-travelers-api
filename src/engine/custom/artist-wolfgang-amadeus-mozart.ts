@@ -1,0 +1,64 @@
+import * as cheerio from 'cheerio';
+import { z } from 'zod';
+import type { ScraperConfig } from '../../schemas/config.js';
+import type { RawConcert } from '../../schemas/concert.js';
+
+const Slot = z.object({
+  date: z.string(), startTime: z.string().nullable(),
+  location: z.object({ nameDe: z.string() }),
+});
+const Event = z.object({
+  infoDe: z.string().nullable(), slugDe: z.string(), archived: z.boolean(),
+  category: z.object({ nameDe: z.string(), isSubcategoryOf: z.object({ nameDe: z.string() }).nullable() }),
+  concertLocationTimes: z.array(Slot),
+});
+const Feed = z.object({ path: z.literal('/konzerte'), result: z.object({ data: z.object({ events: z.array(Event) }) }) });
+const compact = (value: string) => value.replace(/\s+/g, ' ').trim();
+// Primary institution/venue address: mozarteum.at/en/contact, Salzburg, Austria.
+// This closed venue list cannot assign that location to an unfamiliar venue.
+const SALZBURG_VENUES = new Set([
+  'Stiftung Mozarteum, Wiener Saal', 'Stiftung Mozarteum, Großer Saal',
+  'Stiftung Mozarteum, Villa Vicina', 'Mozart-Wohnhaus, Tanzmeistersaal',
+]);
+
+function hasMozartProgramme(html: string): boolean {
+  const $ = cheerio.load(html);
+  return $('strong,b').toArray().some(element => {
+    const label = compact($(element).text());
+    if (!/^(?:Mozart|Wolfgang (?:Amadeus|Amadé) Mozart|W\.?\s*A\.?\s*Mozart)$/i.test(label)) return false;
+    // A composer label needs a work in that programme paragraph. Brand names,
+    // page titles and a mention in descriptive prose cannot grant attribution.
+    const paragraph = $(element).closest('p');
+    return paragraph.length > 0 && compact(paragraph.text()).length > label.length;
+  });
+}
+
+/** The site's own Gatsby payload supplies full dates and composer programmes; listing cards omit years. */
+export async function scrape(config: ScraperConfig, html: string, scrapedAt: string): Promise<RawConcert[]> {
+  if (config.url !== 'https://mozarteum.at/page-data/konzerte/page-data.json' || config.domain !== 'mozarteum.at') {
+    throw new Error('Mozarteum native feed identity mismatch');
+  }
+  const feed = Feed.parse(JSON.parse(html));
+  const concerts: RawConcert[] = [];
+  for (const event of feed.result.data.events) {
+    if (event.archived || !event.infoDe || !hasMozartProgramme(event.infoDe)) continue;
+    const category = compact(event.category.nameDe);
+    if (/Führung|Ausstellung|Filmsammlung|Vortrag/i.test(category)) continue;
+    if (!/^[a-z0-9][a-z0-9-]*$/.test(event.slugDe)) throw new Error('Mozarteum unsafe native event slug');
+    const eventUrl = `https://mozarteum.at/events/${event.slugDe}`;
+    for (const slot of event.concertLocationTimes) {
+      const date = new Date(`${slot.date}T00:00:00Z`);
+      if (!/^20\d{2}-\d{2}-\d{2}$/.test(slot.date) || !Number.isFinite(date.valueOf()) ||
+          date.toISOString().slice(0, 10) !== slot.date) throw new Error('Mozarteum missing valid full native date');
+      const venue = compact(slot.location.nameDe);
+      const verifiedLocation = SALZBURG_VENUES.has(venue);
+      concerts.push({
+        artist: 'Wolfgang Amadeus Mozart', date: slot.date, venue,
+        city: verifiedLocation ? 'Salzburg' : undefined, country: verifiedLocation ? 'AT' : undefined,
+        startTime: slot.startTime && /^([01]\d|2[0-3]):[0-5]\d$/.test(slot.startTime) ? slot.startTime : undefined,
+        ticketUrl: eventUrl, sourceEventUrl: eventUrl, originalSource: config.domain, scrapedAt,
+      });
+    }
+  }
+  return concerts;
+}

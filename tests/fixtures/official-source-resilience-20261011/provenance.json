@@ -1,0 +1,30 @@
+{
+  "capturedAt": {
+    "blueOctober": {
+      "url": "https://www.blueoctober.com/tour-dates",
+      "observedAt": "2026-10-10T20:21:27.963148+00:00",
+      "result": "200 https://www.blueoctober.com/tour-dates",
+      "exitCode": 0,
+      "error": ""
+    },
+    "teenageFanclub": {
+      "url": "https://www.teenagefanclub.com/live",
+      "observedAt": "2026-10-10T20:21:28.047381+00:00",
+      "result": "200 https://www.teenagefanclub.com/live",
+      "exitCode": 0,
+      "error": ""
+    },
+    "mozarteum": {
+      "url": "https://mozarteum.at/page-data/konzerte/page-data.json",
+      "status": 200,
+      "capturedAt": "2026-10-11T06:01:14.041365+00:00",
+      "sha256": "09a5a7c84e93336c3ca0f369dda949fbbe488ca0f09fe3286f9951abeca9a2c8"
+    }
+  },
+  "transform": "Blue: retain actual calendar date/venue/location/link containers verbatim and event wrapper; Teenage: retain actual source content blocks; Mozarteum: remove only image presentation fields. Full originals in stage evidence.",
+  "originalSha256": {
+    "blueOctober": "29e04ff2113aeef79876ac421d7de3717bc7f6a2432ceff79ea2c1bfbcf0b384",
+    "teenageFanclub": "7e253f3b747b3f62ea4cd69b333fc0cf63587dacc1e5f747b844b820a50dcae3",
+    "mozarteum": "09a5a7c84e93336c3ca0f369dda949fbbe488ca0f09fe3286f9951abeca9a2c8"
+  }
+}

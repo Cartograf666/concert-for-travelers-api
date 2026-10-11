@@ -2,7 +2,7 @@
   "id": "artist-blue-october",
   "domain": "www.blueoctober.com",
   "url": "https://www.blueoctober.com/tour-dates",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "div.wixui-repeater__item",
     "artistNameFallback": "Blue October",

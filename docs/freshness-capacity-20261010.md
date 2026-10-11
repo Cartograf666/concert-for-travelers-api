@@ -260,3 +260,20 @@ Unknowns: full market/event denominator, per-target unknown ages and raw p95
 inputs, long-term queue progress under real errors/churn, Eventbrite access
 recovery, deployed revision linkage and sibling runtime behavior. None blocks
 these narrow documentation corrections. Integration/BACKLOG remain hub-owned.
+
+### Coordinator follow-up — 2026-10-11
+
+The completed artist-run artifact subsequently supplied the actual 20,781-entry
+Bandsintown cache. Using the existing expanded target loader, its successful
+`verifiedAt` values and the original source-health timestamp independently
+reproduces **10,888 fresh / 6,686 old / 3,207 unknown**, with **17,574 known ages**
+and p95 **12.42 days**. This supersedes the earlier limitation that the numerical
+p95 could not be independently recomputed from aggregates. Unknown-age targets
+remain unknown. The exact cache hash and zero-network next-queue simulation are
+in stage evidence `freshness-cache-verification.json`, produced by
+`verify-freshness-cache.mjs`; no provider requests or budgets changed.
+
+One retained cache does not establish long-term fairness under churn/errors.
+The [consumer contract audit](consumer-contract-audit-20261011.md) adds an actual
+read-only adapter projection and source-level compatibility inspection; it is not
+a complete static-versus-live provider coverage comparison or server migration.
