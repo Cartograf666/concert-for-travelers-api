@@ -12,12 +12,13 @@ import type { ProcessingDiagnostics } from '../src/observability/processing_diag
 const AT = '2026-10-11T05:00:00.000Z';
 const DIR = 'tests/fixtures/normalization-location-20261011';
 const CASES = [
-  ['artist-randy-houser', 16, 16], ['artist-excision', 6, 6], ['artist-bastille', 8, 8],
-  ['artist-admiral-fallow', 5, 5], ['artist-iration', 8, 8], ['artist-rachael-sage', 7, 7],
+  ['artist-randy-houser', 15, 15], ['artist-excision', 6, 6], ['artist-bastille', 8, 8],
+  ['artist-admiral-fallow', 5, 5], ['artist-iration', 7, 7], ['artist-rachael-sage', 7, 7],
   ['artist-burak-yeter', 7, 2], ['artist-shelly-berg', 6, 4], ['artist-turmion-katilot', 34, 11],
   ['artist-suchmos', 8, 8], ['artist-bonnie-pink', 5, 5], ['artist-ann-reed', 11, 4],
   ['artist-josh-nelson', 4, 4], ['artist-oasis', 40, 29], ['artist-aaron-copland', 23, 22],
-  ['artist-showaddywaddy', 115, 25], ['artist-paul-carrack', 8, 2]
+  ['artist-showaddywaddy', 115, 25], ['artist-paul-carrack', 8, 2],
+  ['artist-american-composers-orchestra', 3, 3]
 ] as const;
 
 async function config(id: string) {
@@ -30,7 +31,7 @@ async function parser(id: string) {
   return import(`../src/engine/custom/${id}.js`);
 }
 
-test('seventeen real native calendars recover locations through the stock runner and strict pipeline without network', async t => {
+test('eighteen real native calendars recover locations through the stock runner and strict pipeline without network', async t => {
   t.mock.timers.enable({ apis: ['Date'], now: Date.parse(AT) });
   let attempts = 0;
   const blocked = () => { attempts++; throw new Error('Network forbidden in native fixture replay'); };
@@ -107,6 +108,10 @@ test('native years, source calendar timezone, missing locations and festival/cru
   await assert.rejects((await parser('artist-shelly-berg')).scrape(await config('artist-shelly-berg'), JSON.stringify(shelly), AT), /timezone/);
   const excision = await (await parser('artist-excision')).scrape(await config('artist-excision'), await fixture('artist-excision'), AT);
   assert.equal(excision.length, 6, 'three printed festival intervals remain excluded');
+  const randy = await (await parser('artist-randy-houser')).scrape(await config('artist-randy-houser'), await fixture('artist-randy-houser'), AT);
+  assert.equal(randy.some((row: { venue: string }) => row.venue === 'Top Shelf Country Cruise'), false);
+  const iration = await (await parser('artist-iration')).scrape(await config('artist-iration'), await fixture('artist-iration'), AT);
+  assert.equal(iration.some((row: { venue: string }) => row.venue === 'Closer To The Sun'), false);
 });
 
 test('verified city spellings preserve provider identities and the exact unresolved Castle Hotel collision stays held', async () => {
@@ -117,6 +122,8 @@ test('verified city spellings preserve provider identities and the exact unresol
   const id = 'artist-rachael-sage';
   const body = await fixture(id);
   const rows = await (await parser(id)).scrape(await config(id), body, AT);
+  assert.equal(rows.find((row: { city: string }) => row.city === 'Kingston')?.date, '2026-10-11',
+    'the native US date 10/11 must not become November 10');
   assert.equal(rows.some((row: { date: string }) => row.date === '2026-10-30'), false);
   const nearby = await (await parser(id)).scrape(await config(id), body.replace('10/30/2026', '10/30/2027'), AT);
   assert.ok(nearby.some((row: { date: string; city: string }) => row.date === '2027-10-30' && row.city === 'Manchester'));
@@ -198,4 +205,16 @@ test('Paul Carrack can only use the explicit same-record Germany Live year with 
   assert.ok(noYear.every((row: { date?: string; country?: string }) => row.date === undefined && row.country === undefined));
   const wrongCity = await (await parser(id)).scrape(cfg, body.replace('Berlin', 'London'), AT);
   assert.equal(wrongCity.find((row: { city: string }) => row.city === 'London')?.country, undefined);
+});
+
+test('ACO direct concerts use component dates and real performer credits without treating commissions or gala as orchestra appearances', async () => {
+  const id = 'artist-american-composers-orchestra';
+  const cfg = await config(id);
+  const body = await fixture(id);
+  const rows = await (await parser(id)).scrape(cfg, body, AT);
+  assert.deepEqual(rows.map((row: { date: string; startTime: string; city: string }) => [row.date, row.startTime, row.city]), [['2026-10-27', '19:30', 'New York'], ['2026-12-05', '20:00', 'New York'], ['2027-03-18', '19:30', 'New York']]);
+  assert.equal(rows.some((row: { city: string }) => row.city === 'Amarillo'), false);
+  assert.equal(rows.some((row: { startTime: string }) => row.startTime === '17:30'), false, 'the pre-concert gala is not the concert');
+  await assert.rejects((await parser(id)).scrape(cfg, body.replaceAll('American Composers Orchestra', 'Partner Orchestra').replaceAll('ACO performs', 'Partner performs').replaceAll('ACO<strong> </strong>performs', 'Partner<strong> </strong>performs'), AT), /credit/);
+  await assert.rejects((await parser(id)).scrape(cfg, body.replaceAll('<div>New York</div>', '<div>London</div>'), AT), /city/);
 });

@@ -533,6 +533,36 @@
       },
       "fixtureSha256": "476835b4310c142c84a268ac5d0284c9ce7325f75530d028a23cf270b27ac63a",
       "fixtureScope": "All eight native records; two exact venue-city tuples and same-row official links explicitly identify Germany Live 2026; no source-global year or GB default inference"
+    },
+    "artist-american-composers-orchestra": {
+      "configPath": "scrapers/artists/artist-american-composers-orchestra.json",
+      "beforeConfig": {
+        "id": "artist-american-composers-orchestra",
+        "domain": "www.americancomposers.org",
+        "url": "https://www.americancomposers.org/performances-events",
+        "type": "static_selectors",
+        "selectors": {
+          "eventBlock": ".p-e-item",
+          "artistNameFallback": "American Composers Orchestra",
+          "date": ".when",
+          "ticketUrl": "a.event-tickets-button",
+          "venue": ".event-location",
+          "city": ".performance-location_wrapper",
+          "venueNameFallback": "",
+          "cityNameFallback": "",
+          "countryNameFallback": "US"
+        }
+      },
+      "meta": {
+        "url": "https://www.americancomposers.org/performances-events",
+        "observedAt": "2026-10-11T05:49:02.517657+00:00",
+        "result": "200 https://www.americancomposers.org/performances-events",
+        "exitCode": 0,
+        "error": "",
+        "sha256": "de1d3d9627707162618583275ba8c755dd0f161366ee4495725c9d0e9f0ee7ef"
+      },
+      "fixtureSha256": "b0ca0b3ffcfeaab672f4b1e2093a7f311c84971acb748b696eb9e1b029719c1d",
+      "fixtureScope": "All native entries retained; three direct ACO concert programmes positively credited, exact separate month/year/day/time and CMS venue/city/state; partner commissions/gala/workshops/reading classification not generalized"
     }
   },
   "venueProofs": {
@@ -647,6 +677,20 @@
       "nativeCity": "Boston",
       "publicCity": "Foxborough",
       "reason": "primary directions page timed out; no inferred venue city"
+    },
+    {
+      "source": "Randy Houser",
+      "date": "2027-03-12",
+      "venue": "Top Shelf Country Cruise",
+      "primary": "https://topshelfcountrycruise.com/",
+      "reason": "Multi-night sailing is advertised; individual performance day/place not established by native calendar start date"
+    },
+    {
+      "source": "Iration",
+      "date": "2027-01-09",
+      "venue": "Closer To The Sun",
+      "primary": "https://closertothesun.com/",
+      "reason": "Promoter title explicitly Jan. 9-13, 2027; individual Iration day and physical venue remain unverified"
     }
   ],
   "showaddyVenueProofs": [

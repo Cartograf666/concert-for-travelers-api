@@ -27,6 +27,9 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
     if (!country || !validRegion || !parts[0] || !venue) {
       throw new Error('Iration event lacks an explicit year or a verified city/state/postcode');
     }
+    // The promoter explicitly advertises January 9-13, 2027. The card's start
+    // date does not establish Iration's individual performance at a specific venue.
+    if (venue === 'Closer To The Sun' && date === '2027-01-09') return;
     const href = row.find('.tour-actions a').first().attr('href');
     concerts.push({ artist: 'Iration', date, venue, city: parts[0], country,
       ticketUrl: href ? safeAbsoluteUrl(href, config.url) : undefined, originalSource: config.domain, scrapedAt });

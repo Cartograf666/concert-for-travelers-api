@@ -8,7 +8,8 @@ const US_STATES = new Set('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA
 
 export async function scrape(config: ScraperConfig, html: string, scrapedAt: string): Promise<Partial<Concert>[]> {
   const $ = cheerio.load(html);
-  return $('article.card.event').map((_, element) => {
+  const concerts: Partial<Concert>[] = [];
+  $('article.card.event').each((_, element) => {
     const row = $(element);
     const printedDate = row.find('time').first().attr('datetime')?.trim() || '';
     const date = /^[A-Za-z]{3} \d{1,2} 20\d{2}$/.test(printedDate) ? parseDate(printedDate, scrapedAt) : null;
@@ -17,9 +18,13 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
     if (!date || !place || !US_STATES.has(place[2]) || !venue) {
       throw new Error('Randy Houser event lacks an explicit date, venue or verified state');
     }
+    // The linked promoter sells a multi-night sailing; March 12 is not yet
+    // independently verified as Randy's individual performance day/place.
+    if (venue === 'Top Shelf Country Cruise' && date === '2027-03-12') return;
     const href = row.find('a.btn-tickets').first().attr('href');
     const city = place[1].trim() === 'Ft. Worth' && place[2] === 'TX' ? 'Fort Worth' : place[1].trim();
-    return { artist: 'Randy Houser', date, venue, city, country: 'US',
-      ticketUrl: href ? safeAbsoluteUrl(href, config.url) : undefined, originalSource: config.domain, scrapedAt };
-  }).get();
+    concerts.push({ artist: 'Randy Houser', date, venue, city, country: 'US',
+      ticketUrl: href ? safeAbsoluteUrl(href, config.url) : undefined, originalSource: config.domain, scrapedAt });
+  });
+  return concerts;
 }

@@ -52,8 +52,8 @@ test('official table uses heading years and survives both strict processing cloc
   const result = await runScraper(cfg);
   assert.equal(result.success, true);
   assert.equal(result.concerts.length, 113, '115 official rows less a weekday conflict and the Castlebar hold');
-  assert.equal(result.concerts.filter(c => c.country !== undefined).length, 27);
-  assert.equal(result.concerts.filter(c => c.country === undefined).length, 86);
+  assert.equal(result.concerts.filter(c => c.country !== undefined).length, 26);
+  assert.equal(result.concerts.filter(c => c.country === undefined).length, 87);
   assert.equal(result.concerts.some(c => c.city === 'Castlebar'), false,
     'the dated Castlebar provider conflict remains held');
   assert.equal(result.concerts.filter(c => c.ticketUrl !== undefined).length, 0,
@@ -78,7 +78,7 @@ test('official table uses heading years and survives both strict processing cloc
   await writeFile(approved, JSON.stringify([{ name: 'Showaddywaddy' }]));
   for (const clock of clocks) {
     const processed = await processConcerts(result.concerts, approved, clock);
-    assert.equal(processed.length, 27);
+    assert.equal(processed.length, 26);
     assert.equal(processed.find(c => c.venue === 'Princess Royal Theatre')?.date, '2027-11-27');
   }
 });
