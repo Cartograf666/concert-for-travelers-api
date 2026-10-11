@@ -21,7 +21,7 @@
       "sha256": "09a5a7c84e93336c3ca0f369dda949fbbe488ca0f09fe3286f9951abeca9a2c8"
     }
   },
-  "transform": "Blue: retain actual calendar date/venue/location/link containers verbatim and event wrapper; Teenage: retain actual source content blocks; Mozarteum: remove only image presentation fields. Full originals in stage evidence.",
+  "transform": "Blue: retain actual calendar date/venue/location/link containers verbatim and event wrapper; Teenage: retain actual source content blocks; Mozarteum: retain the original path and all 187 complete date/programme/category/location fields consumed by the extractor, removing unused presentation/navigation fields. Full originals with hashes remain in stage evidence.",
   "originalSha256": {
     "blueOctober": "29e04ff2113aeef79876ac421d7de3717bc7f6a2432ceff79ea2c1bfbcf0b384",
     "teenageFanclub": "7e253f3b747b3f62ea4cd69b333fc0cf63587dacc1e5f747b844b820a50dcae3",

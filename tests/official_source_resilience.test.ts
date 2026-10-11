@@ -89,6 +89,8 @@ test('Mozarteum native full-date programme retains Mozart Requiem and omits muse
   native.infoDe = '<p>This venue is named Mozart. A Weinberg programme without Mozart credit.</p>';
   parsed.result.data.events = [native];
   assert.deepEqual(await moz(c, JSON.stringify(parsed), at), []);
+  native.infoDe = '<p>A lecture about <strong>Mozart</strong> and his childhood.</p>';
+  assert.deepEqual(await moz(c, JSON.stringify(parsed), at), []);
 });
 
 test('Mozarteum rejects year-less native dates, foreign source identity and malformed feed', async () => {

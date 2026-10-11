@@ -29,7 +29,8 @@ function hasMozartProgramme(html: string): boolean {
     // A composer label needs a work in that programme paragraph. Brand names,
     // page titles and a mention in descriptive prose cannot grant attribution.
     const paragraph = $(element).closest('p');
-    return paragraph.length > 0 && compact(paragraph.text()).length > label.length;
+    return paragraph.length > 0 && compact(paragraph.text()).startsWith(label) &&
+      $(element).next().is('br') && compact(paragraph.text()).length > label.length;
   });
 }
 
