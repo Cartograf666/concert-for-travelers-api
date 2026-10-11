@@ -2,12 +2,11 @@
   "id": "artist-andy-timmons",
   "domain": "andytimmons.com",
   "url": "https://andytimmons.com/shows/",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "table.gigpress-table tbody tr.gigpress-row",
     "artistNameFallback": "Andy Timmons",
     "date": ".gigpress-date",
-    "ticketUrl": "following-sibling::tr[contains(@class, 'gigpress-info')] .gigpress-tickets-link",
     "venue": ".gigpress-venue",
     "city": ".gigpress-city",
     "country": ".gigpress-country",

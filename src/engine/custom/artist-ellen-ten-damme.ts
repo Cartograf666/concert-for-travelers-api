@@ -11,7 +11,7 @@ const DUTCH_MONTHS: Record<string, number> = {
 // Cities verified on the current official tour list as Dutch locations. The
 // page has no per-row country field, so a newly listed location must fail until
 // checked rather than silently inheriting the old NL schema fallback.
-const NL_CITIES = new Set('Aalten|Abcoude|Almelo|Alphen aan den Rijn|Amersfoort|Amsterdam|Arnhem|Baarn|Bemmel|Bergeijk|Bergen op Zoom|Bovenkarspel|Capelle aan den IJssel|Culemborg|Delft|Deventer|Druten|Eibergen|Emmeloord|Etten-Leur|Gemert|Goes|Hardenberg|Heerenveen|Heiloo|Hellevoetsluis|Helmond|Hendrik-Ido-Ambacht|Hilversum|Houten|Kampen|Laren|Lisse|Malden|Naaldwijk|Nijmegen|Nijverdal|Oirschot|Oldenzaal|Oosterhout|Rilland|Roden|Roelofarendsveen|Roermond|Rotterdam|Schiedam|Schipluiden|Sneek|Twisk|Uden|Ulft|Utrecht|Valkenswaard|Veendam|Volendam|Wadway|Wassenaar|Woerden|Zevenaar|Zoetermeer'.split('|'));
+const NL_CITIES = new Set('Aalten|Abcoude|Almelo|Alphen aan den Rijn|Amersfoort|Amsterdam|Arnhem|Baarn|Bemmel|Bergeijk|Bergen op Zoom|Bovenkarspel|Capelle aan den IJssel|Culemborg|Delft|Deventer|Druten|Eibergen|Emmeloord|Etten-Leur|Gemert|Goes|Hardenberg|Heerenveen|Heiloo|Hellevoetsluis|Helmond|Hendrik-Ido-Ambacht|Hilversum|Houten|Kampen|Laren|Lisse|Malden|Naaldwijk|Nijmegen|Nijverdal|Oirschot|Oldenzaal|Oosterhout|Rilland|Roden|Roelofarendsveen|Roermond|Rotterdam|Schiedam|Schipluiden|Sneek|Spaarndam|Twisk|Uden|Ulft|Utrecht|Valkenswaard|Veendam|Volendam|Wadway|Wassenaar|Woerden|Zevenaar|Zoetermeer'.split('|'));
 
 function parsePrintedDate(value: string): string {
   const match = value.trim().toLowerCase().match(/^(\d{1,2}) (jan|feb|mrt|apr|mei|jun|jul|aug|sep|okt|nov|dec) (\d{4})$/);
