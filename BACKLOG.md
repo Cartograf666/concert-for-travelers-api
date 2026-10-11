@@ -11,7 +11,7 @@ each concert in space and time, and (3) **rank** the options.
 
 Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
-## Data quality continuation — 2026-10-11 (local integration; final corrections/checks pending)
+## Data quality continuation — 2026-10-11 (local result verified; not published)
 
 - Alex authorized completing the existing Delamain `concert-data-quality` stage
   locally (P-QUALITY-002). This supersedes the initial dispatch-only stop. Original
@@ -36,8 +36,8 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 - Eighteen location/date normalization source fixes are integrated, with native
   fixtures and zero-network checks. Independent review found F3–F5: two held
   native events, actual-order whole-record losses, and Randy programme titles
-  used as venues. `normalization-integrity` owns those corrections; these findings
-  are **not resolved** by a peer-first count or replay. Bruce Thomas admission
+  used as venues. `normalization-integrity` completed those corrections using
+  41 exact dated occurrence bindings and primary physical-place evidence. Bruce Thomas admission
   uncertainty remains an unchanged source boundary, not an institutional ban.
 - Self-heal now verifies actual approved public output/retention and the correct
   cohort baseline. PR file discovery fails closed. Confirmation/rollback stays
@@ -46,17 +46,30 @@ Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
   6,686 old / 3,207 unknown and p95 12.42d at the dated snapshot. Existing budgets
   and six-day minimum revisit interval are unchanged. The read-only consumer
   audit records 334 slug mismatches; no sibling code/migration changed.
-- On integrated code `1758848`: build/lint (0 errors), SSRF, selector ratchet
-  125 <= 131 and changed-workflow actionlint pass. Full suite: 855 tests,
-  849 pass / 5 old Kitty compatibility failures / 1 skip. Those tests are now
-  corrected against actual native contracts; affected worker suites pass 97/97.
-  Final combined suite and independent review of F3–F5 corrections are pending.
-  Review F1/F2 in Mozart classification is resolved and independently rechecked.
-- Next: integrate the bounded normalization-integrity correction, recheck the
-  actual TM -> artist -> BIT order and both mixed orders, complete invalidated
-  combined gates and the existing independent reviewer, then record final local
-  evidence here. Reviewable source/evidence paths are in the stage coordinator;
-  this status is not production publication or owner acceptance.
+- Intermediate `1758848` full-suite failures were four stale Kitty cases plus
+  their parent. The native-contract correction keeps production guards intact;
+  all 97 affected worker cases pass.
+- Final **production-code revision `1cb9c0791a6af33c25dd875ac1b6294852ee9e63`**:
+  full suite **859 total / 858 pass / 0 fail / 1 expected skip**; build/lint pass
+  (0 errors, 103 existing warnings), separate production SSRF 1/1 covers the skip,
+  selector ratchet 125 <= 131 and changed-workflow actionlint pass. Subsequent
+  status/document-only commits do not invalidate these code checks.
+- Root independently repeats full-original native and actual cache save/load,
+  active-config filter and official-context replay in all six source orders,
+  with zero network attempts and an isolated immutable `1758848` baseline.
+  Thirty complete peer records are preserved; nine physical-venue corrections
+  and two city identity corrections intentionally select a whole primary record,
+  without copying discarded old coordinates/time. Two pre-existing Showaddy
+  interorder conflicts remain explicit outside this introduced delta.
+- Independent Codex Astra review closes F1–F5 with **no remaining blocking
+  findings**. This is local verification, not Alex's acceptance or publication
+  authority. Exact logs/proof are in the stage coordinator's `integrated-checks/`
+  and `final-data-review-REPORT.md`.
+- Remaining boundaries: Eventbrite WAF/fresh Cartagena access, unverified
+  geography/day/Amsterdam placement and Bruce public admission. Broader market
+  coverage/full production raw composition/hosted deployment are not claimed.
+  Consumer slug mismatch needs separate sibling write scope. Local completion
+  does not enable confirmation migration or production.
 
 ## Provider response validation and dashboard corrections — 2026-10-07 (guards merged; final follow-up verification pending)
 
