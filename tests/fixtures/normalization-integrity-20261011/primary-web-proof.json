@@ -1,5 +1,4 @@
 {
-  "observedAt": "2026-10-11T08:00:00Z",
   "retrieval": "web open extracted primary text; these are not live HTTP captures or synthetic native fixtures",
   "sources": [
     {
@@ -23,5 +22,7 @@
       "localHttp": "timeout, no retry",
       "indexedAge": "web open says crawled four days ago, fresh native calendar confirms replacement venue"
     }
-  ]
+  ],
+  "observedOn": "2026-10-11",
+  "observationTimePrecision": "Web tool gives crawl ages, not an exact HTTP retrieval timestamp; only session date is asserted."
 }
