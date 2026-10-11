@@ -9607,7 +9607,13 @@
     "artistIntegrity": "not applicable: no artist data changes",
     "production": "not run / not authorized",
     "liveCollection": "not run / no dispatch / no providers / no LLM",
-    "backgroundProcesses": "all started commands completed, stock browser diagnostic closed"
+    "backgroundProcesses": "all started commands completed, stock browser diagnostic closed",
+    "standaloneSsrfPolicy": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "command": "npm run test:ssrf-policy"
+    }
   },
   "primarySupplementaryEvidence": [
     {
