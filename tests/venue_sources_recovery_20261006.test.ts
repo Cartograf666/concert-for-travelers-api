@@ -91,7 +91,11 @@ test('Jun Shibata replacement official site yields the six announced 2026 tour d
 
 
 test('Kitty Su current official Kolkata listings are not mislabeled as Bangalore', async () => {
-  const rows = await scrapeKitty(config('kitty-su-bangalore'), fixture('kitty-su-bangalore'), scrapedAt);
+  // Retained Kolkata-native cards are wrapped with the confirmed Kitty Su
+  // producer title; no date/year/performer/venue is invented for excluded rows.
+  const rows = await scrapeKitty(config('kitty-su-bangalore'), fixture('kitty-su-bangalore'), scrapedAt, async () => {
+    assert.fail('Kolkata listings must not request a Bangalore detail or emit its fallback location');
+  });
   assert.deepEqual(rows, []);
 });
 

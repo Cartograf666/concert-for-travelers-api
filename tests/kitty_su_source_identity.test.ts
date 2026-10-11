@@ -80,3 +80,14 @@ test('missing native year/performer/venue and listing date conflict fail source 
   await assert.rejects(scrape(config,fixture.indexHtml.replaceAll('/event/PureLoveSundayPresentsKoothRoyaltyTributeToLadyBai',
     'https://evil.example/event/fake'),NOW,async()=>{throw new Error('Unexpected fetch');}),/unsafe native/);
 });
+
+
+test('missing or foreign producer identity is rejected even for an all-Kolkata page', async () => {
+  const {config} = await context();
+  const html = await readFile('tests/fixtures/venue-sources-recovery-20261006/kitty-su-bangalore.html','utf8');
+  assert.match(html, /<title>Kitty Su<\/title>/);
+  for (const input of [html.replace('<title>Kitty Su</title>',''),html.replace('<title>Kitty Su</title>','<title>Blocked</title>')]) {
+    await assert.rejects(scrape(config,input,NOW,async()=>{assert.fail('Invalid producer must not fetch details');}),
+      /native programme identity missing/);
+  }
+});
