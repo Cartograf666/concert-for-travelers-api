@@ -79,27 +79,49 @@ const BLUE_OCTOBER_PAIRS = [
   ["2027-03-14", "/tour-dates-detail/hard-rock-live-rockford", "US", "Rockford", "Hard Rock Live Rockford", "ticketmaster.com", "Rockford", "Hard Rock Live Rockford"],
 ] as const;
 
+// Nine primary-complete Teenage Fanclub records (ES/FR/BE); incomplete
+// countries and later proof cohorts are deliberately absent from this registry.
+const TEENAGE_FANCLUB_PAIRS = [
+  ["2026-10-10", "https://justlifemusic.com/teenage/", "ES", "Oviedo", "Almacenes Kuivi", "bandsintown.com", "Oviedo", "Kuivi Pop Up"],
+  ["2026-10-11", "https://justlifemusic.com/teenage/", "ES", "Bilbao", "Antzokia", "bandsintown.com", "Bilbao", "Kafe Antzokia"],
+  ["2026-10-12", "https://justlifemusic.com/teenage/", "ES", "Zaragoza", "Jardin de Invierno", "bandsintown.com", "Zaragoza", "Invierno Garden"],
+  ["2026-10-14", "https://justlifemusic.com/teenage/", "ES", "Pamplona", "Zentral", "bandsintown.com", "Pamplona", "Zentral"],
+  ["2026-10-15", "https://justlifemusic.com/teenage/", "ES", "Madrid", "Sala Wagon", "bandsintown.com", "Madrid", "Wagon"],
+  ["2026-10-16", "https://justlifemusic.com/teenage/", "ES", "Valencia", "Sala Moon", "bandsintown.com", "Valencia", "Moon Valencia"],
+  ["2026-10-17", "https://justlifemusic.com/teenage/", "ES", "Barcelona", "Razzmatazz 2", "bandsintown.com", "Barcelona", "Razzmatazz 2"],
+  ["2026-10-19", "https://marchegare.fr/agenda/teenage-fanclub", "FR", "Lyon", "Marché Gare", "bandsintown.com", "Lyon", "Le Marché Gare"],
+  ["2026-10-24", "https://teenage.fanclub.tickets.cactusmusic.be/selection", "BE", "Bruges", "Cactus Club", "bandsintown.com", "Brugge", "Cactus Club"],
+] as const;
+
 /** Match only a captured event occurrence and exact location/source labels.
  * The native source URL remains internal; output always keeps one whole record.
  * New dates, venue moves and unknown labels cannot inherit these old pairs. */
 export function verifiedOfficialSourceEventIdentity(raw: RawConcert, concert: Concert):
   { pairKey: string; dedupeCity: string; sourceRank: number } | undefined {
-  if (concert.artist !== 'Blue October' || concert.spotifyId !== BLUE_OCTOBER_SPOTIFY_ID ||
-      raw.artist?.trim().toLowerCase() !== 'blue october' || raw.date !== concert.date) return;
+  const blue = concert.artist === 'Blue October' && concert.spotifyId === BLUE_OCTOBER_SPOTIFY_ID;
+  const teenage = concert.artist === 'Teenage Fanclub' && concert.spotifyId === '5a92s1P4G2L54x4U6c7t1i';
+  if ((!blue && !teenage) || raw.artist?.trim().toLowerCase() !== concert.artist.toLowerCase() ||
+      raw.date !== concert.date) return;
   const source = raw.originalSource?.trim().toLowerCase();
-  const native = source === 'blueoctober.com' || source === 'www.blueoctober.com';
-  let nativePath: string | undefined;
+  const native = (blue ? ['blueoctober.com','www.blueoctober.com'] : ['teenagefanclub.com','www.teenagefanclub.com'])
+    .includes(source || '');
+  let nativeHref: string | undefined;
   if (native) {
     try {
       const url = new URL(raw.sourceEventUrl || raw.ticketUrl || '');
-      if (url.origin !== 'https://www.blueoctober.com' || url.username || url.password || url.search || url.hash) return;
-      nativePath = url.pathname.replace(/\/$/, '');
+      if (url.protocol !== 'https:' || url.port || url.username || url.password || url.hash) return;
+      url.pathname = url.pathname.replace(/\/$/, '');
+      nativeHref = url.href;
     } catch { return; }
   }
-  const pair = BLUE_OCTOBER_PAIRS.find(([date, path, country, nativeCity, nativeVenue, provider, providerCity, providerVenue]) =>
-    concert.date === date && concert.country === country && (native
-      ? nativePath === path && concert.city === nativeCity && concert.venue === nativeVenue
-      : source === provider && concert.city === providerCity && concert.venue === providerVenue));
+  const pairs = blue ? BLUE_OCTOBER_PAIRS : TEENAGE_FANCLUB_PAIRS;
+  const pair = pairs.find(([date, eventUrl, country, nativeCity, nativeVenue, provider, providerCity, providerVenue]) => {
+    const proofUrl = new URL(eventUrl, 'https://www.blueoctober.com');
+    proofUrl.pathname = proofUrl.pathname.replace(/\/$/, '');
+    return concert.date === date && concert.country === country && (native
+      ? nativeHref === proofUrl.href && concert.city === nativeCity && concert.venue === nativeVenue
+      : source === provider && concert.city === providerCity && concert.venue === providerVenue);
+  });
   if (!pair) return;
-  return { pairKey: `blueoctober:${pair[1]}`, dedupeCity: pair[6], sourceRank: native ? 1 : 2 };
+  return { pairKey: `${blue ? 'blueoctober' : 'teenagefanclub'}:${pair[1]}`, dedupeCity: pair[6], sourceRank: native ? 1 : 2 };
 }

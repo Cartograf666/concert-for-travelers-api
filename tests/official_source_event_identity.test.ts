@@ -96,3 +96,30 @@ test('unknown venue does not inherit a provider winner or a city alias; existing
   assert.deepEqual(await processConcerts([moved,abilene.provider],DB,NOW),[movedAlone],
     'A new/moved venue cannot inherit provider rank; preserve the existing whole-record conflict policy');
 });
+
+test('nine primary-complete Teenage records preserve Bruges source-only and all provider metadata in both orders', async () => {
+  const teen = JSON.parse(await readFile('tests/fixtures/teenage-fanclub-event-pairs-20261011.json','utf8')) as {
+    pairs: Pair[]; allRaw: RawConcert[];
+  };
+  const {pairs:blue,baseline} = await fixture();
+  const native = teen.pairs.map(p=>p.native);
+  const only = await processConcerts(teen.allRaw,DB,NOW);
+  assert.equal(teen.allRaw.length,41);
+  assert.equal(only.length,9,'Unknown primary-country cohort is not declared recovered');
+  assert.equal(only.find(row=>row.date==='2026-10-24')?.city,'Bruges');
+  assert.ok(only.every(row=>['ES','FR','BE'].includes(row.country)));
+  const expected = records(await processConcerts(baseline,DB,NOW));
+  for (const input of [[...baseline,...native],[...native,...baseline],
+    [...blue.map(p=>p.native),...teen.allRaw,...baseline],[...baseline,...teen.allRaw,...blue.map(p=>p.native)]]) {
+    assert.deepEqual(records(await processConcerts(input,DB,NOW)),expected,
+      'Confirmed Cactus event/city alias and finite venue pairs must preserve whole existing records');
+  }
+  const cactus = teen.pairs.find(p=>p.native.city==='Bruges')!;
+  const output = only.find(row=>row.date==='2026-10-24')!;
+  assert.equal(verifiedOfficialSourceEventIdentity(cactus.native,output)?.dedupeCity,'Brugge');
+  for (const change of [{venue:'Moved Cactus Event'},{city:'Newcastle'},{country:'NL'},{date:'2027-10-24'},
+    {sourceEventUrl:'https://teenage.fanclub.tickets.cactusmusic.be/other'},
+    {sourceEventUrl:'https://teenage.fanclub.tickets.cactusmusic.be.evil.example/selection'}]) {
+    assert.equal(verifiedOfficialSourceEventIdentity({...cactus.native,...change},{...output,...change}),undefined);
+  }
+});
