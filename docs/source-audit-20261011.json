@@ -1340,14 +1340,81 @@
         "sha256": "b9cb30bbfbddf952069bf27422bb3acd086d28cb3084dc09fba09ba934cd3c39"
       },
       "evidenceExcerpt": "{\"css\":\"*#dm *.dmBody a.span.textonly\\n{\\n\\tcolor:rgb(255,255,255) !important;\\n}\\n*#dm *.dmBody div.dmform-error\\n{\\n\\tfont-style:normal !important;\\n}\\n*#dm *.dmBody div.dmforminput textarea\\n{\\n\\tfont-style:italic !important;\\n}\\n*#dm *.dmBody div.dmforminput *.fileUploadLink\\n{\\n\\tfont-style:italic !important;\\n}\\n*#dm *.dmBody div.checkboxwrapper span\\n{\\n\\tfont-style:italic !important;\\n}\\n*#dm *.dmBody div.radiowrapper span\\n{\\n\\tfont-style:italic !important;\\n}\\n*#dm *.dmBody nav.u_1144820115\\n{\\n\\tcolor:black !important;\\n}\\n*#dm *.dmBody *.u_1181423989:before\\n{\\n\\topacity:0.5 !impor",
-      "disposition": "blocked_native_detail_evidence",
-      "explanation": "Configured 2025-26 source is stale and returns native Duda JSON content wrapper. Current 2026-27 season link verified. Current seasonal buttons incorrectly link old 2025 details; native nav discovers nine current month pages. Jan/Feb/Apr/May are readable, Mar/Sep/Oct/Nov/Dec aborted under guarded fetch. Full extraction contract/current coverage cannot be verified from four partial pages; preserve failed state, no blanket The VETS/date fallback.",
+      "disposition": "repaired_verified",
+      "explanation": "Prior partial source boundary superseded by complete native9 programme captures in continuation. Current2026-27 season JSON/nav/detail extractor gives13 concert rows,12 future verified public records; excludes4 explicitly labelled rehearsals. Intermittent ECONNRESET persists as live transport limitation, never partial success.",
       "captureReplay": {
         "success": false,
         "rawCount": 0,
         "reason": "selectors_stale",
         "error": "Parsed 0 concerts. Website layout might have changed.",
         "note": "Before final patch unless explicitly superseded by repairChecks; transport stub is fixture replay, not fresh production."
+      },
+      "finalConfig": {
+        "url": "https://www.riphil.org/2026-2027-season",
+        "type": "custom_js",
+        "skipConditionalRequests": true
+      },
+      "finalConfigHash": "af342da4039357c333bbc762273d726f8cd00b34170ae9e76a5c09898db4e14f",
+      "repairChecks": {
+        "baseDate": "2026-10-11T00:00:00.000Z",
+        "rawCount": 13,
+        "publicCount": 12,
+        "baselineRaw": 0,
+        "baselinePublic": 0,
+        "pastOnlyDrop": "2026-09-19",
+        "identity": {
+          "artist": "Rhode Island Philharmonic Orchestra",
+          "artistWebsite": "https://riphil.org/",
+          "artistSocials": {
+            "instagram": "https://www.instagram.com/riphilharmonic/",
+            "facebook": "https://www.facebook.com/riphilharmonic"
+          },
+          "mbid": null,
+          "note": "Exact current approved record has no MBID; none invented."
+        },
+        "fullRecordsEvidence": "coordinator/work/fleet-evidence/riphil-continuation/full-record-replay.json",
+        "diagnostics": {
+          "schemaVersion": 1,
+          "generatedAt": "2026-10-11T06:18:12.512Z",
+          "baseDate": "2026-10-11T00:00:00.000Z",
+          "rawCount": 13,
+          "publishedCount": 12,
+          "duplicatesMerged": 0,
+          "dropped": {
+            "incomplete": 0,
+            "notApproved": 0,
+            "badDate": 0,
+            "pastDate": 1,
+            "zodFail": 0
+          },
+          "sources": {
+            "riphil.org": {
+              "rawCount": 13,
+              "publishedCount": 12,
+              "duplicatesMerged": 0,
+              "dropped": {
+                "incomplete": 0,
+                "notApproved": 0,
+                "badDate": 0,
+                "pastDate": 1,
+                "zodFail": 0
+              }
+            }
+          },
+          "validationIssues": {},
+          "missingFields": {},
+          "samples": [
+            {
+              "reason": "pastDate",
+              "artist": "Rhode Island Philharmonic Orchestra",
+              "date": "2026-09-19",
+              "venue": "The VETS",
+              "city": "Providence",
+              "country": "US",
+              "originalSource": "riphil.org"
+            }
+          ]
+        }
       }
     },
     {
@@ -9569,12 +9636,11 @@
     "access_unavailable": 14,
     "archive_only": 2,
     "unrelated_content": 2,
-    "blocked_native_detail_evidence": 1,
+    "repaired_verified": 3,
     "archive_or_announcement_only": 1,
     "inactive_url": 1,
     "blocked_source_identity": 1,
     "repaired_verified_empty": 2,
-    "repaired_verified": 2,
     "local_existing_verified_empty": 1,
     "repaired_verified_partial_calendar": 1,
     "inactive_content": 1,
@@ -9639,10 +9705,342 @@
   ],
   "nativeEvidenceBoundaries": {
     "kitty": "Unresolved DJ Kish to DJ Krush stock matcher collision. Rejected parser is outside branch and cannot be integrated alone; needs hub-owned identity guard/approval policy.",
-    "riphil": "Current complete native details unavailable for five of nine observed nav pages. Four readable current native program captures stored. No complete supported extraction repair yet.",
+    "riphil": "Superseded: all9 native programme contracts now captured and extraction repaired; transient live ECONNRESET remains explicit, no fresh hosted success claimed.",
     "nin": "Configured source403 blocks native replacement for historically invalid XPath/CSS.",
     "esplanade": "One guarded HTTP capture aborted; one standard stock rendered read timed out20s. Browser closed, no repeated backend/UA/domain changes.",
     "other": "All named source-specific native errors and no-calendar/redirect/archive/unrelated cases remain in configs entries, never counted as verified empty."
   },
-  "baselineConfigHashMatches": 568
+  "baselineConfigHashMatches": 568,
+  "riphilContinuation": {
+    "authority": "Hub continuation 2026-10-11 09:07 MSK; finite Riphil batch only, Kitty/source-global transferred and untouched",
+    "supersedes": "Prior blocked_native_detail_evidence for Riphil only; all other frozen-cohort dispositions unchanged.",
+    "requestPolicy": "Exact five previously observed native www.riphil.org month URLs, same axios backend/stock SSRF limits, no changed access/header/backend/domain strategy. One November retry justified by stock isRetryableError ECONNRESET on HTTP200; no live403/challenge responses.",
+    "originalAbortEvidence": "Original first-pass only saved aborted message, without code/stack. Continued November reproduction saved ECONNRESET/response200 at Unzip stream after15s. This establishes the reproduced cause, not an invented cause for each historical aborted response.",
+    "requests": [
+      {
+        "url": "https://www.riphil.org/mar27",
+        "backend": "axios",
+        "startedAt": "2026-10-11T06:08:24.486Z",
+        "attempts": 1,
+        "bytes": 371960,
+        "finishedAt": "2026-10-11T06:08:24.869Z",
+        "title": "Mar27",
+        "pageTitle": "Mar27",
+        "alias": "mar27"
+      },
+      {
+        "url": "https://www.riphil.org/sep26",
+        "backend": "axios",
+        "startedAt": "2026-10-11T06:08:24.870Z",
+        "attempts": 1,
+        "bytes": 381366,
+        "finishedAt": "2026-10-11T06:08:25.386Z",
+        "title": "Sep26",
+        "pageTitle": "Sep26",
+        "alias": "sep26"
+      },
+      {
+        "url": "https://www.riphil.org/oct26",
+        "backend": "axios",
+        "startedAt": "2026-10-11T06:08:25.387Z",
+        "attempts": 1,
+        "bytes": 380526,
+        "finishedAt": "2026-10-11T06:08:25.913Z",
+        "title": "Oct2026",
+        "pageTitle": "Oct2026",
+        "alias": "oct26"
+      },
+      {
+        "url": "https://www.riphil.org/nov26",
+        "backend": "axios",
+        "startedAt": "2026-10-11T06:08:25.913Z",
+        "attempts": 1,
+        "error": "aborted",
+        "code": "ECONNRESET",
+        "cause": {
+          "message": "aborted",
+          "code": "ECONNRESET"
+        },
+        "status": 200,
+        "headers": {
+          "contentType": "text/html;charset=utf-8",
+          "server": "nginx"
+        },
+        "stack": [
+          "Error: aborted",
+          "    at AxiosError.from (/Users/alex/code/concert-for-travelers-api/.worktrees/agent/concert-fleet-recovery-20261011/node_modules/axios/dist/node/axios.cjs:1577:24)",
+          "    at Unzip.handleStreamError (/Users/alex/code/concert-for-travelers-api/.worktrees/agent/concert-fleet-recovery-20261011/node_modules/axios/dist/node/axios.cjs:4757:29)",
+          "    at Unzip.emit (node:events:531:35)",
+          "    at emitErrorNT (node:internal/streams/destroy:170:8)",
+          "    at emitErrorCloseNT (node:internal/streams/destroy:129:3)",
+          "    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)"
+        ],
+        "finishedAt": "2026-10-11T06:08:41.093Z"
+      },
+      {
+        "url": "https://www.riphil.org/dec26",
+        "backend": "axios",
+        "startedAt": "2026-10-11T06:08:41.093Z",
+        "attempts": 1,
+        "bytes": 370942,
+        "finishedAt": "2026-10-11T06:08:41.610Z",
+        "title": "Dec26",
+        "pageTitle": "Dec26",
+        "alias": "dec26"
+      },
+      {
+        "url": "https://www.riphil.org/nov26",
+        "backend": "axios",
+        "startedAt": "2026-10-11T06:09:14.707Z",
+        "attempts": 1,
+        "retryOf": "ECONNRESET response200 unzip aborted; stock isRetryableError=true",
+        "bytes": 372389,
+        "title": "Nov26",
+        "alias": "nov26",
+        "finishedAt": "2026-10-11T06:09:15.038Z"
+      }
+    ],
+    "programmes": [
+      {
+        "url": "https://www.riphil.org/sep26",
+        "alias": "sep26",
+        "capturedAt": "2026-10-11T06:08:25.386603+00:00",
+        "sha256": "ef6d9f911a578d5f36aa7178349f25383ec6a55154d6954a2d4c9c016acfc061",
+        "programme": "Beethoven's \"Pastoral\"",
+        "printedDateRange": "September 18 - 19, 2026",
+        "nativeLocation": "The VETS, Providence",
+        "nativeCredits": "BARBER: The School for Scandal : Overture ERIC NATHAN: Violin Concerto (\"The Mountains We Climb\") (WORLD PREMIERE, RI PHIL COMMISSION) BEETHOVEN: Symphony No.6 ( Pastoral ) Performing Artists The Rhode Island Philharmonic Orchestra Ruth Reinhardt, conductor Yevgeny Kutik, violin",
+        "concertDates": [
+          "2026-09-19"
+        ],
+        "concertTimes": [
+          "19:30"
+        ],
+        "fixturePath": "tests/fixtures/riphil-20261011/sep26.json",
+        "fixtureSha256": "268a6678b3f7aa42d40d2e24555f4cce30e899fb2e5440f9817e10c538e6673d"
+      },
+      {
+        "url": "https://www.riphil.org/oct26",
+        "alias": "oct26",
+        "capturedAt": "2026-10-11T06:08:25.913131+00:00",
+        "sha256": "aa9a97b579311dccf395662f296c5a293d5e5cc578614b2d2e9796ad112fcf45",
+        "programme": "Brahms & Beethoven",
+        "printedDateRange": "October 16 - 17, 2026",
+        "nativeLocation": "The VETS, Providence",
+        "nativeCredits": "PARRY: Elegy for Brahms BRAHMS: Symphony No.3 BEETHOVEN: Piano Concerto No.5 ( Emperor ) Performing Artists The Rhode Island Philharmonic Orchestra Ruth Reinhardt, conductor Denis Kozhukhin, piano",
+        "concertDates": [
+          "2026-10-16",
+          "2026-10-17"
+        ],
+        "concertTimes": [
+          "18:30",
+          "19:30"
+        ],
+        "fixturePath": "tests/fixtures/riphil-20261011/oct26.json",
+        "fixtureSha256": "b0ad9c418d570bbc3908d8257de4cafc940a9b9f4f23aac5232ac62eb1d7fd43"
+      },
+      {
+        "url": "https://www.riphil.org/nov26",
+        "alias": "nov26",
+        "capturedAt": "2026-10-11T06:09:15.037732+00:00",
+        "sha256": "e78e96ab7da1ef1fffb1b6836ac9f29c2fb2ce4517a1bce48e716f059f4d8624",
+        "programme": "Ride of the Valkyries!",
+        "printedDateRange": "November 20 - 21, 2026",
+        "nativeLocation": "The VETS, Providence",
+        "nativeCredits": "WAGNER: Ride of the Valkyries CLARA SCHUMANN: Piano Concerto DVO\u0158\u00c1K: The Wood Dove RAVEL: La Valse Performing Artists The Rhode Island Philharmonic Orchestra Christian Reif, conductor Estefan Iatcekiw, piano",
+        "concertDates": [
+          "2026-11-20",
+          "2026-11-21"
+        ],
+        "concertTimes": [
+          "18:30",
+          "19:30"
+        ],
+        "fixturePath": "tests/fixtures/riphil-20261011/nov26.json",
+        "fixtureSha256": "c34871d38eecc88db848855209485168c6202af8319eab3385cd8077c70cacb0"
+      },
+      {
+        "url": "https://www.riphil.org/dec26",
+        "alias": "dec26",
+        "capturedAt": "2026-10-11T06:08:41.610580+00:00",
+        "sha256": "9c0c1aa803946f7bc2b1ec3f23f025baa5fded91e2a322968e5368721e420b27",
+        "programme": "Handel's Messiah",
+        "printedDateRange": "December 13, 2026",
+        "nativeLocation": "The VETS, Providence",
+        "nativeCredits": "HANDEL: Messiah Performing Artists The Rhode Island Philharmonic Orchestra Providence Singers, Christine Noel, Artistic Director Christine Noel, conductor Maya Kherani, soprano Emily Marvosh, mezzo-soprano Michael Dean, bass-baritone Jonas Budris, tenor",
+        "concertDates": [
+          "2026-12-13"
+        ],
+        "concertTimes": [
+          null
+        ],
+        "fixturePath": "tests/fixtures/riphil-20261011/dec26.json",
+        "fixtureSha256": "0e2f4c499627cb15e5d88efd5d65fe08b7e1f7f112d68f2c82723259fd3962c2"
+      },
+      {
+        "url": "https://www.riphil.org/jan27",
+        "alias": "jan27",
+        "capturedAt": "2026-10-11T05:52:54.521346+00:00",
+        "sha256": "724dd02fac407441d0488229c8a9a04034572ed13419287f934de34806d512e3",
+        "programme": "Romantic Chopin",
+        "printedDateRange": "January 22 - 23, 2027",
+        "nativeLocation": "The VETS, Providence",
+        "nativeCredits": "R. STRAUSS: Don Juan SHOSTAKOVICH: Symphony No.1 CHOPIN: Piano Concerto No.2 (Side-by-Side performance with students from the RI Phil Youth Orchestra) Performing Artists The Rhode Island Philharmonic Orchestra Ruth Reinhardt, conductor Alessio Bax, piano",
+        "concertDates": [
+          "2027-01-23"
+        ],
+        "concertTimes": [
+          "19:30"
+        ],
+        "fixturePath": "tests/fixtures/riphil-20261011/jan27.json",
+        "fixtureSha256": "77058988a0c3e37a1b06f9f4a87728b2e9886698d5c2c606a6df876cc0ea4b24"
+      },
+      {
+        "url": "https://www.riphil.org/feb27",
+        "alias": "feb27",
+        "capturedAt": "2026-10-11T05:52:55.179903+00:00",
+        "sha256": "19a92cf2d5d1bbb0c511a3d38819a7fede03d6ba3404c98f4733062d49e5bcde",
+        "programme": "Tchaikovsky's Fifth",
+        "printedDateRange": "February 12 - 13, 2027",
+        "nativeLocation": "The VETS, Providence",
+        "nativeCredits": "JOAN TOWER: Fanfare for the Uncommon Woman JOHN CORIGLIANO: Conjurer (Percussion Concerto) TCHAIKOVSKY: Symphony No.5 Performing Artists The Rhode Island Philharmonic Orchestra Ruth Reinhardt, conductor Vivi Vassileva, percussion",
+        "concertDates": [
+          "2027-02-12",
+          "2027-02-13"
+        ],
+        "concertTimes": [
+          "18:30",
+          "19:30"
+        ],
+        "fixturePath": "tests/fixtures/riphil-20261011/feb27.json",
+        "fixtureSha256": "de061cc1dbb9c745f80b3fcdb2965dff85f2c49f216c3b1014e115e9ac58c5f3"
+      },
+      {
+        "url": "https://www.riphil.org/mar27",
+        "alias": "mar27",
+        "capturedAt": "2026-10-11T06:08:24.869680+00:00",
+        "sha256": "e353c8bcf6b58b5273320b09d3b762cf6db8d0788f90883724626ce32d2aa22a",
+        "programme": "Northern Lights - Nielsen & Sibelius",
+        "printedDateRange": "March 12 - 13, 2027",
+        "nativeLocation": "The VETS, Providence",
+        "nativeCredits": "NIELSEN: Helios : Overture TCHAIKOVSKY: Variations on a Rococo Theme SIBELIUS: Symphony No.5 Performing Artists The Rhode Island Philharmonic Orchestra Benjamin Manis, conductor Brannon Cho, cello",
+        "concertDates": [
+          "2027-03-13"
+        ],
+        "concertTimes": [
+          "19:30"
+        ],
+        "fixturePath": "tests/fixtures/riphil-20261011/mar27.json",
+        "fixtureSha256": "f792e8172d888fbf6600b7430d8051bc48e114ae8a568c40bfdf3baabc4ece3d"
+      },
+      {
+        "url": "https://www.riphil.org/apr27",
+        "alias": "apr27",
+        "capturedAt": "2026-10-11T05:53:11.349584+00:00",
+        "sha256": "d91d4d34b7149da7905153f5865335e9236c6421b15bc201d4370e3101e8a729",
+        "programme": "Spano Conducts Puccini",
+        "printedDateRange": "April 9 - 10, 2027",
+        "nativeLocation": "The VETS, Providence",
+        "nativeCredits": "PUCCINI : Capriccio sinfonico PUCCINI : La boh\u00e8me , Act III LEONCAVALLO: Prologue from Pagliacci ROSSINI: \"Una voce poco fa\" from The Barber of Seville MASCAGNI: Intermezzo from Cavalleria rusticana CILEA: \"\u00c8 la solita storia del pastore\" from L'Arlesiana VERDI: \"\u00c8  strano, \u00e8 strano... Ah fors'\u00e8 lui... Sempre libera\" from La traviata RESPIGHI: Pines of Rome Performing Artists The Rhode Island Philharmonic Orchestra Robert Spano, conductor Lauren Carroll, soprano Veronica Siebert, mezzo-soprano Reed Gnepper, tenor Thandolwethu Mamba, baritone",
+        "concertDates": [
+          "2027-04-09",
+          "2027-04-10"
+        ],
+        "concertTimes": [
+          "18:30",
+          "19:30"
+        ],
+        "fixturePath": "tests/fixtures/riphil-20261011/apr27.json",
+        "fixtureSha256": "e31ba2c2a34db5bb49709594ce1719c8bb2e78fd7fca2a604d7100411e809615"
+      },
+      {
+        "url": "https://www.riphil.org/may27",
+        "alias": "may27",
+        "capturedAt": "2026-10-11T05:53:12.004282+00:00",
+        "sha256": "75936dec712549632b5ce769bc0f5de1dc9f5b7c297df652027cd1902bafd868",
+        "programme": "Ruth Conducts Beethoven's Missa Solemnis",
+        "printedDateRange": "April 30 - May 1, 2027",
+        "nativeLocation": "The VETS, Providence",
+        "nativeCredits": "BEETHOVEN: Missa solemnis Performing Artists The Rhode Island Philharmonic Orchestra Providence Singers, Christine Noel, Artistic Director Ruth Reinhardt, conductor Katie Van Kooten, soprano Sophie Maekawa, mezzo-soprano Paul Appleby, tenor Andrew Munn, bass",
+        "concertDates": [
+          "2027-05-01"
+        ],
+        "concertTimes": [
+          "19:30"
+        ],
+        "fixturePath": "tests/fixtures/riphil-20261011/may27.json",
+        "fixtureSha256": "dd83372028ed92f32f8d7130f30643671a3cf3ff3dc7b29502cbf6d72398c2a1"
+      }
+    ],
+    "implementation": {
+      "configPath": "scrapers/artist-rhode-island-philharmonic-orchestra.json",
+      "customPath": "src/engine/custom/artist-rhode-island-philharmonic-orchestra.ts",
+      "testPath": "tests/riphil_calendar_20261011.test.ts",
+      "sourceUrl": "https://www.riphil.org/2026-2027-season",
+      "nativeContract": "Main hidden hover captions identify nine current monthly programmes; actual current programme links come from native nav, not obsolete main buttons. Detail pages provide complete printed year/date ranges, labelled Amica/TACO concerts and explicit Open Rehearsals; exact native orchestra credit and The VETS, Providence venue required. US is established native Rhode Island venue mapping, not fallback for any other location. Missing highlighted programme/native date/credit/place/access fails whole source; no partial-success/no invented empty. Conditional parent requests disabled because linked details change independently.",
+      "sourceAccessLimitation": "Later unmocked bounded stock diagnostic again aborted before completion; transient live transport remains unstable. Complete native original captures + corrected fully offline stock transport replay prove extraction contract, not a fresh hosted successful collection. The original ESM axios stub targeted a different package export; corrected replay uses the runner CJS axios export and issues zero network requests."
+    },
+    "replay": {
+      "baseDate": "2026-10-11T00:00:00.000Z",
+      "rawCount": 13,
+      "publicCount": 12,
+      "baselineRaw": 0,
+      "baselinePublic": 0,
+      "pastOnlyDrop": "2026-09-19",
+      "identity": {
+        "artist": "Rhode Island Philharmonic Orchestra",
+        "artistWebsite": "https://riphil.org/",
+        "artistSocials": {
+          "instagram": "https://www.instagram.com/riphilharmonic/",
+          "facebook": "https://www.facebook.com/riphilharmonic"
+        },
+        "mbid": null,
+        "note": "Exact current approved record has no MBID; none invented."
+      },
+      "fullRecordsEvidence": "coordinator/work/fleet-evidence/riphil-continuation/full-record-replay.json",
+      "diagnostics": {
+        "schemaVersion": 1,
+        "generatedAt": "2026-10-11T06:18:12.512Z",
+        "baseDate": "2026-10-11T00:00:00.000Z",
+        "rawCount": 13,
+        "publishedCount": 12,
+        "duplicatesMerged": 0,
+        "dropped": {
+          "incomplete": 0,
+          "notApproved": 0,
+          "badDate": 0,
+          "pastDate": 1,
+          "zodFail": 0
+        },
+        "sources": {
+          "riphil.org": {
+            "rawCount": 13,
+            "publishedCount": 12,
+            "duplicatesMerged": 0,
+            "dropped": {
+              "incomplete": 0,
+              "notApproved": 0,
+              "badDate": 0,
+              "pastDate": 1,
+              "zodFail": 0
+            }
+          }
+        },
+        "validationIssues": {},
+        "missingFields": {},
+        "samples": [
+          {
+            "reason": "pastDate",
+            "artist": "Rhode Island Philharmonic Orchestra",
+            "date": "2026-09-19",
+            "venue": "The VETS",
+            "city": "Providence",
+            "country": "US",
+            "originalSource": "riphil.org"
+          }
+        ]
+      }
+    },
+    "checks": "Targeted/build/scoped lint completed earlier; final gates pending after last parser access-error context and cache negative assertions."
+  }
 }
