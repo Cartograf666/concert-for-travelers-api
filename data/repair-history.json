@@ -27798,5 +27798,31 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
     "verification": ""
+  },
+  {
+    "id": "artist-rhode-island-philharmonic-orchestra",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-rhode-island-philharmonic-orchestra.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-11T11:07:00.235Z",
+    "previousConfig": {
+      "id": "artist-rhode-island-philharmonic-orchestra",
+      "domain": "riphil.org",
+      "url": "https://riphil.org/2025-2026-season/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-block",
+        "artistNameFallback": "Rhode Island Philharmonic Orchestra",
+        "date": "h3",
+        "ticketUrl": "a.button",
+        "venueNameFallback": "The VETS",
+        "cityNameFallback": "Providence",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.u_1543621082 .photoGalleryThumbs) matched 0 elements.",
+    "verification": ""
   }
 ]
