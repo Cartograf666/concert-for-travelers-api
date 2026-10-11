@@ -87,8 +87,10 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          if gh api "repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/files" \
-               --paginate --jq '.[].filename' | grep -q '^data/artists/'; then
+          # Read completely and fail on API errors before deciding to skip the gate.
+          files=$(gh api "repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/files" \
+               --paginate --jq '.[].filename')
+          if grep -q '^data/artists/' <<< "$files"; then
             echo "touched=true" >> "$GITHUB_OUTPUT"
             echo "This PR changes data/artists/ -- enforcing the integrity ratchet."
           else
