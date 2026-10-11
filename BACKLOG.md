@@ -11,12 +11,18 @@ each concert in space and time, and (3) **rank** the options.
 
 Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
-## Data quality continuation — 2026-10-11 (local result verified; not published)
+## Data quality continuation — 2026-10-11 (local main integration prepared; verification pending)
 
 - Alex authorized completing the existing Delamain `concert-data-quality` stage
-  locally (P-QUALITY-002). This supersedes the initial dispatch-only stop. Original
-  main and Alex's uncommitted BACKLOG change remain separate and preserved; no
-  push, PR mutation, production merge/deploy, account/payment/limit change or WAF bypass.
+  locally (P-QUALITY-002), then explicitly authorized local main integration. This
+  supersedes the stage prohibition on local main integration for this task only.
+  The prepared candidate merges reviewed coordinator `b7663df` onto fetched
+  upstream `13b2175` (base `9624768`), retaining all auto artist, tour-discovery and
+  repair-history updates. Integration checks are pending on this combined tree.
+  Original main and Alex's uncommitted BACKLOG archive remain separate and
+  preserved; root owns the final fast-forward and restoration of that dirty delta.
+  No push, PR mutation, production merge/deploy, account/payment/limit change or
+  WAF bypass is authorized or performed.
 - Failed-source inventory covers all 568 configs and the frozen 22 root / 25
   artist failures. Six supported source repairs include the complete Riphil
   season (13 raw / 12 future public); unsupported access/archive/inactive cases
