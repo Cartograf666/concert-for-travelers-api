@@ -11,6 +11,53 @@ each concert in space and time, and (3) **rank** the options.
 
 Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
+## Data quality continuation — 2026-10-11 (local integration; final corrections/checks pending)
+
+- Alex authorized completing the existing Delamain `concert-data-quality` stage
+  locally (P-QUALITY-002). This supersedes the initial dispatch-only stop. Original
+  main and Alex's uncommitted BACKLOG change remain separate and preserved; no
+  push, PR mutation, production merge/deploy, account/payment/limit change or WAF bypass.
+- Failed-source inventory covers all 568 configs and the frozen 22 root / 25
+  artist failures. Six supported source repairs include the complete Riphil
+  season (13 raw / 12 future public); unsupported access/archive/inactive cases
+  remain explicit in `docs/source-audit-20261011.json`.
+- Cartagena native performer/date/place extraction and source-only exact/alias
+  matching replace listing-title attribution. Nine exact catalogue records
+  survive historical-fixture replay; fresh HTTP403 remains a source/release gap.
+  Kitty native DJ Kish is retained raw and its wrong DJ Krush attribution is
+  quarantined with a narrowly bound stable-ID guard.
+- Blue October publishes all 70 primary-complete native dates independently.
+  Teenage Fanclub independently publishes 29 confirmed rows; missing country
+  and Amsterdam placement conflict are withheld. Both mixed orders preserve the
+  same 106 full existing peer records without metadata splicing. Mozarteum uses
+  full native dates and composer/work credits, preserving 59 raw slots / 28
+  public artist/date/city identities and excluding recorded films. The existing
+  same-day/city public collapse and five unknown-geography slots remain explicit.
+- Eighteen location/date normalization source fixes are integrated, with native
+  fixtures and zero-network checks. Independent review found F3–F5: two held
+  native events, actual-order whole-record losses, and Randy programme titles
+  used as venues. `normalization-integrity` owns those corrections; these findings
+  are **not resolved** by a peer-first count or replay. Bruce Thomas admission
+  uncertainty remains an unchanged source boundary, not an institutional ban.
+- Self-heal now verifies actual approved public output/retention and the correct
+  cohort baseline. PR file discovery fails closed. Confirmation/rollback stays
+  migration dry-run; historical CI approval expiry did not execute tests.
+- Actual retained Bandsintown cache independently confirms 10,888 fresh /
+  6,686 old / 3,207 unknown and p95 12.42d at the dated snapshot. Existing budgets
+  and six-day minimum revisit interval are unchanged. The read-only consumer
+  audit records 334 slug mismatches; no sibling code/migration changed.
+- On integrated code `1758848`: build/lint (0 errors), SSRF, selector ratchet
+  125 <= 131 and changed-workflow actionlint pass. Full suite: 855 tests,
+  849 pass / 5 old Kitty compatibility failures / 1 skip. Those tests are now
+  corrected against actual native contracts; affected worker suites pass 97/97.
+  Final combined suite and independent review of F3–F5 corrections are pending.
+  Review F1/F2 in Mozart classification is resolved and independently rechecked.
+- Next: integrate the bounded normalization-integrity correction, recheck the
+  actual TM -> artist -> BIT order and both mixed orders, complete invalidated
+  combined gates and the existing independent reviewer, then record final local
+  evidence here. Reviewable source/evidence paths are in the stage coordinator;
+  this status is not production publication or owner acceptance.
+
 ## Provider response validation and dashboard corrections — 2026-10-07 (guards merged; final follow-up verification pending)
 
 - PR #229 is merged and CI passes: 785 tests passed, one existing skip, no
