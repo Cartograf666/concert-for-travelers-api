@@ -2,7 +2,7 @@
   "id": "artist-excision",
   "domain": "excision.ca",
   "url": "https://excision.ca/tour-dates/",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".events-list .event",
     "artistNameFallback": "Excision",

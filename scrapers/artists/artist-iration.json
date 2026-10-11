@@ -2,7 +2,7 @@
   "id": "artist-iration",
   "domain": "www.irationmusic.com",
   "url": "https://www.irationmusic.com/tour",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "li.tour-item",
     "artistNameFallback": "Iration",

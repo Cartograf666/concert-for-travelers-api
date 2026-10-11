@@ -13,5 +13,7 @@
     "venueNameFallback": "",
     "cityNameFallback": "",
     "countryNameFallback": "AU"
-  }
+  },
+  "allowEmpty": true,
+  "emptyScheduleText": "No upcoming events"
 }

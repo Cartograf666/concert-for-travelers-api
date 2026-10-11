@@ -1,5 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert';
+import { readFile } from 'node:fs/promises';
+import * as cheerio from 'cheerio';
 import { ScraperConfig } from '../src/schemas/config.js';
 
 import { scrape as a38Scrape } from '../src/engine/custom/a38-ship-budapest.js';
@@ -275,54 +277,46 @@ test('custom/jazz-cafe-london.ts', async (t) => {
 });
 
 test('custom/kitty-su-bangalore.ts', async (t) => {
+  // The producer now links its yearless party cards to full native performer/
+  // date/venue records. Replay the captured whole page and exact production config.
+  const config = JSON.parse(await readFile('scrapers/kitty-su-bangalore.json', 'utf8')) as ScraperConfig;
+  const proof = JSON.parse(await readFile('tests/fixtures/kitty-su-native-20261011.json', 'utf8')) as {
+    indexHtml: string; detailHtml: string; detailSource: string;
+  };
+  const detail = async (url: string) => {
+    assert.strictEqual(url, proof.detailSource, 'Only the linked Bangalore detail may be fetched');
+    return proof.detailHtml;
+  };
   await t.test('parses bangalore events and maps details', async () => {
-    const html = `
-      <ul class="event-list">
-        <li>
-          <div class="event-list-img">
-            <a href="/event-slug">Flyer</a>
-          </div>
-          <div class="event-list-text">
-            <h3>Girish and The Chronicles | Bangalore</h3>
-            <p>Bangalore | India | 12 July 2026 - 13 July 2026 | 08:30 PM</p>
-          </div>
-        </li>
-        <li>
-          <div class="event-list-text">
-            <h3>Delhi Event | Delhi</h3>
-            <p>Delhi | India | 15 July | 09:00 PM</p>
-          </div>
-        </li>
-      </ul>
-    `;
-    const config = dummyConfig('kitty-su', 'www.kittysu.com', 'https://www.kittysu.com/bangalore');
-    const result = await kittySuScrape(config, html, scrapedAt);
+    const result = await kittySuScrape(config, proof.indexHtml, scrapedAt, detail);
     assert.strictEqual(result.length, 1);
-    assert.strictEqual(result[0].artist, 'Girish and The Chronicles');
-    assert.match(result[0].date || '', /^12 July/);
-    assert.strictEqual(result[0].ticketUrl, 'https://www.kittysu.com/event-slug');
+    assert.strictEqual(result[0].artist, 'DJ Kish');
+    assert.strictEqual(result[0].date, '2026-10-18');
+    assert.strictEqual(result[0].startTime, '20:30');
+    assert.strictEqual(result[0].venue, 'Kitty Ko The LaLiT Ashok Bangalore');
+    assert.strictEqual(result[0].city, 'Bangalore');
+    assert.strictEqual(result[0].country, 'IN');
+    assert.strictEqual(result[0].ticketUrl, proof.detailSource);
+    assert.strictEqual(result[0].sourceEventUrl, proof.detailSource);
   });
 
   await t.test('rejects a yearless event instead of inventing its year', async () => {
-    const html = '<ul class="event-list"><li><div class="event-list-text"><h3>Girish | Bangalore</h3><p>Bangalore | India | 12 July | 08:30 PM</p></div></li></ul>';
-    const config = dummyConfig('kitty-su', 'www.kittysu.com', 'https://www.kittysu.com/bangalore');
-    assert.deepEqual(await kittySuScrape(config, html, scrapedAt), []);
+    const yearlessDetail = proof.detailHtml.replace('18th October 2026', '18th October');
+    assert.notStrictEqual(yearlessDetail, proof.detailHtml);
+    await assert.rejects(kittySuScrape(config, proof.indexHtml, scrapedAt, async url => {
+      await detail(url);
+      return yearlessDetail;
+    }), /missing native performer, full date, time or venue/);
   });
 
   await t.test('edge case - malformed pText split', async () => {
-    const html = `
-      <ul class="event-list">
-        <li>
-          <div class="event-list-text">
-            <h3>Girish | Bangalore</h3>
-            <p>Short String</p>
-          </div>
-        </li>
-      </ul>
-    `;
-    const config = dummyConfig('kitty-su', 'www.kittysu.com', 'https://www.kittysu.com/bangalore');
-    const result = await kittySuScrape(config, html, scrapedAt);
-    assert.strictEqual(result.length, 0);
+    const $ = cheerio.load(proof.indexHtml);
+    $('.event-list-text').filter((_, el) => $(el).find('h3').text().includes('Bangalore'))
+      .find('p').text('Short String');
+    assert.notStrictEqual($.html(), proof.indexHtml);
+    await assert.rejects(kittySuScrape(config, $.html(), scrapedAt, async () => {
+      assert.fail('Malformed native listing must fail before any detail request');
+    }), /unverified native listing location/);
   });
 });
 

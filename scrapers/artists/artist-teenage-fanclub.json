@@ -2,7 +2,7 @@
   "id": "artist-teenage-fanclub",
   "domain": "www.teenagefanclub.com",
   "url": "https://www.teenagefanclub.com/live",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".sqs-html-content p:has(a)",
     "artistNameFallback": "Teenage Fanclub",

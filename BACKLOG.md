@@ -11,6 +11,66 @@ each concert in space and time, and (3) **rank** the options.
 
 Legend: ✅ done · 🚧 in progress · ⬜ planned · 💡 idea
 
+## Data quality continuation — 2026-10-11 (local result verified; not published)
+
+- Alex authorized completing the existing Delamain `concert-data-quality` stage
+  locally (P-QUALITY-002). This supersedes the initial dispatch-only stop. Original
+  main and Alex's uncommitted BACKLOG change remain separate and preserved; no
+  push, PR mutation, production merge/deploy, account/payment/limit change or WAF bypass.
+- Failed-source inventory covers all 568 configs and the frozen 22 root / 25
+  artist failures. Six supported source repairs include the complete Riphil
+  season (13 raw / 12 future public); unsupported access/archive/inactive cases
+  remain explicit in `docs/source-audit-20261011.json`.
+- Cartagena native performer/date/place extraction and source-only exact/alias
+  matching replace listing-title attribution. Nine exact catalogue records
+  survive historical-fixture replay; fresh HTTP403 remains a source/release gap.
+  Kitty native DJ Kish is retained raw and its wrong DJ Krush attribution is
+  quarantined with a narrowly bound stable-ID guard.
+- Blue October publishes all 70 primary-complete native dates independently.
+  Teenage Fanclub independently publishes 29 confirmed rows; missing country
+  and Amsterdam placement conflict are withheld. Both mixed orders preserve the
+  same 106 full existing peer records without metadata splicing. Mozarteum uses
+  full native dates and composer/work credits, preserving 59 raw slots / 28
+  public artist/date/city identities and excluding recorded films. The existing
+  same-day/city public collapse and five unknown-geography slots remain explicit.
+- Eighteen location/date normalization source fixes are integrated, with native
+  fixtures and zero-network checks. Independent review found F3–F5: two held
+  native events, actual-order whole-record losses, and Randy programme titles
+  used as venues. `normalization-integrity` completed those corrections using
+  41 exact dated occurrence bindings and primary physical-place evidence. Bruce Thomas admission
+  uncertainty remains an unchanged source boundary, not an institutional ban.
+- Self-heal now verifies actual approved public output/retention and the correct
+  cohort baseline. PR file discovery fails closed. Confirmation/rollback stays
+  migration dry-run; historical CI approval expiry did not execute tests.
+- Actual retained Bandsintown cache independently confirms 10,888 fresh /
+  6,686 old / 3,207 unknown and p95 12.42d at the dated snapshot. Existing budgets
+  and six-day minimum revisit interval are unchanged. The read-only consumer
+  audit records 334 slug mismatches; no sibling code/migration changed.
+- Intermediate `1758848` full-suite failures were four stale Kitty cases plus
+  their parent. The native-contract correction keeps production guards intact;
+  all 97 affected worker cases pass.
+- Final **production-code revision `1cb9c0791a6af33c25dd875ac1b6294852ee9e63`**:
+  full suite **859 total / 858 pass / 0 fail / 1 expected skip**; build/lint pass
+  (0 errors, 103 existing warnings), separate production SSRF 1/1 covers the skip,
+  selector ratchet 125 <= 131 and changed-workflow actionlint pass. Subsequent
+  status/document-only commits do not invalidate these code checks.
+- Root independently repeats full-original native and actual cache save/load,
+  active-config filter and official-context replay in all six source orders,
+  with zero network attempts and an isolated immutable `1758848` baseline.
+  Thirty complete peer records are preserved; nine physical-venue corrections
+  and two city identity corrections intentionally select a whole primary record,
+  without copying discarded old coordinates/time. Two pre-existing Showaddy
+  interorder conflicts remain explicit outside this introduced delta.
+- Independent Codex Astra review closes F1–F5 with **no remaining blocking
+  findings**. This is local verification, not Alex's acceptance or publication
+  authority. Exact logs/proof are in the stage coordinator's `integrated-checks/`
+  and `final-data-review-REPORT.md`.
+- Remaining boundaries: Eventbrite WAF/fresh Cartagena access, unverified
+  geography/day/Amsterdam placement and Bruce public admission. Broader market
+  coverage/full production raw composition/hosted deployment are not claimed.
+  Consumer slug mismatch needs separate sibling write scope. Local completion
+  does not enable confirmation migration or production.
+
 ## Provider response validation and dashboard corrections — 2026-10-07 (guards merged; final follow-up verification pending)
 
 - PR #229 is merged and CI passes: 785 tests passed, one existing skip, no

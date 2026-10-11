@@ -2,7 +2,7 @@
   "id": "artist-american-composers-orchestra",
   "domain": "www.americancomposers.org",
   "url": "https://www.americancomposers.org/performances-events",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".p-e-item",
     "artistNameFallback": "American Composers Orchestra",

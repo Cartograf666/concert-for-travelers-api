@@ -31,7 +31,11 @@ const VERIFIED_LOCATIONS: Record<string, { city: string; venue: string; country:
   'Leamington Spa - Royal Spa Centre': { city: 'Leamington Spa', venue: 'Royal Spa Centre', country: 'GB' },
   'Folkestone - Leas Cliff Hall': { city: 'Folkestone', venue: 'Leas Cliff Hall', country: 'GB' },
   'Paisley - Town Hall': { city: 'Paisley', venue: 'Paisley Town Hall', country: 'GB' },
-  'Melton Mowbray - Melton Theatre': { city: 'Melton Mowbray', venue: 'Melton Theatre', country: 'GB' }
+  'Melton Mowbray - Melton Theatre': { city: 'Melton Mowbray', venue: 'Melton Theatre', country: 'GB' },
+  // Exact first-party venue postal-address proofs captured on 2026-10-11.
+  'Wimborne - Tivoli Theatre': { city: 'Wimborne Minster', venue: 'Tivoli Theatre', country: 'GB' },
+  'Christchurch - The Regent': { city: 'Christchurch', venue: 'The Regent', country: 'GB' },
+  'Skegness - Embassy Theatre': { city: 'Skegness', venue: 'Embassy Theatre', country: 'GB' }
 };
 
 function compact(text: string): string {

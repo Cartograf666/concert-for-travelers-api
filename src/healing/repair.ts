@@ -93,9 +93,9 @@ export function testSelectorsOnHtml(
   const $ = cheerio.load(html);
   const concerts: Partial<Concert>[] = [];
   
-  const { eventBlock, artist, date, ticketUrl, venueNameFallback, cityNameFallback, countryNameFallback } = selectors;
+  const { eventBlock, artist, artistNameFallback, date, ticketUrl, venueNameFallback, cityNameFallback, countryNameFallback } = selectors;
   
-  if (!eventBlock || !artist || !date) {
+  if (!eventBlock || (!artist && !artistNameFallback) || !date) {
     throw new Error("Missing required selectors: eventBlock, artist, or date");
   }
 
@@ -106,7 +106,8 @@ export function testSelectorsOnHtml(
 
   blocks.each((_, element) => {
     const block = $(element);
-    const artistText = block.find(artist).text().trim();
+    // Single-artist tour pages omit per-row names; match the native runner's fallback.
+    const artistText = (artist ? block.find(artist).text().trim() : '') || artistNameFallback || '';
     const dateText = block.find(date).text().trim();
     
     let absoluteTicketUrl: string | undefined;

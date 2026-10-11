@@ -1,0 +1,28 @@
+{
+  "retrieval": "web open extracted primary text; these are not live HTTP captures or synthetic native fixtures",
+  "sources": [
+    {
+      "url": "https://www.audacy.com/thebull/events/the-bull-ten-man-jam",
+      "date": "2026-11-11",
+      "artist": "Randy Houser",
+      "venue": "House of Blues Houston",
+      "excerpt": "House of Blues Houston, Caroline Street, Houston, TX, USA",
+      "lines": "57-71, 81-103, 115-119",
+      "localHttp": "403, no retry or bypass",
+      "time": "Organizer page has 18:00 event container and 19:00 prose; do not infer artist stage time"
+    },
+    {
+      "url": "https://www.tempodrom.de/event/paul_carrack_2026-10-18_19/",
+      "date": "2026-10-18",
+      "artist": "Paul Carrack",
+      "from": "Tempodrom",
+      "to": "HUXLEY'S NEUE WELT",
+      "excerpt": "aus dem Tempodrom in Huxley`s neue Welt verlegt werden. Bereits gekaufte Ticket behalten ihre Gültigkeit.",
+      "lines": "73-95",
+      "localHttp": "timeout, no retry",
+      "indexedAge": "web open says crawled four days ago, fresh native calendar confirms replacement venue"
+    }
+  ],
+  "observedOn": "2026-10-11",
+  "observationTimePrecision": "Web tool gives crawl ages, not an exact HTTP retrieval timestamp; only session date is asserted."
+}

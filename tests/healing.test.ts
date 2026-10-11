@@ -263,7 +263,6 @@ test('Healing - a repair preserves selectors the model cannot re-select', async 
 
   const html = `
     <div class="new-row">
-      <span class="artist">Bonnie Pink</span>
       <span class="date">12. Okt 2026</span>
       <span class="venue">Zepp DiverCity</span>
       <span class="city">Tokyo</span>
@@ -279,7 +278,7 @@ test('Healing - a repair preserves selectors the model cannot re-select', async 
 
   try {
     const res = await repairScraperConfig(tempConfigPath, html, 'MOCK_API_KEY', fakeGenerateSelectors, path.dirname(tempConfigPath));
-    assert.strictEqual(res.success, true);
+    assert.strictEqual(res.success, true, res.error);
 
     const s = res.config!.selectors!;
     assert.strictEqual(s.eventBlock, '.new-row', 'the re-selected field must be updated');

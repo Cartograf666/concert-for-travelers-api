@@ -1,8 +1,8 @@
 {
   "id": "artist-shelly-berg",
   "domain": "www.shellyberg.com",
-  "url": "https://www.shellyberg.com/tour",
-  "type": "static_selectors",
+  "url": "https://www.shellyberg.com/tour?format=json",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "article.eventlist-event",
     "artistNameFallback": "Shelly Berg",

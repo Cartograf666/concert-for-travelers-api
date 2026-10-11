@@ -2,7 +2,7 @@
   "id": "artist-bonnie-pink",
   "domain": "www.bonniepink.jp",
   "url": "https://www.bonniepink.jp/live",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".text-list__item",
     "artistNameFallback": "Bonnie Pink",

@@ -15,7 +15,12 @@
 
 import { ScraperConfig } from '../schemas/config.js';
 import { Concert, MAX_VENUE_LENGTH } from '../schemas/concert.js';
-import { parseDate } from '../pipeline/process.js';
+import { parseDate, processConcerts } from '../pipeline/process.js';
+import { PRODUCTION_ARTIST_DB_DIR } from '../pipeline/artistDb.js';
+import { loadCache } from '../engine/cache.js';
+import type { ScrapeCohort } from '../observability/run_manifest.js';
+import type { ProcessingDiagnostics } from '../observability/processing_diagnostics.js';
+import * as path from 'path';
 
 export interface VerifyCheck {
   name: string;
@@ -26,6 +31,8 @@ export interface VerifyCheck {
 export interface VerifyReport {
   ok: boolean;
   eventCount: number;
+  /** Events retained by the actual public normalizer, rather than raw extraction. */
+  publicEventCount?: number;
   checks: VerifyCheck[];
   /**
    * Why the live probe failed, when it did. `selectors_stale` here is a useful
@@ -46,8 +53,20 @@ export interface VerifyOptions {
    * Omit when there is no baseline (a scraper that never worked).
    */
   baselineCount?: number;
+  /** Last-good rows from this cohort, normalized on the same date/catalogue as the candidate. */
+  baselineEvents?: Partial<Concert>[];
+  /** Defaults to the production artist catalogue; tests use an isolated catalogue. */
+  approvedArtistsPath?: string;
   /** Anchor for relative date parsing ("this Friday"). Defaults to now. */
   now?: Date;
+}
+
+/** Artist reports contain artist-scrape-cache.json, never the venue baseline. */
+export async function loadVerificationBaselines(reportsDir: string, cohort: ScrapeCohort): Promise<Map<string, Partial<Concert>[]>> {
+  const cache = await loadCache(path.join(reportsDir, cohort === 'artist' ? 'artist-scrape-cache.json' : 'scrape-cache.json'));
+  return new Map(Object.entries(cache ?? {})
+    .filter(([, entry]) => Array.isArray(entry?.concerts))
+    .map(([id, entry]) => [id, entry.concerts]));
 }
 
 /**
@@ -292,12 +311,39 @@ export async function verifyConfigLive(
 
   const report = verifyEvents(result.concerts, config, options);
   report.checks.unshift({ name: 'live_fetch', ok: true, detail: 'live run succeeded' });
+  // Raw plausibility is not publication evidence: incomplete rows, unapproved
+  // identities and source quarantines can all pass it and yield zero public rows.
+  const now = (options.now ?? new Date()).toISOString();
+  const approved = options.approvedArtistsPath ?? PRODUCTION_ARTIST_DB_DIR;
+  try {
+    let diagnostics: ProcessingDiagnostics | undefined;
+    const published = await processConcerts(result.concerts, approved, now, undefined,
+      value => { diagnostics = value; });
+    report.publicEventCount = published.length;
+    report.checks.push({
+      name: 'public_events', ok: published.length > 0,
+      detail: `${result.concerts.length} raw -> ${published.length} public; dropped=${JSON.stringify(diagnostics?.dropped)}`
+    });
+    if (options.baselineEvents?.length) {
+      const baseline = await processConcerts(options.baselineEvents, approved, now);
+      if (baseline.length > 0) {
+        const floor = Math.max(1, Math.floor(baseline.length * MIN_BASELINE_RETENTION));
+        report.checks.push({
+          name: 'no_public_volume_collapse', ok: published.length >= floor,
+          detail: `${published.length} public event(s) vs ${baseline.length} last-good public event(s) (need >= ${floor})`
+        });
+      }
+    }
+  } catch (err: any) {
+    report.checks.push({ name: 'public_events', ok: false, detail: `public normalization failed: ${err?.message ?? err}` });
+  }
+  report.ok = report.checks.every(check => check.ok);
   return report;
 }
 
 /** One-line summary for logs and the PR body. */
 export function formatVerifyReport(report: VerifyReport): string {
   const failed = report.checks.filter((c) => !c.ok);
-  if (report.ok) return `PASS (${report.eventCount} events, ${report.checks.length} checks)`;
+  if (report.ok) return `PASS (${report.eventCount} events${report.publicEventCount === undefined ? '' : `, ${report.publicEventCount} public`}, ${report.checks.length} checks)`;
   return `FAIL: ${failed.map((c) => `${c.name} [${c.detail}]`).join('; ')}`;
 }

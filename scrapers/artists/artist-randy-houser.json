@@ -2,7 +2,7 @@
   "id": "artist-randy-houser",
   "domain": "www.randyhouser.com",
   "url": "https://www.randyhouser.com/tour",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "article.card.event",
     "artistNameFallback": "Randy Houser",

@@ -2,7 +2,7 @@
   "id": "artist-burak-yeter",
   "domain": "www.burakyeter.com",
   "url": "https://www.burakyeter.com/dates/",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".nectar-hor-list-item",
     "artistNameFallback": "Burak Yeter",

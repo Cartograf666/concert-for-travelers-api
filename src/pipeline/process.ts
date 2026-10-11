@@ -13,6 +13,9 @@ import { isTheHuIdentity, isTheHuName, verifiedTheHuDublinSourceRank } from './t
 import { isVerifiedSourceIdentityCollision } from './provider_identity_exclusions.js';
 import { isVerifiedCancelledTwinAtlanticEvent } from './twin_atlantic_cancellations.js';
 import { isInvalidLegacyAiKawashimaEvent } from './ai_kawashima_provenance.js';
+import { verifiedOfficialSourceEventIdentity } from './official_source_event_identity.js';
+import { verifiedNormalizationOccurrence } from './normalization_occurrence_identity.js';
+import { mozarteumProvenanceDropReason } from './mozarteum_provenance.js';
 
 /** Format a Date as a timezone-safe YYYY-MM-DD using its local calendar fields. */
 function toLocalIso(d: Date): string {
@@ -305,7 +308,7 @@ export function cleanArtistName(name: string): string {
 }
 
 export type ArtistMatch = { name: string; website?: string | null; socials?: any; mbid?: string | null; artistDiscovery: ArtistDiscovery };
-export type ApprovedMatcher = (scrapedName: string) => ArtistMatch | null;
+export type ApprovedMatcher = (scrapedName: string, mode?: 'exact') => ArtistMatch | null;
 
 // Names this short are matched only by exact equality, never as a whole-word
 // substring or fuzzy candidate — otherwise "10cc"/"M83"/two-letter names hit
@@ -628,7 +631,13 @@ export function buildApprovedMatcher(approvedArtists: any[]): ApprovedMatcher {
         artistDiscovery: artistDiscoveryFor(e.approved)
       };
 
-  return (scrapedName: string): ArtistMatch | null => {
+  return (scrapedName: string, mode?: 'exact'): ArtistMatch | null => {
+    // Native performer fields must match the complete canonical name/approved
+    // alias, before title/suffix cleanup can turn unrelated text into a match.
+    if (mode === 'exact') {
+      const exact = exactByLower.get(scrapedName.trim().toLowerCase());
+      return exact ? toMatch(exact) : null;
+    }
     const cleaned = cleanArtistName(scrapedName);
     const lowerCleaned = cleaned.toLowerCase();
 
@@ -1133,6 +1142,7 @@ export async function processConcerts(
   const processedMap = new Map<string, Concert>();
   const officialWinnerByKey = new Map<string, boolean>();
   const theHuDublinWinnerRank = new Map<string, number>();
+  const verifiedEventWinner = new Map<string, { pairKey: string; sourceRank: number }>();
   const diagnostics = onDiagnostics ? new ProcessingDiagnosticsCollector(rawConcerts.length, baseDateStr) : undefined;
   // Telemetry: why events are dropped, so silent losses are visible.
   const drops = { incomplete: 0, notApproved: 0, badDate: 0, pastDate: 0, zodFail: 0 };
@@ -1173,8 +1183,18 @@ export async function processConcerts(
       continue;
     }
 
+    const mozarteumDrop = mozarteumProvenanceDropReason(raw);
+    if (mozarteumDrop) {
+      drops[mozarteumDrop]++;
+      diagnostics?.recordDrop(mozarteumDrop, raw);
+      continue;
+    }
+
     // 1. Artist Normalization & Filter
-    const matched = isTheHuName(raw.artist) && !hasTheHuCanonical ? null : match(raw.artist);
+    const source = raw.originalSource.trim().toLowerCase();
+    const matchMode = ['cartagenamusicfestival.com', 'www.cartagenamusicfestival.com'].includes(source)
+      ? 'exact' : undefined;
+    const matched = isTheHuName(raw.artist) && !hasTheHuCanonical ? null : match(raw.artist, matchMode);
     const artistSocials = matched ? buildArtistSocials(matched.socials) : undefined;
     const spotifyId = parseSpotifyArtistId(artistSocials?.spotify);
     if (!matched || isVerifiedSourceIdentityCollision(raw, matched.mbid, spotifyId) ||
@@ -1249,7 +1269,10 @@ export async function processConcerts(
     // 3. Deduplication Key: (artist_slug, date, city_slug)
     const artistSlug = slugify(validatedConcert.artist);
     const citySlug = slugify(validatedConcert.city);
-    const dedupeKey = `${artistSlug}_${validatedConcert.date}_${citySlug}`;
+    const verifiedEvent = verifiedOfficialSourceEventIdentity(raw, validatedConcert) ??
+      verifiedNormalizationOccurrence(raw, validatedConcert);
+    const dedupeCity = verifiedEvent ? slugify(verifiedEvent.dedupeCity) : citySlug;
+    const dedupeKey = `${artistSlug}_${validatedConcert.date}_${dedupeCity}`;
     // Authority is tied to the original cached object and the canonical
     // approved artist. A raw flag, copied URL, or fuzzy alias cannot confer it.
     const candidateOfficial = officialArtistContext?.get(raw)?.artist === matched.name;
@@ -1264,11 +1287,15 @@ export async function processConcerts(
       const theHuDublinPreferred = candidateTheHuDublinRank > 0 && existingTheHuDublinRank > 0 &&
         candidateTheHuDublinRank !== existingTheHuDublinRank
         ? candidateTheHuDublinRank > existingTheHuDublinRank : undefined;
+      const existingEvent = verifiedEventWinner.get(dedupeKey);
+      const verifiedPairPreferred = verifiedEvent && existingEvent?.pairKey === verifiedEvent.pairKey &&
+        verifiedEvent.sourceRank !== existingEvent.sourceRank
+        ? verifiedEvent.sourceRank > existingEvent.sourceRank : undefined;
       // A verified official row wins as a whole. Equal-rank rows retain the
-      // legacy policy except for the verified The HU Dublin pair above.
+      // legacy policy except for the finite verified source-event pairs.
       if ((candidateOfficial && !existingOfficial) ||
           (Boolean(candidateOfficial) === existingOfficial &&
-            (theHuDublinPreferred ?? ((!existing.ticketUrl && validatedConcert.ticketUrl) ||
+            (theHuDublinPreferred ?? verifiedPairPreferred ?? ((!existing.ticketUrl && validatedConcert.ticketUrl) ||
               (Boolean(existing.ticketUrl) === Boolean(validatedConcert.ticketUrl) &&
                 isMoreCompleteDuplicate(existing, validatedConcert)))))) {
         // The existing record is discarded, so its source owns this duplicate
@@ -1279,6 +1306,8 @@ export async function processConcerts(
         officialWinnerByKey.set(dedupeKey, Boolean(candidateOfficial));
         if (candidateTheHuDublinRank > 0) theHuDublinWinnerRank.set(dedupeKey, candidateTheHuDublinRank);
         else theHuDublinWinnerRank.delete(dedupeKey);
+        if (verifiedEvent) verifiedEventWinner.set(dedupeKey, verifiedEvent);
+        else verifiedEventWinner.delete(dedupeKey);
       } else {
         diagnostics?.recordDuplicate(raw);
       }
@@ -1286,6 +1315,7 @@ export async function processConcerts(
       processedMap.set(dedupeKey, validatedConcert);
       officialWinnerByKey.set(dedupeKey, Boolean(candidateOfficial));
       if (candidateTheHuDublinRank > 0) theHuDublinWinnerRank.set(dedupeKey, candidateTheHuDublinRank);
+      if (verifiedEvent) verifiedEventWinner.set(dedupeKey, verifiedEvent);
     }
   }
 

@@ -4,8 +4,8 @@
 [![PR Verification](https://github.com/Cartograf666/concert-for-travelers-api/actions/workflows/pr-test.yml/badge.svg)](https://github.com/Cartograf666/concert-for-travelers-api/actions/workflows/pr-test.yml)
 [![Static API](https://img.shields.io/badge/API-static%20JSON-blue)](https://cartograf666.github.io/concert-for-travelers-api/)
 
-> A fully autonomous, self-healing pipeline that scrapes concerts from 90+
-> venues, Ticketmaster, Bandsintown, and Eventbrite; matches them against a 63,000+
+> An automated concert pipeline with hundreds of venue and artist-page collectors,
+> Ticketmaster and batched provider sources; matches them against a 63,000+
 > artist whitelist; enriches artist metadata via free structured sources and
 > Gemini; and publishes it all as a free static JSON API. Zero servers,
 > zero manual intervention in the normal case.
@@ -35,16 +35,21 @@ artists I love are playing where I'll be, and when?"*
 
 | Source | Coverage | Cadence | Notes |
 |---|---|---|---|
-| **Venue scrapers** | 91 configs, per-venue | Daily | `static_selectors`, `json_api`, `custom_js`, `jsonld`, `next_data`, `playwright_render` — whichever fits the site; self-healing keeps them alive. |
-| **Ticketmaster Discovery API** | 27 countries | Daily | Broad additive sweep; also surfaces festivals (multi-attraction events). |
-| **Bandsintown** | Worldwide, artist-keyed | Daily, batched | The only source with real reach into markets the others miss (Japan, Russia, ...). Public widget feed — polite pacing, cache-backed, self-throttles on any sign of blocking. |
-| **Eventbrite** | US, artist-keyed | Daily, batched | Public discovery-page scrape (no third-party events-search API exists anymore) — leading-name relevance filter cuts the noise of a full-text search. See [BACKLOG.md](BACKLOG.md) for the ToS-risk tradeoff this accepts. |
-| **Artist tour-page scrapers** | 5 configs today | Weekly | Official tour pages for specific artists — most reliable per-artist source, added by hand. |
+| **Root scraper cohort** | 153 configs on 2026-10-10; includes venues, artist pages and other listings | After the daily artist workflow completes | `scrapers/*.json`, loaded non-recursively; cohort counts are not physical-venue counts. See the [dated audit](docs/freshness-capacity-20261010.md). |
+| **Ticketmaster Discovery API** | 27 configured countries | With the root scraper pass | Broad additive sweep; successful country requests do not prove complete market coverage. |
+| **Bandsintown** | Artist-keyed; 20,781 targets in the 2026-10-10 snapshot | Daily at 04:00 UTC; at most 800 attempts/run | Public widget feed, cached and paced; six days is the minimum revisit interval, not a per-target freshness SLA. Active reservation plus global oldest-attempt queue; see the [capacity audit](docs/freshness-capacity-20261010.md). |
+| **Eventbrite** | US, artist-keyed; access unavailable in the 2026-10-10 snapshot | Scheduled daily; at most 300 attempts/run, subject to early stop | Public discovery-page path. Five access-challenge failures, zero successful checks; not functioning coverage. See the [audit](docs/freshness-capacity-20261010.md) and [BACKLOG.md](BACKLOG.md) for access/ToS constraints. |
+| **Artist tour-page scrapers** | 415 configs on 2026-10-10 | Daily at 04:00 UTC | `scrapers/artists/*.json`, separate cache; configured pages are not all granted official duplicate priority. That registry contains five specific sources with provenance checks; see the [audit](docs/freshness-capacity-20261010.md). |
 | **`discover-artists`** | Deezer + Last.fm charts | Weekly | Self-growing target list: pulls live global + per-genre/per-country charts so the artists being tracked keep pace with what's actually popular, without a human curating it. |
 
 Every raw event — regardless of source — goes through the same
 [approved-artist whitelist](#key-features), date normalization, and
 deduplication pipeline before publishing.
+
+Scheduled frequency describes workflow triggers, not a guarantee that every source
+was checked successfully or every market was covered. The [2026-10-10 audit](docs/freshness-capacity-20261010.md)
+separates configured capacity, observed source age, unavailable access and publication
+gate eligibility from deployment proof. Counts will drift as configurations and targets change.
 
 ---
 
@@ -54,7 +59,7 @@ deduplication pipeline before publishing.
 2. **Layered, Free-First Artist Enrichment Cascade** — website + socials (Spotify/Instagram/Facebook/YouTube/Telegram/VK) are filled in via, in order of cost: a bulk Wikidata SPARQL sweep (~80 names/query), a per-artist MusicBrainz + Wikidata pass, and only then Gemini for the remaining long tail — so the vast majority of the ~63,000-artist whitelist gets enriched with zero LLM spend.
 3. **Multi-Key Gemini Failover** — both enrichment and self-healing rotate through every configured key (`GEMINI_API_KEY`, `_2.._10`, `_RESERV1..10`, or a bulk `GEMINI_API_KEYS` list) and a model cascade (Gemma → Gemini Flash tiers), moving to the next key only once every model on the current one is quota/auth-exhausted — multiplying the free-tier daily budget with zero code changes beyond adding a secret.
 4. **Tiered Artist Whitelist Matching** — exact match → whole-word cover/tribute-band filter → coverage-guarded substring match (with an attached-capitalized-neighbor guard so a short entry can't absorb a fragment of a longer, unapproved name) → edit-distance fuzzy fallback. Tuned against real production false-positives/negatives, not just happy-path cases.
-5. **Self-Healing CSS Selectors, Auto-Merged** — when a scraper stops returning concerts, an automated flow asks Gemini (structured output, restricted to selector fields — never the venue/city/country fallbacks) to repair it, validates the fix against the cached HTML and the full test suite, opens a PR for the audit trail, and **squash-merges it immediately**. No human in the loop.
+5. **Self-Healing CSS Selectors, Auto-Merged** — when a scraper stops returning concerts, an automated flow asks Gemini (structured output, restricted to selector fields — never the venue/city/country fallbacks) to repair it. Verification checks cached HTML, a native live extraction through the actual approved-artist/public pipeline, retention against the same-cohort baseline, and the test suite before opening and auto-merging a PR. Access barriers and unverified identities cannot be repaired by plausible raw counts; see the [semantic and CI audit](docs/self-heal-audit-20261011.md).
 6. **Multiple Scraper Strategies** — `static_selectors` and `json_api` cover most venues; `custom_js`, `jsonld`, `next_data`, and `playwright_render` (headless Chromium) handle the rest. A `static_selectors` config auto-recovers via JSON-LD if its selectors ever match zero events.
 7. **Deploy Safety Net** — a health-gate refuses to publish on a 0-count or >50% drop vs. the cached baseline; an SSRF guard rejects scraper configs targeting localhost/private/link-local/metadata addresses; a per-domain circuit breaker stops hammering a site after 3 consecutive failures; a freshness watchdog opens a GitHub issue if a scheduled run silently stops firing.
 8. **Strict Schema Verification** — every concert is validated against a Zod schema before publishing, including rejecting calendar-invalid dates (e.g. a day/month mix-up) and dropping concerts whose date has already passed.
@@ -124,6 +129,11 @@ are bounded and stored only in `reports/processing-diagnostics.json` in workflow
 artifacts; the public status contains aggregate counts without those samples.
 Collection schedules, provider request limits and event normalization are unchanged.
 
+For per-artist requests, prefer the exact published `slug` from `artists.json`.
+Do not approximate it with an ASCII-only slug generator: punctuation, accents and
+non-Latin names can produce different filenames. The [consumer contract audit](docs/consumer-contract-audit-20261011.md)
+records this compatibility gap without changing API filenames or schema.
+
 Each concert object follows `src/schemas/concert.ts`: `artist`, `artistWebsite?`, `spotifyId?`, `mbid?`, `artistSocials?` (spotify/instagram/facebook/youtube/telegram/vk), `date` (`YYYY-MM-DD`), `startTime?` (`HH:MM`), `venue`, `venueKind?` (stadium/arena/club/theatre/hall/open-air/other), `city`, `country` (ISO 3166-1 alpha-2), `lat?`/`lng?`, `festival?` (`{name, url?}`), `lineup?`, `priceRange?` (`{min, max, currency}`, Ticketmaster only), `ticketUrl?` (the artist's own site when known, not a ticket-vendor link -- see below), `originalSource`, `scrapedAt`.
 
 **Note on `ticketUrl`**: despite the name, this is the artist's own official website when we know it, not a ticket-purchase page — source-specific ticket/aggregator links are frequently an unlabeled widget or a generic city-listing page with no indication of what it is. It only falls back to the raw source ticket link when no artist website is known for that artist.
@@ -167,8 +177,8 @@ not a UI/default-filter change. See [calibration and caveats](docs/ARTIST-DISCOV
 
 ```
 ├── .github/workflows/
-│   ├── daily-scrape.yml        # Daily cron: scrapes venues + Ticketmaster, health-gates, publishes, deploys to Pages
-│   ├── artist-scrape.yml       # Daily cron: artist tour-page configs + the Bandsintown + Eventbrite sweeps
+│   ├── daily-scrape.yml        # After artist workflow: root cohort + Ticketmaster, health-gates, publishes, deploys to Pages
+│   ├── artist-scrape.yml       # Daily 04:00 UTC: artist tour-page configs + capped provider sweeps
 │   ├── discover-artists.yml    # Weekly cron: grows the target list from live Deezer/Last.fm charts
 │   ├── self-heal.yml           # Triggered after daily-scrape: repairs + auto-merges broken selectors
 │   ├── enrich-auto.yml         # Every 3h: free MusicBrainz Tier-0 enrichment sweep
@@ -178,8 +188,8 @@ not a UI/default-filter change. See [calibration and caveats](docs/ARTIST-DISCOV
 │   ├── freshness-watchdog.yml  # Independent check that a successful daily run happened recently
 │   ├── pr-test.yml             # Validates PR code changes, build, and full test suite
 │   └── rank-scraper-candidates.yml # Manual-only: ranks target artists without tour scrapers by popularity
-├── scrapers/                   # JSON config files for each venue scraper (91)
-│   └── artists/                # Artist tour-page scraper configs (5) -- see docs/ADD-VENUE-SCRAPERS.md
+├── scrapers/                   # Root JSON scraper cohort (venues, artist pages and listings)
+│   └── artists/                # Artist tour-page scraper configs -- see docs/ADD-VENUE-SCRAPERS.md
 ├── data/
 │   ├── artists/                # Approved artist whitelist, sharded by name mod 8 (shard-0..7.json)
 │   ├── artist_scrape_targets.txt # Self-growing artist target list for discover-artists/Bandsintown/Eventbrite
@@ -242,7 +252,7 @@ npm run build
 ```
 
 ### Run Scraper & Aggregator
-Runs every venue scraper + the Ticketmaster sweep, merges in whatever the artist-scrape job last cached, runs JIT social/website enrichment, writes results to `/dist`, and logs failure reports to `reports/fail-log.json`.
+Runs every configured root scraper + the Ticketmaster sweep, merges in whatever the artist-scrape job last cached, runs JIT social/website enrichment, writes results to `/dist`, and logs failure reports to `reports/fail-log.json`.
 ```bash
 # Optional: set a Gemini key for enrichment
 export GEMINI_API_KEY="your-gemini-key"
@@ -316,11 +326,11 @@ npm run test
 
 ## Enrichment & Self-Healing Flow Detail
 
-1. **Daily Scrape**: runs every venue scraper + the Ticketmaster sweep, merges in the artist-scrape job's last cached results (tour-pages + Bandsintown + Eventbrite), applies artist matching + date parsing + normalization + past-date filtering, and health-gates the result before publishing to `/dist` and deploying to GitHub Pages. A failed or empty-result scraper has its HTML sample and error logged to `reports/fail-log.json`.
+1. **Daily Scrape**: runs the configured root scraper cohort + the Ticketmaster sweep, merges in the artist-scrape job's last cached results (tour-pages + Bandsintown + Eventbrite), applies artist matching + date parsing + normalization + past-date filtering, and health-gates the result before publishing to `/dist` and deploying to GitHub Pages. A failed or empty-result scraper has its HTML sample and error logged to `reports/fail-log.json`.
 2. **Free-First Metadata Enrichment**: new artists are enriched in cost order — a bulk Wikidata SPARQL sweep first (fast, ~80 names/query), then a per-artist MusicBrainz + Wikidata pass every 3 hours, and only the remaining long tail goes to Gemini in batches for website + socials.
 3. **Multi-Key, Multi-Model Failover**: enrichment and self-healing both rotate through every configured Gemini key and a Gemma/Gemini-Flash model cascade, moving to the next key only once every model on the current one is quota/auth-exhausted.
 4. **LLM Selector Repair**: once the Daily Scrape completes, the Self-Healing Pipeline downloads its fail-log artifact and, for each failure, asks Gemini (structured output, selector fields only) to analyze the broken selectors against the cached HTML.
-5. **Self-Correction, Auto-Merged**: repaired selectors are tested against the cached HTML sample and the full test suite. If they pass, the venue's config is updated on a fresh branch, opened as a PR (for the audit trail), and **squash-merged immediately** — no manual review gate.
+5. **Self-Correction, Auto-Merged**: repaired selectors are checked against cached HTML and a fresh native extraction. The public normalizer must retain approved, valid upcoming output against the correct venue/artist cohort baseline; raw plausibility alone is insufficient. After the relevant gates and suite pass, the config can be opened on a fresh branch and auto-merged. Repair confirmation/rollback remains in migration dry-run in the audited workflow; [pending history is not confirmed recovery](docs/self-heal-audit-20261011.md).
 6. **Freshness Watchdog**: independently verifies a successful daily run happened recently and opens a deduplicated GitHub issue if the schedule silently stopped firing, a run hung, or a run was skipped.
 7. **Concurrent-Write Safety**: `main` receives commits from several independent jobs (daily-scrape's own enrichment commit, both enrich-* workflows, self-heal's auto-merge). Every auto-commit step retries with a fetch+rebase on a push rejection instead of failing the whole job.
 

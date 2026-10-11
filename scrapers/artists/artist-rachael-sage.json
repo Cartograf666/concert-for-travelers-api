@@ -2,7 +2,7 @@
   "id": "artist-rachael-sage",
   "domain": "www.rachaelsage.com",
   "url": "https://www.rachaelsage.com/tour",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "table.tour_list tr.pm_top_tr",
     "artistNameFallback": "Rachael Sage",

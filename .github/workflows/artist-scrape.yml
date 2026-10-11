@@ -2,7 +2,7 @@ name: Artist Tour-Page Scrape
 
 on:
   schedule:
-    - cron: '0 4 * * *' # Daily, 04:00 UTC -- 2205 targets / 800-per-run cap cycles the full list every ~3 days
+    - cron: '0 4 * * *' # Daily, 04:00 UTC; capped attempts, not a full-list freshness SLA (docs/freshness-capacity-20261010.md)
   workflow_dispatch:
 
 permissions:
@@ -70,7 +70,7 @@ jobs:
             artist-run-manifest-
 
       # Per-artist last-successful Bandsintown results. Persisted so the batched
-      # sweep resumes where it left off (stalest-first) instead of re-fetching the
+      # sweep uses active reservation + global oldest-attempt order instead of re-fetching the
       # same head of the list every run, and so a blocked/failed run falls back to
       # last-good data instead of dropping an artist's shows.
       - name: Restore Bandsintown cache
@@ -99,7 +99,7 @@ jobs:
           # widget app_id in code when unset. See src/engine/bandsintown.ts.
           BANDSINTOWN_APP_ID: ${{ secrets.BANDSINTOWN_APP_ID }}
           # Batch size per run -- keeps each run gentle on the public feed; the
-          # cache makes successive runs advance through the full list.
+          # queue advances by last attempt; failures never verify source freshness.
           BANDSINTOWN_MAX_PER_RUN: '800'
           # Smaller/gentler cap than Bandsintown -- see src/engine/eventbrite.ts.
           EVENTBRITE_MAX_PER_RUN: '300'
@@ -107,7 +107,7 @@ jobs:
           # daily-scrape.yml, including the budget-capped LLM-extraction fallback
           # (src/engine/llm_extraction_fallback.ts) -- without a key configured it
           # silently no-ops, which is exactly what was happening here before this
-          # was wired: the ~59 auto-generated artist-<slug> tour scrapers this
+          # was wired: the auto-generated artist-<slug> tour scrapers this
           # workflow runs never got any fallback coverage at all.
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}

@@ -1,82 +1,75 @@
 import * as cheerio from 'cheerio';
 import type { ScraperConfig } from '../../schemas/config.js';
-import type { Concert } from '../../schemas/concert.js';
+import type { RawConcert } from '../../schemas/concert.js';
+import { fetchHtmlForHealing, resolveHttpBackend } from '../runner.js';
 
-export async function scrape(config: ScraperConfig, html: string, scrapedAt: string): Promise<Partial<Concert>[]> {
+const ORIGIN = 'https://www.kittysu.com';
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const clean = (value: string) => value.replace(/\s+/g,' ').trim();
+
+function eventUrl(raw: string | undefined): string {
+  if (!raw) throw new Error('Kitty Su native event URL missing');
+  const url = new URL(raw,ORIGIN);
+  if (url.origin !== ORIGIN || url.username || url.password || url.search || url.hash ||
+      !/^\/event\/[A-Za-z0-9-]+\/?$/.test(url.pathname)) throw new Error('Kitty Su unsafe native event URL');
+  return url.href;
+}
+
+export async function scrape(config: ScraperConfig, html: string, scrapedAt: string,
+  fetchPage: (url: string) => Promise<string> = url => fetchHtmlForHealing(url,resolveHttpBackend(config))): Promise<RawConcert[]> {
+  if (config.url !== `${ORIGIN}/events` || config.domain !== 'kittysu.com') throw new Error('Kitty Su official source mismatch');
   const $ = cheerio.load(html);
-  const concerts: Partial<Concert>[] = [];
-
-  // Extract event list items from Kitty Su's events page
-  // Format: <li><div class="event-list-img">...</div><div class="event-list-text">
-  //   <h3>Show Girls | Bangalore</h3>
-  //   <p>Bangalore | India | 12 July - 13 July | 08:30 PM</p>
-  // </div></li>
-
-  $('ul.event-list > li').each((_, el) => {
-    try {
-      const block = $(el);
-
-      // Extract artist/event title from h3
-      const h3Text = block.find('.event-list-text h3').text().trim();
-      if (!h3Text) return;
-
-      // Parse format: "Event Name | City"
-      const [eventName, city] = h3Text.split('|').map(s => s.trim());
-      if (!eventName) return;
-
-      // Only process Bangalore events
-      if (city && city.toLowerCase() !== 'bangalore') {
-        return;
-      }
-
-      // Extract date and time info from paragraph
-      const pText = block.find('.event-list-text p').text().trim();
-      if (!pText) return;
-
-      // Parse format: "Bangalore | India | 12 July - 13 July | 08:30 PM"
-      // We want to extract the date part
-      const parts = pText.split('|').map(s => s.trim());
-
-      let dateStr = '';
-      // A yearless event card is ambiguous around New Year. Use only a year stated by the source.
-      const year = pText.match(/\b20\d{2}\b/)?.[0] ?? h3Text.match(/\b20\d{2}\b/)?.[0];
-      if (!year) return;
-
-      if (parts.length >= 3) {
-        // The date is typically in parts[2]
-        const datePart = parts[2];
-        // Format: "12 July - 13 July" or similar
-        // We take the start date
-        if (datePart) {
-          const dateMatch = datePart.match(/(\d{1,2})\s+(\w+)/);
-          if (dateMatch) {
-            dateStr = `${dateMatch[1]} ${dateMatch[2]} ${year}`;
-          }
-        }
-      }
-
-      if (!dateStr) return;
-
-      // Extract ticket URL from the link
-      const ticketUrl = block.find('.event-list-img a').attr('href');
-      const fullTicketUrl = ticketUrl ? new URL(ticketUrl, config.url).href : config.url;
-
-      concerts.push({
-        artist: eventName,
-        date: dateStr,
-        venue: config.selectors?.venueNameFallback,
-        city: config.selectors?.cityNameFallback,
-        country: config.selectors?.countryNameFallback,
-        lat: config.selectors?.lat,
-        lng: config.selectors?.lng,
-        ticketUrl: fullTicketUrl,
-        originalSource: config.domain,
-        scrapedAt
-      });
-    } catch {
-      // Skip this event if parsing fails
+  if (clean($('title').text()) !== 'Kitty Su') throw new Error('Kitty Su native programme identity missing');
+  const concerts: RawConcert[] = [];
+  const seen = new Map<string,string>();
+  const deadline = Date.now()+70000;
+  for (const element of $('ul.event-list > li').toArray()) {
+    const row = $(element);
+    const title = clean(row.find('.event-list-text h3').text());
+    const [eventTitle, city] = title.split('|').map(clean);
+    if (city?.toLowerCase() !== 'bangalore') continue;
+    const listing = clean(row.find('.event-list-text p').text());
+    const parts = listing.split('|').map(clean);
+    if (!eventTitle || parts.length !== 4 || parts[0] !== 'Bangalore' || parts[1] !== 'India') {
+      throw new Error('Kitty Su unverified native listing location');
     }
-  });
-
+    const url = eventUrl(row.find('.event-list-img a').attr('href'));
+    if (seen.has(url)) {
+      if (seen.get(url) !== `${title}|${listing}`) throw new Error('Kitty Su conflicting duplicate event');
+      continue;
+    }
+    seen.set(url,`${title}|${listing}`);
+    if (Date.now() > deadline-15000) throw new Error('Kitty Su complete programme exceeds detail fetch budget');
+    const detail = cheerio.load(await fetchPage(url));
+    const canonical = detail('meta[property="og:url"]').attr('content');
+    // The captured canonical URL uses the bare official host; the listing uses
+    // www. Permit only that evidenced host pair and the same exact event path.
+    let canonicalUrl: URL;
+    try { canonicalUrl = new URL(canonical || ''); } catch { throw new Error('Kitty Su native detail identity missing'); }
+    if (clean(detail('title').text()) !== eventTitle || canonicalUrl.protocol !== 'https:' ||
+        !['kittysu.com','www.kittysu.com'].includes(canonicalUrl.hostname) || canonicalUrl.port ||
+        canonicalUrl.username || canonicalUrl.password || canonicalUrl.search || canonicalUrl.hash ||
+        canonicalUrl.pathname !== new URL(url).pathname) throw new Error('Kitty Su native detail identity mismatch');
+    const description = clean(detail('.event-description').text());
+    const artist = description.match(/with (DJ [\p{L}\d .'-]+) on the console/iu)?.[1];
+    const dateMatch = description.match(/\b(\d{1,2})(?:st|nd|rd|th)? ([A-Za-z]+) (20\d{2})\b/);
+    const venues = detail('.event-description strong').toArray().map(el => clean(detail(el).text()))
+      .filter(text => /^Kitty (?:Ko|Su) .+ Bangalore$/.test(text));
+    const listingDate = /^(\d{1,2})\s+([A-Za-z]+)/.exec(parts[2]);
+    const time = /\b(\d{1,2}):(\d{2})\s*(AM|PM)\b/i.exec(description);
+    if (!artist || !dateMatch || venues.length !== 1 || !listingDate || !time ||
+        +time[1] < 1 || +time[1] > 12 || +time[2] > 59) throw new Error('Kitty Su missing native performer, full date, time or venue');
+    const month = MONTHS.findIndex(value => value.toLowerCase() === dateMatch[2].toLowerCase())+1;
+    const date = `${dateMatch[3]}-${String(month).padStart(2,'0')}-${dateMatch[1].padStart(2,'0')}`;
+    const parsed = new Date(`${date}T00:00:00Z`);
+    const startTime = `${String(+time[1]%12+(time[3].toUpperCase()==='PM'?12:0)).padStart(2,'0')}:${time[2]}`;
+    if (!month || !Number.isFinite(parsed.valueOf()) || parsed.toISOString().slice(0,10) !== date ||
+        +listingDate[1] !== +dateMatch[1] || listingDate[2].toLowerCase() !== dateMatch[2].toLowerCase() ||
+        parts[3].toUpperCase() !== `${time[1].padStart(2,'0')}:${time[2]} ${time[3].toUpperCase()}`) {
+      throw new Error('Kitty Su inconsistent native date/time');
+    }
+    concerts.push({artist,date,startTime,venue:venues[0],city:parts[0],country:'IN',ticketUrl:url,
+      sourceEventUrl:url,originalSource:config.domain,scrapedAt});
+  }
   return concerts;
 }

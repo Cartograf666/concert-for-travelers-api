@@ -1,0 +1,732 @@
+{
+  "capturedDate": "2026-10-11",
+  "baseDate": "2026-10-11T05:00:00.000Z",
+  "sources": {
+    "artist-randy-houser": {
+      "configPath": "scrapers/artists/artist-randy-houser.json",
+      "beforeConfig": {
+        "id": "artist-randy-houser",
+        "domain": "www.randyhouser.com",
+        "url": "https://www.randyhouser.com/tour",
+        "type": "static_selectors",
+        "selectors": {
+          "eventBlock": "article.card.event",
+          "artistNameFallback": "Randy Houser",
+          "date": "time",
+          "ticketUrl": "a.btn-tickets",
+          "venue": "h1.card-title",
+          "city": "p.location",
+          "country": "p.location",
+          "venueNameFallback": "",
+          "cityNameFallback": "",
+          "countryNameFallback": "US"
+        }
+      },
+      "meta": {
+        "url": "https://www.randyhouser.com/tour",
+        "observedAt": "2026-10-11T05:48:47.207161+00:00",
+        "result": "200 https://www.randyhouser.com/tour",
+        "exitCode": 0,
+        "error": "",
+        "sha256": "fe17c46b5241f496d1133f207913db0d1088e6891a82303e125e79bfe43430de"
+      },
+      "fixtureSha256": "2f3c84fe0a635b6baba68fff55e2b3f5bc7c6df22d669dad639803526d37c816",
+      "fixtureScope": "Native event blocks excerpted without changing their dates, text, attributes or order"
+    },
+    "artist-excision": {
+      "configPath": "scrapers/artists/artist-excision.json",
+      "beforeConfig": {
+        "id": "artist-excision",
+        "domain": "excision.ca",
+        "url": "https://excision.ca/tour-dates/",
+        "type": "static_selectors",
+        "selectors": {
+          "eventBlock": ".events-list .event",
+          "artistNameFallback": "Excision",
+          "date": ".event-day-text",
+          "ticketUrl": ".event-ticket-link",
+          "venue": ".event-venue-text",
+          "city": ".event-location-text",
+          "country": ".event-location-text",
+          "venueNameFallback": "",
+          "cityNameFallback": "",
+          "countryNameFallback": "US"
+        }
+      },
+      "meta": {
+        "url": "https://excision.ca/tour-dates/",
+        "observedAt": "2026-10-11T05:48:47.744311+00:00",
+        "result": "200 https://excision.ca/tour-dates/",
+        "exitCode": 0,
+        "error": "",
+        "sha256": "2c8b166cb92c3f834b223fa2992cd2b705796bb8824a7b7c0a5f59f3b7954b25"
+      },
+      "fixtureSha256": "38e0618b5ffc94ae1cc8ad7ea38a45b12e283b0881d7396d0086c1e6e3247739",
+      "fixtureScope": "Native event blocks excerpted without changing their dates, text, attributes or order"
+    },
+    "artist-bastille": {
+      "configPath": "scrapers/artists/artist-bastille.json",
+      "beforeConfig": {
+        "id": "artist-bastille",
+        "domain": "www.bastillebastille.com",
+        "url": "https://www.bastillebastille.com/tour/",
+        "type": "static_selectors",
+        "selectors": {
+          "eventBlock": "umg-event",
+          "artistNameFallback": "Bastille",
+          "date": "[part='event-date']",
+          "ticketUrl": "umg-link[data-offer-type='tickets']",
+          "venue": "[part='venue']",
+          "city": "[part='location']",
+          "country": "[part='location']",
+          "venueNameFallback": "",
+          "cityNameFallback": "",
+          "countryNameFallback": "GB"
+        }
+      },
+      "meta": {
+        "url": "https://www.bastillebastille.com/tour/",
+        "observedAt": "2026-10-11T05:48:52.359907+00:00",
+        "result": "200 https://www.bastillebastille.com/tour/",
+        "exitCode": 0,
+        "error": "",
+        "sha256": "91c30cfb05244e8583f2014a852000fca516f26f562623cf1fa8df2bfc43b62d"
+      },
+      "fixtureSha256": "f3932cec7cfe20d0d51b42bcb17976e495ea721eca777927e211d3e1825039b8",
+      "fixtureScope": "Native event blocks excerpted without changing their dates, text, attributes or order"
+    },
+    "artist-admiral-fallow": {
+      "configPath": "scrapers/artists/artist-admiral-fallow.json",
+      "beforeConfig": {
+        "id": "artist-admiral-fallow",
+        "domain": "www.admiralfallow.com",
+        "url": "https://www.admiralfallow.com/shows",
+        "type": "static_selectors",
+        "selectors": {
+          "eventBlock": ".EventListingListItem",
+          "artistNameFallback": "Admiral Fallow",
+          "date": ".EventListingListItem-date",
+          "ticketUrl": ".EventListingListItem-ticketsLink",
+          "venue": ".EventListingListItem-venue a",
+          "city": ".EventListingListItem-venue a",
+          "country": ".EventListingListItem-venue a",
+          "venueNameFallback": "",
+          "cityNameFallback": "",
+          "countryNameFallback": "GB"
+        }
+      },
+      "meta": {
+        "url": "https://www.admiralfallow.com/shows",
+        "observedAt": "2026-10-11T05:48:52.626389+00:00",
+        "result": "200 https://www.admiralfallow.com/shows",
+        "exitCode": 0,
+        "error": "",
+        "sha256": "59af179bda4f3575a4ba3fb58ba1bad63564b744bd244c919f7a4c661d9fd52a"
+      },
+      "fixtureSha256": "90ec17dbc0f1549602214fc0a9f389c25d2afdf6793257c0b59279461776dd5c",
+      "fixtureScope": "Native event blocks excerpted without changing their dates, text, attributes or order"
+    },
+    "artist-iration": {
+      "configPath": "scrapers/artists/artist-iration.json",
+      "beforeConfig": {
+        "id": "artist-iration",
+        "domain": "www.irationmusic.com",
+        "url": "https://www.irationmusic.com/tour",
+        "type": "static_selectors",
+        "selectors": {
+          "eventBlock": "li.tour-item",
+          "artistNameFallback": "Iration",
+          "date": ".tour-timeframe",
+          "ticketUrl": ".tour-actions a",
+          "venue": ".tour-venue-name",
+          "city": ".tour-location-city",
+          "country": ".tour-location-city",
+          "venueNameFallback": "",
+          "cityNameFallback": "",
+          "countryNameFallback": "US"
+        }
+      },
+      "meta": {
+        "url": "https://www.irationmusic.com/tour",
+        "observedAt": "2026-10-11T05:48:48.557910+00:00",
+        "result": "200 https://www.irationmusic.com/tour",
+        "exitCode": 0,
+        "error": "",
+        "sha256": "42e50ea249e75b52028b6ec4281a1733337df1e2e0d3b58b61ee5fdc7c4e0e86"
+      },
+      "fixtureSha256": "c94723f5a2431ab09de930287ce9062d9fc02bbf7fd175aa720976f8c42c86ea",
+      "fixtureScope": "Native event blocks excerpted without changing their dates, text, attributes or order"
+    },
+    "artist-rachael-sage": {
+      "configPath": "scrapers/artists/artist-rachael-sage.json",
+      "beforeConfig": {
+        "id": "artist-rachael-sage",
+        "domain": "www.rachaelsage.com",
+        "url": "https://www.rachaelsage.com/tour",
+        "type": "static_selectors",
+        "selectors": {
+          "eventBlock": "table.tour_list tr.pm_top_tr",
+          "artistNameFallback": "Rachael Sage",
+          "date": "td:nth-child(1)",
+          "ticketUrl": "td.ticket_info img.row_buy_but@onclick",
+          "venue": "td.event_venue",
+          "city": "td.event_location",
+          "country": "td.event_location",
+          "venueNameFallback": "",
+          "cityNameFallback": "",
+          "countryNameFallback": "US"
+        }
+      },
+      "meta": {
+        "url": "https://www.rachaelsage.com/tour",
+        "observedAt": "2026-10-11T05:48:49.329755+00:00",
+        "result": "200 https://www.rachaelsage.com/tour",
+        "exitCode": 0,
+        "error": "",
+        "sha256": "f796ef56e507c2ce98039872a01539246bc0bfd9e6359c92e59ab47f5baf9627"
+      },
+      "fixtureSha256": "71140b8c3c4cf2c67685bf89e99f745aab6ffcff62ff26c36e3b8c1b73dbf0ec",
+      "fixtureScope": "Native event blocks excerpted without changing their dates, text, attributes or order"
+    },
+    "artist-burak-yeter": {
+      "configPath": "scrapers/artists/artist-burak-yeter.json",
+      "beforeConfig": {
+        "id": "artist-burak-yeter",
+        "domain": "www.burakyeter.com",
+        "url": "https://www.burakyeter.com/dates/",
+        "type": "static_selectors",
+        "selectors": {
+          "eventBlock": ".nectar-hor-list-item",
+          "artistNameFallback": "Burak Yeter",
+          "date": ".nectar-list-item:nth-of-type(1) h3",
+          "ticketUrl": ".nectar-list-item-btn",
+          "venue": ".nectar-list-item:nth-of-type(2) h3",
+          "city": ".nectar-list-item:nth-of-type(2) h3",
+          "country": ".nectar-list-item:nth-of-type(2) h3",
+          "venueNameFallback": "",
+          "cityNameFallback": "",
+          "countryNameFallback": "GB"
+        }
+      },
+      "meta": {
+        "url": "https://www.burakyeter.com/dates/",
+        "observedAt": "2026-10-11T05:48:50.065028+00:00",
+        "result": "200 https://www.burakyeter.com/dates/",
+        "exitCode": 0,
+        "error": "",
+        "sha256": "800182d73506cfb773800d96b2bfb94c64401e251b892b9439a12172aa627575"
+      },
+      "fixtureSha256": "97fda87df2964f006b3a286336c752b4dcff06435fd1d01023ded6c3b604208d",
+      "fixtureScope": "Native event blocks excerpted without changing their dates, text, attributes or order"
+    },
+    "artist-shelly-berg": {
+      "configPath": "scrapers/artists/artist-shelly-berg.json",
+      "beforeConfig": {
+        "id": "artist-shelly-berg",
+        "domain": "www.shellyberg.com",
+        "url": "https://www.shellyberg.com/tour",
+        "type": "static_selectors",
+        "selectors": {
+          "eventBlock": "article.eventlist-event",
+          "artistNameFallback": "Shelly Berg",
+          "date": "time.event-date",
+          "ticketUrl": ".eventlist-title-link",
+          "venue": ".eventlist-meta-address",
+          "city": "",
+          "country": "",
+          "venueNameFallback": "",
+          "cityNameFallback": "",
+          "countryNameFallback": "US"
+        }
+      },
+      "meta": {
+        "url": "https://www.shellyberg.com/tour",
+        "observedAt": "2026-10-11T05:49:01.662982+00:00",
+        "result": "200 https://www.shellyberg.com/tour",
+        "exitCode": 0,
+        "error": "",
+        "sha256": "7d0ee75fdcc75032e921a762cf5f224ab8985fefb553ab9b2f8d694b6d52f3d1"
+      },
+      "fixtureSha256": "b76be7a09df840f48677409172c4dc34dfa98ef41b0b02eb7943f4dbb46abad3",
+      "fixtureScope": "Native event blocks excerpted without changing their dates, text, attributes or order",
+      "nativeMeta": {
+        "url": "https://www.shellyberg.com/tour?format=json",
+        "result": "200 https://www.shellyberg.com/tour?format=json",
+        "exitCode": 0,
+        "observedAt": "2026-10-11T05:51:42.958533+00:00",
+        "error": ""
+      }
+    },
+    "artist-turmion-katilot": {
+      "configPath": "scrapers/artists/artist-turmion-katilot.json",
+      "beforeConfig": {
+        "id": "artist-turmion-katilot",
+        "domain": "turmionkatilot.com",
+        "url": "https://turmionkatilot.com/shows/",
+        "type": "static_selectors",
+        "selectors": {
+          "eventBlock": ".fl-rich-text p:has(strong)",
+          "artistNameFallback": "Turmion Kätilöt",
+          "date": "strong",
+          "ticketUrl": "a@href",
+          "venue": "a",
+          "city": "p",
+          "country": "p",
+          "venueNameFallback": "",
+          "cityNameFallback": "",
+          "countryNameFallback": "FI"
+        }
+      },
+      "meta": {
+        "url": "https://turmionkatilot.com/shows/",
+        "observedAt": "2026-10-11T05:49:03.755823+00:00",
+        "result": "200 https://turmionkatilot.com/shows/",
+        "exitCode": 0,
+        "error": "",
+        "sha256": "ef05da8cb16c78056b9ce8283de572de01ac89b01c40ef8ffdfc39a875df70ec"
+      },
+      "fixtureSha256": "fe47dea12f7853406fe65adc2dcd82a03fe09b96c77a4d39cd108182b9e91503",
+      "fixtureScope": "Native event blocks excerpted without changing their dates, text, attributes or order"
+    },
+    "artist-suchmos": {
+      "configPath": "scrapers/artists/artist-suchmos.json",
+      "beforeConfig": {
+        "id": "artist-suchmos",
+        "domain": "www.suchmos.com",
+        "url": "https://www.suchmos.com/live/",
+        "type": "static_selectors",
+        "selectors": {
+          "eventBlock": ".news-item.loop",
+          "artistNameFallback": "Suchmos",
+          "date": "date",
+          "ticketUrl": ".text a",
+          "venue": ".text",
+          "city": ".text",
+          "venueNameFallback": "",
+          "cityNameFallback": "",
+          "countryNameFallback": "JP"
+        }
+      },
+      "meta": {
+        "url": "https://www.suchmos.com/live/",
+        "observedAt": "2026-10-11T05:48:49.146130+00:00",
+        "result": "200 https://www.suchmos.com/live/",
+        "exitCode": 0,
+        "error": "",
+        "sha256": "171a98eaba3bdb7ed80ac6f9eedee75facc18a6a4e8af6d3a31553bd07d7b90d"
+      },
+      "fixtureSha256": "b8db0f21f6540ea51f13cb5f7cc66fda902ee680a06a4a925ca5b2dc28e3964c",
+      "fixtureScope": "First 17 native blocks, including all eight current tour performances and real past controls"
+    },
+    "artist-bonnie-pink": {
+      "configPath": "scrapers/artists/artist-bonnie-pink.json",
+      "beforeConfig": {
+        "id": "artist-bonnie-pink",
+        "domain": "www.bonniepink.jp",
+        "url": "https://www.bonniepink.jp/live",
+        "type": "static_selectors",
+        "selectors": {
+          "eventBlock": ".text-list__item",
+          "artistNameFallback": "Bonnie Pink",
+          "date": ".data-head__date",
+          "ticketUrl": ".text-list__body a",
+          "venue": ".text-list__body",
+          "city": ".text-list__body",
+          "country": "JP",
+          "venueNameFallback": "",
+          "cityNameFallback": "",
+          "countryNameFallback": "JP"
+        }
+      },
+      "meta": {
+        "url": "https://www.bonniepink.jp/live",
+        "observedAt": "2026-10-11T05:48:53.190033+00:00",
+        "result": "200 https://www.bonniepink.jp/live",
+        "exitCode": 0,
+        "error": "",
+        "sha256": "077bcb579afc709d2b171a58f970824a0b99bc40e24055cfcf569f113ce17b6a"
+      },
+      "fixtureSha256": "cc9f21daf0b63ac7839f13b41e2e4ea288fd15c88c209cf7227af6191506e65a",
+      "fixtureScope": "All native event blocks, unchanged date/text/attributes/order"
+    },
+    "artist-ann-reed": {
+      "configPath": "scrapers/artists/artist-ann-reed.json",
+      "beforeConfig": {
+        "id": "artist-ann-reed",
+        "domain": "www.annreed.com",
+        "url": "https://www.annreed.com/shows",
+        "type": "static_selectors",
+        "selectors": {
+          "eventBlock": ".eventlist-event",
+          "artistNameFallback": "Ann Reed",
+          "date": ".event-date",
+          "ticketUrl": ".eventlist-title-link@href",
+          "venue": ".eventlist-description",
+          "city": "",
+          "country": "",
+          "venueNameFallback": "",
+          "cityNameFallback": "",
+          "countryNameFallback": "US"
+        }
+      },
+      "meta": {
+        "url": "https://www.annreed.com/shows",
+        "observedAt": "2026-10-11T05:48:58.719004+00:00",
+        "result": "200 https://www.annreed.com/shows",
+        "exitCode": 0,
+        "error": "",
+        "sha256": "599e12e741bfa002128c426fb91fae4c22eaebc0a872d01b7f496a8c5f3d1bc1"
+      },
+      "fixtureSha256": "06de0708792d44bd064705a7ab9ca9b5de3d5772fbef4407b79e5fe99916756d",
+      "fixtureScope": "All native event blocks, unchanged date/text/attributes/order"
+    },
+    "artist-josh-nelson": {
+      "configPath": "scrapers/artists/artist-josh-nelson.json",
+      "beforeConfig": {
+        "id": "artist-josh-nelson",
+        "domain": "www.joshnelsonmusic.com",
+        "url": "https://www.joshnelsonmusic.com/tour",
+        "type": "static_selectors",
+        "selectors": {
+          "eventBlock": "article.eventlist-event",
+          "artistNameFallback": "Josh Nelson",
+          "date": "time.event-date",
+          "ticketUrl": ".eventlist-description a",
+          "venue": "h1.eventlist-title",
+          "city": "",
+          "country": "",
+          "venueNameFallback": "",
+          "cityNameFallback": "",
+          "countryNameFallback": "US"
+        }
+      },
+      "meta": {
+        "url": "https://www.joshnelsonmusic.com/tour",
+        "observedAt": "2026-10-11T05:49:03.241012+00:00",
+        "result": "200 https://www.joshnelsonmusic.com/tour",
+        "exitCode": 0,
+        "error": "",
+        "sha256": "e9d28fae28238e97a2ae37cece338ae28471ef42e1dae8994e2e5f172857ca8c"
+      },
+      "fixtureSha256": "3701318bf28cd89af084b667b74425e508b0e81c28666df63798ebbc9202ba77",
+      "fixtureScope": "All native event blocks, unchanged date/text/attributes/order"
+    },
+    "artist-oasis": {
+      "configPath": "scrapers/artists/artist-oasis.json",
+      "beforeConfig": {
+        "id": "artist-oasis",
+        "domain": "oasisinet.com",
+        "url": "https://oasisinet.com/live/",
+        "type": "static_selectors",
+        "selectors": {
+          "eventBlock": ".live-listing > li",
+          "artistNameFallback": "Oasis",
+          "date": ".live-date",
+          "venue": ".live-listing > li > span:nth-of-type(2)",
+          "city": ".live-listing > li > span:nth-of-type(2)",
+          "country": ".live-listing > li > span:nth-of-type(2)",
+          "venueNameFallback": "",
+          "cityNameFallback": "",
+          "countryNameFallback": "GB"
+        }
+      },
+      "meta": {
+        "url": "https://oasisinet.com/live/",
+        "observedAt": "2026-10-11T05:49:00.203592+00:00",
+        "result": "200 https://oasisinet.com/live/",
+        "exitCode": 0,
+        "error": "",
+        "sha256": "96877c21cd4c38a261d7659c68ba4caec62def075f6ae78c1a5898a5163134ad"
+      },
+      "fixtureSha256": "899f5781c568332068be5c7777a4003bd62073757d25fac65b0b1f01faccc8a1",
+      "fixtureScope": "All native event blocks, unchanged date/text/attributes/order"
+    },
+    "artist-aaron-copland": {
+      "configPath": "scrapers/artists/artist-aaron-copland.json",
+      "beforeConfig": {
+        "id": "artist-aaron-copland",
+        "domain": "www.aaroncopland.com",
+        "url": "https://www.aaroncopland.com/events",
+        "type": "static_selectors",
+        "selectors": {
+          "eventBlock": ".event-item",
+          "artistNameFallback": "Aaron Copland",
+          "date": ".event-dates span",
+          "ticketUrl": ".event-links a",
+          "venue": ".event-location",
+          "city": ".event-location",
+          "country": ".event-location",
+          "venueNameFallback": "",
+          "cityNameFallback": "",
+          "countryNameFallback": "US"
+        }
+      },
+      "meta": {
+        "url": "https://www.aaroncopland.com/events",
+        "observedAt": "2026-10-11T05:48:53.511926+00:00",
+        "result": "200 https://www.aaroncopland.com/events",
+        "exitCode": 0,
+        "error": "",
+        "sha256": "567d1ad6a66f393e764daae009b64a9417382f1ac7c8d8b2e8afff54574eda25"
+      },
+      "fixtureSha256": "3fa2d6e4bab18d2e555975ffca8f33163d8342b25d333c8ce20fd0ff81450c01",
+      "fixtureScope": "All eight native events with literal COPLAND program credits, actual performer names, official work links, exact individual/paired dates and full country addresses",
+      "artistSemantics": "Existing composer binding retained; source demonstrates performances of his works, not physical appearances by Aaron Copland"
+    },
+    "artist-showaddywaddy": {
+      "configPath": "scrapers/artists/artist-showaddywaddy.json",
+      "beforeConfig": {
+        "id": "artist-showaddywaddy",
+        "domain": "www.showaddywaddy.net",
+        "url": "https://www.showaddywaddy.net/gigs/",
+        "type": "custom_js",
+        "selectors": {
+          "eventBlock": "tr.tableBuilderRow:not(.uniqueStyleRow)",
+          "artistNameFallback": "Showaddywaddy",
+          "date": ".tableBuilderCell1",
+          "ticketUrl": ".tableBuilderCell3 a@href",
+          "venue": ".tableBuilderCell2",
+          "city": ".tableBuilderCell2",
+          "venueNameFallback": "",
+          "cityNameFallback": "",
+          "countryNameFallback": "GB"
+        }
+      },
+      "meta": {
+        "url": "https://www.showaddywaddy.net/gigs/",
+        "observedAt": "2026-10-11T05:48:54.266520+00:00",
+        "result": "200 https://www.showaddywaddy.net/gigs/",
+        "exitCode": 0,
+        "error": "",
+        "sha256": "9dcf5e81cd3b151a9eb223453620c3dd16d4cef4b305dbf819af9f8729235fc1"
+      },
+      "fixtureSha256": "b945f8a48e0bf14c486d45679aff8249d259cdeb5455adac6ecd71403176afdf",
+      "fixtureScope": "All native calendar tables; pre-edit stock custom module raw output captured and replayed at pinned base in showaddywaddy-before.json"
+    },
+    "artist-paul-carrack": {
+      "configPath": "scrapers/artists/artist-paul-carrack.json",
+      "beforeConfig": {
+        "id": "artist-paul-carrack",
+        "domain": "paulcarrack.net",
+        "url": "https://paulcarrack.net/live",
+        "type": "static_selectors",
+        "selectors": {
+          "eventBlock": ".LiveDates-Item",
+          "artistNameFallback": "Paul Carrack",
+          "date": ".LiveDates-Date time",
+          "ticketUrl": ".LiveDates-Tickets a",
+          "venue": ".LiveDates-Venue",
+          "city": ".LiveDates-Location",
+          "country": ".LiveDates-Location",
+          "venueNameFallback": "",
+          "cityNameFallback": "",
+          "countryNameFallback": "GB"
+        }
+      },
+      "meta": {
+        "url": "https://paulcarrack.net/live",
+        "observedAt": "2026-10-11T05:48:48.499867+00:00",
+        "result": "200 https://paulcarrack.net/live",
+        "exitCode": 0,
+        "error": "",
+        "sha256": "51b3b9107b4d4e75bb0e2c6a21d1b33edc1ab5066d6677b62e9ae558e23f9be8"
+      },
+      "fixtureSha256": "476835b4310c142c84a268ac5d0284c9ce7325f75530d028a23cf270b27ac63a",
+      "fixtureScope": "All eight native records; two exact venue-city tuples and same-row official links explicitly identify Germany Live 2026; no source-global year or GB default inference"
+    },
+    "artist-american-composers-orchestra": {
+      "configPath": "scrapers/artists/artist-american-composers-orchestra.json",
+      "beforeConfig": {
+        "id": "artist-american-composers-orchestra",
+        "domain": "www.americancomposers.org",
+        "url": "https://www.americancomposers.org/performances-events",
+        "type": "static_selectors",
+        "selectors": {
+          "eventBlock": ".p-e-item",
+          "artistNameFallback": "American Composers Orchestra",
+          "date": ".when",
+          "ticketUrl": "a.event-tickets-button",
+          "venue": ".event-location",
+          "city": ".performance-location_wrapper",
+          "venueNameFallback": "",
+          "cityNameFallback": "",
+          "countryNameFallback": "US"
+        }
+      },
+      "meta": {
+        "url": "https://www.americancomposers.org/performances-events",
+        "observedAt": "2026-10-11T05:49:02.517657+00:00",
+        "result": "200 https://www.americancomposers.org/performances-events",
+        "exitCode": 0,
+        "error": "",
+        "sha256": "de1d3d9627707162618583275ba8c755dd0f161366ee4495725c9d0e9f0ee7ef"
+      },
+      "fixtureSha256": "b0ca0b3ffcfeaab672f4b1e2093a7f311c84971acb748b696eb9e1b029719c1d",
+      "fixtureScope": "All native entries retained; three direct ACO concert programmes positively credited, exact separate month/year/day/time and CMS venue/city/state; partner commissions/gala/workshops/reading classification not generalized"
+    }
+  },
+  "venueProofs": {
+    "suchmos": [
+      {
+        "label": "ゼビオアリーナ仙台 (宮城県)",
+        "city": "Sendai",
+        "country": "JP",
+        "url": "https://www.xebioarena.com/access/"
+      },
+      {
+        "label": "マリンメッセ福岡B館 (福岡県)",
+        "city": "Fukuoka",
+        "country": "JP",
+        "url": "https://www.marinemesse.or.jp/eng/messe/"
+      },
+      {
+        "label": "Kアリーナ横浜 (神奈川県)",
+        "city": "Yokohama",
+        "country": "JP",
+        "url": "https://k-arena.com/en/access/"
+      },
+      {
+        "label": "GLION ARENA KOBE (兵庫県)",
+        "city": "Kobe",
+        "country": "JP",
+        "url": "https://www.totteikobe.jp/access/"
+      }
+    ],
+    "bonniePink": [
+      {
+        "label": "Zepp DiverCity(TOKYO)",
+        "city": "Koto-ku",
+        "country": "JP",
+        "url": "https://www.zepp.co.jp/hall/divercity/"
+      },
+      {
+        "label": "Billboard Live Tokyo / Osaka / Yokohama",
+        "cities": [
+          "Tokyo",
+          "Osaka",
+          "Yokohama"
+        ],
+        "country": "JP",
+        "url": "https://www.billboard-live.com/",
+        "nativeAddressEvidence": "RSC address dictionary: Tokyo Minato Akasaka 9-7-4, Osaka Kita Umeda 2-2-22, Yokohama Naka Kitanaka-dori 5-57-2",
+        "municipalities": [
+          "Minato-ku",
+          "Osaka",
+          "Yokohama"
+        ]
+      },
+      {
+        "label": "恵比寿リキッドルーム",
+        "city": "Shibuya-ku",
+        "country": "JP",
+        "url": "https://www.liquidroom.net/access"
+      },
+      {
+        "label": "六呂師高原",
+        "city": "Ono",
+        "country": "JP",
+        "url": "https://www.bonniepink.jp/live",
+        "nativeAddressEvidence": "Event itself prints 福井県大野市南六呂師169字東上谷野 and explicit October 11 19:00 SORA appearance"
+      }
+    ],
+    "aliases": [
+      {
+        "source": "Randy Houser",
+        "native": "Ft. Worth, TX",
+        "city": "Fort Worth",
+        "scope": "Exact printed abbreviation",
+        "url": "https://dickiesarena.com/contact-us/"
+      },
+      {
+        "source": "Turmion Katilot",
+        "native": "DE Weiher, Live Music Hall",
+        "city": "Mörlenbach",
+        "url": "https://live-music-hall-weiher.de/kontakt/",
+        "address": "Hauptstr. 73, 69509 Mörlenbach"
+      },
+      {
+        "source": "Rachael Sage",
+        "native": "The Stables, Milton Keynes, UK",
+        "city": "Wavendon",
+        "url": "https://stables.org/",
+        "address": "Stockwell Lane, Wavendon, Milton Keynes, MK17 8LU"
+      }
+    ],
+    "countryRule": "JP is bounded to exact venue labels with verified Japanese municipality/prefecture addresses; unknown or foreign labels cannot inherit JP. No broad domain/default-country inference."
+  },
+  "sourceHolds": [
+    {
+      "source": "Oasis",
+      "venue": "Gillette Stadium",
+      "nativeCity": "Boston",
+      "publicCity": "Foxborough",
+      "reason": "primary directions page timed out; no inferred venue city"
+    },
+    {
+      "source": "Randy Houser",
+      "date": "2027-03-12",
+      "venue": "Top Shelf Country Cruise",
+      "primary": "https://topshelfcountrycruise.com/",
+      "reason": "Multi-night sailing is advertised; individual performance day/place not established by native calendar start date"
+    },
+    {
+      "source": "Iration",
+      "date": "2027-01-09",
+      "venue": "Closer To The Sun",
+      "primary": "https://closertothesun.com/",
+      "reason": "Promoter title explicitly Jan. 9-13, 2027; individual Iration day and physical venue remain unverified"
+    }
+  ],
+  "showaddyVenueProofs": [
+    {
+      "label": "Wimborne - Tivoli Theatre",
+      "city": "Wimborne Minster",
+      "venue": "Tivoli Theatre",
+      "country": "GB",
+      "address": "West Borough, Wimborne Minster, Dorset, BH21 1LT",
+      "url": "https://www.tivoliwimborne.co.uk/events/showaddywaddy-in-concert-november-2026/"
+    },
+    {
+      "label": "Christchurch - The Regent",
+      "city": "Christchurch",
+      "venue": "The Regent",
+      "country": "GB",
+      "address": "51 High St, Christchurch, BH23 1AS",
+      "url": "https://www.theregent.co.uk/whats-on/showaddywaddy/"
+    },
+    {
+      "label": "Skegness - Embassy Theatre",
+      "city": "Skegness",
+      "venue": "Embassy Theatre",
+      "country": "GB",
+      "address": "Grand Parade, Skegness, Lincolnshire, PE25 2UG; operator explicitly registered in England and Wales",
+      "url": "https://embassytheatre.co.uk/shows/showaddywaddy/"
+    }
+  ],
+  "reconciledSourceHolds": [
+    {
+      "source": "Rachael Sage",
+      "date": "2026-10-30",
+      "venue": "The Castle Hotel",
+      "nativeCity": "Manchester",
+      "publicCity": "Greater",
+      "reason": "actual shared provider raw city conflict; root owns reconciliation",
+      "supersedes": "Native source omission pending root reconciliation",
+      "resolution": "Native raw retained; finite proved occurrence selects native whole record in both orders",
+      "evidence": "../normalization-integrity-20261011/occurrence-proof.json",
+      "correctedOn": "2026-10-11"
+    },
+    {
+      "source": "Bonnie Pink",
+      "date": "2026-10-11",
+      "venue": "六呂師高原",
+      "nativeCity": "Ono",
+      "publicCity": "Katsuyama",
+      "reason": "native address explicitly Ono; provider conflict requires root reconciliation",
+      "supersedes": "Native source omission pending root reconciliation",
+      "resolution": "Native raw retained; finite proved occurrence selects native whole record in both orders",
+      "evidence": "../normalization-integrity-20261011/occurrence-proof.json",
+      "correctedOn": "2026-10-11"
+    }
+  ]
+}

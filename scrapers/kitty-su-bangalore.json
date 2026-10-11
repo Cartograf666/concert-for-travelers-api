@@ -8,10 +8,9 @@
     "eventBlock": "li",
     "artist": "h3",
     "date": "p",
-    "venueNameFallback": "Kitty Su",
+    "venueNameFallback": "",
     "cityNameFallback": "Bangalore",
-    "countryNameFallback": "IN",
-    "lat": 12.9716,
-    "lng": 77.5946
-  }
+    "countryNameFallback": "IN"
+  },
+  "skipConditionalRequests": true
 }

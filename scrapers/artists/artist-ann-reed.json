@@ -2,7 +2,7 @@
   "id": "artist-ann-reed",
   "domain": "www.annreed.com",
   "url": "https://www.annreed.com/shows",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": ".eventlist-event",
     "artistNameFallback": "Ann Reed",
