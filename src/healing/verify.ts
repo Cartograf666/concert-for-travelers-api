@@ -64,7 +64,7 @@ export interface VerifyOptions {
 /** Artist reports contain artist-scrape-cache.json, never the venue baseline. */
 export async function loadVerificationBaselines(reportsDir: string, cohort: ScrapeCohort): Promise<Map<string, Partial<Concert>[]>> {
   const cache = await loadCache(path.join(reportsDir, cohort === 'artist' ? 'artist-scrape-cache.json' : 'scrape-cache.json'));
-  return new Map(Object.entries(cache)
+  return new Map(Object.entries(cache ?? {})
     .filter(([, entry]) => Array.isArray(entry?.concerts))
     .map(([id, entry]) => [id, entry.concerts]));
 }

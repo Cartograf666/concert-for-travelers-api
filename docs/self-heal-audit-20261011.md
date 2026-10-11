@@ -96,6 +96,8 @@ artifact содержит `artist-scrape-cache.json`. Поэтому artist repa
 выбирает **только** cache своего manifest cohort, возвращая и rows, и их count.
 Тесты проверяют разные данные под одинаковым id и отсутствие artist cache при
 наличии venue cache. Другой cohort не считается запасным источником baseline.
+JSON `null` cache также означает отсутствие baseline и не прерывает healing pass;
+это сохраняет прежнее поведение best-effort baseline reader.
 
 ### Artist fallback в предварительном repair probe
 
@@ -184,7 +186,7 @@ pending age не доказывает ни работу, ни текущую н�
 
 | Проверка | Фактический результат |
 | --- | --- |
-| `SCRAPER_ALLOW_LOCAL_HOSTS=1 node --import tsx --test tests/healing_verify.test.ts tests/healing_semantic.test.ts tests/healing_baseline.test.ts tests/confirm_repairs.test.ts tests/healing_chain.test.ts tests/healing_classify.test.ts tests/healing_strategies.test.ts tests/healing.test.ts` | PASS 76/76 |
+| `SCRAPER_ALLOW_LOCAL_HOSTS=1 node --import tsx --test tests/healing_verify.test.ts tests/healing_semantic.test.ts tests/healing_baseline.test.ts tests/confirm_repairs.test.ts tests/healing_chain.test.ts tests/healing_classify.test.ts tests/healing_strategies.test.ts tests/healing.test.ts` | PASS 77/77 |
 | `node --import tsx --test tests/healing_pr_workflow.test.ts` | PASS 3/3 |
 | `SCRAPER_ALLOW_LOCAL_HOSTS=1 node --import tsx --test tests/run_manifest.test.ts tests/cache_fingerprint.test.ts tests/empty_http_response.test.ts tests/custom_json_response.test.ts tests/empty_schedule_contract.test.ts tests/source_access_challenge.test.ts tests/official_artist_priority.test.ts tests/nitsch_source_provenance.test.ts tests/artist_andrea_motis.test.ts` | PASS 26/26 |
 | `npm run test:ssrf-policy` без localhost escape hatch | PASS 1/1 |

@@ -22,3 +22,11 @@ test('a missing artist cache never uses the available venue cache', async () => 
     assert.equal((await loadVerificationBaselines(dir, 'artist')).size, 0);
   } finally { await rm(dir, { recursive: true, force: true }); }
 });
+
+test('an empty JSON cache snapshot does not abort the healing pass', async () => {
+  const dir = await mkdtemp(join(tmpdir(), 'heal-baseline-'));
+  try {
+    await writeFile(join(dir, 'artist-scrape-cache.json'), 'null');
+    assert.equal((await loadVerificationBaselines(dir, 'artist')).size, 0);
+  } finally { await rm(dir, { recursive: true, force: true }); }
+});
