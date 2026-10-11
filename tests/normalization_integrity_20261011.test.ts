@@ -32,23 +32,36 @@ test('41 primary occurrence pairs select the same whole record in both orders wi
   const proof = await loadProof();
   assert.equal(proof.pairs.length, 41);
   const cache = new Map<string, RawConcert[]>();
+  const natives: RawConcert[] = [];
   for (const pair of proof.pairs) {
     if (!cache.has(pair.artist)) cache.set(pair.artist, await nativeRows(pair.artist));
     const native = cache.get(pair.artist)!.find(r => r.date === pair.date && r.venue === pair.nativeVenue);
     assert.ok(native, `${pair.artist}/${pair.date}`);
+    natives.push(native);
+  }
+  const peers = proof.pairs.map(pair => pair.before);
+  const sourceOnly = await publish(natives);
+  const peerOnly = await publish(peers);
+  const nativeFirst = await publish([...natives, ...peers]);
+  const peerFirst = await publish([...peers, ...natives]);
+  const futures = natives.map((r, i) => ({ ...r, date: `2030-${String(Math.floor(i / 28) + 1).padStart(2, '0')}-${String(i % 28 + 1).padStart(2, '0')}` }));
+  const futureOnly = await publish(futures);
+  const movedOnly = await publish(natives.map(r => ({ ...r, venue: `${r.venue} moved` })));
+  assert.equal(sourceOnly.length, 41);
+  assert.equal(peerOnly.length, 41);
+  assert.equal(nativeFirst.length, 41);
+  assert.equal(peerFirst.length, 41);
+  for (const [i, pair] of proof.pairs.entries()) {
+    const native = natives[i];
     assert.equal(native.sourceEventUrl, pair.nativeUrl);
-    const sourceOnly = await publish([native]);
-    assert.equal(sourceOnly.length, 1);
-    assert.deepEqual([sourceOnly[0].city, sourceOnly[0].country, sourceOnly[0].venue],
-      [pair.nativeCity, pair.country, pair.nativeVenue]);
-    const peerOnly = await publish([pair.before]);
-    const expected = pair.winner === 'native' ? sourceOnly : peerOnly;
-    for (const rows of [[native, pair.before], [pair.before, native]]) {
-      assert.deepEqual(await publish(rows), expected, `${pair.artist}/${pair.date}`);
+    const record = sourceOnly.find(r => r.artist === pair.artist && r.date === pair.date)!;
+    assert.deepEqual([record.city, record.country, record.venue], [pair.nativeCity, pair.country, pair.nativeVenue]);
+    const expected = pair.winner === 'native' ? record : peerOnly.find(r => r.artist === pair.artist && r.date === pair.date);
+    for (const output of [nativeFirst, peerFirst]) {
+      assert.deepEqual(output.find(r => r.artist === pair.artist && r.date === pair.date), expected);
     }
-    // Whole JSON equality above includes country, venue, coordinates, price,
-    // time, lineup, provenance and all canonical artist metadata.
-    const record = sourceOnly[0];
+    // Complete JSON equality includes country, venue, coordinates, price, time,
+    // lineup, provenance and canonical artist metadata: no field masks/splicing.
     assert.ok(verifiedNormalizationOccurrence(native, record));
     for (const change of [
       { date: '2030-01-01' }, { country: 'ZZ' }, { venue: `${native.venue} moved` },
@@ -59,10 +72,8 @@ test('41 primary occurrence pairs select the same whole record in both orders wi
     }
     assert.equal(verifiedNormalizationOccurrence(native, { ...record, [pair.stableField]: 'wrong-id' }), undefined);
     assert.equal(verifiedNormalizationOccurrence({ ...native, sourceEventUrl: undefined }, record), undefined);
-    const future = { ...native, date: '2030-01-01' };
-    assert.equal((await publish([future]))[0].venue, native.venue, 'new date retains its own geography');
-    const moved = { ...native, venue: `${native.venue} moved` };
-    assert.equal((await publish([moved]))[0].venue, moved.venue, 'unknown venue retains its own record');
+    assert.equal(futureOnly.find(r => r.artist === pair.artist && r.date === futures[i].date)?.venue, native.venue);
+    assert.equal(movedOnly.find(r => r.artist === pair.artist && r.date === pair.date)?.venue, `${native.venue} moved`);
   }
 });
 

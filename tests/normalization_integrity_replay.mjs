@@ -13,6 +13,13 @@ assert.ok(input && output && baselineRoot);
 const root = process.cwd();
 const require = createRequire(path.join(root, 'package.json'));
 const axios = require('axios');
+const { loadCache, saveCache } = await import(path.join(root, 'src/engine/cache.ts'));
+const { filterArtistCacheForActiveConfigs } = await import(path.join(root, 'src/engine/artist_cache.ts'));
+const { buildOfficialArtistContext, OFFICIAL_ARTIST_SOURCES } = await import(path.join(root, 'src/engine/official_artist_sources.ts'));
+assert.equal(OFFICIAL_ARTIST_SOURCES.length, 5);
+const caller = await fs.readFile(path.join(root, 'src/run.ts'), 'utf8');
+assert.ok(caller.indexOf('allScrapedConcerts.push(...tmConcerts)') < caller.indexOf('allScrapedConcerts.push(...entry.concerts)'));
+assert.ok(caller.indexOf('const artistCache =') < caller.indexOf('const bitCache ='));
 const { runScraper } = await import(path.join(root, 'src/engine/runner.ts'));
 const { processConcerts, slugify } = await import(path.join(root, 'src/pipeline/process.ts'));
 const { processConcerts: baselineProcess } = await import(path.join(baselineRoot, 'src/pipeline/process.ts'));
@@ -42,6 +49,12 @@ const beforeRaw = [], reviewedRaw = [], afterRaw = [], peers = [], parity = [];
 for (const [id, entry] of Object.entries(proof.sources)) {
   const savedText = await fs.readFile(path.join(input, `${id}-final-replay.json`), 'utf8');
   const saved = JSON.parse(savedText);
+  const beforeConfig = ScraperConfigSchema.parse(entry.beforeConfig);
+  const originalHtml = await fs.readFile(path.join(input, id + '.html'), 'utf8');
+  const before = id === 'artist-showaddywaddy'
+    ? JSON.parse(await fs.readFile(path.join(fixtureDir, 'showaddywaddy-before.json'), 'utf8')).raw
+    : await extract(beforeConfig, originalHtml);
+  assert.deepEqual(before, saved.beforeRaw, `${id}: frozen beforeRaw must still equal original consumed bytes`);
   beforeRaw.push(...saved.beforeRaw); reviewedRaw.push(...saved.afterRaw);
   const config = ScraperConfigSchema.parse(JSON.parse(await fs.readFile(path.join(root, entry.configPath), 'utf8')));
   const fullFile = id === 'artist-shelly-berg' ? id + '-native.json' : id + '.html';
@@ -54,7 +67,7 @@ for (const [id, entry] of Object.entries(proof.sources)) {
   const meta = JSON.parse(await fs.readFile(path.join(input, `${slug}-public-meta.json`), 'utf8'));
   if (meta.result.startsWith('200 ')) peers.push(...JSON.parse(await fs.readFile(path.join(input, `${slug}-public.json`), 'utf8')));
   else assert.ok(meta.result.startsWith('404 '));
-  parity.push({ id, unchangedSavedRawSha256: hash(savedText), fullSha256: hash(full), fixtureSha256: hash(fixture), fixtureRawDeepEqualsFull: true, beforeRaw: saved.beforeRaw.length, reviewedRaw: saved.afterRaw.length, correctedRaw: rows.length });
+  parity.push({ id, domain: config.domain, unchangedSavedRawSha256: hash(savedText), fullSha256: hash(full), fixtureSha256: hash(fixture), fixtureRawDeepEqualsFull: true, beforeRaw: saved.beforeRaw.length, reviewedRaw: saved.afterRaw.length, correctedRaw: rows.length });
 }
 await write('raw-inputs.json', { at, beforeRaw, reviewedRaw, correctedRaw: afterRaw, peers, parity });
 const tm = peers.filter(r => r.originalSource === 'ticketmaster.com');
@@ -75,11 +88,32 @@ const sourceReviewed = await baselineProcess(reviewedRaw, db, at);
 const preexisting = new Set(delta(sourceBefore,sourceReviewed).changed.map(d => d.key));
 const sourceAfter = await processConcerts(afterRaw, db, at);
 await write('source-only.json', { before: sourceBefore, reviewed: sourceReviewed, corrected: sourceAfter });
+const pairProof = JSON.parse(await fs.readFile(path.join(root,'tests/fixtures/normalization-integrity-20261011/occurrence-proof.json'),'utf8'));
+const expectedWholeWinners = await processConcerts(pairProof.pairs.map(pair => pair.winner === 'native'
+  ? afterRaw.find(r => r.artist===pair.artist && r.date===pair.date && r.venue===pair.nativeVenue) : pair.before),db,at);
+async function callerContext(native, label) {
+  const cache = Object.fromEntries(parity.map(p => [p.id, { contentHash:'offline-fixture', scrapedAt:at,
+    concerts:native.filter(row => row.originalSource === p.domain) }]));
+  const cachePath = path.join(output, `${label}-artist-cache.json`);
+  await saveCache(cachePath,cache);
+  const loaded = await loadCache(cachePath);
+  assert.deepEqual(loaded,JSON.parse(JSON.stringify(cache)));
+  const active = await filterArtistCacheForActiveConfigs(loaded,path.join(root,'scrapers/artists'));
+  assert.equal(Object.keys(active).length,18);
+  const rows = Object.values(active).flatMap(entry => entry.concerts);
+  assert.deepEqual(rows,JSON.parse(JSON.stringify(native)));
+  const context = await buildOfficialArtistContext(active,path.join(root,'scrapers/artists'),Date.parse(at));
+  assert.ok(rows.every(row => !context.has(row)), 'These 18 sources cannot acquire five-source WeakMap authority');
+  return { rows, context };
+}
+const beforeCache = await callerContext(beforeRaw,'before');
+const reviewedCache = await callerContext(reviewedRaw,'reviewed');
+const correctedCache = await callerContext(afterRaw,'corrected');
 for (const order of orders) {
   const composition = native => [...other, ...order.flatMap(s => s === 'tm' ? tm : s === 'bit' ? bit : native)];
-  const before = await baselineProcess(composition(beforeRaw),db,at);
-  const reviewed = await baselineProcess(composition(reviewedRaw),db,at);
-  const corrected = await processConcerts(composition(afterRaw),db,at);
+  const before = await baselineProcess(composition(beforeCache.rows),db,at,undefined,undefined,beforeCache.context);
+  const reviewed = await baselineProcess(composition(reviewedCache.rows),db,at,undefined,undefined,reviewedCache.context);
+  const corrected = await processConcerts(composition(correctedCache.rows),db,at,undefined,undefined,correctedCache.context);
   const introduced = delta(before,reviewed).changed.filter(d => !preexisting.has(d.key));
   const correctedDelta = delta(before,corrected);
   const reviewedDelta = delta(reviewed,corrected);
@@ -89,16 +123,16 @@ for (const order of orders) {
     correctedChanged:correctedDelta.changed.map(d => d.key), correctedAdded:correctedDelta.added.map(key), correctedRemoved:correctedDelta.removed.map(key), file:filename });
   if (order.join('-') === 'tm-native-bit') assert.equal(introduced.length,32);
   if (order.join('-') === 'native-tm-bit') assert.equal(introduced.length,39);
-  const pairProof = JSON.parse(await fs.readFile(path.join(root,'tests/fixtures/normalization-integrity-20261011/occurrence-proof.json'),'utf8'));
   for (const pair of pairProof.pairs) {
     const n = afterRaw.find(r => r.artist===pair.artist && r.date===pair.date && r.venue===pair.nativeVenue);
     assert.ok(n);
-    const expected = await processConcerts([pair.winner==='native' ? n : pair.before],db,at);
+    const expected = expectedWholeWinners.filter(r => r.artist===pair.artist && r.date===pair.date);
     const actual = corrected.filter(r => r.artist===pair.artist && r.date===pair.date && r.city===pair.nativeCity);
     assert.deepEqual(actual,expected,`${filename}: ${pair.artist}/${pair.date}`);
     if (pair.nativeCity !== pair.peerCity) assert.equal(corrected.some(r => r.artist===pair.artist && r.date===pair.date && r.city===pair.peerCity),false);
   }
 }
+summary.caller = { cacheRoundTrip: true, activeConfigFilter: true, officialRegistryCount: OFFICIAL_ARTIST_SOURCES.length, grantedAuthorityRows: 0, appendOrder: 'TM -> artist cache -> BIT', runTsSha256: hash(caller) };
 summary.networkAttempts = networkAttempts;
 assert.equal(networkAttempts,0);
 await write('summary.json',summary);
