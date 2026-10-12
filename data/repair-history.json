@@ -27824,5 +27824,31 @@
     "failuresSinceRepair": 0,
     "note": "repair failed: Selector \"eventBlock\" (.u_1543621082 .photoGalleryThumbs) matched 0 elements.",
     "verification": ""
+  },
+  {
+    "id": "artist-rhode-island-philharmonic-orchestra",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-rhode-island-philharmonic-orchestra.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-12T12:05:06.020Z",
+    "previousConfig": {
+      "id": "artist-rhode-island-philharmonic-orchestra",
+      "domain": "riphil.org",
+      "url": "https://riphil.org/2025-2026-season/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-block",
+        "artistNameFallback": "Rhode Island Philharmonic Orchestra",
+        "date": "h3",
+        "ticketUrl": "a.button",
+        "venueNameFallback": "The VETS",
+        "cityNameFallback": "Providence",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (div.u_1543621082) matched 0 elements.",
+    "verification": ""
   }
 ]
