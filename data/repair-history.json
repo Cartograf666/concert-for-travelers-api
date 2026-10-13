@@ -27936,5 +27936,119 @@
     "failuresSinceRepair": 0,
     "note": "tls_broken: trying the www/apex variant, which usually holds the valid certificate; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): certificate has expired]",
     "verification": ""
+  },
+  {
+    "id": "artist-nine-inch-nails",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-nine-inch-nails.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-10-13T11:52:42.774Z",
+    "previousConfig": {
+      "id": "artist-nine-inch-nails",
+      "domain": "www.nin.com",
+      "url": "https://www.nin.com/tickets2018/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "section#section-tickets2018 > div.section-inner > p:has(strong)",
+        "artistNameFallback": "Nine Inch Nails",
+        "date": "strong:first-child",
+        "ticketUrl": "a:first-of-type",
+        "venue": "b",
+        "city": "xpath=.//p/text()[contains(., ',')][1]",
+        "country": "US",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=parse_error): Unmatched selector: =.//p/text()[contains(., ',')][1]]",
+    "verification": ""
+  },
+  {
+    "id": "artist-pat-benatar",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-pat-benatar.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-13T11:52:47.264Z",
+    "previousConfig": {
+      "id": "artist-pat-benatar",
+      "domain": "www.benatargiraldo.com",
+      "url": "https://www.benatargiraldo.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.tourdates-block",
+        "artistNameFallback": "Pat Benatar",
+        "date": ".tourdates-date",
+        "ticketUrl": "a.tourdates-tickets",
+        "venue": ".tourdates-headline",
+        "city": ".tourdates-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-mia",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-mia.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-13T11:52:49.281Z",
+    "previousConfig": {
+      "id": "artist-mia",
+      "domain": "www.miarockt.de",
+      "url": "https://www.miarockt.de/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".events-container .item",
+        "artistNameFallback": "MIA.",
+        "date": ".time",
+        "ticketUrl": ".event-actions a.btn-secondary",
+        "venue": ".location a",
+        "city": ".event-title",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "DE"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Expected name, found .",
+    "verification": ""
+  },
+  {
+    "id": "artist-ringo-starr",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-ringo-starr.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-13T11:52:51.434Z",
+    "previousConfig": {
+      "id": "artist-ringo-starr",
+      "domain": "www.ringostarr.com",
+      "url": "https://www.ringostarr.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".data-row.data-row-gig",
+        "artistNameFallback": "Ringo Starr",
+        "date": ".tour-table-row-date",
+        "ticketUrl": ".tour-table-row-tickets .buy-btn@href",
+        "venue": ".tour-table-row-venue a:first-child",
+        "city": ".tour-table-row-city",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.data-row.data-row-gig) matched 0 elements.",
+    "verification": ""
   }
 ]
