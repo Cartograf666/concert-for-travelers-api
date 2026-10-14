@@ -1,70 +1,105 @@
 {
-  "digest": "89810f84d82e20c6f20d754fa725b7eee59f7de1906f0679d70abed0a9538efa",
+  "digest": "98efd8961050ce42ed187e4ba629096f5445d9bc0f22fe5ef53603256a99a8ca",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "24e42008ce782de93fc168c46f04ca8a0c5e49705899b94716ceb71da5bd1eb7",
+      "digest": "9e4eab59e402808da718fb47480944c1d8c87276101340e3870bb65f6b031e35",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "4c3a70f1-40ed-42ad-8c38-cc764a54d0fe",
-        "inputHash": "41a975e8fb292802b24e601872f2ac73ff4caf72ca46a68727ea2de3513ea3b2",
+        "id": "c05e6da6-2720-4c3e-b789-b0cfeb4b09a6",
+        "inputHash": "8c8590f9dd41ec81affaee43a37a6fa272eb5eff17f1c39cf75599f70c39f849",
         "candidates": [
           {
-            "name": "John Ireland",
-            "website": "https://www.johnirelandmusic.com"
+            "name": "Billy F. Gibbons",
+            "website": "http://www.billygibbons.com/"
           },
           {
-            "name": "Rayvon",
-            "website": "http://www.rayvonmusic.com"
+            "name": "Boxcutter",
+            "website": "http://www.boxcutter.net/"
           },
           {
-            "name": "Chesney Hawkes",
-            "website": "http://www.chesneyhawkes.com"
+            "name": "John Mosher",
+            "website": "https://www.johnmoshermusic.com/"
           },
           {
-            "name": "Shout Out Out Out Out",
-            "website": "https://shoutoutoutoutout.com/"
+            "name": "Reflections",
+            "website": "https://reflectionsband.bigcartel.com"
           },
           {
-            "name": "Sonia",
-            "website": "http://www.soniaontheweb.com/"
+            "name": "RhythmRebel",
+            "website": "https://rhythmrebel.de"
           },
           {
-            "name": "Lady Saw",
-            "website": "https://ladysaw.com/"
+            "name": "Chvrches",
+            "website": "http://www.chvrch.es"
           },
           {
-            "name": "Lianne La Havas",
-            "website": "http://www.liannelahavas.com/"
+            "name": "Sounds of Blackness",
+            "website": "http://soundsofblackness.org"
           },
           {
-            "name": "Terminal",
-            "website": "http://terminalband.com/"
+            "name": "Sukhwinder Singh",
+            "website": "https://sukhwindersingh.in"
           },
           {
-            "name": "The Commitments",
-            "website": "http://www.thecommitments.net/"
+            "name": "Swirl",
+            "website": "http://www.swirl.com.au"
           },
           {
-            "name": "The Nightingales",
-            "website": "http://www.thenightingales.org.uk"
+            "name": "David Silveria",
+            "website": "https://www.davidsilveriaofficial.com/"
           },
           {
-            "name": "The Planets",
-            "website": "http://www.theplanets.com/"
+            "name": "Desperado",
+            "website": "https://desperado.hu"
           },
           {
-            "name": "The Templars",
-            "website": "http://thetemplars.net/"
+            "name": "Les Dudek",
+            "website": "https://lesdudek.com"
           },
           {
-            "name": "Otto Knows",
-            "website": "https://ottoknows.com"
+            "name": "Los Punsetes",
+            "website": "https://lospunsetes.com/"
+          },
+          {
+            "name": "The Polecats",
+            "website": "https://www.makeacircuit.com/"
+          },
+          {
+            "name": "Tin Man",
+            "website": "http://www.tinmanmusic.com/"
+          },
+          {
+            "name": "Emily Osment",
+            "website": "http://www.emilyosment.com"
+          },
+          {
+            "name": "Markus Schulz",
+            "website": "http://www.globaldjbroadcast.com/"
+          },
+          {
+            "name": "Mikko Lindström",
+            "website": "https://www.linde.fi"
+          },
+          {
+            "name": "Walk Like a Man",
+            "website": "https://www.walklikeaman.co.uk"
+          },
+          {
+            "name": "worship",
+            "website": "http://www.worshipdoom.com/"
           }
         ],
         "nameCounts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           1,
           1,
           1,
@@ -81,99 +116,148 @@
         ],
         "results": [
           {
-            "name": "John Ireland",
-            "website": "https://www.johnirelandmusic.com",
+            "name": "Billy F. Gibbons",
+            "website": "http://www.billygibbons.com/",
+            "tourUrl": "https://billygibbons.com/2021/10/tickets-on-sale-oct-28-for-the-jungle-show-at-antones-in-austin-tx-dec-28-29/",
+            "pathPattern": "/tickets",
+            "reason": "score=13 (years=1, numericDates=0, months=6, days=0, keywords=14, widget=0)"
+          },
+          {
+            "name": "Boxcutter",
+            "website": "http://www.boxcutter.net/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Rayvon",
-            "website": "http://www.rayvonmusic.com",
+            "name": "John Mosher",
+            "website": "https://www.johnmoshermusic.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Chesney Hawkes",
-            "website": "http://www.chesneyhawkes.com",
+            "name": "Reflections",
+            "website": "https://reflectionsband.bigcartel.com",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Shout Out Out Out Out",
-            "website": "https://shoutoutoutoutout.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Sonia",
-            "website": "http://www.soniaontheweb.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Lady Saw",
-            "website": "https://ladysaw.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Lianne La Havas",
-            "website": "http://www.liannelahavas.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Terminal",
-            "website": "http://terminalband.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "The Commitments",
-            "website": "http://www.thecommitments.net/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "The Nightingales",
-            "website": "http://www.thenightingales.org.uk",
-            "tourUrl": "https://thenightingales.org.uk/live?fbclid=IwZXh0bgNhZW0CMTEAcGRvZgVmZGlkFlECYRg8GKiwIj1h4hREAYX6AoxJ595zcnRjBmFwcF9pZAo2NjI4NTY4Mzc5AAEelCO9_glQavATEP08ofCcgAyVqdhqQmyCCua-0iAGv7oRdcUWzUr6ioA2Fc4_aem_xEdWVUKseblVw1AYnU6c4w",
-            "pathPattern": "/live",
-            "reason": "score=29.5 (years=1, numericDates=0, months=15, days=15, keywords=8, widget=0)"
-          },
-          {
-            "name": "The Planets",
-            "website": "http://www.theplanets.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "The Templars",
-            "website": "http://thetemplars.net/",
+            "name": "RhythmRebel",
+            "website": "https://rhythmrebel.de",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Otto Knows",
-            "website": "https://ottoknows.com",
+            "name": "Chvrches",
+            "website": "http://www.chvrch.es",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Sounds of Blackness",
+            "website": "http://soundsofblackness.org",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Sukhwinder Singh",
+            "website": "https://sukhwindersingh.in",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Swirl",
+            "website": "http://www.swirl.com.au",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "David Silveria",
+            "website": "https://www.davidsilveriaofficial.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Desperado",
+            "website": "https://desperado.hu",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Les Dudek",
+            "website": "https://lesdudek.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Los Punsetes",
+            "website": "https://lospunsetes.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "The Polecats",
+            "website": "https://www.makeacircuit.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Tin Man",
+            "website": "http://www.tinmanmusic.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Emily Osment",
+            "website": "http://www.emilyosment.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Markus Schulz",
+            "website": "http://www.globaldjbroadcast.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Mikko Lindström",
+            "website": "https://www.linde.fi",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Walk Like a Man",
+            "website": "https://www.walklikeaman.co.uk",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "worship",
+            "website": "http://www.worshipdoom.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           }
         ],
         "skipped": [],
-        "applied": 13,
+        "applied": 20,
         "pending": null,
         "complete": true
       }
@@ -181,79 +265,114 @@
     "rows": [
       {
         "index": 0,
-        "tourUrl": null,
-        "triedAt": "2026-10-13T11:25:00.726Z"
+        "tourUrl": "https://billygibbons.com/2021/10/tickets-on-sale-oct-28-for-the-jungle-show-at-antones-in-austin-tx-dec-28-29/",
+        "triedAt": "2026-10-14T09:17:07.675Z"
       },
       {
         "index": 1,
         "tourUrl": null,
-        "triedAt": "2026-10-13T11:25:00.738Z"
+        "triedAt": "2026-10-14T09:17:07.687Z"
       },
       {
         "index": 2,
         "tourUrl": null,
-        "triedAt": "2026-10-13T11:25:00.749Z"
+        "triedAt": "2026-10-14T09:17:07.704Z"
       },
       {
         "index": 3,
         "tourUrl": null,
-        "triedAt": "2026-10-13T11:25:00.759Z"
+        "triedAt": "2026-10-14T09:17:07.715Z"
       },
       {
         "index": 4,
         "tourUrl": null,
-        "triedAt": "2026-10-13T11:25:00.770Z"
+        "triedAt": "2026-10-14T09:17:07.726Z"
       },
       {
         "index": 5,
         "tourUrl": null,
-        "triedAt": "2026-10-13T11:25:00.779Z"
+        "triedAt": "2026-10-14T09:17:07.737Z"
       },
       {
         "index": 6,
         "tourUrl": null,
-        "triedAt": "2026-10-13T11:25:00.786Z"
+        "triedAt": "2026-10-14T09:17:07.750Z"
       },
       {
         "index": 7,
         "tourUrl": null,
-        "triedAt": "2026-10-13T11:25:00.793Z"
+        "triedAt": "2026-10-14T09:17:07.762Z"
       },
       {
         "index": 8,
         "tourUrl": null,
-        "triedAt": "2026-10-13T11:25:00.801Z"
+        "triedAt": "2026-10-14T09:17:07.773Z"
       },
       {
         "index": 9,
-        "tourUrl": "https://thenightingales.org.uk/live?fbclid=IwZXh0bgNhZW0CMTEAcGRvZgVmZGlkFlECYRg8GKiwIj1h4hREAYX6AoxJ595zcnRjBmFwcF9pZAo2NjI4NTY4Mzc5AAEelCO9_glQavATEP08ofCcgAyVqdhqQmyCCua-0iAGv7oRdcUWzUr6ioA2Fc4_aem_xEdWVUKseblVw1AYnU6c4w",
-        "triedAt": "2026-10-13T11:25:00.809Z"
+        "tourUrl": null,
+        "triedAt": "2026-10-14T09:17:07.784Z"
       },
       {
         "index": 10,
         "tourUrl": null,
-        "triedAt": "2026-10-13T11:25:17.063Z"
+        "triedAt": "2026-10-14T09:17:33.058Z"
       },
       {
         "index": 11,
         "tourUrl": null,
-        "triedAt": "2026-10-13T11:25:17.075Z"
+        "triedAt": "2026-10-14T09:17:33.070Z"
       },
       {
         "index": 12,
         "tourUrl": null,
-        "triedAt": "2026-10-13T11:25:17.087Z"
+        "triedAt": "2026-10-14T09:17:33.082Z"
+      },
+      {
+        "index": 13,
+        "tourUrl": null,
+        "triedAt": "2026-10-14T09:17:33.093Z"
+      },
+      {
+        "index": 14,
+        "tourUrl": null,
+        "triedAt": "2026-10-14T09:17:33.107Z"
+      },
+      {
+        "index": 15,
+        "tourUrl": null,
+        "triedAt": "2026-10-14T09:17:33.119Z"
+      },
+      {
+        "index": 16,
+        "tourUrl": null,
+        "triedAt": "2026-10-14T09:17:33.131Z"
+      },
+      {
+        "index": 17,
+        "tourUrl": null,
+        "triedAt": "2026-10-14T09:17:33.143Z"
+      },
+      {
+        "index": 18,
+        "tourUrl": null,
+        "triedAt": "2026-10-14T09:17:33.155Z"
+      },
+      {
+        "index": 19,
+        "tourUrl": null,
+        "triedAt": "2026-10-14T09:17:33.167Z"
       }
     ],
     "audit": [
       {
-        "artist": "The Nightingales",
-        "website": "http://www.thenightingales.org.uk",
-        "tourUrl": "https://thenightingales.org.uk/live?fbclid=IwZXh0bgNhZW0CMTEAcGRvZgVmZGlkFlECYRg8GKiwIj1h4hREAYX6AoxJ595zcnRjBmFwcF9pZAo2NjI4NTY4Mzc5AAEelCO9_glQavATEP08ofCcgAyVqdhqQmyCCua-0iAGv7oRdcUWzUr6ioA2Fc4_aem_xEdWVUKseblVw1AYnU6c4w",
-        "pathPattern": "/live",
-        "reason": "score=29.5 (years=1, numericDates=0, months=15, days=15, keywords=8, widget=0)",
-        "appliedAt": "2026-10-13T11:25:00.809Z",
-        "discoveryOperationId": "4c3a70f1-40ed-42ad-8c38-cc764a54d0fe:9"
+        "artist": "Billy F. Gibbons",
+        "website": "http://www.billygibbons.com/",
+        "tourUrl": "https://billygibbons.com/2021/10/tickets-on-sale-oct-28-for-the-jungle-show-at-antones-in-austin-tx-dec-28-29/",
+        "pathPattern": "/tickets",
+        "reason": "score=13 (years=1, numericDates=0, months=6, days=0, keywords=14, widget=0)",
+        "appliedAt": "2026-10-14T09:17:07.675Z",
+        "discoveryOperationId": "c05e6da6-2720-4c3e-b789-b0cfeb4b09a6:0"
       }
     ]
   }
