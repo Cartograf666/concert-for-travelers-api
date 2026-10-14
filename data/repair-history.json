@@ -28050,5 +28050,203 @@
     "failuresSinceRepair": 0,
     "note": "repair failed: Selector \"eventBlock\" (.data-row.data-row-gig) matched 0 elements.",
     "verification": ""
+  },
+  {
+    "id": "artist-mugison",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-mugison.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-14T09:30:54.927Z",
+    "previousConfig": {
+      "id": "artist-mugison",
+      "domain": "www.mugison.com",
+      "url": "http://www.mugison.com/gigs",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.eventlist-event",
+        "artistNameFallback": "Mugison",
+        "date": "time.event-date",
+        "ticketUrl": ".eventlist-description a",
+        "venue": ".eventlist-title",
+        "city": ".eventlist-title",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "IS"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (table tr) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-ringo-starr",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-ringo-starr.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-14T09:30:56.241Z",
+    "previousConfig": {
+      "id": "artist-ringo-starr",
+      "domain": "www.ringostarr.com",
+      "url": "https://www.ringostarr.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".data-row.data-row-gig",
+        "artistNameFallback": "Ringo Starr",
+        "date": ".tour-table-row-date",
+        "ticketUrl": ".tour-table-row-tickets .buy-btn@href",
+        "venue": ".tour-table-row-venue a:first-child",
+        "city": ".tour-table-row-city",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.data-row.data-row-gig) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-rory-mcleod",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-rory-mcleod.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-14T09:30:57.407Z",
+    "previousConfig": {
+      "id": "artist-rory-mcleod",
+      "domain": "rorymcleod.com",
+      "url": "https://rorymcleod.com/tour-dates",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".gig.svelte-ycoml7",
+        "artistNameFallback": "Rory McLeod",
+        "date": "date.svelte-ycoml7",
+        "ticketUrl": "a.svelte-ycoml7[href^='http']",
+        "venue": "h3.svelte-ycoml7",
+        "city": "address.svelte-ycoml7",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (main > div > div) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-the-clientele",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-the-clientele.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-14T09:30:58.610Z",
+    "previousConfig": {
+      "id": "artist-the-clientele",
+      "domain": "theclientele.co.uk",
+      "url": "https://theclientele.co.uk/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table[aria-labelledby='table-label-upcoming'] tbody tr",
+        "artistNameFallback": "The Clientele",
+        "date": "time",
+        "ticketUrl": "td:nth-child(2) a",
+        "venue": "td:nth-child(2) > span",
+        "city": "td:nth-child(3)",
+        "country": "td:nth-child(4)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      },
+      "allowEmpty": true,
+      "emptyScheduleText": "No shows scheduled."
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.shows-list-item) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "komnata-kultury-tour",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/komnata-kultury-tour.json",
+    "repairedConfigHash": "abb2ef93035729ad8c3757ada7cf7d9ca564db9f759b2517c152f26949223f65",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-10-14T09:31:00.525Z",
+    "previousConfig": {
+      "id": "komnata-kultury-tour",
+      "domain": "komnatakultury.ru",
+      "url": "https://komnatakultury.ru",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "custom",
+        "date": "custom",
+        "artistNameFallback": "Комната культуры",
+        "venueNameFallback": "Unknown Venue",
+        "cityNameFallback": "Unknown City",
+        "countryNameFallback": "RU"
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: komnatakultury.ru resolves now, retrying instead of retiring",
+    "verification": "PASS (25 events, 10 checks)"
+  },
+  {
+    "id": "zhenya-trofimov-tour",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/zhenya-trofimov-tour.json",
+    "repairedConfigHash": "17e14e7c9375859227787bfb30a663389d25d8f352ca5d3293b9ea8d8726ae27",
+    "strategy": "dead_domain",
+    "repairedAt": "2026-10-14T09:31:01.915Z",
+    "previousConfig": {
+      "id": "zhenya-trofimov-tour",
+      "domain": "komnatakultury.ru",
+      "url": "https://komnatakultury.ru",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "custom",
+        "date": "custom",
+        "artistNameFallback": "Женя Трофимов",
+        "venueNameFallback": "Unknown Venue",
+        "cityNameFallback": "Unknown City",
+        "countryNameFallback": "RU"
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "dead_domain reclassified: komnatakultury.ru resolves now, retrying instead of retiring",
+    "verification": "PASS (25 events, 10 checks)"
+  },
+  {
+    "id": "artist-yiruma",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-yiruma.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-14T09:32:05.765Z",
+    "previousConfig": {
+      "id": "artist-yiruma",
+      "domain": "yiruma.com",
+      "url": "http://yiruma.com/performances/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".section-blog__wrapper-post.section-grid__item",
+        "artistNameFallback": "Yiruma",
+        "date": ".figure-post__wrapper-info .post-meta li a",
+        "ticketUrl": "p a",
+        "venue": "p",
+        "city": "p",
+        "country": "p",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
+    "verification": ""
   }
 ]

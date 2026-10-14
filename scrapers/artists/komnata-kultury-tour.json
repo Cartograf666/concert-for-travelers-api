@@ -3,10 +3,11 @@
   "domain": "komnatakultury.ru",
   "url": "https://komnatakultury.ru",
   "type": "custom_js",
+  "maxRetries": 4,
   "selectors": {
     "eventBlock": "custom",
-    "date": "custom",
     "artistNameFallback": "Комната культуры",
+    "date": "custom",
     "venueNameFallback": "Unknown Venue",
     "cityNameFallback": "Unknown City",
     "countryNameFallback": "RU"
