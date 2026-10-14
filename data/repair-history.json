@@ -28248,5 +28248,88 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
     "verification": ""
+  },
+  {
+    "id": "artist-rob-waring",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-rob-waring.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-14T09:49:27.473Z",
+    "previousConfig": {
+      "id": "artist-rob-waring",
+      "domain": "www.robwaring.com",
+      "url": "http://www.robwaring.com/gigs.html",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "body > table > tbody > tr > td > table > tbody > tr > td",
+        "artistNameFallback": "Rob Waring",
+        "date": "font:nth-child(1)",
+        "ticketUrl": "a",
+        "venue": "font:nth-child(3)",
+        "city": "font:nth-child(5)",
+        "country": "font:nth-child(7)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "NO"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on http://www.robwaring.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]",
+    "verification": ""
+  },
+  {
+    "id": "artist-rhode-island-philharmonic-orchestra",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-rhode-island-philharmonic-orchestra.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-14T09:49:28.656Z",
+    "previousConfig": {
+      "id": "artist-rhode-island-philharmonic-orchestra",
+      "domain": "riphil.org",
+      "url": "https://riphil.org/2025-2026-season/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-block",
+        "artistNameFallback": "Rhode Island Philharmonic Orchestra",
+        "date": "h3",
+        "ticketUrl": "a.button",
+        "venueNameFallback": "The VETS",
+        "cityNameFallback": "Providence",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.postArticle) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-robbie-krieger",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-robbie-krieger.json",
+    "strategy": "tls_broken",
+    "repairedAt": "2026-10-14T09:49:31.522Z",
+    "previousConfig": {
+      "id": "artist-robbie-krieger",
+      "domain": "www.robbykrieger.com",
+      "url": "https://www.robbykrieger.com/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".sqs-block-content ul li",
+        "artistNameFallback": "Robby Krieger",
+        "date": ".date-display",
+        "ticketUrl": "a[href*='ticket']",
+        "venue": ".event-venue",
+        "city": ".event-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "tls_broken: trying the www/apex variant, which usually holds the valid certificate; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://robbykrieger.com/ but could not re-select on it",
+    "verification": ""
   }
 ]
