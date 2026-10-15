@@ -28331,5 +28331,207 @@
     "failuresSinceRepair": 0,
     "note": "tls_broken: trying the www/apex variant, which usually holds the valid certificate; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://robbykrieger.com/ but could not re-select on it",
     "verification": ""
+  },
+  {
+    "id": "artist-ai-kawashima",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-ai-kawashima.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-15T09:04:33.190Z",
+    "previousConfig": {
+      "id": "artist-ai-kawashima",
+      "domain": "kawashimaai.com",
+      "url": "https://kawashimaai.com/live",
+      "type": "custom_js",
+      "maxRetries": 3,
+      "requestDelayMs": 2000,
+      "selectors": {
+        "eventBlock": "#live_index table tr",
+        "artistNameFallback": "Ai Kawashima",
+        "date": "th.date",
+        "ticketUrl": "td.text a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      },
+      "skipConditionalRequests": true
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper artist-ai-kawashima is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-angst",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-angst.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-15T09:04:36.958Z",
+    "previousConfig": {
+      "id": "artist-angst",
+      "domain": "adamangst.de",
+      "url": "https://adamangst.de/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "#tablepress-1 tbody tr",
+        "artistNameFallback": "Angst",
+        "date": ".column-1",
+        "ticketUrl": ".column-3 a::attr(href)",
+        "venue": ".column-3 a",
+        "city": ".column-2",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "DE"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: has_future_dates [0 event(s) dated today or later]",
+    "verification": ""
+  },
+  {
+    "id": "artist-mugison",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-mugison.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-15T09:04:38.328Z",
+    "previousConfig": {
+      "id": "artist-mugison",
+      "domain": "www.mugison.com",
+      "url": "http://www.mugison.com/gigs",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.eventlist-event",
+        "artistNameFallback": "Mugison",
+        "date": "time.event-date",
+        "ticketUrl": ".eventlist-description a",
+        "venue": ".eventlist-title",
+        "city": ".eventlist-title",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "IS"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (table tr) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-ringo-starr",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-ringo-starr.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-15T09:04:40.799Z",
+    "previousConfig": {
+      "id": "artist-ringo-starr",
+      "domain": "www.ringostarr.com",
+      "url": "https://www.ringostarr.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".data-row.data-row-gig",
+        "artistNameFallback": "Ringo Starr",
+        "date": ".tour-table-row-date",
+        "ticketUrl": ".tour-table-row-tickets .buy-btn@href",
+        "venue": ".tour-table-row-venue a:first-child",
+        "city": ".tour-table-row-city",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.data-row.data-row-gig) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-rory-mcleod",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-rory-mcleod.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-15T09:04:42.116Z",
+    "previousConfig": {
+      "id": "artist-rory-mcleod",
+      "domain": "rorymcleod.com",
+      "url": "https://rorymcleod.com/tour-dates",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".gig.svelte-ycoml7",
+        "artistNameFallback": "Rory McLeod",
+        "date": "date.svelte-ycoml7",
+        "ticketUrl": "a.svelte-ycoml7[href^='http']",
+        "venue": "h3.svelte-ycoml7",
+        "city": "address.svelte-ycoml7",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (main > div > div) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-the-clientele",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-the-clientele.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-15T09:04:45.515Z",
+    "previousConfig": {
+      "id": "artist-the-clientele",
+      "domain": "theclientele.co.uk",
+      "url": "https://theclientele.co.uk/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table[aria-labelledby='table-label-upcoming'] tbody tr",
+        "artistNameFallback": "The Clientele",
+        "date": "time",
+        "ticketUrl": "td:nth-child(2) a",
+        "venue": "td:nth-child(2) > span",
+        "city": "td:nth-child(3)",
+        "country": "td:nth-child(4)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      },
+      "allowEmpty": true,
+      "emptyScheduleText": "No shows scheduled."
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://theclientele.co.uk; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://theclientele.co.uk/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-mia",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-mia.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-15T09:04:50.070Z",
+    "previousConfig": {
+      "id": "artist-mia",
+      "domain": "www.miarockt.de",
+      "url": "https://www.miarockt.de/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".events-container .item",
+        "artistNameFallback": "MIA.",
+        "date": ".time",
+        "ticketUrl": ".event-actions a.btn-secondary",
+        "venue": ".location a",
+        "city": ".event-title",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "DE"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.miarockt.de/live/ but could not re-select on it",
+    "verification": ""
   }
 ]
