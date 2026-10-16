@@ -36,6 +36,12 @@ const CITY_ALIASES: Record<string, Record<string, string[]>> = {
   ME: { Budva: ['Budva', 'Будва'], Podgorica: ['Podgorica', 'Подгорица'] }
 };
 const hash = (value: string | Buffer) => createHash('sha256').update(value).digest('hex');
+export function decodeBody(bytes: Buffer, responseType?: string): unknown {
+  const decoded = bytes[0] === 0x1f && bytes[1] === 0x8b ? gunzipSync(bytes) : bytes;
+  const text = decoded.toString('utf8');
+  if (responseType === 'text') return text;
+  try { return JSON.parse(text); } catch { return text; }
+}
 const canonical = (value: any): string => JSON.stringify(value, (_k, v) => v && typeof v === 'object' && !Array.isArray(v)
   ? Object.fromEntries(Object.entries(v).sort(([a], [b]) => a.localeCompare(b))) : v);
 const readJson = async (file: string) => JSON.parse(await fs.readFile(file, 'utf8'));
@@ -107,19 +113,29 @@ async function worker(root: string, inputFile: string, out: string) {
   const available = new Map<string, { entry: ResponseInput; bytes: Buffer }>();
   let sourceIndex = -1;
   const respond = async (url: string) => {
-    const found = available.get(url);
+    const found = available.get(new URL(url).href);
     if (!found) { missingCaptures.push({ sourceIndex, url }); throw new Error(`No captured response for ${url}`); }
     const { entry, bytes } = found;
     reads.push({ sourceIndex, url, body: entry.body, sha256: entry.sha256, status: entry.status });
-    const decoded = bytes[0] === 0x1f && bytes[1] === 0x8b ? gunzipSync(bytes) : bytes;
-    return { entry, text: decoded.toString('utf8') };
+    return { entry, bytes, text: decodeBody(bytes, 'text') as string };
   };
-  axios.get = async (url: string) => {
-    const { entry, text } = await respond(String(url));
-    let data: unknown = text; try { data = JSON.parse(text); } catch { /* native HTML */ }
-    const response = { status: entry.status, data, headers: entry.headers ?? {} };
-    if (entry.status >= 400) { const error: any = new Error(`Captured HTTP ${entry.status}`); error.response = response; error.request = {}; throw error; }
-    return response;
+  axios.get = async (url: string, options: Row = {}) => {
+    let requested = new URL(url);
+    for (const [key, value] of Object.entries(options.params ?? {})) requested.searchParams.append(key, String(value));
+    for (let redirects = 0; ; redirects++) {
+      const { entry, bytes } = await respond(requested.href);
+      const headers = Object.fromEntries(Object.entries(entry.headers ?? {}).map(([key, value]) => [key.toLowerCase(), value]));
+      if ([301, 302, 303, 307, 308].includes(entry.status) && headers.location && options.maxRedirects !== 0) {
+        assert.ok(redirects < (options.maxRedirects ?? 21), 'Captured redirect limit exceeded');
+        requested = new URL(headers.location, requested);
+        options.beforeRedirect?.({ hostname: requested.hostname, protocol: requested.protocol, path: requested.pathname });
+        continue;
+      }
+      const response = { status: entry.status, data: decodeBody(bytes, options.responseType), headers };
+      const valid = options.validateStatus ? options.validateStatus(entry.status) : entry.status >= 200 && entry.status < 300;
+      if (!valid) { const error: any = new Error(`Captured HTTP ${entry.status}`); error.response = response; error.request = {}; throw error; }
+      return response;
+    }
   };
   globalThis.fetch = async (input, init) => {
     assert.ok(!init?.method || init.method === 'GET', 'Replay only supports captured GET');
@@ -140,8 +156,9 @@ async function worker(root: string, inputFile: string, out: string) {
       assert.ok(entry.capturedAt && /^https?:\/\//.test(entry.url));
       const bytes = await fs.readFile(path.resolve(path.dirname(inputFile), entry.body));
       assert.equal(hash(bytes), entry.sha256, `Input changed: ${entry.body}`);
-      assert.ok(!available.has(entry.url), 'One immutable response per URL per source required');
-      available.set(entry.url, { entry, bytes });
+      const urlKey = new URL(entry.url).href;
+      assert.ok(!available.has(urlKey), 'One immutable response per URL per source required');
+      available.set(urlKey, { entry, bytes });
     }
     const file = path.resolve(root, source.configPath);
     assert.ok(file.startsWith(path.join(root, 'scrapers') + path.sep), 'Only real repo scraper configs permitted');

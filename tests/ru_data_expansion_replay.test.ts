@@ -1,11 +1,18 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { measure } from '../src/scripts/ru_data_expansion_replay.js';
+import { gzipSync } from 'node:zlib';
+import { decodeBody, measure } from '../src/scripts/ru_data_expansion_replay.js';
 
 const clock = '2026-10-16T00:00:00.000Z';
 const lastRun = '2026-10-16T09:12:22.120Z';
 const row = (date: string, city = 'Antalya', country = 'TR', scrapedAt = lastRun) =>
   ({ artist: 'fixture artist', date, city, country, venue: 'fixture venue', scrapedAt });
+
+test('captured gzip preserves axios responseType text for runner and native JSON for API calls', () => {
+  const bytes = gzipSync(Buffer.from('{"events":[]}'));
+  assert.equal(decodeBody(bytes, 'text'), '{"events":[]}');
+  assert.deepEqual(decodeBody(bytes), { events: [] });
+});
 
 test('measurement includes day 14 and 90, separates future from all dates and uses lastRun freshness', () => {
   const result = measure([
