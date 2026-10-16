@@ -1,0 +1,19 @@
+{
+  "id": "tomsarkgh-concerts",
+  "domain": "www.tomsarkgh.am",
+  "url": "https://www.tomsarkgh.am/en/category/Concert",
+  "type": "custom_js",
+  "requestDelayMs": 1000,
+  "maxRetries": 0,
+  "skipConditionalRequests": true,
+  "selectors": {
+    "eventBlock": ".event-box-item",
+    "artist": ".event-title",
+    "date": ".event-date",
+    "venue": ".event-venue",
+    "ticketUrl": ".event-title a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "AM"
+  }
+}
