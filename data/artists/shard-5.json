@@ -358667,45 +358667,36 @@
     "lastConcertSeenAt": "2026-10-10T10:53:27.910Z"
   },
   {
-    "name": "Morgenstern",
-    "website": "https://morgenshtern.com/",
-    "wdBulkTriedAt": "2026-07-24T08:01:23.219Z",
+    "name": "MORGENSHTERN",
+    "mbid": "ae97ba5f-e7ed-4ed5-9a53-eba415fc49d4",
+    "website": "https://morgenshtern.love/",
+    "aliases": [
+      "Моргенштерн"
+    ],
     "socials": {
       "spotify": "https://open.spotify.com/artist/50J688nE59Wb3G1tK1aWjM",
       "instagram": "https://www.instagram.com/morgen_shtern/",
-      "facebook": "https://www.facebook.com/morgenstern.official/",
       "youtube": "https://www.youtube.com/c/MORGENSHTERN",
       "telegram": "https://t.me/morgenshtern",
       "vk": "https://vk.com/morgenshtern"
-    },
+    }
+  },
+  {
+    "name": "Morgenstern",
+    "website": null,
+    "wdBulkTriedAt": "2026-07-24T08:01:23.219Z",
     "mbidBackfillTriedAt": "2026-07-09T08:32:15.771Z",
     "mbid": "2f9c67a0-19d8-4bb8-b1bf-40157eb4142f",
     "enrichedAt": "2026-07-11T09:25:35.280Z",
     "enrichedBy": "musicbrainz",
     "genres": [
-      "folk metal",
       "industrial",
       "german",
       "noise",
       "Rhythmic Noise"
     ],
-    "popularity": {
-      "listeners": 32784,
-      "playcount": 370578
-    },
-    "image": "https://cdn-images.dzcdn.net/images/artist/3778b5d1035175dd728da95743f8a65a/250x250-000000-80-0-0.jpg",
-    "metaEnrichedAt": "2026-07-11T14:19:35.585Z",
-    "similarArtists": [
-      {
-        "name": "Face",
-        "slug": "face",
-        "match": 0.508888
-      }
-    ],
-    "similarEnrichedAt": "2026-07-14T09:11:44.707Z",
     "similarInboundCount": 0,
     "tier": "professional",
-    "lastConcertSeenAt": "2026-10-10T10:53:27.910Z",
     "wdAliasesTriedAt": "2026-07-24T08:01:23.219Z",
     "tourUrlProbeTriedAt": "2026-08-09T05:53:33.235Z"
   },
@@ -410775,6 +410766,15 @@
     "similarInboundCount": 0,
     "tier": "professional",
     "wdAliasesTriedAt": "2026-07-24T08:01:58.705Z"
+  },
+  {
+    "name": "Нервы",
+    "mbid": "d620cf32-e240-46a4-a078-db87acb5ffa0",
+    "website": null,
+    "aliases": [
+      "Nervy",
+      "Нерви"
+    ]
   },
   {
     "name": "Ночные снайперы",
