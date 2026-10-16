@@ -22,6 +22,8 @@ test('official 2026 upcoming section has two film screenings and no live concert
   const previous = process.env.SCRAPER_HTTP_BACKEND;
   process.env.SCRAPER_HTTP_BACKEND = 'axios';
   t.after(() => { if (previous === undefined) delete process.env.SCRAPER_HTTP_BACKEND; else process.env.SCRAPER_HTTP_BACKEND = previous; });
+  // The captured calendar is valid at its capture date, independent of today's clock.
+  t.mock.timers.enable({ apis: ['Date'], now: new Date(at) });
   const result = await runScraper(config);
   assert.equal(result.success, true);
   assert.equal(result.reason, 'empty_schedule');

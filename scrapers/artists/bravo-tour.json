@@ -2,7 +2,7 @@
   "id": "bravo-tour",
   "domain": "www.bravogroup.ru",
   "url": "http://www.bravogroup.ru/show_all.htm",
-  "type": "static_selectors",
+  "type": "custom_js",
   "selectors": {
     "eventBlock": "ul.afishaTable li",
     "artistNameFallback": "Браво",

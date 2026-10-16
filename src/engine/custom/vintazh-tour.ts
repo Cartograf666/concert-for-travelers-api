@@ -68,6 +68,19 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
       // Find closest ticket button
       const btn = buttons.find(b => Math.abs(b.top - d.top) < 80);
       const ticketUrl = btn?.href;
+      // The visible DD.MM has no year. Use an explicit date in this row's
+      // primary ticket URL; never roll an old card into next year's calendar.
+      if (!ticketUrl) continue;
+      const iso = ticketUrl.match(/(?:^|[-/])(20\d{2})-(\d{2})-(\d{2})(?=$|[/?#-])/);
+      const compact = ticketUrl.match(/(?:^|[-/])(\d{2})(\d{2})(20\d{2})(?=$|[/?#-])/);
+      const fullDate = iso ? `${iso[1]}-${iso[2]}-${iso[3]}`
+        : compact ? `${compact[3]}-${compact[2]}-${compact[1]}` : undefined;
+      if (!fullDate) continue;
+      const parsed = new Date(`${fullDate}T00:00:00.000Z`);
+      const visibleDate = `${fullDate.slice(8, 10)}.${fullDate.slice(5, 7)}`;
+      if (!Number.isFinite(parsed.valueOf()) || parsed.toISOString().slice(0, 10) !== fullDate || visibleDate !== d.text) {
+        throw new Error('Vintazh visible date and primary ticket date disagree');
+      }
 
       // Parse city, venue, and country from location text
       let city = '';
@@ -100,13 +113,12 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
           venue = loc.text.replace(/турция/i, '').replace(/[\s,–-]+/g, ' ').replace(/&amp;/g, '&').trim();
         }
       } else {
-        city = loc.text;
-        venue = loc.text;
+        throw new Error(`Vintazh ticket-dated event has an unverified location: ${loc.text}`);
       }
 
       concerts.push({
         artist: 'Винтаж',
-        date: d.text,
+        date: fullDate,
         venue: venue || config.selectors?.venueNameFallback || 'Unknown Venue',
         city: city || config.selectors?.cityNameFallback || 'Unknown City',
         country,
