@@ -1,4 +1,134 @@
-# Live baseline и same-input replay — 16.10.2026
+# Финальный same-input replay — 16.10.2026
+
+**Final candidate даёт 35 published строк вместо 52: добавлены 8 подтверждённых native-источниками выступлений, исправлены две локации Браво и удалены 25 ошибочных строк.** Из новых выступлений 7 имеют дату строго после 16 октября; Varna Би-2 — сегодня и не включена в этот показатель. В целевых 16 странах новое выступление одно: Andru Donalds, Ереван, 21.11.2026. Это локальный affected-cohort replay, не изменение live API и не owner acceptance.
+
+Этот результат **заменяет intermediate 52→58 как актуальное состояние**. Исторические evidence paths ниже сохранены; их старые PENDING, bdva.ru и промежуточные счётчики относятся к предыдущим контрольным точкам.
+
+## Ревизии и frozen inputs
+
+| Поле | Фактическое значение |
+|---|---|
+| Base | `6af49b13628cd0eeb728f16d62bdaaa17a94e069`, actual DB 63 390 |
+| Final candidate | `45e9dd69a1622891ff7a33909046dfc9332403b0`, actual DB 63 397 |
+| Frozen clock | `2026-10-16T19:17:51.765Z`, позже latest capture `2026-10-16T19:06:52.587843Z` |
+| Anchor / окно | 2026-10-16 / 2026-10-30..2027-01-14 inclusive |
+| Inputs SHA256 | `d1e4dfce879aa496ba6b71266a1a17fd15fcbdc8b3b36e722c908a5006f20052` |
+| Harness SHA256 | `ec086f039815b2b1a381798561fd193861908e3bfd6f80c01288c7c442741b74` |
+| Base code/DB/config fingerprint | `1cb20da037a555cbc4c5c0ca1ff089300d366f9f0c6fef85469d4c25837f10c2` |
+| Candidate code/DB/config fingerprint | `d9465cb13121751053cef4eb73f62ce2e11e7e59a554c55f4aca143dd1e9b313` |
+
+На каждой стороне identity-before/after совпали по HEAD и code/DB/config hashes; dirty state пустой. GO сначала называл e8dc814, затем root сделал fixture-only amend; candidate реально стартовал уже на 45e9dd6, старый HEAD не участвовал в candidate replay. Actual approved DB читалась настоящим artistDb через process, без подмены или записей.
+
+Evidence root `/Users/alex/agent-hub/concerts-ru-data/evidence/measurement/`: final manifest `final-integrated-inputs/inputs.json`, результат `final-integrated-replay/`, общий byte/SHA index `final-integrated-replay/evidence-index.json`. Тринадцать config paths: retired solo Zhenya существует на base, candidate configAbsent; Bi2/Tomsarkgh отсутствуют на base. Все original decoded/wire body hashes проверены; raw вручную не вставлялись.
+
+Реально выполнены collection/standard runner/custom modules → normalization/approval/whitelist → whole-record dedup → publishConcerts JSON. Tomsarkgh использовал listing+3 detail responses. **0 network attempts / 0 missing captures** на обеих сторонах, 11 captured HTTP reads base и 15 candidate. Каждая public row совпадает целиком с реальной одиночной нормализацией raw; rejected rows/dedup losers и source URLs сохранены в row-provenance.json. Metadata не сплайсилась.
+
+## Дельта строк и выступлений
+
+| Метрика | Base | Candidate |
+|---|---:|---:|
+| Raw |108|89|
+| Published всей когорты, date>=today |52|35|
+| Published strictly after today |52|34|
+| Окно 14–90 всей когорты |28|18|
+| Корзина 16 стран, date>=today |52|28|
+| Окно 14–90 корзины |28|16|
+| Окно корзины и freshness<=72h |28|16|
+
+Механическая дельта: **10 added / 27 removed / 0 changed whole-record metadata**. Все added/removed классифицированы; unclassified нет:
+
+- **8 новых unique occurrences**: 7 обычных concert cards Би-2 + Andru Donalds; 7 strictly-after-today, 3 в окне 14–90. В target16 только Andru AM, он же в окне. Семь дат Би-2 вне target16.
+- **2 location repairs Браво**: те же даты, Atmosphere/Москва и Aurora Concert Hall/Санкт-Петербург. Старые строки содержали venue+city в обоих полях; это две added с двумя paired removed, не новые концерты.
+- **24 wrong-solo rows удалены**: retired fallback Женя Трофимов ошибочно дублировал календарь группы Комната культуры. Для каждой removed сохранена соответствующая целая group row; все 24 group rows остались. Source-worker дополнительно доказал active-cache exclusion реальным filterArtistCacheForActiveConfigs: `evidence/sources/regional-sources/komnata-followup/`. Fresh replay не фабрикует production caches.
+- **1 phantom year удалён**: Винтаж 2027-08-30. Primary ticket href содержит 2026-08-30, уже прошедший на frozen clock; перенос в 2027 был необоснованным.
+
+## Новые выступления и native evidence
+
+Все восемь проверены по сохранённым первичным HTML, затем сопоставлены с whole-record publisher lineage. Это подтверждение source identity/date/place, не available tickets, не owner acceptance и не source completeness. Полные URL, capturedAt/body/wire/raw/public-record hashes, исходные тексты и lineage каждого события — `new-unique-occurrences.json`, `source-url-inventory.json`. Evidence-only scripts `native-audit.cjs` и `classify-final.cjs` не передают строки в collection/pipeline.
+
+| Артист | Native дата/время | Страна / город | Venue | Native event URL | Класс |
+|---|---|---|---|---|---|
+| Би-2 | 2026-10-16 20:00 | BG / Varna | Palace of Culture and Sports | https://tix.bi2.band/events/bi2/2379649 | сегодня; без still-future claim / вне target16 |
+| Би-2 | 2026-10-18 20:00 | BG / Sofia | Joy Station | https://tix.bi2.band/events/bi2/2379745 | strictly after today / вне target16 |
+| Би-2 | 2026-10-22 20:00 | HU / Budapest | Barba Negra | https://tix.bi2.band/events/bi2/2380217 | strictly after today / вне target16 |
+| Би-2 | 2026-10-26 20:00 | SI / Ljubljana | Cvetlicarna | https://tix.bi2.band/events/bi2/2379512 | strictly after today / вне target16 |
+| Би-2 | 2026-10-28 20:00 | HR / Zagreb | Tvornica Kulture | https://tix.bi2.band/events/bi2/2380407 | strictly after today / вне target16 |
+| Би-2 | 2026-11-15 20:00 | CH / Geneva | Alhambra | https://tix.bi2.band/events/bi2/2387477 | strictly after today / вне target16 |
+| Би-2 | 2026-11-17 20:00 | DE / Ludwigsburg | MHP Arena | https://tix.bi2.band/events/bi2/2388544 | strictly after today / вне target16 |
+| Andru Donalds | 2026-11-21 19:00 | AM / Yerevan | Aram Khachaturyan Concert Hall | https://www.tomsarkgh.am/en/event/51067/Andru-Donalds.html | strictly after today / target16 |
+
+Bi2: identity календаря `Bi-2 / Би-2`, ordinary bilingual concert titles и полный printed год/дата/время/place. Country подтверждён **точной package card той же даты/city/location**, не угадан по городу. Package-only Belgrade/Hangar и Limassol/Etko удержаны без public concerts. В новых строках из integrated DB теперь `artistWebsite/ticketUrl=https://b2band.com/ru`, MBID `5ca35ace-4006-4d4a-af04-5cd91dafab14`; старый bdva.ru не сплайсился вручную.
+
+Andru: native performer heading, Concert category, полная дата `2026-11-21 19:00`, Aram Khachaturyan Concert Hall и `46 Mashtots street, Yerevan, Armenia`; cancellation/postponement в проверенных title/description не обнаружены. ENIGMA в заголовке не стало дополнительным performer. Akmal и Lyubov Uspenskaya остаются raw not-approved; whitelist ради source gain не расширялась.
+
+Существующий public ticketUrl предпочитает approved.website перед raw.ticketUrl: Andru ведёт на `https://www.andrudonalds.org`, Би-2 на b2band.com/ru. Это не native operator event links; отдельный URL inventory сохраняет правильные event URLs. Varna date=16.10 сохраняется по date>=today, но в строго будущий прирост не включена; native20:00 не доказывает текущий show-state.
+
+## 16 стран и resorts: before/after
+
+Все строки этой когорты date>=16.10, поэтому allDates=allFuture в каждой стране. Freshness — `frozen lastRun - replay scrapedAt<=72h`, не новые production verifiedAt. Это не заменяет и не пересчитывает live 853/533/345.
+
+| Страна | All/future base | All/future candidate | Окно base | Окно candidate | Fresh base | Fresh candidate |
+|---|---:|---:|---:|---:|---:|---:|
+| TR | 0 | 0 | 0 | 0 | 0 | 0 |
+| RU | 48 | 25 | 24 | 13 | 24 | 13 |
+| TH | 0 | 0 | 0 | 0 | 0 | 0 |
+| RS | 0 | 0 | 0 | 0 | 0 | 0 |
+| ID | 0 | 0 | 0 | 0 | 0 | 0 |
+| AE | 0 | 0 | 0 | 0 | 0 | 0 |
+| AM | 0 | 1 | 0 | 1 | 0 | 1 |
+| CN | 0 | 0 | 0 | 0 | 0 | 0 |
+| KZ | 4 | 2 | 4 | 2 | 4 | 2 |
+| VN | 0 | 0 | 0 | 0 | 0 | 0 |
+| GE | 0 | 0 | 0 | 0 | 0 | 0 |
+| EG | 0 | 0 | 0 | 0 | 0 | 0 |
+| CY | 0 | 0 | 0 | 0 | 0 | 0 |
+| BY | 0 | 0 | 0 | 0 | 0 | 0 |
+| UZ | 0 | 0 | 0 | 0 | 0 | 0 |
+| ME | 0 | 0 | 0 | 0 | 0 | 0 |
+
+Требуемые отпускные города и все ненулевые группы ниже; полный перечисленный alias mapping/все zero rows — `classified-final.json`, `comparison.json`. Antalya/Alanya и Bangkok/Phuket раздельны, membership районов не угадывается.
+
+| Город (exact aliases) | Future base | Future candidate | Окно base | Окно candidate | Fresh base | Fresh candidate |
+|---|---:|---:|---:|---:|---:|---:|
+| TR Antalya (Antalya, Анталья) | 0 | 0 | 0 | 0 | 0 | 0 |
+| TR Alanya (Alanya, Аланья) | 0 | 0 | 0 | 0 | 0 | 0 |
+| RU Sochi (Sochi, Сочи) | 2 | 1 | 2 | 1 | 2 | 1 |
+| RU Moscow (Moscow, Москва) | 9 | 6 | 4 | 3 | 4 | 3 |
+| RU Saint Petersburg (Saint Petersburg, St Petersburg, Санкт-Петербург) | 3 | 2 | 0 | 1 | 0 | 1 |
+| TH Bangkok (Bangkok, Бангкок) | 0 | 0 | 0 | 0 | 0 | 0 |
+| TH Phuket (Phuket, Пхукет) | 0 | 0 | 0 | 0 | 0 | 0 |
+| TH Pattaya (Pattaya, Muang Pattaya, Паттайя) | 0 | 0 | 0 | 0 | 0 | 0 |
+| AE Dubai (Dubai, Дубай) | 0 | 0 | 0 | 0 | 0 | 0 |
+| AE Abu Dhabi (Abu Dhabi, Абу-Даби) | 0 | 0 | 0 | 0 | 0 | 0 |
+| AM Yerevan (Yerevan, Երևան, Ереван) | 0 | 1 | 0 | 1 | 0 | 1 |
+| KZ Almaty (Almaty, Алматы) | 2 | 1 | 2 | 1 | 2 | 1 |
+| KZ Astana (Astana, Астана) | 2 | 1 | 2 | 1 | 2 | 1 |
+
+## Проверки, ограничения и граница результата
+
+Root выполнил final gates на **45e9dd6**: `npm test` **888 total / 887 pass / 0 fail / 1 expected skip**; отдельный production SSRF **1/1 PASS**; tsc/build/lint PASS (0 errors, 103 existing warnings); selector **125<=131**; artist integrity **156<=156**. Первичные logs+SHA — `/Users/alex/agent-hub/concerts-ru-data/evidence/final-checks/results.json`. Measurement сверил все exitCode и каждый log hash, не повторяя gates: `final-integrated-replay/root-gates-verified.json`. Логи Node используют Unicode ℹ summary; parsing поддерживает ℹ и TAP #. Старое baseline Antoha failure остаётся в baseline evidence; clock-only test correction не ослабила production stale-date guard.
+
+Ограничения: affected cohort не содержит full production cache/provider/geocode composition. TM key и explicit BIT app id отсутствовали, provider HTTP не выполнялся. У UOB сохранён initial redirect, но нет terminal timeout response: source исключён, ответ не выдуман. Antoha captured page остаётся sourceFailed (прошлая дата в upcoming section). Zero-yield not-approved источники не названы repaired. У 24 оставшихся group Komnata rows только 11 embedded full-year witnesses; 13 сохраняют general parseDate behavior без отдельно подтверждённого native года, их owner-correctness не заявляется. Downstream JSON/Instagram rights не создаются replay. Production publication не выполнялась.
+
+Candidate public SHA256 `c22f3d51ff8b8f2a0f8f890bc3d2c10cb2ceeaa57467bf441a9863b6140f484c`; base public SHA256 `e8686018e1ff91fc8b3f596c9812bb8adfcd6c068a4e8b34c4e0f1c5af864131`. Это локальные cohort outputs. **Live отдельно:** 49 651 строка, lastRun `2026-10-16T09:12:22.120Z`, concerts SHA256 `e1b6124c697a2ef7cd7106dd802036d0622a92944be810057da9cd127372f1ca`. Приращение production из cohort delta не вычислялось.
+
+## Воспроизведение
+
+Actual run использовал out `.../evidence/measurement/final-integrated-replay`. Для нового прогона out обязан быть новым/пустым; manifest clock и source bytes сохраняются:
+
+```sh
+node --import tsx /Users/alex/code/concert-for-travelers-api/.worktrees/agent/concerts-ru-data-20261016/src/scripts/ru_data_expansion_replay.ts --base /Users/alex/code/concert-for-travelers-api/.worktrees/verification/concert-ru-measurement-base-6af49b1 --candidate /Users/alex/code/concert-for-travelers-api/.worktrees/agent/concerts-ru-data-20261016 --inputs /Users/alex/agent-hub/concerts-ru-data/evidence/measurement/final-integrated-inputs/inputs.json --out /ABS/NEW/EMPTY/REPLAY
+node /Users/alex/agent-hub/concerts-ru-data/evidence/measurement/final-integrated-inputs/native-audit.cjs /ABS/REPO/WITH/CHEERIO /Users/alex/agent-hub/concerts-ru-data/evidence/measurement/final-integrated-inputs/inputs.json /ABS/NEW/NATIVE-AUDIT.json
+node /Users/alex/agent-hub/concerts-ru-data/evidence/measurement/final-integrated-inputs/classify-final.cjs /Users/alex/agent-hub/concerts-ru-data/evidence/measurement/final-integrated-inputs /ABS/NEW/EMPTY/REPLAY
+```
+
+Зафиксированный независимый native audit уже лежит в `final-integrated-inputs/native-correctness-audit.json`; classifier проверяет его manifest hash. Root интегрирует этот doc-only commit и сообщит общий окончательный HEAD. Source/DB/integration files этим worker не изменялись. Реестр: `/Users/alex/agent-hub/concerts-ru-data/questions.md`.
+
+---
+
+**Архив предыдущего baseline/harness пакета.** Старые PENDING, source-only 52→58 и прежние metadata snapshots ниже заменены финальной секцией выше; исходные proof paths сохранены.
+
+## Исторический baseline и промежуточные replay — 16.10.2026
 
 Свежий live baseline воспроизвёл gaps §2/6: **853 строки → 533 в окне → 345 свежих** для 16 стран. Это записи существующего опубликованного каталога, не проверенные уникальные концерты и не результат локальных исправлений.
 
