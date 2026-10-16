@@ -1,0 +1,46 @@
+{
+  "transformation": "CRLF/CR to LF; remove ASCII trailing space/tab; one final LF. Native captures untouched. Parser semantics rechecked by final suite; replay uses original captures. Bravo leading mixed indentation expanded at tab width8.",
+  "entries": [
+    {
+      "fixture": "tests/fixtures/komnata-20261016/original.html",
+      "originalCaptureFiles": [
+        "013-367a410b85.decoded.html",
+        "014-367a410b85.decoded.html"
+      ],
+      "originalSha256": "2d33de6428c13425b818e51a4efe9be5fa7f49c9538837ef105439a2e950a3ea",
+      "normalizedFixtureSha256": "1e1d175d99dfcc04dd0f1e8249581ce9cb82a994f9eafa9682afd5cbb567a770",
+      "originalBytes": 983584,
+      "normalizedBytes": 983404
+    },
+    {
+      "fixture": "tests/fixtures/regional-20261016/bi2.html",
+      "originalCaptureFiles": [
+        "003-8c3678d81c.decoded.html"
+      ],
+      "originalSha256": "0aa36abb009f97a6d2e66fe81425bc0e10b8175c7c4d6ec58daa3daeb73d073d",
+      "normalizedFixtureSha256": "8547e2b06be1aea252e4e8a684eddfb0210bf21e7304a8bf5d56732350b119d4",
+      "originalBytes": 169398,
+      "normalizedBytes": 169307
+    },
+    {
+      "fixture": "tests/fixtures/regional-20261016/bravo.html",
+      "originalCaptureFiles": [
+        "011-2ce5200ba4.decoded.html"
+      ],
+      "originalSha256": "9639bd93f7e73e75a7cc2f64e9c4fd489e50e55e4fb1525c7d9941f722dcf824",
+      "normalizedFixtureSha256": "531d031329087961957a676e06e126a89ed1001f66e78edf86e2a7116b03e804",
+      "originalBytes": 15892,
+      "normalizedBytes": 17924
+    },
+    {
+      "fixture": "tests/fixtures/regional-20261016/cafe-del-mar.html",
+      "originalCaptureFiles": [
+        "008-746947c568.decoded.html"
+      ],
+      "originalSha256": "59ac9f96ab429d53dad4c29d74e44bdb0e91649b93bd72e834778bf51d7d4070",
+      "normalizedFixtureSha256": "d0b384cdaa2d832809aac74b3da226bed712ac2bd77af97b33078185ee7e7569",
+      "originalBytes": 93480,
+      "normalizedBytes": 91078
+    }
+  ]
+}
