@@ -51,6 +51,12 @@ test('Vintazh never invents a year or accepts conflicting ticket dates', async (
   const element = $('.tn-elem').filter((_, e) => $(e).text().replace(/\s+/g, '').includes('МОСКВАGIPSY')).first();
   element.html(element.html()!.replace('МОСКВА', 'НЕИЗВЕСТНО'));
   await assert.rejects(vintazh(config('vintazh-tour'), $.html(), at), /unverified location/);
+  for (const location of ['КИПР', 'ТУРЦИЯ']) {
+    const unknown = cheerio.load(html);
+    const row = unknown('.tn-elem').filter((_, e) => unknown(e).text().replace(/\s+/g, '').includes('МОСКВАGIPSY')).first();
+    row.html(location);
+    await assert.rejects(vintazh(config('vintazh-tour'), unknown.html(), at), /no verified city/);
+  }
 });
 
 test('Cafe del Mar only accepts zero after its visible explicit empty notice', async t => {

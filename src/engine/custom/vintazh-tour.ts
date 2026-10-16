@@ -99,18 +99,15 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
         venue = loc.text.replace(/кишинев/i, '').replace(/[\s,–-]+/g, ' ').trim();
         country = 'MD';
       } else if (locUpper.includes('КИПР')) {
-        city = 'Кипр';
-        venue = loc.text.replace(/кипр/i, '').replace(/[\s,–-]+/g, ' ').trim();
-        country = 'CY';
+        throw new Error('Vintazh country-only Cyprus location has no verified city');
       } else if (locUpper.includes('ТУРЦИЯ')) {
         country = 'TR';
         const match = loc.text.match(/турция,\s*(kemer|belek|side)?\s*(.*)/i);
-        if (match) {
-          city = match[1] ? match[1].charAt(0).toUpperCase() + match[1].slice(1).toLowerCase() : 'Turkey';
+        if (match?.[1]) {
+          city = match[1].charAt(0).toUpperCase() + match[1].slice(1).toLowerCase();
           venue = match[2].replace(/&amp;/g, '&').trim();
         } else {
-          city = 'Turkey';
-          venue = loc.text.replace(/турция/i, '').replace(/[\s,–-]+/g, ' ').replace(/&amp;/g, '&').trim();
+          throw new Error('Vintazh Turkey location has no verified city');
         }
       } else {
         throw new Error(`Vintazh ticket-dated event has an unverified location: ${loc.text}`);

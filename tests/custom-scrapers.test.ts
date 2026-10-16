@@ -693,12 +693,15 @@ test('custom/vintazh-tour.ts', async (t) => {
         <div class="tn-elem" data-elem-id="date1" data-elem-type="text" data-field-top-value="100" data-field-left-value="100">15.07</div>
         <div class="tn-elem" data-elem-id="loc1" data-elem-type="text" data-field-top-value="120" data-field-left-value="120">МОСКВА, СТАДИУМ</div>
         <div class="tn-elem" data-elem-id="btn1" data-elem-type="button" data-field-top-value="110" data-field-left-value="200">
-          <a href="https://example.com/vintazh-moscow">Tickets</a>
+          <a href="https://example.com/vintazh-moscow-2026-07-15">Tickets</a>
         </div>
         
         <!-- Col B -->
         <div class="tn-elem" data-elem-id="date2" data-elem-type="text" data-field-top-value="200" data-field-left-value="600">20.07</div>
         <div class="tn-elem" data-elem-id="loc2" data-elem-type="text" data-field-top-value="210" data-field-left-value="620">Турция, kemer Club Aqua</div>
+        <div class="tn-elem" data-elem-id="btn2" data-elem-type="button" data-field-top-value="220" data-field-left-value="700">
+          <a href="https://example.com/vintazh-kemer-2026-07-20">Tickets</a>
+        </div>
       </div>
     `;
     const config = dummyConfig('vintazh', 'vintage-play.ru', 'https://vintage-play.ru');
@@ -707,13 +710,14 @@ test('custom/vintazh-tour.ts', async (t) => {
     
     // Check Moscow event
     assert.strictEqual(result[0].artist, 'Винтаж');
-    assert.strictEqual(result[0].date, '15.07');
+    assert.strictEqual(result[0].date, '2026-07-15');
     assert.strictEqual(result[0].city, 'Москва');
     assert.strictEqual(result[0].venue, 'СТАДИУМ');
     assert.strictEqual(result[0].country, 'RU');
-    assert.strictEqual(result[0].ticketUrl, 'https://example.com/vintazh-moscow');
+    assert.strictEqual(result[0].ticketUrl, 'https://example.com/vintazh-moscow-2026-07-15');
 
     // Check Turkey event
+    assert.strictEqual(result[1].date, '2026-07-20');
     assert.strictEqual(result[1].city, 'Kemer');
     assert.strictEqual(result[1].country, 'TR');
   });
