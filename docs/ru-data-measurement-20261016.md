@@ -108,6 +108,8 @@ Manifest JSON (body/savedRaw относительно manifest):
       "body": "captured.html",
       "sha256": "sha256-of-saved-bytes",
       "status": 200,
+      "wireBody": "optional-original-compressed.body",
+      "wireSha256": "optional-sha256-of-original-wire",
       "capturedAt": "actual-capture-time",
       "headers": {"content-type": "text/html"}
     }],
@@ -116,7 +118,7 @@ Manifest JSON (body/savedRaw относительно manifest):
 }
 ```
 
-Здесь только описание структуры, не новые события. Config берётся из каждого worktree; новая отсутствующая в base конфигурация явно `configAbsent`. Никаких invented raw rows или копирования public records в raw. Каждый HTTP URL custom parser должен иметь сохранённый ответ. Wire gzip поддержан по magic bytes, hash всегда по сохранённым bytes. Один response на URL в source; неоднозначные разные ответы одного URL требуют отдельного capture contract. `savedRaw` сравнивается без scrapedAt лишь как аудиторское доказательство; в publish идут только повторно извлечённые реальные строки.
+Здесь только описание структуры, не новые события. Config берётся из каждого worktree; новая отсутствующая в base конфигурация явно `configAbsent`. Никаких invented raw rows или копирования public records в raw. Каждый HTTP URL custom parser должен иметь сохранённый ответ. Wire gzip поддержан по magic bytes. Для Brotli/другого сжатия используйте сохранённый decodedBody с его SHA и отдельно wireBody/wireSha256; оба проверяются. Hash всегда по указанным сохранённым bytes. URL нормализуется стандартным URL.href (в частности root slash), query не отбрасывается. axios responseType:text сохраняет JSON как строку, как настоящий runner; axios redirects требуют всех capture hops. fetch redirect без manual явно отвергается до симуляции результата. Один response на URL в source; неоднозначные разные ответы одного URL требуют отдельного capture contract. `savedRaw` сравнивается без scrapedAt лишь как аудиторское доказательство; в publish идут только повторно извлечённые реальные строки.
 
 ```sh
 node --import tsx src/scripts/ru_data_expansion_replay.ts --base /Users/alex/code/concert-for-travelers-api/.worktrees/verification/concert-ru-measurement-base-6af49b1 --candidate /ABS/PATH/TO/FINAL-CANDIDATE --inputs /ABS/PATH/TO/inputs.json --out /ABS/PATH/TO/NEW-REPLAY-DIRECTORY
@@ -155,12 +157,12 @@ node --import tsx -e "require('node:test').mock.timers.enable({apis:['Date'],now
 
 Лог `base-checks/antoha-frozen-clock.log`. Это time-dependent baseline test, не browser/tool failure; полный исходный suite остаётся FAIL. Никаких ослаблений guards/ожиданий в этом пакете.
 
-Harness smoke: сохранённый repository native excerpt Admiral Fallow (5 raw -> 5 public) на обеих сторонах; **0 added / 0 removed / 0 changed**, 0 network attempts, 0 missing captures. `/Users/alex/agent-hub/concerts-ru-data/evidence/measurement/harness-smoke/inputs.json`, `original-proof.json` и `replay/comparison.json`. Это старый fixture exercise, не свежий RU/regional прирост. Фокусные metric tests 3/3 PASS, tsc и focused eslint PASS. Анталья/Аланья и Бангкок/Пхукет не смешиваются; проверены inclusive boundaries и lastRun freshness.
+Harness smoke: сохранённый repository native excerpt Admiral Fallow (5 raw -> 5 public) на обеих сторонах; **0 added / 0 removed / 0 changed**, 0 network attempts, 0 missing captures. `/Users/alex/agent-hub/concerts-ru-data/evidence/measurement/harness-smoke/inputs.json`, `original-proof.json` и `replay/comparison.json`. Это старый fixture exercise, не свежий RU/regional прирост. Фокусные metric/HTTP tests 4/4 PASS, tsc и focused eslint PASS. Анталья/Аланья и Бангкок/Пхукет не смешиваются; проверены inclusive boundaries и lastRun freshness.
 
 Presence-only local environment: `TICKETMASTER_API_KEY`, `TM_API_KEY`, `BANDSINTOWN_APP_ID` отсутствуют. TM/ BIT live rerun здесь не выполнен. Fallback BIT app id в проекте не означает разрешение broad reuse и не использован. Budgets/cadence не менялись.
 
 ## Остаётся root / следующему запуску
 
-Native captures regional-sources и итоговый candidate code/DB ещё не интегрированы в этот smoke. Root может передать конечный manifest и candidate path для повторного запуска либо выполнить команду сам. Финальный combined raw-to-public replay и проверка новых корректных событий пока **PENDING**, production gain не заявляется.
+Архивный smoke не включает итоговый candidate code/DB. Региональные inputs уже доступны; самостоятельные региональные replay отмечаются ниже по фактическому завершению. Root может передать конечный manifest и candidate path для повторного запуска либо выполнить команду сам. Финальный combined raw-to-public replay и проверка новых корректных событий пока **PENDING**, production gain не заявляется.
 
 Реестр решений: `/Users/alex/agent-hub/concerts-ru-data/questions.md`. Нет push/PR/main merge/deploy, регистрации ключей, outbound сообщений или правок sibling app/DB/config/shared modules.
