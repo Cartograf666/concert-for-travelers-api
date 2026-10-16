@@ -24,8 +24,8 @@ Live index/status получены заново; lastRun `2026-10-16T09:12:22.12
 | antoha-mc-tour | https://antoha-mc.ru/concerts | 0 | Fail-closed parse_error: upcoming section всё ещё содержит 15.10.2026 (кинопоказ). Live концерт не подтверждён. Production guard сохранён; fixture integration test теперь замораживает clock 07.10.2026, matching capture. Stale negative control сохранён. |
 | bravo-tour | http://www.bravogroup.ru/show_all.htm | 2 | Оба поля city/venue брали один div.name: Atmosphere, Москва / Aurora Concert Hall, Санкт-Петербург. Source-only splitter разделяет поля, требует полный год и подтверждённый город. Standard selector не умеет substring одного text node. |
 | vintazh-tour | https://annapletneva.ru | 7 → 2 | DD.MM без года: прошедший Roof Place 30.08.2026 из ticket URL становился 30.08.2027. Теперь год только из primary ticket URL с проверкой DD.MM; пять карточек без такого свидетельства удержаны. Accepted 2 → 1: удалена ложная будущая дата, Moscow 23.10.2026 сохранена. |
-| komnata-kultury-tour | https://komnatakultury.ru | 24 | Native Tilda работает; группа даёт то же расписание, что конфиг вокалиста. Год отсутствует в DD/MM: inferred dates не называются первично подтверждёнными. |
-| zhenya-trofimov-tour | https://komnatakultury.ru | 24 | Тот же HTML/parser, fixed artist Женя Трофимов создаёт вторую атрибуцию календаря группы. Identity/publisher lane оценивает identity/дубли; source lane не выдумывает solo identity. |
+| komnata-kultury-tour | https://komnatakultury.ru | 24 | Native Tilda даёт 24 выступления группы. Follow-up: 11 полных дат из собственных ticket URLs совпадают с текущей нормализацией; ещё 13 без embedded year остаются по общему date contract, без source-wide inference. |
+| zhenya-trofimov-tour | https://komnatakultury.ru | 24 | Удалён в отдельном follow-up: тот же календарь группы ошибочно приписывался сольному артисту. Source-only retirement исключает 24 ложные строки из active cache; approved artist и targets сохранены. |
 
 ## Ticketmaster TR/AE
 
@@ -65,3 +65,20 @@ b2band.com/robots.txt: HTTP404 с Next.js HTML, не robots policy. b2band.com/r
 | https://tix.bi2.band/ | native HTTP200, original HTML SHA256 `0aa36abb009f97a6d2e66fe81425bc0e10b8175c7c4d6ec58daa3daeb73d073d` | 7 ordinary concerts / 28 Meet & Greet / 1 certificate. Passive page scripts не исполнялись. |
 | https://tix.bi2.band/promoter/privacy-policy/link/bi2?widget=true&modal_widget=true | native HTTP200, SHA256 `ca0439bfa3c70737291e80cd46ea4479279d62fe40a638944667f62aaf32bdda` | Privacy data policy, automated-collection запрет не обнаружен; общая reuse licence не установлена. |
 | https://b2band.com/refund-policy | official web reader, snapshot indexed last month | Условия возвратов; не свежий raw capture, не лицензия каталога. |
+
+
+## Follow-up: устранение ложной solo attribution Комнаты культуры
+
+Дополнительный пакет после `04d5892`; предыдущие коммиты не изменены. Первоначальная передача вопроса атрибуции identity/publisher lane была ошибочной: это ответственность source lane. Текущие выводы заменяют ту часть первого отчёта.
+
+Сохранённый original `014-367a410b85.decoded.html` (URL https://komnatakultury.ru, native capture 16.10.2026; SHA в исходном http-manifest.json) содержит title «Комната культуры», h1/h2 «Официальный сайт Группа Комната Культуры», билеты `gruppa-komnata-kultury`. Сольный bill не найден. Два прежних конфига использовали один календарь и parser; единственная подмена artistNameFallback давала 24 ложные записи «Женя Трофимов», которые действительно проходили текущий whitelist.
+
+Удалён только `scrapers/artists/zhenya-trofimov-tour.json`. Канонический `komnata-kultury-tour` и его 24 native rows сохранены побайтно по extraction output; parser остаётся общим legacy implementation, active solo-конфига больше нет. DB/targets, runner/matcher/schema не менялись. В тестах archived config воспроизводит исходный дефект; в production он не загружается.
+
+Проверен реальный consumer path из run.ts: saveCache → loadCache → filterArtistCacheForActiveConfigs с настоящим каталогом scrapers/artists → processConcerts. Старые 24 ложных solo rows остаются в сохранённых cache bytes как orphan, но отсутствуют в active view и output; 24 canonical group rows и active peer Браво сохраняются. Это проверка на seeded cache из фактического native output, не утверждение об очистке недоступного production cache. Физическое удаление старого cache не требуется для исключения из публикации.
+
+В native ticket URLs проверены 10 base64 session payloads widget.afisha.yandex.ru с epoch milliseconds и 1 campaign slug Ярославля DDMMYYYY. Все 11 дают тот же YYYY-MM-DD, что текущий parseDate на capture clock. Неверного года на этих строках нет; production date extraction не менялась. Для ещё 13 embedded year отсутствует: источник-wide год не переносился, seller checkout не запрашивался.
+
+Focused/cache/custom suite 78/78, TypeScript и focused lint pass. Full combined suite оставлена root по follow-up brief. Новый source-only same-input replay: 110 → 86 raw, 58 → 34 pipeline accepted; ровно 24 удалённых строки «Женя Трофимов», 0 добавлений, все 24 group rows и остальные source rows неизменны. Это delta относительно первого пакета с исходной DB; итоговый publisher с объединённой identity DB проверяет measurement lane.
+
+Точный row inventory, year witnesses/13 оставшихся rows, seeded persisted/active cache и replay outputs: `/Users/alex/agent-hub/concerts-ru-data/evidence/sources/regional-sources/komnata-followup/` (delta.json, cache-seeded-from-native.json, active-cache.json, candidate-native.json, before-processed.json, candidate-processed.json, replay.ts). New network requests: 0.
