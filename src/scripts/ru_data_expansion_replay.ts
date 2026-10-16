@@ -13,6 +13,7 @@ type Row = Record<string, any>;
 interface ResponseInput {
   url: string; body: string; sha256: string; status: number;
   capturedAt: string; headers?: Record<string, string>;
+  wireBody?: string; wireSha256?: string;
 }
 interface SourceInput { configPath: string; responses: ResponseInput[]; savedRaw?: string }
 interface Inputs { clock: string; label: string; sources: SourceInput[] }
@@ -116,7 +117,8 @@ async function worker(root: string, inputFile: string, out: string) {
     const found = available.get(new URL(url).href);
     if (!found) { missingCaptures.push({ sourceIndex, url }); throw new Error(`No captured response for ${url}`); }
     const { entry, bytes } = found;
-    reads.push({ sourceIndex, url, body: entry.body, sha256: entry.sha256, status: entry.status });
+    reads.push({ sourceIndex, url, body: entry.body, sha256: entry.sha256, status: entry.status,
+      wireBody: entry.wireBody, wireSha256: entry.wireSha256 });
     return { entry, bytes, text: decodeBody(bytes, 'text') as string };
   };
   axios.get = async (url: string, options: Row = {}) => {
@@ -141,7 +143,8 @@ async function worker(root: string, inputFile: string, out: string) {
     assert.ok(!init?.method || init.method === 'GET', 'Replay only supports captured GET');
     const url = typeof input === 'string' ? input : input instanceof URL ? input.href : input.url;
     const { entry, text } = await respond(url);
-    return new Response(text, { status: entry.status, headers: Object.fromEntries(Object.entries(entry.headers ?? {}).filter(([k]) => !['content-encoding', 'content-length'].includes(k.toLowerCase()))) });
+    assert.ok(![301, 302, 303, 307, 308].includes(entry.status) || init?.redirect === 'manual', 'fetch redirect replay requires explicit captured redirect-chain support');
+    return new Response([204, 205, 304].includes(entry.status) ? null : text, { status: entry.status, headers: Object.fromEntries(Object.entries(entry.headers ?? {}).filter(([k]) => !['content-encoding', 'content-length'].includes(k.toLowerCase()))) });
   };
   const fromRoot = (relative: string) => import(pathToFileURL(path.join(root, relative)).href);
   const { runScraper, scraperCacheFingerprint } = await fromRoot('src/engine/runner.ts');
@@ -156,6 +159,9 @@ async function worker(root: string, inputFile: string, out: string) {
       assert.ok(entry.capturedAt && /^https?:\/\//.test(entry.url));
       const bytes = await fs.readFile(path.resolve(path.dirname(inputFile), entry.body));
       assert.equal(hash(bytes), entry.sha256, `Input changed: ${entry.body}`);
+      if (entry.wireBody) {
+        assert.equal(hash(await fs.readFile(path.resolve(path.dirname(inputFile), entry.wireBody))), entry.wireSha256, `Wire input changed: ${entry.wireBody}`);
+      }
       const urlKey = new URL(entry.url).href;
       assert.ok(!available.has(urlKey), 'One immutable response per URL per source required');
       available.set(urlKey, { entry, bytes });
