@@ -1,0 +1,14 @@
+{
+  "id": "bi2-tour",
+  "domain": "tix.bi2.band",
+  "url": "https://tix.bi2.band/",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": ".events-listing__item",
+    "artistNameFallback": "Би-2",
+    "date": ".event-meta__date",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "RU"
+  }
+}

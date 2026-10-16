@@ -7,6 +7,7 @@ import { ScraperConfigSchema } from '../src/schemas/config.js';
 import { runScraper } from '../src/engine/runner.js';
 import { scrape as bravo } from '../src/engine/custom/bravo-tour.js';
 import { scrape as vintazh } from '../src/engine/custom/vintazh-tour.js';
+import { resetLlmFallbackBudget } from '../src/engine/llm_extraction_fallback.js';
 import { processConcerts } from '../src/pipeline/process.js';
 
 const at = '2026-10-16T18:55:11.000Z';
@@ -50,4 +51,20 @@ test('Vintazh never invents a year or accepts conflicting ticket dates', async (
   const element = $('.tn-elem').filter((_, e) => $(e).text().replace(/\s+/g, '').includes('МОСКВАGIPSY')).first();
   element.html(element.html()!.replace('МОСКВА', 'НЕИЗВЕСТНО'));
   await assert.rejects(vintazh(config('vintazh-tour'), $.html(), at), /unverified location/);
+});
+
+test('Cafe del Mar only accepts zero after its visible explicit empty notice', async t => {
+  const cafe = ScraperConfigSchema.parse(JSON.parse(readFileSync('scrapers/cafe-del-mar-bali.json', 'utf8')));
+  let body = fixture('cafe-del-mar');
+  t.mock.method(axios, 'get', async () => ({ status: 200, data: body, headers: {} }));
+  resetLlmFallbackBudget(0);
+  t.after(() => resetLlmFallbackBudget());
+  const result = await runScraper(cafe);
+  assert.equal(result.success, true);
+  assert.equal(result.reason, 'empty_schedule');
+  assert.deepEqual(result.concerts, []);
+  body = '<html><body>Calendar markup changed</body></html>';
+  const changed = await runScraper(cafe);
+  assert.equal(changed.success, false);
+  assert.equal(changed.concerts.length, 0);
 });
