@@ -206,3 +206,8 @@ node --import tsx src/scripts/ru_data_expansion_replay.ts --base /Users/alex/cod
 ```
 
 Для final replay root повторяет команду с новым пустым out, окончательным integration worktree и manifest, дополненным Tomsarkgh captures. Harness package завершён; финальные same-input интеграция/spot-check/gates остаются root-owned, production gain не заявлен.
+
+
+Следующая авторитетная граница из inbox hub 22:09: identity `e1f4e0c` уже интегрирована в root; **final** candidate только integration worktree после regional+Tomsarkgh composition. Final clock должен быть не раньше последнего source capture; ранний `2026-10-16T00:00:00Z` выше — явно искусственный benchmark clock, не утверждение, что извлечение произошло до реального GET. Для day14–90 используйте anchor-date 2026-10-16; в текущем task final clock остаётся на этом UTC дне.
+
+В source-only replay Би-2 ещё получил из старой реальной DB `artistWebsite/ticketUrl=https://bdva.ru/`, MBID отсутствует. Это дополнительная причина не объявлять эти строки финально корректными до integrated identity replay. Исходные source URLs сохранены в raw/provenance, official URL вручную не сплайсился.
