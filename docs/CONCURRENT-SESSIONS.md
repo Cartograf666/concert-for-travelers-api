@@ -14,6 +14,14 @@ suspect another session might be active.
 
 ## Recently active
 
+- 2026-10-16: Delamain `concerts-ru-data`, integration branch
+  `agent/concerts-ru-data-20261016` from exact local main `6af49b1`.
+  Separate worktrees own RU artist identities/targets, regional source configs,
+  source-rights research and reproducible publication measurement. Hub owns
+  composition and `docs/ru-data-expansion-20261016.md`. `BACKLOG.md`, main,
+  sibling apps and old worktrees are protected. Local commits only; Claude
+  reviews the result, Alex decides publication and access-request sending.
+
 - 2026-09-28: Codex country-source recovery is isolated in
   `codex/country-sources-recovery-20260928`, based on `8fc4b6b`. Root owns
   Steve Cardenas and integration; separate writers own Andrea Motis and
