@@ -89,7 +89,7 @@ Actual bytes, URL, capturedAt, headers, hash: `/Users/alex/agent-hub/concerts-ru
 node --import tsx src/scripts/ru_data_expansion_replay.ts --live /Users/alex/agent-hub/concerts-ru-data/evidence/measurement/live --out /Users/alex/agent-hub/concerts-ru-data/evidence/measurement/live-analysis
 ```
 
-Скрипт проверяет hashes исходных bytes и index.stats.totalConcerts, сохраняет `live-measurement.json`. Этот режим offline. Live GET был отдельным read-only capture; повторение анализа не получает меняющийся live повторно.
+Скрипт проверяет hashes исходных bytes и index.stats.totalConcerts, сохраняет `live-measurement.json`. Этот режим offline. Live GET был отдельным read-only capture; повторение анализа не получает меняющийся live повторно. Эквивалент исходного capture-script сохранён как `evidence/measurement/capture_live.py`; для нового снимка `python3 /Users/alex/agent-hub/concerts-ru-data/evidence/measurement/capture_live.py --out /ABS/NEW/DIRECTORY`. Он никогда не перезаписывает baseline. После сохранения этот helper не запускался повторно.
 
 ## Replay: входы, путь и границы доказательства
 
@@ -166,3 +166,43 @@ Presence-only local environment: `TICKETMASTER_API_KEY`, `TM_API_KEY`, `BANDSINT
 Архивный smoke не включает итоговый candidate code/DB. Региональные inputs уже доступны; самостоятельные региональные replay отмечаются ниже по фактическому завершению. Root может передать конечный manifest и candidate path для повторного запуска либо выполнить команду сам. Финальный combined raw-to-public replay и проверка новых корректных событий пока **PENDING**, production gain не заявляется.
 
 Реестр решений: `/Users/alex/agent-hub/concerts-ru-data/questions.md`. Нет push/PR/main merge/deploy, регистрации ключей, outbound сообщений или правок sibling app/DB/config/shared modules.
+
+
+## Реальный initial existing-cohort replay
+
+`evidence/measurement/regional-decoded-replay/comparison.json`: 11 существующих конфигов; base и код до source-изменений **108 raw → 52 published**, **0 added / 0 removed / 0 changed**. Все сохранённые observed raw совпали с повторным извлечением, кроме намеренно frozen scrapedAt. Обе стороны имеют 0 network attempts и 0 missingCaptures, 11 captured HTTP reads. Отказы: 43 notApproved, 13 pastDate; отдельный Antoha source parse failure сохранён. Public: RU48, KZ4; в окне RU24/KZ4, все свежие по frozen clock. Это затронутая когорта, не полный каталог и не новый gain.
+
+Manifest `evidence/measurement/regional-inputs/inputs-decoded.json` с отдельными wire/decoded SHA. UOB исключён в `excluded-sources.json`: initial301 есть, terminal redirect/timeout body отсутствует. TM/BIT HTTP inputs отсутствуют; ключи не создавались, fallback id не использовался.
+
+Первый wire-only прогон `regional-initial-replay` дал 96 raw/52 public из-за попытки читать Brotli Fabrika как текст. Он сохранён для аудита и **заменён** decoded прогоном: decoded hash совпал с реальным Brotli decompression wire. Это defect harness capture boundary, не новый дефект сайта/selector. Никакие raw строки не редактировались ради parity.
+
+
+## Реальный source-candidate replay (до final identity/AM composition)
+
+`evidence/measurement/regional-source-candidate-replay/comparison.json`, exact base `6af49b13628cd0eeb728f16d62bdaaa17a94e069`, actual regional candidate **`04d58929fbc6d3d488b1d712d1e3046cb06050b0`**. На обеих сторонах реальная approved DB по 63 390 записей, shard/code/config hashes в identity-before/after; DB не подменялась. Input manifest `regional-inputs/inputs-regional-candidate.json`, clock `2026-10-16T00:00:00.000Z`, 12 configs (Bi2 отсутствует на base). На обеих сторонах 0 network attempts, 0 missing captures; Antoha sourceFailed явно сохранён.
+
+**108 raw / 52 public → 110 raw / 58 public**. По настоящему ключу pipeline: 9 added / 3 removed / 0 changed. Из added семь новых дат Би-2, две — исправления города/площадки Браво с соответствующими двумя removed. Третья removed — ложная Винтаж 2027-08-30. Изменения представлены полными записями, без сплайсинга metadata.
+
+**Семь новых дат Би-2 находятся ВНЕ корзины 16 стран.** Внутри 16 стран 52 → 51: RU48 → RU47 (удаление ложной строки), KZ4 → KZ4; окно28 →28, свежие28 →28. Это не рост целевого странового покрытия. Улучшена корректность двух городских строк RU; Belgrade/Hangar и Limassol/Etko в capture — package-only и не опубликованы parser, source worker удержал их без обычного concert ticket. Проверка этих двух потерь остаётся отдельным source/owner gap, не выдумываем даты.
+
+| Added artist | Date | Country | City | Venue | Вид изменения |
+|---|---|---|---|---|---|
+| Би-2 | 2026-10-16 | BG | Varna | Palace of Culture and Sports | новая native дата, требуется source spot-check |
+| Би-2 | 2026-10-18 | BG | Sofia | Joy Station | новая native дата, требуется source spot-check |
+| Би-2 | 2026-10-22 | HU | Budapest | Barba Negra | новая native дата, требуется source spot-check |
+| Би-2 | 2026-10-26 | SI | Ljubljana | Cvetlicarna | новая native дата, требуется source spot-check |
+| Би-2 | 2026-10-28 | HR | Zagreb | Tvornica Kulture | новая native дата, требуется source spot-check |
+| Би-2 | 2026-11-15 | CH | Geneva | Alhambra | новая native дата, требуется source spot-check |
+| Би-2 | 2026-11-17 | DE | Ludwigsburg | MHP Arena | новая native дата, требуется source spot-check |
+| Браво | 2026-11-21 | RU | Москва | Atmosphere | location repair, old key removed |
+| Браво | 2026-11-28 | RU | Санкт-Петербург | Aurora Concert Hall | location repair, old key removed |
+
+`new-events-review.json` содержит все added целые записи и raw/HTTP provenance с source URLs; `delta.json` сохраняет все removed. Называть механическую публикацию owner acceptance или confirmed ticket availability нельзя. Финальная artist DB и Tomsarkgh AM pilot здесь ещё не интегрированы.
+
+Точная выполненная команда (из measurement worktree):
+
+```sh
+node --import tsx src/scripts/ru_data_expansion_replay.ts --base /Users/alex/code/concert-for-travelers-api/.worktrees/verification/concert-ru-measurement-base-6af49b1 --candidate /Users/alex/code/concert-for-travelers-api/.worktrees/agent/concerts-regional-sources-20261016 --inputs /Users/alex/agent-hub/concerts-ru-data/evidence/measurement/regional-inputs/inputs-regional-candidate.json --out /Users/alex/agent-hub/concerts-ru-data/evidence/measurement/regional-source-candidate-replay
+```
+
+Для final replay root повторяет команду с новым пустым out, окончательным integration worktree и manifest, дополненным Tomsarkgh captures. Harness package завершён; финальные same-input интеграция/spot-check/gates остаются root-owned, production gain не заявлен.
