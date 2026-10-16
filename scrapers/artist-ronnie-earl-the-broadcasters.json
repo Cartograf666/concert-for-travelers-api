@@ -1,0 +1,17 @@
+{
+  "id": "artist-ronnie-earl-the-broadcasters",
+  "domain": "www.ronnieearl.com",
+  "url": "https://www.ronnieearl.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-block",
+    "artistNameFallback": "Ronnie Earl & The Broadcasters",
+    "date": "div.event-date",
+    "ticketUrl": "div.event-ticket a",
+    "venue": "div.event-venue",
+    "city": "div.event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

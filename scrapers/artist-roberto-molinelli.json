@@ -1,0 +1,16 @@
+{
+  "id": "artist-roberto-molinelli",
+  "domain": "www.robertomolinelli.com",
+  "url": "http://www.robertomolinelli.com/upcoming-concerts/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-item",
+    "artistNameFallback": "Roberto Molinelli",
+    "date": "div.event-date",
+    "ticketUrl": "a.ticket-button",
+    "city": "div.event-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "IT"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "artist-robbie-krieger",
+  "domain": "www.robbykrieger.com",
+  "url": "https://www.robbykrieger.com/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".sqs-block-content ul li",
+    "artistNameFallback": "Robby Krieger",
+    "date": ".date-display",
+    "ticketUrl": "a[href*='ticket']",
+    "venue": ".event-venue",
+    "city": ".event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
