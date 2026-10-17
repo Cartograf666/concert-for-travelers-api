@@ -41460,7 +41460,35 @@
       "vk": null
     },
     "enrichedAt": "2026-10-17T11:02:55.918Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "Natalia Przybysz",
+        "slug": "natalia-przybysz",
+        "match": 0.663542
+      },
+      {
+        "name": "Mela Koteluk",
+        "slug": "mela-koteluk",
+        "match": 0.655431
+      },
+      {
+        "name": "Artur Rojek",
+        "slug": "artur-rojek",
+        "match": 0.527744
+      },
+      {
+        "name": "Voo Voo",
+        "slug": "voo-voo",
+        "match": 0.499255
+      },
+      {
+        "name": "O.S.T.R.",
+        "slug": "ostr",
+        "match": 0.404261
+      }
+    ],
+    "similarEnrichedAt": "2026-10-17T11:11:52.770Z"
   },
   {
     "name": "Fit for a King",
@@ -204296,7 +204324,50 @@
     "enrichedAt": "2026-10-17T09:13:31.153Z",
     "enrichedBy": "wikidata-bulk",
     "mbidBackfillTriedAt": "2026-10-17T09:13:40.448Z",
-    "imageFallbackTriedAt": "2026-10-17T10:28:43.317Z"
+    "imageFallbackTriedAt": "2026-10-17T10:28:43.317Z",
+    "similarArtists": [
+      {
+        "name": "Alvaro Diaz",
+        "slug": "alvaro-diaz",
+        "match": 1
+      },
+      {
+        "name": "Latin mafia",
+        "slug": "latin-mafia",
+        "match": 0.933812
+      },
+      {
+        "name": "Mora",
+        "slug": "mora",
+        "match": 0.397475
+      },
+      {
+        "name": "Rels B",
+        "slug": "rels-b",
+        "match": 0.3924
+      },
+      {
+        "name": "Tainy",
+        "slug": "tainy",
+        "match": 0.340311
+      },
+      {
+        "name": "Dillom",
+        "slug": "dillom",
+        "match": 0.312155
+      },
+      {
+        "name": "JHAYCO",
+        "slug": "jhayco",
+        "match": 0.300576
+      },
+      {
+        "name": "Milo j",
+        "slug": "milo-j",
+        "match": 0.195773
+      }
+    ],
+    "similarEnrichedAt": "2026-10-17T11:11:53.160Z"
   },
   {
     "name": "NSYNC",
@@ -234691,7 +234762,30 @@
     "imageFallbackTriedAt": "2026-10-17T10:28:43.720Z",
     "mbid": "f06b96ed-0e3f-4182-ab26-df6748cba5f3",
     "enrichedAt": "2026-10-17T11:02:59.604Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "Natanael Cano",
+        "slug": "natanael-cano",
+        "match": 0.886669
+      },
+      {
+        "name": "Junior H",
+        "slug": "junior-h",
+        "match": 0.713412
+      },
+      {
+        "name": "Fuerza Regida",
+        "slug": "fuerza-regida",
+        "match": 0.682504
+      },
+      {
+        "name": "Cartel de Santa",
+        "slug": "cartel-de-santa",
+        "match": 0.401857
+      }
+    ],
+    "similarEnrichedAt": "2026-10-17T11:11:53.758Z"
   },
   {
     "name": "Victor Merzhanov",

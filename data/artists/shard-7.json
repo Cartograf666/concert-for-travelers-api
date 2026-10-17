@@ -21405,7 +21405,25 @@
       "vk": null
     },
     "enrichedAt": "2026-10-17T11:03:03.118Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "BlvckHeart",
+        "slug": "blvckheart",
+        "match": 1
+      },
+      {
+        "name": "Maiyarap",
+        "slug": "maiyarap",
+        "match": 0.933249
+      },
+      {
+        "name": "Yented",
+        "slug": "yented",
+        "match": 0.754022
+      }
+    ],
+    "similarEnrichedAt": "2026-10-17T11:11:54.124Z"
   },
   {
     "name": "Gavriel Lipkind",
