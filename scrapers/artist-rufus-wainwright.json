@@ -1,0 +1,17 @@
+{
+  "id": "artist-rufus-wainwright",
+  "domain": "rufuswainwright.com",
+  "url": "https://rufuswainwright.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour-item",
+    "artistNameFallback": "Rufus Wainwright",
+    "date": ".date",
+    "ticketUrl": "a.ticket-link",
+    "venue": ".venue",
+    "city": ".city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

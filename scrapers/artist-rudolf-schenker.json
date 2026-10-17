@@ -1,0 +1,17 @@
+{
+  "id": "artist-rudolf-schenker",
+  "domain": "www.the-scorpions.com",
+  "url": "https://www.the-scorpions.com/tourdates",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.avada-column-wrapper.fusion-layout-column.fusion_builder_column_2_5.fusion-builder-column-last",
+    "artistNameFallback": "Scorpions",
+    "date": ".fusion-text > div:nth-child(1)",
+    "ticketUrl": ".button.fusion-button.button-flat.button-round.button-small",
+    "venue": ".fusion-text > div:nth-child(2)",
+    "city": ".fusion-text > div:nth-child(3)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}
