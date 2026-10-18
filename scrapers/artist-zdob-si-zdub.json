@@ -1,0 +1,17 @@
+{
+  "id": "artist-zdob-si-zdub",
+  "domain": "zdou-si-zdub.com",
+  "url": "https://zdou-si-zdub.com/concerts/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-item",
+    "artistNameFallback": "Zdob Si Zdub",
+    "date": "div.event-date",
+    "ticketUrl": "a.event-tickets",
+    "venue": "div.event-venue",
+    "city": "div.event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "RO"
+  }
+}
