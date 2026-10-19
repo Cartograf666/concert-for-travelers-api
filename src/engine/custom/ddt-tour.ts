@@ -1,6 +1,8 @@
 import * as cheerio from 'cheerio';
 import type { ScraperConfig } from '../../schemas/config.js';
-import type { Concert } from '../../schemas/concert.js';
+import type { RawConcert } from '../../schemas/concert.js';
+
+import { normalizeCountry } from '../../pipeline/process.js';
 
 const PAGE = 'https://biletkartina.tv/ru/event/Gruppa_DDT_v_Germanii';
 const TITLE = 'Группа ДДТ в Германии';
@@ -10,7 +12,7 @@ const clean = (s: string) => s.replace(/\s+/g, ' ').trim();
 // DDT tour links to this *band* calendar. Generic JSON-LD prefers performer and
 // would publish a different artist. Selectors cannot read its JSON array.
 // No fallback country/date/place is used; unknown inventory fails closed.
-export async function scrape(config: ScraperConfig, html: string, scrapedAt: string): Promise<Partial<Concert>[]> {
+export async function scrape(config: ScraperConfig, html: string, scrapedAt: string): Promise<RawConcert[]> {
   const $ = cheerio.load(html);
   if (config.url !== PAGE || config.domain !== 'biletkartina.tv' ||
       clean($('h1').text()) !== TITLE) throw new Error('DDT calendar identity is missing');
@@ -22,7 +24,7 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
   });
   const events = nodes.filter(n => n['@type'] === 'MusicEvent');
   if (!events.length) throw new Error('DDT concert type is missing');
-  const concerts: Partial<Concert>[] = [];
+  const concerts: RawConcert[] = [];
   for (const event of events) {
     if (event.name !== TITLE || event.performer?.name !== 'Yuri Shevchuk') {
       throw new Error('DDT event identity is unverified');
@@ -43,9 +45,8 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
     const venue = event.location?.name;
     const address = event.location?.address;
     const city = address?.addressLocality;
-    const country = address?.addressCountry;
-    if (typeof venue !== 'string' || !venue.trim() || typeof city !== 'string' || !city.trim() || country !== 'DE') {
-      throw new Error('DDT concert place or explicit country is missing');
+    if (typeof venue !== 'string' || !venue.trim() || typeof city !== 'string' || !city.trim()) {
+      throw new Error('DDT concert place is missing');
     }
     const url = event.url;
     if (typeof url !== 'string' || !url.startsWith(PAGE + '/') ||
@@ -53,9 +54,18 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
         event.offers?.url !== url || !url.endsWith('-' + date)) {
       throw new Error('DDT source event URL is unverified');
     }
+    // Only the card's explicit country is evidence. normalizeCountry preserves
+    // unknown names as long strings, so require a verified two-letter result.
+    const rawCountry = address?.addressCountry;
+    const labels: unknown[] = typeof rawCountry === 'string' ? [rawCountry]
+      : rawCountry?.['@type'] === 'Country'
+        ? [rawCountry.name, rawCountry.identifier].filter(value => value !== undefined) : [];
+    const codes = labels.map(label => typeof label === 'string' ? normalizeCountry(label) : '');
+    if (!codes.length || codes.some(code => !/^[A-Z]{2}$/.test(code)) || new Set(codes).size !== 1) continue;
+    const country = codes[0];
     if (date < scrapedAt.slice(0, 10)) continue;
     concerts.push({ artist: 'ДДТ', date, startTime: stamp.slice(11, 16), venue: clean(venue),
-      city: clean(city), country, ticketUrl: url, originalSource: config.domain, scrapedAt });
+      city: clean(city), country, ticketUrl: url, sourceEventUrl: url, originalSource: config.domain, scrapedAt });
   }
   return concerts;
 }
