@@ -16,7 +16,24 @@ interface ResponseInput {
   wireBody?: string; wireSha256?: string;
 }
 interface SourceInput { configPath: string; responses: ResponseInput[]; savedRaw?: string }
-interface Inputs { clock: string; label: string; sources: SourceInput[] }
+interface Inputs {
+  clock: string; label: string; sources: SourceInput[];
+  baseRevision?: string; candidateRevision?: string;
+}
+export function validateReplayInputs(inputs: Inputs) {
+  assert.ok(inputs.label && inputs.sources.length, 'Nonempty labelled captured cohort required');
+  const clock = Date.parse(inputs.clock);
+  assert.ok(Number.isFinite(clock), 'Valid frozen clock required');
+  for (const revision of [inputs.baseRevision, inputs.candidateRevision]) {
+    if (revision !== undefined) assert.match(revision, /^[a-f0-9]{40}$/, 'Exact full revision required');
+  }
+  for (const source of inputs.sources) for (const response of source.responses) {
+    assert.ok(Number.isFinite(Date.parse(response.capturedAt)) && Date.parse(response.capturedAt) <= clock,
+      `Frozen clock must not precede capture: ${response.url}`);
+  }
+  // Existing first-slice manifests keep their immutable base contract.
+  return inputs.baseRevision ?? '6af49b13628cd0eeb728f16d62bdaaa17a94e069';
+}
 const COUNTRIES = 'TR RU TH RS ID AE AM CN KZ VN GE EG CY BY UZ ME'.split(' ');
 // Exact aliases only. District/island/metro membership is deliberately not inferred.
 const CITY_ALIASES: Record<string, Record<string, string[]>> = {
@@ -88,7 +105,8 @@ export function measure(rows: Row[], lastRun: string, clock: string) {
     unmatchedCityStrings: Object.fromEntries(COUNTRIES.map(c => [c, [...new Set(basket.filter(r => r.country === c && !Object.values(CITY_ALIASES[c]).flat().includes(r.city)).map(r => r.city))].sort()])) };
 }
 async function treeIdentity(root: string, sources: SourceInput[]) {
-  const files = [...git(root, ['ls-files', 'src', 'data/artists']).split('\n'), ...sources.map(s => s.configPath)].filter(Boolean);
+  const files = [...git(root, ['ls-files', 'src', 'scrapers', 'data/artists', 'package.json', 'package-lock.json']).split('\n'),
+    ...sources.map(s => s.configPath), 'reports/geocode-cache.json', 'reports/geocode-cache-backup.json'].filter(Boolean);
   const entries = [];
   for (const name of [...new Set(files)].sort()) {
     try { entries.push({ path: name, sha256: hash(await fs.readFile(path.join(root, name))) }); }
@@ -98,8 +116,7 @@ async function treeIdentity(root: string, sources: SourceInput[]) {
 }
 async function worker(root: string, inputFile: string, out: string) {
   const inputs: Inputs = await readJson(inputFile);
-  assert.ok(inputs.label && inputs.sources.length, 'Nonempty labelled captured cohort required');
-  assert.ok(Number.isFinite(Date.parse(inputs.clock)));
+  validateReplayInputs(inputs);
   const before = await treeIdentity(root, inputs.sources);
   await write(path.join(out, 'identity-before.json'), before);
   mock.timers.enable({ apis: ['Date'], now: Date.parse(inputs.clock) });
@@ -150,6 +167,7 @@ async function worker(root: string, inputFile: string, out: string) {
   const { runScraper, scraperCacheFingerprint } = await fromRoot('src/engine/runner.ts');
   const { processConcerts, slugify } = await fromRoot('src/pipeline/process.ts');
   const { publishConcerts } = await fromRoot('src/generator/publish.ts');
+  const { geocodeConcerts, loadGeocodeCacheWithBackup } = await fromRoot('src/pipeline/geocode.ts');
   const { ScraperConfigSchema } = await fromRoot('src/schemas/config.ts');
   const { buildOfficialArtistContext } = await fromRoot('src/engine/official_artist_sources.ts');
   const raw: Row[] = [], origins: Row[] = [], results: Row[] = [], cache: Row = {};
@@ -202,8 +220,14 @@ async function worker(root: string, inputFile: string, out: string) {
   }
   const context = await buildOfficialArtistContext(cache, path.join(root, 'scrapers/artists'), Date.parse(inputs.clock));
   const db = path.join(root, 'data/artists');
+  // Match run.ts's real cache-only geocode stage. Missing caches are an observed
+  // absence, never synthetic coordinates. No cache or artist DB is written.
+  const geocodeCache = await loadGeocodeCacheWithBackup(path.join(root, 'reports/geocode-cache.json'), path.join(root, 'reports/geocode-cache-backup.json'));
+  const geocodeCacheSha256 = hash(canonical(geocodeCache));
   let diagnostics: unknown, dbCount = 0;
   const processed = await processConcerts(raw, db, inputs.clock, (artists: unknown[]) => { dbCount = artists.length; }, (d: unknown) => { diagnostics = d; }, context);
+  const geocodeStats = await geocodeConcerts(processed, { cache: structuredClone(geocodeCache), maxPerRun: 0 });
+  assert.equal(geocodeStats.attempted, 0, 'Geocode must remain cache-only');
   assert.ok(dbCount > 0, 'Actual approved DB must be readable and nonempty');
   await write(path.join(out, 'raw.json'), raw);
   await write(path.join(out, 'processing.json'), diagnostics);
@@ -216,6 +240,7 @@ async function worker(root: string, inputFile: string, out: string) {
   for (const [i, row] of raw.entries()) {
     let singleDiagnostics: any;
     const normalized = await processConcerts([row], db, inputs.clock, undefined, (d: unknown) => { singleDiagnostics = d; }, context);
+    await geocodeConcerts(normalized, { cache: structuredClone(geocodeCache), maxPerRun: 0 });
     const normalizedRow = normalized[0];
     attribution.push({ ...origins[i], raw: row, normalized: normalizedRow ?? null,
       state: !normalizedRow ? 'rejected' : publishedHashes.has(hash(canonical(normalizedRow))) ? 'wholeRecordPublished' : 'dedupLoser',
@@ -226,10 +251,12 @@ async function worker(root: string, inputFile: string, out: string) {
   await write(path.join(out, 'measurement.json'), measure(published, inputs.clock, inputs.clock));
   const after = await treeIdentity(root, inputs.sources);
   assert.equal(before.contentSha256, after.contentSha256, 'DB/code/config changed during replay');
+  assert.equal(before.revision, after.revision, 'Revision changed during replay');
+  assert.equal(before.dirty, after.dirty, 'Working tree changed during replay');
   await write(path.join(out, 'identity-after.json'), after);
   await write(path.join(out, 'summary.json'), { scope: 'affected-cohort-only; no live-full-output or production-gain claim', label: inputs.label,
     clock: inputs.clock, inputSha256: hash(await fs.readFile(inputFile)), revision: before.revision, contentSha256: before.contentSha256,
-    dbCount, rawCount: raw.length, publishedCount: published.length, sources: results, networkAttempts, capturedHttpReads: reads, missingCaptures,
+    dbCount, geocodeCacheSha256, geocodeStats, rawCount: raw.length, publishedCount: published.length, sources: results, networkAttempts, capturedHttpReads: reads, missingCaptures,
     state: networkAttempts.length || missingCaptures.length ? 'incomplete-input-coverage' : results.some(r => r.state === 'sourceFailed') ? 'completed-with-source-failures' : 'replayed',
     exclusions: ['uncaptured providers and existing last-good caches', 'network geocoding/enrichment', 'activity DB writes', 'global publication eligibility/deployment'] });
   assert.equal(networkAttempts.length, 0, 'Unexpected network attempted');
@@ -237,8 +264,11 @@ async function worker(root: string, inputFile: string, out: string) {
   mock.timers.reset();
 }
 async function compare(base: string, candidate: string, inputs: string, out: string) {
-  assert.equal(git(base, ['rev-parse', 'HEAD']), '6af49b13628cd0eeb728f16d62bdaaa17a94e069', 'Immutable exact base required');
+  const sourceInputs: Inputs = await readJson(inputs);
+  assert.equal(git(base, ['rev-parse', 'HEAD']), validateReplayInputs(sourceInputs), 'Immutable exact base required');
+  if (sourceInputs.candidateRevision) assert.equal(git(candidate, ['rev-parse', 'HEAD']), sourceInputs.candidateRevision, 'Exact GO candidate required');
   assert.equal(git(base, ['status', '--porcelain', '--untracked-files=all', '--', 'src', 'scrapers', 'data/artists']), '', 'Base replay inputs must be clean, including untracked files');
+  assert.equal(git(candidate, ['status', '--porcelain', '--untracked-files=all', '--', 'src', 'scrapers', 'data/artists']), '', 'Candidate replay inputs must be clean, including untracked files');
   await fs.mkdir(out, { recursive: true });
   assert.equal((await fs.readdir(out)).length, 0, 'Use a fresh output directory; evidence is never overwritten');
   const inputHash = hash(await fs.readFile(inputs));
@@ -258,7 +288,10 @@ async function compare(base: string, candidate: string, inputs: string, out: str
   const delta = { added: after.filter(r => !old.has(key(r))), removed: before.filter(r => !next.has(key(r))),
     changed: after.filter(r => old.has(key(r)) && canonical(old.get(key(r))) !== canonical(r)).map(r => ({ key: key(r), before: old.get(key(r)), after: r })) };
   await write(path.join(out, 'delta.json'), delta);
-  const sourceInputs: Inputs = await readJson(inputs);
+  const baseSummary = await readJson(path.join(out, 'base/summary.json'));
+  const candidateSummary = await readJson(path.join(out, 'candidate/summary.json'));
+  assert.equal(baseSummary.geocodeCacheSha256, candidateSummary.geocodeCacheSha256, 'Same geocode-cache input required');
+  if (sourceInputs.candidateRevision) assert.equal(candidateSummary.revision, sourceInputs.candidateRevision, 'Candidate changed after GO');
   const candidateProvenance: Row[] = await readJson(path.join(out, 'candidate/row-provenance.json'));
   await write(path.join(out, 'new-events-review.json'), delta.added.map(row => ({ row, correctness: 'owner/source spot-check required; mechanical gain only',
     provenance: candidateProvenance.filter(a => a.state === 'wholeRecordPublished' && canonical(a.normalized) === canonical(row)) })));

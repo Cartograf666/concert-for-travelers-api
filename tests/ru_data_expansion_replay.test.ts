@@ -1,12 +1,31 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { gzipSync } from 'node:zlib';
-import { decodeBody, measure } from '../src/scripts/ru_data_expansion_replay.js';
+import { decodeBody, measure, validateReplayInputs } from '../src/scripts/ru_data_expansion_replay.js';
 
 const clock = '2026-10-16T00:00:00.000Z';
 const lastRun = '2026-10-16T09:12:22.120Z';
 const row = (date: string, city = 'Antalya', country = 'TR', scrapedAt = lastRun) =>
   ({ artist: 'fixture artist', date, city, country, venue: 'fixture venue', scrapedAt });
+
+test('second-slice replay binds exact revisions and accepts real config absence without fabricated responses', () => {
+  const inputs = { clock, label: 'absent source fixture', sources: [{ configPath: 'scrapers/artists/absent-tour.json', responses: [] }],
+    baseRevision: 'a'.repeat(40), candidateRevision: 'b'.repeat(40) };
+  assert.equal(validateReplayInputs(inputs), inputs.baseRevision);
+  assert.throws(() => validateReplayInputs({ ...inputs, baseRevision: 'abcdef0' }), /Exact full revision/);
+  assert.throws(() => validateReplayInputs({ ...inputs, candidateRevision: 'latest' }), /Exact full revision/);
+  const legacy = { clock: inputs.clock, label: inputs.label, sources: inputs.sources };
+  assert.equal(validateReplayInputs(legacy), '6af49b13628cd0eeb728f16d62bdaaa17a94e069');
+});
+
+test('frozen replay clock cannot precede an original capture or silently accept an invalid capture date', () => {
+  const response = { url: 'https://example.com/events', body: 'original.html', sha256: 'fixture', status: 200, capturedAt: clock };
+  const inputs = { clock, label: 'captured source fixture', sources: [{ configPath: 'scrapers/fixture.json', responses: [response] }] };
+  assert.doesNotThrow(() => validateReplayInputs(inputs));
+  for (const capturedAt of ['invalid', '2026-10-16T00:00:00.001Z']) {
+    assert.throws(() => validateReplayInputs({ ...inputs, sources: [{ ...inputs.sources[0], responses: [{ ...response, capturedAt }] }] }), /Frozen clock/);
+  }
+});
 
 test('captured gzip preserves axios responseType text for runner and native JSON for API calls', () => {
   const bytes = gzipSync(Buffer.from('{"events":[]}'));
