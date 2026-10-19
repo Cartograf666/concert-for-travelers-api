@@ -159,6 +159,25 @@ jobs:
             echo "No durable repair state changed."
           fi
 
+      # Mint only after all scraper code and tests have finished. App-created PRs
+      # can start PR Verification without GITHUB_TOKEN's approval gate.
+      - name: Create self-heal App token
+        id: self-heal-app
+        if: steps.check-failures.outputs.has_failures == 'true' && steps.check-repaired.outputs.changed == 'true'
+        continue-on-error: true # App setup is optional; keep shipping repairs without it.
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        with:
+          app-id: ${{ secrets.SELF_HEAL_APP_ID }}
+          private-key: ${{ secrets.SELF_HEAL_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: ${{ github.event.repository.name }}
+          permission-contents: write
+          permission-pull-requests: write
+
+      - name: Warn when self-heal App token is unavailable
+        if: steps.check-failures.outputs.has_failures == 'true' && steps.check-repaired.outputs.changed == 'true' && steps.self-heal-app.outputs.token == ''
+        run: echo "::warning::Self-heal App token unavailable. Falling back to GITHUB_TOKEN; repairs will still ship, but PR Verification may require approval. Configure SELF_HEAL_APP_ID and SELF_HEAL_APP_PRIVATE_KEY to enable the App."
+
       # Open a PR (audit trail + diff visibility) and squash-merge it automatically.
       # Every config in this diff already passed the live verification gate, so
       # holding it for manual review would be the only non-autonomous step in the
@@ -170,6 +189,7 @@ jobs:
         if: steps.check-failures.outputs.has_failures == 'true' && steps.check-repaired.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8
         with:
+          token: ${{ steps.self-heal-app.outputs.token || github.token }}
           commit-message: "auto: self-healed broken scrapers"
           branch: auto/self-heal-${{ github.event.workflow_run.id }}
           delete-branch: true
@@ -199,7 +219,7 @@ jobs:
       - name: Auto-merge repaired-scraper PR
         if: steps.cpr.outputs.pull-request-number != ''
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ steps.self-heal-app.outputs.token || github.token }}
         run: gh pr merge --squash --delete-branch "${{ steps.cpr.outputs.pull-request-number }}"
 
       # A failing healer is itself a silent failure mode — surface it the same way
