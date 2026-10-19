@@ -1280,9 +1280,10 @@ export async function processConcerts(
       verifiedNormalizationOccurrence(raw, validatedConcert);
     const dedupeCity = verifiedEvent ? slugify(verifiedEvent.dedupeCity) : citySlug;
     const locationSuffix = verifiedEvent ? '' : locationDedupeSuffix(validatedConcert);
-    // A shared sentinel cannot prove that previously distinct alias-city
-    // occurrences belong to the same venue. Retain each unknown occurrence.
-    const unknownOccurrence = locationSuffix && isUnknownVenue(validatedConcert.venue) ? `_${processed}` : '';
+    // A shared sentinel cannot prove a common venue. Use the complete public
+    // evidence, whose property order is fixed by Zod, to dedupe identical rows
+    // while retaining distinct coordinates/source metadata as whole records.
+    const unknownOccurrence = locationSuffix && isUnknownVenue(validatedConcert.venue) ? JSON.stringify(validatedConcert) : '';
     const dedupeKey = `${artistSlug}_${validatedConcert.date}_${dedupeCity}${locationSuffix}${unknownOccurrence}`;
     // Authority is tied to the original cached object and the canonical
     // approved artist. A raw flag, copied URL, or fuzzy alias cannot confer it.

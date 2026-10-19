@@ -130,6 +130,36 @@ test('arbitrary approved artist aliases normalize title placeholders without per
   assert.equal(result[0].venue, UNKNOWN_VENUE);
 });
 
+test('identical unknown rows dedupe independently of input order while distinct whole-source evidence survives', async t => {
+  const { db, dir } = await fixture(t);
+  const unknown = row({ city: 'Beograd', country: 'RS', venue: 'NERVY IN BELGRADE', lat: 8, lng: 9 });
+  const reordered = Object.fromEntries(Object.entries(unknown).reverse()) as Concert;
+  const aliasDuplicate = { ...unknown, city: 'Belgrade' };
+  let duplicates = 0;
+  const result = await processConcerts([unknown, structuredClone(unknown), reordered, aliasDuplicate], db, NOW,
+    undefined, report => { duplicates = report.duplicatesMerged; });
+  assert.equal(result.length, 1, 'repeated identical evidence must not manufacture extra published occurrences');
+  assert.equal(duplicates, 3);
+  assert.equal(result[0].venue, UNKNOWN_VENUE);
+  await geocodeConcerts(result, { maxPerRun: 0 });
+  const out = path.join(dir, 'unknown-duplicates');
+  await publishConcerts(result, out);
+  const published = JSON.parse(await fs.readFile(path.join(out, 'concerts.json'), 'utf8'));
+  assert.equal(published.length, 1);
+  const repeated = await processConcerts([...published, ...published], db, NOW);
+  assert.deepEqual(JSON.parse(JSON.stringify(repeated)), published);
+
+  const otherSource = { ...unknown, city: 'Belgrade', originalSource: 'www.bandsintown.com', startTime: '21:00' };
+  for (const input of [[unknown, otherSource, structuredClone(unknown)], [otherSource, unknown, structuredClone(otherSource)]]) {
+    const kept = await processConcerts(input, db, NOW);
+    assert.equal(kept.length, 2, 'distinct source evidence must remain separate complete rows');
+    assert.equal(kept.find(r => r.originalSource === 'bandsintown.com')?.startTime, undefined);
+    assert.equal(kept.find(r => r.originalSource === 'www.bandsintown.com')?.startTime, '21:00');
+    assert.ok(kept.every(r => r.lat === 8 && r.lng === 9));
+    assert.deepEqual(await processConcerts(kept, db, NOW), kept);
+  }
+});
+
 test('existing artist/date/city dedupe remains unchanged outside finite alias groups', async t => {
   const { db } = await fixture(t);
   const result = await processConcerts([row({ city: 'Berlin', country: 'DE', venue: 'Hall A' }),
