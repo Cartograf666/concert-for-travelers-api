@@ -1,0 +1,17 @@
+{
+  "id": "artist-zoo-station",
+  "domain": "zoostationofficial.com",
+  "url": "https://zoostationofficial.com/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-list-item",
+    "artistNameFallback": "Zoo Station",
+    "date": ".event-date",
+    "ticketUrl": ".event-tickets a",
+    "venue": ".event-venue",
+    "city": ".event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}
