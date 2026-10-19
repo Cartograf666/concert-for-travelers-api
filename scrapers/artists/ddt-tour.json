@@ -1,0 +1,14 @@
+{
+  "id": "ddt-tour",
+  "domain": "biletkartina.tv",
+  "url": "https://biletkartina.tv/ru/event/Gruppa_DDT_v_Germanii",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": "script[type=\"application/ld+json\"]",
+    "artistNameFallback": "ДДТ",
+    "date": "startDate",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "DE"
+  }
+}

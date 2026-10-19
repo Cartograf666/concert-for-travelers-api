@@ -1,0 +1,893 @@
+[
+  {
+    "url": "https://www.zivert.com/",
+    "capturedAt": "2026-10-19T07:23:56.315559+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1129)>",
+    "status": null,
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/00f069d89cfd6dda9f.json",
+    "headers": {}
+  },
+  {
+    "url": "https://ddt.ru/",
+    "capturedAt": "2026-10-19T07:19:55.881325+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "06bc3a8f959acb24a0.body",
+    "sha256": "d21abd03ab9183a9e0cd2e436ff32e7ce4cd7cd9a752c6c5ef7d3ff8f8e98d9b",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/06bc3a8f959acb24a0.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:19:55 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Content-Length": "6600",
+      "Last-Modified": "Sun, 05 Apr 2026 23:11:01 GMT"
+    },
+    "fixtureBody": "06bc3a8f959acb24a0.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "085345eca54d2e24d8924413f47dc3e06232a6a268d819ee4752446412d0f85e"
+  },
+  {
+    "url": "https://maxkorzh.com/robots.txt",
+    "capturedAt": "2026-10-19T07:19:44.479900+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "094298ac9f64bf5ce6.body",
+    "sha256": "cd2b0970db788853bb5c439bad8b75c975e3300b704ba376194612f11dfd87bd",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/094298ac9f64bf5ce6.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:19:44 GMT",
+      "Content-Length": "711",
+      "Content-Type": "text/plain; charset=utf-8"
+    },
+    "fixtureBody": "094298ac9f64bf5ce6.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "7ead79f186a85e777bab0d80fd2a4a862f5396cfa348ae8a1dbe3b7060cabcd7"
+  },
+  {
+    "url": "https://oxxxymiron.com/robots.txt",
+    "capturedAt": "2026-10-19T07:19:44.473798+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "0b67f978792ac757eb.body",
+    "sha256": "b264b92fd57979f8786c7a1931875d5daa72ae97153f6dc96e61c5cb97ca40ff",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/0b67f978792ac757eb.json",
+    "headers": {
+      "date": "Mon, 19 Oct 2026 07:19:44 GMT",
+      "content-type": "text/plain; charset=UTF-8",
+      "last-modified": "Sunday, 18-Oct-2026 09:21:08 GMT"
+    },
+    "fixtureBody": "0b67f978792ac757eb.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "167236c535fc2c3a059a02c9f7b63d798f3d7ebf2239ff1cd4a8581432558a9f"
+  },
+  {
+    "url": "https://ddt-tour.ru/",
+    "capturedAt": "2026-10-19T07:20:18.321630+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "0c51c4c004a10e6e38.body",
+    "sha256": "466fada090961be460baf8d83633167e14cac1ef9cb961d22f87629d54dd6174",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/0c51c4c004a10e6e38.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:20:18 GMT",
+      "Content-Type": "text/html; charset=UTF-8"
+    },
+    "fixtureBody": "0c51c4c004a10e6e38.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "1cd5b5a7e1378bae8eebc6890234c4bf44c99fd59631e7553d6bc60b12b2d96e"
+  },
+  {
+    "url": "https://www.burj-bigart.com/en/662-1126-sakhalin-dubai",
+    "capturedAt": "2026-10-19T07:21:33.821543+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "0feca575875029cbbc.body",
+    "sha256": "34370d0a1415e2c34e55549df26b078429cadd071ed5e7236cd62c6e2e1bf8af",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/0feca575875029cbbc.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:21:34 GMT",
+      "Content-Type": "text/html; charset=utf-8"
+    },
+    "fixtureBody": "0feca575875029cbbc.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "a7668c41e81e0f1d715f12f5f46718c6924f0dc03021d3b7ab90a482b61b4b28"
+  },
+  {
+    "url": "https://biletkartina.tv/",
+    "capturedAt": "2026-10-19T07:21:31.292496+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "15bd9af66314f6b9f6.body",
+    "sha256": "311fd3c05814123e207fd95c8c1c3f9a0afe73378ba4f86a2892150e57b3f36e",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/15bd9af66314f6b9f6.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:21:31 GMT",
+      "Content-Type": "text/html; charset=UTF-8"
+    },
+    "fixtureBody": "15bd9af66314f6b9f6.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "755df96cfbc1f737d80ec64a14acedcb3a82b563f9bad73a1b73af83184e033f"
+  },
+  {
+    "url": "https://ddt-tour.ru/robots.txt",
+    "capturedAt": "2026-10-19T07:20:06.979621+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "1a5f0f0fe1fad725c5.body",
+    "sha256": "948a1c2cbf12bc196a2edde81f4ceb56cb43f891b59bdef8f7cab43a956c7793",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/1a5f0f0fe1fad725c5.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:20:07 GMT",
+      "Content-Type": "text/plain",
+      "Content-Length": "928",
+      "Last-Modified": "Wed, 18 Nov 2020 19:17:00 GMT"
+    },
+    "fixtureBody": "1a5f0f0fe1fad725c5.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "8eceaa79b505878d245799e22ee22b1c79df01ae71ea5c99d186e1cb1af6a894"
+  },
+  {
+    "url": "https://biletkartina.tv/ru/hall?event_id=1286946656",
+    "capturedAt": "2026-10-19T07:20:54.988696+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "1a8b98c27a48c6bece.body",
+    "sha256": "7477f9292ef1f281ce60477c07520b343b4126e1340d37c62efd78a69ad9bfa1",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/1a8b98c27a48c6bece.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:20:55 GMT",
+      "Content-Type": "text/html; charset=UTF-8"
+    },
+    "fixtureBody": "1a8b98c27a48c6bece.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "3ac120a2bbc0bf90c934a09747713f08d714d5173a67873337190ece77cf7f4e"
+  },
+  {
+    "url": "https://lotusarena.com/en/events/51---?meta=829556",
+    "capturedAt": "2026-10-19T07:22:41.748080+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "1c49cb153d39292d7a.body",
+    "sha256": "dd8a0d2f6ea912f66fc82667157aebbb0fa5ba079a9ada4e677123ad366d2410",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/1c49cb153d39292d7a.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:22:43 GMT",
+      "Content-Type": "text/html; charset=utf-8"
+    },
+    "fixtureBody": "1c49cb153d39292d7a.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "026690850871dec22bbdafa8275ae846869b6a5e8408a1a6152687b0db4867d4"
+  },
+  {
+    "url": "https://biletkartina.tv/ru/info/rechtliche-hinweise",
+    "capturedAt": "2026-10-19T07:22:11.751175+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 404,
+    "body": "38d2e200d554741677.body",
+    "sha256": "ddc3705b3b2be98bdd6bdfc1be06929d88358f4fc3d22741b11d206c77617652",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/38d2e200d554741677.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:22:12 GMT",
+      "Content-Type": "text/html; charset=UTF-8"
+    },
+    "fixtureBody": "38d2e200d554741677.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "f91ef86218475092c20f13c1c95a7bacd5ee363b95dba652e6b9aa6c0b7b3dff"
+  },
+  {
+    "url": "https://iframeab-pre11562.intickets.ru/seance/70394135/",
+    "capturedAt": "2026-10-19T07:22:59.497032+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "3c0e282af2935c2e0d.body",
+    "sha256": "c49036bd0ea31f2cc70e14818d1c0b789f2a818a6ebdcb22e9e3e130adddb741",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/3c0e282af2935c2e0d.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:22:59 GMT",
+      "Content-Type": "text/html",
+      "Content-Length": "1803"
+    },
+    "fixtureBody": "3c0e282af2935c2e0d.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "bcd4670380dba5e9b90c38e4a6eb772a4929a5bdb69b86768d27b2ceaf17aa2c"
+  },
+  {
+    "url": "https://www.burj-bigart.com/en/content/12-terms-conditions",
+    "capturedAt": "2026-10-19T07:23:23.977850+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "48051c94574ba3c17f.body",
+    "sha256": "e87d5948c08cb34021636b6339a94be9c6434825a8071e9f268312dfcc4660d8",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/48051c94574ba3c17f.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:23:24 GMT",
+      "Content-Type": "text/html; charset=utf-8"
+    },
+    "fixtureBody": "48051c94574ba3c17f.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "0db78cd5acba89d119dc174081f8722764bd1f245f2f55855014c9971316b148"
+  },
+  {
+    "url": "https://maxkorzh.com/",
+    "capturedAt": "2026-10-19T07:19:47.159712+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "error": "The read operation timed out",
+    "status": null,
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/48dd49fe8d9386c826.json",
+    "headers": {}
+  },
+  {
+    "url": "https://iframeab-pre11562.intickets.ru/robots.txt",
+    "capturedAt": "2026-10-19T07:22:57.245706+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 307,
+    "body": "49da57e730bd26eb74.body",
+    "sha256": "ff71cf74abb3ccb005b8b64371725db15edc42c1ad33413bbe561b2da3c85ef9",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/49da57e730bd26eb74.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:22:57 GMT",
+      "Content-Length": "5",
+      "location": "https://iframeab-pre11562.intickets.ru/robots.txt"
+    },
+    "fixtureBody": "49da57e730bd26eb74.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "1100250bccdd46649b0c945a46ce512de31ca705a715e99f4efe4c6ca96b50a8"
+  },
+  {
+    "url": "https://biletkartina.tv/ru/info/rechtliche",
+    "capturedAt": "2026-10-19T07:22:36.582746+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "53c7cfb0140a9cec63.body",
+    "sha256": "118013f0b416cb0b180b166f7f5ff39ed57af1e6f68882b8468df473ed114b0c",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/53c7cfb0140a9cec63.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:22:36 GMT",
+      "Content-Type": "text/html; charset=UTF-8"
+    },
+    "fixtureBody": "53c7cfb0140a9cec63.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "e5536925ec84a05abda9986b71b566cd31f6dc36c1a69eca3bf8eca871568a6e"
+  },
+  {
+    "url": "https://ticket.lotusarena.life/en/events/47-ddt-group-phuket?meta=49232",
+    "capturedAt": "2026-10-19T07:20:55.880477+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 308,
+    "body": "5b849427fdeab0faa0.body",
+    "sha256": "d99fd2a63c9d9d0e2526828c466f9080c551f917d4422a13ce0d0eeb99e47909",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/5b849427fdeab0faa0.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:20:56 GMT",
+      "Content-Type": "text/html",
+      "Content-Length": "180",
+      "Location": "https://lotusarena.com/en/events/47-ddt-group-phuket?meta=49232"
+    },
+    "fixtureBody": "5b849427fdeab0faa0.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "60e3d8e422eb59d3e748d9cc3fd5bd1493269bfd714365e185fcc92a88dd90d0"
+  },
+  {
+    "url": "https://maxkorzh.com/event/frankfurt/",
+    "capturedAt": "2026-10-19T07:21:49.705311+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "error": "The read operation timed out",
+    "status": null,
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/5de935a4dd6d0dd8ca.json",
+    "headers": {}
+  },
+  {
+    "url": "https://www.burj-bigart.com/index.php?id_cms=12&controller=cms",
+    "capturedAt": "2026-10-19T07:22:57.246059+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 302,
+    "body": "6835a9b530fceab40e.body",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/6835a9b530fceab40e.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:22:57 GMT",
+      "Location": "https://www.burj-bigart.com/en/content/12-terms-conditions",
+      "Content-Length": "0",
+      "Content-Type": "text/html; charset=utf-8"
+    },
+    "fixtureBody": "6835a9b530fceab40e.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+  },
+  {
+    "url": "https://lotusarena.com/en/thailand",
+    "capturedAt": "2026-10-19T07:22:36.585048+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "6967b8a1b4fed945c3.body",
+    "sha256": "bb4b30509c1b7457d8066603d584ce1b32036884ff1aa2a4b02c9724c0e5f202",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/6967b8a1b4fed945c3.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:22:39 GMT",
+      "Content-Type": "text/html; charset=utf-8"
+    },
+    "fixtureBody": "6967b8a1b4fed945c3.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "79fed1190370fc63a2860cd696c1449f8eea047c5a91549aff2a519575f3a35e"
+  },
+  {
+    "url": "https://zivert.com/robots.txt",
+    "capturedAt": "2026-10-19T07:19:44.480008+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1129)>",
+    "status": null,
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/6b2ddf39a9a86d4281.json",
+    "headers": {}
+  },
+  {
+    "url": "https://lotusarena.com/robots.txt",
+    "capturedAt": "2026-10-19T07:21:31.292872+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "6c00d6395f9a7995e5.body",
+    "sha256": "340663ba5e038a2d210ce8de380f81f0b1eb65448dce279df662801a3991a218",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/6c00d6395f9a7995e5.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:21:31 GMT",
+      "Content-Type": "text/plain; charset=utf-8",
+      "last-modified": "Wed, 14 Oct 2026 17:51:08 GMT"
+    },
+    "fixtureBody": "6c00d6395f9a7995e5.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "87bef4ac449bbea2e8e332ad4c1c55c652a534019a4f8bd95e70136e7f51e179"
+  },
+  {
+    "url": "https://bastatickets.ru/",
+    "capturedAt": "2026-10-19T07:19:46.946548+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "6f9d05dd6bf7ad7d27.body",
+    "sha256": "3beff6f26d56147cf4d4ad5f6b05628c2eb297a6abb5669c10ad858d36a6606d",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/6f9d05dd6bf7ad7d27.json",
+    "headers": {
+      "date": "Mon, 19 Oct 2026 07:19:47 GMT",
+      "content-type": "text/html; charset=UTF-8",
+      "last-modified": "Sun, 18 Oct 2026 13:56:45 GMT"
+    },
+    "fixtureBody": "6f9d05dd6bf7ad7d27.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "df8cd91e377664d50b958587ebd6466368235f2321c6cde7909c9eea912d8c94"
+  },
+  {
+    "url": "https://burj-bigart.com/robots.txt",
+    "capturedAt": "2026-10-19T07:22:09.291675+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 301,
+    "body": "758a13fb00c5de8762.body",
+    "sha256": "d462e925ecea6c154af5b9f2aaa90b6159cb3d90adf153ffa1eb911d8ec723ca",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/758a13fb00c5de8762.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:22:09 GMT",
+      "Location": "https://www.burj-bigart.com/robots.txt",
+      "Content-Length": "312",
+      "Content-Type": "text/html; charset=iso-8859-1"
+    },
+    "fixtureBody": "758a13fb00c5de8762.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "ae97e1f0d734392e525f198bd094477bee24e8f28d022633491d65714bce7cbb"
+  },
+  {
+    "url": "https://zivert.com/",
+    "capturedAt": "2026-10-19T07:19:46.983898+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1129)>",
+    "status": null,
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/870e2bd8ab0982f4ce.json",
+    "headers": {}
+  },
+  {
+    "url": "https://lotusarena.com/en/legal/payment-services-rules",
+    "capturedAt": "2026-10-19T07:23:48.153435+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "87ef0a19bf8a5470f8.body",
+    "sha256": "0b0ff0d982a28effa141378ece310c0ec5f7258e30c61b041cbeddd9a327112b",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/87ef0a19bf8a5470f8.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:23:49 GMT",
+      "Content-Type": "text/html; charset=utf-8"
+    },
+    "fixtureBody": "87ef0a19bf8a5470f8.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "f46974c684a6268d5dc7c405618816d69f13421b33952a0cbecba8d6d2a7ea64"
+  },
+  {
+    "url": "https://lotusarena.com/en/events/47-ddt-group-phuket?meta=49232",
+    "capturedAt": "2026-10-19T07:21:33.640509+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "886f6bdd071e4c4fa6.body",
+    "sha256": "11ede49c2af042bfd0c05a60f674767289698c6f2f428215482a8e03908ef7b3",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/886f6bdd071e4c4fa6.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:21:37 GMT",
+      "Content-Type": "text/html; charset=utf-8"
+    },
+    "fixtureBody": "886f6bdd071e4c4fa6.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "8e9930500c3c342de7933dac3afa7555ffc8c0e5453f23c82ee7f4a869e2306c"
+  },
+  {
+    "url": "https://biletkartina.tv/robots.txt",
+    "capturedAt": "2026-10-19T07:20:52.663629+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "8be0386c21ff3b2c5e.body",
+    "sha256": "574fe62ae7f3bccf90c813c38f672dcc7c0c0e6eeb73d521c153ecb52b74eac9",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/8be0386c21ff3b2c5e.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:20:53 GMT",
+      "Content-Type": "text/plain",
+      "Content-Length": "602",
+      "Last-Modified": "Thu, 01 Oct 2026 15:01:32 GMT"
+    },
+    "fixtureBody": "8be0386c21ff3b2c5e.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "93f7b8ec87aa1dd9067ae42c8030a9478462746ba2935962cdfe3692d961c45d"
+  },
+  {
+    "url": "https://burj-bigart.com/index.php?id_cms=12&controller=cms",
+    "capturedAt": "2026-10-19T07:22:11.509602+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 301,
+    "body": "8d194f75a1123f9a6b.body",
+    "sha256": "4a11e0b46a185b8e7b3f5631b18f16b6fe094f8edeb02ed48de4e3f4b03dffbd",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/8d194f75a1123f9a6b.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:22:11 GMT",
+      "Location": "https://www.burj-bigart.com/index.php?id_cms=12&controller=cms",
+      "Content-Length": "340",
+      "Content-Type": "text/html; charset=iso-8859-1"
+    },
+    "fixtureBody": "8d194f75a1123f9a6b.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "92edbef1dd536f4a065a8f5c236e671fbda94543280badbe5223635f9249be10"
+  },
+  {
+    "url": "https://bastatickets.ru/robots.txt",
+    "capturedAt": "2026-10-19T07:19:44.475872+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "976deb12c670a10570.body",
+    "sha256": "0574acd35a4eae18627387d6717ec3c718cc0867cb3e9d1e9eafd5498bd5d67f",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/976deb12c670a10570.json",
+    "headers": {
+      "date": "Mon, 19 Oct 2026 07:19:45 GMT",
+      "content-type": "text/plain; charset=UTF-8",
+      "last-modified": "Monday, 19-Oct-2026 00:06:25 GMT"
+    },
+    "fixtureBody": "976deb12c670a10570.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "d3f89d08a02b4ce30627fca0eafc128a80b80a6412c78f14bb67b9b320a4033f"
+  },
+  {
+    "url": "https://lotusarena.com/documents/user-agreement?lang=en",
+    "capturedAt": "2026-10-19T07:24:24.663181+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "b5d0cfe409812d514a.body",
+    "sha256": "20ce6d2f8234cd099c939a7a124f27ec489d0d213e8cfa8b91df883a1da09150",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/b5d0cfe409812d514a.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:24:25 GMT",
+      "Content-Type": "application/pdf"
+    },
+    "fixtureBody": "b5d0cfe409812d514a.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "871be0e18f9ab236adbe7035102a37307248fd0f84228be111e85b688cc03a97"
+  },
+  {
+    "url": "https://lotusarena.com/en/legal/user-agreement",
+    "capturedAt": "2026-10-19T07:23:44.781125+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "bbad1162495b7e15d4.body",
+    "sha256": "ac93b38ed242862ee604223959f43e74c09faca0e7cc9e01127ebd6c02befc31",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/bbad1162495b7e15d4.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:23:46 GMT",
+      "Content-Type": "text/html; charset=utf-8"
+    },
+    "fixtureBody": "bbad1162495b7e15d4.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "9052e27c2bee2a8fe33d6b2785599eadda64a3594fb35096c8e9f3d6520990eb"
+  },
+  {
+    "url": "https://ddt-tour.ru/agree.docx",
+    "capturedAt": "2026-10-19T07:20:52.663229+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "bfdf75fe1f37f02ca4.body",
+    "sha256": "8db69778fb05ed7af5cb8621b1f1315eeb20699ef37c5c05067f25944a0b5183",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/bfdf75fe1f37f02ca4.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:20:52 GMT",
+      "Content-Type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "Content-Length": "742967",
+      "Last-Modified": "Wed, 18 Nov 2020 18:51:07 GMT"
+    },
+    "fixtureBody": "bfdf75fe1f37f02ca4.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "51082ac513b860a088e9e239fe6d5cfa03d4d09852b8da9509403d63c41d244d"
+  },
+  {
+    "url": "https://maxkorzh.com/",
+    "capturedAt": "2026-10-19T07:20:32.967746+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "error": "The read operation timed out",
+    "status": null,
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/ca823f7fb0fad54383.json",
+    "headers": {}
+  },
+  {
+    "url": "https://ddt.ru/robots.txt",
+    "capturedAt": "2026-10-19T07:19:44.473476+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 404,
+    "body": "d7a3dc8eac9e89c489.body",
+    "sha256": "391967a9a7409f683d4fde75dc8ace924f8a8c6378782786c7ea495ba46c0d93",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/d7a3dc8eac9e89c489.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:19:44 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Content-Length": "32112"
+    },
+    "fixtureBody": "d7a3dc8eac9e89c489.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "5cc98b4e372f3b77004f3a5007c5ac150b8487fc9d84db0145082dd92b3d957b"
+  },
+  {
+    "url": "https://maxkorzh.com/tour-dates/",
+    "capturedAt": "2026-10-19T07:21:17.446585+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "error": "The read operation timed out",
+    "status": null,
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/d7e4a3816b7503552a.json",
+    "headers": {}
+  },
+  {
+    "url": "https://oxxxymiron.com/",
+    "capturedAt": "2026-10-19T07:19:46.679683+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "d8e1cba7363c6de0bb.body",
+    "sha256": "1b523be2409982ddc8a5acacb30dbccb22ceecc850dc28f0bf710a09aef35519",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/d8e1cba7363c6de0bb.json",
+    "headers": {
+      "date": "Mon, 19 Oct 2026 07:19:46 GMT",
+      "content-type": "text/html; charset=UTF-8",
+      "last-modified": "Thu, 24 Sep 2026 11:39:10 GMT"
+    },
+    "fixtureBody": "d8e1cba7363c6de0bb.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "a39b074108995e578233c14e61f5b8ddf304167ff4898f6ea7ad3b0f30898290"
+  },
+  {
+    "url": "https://biletkartina.tv/ru/event/Gruppa_DDT_v_Germanii",
+    "capturedAt": "2026-10-19T07:21:33.815178+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "deac8dc26fd613f440.body",
+    "sha256": "2b7cc34a6429d0450f5a05ed7712e8a2c0915bc85b87fa0ffb5a94675c7486a3",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/deac8dc26fd613f440.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:21:34 GMT",
+      "Content-Type": "text/html; charset=UTF-8"
+    },
+    "fixtureBody": "deac8dc26fd613f440.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "16fd480bdddfdfa24001916f492baf7ec770301a3366ddd120fb1e518b5af0e2"
+  },
+  {
+    "url": "https://www.zivert.com/robots.txt",
+    "capturedAt": "2026-10-19T07:23:54.045229+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1129)>",
+    "status": null,
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/e48e014af51271b078.json",
+    "headers": {}
+  },
+  {
+    "url": "https://www.burj-bigart.com/robots.txt",
+    "capturedAt": "2026-10-19T07:21:31.295042+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 404,
+    "body": "e9bf90adb2650cfe0d.body",
+    "sha256": "8aead341480084222529dbbcc24dfe2039c40a6702d008d62d41e2f1c9f121a1",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/e9bf90adb2650cfe0d.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:21:31 GMT",
+      "Content-Type": "text/html; charset=utf-8"
+    },
+    "fixtureBody": "e9bf90adb2650cfe0d.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "880a90fb916d135925909ecf5a0cd62ce65c7fa26f0d03f68cc3282b19c9becb"
+  },
+  {
+    "url": "https://lotusarena.com/documents/payment-services-rules?lang=en",
+    "capturedAt": "2026-10-19T07:24:28.304702+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "ee7dc8eaa31788174d.body",
+    "sha256": "fe27f21cedbb4f6af1acc70ac7e8866a05db3e7b4ac187487bc30df65764aabb",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/ee7dc8eaa31788174d.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:24:29 GMT",
+      "Content-Type": "application/pdf"
+    },
+    "fixtureBody": "ee7dc8eaa31788174d.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "1e51704ab7ee9db412e1ed8cdb968545911c6188d5b969c1da65dd3b353d0776"
+  },
+  {
+    "url": "https://biletkartina.tv/ru/info/agb",
+    "capturedAt": "2026-10-19T07:22:09.289341+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 200,
+    "body": "efa8aff9cceb6ceb59.body",
+    "sha256": "f36ba53357d112141c48b9ef40d2e06aa9bc9853a1d2dba4889e650ada6ed41a",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/efa8aff9cceb6ceb59.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:22:09 GMT",
+      "Content-Type": "text/html; charset=UTF-8"
+    },
+    "fixtureBody": "efa8aff9cceb6ceb59.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "ccabbb94037f9f5ac2de8783336a2027b4b948008b0cfc196affd239d3d81ec4"
+  },
+  {
+    "url": "https://ticket.lotusarena.life/robots.txt",
+    "capturedAt": "2026-10-19T07:20:52.667440+00:00",
+    "method": "GET",
+    "requestHeaders": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept-Encoding": "identity"
+    },
+    "tlsVerification": true,
+    "status": 308,
+    "body": "f7b5816667839a2a57.body",
+    "sha256": "d99fd2a63c9d9d0e2526828c466f9080c551f917d4422a13ce0d0eeb99e47909",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/f7b5816667839a2a57.json",
+    "headers": {
+      "Date": "Mon, 19 Oct 2026 07:20:53 GMT",
+      "Content-Type": "text/html",
+      "Content-Length": "180",
+      "Location": "https://lotusarena.com/robots.txt"
+    },
+    "fixtureBody": "f7b5816667839a2a57.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "60e3d8e422eb59d3e748d9cc3fd5bd1493269bfd714365e185fcc92a88dd90d0"
+  },
+  {
+    "url": "https://maxkorzh.com/tour-dates/",
+    "capturedAt": "2026-10-19T07:24:25.856594+00:00",
+    "method": "GET",
+    "backend": "curl",
+    "tlsVerification": true,
+    "status": 200,
+    "exitCode": 28,
+    "error": "curl: (28) Operation timed out after 35006 milliseconds with 16384 out of 29157 bytes received\n",
+    "body": "maxkorzh-curl-calendar.body",
+    "sha256": "9cdb1efe22514a45b0d9841edc5d4cc94b8fbed126a8e95dd8858d9cbaecd63c",
+    "evidenceMetadata": "/Users/alex/agent-hub/concerts-ru-data-2/evidence/official-west/maxkorzh-curl-calendar.json",
+    "headers": {},
+    "fixtureBody": "maxkorzh-curl-calendar.body.gz",
+    "fixtureEncoding": "gzip of original HTTP entity bytes",
+    "fixtureSha256": "8932c1ea9be127aebe423019388f14dd653e123998e525962cf9dfd50adb0097"
+  }
+]
