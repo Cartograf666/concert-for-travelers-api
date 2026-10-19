@@ -28617,5 +28617,238 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
     "verification": ""
+  },
+  {
+    "id": "artist-aaron-copland",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-aaron-copland.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-19T09:48:08.451Z",
+    "previousConfig": {
+      "id": "artist-aaron-copland",
+      "domain": "www.aaroncopland.com",
+      "url": "https://www.aaroncopland.com/events",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": ".event-item",
+        "artistNameFallback": "Aaron Copland",
+        "date": ".event-dates span",
+        "ticketUrl": ".event-links a",
+        "venue": ".event-location",
+        "city": ".event-location",
+        "country": ".event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper artist-aaron-copland is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-admiral-fallow",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-admiral-fallow.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-19T09:48:08.452Z",
+    "previousConfig": {
+      "id": "artist-admiral-fallow",
+      "domain": "www.admiralfallow.com",
+      "url": "https://www.admiralfallow.com/shows",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": ".EventListingListItem",
+        "artistNameFallback": "Admiral Fallow",
+        "date": ".EventListingListItem-date",
+        "ticketUrl": ".EventListingListItem-ticketsLink",
+        "venue": ".EventListingListItem-venue a",
+        "city": ".EventListingListItem-venue a",
+        "country": ".EventListingListItem-venue a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper artist-admiral-fallow is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-ai-kawashima",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-ai-kawashima.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-19T09:48:08.454Z",
+    "previousConfig": {
+      "id": "artist-ai-kawashima",
+      "domain": "kawashimaai.com",
+      "url": "https://kawashimaai.com/live",
+      "type": "custom_js",
+      "maxRetries": 3,
+      "requestDelayMs": 2000,
+      "selectors": {
+        "eventBlock": "#live_index table tr",
+        "artistNameFallback": "Ai Kawashima",
+        "date": "th.date",
+        "ticketUrl": "td.text a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      },
+      "skipConditionalRequests": true
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper artist-ai-kawashima is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-mugison",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-mugison.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-19T09:48:09.968Z",
+    "previousConfig": {
+      "id": "artist-mugison",
+      "domain": "www.mugison.com",
+      "url": "http://www.mugison.com/gigs",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "article.eventlist-event",
+        "artistNameFallback": "Mugison",
+        "date": "time.event-date",
+        "ticketUrl": ".eventlist-description a",
+        "venue": ".eventlist-title",
+        "city": ".eventlist-title",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "IS"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (table tr) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-paralamas-do-sucesso",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-paralamas-do-sucesso.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-19T09:48:09.971Z",
+    "previousConfig": {
+      "id": "artist-paralamas-do-sucesso",
+      "domain": "osparalamas.com.br",
+      "url": "https://osparalamas.com.br/agenda/",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "li.event",
+        "artistNameFallback": "Paralamas do Sucesso",
+        "date": ".event-line-node:nth-child(1)",
+        "ticketUrl": "a.event-map-link",
+        "venue": ".event-line-node.medium:nth-child(2)",
+        "city": ".event-line-node.medium:nth-child(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "BR"
+      },
+      "httpClient": "got-scraping",
+      "skipConditionalRequests": true
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper artist-paralamas-do-sucesso is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-rory-mcleod",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-rory-mcleod.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-19T09:48:10.697Z",
+    "previousConfig": {
+      "id": "artist-rory-mcleod",
+      "domain": "rorymcleod.com",
+      "url": "https://rorymcleod.com/tour-dates",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".gig.svelte-ycoml7",
+        "artistNameFallback": "Rory McLeod",
+        "date": "date.svelte-ycoml7",
+        "ticketUrl": "a.svelte-ycoml7[href^='http']",
+        "venue": "h3.svelte-ycoml7",
+        "city": "address.svelte-ycoml7",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (main > div > div) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-the-clientele",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-the-clientele.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-19T09:48:15.539Z",
+    "previousConfig": {
+      "id": "artist-the-clientele",
+      "domain": "theclientele.co.uk",
+      "url": "https://theclientele.co.uk/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table[aria-labelledby='table-label-upcoming'] tbody tr",
+        "artistNameFallback": "The Clientele",
+        "date": "time",
+        "ticketUrl": "td:nth-child(2) a",
+        "venue": "td:nth-child(2) > span",
+        "city": "td:nth-child(3)",
+        "country": "td:nth-child(4)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      },
+      "allowEmpty": true,
+      "emptyScheduleText": "No shows scheduled."
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://theclientele.co.uk; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://theclientele.co.uk/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-the-whitlams",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-the-whitlams.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-10-19T09:48:15.855Z",
+    "previousConfig": {
+      "id": "artist-the-whitlams",
+      "domain": "thewhitlams.com",
+      "url": "https://thewhitlams.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".ep-events__item",
+        "artistNameFallback": "The Whitlams",
+        "date": ".ep-events__datetime",
+        "ticketUrl": ".ep-events__button",
+        "venue": ".ep-events__venue",
+        "city": ".ep-events__venue",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "AU"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]",
+    "verification": ""
   }
 ]
