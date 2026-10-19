@@ -1,0 +1,3 @@
+# Immutable HTTP payloads include publisher whitespace and mixed CRLF/LF.
+# Preserve exact bytes and compare through SHA-256, not text diff normalization.
+*.html -text -diff

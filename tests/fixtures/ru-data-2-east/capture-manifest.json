@@ -1,0 +1,73 @@
+{
+  "clock": "2026-10-19T07:26:36.597Z",
+  "scope": "2026-10-19 capture snapshot; never assert live artist DB equals this input",
+  "captures": [
+    {
+      "url": "https://kino.band/",
+      "fixture": "kino-home.html",
+      "sha256": "6dd4b29775acd150f9a66d989778737eda9ca5e9139b3356b82192120b4814e5",
+      "capturedAt": "2026-10-19T07:19:59.504045+00:00",
+      "status": 200
+    },
+    {
+      "url": "https://monetochka.world/",
+      "fixture": "monetochka-home.html",
+      "sha256": "9ccb0e40ece40472e4c3158c723fa6a99bef1fdb0453eba51c4762e7762c927e",
+      "capturedAt": "2026-10-19T07:20:02.745096+00:00",
+      "status": 200
+    },
+    {
+      "url": "https://lumen.ws/",
+      "fixture": "lumen-home.html",
+      "sha256": "01a9aceb80d8abebdb5ae8dfc53ab31d8b8537936f974f8e075b89c8d34ecb4b",
+      "capturedAt": "2026-10-19T07:20:25.439601+00:00",
+      "status": 200
+    }
+  ],
+  "probes": [
+    {
+      "config": {
+        "id": "kino-tour",
+        "domain": "kino.band",
+        "url": "https://kino.band/",
+        "type": "jsonld"
+      },
+      "fixture": "kino-home.html"
+    },
+    {
+      "config": {
+        "id": "monetochka-tour",
+        "domain": "monetochka.world",
+        "url": "https://monetochka.world/",
+        "type": "jsonld"
+      },
+      "fixture": "monetochka-home.html"
+    },
+    {
+      "config": {
+        "id": "lumen-tour",
+        "domain": "lumen.ws",
+        "url": "https://lumen.ws/",
+        "type": "jsonld"
+      },
+      "fixture": "lumen-home.html"
+    }
+  ],
+  "doraAccess": [
+    {
+      "url": "https://realdora.com/",
+      "capturedAt": "2026-10-19T07:20:05.430084+00:00",
+      "error": "timed out"
+    },
+    {
+      "url": "https://realdora.com/robots.txt",
+      "capturedAt": "2026-10-19T07:19:52.951463+00:00",
+      "error": "timed out"
+    }
+  ],
+  "monetochka": {
+    "maxAnnouncedDate": "2026-09-05",
+    "futureRows": 0
+  },
+  "admittedRuntimeConfigs": []
+}
