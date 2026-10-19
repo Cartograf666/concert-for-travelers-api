@@ -28850,5 +28850,148 @@
     "failuresSinceRepair": 0,
     "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]",
     "verification": ""
+  },
+  {
+    "id": "artist-rob-waring",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-rob-waring.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-19T10:13:08.251Z",
+    "previousConfig": {
+      "id": "artist-rob-waring",
+      "domain": "www.robwaring.com",
+      "url": "http://www.robwaring.com/gigs.html",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "body > table > tbody > tr > td > table > tbody > tr > td",
+        "artistNameFallback": "Rob Waring",
+        "date": "font:nth-child(1)",
+        "ticketUrl": "a",
+        "venue": "font:nth-child(3)",
+        "city": "font:nth-child(5)",
+        "country": "font:nth-child(7)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "NO"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on http://www.robwaring.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]",
+    "verification": ""
+  },
+  {
+    "id": "artist-robbie-krieger",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-robbie-krieger.json",
+    "strategy": "tls_broken",
+    "repairedAt": "2026-10-19T10:13:10.694Z",
+    "previousConfig": {
+      "id": "artist-robbie-krieger",
+      "domain": "www.robbykrieger.com",
+      "url": "https://www.robbykrieger.com/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".sqs-block-content ul li",
+        "artistNameFallback": "Robby Krieger",
+        "date": ".date-display",
+        "ticketUrl": "a[href*='ticket']",
+        "venue": ".event-venue",
+        "city": ".event-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "tls_broken: trying the www/apex variant, which usually holds the valid certificate; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://robbykrieger.com/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-ronnie-earl-the-broadcasters",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-ronnie-earl-the-broadcasters.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-19T10:13:23.443Z",
+    "previousConfig": {
+      "id": "artist-ronnie-earl-the-broadcasters",
+      "domain": "www.ronnieearl.com",
+      "url": "https://www.ronnieearl.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-block",
+        "artistNameFallback": "Ronnie Earl & The Broadcasters",
+        "date": "div.event-date",
+        "ticketUrl": "div.event-ticket a",
+        "venue": "div.event-venue",
+        "city": "div.event-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.ronnieearl.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]; reached https://www.ronnieearl.com/gigs.html but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-rufus-wainwright",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-rufus-wainwright.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-19T10:13:41.626Z",
+    "previousConfig": {
+      "id": "artist-rufus-wainwright",
+      "domain": "rufuswainwright.com",
+      "url": "https://rufuswainwright.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour-item",
+        "artistNameFallback": "Rufus Wainwright",
+        "date": ".date",
+        "ticketUrl": "a.ticket-link",
+        "venue": ".venue",
+        "city": ".city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.sqs-events-collection-item) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "the-star-theatre-singapore",
+    "cohort": "venue",
+    "configPath": "scrapers/the-star-theatre-singapore.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-19T10:14:10.316Z",
+    "previousConfig": {
+      "id": "the-star-theatre-singapore",
+      "domain": "nac.gov.sg",
+      "url": "https://www.nac.gov.sg/resources/research/events",
+      "type": "static_selectors",
+      "maxRetries": 3,
+      "requestDelayMs": 500,
+      "selectors": {
+        "eventBlock": "div[class*='event'], article[class*='event'], li.event, .event-card, [data-event], .sfContentBlock",
+        "artist": "h3, h2, .artist, .artist-name, .event-title, .performer, a, [itemprop='name']",
+        "date": "time, .date, .event-date, [itemprop='startDate'], span[class*='date'], .when, p",
+        "ticketUrl": "a[href*='ticket'], a[href*='book'], .ticket-link, a.cta-button, [href*='ticketing'], a",
+        "venueNameFallback": "The Star Theatre",
+        "cityNameFallback": "Singapore",
+        "countryNameFallback": "SG",
+        "lat": 1.3521,
+        "lng": 103.8198
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.nac.gov.sg; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://www.nac.gov.sg/support-your-practice/busking-scheme/about-the-busking-scheme/ but could not re-select on it",
+    "verification": ""
   }
 ]
