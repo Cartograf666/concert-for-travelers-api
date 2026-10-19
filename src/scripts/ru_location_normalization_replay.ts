@@ -146,6 +146,8 @@ try {
       beforeDuplicates: beforeDiagnostics?.duplicatesMerged, afterDuplicates: afterDiagnostics?.duplicatesMerged,
       lostOutputRowsAfterFieldCorrections: lost.length, gainedOutputRowsAfterFieldCorrections: gained.length },
     notes: ['All snapshot rows replayed; past-date/approval validation and dedupe reported separately in production-diagnostics.json.',
+      'Loss/dedupe counts apply only to this already-published input. Multi-source cases are tested separately; upstream BIT recovery and event truth are unmeasured.',
+      'City canonicalization follows legacy raw-city dedupe. Repeated raw-cache inputs are reproducible; published JSON re-ingestion is not an unconditional idempotence guarantee.',
       'Publisher groups nearby cities in its existing index; concerts.json retains the normalized settlement.',
       'This saved-public-input replay cannot recover events already rejected upstream of publication. Native BIT fixture regression covers recovery.'] });
   console.log(JSON.stringify({ inputRows: rows.length, modifiedRows, types, countries, beforeRows: before.length, afterRows: after.length,

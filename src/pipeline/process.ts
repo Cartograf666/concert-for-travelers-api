@@ -16,7 +16,7 @@ import { isInvalidLegacyAiKawashimaEvent } from './ai_kawashima_provenance.js';
 import { verifiedOfficialSourceEventIdentity } from './official_source_event_identity.js';
 import { verifiedNormalizationOccurrence } from './normalization_occurrence_identity.js';
 import { mozarteumProvenanceDropReason } from './mozarteum_provenance.js';
-import { normalizeLocation, locationDedupeSuffix, isUnknownVenue } from './location.js';
+import { normalizeLocation, isUnknownVenue } from './location.js';
 
 /** Format a Date as a timezone-safe YYYY-MM-DD using its local calendar fields. */
 function toLocalIso(d: Date): string {
@@ -1243,7 +1243,9 @@ export async function processConcerts(
       startTime: raw.startTime || extractTimeFromRawDate(raw.date),
       venue: location.venue,
       venueKind: isUnknownVenue(location.venue) ? undefined : inferVenueKind(location.venue),
-      city: location.city,
+      // Retain the legacy raw-city dedupe groups. The existing geocode pass
+      // canonicalizes city spellings after choosing whole-record winners.
+      city: normalizeTextField(raw.city),
       country: location.country,
       lat: raw.lat,
       lng: raw.lng,
@@ -1279,12 +1281,7 @@ export async function processConcerts(
     const verifiedEvent = verifiedOfficialSourceEventIdentity(raw, validatedConcert) ??
       verifiedNormalizationOccurrence(raw, validatedConcert);
     const dedupeCity = verifiedEvent ? slugify(verifiedEvent.dedupeCity) : citySlug;
-    const locationSuffix = verifiedEvent ? '' : locationDedupeSuffix(validatedConcert);
-    // A shared sentinel cannot prove a common venue. Use the complete public
-    // evidence, whose property order is fixed by Zod, to dedupe identical rows
-    // while retaining distinct coordinates/source metadata as whole records.
-    const unknownOccurrence = locationSuffix && isUnknownVenue(validatedConcert.venue) ? JSON.stringify(validatedConcert) : '';
-    const dedupeKey = `${artistSlug}_${validatedConcert.date}_${dedupeCity}${locationSuffix}${unknownOccurrence}`;
+    const dedupeKey = `${artistSlug}_${validatedConcert.date}_${dedupeCity}`;
     // Authority is tied to the original cached object and the canonical
     // approved artist. A raw flag, copied URL, or fuzzy alias cannot confer it.
     const candidateOfficial = officialArtistContext?.get(raw)?.artist === matched.name;
@@ -1303,11 +1300,14 @@ export async function processConcerts(
       const verifiedPairPreferred = verifiedEvent && existingEvent?.pairKey === verifiedEvent.pairKey &&
         verifiedEvent.sourceRank !== existingEvent.sourceRank
         ? verifiedEvent.sourceRank > existingEvent.sourceRank : undefined;
+      const namedVenuePreferred = existing.country === validatedConcert.country &&
+        isUnknownVenue(existing.venue) !== isUnknownVenue(validatedConcert.venue)
+        ? !isUnknownVenue(validatedConcert.venue) : undefined;
       // A verified official row wins as a whole. Equal-rank rows retain the
       // legacy policy except for the finite verified source-event pairs.
       if ((candidateOfficial && !existingOfficial) ||
           (Boolean(candidateOfficial) === existingOfficial &&
-            (theHuDublinPreferred ?? verifiedPairPreferred ?? ((!existing.ticketUrl && validatedConcert.ticketUrl) ||
+            (theHuDublinPreferred ?? verifiedPairPreferred ?? namedVenuePreferred ?? ((!existing.ticketUrl && validatedConcert.ticketUrl) ||
               (Boolean(existing.ticketUrl) === Boolean(validatedConcert.ticketUrl) &&
                 isMoreCompleteDuplicate(existing, validatedConcert)))))) {
         // The existing record is discarded, so its source owns this duplicate

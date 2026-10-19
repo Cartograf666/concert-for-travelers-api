@@ -194,7 +194,7 @@ export async function geocodeConcerts(concerts: Concert[], options: GeocodeConce
     Object.assign(concert, location);
     if (isUnknownVenue(concert.venue)) delete concert.venueKind;
   }
-  // Preserve old, country-scoped cache keys after process canonicalizes a city.
+  // Preserve old, country-scoped cache keys after this pass canonicalizes a city.
   // Do not move entries or share coordinates between distinct named venues.
   const cacheKey = (concert: Concert) => citySpellings(concert.city, concert.country)
     .map(city => geocodeCacheKey({ ...concert, city }))
