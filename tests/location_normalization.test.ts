@@ -83,6 +83,7 @@ test('real venues, artist-name venues and unverified title suffixes remain intac
     row({ venue: 'NERVY', city: 'Batumi', country: 'GE' }),
     row({ venue: 'NERVY IN YEREVAN Arena' }), row({ venue: 'NERVY IN Unknownville' }),
     row({ venue: 'NERVY | Real Hall' }), row({ venue: 'NERVY IN YEREVAN', originalSource: 'real.example' }),
+    row({ venue: "Jimmy's Jazz & Blues Club, Portsmouth, NH", city: "Jimmy's Jazz & Blues Club, Portsmouth, NH", originalSource: 'real.example' }),
     row({ venue: 'Andru Donalds Theatre', artist: 'Andru Donalds', city: 'Bangkok', country: 'TH' })
   ].map((r, i) => ({ ...r, date: `2027-01-${String(i + 1).padStart(2, '0')}` }));
   const result = await processConcerts(real, db, NOW);
@@ -113,6 +114,20 @@ test('alias convergence preserves distinct venues, dedupes same venues as whole 
   const result = await processConcerts([unknown, a], db, NOW);
   assert.equal(result.length, 2, 'unknown cannot be merged into a different real venue by alias convergence');
   assert.equal(result.find(r => r.venue === UNKNOWN_VENUE)?.lat, 8);
+  const secondUnknown = { ...unknown, city: 'Belgrade', lat: 10, lng: 11 };
+  for (const input of [[unknown, secondUnknown], [secondUnknown, unknown]]) {
+    const kept = await processConcerts(input, db, NOW);
+    assert.equal(kept.length, 2, 'two unknown venues cannot acquire shared venue identity during alias convergence');
+    assert.deepEqual(kept.map(r => [r.lat, r.lng]), input.map(r => [r.lat, r.lng]));
+    assert.deepEqual(await processConcerts(kept, db, NOW), kept);
+  }
+});
+
+test('arbitrary approved artist aliases normalize title placeholders without per-artist rules', async t => {
+  const { db } = await fixture(t);
+  const result = await processConcerts([row({ artist: 'Test Artist', venue: 'Different Name IN YEREVAN' })], db, NOW);
+  assert.equal(result.length, 1);
+  assert.equal(result[0].venue, UNKNOWN_VENUE);
 });
 
 test('existing artist/date/city dedupe remains unchanged outside finite alias groups', async t => {

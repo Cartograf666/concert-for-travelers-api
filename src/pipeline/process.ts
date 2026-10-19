@@ -1279,7 +1279,11 @@ export async function processConcerts(
     const verifiedEvent = verifiedOfficialSourceEventIdentity(raw, validatedConcert) ??
       verifiedNormalizationOccurrence(raw, validatedConcert);
     const dedupeCity = verifiedEvent ? slugify(verifiedEvent.dedupeCity) : citySlug;
-    const dedupeKey = `${artistSlug}_${validatedConcert.date}_${dedupeCity}${verifiedEvent ? '' : locationDedupeSuffix(validatedConcert)}`;
+    const locationSuffix = verifiedEvent ? '' : locationDedupeSuffix(validatedConcert);
+    // A shared sentinel cannot prove that previously distinct alias-city
+    // occurrences belong to the same venue. Retain each unknown occurrence.
+    const unknownOccurrence = locationSuffix && isUnknownVenue(validatedConcert.venue) ? `_${processed}` : '';
+    const dedupeKey = `${artistSlug}_${validatedConcert.date}_${dedupeCity}${locationSuffix}${unknownOccurrence}`;
     // Authority is tied to the original cached object and the canonical
     // approved artist. A raw flag, copied URL, or fuzzy alias cannot confer it.
     const candidateOfficial = officialArtistContext?.get(raw)?.artist === matched.name;

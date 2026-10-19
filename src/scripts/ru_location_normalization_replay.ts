@@ -139,7 +139,7 @@ try {
   assert.equal(canonical(cache), cacheBefore, 'source cache is immutable');
   assert.equal(networkAttempts, 0);
   await write('summary.json', { input: path.resolve(input), inputSha256: inputHash, inputRows: rows.length,
-    revision: git(['rev-parse', 'HEAD']), dirty: git(['status', '--short']), baselineRef, clock, approvedDb: dbHashes,
+    revision: git(['rev-parse', 'HEAD']), dirty: git(['status', '--short']).split('\n').filter(line => !line.includes('/.location-replay-')).join('\n'), baselineRef, clock, approvedDb: dbHashes,
     cache: cacheFile ? { file: path.resolve(cacheFile), sha256: sha(await fs.readFile(cacheFile)) } : 'empty cache: no saved cache supplied; no coordinate guesses',
     networkAttempts, rowTransformation: { modifiedRows, outputRows: transformed.length, types, countries },
     production: { beforeRows: before.length, afterRows: after.length,

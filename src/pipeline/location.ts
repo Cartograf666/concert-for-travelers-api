@@ -45,8 +45,12 @@ export function locationDedupeSuffix(row: Pick<Concert, 'venue' | 'city' | 'coun
 
 export function normalizeLocation<T extends Pick<Concert, 'artist' | 'venue' | 'city' | 'country'> & { originalSource?: string }>(row: T, artistAliases: readonly string[] = []): T {
   const city = canonicalCity(row.city, row.country);
-  let placeholder = key(canonicalCity(row.venue, row.country)) === key(city);
+  let placeholder = false;
   if (/(^|\.)bandsintown\.com$/i.test(row.originalSource ?? '')) {
+    // BIT's city is structured provider metadata. Native selector sources may
+    // accidentally duplicate the entire real venue block into city; equality
+    // alone must not erase those real venue names.
+    placeholder = key(canonicalCity(row.venue, row.country)) === key(city);
     const names = [row.artist, ...artistAliases];
     const artist = names.map(name => name.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).filter(Boolean).join('|');
     const title = artist && row.venue.trim().match(new RegExp(`^(?:${artist})(?:\\s+in\\s+|\\s+в\\s+|\\s*\\|\\s*)(.+)$`, 'iu'));
