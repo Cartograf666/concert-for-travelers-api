@@ -16,6 +16,7 @@ import { isInvalidLegacyAiKawashimaEvent } from './ai_kawashima_provenance.js';
 import { verifiedOfficialSourceEventIdentity } from './official_source_event_identity.js';
 import { verifiedNormalizationOccurrence } from './normalization_occurrence_identity.js';
 import { mozarteumProvenanceDropReason } from './mozarteum_provenance.js';
+import { normalizeLocation, locationDedupeSuffix, isUnknownVenue } from './location.js';
 
 /** Format a Date as a timezone-safe YYYY-MM-DD using its local calendar fields. */
 function toLocalIso(d: Date): string {
@@ -1096,6 +1097,7 @@ function buildArtistSocials(socials: any): Concert['artistSocials'] {
  * new venue after a relocation, while an older feed still has the old coordinates.
  * Never construct a record by combining metadata from different sources. */
 function isMoreCompleteDuplicate(existing: Concert, candidate: Concert): boolean {
+  if (isUnknownVenue(existing.venue) || isUnknownVenue(candidate.venue)) return false;
   if (existing.country !== candidate.country || slugify(existing.venue) !== slugify(candidate.venue)) return false;
 
   let addsInformation = (existing.lat === undefined || existing.lng === undefined) &&
@@ -1138,6 +1140,8 @@ export async function processConcerts(
 
   // Compile the matcher once for the whole batch instead of per concert.
   const match = buildApprovedMatcher(approvedArtists);
+  const locationAliases = new Map<string, string[]>(approvedArtists.filter(a => typeof a === 'object' && a?.name)
+    .map(a => [a.name, Array.isArray(a.aliases) ? a.aliases.filter((alias: unknown): alias is string => typeof alias === 'string') : []]));
   const hasTheHuCanonical = approvedArtists.some(isTheHuIdentity);
   const processedMap = new Map<string, Concert>();
   const officialWinnerByKey = new Map<string, boolean>();
@@ -1225,6 +1229,9 @@ export async function processConcerts(
     }
 
     // Prepare full concert model
+    const location = normalizeLocation({ artist: raw.artist, venue: normalizeTextField(raw.venue),
+      city: normalizeTextField(raw.city), country: normalizeCountry(raw.country), originalSource: raw.originalSource },
+    [matched.name, ...(locationAliases.get(matched.name) ?? [])]);
     const concertData: Concert = {
       artist: matched.name,
       artistDiscovery: matched.artistDiscovery,
@@ -1234,10 +1241,10 @@ export async function processConcerts(
       mbid: matched.mbid || undefined,
       date: normalizedDate,
       startTime: raw.startTime || extractTimeFromRawDate(raw.date),
-      venue: normalizeTextField(raw.venue),
-      venueKind: inferVenueKind(raw.venue),
-      city: normalizeTextField(raw.city),
-      country: normalizeCountry(raw.country),
+      venue: location.venue,
+      venueKind: isUnknownVenue(location.venue) ? undefined : inferVenueKind(location.venue),
+      city: location.city,
+      country: location.country,
       lat: raw.lat,
       lng: raw.lng,
       festival: raw.festival,
@@ -1272,7 +1279,7 @@ export async function processConcerts(
     const verifiedEvent = verifiedOfficialSourceEventIdentity(raw, validatedConcert) ??
       verifiedNormalizationOccurrence(raw, validatedConcert);
     const dedupeCity = verifiedEvent ? slugify(verifiedEvent.dedupeCity) : citySlug;
-    const dedupeKey = `${artistSlug}_${validatedConcert.date}_${dedupeCity}`;
+    const dedupeKey = `${artistSlug}_${validatedConcert.date}_${dedupeCity}${verifiedEvent ? '' : locationDedupeSuffix(validatedConcert)}`;
     // Authority is tied to the original cached object and the canonical
     // approved artist. A raw flag, copied URL, or fuzzy alias cannot confer it.
     const candidateOfficial = officialArtistContext?.get(raw)?.artist === matched.name;

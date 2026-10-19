@@ -4,6 +4,7 @@ import axios from 'axios';
 import { hasUnreadableScript, isReadableScript } from './script.js';
 import { Concert } from '../schemas/concert.js';
 import { sleep } from '../engine/sleep.js';
+import { citySpellings, normalizeLocation, isUnknownVenue } from './location.js';
 
 /** The project's scheduled Nominatim policy is at most four requests per minute;
  * the daily reader is deliberately cache-only. */
@@ -187,19 +188,36 @@ export async function geocodeConcerts(concerts: Concert[], options: GeocodeConce
   const attemptedKeys = new Set<string>(); // includes transient failures for this run
   const stats: GeocodeStats = { attempted: 0, filledFromCache: 0, geocoded: 0, failed: 0, skippedCapped: 0, cityTranslated: 0 };
 
+  for (const concert of concerts) {
+    const location = normalizeLocation(concert);
+    if (location.city !== concert.city) stats.cityTranslated++;
+    Object.assign(concert, location);
+    if (isUnknownVenue(concert.venue)) delete concert.venueKind;
+  }
+  // Preserve old, country-scoped cache keys after process canonicalizes a city.
+  // Do not move entries or share coordinates between distinct named venues.
+  const cacheKey = (concert: Concert) => citySpellings(concert.city, concert.country)
+    .map(city => geocodeCacheKey({ ...concert, city }))
+    .find(key => cache[key] !== undefined) ?? geocodeCacheKey(concert);
+
   const queue = concerts.map((concert, index) => ({ concert, index })).sort((a, b) => {
-    const aStamp = cache[geocodeCacheKey(a.concert)]?.lastAttemptAt ?? '';
-    const bStamp = cache[geocodeCacheKey(b.concert)]?.lastAttemptAt ?? '';
+    const aStamp = cache[cacheKey(a.concert)]?.lastAttemptAt ?? '';
+    const bStamp = cache[cacheKey(b.concert)]?.lastAttemptAt ?? '';
     return aStamp.localeCompare(bStamp) || a.index - b.index;
   });
   for (const { concert } of queue) {
     if (!concert.venue || !concert.city || !concert.country) continue;
-    const key = geocodeCacheKey(concert);
+    // A city/title placeholder cannot identify a venue. Keep supplied coords,
+    // but never spread a shared Unknown Venue cache point to other events.
+    if (isUnknownVenue(concert.venue)) continue;
+    const key = cacheKey(concert);
     const cached = cache[key];
     const needsCoords = concert.lat === undefined || concert.lng === undefined;
     // Key is deliberately computed before this mutation, so translated cities
     // continue to hit the original venue/city/country cache record on later runs.
     if (cached) applyEnglishCity(concert, cached.cityEn, stats);
+    Object.assign(concert, normalizeLocation(concert));
+    if (isUnknownVenue(concert.venue)) { delete concert.venueKind; continue; }
     const needsCityEn = hasUnreadableScript(concert.city) && cached?.cityEn === undefined;
     let usedCachedCoords = false;
     if (!needsCoords && !needsCityEn && !cached?.retryable) continue;
