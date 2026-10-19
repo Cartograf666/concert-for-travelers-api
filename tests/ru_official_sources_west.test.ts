@@ -9,7 +9,7 @@ import { ScraperConfigSchema } from '../src/schemas/config.js';
 import { runScraper } from '../src/engine/runner.js';
 import { extractJsonLd } from '../src/engine/structured.js';
 import { scrape } from '../src/engine/custom/ddt-tour.js';
-import { processConcerts } from '../src/pipeline/process.js';
+import { normalizeCountry, processConcerts } from '../src/pipeline/process.js';
 
 const root = 'tests/fixtures/ru-data-2-west/';
 const captures = JSON.parse(readFileSync(root + 'captures.json', 'utf8'));
@@ -25,6 +25,11 @@ function mutateEvent(change: (event: Record<string, any>) => void) {
   script.text(JSON.stringify(events));
   return $.html();
 }
+
+test('DDT config accepts ZZ only as an unused fallback marker', () => {
+  assert.equal(config.selectors?.countryNameFallback, 'ZZ');
+  assert.equal(normalizeCountry(config.selectors!.countryNameFallback), '');
+});
 
 test('all west native fixture bodies retain their original response hashes', () => {
   assert.ok(captures.length >= 12);
@@ -127,7 +132,7 @@ test('DDT skips only rows without a trustworthy explicit country, ignoring confi
     { '@type': 'Country', name: 'Austria', identifier: 123 }
   ]) {
     const body = mutateEvent(event => { event.location.address.addressCountry = label; });
-    for (const fallback of ['DE', 'AT']) {
+    for (const fallback of [config.selectors!.countryNameFallback, 'DE', 'AT']) {
       const rows = await scrape({ ...config, selectors: { ...config.selectors!, countryNameFallback: fallback } }, body, clock);
       assert.equal(rows.length, 1, JSON.stringify(label));
       assert.equal(rows[0].city, 'Ingolstadt');
