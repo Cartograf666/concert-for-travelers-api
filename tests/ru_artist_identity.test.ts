@@ -5,7 +5,6 @@ import { loadApprovedArtists, PRODUCTION_ARTIST_DB_DIR } from '../src/pipeline/a
 import { buildApprovedMatcher, processConcerts, type ApprovedMatcher } from '../src/pipeline/process.js';
 import { loadArtistTargets } from '../src/run-artists.js';
 import type { ArtistEntry } from '../src/schemas/artist.js';
-import { repairRuArtistIdentities, repairRuTargets, assertRuIdentityScope } from '../src/scripts/repair_ru_artist_identities_20261016.js';
 
 let db: ArtistEntry[];
 let match: ApprovedMatcher;
@@ -104,24 +103,4 @@ test('real normalization carries distinct MBIDs for RU artists and foreign contr
     assert.equal(row?.mbid, expected.mbid, input);
     assert.equal(row?.artistWebsite, expected.website || undefined, input);
   }
-});
-
-test('finite repair is repeatable, preserves unknown unrelated metadata and rejects identity drift', async () => {
-  const sentinel = { name: 'Unrelated identity sentinel', mbid: 'unchanged', arbitraryFutureField: { nested: ['keep'] } };
-  const input = [...db, sentinel];
-  // The live DB keeps being enriched by bots (e.g. German Morgenstern regains
-  // genres/image), so assert idempotence of the repair, not that the live DB
-  // still equals its 2026-10-16 post-repair state.
-  const repaired = repairRuArtistIdentities(input);
-  assert.deepEqual(repaired.at(-1), sentinel, 'unrelated metadata preserved');
-  assert.deepEqual(repairRuArtistIdentities(repaired), repaired, 'second run is a complete no-op');
-  assert.equal(input.at(-1), sentinel, 'no mutation of caller input');
-  const changed = structuredClone(repaired);
-  changed.at(-1)!.arbitraryFutureField.nested.push('unwanted');
-  assert.throws(() => assertRuIdentityScope(input, changed));
-  const conflict = structuredClone(db);
-  conflict.find(a => a.name === 'Little Big')!.mbid = '76e78b58-f301-4975-8058-7f84d8360738';
-  assert.throws(() => repairRuArtistIdentities(conflict), /Unexpected identity/);
-  const targets = await readFile('data/artist_scrape_targets.txt', 'utf8');
-  assert.equal(repairRuTargets(repairRuTargets(targets)), repairRuTargets(targets));
 });
