@@ -14,7 +14,7 @@ suspect another session might be active.
 
 ## Recently active
 
-- **2026-10-19 — `concerts-ru-data-2` (Delamain, in progress):** `agent/concerts-ru-data-2-20261019` from `bc5e20d`; official calendars for nine RU artists, shared venue/city normalization and saved-input measurements. Separate owned worktrees for normalization, official-west/east and measurement. State: `docs/ru-data-expansion-2-20261019.md`; decisions: `/Users/alex/agent-hub/concerts-ru-data-2/questions.md`. No push/deploy/main merge; main checkout and dirty `BACKLOG.md` protected.
+- **2026-10-19 — `concerts-ru-data-2` (Delamain, local delivery):** `agent/concerts-ru-data-2-20261019` from `bc5e20d`; all nine official-source cases documented, one DDT source adds 2 DE concerts; full snapshot 80 field repairs (68 venues/16 cities/4 overlap). Exact code `3f31463`: 921 tests/920 pass/0 fail/1 skip, all required gates and Claude Opus 5.5 fix review passed. State: `docs/ru-data-expansion-2-20261019.md`; decisions: `/Users/alex/agent-hub/concerts-ru-data-2/questions.md`. Subsequent commits are docs-only. No push/deploy/main merge; main checkout and dirty `BACKLOG.md` protected. Alex owns publication/access-request decisions.
 
 - 2026-10-16: Delamain `concerts-ru-data`, integration branch
   `agent/concerts-ru-data-20261016` from exact local main `6af49b1`.
