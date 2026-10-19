@@ -1,104 +1,112 @@
-# Второй срез: финальное воспроизводимое измерение, 19.10.2026
+# Второй срез: измерение после review, 19.10.2026
 
-**Exact candidate `319aa0412cac7fff271424099afdc240362034c5` даёт 2 новых валидных концерта ДДТ в Германии: Essen 05.12.2026 и Ingolstadt 09.12.2026. В affected source cohort public output 0 → 2, removed/metadata changed = 0/0. Остальные восемь targets не имеют допущенного config: их source gain 0 с причинами ниже.** Отдельная нормализация полного saved-live snapshot исправила 74 существующие строки, сохранив все 48 283 входные записи; native publisher дал 48 255 → 48 255, без потерь и дополнительного dedupe. Production не менялась.
+**Post-review candidate `3f314632c0276cabca9b4c726257b9f6eb92c445` подтверждает 2 новых source occurrences ДДТ в Германии: Essen 05.12.2026 и Ingolstadt 09.12.2026. Source public output 0 → 2, added/removed/changed = 2/0/0; whole public bytes совпадают с предыдущим candidate.** У остальных восьми targets нет допущенного config, прирост 0. На полном уже опубликованном snapshot нормализация изменила **80 строк: 68 venue placeholders, 16 city aliases, overlap 4**; actual publisher **48 255 → 48 255**, snapshot-induced loss/dedupe 0/0. Production не менялась.
 
-Контракт: `/Users/alex/agent-hub/concerts-ru-data-2/common-brief.md`; реестр решений: `/Users/alex/agent-hub/concerts-ru-data-2/questions.md`. Все пути evidence ниже относительны `/Users/alex/agent-hub/concerts-ru-data-2/evidence/measurement/`.
+Этот документ **заменяет** результаты и code claims candidate `319aa04` / normalization `d400a80`, включая counters **74/61/16/3**. Предыдущие immutable evidence directories сохранены как история. Текущие counters взяты из новых artifacts и независимо пересчитаны, не из предварительной оценки.
 
-## Exact ревизии и original inputs
+Контракт: `/Users/alex/agent-hub/concerts-ru-data-2/common-brief.md`; реестр решений: `/Users/alex/agent-hub/concerts-ru-data-2/questions.md`. Пути ниже относительны `/Users/alex/agent-hub/concerts-ru-data-2/evidence/measurement/`, если не указано иначе.
+
+## Exact versions и неизменные inputs
 
 | Поле | Проверенное значение |
 |---|---|
-| Base | `bc5e20db913ab5cbcff26870bda072c82fb8b768` |
-| GO candidate | `319aa0412cac7fff271424099afdc240362034c5` |
-| Встроенная normalization revision | `d400a809680af1b07da8df901dc460dbf0b7ac07` |
-| Frozen source clock | `2026-10-19T07:34:57.000Z` |
+| Exact base | `bc5e20db913ab5cbcff26870bda072c82fb8b768` |
+| Post-review GO candidate | `3f314632c0276cabca9b4c726257b9f6eb92c445` |
+| Встроенная normalization revision | `417dc9824407b2df02cea826e1da4a741426ac39` |
+| Frozen source clock, сохранён по GO | `2026-10-19T07:34:57.000Z` |
 | Latest mapped actual capture | `2026-10-19T07:21:33.815178+00:00` |
-| Final manifest SHA256 | `cf1a5c78a74125fb0ef408421f5992cc37608f9f9fbd624402c9c8d3490a9c61` |
+| Post-review manifest SHA256 | `00a65918fc23ac6ba956aef02cc9c0d0ce8ffdd86d97bd7e89b80cde31ca1f9d` |
 | Внешний harness SHA256 | `b1bbf7da861417c9bdf4b3d5567028b874c1bdf8766a1170da6e7f6b8db11546` |
 | Base code/config/DB fingerprint | `e78934f83bdb5da083b7fe57f38565bfc6f37aed801b3f9933ddece18a2a1d29` |
-| Candidate code/config/DB fingerprint | `64815783d967c6c1c7a12810759de8f229d722f12eed323e59d7962f0e9b594f` |
-| Actual approved DB | 63 409, одинаковые shard hashes на обеих сторонах |
+| Candidate code/config/DB fingerprint | `7154c13bed9e9943fa28dda6be252b10d2329ee3076520dde532079bca580a09` |
+| Public candidate concerts.json SHA256 | `d406f04de67554a421f745e377fe5111ec6efdc5d8837f48a1a54630309288a1` |
+| Actual approved DB | 63 409; shard hashes одинаковы на обеих сторонах |
 
-Реально выполнена цепочка `runScraper → processConcerts → geocodeConcerts(cache-only) → publishConcerts`, по настоящим code/config и approved artistDb каждой стороны. Harness загружен из собственного measurement worktree вне обеих проверяемых сторон. Base worktree `.../evidence/measurement/base-bc5e20d` нетронут; candidate code/config/DB не менялись. На каждой стороне identity-before/after JSON полностью совпали по revision, clean state и file hashes. Fingerprint покрывает tracked src, scrapers, artist DB, package manifests, primary/backup geocode cache. Actual geocode caches отсутствуют на обеих сторонах; provider calls = 0, две новые coordinate-less строки остаются pending enrichment. Координаты не выдуманы.
+Созданы **новые** `post-review-inputs/` и `post-review-integrated-replay/`; старые inputs/outputs не перезаписаны. В manifest изменено **только candidateRevision** относительно прежнего `final-inputs/inputs.json`: label, base, clock, все original response mappings, hashes, paths и savedRaw audit references побайтно/структурно проверены как неизменные. Новый manifest hash привязан к обеим summaries; original bytes проверены до и после. Нет stale candidate inputs. Source config diff 319aa04→3f31463 пустой; все новые approved runtime paths base→3f покрыты, единственный — `scrapers/artists/ddt-tour.json`.
 
-Manifest `final-inputs/inputs.json` содержит все девять target paths и все одобренные новые runtime configs; diff base→GO показывает только один новый config, `scrapers/artists/ddt-tour.json`. Его original HTTP entity bytes — `../official-west/deac8dc26fd613f440.body` относительно evidence root, SHA256 `2b7cc34a6429d0450f5a05ed7712e8a2c0915bc85b87fa0ffb5a94675c7486a3`, GET 200. Ещё три original home captures из east mapping проверены по SHA, но при отсутствующих configs не исполняются. West other four absence paths имеют responses=[]; это отсутствие допустимого config, не поддельные ответы или события. Original inputs проверены до и после; готовые raw не передавались в pipeline. `savedRaw` ДДТ использован только как audit: equalExceptScrapedAt=true.
+Выполнен тот же реальный `runScraper → processConcerts → geocodeConcerts(cache-only) → publishConcerts` из exact base/candidate с их actual artistDb. Harness загружен из собственного measurement worktree вне обеих сторон. На каждой стороне identity-before/after JSON полностью совпали: HEAD, clean state, code/config/DB/package/cache hashes. Base preserved worktree `base-bc5e20d` не менялся; hub и чужие worktrees не менялись.
 
-Clock свежий и позже original captures; source окно 14–90 inclusive — 02.11.2026–17.01.2027. На base 0 HTTP reads, на candidate 1; на обеих сторонах **0 network attempts / 0 missing captures**. Отсутствующие configs не классифицируются как source-success, даже если технический итог worker `state=replayed`.
+| Source cohort | Base | Post-review candidate |
+|---|---:|---:|
+| Raw / public | 0 / 0 | 2 / 2 |
+| Captured HTTP reads | 0 | 1 |
+| Network attempts / missing captures | 0 / 0 | 0 / 0 |
+| Config absent | 9 | 8 |
+| Admitted runtime source collected | 0 | 1 |
+| Approved DB read | 63 409 | 63 409 |
 
-## Новые valid occurrences и все страны/города
+Original DDT HTTP entity body: `../official-west/deac8dc26fd613f440.body`, GET200, SHA256 `2b7cc34a6429d0450f5a05ed7712e8a2c0915bc85b87fa0ffb5a94675c7486a3`. Ещё три east home captures проверены по SHA, но при отсутствующих configs не исполняются. West other4 имеют responses=[]: нет eligible config, а не synthetic HTTP/events. Готовые raw не передавались в pipeline; savedRaw ДДТ — только audit, equalExceptScrapedAt=true. Actual primary/backup geocode caches отсутствуют на обеих сторонах, provider attempts0; новые координаты не угадывались, enrichment pending2.
 
-| Артист | Native дата/время | Страна / город | Venue | Проверенный native event URL |
+## Два новых source события
+
+| Артист | Native дата/время | Страна / город | Venue | Native source-event URL |
 |---|---|---|---|---|
 | ДДТ | 05.12.2026 20:00 | DE / Essen | Essen Grugahalle | [Essen](https://biletkartina.tv/ru/event/Gruppa_DDT_v_Germanii/essen-2026-12-05) |
 | ДДТ | 09.12.2026 20:00 | DE / Ingolstadt | Saturn Arena | [Ingolstadt](https://biletkartina.tv/ru/event/Gruppa_DDT_v_Germanii/ingolstadt-2026-12-09) |
 
-Полный all-country gain: **DE 2; Essen 1, Ingolstadt 1**; остальные страны 0. Обе даты строго будущие и в окне 14–90. В исходной корзине 16 стран первого среза прирост **0**: DE туда не входит. Поля `comparison.addedByCountry`, `baseMeasurement` и `candidateMeasurement` сохраняют ограниченную старую корзину; этот country panel не является полным all-country breakdown. Полные counts отдельно в `new-valid-occurrences.json`.
+**All-country new counts: DE2; Essen1, Ingolstadt1; прочие страны 0.** Обе даты строго будущие и в source окне 14–90 inclusive, 02.11.2026–17.01.2027. В старой корзине 16 стран первого среза gain **0**, потому что DE не входит. Legacy panel `comparison.addedByCountry` и measurement country tables ограничены этими16; полный country/city breakdown — `new-valid-occurrences.json`.
 
-Проверены оригинальный h1 и MusicEvent JSON-LD: scheduled/offline, полный год/дата/время, explicit DE, city, venue, event URL = offers URL. Сверена авторитетная saved-native цепочка `ddt.ru → ddt-tour.ru → Bilet.Kartina hall → calendar`. Performer Yuri Shevchuk в group calendar не превратился в другую approved identity: обе public rows — ДДТ, MBID `f7456b5b-e5a5-454e-b5db-047308210c8e`. Каждая public row целиком совпадает с реальной одиночной нормализацией freshly extracted raw; metadata не сплайсилась. В полном live-before target identity ДДТ имеет 0 строк, внутри final cohort обе occurrences уникальны.
+Повторно проверены original h1/MusicEvent, scheduled/offline, полный год/дата/время, explicit DE/city/venue, source URL=offers URL, saved-native authority chain `ddt.ru → ddt-tour.ru → Bilet.Kartina hall → calendar`. Public identity — ДДТ, MBID `f7456b5b-e5a5-454e-b5db-047308210c8e`; performer Yuri Shevchuk в group calendar не стал другой identity. В full live-before эта identity имеет0 rows; две новые occurrences уникальны в source cohort.
 
-Настоящий process предпочитает approved website: public `ticketUrl=https://ddt.ru/`, не operator event URL. Правильные native event URLs, полные raw/public rows и их hashes сохранены отдельно в `final-integrated-replay/new-valid-occurrences.json`. Это доказательство source identity/date/place, не наличия билетов или полноты календаря.
+Каждая public row целиком совпала с реальной одиночной нормализацией extracted raw и geocode; metadata не сплайсилась. Candidate public bytes **полностью равны предыдущим public bytes** (SHA выше), не только выбранным полям. Существующий process предпочитает approved website: public ticketUrl `https://ddt.ru/`; operator event URLs сохранены отдельно с полными native/raw/public rows и hashes. Это source identity/date/place proof, не ticket availability или source completeness.
 
-## Все девять target statuses
+## Все девять targets
 
-Все девять approved identities имели 0 строк в полном live-before. Таблица показывает source delta локального same-input replay, не переписанный полный production catalog.
+Fresh live-before canonical names и approved MBIDs: у каждого0. Ни один отсутствующий config не назван source-success, даже если технический worker summary state=replayed.
 
-| Target | Base / candidate raw | Новых valid occurrences | Фактический результат |
-|---|---:|---:|---|
-| ДДТ | 0 / 2 | 2 | Один допущенный native runtime source; Germany. Thai dates не подключены из-за конкретного Lotus Arena terms restriction |
-| Oxxxymiron | 0 / 0 | 0 | На saved official TOUR 2026 April–July calendar нет подтверждённых дат после 19.10; вывод ограничен страницей |
-| Баста | 0 / 0 | 0 | Явная страна отсутствует; Intickets JS challenge; linked BIG ART также без country; config не создан |
-| Макс Корж | 0 / 0 | 0 | Timeouts и неполный native calendar body; не утверждение «нет дат» |
-| Zivert | 0 / 0 | 0 | Expired TLS official hosts; полный native calendar не получен; TLS не обходился; не «нет дат» |
-| Кино | 0 / 0 | 0 | Official country отсутствует, linked Zakazbiletov reuse restriction; config отсутствует |
-| Монеточка | 0 / 0 | 0 | Последний анонс на captured page 05.09.2026; dated no-announced-future-dates-on-this-page |
-| Дора | 0 / 0 | 0 | Home/robots timeout; linked BandLink terms restriction и incomplete venue/country; не «нет дат» |
-| Lumen | 0 / 0 | 0 | Homepage без country; full-calendar timeout; не «нет дат» |
+| Target | New valid occurrences | Фактическая причина / статус |
+|---|---:|---|
+| ДДТ | 2 | Один admitted runtime source Germany; Thai dates не подключены из-за конкретного Lotus Arena terms restriction |
+| Oxxxymiron | 0 | На saved official TOUR2026 calendar April–July нет подтверждённых дат после19.10; вывод ограничен страницей |
+| Баста | 0 | Explicit country отсутствует; Intickets JS challenge; linked BIG ART также без country |
+| Макс Корж | 0 | Timeouts/partial native calendar; не утверждение «нет дат» |
+| Zivert | 0 | Expired TLS official hosts, полного native calendar нет; TLS не обходился; не «нет дат» |
+| Кино | 0 | Official country отсутствует, linked Zakazbiletov reuse restriction |
+| Монеточка | 0 | Last announced05.09.2026; dated no-announced-future-dates-on-this-page, без year rollover |
+| Дора | 0 | Official home/robots timeout; BandLink reuse restriction и incomplete venue/country; не «нет дат» |
+| Lumen | 0 | Homepage без country, full-calendar timeout; не «нет дат» |
 
-Detailed source reasons/terms evidence принадлежат `coordinator/work/official-sources-west-REPORT.md` и `official-sources-east-REPORT.md`; их observations не превращались в publish inputs. Ни один blocked/no-dates/incomplete case не назван успешной интеграцией. Машиночитаемые статусы: `final-integrated-replay/all-nine-target-statuses.json`.
+Подробные причины/native evidence — в source worker reports `coordinator/work/official-sources-west-REPORT.md` и `official-sources-east-REPORT.md`; source observations не стали publish inputs. `post-review-integrated-replay/all-nine-target-statuses.json` связывает каждую identity с фактическим config state и reason. Source configs/statuses не изменились после review.
 
-## Свежий полный live-before
+## Полный saved-live snapshot и новая нормализация
 
-Хаб выполнил GET 19.10.2026 07:19:12–07:19:18 UTC. Все три оригинальных файла `../live-before/{index,concerts,status}.json` проверены offline по manifest HTTP200, bytes и SHA; `index.stats.totalConcerts == status.publishedConcerts == concerts.length == 48283`. Оригиналы не менялись.
+Hub captured GET19.10.2026 07:19:12–07:19:18 UTC. Повторно проверены все original files bytes/SHA и counts: `index.stats.totalConcerts == status.publishedConcerts == concerts.length == 48283`. `index.lastRun=2026-10-18T09:04:35.710Z`, `status.generatedAt=2026-10-18T09:04:35.713Z`; concerts35 176 627 bytes, SHA256 `2fd8d7d81fa3e35a9c9c02931dbe440ed5c7c21c433b47c897d0a125cdd368d5`. Девять target counts0 подтверждены actual artistDb; латинский Kino Calgary с другой MBID не включён в RU Кино. Исходные21 descriptive location examples сохранены в `live-validation/`, категории пересекаются.
 
-- `index.lastRun=2026-10-18T09:04:35.710Z`; `status.generatedAt=2026-10-18T09:04:35.713Z`.
-- `concerts.json`: 35 176 627 bytes, SHA256 `2fd8d7d81fa3e35a9c9c02931dbe440ed5c7c21c433b47c897d0a125cdd368d5`.
-- Все nine targets: 0 по canonical name и approved MBID; имя Kino отдельно не включено в «Кино». Live Kino Calgary 20.11.2026 имеет другую MBID `39568c43-87a3-4711-92dd-7a33bd4e92ef`, kinomusic.com; RU Кино — `064db6e8-fdfb-4acb-a327-fc2de75b37de`, kino.band.
-- Входные descriptive location examples: 4 NERVY templates, 1 MORGENSHTERN Limassol title, 3 Andru venue=city; AM Երևան 1, GE T'bilisi 3, RS Beograd 11, CY Άγιος Τύχων 1. Категории пересекаются: 21 distinct input row, не прогноз количества исправлений.
+Новый worker replay: `../location-normalization-opus-fix-1/`, exact revision `417dc9824407b2df02cea826e1da4a741426ac39`. Process/geocode/location/BIT/replay bytes **совпали с integrated3f31463**, approved DB hashes также совпали. Full snapshot replay сохраняет index clock18.10, чтобы оценивать тот же опубликованный input; это отдельный эксперимент от source clock19.10.
 
-`live-validation/{summary,targets,location-before-rows}.json` сохраняют полный учёт и before examples; `validate-live.py` читает только original snapshot. Строки каталога не заявляются независимо проверенными уникальными событиями. Freshness = `index.lastRun - scrapedAt <=72h`, extraction age, не event verification.
+`verify-post-review-normalization.mjs` не запускает pipeline повторно и не воспроизводит normalization algorithm. Независимо проверены все48 283 before rows, hashes, indexes, identity arrays, every changed field и row-level counters:
 
-## Независимая сверка normalization worker
+- **80 modified = 68 venue +16 city −4 overlap**; input/output audit rows48 283/48 283. Source coordinates и unrelated fields сохранены.
+- Семь новых venue corrections против d400a80: `Ljubljana, SI`; `Den Haag, Netherlands`; `Madrid, Spain`; `Bogotá, Colombia`; `Santiago, Chile`; `Buenos Aires, Argentina`; `Belgrade, Serbia`. Они соответствуют structured BIT city/country. Одна строка уже имела city correction, поэтому union modified вырос74→80, а venue corrections61→68. Проверено сравнением полных старых/новых audit rows, не предположением.
+- Actual native public before/after48 255/48 255; в обоих28 existing notApproved (Mozarteum provenance guard), все другие drops0, duplicatesMerged0/0.
+- Все80 audit corrections найдены в published rows; после применения **только записанных field diffs** baseline public row multiset полностью равен candidate. Все прочие metadata и multiplicity сохранены **на этом snapshot**; snapshot-induced loss/dedupe0/0, downstream gained/lost после corrections0/0.
+- Все8 required cases опубликованы как Unknown Venue с исходными lat/lng; CY стал **Agios Tychonas**, не Limassol.
+- Worker native replay networkAttempts0, пустой cache; source lat/lng не угадывались и не переносились между записями.
 
-Источник — финальный replay `../location-normalization/`, revision `d400a809680af1b07da8df901dc460dbf0b7ac07`. Изменённые process/geocode/location/BIT/replay bytes **совпали** с integrated GO candidate; approved shard hashes также совпали. Это заменяет rejected d6b8777 и earlier 611aeed evidence. Full replay использует clock соседнего index (`18.10 09:04:35.710Z`), чтобы проверять сохранение исходного snapshot; это отдельный эксперимент от fresh source clock 19.10.
+Новые country modified counts (все независимо пересчитаны): AM2, AR3, AU1, BE2, BR1, CA10, CH1, CL1, CO1, CY1, CZ1, DE2, DK2, EE1, ES6, FI1, FR6, GB2, GE4, IE1, IN6, LT2, NL1, PT1, RS11, RU8, SI1, TH1. Type/country breakdown — `post-review-normalization-validation/verification.json`. Full worker audit SHA256 **`54be5d3db2330c030c37d7f15c30e20e65be5977ffc43c79437f912cc67a5fce`**, actual publisher before/after hashes также зафиксированы в verification. Полные80 changed pairs,8 required published examples и7 новых venue corrections сохранены отдельно.
 
-Валидатор `verify-normalization.mjs` не запускает нормализацию повторно и не дублирует её code. Он проверил все 48 283 исходных before rows, row indexes, identity arrays и input-row hashes по оригинальному live snapshot; сопоставил every before/after field и independently пересчитал types/countries:
+## Исправленный code contract и границы доказательств
 
-- **74 modified**: venue placeholders **61**, city aliases **16**, пересечение **3**; input/output row audit **48 283/48 283**.
-- Authoritative lat/lng и все поля вне venue/city сохранены; ни одно событие не добавлено row transformation.
-- Production **48 255 → 48 255**; на каждой стороне 28 notApproved (existing Mozarteum provenance guard), остальные dropped reasons = 0, duplicatesMerged = 0.
-- Все 74 corrections найдены в published rows. После применения **только записанных audit field diffs** к baseline public rows полные row multisets candidate совпали. Сохранены metadata и multiplicity, без field splicing.
-- Normalization-induced loss/dedupe = **0/0**; downstream gained/lost после field corrections = **0/0**; source gain здесь **0**.
-- Все восемь required live cases действительно опубликованы с `Unknown Venue`, исходные координаты сохранены. CY Άγιος Τύχων стал **Agios Tychonas**, не Limassol.
-- Worker native replay имеет networkAttempts=0 и завершённое idempotence assertion до записи summary. Мною проверены завершённые artifacts/исходный assertion, повторный pipeline не исполнялся.
+Старые venue-discriminator / validated-row identity эксперименты **удалены**. Process сохраняет legacy grouping artist/date/**raw city** до post-dedupe geocode canonicalization и прежние verified-source exceptions. В одной прежней группе целая named-venue row предпочтительнее Unknown Venue при одинаковом authority; прежний official-source приоритет сохраняется. Timestamp/query/прочая metadata не создают новую event identity; metadata не собирается из разных записей.
 
-Country modified/type counts целиком повторно сверены в `final-normalization-validation/verification.json`: AM2, AR2, AU1, BE2, BR1, CA10, CH1, CY1, CZ1, DE2, DK2, EE1, ES5, FI1, FR6, GB2, GE4, IE1, IN6, LT2, PT1, RS11, RU8, TH1. Original full before/after audit сохранён worker: `../location-normalization/rows-before-after.jsonl`, SHA256 `b767168ac175f15c6ce0056924383237e7f1216fb8ad10238340dda4e49d2b4f`. Его hashes и full public before/after hashes зафиксированы в моей verification. Полные 74 modified rows и 8 required published examples скопированы как отдельные проверенные evidence artifacts.
+Limited country/city-scoped comparison forms распознают Izhevsk/RU ↔ Ижевск/Ижевске в title placeholders, не переименовывают города и не выводят geography. Structured `city, country` проверяется по совпадающему городу и существующему country code/English country name. Неизвестный Various/GB остаётся unknown source-quality limit; настоящий город не выдумывается.
 
-BIT upstream provider recovery отделён: full saved-public snapshot не может восстановить события, отброшенные до публикации. Изменённый native BIT no-discard path покрыт worker fixtures, но количественный production gain от provider recovery **не измерен**. Он не прибавляется к двум новым ДДТ source events.
+**Snapshot loss/dedupe0 не доказывает raw multi-source coverage.** Эти сценарии, authority и whole named row preference проверены отдельными synthetic/native fixture regressions worker:18 location tests и103 focused tests, не live provider acceptance. Достоверность retained BIT provider rows и численность ранее отсечённых upstream events **не измерены** и не добавляются к source gain2 ДДТ.
 
-## Проверки, ограничения и воспроизведение
+Идемпотентность ограничена field normalizer и повтором **того же RAW input** в worker assertions/fixtures. Безусловное re-ingestion **published JSON** не заявляется: raw spelling Beograd/Belgrade теряется после публикации и может изменить legacy grouping при повторной подаче public output. Такой consumer path не служил причиной нового discriminator. Моя проверка читала завершённые assertions/artifacts, нормализатор не запускала повторно.
 
-PASS: pristine exact-base native absence replay выполнен **до изменений harness** — 9 configAbsent, 0 raw/public/HTTP/network/missing; actual DB63 409; code/config/DB identity без изменений. Evidence `preparation/pristine-base/`. PASS внешний harness base-self regression на original first-slice HTTP: identical 7 raw→5 public с нулевой дельтой; это только harness regression, не новый source-success.
+## Gates и воспроизведение
 
-PASS в этом финальном запуске: real same-input pipeline на exact GO; original bytes before/after; code/config/DB before/after; одинаковый approved DB и geocode input; 0 missing captures/0 network attempts; independent native event/date/place/URL/identity spot-check; 2 whole-record lineage; все9 statuses; полная normalization row/production multiset сверка. Свои focused replay tests 6/6 и focused eslint/`git diff --check` прошли в подготовке, src/tests после неё не менялись.
+PASS мной: exact source replay на новом GO; manifest меняет только candidateRevision; original hashes before/after; code/config/DB identity; одинаковый actual artistDb/cache input; 0 network/missing; native event/date/place/URL/identity audit;2 whole-record lineages; identical public bytes versus prior candidate; all9 statuses; full saved-snapshot row/country/type/hash/coordinate/metadata/multiplicity validation. Подготовительные6/6 harness tests, focused lint и pristine base absence replay остаются в evidence; harness/tests с тех пор не менялись.
 
-Full gates выполнил **хаб**, я проверил completed logs/SHA на exact `319aa04`, не повторяя их: `npm test` **912 total / 911 pass / 0 fail / 1 expected skip**; SSRF, tsc --noEmit, lint, selector ratchet **125<=131**, artist integrity и diff-check — PASS. Первый npm run имел 3 infrastructure failures из-за отсутствующей worktree-local node_modules/tsx ссылки; хаб добавил ignored symlink на уже установленные зависимости, без install/code changes. Повторный npm log/hash/exit0 проверены; первый не скрыт. Итог: `final-integrated-replay/root-gates-verified.json`. External reviewer/owner acceptance относятся к хабу и этим измерением не заявляются.
+**Hub-owned final-checks-2 завершены на exact3f31463:** npm **921 total /920 pass /0 fail /1 expected skip**; SSRF, tsc --noEmit, lint, selector125<=131, artist integrity, diff-check — все exit0. Мною проверены каждый log SHA и exact before/after HEAD/clean status, gates не повторялись. npm log SHA `4c5d1fb1c355ee0bfc2b5c7485ed67f13112dcbfe9caa046c89db4d8ca91649f`. Current source replay/validation/gates failures нет; старый final-checks-1 loader failure и прежние counters остаются только historical evidence. Внешний review round2 и owner acceptance — scope хаба, этим измерением не заявляются.
 
-Known gaps: восемь targets без eligible runtime configs; Thailand ДДТ исключён по source restriction; network geocoding и реальные production caches не участвовали, новые coordinates pending; источник не проверен на полноту или ticket availability; BIT provider recovery count не измерен; нет deploy/live-after publication. Affected-cohort 0→2 нельзя прибавлять к full snapshot как доказательство нового production total. Ни push, PR, dispatch, deploy, external contacts/forms, auth repair, agreements, DB writes или budget/cadence changes не выполнялись.
+Не выполнены и не заявляются: production deploy/live-after, реальные provider geocoding/caches, ticket availability/source completeness, quantitative BIT upstream recovery/provider truth, безусловная published-JSON идемпотентность. Восемь targets без eligible configs; новые DDT coordinates pending. Source0→2 нельзя прибавлять к full live total как подтверждённый production прирост. Нет push/PR/main merge/dispatch/deploy, external contacts/forms/auth repair/agreement acceptance/DB writes/budget-cadence changes.
 
-Команда выполненного replay (out при повторе должен быть новым и пустым):
+Выполненная команда (out при повторе новый и пустой):
 
 ```sh
-node --import tsx /Users/alex/code/concert-for-travelers-api/.worktrees/agent/concerts-published-measurement-20261019/src/scripts/ru_data_expansion_replay.ts --base /Users/alex/agent-hub/concerts-ru-data-2/evidence/measurement/base-bc5e20d --candidate /Users/alex/code/concert-for-travelers-api/.worktrees/agent/concerts-ru-data-2-20261019 --inputs /Users/alex/agent-hub/concerts-ru-data-2/evidence/measurement/final-inputs/inputs.json --out /ABS/NEW/EMPTY/REPLAY
+node --import tsx /Users/alex/code/concert-for-travelers-api/.worktrees/agent/concerts-published-measurement-20261019/src/scripts/ru_data_expansion_replay.ts --base /Users/alex/agent-hub/concerts-ru-data-2/evidence/measurement/base-bc5e20d --candidate /Users/alex/code/concert-for-travelers-api/.worktrees/agent/concerts-ru-data-2-20261019 --inputs /Users/alex/agent-hub/concerts-ru-data-2/evidence/measurement/post-review-inputs/inputs.json --out /ABS/NEW/EMPTY/REPLAY
 ```
 
-Final primary artifacts: `final-inputs/{inputs,originals-before}.json`, `final-integrated-replay/{comparison,delta,new-valid-occurrences,all-nine-target-statuses,verified-invariants,originals-after,root-gates-verified}.json`, per-side `identity-before/after`, `raw.json`, `row-provenance.json`, `processing.json`, `public/`, logs. Native audit script `audit-final.mjs` и normalization validator используют только saved evidence; новые scraping/pipeline реализации не созданы. Полный byte index — `final-evidence-index.json`.
+Current artifacts: `post-review-inputs/{inputs,originals-before}.json`; `post-review-integrated-replay/{comparison,delta,new-valid-occurrences,all-nine-target-statuses,verified-invariants,previous-vs-post-review,originals-after,root-gates-verified}.json`; per-side raw/public/provenance/diagnostics/identity-before-after/logs. Validation: `post-review-normalization-validation/`, scripts `audit-post-review.mjs` и `verify-post-review-normalization.mjs`. Final byte index — `post-review-evidence-index.json`. Старые final-inputs/final-integrated-replay и предыдущий normalization audit сохранены без изменений.
