@@ -41,7 +41,8 @@ test('native BIT → process → cache-only geocode → publisher retains all re
   const raw = required.map((r, i) => mapBitEventToConcert({ starts_at: `${r.date}T20:00:00`,
     venue: { name: r.venue, city: r.city, country: r.country, latitude: '10', longitude: '20' },
     url: `https://www.bandsintown.com/e/${i}` }, r.artist, NOW)!);
-  assert.equal(raw.filter(Boolean).length, required.length, 'BIT must not discard title-shaped venues');
+  assert.equal(required.length, 8);
+  assert.equal(raw.filter(Boolean).length, 8, 'real NERVY listings are queried as Нервы and survive the original exact-artist filter');
   const original = structuredClone(raw);
   const processed = await processConcerts(raw, db, NOW);
   assert.equal(processed.length, required.length);
@@ -54,10 +55,40 @@ test('native BIT → process → cache-only geocode → publisher retains all re
   const published: Concert[] = JSON.parse(await fs.readFile(path.join(out, 'concerts.json'), 'utf8'));
   assert.equal(published.length, required.length);
   assert.ok(published.every(r => r.venue === UNKNOWN_VENUE && r.lat === 10 && r.lng === 20));
+  const locations = (rows: Concert[]) => rows.map(r => [r.artist, r.city, r.country, r.lat, r.lng]).sort();
+  assert.deepEqual(locations(published), locations(processed), 'all eight canonical cities, countries and source coordinates survive publication');
   assert.equal(published.find(r => r.country === 'CY')?.city, 'Agios Tychonas');
   const again = await processConcerts(published, db, NOW);
   await geocodeConcerts(again, { maxPerRun: 0 });
   assert.deepEqual(JSON.parse(JSON.stringify(again)), published, 'public production output is idempotent');
+});
+
+test('original BIT spam rejection coexists with downstream placeholder normalization', async t => {
+  const { db } = await fixture(t);
+  const event = (name: string) => ({ starts_at: '2027-01-01T20:00:00',
+    venue: { name, city: 'Yerevan', country: 'AM', latitude: '10', longitude: '20' } });
+  for (const venue of ['Нервы в Yerevan', 'Нервы in Yerevan', '  НЕРВЫ IN Yerevan  ']) {
+    assert.equal(mapBitEventToConcert(event(venue), 'Нервы', NOW), null, venue);
+  }
+  const placeholders = ['Нервы | Yerevan', 'Yerevan', 'NERVY IN YEREVAN'];
+  for (const venue of placeholders) {
+    const raw = mapBitEventToConcert(event(venue), 'Нервы', NOW);
+    assert.ok(raw, venue);
+    assert.equal(raw.artist, 'Нервы');
+    assert.equal(raw.venue, venue);
+    const result = await processConcerts([raw], db, NOW);
+    assert.equal(result.length, 1, venue);
+    assert.equal(result[0].venue, UNKNOWN_VENUE, venue);
+    assert.equal(result[0].city, 'Yerevan');
+    assert.equal(result[0].lat, 10);
+    assert.equal(result[0].lng, 20);
+  }
+  for (const venue of ['Belgrade Arena', 'Dubai Opera', 'Нервы', 'Нервы Theatre']) {
+    const raw = mapBitEventToConcert(event(venue), 'Нервы', NOW);
+    assert.ok(raw, venue);
+    const result = await processConcerts([raw], db, NOW);
+    assert.equal(result[0].venue, venue);
+  }
 });
 
 test('finite country aliases and placeholder detection commute and are idempotent', () => {
@@ -295,12 +326,15 @@ test('named-venue preference cannot override the country boundary', async t => {
   assert.equal(result[0].venue, UNKNOWN_VENUE);
 });
 
-test('D: inflected Russian artist-city title is retained as unknown without geocoding or city inference', async t => {
+test('D: native mapper discards inflected Splin spam; retained raw cache can still be classified downstream', async t => {
   const { db } = await fixture(t);
   const raw = mapBitEventToConcert({ starts_at: '2027-01-01T20:00:00',
     venue: { name: 'Сплин в Ижевске', city: 'Izhevsk', country: 'RU' } }, 'Сплин', NOW);
-  assert.ok(raw, 'placeholder venue cannot justify dropping the event');
-  const result = await processConcerts([raw], db, NOW);
+  assert.equal(raw, null, 'the restored upstream spam filter rejects the exact queried artist prefix');
+  // A pre-existing raw cache row exercises only downstream classification, not
+  // a path around the native mapper's rejection of newly fetched events.
+  const retainedCacheRow = row({ artist: 'Сплин', venue: 'Сплин в Ижевске', city: 'Izhevsk', country: 'RU' });
+  const result = await processConcerts([retainedCacheRow], db, NOW);
   assert.equal(result.length, 1);
   assert.equal(result[0].venue, UNKNOWN_VENUE);
   assert.equal(result[0].city, 'Izhevsk');
