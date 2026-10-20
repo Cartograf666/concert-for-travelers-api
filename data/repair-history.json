@@ -29171,5 +29171,119 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget",
     "verification": "PASS (61 events, 61 public, 13 checks)"
+  },
+  {
+    "id": "artist-ronnie-earl-the-broadcasters",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-ronnie-earl-the-broadcasters.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-20T09:43:22.603Z",
+    "previousConfig": {
+      "id": "artist-ronnie-earl-the-broadcasters",
+      "domain": "www.ronnieearl.com",
+      "url": "https://www.ronnieearl.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-block",
+        "artistNameFallback": "Ronnie Earl & The Broadcasters",
+        "date": "div.event-date",
+        "ticketUrl": "div.event-ticket a",
+        "venue": "div.event-venue",
+        "city": "div.event-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.ronnieearl.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]",
+    "verification": ""
+  },
+  {
+    "id": "artist-rufus-wainwright",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-rufus-wainwright.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-20T09:43:24.948Z",
+    "previousConfig": {
+      "id": "artist-rufus-wainwright",
+      "domain": "rufuswainwright.com",
+      "url": "https://rufuswainwright.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour-item",
+        "artistNameFallback": "Rufus Wainwright",
+        "date": ".date",
+        "ticketUrl": "a.ticket-link",
+        "venue": ".venue",
+        "city": ".city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.sqs-events-collection-list .eventlist-event) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-zoo-station",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-zoo-station.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-20T09:43:32.480Z",
+    "previousConfig": {
+      "id": "artist-zoo-station",
+      "domain": "zoostationofficial.com",
+      "url": "https://zoostationofficial.com/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-list-item",
+        "artistNameFallback": "Zoo Station",
+        "date": ".event-date",
+        "ticketUrl": ".event-tickets a",
+        "venue": ".event-venue",
+        "city": ".event-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://zoostationofficial.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]; reached https://zoostationofficial.com/all-events/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "the-star-theatre-singapore",
+    "cohort": "venue",
+    "configPath": "scrapers/the-star-theatre-singapore.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-20T09:43:41.099Z",
+    "previousConfig": {
+      "id": "the-star-theatre-singapore",
+      "domain": "nac.gov.sg",
+      "url": "https://www.nac.gov.sg/resources/research/events",
+      "type": "static_selectors",
+      "maxRetries": 3,
+      "requestDelayMs": 500,
+      "selectors": {
+        "eventBlock": "div[class*='event'], article[class*='event'], li.event, .event-card, [data-event], .sfContentBlock",
+        "artist": "h3, h2, .artist, .artist-name, .event-title, .performer, a, [itemprop='name']",
+        "date": "time, .date, .event-date, [itemprop='startDate'], span[class*='date'], .when, p",
+        "ticketUrl": "a[href*='ticket'], a[href*='book'], .ticket-link, a.cta-button, [href*='ticketing'], a",
+        "venueNameFallback": "The Star Theatre",
+        "cityNameFallback": "Singapore",
+        "countryNameFallback": "SG",
+        "lat": 1.3521,
+        "lng": 103.8198
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.nac.gov.sg; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://www.nac.gov.sg/support-your-practice/busking-scheme/about-the-busking-scheme/ but could not re-select on it",
+    "verification": ""
   }
 ]
