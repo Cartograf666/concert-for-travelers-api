@@ -1,0 +1,14 @@
+{
+  "id": "artist-capcom",
+  "domain": "www.capcom.com",
+  "url": "https://www.capcom.com/en/esports/2026/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.list_post",
+    "artistNameFallback": "Capcom",
+    "date": "p",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

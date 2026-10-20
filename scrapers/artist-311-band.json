@@ -1,0 +1,17 @@
+{
+  "id": "artist-311-band",
+  "domain": "311.com",
+  "url": "https://311.com/pages/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.grid.grid--gap.grid--justify-center div.grid-item.w-100",
+    "artistNameFallback": "311",
+    "date": "div.grid-item.grid-item--flex-start span",
+    "ticketUrl": "div.grid-item.grid-item--flex-end a",
+    "venue": "div.grid-item.grid-item--flex-start div.text-style--medium.text-size--18:nth-child(3)",
+    "city": "div.grid-item.grid-item--flex-start div.text-style--medium.text-size--18:nth-child(2)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
