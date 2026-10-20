@@ -26237,7 +26237,7 @@
         "countryNameFallback": "DE"
       }
     },
-    "status": "pending",
+    "status": "superseded",
     "failuresSinceRepair": 0,
     "note": "anti_bot: escalating to the got-scraping header-fingerprint backend",
     "verification": "PASS (61 events, 10 checks)"
@@ -28993,5 +28993,183 @@
     "failuresSinceRepair": 0,
     "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.nac.gov.sg; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://www.nac.gov.sg/support-your-practice/busking-scheme/about-the-busking-scheme/ but could not re-select on it",
     "verification": ""
+  },
+  {
+    "id": "artist-aaron-copland",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-aaron-copland.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-20T09:23:23.410Z",
+    "previousConfig": {
+      "id": "artist-aaron-copland",
+      "domain": "www.aaroncopland.com",
+      "url": "https://www.aaroncopland.com/events",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": ".event-item",
+        "artistNameFallback": "Aaron Copland",
+        "date": ".event-dates span",
+        "ticketUrl": ".event-links a",
+        "venue": ".event-location",
+        "city": ".event-location",
+        "country": ".event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper artist-aaron-copland is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-ai-kawashima",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-ai-kawashima.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-20T09:23:23.412Z",
+    "previousConfig": {
+      "id": "artist-ai-kawashima",
+      "domain": "kawashimaai.com",
+      "url": "https://kawashimaai.com/live",
+      "type": "custom_js",
+      "maxRetries": 3,
+      "requestDelayMs": 2000,
+      "selectors": {
+        "eventBlock": "#live_index table tr",
+        "artistNameFallback": "Ai Kawashima",
+        "date": "th.date",
+        "ticketUrl": "td.text a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      },
+      "skipConditionalRequests": true
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper artist-ai-kawashima is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-barbara-dickson",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-barbara-dickson.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-20T09:23:23.416Z",
+    "previousConfig": {
+      "id": "artist-barbara-dickson",
+      "domain": "www.barbaradickson.net",
+      "url": "https://www.barbaradickson.net/tour",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "li[data-hook='event-list-item']",
+        "artistNameFallback": "Barbara Dickson",
+        "date": "[data-hook='date']",
+        "ticketUrl": "a[data-hook='ev-rsvp-button']",
+        "venue": "[data-hook='ev-list-item-location']",
+        "city": "[data-hook='location']",
+        "country": "[data-hook='location']",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper artist-barbara-dickson is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-paralamas-do-sucesso",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-paralamas-do-sucesso.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-20T09:23:23.427Z",
+    "previousConfig": {
+      "id": "artist-paralamas-do-sucesso",
+      "domain": "osparalamas.com.br",
+      "url": "https://osparalamas.com.br/agenda/",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "li.event",
+        "artistNameFallback": "Paralamas do Sucesso",
+        "date": ".event-line-node:nth-child(1)",
+        "ticketUrl": "a.event-map-link",
+        "venue": ".event-line-node.medium:nth-child(2)",
+        "city": ".event-line-node.medium:nth-child(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "BR"
+      },
+      "httpClient": "got-scraping",
+      "skipConditionalRequests": true
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper artist-paralamas-do-sucesso is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-the-clientele",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-the-clientele.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-20T09:23:36.319Z",
+    "previousConfig": {
+      "id": "artist-the-clientele",
+      "domain": "theclientele.co.uk",
+      "url": "https://theclientele.co.uk/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table[aria-labelledby='table-label-upcoming'] tbody tr",
+        "artistNameFallback": "The Clientele",
+        "date": "time",
+        "ticketUrl": "td:nth-child(2) a",
+        "venue": "td:nth-child(2) > span",
+        "city": "td:nth-child(3)",
+        "country": "td:nth-child(4)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      },
+      "allowEmpty": true,
+      "emptyScheduleText": "No shows scheduled."
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://theclientele.co.uk; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://theclientele.co.uk/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-giora-feidman",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-giora-feidman.json",
+    "repairedConfigHash": "15b929199073e725e39a0fedec5d20aaceb74ebf36fb395b6659d61a11a03c9a",
+    "strategy": "transient",
+    "repairedAt": "2026-10-20T09:23:39.661Z",
+    "previousConfig": {
+      "id": "artist-giora-feidman",
+      "domain": "www.giorafeidman-online.com",
+      "url": "https://www.giorafeidman-online.com/termine",
+      "type": "custom_js",
+      "httpClient": "got-scraping",
+      "selectors": {
+        "eventBlock": ".listItem",
+        "artistNameFallback": "Giora Feidman",
+        "date": ".itemName",
+        "ticketUrl": "a.biglink",
+        "venue": ".itemText .rteBlock:nth-of-type(3)",
+        "city": ".itemName",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "DE"
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget",
+    "verification": "PASS (61 events, 61 public, 13 checks)"
   }
 ]
