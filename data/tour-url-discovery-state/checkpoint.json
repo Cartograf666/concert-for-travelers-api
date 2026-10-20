@@ -1,61 +1,46 @@
 {
-  "digest": "eac9161f4f124fbd1b27ad40ec62bfb987d3eb1780aa70c0c57b8c79128a38d2",
+  "digest": "45c80cc9a4856463fd5f0699cda104362668eaa969dced32c28617e8500a7bbb",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "f3788c674f4cc22d1fed3d494bdbf2b743f80e4cdfc545bff738dedd534cae03",
+      "digest": "cf208e11612cc9992ed3551f3c5c6e595fe9e04dedbef9e835ae9f1ca1b43a84",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "4e01cf6b-a8a2-43de-acc5-2e268ffbd3ff",
-        "inputHash": "614178ec6ba7eba98d72fa6ba18e550121558f120b4028143b257b9f122a7ecc",
+        "id": "6ff36b18-a2bf-453f-8764-bf6b5b56a9a3",
+        "inputHash": "d767308771318e15701a87cc638f41d7ca35287a14cfba572a8902fd9a2bab74",
         "candidates": [
           {
-            "name": "Priscilla Chan",
-            "website": "http://www.priscillachan.hk/"
+            "name": "Bitty McLean",
+            "website": "http://www.bittymclean.com/"
           },
           {
-            "name": "Regina",
-            "website": "https://www.regina.cz/"
+            "name": "Jada",
+            "website": "https://www.jadamusic.net/"
           },
           {
-            "name": "Kreator",
-            "website": "http://kreator-terrorzone.de/"
+            "name": "Rava",
+            "website": "https://ravamusic.com/"
           },
           {
-            "name": "Diamond D",
-            "website": "https://www.diamondd.com"
+            "name": "D.O.",
+            "website": "https://do.smtown.com/"
           },
           {
-            "name": "Diane Bish",
-            "website": "http://dianebish.org"
+            "name": "Lighthouse Family",
+            "website": "https://lighthousefamily.net/"
           },
           {
-            "name": "Los Van Van",
-            "website": "http://www.vanvandeformell.com/inicio.php"
+            "name": "M Lisa",
+            "website": "https://mlisa.de/"
           },
           {
-            "name": "Teddy Riley",
-            "website": "https://www.teddyriley.com"
-          },
-          {
-            "name": "Meltdown",
-            "website": "https://www.meltdownband.com"
-          },
-          {
-            "name": "Miguel Zenón",
-            "website": "http://miguelzenon.com"
-          },
-          {
-            "name": "Willy William",
-            "website": "https://www.willywilliam.com/"
+            "name": "Umberto Giordano",
+            "website": "https://www.umbertogiordano.it/"
           }
         ],
         "nameCounts": [
-          1,
-          1,
-          1,
           1,
           1,
           1,
@@ -66,78 +51,57 @@
         ],
         "results": [
           {
-            "name": "Priscilla Chan",
-            "website": "http://www.priscillachan.hk/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Regina",
-            "website": "https://www.regina.cz/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Kreator",
-            "website": "http://kreator-terrorzone.de/",
+            "name": "Bitty McLean",
+            "website": "http://www.bittymclean.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Diamond D",
-            "website": "https://www.diamondd.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Diane Bish",
-            "website": "http://dianebish.org",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Los Van Van",
-            "website": "http://www.vanvandeformell.com/inicio.php",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Teddy Riley",
-            "website": "https://www.teddyriley.com",
+            "name": "Jada",
+            "website": "https://www.jadamusic.net/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Meltdown",
-            "website": "https://www.meltdownband.com",
+            "name": "Rava",
+            "website": "https://ravamusic.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Miguel Zenón",
-            "website": "http://miguelzenon.com",
-            "tourUrl": "https://miguelzenon.com/schedule/",
-            "pathPattern": "/schedule",
-            "reason": "score=14 (years=1, numericDates=0, months=0, days=0, keywords=4, widget=1)"
+            "name": "D.O.",
+            "website": "https://do.smtown.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Willy William",
-            "website": "https://www.willywilliam.com/",
+            "name": "Lighthouse Family",
+            "website": "https://lighthousefamily.net/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "M Lisa",
+            "website": "https://mlisa.de/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Umberto Giordano",
+            "website": "https://www.umbertogiordano.it/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           }
         ],
         "skipped": [],
-        "applied": 10,
+        "applied": 7,
         "pending": null,
         "complete": true
       }
@@ -146,64 +110,39 @@
       {
         "index": 0,
         "tourUrl": null,
-        "triedAt": "2026-10-19T09:35:22.516Z"
+        "triedAt": "2026-10-20T09:07:03.074Z"
       },
       {
         "index": 1,
         "tourUrl": null,
-        "triedAt": "2026-10-19T09:35:22.529Z"
+        "triedAt": "2026-10-20T09:07:03.089Z"
       },
       {
         "index": 2,
         "tourUrl": null,
-        "triedAt": "2026-10-19T09:35:22.539Z"
+        "triedAt": "2026-10-20T09:07:03.102Z"
       },
       {
         "index": 3,
         "tourUrl": null,
-        "triedAt": "2026-10-19T09:35:22.547Z"
+        "triedAt": "2026-10-20T09:07:03.115Z"
       },
       {
         "index": 4,
         "tourUrl": null,
-        "triedAt": "2026-10-19T09:35:22.557Z"
+        "triedAt": "2026-10-20T09:07:03.128Z"
       },
       {
         "index": 5,
         "tourUrl": null,
-        "triedAt": "2026-10-19T09:35:22.565Z"
+        "triedAt": "2026-10-20T09:07:03.141Z"
       },
       {
         "index": 6,
         "tourUrl": null,
-        "triedAt": "2026-10-19T09:35:22.572Z"
-      },
-      {
-        "index": 7,
-        "tourUrl": null,
-        "triedAt": "2026-10-19T09:35:22.578Z"
-      },
-      {
-        "index": 8,
-        "tourUrl": "https://miguelzenon.com/schedule/",
-        "triedAt": "2026-10-19T09:35:22.585Z"
-      },
-      {
-        "index": 9,
-        "tourUrl": null,
-        "triedAt": "2026-10-19T09:35:22.592Z"
+        "triedAt": "2026-10-20T09:07:03.153Z"
       }
     ],
-    "audit": [
-      {
-        "artist": "Miguel Zenón",
-        "website": "http://miguelzenon.com",
-        "tourUrl": "https://miguelzenon.com/schedule/",
-        "pathPattern": "/schedule",
-        "reason": "score=14 (years=1, numericDates=0, months=0, days=0, keywords=4, widget=1)",
-        "appliedAt": "2026-10-19T09:35:22.585Z",
-        "discoveryOperationId": "4e01cf6b-a8a2-43de-acc5-2e268ffbd3ff:8"
-      }
-    ]
+    "audit": []
   }
 }
