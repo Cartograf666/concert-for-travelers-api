@@ -1,0 +1,18 @@
+{
+  "id": "artist-canton-symphony-orchestra",
+  "domain": "www.cantonsymphony.org",
+  "url": "https://www.cantonsymphony.org/all-events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.tribe-events-list-event",
+    "artistNameFallback": "Canton Symphony Orchestra",
+    "date": ".tribe-event-date-start",
+    "ticketUrl": ".tribe-events-read-more",
+    "venue": ".tribe-events-list-event-venue-details .tribe-venue",
+    "city": ".tribe-address span.tribe-locality",
+    "country": ".tribe-address span.tribe-country",
+    "venueNameFallback": "",
+    "cityNameFallback": "Canton",
+    "countryNameFallback": "US"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "artist-carl-hilding-doc-severinsen",
+  "domain": "docseverinsen.com",
+  "url": "https://docseverinsen.com/calendar/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.mk-calendar-item",
+    "artistNameFallback": "Doc Severinsen",
+    "date": "div.mk-calendar-date",
+    "ticketUrl": "a.mk-button",
+    "city": "div.mk-calendar-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
