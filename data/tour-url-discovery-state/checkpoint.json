@@ -1,46 +1,141 @@
 {
-  "digest": "45c80cc9a4856463fd5f0699cda104362668eaa969dced32c28617e8500a7bbb",
+  "digest": "aa22acd9f0ff66e4423df51e8b3f9d8a50248a81658530234a3d3e649ad6af3c",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "cf208e11612cc9992ed3551f3c5c6e595fe9e04dedbef9e835ae9f1ca1b43a84",
+      "digest": "2ebb21a2202452dc168d98e3a3fe2146836df9ac9f3013e246f2588405c5ce40",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "6ff36b18-a2bf-453f-8764-bf6b5b56a9a3",
-        "inputHash": "d767308771318e15701a87cc638f41d7ca35287a14cfba572a8902fd9a2bab74",
+        "id": "ae00ea50-09b5-42a3-9363-63a5bdf5a216",
+        "inputHash": "63b9cdd1e2f1fe756071dd1b193df3bf69a1ca32fdbddc3ad5a29fa5c9803264",
         "candidates": [
           {
-            "name": "Bitty McLean",
-            "website": "http://www.bittymclean.com/"
+            "name": "Anuradha Bhat",
+            "website": "http://www.anuradhabhat.com"
           },
           {
-            "name": "Jada",
-            "website": "https://www.jadamusic.net/"
+            "name": "Bob Seger",
+            "website": "http://www.bobseger.com"
           },
           {
-            "name": "Rava",
-            "website": "https://ravamusic.com/"
+            "name": "Joe Puma",
+            "website": "http://www.joepuma.com/"
           },
           {
-            "name": "D.O.",
-            "website": "https://do.smtown.com/"
+            "name": "Radney Foster",
+            "website": "http://radneyfoster.com/"
           },
           {
-            "name": "Lighthouse Family",
-            "website": "https://lighthousefamily.net/"
+            "name": "Regina Belle",
+            "website": "http://www.peak-records.com/index.php?page=artist-profile&name=Regina-Belle"
           },
           {
-            "name": "M Lisa",
-            "website": "https://mlisa.de/"
+            "name": "Charlie Zaa",
+            "website": "http://www.charliezaa.com"
           },
           {
-            "name": "Umberto Giordano",
-            "website": "https://www.umbertogiordano.it/"
+            "name": "China Drum",
+            "website": "http://www.chinadrum.com/"
+          },
+          {
+            "name": "Coko",
+            "website": "http://www.cokosplace.com"
+          },
+          {
+            "name": "Stevie B",
+            "website": "https://steviebworld.com/"
+          },
+          {
+            "name": "Storm Large",
+            "website": "http://stormlarge.com/"
+          },
+          {
+            "name": "Dakota",
+            "website": "https://dakotaband.com"
+          },
+          {
+            "name": "De La Ghetto",
+            "website": "https://delaghetto.com"
+          },
+          {
+            "name": "DJ Chef",
+            "website": "http://www.djchef.com"
+          },
+          {
+            "name": "The Embassy",
+            "website": "http://www.theembassy.info/"
+          },
+          {
+            "name": "The InCiders",
+            "website": "https://theinciders.com"
+          },
+          {
+            "name": "The Popguns",
+            "website": "https://www.popguns.net/"
+          },
+          {
+            "name": "The Swans",
+            "website": "https://younggodrecords.com/collections/swans"
+          },
+          {
+            "name": "Trixie Whitley",
+            "website": "http://www.trixiewhitley.com/"
+          },
+          {
+            "name": "Everette Harp",
+            "website": "http://www.everetteharp.com"
+          },
+          {
+            "name": "Mark Sultan",
+            "website": "http://www.marksultan.com"
+          },
+          {
+            "name": "Meek Mill",
+            "website": "http://www.meekmilldreamteam.com/"
+          },
+          {
+            "name": "Miseration",
+            "website": "http://www.myspace.com/miseration"
+          },
+          {
+            "name": "Operahouse",
+            "website": "http://www.operahousehq.com"
+          },
+          {
+            "name": "Our Last Night",
+            "website": "http://www.ourlastnight.com/"
+          },
+          {
+            "name": "Wayne Toups",
+            "website": "http://waynetoups.com"
+          },
+          {
+            "name": "Wild Horses",
+            "website": "http://www.wildhorses.co.uk/"
           }
         ],
         "nameCounts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           1,
           1,
           1,
@@ -51,57 +146,190 @@
         ],
         "results": [
           {
-            "name": "Bitty McLean",
-            "website": "http://www.bittymclean.com/",
+            "name": "Anuradha Bhat",
+            "website": "http://www.anuradhabhat.com",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Jada",
-            "website": "https://www.jadamusic.net/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
+            "name": "Bob Seger",
+            "website": "http://www.bobseger.com",
+            "tourUrl": "https://www.bobseger.com/tour-update-album-teaser/",
+            "pathPattern": "/tour",
+            "reason": "score=16.5 (years=1, numericDates=0, months=8, days=3, keywords=9, widget=0)"
           },
           {
-            "name": "Rava",
-            "website": "https://ravamusic.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "D.O.",
-            "website": "https://do.smtown.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Lighthouse Family",
-            "website": "https://lighthousefamily.net/",
+            "name": "Joe Puma",
+            "website": "http://www.joepuma.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "M Lisa",
-            "website": "https://mlisa.de/",
+            "name": "Radney Foster",
+            "website": "http://radneyfoster.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Regina Belle",
+            "website": "http://www.peak-records.com/index.php?page=artist-profile&name=Regina-Belle",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Charlie Zaa",
+            "website": "http://www.charliezaa.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "China Drum",
+            "website": "http://www.chinadrum.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Coko",
+            "website": "http://www.cokosplace.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Stevie B",
+            "website": "https://steviebworld.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Storm Large",
+            "website": "http://stormlarge.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Dakota",
+            "website": "https://dakotaband.com",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Umberto Giordano",
-            "website": "https://www.umbertogiordano.it/",
+            "name": "De La Ghetto",
+            "website": "https://delaghetto.com",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "DJ Chef",
+            "website": "http://www.djchef.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "The Embassy",
+            "website": "http://www.theembassy.info/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "The InCiders",
+            "website": "https://theinciders.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "The Popguns",
+            "website": "https://www.popguns.net/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "The Swans",
+            "website": "https://younggodrecords.com/collections/swans",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Trixie Whitley",
+            "website": "http://www.trixiewhitley.com/",
+            "tourUrl": "https://trixiewhitley.com/events",
+            "pathPattern": "/events",
+            "reason": "score=17.5 (years=0, numericDates=0, months=10, days=5, keywords=19, widget=0)"
+          },
+          {
+            "name": "Everette Harp",
+            "website": "http://www.everetteharp.com",
+            "tourUrl": "http://www.everetteharp.com/tour",
+            "pathPattern": "/tour",
+            "reason": "score=14 (years=0, numericDates=0, months=12, days=0, keywords=2, widget=0)"
+          },
+          {
+            "name": "Mark Sultan",
+            "website": "http://www.marksultan.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Meek Mill",
+            "website": "http://www.meekmilldreamteam.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Miseration",
+            "website": "http://www.myspace.com/miseration",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Operahouse",
+            "website": "http://www.operahousehq.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Our Last Night",
+            "website": "http://www.ourlastnight.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Wayne Toups",
+            "website": "http://waynetoups.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Wild Horses",
+            "website": "http://www.wildhorses.co.uk/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
           }
         ],
         "skipped": [],
-        "applied": 7,
+        "applied": 26,
         "pending": null,
         "complete": true
       }
@@ -110,39 +338,162 @@
       {
         "index": 0,
         "tourUrl": null,
-        "triedAt": "2026-10-20T09:07:03.074Z"
+        "triedAt": "2026-10-21T09:07:06.236Z"
       },
       {
         "index": 1,
-        "tourUrl": null,
-        "triedAt": "2026-10-20T09:07:03.089Z"
+        "tourUrl": "https://www.bobseger.com/tour-update-album-teaser/",
+        "triedAt": "2026-10-21T09:07:06.253Z"
       },
       {
         "index": 2,
         "tourUrl": null,
-        "triedAt": "2026-10-20T09:07:03.102Z"
+        "triedAt": "2026-10-21T09:07:06.268Z"
       },
       {
         "index": 3,
         "tourUrl": null,
-        "triedAt": "2026-10-20T09:07:03.115Z"
+        "triedAt": "2026-10-21T09:07:06.282Z"
       },
       {
         "index": 4,
         "tourUrl": null,
-        "triedAt": "2026-10-20T09:07:03.128Z"
+        "triedAt": "2026-10-21T09:07:06.297Z"
       },
       {
         "index": 5,
         "tourUrl": null,
-        "triedAt": "2026-10-20T09:07:03.141Z"
+        "triedAt": "2026-10-21T09:07:06.314Z"
       },
       {
         "index": 6,
         "tourUrl": null,
-        "triedAt": "2026-10-20T09:07:03.153Z"
+        "triedAt": "2026-10-21T09:07:06.329Z"
+      },
+      {
+        "index": 7,
+        "tourUrl": null,
+        "triedAt": "2026-10-21T09:07:06.344Z"
+      },
+      {
+        "index": 8,
+        "tourUrl": null,
+        "triedAt": "2026-10-21T09:07:06.358Z"
+      },
+      {
+        "index": 9,
+        "tourUrl": null,
+        "triedAt": "2026-10-21T09:07:06.374Z"
+      },
+      {
+        "index": 10,
+        "tourUrl": null,
+        "triedAt": "2026-10-21T09:07:21.739Z"
+      },
+      {
+        "index": 11,
+        "tourUrl": null,
+        "triedAt": "2026-10-21T09:07:21.761Z"
+      },
+      {
+        "index": 12,
+        "tourUrl": null,
+        "triedAt": "2026-10-21T09:07:21.776Z"
+      },
+      {
+        "index": 13,
+        "tourUrl": null,
+        "triedAt": "2026-10-21T09:07:21.792Z"
+      },
+      {
+        "index": 14,
+        "tourUrl": null,
+        "triedAt": "2026-10-21T09:07:21.811Z"
+      },
+      {
+        "index": 15,
+        "tourUrl": null,
+        "triedAt": "2026-10-21T09:07:21.827Z"
+      },
+      {
+        "index": 16,
+        "tourUrl": null,
+        "triedAt": "2026-10-21T09:07:21.843Z"
+      },
+      {
+        "index": 17,
+        "tourUrl": "https://trixiewhitley.com/events",
+        "triedAt": "2026-10-21T09:07:21.859Z"
+      },
+      {
+        "index": 18,
+        "tourUrl": "http://www.everetteharp.com/tour",
+        "triedAt": "2026-10-21T09:07:21.877Z"
+      },
+      {
+        "index": 19,
+        "tourUrl": null,
+        "triedAt": "2026-10-21T09:07:21.893Z"
+      },
+      {
+        "index": 20,
+        "tourUrl": null,
+        "triedAt": "2026-10-21T09:08:20.441Z"
+      },
+      {
+        "index": 21,
+        "tourUrl": null,
+        "triedAt": "2026-10-21T09:08:20.457Z"
+      },
+      {
+        "index": 22,
+        "tourUrl": null,
+        "triedAt": "2026-10-21T09:08:20.473Z"
+      },
+      {
+        "index": 23,
+        "tourUrl": null,
+        "triedAt": "2026-10-21T09:08:20.489Z"
+      },
+      {
+        "index": 24,
+        "tourUrl": null,
+        "triedAt": "2026-10-21T09:08:20.509Z"
+      },
+      {
+        "index": 25,
+        "tourUrl": null,
+        "triedAt": "2026-10-21T09:08:20.525Z"
       }
     ],
-    "audit": []
+    "audit": [
+      {
+        "artist": "Bob Seger",
+        "website": "http://www.bobseger.com",
+        "tourUrl": "https://www.bobseger.com/tour-update-album-teaser/",
+        "pathPattern": "/tour",
+        "reason": "score=16.5 (years=1, numericDates=0, months=8, days=3, keywords=9, widget=0)",
+        "appliedAt": "2026-10-21T09:07:06.253Z",
+        "discoveryOperationId": "ae00ea50-09b5-42a3-9363-63a5bdf5a216:1"
+      },
+      {
+        "artist": "Trixie Whitley",
+        "website": "http://www.trixiewhitley.com/",
+        "tourUrl": "https://trixiewhitley.com/events",
+        "pathPattern": "/events",
+        "reason": "score=17.5 (years=0, numericDates=0, months=10, days=5, keywords=19, widget=0)",
+        "appliedAt": "2026-10-21T09:07:21.859Z",
+        "discoveryOperationId": "ae00ea50-09b5-42a3-9363-63a5bdf5a216:17"
+      },
+      {
+        "artist": "Everette Harp",
+        "website": "http://www.everetteharp.com",
+        "tourUrl": "http://www.everetteharp.com/tour",
+        "pathPattern": "/tour",
+        "reason": "score=14 (years=0, numericDates=0, months=12, days=0, keywords=2, widget=0)",
+        "appliedAt": "2026-10-21T09:07:21.877Z",
+        "discoveryOperationId": "ae00ea50-09b5-42a3-9363-63a5bdf5a216:18"
+      }
+    ]
   }
 }
