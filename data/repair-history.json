@@ -29285,5 +29285,34 @@
     "failuresSinceRepair": 0,
     "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.nac.gov.sg; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://www.nac.gov.sg/support-your-practice/busking-scheme/about-the-busking-scheme/ but could not re-select on it",
     "verification": ""
+  },
+  {
+    "id": "artist-uicideboy",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-uicideboy.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-21T09:20:35.103Z",
+    "previousConfig": {
+      "id": "artist-uicideboy",
+      "domain": "www.g59records.com",
+      "url": "https://www.g59records.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour-row",
+        "artistNameFallback": "$uicideboy$",
+        "date": ".hidden.md\\:flex .font-stencil:first-child, .hidden.md\\:flex .font-sans:nth-child(2)",
+        "ticketUrl": ".hidden.md\\:flex a:last-of-type",
+        "venue": ".hidden.md\\:flex .font-kraut:nth-of-type(1)",
+        "city": ".hidden.md\\:flex .font-sans:nth-child(1)",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.md\\:w-\\[95vw\\] .tour-row) matched 0 elements.",
+    "verification": ""
   }
 ]
