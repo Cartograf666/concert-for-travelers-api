@@ -29314,5 +29314,172 @@
     "failuresSinceRepair": 0,
     "note": "repair failed: Selector \"eventBlock\" (.md\\:w-\\[95vw\\] .tour-row) matched 0 elements.",
     "verification": ""
+  },
+  {
+    "id": "artist-311-band",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-311-band.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-21T09:37:59.724Z",
+    "previousConfig": {
+      "id": "artist-311-band",
+      "domain": "311.com",
+      "url": "https://311.com/pages/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.grid.grid--gap.grid--justify-center div.grid-item.w-100",
+        "artistNameFallback": "311",
+        "date": "div.grid-item.grid-item--flex-start span",
+        "ticketUrl": "div.grid-item.grid-item--flex-end a",
+        "venue": "div.grid-item.grid-item--flex-start div.text-style--medium.text-size--18:nth-child(3)",
+        "city": "div.grid-item.grid-item--flex-start div.text-style--medium.text-size--18:nth-child(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (div.grid.grid--gap.grid--justify-center div.grid-item.w-100) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-capcom",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-capcom.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-21T09:38:00.197Z",
+    "previousConfig": {
+      "id": "artist-capcom",
+      "domain": "www.capcom.com",
+      "url": "https://www.capcom.com/en/esports/2026/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.list_post",
+        "artistNameFallback": "Capcom",
+        "date": "p",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.capcom.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]",
+    "verification": ""
+  },
+  {
+    "id": "artist-ronnie-earl-the-broadcasters",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-ronnie-earl-the-broadcasters.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-21T09:38:02.810Z",
+    "previousConfig": {
+      "id": "artist-ronnie-earl-the-broadcasters",
+      "domain": "www.ronnieearl.com",
+      "url": "https://www.ronnieearl.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-block",
+        "artistNameFallback": "Ronnie Earl & The Broadcasters",
+        "date": "div.event-date",
+        "ticketUrl": "div.event-ticket a",
+        "venue": "div.event-venue",
+        "city": "div.event-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.ronnieearl.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]",
+    "verification": ""
+  },
+  {
+    "id": "artist-rufus-wainwright",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-rufus-wainwright.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-21T09:38:04.349Z",
+    "previousConfig": {
+      "id": "artist-rufus-wainwright",
+      "domain": "rufuswainwright.com",
+      "url": "https://rufuswainwright.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour-item",
+        "artistNameFallback": "Rufus Wainwright",
+        "date": ".date",
+        "ticketUrl": "a.ticket-link",
+        "venue": ".venue",
+        "city": ".city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.sqs-events-collection .eventlist-event) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-zoo-station",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-zoo-station.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-10-21T09:38:04.898Z",
+    "previousConfig": {
+      "id": "artist-zoo-station",
+      "domain": "zoostationofficial.com",
+      "url": "https://zoostationofficial.com/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-list-item",
+        "artistNameFallback": "Zoo Station",
+        "date": ".event-date",
+        "ticketUrl": ".event-tickets a",
+        "venue": ".event-venue",
+        "city": ".event-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Source access blocked by SGCaptcha challenge]",
+    "verification": ""
+  },
+  {
+    "id": "the-star-theatre-singapore",
+    "cohort": "venue",
+    "configPath": "scrapers/the-star-theatre-singapore.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-21T09:38:14.594Z",
+    "previousConfig": {
+      "id": "the-star-theatre-singapore",
+      "domain": "nac.gov.sg",
+      "url": "https://www.nac.gov.sg/resources/research/events",
+      "type": "static_selectors",
+      "maxRetries": 3,
+      "requestDelayMs": 500,
+      "selectors": {
+        "eventBlock": "div[class*='event'], article[class*='event'], li.event, .event-card, [data-event], .sfContentBlock",
+        "artist": "h3, h2, .artist, .artist-name, .event-title, .performer, a, [itemprop='name']",
+        "date": "time, .date, .event-date, [itemprop='startDate'], span[class*='date'], .when, p",
+        "ticketUrl": "a[href*='ticket'], a[href*='book'], .ticket-link, a.cta-button, [href*='ticketing'], a",
+        "venueNameFallback": "The Star Theatre",
+        "cityNameFallback": "Singapore",
+        "countryNameFallback": "SG",
+        "lat": 1.3521,
+        "lng": 103.8198
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.nac.gov.sg; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://www.nac.gov.sg/support-your-practice/busking-scheme/about-the-busking-scheme/ but could not re-select on it",
+    "verification": ""
   }
 ]
