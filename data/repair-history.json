@@ -29814,5 +29814,292 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
     "verification": ""
+  },
+  {
+    "id": "artist-311-band",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-311-band.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-22T09:48:14.561Z",
+    "previousConfig": {
+      "id": "artist-311-band",
+      "domain": "311.com",
+      "url": "https://311.com/pages/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.grid.grid--gap.grid--justify-center div.grid-item.w-100",
+        "artistNameFallback": "311",
+        "date": "div.grid-item.grid-item--flex-start span",
+        "ticketUrl": "div.grid-item.grid-item--flex-end a",
+        "venue": "div.grid-item.grid-item--flex-start div.text-style--medium.text-size--18:nth-child(3)",
+        "city": "div.grid-item.grid-item--flex-start div.text-style--medium.text-size--18:nth-child(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (div.grid-item.w-100) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-capcom",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-capcom.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-22T09:48:17.073Z",
+    "previousConfig": {
+      "id": "artist-capcom",
+      "domain": "www.capcom.com",
+      "url": "https://www.capcom.com/en/esports/2026/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.list_post",
+        "artistNameFallback": "Capcom",
+        "date": "p",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.capcom.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]",
+    "verification": ""
+  },
+  {
+    "id": "artist-carl-hilding-doc-severinsen",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-carl-hilding-doc-severinsen.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-22T09:48:26.162Z",
+    "previousConfig": {
+      "id": "artist-carl-hilding-doc-severinsen",
+      "domain": "docseverinsen.com",
+      "url": "https://docseverinsen.com/calendar/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.mk-calendar-item",
+        "artistNameFallback": "Doc Severinsen",
+        "date": "div.mk-calendar-date",
+        "ticketUrl": "a.mk-button",
+        "city": "div.mk-calendar-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://docseverinsen.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://docseverinsen.com/events/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-philippine-philharmonic-orchestra",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-philippine-philharmonic-orchestra.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-22T09:48:38.369Z",
+    "previousConfig": {
+      "id": "artist-philippine-philharmonic-orchestra",
+      "domain": "culturalcenter.gov.ph",
+      "url": "https://culturalcenter.gov.ph/events",
+      "type": "static_selectors",
+      "maxRetries": 3,
+      "requestDelayMs": 2000,
+      "selectors": {
+        "eventBlock": "div.tribe-events-event-info",
+        "artistNameFallback": "Philippine Philharmonic Orchestra",
+        "date": "div.tribe-events-event-date-start",
+        "ticketUrl": "a.tribe-events-read-more",
+        "venue": "span.tribe-venue-name",
+        "city": "span.tribe-address-city",
+        "country": "span.tribe-address-country",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "PH"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://culturalcenter.gov.ph; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]",
+    "verification": ""
+  },
+  {
+    "id": "artist-canton-symphony-orchestra",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-canton-symphony-orchestra.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-22T09:49:14.559Z",
+    "previousConfig": {
+      "id": "artist-canton-symphony-orchestra",
+      "domain": "www.cantonsymphony.org",
+      "url": "https://www.cantonsymphony.org/all-events",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.tribe-events-list-event",
+        "artistNameFallback": "Canton Symphony Orchestra",
+        "date": ".tribe-event-date-start",
+        "ticketUrl": ".tribe-events-read-more",
+        "venue": ".tribe-events-list-event-venue-details .tribe-venue",
+        "city": ".tribe-address span.tribe-locality",
+        "country": ".tribe-address span.tribe-country",
+        "venueNameFallback": "",
+        "cityNameFallback": "Canton",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.tribe-events-calendar-list__event) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-yamazaki-masayoshi",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-yamazaki-masayoshi.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-22T09:49:22.620Z",
+    "previousConfig": {
+      "id": "artist-yamazaki-masayoshi",
+      "domain": "www.office-augusta.com",
+      "url": "https://www.office-augusta.com/yama/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.list_item",
+        "artistNameFallback": "Masayoshi Yamazaki",
+        "date": ".date",
+        "ticketUrl": "a",
+        "venue": ".place",
+        "city": ".place",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.office-augusta.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]",
+    "verification": ""
+  },
+  {
+    "id": "artist-zoo-station",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-zoo-station.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-22T09:49:22.763Z",
+    "previousConfig": {
+      "id": "artist-zoo-station",
+      "domain": "zoostationofficial.com",
+      "url": "https://zoostationofficial.com/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-list-item",
+        "artistNameFallback": "Zoo Station",
+        "date": ".event-date",
+        "ticketUrl": ".event-tickets a",
+        "venue": ".event-venue",
+        "city": ".event-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Source access blocked by SGCaptcha challenge]",
+    "verification": ""
+  },
+  {
+    "id": "legacy-taipei-taipei",
+    "cohort": "venue",
+    "configPath": "scrapers/legacy-taipei-taipei.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-22T09:49:54.313Z",
+    "previousConfig": {
+      "id": "legacy-taipei-taipei",
+      "domain": "legacy.com.tw",
+      "url": "https://www.legacy.com.tw/page/programlist/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".program_search_list li:contains(\"演出場地： Legacy Taipei\")",
+        "artist": ".program_search_title a",
+        "date": "td:contains(\"演出日期：\")",
+        "ticketUrl": ".program_search_title a",
+        "venueNameFallback": "Legacy Taipei",
+        "cityNameFallback": "Taipei",
+        "countryNameFallback": "TW",
+        "lat": 25.0450055,
+        "lng": 121.5294132
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.program_search_list li:has(td:contains(\"演出場地： Legacy Taipei\"))) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "liquidroom-tokyo",
+    "cohort": "venue",
+    "configPath": "scrapers/liquidroom-tokyo.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-22T09:50:02.134Z",
+    "previousConfig": {
+      "id": "liquidroom-tokyo",
+      "domain": "www.liquidroom.net",
+      "url": "https://www.liquidroom.net/schedule",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "article",
+        "artist": "h2",
+        "date": "event url YYYYMMDD",
+        "ticketUrl": "a.s_link",
+        "venueNameFallback": "LIQUIDROOM",
+        "cityNameFallback": "Tokyo",
+        "countryNameFallback": "JP",
+        "lat": 35.649,
+        "lng": 139.7101
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 503]",
+    "verification": ""
+  },
+  {
+    "id": "osaka-jo-hall-osaka",
+    "cohort": "venue",
+    "configPath": "scrapers/osaka-jo-hall-osaka.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-22T09:50:09.150Z",
+    "previousConfig": {
+      "id": "osaka-jo-hall-osaka",
+      "domain": "osaka-johall.com",
+      "url": "https://www.osaka-johall.com/event/",
+      "type": "static_selectors",
+      "requestDelayMs": 2000,
+      "allowEmpty": false,
+      "selectors": {
+        "eventBlock": "dl",
+        "artist": "dt.event-ttl a",
+        "artistNameFallback": "",
+        "date": "dt.event-genre span.date",
+        "datePattern": "",
+        "ticketUrl": "dt.event-ttl a",
+        "venue": "",
+        "city": "",
+        "country": "",
+        "venueNameFallback": "Osaka-Jo Hall",
+        "cityNameFallback": "Osaka",
+        "countryNameFallback": "JP",
+        "lat": 34.6896442,
+        "lng": 135.5301038
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 503]",
+    "verification": ""
   }
 ]
