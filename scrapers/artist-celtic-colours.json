@@ -1,0 +1,15 @@
+{
+  "id": "artist-celtic-colours",
+  "domain": "www.celtic-colours.com",
+  "url": "https://www.celtic-colours.com/schedule",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.schedule-item",
+    "date": "div.date",
+    "ticketUrl": "a.tickets",
+    "city": "div.location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}

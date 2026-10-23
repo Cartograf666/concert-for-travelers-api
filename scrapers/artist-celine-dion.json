@@ -1,0 +1,16 @@
+{
+  "id": "artist-celine-dion",
+  "domain": "www.celinedion.com",
+  "url": "https://www.celinedion.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-item",
+    "artistNameFallback": "Celine Dion",
+    "date": "div.date",
+    "ticketUrl": "a.ticket-link",
+    "city": "div.location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

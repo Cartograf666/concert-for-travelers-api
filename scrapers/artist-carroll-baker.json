@@ -1,0 +1,17 @@
+{
+  "id": "artist-carroll-baker",
+  "domain": "www.carrollbakermusic.com",
+  "url": "https://www.carrollbakermusic.com/tour-dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour-date-item",
+    "artistNameFallback": "Carroll Baker",
+    "date": ".date",
+    "ticketUrl": ".ticket-link",
+    "venue": ".venue",
+    "city": ".city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}
