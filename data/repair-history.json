@@ -30324,5 +30324,175 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
     "verification": ""
+  },
+  {
+    "id": "artist-311-band",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-311-band.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-23T09:39:03.471Z",
+    "previousConfig": {
+      "id": "artist-311-band",
+      "domain": "311.com",
+      "url": "https://311.com/pages/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.grid.grid--gap.grid--justify-center div.grid-item.w-100",
+        "artistNameFallback": "311",
+        "date": "div.grid-item.grid-item--flex-start span",
+        "ticketUrl": "div.grid-item.grid-item--flex-end a",
+        "venue": "div.grid-item.grid-item--flex-start div.text-style--medium.text-size--18:nth-child(3)",
+        "city": "div.grid-item.grid-item--flex-start div.text-style--medium.text-size--18:nth-child(2)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (div.grid.grid--gap.grid--justify-center div.grid-item.w-100) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-capcom",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-capcom.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-23T09:39:06.732Z",
+    "previousConfig": {
+      "id": "artist-capcom",
+      "domain": "www.capcom.com",
+      "url": "https://www.capcom.com/en/esports/2026/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.list_post",
+        "artistNameFallback": "Capcom",
+        "date": "p",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.capcom.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]",
+    "verification": ""
+  },
+  {
+    "id": "artist-carl-hilding-doc-severinsen",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-carl-hilding-doc-severinsen.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-23T09:39:16.164Z",
+    "previousConfig": {
+      "id": "artist-carl-hilding-doc-severinsen",
+      "domain": "docseverinsen.com",
+      "url": "https://docseverinsen.com/calendar/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.mk-calendar-item",
+        "artistNameFallback": "Doc Severinsen",
+        "date": "div.mk-calendar-date",
+        "ticketUrl": "a.mk-button",
+        "city": "div.mk-calendar-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://docseverinsen.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://docseverinsen.com/events/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-zoo-station",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-zoo-station.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-10-23T09:39:21.429Z",
+    "previousConfig": {
+      "id": "artist-zoo-station",
+      "domain": "zoostationofficial.com",
+      "url": "https://zoostationofficial.com/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-list-item",
+        "artistNameFallback": "Zoo Station",
+        "date": ".event-date",
+        "ticketUrl": ".event-tickets a",
+        "venue": ".event-venue",
+        "city": ".event-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]",
+    "verification": ""
+  },
+  {
+    "id": "artist-peoria-symphony-orchestra",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-peoria-symphony-orchestra.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-23T09:40:07.278Z",
+    "previousConfig": {
+      "id": "artist-peoria-symphony-orchestra",
+      "domain": "peoriasymphony.org",
+      "url": "https://peoriasymphony.org/calendar",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".em-event.em-item",
+        "artist": ".em-item-name",
+        "date": ".em-event-date",
+        "datePattern": "MMMM D, YYYY",
+        "ticketUrl": ".em-item-name a",
+        "venueNameFallback": "",
+        "cityNameFallback": "Peoria",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 504]",
+    "verification": ""
+  },
+  {
+    "id": "osaka-jo-hall-osaka",
+    "cohort": "venue",
+    "configPath": "scrapers/osaka-jo-hall-osaka.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-23T09:40:14.673Z",
+    "previousConfig": {
+      "id": "osaka-jo-hall-osaka",
+      "domain": "osaka-johall.com",
+      "url": "https://www.osaka-johall.com/event/",
+      "type": "static_selectors",
+      "requestDelayMs": 2000,
+      "allowEmpty": false,
+      "selectors": {
+        "eventBlock": "dl",
+        "artist": "dt.event-ttl a",
+        "artistNameFallback": "",
+        "date": "dt.event-genre span.date",
+        "datePattern": "",
+        "ticketUrl": "dt.event-ttl a",
+        "venue": "",
+        "city": "",
+        "country": "",
+        "venueNameFallback": "Osaka-Jo Hall",
+        "cityNameFallback": "Osaka",
+        "countryNameFallback": "JP",
+        "lat": 34.6896442,
+        "lng": 135.5301038
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 503]",
+    "verification": ""
   }
 ]
