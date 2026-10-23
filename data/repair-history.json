@@ -30101,5 +30101,228 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 503]",
     "verification": ""
+  },
+  {
+    "id": "artist-aiko",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-aiko.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-23T09:17:47.407Z",
+    "previousConfig": {
+      "id": "artist-aiko",
+      "domain": "www.aiko.com",
+      "url": "https://www.aiko.com/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".live-detail-content table tbody tr",
+        "artistNameFallback": "Aiko",
+        "date": "td.day",
+        "venue": ".venue",
+        "city": ".area",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.aiko.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]",
+    "verification": ""
+  },
+  {
+    "id": "artist-akari-saho",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-akari-saho.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-23T09:18:03.590Z",
+    "previousConfig": {
+      "id": "artist-akari-saho",
+      "domain": "www.upupgirlskakkokari.com",
+      "url": "http://www.upupgirlskakkokari.com/live_event/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event_list_item",
+        "artistNameFallback": "Akari Saho",
+        "date": ".event_month, .event_date",
+        "ticketUrl": "a",
+        "venueNameFallback": "TBD",
+        "cityNameFallback": "TBD",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: dates_parse [0/1 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]; city_distinct_from_venue [1/1 rows have city identical to venue (100%, allow 20%)]; no_volume_collapse [1 event(s) vs 10 on the last good run (need >= 3)]; public_events [1 raw -> 0 public; dropped={\"incomplete\":0,\"notApproved\":1,\"badDate\":0,\"pastDate\":0,\"zodFail\":0}]; no_public_volume_collapse [0 public event(s) vs 2 last-good public event(s) (need >= 1)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-alasdair-roberts",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-alasdair-roberts.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-23T09:18:11.590Z",
+    "previousConfig": {
+      "id": "artist-alasdair-roberts",
+      "domain": "www.alasdairroberts.com",
+      "url": "http://www.alasdairroberts.com/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "tbody.vevent",
+        "artistNameFallback": "Alasdair Roberts",
+        "date": ".gigpress-date abbr",
+        "ticketUrl": ".gigpress-tickets-link",
+        "venue": ".gigpress-venue.location",
+        "city": ".gigpress-city.summary",
+        "country": ".gigpress-country",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-gerard-joling",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-gerard-joling.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-10-23T09:18:12.616Z",
+    "previousConfig": {
+      "id": "artist-gerard-joling",
+      "domain": "gerardjoling.nl",
+      "url": "https://gerardjoling.nl/agenda/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "tr[itemscope][itemtype='http://schema.org/MusicEvent']",
+        "artistNameFallback": "Gerard Joling",
+        "date": ".event-date",
+        "ticketUrl": "a.artwinlive_tour_dates-button-tickets",
+        "venue": ".artwinlive_tour_dates-where",
+        "city": ".artwinlive_tour_dates-where",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "NL"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]",
+    "verification": ""
+  },
+  {
+    "id": "artist-the-whitlams",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-the-whitlams.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-10-23T09:18:12.755Z",
+    "previousConfig": {
+      "id": "artist-the-whitlams",
+      "domain": "thewhitlams.com",
+      "url": "https://thewhitlams.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".ep-events__item",
+        "artistNameFallback": "The Whitlams",
+        "date": ".ep-events__datetime",
+        "ticketUrl": ".ep-events__button",
+        "venue": ".ep-events__venue",
+        "city": ".ep-events__venue",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "AU"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]",
+    "verification": ""
+  },
+  {
+    "id": "artist-uicideboy",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-uicideboy.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-23T09:18:19.227Z",
+    "previousConfig": {
+      "id": "artist-uicideboy",
+      "domain": "www.g59records.com",
+      "url": "https://www.g59records.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour-row",
+        "artistNameFallback": "$uicideboy$",
+        "date": ".hidden.md\\:flex .font-stencil:first-child, .hidden.md\\:flex .font-sans:nth-child(2)",
+        "ticketUrl": ".hidden.md\\:flex a:last-of-type",
+        "venue": ".hidden.md\\:flex .font-kraut:nth-of-type(1)",
+        "city": ".hidden.md\\:flex .font-sans:nth-child(1)",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: dates_parse [0/1 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]; public_events [1 raw -> 0 public; dropped={\"incomplete\":1,\"notApproved\":0,\"badDate\":0,\"pastDate\":0,\"zodFail\":0}]",
+    "verification": ""
+  },
+  {
+    "id": "artist-yiruma",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-yiruma.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-23T09:18:58.084Z",
+    "previousConfig": {
+      "id": "artist-yiruma",
+      "domain": "yiruma.com",
+      "url": "http://yiruma.com/performances/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".section-blog__wrapper-post.section-grid__item",
+        "artistNameFallback": "Yiruma",
+        "date": ".figure-post__wrapper-info .post-meta li a",
+        "ticketUrl": "p a",
+        "venue": "p",
+        "city": "p",
+        "country": "p",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on http://yiruma.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]",
+    "verification": ""
+  },
+  {
+    "id": "artist-polysics",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-polysics.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-23T09:20:02.047Z",
+    "previousConfig": {
+      "id": "artist-polysics",
+      "domain": "www.polysics.com",
+      "url": "http://www.polysics.com/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".live-content",
+        "artistNameFallback": "Polysics",
+        "date": "h2",
+        "venue": ".live-content h3",
+        "city": "h2 span",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
+    "verification": ""
   }
 ]
