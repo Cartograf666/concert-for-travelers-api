@@ -1,0 +1,17 @@
+{
+  "id": "artist-cant-smile-without-you",
+  "domain": "www.manilow.com",
+  "url": "https://www.manilow.com/tour-dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour_date_row",
+    "artistNameFallback": "Barry Manilow",
+    "date": ".tour_date_col_left > span:first-child",
+    "ticketUrl": ".tour_date_col_right .btn_tickets",
+    "venue": ".tour_date_col_right .tour_date_venue",
+    "city": ".tour_date_col_right .tour_date_location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

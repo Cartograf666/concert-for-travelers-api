@@ -1,0 +1,17 @@
+{
+  "id": "artist-cant-get-a-line",
+  "domain": "www.old97s.com",
+  "url": "https://www.old97s.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.shows_row",
+    "artistNameFallback": "Old 97's",
+    "date": "div.shows_date",
+    "ticketUrl": "a.ticket_button",
+    "venue": "div.shows_venue",
+    "city": "div.shows_location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

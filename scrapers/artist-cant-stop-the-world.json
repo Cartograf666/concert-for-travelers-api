@@ -1,0 +1,17 @@
+{
+  "id": "artist-cant-stop-the-world",
+  "domain": "www.gogos.com",
+  "url": "https://www.gogos.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour-item",
+    "artistNameFallback": "The Go-Go's",
+    "date": ".date",
+    "ticketUrl": ".button.tickets",
+    "venue": ".venue",
+    "city": ".city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

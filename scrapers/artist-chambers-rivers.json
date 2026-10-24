@@ -1,0 +1,16 @@
+{
+  "id": "artist-chambers-rivers",
+  "domain": "www.riverschambers.com",
+  "url": "https://www.riverschambers.com/events",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "article.event_item",
+    "artistNameFallback": "Rivers Chambers",
+    "date": ".event_meta > .time",
+    "venue": ".event_meta > .venue",
+    "city": ".event_meta > .location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
