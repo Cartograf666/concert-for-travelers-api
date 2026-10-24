@@ -122142,7 +122142,50 @@
       "vk": null
     },
     "enrichedAt": "2026-10-24T11:24:23.791Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "18K",
+        "slug": "18k",
+        "match": 1
+      },
+      {
+        "name": "Nerissima Serpe",
+        "slug": "nerissima-serpe",
+        "match": 0.386425
+      },
+      {
+        "name": "Kid Yugi",
+        "slug": "kid-yugi",
+        "match": 0.383442
+      },
+      {
+        "name": "SadTurs",
+        "slug": "sadturs",
+        "match": 0.361852
+      },
+      {
+        "name": "Artie 5ive",
+        "slug": "artie-5ive",
+        "match": 0.291719
+      },
+      {
+        "name": "saYf",
+        "slug": "sayf",
+        "match": 0.291128
+      },
+      {
+        "name": "Papa V",
+        "slug": "papa-v",
+        "match": 0.282797
+      },
+      {
+        "name": "Tony Boy",
+        "slug": "tony-boy",
+        "match": 0.258514
+      }
+    ],
+    "similarEnrichedAt": "2026-10-24T11:39:36.942Z"
   },
   {
     "name": "Maceo Parker",
@@ -233956,7 +233999,50 @@
     "enrichedBy": "wikidata-bulk",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Maustetyt%C3%B6t%20Kampissa%202019.jpg",
     "imageSource": "wikidata",
-    "imageFallbackTriedAt": "2026-10-24T10:42:54.205Z"
+    "imageFallbackTriedAt": "2026-10-24T10:42:54.205Z",
+    "similarArtists": [
+      {
+        "name": "Mariska",
+        "slug": "mariska",
+        "match": 1
+      },
+      {
+        "name": "Litku Klemetti",
+        "slug": "litku-klemetti",
+        "match": 0.962885
+      },
+      {
+        "name": "PMMP",
+        "slug": "pmmp",
+        "match": 0.881649
+      },
+      {
+        "name": "Leevi and the Leavings",
+        "slug": "leevi-and-the-leavings",
+        "match": 0.822724
+      },
+      {
+        "name": "Haloo Helsinki!",
+        "slug": "haloo-helsinki",
+        "match": 0.80311
+      },
+      {
+        "name": "Samuli Putro",
+        "slug": "samuli-putro",
+        "match": 0.729318
+      },
+      {
+        "name": "Maija Vilkkumaa",
+        "slug": "maija-vilkkumaa",
+        "match": 0.711202
+      },
+      {
+        "name": "Vesta",
+        "slug": "vesta",
+        "match": 0.652547
+      }
+    ],
+    "similarEnrichedAt": "2026-10-24T11:39:37.582Z"
   },
   {
     "name": "Mauthausen Orchestra",

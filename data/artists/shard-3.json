@@ -60911,7 +60911,20 @@
     },
     "sitesTriedAt": "2026-10-24T10:11:54.622Z",
     "enrichedAt": "2026-10-24T10:11:54.622Z",
-    "imageFallbackTriedAt": "2026-10-24T10:42:52.909Z"
+    "imageFallbackTriedAt": "2026-10-24T10:42:52.909Z",
+    "similarArtists": [
+      {
+        "name": "Suchmos",
+        "slug": "suchmos",
+        "match": 0.71238
+      },
+      {
+        "name": "Ogre You Asshole",
+        "slug": "ogre-you-asshole",
+        "match": 0.645781
+      }
+    ],
+    "similarEnrichedAt": "2026-10-24T11:39:35.383Z"
   },
   {
     "name": "Cerrone",
@@ -464657,7 +464670,50 @@
     "enrichedBy": "wikidata-bulk",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/SillyFoolsPIMF2007.JPG",
     "imageSource": "wikidata",
-    "imageFallbackTriedAt": "2026-10-24T10:42:52.909Z"
+    "imageFallbackTriedAt": "2026-10-24T10:42:52.909Z",
+    "similarArtists": [
+      {
+        "name": "Bodyslam",
+        "slug": "bodyslam",
+        "match": 0.940898
+      },
+      {
+        "name": "Musketeers",
+        "slug": "musketeers",
+        "match": 0.61142
+      },
+      {
+        "name": "Cocktail",
+        "slug": "cocktail",
+        "match": 0.544031
+      },
+      {
+        "name": "Tattoo Colour",
+        "slug": "tattoo-colour",
+        "match": 0.434467
+      },
+      {
+        "name": "Ink Waruntorn",
+        "slug": "ink-waruntorn",
+        "match": 0.288331
+      },
+      {
+        "name": "Three Man Down",
+        "slug": "three-man-down",
+        "match": 0.278506
+      },
+      {
+        "name": "YOUNGOHM",
+        "slug": "youngohm",
+        "match": 0.262113
+      },
+      {
+        "name": "Tilly Birds",
+        "slug": "tilly-birds",
+        "match": 0.259812
+      }
+    ],
+    "similarEnrichedAt": "2026-10-24T11:39:35.770Z"
   },
   {
     "name": "Silly Love Songs",
