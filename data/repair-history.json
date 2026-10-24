@@ -30494,5 +30494,257 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 503]",
     "verification": ""
+  },
+  {
+    "id": "artist-aiko",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-aiko.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-24T08:52:46.797Z",
+    "previousConfig": {
+      "id": "artist-aiko",
+      "domain": "www.aiko.com",
+      "url": "https://www.aiko.com/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".live-detail-content table tbody tr",
+        "artistNameFallback": "Aiko",
+        "date": "td.day",
+        "venue": ".venue",
+        "city": ".area",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.aiko.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]",
+    "verification": ""
+  },
+  {
+    "id": "artist-akari-saho",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-akari-saho.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-24T08:52:52.098Z",
+    "previousConfig": {
+      "id": "artist-akari-saho",
+      "domain": "www.upupgirlskakkokari.com",
+      "url": "http://www.upupgirlskakkokari.com/live_event/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event_list_item",
+        "artistNameFallback": "Akari Saho",
+        "date": ".event_month, .event_date",
+        "ticketUrl": "a",
+        "venueNameFallback": "TBD",
+        "cityNameFallback": "TBD",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: dates_parse [0/1 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]; city_distinct_from_venue [1/1 rows have city identical to venue (100%, allow 20%)]; no_volume_collapse [1 event(s) vs 10 on the last good run (need >= 3)]; public_events [1 raw -> 0 public; dropped={\"incomplete\":0,\"notApproved\":1,\"badDate\":0,\"pastDate\":0,\"zodFail\":0}]; no_public_volume_collapse [0 public event(s) vs 2 last-good public event(s) (need >= 1)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-alasdair-roberts",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-alasdair-roberts.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-24T08:54:04.818Z",
+    "previousConfig": {
+      "id": "artist-alasdair-roberts",
+      "domain": "www.alasdairroberts.com",
+      "url": "http://www.alasdairroberts.com/live/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "tbody.vevent",
+        "artistNameFallback": "Alasdair Roberts",
+        "date": ".gigpress-date abbr",
+        "ticketUrl": ".gigpress-tickets-link",
+        "venue": ".gigpress-venue.location",
+        "city": ".gigpress-city.summary",
+        "country": ".gigpress-country",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-angst",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-angst.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-24T08:54:12.846Z",
+    "previousConfig": {
+      "id": "artist-angst",
+      "domain": "adamangst.de",
+      "url": "https://adamangst.de/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "#tablepress-1 tbody tr",
+        "artistNameFallback": "Angst",
+        "date": ".column-1",
+        "ticketUrl": ".column-3 a::attr(href)",
+        "venue": ".column-3 a",
+        "city": ".column-2",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "DE"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: has_future_dates [0 event(s) dated today or later]; public_events [11 raw -> 0 public; dropped={\"incomplete\":0,\"notApproved\":0,\"badDate\":0,\"pastDate\":11,\"zodFail\":0}]",
+    "verification": ""
+  },
+  {
+    "id": "artist-gerard-joling",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-gerard-joling.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-10-24T08:54:13.529Z",
+    "previousConfig": {
+      "id": "artist-gerard-joling",
+      "domain": "gerardjoling.nl",
+      "url": "https://gerardjoling.nl/agenda/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "tr[itemscope][itemtype='http://schema.org/MusicEvent']",
+        "artistNameFallback": "Gerard Joling",
+        "date": ".event-date",
+        "ticketUrl": "a.artwinlive_tour_dates-button-tickets",
+        "venue": ".artwinlive_tour_dates-where",
+        "city": ".artwinlive_tour_dates-where",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "NL"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]",
+    "verification": ""
+  },
+  {
+    "id": "artist-dave",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-dave.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-24T08:54:20.082Z",
+    "previousConfig": {
+      "id": "artist-dave",
+      "domain": "santandave.com",
+      "url": "https://santandave.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.d-gigs tr",
+        "artistNameFallback": "Dave",
+        "date": "td.gig-date",
+        "ticketUrl": "td.gig-link a",
+        "venue": "td.gig-venue",
+        "city": "td.gig-city",
+        "country": "td.gig-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (table.d-gigs2 tr) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-yiruma",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-yiruma.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-24T08:54:37.335Z",
+    "previousConfig": {
+      "id": "artist-yiruma",
+      "domain": "yiruma.com",
+      "url": "http://yiruma.com/performances/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".section-blog__wrapper-post.section-grid__item",
+        "artistNameFallback": "Yiruma",
+        "date": ".figure-post__wrapper-info .post-meta li a",
+        "ticketUrl": "p a",
+        "venue": "p",
+        "city": "p",
+        "country": "p",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on http://yiruma.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://yiruma.com/post-perfo/yiruma-live-in-seattle-toronto-2019/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-polysics",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-polysics.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-24T08:55:41.337Z",
+    "previousConfig": {
+      "id": "artist-polysics",
+      "domain": "www.polysics.com",
+      "url": "http://www.polysics.com/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".live-content",
+        "artistNameFallback": "Polysics",
+        "date": "h2",
+        "venue": ".live-content h3",
+        "city": "h2 span",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
+    "verification": ""
+  },
+  {
+    "id": "artist-vittorio-grigolo",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-vittorio-grigolo.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-24T08:56:45.282Z",
+    "previousConfig": {
+      "id": "artist-vittorio-grigolo",
+      "domain": "www.vittoriogrigolo.com",
+      "url": "https://www.vittoriogrigolo.com/schedule",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div[data-testid='richTextElement']:has(a[href*='ticket'])",
+        "artistNameFallback": "Vittorio Grigolo",
+        "date": "p:nth-of-type(1)",
+        "ticketUrl": "a[href*='ticket']",
+        "venue": "p:nth-of-type(4)",
+        "city": "p:nth-of-type(4)",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "IT"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
+    "verification": ""
   }
 ]
