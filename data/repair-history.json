@@ -30746,5 +30746,206 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
     "verification": ""
+  },
+  {
+    "id": "artist-carl-hilding-doc-severinsen",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-carl-hilding-doc-severinsen.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-24T09:14:16.743Z",
+    "previousConfig": {
+      "id": "artist-carl-hilding-doc-severinsen",
+      "domain": "docseverinsen.com",
+      "url": "https://docseverinsen.com/calendar/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.mk-calendar-item",
+        "artistNameFallback": "Doc Severinsen",
+        "date": "div.mk-calendar-date",
+        "ticketUrl": "a.mk-button",
+        "city": "div.mk-calendar-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://docseverinsen.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://docseverinsen.com/events/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-celtic-women",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-celtic-women.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-24T09:14:25.415Z",
+    "previousConfig": {
+      "id": "artist-celtic-women",
+      "domain": "www.celticwoman.com",
+      "url": "https://www.celticwoman.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-item",
+        "artistNameFallback": "Celtic Woman",
+        "date": "div.event-date",
+        "ticketUrl": "a.btn.btn-primary",
+        "venue": "div.event-venue",
+        "city": "div.event-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.celticwoman.com; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.celticwoman.com/tour-dates/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-canton-symphony-orchestra",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-canton-symphony-orchestra.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-24T09:14:31.672Z",
+    "previousConfig": {
+      "id": "artist-canton-symphony-orchestra",
+      "domain": "www.cantonsymphony.org",
+      "url": "https://www.cantonsymphony.org/all-events",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.tribe-events-list-event",
+        "artistNameFallback": "Canton Symphony Orchestra",
+        "date": ".tribe-event-date-start",
+        "ticketUrl": ".tribe-events-read-more",
+        "venue": ".tribe-events-list-event-venue-details .tribe-venue",
+        "city": ".tribe-address span.tribe-locality",
+        "country": ".tribe-address span.tribe-country",
+        "venueNameFallback": "",
+        "cityNameFallback": "Canton",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: dates_parse [0/72 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]; public_events [72 raw -> 0 public; dropped={\"incomplete\":72,\"notApproved\":0,\"badDate\":0,\"pastDate\":0,\"zodFail\":0}]",
+    "verification": ""
+  },
+  {
+    "id": "artist-celtic-colours",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-celtic-colours.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-24T09:14:46.831Z",
+    "previousConfig": {
+      "id": "artist-celtic-colours",
+      "domain": "www.celtic-colours.com",
+      "url": "https://www.celtic-colours.com/schedule",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.schedule-item",
+        "date": "div.date",
+        "ticketUrl": "a.tickets",
+        "city": "div.location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: public_events [52 raw -> 0 public; dropped={\"incomplete\":52,\"notApproved\":0,\"badDate\":0,\"pastDate\":0,\"zodFail\":0}]",
+    "verification": ""
+  },
+  {
+    "id": "artist-ronnie-earl-the-broadcasters",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-ronnie-earl-the-broadcasters.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-10-24T09:14:47.939Z",
+    "previousConfig": {
+      "id": "artist-ronnie-earl-the-broadcasters",
+      "domain": "www.ronnieearl.com",
+      "url": "https://www.ronnieearl.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-block",
+        "artistNameFallback": "Ronnie Earl & The Broadcasters",
+        "date": "div.event-date",
+        "ticketUrl": "div.event-ticket a",
+        "venue": "div.event-venue",
+        "city": "div.event-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]",
+    "verification": ""
+  },
+  {
+    "id": "artist-zoo-station",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-zoo-station.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-24T09:14:55.183Z",
+    "previousConfig": {
+      "id": "artist-zoo-station",
+      "domain": "zoostationofficial.com",
+      "url": "https://zoostationofficial.com/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-list-item",
+        "artistNameFallback": "Zoo Station",
+        "date": ".event-date",
+        "ticketUrl": ".event-tickets a",
+        "venue": ".event-venue",
+        "city": ".event-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://zoostationofficial.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]; reached https://zoostationofficial.com/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "osaka-jo-hall-osaka",
+    "cohort": "venue",
+    "configPath": "scrapers/osaka-jo-hall-osaka.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-24T09:15:03.024Z",
+    "previousConfig": {
+      "id": "osaka-jo-hall-osaka",
+      "domain": "osaka-johall.com",
+      "url": "https://www.osaka-johall.com/event/",
+      "type": "static_selectors",
+      "requestDelayMs": 2000,
+      "allowEmpty": false,
+      "selectors": {
+        "eventBlock": "dl",
+        "artist": "dt.event-ttl a",
+        "artistNameFallback": "",
+        "date": "dt.event-genre span.date",
+        "datePattern": "",
+        "ticketUrl": "dt.event-ttl a",
+        "venue": "",
+        "city": "",
+        "country": "",
+        "venueNameFallback": "Osaka-Jo Hall",
+        "cityNameFallback": "Osaka",
+        "countryNameFallback": "JP",
+        "lat": 34.6896442,
+        "lng": 135.5301038
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 503]",
+    "verification": ""
   }
 ]
