@@ -3,6 +3,8 @@
   "domain": "gretchen-club.de",
   "url": "https://gretchen-club.de/",
   "type": "static_selectors",
+  "maxRetries": 3,
+  "requestDelayMs": 2000,
   "selectors": {
     "eventBlock": "div.gig",
     "artist": ".gig_main span.title h2 a",
