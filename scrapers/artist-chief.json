@@ -1,0 +1,17 @@
+{
+  "id": "artist-chief",
+  "domain": "www.chiefkeef.com",
+  "url": "https://www.chiefkeef.com/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-item",
+    "artistNameFallback": "Chief Keef",
+    "date": ".event-date",
+    "ticketUrl": ".event-link a",
+    "venue": ".event-venue",
+    "city": ".event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

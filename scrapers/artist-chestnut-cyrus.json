@@ -1,0 +1,17 @@
+{
+  "id": "artist-chestnut-cyrus",
+  "domain": "www.cyruschestnut.net",
+  "url": "https://www.cyruschestnut.net/dates",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-item",
+    "artistNameFallback": "Cyrus Chestnut",
+    "date": ".event-date",
+    "ticketUrl": ".event-link a",
+    "venue": ".event-venue",
+    "city": ".event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

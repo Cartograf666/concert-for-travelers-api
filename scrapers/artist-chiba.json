@@ -1,0 +1,17 @@
+{
+  "id": "artist-chiba",
+  "domain": "www.yuki-chiba.com",
+  "url": "https://www.yuki-chiba.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".tour-item",
+    "artistNameFallback": "Yuki Chiba",
+    "date": ".tour-date",
+    "ticketUrl": ".tour-ticket-link a",
+    "venue": ".tour-venue",
+    "city": ".tour-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
