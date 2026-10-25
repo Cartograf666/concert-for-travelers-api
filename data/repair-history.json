@@ -30947,5 +30947,120 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 503]",
     "verification": ""
+  },
+  {
+    "id": "artist-dave",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-dave.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-25T09:14:07.093Z",
+    "previousConfig": {
+      "id": "artist-dave",
+      "domain": "santandave.com",
+      "url": "https://santandave.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.d-gigs tr",
+        "artistNameFallback": "Dave",
+        "date": "td.gig-date",
+        "ticketUrl": "td.gig-link a",
+        "venue": "td.gig-venue",
+        "city": "td.gig-city",
+        "country": "td.gig-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://santandave.com/tour/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-the-whitlams",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-the-whitlams.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-10-25T09:14:07.346Z",
+    "previousConfig": {
+      "id": "artist-the-whitlams",
+      "domain": "thewhitlams.com",
+      "url": "https://thewhitlams.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".ep-events__item",
+        "artistNameFallback": "The Whitlams",
+        "date": ".ep-events__datetime",
+        "ticketUrl": ".ep-events__button",
+        "venue": ".ep-events__venue",
+        "city": ".ep-events__venue",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "AU"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]",
+    "verification": ""
+  },
+  {
+    "id": "artist-yiruma",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-yiruma.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-25T09:14:24.671Z",
+    "previousConfig": {
+      "id": "artist-yiruma",
+      "domain": "yiruma.com",
+      "url": "http://yiruma.com/performances/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".section-blog__wrapper-post.section-grid__item",
+        "artistNameFallback": "Yiruma",
+        "date": ".figure-post__wrapper-info .post-meta li a",
+        "ticketUrl": "p a",
+        "venue": "p",
+        "city": "p",
+        "country": "p",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on http://yiruma.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://yiruma.com/post-perfo/yiruma-live-in-seattle-toronto-2019/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-vittorio-grigolo",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-vittorio-grigolo.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-25T09:15:28.753Z",
+    "previousConfig": {
+      "id": "artist-vittorio-grigolo",
+      "domain": "www.vittoriogrigolo.com",
+      "url": "https://www.vittoriogrigolo.com/schedule",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div[data-testid='richTextElement']:has(a[href*='ticket'])",
+        "artistNameFallback": "Vittorio Grigolo",
+        "date": "p:nth-of-type(1)",
+        "ticketUrl": "a[href*='ticket']",
+        "venue": "p:nth-of-type(4)",
+        "city": "p:nth-of-type(4)",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "IT"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
+    "verification": ""
   }
 ]
