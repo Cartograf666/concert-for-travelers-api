@@ -1,75 +1,70 @@
 {
-  "digest": "74afc15d58b8c7b443884dfa36c89eea60e30000e21c89e02ce21aad82151280",
+  "digest": "d4de53cfb173786b67743ecce92cfe46fecbb176cc7a958b6eb4c76022b7f1f0",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "823fa7052dd5d0ebaaccfb8cb57b3b6486d0b9a9df617c69213884519d83f2bf",
+      "digest": "3d71e8331a12197ef1890a74357e868d5dec9cd6600ee787ee079d0ba0753c73",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "a5d22b55-6f8e-4052-a084-b52ba65e4431",
-        "inputHash": "5c1ae5b6ee60e51f4669b8b80f495dc3b108bc2763c7c8009771c6e4314c58a7",
+        "id": "a8aa2808-059e-479e-98b7-ae8bd92261d0",
+        "inputHash": "10f0ae2e885e0ddefd0ec2375de804bb1e4919fa09f071dd12f2a9c84c0f9151",
         "candidates": [
           {
-            "name": "Parikrama",
-            "website": "http://www.parikrama.com/"
+            "name": "Pedro Aznar",
+            "website": "http://www.pedroaznar.com.ar"
           },
           {
-            "name": "Arts",
-            "website": "https://artsofficial.com/"
+            "name": "Ino Casablanca",
+            "website": "https://inocasablanca.com"
           },
           {
-            "name": "Redsan",
-            "website": "https://redsan.co.ke/"
+            "name": "Benny Dayal",
+            "website": "http://www.bennydayal.com"
           },
           {
-            "name": "Ryan Tyler",
-            "website": "http://www.ryantyler.com/"
+            "name": "Sakari",
+            "website": "https://sakarimusic.com/"
           },
           {
-            "name": "Claudio Constantini",
-            "website": "https://www.claudioconstantini.com/"
+            "name": "Satinder Sartaaj",
+            "website": "https://www.satindersartaaj.com/"
           },
           {
-            "name": "Curtiss A",
-            "website": "http://www.curtissa.com/"
+            "name": "David Carreira",
+            "website": "http://www.davidcarreira.com.pt"
           },
           {
-            "name": "Sandy West",
-            "website": "http://www.sandywest.com/"
+            "name": "Dreams",
+            "website": "http://www.dreamsband.com/"
           },
           {
-            "name": "The Nerves",
-            "website": "http://www.nerves.de/"
+            "name": "Take 6",
+            "website": "http://www.take6.com/"
           },
           {
-            "name": "Thompson Square",
-            "website": "http://thompsonsquare.com/"
+            "name": "The Agonist",
+            "website": "http://theagonistband.com/"
           },
           {
-            "name": "Mattel",
-            "website": "https://shop.mattel.com"
+            "name": "The Klezmatics",
+            "website": "http://klezmatics.com/"
           },
           {
-            "name": "Michael White",
-            "website": "http://www.michaelwhite.com/"
+            "name": "Maustetytöt",
+            "website": "https://maustetytot.fi/"
           },
           {
-            "name": "Milo j",
-            "website": "https://miloj.com.ar/"
+            "name": "New Order",
+            "website": "http://www.neworder.com/"
           },
           {
-            "name": "Vienna",
-            "website": "https://www.viennateng.com/"
-          },
-          {
-            "name": "Gideon",
-            "website": "http://gideonal.com/"
+            "name": "Big Thief",
+            "website": "http://www.bigthief.net/"
           }
         ],
         "nameCounts": [
-          1,
           1,
           1,
           1,
@@ -86,106 +81,99 @@
         ],
         "results": [
           {
-            "name": "Parikrama",
-            "website": "http://www.parikrama.com/",
+            "name": "Pedro Aznar",
+            "website": "http://www.pedroaznar.com.ar",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Arts",
-            "website": "https://artsofficial.com/",
+            "name": "Ino Casablanca",
+            "website": "https://inocasablanca.com",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Redsan",
-            "website": "https://redsan.co.ke/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Ryan Tyler",
-            "website": "http://www.ryantyler.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Claudio Constantini",
-            "website": "https://www.claudioconstantini.com/",
+            "name": "Benny Dayal",
+            "website": "http://www.bennydayal.com",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Curtiss A",
-            "website": "http://www.curtissa.com/",
+            "name": "Sakari",
+            "website": "https://sakarimusic.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Sandy West",
-            "website": "http://www.sandywest.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
+            "name": "Satinder Sartaaj",
+            "website": "https://www.satindersartaaj.com/",
+            "tourUrl": "https://www.satindersartaaj.com/shows",
+            "pathPattern": "/shows",
+            "reason": "score=8.5 (years=1, numericDates=0, months=1, days=1, keywords=8, widget=0)"
           },
           {
-            "name": "The Nerves",
-            "website": "http://www.nerves.de/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Thompson Square",
-            "website": "http://thompsonsquare.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Mattel",
-            "website": "https://shop.mattel.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Michael White",
-            "website": "http://www.michaelwhite.com/",
+            "name": "David Carreira",
+            "website": "http://www.davidcarreira.com.pt",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Milo j",
-            "website": "https://miloj.com.ar/",
+            "name": "Dreams",
+            "website": "http://www.dreamsband.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Vienna",
-            "website": "https://www.viennateng.com/",
-            "tourUrl": "https://www.viennateng.com/tour",
+            "name": "Take 6",
+            "website": "http://www.take6.com/",
+            "tourUrl": "https://take6.com/tour/",
             "pathPattern": "/tour",
-            "reason": "score=35 (years=11, numericDates=0, months=8, days=0, keywords=12, widget=0)"
+            "reason": "score=13 (years=0, numericDates=0, months=0, days=0, keywords=6, widget=1)"
           },
           {
-            "name": "Gideon",
-            "website": "http://gideonal.com/",
+            "name": "The Agonist",
+            "website": "http://theagonistband.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "The Klezmatics",
+            "website": "http://klezmatics.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Maustetytöt",
+            "website": "https://maustetytot.fi/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "New Order",
+            "website": "http://www.neworder.com/",
+            "tourUrl": "https://www.neworder.com/tour",
+            "pathPattern": "/tour",
+            "reason": "score=13 (years=1, numericDates=0, months=6, days=0, keywords=10, widget=0)"
+          },
+          {
+            "name": "Big Thief",
+            "website": "http://www.bigthief.net/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           }
         ],
         "skipped": [],
-        "applied": 14,
+        "applied": 13,
         "pending": null,
         "complete": true
       }
@@ -194,83 +182,96 @@
       {
         "index": 0,
         "tourUrl": null,
-        "triedAt": "2026-10-24T08:38:38.549Z"
+        "triedAt": "2026-10-25T08:57:48.958Z"
       },
       {
         "index": 1,
         "tourUrl": null,
-        "triedAt": "2026-10-24T08:38:38.562Z"
+        "triedAt": "2026-10-25T08:57:48.972Z"
       },
       {
         "index": 2,
         "tourUrl": null,
-        "triedAt": "2026-10-24T08:38:38.580Z"
+        "triedAt": "2026-10-25T08:57:48.985Z"
       },
       {
         "index": 3,
         "tourUrl": null,
-        "triedAt": "2026-10-24T08:38:38.592Z"
+        "triedAt": "2026-10-25T08:57:48.997Z"
       },
       {
         "index": 4,
-        "tourUrl": null,
-        "triedAt": "2026-10-24T08:38:38.604Z"
+        "tourUrl": "https://www.satindersartaaj.com/shows",
+        "triedAt": "2026-10-25T08:57:49.015Z"
       },
       {
         "index": 5,
         "tourUrl": null,
-        "triedAt": "2026-10-24T08:38:38.616Z"
+        "triedAt": "2026-10-25T08:57:49.028Z"
       },
       {
         "index": 6,
         "tourUrl": null,
-        "triedAt": "2026-10-24T08:38:38.627Z"
+        "triedAt": "2026-10-25T08:57:49.040Z"
       },
       {
         "index": 7,
-        "tourUrl": null,
-        "triedAt": "2026-10-24T08:38:38.635Z"
+        "tourUrl": "https://take6.com/tour/",
+        "triedAt": "2026-10-25T08:57:49.053Z"
       },
       {
         "index": 8,
         "tourUrl": null,
-        "triedAt": "2026-10-24T08:38:38.643Z"
+        "triedAt": "2026-10-25T08:57:49.067Z"
       },
       {
         "index": 9,
         "tourUrl": null,
-        "triedAt": "2026-10-24T08:38:38.650Z"
+        "triedAt": "2026-10-25T08:57:49.079Z"
       },
       {
         "index": 10,
         "tourUrl": null,
-        "triedAt": "2026-10-24T08:39:06.543Z"
+        "triedAt": "2026-10-25T08:58:16.755Z"
       },
       {
         "index": 11,
-        "tourUrl": null,
-        "triedAt": "2026-10-24T08:39:06.555Z"
+        "tourUrl": "https://www.neworder.com/tour",
+        "triedAt": "2026-10-25T08:58:16.768Z"
       },
       {
         "index": 12,
-        "tourUrl": "https://www.viennateng.com/tour",
-        "triedAt": "2026-10-24T08:39:06.566Z"
-      },
-      {
-        "index": 13,
         "tourUrl": null,
-        "triedAt": "2026-10-24T08:39:06.576Z"
+        "triedAt": "2026-10-25T08:58:16.788Z"
       }
     ],
     "audit": [
       {
-        "artist": "Vienna",
-        "website": "https://www.viennateng.com/",
-        "tourUrl": "https://www.viennateng.com/tour",
+        "artist": "Satinder Sartaaj",
+        "website": "https://www.satindersartaaj.com/",
+        "tourUrl": "https://www.satindersartaaj.com/shows",
+        "pathPattern": "/shows",
+        "reason": "score=8.5 (years=1, numericDates=0, months=1, days=1, keywords=8, widget=0)",
+        "appliedAt": "2026-10-25T08:57:49.015Z",
+        "discoveryOperationId": "a8aa2808-059e-479e-98b7-ae8bd92261d0:4"
+      },
+      {
+        "artist": "Take 6",
+        "website": "http://www.take6.com/",
+        "tourUrl": "https://take6.com/tour/",
         "pathPattern": "/tour",
-        "reason": "score=35 (years=11, numericDates=0, months=8, days=0, keywords=12, widget=0)",
-        "appliedAt": "2026-10-24T08:39:06.566Z",
-        "discoveryOperationId": "a5d22b55-6f8e-4052-a084-b52ba65e4431:12"
+        "reason": "score=13 (years=0, numericDates=0, months=0, days=0, keywords=6, widget=1)",
+        "appliedAt": "2026-10-25T08:57:49.053Z",
+        "discoveryOperationId": "a8aa2808-059e-479e-98b7-ae8bd92261d0:7"
+      },
+      {
+        "artist": "New Order",
+        "website": "http://www.neworder.com/",
+        "tourUrl": "https://www.neworder.com/tour",
+        "pathPattern": "/tour",
+        "reason": "score=13 (years=1, numericDates=0, months=6, days=0, keywords=10, widget=0)",
+        "appliedAt": "2026-10-25T08:58:16.768Z",
+        "discoveryOperationId": "a8aa2808-059e-479e-98b7-ae8bd92261d0:11"
       }
     ]
   }
