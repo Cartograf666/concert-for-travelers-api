@@ -31062,5 +31062,285 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
     "verification": ""
+  },
+  {
+    "id": "artist-cant-get-a-line",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-cant-get-a-line.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-25T09:32:54.715Z",
+    "previousConfig": {
+      "id": "artist-cant-get-a-line",
+      "domain": "www.old97s.com",
+      "url": "https://www.old97s.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.shows_row",
+        "artistNameFallback": "Old 97's",
+        "date": "div.shows_date",
+        "ticketUrl": "a.ticket_button",
+        "venue": "div.shows_venue",
+        "city": "div.shows_location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.old97s.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://www.old97s.com/shows but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-cant-smile-without-you",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-cant-smile-without-you.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-25T09:32:56.897Z",
+    "previousConfig": {
+      "id": "artist-cant-smile-without-you",
+      "domain": "www.manilow.com",
+      "url": "https://www.manilow.com/tour-dates/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour_date_row",
+        "artistNameFallback": "Barry Manilow",
+        "date": ".tour_date_col_left > span:first-child",
+        "ticketUrl": ".tour_date_col_right .btn_tickets",
+        "venue": ".tour_date_col_right .tour_date_venue",
+        "city": ".tour_date_col_right .tour_date_location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.manilow.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]",
+    "verification": ""
+  },
+  {
+    "id": "artist-canton-symphony-orchestra",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-canton-symphony-orchestra.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-25T09:33:14.369Z",
+    "previousConfig": {
+      "id": "artist-canton-symphony-orchestra",
+      "domain": "www.cantonsymphony.org",
+      "url": "https://www.cantonsymphony.org/all-events",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.tribe-events-list-event",
+        "artistNameFallback": "Canton Symphony Orchestra",
+        "date": ".tribe-event-date-start",
+        "ticketUrl": ".tribe-events-read-more",
+        "venue": ".tribe-events-list-event-venue-details .tribe-venue",
+        "city": ".tribe-address span.tribe-locality",
+        "country": ".tribe-address span.tribe-country",
+        "venueNameFallback": "",
+        "cityNameFallback": "Canton",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: dates_parse [0/54 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]; public_events [54 raw -> 0 public; dropped={\"incomplete\":54,\"notApproved\":0,\"badDate\":0,\"pastDate\":0,\"zodFail\":0}]",
+    "verification": ""
+  },
+  {
+    "id": "artist-cant-stop-the-world",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-cant-stop-the-world.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-25T09:33:15.397Z",
+    "previousConfig": {
+      "id": "artist-cant-stop-the-world",
+      "domain": "www.gogos.com",
+      "url": "https://www.gogos.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour-item",
+        "artistNameFallback": "The Go-Go's",
+        "date": ".date",
+        "ticketUrl": ".button.tickets",
+        "venue": ".venue",
+        "city": ".city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.view-content > div:not([style])) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-celtic-women",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-celtic-women.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-25T09:33:26.740Z",
+    "previousConfig": {
+      "id": "artist-celtic-women",
+      "domain": "www.celticwoman.com",
+      "url": "https://www.celticwoman.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-item",
+        "artistNameFallback": "Celtic Woman",
+        "date": "div.event-date",
+        "ticketUrl": "a.btn.btn-primary",
+        "venue": "div.event-venue",
+        "city": "div.event-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.celticwoman.com; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://www.celticwoman.com/tour-dates/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-celtic-colours",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-celtic-colours.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-25T09:33:31.104Z",
+    "previousConfig": {
+      "id": "artist-celtic-colours",
+      "domain": "www.celtic-colours.com",
+      "url": "https://www.celtic-colours.com/schedule",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.schedule-item",
+        "date": "div.date",
+        "ticketUrl": "a.tickets",
+        "city": "div.location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: public_events [52 raw -> 0 public; dropped={\"incomplete\":52,\"notApproved\":0,\"badDate\":0,\"pastDate\":0,\"zodFail\":0}]",
+    "verification": ""
+  },
+  {
+    "id": "artist-ronnie-earl-the-broadcasters",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-ronnie-earl-the-broadcasters.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-10-25T09:33:32.041Z",
+    "previousConfig": {
+      "id": "artist-ronnie-earl-the-broadcasters",
+      "domain": "www.ronnieearl.com",
+      "url": "https://www.ronnieearl.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-block",
+        "artistNameFallback": "Ronnie Earl & The Broadcasters",
+        "date": "div.event-date",
+        "ticketUrl": "div.event-ticket a",
+        "venue": "div.event-venue",
+        "city": "div.event-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]",
+    "verification": ""
+  },
+  {
+    "id": "artist-zoo-station",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-zoo-station.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-25T09:33:40.005Z",
+    "previousConfig": {
+      "id": "artist-zoo-station",
+      "domain": "zoostationofficial.com",
+      "url": "https://zoostationofficial.com/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-list-item",
+        "artistNameFallback": "Zoo Station",
+        "date": ".event-date",
+        "ticketUrl": ".event-tickets a",
+        "venue": ".event-venue",
+        "city": ".event-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://zoostationofficial.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]; reached https://zoostationofficial.com/all-events/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "legacy-taipei-taipei",
+    "cohort": "venue",
+    "configPath": "scrapers/legacy-taipei-taipei.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-25T09:33:47.367Z",
+    "previousConfig": {
+      "id": "legacy-taipei-taipei",
+      "domain": "legacy.com.tw",
+      "url": "https://www.legacy.com.tw/page/programlist/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".program_search_list li:contains(\"演出場地： Legacy Taipei\")",
+        "artist": ".program_search_title a",
+        "date": "td:contains(\"演出日期：\")",
+        "ticketUrl": ".program_search_title a",
+        "venueNameFallback": "Legacy Taipei",
+        "cityNameFallback": "Taipei",
+        "countryNameFallback": "TW",
+        "lat": 25.0450055,
+        "lng": 121.5294132
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: public_events [10 raw -> 0 public; dropped={\"incomplete\":0,\"notApproved\":10,\"badDate\":0,\"pastDate\":0,\"zodFail\":0}]",
+    "verification": ""
+  },
+  {
+    "id": "gretchen-berlin",
+    "cohort": "venue",
+    "configPath": "scrapers/gretchen-berlin.json",
+    "repairedConfigHash": "cf40802a83834864a39e27de114232f955dcf982901e8efbc0f1bf76fd9783da",
+    "strategy": "transient",
+    "repairedAt": "2026-10-25T09:33:51.789Z",
+    "previousConfig": {
+      "id": "gretchen-berlin",
+      "domain": "gretchen-club.de",
+      "url": "https://gretchen-club.de/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.gig",
+        "artist": ".gig_main span.title h2 a",
+        "date": ".gig_top span.date strong",
+        "ticketUrl": ".gig_main span.title h2 a",
+        "venueNameFallback": "Gretchen",
+        "cityNameFallback": "Berlin",
+        "countryNameFallback": "DE",
+        "lat": 52.497576,
+        "lng": 13.386241
+      }
+    },
+    "status": "pending",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget",
+    "verification": "PASS (78 events, 10 public, 13 checks)"
   }
 ]
