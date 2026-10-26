@@ -1,0 +1,16 @@
+{
+  "id": "artist-pete-wylie",
+  "domain": "petewylie.com",
+  "url": "https://petewylie.com/live",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".event-detail",
+    "artistNameFallback": "Pete Wylie",
+    "date": ".event-datetime .date-long .date",
+    "ticketUrl": "a.tickets",
+    "venue": ".event-location span",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}
