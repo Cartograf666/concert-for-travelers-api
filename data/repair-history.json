@@ -31342,5 +31342,34 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget",
     "verification": "PASS (78 events, 10 public, 13 checks)"
+  },
+  {
+    "id": "artist-vittorio-grigolo",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-vittorio-grigolo.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-26T09:53:31.242Z",
+    "previousConfig": {
+      "id": "artist-vittorio-grigolo",
+      "domain": "www.vittoriogrigolo.com",
+      "url": "https://www.vittoriogrigolo.com/schedule",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div[data-testid='richTextElement']:has(a[href*='ticket'])",
+        "artistNameFallback": "Vittorio Grigolo",
+        "date": "p:nth-of-type(1)",
+        "ticketUrl": "a[href*='ticket']",
+        "venue": "p:nth-of-type(4)",
+        "city": "p:nth-of-type(4)",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "IT"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): timeout of 15000ms exceeded]",
+    "verification": ""
   }
 ]
