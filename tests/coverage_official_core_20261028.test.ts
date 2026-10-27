@@ -102,8 +102,40 @@ test('Hard-Ons uses guarded catalog discovery, band identity, current pages and 
   await assert.rejects(hardOns(c, index, at, async () => body.replaceAll('AUSTRALIAN TOUR MARCH 2027', 'TOUR TBD')), /year/);
   await assert.rejects(hardOns(c, index, at, async () => body.replaceAll('March 4 - Link', 'March 32 - Link')), /impossible/);
   await assert.rejects(hardOns(c, index, at, async () => body.replaceAll('"addressCountry":"Australia"', '"addressCountry":"Unknown"')), /country/);
-  const rows=await hardOns(c,index,at,async()=>body.replaceAll('March 4 - Link', 'March 4 - Cancelled Link'));
-  assert.ok(!rows.some(row=>row.date==='2027-03-04'));
+  await assert.rejects(hardOns(c,index,at,async()=>body.replaceAll('March 4 - Link', 'March 4 - Cancelled Link')), /require revalidation/);
+});
+
+test('Hard-Ons rejects conflicting itinerary status in either organizer page order', async t => {
+  const c={...configs[0],requestDelayMs:0}, originalIndex=fixture('hard-ons-index');
+  const firstUrl='https://bespoketouring.oztix.com.au/Default.aspx?Event=251910';
+  const secondUrl='https://bespoketouring.oztix.com.au/Default.aspx?Event=251911';
+  // Reverse discovered link order, keeping both genuine source page bodies.
+  const reversedIndex=originalIndex.replaceAll('251910','ORDER_SWAP').replaceAll('251911','251910').replaceAll('ORDER_SWAP','251911');
+  for (const [order,index] of [['first',originalIndex],['last',reversedIndex]]) {
+    for (const status of ['CANCELLED','CANCELED','POSTPONED']) {
+      await t.test(`${status} copy encountered ${order}`, async t => {
+        const pages: Record<string,string> = {
+          [firstUrl]:fixture('hard-ons-251910').replaceAll('March 4 - Link',`March 4 - ${status} Link`),
+          [secondUrl]:fixture('hard-ons-251911')
+        };
+        const requested:string[]=[];
+        t.mock.method(axios,'get',async (url:string)=> {
+          if(url===c.url) return {status:200,data:index,headers:{}};
+          assert.ok(pages[url],`unexpected request ${url}`);
+          requested.push(url);
+          return {status:200,data:pages[url],headers:{}};
+        });
+        const result=await runScraper(c);
+        assert.equal(result.success,false,'a stale active copy cannot confirm a contradictory date');
+        assert.deepEqual(result.concerts,[],'no accumulated active rows escape the failed scrape');
+        assert.match(result.error??'',/conflicting copies require revalidation/);
+        assert.deepEqual(requested,order==='first'?[firstUrl]:[secondUrl,firstUrl]);
+      });
+    }
+    const baseline=await hardOns(c,index,at,async url=>url===firstUrl?fixture('hard-ons-251910'):fixture('hard-ons-251911'));
+    assert.equal(baseline.length,13);
+    assert.deepEqual(baseline.map(row=>row.date).sort(),dates[0]);
+  }
 });
 
 test('Paula preserves exact Curitiba date and rejects missing identity, empty, impossible, unknown state and cancellation', async () => {

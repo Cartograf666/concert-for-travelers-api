@@ -38,7 +38,11 @@ export function parseItinerary(config: ScraperConfig, html: string, scrapedAt: s
       if (/^[A-Za-z]+ \d+\s*[-–]/.test(line)) throw new Error('Hard-Ons malformed itinerary row');
       continue;
     }
-    if (/\b(cancelled|canceled|postponed)\b/i.test(line)) continue;
+    // Every organizer page repeats the tour: dropping a status here lets another
+    // stale copy resurrect this date during merge. Revalidate the whole source.
+    if (/\b(cancelled|canceled|postponed)\b/i.test(line)) {
+      throw new Error('Hard-Ons itinerary cancelled or postponed; conflicting copies require revalidation');
+    }
     const month = MONTHS.indexOf(match[1].toUpperCase()) + 1;
     const date = `${header[2]}-${String(month).padStart(2, '0')}-${match[2].padStart(2, '0')}`;
     if (!month || !Number.isFinite(Date.parse(date)) || new Date(date).toISOString().slice(0, 10) !== date) throw new Error('Hard-Ons impossible tour date');
