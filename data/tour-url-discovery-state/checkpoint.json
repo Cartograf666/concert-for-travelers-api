@@ -1,39 +1,34 @@
 {
-  "digest": "a3845a0c13aefe2969b4dfec9833c70a13cda0bcbf0d158a8c0b0fe55a5d0ded",
+  "digest": "67fc119b49a4b4aa8cc31f7da00a415d7b44512bc3b568bbdfa7fd93ba239839",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "fd6a114245eb0e4ded0d38ffd8394e8f58bc71dce40553c198b070428d80cc9c",
+      "digest": "c57843db605acf6755273d3166e6a042ec9e60c0048ad024262b75e522c9eac3",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "d25567ea-0ce6-4c13-93c7-1994d1510acc",
-        "inputHash": "6f3e990e44b23ad0068c34e19e2a843115827fb11a52a903d16ebfef47088904",
+        "id": "8852577c-9708-4416-b3f2-24021c220e1e",
+        "inputHash": "ac4b178c5106bd01b1f3f1d791c2b94e73792e2a1869bb4530a9e6398bf2425e",
         "candidates": [
           {
-            "name": "Pete Wylie",
-            "website": "https://petewylie.com"
+            "name": "Adept",
+            "website": "http://www.adeptofficial.com/"
           },
           {
-            "name": "Rachmaninoff",
-            "website": "https://www.rachmaninoff.org"
+            "name": "D1MA",
+            "website": "https://d1ma.ru/"
           },
           {
-            "name": "Luis Coronel",
-            "website": "https://www.luiscoronel.com"
+            "name": "Nelli Matula",
+            "website": "https://www.nellimatula.fi/"
           },
           {
-            "name": "The Teenagers",
-            "website": "http://www.theteenagers.fr/"
-          },
-          {
-            "name": "Ugly",
-            "website": "https://uglyband.com"
+            "name": "Grupo Play",
+            "website": "http://www.grupoplayoficial.com.ar/"
           }
         ],
         "nameCounts": [
-          1,
           1,
           1,
           1,
@@ -41,43 +36,36 @@
         ],
         "results": [
           {
-            "name": "Pete Wylie",
-            "website": "https://petewylie.com",
-            "tourUrl": "https://petewylie.com/live",
-            "pathPattern": "/live",
-            "reason": "score=85 (years=0, numericDates=0, months=60, days=40, keywords=43, widget=0)"
+            "name": "Adept",
+            "website": "http://www.adeptofficial.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Rachmaninoff",
-            "website": "https://www.rachmaninoff.org",
+            "name": "D1MA",
+            "website": "https://d1ma.ru/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Nelli Matula",
+            "website": "https://www.nellimatula.fi/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Luis Coronel",
-            "website": "https://www.luiscoronel.com",
+            "name": "Grupo Play",
+            "website": "http://www.grupoplayoficial.com.ar/",
             "tourUrl": null,
             "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "The Teenagers",
-            "website": "http://www.theteenagers.fr/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Ugly",
-            "website": "https://uglyband.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
+            "reason": "No suffix matched content requirements"
           }
         ],
         "skipped": [],
-        "applied": 5,
+        "applied": 4,
         "pending": null,
         "complete": true
       }
@@ -85,40 +73,25 @@
     "rows": [
       {
         "index": 0,
-        "tourUrl": "https://petewylie.com/live",
-        "triedAt": "2026-10-26T09:41:33.466Z"
+        "tourUrl": null,
+        "triedAt": "2026-10-27T09:35:52.614Z"
       },
       {
         "index": 1,
         "tourUrl": null,
-        "triedAt": "2026-10-26T09:41:33.480Z"
+        "triedAt": "2026-10-27T09:35:52.633Z"
       },
       {
         "index": 2,
         "tourUrl": null,
-        "triedAt": "2026-10-26T09:41:33.491Z"
+        "triedAt": "2026-10-27T09:35:52.645Z"
       },
       {
         "index": 3,
         "tourUrl": null,
-        "triedAt": "2026-10-26T09:41:33.499Z"
-      },
-      {
-        "index": 4,
-        "tourUrl": null,
-        "triedAt": "2026-10-26T09:41:33.511Z"
+        "triedAt": "2026-10-27T09:35:52.657Z"
       }
     ],
-    "audit": [
-      {
-        "artist": "Pete Wylie",
-        "website": "https://petewylie.com",
-        "tourUrl": "https://petewylie.com/live",
-        "pathPattern": "/live",
-        "reason": "score=85 (years=0, numericDates=0, months=60, days=40, keywords=43, widget=0)",
-        "appliedAt": "2026-10-26T09:41:33.466Z",
-        "discoveryOperationId": "d25567ea-0ce6-4c13-93c7-1994d1510acc:0"
-      }
-    ]
+    "audit": []
   }
 }
