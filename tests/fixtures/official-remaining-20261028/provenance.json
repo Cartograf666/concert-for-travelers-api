@@ -1,0 +1,70 @@
+[
+  {
+    "id": "maiden",
+    "url": "https://www.ironmaiden.com/tour/run-for-your-lives-north-american-tour-2027/",
+    "capturedAt": "2026-10-27T21:23:03.546598+00:00",
+    "timestampMeaning": "capture completion (file mtime)",
+    "backend": "axios",
+    "bytes": 137782,
+    "sha256": "fe02aeaf7bc47ed3f26134aeebb6c7f5663494f4fd3d25c97d52b52c57fc6753"
+  },
+  {
+    "id": "bluetones",
+    "url": "https://bluetones.band/live/",
+    "capturedAt": "2026-10-27T21:23:03.966914+00:00",
+    "timestampMeaning": "capture completion (file mtime)",
+    "backend": "axios",
+    "bytes": 126349,
+    "sha256": "b6df6cf8453332187ddb724b41023c8c26bae0f151071bf401c44ae9b5ca4243"
+  },
+  {
+    "id": "matthew",
+    "url": "https://www.princegeorge.ca/community-culture/arts-events/events-calendar/matthew-good-and-his-band-i-mother-earth",
+    "capturedAt": "2026-10-27T21:23:05.855646+00:00",
+    "timestampMeaning": "capture completion (file mtime)",
+    "backend": "axios",
+    "bytes": 183291,
+    "sha256": "5f31caa1c75363385415251f99a99a63e8290da3584377048dd1415306bb4ae2"
+  },
+  {
+    "id": "eurocks-home",
+    "url": "https://www.eurockeennes.fr/",
+    "capturedAt": "2026-10-27T21:24:13.645972+00:00",
+    "timestampMeaning": "capture completion (file mtime)",
+    "backend": "axios",
+    "bytes": 237846,
+    "sha256": "87e5c1c6808167ece7450b69cc86e6ed5027fd88af4b10469308fe4790e6a323"
+  },
+  {
+    "id": "charrues",
+    "url": "https://www.vieillescharrues.asso.fr/",
+    "capturedAt": "2026-10-27T21:23:06.805991+00:00",
+    "timestampMeaning": "capture completion (file mtime)",
+    "backend": "axios",
+    "bytes": 314293,
+    "sha256": "976a3c2bf984007c1e15355a6f54473ea775457f197c8ce8cd29beb4fb78a3ae"
+  },
+  {
+    "id": "muse",
+    "url": "https://www.muse.mu/tour",
+    "capturedAt": "2026-10-27T21:23:27.110859+00:00",
+    "timestampMeaning": "capture completion (file mtime)",
+    "backend": "got-scraping",
+    "bytes": 169523,
+    "sha256": "71ab9b7594e0126ccf389ab025a01efbcef81539011b349aa644d737aca39793"
+  },
+  {
+    "id": "king",
+    "url": "https://www.ticketmaster.co.uk/king-gizzard-the-lizard-wizard-tickets/artist/1970014?tt_scene=anchor_view",
+    "checkedAt": "2026-10-27T21:27:00Z",
+    "status": "blocked",
+    "evidence": "axios HTTP 403; got-scraping HTTP 403; normal SSRF-guarded Playwright renderer received identity-verification challenge; no challenge solved. Web reader opened five events but is not an automated scraper input.",
+    "timestampMeaning": "approximate minute of rendered challenge, from local 00:27 MSK journal"
+  },
+  {
+    "id": "king-official",
+    "url": "https://kinggizzardandthelizardwizard.com/shows",
+    "status": "unavailable",
+    "evidence": "guarded axios request timed out (15s); web reader opened empty schedule shell"
+  }
+]
