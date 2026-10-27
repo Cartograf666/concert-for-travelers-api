@@ -41,7 +41,7 @@ test('Funner/Valley Center known event keeps one complete counterpart including 
   const pair = pairs.find(p => p.native.date === '2027-02-11')!;
   const provider = { ...pair.provider, festival: {name:'Fixture Festival'}, lineup:['Fixture Support'],
     priceRange:{min:30,max:75,currency:'USD'} };
-  const native = {...pair.native, lat: 1, lng: 2, startTime: '18:00', lineup:['Native Fixture Support']};
+  const native = {...pair.native, lat: 1, lng: 2, startTime: provider.startTime, lineup:['Native Fixture Support']};
   const before = structuredClone(native);
   const expected = await processConcerts([provider], DB, NOW);
   assert.equal(expected[0].city, 'Valley Center');
@@ -80,7 +80,7 @@ test('pair boundary rejects new dates/artists/countries/sources, unsafe or diffe
   }
 });
 
-test('unknown venue does not inherit a provider winner or a city alias; existing conflict behavior remains', async () => {
+test('unproved moved venue does not inherit a provider winner or a city alias; both venues survive', async () => {
   const {pairs} = await fixture();
   const funner = pairs.find(p => p.native.date === '2027-02-11')!;
   const unknown = {...funner.native, venue:'Explicitly Relocated Venue'};
@@ -93,8 +93,10 @@ test('unknown venue does not inherit a provider winner or a city alias; existing
   const moved = {...abilene.native,venue:'Explicitly Relocated Venue'};
   const [movedAlone] = await processConcerts([moved],DB,NOW);
   assert.equal(verifiedOfficialSourceEventIdentity(moved,movedAlone),undefined);
-  assert.deepEqual(await processConcerts([moved,abilene.provider],DB,NOW),[movedAlone],
-    'A new/moved venue cannot inherit provider rank; preserve the existing whole-record conflict policy');
+  const separated = await processConcerts([moved,abilene.provider],DB,NOW);
+  assert.equal(separated.length, 2, 'unproved different venues remain separate');
+  assert.deepEqual(separated.find(r => r.venue === moved.venue), movedAlone);
+  assert.ok(separated.some(r => r.venue === abilene.provider.venue));
 });
 
 test('twenty-nine primary-complete Teenage records preserve Bruges source-only and all provider metadata in both orders', async () => {

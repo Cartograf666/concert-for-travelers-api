@@ -1,6 +1,8 @@
+import { projectArtistIdentities, canonicalArtistName } from '../pipeline/artist_identity.js';
+import { loadDenylistGuard } from '../pipeline/denylist.js';
 import * as fs from 'fs/promises';
 import * as path from 'path';
-import { Concert } from '../schemas/concert.js';
+import type { Concert } from '../schemas/concert.js';
 import { slugify, parseSpotifyArtistId } from '../pipeline/process.js';
 import { isReadableScript, isLatinScript } from '../pipeline/script.js';
 import { artistDiscoveryFor } from '../pipeline/artist_discovery.js';
@@ -53,7 +55,7 @@ interface WriteOutcome {
 // backwards-compatible for a consumer that ignores unknown fields, so this
 // isn't a hard compatibility gate, just a cheap signal of "something changed,
 // go check src/schemas/concert.ts" for a consumer that wants to notice.
-export const CONCERT_SCHEMA_VERSION = 2;
+export const CONCERT_SCHEMA_VERSION = 3;
 
 export interface PublishIndex {
   schemaVersion: number;
@@ -61,6 +63,10 @@ export interface PublishIndex {
   stats: PublishStats;
   artists: string[];
   cities: string[];
+  /** Legacy per-artist slug -> canonical slug; aliases remain fetchable. */
+  artistAliases?: Record<string, string>;
+  /** Proven legacy display name -> canonical name, independent of slug conventions. */
+  artistNameAliases?: Record<string, string>;
 }
 
 export interface ArtistCatalogEntry {
@@ -77,6 +83,7 @@ export interface ArtistCatalogEntry {
   image?: string;
   similarArtists?: Array<{ name: string; slug: string; match: number }>;
   aliases?: string[];
+  legacySlugs?: string[];
   discovery: ArtistDiscovery;
 }
 
@@ -94,11 +101,13 @@ export interface ArtistCatalogEntry {
  * {slug, name} record so the directory is always complete.
  */
 export async function publishArtistCatalog(approvedArtists: any[], outputDir: string): Promise<void> {
+  const denylist = await loadDenylistGuard();
+  const projection = projectArtistIdentities(approvedArtists.filter(a => !denylist.isDenylisted(typeof a === 'string' ? a : a?.name ?? '')));
   const bySlug = new Map<string, ArtistCatalogEntry>();
 
-  for (const a of approvedArtists) {
+  for (const a of projection.artists) {
     const name: string | undefined = typeof a === 'string' ? a : a?.name;
-    if (!name) continue;
+    if (!name || denylist.isDenylisted(name)) continue;
     const slug = slugify(name);
     if (bySlug.has(slug)) continue; // first entry wins on a slug collision (same documented limitation as per-artist concert files)
 
@@ -126,7 +135,7 @@ export async function publishArtistCatalog(approvedArtists: any[], outputDir: st
       if (a.image) entry.image = a.image;
       if (Array.isArray(a.similarArtists)) {
         const similar = a.similarArtists
-          .filter((s: any) => s?.name && s?.slug && typeof s?.match === 'number')
+          .filter((s: any) => s?.name && s?.slug && typeof s?.match === 'number' && !denylist.isDenylisted(s.name))
           .map((s: any) => ({ name: s.name, slug: s.slug, match: s.match }));
         if (similar.length > 0) entry.similarArtists = similar;
       }
@@ -137,10 +146,16 @@ export async function publishArtistCatalog(approvedArtists: any[], outputDir: st
         // data/artists/ for the matcher, but an autocomplete offering a script the
         // reader cannot read is noise -- and for thousands of artists it is most of
         // what they would see. Latin and Cyrillic both pass; see script.ts.
-        const aliases = a.aliases.filter(isReadableScript);
+        const aliases = a.aliases.filter((name: unknown): name is string => typeof name === 'string' && isReadableScript(name) && !denylist.isDenylisted(name));
         if (aliases.length > 0) entry.aliases = aliases;
       }
     }
+    const legacySlugs = [...new Set((projection.compatibilityNames.get(name) ?? []).map(slugify))].filter(s => s !== slug);
+    if (legacySlugs.length) entry.legacySlugs = legacySlugs;
+    if (entry.similarArtists) entry.similarArtists = entry.similarArtists.map(a => {
+      const canonical = canonicalArtistName(a.name, projection);
+      return canonical === a.name ? a : { ...a, name: canonical, slug: slugify(canonical) };
+    });
     bySlug.set(slug, entry);
   }
 
@@ -300,7 +315,8 @@ async function pruneOrphans(dir: string, keepSlugs: Set<string>): Promise<void> 
 /**
  * Publishes normalized concert data as split static JSON API endpoints in the output directory.
  */
-export async function publishConcerts(concerts: Concert[], outputDir: string): Promise<void> {
+export async function publishConcerts(concerts: Concert[], outputDir: string, approvedArtists: any[] = []): Promise<void> {
+  const projection = projectArtistIdentities(approvedArtists);
   const artistsDir = path.join(outputDir, 'artists');
   const citiesDir = path.join(outputDir, 'cities');
 
@@ -348,6 +364,23 @@ export async function publishConcerts(concerts: Concert[], outputDir: string): P
   // Sort lists for deterministic output
   const sortedArtists = Array.from(uniqueArtists).sort();
   const sortedCities = Array.from(uniqueCities).sort();
+
+  // Preserve existing bookmarked/loved-artist endpoints without duplicating
+  // artists in the catalog/autocomplete or events in the master/city feeds.
+  const artistAliases: Record<string, string> = {};
+  const artistNameAliases: Record<string, string> = {};
+  for (const [name, aliases] of projection.compatibilityNames) {
+    const canonicalSlug = slugify(name);
+    const rows = concertsByArtist.get(canonicalSlug);
+    if (!rows) continue;
+    for (const alias of aliases) {
+      artistNameAliases[alias] = name;
+      const oldSlug = slugify(alias);
+      if (oldSlug === canonicalSlug || concertsByArtist.has(oldSlug)) continue;
+      concertsByArtist.set(oldSlug, rows);
+      artistAliases[oldSlug] = canonicalSlug;
+    }
+  }
 
   // Remove stale per-slug files from prior runs before writing the current set.
   await pruneOrphans(artistsDir, new Set(concertsByArtist.keys()));
@@ -463,7 +496,9 @@ export async function publishConcerts(concerts: Concert[], outputDir: string): P
       ...(writeFailures.length > 0 ? { failedWrites: writeFailures.length } : {})
     },
     artists: sortedArtists,
-    cities: sortedCities
+    cities: sortedCities,
+    ...(Object.keys(artistAliases).length ? { artistAliases } : {}),
+    ...(Object.keys(artistNameAliases).length ? { artistNameAliases } : {})
   };
 
   await fs.writeFile(

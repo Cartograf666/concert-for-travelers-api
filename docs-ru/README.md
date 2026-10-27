@@ -99,7 +99,8 @@ fetch('https://cartograf666.github.io/concert-for-travelers-api/concerts.json')
   "country": "DE",
   "lat": 48.7901,
   "lng": 9.2241,
-  "ticketUrl": "https://www.thecure.com/",
+  "ticketUrl": "https://tickets.example/events/the-cure-berlin",
+  "eventUrl": "https://venue.example/events/the-cure-berlin",
   "originalSource": "ticketmaster.de",
   "scrapedAt": "2026-07-08T12:00:00.000Z"
 }
@@ -113,9 +114,13 @@ fetch('https://cartograf666.github.io/concert-for-travelers-api/concerts.json')
 - **`status.json`** — машиночитаемая сводка состояния (скрейперы ok/failed, устаревшие площадки, количество событий ticketmaster, `conflictDropsLast7Days` — см. [Известные ограничения](#known-limitations)) для дашборда и freshness watchdog.
 - **`changes.json`** — концерты, появившиеся с момента последнего запуска (скользящее окно 30 дней), чтобы потребитель мог показать «N новых концертов с вашего последнего визита», не сравнивая весь `concerts.json` самостоятельно.
 
-Каждый объект концерта соответствует `src/schemas/concert.ts`: `artist`, `artistWebsite?`, `spotifyId?`, `mbid?`, `artistSocials?` (spotify/instagram/facebook/youtube/telegram/vk), `date` (`YYYY-MM-DD`), `startTime?` (`HH:MM`), `venue`, `venueKind?` (stadium/arena/club/theatre/hall/open-air/other), `city`, `country` (ISO 3166-1 alpha-2), `lat?`/`lng?`, `festival?` (`{name, url?}`), `lineup?`, `priceRange?` (`{min, max, currency}`, только для Ticketmaster), `ticketUrl?` (собственный сайт артиста, если он известен, а не ссылка на продавца билетов — см. ниже), `originalSource`, `scrapedAt`.
+Каждый объект концерта соответствует `src/schemas/concert.ts`: `artist`, `artistWebsite?`, `spotifyId?`, `mbid?`, `artistSocials?` (spotify/instagram/facebook/youtube/telegram/vk), `date` (`YYYY-MM-DD`), `startTime?` (`HH:MM`), `venue`, `venueKind?` (stadium/arena/club/theatre/hall/open-air/other), `city`, `country` (ISO 3166-1 alpha-2), `lat?`/`lng?`, `festival?` (`{name, url?}`), `lineup?`, `priceRange?` (`{min, max, currency}`, только для Ticketmaster), `ticketUrl?` (source action), `eventUrl?` (source event page), `originalSource`, `scrapedAt`.
 
-**Примечание про `ticketUrl`**: несмотря на название, это собственный официальный сайт артиста, если он нам известен, а не страница покупки билетов — специфичные для источника ссылки на билеты/агрегаторы часто оказываются безымянным виджетом или обобщённой страницей со списком по городу без какого-либо указания на то, что это такое. Откат к исходной ссылке на билет из источника происходит только тогда, когда сайт артиста для него неизвестен.
+**Ссылки (версия схемы 3):** `ticketUrl` сохраняет исходную ссылку действия с билетами/событием и не заменяется на `artistWebsite`. Наличие ссылки не подтверждает продажу билетов. `eventUrl` берётся из безопасного `sourceEventUrl` в сырых данных (или ранее заданного `eventUrl`); он не вычисляется из сайта артиста. Отсутствующие и небезопасные ссылки не публикуются. Для восстановления ссылок старой публикации нужен сырой scrape-cache.
+
+**Качество публикации:** `CONCERT_MAX_FUTURE_DAYS` — положительное целое число, по умолчанию 730 календарных дней включительно от даты запуска. Это окно планирования, а не доказательство ложности далёкого события. Исходные данные сохраняются; исключения считаются в `beyondPlanningHorizon`, невозможные даты — в `badDate`, точные термины существующего denylist (теперь и `pop-rock`) — в `nonArtist`. Исключения для явно заданных scrape-targets сохраняются. Диагностика обработки имеет версию 2.
+
+Проекция идентичности объединяет проверенные группы A. R. Rahman / A.R. Rahman / A.R.Rahman, AURORA / Aurora Aksnes и KoRn / KoЯn при совпадении ожидаемых идентификаторов и отсутствии конфликтов. Варианты пунктуации/пробелов дополнительно объединяются только при общих MBID и Spotify ID и отсутствии конфликтов MBID, Spotify и сайта. Разные имена проектов не сливаются лишь по общему ID. БД не переписывается. Старые имена остаются в `aliases`, старые slug — в `legacySlugs` каталога и `index.artistAliases`; для совместимых per-artist файлов передавайте исходный снимок артистов третьим аргументом `publishConcerts`. Общий ключ события учитывает страну, площадку и известное время; разные площадки и сеансы сохраняются. Подробности и компромиссы — в [английском контракте](../README.md).
 
 ---
 

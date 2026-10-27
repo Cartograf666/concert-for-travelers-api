@@ -1,5 +1,37 @@
 # Backlog
 
+## Verified local data-contract repair — 2026-10-27 (candidate; not deployed)
+
+Alex requested fixes to concrete event/ticket links, application cache freshness,
+artist duplicates and suspicious records. This candidate supersedes artist-site-first
+`ticketUrl`, 30-day Cartograf freshness and artist/date/city-only occurrence grouping.
+
+- Collector source candidate `180d56db3eea0fe97eb054357801f886efb54b11`, integrated
+  as `488e104bbcde4e3c06fb85cb2746ab73839bb72c`; source/tests/data trees match.
+- Consumer `/Users/alex/code/concerts-for-travelers/.worktrees/codex/concerts-data-contract-consumer-20261027`,
+  HEAD `49fe3d281165d612741fab2b8d7f8204884a77e0`. Source actions/profile separated;
+  metadata retained in both searches; Cartograf revalidates after 10 minutes,
+  live providers after 6 hours with bounded serial refresh and last-good fallback.
+- Guarded canonical artist projection retains explicit legacy-name lookup.
+  Known distinct sessions/venues/days and ambiguous source facts are preserved.
+  Exact genre placeholders and dates beyond a documented configurable 730-day
+  planning window are excluded with diagnostics; raw inputs are not rewritten.
+- Actual Actions inputs: 105,840 raw rows. Frozen UTC baseline exactly reproduces
+  all 46,493 published rows. Candidate retains 52,705 rows, zero network requests,
+  zero artist-site ticket replacements, 27,102 source event URLs. The higher row
+  count is conservative occurrence retention, not verified new concerts.
+- Collector full suite 943 PASS / 0 FAIL / 1 intentional SKIP; production SSRF
+  gate PASS; build PASS, lint zero errors (existing warnings retained).
+  Consumer server 258 PASS under Europe/Moscow; client 106 PASS; typechecks,
+  lints and build PASS. Browser checks cover legacy artist lookup, source action,
+  exact-day region search and distinct known session times. Independent bounded
+  correctness/recipient review has no remaining actionable findings.
+- Evidence and final handoff: `/Users/alex/agent-hub/concerts-data-contract/coordinator/work/FINAL-REPORT.md`.
+  No original dirty checkout, production collection, main push/merge or deployment
+  was changed. Remaining ambiguity, live-provider/Redis/billing/ticket availability
+  and release verification are explicitly separate from these local checks.
+
+
 Living backlog for the concert-data API. Backend/data-only repo — a separate
 app (`concerts-for-travelers`) consumes the published JSON.
 

@@ -67,7 +67,8 @@ test('native DDT config response -> runScraper -> actual artistDb fixture read -
   const normalized = await processConcerts(result.concerts, root + 'approved-artists.json', clock);
   assert.equal(normalized.length, 2);
   assert.ok(normalized.every(row => row.artist === 'ДДТ' && row.country === 'DE'));
-  assert.ok(normalized.every(row => row.ticketUrl === 'https://ddt.ru/' && !('sourceEventUrl' in row)));
+  assert.ok(normalized.every(row => row.artistWebsite === 'https://ddt.ru/' && row.ticketUrl === result.concerts.find(r => r.date === row.date)?.ticketUrl &&
+    row.eventUrl === row.ticketUrl && !('sourceEventUrl' in row)));
   assert.deepEqual(await processConcerts([...result.concerts, ...result.concerts], root + 'approved-artists.json', clock), normalized);
   // Demonstrates why generic JSON-LD would attribute the band's concerts to its singer.
   assert.ok(extractJsonLd(config, html, clock).every(row => row.artist === 'Yuri Shevchuk'));

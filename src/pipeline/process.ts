@@ -2,7 +2,13 @@ import * as path from 'path';
 import * as chrono from 'chrono-node';
 import didYouMean, { ThresholdTypeEnums } from 'didyoumean2';
 import deburr from 'lodash.deburr';
-import { Concert, ConcertSchema } from '../schemas/concert.js';
+import { ConcertSchema } from '../schemas/concert.js';
+import type { Concert, RawConcert } from '../schemas/concert.js';
+import { isKnownVenueConflict } from './known_venue_conflicts.js';
+import { loadDenylistGuard } from './denylist.js';
+import { projectArtistIdentities, canonicalArtistName } from './artist_identity.js';
+import { occurrenceVenueKeys, occurrenceDedupeKeys, publicationMaxFutureDays, publicationQualityDropReason, sourceActionUrl } from './publication_quality.js';
+import type { PublicationQualityOptions } from './publication_quality.js';
 import { loadApprovedArtists } from './artistDb.js';
 import { artistDiscoveryFor } from './artist_discovery.js';
 import type { ArtistDiscovery } from '../schemas/artist_discovery.js';
@@ -550,6 +556,7 @@ function candidatesNearLength(
 }
 
 export function buildApprovedMatcher(approvedArtists: any[]): ApprovedMatcher {
+  approvedArtists = projectArtistIdentities(approvedArtists).artists;
   type MatchVariant = { approved: any; matchName: string; lower: string };
   // `order` is the candidate's position in the original (pre-sort) entry list --
   // the tiebreaker that reproduces the old longest-first scan's winner exactly.
@@ -1118,7 +1125,7 @@ function isMoreCompleteDuplicate(existing: Concert, candidate: Concert): boolean
  * standardizes dates, and deduplicates.
  */
 export async function processConcerts(
-  rawConcerts: Partial<Concert>[],
+  rawConcerts: RawConcert[],
   approvedArtistsPath: string,
   baseDateStr: string = new Date().toISOString(),
   // Lets a caller that already needs the parsed whitelist for something else
@@ -1128,7 +1135,8 @@ export async function processConcerts(
   // Optional bounded accounting for rejected records. This is deliberately
   // observational: it must not alter matching, normalization, or output.
   onDiagnostics?: (report: ProcessingDiagnostics) => void,
-  officialArtistContext?: OfficialArtistContext
+  officialArtistContext?: OfficialArtistContext,
+  qualityOptions: PublicationQualityOptions = {}
 ): Promise<Concert[]> {
   let approvedArtists: any[] = [];
   try {
@@ -1138,18 +1146,24 @@ export async function processConcerts(
   }
   onApprovedArtistsLoaded?.(approvedArtists);
 
+  const denylist = await loadDenylistGuard();
+  const projection = projectArtistIdentities(approvedArtists.filter(a => !denylist.isDenylisted(typeof a === 'string' ? a : a?.name ?? '')));
+  approvedArtists = projection.artists;
+  const maxFutureDays = publicationMaxFutureDays(qualityOptions.maxFutureDays);
   // Compile the matcher once for the whole batch instead of per concert.
   const match = buildApprovedMatcher(approvedArtists);
   const locationAliases = new Map<string, string[]>(approvedArtists.filter(a => typeof a === 'object' && a?.name)
     .map(a => [a.name, Array.isArray(a.aliases) ? a.aliases.filter((alias: unknown): alias is string => typeof alias === 'string') : []]));
   const hasTheHuCanonical = approvedArtists.some(isTheHuIdentity);
+  const candidates: Array<{ raw: RawConcert; concert: Concert; candidateOfficial: boolean;
+    candidateTheHuDublinRank: number; verifiedEvent?: { pairKey: string; dedupeCity: string; sourceRank: number } }> = [];
   const processedMap = new Map<string, Concert>();
   const officialWinnerByKey = new Map<string, boolean>();
   const theHuDublinWinnerRank = new Map<string, number>();
   const verifiedEventWinner = new Map<string, { pairKey: string; sourceRank: number }>();
-  const diagnostics = onDiagnostics ? new ProcessingDiagnosticsCollector(rawConcerts.length, baseDateStr) : undefined;
+  const diagnostics = onDiagnostics ? new ProcessingDiagnosticsCollector(rawConcerts.length, baseDateStr, { maxFutureDays }) : undefined;
   // Telemetry: why events are dropped, so silent losses are visible.
-  const drops = { incomplete: 0, notApproved: 0, badDate: 0, pastDate: 0, zodFail: 0 };
+  const drops = { incomplete: 0, notApproved: 0, badDate: 0, pastDate: 0, zodFail: 0, nonArtist: 0, beyondPlanningHorizon: 0 };
   // Some venue pages list past shows alongside upcoming ones (an archive
   // section the scraper's selector also happens to pick up); nothing should
   // ever publish a concert that's already happened.
@@ -1187,6 +1201,11 @@ export async function processConcerts(
       continue;
     }
 
+    if (denylist.isDenylisted(raw.artist)) {
+      drops.nonArtist++;
+      diagnostics?.recordDrop('nonArtist', raw);
+      continue;
+    }
     const mozarteumDrop = mozarteumProvenanceDropReason(raw);
     if (mozarteumDrop) {
       drops[mozarteumDrop]++;
@@ -1210,9 +1229,14 @@ export async function processConcerts(
 
     // 2. Date Parsing
     const normalizedDate = parseDate(raw.date, baseDateStr);
-    if (!normalizedDate) {
+    if (!normalizedDate || publicationQualityDropReason(normalizedDate, baseDateStr, maxFutureDays) === 'badDate') {
       drops.badDate++;
       diagnostics?.recordDrop('badDate', raw);
+      continue;
+    }
+    if (publicationQualityDropReason(normalizedDate, baseDateStr, maxFutureDays) === 'beyondPlanningHorizon') {
+      drops.beyondPlanningHorizon++;
+      diagnostics?.recordDrop('beyondPlanningHorizon', raw);
       continue;
     }
     if (normalizedDate < todayIso) {
@@ -1221,7 +1245,8 @@ export async function processConcerts(
       continue;
     }
 
-    if (isVerifiedCancelledTwinAtlanticEvent(raw, normalizedDate, matched.mbid) ||
+    if (isKnownVenueConflict(raw, matched.name, normalizedDate, matched.mbid, spotifyId) ||
+        isVerifiedCancelledTwinAtlanticEvent(raw, normalizedDate, matched.mbid) ||
         isInvalidLegacyAiKawashimaEvent(raw, normalizedDate, matched.mbid)) {
       drops.notApproved++;
       diagnostics?.recordDrop('notApproved', raw);
@@ -1252,12 +1277,8 @@ export async function processConcerts(
       festival: raw.festival,
       lineup: raw.lineup,
       priceRange: raw.priceRange,
-      // Prefer the artist's own official site over a source-specific ticket/
-      // aggregator link -- those are frequently an unlabeled widget page or a
-      // generic city-listing URL with no indication of what it actually is.
-      // Falls back to the raw ticket link only when we don't know the
-      // artist's site at all, so a concert still isn't left with no link.
-      ticketUrl: matched.website || (raw.ticketUrl ? raw.ticketUrl.trim() : undefined),
+      ticketUrl: sourceActionUrl(raw.ticketUrl),
+      eventUrl: sourceActionUrl(raw.sourceEventUrl) ?? sourceActionUrl(raw.eventUrl),
       originalSource: raw.originalSource,
       scrapedAt: raw.scrapedAt
     };
@@ -1275,16 +1296,37 @@ export async function processConcerts(
     const validatedConcert = validation.data;
     const candidateTheHuDublinRank = verifiedTheHuDublinSourceRank(raw);
 
-    // 3. Deduplication Key: (artist_slug, date, city_slug)
-    const artistSlug = slugify(validatedConcert.artist);
-    const citySlug = slugify(validatedConcert.city);
     const verifiedEvent = verifiedOfficialSourceEventIdentity(raw, validatedConcert) ??
       verifiedNormalizationOccurrence(raw, validatedConcert);
-    const dedupeCity = verifiedEvent ? slugify(verifiedEvent.dedupeCity) : citySlug;
-    const dedupeKey = `${artistSlug}_${validatedConcert.date}_${dedupeCity}`;
-    // Authority is tied to the original cached object and the canonical
-    // approved artist. A raw flag, copied URL, or fuzzy alias cannot confer it.
-    const candidateOfficial = officialArtistContext?.get(raw)?.artist === matched.name;
+    const officialName = officialArtistContext?.get(raw)?.artist;
+    const candidateOfficial = officialName !== undefined && canonicalArtistName(officialName, projection) === matched.name;
+    candidates.push({ raw, concert: validatedConcert, candidateOfficial, candidateTheHuDublinRank, verifiedEvent });
+  }
+
+  const concerts = candidates.map(c => c.concert);
+  const venueKeys = occurrenceVenueKeys(concerts);
+  const verifiedKeyFor = (c: (typeof candidates)[number]) => c.verifiedEvent
+    ? `verified:${JSON.stringify([c.verifiedEvent.pairKey, c.concert.date, c.concert.country])}` : undefined;
+  const proofsByOccurrence = new Map<string, Set<string>>();
+  candidates.forEach((candidate, i) => {
+    const verifiedKey = verifiedKeyFor(candidate);
+    if (!verifiedKey) return;
+    const proofs = proofsByOccurrence.get(venueKeys[i]) ?? new Set<string>();
+    proofs.add(verifiedKey);
+    proofsByOccurrence.set(venueKeys[i], proofs);
+  });
+  // Resolve only proven location equivalence here; temporal and source event
+  // conflicts must still split the resulting occurrence in the shared helper.
+  const locationKeys = candidates.map((candidate, i) => {
+    const proofs = proofsByOccurrence.get(venueKeys[i]);
+    return verifiedKeyFor(candidate) ?? (proofs?.size === 1 ? [...proofs][0] : venueKeys[i]);
+  });
+  const occurrenceKeys = occurrenceDedupeKeys(concerts, locationKeys);
+  for (const [index, candidate] of candidates.entries()) {
+    const { raw, concert: validatedConcert, candidateOfficial, candidateTheHuDublinRank, verifiedEvent } = candidate;
+    // Finite primary-source pairs can reconcile differing venue/city labels.
+    // General artist/day/city coincidence cannot.
+    const dedupeKey = occurrenceKeys[index];
     diagnostics?.recordAccepted(raw);
 
     if (processedMap.has(dedupeKey)) {
@@ -1332,11 +1374,12 @@ export async function processConcerts(
   }
 
   const kept = processedMap.size;
-  const totalDropped = drops.incomplete + drops.notApproved + drops.badDate + drops.pastDate + drops.zodFail;
+  const totalDropped = Object.values(drops).reduce((sum, count) => sum + count, 0);
   console.log(
     `[Pipeline] ${rawConcerts.length} raw -> ${kept} valid events. ` +
     `Dropped ${totalDropped}: ${drops.notApproved} not-approved, ${drops.badDate} bad-date, ` +
-    `${drops.pastDate} past-date, ${drops.incomplete} incomplete, ${drops.zodFail} zod-fail.`
+    `${drops.pastDate} past-date, ${drops.incomplete} incomplete, ${drops.zodFail} zod-fail, ` +
+    `${drops.nonArtist} non-artist, ${drops.beyondPlanningHorizon} beyond-${maxFutureDays}-day-planning-horizon.`
   );
   const published = Array.from(processedMap.values());
   onDiagnostics?.(diagnostics!.build(published));

@@ -197,12 +197,14 @@ test('identical unknown rows dedupe and metadata differences select one complete
   }
 });
 
-test('existing artist/date/city dedupe remains unchanged outside finite alias groups', async t => {
+test('distinct same-day venues survive outside finite verified occurrence groups', async t => {
   const { db } = await fixture(t);
   const result = await processConcerts([row({ city: 'Berlin', country: 'DE', venue: 'Hall A' }),
     row({ city: 'Berlin', country: 'DE', venue: 'Hall B', lat: 3, lng: 4 })], db, NOW);
-  assert.equal(result.length, 1);
+  assert.equal(result.length, 2);
   assert.equal(result[0].venue, 'Hall A');
+  assert.equal(result[1].venue, 'Hall B');
+  assert.equal(result[1].lat, 3);
   assert.equal(result[0].lat, undefined, 'never splice metadata from another venue');
 });
 
@@ -273,15 +275,17 @@ test('H2 B2: tracking-query changes do not create unknown event identities', asy
   }
 });
 
-test('H2 C: named-venue spelling variants in one raw city retain the legacy dedupe group', async t => {
+test('unproved venue spelling variants with conflicting coordinates stay separate', async t => {
   const { db } = await fixture(t);
   const first = row({ city: 'Belgrade', country: 'RS', venue: 'Štark Arena', lat: 1, lng: 2 });
   const second = { ...first, venue: 'Stark Arena Beograd', lat: 3, lng: 4 };
   for (const input of [[first, second], [second, first]]) {
     const result = await processConcerts(input, db, NOW);
-    assert.equal(result.length, 1);
+    assert.equal(result.length, 2);
     assert.equal(result[0].venue, input[0].venue);
     assert.equal(result[0].lat, input[0].lat);
+    assert.equal(result[1].venue, input[1].venue);
+    assert.equal(result[1].lat, input[1].lat);
   }
 });
 
@@ -321,7 +325,9 @@ test('named-venue preference cannot override the country boundary', async t => {
   const unknown = row({ city: 'Berlin', country: 'DE', venue: UNKNOWN_VENUE, ticketUrl: 'https://tickets.example/unknown' });
   const named = { ...unknown, country: 'AT', venue: 'Other Country Hall', ticketUrl: undefined };
   const result = await processConcerts([unknown, named], db, NOW);
-  assert.equal(result.length, 1);
+  assert.equal(result.length, 2);
+  assert.equal(result[1].country, 'AT');
+  assert.equal(result[1].venue, 'Other Country Hall');
   assert.equal(result[0].country, 'DE');
   assert.equal(result[0].venue, UNKNOWN_VENUE);
 });

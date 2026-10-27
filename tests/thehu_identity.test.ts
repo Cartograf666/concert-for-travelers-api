@@ -158,7 +158,8 @@ test('Dublin rank follows the current whole-record winner after an unranked repl
   await withDb(async db => {
     const rows = await inputs(), venue = rows[0], tm = rows[9];
     const unranked = { ...tm, originalSource: 'other.example', priceRange: { min: 10, max: 20, currency: 'EUR' } };
-    const richerVenue: Partial<Concert> = { ...venue, startTime: tm.startTime, lat: tm.lat, lng: tm.lng,
+    // Equal source-action presence isolates the completeness/rank-reset rule.
+    const richerVenue: Partial<Concert> = { ...venue, ticketUrl: tm.ticketUrl, startTime: tm.startTime, lat: tm.lat, lng: tm.lng,
       priceRange: unranked.priceRange, lineup: ['Support Artist'] };
     for (const prefix of [[tm, unranked], [unranked, tm]]) {
       const expected = await processConcerts([unranked, richerVenue], db, baseDate);

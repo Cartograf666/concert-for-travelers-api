@@ -75,7 +75,8 @@ export const ConcertSchema = z.object({
     max: z.number().min(0),
     currency: z.string()
   }).optional().describe("Best-effort ticket price range, from Ticketmaster's own structured priceRanges only -- scraped venue pages rarely expose a clean structured price, so this is never guessed/parsed from free text"),
-  ticketUrl: httpUrl().or(z.literal("")).optional().describe("The artist's own official website when known (NOT a ticket-vendor/aggregator purchase link -- those are often an unlabeled widget or generic city page); falls back to the source's raw ticket/event link only when no artist website is known, or empty string"),
+  ticketUrl: httpUrl().or(z.literal("")).optional().describe("Source-provided ticket/event action URL; never replaced with the artist profile and does not assert ticket availability"),
+  eventUrl: httpUrl().optional().describe("Source event page, when explicitly supplied; not inferred from artistWebsite or ticketUrl"),
   originalSource: z.string().describe("Domain name of the source site (e.g., club-arena.de)"),
   scrapedAt: z.string().datetime().describe("ISO datetime when data was extracted")
 });

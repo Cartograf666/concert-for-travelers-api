@@ -26,7 +26,8 @@ test('The Fizz official calendar publishes under its exact canonical identity, c
   const published = await processConcerts(raw, PRODUCTION_ARTIST_DB_DIR, '2026-10-06T12:00:00Z');
   assert.equal(published.length, 14);
   assert.ok(published.every(row => row.artist === 'The Fizz' && row.spotifyId === '1fyj6rE8Dw2eLkmdflawvG' &&
-    row.artistWebsite === 'https://www.thefizzofficial.com' && row.ticketUrl === 'https://www.thefizzofficial.com' &&
+    row.artistWebsite === 'https://www.thefizzofficial.com' && row.ticketUrl === raw.find(r => r.date === row.date)?.ticketUrl &&
+    row.eventUrl === raw.find(r => r.date === row.date)?.sourceEventUrl &&
     !row.mbid && !('sourceEventUrl' in row)));
 });
 
