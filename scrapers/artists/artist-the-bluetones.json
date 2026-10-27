@@ -1,0 +1,14 @@
+{
+  "id": "artist-the-bluetones",
+  "domain": "bluetones.band",
+  "url": "https://bluetones.band/live/",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": "tr.gigpress-row",
+    "artistNameFallback": "The Bluetones",
+    "date": "time",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

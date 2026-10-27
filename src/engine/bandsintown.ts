@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as fs from 'fs/promises';
 import { Concert, type RawConcert } from '../schemas/concert.js';
-import { buildArtistSweepSourceHealth, type SourceHealthReport } from '../observability/source_health.js';
+import { buildArtistSweepSourceHealth, buildSourceFreshness, type SourceFreshness, type SourceHealthReport } from '../observability/source_health.js';
 import { sleep } from './sleep.js';
 
 const BIT_BASE = 'https://rest.bandsintown.com/artists';
@@ -17,7 +17,7 @@ const DEFAULT_APP_ID = 'js_127.0.0.1';
 // not a licensed high-throughput API, so spacing matters more than raw speed.
 const REQUEST_DELAY_MS = 1100;
 
-// Per-run cap so the ~1400-artist list is worked in batches across scheduled runs
+// Per-run cap so the artist list is worked in batches across scheduled runs
 // ("пачками по очереди") rather than one giant blast. Stalest-first ordering means
 // each run picks up where the last left off; overridable via env for a faster
 // initial fill vs. gentler steady-state refresh.
@@ -28,7 +28,7 @@ const DEFAULT_MAX_ARTISTS_PER_RUN = 800;
 // list instead of re-fetching the same head of it every time. This is a minimum
 // freshness interval, not a six-day SLA: 20,711 targets at 800/day need at least
 // 26 runs even before failures and active-priority traffic are considered. The
-// active reservation is only 20% under a permanently contended oldest lane, so it
+// active reservation is 50% under a permanently contended oldest lane, so it
 // deliberately does not promise a tighter bound than available daily capacity.
 const DEFAULT_FRESHNESS_DAYS = 6;
 
@@ -182,31 +182,47 @@ function isTemplatedArtistCityVenueName(venueName: string, artistName: string): 
   return new RegExp(`^${escapedArtist}\\s+(в|in)\\s+\\S`, 'iu').test(venueName.trim());
 }
 
-export function mapBitEventToConcert(event: BitEvent, queriedArtist: string, scrapedAt: string): RawConcert | null {
+type BitEventMapping =
+  | { kind: 'concert'; concert: RawConcert }
+  | { kind: 'excluded'; reason: 'templated_artist_city_venue' }
+  | { kind: 'unparsed'; reason: 'malformed_event' | 'missing_required_fields' | 'malformed_date' | 'unmapped_country' };
+
+function mapBitEvent(event: BitEvent, queriedArtist: string, scrapedAt: string): BitEventMapping {
+  if (!event || typeof event !== 'object' || Array.isArray(event)) {
+    return { kind: 'unparsed', reason: 'malformed_event' };
+  }
   // Prefer the queried name (guaranteed to match a whitelist entry when the target
   // list overlaps the approved list) over Bandsintown's own spelling, which can
   // differ in casing/punctuation and slip past the matcher.
   const artist = queriedArtist || event.artist?.name || event.lineup?.[0];
   const rawDate = event.starts_at || event.datetime;
-  const date = rawDate ? rawDate.slice(0, 10) : undefined; // ISO datetime -> YYYY-MM-DD
+  const venue = event.venue;
+  if (!artist || typeof rawDate !== 'string' || !rawDate ||
+      typeof venue?.name !== 'string' || !venue.name.trim() ||
+      typeof venue.city !== 'string' || !venue.city.trim()) {
+    return { kind: 'unparsed', reason: 'missing_required_fields' };
+  }
+  const date = rawDate.slice(0, 10); // ISO datetime -> YYYY-MM-DD
+  const dateMs = Date.parse(date);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !Number.isFinite(dateMs) || new Date(dateMs).toISOString().slice(0, 10) !== date) {
+    return { kind: 'unparsed', reason: 'malformed_date' };
+  }
   // rawDate is "YYYY-MM-DDTHH:MM:SS" -- keep the time component ConcertSchema wants.
   const startTimeMatch = rawDate?.match(/T(\d{2}:\d{2})/);
   const startTime = startTimeMatch ? startTimeMatch[1] : undefined;
-  const venue = event.venue;
-  const country = bandsintownCountryToCode(venue?.country);
-
-  if (!artist || !date || !venue?.name || !venue?.city || !country) {
-    return null;
+  const country = typeof venue.country === 'string' ? bandsintownCountryToCode(venue.country) : null;
+  if (!country) {
+    return { kind: 'unparsed', reason: 'unmapped_country' };
   }
 
   if (isTemplatedArtistCityVenueName(venue.name, artist)) {
-    return null;
+    return { kind: 'excluded', reason: 'templated_artist_city_venue' };
   }
 
   const lat = venue.latitude ? parseFloat(venue.latitude) : undefined;
   const lng = venue.longitude ? parseFloat(venue.longitude) : undefined;
 
-  return {
+  return { kind: 'concert', concert: {
     artist,
     date,
     startTime,
@@ -219,8 +235,16 @@ export function mapBitEventToConcert(event: BitEvent, queriedArtist: string, scr
     ...(event.url ? { sourceEventUrl: event.url } : {}),
     originalSource: 'bandsintown.com',
     scrapedAt
-  };
+  } };
 }
+
+/** Compatibility wrapper; the collector also needs the reason for a rejected row. */
+export function mapBitEventToConcert(event: BitEvent, queriedArtist: string, scrapedAt: string): RawConcert | null {
+  const result = mapBitEvent(event, queriedArtist, scrapedAt);
+  return result.kind === 'concert' ? result.concert : null;
+}
+
+class IncompleteBitFeedError extends Error {}
 
 export type BitFetchFn = (artist: string, appId: string, baseUrl: string) => Promise<BitEvent[]>;
 
@@ -265,9 +289,11 @@ export interface BandsintownQueueSelection {
   cohortByArtist: Record<string, BandsintownCohort>;
   availableByCohort: Record<BandsintownCohort, number>;
   selectedByCohort: Record<BandsintownCohort, number>;
+  /** Successful verification for ALL targets, independent of retry cadence. */
+  verificationByCohort: Record<BandsintownCohort, SourceFreshness>;
 }
 
-const ACTIVE_PRIORITY_FRACTION = 0.20;
+const ACTIVE_PRIORITY_FRACTION = 0.50;
 
 function parsedTime(value: string | undefined): number | undefined {
   if (!value) return undefined;
@@ -283,8 +309,8 @@ function isActiveCacheEntry(entry: BandsintownCache[string] | undefined, nowMs: 
 
 /**
  * Deterministically select stale artists without letting either discovery or useful
- * (future-event) artists starve. Twenty percent of a run is reserved for active
- * artists; the other eighty percent is globally oldest-attempt-first, which is the
+ * (future-event) artists starve. Half of a run is reserved for active
+ * artists; the other half is globally oldest-attempt-first, which is the
  * exploration/oldest lane. The lanes are interleaved (one active then its global
  * share) so active failures cannot trip the block guard before healthy exploration
  * gets a turn. Unused active capacity carries into that global lane.
@@ -303,15 +329,15 @@ export function selectBandsintownArtists(
   const freshCutoff = nowMs - freshnessDays * 24 * 60 * 60 * 1000;
   const unique = Array.from(new Set(artists.map((artist) => artist.trim()).filter(Boolean)));
   const cohortByArtist: Record<string, BandsintownCohort> = {};
+  for (const artist of unique) {
+    const entry = cache[artist];
+    cohortByArtist[artist] = !entry ? 'new' : isActiveCacheEntry(entry, nowMs) ? 'active' : 'cold';
+  }
   const stale = unique.filter((artist) => {
     const entry = cache[artist];
     const fetchedAt = parsedTime(entry?.fetchedAt);
     return fetchedAt === undefined || fetchedAt <= freshCutoff;
   });
-  for (const artist of stale) {
-    const entry = cache[artist];
-    cohortByArtist[artist] = !entry ? 'new' : isActiveCacheEntry(entry, nowMs) ? 'active' : 'cold';
-  }
   const oldestAttemptFirst = (left: string, right: string): number => {
     const leftTime = parsedTime(cache[left]?.attemptedAt) ?? parsedTime(cache[left]?.fetchedAt) ?? Number.NEGATIVE_INFINITY;
     const rightTime = parsedTime(cache[right]?.attemptedAt) ?? parsedTime(cache[right]?.fetchedAt) ?? Number.NEGATIVE_INFINITY;
@@ -340,17 +366,13 @@ export function selectBandsintownArtists(
   const selectedByCohort: Record<BandsintownCohort, number> = { active: 0, new: 0, cold: 0 };
   for (const artist of stale) availableByCohort[cohortByArtist[artist]]++;
   for (const artist of selected) selectedByCohort[cohortByArtist[artist]]++;
-  return { artists: selected, cohortByArtist, availableByCohort, selectedByCohort };
-}
-
-function ageQuantilesDays(artists: string[], cache: BandsintownCache, nowMs: number): Record<string, number | null> {
-  const ages = artists
-    .map((artist) => parsedTime(cache[artist]?.fetchedAt))
-    .filter((value): value is number => value !== undefined)
-    .map((value) => Math.max(0, (nowMs - value) / (24 * 60 * 60 * 1000)))
-    .sort((a, b) => a - b);
-  const quantile = (p: number): number | null => ages.length ? Number(ages[Math.min(ages.length - 1, Math.floor((ages.length - 1) * p))].toFixed(2)) : null;
-  return { p50: quantile(0.5), p95: quantile(0.95), max: quantile(1) };
+  const verificationFor = (cohort: BandsintownCohort) => buildSourceFreshness(
+    unique.filter((artist) => cohortByArtist[artist] === cohort), cache, { now, revisitIntervalDays: freshnessDays }
+  );
+  return {
+    artists: selected, cohortByArtist, availableByCohort, selectedByCohort,
+    verificationByCohort: { active: verificationFor('active'), new: verificationFor('new'), cold: verificationFor('cold') }
+  };
 }
 
 /**
@@ -388,6 +410,7 @@ export async function fetchBandsintownConcerts(
   let empty = 0;
   let unavailable = 0;
   let failed = 0;
+  let partial = 0;
   let cacheFallbacks = 0;
   let yielded = 0;
   const attemptsByCohort: Record<BandsintownCohort, number> = { active: 0, new: 0, cold: 0 };
@@ -408,9 +431,20 @@ export async function fetchBandsintownConcerts(
     try {
       const events = await fetchFn(artist, appId, baseUrl);
       const concerts: Partial<Concert>[] = [];
+      let unparsed = 0;
       for (const ev of events) {
-        const c = mapBitEventToConcert(ev, artist, scrapedAt);
-        if (c) concerts.push(c);
+        const result = mapBitEvent(ev, artist, scrapedAt);
+        if (result.kind === 'concert') concerts.push(result.concert);
+        else if (result.kind === 'unparsed') {
+          unparsed++;
+          addIssue(`unparsed_event_${result.reason}`);
+        }
+      }
+      if (unparsed > 0) {
+        partial++;
+        // A reduced feed cannot prove removals. Reuse the entire last-good
+        // snapshot through the existing failed-attempt/guard path instead.
+        throw new IncompleteBitFeedError(`${unparsed} unparsed event rows`);
       }
       cache[artist] = {
         fetchedAt: scrapedAt,
@@ -430,33 +464,23 @@ export async function fetchBandsintownConcerts(
       // 404 (no page for this name) and 401 both mean "no usable data for this exact
       // artist", NOT that we're being throttled -- Bandsintown returns 401 for names
       // it can't resolve (e.g. odd punctuation/quotes in niche names), while OTHER
-      // artists in the same run keep succeeding. Treat both as skip-empty so a run of
+      // artists in the same run keep succeeding. Treat both as unavailable so a run of
       // such names can't false-trip the block guard (observed live: a cluster of
       // never-fetched Russian names all 401'd in a row and wrongly halted the sweep).
       // Real throttling shows up as 429, which still counts toward the block streak.
       if (status === 404 || status === 401) {
-        const previousVerifiedAt = cache[artist]?.verifiedAt;
-        if (status === 404) {
-          unavailable++;
-          addIssue('artist_feed_not_found');
-          cache[artist] = {
-            fetchedAt: scrapedAt,
-            attemptedAt: scrapedAt,
-            verifiedAt: previousVerifiedAt,
-            lastOutcome: 'unavailable',
-            concerts: []
-          };
-        } else {
-          unavailable++;
-          addIssue('artist_feed_unavailable');
-          cache[artist] = {
-            fetchedAt: scrapedAt,
-            attemptedAt: scrapedAt,
-            verifiedAt: previousVerifiedAt,
-            lastOutcome: 'unavailable',
-            concerts: []
-          };
-        }
+        unavailable++;
+        addIssue(status === 404 ? 'artist_feed_not_found' : 'artist_feed_unavailable');
+        if (cache[artist]) cacheFallbacks++;
+        // A failed lookup cannot prove cancellation or an empty schedule. Keep
+        // successful verification/events, but retain the existing revisit cadence.
+        cache[artist] = {
+          ...cache[artist],
+          fetchedAt: scrapedAt,
+          attemptedAt: scrapedAt,
+          lastOutcome: 'unavailable',
+          concerts: cache[artist]?.concerts ?? []
+        };
         blockStreak = 0;
       } else {
         // Preserve last-good concerts/fetchedAt for cache fallback. `attemptedAt`
@@ -465,6 +489,7 @@ export async function fetchBandsintownConcerts(
         failed++;
         const failureCategory = status === 429
           ? 'rate_limited'
+          : err instanceof IncompleteBitFeedError ? 'incomplete_feed'
           : typeof status === 'number' && status >= 500 ? 'source_server_error' : 'request_failed';
         addIssue(failureCategory);
         cache[artist] = { ...cache[artist], attemptedAt: scrapedAt, lastOutcome: 'failed', concerts: cache[artist]?.concerts ?? [] };
@@ -488,12 +513,17 @@ export async function fetchBandsintownConcerts(
   }
 
   const neverFetched = unique.filter((artist) => parsedTime(cache[artist]?.fetchedAt) === undefined).length;
+  const verification = buildSourceFreshness(unique, cache, { now: runNow, revisitIntervalDays: freshnessDays });
   console.log(`[Bandsintown] telemetry ${JSON.stringify({
     attempts,
     yield: yielded,
     neverFetched,
-    ageDays: ageQuantilesDays(unique, cache, runNow.getTime()),
+    neverVerified: verification.unknown,
+    ageDays: { p50: verification.p50Days, p95: verification.p95Days, max: verification.maxDays },
+    ageBasis: 'verifiedAt',
     cohorts: {
+      // Pre-run measurement includes cadence-fresh failed lookups and deferred targets.
+      verificationBeforeRun: selection.verificationByCohort,
       available: selection.availableByCohort,
       selected: selection.selectedByCohort,
       attempts: attemptsByCohort,
@@ -503,12 +533,20 @@ export async function fetchBandsintownConcerts(
     rawEvents: all.length,
     cap: maxPerRun
   })}`);
+  for (const cohort of ['active', 'new', 'cold'] as const) {
+    // Report the observed backlog, without turning the minimum interval into SLA.
+    const unverified = unique.filter((artist) => selection.cohortByArtist[artist] === cohort && !verifiedThisRun.has(artist));
+    const remaining = buildSourceFreshness(unverified, cache, { now: runNow, revisitIntervalDays: freshnessDays });
+    if (remaining.old > 0) issueCounts.set(`${cohort}_verification_older_than_revisit_interval`, remaining.old);
+    if (remaining.unknown > 0) issueCounts.set(`${cohort}_verification_unknown`, remaining.unknown);
+  }
   const staleTargets = Object.values(selection.availableByCohort).reduce((sum, count) => sum + count, 0);
   const report = buildArtistSweepSourceHealth('bandsintown', unique, cache, {
     selected: selection.artists.length,
     attempted: attempts,
     succeeded,
     failed,
+    partial,
     empty,
     unavailable,
     skippedFresh: unique.length - staleTargets,
@@ -518,6 +556,8 @@ export async function fetchBandsintownConcerts(
       reason,
       count,
       action: reason === 'rate_limited' ? 'wait_for_source_cooldown'
+        : reason.includes('_verification_') ? 'review_refresh_capacity_and_source_coverage'
+        : reason === 'incomplete_feed' || reason.startsWith('unparsed_event_') ? 'inspect_source_format_change'
         : reason === 'source_server_error' || reason === 'request_failed' ? 'retry_next_scheduled_sweep'
           : 'review_artist_source_identity'
     })),

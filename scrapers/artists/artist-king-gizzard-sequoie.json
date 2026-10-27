@@ -1,0 +1,14 @@
+{
+  "id": "artist-king-gizzard-sequoie",
+  "domain": "www.sequoiemusicpark.com",
+  "url": "https://www.sequoiemusicpark.com/",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": "h2",
+    "date": "time",
+    "artistNameFallback": "King Gizzard & The Lizard Wizard",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "IT"
+  }
+}

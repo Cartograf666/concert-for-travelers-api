@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "scope": "One independently captured Radiant occurrence only; not a city/venue alias or a shared provider ID.",
+  "artist": "King Gizzard & the Lizard Wizard",
+  "spotifyId": "6XYvaoDGE0VmRt83Jss9Sn",
+  "date": "2027-06-09",
+  "country": "FR",
+  "officialSession": "19:00",
+  "nativeEventUrl": "https://radiant-bellevue.fr/spectacles/king-gizzard-the-lizard-wizard/",
+  "nativeTicketUrl": "https://billetterie.radiant-bellevue.fr/fr/meeting/1574/king_gizzard_the_lizard_wizard",
+  "nativeMeetingId": "1574",
+  "bandsintownEventId": "109083165",
+  "nativeCapturedAt": "2026-10-27T21:36:11.904Z",
+  "bandsintownReceivedAt": "2026-10-27T21:33:51.127Z",
+  "identityBasis": [
+    "Official primary page: exact artist, full date, one session at 19h00, physical address 69300 CALUIRE ET CUIRE, event URL and meeting/1574 ticket link.",
+    "Native BIT response: artist_id 2117024, matching lineup, date and time 2027-06-09T19:00:00, France, Radiant - Bellevue, event/ticket routes with real ID 109083165.",
+    "Official linked ticket page: HTTP 200; canonical meeting/1574, same title, 9 juin 2027, RADIANT-BELLEVUE.",
+    "Whole primary record wins. BIT city and city-centre coordinates are not venue/address proof; neither its time nor its links are spliced into primary."
+  ],
+  "limits": [
+    "Identity inferred from independent agreement on exact artist/date/time/venue/country and unique official session, not a demonstrated shared ID/redirect.",
+    "BIT ticket HTTP 403 Cloudflare; no bypass. Official artist /shows TLS handshake timed out. Additional official-event body download timed out; existing captured primary fixture remains the source.",
+    "No ticket availability assertion: primary says opening 29 October 10h."
+  ],
+  "inputs": [
+    {
+      "path": "tests/fixtures/official-remaining-20261028/king-radiant.html",
+      "sha256": "e266be984499f6983fca2a011b31fd5f130677221a8be123115e7a27dfcad735"
+    },
+    {
+      "path": "tests/fixtures/official-remaining-20261028/king-bit-runtime.json",
+      "sha256": "3928118599bfde9cf0d7483770d0ec002e36b6781ac084215964ec75db7f1293"
+    },
+    {
+      "path": "tests/fixtures/official-remaining-20261028/king-primary-live.json",
+      "sha256": "81a52e8c8c3df6fda29f66c61efa890c896b16b1941c2381a08270485f9d8ea0"
+    },
+    {
+      "path": "tests/fixtures/king-radiant-identity-20261028/official-ticket.html",
+      "sha256": "717cb334941cf772c0c946db9274fffdb768e3738a26d07676e7836af58f1fcf"
+    },
+    {
+      "path": "tests/fixtures/king-radiant-identity-20261028/official-ticket-meta.json",
+      "sha256": "39aa773e5b4cce93dd62ce03f7ebe60b015a509abf7515e3ab15d6399a39d6b3"
+    },
+    {
+      "path": "tests/fixtures/king-radiant-identity-20261028/bit-ticket.html",
+      "sha256": "5ed45d7e3eaa88200f4545acd9f115ab13ce14fee8cd09c6a15b9905a350bfaa"
+    },
+    {
+      "path": "tests/fixtures/king-radiant-identity-20261028/bit-ticket-meta.json",
+      "sha256": "6c1f9514af4a5d1b8776b93eb5f1e130ade3b257669e3673af36e46195f92b71"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "artist-muse-eurockeennes",
+  "domain": "www.eurockeennes.fr",
+  "url": "https://www.eurockeennes.fr/",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": "a.uneactu, a.uneactumin",
+    "artistNameFallback": "Muse",
+    "date": "time",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "FR"
+  }
+}

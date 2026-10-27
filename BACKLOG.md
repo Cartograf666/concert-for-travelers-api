@@ -1,5 +1,44 @@
 # Backlog
 
+## Verified local coverage recovery — 2026-10-28 (candidate; not released)
+
+Alex requested recovery of the 40 audited missing dates and repair of demonstrated
+recurrence causes. Candidate code `70a61891` builds on `1ca03618`; the three P2
+review findings are corrected in `4fcb0a92`, `dcc8bb70`, `eae1814c`.
+
+- Eleven normally discovered source configs recover current schedules without
+  hardcoded dates. 38 target dates have primary-source inputs; two King Gizzard
+  dates rely on a fresh normal Bandsintown observation. Source winners in final
+  output may differ from input provenance. Paula is a current-tour announcement,
+  so automatic discovery of her next tour remains a documented limitation.
+- Equivalent immutable producer baseline: 106,686 raw → 52,973 public rows.
+  Final candidate: 106,765 raw → 53,027 public rows, zero network requests.
+  All 40 audited artist/date/country targets are present and absent from baseline;
+  22 have ticket links. Native venue/city labels are retained. King Gizzard
+  2027-06-09 now resolves to one complete primary record via an exact source-proven
+  guard; separate event IDs/sessions/times stay separate. The only full-catalogue
+  change from the pre-identity result is removal of that one BIT duplicate.
+  54 extra output rows over baseline are not 54 verified new unique shows.
+- Unavailable/incomplete feeds preserve last-good events and successful verifiedAt;
+  malformed active tour rows fail instead of truncating caches; contradictory
+  Hard-Ons cancellation copies fail revalidation. A zero-config run still reaches
+  independent provider stages. Telemetry exposes successful-verification backlog.
+- Active refresh reservation changes 20% → 50%, retaining global oldest coverage,
+  cap 800/day, 1.1s delay, minimum 6 days and guards. Saved-cache simulation:
+  current-active p95 8 → 5 days; current-cold p95 28 → 33 days. Not a live SLA.
+- Integrated full suite: 979 PASS / 0 FAIL / 1 intentional SKIP; build PASS;
+  lint 0 errors / 101 existing warnings; production SSRF policy PASS.
+  Independent Terra final review closes all reported P2s; no code blockers.
+  Stale receipt duplicate counter corrected and checked against actual matches.
+- Strategy and prepared affiliate application distinguish data access, tracking,
+  contracts and payouts. New platform/pilot, accounts, contracts and outbound
+  messages are not authorized. Actual applicant country/entity remains required.
+- Evidence/report: `docs/coverage-recovery-20261028.md` and
+  `/Users/alex/agent-hub/concert-coverage-recovery/coordinator/work/recovery-receipt-final.json`.
+  Production, original dirty checkout, main merge/push and collection dispatch
+  are unchanged. Next: owner release decision on the reviewed local package.
+
+
 ## Verified local data-contract repair — 2026-10-27 (candidate; not deployed)
 
 Alex requested fixes to concrete event/ticket links, application cache freshness,

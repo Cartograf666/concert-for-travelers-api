@@ -1,0 +1,14 @@
+{
+  "id": "artist-iron-maiden",
+  "domain": "www.ironmaiden.com",
+  "url": "https://www.ironmaiden.com/tour/run-for-your-lives-north-american-tour-2027/",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": ".tour-info-row",
+    "artistNameFallback": "Iron Maiden",
+    "date": "time",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

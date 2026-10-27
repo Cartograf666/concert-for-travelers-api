@@ -1,0 +1,14 @@
+{
+  "id": "artist-matthew-good-cn-centre",
+  "domain": "www.princegeorge.ca",
+  "url": "https://www.princegeorge.ca/community-culture/arts-events/events-calendar/matthew-good-and-his-band-i-mother-earth",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": "main time[datetime]",
+    "artistNameFallback": "Matthew Good",
+    "date": "time",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}

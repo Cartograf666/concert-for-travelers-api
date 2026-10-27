@@ -1,0 +1,14 @@
+{
+  "id": "artist-king-gizzard-apollo",
+  "domain": "www.eventimapollo.com",
+  "url": "https://www.eventimapollo.com/events/king-gizzard-the-lizard-wizard/",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": "h1.event-hero__title",
+    "date": "time",
+    "artistNameFallback": "King Gizzard & The Lizard Wizard",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}

@@ -192,7 +192,9 @@ test('Bandsintown - interleaved active failures do not block healthy cold explor
     return [];
   };
 
-  for (let day = 0; day < 3; day++) {
+  // At a five-attempt cap, rounding reserves three active and leaves two oldest
+  // slots; ten healthy cold targets therefore need five runs under contention.
+  for (let day = 0; day < 5; day++) {
     await fetchBandsintownConcerts([...failures, ...healthy], {
       cache, fetchFn, maxPerRun: 5, delayMs: 0, now: () => new Date(Date.UTC(2026, 0, 1 + day))
     });
@@ -330,9 +332,10 @@ test('Bandsintown - cadence-fresh prior unavailable outcome is unknown, not heal
   assert.equal(calls, 0);
   assert.equal(health.state, 'unknown');
   assert.equal(health.completeness, 'partial');
-  assert.deepStrictEqual(health.issues, [{
-    reason: 'previous_target_failures', count: 1, action: 'retry_next_scheduled_sweep'
-  }]);
+  assert.deepStrictEqual(health.issues, [
+    { reason: 'cold_verification_older_than_revisit_interval', count: 1, action: 'review_refresh_capacity_and_source_coverage' },
+    { reason: 'previous_target_failures', count: 1, action: 'retry_next_scheduled_sweep' }
+  ]);
 });
 
 test('Bandsintown - a cluster of 401s (unresolvable names) does NOT trip the block guard', async () => {
@@ -453,4 +456,238 @@ test('Bandsintown - slash, question mark and asterisk names use the documented d
   assert.equal(health.counts.empty, artists.length);
   assert.equal(health.counts.failed, 0);
   assert.ok(Object.values(cache).every((entry) => entry.lastOutcome === 'empty' && entry.verifiedAt === '2026-10-07T12:00:00.000Z'));
+});
+
+test('Bandsintown - 401/404 preserve last-good events, verification and active identity without retrying before cadence', async () => {
+  const previous = '2026-09-01T00:00:00.000Z';
+  const now = new Date('2026-10-28T00:00:00.000Z');
+  for (const status of [401, 404]) {
+    const cache: BandsintownCache = {
+      Artist: {
+        fetchedAt: previous, verifiedAt: previous, lastOutcome: 'events',
+        concerts: [{ artist: 'Artist', date: '2027-03-20', venue: 'Last good' }]
+      }
+    };
+    let health: any;
+    const result = await fetchBandsintownConcerts(['Artist'], {
+      cache, delayMs: 0, now: () => now,
+      fetchFn: async () => { const error: any = new Error('unavailable'); error.response = { status }; throw error; },
+      onHealth: (report) => { health = report; }
+    });
+    assert.equal(result.length, 1, `${status} is not a verified empty feed`);
+    assert.equal(result[0].date, '2027-03-20');
+    assert.equal(cache.Artist.verifiedAt, previous);
+    assert.equal(cache.Artist.lastOutcome, 'unavailable');
+    assert.equal(health.counts.cacheFallbacks, 1);
+    assert.equal(health.counts.empty, 0);
+    assert.equal(health.freshness.old, 1);
+    assert.deepStrictEqual(selectBandsintownArtists(['Artist'], cache, 800, 6, now).artists, []);
+    const eligible = selectBandsintownArtists(['Artist'], cache, 800, 6, new Date('2026-11-04T00:00:00.000Z'));
+    assert.deepStrictEqual(eligible.availableByCohort, { active: 1, new: 0, cold: 0 });
+  }
+});
+
+test('Bandsintown - active successful freshness remains visible when failed lookup cadence is recent', async () => {
+  const now = new Date('2026-10-28T00:00:00.000Z');
+  const cache: BandsintownCache = {
+    Active: {
+      fetchedAt: now.toISOString(), attemptedAt: now.toISOString(),
+      verifiedAt: '2026-10-01T00:00:00.000Z', lastOutcome: 'unavailable',
+      concerts: [{ date: '2027-03-20' }]
+    },
+    Cold: { fetchedAt: now.toISOString(), verifiedAt: now.toISOString(), lastOutcome: 'empty', concerts: [] }
+  };
+  const selection = selectBandsintownArtists(['Active', 'Cold', 'New'], cache, 0, 6, now);
+  assert.equal(selection.verificationByCohort.active.old, 1);
+  assert.equal(selection.verificationByCohort.active.p95Days, 27);
+  assert.equal(selection.verificationByCohort.cold.fresh, 1);
+  assert.equal(selection.verificationByCohort.new.unknown, 1);
+  let health: any;
+  await fetchBandsintownConcerts(['Active', 'Cold', 'New'], {
+    cache, maxPerRun: 0, delayMs: 0, now: () => now,
+    fetchFn: async () => { throw new Error('must not request'); },
+    onHealth: (report) => { health = report; }
+  });
+  assert.ok(health.issues.some((issue: any) => issue.reason === 'active_verification_older_than_revisit_interval' && issue.count === 1));
+});
+
+test('Bandsintown - mixed 20,819 roster retains 50% reservation, oldest coverage, cap and six-day minimum', () => {
+  const artists = Array.from({ length: 20_819 }, (_, index) => `Artist ${String(index).padStart(5, '0')}`);
+  const cache: BandsintownCache = Object.fromEntries(artists.map((artist, index) => [artist, {
+    fetchedAt: '2026-01-01T00:00:00.000Z', verifiedAt: '2026-01-01T00:00:00.000Z',
+    concerts: index < 3_723 ? [{ date: '2028-01-01' }] : []
+  }]));
+  let firstCoverageRuns: number | undefined;
+  for (let day = 0; day < 60; day++) {
+    const now = new Date(Date.UTC(2026, 0, 20 + day));
+    const queue = selectBandsintownArtists(artists, cache, 800, 6, now);
+    assert.equal(queue.artists.length, 800);
+    assert.equal(new Set(queue.artists).size, 800);
+    // Global oldest can also select active artists; 50% is a floor, not a ceiling.
+    assert.ok(queue.selectedByCohort.active >= Math.min(queue.availableByCohort.active, 400));
+    if (day === 0) assert.deepStrictEqual(queue.selectedByCohort, { active: 800, new: 0, cold: 0 });
+    for (const artist of queue.artists) {
+      const previousAttempt = cache[artist].attemptedAt;
+      if (previousAttempt) assert.ok(now.getTime() - Date.parse(previousAttempt) >= 6 * 86_400_000);
+      Object.assign(cache[artist], { fetchedAt: now.toISOString(), attemptedAt: now.toISOString(), verifiedAt: now.toISOString() });
+    }
+    if (firstCoverageRuns === undefined && artists.every((artist) => cache[artist].attemptedAt)) firstCoverageRuns = day + 1;
+  }
+  assert.equal(firstCoverageRuns, 47, 'global oldest also services active targets; the mixed roster must still reach every target under 50/50');
+});
+
+test('Bandsintown - 50/50 reservation interleaves 400 active with 400 oldest under full contention', () => {
+  const active = Array.from({ length: 800 }, (_, index) => `A${String(index).padStart(3, '0')}`);
+  const cold = Array.from({ length: 800 }, (_, index) => `C${String(index).padStart(3, '0')}`);
+  const cache: BandsintownCache = Object.fromEntries([
+    ...active.map((artist) => [artist, { fetchedAt: '2026-01-02T00:00:00.000Z', concerts: [{ date: '2028-01-01' }] }]),
+    ...cold.map((artist) => [artist, { fetchedAt: '2020-01-01T00:00:00.000Z', concerts: [] }])
+  ]);
+  const queue = selectBandsintownArtists([...active, ...cold], cache, 800, 6, new Date('2026-01-20T00:00:00.000Z'));
+  assert.deepStrictEqual(queue.selectedByCohort, { active: 400, new: 0, cold: 400 });
+  assert.deepStrictEqual(queue.artists.slice(0, 4), ['A000', 'C000', 'A001', 'C001']);
+  assert.ok(cold.slice(0, 400).every((artist) => queue.artists.includes(artist)), 'oldest cold targets retain their ordered lane');
+});
+
+test('Bandsintown - all-unparsed and one-bad mixed native feeds retain the entire last-good schedule', async () => {
+  const old = '2026-10-01T00:00:00.000Z';
+  const now = '2026-10-28T00:00:00.000Z';
+  const good = bitEvent({ starts_at: '2027-03-20T20:00:00' });
+  const cases = [
+    { name: 'missing country', reason: 'unmapped_country', bad: bitEvent({ venue: { name: 'Source venue', city: 'Source city' } }) },
+    { name: 'unmapped country', reason: 'unmapped_country', bad: bitEvent({ venue: { name: 'Source venue', city: 'Source city', country: 'Unknown region' } }) },
+    { name: 'missing date', reason: 'missing_required_fields', bad: bitEvent({ starts_at: undefined }) },
+    { name: 'missing venue', reason: 'missing_required_fields', bad: bitEvent({ venue: { city: 'Source city', country: 'GB' } }) },
+    { name: 'missing city', reason: 'missing_required_fields', bad: bitEvent({ venue: { name: 'Source venue', country: 'GB' } }) },
+    { name: 'blank city', reason: 'missing_required_fields', bad: bitEvent({ venue: { name: 'Source venue', city: '  ', country: 'GB' } }) },
+    { name: 'invalid date', reason: 'malformed_date', bad: bitEvent({ starts_at: 'not-a-date' }) },
+    { name: 'impossible date', reason: 'malformed_date', bad: bitEvent({ starts_at: '2027-02-30T20:00:00' }) },
+    { name: 'wrong date type', reason: 'missing_required_fields', bad: bitEvent({ starts_at: 123 }) },
+    { name: 'null row', reason: 'malformed_event', bad: null }
+  ];
+  for (const { name, reason, bad } of cases) {
+    for (const feed of [[bad], [good, bad], [bad, good]]) {
+      const previous = [
+        { artist: 'Metallica', date: '2027-03-19', venue: 'Last good one' },
+        { artist: 'Metallica', date: '2027-03-20', venue: 'Last good two' }
+      ];
+      const cache: BandsintownCache = { Metallica: { fetchedAt: old, verifiedAt: old, lastOutcome: 'events', concerts: previous } };
+      let health: any;
+      const output = await fetchBandsintownConcerts(['Metallica'], {
+        cache, now: () => new Date(now), delayMs: 0, maxPerRun: 1,
+        fetchFn: async () => feed,
+        onHealth: (report) => { health = report; }
+      });
+      assert.deepStrictEqual(output, previous, `${name}: neither all-bad nor mixed feed may replace the last-good snapshot`);
+      assert.equal(cache.Metallica.verifiedAt, old, name);
+      assert.equal(cache.Metallica.fetchedAt, old, name);
+      assert.equal(cache.Metallica.attemptedAt, now, name);
+      assert.equal(cache.Metallica.lastOutcome, 'failed', name);
+      assert.equal(health.counts.attempted, 1);
+      assert.equal(health.counts.failed, 1);
+      assert.equal(health.counts.partial, 1);
+      assert.equal(health.counts.cacheFallbacks, 1);
+      assert.equal(health.counts.succeeded, 0);
+      assert.equal(health.counts.empty, 0);
+      assert.ok(health.issues.some((issue: any) => issue.reason === 'incomplete_feed'), name);
+      assert.ok(health.issues.some((issue: any) => issue.reason === `unparsed_event_${reason}` && issue.count === 1), name);
+    }
+  }
+});
+
+test('Bandsintown - documented templated spam exclusions and native [] can replace last-good without a false parse failure', async () => {
+  const now = '2026-10-28T00:00:00.000Z';
+  const spam = bitEvent({ venue: { name: 'Metallica in London', city: 'London', country: 'United Kingdom' } });
+  const good = bitEvent({ starts_at: '2027-03-20T20:00:00' });
+  for (const feed of [[], [spam], [spam, good], [good, spam]]) {
+    let health: any;
+    const cache: BandsintownCache = { Metallica: {
+      fetchedAt: '2026-10-01T00:00:00.000Z', verifiedAt: '2026-10-01T00:00:00.000Z',
+      concerts: [{ artist: 'Metallica', date: '2027-03-19', venue: 'Last good' }]
+    } };
+    const result = await fetchBandsintownConcerts(['Metallica'], {
+      cache, now: () => new Date(now), delayMs: 0, fetchFn: async () => feed,
+      onHealth: (report) => { health = report; }
+    });
+    assert.equal(result.length, feed.includes(good) ? 1 : 0);
+    if (feed.includes(good)) assert.equal(result[0].date, '2027-03-20');
+    assert.equal(cache.Metallica.verifiedAt, now);
+    assert.equal(cache.Metallica.lastOutcome, feed.includes(good) ? 'events' : 'empty');
+    assert.equal(health.counts.partial, 0);
+    assert.equal(health.counts.failed, 0);
+    assert.equal(health.counts.succeeded, 1);
+  }
+});
+
+test('Bandsintown - unparsed response without last-good stays unverified and yields attempt priority under the same cap', async () => {
+  const cache: BandsintownCache = {};
+  const calls: string[] = [];
+  const now = new Date('2026-10-28T00:00:00.000Z');
+  let health: any;
+  await fetchBandsintownConcerts(['A bad', 'B deferred'], {
+    cache, now: () => now, maxPerRun: 1, delayMs: 0,
+    fetchFn: async (artist) => { calls.push(artist); return [bitEvent({ venue: { city: 'London', country: 'GB' } })]; },
+    onHealth: (report) => { health = report; }
+  });
+  assert.deepStrictEqual(calls, ['A bad']);
+  assert.equal(cache['A bad'].verifiedAt, undefined);
+  assert.equal(cache['A bad'].fetchedAt, undefined);
+  assert.deepStrictEqual(cache['A bad'].concerts, []);
+  assert.equal(cache['A bad'].lastOutcome, 'failed');
+  assert.equal(health.counts.empty, 0);
+  assert.equal(health.counts.partial, 1);
+  assert.deepStrictEqual(selectBandsintownArtists(['A bad', 'B deferred'], cache, 1, 6, now).artists, ['B deferred']);
+});
+
+test('Bandsintown - partial native feeds consume capped attempts and retain the five-failure circuit guard', async () => {
+  const artists = Array.from({ length: 12 }, (_, index) => `Artist ${String(index).padStart(2, '0')}`);
+  const old = '2026-10-01T00:00:00.000Z';
+  const cache: BandsintownCache = Object.fromEntries(artists.map((artist) => [artist, {
+    fetchedAt: old, verifiedAt: old, concerts: [{ artist, date: '2027-03-20', venue: 'Last good' }]
+  }]));
+  const calls: string[] = [];
+  let health: any;
+  await fetchBandsintownConcerts(artists, {
+    cache, maxPerRun: 8, delayMs: 0, now: () => new Date('2026-10-28T00:00:00.000Z'),
+    fetchFn: async (artist) => { calls.push(artist); return [bitEvent(), bitEvent({ venue: { name: 'Venue', city: 'London' } })]; },
+    onHealth: (report) => { health = report; }
+  });
+  assert.equal(calls.length, 5, 'malformed feeds use the existing failure guard, not extra attempts');
+  assert.equal(health.counts.selected, 8);
+  assert.equal(health.counts.attempted, 5);
+  assert.equal(health.counts.failed, 5);
+  assert.equal(health.counts.partial, 5);
+  assert.equal(health.counts.empty, 0);
+  assert.equal(health.halted.category, 'consecutive_failures');
+  assert.ok(Object.values(cache).every((entry) => entry.verifiedAt === old && entry.concerts[0].venue === 'Last good'));
+});
+
+test('Bandsintown - real HTTP native mixed feed preserves last-good through the default fetch and mapper', async (t) => {
+  const server = createServer((_request, response) => {
+    response.writeHead(200, { 'Content-Type': 'application/json' });
+    response.end(JSON.stringify([
+      bitEvent({ starts_at: '2027-03-20T20:00:00' }),
+      bitEvent({ venue: { name: 'Unparsed venue', city: 'London' } })
+    ]));
+  });
+  server.listen(0, '127.0.0.1');
+  await once(server, 'listening');
+  t.after(() => new Promise<void>((resolve, reject) => server.close((error) => error ? reject(error) : resolve())));
+  const address = server.address();
+  assert.ok(address && typeof address !== 'string');
+  const previous = '2026-10-01T00:00:00.000Z';
+  const cache: BandsintownCache = { Metallica: {
+    fetchedAt: previous, verifiedAt: previous,
+    concerts: [{ artist: 'Metallica', date: '2027-03-19', venue: 'Last good' }]
+  } };
+  let health: any;
+  const result = await fetchBandsintownConcerts(['Metallica'], {
+    cache, baseUrl: `http://127.0.0.1:${address.port}/artists`, delayMs: 0,
+    now: () => new Date('2026-10-28T00:00:00.000Z'), onHealth: (report) => { health = report; }
+  });
+  assert.equal(result.length, 1);
+  assert.equal(result[0].date, '2027-03-19');
+  assert.equal(cache.Metallica.verifiedAt, previous);
+  assert.equal(health.counts.partial, 1);
+  assert.equal(health.counts.empty, 0);
 });

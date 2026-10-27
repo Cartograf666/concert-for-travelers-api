@@ -58,3 +58,21 @@ test('run-artists - case/whitespace-variant names collapse to one target', async
     await fs.rm(root, { recursive: true, force: true });
   }
 });
+
+test('run-artists - no tour-page configs still reaches independent provider target stage', async () => {
+  const { execFile } = await import('node:child_process');
+  const { promisify } = await import('node:util');
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'run-artists-no-configs-'));
+  try {
+    const script = path.resolve('src/run-artists.ts');
+    const tsx = path.resolve('node_modules/tsx/dist/loader.mjs');
+    await promisify(execFile)(process.execPath, ['--import', tsx, script], { cwd: root, timeout: 30_000 });
+    const bundle = JSON.parse(await fs.readFile(path.join(root, 'reports/artist-source-health.json'), 'utf8'));
+    for (const source of ['artist', 'bandsintown', 'eventbrite']) {
+      assert.equal(bundle.sources[source].state, 'unknown');
+      assert.equal(bundle.sources[source].issues[0].reason, 'no_targets');
+    }
+  } finally {
+    await fs.rm(root, { recursive: true, force: true });
+  }
+});

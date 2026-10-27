@@ -1,0 +1,15 @@
+{
+  "id": "artist-hard-ons",
+  "domain": "bespoketouring.oztix.com.au",
+  "url": "https://bespoketouring.oztix.com.au/",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": ".event",
+    "artistNameFallback": "Hard-Ons",
+    "date": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "AU"
+  },
+  "skipConditionalRequests": true
+}

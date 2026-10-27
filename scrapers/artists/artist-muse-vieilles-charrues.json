@@ -1,0 +1,14 @@
+{
+  "id": "artist-muse-vieilles-charrues",
+  "domain": "www.vieillescharrues.asso.fr",
+  "url": "https://www.vieillescharrues.asso.fr/",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": ".wysiwyg",
+    "artistNameFallback": "Muse",
+    "date": "time",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "FR"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "artist-godspeed-you-black-emperor",
+  "domain": "cstrecords.com",
+  "url": "https://cstrecords.com/pages/artist/godspeed-you-black-emperor",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": ".metafield-rich_text_field > p",
+    "artistNameFallback": "Godspeed You! Black Emperor",
+    "date": "",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "XX"
+  },
+  "skipConditionalRequests": true
+}

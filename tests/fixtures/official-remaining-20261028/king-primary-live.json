@@ -1,0 +1,223 @@
+{
+  "startedAt": "2026-10-27T21:36:11.552Z",
+  "completedAt": "2026-10-27T21:36:13.650Z",
+  "results": [
+    {
+      "configId": "artist-king-gizzard-apollo",
+      "url": "https://www.eventimapollo.com/events/king-gizzard-the-lizard-wizard/",
+      "success": true,
+      "concerts": [
+        {
+          "artist": "King Gizzard & The Lizard Wizard",
+          "date": "2027-06-20",
+          "venue": "Eventim Apollo",
+          "city": "London",
+          "country": "GB",
+          "eventUrl": "https://www.eventimapollo.com/events/king-gizzard-the-lizard-wizard/",
+          "ticketUrl": "https://www.eventim.co.uk/artist/king-gizzard-and-lizard-wizard/king-gizzard-the-lizard-wizard-4271585/?affiliate=HAL",
+          "originalSource": "www.eventimapollo.com",
+          "scrapedAt": "2026-10-27T21:36:11.553Z"
+        }
+      ],
+      "scrapedAt": "2026-10-27T21:36:11.553Z",
+      "cacheFingerprint": "cb53b10c732f97d4f3d9fc9fa19164fe01f8368e2f66a150f05a3c30e400f62d",
+      "contentHash": "f70a488c301709a970665000ef58eab43d505805",
+      "notModified": false
+    },
+    {
+      "configId": "artist-king-gizzard-radiant",
+      "url": "https://radiant-bellevue.fr/spectacles/king-gizzard-the-lizard-wizard/",
+      "success": true,
+      "concerts": [
+        {
+          "artist": "King Gizzard & The Lizard Wizard",
+          "date": "2027-06-09",
+          "venue": "Radiant-Bellevue",
+          "city": "Caluire et Cuire",
+          "country": "FR",
+          "eventUrl": "https://radiant-bellevue.fr/spectacles/king-gizzard-the-lizard-wizard/",
+          "ticketUrl": "https://billetterie.radiant-bellevue.fr/fr/meeting/1574/king_gizzard_the_lizard_wizard",
+          "originalSource": "radiant-bellevue.fr",
+          "scrapedAt": "2026-10-27T21:36:11.904Z"
+        }
+      ],
+      "scrapedAt": "2026-10-27T21:36:11.904Z",
+      "lastModified": "Tue, 27 Oct 2026 21:07:32 GMT",
+      "cacheFingerprint": "894e8039a5eae5a89a8795df3ac797601c19eefe7e175cdfe8a6847d0e75473a",
+      "contentHash": "1eb63bb31621852e608b7953aeba10f84b769b86",
+      "notModified": false
+    },
+    {
+      "configId": "artist-king-gizzard-sequoie",
+      "url": "https://www.sequoiemusicpark.com/",
+      "success": true,
+      "concerts": [
+        {
+          "artist": "King Gizzard & The Lizard Wizard",
+          "date": "2027-06-11",
+          "venue": "Sequoie Music Park",
+          "city": "Bologna",
+          "country": "IT",
+          "ticketUrl": "https://www.ticketone.it/event/king-gizzard-and-the-lizard-wizard-sequoie-music-park-parco-caserme-rosse-22323603/",
+          "originalSource": "www.sequoiemusicpark.com",
+          "scrapedAt": "2026-10-27T21:36:12.471Z"
+        }
+      ],
+      "scrapedAt": "2026-10-27T21:36:12.471Z",
+      "etag": "W/\"81494cf1caac942c930230d181491b5f\"",
+      "cacheFingerprint": "7905dd60285e9ef6120d5ba388fed44356a1ad5de6a14ce656f128b3c716530f",
+      "contentHash": "da6c08585c005f5c8404b2c93bb6b96798776eae",
+      "notModified": false
+    }
+  ],
+  "rawCount": 3,
+  "diagnostics": [
+    {
+      "schemaVersion": 2,
+      "generatedAt": "2026-10-27T21:36:13.650Z",
+      "baseDate": "2026-10-27T21:36:11.552Z",
+      "publicationPolicy": {
+        "maxFutureDays": 730
+      },
+      "rawCount": 3,
+      "publishedCount": 3,
+      "duplicatesMerged": 0,
+      "dropped": {
+        "incomplete": 0,
+        "notApproved": 0,
+        "badDate": 0,
+        "pastDate": 0,
+        "zodFail": 0,
+        "nonArtist": 0,
+        "beyondPlanningHorizon": 0
+      },
+      "sources": {
+        "www.eventimapollo.com": {
+          "rawCount": 1,
+          "publishedCount": 1,
+          "duplicatesMerged": 0,
+          "dropped": {
+            "incomplete": 0,
+            "notApproved": 0,
+            "badDate": 0,
+            "pastDate": 0,
+            "zodFail": 0,
+            "nonArtist": 0,
+            "beyondPlanningHorizon": 0
+          }
+        },
+        "radiant-bellevue.fr": {
+          "rawCount": 1,
+          "publishedCount": 1,
+          "duplicatesMerged": 0,
+          "dropped": {
+            "incomplete": 0,
+            "notApproved": 0,
+            "badDate": 0,
+            "pastDate": 0,
+            "zodFail": 0,
+            "nonArtist": 0,
+            "beyondPlanningHorizon": 0
+          }
+        },
+        "www.sequoiemusicpark.com": {
+          "rawCount": 1,
+          "publishedCount": 1,
+          "duplicatesMerged": 0,
+          "dropped": {
+            "incomplete": 0,
+            "notApproved": 0,
+            "badDate": 0,
+            "pastDate": 0,
+            "zodFail": 0,
+            "nonArtist": 0,
+            "beyondPlanningHorizon": 0
+          }
+        }
+      },
+      "validationIssues": {},
+      "missingFields": {},
+      "samples": []
+    }
+  ],
+  "processed": [
+    {
+      "artist": "King Gizzard & the Lizard Wizard",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "large",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "artistWebsite": "https://kinggizzardandthelizardwizard.com/",
+      "spotifyId": "6XYvaoDGE0VmRt83Jss9Sn",
+      "mbid": "f58384a4-2ad2-4f24-89c5-c7b74ae1cce7",
+      "artistSocials": {
+        "spotify": "https://open.spotify.com/artist/6XYvaoDGE0VmRt83Jss9Sn",
+        "instagram": "https://www.instagram.com/kinggizzard/",
+        "facebook": "https://www.facebook.com/kinggizzardandthelizardwizard",
+        "youtube": "https://www.youtube.com/channel/UCNiyS8zr2RIddszLwtoyUow"
+      },
+      "date": "2027-06-20",
+      "venue": "Eventim Apollo",
+      "city": "London",
+      "country": "GB",
+      "ticketUrl": "https://www.eventim.co.uk/artist/king-gizzard-and-lizard-wizard/king-gizzard-the-lizard-wizard-4271585/?affiliate=HAL",
+      "eventUrl": "https://www.eventimapollo.com/events/king-gizzard-the-lizard-wizard/",
+      "originalSource": "www.eventimapollo.com",
+      "scrapedAt": "2026-10-27T21:36:11.553Z"
+    },
+    {
+      "artist": "King Gizzard & the Lizard Wizard",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "large",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "artistWebsite": "https://kinggizzardandthelizardwizard.com/",
+      "spotifyId": "6XYvaoDGE0VmRt83Jss9Sn",
+      "mbid": "f58384a4-2ad2-4f24-89c5-c7b74ae1cce7",
+      "artistSocials": {
+        "spotify": "https://open.spotify.com/artist/6XYvaoDGE0VmRt83Jss9Sn",
+        "instagram": "https://www.instagram.com/kinggizzard/",
+        "facebook": "https://www.facebook.com/kinggizzardandthelizardwizard",
+        "youtube": "https://www.youtube.com/channel/UCNiyS8zr2RIddszLwtoyUow"
+      },
+      "date": "2027-06-09",
+      "venue": "Radiant-Bellevue",
+      "city": "Caluire et Cuire",
+      "country": "FR",
+      "ticketUrl": "https://billetterie.radiant-bellevue.fr/fr/meeting/1574/king_gizzard_the_lizard_wizard",
+      "eventUrl": "https://radiant-bellevue.fr/spectacles/king-gizzard-the-lizard-wizard/",
+      "originalSource": "radiant-bellevue.fr",
+      "scrapedAt": "2026-10-27T21:36:11.904Z"
+    },
+    {
+      "artist": "King Gizzard & the Lizard Wizard",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "large",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "artistWebsite": "https://kinggizzardandthelizardwizard.com/",
+      "spotifyId": "6XYvaoDGE0VmRt83Jss9Sn",
+      "mbid": "f58384a4-2ad2-4f24-89c5-c7b74ae1cce7",
+      "artistSocials": {
+        "spotify": "https://open.spotify.com/artist/6XYvaoDGE0VmRt83Jss9Sn",
+        "instagram": "https://www.instagram.com/kinggizzard/",
+        "facebook": "https://www.facebook.com/kinggizzardandthelizardwizard",
+        "youtube": "https://www.youtube.com/channel/UCNiyS8zr2RIddszLwtoyUow"
+      },
+      "date": "2027-06-11",
+      "venue": "Sequoie Music Park",
+      "city": "Bologna",
+      "country": "IT",
+      "venueKind": "open-air",
+      "ticketUrl": "https://www.ticketone.it/event/king-gizzard-and-the-lizard-wizard-sequoie-music-park-parco-caserme-rosse-22323603/",
+      "originalSource": "www.sequoiemusicpark.com",
+      "scrapedAt": "2026-10-27T21:36:12.471Z"
+    }
+  ]
+}

@@ -1,4 +1,30 @@
 import type { Concert, RawConcert } from '../schemas/concert.js';
+import { knownSourceEventIdentity } from './publication_quality.js';
+
+// Independent native IDs, not a fabricated shared provider ID. The official
+// page has one 19:00 session matching BIT's captured lineup/day/time/country.
+// Proof, source URLs, capture times and hashes: king-radiant-identity-20261028/proof.json.
+function verifiedKingRadiantOccurrence(raw: RawConcert, concert: Concert):
+  { pairKey: string; dedupeCity: string; sourceRank: number } | undefined {
+  if (concert.artist !== 'King Gizzard & the Lizard Wizard' ||
+      concert.spotifyId !== '6XYvaoDGE0VmRt83Jss9Sn' ||
+      raw.artist?.trim().toLowerCase() !== concert.artist.toLowerCase() ||
+      raw.date !== '2027-06-09' || concert.date !== raw.date || concert.country !== 'FR') return;
+  const eventUrl = raw.sourceEventUrl ?? raw.eventUrl;
+  const native = raw.originalSource === 'radiant-bellevue.fr' &&
+    concert.city === 'Caluire et Cuire' && concert.venue === 'Radiant-Bellevue' &&
+    eventUrl === 'https://radiant-bellevue.fr/spectacles/king-gizzard-the-lizard-wizard/' &&
+    raw.ticketUrl === 'https://billetterie.radiant-bellevue.fr/fr/meeting/1574/king_gizzard_the_lizard_wizard' &&
+    (concert.startTime === undefined || concert.startTime === '19:00');
+  const bitId = knownSourceEventIdentity('https://www.bandsintown.com/e/109083165');
+  const peer = raw.originalSource === 'bandsintown.com' &&
+    concert.city === 'Lyon 01' && concert.venue === 'Radiant - Bellevue' &&
+    concert.startTime === '19:00' && knownSourceEventIdentity(eventUrl) === bitId &&
+    (!raw.ticketUrl || knownSourceEventIdentity(raw.ticketUrl) === bitId);
+  if (!native && !peer) return;
+  return { pairKey: 'kinggizzard:radiant:meeting1574:bit109083165',
+    dedupeCity: 'Caluire et Cuire', sourceRank: native ? 2 : 1 };
+}
 
 // Exact captured occurrences, not general venue/city aliases or source authority.
 // Primary evidence and full peer records: tests/fixtures/normalization-integrity-20261011/occurrence-proof.json.
@@ -49,6 +75,8 @@ const PAIRS = [
 
 export function verifiedNormalizationOccurrence(raw: RawConcert, concert: Concert):
   { pairKey: string; dedupeCity: string; sourceRank: number } | undefined {
+  const radiant = verifiedKingRadiantOccurrence(raw, concert);
+  if (radiant) return radiant;
   if (raw.artist !== concert.artist || raw.date !== concert.date) return;
   const pair = PAIRS.find(([artist, field, id, date, country, source, url, city, venue, peer, peerCity, peerVenue]) =>
     concert.artist === artist && concert[field] === id && concert.date === date && concert.country === country &&
