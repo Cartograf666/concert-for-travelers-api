@@ -182,31 +182,47 @@ function isTemplatedArtistCityVenueName(venueName: string, artistName: string): 
   return new RegExp(`^${escapedArtist}\\s+(в|in)\\s+\\S`, 'iu').test(venueName.trim());
 }
 
-export function mapBitEventToConcert(event: BitEvent, queriedArtist: string, scrapedAt: string): RawConcert | null {
+type BitEventMapping =
+  | { kind: 'concert'; concert: RawConcert }
+  | { kind: 'excluded'; reason: 'templated_artist_city_venue' }
+  | { kind: 'unparsed'; reason: 'malformed_event' | 'missing_required_fields' | 'malformed_date' | 'unmapped_country' };
+
+function mapBitEvent(event: BitEvent, queriedArtist: string, scrapedAt: string): BitEventMapping {
+  if (!event || typeof event !== 'object' || Array.isArray(event)) {
+    return { kind: 'unparsed', reason: 'malformed_event' };
+  }
   // Prefer the queried name (guaranteed to match a whitelist entry when the target
   // list overlaps the approved list) over Bandsintown's own spelling, which can
   // differ in casing/punctuation and slip past the matcher.
   const artist = queriedArtist || event.artist?.name || event.lineup?.[0];
   const rawDate = event.starts_at || event.datetime;
-  const date = rawDate ? rawDate.slice(0, 10) : undefined; // ISO datetime -> YYYY-MM-DD
+  const venue = event.venue;
+  if (!artist || typeof rawDate !== 'string' || !rawDate ||
+      typeof venue?.name !== 'string' || !venue.name.trim() ||
+      typeof venue.city !== 'string' || !venue.city.trim()) {
+    return { kind: 'unparsed', reason: 'missing_required_fields' };
+  }
+  const date = rawDate.slice(0, 10); // ISO datetime -> YYYY-MM-DD
+  const dateMs = Date.parse(date);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !Number.isFinite(dateMs) || new Date(dateMs).toISOString().slice(0, 10) !== date) {
+    return { kind: 'unparsed', reason: 'malformed_date' };
+  }
   // rawDate is "YYYY-MM-DDTHH:MM:SS" -- keep the time component ConcertSchema wants.
   const startTimeMatch = rawDate?.match(/T(\d{2}:\d{2})/);
   const startTime = startTimeMatch ? startTimeMatch[1] : undefined;
-  const venue = event.venue;
-  const country = bandsintownCountryToCode(venue?.country);
-
-  if (!artist || !date || !venue?.name || !venue?.city || !country) {
-    return null;
+  const country = typeof venue.country === 'string' ? bandsintownCountryToCode(venue.country) : null;
+  if (!country) {
+    return { kind: 'unparsed', reason: 'unmapped_country' };
   }
 
   if (isTemplatedArtistCityVenueName(venue.name, artist)) {
-    return null;
+    return { kind: 'excluded', reason: 'templated_artist_city_venue' };
   }
 
   const lat = venue.latitude ? parseFloat(venue.latitude) : undefined;
   const lng = venue.longitude ? parseFloat(venue.longitude) : undefined;
 
-  return {
+  return { kind: 'concert', concert: {
     artist,
     date,
     startTime,
@@ -219,8 +235,16 @@ export function mapBitEventToConcert(event: BitEvent, queriedArtist: string, scr
     ...(event.url ? { sourceEventUrl: event.url } : {}),
     originalSource: 'bandsintown.com',
     scrapedAt
-  };
+  } };
 }
+
+/** Compatibility wrapper; the collector also needs the reason for a rejected row. */
+export function mapBitEventToConcert(event: BitEvent, queriedArtist: string, scrapedAt: string): RawConcert | null {
+  const result = mapBitEvent(event, queriedArtist, scrapedAt);
+  return result.kind === 'concert' ? result.concert : null;
+}
+
+class IncompleteBitFeedError extends Error {}
 
 export type BitFetchFn = (artist: string, appId: string, baseUrl: string) => Promise<BitEvent[]>;
 
@@ -386,6 +410,7 @@ export async function fetchBandsintownConcerts(
   let empty = 0;
   let unavailable = 0;
   let failed = 0;
+  let partial = 0;
   let cacheFallbacks = 0;
   let yielded = 0;
   const attemptsByCohort: Record<BandsintownCohort, number> = { active: 0, new: 0, cold: 0 };
@@ -406,9 +431,20 @@ export async function fetchBandsintownConcerts(
     try {
       const events = await fetchFn(artist, appId, baseUrl);
       const concerts: Partial<Concert>[] = [];
+      let unparsed = 0;
       for (const ev of events) {
-        const c = mapBitEventToConcert(ev, artist, scrapedAt);
-        if (c) concerts.push(c);
+        const result = mapBitEvent(ev, artist, scrapedAt);
+        if (result.kind === 'concert') concerts.push(result.concert);
+        else if (result.kind === 'unparsed') {
+          unparsed++;
+          addIssue(`unparsed_event_${result.reason}`);
+        }
+      }
+      if (unparsed > 0) {
+        partial++;
+        // A reduced feed cannot prove removals. Reuse the entire last-good
+        // snapshot through the existing failed-attempt/guard path instead.
+        throw new IncompleteBitFeedError(`${unparsed} unparsed event rows`);
       }
       cache[artist] = {
         fetchedAt: scrapedAt,
@@ -453,6 +489,7 @@ export async function fetchBandsintownConcerts(
         failed++;
         const failureCategory = status === 429
           ? 'rate_limited'
+          : err instanceof IncompleteBitFeedError ? 'incomplete_feed'
           : typeof status === 'number' && status >= 500 ? 'source_server_error' : 'request_failed';
         addIssue(failureCategory);
         cache[artist] = { ...cache[artist], attemptedAt: scrapedAt, lastOutcome: 'failed', concerts: cache[artist]?.concerts ?? [] };
@@ -509,6 +546,7 @@ export async function fetchBandsintownConcerts(
     attempted: attempts,
     succeeded,
     failed,
+    partial,
     empty,
     unavailable,
     skippedFresh: unique.length - staleTargets,
@@ -519,6 +557,7 @@ export async function fetchBandsintownConcerts(
       count,
       action: reason === 'rate_limited' ? 'wait_for_source_cooldown'
         : reason.includes('_verification_') ? 'review_refresh_capacity_and_source_coverage'
+        : reason === 'incomplete_feed' || reason.startsWith('unparsed_event_') ? 'inspect_source_format_change'
         : reason === 'source_server_error' || reason === 'request_failed' ? 'retry_next_scheduled_sweep'
           : 'review_artist_source_identity'
     })),
