@@ -6,7 +6,7 @@ import * as path from 'node:path';
 import { buildApprovedMatcher, processConcerts, slugify } from '../src/pipeline/process.js';
 import { projectArtistIdentities } from '../src/pipeline/artist_identity.js';
 import { DEFAULT_MAX_FUTURE_DAYS, occurrenceDedupeKeys, publicationMaxFutureDays,
-  publicationQualityDropReason, sourceActionUrl } from '../src/pipeline/publication_quality.js';
+  publicationQualityDropReason, sourceActionUrl, knownSourceEventIdentity } from '../src/pipeline/publication_quality.js';
 import { publishArtistCatalog, publishConcerts } from '../src/generator/publish.js';
 import { isKnownVenueConflict } from '../src/pipeline/known_venue_conflicts.js';
 import { loadDenylistGuard } from '../src/pipeline/denylist.js';
@@ -304,4 +304,64 @@ test('verified location proofs also preserve distinct explicit source event page
       assert.deepEqual(result.map(r => r.startTime).sort(), ['18:00', '21:00']);
     }
   }, [{ name: 'Blue October', socials: { spotify: 'https://open.spotify.com/artist/1TJbmc7jTpw78GKCiMpvDh' } }]);
+});
+
+test('captured Beck tracking-only BIT ticket variants join the unique BIT time while TM time remains unresolved', async () => {
+  const fixture = JSON.parse(await fs.readFile('tests/fixtures/beck-source-ambiguity-20261027.json', 'utf8')) as { rows: Concert[] };
+  assert.equal(fixture.rows.length, 3);
+  await withDb(async db => {
+    for (const input of permutations(fixture.rows)) {
+      const before = structuredClone(input);
+      const result = await processConcerts(input, db, BASE);
+      assert.equal(result.length, 2, 'the exact BIT event ticket identity resolves only the sparse copy, not the TM disagreement');
+      assert.deepEqual(result.map(r => r.startTime).sort(), ['19:00', '19:30']);
+      const bit = result.find(r => r.startTime === '19:00')!;
+      assert.equal(bit.originalSource, 'bandsintown.com');
+      assert.equal(bit.ticketUrl, fixture.rows.find(r => r.originalSource === 'bandsintown.com')!.ticketUrl);
+      assert.deepEqual(input, before);
+    }
+  }, [{ name: 'Beck', website: 'http://www.beck.com/' }]);
+});
+
+test('known BIT tracking-only event page variants do not create distinct source identities', async () => {
+  const first = row({ originalSource: 'bandsintown.com', sourceEventUrl: 'https://www.bandsintown.com/e/123?app_id=one&utm_source=api&came_from=267' });
+  const second = { ...first, sourceEventUrl: 'https://www.bandsintown.com/e/123?app_id=two&utm_source=artist&affil_code=abc' };
+  await withDb(async db => {
+    for (const input of [[first, second], [second, first]]) {
+      const result = await processConcerts(input, db, BASE);
+      assert.equal(result.length, 1);
+      assert.equal(result[0].eventUrl, input[0].sourceEventUrl, 'comparison normalization never rewrites published source URLs');
+    }
+  });
+});
+
+test('known provider identity normalization is bounded to observed routes and known tracking keys', () => {
+  const identity = knownSourceEventIdentity('https://www.bandsintown.com/t/108266237?app_id=artist&came_from=267&utm_source=api');
+  assert.ok(identity);
+  assert.equal(knownSourceEventIdentity('https://bandsintown.com/e/108266237?app_id=other&affil_code=label'), identity);
+  for (const url of ['https://bandsintown.com.evil.test/t/108266237', 'https://unrelated.example/t/108266237',
+    'https://bandsintown.com/artist/108266237', 'https://bandsintown.com/', 'javascript:alert(1)',
+    'https://user:pass@bandsintown.com/t/108266237']) assert.equal(knownSourceEventIdentity(url), undefined);
+  for (const url of ['https://bandsintown.com/t/108266238', 'https://bandsintown.com/t/108266237?ticket_id=one',
+    'https://bandsintown.com/t/108266237?custom=session', 'https://bandsintown.com/t/108266237?unknown=value']) {
+    assert.notEqual(knownSourceEventIdentity(url), identity);
+  }
+});
+
+test('tracking normalization cannot merge conflicting times or different known provider IDs', async () => {
+  const ticket = 'https://www.bandsintown.com/t/123';
+  const first = row({ startTime: '18:00', ticketUrl: ticket + '?app_id=one' });
+  const second = row({ startTime: '21:00', originalSource: 'bandsintown.com', ticketUrl: ticket + '?app_id=two' });
+  const sparse = row({ ticketUrl: ticket + '?app_id=three' });
+  await withDb(async db => {
+    for (const input of permutations([first, second, sparse])) {
+      const result = await processConcerts(input, db, BASE);
+      assert.equal(result.length, 3, 'one recognized ID with conflicting times is still ambiguous');
+      assert.deepEqual(result.filter(r => r.startTime).map(r => r.startTime).sort(), ['18:00', '21:00']);
+    }
+    const distinct = [row({ ticketUrl: ticket }), row({ originalSource: 'other.example', ticketUrl: 'https://bandsintown.com/e/456' })];
+    for (const input of [distinct, [...distinct].reverse()]) {
+      assert.equal((await processConcerts(input, db, BASE)).length, 2, 'different IDs of one recognized provider stay distinct across original source labels');
+    }
+  });
 });

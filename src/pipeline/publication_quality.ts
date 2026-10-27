@@ -38,6 +38,24 @@ export function sourceActionUrl(value: unknown): string | undefined {
   } catch { return; }
 }
 
+/** Comparison identity only, never a replacement public URL. Bounded to the
+ * captured Bandsintown /e/ID event and /t/ID ticket routes. These refer to one
+ * provider event ID; only known campaign/client parameters are discarded.
+ * Unknown query keys (ticket_id/custom included), paths and hosts stay distinct.
+ */
+export function knownSourceEventIdentity(value: unknown): string | undefined {
+  const safe = sourceActionUrl(value);
+  if (!safe) return;
+  const url = new URL(safe);
+  if (!['bandsintown.com', 'www.bandsintown.com'].includes(url.hostname) || url.port) return;
+  const id = url.pathname.match(/^\/[et]\/(\d+)\/?$/)?.[1];
+  if (!id) return;
+  for (const name of ['app_id', 'came_from', 'affil_code', 'utm_source', 'utm_medium',
+    'utm_campaign', 'utm_term', 'utm_content', 'utm_id']) url.searchParams.delete(name);
+  url.searchParams.sort();
+  return JSON.stringify(['bandsintown', id, url.searchParams.toString(), url.hash]);
+}
+
 /** Batch keys avoid order-dependent sparse-row merging. Different countries,
  * named venues and known showtimes survive. A missing venue/time can attach only
  * to one unambiguous completion; two known shows never collapse via a sparse row.
@@ -65,6 +83,20 @@ export function occurrenceVenueKeys(concerts: Concert[]): string[] {
  * Ambiguous unlinked rows keep their own source bucket instead of joining either
  * explicit event; keys are calculated from the full batch, never input order. */
 export function occurrenceDedupeKeys(concerts: Concert[], locationKeys = occurrenceVenueKeys(concerts)): string[] {
+  const knownIds = concerts.map(c => {
+    const ids = new Set([knownSourceEventIdentity(c.eventUrl), knownSourceEventIdentity(c.ticketUrl)]
+      .filter((id): id is string => id !== undefined));
+    return ids.size === 1 ? [...ids][0] : undefined;
+  });
+  const knownTimesByIdentity = new Map<string, Set<string>>();
+  const identityKey = (i: number) => JSON.stringify([locationKeys[i], knownIds[i]]);
+  concerts.forEach((c, i) => {
+    if (!knownIds[i] || !c.startTime) return;
+    const key = identityKey(i);
+    const known = knownTimesByIdentity.get(key) ?? new Set<string>();
+    known.add(c.startTime);
+    knownTimesByIdentity.set(key, known);
+  });
   const times = new Map<string, Set<string>>();
   concerts.forEach((c, i) => {
     const key = locationKeys[i];
@@ -73,17 +105,27 @@ export function occurrenceDedupeKeys(concerts: Concert[], locationKeys = occurre
   });
   const timedKeys = concerts.map((c, i) => {
     const key = locationKeys[i], known = times.get(key)!;
-    return JSON.stringify([key, c.startTime ?? (known.size === 1 ? [...known][0] : '')]);
+    const identityTimes = knownIds[i] ? knownTimesByIdentity.get(identityKey(i)) : undefined;
+    // A recognized shared provider event can attach a sparse copy to exactly
+    // one known time even when another provider reports a different occurrence.
+    // Printed conflicting times always survive, including for the same ID.
+    const inferred = identityTimes?.size ? (identityTimes.size === 1 ? [...identityTimes][0] : '')
+      : (known.size === 1 ? [...known][0] : '');
+    return JSON.stringify([key, c.startTime ?? inferred]);
   });
   const source = (c: Concert) => c.originalSource.trim().toLowerCase();
   const identity = (c: Concert) => {
     const safe = sourceActionUrl(c.eventUrl);
-    return safe ? new URL(safe).href : undefined;
+    return knownSourceEventIdentity(safe) ?? (safe ? new URL(safe).href : undefined);
   };
   const urlsBySource = new Map<string, Map<string, Set<string>>>();
-  const urls = concerts.map(identity);
+  const urls = concerts.map((c, i) => identity(c) ?? knownIds[i]);
+  const idsByTime = new Map<string, Set<string>>();
   concerts.forEach((c, i) => {
     const key = timedKeys[i];
+    const ids = idsByTime.get(key) ?? new Set<string>();
+    if (knownIds[i]) ids.add(knownIds[i]!);
+    idsByTime.set(key, ids);
     if (!urlsBySource.has(key)) urlsBySource.set(key, new Map());
     const sources = urlsBySource.get(key)!;
     if (!sources.has(source(c))) sources.set(source(c), new Set());
@@ -92,6 +134,11 @@ export function occurrenceDedupeKeys(concerts: Concert[], locationKeys = occurre
   return concerts.map((c, i) => {
     const key = timedKeys[i];
     const sources = urlsBySource.get(key)!;
+    if (idsByTime.get(key)!.size > 1) {
+      // Different event IDs on the SAME recognized provider are not just
+      // different cross-provider URLs. Unlinked rows cannot bridge them.
+      return JSON.stringify([key, knownIds[i] ?? [source(c), urls[i] ?? '']]);
+    }
     if (![...sources.values()].some(urls => urls.size > 1)) return key;
     // Never attach a sparse row or a differently linked provider to an
     // arbitrary one of the same source's explicit event pages.
