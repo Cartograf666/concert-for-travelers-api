@@ -31734,5 +31734,201 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://yolandaadamslive.com/tour/ but could not re-select on it",
     "verification": ""
+  },
+  {
+    "id": "artist-cant-get-a-line",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-cant-get-a-line.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-27T10:08:40.114Z",
+    "previousConfig": {
+      "id": "artist-cant-get-a-line",
+      "domain": "www.old97s.com",
+      "url": "https://www.old97s.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.shows_row",
+        "artistNameFallback": "Old 97's",
+        "date": "div.shows_date",
+        "ticketUrl": "a.ticket_button",
+        "venue": "div.shows_venue",
+        "city": "div.shows_location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.old97s.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://www.old97s.com/shows but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-cant-smile-without-you",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-cant-smile-without-you.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-27T10:08:42.221Z",
+    "previousConfig": {
+      "id": "artist-cant-smile-without-you",
+      "domain": "www.manilow.com",
+      "url": "https://www.manilow.com/tour-dates/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour_date_row",
+        "artistNameFallback": "Barry Manilow",
+        "date": ".tour_date_col_left > span:first-child",
+        "ticketUrl": ".tour_date_col_right .btn_tickets",
+        "venue": ".tour_date_col_right .tour_date_venue",
+        "city": ".tour_date_col_right .tour_date_location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.manilow.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]",
+    "verification": ""
+  },
+  {
+    "id": "artist-cant-stop-the-world",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-cant-stop-the-world.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-27T10:08:47.111Z",
+    "previousConfig": {
+      "id": "artist-cant-stop-the-world",
+      "domain": "www.gogos.com",
+      "url": "https://www.gogos.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour-item",
+        "artistNameFallback": "The Go-Go's",
+        "date": ".date",
+        "ticketUrl": ".button.tickets",
+        "venue": ".venue",
+        "city": ".city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-chestnut-cyrus",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-chestnut-cyrus.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-27T10:08:48.180Z",
+    "previousConfig": {
+      "id": "artist-chestnut-cyrus",
+      "domain": "www.cyruschestnut.net",
+      "url": "https://www.cyruschestnut.net/dates",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-item",
+        "artistNameFallback": "Cyrus Chestnut",
+        "date": ".event-date",
+        "ticketUrl": ".event-link a",
+        "venue": ".event-venue",
+        "city": ".event-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.wixui-repeater__item) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-chiba",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-chiba.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-27T10:09:05.947Z",
+    "previousConfig": {
+      "id": "artist-chiba",
+      "domain": "www.yuki-chiba.com",
+      "url": "https://www.yuki-chiba.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour-item",
+        "artistNameFallback": "Yuki Chiba",
+        "date": ".tour-date",
+        "ticketUrl": ".tour-ticket-link a",
+        "venue": ".tour-venue",
+        "city": ".tour-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.yuki-chiba.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]",
+    "verification": ""
+  },
+  {
+    "id": "artist-chief",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-chief.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-27T10:09:10.713Z",
+    "previousConfig": {
+      "id": "artist-chief",
+      "domain": "www.chiefkeef.com",
+      "url": "https://www.chiefkeef.com/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "div.event-item",
+        "artistNameFallback": "Chief Keef",
+        "date": ".event-date",
+        "ticketUrl": ".event-link a",
+        "venue": ".event-venue",
+        "city": ".event-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.t4s-section-inner .t4s-product) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-zoo-station",
+    "cohort": "venue",
+    "configPath": "scrapers/artist-zoo-station.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-27T10:09:10.986Z",
+    "previousConfig": {
+      "id": "artist-zoo-station",
+      "domain": "zoostationofficial.com",
+      "url": "https://zoostationofficial.com/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event-list-item",
+        "artistNameFallback": "Zoo Station",
+        "date": ".event-date",
+        "ticketUrl": ".event-tickets a",
+        "venue": ".event-venue",
+        "city": ".event-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Source access blocked by SGCaptcha challenge]",
+    "verification": ""
   }
 ]
