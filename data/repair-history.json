@@ -32069,5 +32069,115 @@
     "failuresSinceRepair": 0,
     "note": "re-selection rejected by live verification -- FAIL: public_events [1 raw -> 0 public; dropped={\"incomplete\":0,\"notApproved\":1,\"badDate\":0,\"pastDate\":0,\"zodFail\":0,\"nonArtist\":0,\"beyondPlanningHorizon\":0}]",
     "verification": ""
+  },
+  {
+    "id": "artist-the-bluetones",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-the-bluetones.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-10-27T22:42:56.263Z",
+    "previousConfig": {
+      "id": "artist-the-bluetones",
+      "domain": "bluetones.band",
+      "url": "https://bluetones.band/live/",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "tr.gigpress-row",
+        "artistNameFallback": "The Bluetones",
+        "date": "time",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 401]",
+    "verification": ""
+  },
+  {
+    "id": "artist-the-clientele",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-the-clientele.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-27T22:42:57.591Z",
+    "previousConfig": {
+      "id": "artist-the-clientele",
+      "domain": "theclientele.co.uk",
+      "url": "https://theclientele.co.uk/shows",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table[aria-labelledby='table-label-upcoming'] tbody tr",
+        "artistNameFallback": "The Clientele",
+        "date": "time",
+        "ticketUrl": "td:nth-child(2) a",
+        "venue": "td:nth-child(2) > span",
+        "city": "td:nth-child(3)",
+        "country": "td:nth-child(4)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      },
+      "allowEmpty": true,
+      "emptyScheduleText": "No shows scheduled."
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.event-item) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-yolanda-adams",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-yolanda-adams.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-27T22:42:59.330Z",
+    "previousConfig": {
+      "id": "artist-yolanda-adams",
+      "domain": "yolandaadamslive.com",
+      "url": "https://yolandaadamslive.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".qode-event-content",
+        "artistNameFallback": "Yolanda Adams",
+        "date": ".qode-event-date-holder",
+        "ticketUrl": ".qode-event-buy-tickets-button",
+        "venue": ".qode-event-title a",
+        "city": ".qode-event-title a",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.qode-events-list-holder-outer .qode-event-content) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "bi2-tour",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/bi2-tour.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-27T22:42:59.331Z",
+    "previousConfig": {
+      "id": "bi2-tour",
+      "domain": "tix.bi2.band",
+      "url": "https://tix.bi2.band/",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": ".events-listing__item",
+        "artistNameFallback": "Би-2",
+        "date": ".event-meta__date",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "RU"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper bi2-tour is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
   }
 ]
