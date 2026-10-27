@@ -41,7 +41,7 @@ test('Funner/Valley Center known event keeps one complete counterpart including 
   const pair = pairs.find(p => p.native.date === '2027-02-11')!;
   const provider = { ...pair.provider, festival: {name:'Fixture Festival'}, lineup:['Fixture Support'],
     priceRange:{min:30,max:75,currency:'USD'} };
-  const native = {...pair.native, lat: 1, lng: 2, startTime: '18:00', lineup:['Native Fixture Support']};
+  const native = {...pair.native, lat: 1, lng: 2, startTime: provider.startTime, lineup:['Native Fixture Support']};
   const before = structuredClone(native);
   const expected = await processConcerts([provider], DB, NOW);
   assert.equal(expected[0].city, 'Valley Center');

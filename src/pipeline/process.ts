@@ -7,7 +7,7 @@ import type { Concert, RawConcert } from '../schemas/concert.js';
 import { isKnownVenueConflict } from './known_venue_conflicts.js';
 import { loadDenylistGuard } from './denylist.js';
 import { projectArtistIdentities, canonicalArtistName } from './artist_identity.js';
-import { occurrenceDedupeKeys, publicationMaxFutureDays, publicationQualityDropReason, sourceActionUrl } from './publication_quality.js';
+import { occurrenceVenueKeys, occurrenceDedupeKeys, publicationMaxFutureDays, publicationQualityDropReason, sourceActionUrl } from './publication_quality.js';
 import type { PublicationQualityOptions } from './publication_quality.js';
 import { loadApprovedArtists } from './artistDb.js';
 import { artistDiscoveryFor } from './artist_discovery.js';
@@ -1303,23 +1303,30 @@ export async function processConcerts(
     candidates.push({ raw, concert: validatedConcert, candidateOfficial, candidateTheHuDublinRank, verifiedEvent });
   }
 
-  const occurrenceKeys = occurrenceDedupeKeys(candidates.map(c => c.concert));
+  const concerts = candidates.map(c => c.concert);
+  const venueKeys = occurrenceVenueKeys(concerts);
   const verifiedKeyFor = (c: (typeof candidates)[number]) => c.verifiedEvent
     ? `verified:${JSON.stringify([c.verifiedEvent.pairKey, c.concert.date, c.concert.country])}` : undefined;
   const proofsByOccurrence = new Map<string, Set<string>>();
   candidates.forEach((candidate, i) => {
     const verifiedKey = verifiedKeyFor(candidate);
     if (!verifiedKey) return;
-    const proofs = proofsByOccurrence.get(occurrenceKeys[i]) ?? new Set<string>();
+    const proofs = proofsByOccurrence.get(venueKeys[i]) ?? new Set<string>();
     proofs.add(verifiedKey);
-    proofsByOccurrence.set(occurrenceKeys[i], proofs);
+    proofsByOccurrence.set(venueKeys[i], proofs);
   });
+  // Resolve only proven location equivalence here; temporal and source event
+  // conflicts must still split the resulting occurrence in the shared helper.
+  const locationKeys = candidates.map((candidate, i) => {
+    const proofs = proofsByOccurrence.get(venueKeys[i]);
+    return verifiedKeyFor(candidate) ?? (proofs?.size === 1 ? [...proofs][0] : venueKeys[i]);
+  });
+  const occurrenceKeys = occurrenceDedupeKeys(concerts, locationKeys);
   for (const [index, candidate] of candidates.entries()) {
     const { raw, concert: validatedConcert, candidateOfficial, candidateTheHuDublinRank, verifiedEvent } = candidate;
     // Finite primary-source pairs can reconcile differing venue/city labels.
     // General artist/day/city coincidence cannot.
-    const proofs = proofsByOccurrence.get(occurrenceKeys[index]);
-    const dedupeKey = verifiedKeyFor(candidate) ?? (proofs?.size === 1 ? [...proofs][0] : occurrenceKeys[index]);
+    const dedupeKey = occurrenceKeys[index];
     diagnostics?.recordAccepted(raw);
 
     if (processedMap.has(dedupeKey)) {

@@ -230,3 +230,78 @@ test('the planning policy is recorded and exact historical venue exclusions cann
     assert.ok(!kept.some(r => r.date === bad.date && r.city === bad.city && r.venue === bad.venue && r.originalSource === bad.originalSource));
   }, [{ name: 'Beth Hart' }]);
 });
+
+function permutations<T>(rows: T[]): T[][] {
+  return rows.length < 2 ? [rows] : rows.flatMap((row, i) =>
+    permutations(rows.filter((_, index) => index !== i)).map(rest => [row, ...rest]));
+}
+
+test('verified Blue October location proof cannot erase conflicting known showtimes', async () => {
+  const known = row({ artist: 'Blue October', date: '2026-10-28', venue: 'Pabst Theater', city: 'Milwaukee', country: 'US',
+    originalSource: 'ticketmaster.com', startTime: '18:00' });
+  const later = { ...known, startTime: '21:00' };
+  const native = { ...known, venue: 'The Pabst Theater', originalSource: 'www.blueoctober.com', startTime: undefined,
+    sourceEventUrl: 'https://www.blueoctober.com/tour-dates-detail/the-pabst-theater' };
+  const artistDb = [{ name: 'Blue October', socials: { spotify: 'https://open.spotify.com/artist/1TJbmc7jTpw78GKCiMpvDh' } }];
+  await withDb(async db => {
+    for (const input of [[known, later], [later, known], ...permutations([known, native, later])]) {
+      const before = structuredClone(input);
+      const result = await processConcerts(input, db, BASE);
+      assert.deepEqual(result.filter(r => r.startTime).map(r => r.startTime).sort(), ['18:00', '21:00']);
+      assert.equal(result.length, input.length, 'an ambiguous untimed native record stays separate instead of bridging shows');
+      assert.deepEqual(input, before);
+    }
+    for (const input of [[native, known], [known, native]]) {
+      const result = await processConcerts(input, db, BASE);
+      assert.equal(result.length, 1, 'one sparse verified counterpart still attaches to one known show');
+      assert.equal(result[0].startTime, '18:00');
+      assert.equal(result[0].originalSource, 'ticketmaster.com');
+    }
+  }, artistDb);
+});
+
+test('same-source explicit event identities survive missing times and cannot merge through sparse records', async () => {
+  const early = row({ originalSource: 'venue.example', sourceEventUrl: 'https://venue.example/show/1' });
+  const late = row({ originalSource: 'venue.example', sourceEventUrl: 'https://venue.example/show/2' });
+  const sparse = row({ originalSource: 'venue.example' });
+  const otherSourceSparse = row({ originalSource: 'other-provider.example' });
+  await withDb(async db => {
+    for (const input of [[early, late], [late, early], ...permutations([early, sparse, late]),
+      ...permutations([early, otherSourceSparse, late])]) {
+      const before = structuredClone(input);
+      const result = await processConcerts(input, db, BASE);
+      assert.deepEqual(result.flatMap(r => r.eventUrl ? [r.eventUrl] : []).sort(), [early.sourceEventUrl, late.sourceEventUrl]);
+      assert.equal(result.length, input.length, 'unlinked rows cannot choose between two explicit events');
+      assert.deepEqual(input, before);
+    }
+    for (const input of [[early, { ...early }], [early, sparse], [sparse, early]]) {
+      assert.equal((await processConcerts(input, db, BASE)).length, 1, 'one explicit event/duplicate keeps normal dedupe');
+    }
+    const peer = { ...early, originalSource: 'provider.example', sourceEventUrl: 'https://provider.example/events/123' };
+    for (const input of [[early, peer], [peer, early]]) {
+      assert.equal((await processConcerts(input, db, BASE)).length, 1, 'different provider URLs alone are not proof of distinct events');
+    }
+  });
+});
+
+test('verified location proofs also preserve distinct explicit source event pages without times', async () => {
+  const first = row({ artist: 'Blue October', date: '2026-10-28', venue: 'Pabst Theater', city: 'Milwaukee', country: 'US',
+    originalSource: 'ticketmaster.com', sourceEventUrl: 'https://ticketmaster.example/show/1' });
+  const second = { ...first, sourceEventUrl: 'https://ticketmaster.example/show/2' };
+  const native = { ...first, venue: 'The Pabst Theater', originalSource: 'www.blueoctober.com',
+    sourceEventUrl: 'https://www.blueoctober.com/tour-dates-detail/the-pabst-theater' };
+  await withDb(async db => {
+    for (const input of [[first, second], [second, first], ...permutations([first, native, second])]) {
+      const result = await processConcerts(input, db, BASE);
+      assert.equal(result.length, input.length);
+      assert.ok(result.some(r => r.eventUrl === first.sourceEventUrl));
+      assert.ok(result.some(r => r.eventUrl === second.sourceEventUrl));
+    }
+    const timedNative = { ...native, startTime: '21:00' };
+    const timedProvider = { ...first, startTime: '18:00' };
+    for (const input of [[timedNative, timedProvider], [timedProvider, timedNative]]) {
+      const result = await processConcerts(input, db, BASE);
+      assert.deepEqual(result.map(r => r.startTime).sort(), ['18:00', '21:00']);
+    }
+  }, [{ name: 'Blue October', socials: { spotify: 'https://open.spotify.com/artist/1TJbmc7jTpw78GKCiMpvDh' } }]);
+});

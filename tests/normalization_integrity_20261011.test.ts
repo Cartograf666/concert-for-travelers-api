@@ -28,7 +28,7 @@ async function nativeRows(artist: string, bodyOverride?: string): Promise<RawCon
 }
 const publish = (rows: RawConcert[]) => processConcerts(rows, 'data/artists', AT);
 
-test('41 primary occurrence pairs select the same whole record in both orders without splicing fields', async () => {
+test('41 primary occurrence pairs preserve whole records and do not erase conflicting known showtimes', async () => {
   const proof = await loadProof();
   assert.equal(proof.pairs.length, 41);
   const cache = new Map<string, RawConcert[]>();
@@ -49,16 +49,31 @@ test('41 primary occurrence pairs select the same whole record in both orders wi
   const movedOnly = await publish(natives.map(r => ({ ...r, venue: `${r.venue} moved` })));
   assert.equal(sourceOnly.length, 41);
   assert.equal(peerOnly.length, 41);
-  assert.equal(nativeFirst.length, 41);
-  assert.equal(peerFirst.length, 41);
+  const timeConflicts = proof.pairs.filter(pair => {
+    const native = sourceOnly.find(r => r.artist === pair.artist && r.date === pair.date)!;
+    const peer = peerOnly.find(r => r.artist === pair.artist && r.date === pair.date)!;
+    return native.startTime && peer.startTime && native.startTime !== peer.startTime;
+  });
+  assert.deepEqual(timeConflicts.map(p => [p.artist, p.date]), [['Bonnie Pink', '2026-10-11']]);
+  assert.equal(nativeFirst.length, 42);
+  assert.equal(peerFirst.length, 42);
   for (const [i, pair] of proof.pairs.entries()) {
     const native = natives[i];
     assert.equal(native.sourceEventUrl, pair.nativeUrl);
     const record = sourceOnly.find(r => r.artist === pair.artist && r.date === pair.date)!;
     assert.deepEqual([record.city, record.country, record.venue], [pair.nativeCity, pair.country, pair.nativeVenue]);
-    const expected = pair.winner === 'native' ? record : peerOnly.find(r => r.artist === pair.artist && r.date === pair.date);
+    const peer = peerOnly.find(r => r.artist === pair.artist && r.date === pair.date)!;
+    const expected = pair.winner === 'native' ? record : peer;
     for (const output of [nativeFirst, peerFirst]) {
-      assert.deepEqual(output.find(r => r.artist === pair.artist && r.date === pair.date), expected);
+      const occurrence = output.filter(r => r.artist === pair.artist && r.date === pair.date);
+      if (timeConflicts.includes(pair)) {
+        assert.deepEqual([record.startTime, peer.startTime], ['19:00', '11:00']);
+        const byTime = (a: Concert, b: Concert) => a.startTime!.localeCompare(b.startTime!);
+        assert.deepEqual([...occurrence].sort(byTime), [record, peer].sort(byTime),
+          'finite venue/city proof cannot erase either conflicting known time or splice source fields');
+      } else {
+        assert.deepEqual(occurrence, [expected]);
+      }
     }
     // Complete JSON equality includes country, venue, coordinates, price, time,
     // lineup, provenance and canonical artist metadata: no field masks/splicing.
