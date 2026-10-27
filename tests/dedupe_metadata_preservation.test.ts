@@ -48,12 +48,15 @@ test('same-venue duplicate retains a complete source record in either source ord
   }
 });
 
-test('a venue relocation keeps the current venue and never adopts old venue coordinates', async () => {
-  // Official Beth Hart 21 November 2026 relocation: Swiss Life Hall -> Kuppelsaal.
+test('unproved different venues survive without adopting each other coordinates', async () => {
+  // A generic Test Artist has no evidence-backed relocation identity.
   const { events } = await processRows([
     row(),
     row({ venue: 'Swiss Life Hall', originalSource: 'old-feed.example', startTime: '20:00', lat: 52.353, lng: 9.731 })
   ]);
+  assert.equal(events.length, 2);
+  assert.equal(events[1].venue, 'Swiss Life Hall');
+  assert.equal(events[1].lat, 52.353);
   assert.equal(events[0].venue, 'Kuppelsaal IM HCC');
   assert.equal(events[0].originalSource, 'official.example');
   assert.equal(events[0].lat, undefined);

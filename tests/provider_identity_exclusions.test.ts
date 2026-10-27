@@ -51,7 +51,7 @@ test('identity exclusion preserves other events, sources, artists and a distinct
     { ...raw, artist: otherArtist.name }
   ];
   await withDb([canonical, otherArtist], async db => {
-    const result = await processConcerts(unrelated, db, baseDate);
+    const result = await processConcerts(unrelated, db, baseDate, undefined, undefined, undefined, { maxFutureDays: 2000 });
     assert.equal(result.length, 4);
     assert.equal(result.filter(row => row.mbid === canonical.mbid).length, 3);
     assert.equal(result.find(row => row.artist === otherArtist.name)?.mbid, otherArtist.mbid);

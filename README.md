@@ -109,7 +109,8 @@ Example Concert JSON object structure:
   "country": "DE",
   "lat": 48.7901,
   "lng": 9.2241,
-  "ticketUrl": "https://www.thecure.com/",
+  "ticketUrl": "https://tickets.example/events/the-cure-berlin",
+  "eventUrl": "https://venue.example/events/the-cure-berlin",
   "originalSource": "ticketmaster.de",
   "scrapedAt": "2026-07-08T12:00:00.000Z"
 }
@@ -134,9 +135,15 @@ Do not approximate it with an ASCII-only slug generator: punctuation, accents an
 non-Latin names can produce different filenames. The [consumer contract audit](docs/consumer-contract-audit-20261011.md)
 records this compatibility gap without changing API filenames or schema.
 
-Each concert object follows `src/schemas/concert.ts`: `artist`, `artistWebsite?`, `spotifyId?`, `mbid?`, `artistSocials?` (spotify/instagram/facebook/youtube/telegram/vk), `date` (`YYYY-MM-DD`), `startTime?` (`HH:MM`), `venue`, `venueKind?` (stadium/arena/club/theatre/hall/open-air/other), `city`, `country` (ISO 3166-1 alpha-2), `lat?`/`lng?`, `festival?` (`{name, url?}`), `lineup?`, `priceRange?` (`{min, max, currency}`, Ticketmaster only), `ticketUrl?` (the artist's own site when known, not a ticket-vendor link -- see below), `originalSource`, `scrapedAt`.
+Each concert object follows `src/schemas/concert.ts`: `artist`, `artistWebsite?`, `spotifyId?`, `mbid?`, `artistSocials?` (spotify/instagram/facebook/youtube/telegram/vk), `date` (`YYYY-MM-DD`), `startTime?` (`HH:MM`), `venue`, `venueKind?` (stadium/arena/club/theatre/hall/open-air/other), `city`, `country` (ISO 3166-1 alpha-2), `lat?`/`lng?`, `festival?` (`{name, url?}`), `lineup?`, `priceRange?` (`{min, max, currency}`, Ticketmaster only), `ticketUrl?` (source-provided ticket/event action), `eventUrl?` (explicit source event page), `originalSource`, `scrapedAt`.
 
-**Note on `ticketUrl`**: despite the name, this is the artist's own official website when we know it, not a ticket-purchase page — source-specific ticket/aggregator links are frequently an unlabeled widget or a generic city-listing page with no indication of what it is. It only falls back to the raw source ticket link when no artist website is known for that artist.
+**Links (schema version 3):** `ticketUrl` keeps the source's ticket/event action URL and never falls back to `artistWebsite`. It does not promise that tickets are on sale. `eventUrl` is an explicit safe `sourceEventUrl` from raw provider provenance (or a previously supplied `eventUrl`), never guessed from a profile or ticket URL. Missing/unsafe optional actions stay absent; artist profiles remain in `artistWebsite`. Already published legacy rows cannot recover overwritten source links: replay the raw scrape cache.
+
+**Publication quality and identity:** `CONCERT_MAX_FUTURE_DAYS` is a positive integer, default **730 calendar days**, inclusive from the run's base date. This is a bounded planning window, not a factual verdict on later shows: preserve raw caches and exclude out-of-window records with `beyondPlanningHorizon` diagnostics, without rewriting dates or locations. Invalid calendar dates count as `badDate`. Exact genre/descriptor names use the existing `data/artist_denylist.json` guard (including deliberate scrape-target exemptions); `pop-rock` is now covered. They count as `nonArtist` and are excluded from the artist catalog too. Processing diagnostics schema version 2 adds these counts and bounded source samples; accounting remains raw = published + duplicate + dropped for each source.
+
+The publication-only artist projection in `src/pipeline/artist_identity.ts` joins the inspected A. R. Rahman / A.R. Rahman / A.R.Rahman, AURORA / Aurora Aksnes and KoRn / KoЯn name cohorts with expected-ID corroboration and conflict guards (see the source for exact Unicode spelling). It also joins formatting-equivalent names (NFKC letters/digits, ignoring punctuation/spacing) only with both common MBID and Spotify IDs across the group and no MBID/Spotify/site-host conflicts. Materially different names/projects are never merged just for sharing IDs or broad DB aliases. DB shards are unchanged. The catalog keeps old names in `aliases`, exposes `legacySlugs`, and `publishConcerts(rows, outputDir, approvedArtistsSnapshot)` writes compatibility endpoints plus `index.artistAliases` (legacy slug to canonical slug). All these files contain canonical rows; autocomplete and master feeds contain one canonical identity. Omit the third argument only when no alias compatibility is required.
+
+General event matching includes artist, date, country, city, venue and known time. Sparse venue/time fields attach only to a single unambiguous completion in the batch; distinct venues or known showtimes remain separate. The finite existing verified source-event pairs retain their source ranking; exact previously proved Beth Hart/Andrea stale venue records remain excluded. Unresolved cross-provider spellings can now leave extra rows instead of silently dropping a distinct show.
 
 ### Audience categories (discovery version 1)
 

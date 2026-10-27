@@ -53,13 +53,13 @@ test('processing diagnostics are observational, reconcile every processing outco
 
     assert.deepStrictEqual(withDiagnostics, withoutDiagnostics, 'the callback must not change output or dedupe selection');
     assert.ok(report);
-    assert.equal(report.schemaVersion, 1);
+    assert.equal(report.schemaVersion, 2);
     assert.equal(report.baseDate, baseDate);
     assert.match(report.generatedAt, /^\d{4}-\d{2}-\d{2}T/);
     assert.equal(report.rawCount, 10);
     assert.equal(report.publishedCount, 1);
     assert.equal(report.duplicatesMerged, 1);
-    assert.deepStrictEqual(report.dropped, { incomplete: 1, notApproved: 4, badDate: 1, pastDate: 1, zodFail: 1 });
+    assert.deepStrictEqual(report.dropped, { incomplete: 1, notApproved: 4, badDate: 1, pastDate: 1, zodFail: 1, nonArtist: 0, beyondPlanningHorizon: 0 });
     assert.equal(report.rawCount, report.publishedCount + report.duplicatesMerged + Object.values(report.dropped).reduce((sum, count) => sum + count, 0));
     for (const source of Object.values(report.sources)) {
       assert.equal(
@@ -100,7 +100,7 @@ test('processing diagnostics report a meaningful empty batch', async () => {
     assert.equal(report.rawCount, 0);
     assert.equal(report.publishedCount, 0);
     assert.equal(report.duplicatesMerged, 0);
-    assert.deepStrictEqual(report.dropped, { incomplete: 0, notApproved: 0, badDate: 0, pastDate: 0, zodFail: 0 });
+    assert.deepStrictEqual(report.dropped, { incomplete: 0, notApproved: 0, badDate: 0, pastDate: 0, zodFail: 0, nonArtist: 0, beyondPlanningHorizon: 0 });
     assert.deepStrictEqual(Object.keys(report.sources), []);
   });
 });

@@ -45,7 +45,7 @@ test('41 primary occurrence pairs select the same whole record in both orders wi
   const nativeFirst = await publish([...natives, ...peers]);
   const peerFirst = await publish([...peers, ...natives]);
   const futures = natives.map((r, i) => ({ ...r, date: `2030-${String(Math.floor(i / 28) + 1).padStart(2, '0')}-${String(i % 28 + 1).padStart(2, '0')}` }));
-  const futureOnly = await publish(futures);
+  const futureOnly = await processConcerts(futures, 'data/artists', AT, undefined, undefined, undefined, { maxFutureDays: 2000 });
   const movedOnly = await publish(natives.map(r => ({ ...r, venue: `${r.venue} moved` })));
   assert.equal(sourceOnly.length, 41);
   assert.equal(peerOnly.length, 41);

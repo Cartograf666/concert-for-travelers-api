@@ -25,7 +25,7 @@ const official = (overrides: Partial<Concert> = {}): Partial<Concert> => ({
   ...overrides
 });
 const ordinary = (overrides: Partial<Concert> = {}): Partial<Concert> => ({
-  ...official({ venue: 'Old Hall', originalSource: 'aggregator.example', lat: 55.8, lng: -4.2,
+  ...official({ venue: 'New Room', originalSource: 'aggregator.example', lat: 55.8, lng: -4.2,
     startTime: '20:00', lineup: ['Support'], ticketUrl: 'https://aggregator.example/ticket' }),
   ...overrides
 });
@@ -47,7 +47,7 @@ function cacheFor(row: Partial<Concert>, fingerprint: string, verifiedAt = NOW):
   } };
 }
 
-test('verified official whole row wins in either input order, despite richer aggregator and relocated venue', async () => {
+test('verified official whole row wins for the same occurrence in either input order despite richer aggregator metadata', async () => {
   const f = await fixture();
   try {
     const fingerprint = await scraperCacheFingerprint(CONFIG);
@@ -74,7 +74,7 @@ test('copied official fields and flags on a different raw object do not inherit 
     const spoof = { ...cached, official: true, venue: 'Spoof Hall' } as Partial<Concert>;
     assert.equal(context.has(spoof), false);
     const result = await processConcerts([ordinary(), spoof], f.approved, NOW, undefined, undefined, context);
-    assert.equal(result[0].venue, 'Old Hall');
+    assert.equal(result[0].venue, 'New Room');
   } finally { await f.cleanup(); }
 });
 
@@ -138,9 +138,9 @@ test('invalid official row is filtered, and untrusted/equal-rank duplicates reta
     const context = await buildOfficialArtistContext(cacheFor(bad, fingerprint), f.configsDir, Date.parse(NOW));
     const result = await processConcerts([bad, ordinary()], f.approved, NOW, undefined, undefined, context);
     assert.equal(result.length, 1);
-    assert.equal(result[0].venue, 'Old Hall');
+    assert.equal(result[0].venue, 'New Room');
     const untrusted = await processConcerts([ordinary(), official()], f.approved, NOW);
-    assert.equal(untrusted[0].venue, 'Old Hall');
+    assert.equal(untrusted[0].venue, 'New Room');
   } finally { await f.cleanup(); }
 });
 
@@ -174,6 +174,22 @@ test('all curated sources match real configs and their verified whole records be
       }
       cache[source.configId].cacheFingerprint = 'old-implementation';
       assert.equal((await buildOfficialArtistContext(cache, configsDir, Date.parse(NOW))).has(row), false);
+    }
+  } finally { await f.cleanup(); }
+});
+
+
+test('official artist authority cannot erase a different venue on the same day', async () => {
+  const f = await fixture();
+  try {
+    const current = official();
+    const another = ordinary({ venue: 'Another Hall' });
+    const context = await buildOfficialArtistContext(cacheFor(current, await scraperCacheFingerprint(CONFIG)), f.configsDir, Date.parse(NOW));
+    for (const rows of [[current, another], [another, current]]) {
+      const result = await processConcerts(rows, f.approved, NOW, undefined, undefined, context);
+      assert.equal(result.length, 2);
+      assert.equal(result.find(r => r.venue === 'New Room')?.lat, undefined);
+      assert.equal(result.find(r => r.venue === 'Another Hall')?.lat, another.lat);
     }
   } finally { await f.cleanup(); }
 });

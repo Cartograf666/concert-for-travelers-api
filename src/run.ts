@@ -351,7 +351,7 @@ async function main() {
 
     // 9. Write static API files to dist/
     console.log(`[Orchestrator] Publishing ${normalizedConcerts.length} concerts to ${distDir}...`);
-    await publishConcerts(normalizedConcerts, distDir);
+    await publishConcerts(normalizedConcerts, distDir, approvedArtistsSnapshot);
     await writeStatus(distDir, results, changedCount, ticketmasterCount, normalizedConcerts.length, staleVenueIds, artistManifest, sourceReports, processing);
 
     // 9a. Publish dist/changes.json: concerts new since last run, so the consumer

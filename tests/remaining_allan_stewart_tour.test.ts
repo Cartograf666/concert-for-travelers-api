@@ -54,12 +54,13 @@ test('Allan Stewart current discovery and primary pages produce seven timed vari
     await writeFile(db, JSON.stringify([{ name: 'Allan Stewart', website: 'https://www.allanstewart.com/' }]));
     const published = await processConcerts(rows, db, observedAt);
     assert.deepEqual(published.map(row => row.date), [
-      '2027-03-23', '2027-03-24', '2027-03-25', '2027-03-26', '2027-03-27'
+      '2027-03-23', '2027-03-24', '2027-03-24', '2027-03-25', '2027-03-26', '2027-03-27', '2027-03-27'
     ]);
     assert.ok(published.every(row => row.artist === 'Allan Stewart' && row.country === 'GB' &&
-      row.originalSource === config.domain && row.ticketUrl === 'https://www.allanstewart.com/'));
+      row.originalSource === config.domain && row.artistWebsite === 'https://www.allanstewart.com/' && row.ticketUrl?.startsWith('https://www.capitaltheatres.com/book-online/')));
+    assert.deepEqual(published.map(r => [r.date, r.startTime, r.ticketUrl]), rows.map(r => [r.date, r.startTime, r.ticketUrl]));
     assert.ok(rows.every(row => row.ticketUrl?.startsWith('https://www.capitaltheatres.com/book-online/')),
-      'raw booking provenance stays intact when public URLs prefer the official artist site');
+      'both raw and public records preserve booking provenance');
   } finally { await rm(dir, { recursive: true, force: true }); }
 });
 

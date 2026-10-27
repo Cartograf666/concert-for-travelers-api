@@ -1,6 +1,6 @@
 import type { Concert } from '../schemas/concert.js';
 
-export type ProcessingDropReason = 'incomplete' | 'notApproved' | 'badDate' | 'pastDate' | 'zodFail';
+export type ProcessingDropReason = 'incomplete' | 'notApproved' | 'badDate' | 'pastDate' | 'zodFail' | 'nonArtist' | 'beyondPlanningHorizon';
 
 export interface ProcessingDiagnosticsDrops {
   incomplete: number;
@@ -8,6 +8,8 @@ export interface ProcessingDiagnosticsDrops {
   badDate: number;
   pastDate: number;
   zodFail: number;
+  nonArtist: number;
+  beyondPlanningHorizon: number;
 }
 
 export interface ProcessingDiagnosticsSourceBreakdown {
@@ -30,9 +32,10 @@ export interface ProcessingDiagnosticsSample {
 }
 
 export interface ProcessingDiagnostics {
-  schemaVersion: 1;
+  schemaVersion: 2;
   generatedAt: string;
   baseDate: string;
+  publicationPolicy?: { maxFutureDays: number };
   rawCount: number;
   publishedCount: number;
   duplicatesMerged: number;
@@ -45,9 +48,10 @@ export interface ProcessingDiagnostics {
 
 /** Safe to publish in status: the full diagnostics report alone carries samples. */
 export interface ProcessingDiagnosticsSummary {
-  schemaVersion: 1;
+  schemaVersion: 2;
   generatedAt: string;
   baseDate: string;
+  publicationPolicy?: { maxFutureDays: number };
   rawCount: number;
   publishedCount: number;
   duplicatesMerged: number;
@@ -63,7 +67,7 @@ const SAMPLE_TEXT_LIMIT = 160;
 const SOURCE_LIMIT = 120;
 
 function emptyDrops(): ProcessingDiagnosticsDrops {
-  return { incomplete: 0, notApproved: 0, badDate: 0, pastDate: 0, zodFail: 0 };
+  return { incomplete: 0, notApproved: 0, badDate: 0, pastDate: 0, zodFail: 0, nonArtist: 0, beyondPlanningHorizon: 0 };
 }
 
 function safeMap<T>(): Record<string, T> {
@@ -123,6 +127,7 @@ export function processingDiagnosticsSummary(report: ProcessingDiagnostics): Pro
     schemaVersion: report.schemaVersion,
     generatedAt: report.generatedAt,
     baseDate: report.baseDate,
+    publicationPolicy: report.publicationPolicy,
     rawCount: report.rawCount,
     publishedCount: report.publishedCount,
     duplicatesMerged: report.duplicatesMerged,
@@ -146,7 +151,8 @@ export class ProcessingDiagnosticsCollector {
   private readonly dropped = emptyDrops();
   private duplicatesMerged = 0;
 
-  constructor(private readonly rawCount: number, private readonly baseDate: string) {}
+  constructor(private readonly rawCount: number, private readonly baseDate: string,
+    private readonly publicationPolicy?: { maxFutureDays: number }) {}
 
   recordDrop(reason: ProcessingDropReason, raw: Partial<Concert>, missingFields: readonly string[] = []): void {
     this.dropped[reason]++;
@@ -175,9 +181,10 @@ export class ProcessingDiagnosticsCollector {
   build(published: Concert[]): ProcessingDiagnostics {
     for (const concert of published) this.source(concert).publishedCount++;
     return {
-      schemaVersion: 1,
+      schemaVersion: 2,
       generatedAt: new Date().toISOString(),
       baseDate: this.baseDate,
+      publicationPolicy: this.publicationPolicy,
       rawCount: this.rawCount,
       publishedCount: published.length,
       duplicatesMerged: this.duplicatesMerged,

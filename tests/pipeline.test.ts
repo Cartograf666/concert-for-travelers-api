@@ -388,10 +388,11 @@ test('Pipeline - full concert processing & deduplication', async () => {
   assert.strictEqual(result.date, '2026-10-12'); // Normalized date
   assert.strictEqual(result.city, 'Berlin');
   assert.strictEqual(result.country, 'DE'); // Uppercased
-  assert.strictEqual(result.ticketUrl, 'https://www.thecure.com/'); // artist site preferred over the raw ticket link
+  assert.strictEqual(result.ticketUrl, 'https://example.com/cure'); // source action survives artist profile enrichment
+  assert.strictEqual(result.artistWebsite, 'https://www.thecure.com/');
 });
 
-test('Pipeline - ticketUrl falls back to the raw ticket link when the artist has no known website', async () => {
+test('Pipeline - ticketUrl preserves the raw ticket link when the artist has no known website', async () => {
   const approvedArtistsPath = PRODUCTION_ARTIST_DB_DIR;
   const baseDate = '2026-07-07T00:00:00.000Z';
   const scrapedAt = new Date().toISOString();
