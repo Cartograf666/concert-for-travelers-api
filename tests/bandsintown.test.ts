@@ -192,7 +192,9 @@ test('Bandsintown - interleaved active failures do not block healthy cold explor
     return [];
   };
 
-  for (let day = 0; day < 3; day++) {
+  // At a five-attempt cap, rounding reserves three active and leaves two oldest
+  // slots; ten healthy cold targets therefore need five runs under contention.
+  for (let day = 0; day < 5; day++) {
     await fetchBandsintownConcerts([...failures, ...healthy], {
       cache, fetchFn, maxPerRun: 5, delayMs: 0, now: () => new Date(Date.UTC(2026, 0, 1 + day))
     });
@@ -509,20 +511,20 @@ test('Bandsintown - active successful freshness remains visible when failed look
   assert.ok(health.issues.some((issue: any) => issue.reason === 'active_verification_older_than_revisit_interval' && issue.count === 1));
 });
 
-test('Bandsintown - mixed 20,819 roster retains 20% reservation, oldest coverage, cap and six-day minimum', () => {
+test('Bandsintown - mixed 20,819 roster retains 50% reservation, oldest coverage, cap and six-day minimum', () => {
   const artists = Array.from({ length: 20_819 }, (_, index) => `Artist ${String(index).padStart(5, '0')}`);
   const cache: BandsintownCache = Object.fromEntries(artists.map((artist, index) => [artist, {
     fetchedAt: '2026-01-01T00:00:00.000Z', verifiedAt: '2026-01-01T00:00:00.000Z',
     concerts: index < 3_723 ? [{ date: '2028-01-01' }] : []
   }]));
   let firstCoverageRuns: number | undefined;
-  for (let day = 0; day < 40; day++) {
+  for (let day = 0; day < 60; day++) {
     const now = new Date(Date.UTC(2026, 0, 20 + day));
     const queue = selectBandsintownArtists(artists, cache, 800, 6, now);
     assert.equal(queue.artists.length, 800);
     assert.equal(new Set(queue.artists).size, 800);
-    // Global oldest can also select active artists; 20% is a floor, not a ceiling.
-    assert.ok(queue.selectedByCohort.active >= Math.min(queue.availableByCohort.active, 160));
+    // Global oldest can also select active artists; 50% is a floor, not a ceiling.
+    assert.ok(queue.selectedByCohort.active >= Math.min(queue.availableByCohort.active, 400));
     if (day === 0) assert.deepStrictEqual(queue.selectedByCohort, { active: 800, new: 0, cold: 0 });
     for (const artist of queue.artists) {
       const previousAttempt = cache[artist].attemptedAt;
@@ -531,5 +533,18 @@ test('Bandsintown - mixed 20,819 roster retains 20% reservation, oldest coverage
     }
     if (firstCoverageRuns === undefined && artists.every((artist) => cache[artist].attemptedAt)) firstCoverageRuns = day + 1;
   }
-  assert.equal(firstCoverageRuns, 32, 'mixed roster needs longer than the 27-run capacity floor; oldest lane still reaches every target');
+  assert.equal(firstCoverageRuns, 47, 'global oldest also services active targets; the mixed roster must still reach every target under 50/50');
+});
+
+test('Bandsintown - 50/50 reservation interleaves 400 active with 400 oldest under full contention', () => {
+  const active = Array.from({ length: 800 }, (_, index) => `A${String(index).padStart(3, '0')}`);
+  const cold = Array.from({ length: 800 }, (_, index) => `C${String(index).padStart(3, '0')}`);
+  const cache: BandsintownCache = Object.fromEntries([
+    ...active.map((artist) => [artist, { fetchedAt: '2026-01-02T00:00:00.000Z', concerts: [{ date: '2028-01-01' }] }]),
+    ...cold.map((artist) => [artist, { fetchedAt: '2020-01-01T00:00:00.000Z', concerts: [] }])
+  ]);
+  const queue = selectBandsintownArtists([...active, ...cold], cache, 800, 6, new Date('2026-01-20T00:00:00.000Z'));
+  assert.deepStrictEqual(queue.selectedByCohort, { active: 400, new: 0, cold: 400 });
+  assert.deepStrictEqual(queue.artists.slice(0, 4), ['A000', 'C000', 'A001', 'C001']);
+  assert.ok(cold.slice(0, 400).every((artist) => queue.artists.includes(artist)), 'oldest cold targets retain their ordered lane');
 });

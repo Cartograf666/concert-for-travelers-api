@@ -28,7 +28,7 @@ const DEFAULT_MAX_ARTISTS_PER_RUN = 800;
 // list instead of re-fetching the same head of it every time. This is a minimum
 // freshness interval, not a six-day SLA: 20,711 targets at 800/day need at least
 // 26 runs even before failures and active-priority traffic are considered. The
-// active reservation is only 20% under a permanently contended oldest lane, so it
+// active reservation is 50% under a permanently contended oldest lane, so it
 // deliberately does not promise a tighter bound than available daily capacity.
 const DEFAULT_FRESHNESS_DAYS = 6;
 
@@ -269,7 +269,7 @@ export interface BandsintownQueueSelection {
   verificationByCohort: Record<BandsintownCohort, SourceFreshness>;
 }
 
-const ACTIVE_PRIORITY_FRACTION = 0.20;
+const ACTIVE_PRIORITY_FRACTION = 0.50;
 
 function parsedTime(value: string | undefined): number | undefined {
   if (!value) return undefined;
@@ -285,8 +285,8 @@ function isActiveCacheEntry(entry: BandsintownCache[string] | undefined, nowMs: 
 
 /**
  * Deterministically select stale artists without letting either discovery or useful
- * (future-event) artists starve. Twenty percent of a run is reserved for active
- * artists; the other eighty percent is globally oldest-attempt-first, which is the
+ * (future-event) artists starve. Half of a run is reserved for active
+ * artists; the other half is globally oldest-attempt-first, which is the
  * exploration/oldest lane. The lanes are interleaved (one active then its global
  * share) so active failures cannot trip the block guard before healthy exploration
  * gets a turn. Unused active capacity carries into that global lane.
