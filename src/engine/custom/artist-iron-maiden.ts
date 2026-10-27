@@ -18,7 +18,9 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
     const country = normalizeCountry(location.at(-1) || '');
     const city = location.slice(0, -2).join(', ');
     const venue = cols.eq(2).text().trim();
-    if (!date || !city || !venue || !['US', 'CA'].includes(country)) return;
+    if (!date || !city || !venue || !['US', 'CA'].includes(country)) {
+      throw new Error(`Iron Maiden malformed active tour row: ${printed || 'missing date/location'}`);
+    }
     const ticket = row.find('a.buy-tickets-link').attr('href');
     concerts.push({ artist: 'Iron Maiden', date, city, country, venue,
       ticketUrl: ticket ? safeAbsoluteUrl(ticket, config.url) : undefined,

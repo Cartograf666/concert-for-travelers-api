@@ -68,7 +68,7 @@ test('Iron Maiden reads calendar rows, not guest artists, onsale dates, or inval
   assert.ok(raw.every(r => r.artist === 'Iron Maiden'));
   const $ = cheerio.load(html);
   $('.tour-info-row').each((_, el) => { $(el).children().first().text('31 Feb 2027'); });
-  assert.deepEqual(await maiden(c, $.html(), captured), []);
+  await assert.rejects(maiden(c, $.html(), captured), /malformed active/);
   $('.tour-info-row').each((_, el) => { $(el).children().first().text('14 May 2027'); $(el).append('<span>Cancelled</span>'); });
   assert.deepEqual(await maiden(c, $.html(), captured), []);
 });
@@ -81,7 +81,7 @@ test('Bluetones scope excludes the separate acoustic identity and cancellation/i
   assert.equal(raw.find(r => r.date === '2027-05-08')?.ticketUrl, 'https://guiseleysounds.co.uk/guiseley-sounds-festival-2027-tickets/');
   const $ = cheerio.load(html);
   $('tr.gigpress-row').each((_, el) => { $(el).find('.gigpress-date').text('31/02/27'); });
-  assert.deepEqual(await bluetones(c, $.html(), captured), []);
+  await assert.rejects(bluetones(c, $.html(), captured), /malformed active/);
   $('tr.gigpress-row').each((_, el) => { $(el).find('.gigpress-date').text('08/05/27'); $(el).append('<td>Cancelled</td>'); });
   assert.deepEqual(await bluetones(c, $.html(), captured), []);
 });

@@ -17,11 +17,15 @@ export async function scrape(config: ScraperConfig, html: string, scrapedAt: str
       const printed = row.find('.gigpress-date').text().trim();
       const m = /^(\d{2})\/(\d{2})\/(\d{2})$/.exec(printed);
       const iso = m ? `20${m[3]}-${m[2]}-${m[1]}` : '';
-      if (!iso || parseDate(iso, scrapedAt) !== iso) return;
+      if (!iso || parseDate(iso, scrapedAt) !== iso) {
+        throw new Error(`The Bluetones malformed active date: ${printed || 'missing date'}`);
+      }
       const city = row.find('.gigpress-city').text().trim();
       const venue = row.find('.gigpress-venue').text().trim();
       const country = normalizeCountry(row.find('.gigpress-country').text().trim());
-      if (!city || !venue || !/^[A-Z]{2}$/.test(country)) return;
+      if (!city || !venue || !/^[A-Z]{2}$/.test(country)) {
+        throw new Error('The Bluetones malformed active location');
+      }
       const ticket = info.find('a.gigpress-tickets-link').attr('href');
       concerts.push({ artist: 'The Bluetones', date: iso, city, venue, country,
         ticketUrl: ticket ? safeAbsoluteUrl(ticket, config.url) : undefined,
