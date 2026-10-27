@@ -330,9 +330,10 @@ test('Bandsintown - cadence-fresh prior unavailable outcome is unknown, not heal
   assert.equal(calls, 0);
   assert.equal(health.state, 'unknown');
   assert.equal(health.completeness, 'partial');
-  assert.deepStrictEqual(health.issues, [{
-    reason: 'previous_target_failures', count: 1, action: 'retry_next_scheduled_sweep'
-  }]);
+  assert.deepStrictEqual(health.issues, [
+    { reason: 'cold_verification_older_than_revisit_interval', count: 1, action: 'review_refresh_capacity_and_source_coverage' },
+    { reason: 'previous_target_failures', count: 1, action: 'retry_next_scheduled_sweep' }
+  ]);
 });
 
 test('Bandsintown - a cluster of 401s (unresolvable names) does NOT trip the block guard', async () => {
@@ -453,4 +454,82 @@ test('Bandsintown - slash, question mark and asterisk names use the documented d
   assert.equal(health.counts.empty, artists.length);
   assert.equal(health.counts.failed, 0);
   assert.ok(Object.values(cache).every((entry) => entry.lastOutcome === 'empty' && entry.verifiedAt === '2026-10-07T12:00:00.000Z'));
+});
+
+test('Bandsintown - 401/404 preserve last-good events, verification and active identity without retrying before cadence', async () => {
+  const previous = '2026-09-01T00:00:00.000Z';
+  const now = new Date('2026-10-28T00:00:00.000Z');
+  for (const status of [401, 404]) {
+    const cache: BandsintownCache = {
+      Artist: {
+        fetchedAt: previous, verifiedAt: previous, lastOutcome: 'events',
+        concerts: [{ artist: 'Artist', date: '2027-03-20', venue: 'Last good' }]
+      }
+    };
+    let health: any;
+    const result = await fetchBandsintownConcerts(['Artist'], {
+      cache, delayMs: 0, now: () => now,
+      fetchFn: async () => { const error: any = new Error('unavailable'); error.response = { status }; throw error; },
+      onHealth: (report) => { health = report; }
+    });
+    assert.equal(result.length, 1, `${status} is not a verified empty feed`);
+    assert.equal(result[0].date, '2027-03-20');
+    assert.equal(cache.Artist.verifiedAt, previous);
+    assert.equal(cache.Artist.lastOutcome, 'unavailable');
+    assert.equal(health.counts.cacheFallbacks, 1);
+    assert.equal(health.counts.empty, 0);
+    assert.equal(health.freshness.old, 1);
+    assert.deepStrictEqual(selectBandsintownArtists(['Artist'], cache, 800, 6, now).artists, []);
+    const eligible = selectBandsintownArtists(['Artist'], cache, 800, 6, new Date('2026-11-04T00:00:00.000Z'));
+    assert.deepStrictEqual(eligible.availableByCohort, { active: 1, new: 0, cold: 0 });
+  }
+});
+
+test('Bandsintown - active successful freshness remains visible when failed lookup cadence is recent', async () => {
+  const now = new Date('2026-10-28T00:00:00.000Z');
+  const cache: BandsintownCache = {
+    Active: {
+      fetchedAt: now.toISOString(), attemptedAt: now.toISOString(),
+      verifiedAt: '2026-10-01T00:00:00.000Z', lastOutcome: 'unavailable',
+      concerts: [{ date: '2027-03-20' }]
+    },
+    Cold: { fetchedAt: now.toISOString(), verifiedAt: now.toISOString(), lastOutcome: 'empty', concerts: [] }
+  };
+  const selection = selectBandsintownArtists(['Active', 'Cold', 'New'], cache, 0, 6, now);
+  assert.equal(selection.verificationByCohort.active.old, 1);
+  assert.equal(selection.verificationByCohort.active.p95Days, 27);
+  assert.equal(selection.verificationByCohort.cold.fresh, 1);
+  assert.equal(selection.verificationByCohort.new.unknown, 1);
+  let health: any;
+  await fetchBandsintownConcerts(['Active', 'Cold', 'New'], {
+    cache, maxPerRun: 0, delayMs: 0, now: () => now,
+    fetchFn: async () => { throw new Error('must not request'); },
+    onHealth: (report) => { health = report; }
+  });
+  assert.ok(health.issues.some((issue: any) => issue.reason === 'active_verification_older_than_revisit_interval' && issue.count === 1));
+});
+
+test('Bandsintown - mixed 20,819 roster retains 20% reservation, oldest coverage, cap and six-day minimum', () => {
+  const artists = Array.from({ length: 20_819 }, (_, index) => `Artist ${String(index).padStart(5, '0')}`);
+  const cache: BandsintownCache = Object.fromEntries(artists.map((artist, index) => [artist, {
+    fetchedAt: '2026-01-01T00:00:00.000Z', verifiedAt: '2026-01-01T00:00:00.000Z',
+    concerts: index < 3_723 ? [{ date: '2028-01-01' }] : []
+  }]));
+  let firstCoverageRuns: number | undefined;
+  for (let day = 0; day < 40; day++) {
+    const now = new Date(Date.UTC(2026, 0, 20 + day));
+    const queue = selectBandsintownArtists(artists, cache, 800, 6, now);
+    assert.equal(queue.artists.length, 800);
+    assert.equal(new Set(queue.artists).size, 800);
+    // Global oldest can also select active artists; 20% is a floor, not a ceiling.
+    assert.ok(queue.selectedByCohort.active >= Math.min(queue.availableByCohort.active, 160));
+    if (day === 0) assert.deepStrictEqual(queue.selectedByCohort, { active: 800, new: 0, cold: 0 });
+    for (const artist of queue.artists) {
+      const previousAttempt = cache[artist].attemptedAt;
+      if (previousAttempt) assert.ok(now.getTime() - Date.parse(previousAttempt) >= 6 * 86_400_000);
+      Object.assign(cache[artist], { fetchedAt: now.toISOString(), attemptedAt: now.toISOString(), verifiedAt: now.toISOString() });
+    }
+    if (firstCoverageRuns === undefined && artists.every((artist) => cache[artist].attemptedAt)) firstCoverageRuns = day + 1;
+  }
+  assert.equal(firstCoverageRuns, 32, 'mixed roster needs longer than the 27-run capacity floor; oldest lane still reaches every target');
 });

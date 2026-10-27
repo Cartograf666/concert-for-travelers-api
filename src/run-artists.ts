@@ -93,8 +93,7 @@ async function main() {
     if (configs.length === 0) {
       healthBundle.sources.artist = createUnknownSourceHealth('artist', 'no_targets');
       await writeArtistSourceHealthBundle(reportsDir, healthBundle);
-      console.log('[ArtistScrape] No configs found in scrapers/artists/. Nothing to do.');
-      return;
+      console.log('[ArtistScrape] No tour-page configs; continuing to independent artist-feed targets.');
     }
     console.log(`[ArtistScrape] Loaded ${configs.length} artist tour-page configs.`);
 
