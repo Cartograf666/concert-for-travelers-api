@@ -1,0 +1,946 @@
+{
+  "checkedAt": "2026-10-27T21:29:15.169Z",
+  "configs": [
+    {
+      "id": "artist-godspeed-you-black-emperor",
+      "domain": "cstrecords.com",
+      "url": "https://cstrecords.com/pages/artist/godspeed-you-black-emperor",
+      "type": "custom_js",
+      "skipConditionalRequests": true,
+      "selectors": {
+        "eventBlock": ".metafield-rich_text_field > p",
+        "artistNameFallback": "Godspeed You! Black Emperor",
+        "date": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "XX"
+      }
+    },
+    {
+      "id": "artist-hard-ons",
+      "domain": "bespoketouring.oztix.com.au",
+      "url": "https://bespoketouring.oztix.com.au/",
+      "type": "custom_js",
+      "skipConditionalRequests": true,
+      "selectors": {
+        "eventBlock": ".event",
+        "artistNameFallback": "Hard-Ons",
+        "date": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "AU"
+      }
+    },
+    {
+      "id": "artist-paula-fernandes",
+      "domain": "riomarfortaleza.com.br",
+      "url": "https://riomarfortaleza.com.br/teatro/paula-fernandes-30-e-poucos-anos-16931",
+      "type": "custom_js",
+      "skipConditionalRequests": true,
+      "selectors": {
+        "eventBlock": ".l-eventos-interna__feature__text",
+        "artistNameFallback": "Paula Fernandes",
+        "date": "p",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "BR"
+      }
+    }
+  ],
+  "results": [
+    {
+      "configId": "artist-godspeed-you-black-emperor",
+      "success": true,
+      "concerts": [
+        {
+          "artist": "Godspeed You! Black Emperor",
+          "date": "2026-11-21",
+          "venue": "C Art Media",
+          "city": "Buenos Aires",
+          "country": "AR",
+          "ticketUrl": "https://www.passline.com/eventos/godspeed-you-black-emperor-c-art-media",
+          "originalSource": "cstrecords.com",
+          "scrapedAt": "2026-10-27T21:29:15.170Z"
+        },
+        {
+          "artist": "Godspeed You! Black Emperor",
+          "date": "2026-11-23",
+          "venue": "Audio",
+          "city": "São Paulo",
+          "country": "BR",
+          "ticketUrl": "https://ingresse.com/godspeed-sp",
+          "originalSource": "cstrecords.com",
+          "scrapedAt": "2026-10-27T21:29:15.170Z"
+        },
+        {
+          "artist": "Godspeed You! Black Emperor",
+          "date": "2026-11-24",
+          "venue": "Audio",
+          "city": "São Paulo",
+          "country": "BR",
+          "ticketUrl": "https://ingresse.com/godspeed-spextra/",
+          "originalSource": "cstrecords.com",
+          "scrapedAt": "2026-10-27T21:29:15.170Z"
+        },
+        {
+          "artist": "Godspeed You! Black Emperor",
+          "date": "2026-11-26",
+          "venue": "Fauna Primavera Festival",
+          "city": "Santiago de Chile",
+          "country": "CL",
+          "ticketUrl": "https://www.puntoticket.com/faunaprimavera",
+          "originalSource": "cstrecords.com",
+          "scrapedAt": "2026-10-27T21:29:15.170Z"
+        },
+        {
+          "artist": "Godspeed You! Black Emperor",
+          "date": "2027-02-20",
+          "venue": "Théâtre Capitole",
+          "city": "Québec City",
+          "country": "CA",
+          "ticketUrl": "https://www.ticketmaster.ca/event/31006547EE7BB476",
+          "originalSource": "cstrecords.com",
+          "scrapedAt": "2026-10-27T21:29:15.170Z"
+        },
+        {
+          "artist": "Godspeed You! Black Emperor",
+          "date": "2027-02-21",
+          "venue": "Théâtre Capitole",
+          "city": "Québec City",
+          "country": "CA",
+          "ticketUrl": "https://www.ticketmaster.ca/event/3100652471741B58?lang=fr-ca",
+          "originalSource": "cstrecords.com",
+          "scrapedAt": "2026-10-27T21:29:15.170Z"
+        },
+        {
+          "artist": "Godspeed You! Black Emperor",
+          "date": "2027-02-22",
+          "venue": "Club Soda",
+          "city": "Montréal",
+          "country": "CA",
+          "ticketUrl": "https://clubsoda.billetteriealacarte.com/en/buy/godspeed_2027-02-22/",
+          "originalSource": "cstrecords.com",
+          "scrapedAt": "2026-10-27T21:29:15.170Z"
+        },
+        {
+          "artist": "Godspeed You! Black Emperor",
+          "date": "2027-02-23",
+          "venue": "Club Soda",
+          "city": "Montréal",
+          "country": "CA",
+          "ticketUrl": "https://clubsoda.billetteriealacarte.com/en/buy/godspeed_2027-02-23/",
+          "originalSource": "cstrecords.com",
+          "scrapedAt": "2026-10-27T21:29:15.170Z"
+        },
+        {
+          "artist": "Godspeed You! Black Emperor",
+          "date": "2027-02-24",
+          "venue": "Club Soda",
+          "city": "Montréal",
+          "country": "CA",
+          "ticketUrl": "https://clubsoda.billetteriealacarte.com/en/buy/godspeed_2027-02-24/",
+          "originalSource": "cstrecords.com",
+          "scrapedAt": "2026-10-27T21:29:15.170Z"
+        },
+        {
+          "artist": "Godspeed You! Black Emperor",
+          "date": "2027-02-26",
+          "venue": "Danforth Music Hall",
+          "city": "Toronto",
+          "country": "CA",
+          "ticketUrl": "https://www.ticketmaster.ca/event/10006531D84B5297",
+          "originalSource": "cstrecords.com",
+          "scrapedAt": "2026-10-27T21:29:15.170Z"
+        },
+        {
+          "artist": "Godspeed You! Black Emperor",
+          "date": "2027-02-27",
+          "venue": "Danforth Music Hall",
+          "city": "Toronto",
+          "country": "CA",
+          "ticketUrl": "https://www.ticketmaster.ca/event/10006521D6E96D34",
+          "originalSource": "cstrecords.com",
+          "scrapedAt": "2026-10-27T21:29:15.170Z"
+        },
+        {
+          "artist": "Godspeed You! Black Emperor",
+          "date": "2027-03-03",
+          "venue": "La Respuesta",
+          "city": "San Juan",
+          "country": "PR",
+          "ticketUrl": "https://boletera.net/event/godspeed-you-black-emperor-en-puerto-rico-7a446aa7-1a37-42b4-bf56-660ef4e74917",
+          "originalSource": "cstrecords.com",
+          "scrapedAt": "2026-10-27T21:29:15.170Z"
+        },
+        {
+          "artist": "Godspeed You! Black Emperor",
+          "date": "2027-03-04",
+          "venue": "La Respuesta",
+          "city": "San Juan",
+          "country": "PR",
+          "ticketUrl": "https://boletera.net/event/godspeed-you-black-emperor-en-puerto-rico-7a446aa7-1a37-42b4-bf56-660ef4e74917",
+          "originalSource": "cstrecords.com",
+          "scrapedAt": "2026-10-27T21:29:15.170Z"
+        }
+      ],
+      "scrapedAt": "2026-10-27T21:29:15.170Z",
+      "etag": "\"page_cache:7155810415:MetaobjectDetailsController:d7473bf732b57266f997fdf5d93f6142:cb3128105b7eece0139f68a581264a8f\"",
+      "cacheFingerprint": "a4fa30d6bd8907d206edd2a7eba7e7f4cc89a19385f335876a626cc27acb694f",
+      "contentHash": "00832efef3f6535734b67eb32c5b50e6e5e74c20",
+      "notModified": false
+    },
+    {
+      "configId": "artist-hard-ons",
+      "success": true,
+      "concerts": [
+        {
+          "artist": "Hard-Ons",
+          "date": "2027-03-04",
+          "venue": "Link & Pin",
+          "city": "Woy Woy",
+          "country": "AU",
+          "originalSource": "bespoketouring.oztix.com.au",
+          "scrapedAt": "2026-10-27T21:29:16.113Z"
+        },
+        {
+          "artist": "Hard-Ons",
+          "date": "2027-03-05",
+          "venue": "Ed Castle",
+          "city": "Adelaide",
+          "country": "AU",
+          "originalSource": "bespoketouring.oztix.com.au",
+          "scrapedAt": "2026-10-27T21:29:16.113Z"
+        },
+        {
+          "artist": "Hard-Ons",
+          "date": "2027-03-06",
+          "venue": "Milk Bar",
+          "city": "Inglewood",
+          "country": "AU",
+          "ticketUrl": "https://bespoketouring.oztix.com.au/outlet/event/4c4ab300-efd5-4dd1-a8a0-09499072d141",
+          "eventUrl": "https://bespoketouring.oztix.com.au/outlet/event/4c4ab300-efd5-4dd1-a8a0-09499072d141",
+          "originalSource": "bespoketouring.oztix.com.au",
+          "scrapedAt": "2026-10-27T21:29:16.113Z"
+        },
+        {
+          "artist": "Hard-Ons",
+          "date": "2027-03-07",
+          "venue": "The River",
+          "city": "Margaret River",
+          "country": "AU",
+          "ticketUrl": "https://bespoketouring.oztix.com.au/outlet/event/ce11a07e-202d-4f67-92d9-98cf92dc0613",
+          "eventUrl": "https://bespoketouring.oztix.com.au/outlet/event/ce11a07e-202d-4f67-92d9-98cf92dc0613",
+          "originalSource": "bespoketouring.oztix.com.au",
+          "scrapedAt": "2026-10-27T21:29:16.113Z"
+        },
+        {
+          "artist": "Hard-Ons",
+          "date": "2027-03-10",
+          "venue": "Dissent",
+          "city": "Canberra",
+          "country": "AU",
+          "originalSource": "bespoketouring.oztix.com.au",
+          "scrapedAt": "2026-10-27T21:29:16.113Z"
+        },
+        {
+          "artist": "Hard-Ons",
+          "date": "2027-03-11",
+          "venue": "Barwon Club",
+          "city": "Geelong",
+          "country": "AU",
+          "originalSource": "bespoketouring.oztix.com.au",
+          "scrapedAt": "2026-10-27T21:29:16.113Z"
+        },
+        {
+          "artist": "Hard-Ons",
+          "date": "2027-03-12",
+          "venue": "The Tote",
+          "city": "Melbourne",
+          "country": "AU",
+          "originalSource": "bespoketouring.oztix.com.au",
+          "scrapedAt": "2026-10-27T21:29:16.113Z"
+        },
+        {
+          "artist": "Hard-Ons",
+          "date": "2027-03-13",
+          "venue": "Singing Bird",
+          "city": "Frankston",
+          "country": "AU",
+          "originalSource": "bespoketouring.oztix.com.au",
+          "scrapedAt": "2026-10-27T21:29:16.113Z"
+        },
+        {
+          "artist": "Hard-Ons",
+          "date": "2027-03-14",
+          "venue": "Altar",
+          "city": "Hobart",
+          "country": "AU",
+          "originalSource": "bespoketouring.oztix.com.au",
+          "scrapedAt": "2026-10-27T21:29:16.113Z"
+        },
+        {
+          "artist": "Hard-Ons",
+          "date": "2027-03-18",
+          "venue": "The Hamo",
+          "city": "Newcastle",
+          "country": "AU",
+          "originalSource": "bespoketouring.oztix.com.au",
+          "scrapedAt": "2026-10-27T21:29:16.113Z"
+        },
+        {
+          "artist": "Hard-Ons",
+          "date": "2027-03-19",
+          "venue": "Paddo RSL",
+          "city": "Sydney",
+          "country": "AU",
+          "originalSource": "bespoketouring.oztix.com.au",
+          "scrapedAt": "2026-10-27T21:29:16.113Z"
+        },
+        {
+          "artist": "Hard-Ons",
+          "date": "2027-03-20",
+          "venue": "Vinnies Dive",
+          "city": "Gold Coast",
+          "country": "AU",
+          "originalSource": "bespoketouring.oztix.com.au",
+          "scrapedAt": "2026-10-27T21:29:16.113Z"
+        },
+        {
+          "artist": "Hard-Ons",
+          "date": "2027-03-21",
+          "venue": "The Brightside",
+          "city": "Brisbane",
+          "country": "AU",
+          "originalSource": "bespoketouring.oztix.com.au",
+          "scrapedAt": "2026-10-27T21:29:16.113Z"
+        }
+      ],
+      "scrapedAt": "2026-10-27T21:29:16.113Z",
+      "cacheFingerprint": "eea4d6b034b9ae4d0d2c4bf95d6502834f29ea43031d43a28a9a9465de3d0677",
+      "contentHash": "8538216f60c8a17db4afe751e67df21e999087a9",
+      "notModified": false
+    },
+    {
+      "configId": "artist-paula-fernandes",
+      "success": true,
+      "concerts": [
+        {
+          "artist": "Paula Fernandes",
+          "date": "2026-12-05",
+          "city": "São Paulo",
+          "venue": "Vibra",
+          "country": "BR",
+          "originalSource": "riomarfortaleza.com.br",
+          "scrapedAt": "2026-10-27T21:29:27.338Z"
+        },
+        {
+          "artist": "Paula Fernandes",
+          "date": "2027-03-19",
+          "city": "Porto Alegre",
+          "venue": "Teatro do Bourbon Country",
+          "country": "BR",
+          "originalSource": "riomarfortaleza.com.br",
+          "scrapedAt": "2026-10-27T21:29:27.338Z"
+        },
+        {
+          "artist": "Paula Fernandes",
+          "date": "2027-03-20",
+          "city": "Curitiba",
+          "venue": "Teatro Positivo",
+          "country": "BR",
+          "originalSource": "riomarfortaleza.com.br",
+          "scrapedAt": "2026-10-27T21:29:27.338Z"
+        },
+        {
+          "artist": "Paula Fernandes",
+          "date": "2027-04-02",
+          "city": "Recife",
+          "venue": "Teatro RioMar Recife",
+          "country": "BR",
+          "originalSource": "riomarfortaleza.com.br",
+          "scrapedAt": "2026-10-27T21:29:27.338Z"
+        },
+        {
+          "artist": "Paula Fernandes",
+          "date": "2027-04-03",
+          "city": "Natal",
+          "venue": "Teatro Riachuelo Natal",
+          "country": "BR",
+          "originalSource": "riomarfortaleza.com.br",
+          "scrapedAt": "2026-10-27T21:29:27.338Z"
+        },
+        {
+          "artist": "Paula Fernandes",
+          "date": "2027-04-04",
+          "city": "Fortaleza",
+          "venue": "Teatro RioMar Fortaleza",
+          "country": "BR",
+          "ticketUrl": "https://uhuu.com/evento/ce/fortaleza/paula-fernandes-30-e-poucos-anos-16931",
+          "eventUrl": "https://riomarfortaleza.com.br/teatro/paula-fernandes-30-e-poucos-anos-16931",
+          "originalSource": "riomarfortaleza.com.br",
+          "scrapedAt": "2026-10-27T21:29:27.338Z"
+        },
+        {
+          "artist": "Paula Fernandes",
+          "date": "2027-05-15",
+          "city": "Belo Horizonte",
+          "venue": "Minascentro",
+          "country": "BR",
+          "originalSource": "riomarfortaleza.com.br",
+          "scrapedAt": "2026-10-27T21:29:27.338Z"
+        },
+        {
+          "artist": "Paula Fernandes",
+          "date": "2027-06-05",
+          "city": "Rio de Janeiro",
+          "venue": "Qualistage",
+          "country": "BR",
+          "originalSource": "riomarfortaleza.com.br",
+          "scrapedAt": "2026-10-27T21:29:27.338Z"
+        }
+      ],
+      "scrapedAt": "2026-10-27T21:29:27.338Z",
+      "cacheFingerprint": "c44db1baa742e498e7c954e104c5da514552a1e7f3dd6ed4b45bead119497741",
+      "contentHash": "67ddf980146ad524afbd683565c8b44895e20e13",
+      "notModified": false
+    }
+  ],
+  "processed": [
+    {
+      "artist": "Godspeed You! Black Emperor",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2026-11-21",
+      "venue": "C Art Media",
+      "city": "Buenos Aires",
+      "country": "AR",
+      "ticketUrl": "https://www.passline.com/eventos/godspeed-you-black-emperor-c-art-media",
+      "originalSource": "cstrecords.com",
+      "scrapedAt": "2026-10-27T21:29:15.170Z"
+    },
+    {
+      "artist": "Godspeed You! Black Emperor",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2026-11-23",
+      "venue": "Audio",
+      "city": "São Paulo",
+      "country": "BR",
+      "ticketUrl": "https://ingresse.com/godspeed-sp",
+      "originalSource": "cstrecords.com",
+      "scrapedAt": "2026-10-27T21:29:15.170Z"
+    },
+    {
+      "artist": "Godspeed You! Black Emperor",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2026-11-24",
+      "venue": "Audio",
+      "city": "São Paulo",
+      "country": "BR",
+      "ticketUrl": "https://ingresse.com/godspeed-spextra/",
+      "originalSource": "cstrecords.com",
+      "scrapedAt": "2026-10-27T21:29:15.170Z"
+    },
+    {
+      "artist": "Godspeed You! Black Emperor",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2026-11-26",
+      "venue": "Fauna Primavera Festival",
+      "city": "Santiago de Chile",
+      "country": "CL",
+      "ticketUrl": "https://www.puntoticket.com/faunaprimavera",
+      "originalSource": "cstrecords.com",
+      "scrapedAt": "2026-10-27T21:29:15.170Z"
+    },
+    {
+      "artist": "Godspeed You! Black Emperor",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-02-20",
+      "venue": "Théâtre Capitole",
+      "city": "Québec City",
+      "country": "CA",
+      "ticketUrl": "https://www.ticketmaster.ca/event/31006547EE7BB476",
+      "originalSource": "cstrecords.com",
+      "scrapedAt": "2026-10-27T21:29:15.170Z"
+    },
+    {
+      "artist": "Godspeed You! Black Emperor",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-02-21",
+      "venue": "Théâtre Capitole",
+      "city": "Québec City",
+      "country": "CA",
+      "ticketUrl": "https://www.ticketmaster.ca/event/3100652471741B58?lang=fr-ca",
+      "originalSource": "cstrecords.com",
+      "scrapedAt": "2026-10-27T21:29:15.170Z"
+    },
+    {
+      "artist": "Godspeed You! Black Emperor",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-02-22",
+      "venue": "Club Soda",
+      "city": "Montréal",
+      "country": "CA",
+      "venueKind": "club",
+      "ticketUrl": "https://clubsoda.billetteriealacarte.com/en/buy/godspeed_2027-02-22/",
+      "originalSource": "cstrecords.com",
+      "scrapedAt": "2026-10-27T21:29:15.170Z"
+    },
+    {
+      "artist": "Godspeed You! Black Emperor",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-02-23",
+      "venue": "Club Soda",
+      "city": "Montréal",
+      "country": "CA",
+      "venueKind": "club",
+      "ticketUrl": "https://clubsoda.billetteriealacarte.com/en/buy/godspeed_2027-02-23/",
+      "originalSource": "cstrecords.com",
+      "scrapedAt": "2026-10-27T21:29:15.170Z"
+    },
+    {
+      "artist": "Godspeed You! Black Emperor",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-02-24",
+      "venue": "Club Soda",
+      "city": "Montréal",
+      "country": "CA",
+      "venueKind": "club",
+      "ticketUrl": "https://clubsoda.billetteriealacarte.com/en/buy/godspeed_2027-02-24/",
+      "originalSource": "cstrecords.com",
+      "scrapedAt": "2026-10-27T21:29:15.170Z"
+    },
+    {
+      "artist": "Godspeed You! Black Emperor",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-02-26",
+      "venue": "Danforth Music Hall",
+      "city": "Toronto",
+      "country": "CA",
+      "venueKind": "hall",
+      "ticketUrl": "https://www.ticketmaster.ca/event/10006531D84B5297",
+      "originalSource": "cstrecords.com",
+      "scrapedAt": "2026-10-27T21:29:15.170Z"
+    },
+    {
+      "artist": "Godspeed You! Black Emperor",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-02-27",
+      "venue": "Danforth Music Hall",
+      "city": "Toronto",
+      "country": "CA",
+      "venueKind": "hall",
+      "ticketUrl": "https://www.ticketmaster.ca/event/10006521D6E96D34",
+      "originalSource": "cstrecords.com",
+      "scrapedAt": "2026-10-27T21:29:15.170Z"
+    },
+    {
+      "artist": "Godspeed You! Black Emperor",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-03-03",
+      "venue": "La Respuesta",
+      "city": "San Juan",
+      "country": "PR",
+      "ticketUrl": "https://boletera.net/event/godspeed-you-black-emperor-en-puerto-rico-7a446aa7-1a37-42b4-bf56-660ef4e74917",
+      "originalSource": "cstrecords.com",
+      "scrapedAt": "2026-10-27T21:29:15.170Z"
+    },
+    {
+      "artist": "Godspeed You! Black Emperor",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-03-04",
+      "venue": "La Respuesta",
+      "city": "San Juan",
+      "country": "PR",
+      "ticketUrl": "https://boletera.net/event/godspeed-you-black-emperor-en-puerto-rico-7a446aa7-1a37-42b4-bf56-660ef4e74917",
+      "originalSource": "cstrecords.com",
+      "scrapedAt": "2026-10-27T21:29:15.170Z"
+    },
+    {
+      "artist": "Hard-Ons",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-03-04",
+      "venue": "Link & Pin",
+      "city": "Woy Woy",
+      "country": "AU",
+      "originalSource": "bespoketouring.oztix.com.au",
+      "scrapedAt": "2026-10-27T21:29:16.113Z"
+    },
+    {
+      "artist": "Hard-Ons",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-03-05",
+      "venue": "Ed Castle",
+      "city": "Adelaide",
+      "country": "AU",
+      "originalSource": "bespoketouring.oztix.com.au",
+      "scrapedAt": "2026-10-27T21:29:16.113Z"
+    },
+    {
+      "artist": "Hard-Ons",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-03-06",
+      "venue": "Milk Bar",
+      "city": "Inglewood",
+      "country": "AU",
+      "venueKind": "club",
+      "ticketUrl": "https://bespoketouring.oztix.com.au/outlet/event/4c4ab300-efd5-4dd1-a8a0-09499072d141",
+      "eventUrl": "https://bespoketouring.oztix.com.au/outlet/event/4c4ab300-efd5-4dd1-a8a0-09499072d141",
+      "originalSource": "bespoketouring.oztix.com.au",
+      "scrapedAt": "2026-10-27T21:29:16.113Z"
+    },
+    {
+      "artist": "Hard-Ons",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-03-07",
+      "venue": "The River",
+      "city": "Margaret River",
+      "country": "AU",
+      "ticketUrl": "https://bespoketouring.oztix.com.au/outlet/event/ce11a07e-202d-4f67-92d9-98cf92dc0613",
+      "eventUrl": "https://bespoketouring.oztix.com.au/outlet/event/ce11a07e-202d-4f67-92d9-98cf92dc0613",
+      "originalSource": "bespoketouring.oztix.com.au",
+      "scrapedAt": "2026-10-27T21:29:16.113Z"
+    },
+    {
+      "artist": "Hard-Ons",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-03-10",
+      "venue": "Dissent",
+      "city": "Canberra",
+      "country": "AU",
+      "originalSource": "bespoketouring.oztix.com.au",
+      "scrapedAt": "2026-10-27T21:29:16.113Z"
+    },
+    {
+      "artist": "Hard-Ons",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-03-11",
+      "venue": "Barwon Club",
+      "city": "Geelong",
+      "country": "AU",
+      "venueKind": "club",
+      "originalSource": "bespoketouring.oztix.com.au",
+      "scrapedAt": "2026-10-27T21:29:16.113Z"
+    },
+    {
+      "artist": "Hard-Ons",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-03-12",
+      "venue": "The Tote",
+      "city": "Melbourne",
+      "country": "AU",
+      "originalSource": "bespoketouring.oztix.com.au",
+      "scrapedAt": "2026-10-27T21:29:16.113Z"
+    },
+    {
+      "artist": "Hard-Ons",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-03-13",
+      "venue": "Singing Bird",
+      "city": "Frankston",
+      "country": "AU",
+      "originalSource": "bespoketouring.oztix.com.au",
+      "scrapedAt": "2026-10-27T21:29:16.113Z"
+    },
+    {
+      "artist": "Hard-Ons",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-03-14",
+      "venue": "Altar",
+      "city": "Hobart",
+      "country": "AU",
+      "originalSource": "bespoketouring.oztix.com.au",
+      "scrapedAt": "2026-10-27T21:29:16.113Z"
+    },
+    {
+      "artist": "Hard-Ons",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-03-18",
+      "venue": "The Hamo",
+      "city": "Newcastle",
+      "country": "AU",
+      "originalSource": "bespoketouring.oztix.com.au",
+      "scrapedAt": "2026-10-27T21:29:16.113Z"
+    },
+    {
+      "artist": "Hard-Ons",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-03-19",
+      "venue": "Paddo RSL",
+      "city": "Sydney",
+      "country": "AU",
+      "originalSource": "bespoketouring.oztix.com.au",
+      "scrapedAt": "2026-10-27T21:29:16.113Z"
+    },
+    {
+      "artist": "Hard-Ons",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-03-20",
+      "venue": "Vinnies Dive",
+      "city": "Gold Coast",
+      "country": "AU",
+      "originalSource": "bespoketouring.oztix.com.au",
+      "scrapedAt": "2026-10-27T21:29:16.113Z"
+    },
+    {
+      "artist": "Hard-Ons",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-03-21",
+      "venue": "The Brightside",
+      "city": "Brisbane",
+      "country": "AU",
+      "originalSource": "bespoketouring.oztix.com.au",
+      "scrapedAt": "2026-10-27T21:29:16.113Z"
+    },
+    {
+      "artist": "Paula Fernandes",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2026-12-05",
+      "venue": "Vibra",
+      "city": "São Paulo",
+      "country": "BR",
+      "originalSource": "riomarfortaleza.com.br",
+      "scrapedAt": "2026-10-27T21:29:27.338Z"
+    },
+    {
+      "artist": "Paula Fernandes",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-03-19",
+      "venue": "Teatro do Bourbon Country",
+      "city": "Porto Alegre",
+      "country": "BR",
+      "originalSource": "riomarfortaleza.com.br",
+      "scrapedAt": "2026-10-27T21:29:27.338Z"
+    },
+    {
+      "artist": "Paula Fernandes",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-03-20",
+      "venue": "Teatro Positivo",
+      "city": "Curitiba",
+      "country": "BR",
+      "originalSource": "riomarfortaleza.com.br",
+      "scrapedAt": "2026-10-27T21:29:27.338Z"
+    },
+    {
+      "artist": "Paula Fernandes",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-04-02",
+      "venue": "Teatro RioMar Recife",
+      "city": "Recife",
+      "country": "BR",
+      "originalSource": "riomarfortaleza.com.br",
+      "scrapedAt": "2026-10-27T21:29:27.338Z"
+    },
+    {
+      "artist": "Paula Fernandes",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-04-03",
+      "venue": "Teatro Riachuelo Natal",
+      "city": "Natal",
+      "country": "BR",
+      "originalSource": "riomarfortaleza.com.br",
+      "scrapedAt": "2026-10-27T21:29:27.338Z"
+    },
+    {
+      "artist": "Paula Fernandes",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-04-04",
+      "venue": "Teatro RioMar Fortaleza",
+      "city": "Fortaleza",
+      "country": "BR",
+      "ticketUrl": "https://uhuu.com/evento/ce/fortaleza/paula-fernandes-30-e-poucos-anos-16931",
+      "eventUrl": "https://riomarfortaleza.com.br/teatro/paula-fernandes-30-e-poucos-anos-16931",
+      "originalSource": "riomarfortaleza.com.br",
+      "scrapedAt": "2026-10-27T21:29:27.338Z"
+    },
+    {
+      "artist": "Paula Fernandes",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-05-15",
+      "venue": "Minascentro",
+      "city": "Belo Horizonte",
+      "country": "BR",
+      "originalSource": "riomarfortaleza.com.br",
+      "scrapedAt": "2026-10-27T21:29:27.338Z"
+    },
+    {
+      "artist": "Paula Fernandes",
+      "artistDiscovery": {
+        "version": 1,
+        "audience": "unknown",
+        "basis": "lastfm-listeners",
+        "metricAsOf": null
+      },
+      "date": "2027-06-05",
+      "venue": "Qualistage",
+      "city": "Rio de Janeiro",
+      "country": "BR",
+      "originalSource": "riomarfortaleza.com.br",
+      "scrapedAt": "2026-10-27T21:29:27.338Z"
+    }
+  ]
+}

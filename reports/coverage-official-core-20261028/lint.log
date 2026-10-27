@@ -1,0 +1,219 @@
+
+> concert-for-travelers-api@1.0.0 lint
+> eslint src/ tests/
+
+(node:83804) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/eslint.config.js?mtime=1793136133065 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/bandsintown.ts
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/cache.ts
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/custom/akbank-sanat-istanbul.ts
+  2:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/custom/club-quattro-umeda-osaka.ts
+  2:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/custom/drugstore-belgrade.ts
+  2:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/custom/flex-vienna.ts
+  2:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/custom/jazz-cafe-london.ts
+  2:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/custom/kolarac-concert-hall-belgrade.ts
+  2:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/custom/lacigale-paris.ts
+  2:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/custom/liquidroom-tokyo.ts
+  2:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/custom/lucerna-music-bar-prague.ts
+  2:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/custom/meetfactory-prague.ts
+  2:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/custom/melkweg-amsterdam.ts
+  2:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/custom/sagres-campo-pequeno-lisbon.ts
+  2:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/custom/sala-apolo-barcelona.ts
+  2:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/custom/so36-berlin.ts
+  1:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  2:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/custom/tolhuistuin-amsterdam.ts
+  2:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/custom/vintazh-tour.ts
+  2:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/custom/wuk-vienna.ts
+  2:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/custom/www-shibuya-tokyo.ts
+  2:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/custom/zhenya-trofimov-tour.ts
+  2:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/eventbrite.ts
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/llm_extraction_fallback.ts
+  5:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  6:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/runner.ts
+  5:1  warning  Imports "ScraperConfig" are only used as type                             @typescript-eslint/consistent-type-imports
+  6:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  9:1  warning  Imports "VenueCache" and "ScrapeCache" are only used as type              @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/structured.ts
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  4:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/engine/ticketmaster.ts
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/generator/publish.ts
+  459:12  warning  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/heal.ts
+   6:1  warning  Imports "FailureEntry" and "RepairStrategy" are only used as type  @typescript-eslint/consistent-type-imports
+   7:1  warning  Imports "StrategyDeps" are only used as type                       @typescript-eslint/consistent-type-imports
+   8:1  warning  Imports "VerifyReport" are only used as type                       @typescript-eslint/consistent-type-imports
+  10:1  warning  Imports "RepairRecord" are only used as type                       @typescript-eslint/consistent-type-imports
+  17:1  warning  Imports "ScraperConfig" are only used as type                      @typescript-eslint/consistent-type-imports
+  18:1  warning  Imports "ScrapeCohort" are only used as type                       @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/healing/chain.ts
+  19:1  warning  Imports "ScraperConfig" are only used as type                             @typescript-eslint/consistent-type-imports
+  20:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/healing/history.ts
+  20:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/healing/repair.ts
+  7:1  warning  Imports "ScraperConfig" are only used as type                             @typescript-eslint/consistent-type-imports
+  8:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/healing/strategies.ts
+  16:1  warning  Imports "ScraperConfig" are only used as type                             @typescript-eslint/consistent-type-imports
+  17:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/healing/verify.ts
+  16:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  17:1  warning  Imports "Concert" are only used as type                                   @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/pipeline/geocode.ts
+  5:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/pipeline/process.ts
+    1:13  warning  'path' is defined but never used               @typescript-eslint/no-unused-vars
+  779:9   warning  'baseYear' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  863:10  warning  '_' is assigned a value but never used         @typescript-eslint/no-unused-vars
+  881:10  warning  '_' is assigned a value but never used         @typescript-eslint/no-unused-vars
+  891:10  warning  '_' is assigned a value but never used         @typescript-eslint/no-unused-vars
+  902:10  warning  '_' is assigned a value but never used         @typescript-eslint/no-unused-vars
+  913:10  warning  '_' is assigned a value but never used         @typescript-eslint/no-unused-vars
+  924:10  warning  '_' is assigned a value but never used         @typescript-eslint/no-unused-vars
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/run.ts
+  3:1  warning  Imports "ScraperResult" are only used as type                             @typescript-eslint/consistent-type-imports
+  7:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/scripts/backfill_mbid.ts
+  1:1  warning  Imports "Resolved" are only used as type                                  @typescript-eslint/consistent-type-imports
+  2:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/scripts/compute_similar_inbound.ts
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/scripts/confirm_repairs.ts
+  19:1  warning  Imports "RepairRecord" and "ScraperCohort" are only used as type  @typescript-eslint/consistent-type-imports
+  23:1  warning  Imports "ScrapeRunManifest" are only used as type                 @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/scripts/enrich_artist_images.ts
+  2:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/scripts/enrich_auto.ts
+  4:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/scripts/enrich_metadata.ts
+  2:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/scripts/enrich_similar_artists.ts
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/scripts/enrich_sites.ts
+  6:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/scripts/extract_tour_scrapers.ts
+    7:1   warning  Imports "ScraperConfig" are only used as type                             @typescript-eslint/consistent-type-imports
+    8:1   warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  192:17  warning  '_dropped' is assigned a value but never used                             @typescript-eslint/no-unused-vars
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/scripts/prune_dead_scrapers.ts
+  5:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  7:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  8:1  warning  Imports "RunIdentity" and "ScrapeRunManifest" are only used as type       @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/scripts/prune_non_artists.ts
+  7:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/scripts/rank_scraper_candidates.ts
+  4:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/scripts/score_artist_popularity.ts
+  5:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/src/scripts/verify_enrichment.ts
+  8:22  warning  'VerifyResult' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/tests/cache_fingerprint.test.ts
+  96:29  warning  '_' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/tests/discover_tour_urls.test.ts
+  139:11  warning  'urlString' is assigned a value but never used                         @typescript-eslint/no-unused-vars
+  152:25  warning  'url' is defined but never used. Allowed unused args must match /^_/u  @typescript-eslint/no-unused-vars
+
+/Users/alex/code/concert-for-travelers-api/.worktrees/codex/coverage-official-core-20261028/tests/runner.test.ts
+  218:58   warning  't' is defined but never used. Allowed unused args must match /^_/u  @typescript-eslint/no-unused-vars
+  408:125  warning  't' is defined but never used. Allowed unused args must match /^_/u  @typescript-eslint/no-unused-vars
+
+✖ 101 problems (0 errors, 101 warnings)
+  0 errors and 85 warnings potentially fixable with the `--fix` option.
+

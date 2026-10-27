@@ -1,0 +1,64 @@
+{
+  "fetchPath": "src/engine/runner.ts fetchHtmlForHealing -> performGet (axios): guarded DNS/redirects/limits; same helper for runtime discovered detail pages",
+  "captures": [
+    {
+      "path": "tests/fixtures/coverage-official-core-20261028/hard-ons.html",
+      "url": "https://bespoketouring.oztix.com.au/outlet/event/4c4ab300-efd5-4dd1-a8a0-09499072d141?Event=251910",
+      "capturedAt": "2026-10-27T21:22:42.994Z",
+      "sha256": "addb0a874f274a205c3ebb1dded5ee29d86e14fd132b7cee92b8677ec6fe32c6",
+      "bytes": 63802
+    },
+    {
+      "path": "tests/fixtures/coverage-official-core-20261028/hard-ons-index.html",
+      "url": "https://bespoketouring.oztix.com.au/",
+      "capturedAt": "2026-10-27T21:23:03.604Z",
+      "sha256": "6fcaa5e973528e5b72e2f7bca3e390f4ed673f4641378b89e927e818eb0a4b12",
+      "bytes": 280791
+    },
+    {
+      "path": "tests/fixtures/coverage-official-core-20261028/hard-ons-251910.html",
+      "url": "https://bespoketouring.oztix.com.au/Default.aspx?Event=251910",
+      "capturedAt": "2026-10-27T21:24:20.254Z",
+      "sha256": "22faf31079eb98face053d7d608dce5c035fae813eaa8744f2c86ed453c4d715",
+      "bytes": 63802
+    },
+    {
+      "path": "tests/fixtures/coverage-official-core-20261028/hard-ons-251911.html",
+      "url": "https://bespoketouring.oztix.com.au/Default.aspx?Event=251911",
+      "capturedAt": "2026-10-27T21:24:23.980Z",
+      "sha256": "e06a1c4566a23e7ed865465f10e75bb75e1b5d50f9a2fd612cd555e510b64184",
+      "bytes": 63510
+    },
+    {
+      "path": "tests/fixtures/coverage-official-core-20261028/godspeed.html",
+      "url": "https://cstrecords.com/pages/artist/godspeed-you-black-emperor",
+      "capturedAt": "2026-10-27T21:22:45.170Z",
+      "sha256": "26f18f66af4c5e51022dc6155257a0f09cd2c99fd0adfd792c0bf9e79adc9755",
+      "bytes": 431938
+    },
+    {
+      "path": "tests/fixtures/coverage-official-core-20261028/paula-venue.html",
+      "url": "https://riomarfortaleza.com.br/teatro/paula-fernandes-30-e-poucos-anos-16931",
+      "capturedAt": "2026-10-27T21:24:24.242Z",
+      "sha256": "1f9c45a59fc83879506a2eca5f0d3050c0badd66f234ef702aea190e45cc230e",
+      "bytes": 79590
+    }
+  ],
+  "unavailable": [
+    {
+      "url": "https://uhuu.com/evento/rn/natal/paula-fernandes-30-e-poucos-anos-16929",
+      "status": 405
+    },
+    {
+      "url": "https://paulafernandes.com.br/",
+      "status": 403
+    },
+    {
+      "url": "https://paulafernandes.com.br/agenda/",
+      "status": 403
+    }
+  ],
+  "discoveryLimitations": [
+    "RioMar /teatro returned an empty card list; home did not expose a Paula link. Current-tour direct venue announcement used, no evergreen Paula discovery claimed."
+  ]
+}

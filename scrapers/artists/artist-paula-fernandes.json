@@ -1,0 +1,15 @@
+{
+  "id": "artist-paula-fernandes",
+  "domain": "riomarfortaleza.com.br",
+  "url": "https://riomarfortaleza.com.br/teatro/paula-fernandes-30-e-poucos-anos-16931",
+  "type": "custom_js",
+  "skipConditionalRequests": true,
+  "selectors": {
+    "eventBlock": ".l-eventos-interna__feature__text",
+    "artistNameFallback": "Paula Fernandes",
+    "date": "p",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "BR"
+  }
+}
