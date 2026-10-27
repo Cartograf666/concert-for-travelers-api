@@ -8,6 +8,7 @@ import { projectArtistIdentities } from '../src/pipeline/artist_identity.js';
 import { DEFAULT_MAX_FUTURE_DAYS, occurrenceDedupeKeys, publicationMaxFutureDays,
   publicationQualityDropReason, sourceActionUrl } from '../src/pipeline/publication_quality.js';
 import { publishArtistCatalog, publishConcerts } from '../src/generator/publish.js';
+import { isKnownVenueConflict } from '../src/pipeline/known_venue_conflicts.js';
 import { loadDenylistGuard } from '../src/pipeline/denylist.js';
 import type { Concert, RawConcert } from '../src/schemas/concert.js';
 import type { ProcessingDiagnostics } from '../src/observability/processing_diagnostics.js';
@@ -107,6 +108,7 @@ test('canonical catalog, master feed, autocomplete aliases and legacy per-artist
         assert.ok(entry.aliases.includes(alias));
         assert.ok(entry.legacySlugs.includes(slugify(alias)));
         assert.equal(index.artistAliases[slugify(alias)], entry.slug);
+        assert.equal(index.artistNameAliases[alias], entry.name);
         assert.deepEqual(await read(`artists/${slugify(alias)}.json`), canonical);
       }
     }
@@ -220,6 +222,8 @@ test('the planning policy is recorded and exact historical venue exclusions cann
   await withDb(async db => {
     const bad = row({ artist: 'Beth Hart', date: '2026-11-21', venue: 'Swiss Life Hall', city: 'Hannover',
       country: 'DE', originalSource: 'bandsintown.com' });
+    assert.equal(isKnownVenueConflict(bad, 'Beth Hart', bad.date, 'another-project'), false);
+    assert.equal(isKnownVenueConflict(bad, 'Beth Hart', bad.date, undefined, 'another-project'), false);
     const kept = await processConcerts([bad, { ...bad, date: '2026-11-22' }, { ...bad, venue: 'Another Hall' },
       { ...bad, originalSource: 'venue.example' }, { ...bad, city: 'Another City' }], db, BASE);
     assert.equal(kept.length, 4);

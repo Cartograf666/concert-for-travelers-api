@@ -65,6 +65,8 @@ export interface PublishIndex {
   cities: string[];
   /** Legacy per-artist slug -> canonical slug; aliases remain fetchable. */
   artistAliases?: Record<string, string>;
+  /** Proven legacy display name -> canonical name, independent of slug conventions. */
+  artistNameAliases?: Record<string, string>;
 }
 
 export interface ArtistCatalogEntry {
@@ -366,11 +368,13 @@ export async function publishConcerts(concerts: Concert[], outputDir: string, ap
   // Preserve existing bookmarked/loved-artist endpoints without duplicating
   // artists in the catalog/autocomplete or events in the master/city feeds.
   const artistAliases: Record<string, string> = {};
+  const artistNameAliases: Record<string, string> = {};
   for (const [name, aliases] of projection.compatibilityNames) {
     const canonicalSlug = slugify(name);
     const rows = concertsByArtist.get(canonicalSlug);
     if (!rows) continue;
     for (const alias of aliases) {
+      artistNameAliases[alias] = name;
       const oldSlug = slugify(alias);
       if (oldSlug === canonicalSlug || concertsByArtist.has(oldSlug)) continue;
       concertsByArtist.set(oldSlug, rows);
@@ -493,7 +497,8 @@ export async function publishConcerts(concerts: Concert[], outputDir: string, ap
     },
     artists: sortedArtists,
     cities: sortedCities,
-    ...(Object.keys(artistAliases).length ? { artistAliases } : {})
+    ...(Object.keys(artistAliases).length ? { artistAliases } : {}),
+    ...(Object.keys(artistNameAliases).length ? { artistNameAliases } : {})
   };
 
   await fs.writeFile(

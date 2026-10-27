@@ -71,10 +71,12 @@ test('copied official fields and flags on a different raw object do not inherit 
   try {
     const cached = official();
     const context = await buildOfficialArtistContext(cacheFor(cached, await scraperCacheFingerprint(CONFIG)), f.configsDir, Date.parse(NOW));
-    const spoof = { ...cached, official: true, venue: 'Spoof Hall' } as Partial<Concert>;
+    const spoof = { ...cached, official: true } as Partial<Concert>;
     assert.equal(context.has(spoof), false);
     const result = await processConcerts([ordinary(), spoof], f.approved, NOW, undefined, undefined, context);
-    assert.equal(result[0].venue, 'New Room');
+    assert.equal(result.length, 1);
+    assert.equal(result[0].originalSource, 'aggregator.example');
+    assert.equal(result[0].lat, 55.8);
   } finally { await f.cleanup(); }
 });
 
@@ -127,6 +129,9 @@ test('old cached content remains authoritative after successful verification and
     assert.equal(context.get(row)?.artist, 'Hue & Cry');
     const result = await processConcerts([ordinary(), row], f.approved, NOW, undefined, undefined, context);
     assert.equal(result[0].venue, 'New Room');
+    assert.equal(result.length, 1);
+    assert.equal(result[0].originalSource, 'hueandcry.co.uk');
+    assert.equal(result[0].lat, undefined);
   } finally { await f.cleanup(); }
 });
 
@@ -140,7 +145,9 @@ test('invalid official row is filtered, and untrusted/equal-rank duplicates reta
     assert.equal(result.length, 1);
     assert.equal(result[0].venue, 'New Room');
     const untrusted = await processConcerts([ordinary(), official()], f.approved, NOW);
-    assert.equal(untrusted[0].venue, 'New Room');
+    assert.equal(untrusted.length, 1);
+    assert.equal(untrusted[0].originalSource, 'aggregator.example');
+    assert.equal(untrusted[0].lat, 55.8);
   } finally { await f.cleanup(); }
 });
 
