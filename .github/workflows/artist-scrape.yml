@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: '0 4 * * *' # Daily, 04:00 UTC; capped attempts, not a full-list freshness SLA (docs/freshness-capacity-20261010.md)
   workflow_dispatch:
+    inputs:
+      artist_names_json:
+        description: 'Manual Bandsintown revalidation: JSON artist-name array; empty runs the ordinary full scraper'
+        required: false
+        default: ''
+        type: string
 
 permissions:
   contents: read
@@ -16,6 +22,10 @@ concurrency:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    env:
+      # Raw input is data, never shell source; schedules always use the full path.
+      ARTIST_TARGET_NAMES_JSON: ${{ github.event_name == 'workflow_dispatch' && inputs.artist_names_json || '' }}
+      BANDSINTOWN_MAX_PER_RUN: '800'
     timeout-minutes: 90 # can cover hundreds/thousands of artist configs; a wedged run must still not run forever
     steps:
       - name: Checkout repository
@@ -32,6 +42,7 @@ jobs:
 
       - name: Check for playwright_render scrapers
         id: check-playwright
+        if: env.ARTIST_TARGET_NAMES_JSON == ''
         run: |
           if grep -rl '"type"[[:space:]]*:[[:space:]]*"playwright_render"' scrapers/artists/*.json > /dev/null 2>&1; then
             echo "needed=true" >> "$GITHUB_OUTPUT"
@@ -94,13 +105,11 @@ jobs:
             eventbrite-cache-
 
       - name: Run artist tour-page + Bandsintown + Eventbrite scraper
+        if: env.ARTIST_TARGET_NAMES_JSON == ''
         env:
           # Optional: a real partner app_id if/when granted. Falls back to the public
           # widget app_id in code when unset. See src/engine/bandsintown.ts.
           BANDSINTOWN_APP_ID: ${{ secrets.BANDSINTOWN_APP_ID }}
-          # Batch size per run -- keeps each run gentle on the public feed; the
-          # queue advances by last attempt; failures never verify source freshness.
-          BANDSINTOWN_MAX_PER_RUN: '800'
           # Smaller/gentler cap than Bandsintown -- see src/engine/eventbrite.ts.
           EVENTBRITE_MAX_PER_RUN: '300'
           # This step's tour-page pass runs the exact same runner.ts as
@@ -120,15 +129,22 @@ jobs:
           GEMINI_API_KEYS: ${{ secrets.GEMINI_API_KEYS }}
         run: npm run scrape-artists
 
+      - name: Revalidate only requested Bandsintown artists
+        id: targeted
+        if: env.ARTIST_TARGET_NAMES_JSON != ''
+        env:
+          BANDSINTOWN_APP_ID: ${{ secrets.BANDSINTOWN_APP_ID }}
+        run: npx tsx src/scripts/targeted_artist_refresh.ts
+
       - name: Save artist scrape cache
-        if: always()
+        if: always() && env.ARTIST_TARGET_NAMES_JSON == ''
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: reports/artist-scrape-cache.json
           key: artist-scrape-cache-${{ github.run_id }}
 
       - name: Save artist run manifest
-        if: always()
+        if: always() && env.ARTIST_TARGET_NAMES_JSON == ''
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: |
@@ -137,14 +153,14 @@ jobs:
           key: artist-run-manifest-${{ github.run_id }}
 
       - name: Save Bandsintown cache
-        if: always()
+        if: always() && (env.ARTIST_TARGET_NAMES_JSON == '' || steps.targeted.outputs.cache_updated == 'true')
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: reports/bandsintown-cache.json
           key: bandsintown-cache-${{ github.run_id }}
 
       - name: Save Eventbrite cache
-        if: always()
+        if: always() && env.ARTIST_TARGET_NAMES_JSON == ''
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: reports/eventbrite-cache.json
@@ -160,6 +176,7 @@ jobs:
             reports/bandsintown-cache.json
             reports/eventbrite-cache.json
             reports/fail-log.json
+            reports/targeted-artist-refresh.json
             reports/artist-run-manifest.json
             reports/artist-source-health.json
           retention-days: 5
