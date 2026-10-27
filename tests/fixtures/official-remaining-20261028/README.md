@@ -1,3 +1,42 @@
+# King Gizzard continuation — current package
+
+This continuation supersedes the original five-source access gap for three dates:
+Radiant9June, Sequoie11June and Apollo20June now have guarded live extraction.
+Manchester22June and Bristol23June have a fresh normal Bandsintown response,
+explicitly an aggregator rather than independent official evidence.
+
+New configs/modules: `artist-king-gizzard-{radiant,sequoie,apollo}` in the normal
+artist loader. Venue/organizer URLs and captured-input SHA-256 are in
+`organizer-rescue-provenance.json`; Now Wave/Gigantic returned403, no repeat/bypass.
+`king-primary-live.json`: separate normal live runner run, three raw→three accepted
+by real artist DB. `king-bit-runtime.json`: exactly one normal collector call,
+maxPerRun1, fresh isolated empty cache,11raw events, healthy1attempt/0fallbacks;
+native response and endpoint recorded without app key. Its `isolatedCache` is
+evidence only, never read by runtime or injected into shared caches.
+`king-target-recovery.json` maps five target rows to three primary/two BIT raw rows.
+
+Run offline regressions with:
+
+```sh
+SCRAPER_ALLOW_LOCAL_HOSTS=1 node --import tsx --test tests/king_gizzard_primary_20261028.test.ts tests/king_gizzard_bit_replay_20261028.test.ts tests/official_remaining_coverage_20261028.test.ts
+```
+
+The BIT test replays captured native input through the actual default collector,
+real read-only artist DB, dedup and publisher into a temporary directory. It asserts
+five exact aggregator targets and canonical artist identity. It makes no live call.
+The optional `capture-king-bit.ts` makes one scoped fresh call; do not dispatch it as
+a second artist sweep. `verify-king-live.ts` rechecks only three primary sources.
+
+Root owns final40-replay and recurring priority/daily integration. A local probe
+confirmed35primary+5BIT covers all40 after publisher. Adding three primary configs
+provides38primary source observations; current shared dedup retains BIT as winner
+for Sequoie/Apollo and keeps Caluire/Lyon variants separate, resulting in36primary/
+4BIT *output provenance*,77total rows. This package makes no shared dedup change or
+claim of38primary publisher rows. Full probe evidence is in the coordinator report.
+The older files/notes below preserve the initial6/11 package, not current gaps.
+
+---
+
 # Official remaining coverage recovery — 28 October 2026 (MSK)
 
 Scope: five assigned artists / eleven exact rows copied from the authoritative

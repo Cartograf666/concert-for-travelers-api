@@ -1,0 +1,38 @@
+[
+  {
+    "id": "king-radiant",
+    "url": "https://radiant-bellevue.fr/spectacles/king-gizzard-the-lizard-wizard/",
+    "checkedAt": "2026-10-27T21:33:37.292Z",
+    "bytes": 91743,
+    "sha256": "e266be984499f6983fca2a011b31fd5f130677221a8be123115e7a27dfcad735",
+    "backend": "axios guarded fetchHtmlForHealing"
+  },
+  {
+    "id": "king-sequoie",
+    "url": "https://www.sequoiemusicpark.com/",
+    "checkedAt": "2026-10-27T21:33:37.933Z",
+    "bytes": 597870,
+    "sha256": "5bdc803468c80f1b712a9859e2bad27ff19de6f9f2d4c9c4f27ed8fe72dc1a45",
+    "backend": "axios guarded fetchHtmlForHealing"
+  },
+  {
+    "id": "king-apollo",
+    "url": "https://www.eventimapollo.com/events/king-gizzard-the-lizard-wizard/",
+    "checkedAt": "2026-10-27T21:33:38.378Z",
+    "bytes": 63431,
+    "sha256": "daf1e49d34eee7c89b8cce3c3b4fd93ef0aab46d0946b8cbc9b9e741452f6084",
+    "backend": "axios guarded fetchHtmlForHealing"
+  },
+  {
+    "id": "king-nowwave",
+    "url": "https://www.gigantic.com/promoter/now-wave",
+    "checkedAt": "2026-10-27T21:33:38.775Z",
+    "error": "AxiosError: Request failed with status code 403"
+  },
+  {
+    "id": "king-gigantic",
+    "url": "https://www.gigantic.com/king-gizzard-the-lizard-wizard-tickets",
+    "checkedAt": "2026-10-27T21:33:39.128Z",
+    "error": "AxiosError: Request failed with status code 403"
+  }
+]

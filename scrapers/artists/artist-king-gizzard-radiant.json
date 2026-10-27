@@ -1,0 +1,14 @@
+{
+  "id": "artist-king-gizzard-radiant",
+  "domain": "radiant-bellevue.fr",
+  "url": "https://radiant-bellevue.fr/spectacles/king-gizzard-the-lizard-wizard/",
+  "type": "custom_js",
+  "selectors": {
+    "eventBlock": "h1",
+    "date": "time",
+    "artistNameFallback": "King Gizzard & The Lizard Wizard",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "FR"
+  }
+}

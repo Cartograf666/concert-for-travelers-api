@@ -1,0 +1,870 @@
+{
+  "startedAt": "2026-10-27T21:33:50.692Z",
+  "completedAt": "2026-10-27T21:33:52.228Z",
+  "sourceClass": "aggregator-bandsintown",
+  "independentOfficial": false,
+  "scope": {
+    "artists": [
+      "King Gizzard & The Lizard Wizard"
+    ],
+    "maxPerRun": 1,
+    "initialCacheEntries": 0
+  },
+  "health": {
+    "schemaVersion": 1,
+    "generatedAt": "2026-10-27T21:33:50.693Z",
+    "source": "bandsintown",
+    "state": "healthy",
+    "counts": {
+      "targets": 1,
+      "selected": 1,
+      "attempted": 1,
+      "succeeded": 1,
+      "failed": 0,
+      "empty": 0,
+      "unavailable": 0,
+      "skippedFresh": 0,
+      "missing": 0,
+      "cacheFallbacks": 0,
+      "partial": 0
+    },
+    "freshness": {
+      "basis": "verifiedAt",
+      "classification": "revisit_interval",
+      "revisitIntervalDays": 6,
+      "intervalMeaning": "minimum_revisit_interval_not_stale_sla",
+      "fresh": 1,
+      "old": 0,
+      "unknown": 0,
+      "latestVerifiedAt": "2026-10-27T21:33:50.693Z",
+      "p50Days": 0,
+      "p95Days": 0,
+      "maxDays": 0
+    },
+    "completeness": "complete",
+    "issues": []
+  },
+  "native": [
+    {
+      "endpoint": "https://rest.bandsintown.com/artists/King%20Gizzard%20%26%20The%20Lizard%20Wizard/events",
+      "status": 200,
+      "receivedAt": "2026-10-27T21:33:51.127Z",
+      "data": [
+        {
+          "artist": {
+            "artist_optin_show_phone_number": false,
+            "facebook_page_url": "",
+            "id": "2117024",
+            "image_url": "https://photos.bandsintown.com/large/17347168.jpeg",
+            "links": [
+              {
+                "type": "website",
+                "url": "http://kinggizzardandthelizardwizard.com/"
+              },
+              {
+                "type": "facebook",
+                "url": "https://www.facebook.com/kinggizzardandthelizardwizard/"
+              },
+              {
+                "type": "amazon",
+                "url": "https://music.amazon.com/artists/B006GKEIH4"
+              },
+              {
+                "type": "shazam",
+                "url": "https://www.shazam.com/artist/-/440629621"
+              },
+              {
+                "type": "itunes",
+                "url": "https://music.apple.com/artist/440629621"
+              },
+              {
+                "type": "spotify",
+                "url": "https://open.spotify.com/artist/6XYvaoDGE0VmRt83Jss9Sn"
+              },
+              {
+                "type": "instagram",
+                "url": "https://www.instagram.com/kinggizzard/"
+              },
+              {
+                "type": "twitter",
+                "url": "https://x.com/kinggizzard"
+              },
+              {
+                "type": "tiktok",
+                "url": "https://www.tiktok.com/@gizzardtok"
+              },
+              {
+                "type": "youtube",
+                "url": "https://www.youtube.com/channel/UCNiyS8zr2RIddszLwtoyUow"
+              }
+            ],
+            "mbid": "",
+            "name": "King Gizzard & The Lizard Wizard",
+            "options": {
+              "display_listen_unit": false
+            },
+            "show_multi_ticket": true,
+            "support_url": "",
+            "thumb_url": "https://photos.bandsintown.com/thumb/17347168.jpeg",
+            "tracker_count": 605428,
+            "tracking": [],
+            "upcoming_event_count": 11,
+            "url": "https://www.bandsintown.com/a/2117024?came_from=267&app_id=js_127.0.0.1"
+          },
+          "artist_id": "2117024",
+          "bandsintown_plus": false,
+          "datetime": "2027-06-03T19:00:00",
+          "datetime_display_rule": "range",
+          "description": "",
+          "ends_at": "2027-06-05T23:59:59",
+          "festival_datetime_display_rule": "range",
+          "festival_end_date": "2027-06-05",
+          "festival_start_date": "2027-06-03",
+          "free": false,
+          "id": "108993073",
+          "lineup": [
+            "King Gizzard & The Lizard Wizard"
+          ],
+          "offers": [
+            {
+              "status": "available",
+              "type": "Tickets",
+              "url": "https://www.bandsintown.com/t/108993073?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket"
+            }
+          ],
+          "on_sale_datetime": "",
+          "presale": "",
+          "sold_out": false,
+          "starts_at": "2027-06-03T19:00:00",
+          "title": "",
+          "url": "https://www.bandsintown.com/e/108993073?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+          "venue": {
+            "city": "Eixample",
+            "country": "Spain",
+            "latitude": "41.38896",
+            "location": "Eixample, Spain",
+            "longitude": "2.16179",
+            "name": "Primavera Sound - Barcelona, Spain",
+            "postal_code": "",
+            "region": "",
+            "street_address": ""
+          }
+        },
+        {
+          "artist_id": "2117024",
+          "bandsintown_plus": false,
+          "datetime": "2027-06-08T19:00:00",
+          "datetime_display_rule": "datetime",
+          "description": "",
+          "ends_at": "",
+          "festival_datetime_display_rule": "",
+          "festival_end_date": "",
+          "festival_start_date": "",
+          "free": false,
+          "id": "109083164",
+          "lineup": [
+            "King Gizzard & The Lizard Wizard"
+          ],
+          "offers": [
+            {
+              "status": "available",
+              "type": "Tickets",
+              "url": "https://www.bandsintown.com/t/109083164?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket"
+            }
+          ],
+          "on_sale_datetime": "",
+          "presale": "",
+          "sold_out": false,
+          "starts_at": "2027-06-08T19:00:00",
+          "title": "",
+          "url": "https://www.bandsintown.com/e/109083164?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+          "venue": {
+            "city": "Ramonville-saint-agne",
+            "country": "France",
+            "latitude": "43.5480492",
+            "location": "Ramonville-Saint-Agne, France",
+            "longitude": "1.4854047",
+            "name": "Le Bikini",
+            "postal_code": "31520",
+            "region": "",
+            "street_address": "Parc Technologique du Canal, Rue Théodore Monod"
+          }
+        },
+        {
+          "artist_id": "2117024",
+          "bandsintown_plus": false,
+          "datetime": "2027-06-09T19:00:00",
+          "datetime_display_rule": "datetime",
+          "description": "",
+          "ends_at": "",
+          "festival_datetime_display_rule": "",
+          "festival_end_date": "",
+          "festival_start_date": "",
+          "free": false,
+          "id": "109083165",
+          "lineup": [
+            "King Gizzard & The Lizard Wizard"
+          ],
+          "offers": [
+            {
+              "status": "available",
+              "type": "Tickets",
+              "url": "https://www.bandsintown.com/t/109083165?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket"
+            }
+          ],
+          "on_sale_datetime": "",
+          "presale": "",
+          "sold_out": false,
+          "starts_at": "2027-06-09T19:00:00",
+          "title": "",
+          "url": "https://www.bandsintown.com/e/109083165?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+          "venue": {
+            "city": "Lyon 01",
+            "country": "France",
+            "latitude": "45.76758",
+            "location": "Lyon 01, France",
+            "longitude": "4.8345",
+            "name": "Radiant - Bellevue",
+            "postal_code": "",
+            "region": "",
+            "street_address": ""
+          }
+        },
+        {
+          "artist_id": "2117024",
+          "bandsintown_plus": false,
+          "datetime": "2027-06-11T19:00:00",
+          "datetime_display_rule": "range",
+          "description": "",
+          "ends_at": "2027-06-13T23:59:59",
+          "festival_datetime_display_rule": "range",
+          "festival_end_date": "2027-06-13",
+          "festival_start_date": "2027-06-11",
+          "free": false,
+          "id": "109084259",
+          "lineup": [
+            "King Gizzard & The Lizard Wizard"
+          ],
+          "offers": [],
+          "on_sale_datetime": "",
+          "presale": "",
+          "sold_out": false,
+          "starts_at": "2027-06-11T19:00:00",
+          "title": "Best Kept Secret Festival 2027",
+          "url": "https://www.bandsintown.com/e/109084259?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+          "venue": {
+            "city": "Hilvarenbeek",
+            "country": "Netherlands",
+            "latitude": "51.48583",
+            "location": "Hilvarenbeek, Netherlands",
+            "longitude": "5.1375",
+            "name": "Best Kept Secret Festival 2027",
+            "postal_code": "",
+            "region": "",
+            "street_address": ""
+          }
+        },
+        {
+          "artist_id": "2117024",
+          "bandsintown_plus": false,
+          "datetime": "2027-06-11T19:00:00",
+          "datetime_display_rule": "datetime",
+          "description": "",
+          "ends_at": "",
+          "festival_datetime_display_rule": "",
+          "festival_end_date": "",
+          "festival_start_date": "",
+          "free": false,
+          "id": "109083166",
+          "lineup": [
+            "King Gizzard & The Lizard Wizard"
+          ],
+          "offers": [
+            {
+              "status": "available",
+              "type": "Tickets",
+              "url": "https://www.bandsintown.com/t/109083166?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket"
+            }
+          ],
+          "on_sale_datetime": "",
+          "presale": "",
+          "sold_out": false,
+          "starts_at": "2027-06-11T19:00:00",
+          "title": "",
+          "url": "https://www.bandsintown.com/e/109083166?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+          "venue": {
+            "city": "Bologna",
+            "country": "Italy",
+            "latitude": "44.5257563",
+            "location": "Bologna, Italy",
+            "longitude": "11.3523219",
+            "name": "Sequoie Music Park",
+            "postal_code": "40128",
+            "region": "",
+            "street_address": "Via di Saliceto"
+          }
+        },
+        {
+          "artist_id": "2117024",
+          "bandsintown_plus": false,
+          "datetime": "2027-06-15T19:00:00",
+          "datetime_display_rule": "datetime",
+          "description": "",
+          "ends_at": "",
+          "festival_datetime_display_rule": "",
+          "festival_end_date": "",
+          "festival_start_date": "",
+          "free": false,
+          "id": "109083171",
+          "lineup": [
+            "King Gizzard & The Lizard Wizard"
+          ],
+          "offers": [
+            {
+              "status": "available",
+              "type": "Tickets",
+              "url": "https://www.bandsintown.com/t/109083171?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket"
+            }
+          ],
+          "on_sale_datetime": "",
+          "presale": "",
+          "sold_out": false,
+          "starts_at": "2027-06-15T19:00:00",
+          "title": "",
+          "url": "https://www.bandsintown.com/e/109083171?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+          "venue": {
+            "city": "Antwerpen",
+            "country": "Belgium",
+            "latitude": "51.215",
+            "location": "Antwerpen, Belgium",
+            "longitude": "4.4705556",
+            "name": "OLT Rivierenhof",
+            "postal_code": "2100",
+            "region": "",
+            "street_address": "Turnhoutsebaan 246"
+          }
+        },
+        {
+          "artist_id": "2117024",
+          "bandsintown_plus": false,
+          "datetime": "2027-06-16T19:00:00",
+          "datetime_display_rule": "datetime",
+          "description": "",
+          "ends_at": "",
+          "festival_datetime_display_rule": "",
+          "festival_end_date": "",
+          "festival_start_date": "",
+          "free": false,
+          "id": "109083172",
+          "lineup": [
+            "King Gizzard & The Lizard Wizard"
+          ],
+          "offers": [
+            {
+              "status": "available",
+              "type": "Tickets",
+              "url": "https://www.bandsintown.com/t/109083172?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket"
+            }
+          ],
+          "on_sale_datetime": "",
+          "presale": "",
+          "sold_out": false,
+          "starts_at": "2027-06-16T19:00:00",
+          "title": "",
+          "url": "https://www.bandsintown.com/e/109083172?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+          "venue": {
+            "city": "Antwerpen",
+            "country": "Belgium",
+            "latitude": "51.215",
+            "location": "Antwerpen, Belgium",
+            "longitude": "4.4705556",
+            "name": "OLT Rivierenhof",
+            "postal_code": "2100",
+            "region": "",
+            "street_address": "Turnhoutsebaan 246"
+          }
+        },
+        {
+          "artist_id": "2117024",
+          "bandsintown_plus": false,
+          "datetime": "2027-06-18T19:00:00",
+          "datetime_display_rule": "datetime",
+          "description": "",
+          "ends_at": "",
+          "festival_datetime_display_rule": "",
+          "festival_end_date": "",
+          "festival_start_date": "",
+          "free": false,
+          "id": "109083173",
+          "lineup": [
+            "King Gizzard & The Lizard Wizard"
+          ],
+          "offers": [
+            {
+              "status": "available",
+              "type": "Tickets",
+              "url": "https://www.bandsintown.com/t/109083173?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket"
+            }
+          ],
+          "on_sale_datetime": "",
+          "presale": "",
+          "sold_out": false,
+          "starts_at": "2027-06-18T19:00:00",
+          "title": "",
+          "url": "https://www.bandsintown.com/e/109083173?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+          "venue": {
+            "city": "Paris",
+            "country": "France",
+            "latitude": "48.89420459999999",
+            "location": "Paris, France",
+            "longitude": "2.3932285",
+            "name": "Zenith",
+            "postal_code": "75019",
+            "region": "",
+            "street_address": "211 Avenue Jean Jaurès"
+          }
+        },
+        {
+          "artist_id": "2117024",
+          "bandsintown_plus": false,
+          "datetime": "2027-06-20T19:00:00",
+          "datetime_display_rule": "datetime",
+          "description": "",
+          "ends_at": "",
+          "festival_datetime_display_rule": "",
+          "festival_end_date": "",
+          "festival_start_date": "",
+          "free": false,
+          "id": "109083175",
+          "lineup": [
+            "King Gizzard & The Lizard Wizard"
+          ],
+          "offers": [
+            {
+              "status": "available",
+              "type": "Tickets",
+              "url": "https://www.bandsintown.com/t/109083175?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket"
+            }
+          ],
+          "on_sale_datetime": "",
+          "presale": "",
+          "sold_out": false,
+          "starts_at": "2027-06-20T19:00:00",
+          "title": "",
+          "url": "https://www.bandsintown.com/e/109083175?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+          "venue": {
+            "city": "London",
+            "country": "United Kingdom",
+            "latitude": "51.4909927",
+            "location": "London, United Kingdom",
+            "longitude": "-0.2246102",
+            "name": "Eventim Apollo",
+            "postal_code": "W6 9QH",
+            "region": "",
+            "street_address": "45 Queen Caroline St"
+          }
+        },
+        {
+          "artist_id": "2117024",
+          "bandsintown_plus": false,
+          "datetime": "2027-06-22T19:00:00",
+          "datetime_display_rule": "datetime",
+          "description": "",
+          "ends_at": "",
+          "festival_datetime_display_rule": "",
+          "festival_end_date": "",
+          "festival_start_date": "",
+          "free": false,
+          "id": "109083179",
+          "lineup": [
+            "King Gizzard & The Lizard Wizard"
+          ],
+          "offers": [
+            {
+              "status": "available",
+              "type": "Tickets",
+              "url": "https://www.bandsintown.com/t/109083179?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket"
+            }
+          ],
+          "on_sale_datetime": "",
+          "presale": "",
+          "sold_out": false,
+          "starts_at": "2027-06-22T19:00:00",
+          "title": "",
+          "url": "https://www.bandsintown.com/e/109083179?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+          "venue": {
+            "city": "Manchester City Centre",
+            "country": "United Kingdom",
+            "latitude": "53.48097",
+            "location": "Manchester City Centre, United Kingdom",
+            "longitude": "-2.24555",
+            "name": "BEC Arena Outside",
+            "postal_code": "",
+            "region": "",
+            "street_address": ""
+          }
+        },
+        {
+          "artist_id": "2117024",
+          "bandsintown_plus": false,
+          "datetime": "2027-06-23T19:00:00",
+          "datetime_display_rule": "datetime",
+          "description": "",
+          "ends_at": "",
+          "festival_datetime_display_rule": "",
+          "festival_end_date": "",
+          "festival_start_date": "",
+          "free": false,
+          "id": "109083180",
+          "lineup": [
+            "King Gizzard & The Lizard Wizard"
+          ],
+          "offers": [
+            {
+              "status": "available",
+              "type": "Tickets",
+              "url": "https://www.bandsintown.com/t/109083180?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket"
+            }
+          ],
+          "on_sale_datetime": "",
+          "presale": "",
+          "sold_out": false,
+          "starts_at": "2027-06-23T19:00:00",
+          "title": "",
+          "url": "https://www.bandsintown.com/e/109083180?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+          "venue": {
+            "city": "Bristol",
+            "country": "United Kingdom",
+            "latitude": "51.45523",
+            "location": "Bristol, United Kingdom",
+            "longitude": "-2.59665",
+            "name": "Bristol Sounds",
+            "postal_code": "",
+            "region": "",
+            "street_address": ""
+          }
+        }
+      ]
+    }
+  ],
+  "raw": [
+    {
+      "artist": "King Gizzard & The Lizard Wizard",
+      "date": "2027-06-03",
+      "startTime": "19:00",
+      "venue": "Primavera Sound - Barcelona, Spain",
+      "city": "Eixample",
+      "country": "ES",
+      "lat": 41.38896,
+      "lng": 2.16179,
+      "ticketUrl": "https://www.bandsintown.com/t/108993073?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+      "sourceEventUrl": "https://www.bandsintown.com/e/108993073?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+      "originalSource": "bandsintown.com",
+      "scrapedAt": "2026-10-27T21:33:50.693Z"
+    },
+    {
+      "artist": "King Gizzard & The Lizard Wizard",
+      "date": "2027-06-08",
+      "startTime": "19:00",
+      "venue": "Le Bikini",
+      "city": "Ramonville-saint-agne",
+      "country": "FR",
+      "lat": 43.5480492,
+      "lng": 1.4854047,
+      "ticketUrl": "https://www.bandsintown.com/t/109083164?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+      "sourceEventUrl": "https://www.bandsintown.com/e/109083164?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+      "originalSource": "bandsintown.com",
+      "scrapedAt": "2026-10-27T21:33:50.693Z"
+    },
+    {
+      "artist": "King Gizzard & The Lizard Wizard",
+      "date": "2027-06-09",
+      "startTime": "19:00",
+      "venue": "Radiant - Bellevue",
+      "city": "Lyon 01",
+      "country": "FR",
+      "lat": 45.76758,
+      "lng": 4.8345,
+      "ticketUrl": "https://www.bandsintown.com/t/109083165?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+      "sourceEventUrl": "https://www.bandsintown.com/e/109083165?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+      "originalSource": "bandsintown.com",
+      "scrapedAt": "2026-10-27T21:33:50.693Z"
+    },
+    {
+      "artist": "King Gizzard & The Lizard Wizard",
+      "date": "2027-06-11",
+      "startTime": "19:00",
+      "venue": "Best Kept Secret Festival 2027",
+      "city": "Hilvarenbeek",
+      "country": "NL",
+      "lat": 51.48583,
+      "lng": 5.1375,
+      "ticketUrl": "https://www.bandsintown.com/e/109084259?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+      "sourceEventUrl": "https://www.bandsintown.com/e/109084259?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+      "originalSource": "bandsintown.com",
+      "scrapedAt": "2026-10-27T21:33:50.693Z"
+    },
+    {
+      "artist": "King Gizzard & The Lizard Wizard",
+      "date": "2027-06-11",
+      "startTime": "19:00",
+      "venue": "Sequoie Music Park",
+      "city": "Bologna",
+      "country": "IT",
+      "lat": 44.5257563,
+      "lng": 11.3523219,
+      "ticketUrl": "https://www.bandsintown.com/t/109083166?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+      "sourceEventUrl": "https://www.bandsintown.com/e/109083166?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+      "originalSource": "bandsintown.com",
+      "scrapedAt": "2026-10-27T21:33:50.693Z"
+    },
+    {
+      "artist": "King Gizzard & The Lizard Wizard",
+      "date": "2027-06-15",
+      "startTime": "19:00",
+      "venue": "OLT Rivierenhof",
+      "city": "Antwerpen",
+      "country": "BE",
+      "lat": 51.215,
+      "lng": 4.4705556,
+      "ticketUrl": "https://www.bandsintown.com/t/109083171?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+      "sourceEventUrl": "https://www.bandsintown.com/e/109083171?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+      "originalSource": "bandsintown.com",
+      "scrapedAt": "2026-10-27T21:33:50.693Z"
+    },
+    {
+      "artist": "King Gizzard & The Lizard Wizard",
+      "date": "2027-06-16",
+      "startTime": "19:00",
+      "venue": "OLT Rivierenhof",
+      "city": "Antwerpen",
+      "country": "BE",
+      "lat": 51.215,
+      "lng": 4.4705556,
+      "ticketUrl": "https://www.bandsintown.com/t/109083172?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+      "sourceEventUrl": "https://www.bandsintown.com/e/109083172?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+      "originalSource": "bandsintown.com",
+      "scrapedAt": "2026-10-27T21:33:50.693Z"
+    },
+    {
+      "artist": "King Gizzard & The Lizard Wizard",
+      "date": "2027-06-18",
+      "startTime": "19:00",
+      "venue": "Zenith",
+      "city": "Paris",
+      "country": "FR",
+      "lat": 48.89420459999999,
+      "lng": 2.3932285,
+      "ticketUrl": "https://www.bandsintown.com/t/109083173?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+      "sourceEventUrl": "https://www.bandsintown.com/e/109083173?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+      "originalSource": "bandsintown.com",
+      "scrapedAt": "2026-10-27T21:33:50.693Z"
+    },
+    {
+      "artist": "King Gizzard & The Lizard Wizard",
+      "date": "2027-06-20",
+      "startTime": "19:00",
+      "venue": "Eventim Apollo",
+      "city": "London",
+      "country": "GB",
+      "lat": 51.4909927,
+      "lng": -0.2246102,
+      "ticketUrl": "https://www.bandsintown.com/t/109083175?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+      "sourceEventUrl": "https://www.bandsintown.com/e/109083175?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+      "originalSource": "bandsintown.com",
+      "scrapedAt": "2026-10-27T21:33:50.693Z"
+    },
+    {
+      "artist": "King Gizzard & The Lizard Wizard",
+      "date": "2027-06-22",
+      "startTime": "19:00",
+      "venue": "BEC Arena Outside",
+      "city": "Manchester City Centre",
+      "country": "GB",
+      "lat": 53.48097,
+      "lng": -2.24555,
+      "ticketUrl": "https://www.bandsintown.com/t/109083179?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+      "sourceEventUrl": "https://www.bandsintown.com/e/109083179?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+      "originalSource": "bandsintown.com",
+      "scrapedAt": "2026-10-27T21:33:50.693Z"
+    },
+    {
+      "artist": "King Gizzard & The Lizard Wizard",
+      "date": "2027-06-23",
+      "startTime": "19:00",
+      "venue": "Bristol Sounds",
+      "city": "Bristol",
+      "country": "GB",
+      "lat": 51.45523,
+      "lng": -2.59665,
+      "ticketUrl": "https://www.bandsintown.com/t/109083180?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+      "sourceEventUrl": "https://www.bandsintown.com/e/109083180?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+      "originalSource": "bandsintown.com",
+      "scrapedAt": "2026-10-27T21:33:50.693Z"
+    }
+  ],
+  "isolatedCache": {
+    "King Gizzard & The Lizard Wizard": {
+      "fetchedAt": "2026-10-27T21:33:50.693Z",
+      "attemptedAt": "2026-10-27T21:33:50.693Z",
+      "verifiedAt": "2026-10-27T21:33:50.693Z",
+      "lastOutcome": "events",
+      "concerts": [
+        {
+          "artist": "King Gizzard & The Lizard Wizard",
+          "date": "2027-06-03",
+          "startTime": "19:00",
+          "venue": "Primavera Sound - Barcelona, Spain",
+          "city": "Eixample",
+          "country": "ES",
+          "lat": 41.38896,
+          "lng": 2.16179,
+          "ticketUrl": "https://www.bandsintown.com/t/108993073?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+          "sourceEventUrl": "https://www.bandsintown.com/e/108993073?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+          "originalSource": "bandsintown.com",
+          "scrapedAt": "2026-10-27T21:33:50.693Z"
+        },
+        {
+          "artist": "King Gizzard & The Lizard Wizard",
+          "date": "2027-06-08",
+          "startTime": "19:00",
+          "venue": "Le Bikini",
+          "city": "Ramonville-saint-agne",
+          "country": "FR",
+          "lat": 43.5480492,
+          "lng": 1.4854047,
+          "ticketUrl": "https://www.bandsintown.com/t/109083164?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+          "sourceEventUrl": "https://www.bandsintown.com/e/109083164?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+          "originalSource": "bandsintown.com",
+          "scrapedAt": "2026-10-27T21:33:50.693Z"
+        },
+        {
+          "artist": "King Gizzard & The Lizard Wizard",
+          "date": "2027-06-09",
+          "startTime": "19:00",
+          "venue": "Radiant - Bellevue",
+          "city": "Lyon 01",
+          "country": "FR",
+          "lat": 45.76758,
+          "lng": 4.8345,
+          "ticketUrl": "https://www.bandsintown.com/t/109083165?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+          "sourceEventUrl": "https://www.bandsintown.com/e/109083165?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+          "originalSource": "bandsintown.com",
+          "scrapedAt": "2026-10-27T21:33:50.693Z"
+        },
+        {
+          "artist": "King Gizzard & The Lizard Wizard",
+          "date": "2027-06-11",
+          "startTime": "19:00",
+          "venue": "Best Kept Secret Festival 2027",
+          "city": "Hilvarenbeek",
+          "country": "NL",
+          "lat": 51.48583,
+          "lng": 5.1375,
+          "ticketUrl": "https://www.bandsintown.com/e/109084259?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+          "sourceEventUrl": "https://www.bandsintown.com/e/109084259?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+          "originalSource": "bandsintown.com",
+          "scrapedAt": "2026-10-27T21:33:50.693Z"
+        },
+        {
+          "artist": "King Gizzard & The Lizard Wizard",
+          "date": "2027-06-11",
+          "startTime": "19:00",
+          "venue": "Sequoie Music Park",
+          "city": "Bologna",
+          "country": "IT",
+          "lat": 44.5257563,
+          "lng": 11.3523219,
+          "ticketUrl": "https://www.bandsintown.com/t/109083166?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+          "sourceEventUrl": "https://www.bandsintown.com/e/109083166?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+          "originalSource": "bandsintown.com",
+          "scrapedAt": "2026-10-27T21:33:50.693Z"
+        },
+        {
+          "artist": "King Gizzard & The Lizard Wizard",
+          "date": "2027-06-15",
+          "startTime": "19:00",
+          "venue": "OLT Rivierenhof",
+          "city": "Antwerpen",
+          "country": "BE",
+          "lat": 51.215,
+          "lng": 4.4705556,
+          "ticketUrl": "https://www.bandsintown.com/t/109083171?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+          "sourceEventUrl": "https://www.bandsintown.com/e/109083171?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+          "originalSource": "bandsintown.com",
+          "scrapedAt": "2026-10-27T21:33:50.693Z"
+        },
+        {
+          "artist": "King Gizzard & The Lizard Wizard",
+          "date": "2027-06-16",
+          "startTime": "19:00",
+          "venue": "OLT Rivierenhof",
+          "city": "Antwerpen",
+          "country": "BE",
+          "lat": 51.215,
+          "lng": 4.4705556,
+          "ticketUrl": "https://www.bandsintown.com/t/109083172?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+          "sourceEventUrl": "https://www.bandsintown.com/e/109083172?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+          "originalSource": "bandsintown.com",
+          "scrapedAt": "2026-10-27T21:33:50.693Z"
+        },
+        {
+          "artist": "King Gizzard & The Lizard Wizard",
+          "date": "2027-06-18",
+          "startTime": "19:00",
+          "venue": "Zenith",
+          "city": "Paris",
+          "country": "FR",
+          "lat": 48.89420459999999,
+          "lng": 2.3932285,
+          "ticketUrl": "https://www.bandsintown.com/t/109083173?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+          "sourceEventUrl": "https://www.bandsintown.com/e/109083173?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+          "originalSource": "bandsintown.com",
+          "scrapedAt": "2026-10-27T21:33:50.693Z"
+        },
+        {
+          "artist": "King Gizzard & The Lizard Wizard",
+          "date": "2027-06-20",
+          "startTime": "19:00",
+          "venue": "Eventim Apollo",
+          "city": "London",
+          "country": "GB",
+          "lat": 51.4909927,
+          "lng": -0.2246102,
+          "ticketUrl": "https://www.bandsintown.com/t/109083175?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+          "sourceEventUrl": "https://www.bandsintown.com/e/109083175?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+          "originalSource": "bandsintown.com",
+          "scrapedAt": "2026-10-27T21:33:50.693Z"
+        },
+        {
+          "artist": "King Gizzard & The Lizard Wizard",
+          "date": "2027-06-22",
+          "startTime": "19:00",
+          "venue": "BEC Arena Outside",
+          "city": "Manchester City Centre",
+          "country": "GB",
+          "lat": 53.48097,
+          "lng": -2.24555,
+          "ticketUrl": "https://www.bandsintown.com/t/109083179?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+          "sourceEventUrl": "https://www.bandsintown.com/e/109083179?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+          "originalSource": "bandsintown.com",
+          "scrapedAt": "2026-10-27T21:33:50.693Z"
+        },
+        {
+          "artist": "King Gizzard & The Lizard Wizard",
+          "date": "2027-06-23",
+          "startTime": "19:00",
+          "venue": "Bristol Sounds",
+          "city": "Bristol",
+          "country": "GB",
+          "lat": 51.45523,
+          "lng": -2.59665,
+          "ticketUrl": "https://www.bandsintown.com/t/109083180?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+          "sourceEventUrl": "https://www.bandsintown.com/e/109083180?app_id=js_127.0.0.1&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+          "originalSource": "bandsintown.com",
+          "scrapedAt": "2026-10-27T21:33:50.693Z"
+        }
+      ]
+    }
+  }
+}
