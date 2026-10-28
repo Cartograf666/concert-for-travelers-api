@@ -1,34 +1,129 @@
 {
-  "digest": "67fc119b49a4b4aa8cc31f7da00a415d7b44512bc3b568bbdfa7fd93ba239839",
+  "digest": "fdae20437f869c79c9dd58831194b541ea8cd4a29eec5296e264b1a871bb39ea",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "c57843db605acf6755273d3166e6a042ec9e60c0048ad024262b75e522c9eac3",
+      "digest": "34f4a6522cad74fe6470ba7f74f27491d91150eba34cfe682344188ee162053d",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "8852577c-9708-4416-b3f2-24021c220e1e",
-        "inputHash": "ac4b178c5106bd01b1f3f1d791c2b94e73792e2a1869bb4530a9e6398bf2425e",
+        "id": "9c74f6e1-07dc-4867-a071-05f4cb1a9e5b",
+        "inputHash": "eb8d0eb4f33b2ecd2e32f4fa0a00790729b59064e0b6c9749ad54e4e1b11e1db",
         "candidates": [
           {
-            "name": "Adept",
-            "website": "http://www.adeptofficial.com/"
+            "name": "Plastics",
+            "website": "http://www.plastics.jp/"
           },
           {
-            "name": "D1MA",
-            "website": "https://d1ma.ru/"
+            "name": "Yamantaka Eye",
+            "website": "http://www.eyyam.com/"
           },
           {
-            "name": "Nelli Matula",
-            "website": "https://www.nellimatula.fi/"
+            "name": "Beth Gibbons",
+            "website": "https://bethgibbons.net/"
           },
           {
-            "name": "Grupo Play",
-            "website": "http://www.grupoplayoficial.com.ar/"
+            "name": "Blasted Mechanism",
+            "website": "http://www.blastedmechanism.com"
+          },
+          {
+            "name": "Blood Sweat & Tears",
+            "website": "https://www.bloodsweatandtears.com/"
+          },
+          {
+            "name": "Booker T Jones",
+            "website": "https://bookert.com"
+          },
+          {
+            "name": "Robert Irving III",
+            "website": "https://www.robertirvingiii.com/"
+          },
+          {
+            "name": "Carlos Santana",
+            "website": "http://www.santana.com/"
+          },
+          {
+            "name": "KeeN",
+            "website": "http://keen-music.ru"
+          },
+          {
+            "name": "KT Tunstall",
+            "website": "https://www.kttunstall.com/"
+          },
+          {
+            "name": "Salt 'N' Pepa",
+            "website": "https://www.saltnpepa.com"
+          },
+          {
+            "name": "Doof",
+            "website": "https://nickbarbermusic.uk/"
+          },
+          {
+            "name": "Drive By Truckers",
+            "website": "https://www.drivebytruckers.com/"
+          },
+          {
+            "name": "L. A. Guns",
+            "website": "http://www.laguns.net"
+          },
+          {
+            "name": "Lordi",
+            "website": "https://lordi.fi"
+          },
+          {
+            "name": "Tally Hall",
+            "website": "http://tallyhall.com/"
+          },
+          {
+            "name": "The Emotions",
+            "website": "http://www.theemotionsweb.com/"
+          },
+          {
+            "name": "The Plot in You",
+            "website": "https://www.theplotinyou.com"
+          },
+          {
+            "name": "The Vamps",
+            "website": "http://www.thevamps.net/"
+          },
+          {
+            "name": "Two Gallants",
+            "website": "http://www.twogallants.com/"
+          },
+          {
+            "name": "Mazes",
+            "website": "http://www.wearemazes.com/"
+          },
+          {
+            "name": "Meshuggah",
+            "website": "http://www.meshuggah.net"
+          },
+          {
+            "name": "Mordor",
+            "website": "http://mordorland.ru/"
           }
         ],
         "nameCounts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           1,
           1,
           1,
@@ -36,36 +131,169 @@
         ],
         "results": [
           {
-            "name": "Adept",
-            "website": "http://www.adeptofficial.com/",
+            "name": "Plastics",
+            "website": "http://www.plastics.jp/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "D1MA",
-            "website": "https://d1ma.ru/",
+            "name": "Yamantaka Eye",
+            "website": "http://www.eyyam.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Beth Gibbons",
+            "website": "https://bethgibbons.net/",
+            "tourUrl": "https://bethgibbons.net/tour-dates-2025/",
+            "pathPattern": "/tour",
+            "reason": "score=20 (years=0, numericDates=7, months=1, days=0, keywords=7, widget=0)"
+          },
+          {
+            "name": "Blasted Mechanism",
+            "website": "http://www.blastedmechanism.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Blood Sweat & Tears",
+            "website": "https://www.bloodsweatandtears.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Booker T Jones",
+            "website": "https://bookert.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Robert Irving III",
+            "website": "https://www.robertirvingiii.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Nelli Matula",
-            "website": "https://www.nellimatula.fi/",
+            "name": "Carlos Santana",
+            "website": "http://www.santana.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "KeeN",
+            "website": "http://keen-music.ru",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "KT Tunstall",
+            "website": "https://www.kttunstall.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Grupo Play",
-            "website": "http://www.grupoplayoficial.com.ar/",
+            "name": "Salt 'N' Pepa",
+            "website": "https://www.saltnpepa.com",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Doof",
+            "website": "https://nickbarbermusic.uk/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Drive By Truckers",
+            "website": "https://www.drivebytruckers.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "L. A. Guns",
+            "website": "http://www.laguns.net",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Lordi",
+            "website": "https://lordi.fi",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Tally Hall",
+            "website": "http://tallyhall.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "The Emotions",
+            "website": "http://www.theemotionsweb.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "The Plot in You",
+            "website": "https://www.theplotinyou.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "The Vamps",
+            "website": "http://www.thevamps.net/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Two Gallants",
+            "website": "http://www.twogallants.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Mazes",
+            "website": "http://www.wearemazes.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Meshuggah",
+            "website": "http://www.meshuggah.net",
+            "tourUrl": "http://www.meshuggah.net/tour/",
+            "pathPattern": "/tour",
+            "reason": "score=16 (years=1, numericDates=0, months=1, days=0, keywords=5, widget=1)"
+          },
+          {
+            "name": "Mordor",
+            "website": "http://mordorland.ru/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
           }
         ],
         "skipped": [],
-        "applied": 4,
+        "applied": 23,
         "pending": null,
         "complete": true
       }
@@ -74,24 +302,138 @@
       {
         "index": 0,
         "tourUrl": null,
-        "triedAt": "2026-10-27T09:35:52.614Z"
+        "triedAt": "2026-10-28T10:21:44.721Z"
       },
       {
         "index": 1,
         "tourUrl": null,
-        "triedAt": "2026-10-27T09:35:52.633Z"
+        "triedAt": "2026-10-28T10:21:44.742Z"
       },
       {
         "index": 2,
-        "tourUrl": null,
-        "triedAt": "2026-10-27T09:35:52.645Z"
+        "tourUrl": "https://bethgibbons.net/tour-dates-2025/",
+        "triedAt": "2026-10-28T10:21:44.756Z"
       },
       {
         "index": 3,
         "tourUrl": null,
-        "triedAt": "2026-10-27T09:35:52.657Z"
+        "triedAt": "2026-10-28T10:21:44.774Z"
+      },
+      {
+        "index": 4,
+        "tourUrl": null,
+        "triedAt": "2026-10-28T10:21:44.788Z"
+      },
+      {
+        "index": 5,
+        "tourUrl": null,
+        "triedAt": "2026-10-28T10:21:44.801Z"
+      },
+      {
+        "index": 6,
+        "tourUrl": null,
+        "triedAt": "2026-10-28T10:21:44.815Z"
+      },
+      {
+        "index": 7,
+        "tourUrl": null,
+        "triedAt": "2026-10-28T10:21:44.829Z"
+      },
+      {
+        "index": 8,
+        "tourUrl": null,
+        "triedAt": "2026-10-28T10:21:44.843Z"
+      },
+      {
+        "index": 9,
+        "tourUrl": null,
+        "triedAt": "2026-10-28T10:21:44.856Z"
+      },
+      {
+        "index": 10,
+        "tourUrl": null,
+        "triedAt": "2026-10-28T10:23:05.802Z"
+      },
+      {
+        "index": 11,
+        "tourUrl": null,
+        "triedAt": "2026-10-28T10:23:05.815Z"
+      },
+      {
+        "index": 12,
+        "tourUrl": null,
+        "triedAt": "2026-10-28T10:23:05.830Z"
+      },
+      {
+        "index": 13,
+        "tourUrl": null,
+        "triedAt": "2026-10-28T10:23:05.844Z"
+      },
+      {
+        "index": 14,
+        "tourUrl": null,
+        "triedAt": "2026-10-28T10:23:05.862Z"
+      },
+      {
+        "index": 15,
+        "tourUrl": null,
+        "triedAt": "2026-10-28T10:23:05.877Z"
+      },
+      {
+        "index": 16,
+        "tourUrl": null,
+        "triedAt": "2026-10-28T10:23:05.892Z"
+      },
+      {
+        "index": 17,
+        "tourUrl": null,
+        "triedAt": "2026-10-28T10:23:05.907Z"
+      },
+      {
+        "index": 18,
+        "tourUrl": null,
+        "triedAt": "2026-10-28T10:23:05.922Z"
+      },
+      {
+        "index": 19,
+        "tourUrl": null,
+        "triedAt": "2026-10-28T10:23:05.937Z"
+      },
+      {
+        "index": 20,
+        "tourUrl": null,
+        "triedAt": "2026-10-28T10:24:21.822Z"
+      },
+      {
+        "index": 21,
+        "tourUrl": "http://www.meshuggah.net/tour/",
+        "triedAt": "2026-10-28T10:24:21.843Z"
+      },
+      {
+        "index": 22,
+        "tourUrl": null,
+        "triedAt": "2026-10-28T10:24:21.857Z"
       }
     ],
-    "audit": []
+    "audit": [
+      {
+        "artist": "Beth Gibbons",
+        "website": "https://bethgibbons.net/",
+        "tourUrl": "https://bethgibbons.net/tour-dates-2025/",
+        "pathPattern": "/tour",
+        "reason": "score=20 (years=0, numericDates=7, months=1, days=0, keywords=7, widget=0)",
+        "appliedAt": "2026-10-28T10:21:44.756Z",
+        "discoveryOperationId": "9c74f6e1-07dc-4867-a071-05f4cb1a9e5b:2"
+      },
+      {
+        "artist": "Meshuggah",
+        "website": "http://www.meshuggah.net",
+        "tourUrl": "http://www.meshuggah.net/tour/",
+        "pathPattern": "/tour",
+        "reason": "score=16 (years=1, numericDates=0, months=1, days=0, keywords=5, widget=1)",
+        "appliedAt": "2026-10-28T10:24:21.843Z",
+        "discoveryOperationId": "9c74f6e1-07dc-4867-a071-05f4cb1a9e5b:21"
+      }
+    ]
   }
 }
