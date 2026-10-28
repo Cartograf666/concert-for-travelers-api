@@ -32179,5 +32179,169 @@
     "failuresSinceRepair": 0,
     "note": "repair failed: Scraper bi2-tour is not a static_selectors scraper or is missing selectors.",
     "verification": ""
+  },
+  {
+    "id": "artist-american-composers-orchestra",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-american-composers-orchestra.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-28T10:35:05.690Z",
+    "previousConfig": {
+      "id": "artist-american-composers-orchestra",
+      "domain": "www.americancomposers.org",
+      "url": "https://www.americancomposers.org/performances-events",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": ".p-e-item",
+        "artistNameFallback": "American Composers Orchestra",
+        "date": ".when",
+        "ticketUrl": "a.event-tickets-button",
+        "venue": ".event-location",
+        "city": ".performance-location_wrapper",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper artist-american-composers-orchestra is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-john-mellencamp",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-john-mellencamp.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-28T10:35:08.064Z",
+    "previousConfig": {
+      "id": "artist-john-mellencamp",
+      "domain": "www.mellencamp.com",
+      "url": "https://www.mellencamp.com/tour",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "article.card",
+        "artistNameFallback": "John Mellencamp",
+        "date": "time",
+        "ticketUrl": "a.dropdown-item[href^='http']",
+        "venue": ".h3",
+        "city": "h1 > div:first-of-type",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      },
+      "allowEmpty": true
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: has_events [0 event(s) extracted]; public_events [0 raw -> 0 public; dropped={\"incomplete\":0,\"notApproved\":0,\"badDate\":0,\"pastDate\":0,\"zodFail\":0,\"nonArtist\":0,\"beyondPlanningHorizon\":0}]",
+    "verification": ""
+  },
+  {
+    "id": "artist-shelby-lynne",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-shelby-lynne.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-28T10:35:14.579Z",
+    "previousConfig": {
+      "id": "artist-shelby-lynne",
+      "domain": "www.shelbylynne.com",
+      "url": "https://www.shelbylynne.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "section.elementor-inner-section[data-id][class*='elementor-element-']",
+        "artistNameFallback": "Shelby Lynne",
+        "date": ".elementor-widget-heading .elementor-heading-title",
+        "ticketUrl": "a.elementor-button-link",
+        "venue": ".elementor-image-box-title",
+        "city": ".elementor-image-box-description",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Maximum number of redirects exceeded]",
+    "verification": ""
+  },
+  {
+    "id": "artist-the-bluetones",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-the-bluetones.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-10-28T10:35:16.311Z",
+    "previousConfig": {
+      "id": "artist-the-bluetones",
+      "domain": "bluetones.band",
+      "url": "https://bluetones.band/live/",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "tr.gigpress-row",
+        "artistNameFallback": "The Bluetones",
+        "date": "time",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 401]",
+    "verification": ""
+  },
+  {
+    "id": "bi2-tour",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/bi2-tour.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-28T10:35:16.317Z",
+    "previousConfig": {
+      "id": "bi2-tour",
+      "domain": "tix.bi2.band",
+      "url": "https://tix.bi2.band/",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": ".events-listing__item",
+        "artistNameFallback": "Би-2",
+        "date": ".event-meta__date",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "RU"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper bi2-tour is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-yolanda-adams",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-yolanda-adams.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-28T10:35:18.309Z",
+    "previousConfig": {
+      "id": "artist-yolanda-adams",
+      "domain": "yolandaadamslive.com",
+      "url": "https://yolandaadamslive.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".qode-event-content",
+        "artistNameFallback": "Yolanda Adams",
+        "date": ".qode-event-date-holder",
+        "ticketUrl": ".qode-event-buy-tickets-button",
+        "venue": ".qode-event-title a",
+        "city": ".qode-event-title a",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://yolandaadamslive.com/tour/ but could not re-select on it",
+    "verification": ""
   }
 ]
