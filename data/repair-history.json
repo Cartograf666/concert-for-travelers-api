@@ -25082,34 +25082,6 @@
     "verification": ""
   },
   {
-    "id": "artist-shelby-lynne",
-    "cohort": "artist",
-    "configPath": "scrapers/artists/artist-shelby-lynne.json",
-    "strategy": "url_moved",
-    "repairedAt": "2026-10-06T13:55:18.603Z",
-    "previousConfig": {
-      "id": "artist-shelby-lynne",
-      "domain": "www.shelbylynne.com",
-      "url": "https://www.shelbylynne.com/tour",
-      "type": "static_selectors",
-      "selectors": {
-        "eventBlock": "section.elementor-inner-section[data-id][class*='elementor-element-']",
-        "artistNameFallback": "Shelby Lynne",
-        "date": ".elementor-widget-heading .elementor-heading-title",
-        "ticketUrl": "a.elementor-button-link",
-        "venue": ".elementor-image-box-title",
-        "city": ".elementor-image-box-description",
-        "venueNameFallback": "",
-        "cityNameFallback": "",
-        "countryNameFallback": "US"
-      }
-    },
-    "status": "rejected",
-    "failuresSinceRepair": 0,
-    "note": "url_moved: probing 6 candidate schedule URL(s) on https://www.shelbylynne.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]; reached https://www.shelbylynne.com/events.html but could not re-select on it",
-    "verification": ""
-  },
-  {
     "id": "artist-joe-hutton",
     "cohort": "venue",
     "configPath": "scrapers/artist-joe-hutton.json",
@@ -32506,6 +32478,201 @@
     "status": "rejected",
     "failuresSinceRepair": 0,
     "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 401]",
+    "verification": ""
+  },
+  {
+    "id": "artist-akari-saho",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-akari-saho.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-30T10:58:56.133Z",
+    "previousConfig": {
+      "id": "artist-akari-saho",
+      "domain": "www.upupgirlskakkokari.com",
+      "url": "http://www.upupgirlskakkokari.com/live_event/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event_list_item",
+        "artistNameFallback": "Akari Saho",
+        "date": ".event_month, .event_date",
+        "ticketUrl": "a",
+        "venueNameFallback": "TBD",
+        "cityNameFallback": "TBD",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 503]",
+    "verification": ""
+  },
+  {
+    "id": "artist-american-composers-orchestra",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-american-composers-orchestra.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-30T10:58:56.134Z",
+    "previousConfig": {
+      "id": "artist-american-composers-orchestra",
+      "domain": "www.americancomposers.org",
+      "url": "https://www.americancomposers.org/performances-events",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": ".p-e-item",
+        "artistNameFallback": "American Composers Orchestra",
+        "date": ".when",
+        "ticketUrl": "a.event-tickets-button",
+        "venue": ".event-location",
+        "city": ".performance-location_wrapper",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper artist-american-composers-orchestra is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-boa",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-boa.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-30T10:58:57.035Z",
+    "previousConfig": {
+      "id": "artist-boa",
+      "domain": "www.boaukofficial.com",
+      "url": "https://www.boaukofficial.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour-row",
+        "artistNameFallback": "bôa",
+        "date": ".tour-text:nth-child(2)",
+        "ticketUrl": "a.tour-row",
+        "venue": ".tour-text:nth-child(1)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.tour-row) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-hubert-laws",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-hubert-laws.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-30T10:59:06.573Z",
+    "previousConfig": {
+      "id": "artist-hubert-laws",
+      "domain": "hubertlaws.com",
+      "url": "https://hubertlaws.com/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tribe-events-calendar-latest-past__event-row",
+        "artistNameFallback": "Hubert Laws",
+        "date": ".tribe-events-calendar-latest-past__event-datetime",
+        "ticketUrl": ".tribe-events-calendar-latest-past__event-title-link",
+        "venue": ".tribe-events-calendar-latest-past__event-venue-title",
+        "city": ".tribe-events-calendar-latest-past__event-venue-address",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://hubertlaws.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]",
+    "verification": ""
+  },
+  {
+    "id": "artist-dave",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-dave.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-30T10:59:09.011Z",
+    "previousConfig": {
+      "id": "artist-dave",
+      "domain": "santandave.com",
+      "url": "https://santandave.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.d-gigs tr",
+        "artistNameFallback": "Dave",
+        "date": "td.gig-date",
+        "ticketUrl": "td.gig-link a",
+        "venue": "td.gig-venue",
+        "city": "td.gig-city",
+        "country": "td.gig-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://santandave.com/tour/ but could not re-select on it",
+    "verification": ""
+  },
+  {
+    "id": "artist-shelby-lynne",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-shelby-lynne.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-30T10:59:15.517Z",
+    "previousConfig": {
+      "id": "artist-shelby-lynne",
+      "domain": "www.shelbylynne.com",
+      "url": "https://www.shelbylynne.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "section.elementor-inner-section[data-id][class*='elementor-element-']",
+        "artistNameFallback": "Shelby Lynne",
+        "date": ".elementor-widget-heading .elementor-heading-title",
+        "ticketUrl": "a.elementor-button-link",
+        "venue": ".elementor-image-box-title",
+        "city": ".elementor-image-box-description",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Maximum number of redirects exceeded]",
+    "verification": ""
+  },
+  {
+    "id": "artist-yolanda-adams",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-yolanda-adams.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-30T10:59:17.186Z",
+    "previousConfig": {
+      "id": "artist-yolanda-adams",
+      "domain": "yolandaadamslive.com",
+      "url": "https://yolandaadamslive.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".qode-event-content",
+        "artistNameFallback": "Yolanda Adams",
+        "date": ".qode-event-date-holder",
+        "ticketUrl": ".qode-event-buy-tickets-button",
+        "venue": ".qode-event-title a",
+        "city": ".qode-event-title a",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://yolandaadamslive.com/tour/ but could not re-select on it",
     "verification": ""
   }
 ]
