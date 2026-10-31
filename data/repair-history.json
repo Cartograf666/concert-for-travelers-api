@@ -32674,5 +32674,115 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=selectors_stale): Parsed 0 concerts. Website layout might have changed.]; reached https://yolandaadamslive.com/tour/ but could not re-select on it",
     "verification": ""
+  },
+  {
+    "id": "artist-akari-saho",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-akari-saho.json",
+    "strategy": "transient",
+    "repairedAt": "2026-10-31T10:29:18.339Z",
+    "previousConfig": {
+      "id": "artist-akari-saho",
+      "domain": "www.upupgirlskakkokari.com",
+      "url": "http://www.upupgirlskakkokari.com/live_event/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".event_list_item",
+        "artistNameFallback": "Akari Saho",
+        "date": ".event_month, .event_date",
+        "ticketUrl": "a",
+        "venueNameFallback": "TBD",
+        "cityNameFallback": "TBD",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 503]",
+    "verification": ""
+  },
+  {
+    "id": "artist-boa",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-boa.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-31T10:29:57.016Z",
+    "previousConfig": {
+      "id": "artist-boa",
+      "domain": "www.boaukofficial.com",
+      "url": "https://www.boaukofficial.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tour-row",
+        "artistNameFallback": "bôa",
+        "date": ".tour-text:nth-child(2)",
+        "ticketUrl": "a.tour-row",
+        "venue": ".tour-text:nth-child(1)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.tour-row) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-hubert-laws",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-hubert-laws.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-10-31T10:29:58.959Z",
+    "previousConfig": {
+      "id": "artist-hubert-laws",
+      "domain": "hubertlaws.com",
+      "url": "https://hubertlaws.com/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tribe-events-calendar-latest-past__event-row",
+        "artistNameFallback": "Hubert Laws",
+        "date": ".tribe-events-calendar-latest-past__event-datetime",
+        "ticketUrl": ".tribe-events-calendar-latest-past__event-title-link",
+        "venue": ".tribe-events-calendar-latest-past__event-venue-title",
+        "city": ".tribe-events-calendar-latest-past__event-venue-address",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://hubertlaws.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]",
+    "verification": ""
+  },
+  {
+    "id": "artist-kate-dearaugo",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-kate-dearaugo.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-10-31T10:30:37.836Z",
+    "previousConfig": {
+      "id": "artist-kate-dearaugo",
+      "domain": "www.katedearaugo.com.au",
+      "url": "https://www.katedearaugo.com.au/events",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".eventlist-event--upcoming",
+        "artistNameFallback": "Kate DeAraugo",
+        "date": "time.event-date",
+        "ticketUrl": ".eventlist-description a",
+        "venue": ".eventlist-meta-address",
+        "city": "",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "AU"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.eventlist-event) matched 0 elements.",
+    "verification": ""
   }
 ]
