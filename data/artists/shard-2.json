@@ -93858,7 +93858,8 @@
       "vk": null
     },
     "enrichedAt": "2026-10-31T12:56:27.596Z",
-    "enrichedBy": "musicbrainz+wikidata"
+    "enrichedBy": "musicbrainz+wikidata",
+    "similarTriedAt": "2026-10-31T13:06:37.444Z"
   },
   {
     "name": "Bijan Mortazavi",
@@ -687677,7 +687678,20 @@
       "vk": null
     },
     "enrichedAt": "2026-10-31T12:56:30.922Z",
-    "enrichedBy": "musicbrainz+wikidata"
+    "enrichedBy": "musicbrainz+wikidata",
+    "similarArtists": [
+      {
+        "name": "ТРЕТЯ ШТУРМОВА",
+        "slug": "третя-штурмова",
+        "match": 0.447018
+      },
+      {
+        "name": "The Unsleeping",
+        "slug": "the-unsleeping",
+        "match": 0.445123
+      }
+    ],
+    "similarEnrichedAt": "2026-10-31T13:06:37.872Z"
   },
   {
     "name": "zydeco",

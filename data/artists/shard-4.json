@@ -215423,7 +215423,50 @@
       "vk": null
     },
     "enrichedAt": "2026-10-31T12:56:41.113Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "Lucho RK",
+        "slug": "lucho-rk",
+        "match": 1
+      },
+      {
+        "name": "Quevedo",
+        "slug": "quevedo",
+        "match": 0.544414
+      },
+      {
+        "name": "MVRK",
+        "slug": "mvrk",
+        "match": 0.445721
+      },
+      {
+        "name": "Saiko",
+        "slug": "saiko",
+        "match": 0.392238
+      },
+      {
+        "name": "Cruzzi",
+        "slug": "cruzzi",
+        "match": 0.353764
+      },
+      {
+        "name": "JC Reyes",
+        "slug": "jc-reyes",
+        "match": 0.29047
+      },
+      {
+        "name": "Clarent",
+        "slug": "clarent",
+        "match": 0.277751
+      },
+      {
+        "name": "Mora",
+        "slug": "mora",
+        "match": 0.258092
+      }
+    ],
+    "similarEnrichedAt": "2026-10-31T13:06:39.439Z"
   },
   {
     "name": "La Patère Rose",

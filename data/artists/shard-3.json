@@ -307852,7 +307852,15 @@
       "vk": null
     },
     "enrichedAt": "2026-10-31T12:56:35.594Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "The Hardkiss",
+        "slug": "the-hardkiss",
+        "match": 0.557762
+      }
+    ],
+    "similarEnrichedAt": "2026-10-31T13:06:38.493Z"
   },
   {
     "name": "Klezmer",
@@ -437941,7 +437949,50 @@
     "name": "SHEAN",
     "website": null,
     "imageFallbackTriedAt": "2026-10-31T12:04:01.468Z",
-    "autoTriedAt": "2026-10-31T12:56:37.877Z"
+    "autoTriedAt": "2026-10-31T12:56:37.877Z",
+    "similarArtists": [
+      {
+        "name": "Jin DC",
+        "slug": "jin-dc",
+        "match": 1
+      },
+      {
+        "name": "Mariah Deborah",
+        "slug": "mariah-deborah",
+        "match": 0.669381
+      },
+      {
+        "name": "RAPROJECT SIX",
+        "slug": "raproject-six",
+        "match": 0.617489
+      },
+      {
+        "name": "Esremborak",
+        "slug": "esremborak",
+        "match": 0.552473
+      },
+      {
+        "name": "Alex Crichton",
+        "slug": "alex-crichton",
+        "match": 0.493827
+      },
+      {
+        "name": "HELLMERRY",
+        "slug": "hellmerry",
+        "match": 0.38408
+      },
+      {
+        "name": "Uncle Dags",
+        "slug": "uncle-dags",
+        "match": 0.350998
+      },
+      {
+        "name": "Shanti Dope",
+        "slug": "shanti-dope",
+        "match": 0.340081
+      }
+    ],
+    "similarEnrichedAt": "2026-10-31T13:06:38.877Z"
   },
   {
     "name": "Shearwater",
