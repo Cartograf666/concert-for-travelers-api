@@ -1,191 +1,35 @@
 {
-  "digest": "8c0c588f4412b4a13e72344a5dfa858b9498cf2ddbacac12907797f365613161",
+  "digest": "e51956b7691574789c927bdc211ee24db392b99c25eac0787035161f8b3362de",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "ff5ba4144e46145d6ff4fa0833833626aeeca86b0a2de8f1ce7e7d3112ff02c3",
+      "digest": "4cb3e2bb4198b47d44089432c4f74def6bbe35ebea020d62ed9b5180494592a3",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "c7694d22-fff2-483f-92e7-38439aa8d912",
-        "inputHash": "04d650e5dedda6e335040b5e2bdc918e9d0d6a5593c17bdb724db118acc07bfc",
+        "id": "881783eb-eef8-4972-bb6d-43d4f6e8e1d1",
+        "inputHash": "0e8c738408549f428740b6e08ed927f5b9b101ecb0e71fb65604b5ca7257ba44",
         "candidates": [
           {
-            "name": "Aidonia",
-            "website": "http://www.aidoniamusic.com/"
-          },
-          {
-            "name": "Art Of Noise",
-            "website": "http://theartofnoise.com/"
-          },
-          {
-            "name": "Au Pairs",
-            "website": "https://www.aupairs.com/"
-          },
-          {
-            "name": "Crooked Fingers",
-            "website": "http://www.crookedfingers.com"
-          },
-          {
-            "name": "Sam Harris",
-            "website": "http://www.samharris.com/"
-          },
-          {
-            "name": "Scream",
-            "website": "http://www.screamdc.com"
-          },
-          {
-            "name": "Steven Isserlis",
-            "website": "https://stevenisserlis.com"
-          },
-          {
-            "name": "Superhero",
-            "website": "https://www.superhero.org.uk/"
-          },
-          {
-            "name": "Dan Cray",
-            "website": "http://dancray.com"
-          },
-          {
-            "name": "Lim Kim",
-            "website": "https://limkim.kr/"
-          },
-          {
-            "name": "Liza Lim",
-            "website": "https://lizalimcomposer.com/"
-          },
-          {
-            "name": "Erie",
-            "website": "https://erietheband.com/"
-          },
-          {
-            "name": "FEDUK",
-            "website": "https://feduk.ru/"
-          },
-          {
-            "name": "Goo Ha-ra",
-            "website": "http://ogipro.com/talent/hara/"
+            "name": "Bruno Coulais",
+            "website": "http://www.brunocoulais.com"
           }
         ],
         "nameCounts": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
           1
         ],
         "results": [
           {
-            "name": "Aidonia",
-            "website": "http://www.aidoniamusic.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Art Of Noise",
-            "website": "http://theartofnoise.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Au Pairs",
-            "website": "https://www.aupairs.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Crooked Fingers",
-            "website": "http://www.crookedfingers.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Sam Harris",
-            "website": "http://www.samharris.com/",
-            "tourUrl": "https://www.samharris.com/events",
-            "pathPattern": "/events",
-            "reason": "score=16.5 (years=4, numericDates=0, months=3, days=1, keywords=22, widget=0)"
-          },
-          {
-            "name": "Scream",
-            "website": "http://www.screamdc.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Steven Isserlis",
-            "website": "https://stevenisserlis.com",
-            "tourUrl": "https://stevenisserlis.com/concerts/",
-            "pathPattern": "/concerts",
-            "reason": "score=35 (years=9, numericDates=0, months=12, days=0, keywords=10, widget=0)"
-          },
-          {
-            "name": "Superhero",
-            "website": "https://www.superhero.org.uk/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Dan Cray",
-            "website": "http://dancray.com",
-            "tourUrl": "http://www.dancray.com/performances",
-            "pathPattern": "/performances",
-            "reason": "score=80 (years=0, numericDates=0, months=60, days=30, keywords=82, widget=0)"
-          },
-          {
-            "name": "Lim Kim",
-            "website": "https://limkim.kr/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Liza Lim",
-            "website": "https://lizalimcomposer.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Erie",
-            "website": "https://erietheband.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "FEDUK",
-            "website": "https://feduk.ru/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Goo Ha-ra",
-            "website": "http://ogipro.com/talent/hara/",
+            "name": "Bruno Coulais",
+            "website": "http://www.brunocoulais.com",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           }
         ],
         "skipped": [],
-        "applied": 14,
+        "applied": 1,
         "pending": null,
         "complete": true
       }
@@ -194,102 +38,9 @@
       {
         "index": 0,
         "tourUrl": null,
-        "triedAt": "2026-10-30T10:42:44.301Z"
-      },
-      {
-        "index": 1,
-        "tourUrl": null,
-        "triedAt": "2026-10-30T10:42:44.324Z"
-      },
-      {
-        "index": 2,
-        "tourUrl": null,
-        "triedAt": "2026-10-30T10:42:44.339Z"
-      },
-      {
-        "index": 3,
-        "tourUrl": null,
-        "triedAt": "2026-10-30T10:42:44.355Z"
-      },
-      {
-        "index": 4,
-        "tourUrl": "https://www.samharris.com/events",
-        "triedAt": "2026-10-30T10:42:44.373Z"
-      },
-      {
-        "index": 5,
-        "tourUrl": null,
-        "triedAt": "2026-10-30T10:42:44.386Z"
-      },
-      {
-        "index": 6,
-        "tourUrl": "https://stevenisserlis.com/concerts/",
-        "triedAt": "2026-10-30T10:42:44.400Z"
-      },
-      {
-        "index": 7,
-        "tourUrl": null,
-        "triedAt": "2026-10-30T10:42:44.414Z"
-      },
-      {
-        "index": 8,
-        "tourUrl": "http://www.dancray.com/performances",
-        "triedAt": "2026-10-30T10:42:44.428Z"
-      },
-      {
-        "index": 9,
-        "tourUrl": null,
-        "triedAt": "2026-10-30T10:42:44.442Z"
-      },
-      {
-        "index": 10,
-        "tourUrl": null,
-        "triedAt": "2026-10-30T10:43:14.809Z"
-      },
-      {
-        "index": 11,
-        "tourUrl": null,
-        "triedAt": "2026-10-30T10:43:14.828Z"
-      },
-      {
-        "index": 12,
-        "tourUrl": null,
-        "triedAt": "2026-10-30T10:43:14.841Z"
-      },
-      {
-        "index": 13,
-        "tourUrl": null,
-        "triedAt": "2026-10-30T10:43:14.852Z"
+        "triedAt": "2026-10-31T10:11:27.980Z"
       }
     ],
-    "audit": [
-      {
-        "artist": "Sam Harris",
-        "website": "http://www.samharris.com/",
-        "tourUrl": "https://www.samharris.com/events",
-        "pathPattern": "/events",
-        "reason": "score=16.5 (years=4, numericDates=0, months=3, days=1, keywords=22, widget=0)",
-        "appliedAt": "2026-10-30T10:42:44.373Z",
-        "discoveryOperationId": "c7694d22-fff2-483f-92e7-38439aa8d912:4"
-      },
-      {
-        "artist": "Steven Isserlis",
-        "website": "https://stevenisserlis.com",
-        "tourUrl": "https://stevenisserlis.com/concerts/",
-        "pathPattern": "/concerts",
-        "reason": "score=35 (years=9, numericDates=0, months=12, days=0, keywords=10, widget=0)",
-        "appliedAt": "2026-10-30T10:42:44.400Z",
-        "discoveryOperationId": "c7694d22-fff2-483f-92e7-38439aa8d912:6"
-      },
-      {
-        "artist": "Dan Cray",
-        "website": "http://dancray.com",
-        "tourUrl": "http://www.dancray.com/performances",
-        "pathPattern": "/performances",
-        "reason": "score=80 (years=0, numericDates=0, months=60, days=30, keywords=82, widget=0)",
-        "appliedAt": "2026-10-30T10:42:44.428Z",
-        "discoveryOperationId": "c7694d22-fff2-483f-92e7-38439aa8d912:8"
-      }
-    ]
+    "audit": []
   }
 }
