@@ -32784,5 +32784,120 @@
     "failuresSinceRepair": 0,
     "note": "repair failed: Selector \"eventBlock\" (.eventlist-event) matched 0 elements.",
     "verification": ""
+  },
+  {
+    "id": "artist-aaron-copland",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-aaron-copland.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-11-01T11:17:11.603Z",
+    "previousConfig": {
+      "id": "artist-aaron-copland",
+      "domain": "www.aaroncopland.com",
+      "url": "https://www.aaroncopland.com/events",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": ".event-item",
+        "artistNameFallback": "Aaron Copland",
+        "date": ".event-dates span",
+        "ticketUrl": ".event-links a",
+        "venue": ".event-location",
+        "city": ".event-location",
+        "country": ".event-location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper artist-aaron-copland is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-hubert-laws",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-hubert-laws.json",
+    "strategy": "url_moved",
+    "repairedAt": "2026-11-01T11:17:16.655Z",
+    "previousConfig": {
+      "id": "artist-hubert-laws",
+      "domain": "hubertlaws.com",
+      "url": "https://hubertlaws.com/events/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".tribe-events-calendar-latest-past__event-row",
+        "artistNameFallback": "Hubert Laws",
+        "date": ".tribe-events-calendar-latest-past__event-datetime",
+        "ticketUrl": ".tribe-events-calendar-latest-past__event-title-link",
+        "venue": ".tribe-events-calendar-latest-past__event-venue-title",
+        "city": ".tribe-events-calendar-latest-past__event-venue-address",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "url_moved: probing 6 candidate schedule URL(s) on https://hubertlaws.com; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 404]",
+    "verification": ""
+  },
+  {
+    "id": "artist-kate-dearaugo",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-kate-dearaugo.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-11-01T11:17:17.675Z",
+    "previousConfig": {
+      "id": "artist-kate-dearaugo",
+      "domain": "www.katedearaugo.com.au",
+      "url": "https://www.katedearaugo.com.au/events",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".eventlist-event--upcoming",
+        "artistNameFallback": "Kate DeAraugo",
+        "date": "time.event-date",
+        "ticketUrl": ".eventlist-description a",
+        "venue": ".eventlist-meta-address",
+        "city": "",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "AU"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.eventlist-event) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-yolanda-adams",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-yolanda-adams.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-11-01T11:17:20.605Z",
+    "previousConfig": {
+      "id": "artist-yolanda-adams",
+      "domain": "yolandaadamslive.com",
+      "url": "https://yolandaadamslive.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".qode-event-content",
+        "artistNameFallback": "Yolanda Adams",
+        "date": ".qode-event-date-holder",
+        "ticketUrl": ".qode-event-buy-tickets-button",
+        "venue": ".qode-event-title a",
+        "city": ".qode-event-title a",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.qode-events-list-holder-outer .qode-event-content) matched 0 elements.",
+    "verification": ""
   }
 ]
