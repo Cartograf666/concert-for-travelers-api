@@ -1,0 +1,16 @@
+{
+  "id": "artist-bigxthaplug",
+  "domain": "www.bigxthaplugofficial.com",
+  "url": "https://www.bigxthaplugofficial.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "umg-event[slot=\"event\"]",
+    "artistNameFallback": "BigXthaPlug",
+    "date": "umg-text[slot=\"date\"] > a",
+    "ticketUrl": "umg-button[slot=\"ticket-links\"]::attr(url)",
+    "venue": "umg-text[part=\"venue\"] > a",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "GB"
+  }
+}
