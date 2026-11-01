@@ -1,35 +1,155 @@
 {
-  "digest": "e51956b7691574789c927bdc211ee24db392b99c25eac0787035161f8b3362de",
+  "digest": "b5a100b2abd30b490f3bdcefbb2685c5183a6626b2f786f8e057604fd72229d3",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "4cb3e2bb4198b47d44089432c4f74def6bbe35ebea020d62ed9b5180494592a3",
+      "digest": "3db714887c7151188a698efa8394467d8663933d9919bc1be134f42dc6cce96a",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "881783eb-eef8-4972-bb6d-43d4f6e8e1d1",
-        "inputHash": "0e8c738408549f428740b6e08ed927f5b9b101ecb0e71fb65604b5ca7257ba44",
+        "id": "83313e4f-a1b0-47ae-a083-e86f173e9a76",
+        "inputHash": "e3acb7581f66eeea47f417662d0d757444815eed29c04b807bfb349f6f363344",
         "candidates": [
           {
-            "name": "Bruno Coulais",
-            "website": "http://www.brunocoulais.com"
+            "name": "BigXthaPlug",
+            "website": "https://www.bigxthaplugofficial.com/"
+          },
+          {
+            "name": "Return",
+            "website": "http://www.return.no/"
+          },
+          {
+            "name": "Zwyntar",
+            "website": "http://zwyntar.com/"
+          },
+          {
+            "name": "Caetano Veloso",
+            "website": "https://www.caetanoveloso.com.br/"
+          },
+          {
+            "name": "Charlie Hunter",
+            "website": "http://www.charliehunter.com/"
+          },
+          {
+            "name": "Silkworm",
+            "website": "http://www.silkworm.net/"
+          },
+          {
+            "name": "Dolly Dots",
+            "website": "http://www.dollydots.nl/"
+          },
+          {
+            "name": "Todd Kerns",
+            "website": "https://toddkerns.com/"
+          },
+          {
+            "name": "Tom Sancton",
+            "website": "http://tomsancton.blogspot.com/"
+          },
+          {
+            "name": "くるり",
+            "website": "https://www.quruli.net/"
+          },
+          {
+            "name": "A2O LITE",
+            "website": "https://a2olite.world/"
           }
         ],
         "nameCounts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           1
         ],
         "results": [
           {
-            "name": "Bruno Coulais",
-            "website": "http://www.brunocoulais.com",
+            "name": "BigXthaPlug",
+            "website": "https://www.bigxthaplugofficial.com/",
+            "tourUrl": "https://www.bigxthaplugofficial.com/tour/",
+            "pathPattern": "/tour",
+            "reason": "score=13 (years=2, numericDates=0, months=4, days=0, keywords=6, widget=0)"
+          },
+          {
+            "name": "Return",
+            "website": "http://www.return.no/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Zwyntar",
+            "website": "http://zwyntar.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Caetano Veloso",
+            "website": "https://www.caetanoveloso.com.br/",
+            "tourUrl": "https://www.caetanoveloso.com.br/discografia/live-at-carnegie-hall/",
+            "pathPattern": "/live",
+            "reason": "score=8 (years=1, numericDates=0, months=1, days=0, keywords=5, widget=0)"
+          },
+          {
+            "name": "Charlie Hunter",
+            "website": "http://www.charliehunter.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Silkworm",
+            "website": "http://www.silkworm.net/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Dolly Dots",
+            "website": "http://www.dollydots.nl/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Todd Kerns",
+            "website": "https://toddkerns.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Tom Sancton",
+            "website": "http://tomsancton.blogspot.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "くるり",
+            "website": "https://www.quruli.net/",
+            "tourUrl": "https://www.quruli.net/live",
+            "pathPattern": "/live",
+            "reason": "score=95 (years=46, numericDates=0, months=0, days=0, keywords=3, widget=0)"
+          },
+          {
+            "name": "A2O LITE",
+            "website": "https://a2olite.world/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           }
         ],
         "skipped": [],
-        "applied": 1,
+        "applied": 11,
         "pending": null,
         "complete": true
       }
@@ -37,10 +157,88 @@
     "rows": [
       {
         "index": 0,
+        "tourUrl": "https://www.bigxthaplugofficial.com/tour/",
+        "triedAt": "2026-11-01T11:02:12.364Z"
+      },
+      {
+        "index": 1,
         "tourUrl": null,
-        "triedAt": "2026-10-31T10:11:27.980Z"
+        "triedAt": "2026-11-01T11:02:12.379Z"
+      },
+      {
+        "index": 2,
+        "tourUrl": null,
+        "triedAt": "2026-11-01T11:02:12.391Z"
+      },
+      {
+        "index": 3,
+        "tourUrl": "https://www.caetanoveloso.com.br/discografia/live-at-carnegie-hall/",
+        "triedAt": "2026-11-01T11:02:12.403Z"
+      },
+      {
+        "index": 4,
+        "tourUrl": null,
+        "triedAt": "2026-11-01T11:02:12.417Z"
+      },
+      {
+        "index": 5,
+        "tourUrl": null,
+        "triedAt": "2026-11-01T11:02:12.428Z"
+      },
+      {
+        "index": 6,
+        "tourUrl": null,
+        "triedAt": "2026-11-01T11:02:12.436Z"
+      },
+      {
+        "index": 7,
+        "tourUrl": null,
+        "triedAt": "2026-11-01T11:02:12.444Z"
+      },
+      {
+        "index": 8,
+        "tourUrl": null,
+        "triedAt": "2026-11-01T11:02:12.452Z"
+      },
+      {
+        "index": 9,
+        "tourUrl": "https://www.quruli.net/live",
+        "triedAt": "2026-11-01T11:02:12.461Z"
+      },
+      {
+        "index": 10,
+        "tourUrl": null,
+        "triedAt": "2026-11-01T11:02:28.178Z"
       }
     ],
-    "audit": []
+    "audit": [
+      {
+        "artist": "BigXthaPlug",
+        "website": "https://www.bigxthaplugofficial.com/",
+        "tourUrl": "https://www.bigxthaplugofficial.com/tour/",
+        "pathPattern": "/tour",
+        "reason": "score=13 (years=2, numericDates=0, months=4, days=0, keywords=6, widget=0)",
+        "appliedAt": "2026-11-01T11:02:12.364Z",
+        "discoveryOperationId": "83313e4f-a1b0-47ae-a083-e86f173e9a76:0"
+      },
+      {
+        "artist": "Caetano Veloso",
+        "website": "https://www.caetanoveloso.com.br/",
+        "tourUrl": "https://www.caetanoveloso.com.br/discografia/live-at-carnegie-hall/",
+        "pathPattern": "/live",
+        "reason": "score=8 (years=1, numericDates=0, months=1, days=0, keywords=5, widget=0)",
+        "appliedAt": "2026-11-01T11:02:12.403Z",
+        "discoveryOperationId": "83313e4f-a1b0-47ae-a083-e86f173e9a76:3"
+      },
+      {
+        "artist": "くるり",
+        "website": "https://www.quruli.net/",
+        "tourUrl": "https://www.quruli.net/live",
+        "pathPattern": "/live",
+        "reason": "score=95 (years=46, numericDates=0, months=0, days=0, keywords=3, widget=0)",
+        "appliedAt": "2026-11-01T11:02:12.461Z",
+        "discoveryOperationId": "83313e4f-a1b0-47ae-a083-e86f173e9a76:9"
+      }
+    ]
   }
 }
