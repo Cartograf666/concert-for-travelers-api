@@ -1,62 +1,87 @@
 {
-  "digest": "b5a100b2abd30b490f3bdcefbb2685c5183a6626b2f786f8e057604fd72229d3",
+  "digest": "23f96f60b45e983e4cdf5f382f4b233a1d40d324304d4ee6ac7b7c0760416616",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "3db714887c7151188a698efa8394467d8663933d9919bc1be134f42dc6cce96a",
+      "digest": "816a3b6e4d7bbe34d00034a4d5c4e2935283b47dcd33808431a529c58ad5c700",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "83313e4f-a1b0-47ae-a083-e86f173e9a76",
-        "inputHash": "e3acb7581f66eeea47f417662d0d757444815eed29c04b807bfb349f6f363344",
+        "id": "e8651a07-648b-4f33-806b-e28672d7e6c7",
+        "inputHash": "732a3e1601e5ff9c314128cb59ae1adafa1896685276bbf207e70fb742beed70",
         "candidates": [
           {
-            "name": "BigXthaPlug",
-            "website": "https://www.bigxthaplugofficial.com/"
+            "name": "Astrobrite",
+            "website": "https://astrobrite.bandcamp.com/"
           },
           {
-            "name": "Return",
-            "website": "http://www.return.no/"
+            "name": "Atheist",
+            "website": "https://www.officialatheist.com/"
           },
           {
-            "name": "Zwyntar",
-            "website": "http://zwyntar.com/"
+            "name": "Auburn",
+            "website": "http://www.auburnmusic.com/"
           },
           {
-            "name": "Caetano Veloso",
-            "website": "https://www.caetanoveloso.com.br/"
+            "name": "Autopsy",
+            "website": "http://www.autopsydeathmetal.com/"
           },
           {
-            "name": "Charlie Hunter",
-            "website": "http://www.charliehunter.com/"
+            "name": "Beth",
+            "website": "https://www.bethoficial.com"
           },
           {
-            "name": "Silkworm",
-            "website": "http://www.silkworm.net/"
+            "name": "Brandon Heath",
+            "website": "https://brandonheathmusic.com"
           },
           {
-            "name": "Dolly Dots",
-            "website": "http://www.dollydots.nl/"
+            "name": "DAAU",
+            "website": "http://www.daau.com"
           },
           {
-            "name": "Todd Kerns",
-            "website": "https://toddkerns.com/"
+            "name": "Datura",
+            "website": "http://www.datura.it/"
           },
           {
-            "name": "Tom Sancton",
-            "website": "http://tomsancton.blogspot.com/"
+            "name": "Taco",
+            "website": "http://www.taco.tc/"
           },
           {
-            "name": "くるり",
-            "website": "https://www.quruli.net/"
+            "name": "The Collectors",
+            "website": "http://www.the-collectors.net/"
           },
           {
-            "name": "A2O LITE",
-            "website": "https://a2olite.world/"
+            "name": "The Listening Pool",
+            "website": "http://www.thelisteningpool.com/"
+          },
+          {
+            "name": "The Pains of Being Pure at Heart",
+            "website": "http://www.thepainsofbeingpureatheart.com/"
+          },
+          {
+            "name": "Manoella Torres",
+            "website": "http://www.manoellatorres.com/"
+          },
+          {
+            "name": "Memoria",
+            "website": "https://www.memoriaband.com"
+          },
+          {
+            "name": "Mitar Subotić",
+            "website": "http://suba.com.br/"
+          },
+          {
+            "name": "Voyage",
+            "website": "https://voyage.rs/"
           }
         ],
         "nameCounts": [
+          1,
+          1,
+          1,
+          1,
+          1,
           1,
           1,
           1,
@@ -71,85 +96,120 @@
         ],
         "results": [
           {
-            "name": "BigXthaPlug",
-            "website": "https://www.bigxthaplugofficial.com/",
-            "tourUrl": "https://www.bigxthaplugofficial.com/tour/",
-            "pathPattern": "/tour",
-            "reason": "score=13 (years=2, numericDates=0, months=4, days=0, keywords=6, widget=0)"
+            "name": "Astrobrite",
+            "website": "https://astrobrite.bandcamp.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Return",
-            "website": "http://www.return.no/",
+            "name": "Atheist",
+            "website": "https://www.officialatheist.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Auburn",
+            "website": "http://www.auburnmusic.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Autopsy",
+            "website": "http://www.autopsydeathmetal.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Beth",
+            "website": "https://www.bethoficial.com",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Zwyntar",
-            "website": "http://zwyntar.com/",
+            "name": "Brandon Heath",
+            "website": "https://brandonheathmusic.com",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Caetano Veloso",
-            "website": "https://www.caetanoveloso.com.br/",
-            "tourUrl": "https://www.caetanoveloso.com.br/discografia/live-at-carnegie-hall/",
-            "pathPattern": "/live",
-            "reason": "score=8 (years=1, numericDates=0, months=1, days=0, keywords=5, widget=0)"
-          },
-          {
-            "name": "Charlie Hunter",
-            "website": "http://www.charliehunter.com/",
+            "name": "DAAU",
+            "website": "http://www.daau.com",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Silkworm",
-            "website": "http://www.silkworm.net/",
+            "name": "Datura",
+            "website": "http://www.datura.it/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Dolly Dots",
-            "website": "http://www.dollydots.nl/",
+            "name": "Taco",
+            "website": "http://www.taco.tc/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "The Collectors",
+            "website": "http://www.the-collectors.net/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "The Listening Pool",
+            "website": "http://www.thelisteningpool.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Todd Kerns",
-            "website": "https://toddkerns.com/",
+            "name": "The Pains of Being Pure at Heart",
+            "website": "http://www.thepainsofbeingpureatheart.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Tom Sancton",
-            "website": "http://tomsancton.blogspot.com/",
+            "name": "Manoella Torres",
+            "website": "http://www.manoellatorres.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "くるり",
-            "website": "https://www.quruli.net/",
-            "tourUrl": "https://www.quruli.net/live",
-            "pathPattern": "/live",
-            "reason": "score=95 (years=46, numericDates=0, months=0, days=0, keywords=3, widget=0)"
+            "name": "Memoria",
+            "website": "https://www.memoriaband.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "A2O LITE",
-            "website": "https://a2olite.world/",
+            "name": "Mitar Subotić",
+            "website": "http://suba.com.br/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Voyage",
+            "website": "https://voyage.rs/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
           }
         ],
         "skipped": [],
-        "applied": 11,
+        "applied": 16,
         "pending": null,
         "complete": true
       }
@@ -157,88 +217,85 @@
     "rows": [
       {
         "index": 0,
-        "tourUrl": "https://www.bigxthaplugofficial.com/tour/",
-        "triedAt": "2026-11-01T11:02:12.364Z"
+        "tourUrl": null,
+        "triedAt": "2026-11-02T12:00:17.381Z"
       },
       {
         "index": 1,
         "tourUrl": null,
-        "triedAt": "2026-11-01T11:02:12.379Z"
+        "triedAt": "2026-11-02T12:00:17.395Z"
       },
       {
         "index": 2,
         "tourUrl": null,
-        "triedAt": "2026-11-01T11:02:12.391Z"
+        "triedAt": "2026-11-02T12:00:17.407Z"
       },
       {
         "index": 3,
-        "tourUrl": "https://www.caetanoveloso.com.br/discografia/live-at-carnegie-hall/",
-        "triedAt": "2026-11-01T11:02:12.403Z"
+        "tourUrl": null,
+        "triedAt": "2026-11-02T12:00:17.418Z"
       },
       {
         "index": 4,
         "tourUrl": null,
-        "triedAt": "2026-11-01T11:02:12.417Z"
+        "triedAt": "2026-11-02T12:00:17.431Z"
       },
       {
         "index": 5,
         "tourUrl": null,
-        "triedAt": "2026-11-01T11:02:12.428Z"
+        "triedAt": "2026-11-02T12:00:17.442Z"
       },
       {
         "index": 6,
         "tourUrl": null,
-        "triedAt": "2026-11-01T11:02:12.436Z"
+        "triedAt": "2026-11-02T12:00:17.452Z"
       },
       {
         "index": 7,
         "tourUrl": null,
-        "triedAt": "2026-11-01T11:02:12.444Z"
+        "triedAt": "2026-11-02T12:00:17.462Z"
       },
       {
         "index": 8,
         "tourUrl": null,
-        "triedAt": "2026-11-01T11:02:12.452Z"
+        "triedAt": "2026-11-02T12:00:17.472Z"
       },
       {
         "index": 9,
-        "tourUrl": "https://www.quruli.net/live",
-        "triedAt": "2026-11-01T11:02:12.461Z"
+        "tourUrl": null,
+        "triedAt": "2026-11-02T12:00:17.483Z"
       },
       {
         "index": 10,
         "tourUrl": null,
-        "triedAt": "2026-11-01T11:02:28.178Z"
+        "triedAt": "2026-11-02T12:00:53.519Z"
+      },
+      {
+        "index": 11,
+        "tourUrl": null,
+        "triedAt": "2026-11-02T12:00:53.533Z"
+      },
+      {
+        "index": 12,
+        "tourUrl": null,
+        "triedAt": "2026-11-02T12:00:53.548Z"
+      },
+      {
+        "index": 13,
+        "tourUrl": null,
+        "triedAt": "2026-11-02T12:00:53.564Z"
+      },
+      {
+        "index": 14,
+        "tourUrl": null,
+        "triedAt": "2026-11-02T12:00:53.581Z"
+      },
+      {
+        "index": 15,
+        "tourUrl": null,
+        "triedAt": "2026-11-02T12:00:53.595Z"
       }
     ],
-    "audit": [
-      {
-        "artist": "BigXthaPlug",
-        "website": "https://www.bigxthaplugofficial.com/",
-        "tourUrl": "https://www.bigxthaplugofficial.com/tour/",
-        "pathPattern": "/tour",
-        "reason": "score=13 (years=2, numericDates=0, months=4, days=0, keywords=6, widget=0)",
-        "appliedAt": "2026-11-01T11:02:12.364Z",
-        "discoveryOperationId": "83313e4f-a1b0-47ae-a083-e86f173e9a76:0"
-      },
-      {
-        "artist": "Caetano Veloso",
-        "website": "https://www.caetanoveloso.com.br/",
-        "tourUrl": "https://www.caetanoveloso.com.br/discografia/live-at-carnegie-hall/",
-        "pathPattern": "/live",
-        "reason": "score=8 (years=1, numericDates=0, months=1, days=0, keywords=5, widget=0)",
-        "appliedAt": "2026-11-01T11:02:12.403Z",
-        "discoveryOperationId": "83313e4f-a1b0-47ae-a083-e86f173e9a76:3"
-      },
-      {
-        "artist": "くるり",
-        "website": "https://www.quruli.net/",
-        "tourUrl": "https://www.quruli.net/live",
-        "pathPattern": "/live",
-        "reason": "score=95 (years=46, numericDates=0, months=0, days=0, keywords=3, widget=0)",
-        "appliedAt": "2026-11-01T11:02:12.461Z",
-        "discoveryOperationId": "83313e4f-a1b0-47ae-a083-e86f173e9a76:9"
-      }
-    ]
+    "audit": []
   }
 }
