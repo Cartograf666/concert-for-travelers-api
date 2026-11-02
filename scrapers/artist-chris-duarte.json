@@ -1,0 +1,17 @@
+{
+  "id": "artist-chris-duarte",
+  "domain": "www.chrisduarte.com",
+  "url": "http://www.chrisduarte.com/shows/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".gigpress-row",
+    "artistNameFallback": "Chris Duarte Group",
+    "date": ".gigpress-date",
+    "ticketUrl": ".gigpress-tickets a",
+    "venue": ".gigpress-venue",
+    "city": ".gigpress-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
