@@ -32899,5 +32899,145 @@
     "failuresSinceRepair": 0,
     "note": "repair failed: Selector \"eventBlock\" (.qode-events-list-holder-outer .qode-event-content) matched 0 elements.",
     "verification": ""
+  },
+  {
+    "id": "artist-admiral-fallow",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-admiral-fallow.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-11-02T12:28:26.703Z",
+    "previousConfig": {
+      "id": "artist-admiral-fallow",
+      "domain": "www.admiralfallow.com",
+      "url": "https://www.admiralfallow.com/shows",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": ".EventListingListItem",
+        "artistNameFallback": "Admiral Fallow",
+        "date": ".EventListingListItem-date",
+        "ticketUrl": ".EventListingListItem-ticketsLink",
+        "venue": ".EventListingListItem-venue a",
+        "city": ".EventListingListItem-venue a",
+        "country": ".EventListingListItem-venue a",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper artist-admiral-fallow is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-amber-run",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-amber-run.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-11-02T12:28:26.706Z",
+    "previousConfig": {
+      "id": "artist-amber-run",
+      "domain": "www.amber-run.com",
+      "url": "https://www.amber-run.com/live",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "article.EventListingListItem",
+        "artistNameFallback": "Amber Run",
+        "date": ".EventListingListItem-date-day",
+        "ticketUrl": "a.EventListingListItem-content",
+        "venue": ".EventListingListItem-venue-name",
+        "city": ".EventListingListItem-venue-city",
+        "country": ".EventListingListItem-venue-city",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper artist-amber-run is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-ann-and-nancy-wilson",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-ann-and-nancy-wilson.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-11-02T12:28:27.923Z",
+    "previousConfig": {
+      "id": "artist-ann-and-nancy-wilson",
+      "domain": "www.heart-music.com",
+      "url": "https://www.heart-music.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".widget-events .event",
+        "artistNameFallback": "Ann and Nancy Wilson",
+        "date": "time",
+        "ticketUrl": ".btn-tickets",
+        "venue": ".card-title",
+        "city": ".location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.widget-events .event) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-king-gizzard-apollo",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-king-gizzard-apollo.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-11-02T12:28:27.928Z",
+    "previousConfig": {
+      "id": "artist-king-gizzard-apollo",
+      "domain": "www.eventimapollo.com",
+      "url": "https://www.eventimapollo.com/events/king-gizzard-the-lizard-wizard/",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "h1.event-hero__title",
+        "date": "time",
+        "artistNameFallback": "King Gizzard & The Lizard Wizard",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper artist-king-gizzard-apollo is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-yolanda-adams",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-yolanda-adams.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-11-02T12:28:28.977Z",
+    "previousConfig": {
+      "id": "artist-yolanda-adams",
+      "domain": "yolandaadamslive.com",
+      "url": "https://yolandaadamslive.com/tour/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".qode-event-content",
+        "artistNameFallback": "Yolanda Adams",
+        "date": ".qode-event-date-holder",
+        "ticketUrl": ".qode-event-buy-tickets-button",
+        "venue": ".qode-event-title a",
+        "city": ".qode-event-title a",
+        "country": "",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.qode-events-list-holder-outer .qode-event-content) matched 0 elements.",
+    "verification": ""
   }
 ]
