@@ -33039,5 +33039,87 @@
     "failuresSinceRepair": 0,
     "note": "repair failed: Selector \"eventBlock\" (.qode-events-list-holder-outer .qode-event-content) matched 0 elements.",
     "verification": ""
+  },
+  {
+    "id": "artist-ann-and-nancy-wilson",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-ann-and-nancy-wilson.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-11-03T11:55:44.965Z",
+    "previousConfig": {
+      "id": "artist-ann-and-nancy-wilson",
+      "domain": "www.heart-music.com",
+      "url": "https://www.heart-music.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".widget-events .event",
+        "artistNameFallback": "Ann and Nancy Wilson",
+        "date": "time",
+        "ticketUrl": ".btn-tickets",
+        "venue": ".card-title",
+        "city": ".location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.widget-events .event) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-king-gizzard-apollo",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-king-gizzard-apollo.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-11-03T11:55:44.969Z",
+    "previousConfig": {
+      "id": "artist-king-gizzard-apollo",
+      "domain": "www.eventimapollo.com",
+      "url": "https://www.eventimapollo.com/events/king-gizzard-the-lizard-wizard/",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "h1.event-hero__title",
+        "date": "time",
+        "artistNameFallback": "King Gizzard & The Lizard Wizard",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper artist-king-gizzard-apollo is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-level-42",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-level-42.json",
+    "strategy": "transient",
+    "repairedAt": "2026-11-03T11:55:49.971Z",
+    "previousConfig": {
+      "id": "artist-level-42",
+      "domain": "www.level42.com",
+      "url": "https://www.level42.com/event-listing/tour-history/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.gigpress-table tbody:has(tr.gigpress-row)",
+        "artistNameFallback": "Level 42",
+        "date": "tr.gigpress-row td.gigpress-date",
+        "ticketUrl": "tr.gigpress-row td.gigpress-venue a",
+        "venue": "tr.gigpress-row td.gigpress-venue",
+        "city": "tr.gigpress-row td.gigpress-city",
+        "country": "tr.gigpress-row td.gigpress-country",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: has_future_dates [0 event(s) dated today or later]; country_codes_valid [0/269 country values are 2-letter codes (0%, need 80%)]; public_events [269 raw -> 0 public; dropped={\"incomplete\":0,\"notApproved\":0,\"badDate\":0,\"pastDate\":269,\"zodFail\":0,\"nonArtist\":0,\"beyondPlanningHorizon\":0}]",
+    "verification": ""
   }
 ]
