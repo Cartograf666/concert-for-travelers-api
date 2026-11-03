@@ -1,92 +1,42 @@
 {
-  "digest": "23f96f60b45e983e4cdf5f382f4b233a1d40d324304d4ee6ac7b7c0760416616",
+  "digest": "445abf57e30bdb0480bce4ef59afc397997c79cbad49dfdab1cf10bd4528729a",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "816a3b6e4d7bbe34d00034a4d5c4e2935283b47dcd33808431a529c58ad5c700",
+      "digest": "df5e9c2179fdd2ffd52da6b96316cadd8aed447bd1da0de7a2bea31a92318aa6",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "e8651a07-648b-4f33-806b-e28672d7e6c7",
-        "inputHash": "732a3e1601e5ff9c314128cb59ae1adafa1896685276bbf207e70fb742beed70",
+        "id": "ece1d465-3d14-4fb3-80da-1c61bd3351f8",
+        "inputHash": "e6e9f43a2f7b5991a39c73aaa047b0665299a626e9260a5912f1b6710babd237",
         "candidates": [
           {
-            "name": "Astrobrite",
-            "website": "https://astrobrite.bandcamp.com/"
+            "name": "Art Department",
+            "website": "http://www.artdepartmentmusic.com/"
           },
           {
-            "name": "Atheist",
-            "website": "https://www.officialatheist.com/"
+            "name": "John Bush",
+            "website": "http://armoredsaint.com"
           },
           {
-            "name": "Auburn",
-            "website": "http://www.auburnmusic.com/"
+            "name": "Juice Newton",
+            "website": "http://www.juicenewton.net"
           },
           {
-            "name": "Autopsy",
-            "website": "http://www.autopsydeathmetal.com/"
+            "name": "Christopher Lawrence",
+            "website": "http://www.christopherlawrence.com/"
           },
           {
-            "name": "Beth",
-            "website": "https://www.bethoficial.com"
+            "name": "The Leaves",
+            "website": "https://www.theleavesmusic.com/"
           },
           {
-            "name": "Brandon Heath",
-            "website": "https://brandonheathmusic.com"
-          },
-          {
-            "name": "DAAU",
-            "website": "http://www.daau.com"
-          },
-          {
-            "name": "Datura",
-            "website": "http://www.datura.it/"
-          },
-          {
-            "name": "Taco",
-            "website": "http://www.taco.tc/"
-          },
-          {
-            "name": "The Collectors",
-            "website": "http://www.the-collectors.net/"
-          },
-          {
-            "name": "The Listening Pool",
-            "website": "http://www.thelisteningpool.com/"
-          },
-          {
-            "name": "The Pains of Being Pure at Heart",
-            "website": "http://www.thepainsofbeingpureatheart.com/"
-          },
-          {
-            "name": "Manoella Torres",
-            "website": "http://www.manoellatorres.com/"
-          },
-          {
-            "name": "Memoria",
-            "website": "https://www.memoriaband.com"
-          },
-          {
-            "name": "Mitar Subotić",
-            "website": "http://suba.com.br/"
-          },
-          {
-            "name": "Voyage",
-            "website": "https://voyage.rs/"
+            "name": "Eurogliders",
+            "website": "http://www.eurogliders.com"
           }
         ],
         "nameCounts": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
           1,
           1,
           1,
@@ -96,120 +46,50 @@
         ],
         "results": [
           {
-            "name": "Astrobrite",
-            "website": "https://astrobrite.bandcamp.com/",
+            "name": "Art Department",
+            "website": "http://www.artdepartmentmusic.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Atheist",
-            "website": "https://www.officialatheist.com/",
+            "name": "John Bush",
+            "website": "http://armoredsaint.com",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Auburn",
-            "website": "http://www.auburnmusic.com/",
+            "name": "Juice Newton",
+            "website": "http://www.juicenewton.net",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Autopsy",
-            "website": "http://www.autopsydeathmetal.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Beth",
-            "website": "https://www.bethoficial.com",
+            "name": "Christopher Lawrence",
+            "website": "http://www.christopherlawrence.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Brandon Heath",
-            "website": "https://brandonheathmusic.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "DAAU",
-            "website": "http://www.daau.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Datura",
-            "website": "http://www.datura.it/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Taco",
-            "website": "http://www.taco.tc/",
+            "name": "The Leaves",
+            "website": "https://www.theleavesmusic.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "The Collectors",
-            "website": "http://www.the-collectors.net/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "The Listening Pool",
-            "website": "http://www.thelisteningpool.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "The Pains of Being Pure at Heart",
-            "website": "http://www.thepainsofbeingpureatheart.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Manoella Torres",
-            "website": "http://www.manoellatorres.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Memoria",
-            "website": "https://www.memoriaband.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Mitar Subotić",
-            "website": "http://suba.com.br/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Voyage",
-            "website": "https://voyage.rs/",
+            "name": "Eurogliders",
+            "website": "http://www.eurogliders.com",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           }
         ],
         "skipped": [],
-        "applied": 16,
+        "applied": 6,
         "pending": null,
         "complete": true
       }
@@ -218,82 +98,32 @@
       {
         "index": 0,
         "tourUrl": null,
-        "triedAt": "2026-11-02T12:00:17.381Z"
+        "triedAt": "2026-11-03T11:38:07.706Z"
       },
       {
         "index": 1,
         "tourUrl": null,
-        "triedAt": "2026-11-02T12:00:17.395Z"
+        "triedAt": "2026-11-03T11:38:07.720Z"
       },
       {
         "index": 2,
         "tourUrl": null,
-        "triedAt": "2026-11-02T12:00:17.407Z"
+        "triedAt": "2026-11-03T11:38:07.731Z"
       },
       {
         "index": 3,
         "tourUrl": null,
-        "triedAt": "2026-11-02T12:00:17.418Z"
+        "triedAt": "2026-11-03T11:38:07.746Z"
       },
       {
         "index": 4,
         "tourUrl": null,
-        "triedAt": "2026-11-02T12:00:17.431Z"
+        "triedAt": "2026-11-03T11:38:07.757Z"
       },
       {
         "index": 5,
         "tourUrl": null,
-        "triedAt": "2026-11-02T12:00:17.442Z"
-      },
-      {
-        "index": 6,
-        "tourUrl": null,
-        "triedAt": "2026-11-02T12:00:17.452Z"
-      },
-      {
-        "index": 7,
-        "tourUrl": null,
-        "triedAt": "2026-11-02T12:00:17.462Z"
-      },
-      {
-        "index": 8,
-        "tourUrl": null,
-        "triedAt": "2026-11-02T12:00:17.472Z"
-      },
-      {
-        "index": 9,
-        "tourUrl": null,
-        "triedAt": "2026-11-02T12:00:17.483Z"
-      },
-      {
-        "index": 10,
-        "tourUrl": null,
-        "triedAt": "2026-11-02T12:00:53.519Z"
-      },
-      {
-        "index": 11,
-        "tourUrl": null,
-        "triedAt": "2026-11-02T12:00:53.533Z"
-      },
-      {
-        "index": 12,
-        "tourUrl": null,
-        "triedAt": "2026-11-02T12:00:53.548Z"
-      },
-      {
-        "index": 13,
-        "tourUrl": null,
-        "triedAt": "2026-11-02T12:00:53.564Z"
-      },
-      {
-        "index": 14,
-        "tourUrl": null,
-        "triedAt": "2026-11-02T12:00:53.581Z"
-      },
-      {
-        "index": 15,
-        "tourUrl": null,
-        "triedAt": "2026-11-02T12:00:53.595Z"
+        "triedAt": "2026-11-03T11:38:07.767Z"
       }
     ],
     "audit": []
