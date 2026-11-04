@@ -1,42 +1,67 @@
 {
-  "digest": "445abf57e30bdb0480bce4ef59afc397997c79cbad49dfdab1cf10bd4528729a",
+  "digest": "3b2e4e47e852c4a58f932b7adbc389c3dab73076cf0847e3b5f5f105a248f857",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "df5e9c2179fdd2ffd52da6b96316cadd8aed447bd1da0de7a2bea31a92318aa6",
+      "digest": "92868152d34cd37ae09085d1428f3d32dcfacfb6c00ec66f03cc526d833345ca",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "ece1d465-3d14-4fb3-80da-1c61bd3351f8",
-        "inputHash": "e6e9f43a2f7b5991a39c73aaa047b0665299a626e9260a5912f1b6710babd237",
+        "id": "37fa7485-4dff-4624-b842-b57b1a605a03",
+        "inputHash": "74848d90d17214daa13ab3f729396bf487d196093214174bbde1f8a899ee0574",
         "candidates": [
           {
-            "name": "Art Department",
-            "website": "http://www.artdepartmentmusic.com/"
+            "name": "Impending Doom",
+            "website": "http://www.impendingdoommusic.com"
           },
           {
-            "name": "John Bush",
-            "website": "http://armoredsaint.com"
+            "name": "YouTube",
+            "website": "https://www.youtube.com/"
           },
           {
-            "name": "Juice Newton",
-            "website": "http://www.juicenewton.net"
+            "name": "Jeremy Fisher",
+            "website": "http://www.jeremyfishermusic.com/"
           },
           {
-            "name": "Christopher Lawrence",
-            "website": "http://www.christopherlawrence.com/"
+            "name": "Ruth Laredo",
+            "website": "http://www.ruthlaredo.com"
           },
           {
-            "name": "The Leaves",
-            "website": "https://www.theleavesmusic.com/"
+            "name": "Steve Kilbey",
+            "website": "http://thetimebeing.com"
           },
           {
-            "name": "Eurogliders",
-            "website": "http://www.eurogliders.com"
+            "name": "Micky & the Motorcars",
+            "website": "http://www.mickyandthemotorcars.com/"
+          },
+          {
+            "name": "Ultrabeat",
+            "website": "https://www.ultrabeat.co.uk"
+          },
+          {
+            "name": "Gorilla Biscuits",
+            "website": "https://www.revelationrecords.com/bands/gorilla_biscuits"
+          },
+          {
+            "name": "Orla Gartland",
+            "website": "http://www.orlagartland.com"
+          },
+          {
+            "name": "Warren Haynes",
+            "website": "http://warrenhaynes.com"
+          },
+          {
+            "name": "Clan Gregor Society Pipe Band",
+            "website": "https://clangregor.org/"
           }
         ],
         "nameCounts": [
+          1,
+          1,
+          1,
+          1,
+          1,
           1,
           1,
           1,
@@ -46,50 +71,85 @@
         ],
         "results": [
           {
-            "name": "Art Department",
-            "website": "http://www.artdepartmentmusic.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "John Bush",
-            "website": "http://armoredsaint.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Juice Newton",
-            "website": "http://www.juicenewton.net",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Christopher Lawrence",
-            "website": "http://www.christopherlawrence.com/",
+            "name": "Impending Doom",
+            "website": "http://www.impendingdoommusic.com",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "The Leaves",
-            "website": "https://www.theleavesmusic.com/",
+            "name": "YouTube",
+            "website": "https://www.youtube.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Jeremy Fisher",
+            "website": "http://www.jeremyfishermusic.com/",
+            "tourUrl": "https://www.jeremyfishermusic.com/tour",
+            "pathPattern": "/tour",
+            "reason": "score=21 (years=2, numericDates=0, months=8, days=8, keywords=10, widget=0)"
+          },
+          {
+            "name": "Ruth Laredo",
+            "website": "http://www.ruthlaredo.com",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Eurogliders",
-            "website": "http://www.eurogliders.com",
+            "name": "Steve Kilbey",
+            "website": "http://thetimebeing.com",
+            "tourUrl": "https://thetimebeing.com/tickets-for-twilight-at-taronga-sat-jan-28th-2012/",
+            "pathPattern": "/tickets",
+            "reason": "score=14.5 (years=1, numericDates=1, months=4, days=3, keywords=9, widget=0)"
+          },
+          {
+            "name": "Micky & the Motorcars",
+            "website": "http://www.mickyandthemotorcars.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Ultrabeat",
+            "website": "https://www.ultrabeat.co.uk",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Gorilla Biscuits",
+            "website": "https://www.revelationrecords.com/bands/gorilla_biscuits",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Orla Gartland",
+            "website": "http://www.orlagartland.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Warren Haynes",
+            "website": "http://warrenhaynes.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Clan Gregor Society Pipe Band",
+            "website": "https://clangregor.org/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
           }
         ],
         "skipped": [],
-        "applied": 6,
+        "applied": 11,
         "pending": null,
         "complete": true
       }
@@ -98,34 +158,78 @@
       {
         "index": 0,
         "tourUrl": null,
-        "triedAt": "2026-11-03T11:38:07.706Z"
+        "triedAt": "2026-11-04T11:52:08.099Z"
       },
       {
         "index": 1,
         "tourUrl": null,
-        "triedAt": "2026-11-03T11:38:07.720Z"
+        "triedAt": "2026-11-04T11:52:08.112Z"
       },
       {
         "index": 2,
-        "tourUrl": null,
-        "triedAt": "2026-11-03T11:38:07.731Z"
+        "tourUrl": "https://www.jeremyfishermusic.com/tour",
+        "triedAt": "2026-11-04T11:52:08.125Z"
       },
       {
         "index": 3,
         "tourUrl": null,
-        "triedAt": "2026-11-03T11:38:07.746Z"
+        "triedAt": "2026-11-04T11:52:08.137Z"
       },
       {
         "index": 4,
-        "tourUrl": null,
-        "triedAt": "2026-11-03T11:38:07.757Z"
+        "tourUrl": "https://thetimebeing.com/tickets-for-twilight-at-taronga-sat-jan-28th-2012/",
+        "triedAt": "2026-11-04T11:52:08.153Z"
       },
       {
         "index": 5,
         "tourUrl": null,
-        "triedAt": "2026-11-03T11:38:07.767Z"
+        "triedAt": "2026-11-04T11:52:08.166Z"
+      },
+      {
+        "index": 6,
+        "tourUrl": null,
+        "triedAt": "2026-11-04T11:52:08.178Z"
+      },
+      {
+        "index": 7,
+        "tourUrl": null,
+        "triedAt": "2026-11-04T11:52:08.191Z"
+      },
+      {
+        "index": 8,
+        "tourUrl": null,
+        "triedAt": "2026-11-04T11:52:08.203Z"
+      },
+      {
+        "index": 9,
+        "tourUrl": null,
+        "triedAt": "2026-11-04T11:52:08.215Z"
+      },
+      {
+        "index": 10,
+        "tourUrl": null,
+        "triedAt": "2026-11-04T11:52:15.516Z"
       }
     ],
-    "audit": []
+    "audit": [
+      {
+        "artist": "Jeremy Fisher",
+        "website": "http://www.jeremyfishermusic.com/",
+        "tourUrl": "https://www.jeremyfishermusic.com/tour",
+        "pathPattern": "/tour",
+        "reason": "score=21 (years=2, numericDates=0, months=8, days=8, keywords=10, widget=0)",
+        "appliedAt": "2026-11-04T11:52:08.125Z",
+        "discoveryOperationId": "37fa7485-4dff-4624-b842-b57b1a605a03:2"
+      },
+      {
+        "artist": "Steve Kilbey",
+        "website": "http://thetimebeing.com",
+        "tourUrl": "https://thetimebeing.com/tickets-for-twilight-at-taronga-sat-jan-28th-2012/",
+        "pathPattern": "/tickets",
+        "reason": "score=14.5 (years=1, numericDates=1, months=4, days=3, keywords=9, widget=0)",
+        "appliedAt": "2026-11-04T11:52:08.153Z",
+        "discoveryOperationId": "37fa7485-4dff-4624-b842-b57b1a605a03:4"
+      }
+    ]
   }
 }
