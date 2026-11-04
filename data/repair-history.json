@@ -33121,5 +33121,170 @@
     "failuresSinceRepair": 0,
     "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: has_future_dates [0 event(s) dated today or later]; country_codes_valid [0/269 country values are 2-letter codes (0%, need 80%)]; public_events [269 raw -> 0 public; dropped={\"incomplete\":0,\"notApproved\":0,\"badDate\":0,\"pastDate\":269,\"zodFail\":0,\"nonArtist\":0,\"beyondPlanningHorizon\":0}]",
     "verification": ""
+  },
+  {
+    "id": "artist-alabama-3",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-alabama-3.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-11-04T12:10:01.808Z",
+    "previousConfig": {
+      "id": "artist-alabama-3",
+      "domain": "alabama3.co.uk",
+      "url": "https://alabama3.co.uk/live/",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "article.show",
+        "artistNameFallback": "Alabama 3",
+        "date": "time.date::attr(datetime)",
+        "ticketUrl": "a.ticket-link::attr(href)",
+        "venue": ".place p",
+        "city": ".place h4",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper artist-alabama-3 is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-ann-and-nancy-wilson",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-ann-and-nancy-wilson.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-11-04T12:10:11.494Z",
+    "previousConfig": {
+      "id": "artist-ann-and-nancy-wilson",
+      "domain": "www.heart-music.com",
+      "url": "https://www.heart-music.com/tour",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".widget-events .event",
+        "artistNameFallback": "Ann and Nancy Wilson",
+        "date": "time",
+        "ticketUrl": ".btn-tickets",
+        "venue": ".card-title",
+        "city": ".location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "CA"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.widget-events .event) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-golem",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-golem.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-11-04T12:10:11.796Z",
+    "previousConfig": {
+      "id": "artist-golem",
+      "domain": "golemrocks.com",
+      "url": "http://golemrocks.com/shows/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "#tablepress-1 tbody tr",
+        "artistNameFallback": "Golem",
+        "date": ".column-1",
+        "venue": ".column-3",
+        "city": ".column-2",
+        "country": ".column-2",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 403]",
+    "verification": ""
+  },
+  {
+    "id": "artist-king-gizzard-apollo",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-king-gizzard-apollo.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-11-04T12:10:11.800Z",
+    "previousConfig": {
+      "id": "artist-king-gizzard-apollo",
+      "domain": "www.eventimapollo.com",
+      "url": "https://www.eventimapollo.com/events/king-gizzard-the-lizard-wizard/",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "h1.event-hero__title",
+        "date": "time",
+        "artistNameFallback": "King Gizzard & The Lizard Wizard",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper artist-king-gizzard-apollo is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-them",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-them.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-11-04T12:11:01.774Z",
+    "previousConfig": {
+      "id": "artist-them",
+      "domain": "vanmorrison.com",
+      "url": "https://vanmorrison.com/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".shows__list .shows__item",
+        "artistNameFallback": "Them",
+        "date": "time.shows__date",
+        "ticketUrl": ".shows__action a",
+        "venue": ".shows__venue",
+        "city": ".shows__location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Selector \"eventBlock\" (.shows-page__inner .shows__item) matched 0 elements.",
+    "verification": ""
+  },
+  {
+    "id": "artist-van-morrison",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-van-morrison.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-11-04T12:11:25.012Z",
+    "previousConfig": {
+      "id": "artist-van-morrison",
+      "domain": "vanmorrison.com",
+      "url": "https://vanmorrison.com/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.shows__item",
+        "artistNameFallback": "Van Morrison",
+        "date": "time.shows__date",
+        "ticketUrl": "div.shows__action a",
+        "venue": "p.shows__venue",
+        "city": "p.shows__location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: dates_parse [0/1 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]; artist_names_plausible [1/1 artist values look like page chrome (100%, allow 20%)]; public_events [1 raw -> 0 public; dropped={\"incomplete\":1,\"notApproved\":0,\"badDate\":0,\"pastDate\":0,\"zodFail\":0,\"nonArtist\":0,\"beyondPlanningHorizon\":0}]",
+    "verification": ""
   }
 ]
