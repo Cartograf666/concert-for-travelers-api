@@ -33286,5 +33286,230 @@
     "failuresSinceRepair": 0,
     "note": "re-selection rejected by live verification -- FAIL: dates_parse [0/1 date strings parsed (0%, need 60%)]; has_future_dates [0 event(s) dated today or later]; artist_names_plausible [1/1 artist values look like page chrome (100%, allow 20%)]; public_events [1 raw -> 0 public; dropped={\"incomplete\":1,\"notApproved\":0,\"badDate\":0,\"pastDate\":0,\"zodFail\":0,\"nonArtist\":0,\"beyondPlanningHorizon\":0}]",
     "verification": ""
+  },
+  {
+    "id": "artist-alabama-3",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-alabama-3.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-11-05T12:10:27.077Z",
+    "previousConfig": {
+      "id": "artist-alabama-3",
+      "domain": "alabama3.co.uk",
+      "url": "https://alabama3.co.uk/live/",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "article.show",
+        "artistNameFallback": "Alabama 3",
+        "date": "time.date::attr(datetime)",
+        "ticketUrl": "a.ticket-link::attr(href)",
+        "venue": ".place p",
+        "city": ".place h4",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper artist-alabama-3 is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-arena",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-arena.json",
+    "strategy": "transient",
+    "repairedAt": "2026-11-05T12:10:42.655Z",
+    "previousConfig": {
+      "id": "artist-arena",
+      "domain": "www.arenaband.co.uk",
+      "url": "https://www.arenaband.co.uk/tour-dates-2022/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "table.tftable tbody tr",
+        "artistNameFallback": "Arena",
+        "date": "td:nth-child(2) span",
+        "ticketUrl": "td:nth-child(4) a::attr(href)",
+        "venue": "td:nth-child(3) strong",
+        "city": "td:nth-child(3) span",
+        "country": "td:nth-child(1) img::attr(alt)",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "transient: setting maxRetries 2 -> 3 within the 90s budget; last candidate: FAIL: live_fetch [live run failed (reason=fetch_error): Request failed with status code 503]",
+    "verification": ""
+  },
+  {
+    "id": "artist-golem",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-golem.json",
+    "strategy": "anti_bot",
+    "repairedAt": "2026-11-05T12:10:54.433Z",
+    "previousConfig": {
+      "id": "artist-golem",
+      "domain": "golemrocks.com",
+      "url": "http://golemrocks.com/shows/",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "#tablepress-1 tbody tr",
+        "artistNameFallback": "Golem",
+        "date": ".column-1",
+        "venue": ".column-3",
+        "city": ".column-2",
+        "country": ".column-2",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "US"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "anti_bot: escalating to the got-scraping header-fingerprint backend; last candidate: FAIL: has_future_dates [0 event(s) dated today or later]; country_codes_valid [2/237 country values are 2-letter codes (1%, need 80%)]; public_events [237 raw -> 0 public; dropped={\"incomplete\":21,\"notApproved\":0,\"badDate\":1,\"pastDate\":215,\"zodFail\":0,\"nonArtist\":0,\"beyondPlanningHorizon\":0}]",
+    "verification": ""
+  },
+  {
+    "id": "artist-polysics",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-polysics.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-11-05T12:10:59.975Z",
+    "previousConfig": {
+      "id": "artist-polysics",
+      "domain": "www.polysics.com",
+      "url": "http://www.polysics.com/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".live-content",
+        "artistNameFallback": "Polysics",
+        "date": "h2",
+        "venue": ".live-content h3",
+        "city": "h2 span",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "JP"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "re-selection rejected by live verification -- FAIL: public_events [6 raw -> 0 public; dropped={\"incomplete\":6,\"notApproved\":0,\"badDate\":0,\"pastDate\":0,\"zodFail\":0,\"nonArtist\":0,\"beyondPlanningHorizon\":0}]; no_public_volume_collapse [0 public event(s) vs 1 last-good public event(s) (need >= 1)]",
+    "verification": ""
+  },
+  {
+    "id": "artist-turmion-katilot",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-turmion-katilot.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-11-05T12:10:59.976Z",
+    "previousConfig": {
+      "id": "artist-turmion-katilot",
+      "domain": "turmionkatilot.com",
+      "url": "https://turmionkatilot.com/shows/",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": ".fl-rich-text p:has(strong)",
+        "artistNameFallback": "Turmion Kätilöt",
+        "date": "strong",
+        "ticketUrl": "a@href",
+        "venue": "a",
+        "city": "p",
+        "country": "p",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "FI"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper artist-turmion-katilot is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-them",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-them.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-11-05T12:11:00.918Z",
+    "previousConfig": {
+      "id": "artist-them",
+      "domain": "vanmorrison.com",
+      "url": "https://vanmorrison.com/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": ".shows__list .shows__item",
+        "artistNameFallback": "Them",
+        "date": "time.shows__date",
+        "ticketUrl": ".shows__action a",
+        "venue": ".shows__venue",
+        "city": ".shows__location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "artist-van-morrison",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/artist-van-morrison.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-11-05T12:11:01.749Z",
+    "previousConfig": {
+      "id": "artist-van-morrison",
+      "domain": "vanmorrison.com",
+      "url": "https://vanmorrison.com/live",
+      "type": "static_selectors",
+      "selectors": {
+        "eventBlock": "li.shows__item",
+        "artistNameFallback": "Van Morrison",
+        "date": "time.shows__date",
+        "ticketUrl": "div.shows__action a",
+        "venue": "p.shows__venue",
+        "city": "p.shows__location",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "GB"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: New selectors were generated but extracted 0 events. Invalid selectors.",
+    "verification": ""
+  },
+  {
+    "id": "bravo-tour",
+    "cohort": "artist",
+    "configPath": "scrapers/artists/bravo-tour.json",
+    "strategy": "selectors",
+    "repairedAt": "2026-11-05T12:11:01.750Z",
+    "previousConfig": {
+      "id": "bravo-tour",
+      "domain": "www.bravogroup.ru",
+      "url": "http://www.bravogroup.ru/show_all.htm",
+      "type": "custom_js",
+      "selectors": {
+        "eventBlock": "ul.afishaTable li",
+        "artistNameFallback": "Браво",
+        "date": "div.date",
+        "venue": "div.name",
+        "city": "div.name",
+        "ticketUrl": "a.buyButton",
+        "venueNameFallback": "",
+        "cityNameFallback": "",
+        "countryNameFallback": "RU"
+      }
+    },
+    "status": "rejected",
+    "failuresSinceRepair": 0,
+    "note": "repair failed: Scraper bravo-tour is not a static_selectors scraper or is missing selectors.",
+    "verification": ""
   }
 ]
