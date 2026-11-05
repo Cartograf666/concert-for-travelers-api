@@ -1,62 +1,77 @@
 {
-  "digest": "3b2e4e47e852c4a58f932b7adbc389c3dab73076cf0847e3b5f5f105a248f857",
+  "digest": "6fa720fef58c6612348eff5de871701a00563fd05a8761d194f066316dc299ed",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "92868152d34cd37ae09085d1428f3d32dcfacfb6c00ec66f03cc526d833345ca",
+      "digest": "64593e6d70e4a0f965a7b5e8f79d34b35cc759ddf3d00f1d188109bcaf4118a1",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "37fa7485-4dff-4624-b842-b57b1a605a03",
-        "inputHash": "74848d90d17214daa13ab3f729396bf487d196093214174bbde1f8a899ee0574",
+        "id": "8aaf9ed9-5980-4ff9-8ff6-aa68c37b134f",
+        "inputHash": "92c4920c58ba2223cec87adc5882a35f8c29e1d82fafb3d717428abef58e5ad7",
         "candidates": [
           {
-            "name": "Impending Doom",
-            "website": "http://www.impendingdoommusic.com"
+            "name": "Ankit Tiwari",
+            "website": "https://ankittiwari.com/"
           },
           {
-            "name": "YouTube",
-            "website": "https://www.youtube.com/"
+            "name": "Baby Bird",
+            "website": "http://www.babybird.org.uk/"
           },
           {
-            "name": "Jeremy Fisher",
-            "website": "http://www.jeremyfishermusic.com/"
+            "name": "Jeff Martin",
+            "website": "http://jeff-martin.net/"
           },
           {
-            "name": "Ruth Laredo",
-            "website": "http://www.ruthlaredo.com"
+            "name": "Judy Carmichael",
+            "website": "http://www.judycarmichael.com/"
           },
           {
-            "name": "Steve Kilbey",
-            "website": "http://thetimebeing.com"
+            "name": "Zoot Money",
+            "website": "http://www.zootmoney.org/"
           },
           {
-            "name": "Micky & the Motorcars",
-            "website": "http://www.mickyandthemotorcars.com/"
+            "name": "Dada",
+            "website": "http://dadatheband.com/"
           },
           {
-            "name": "Ultrabeat",
-            "website": "https://www.ultrabeat.co.uk"
+            "name": "DJ Sasha",
+            "website": "http://djsasha.com/"
           },
           {
-            "name": "Gorilla Biscuits",
-            "website": "https://www.revelationrecords.com/bands/gorilla_biscuits"
+            "name": "Lost Boyz",
+            "website": "http://lostboyzmusic.com/"
           },
           {
-            "name": "Orla Gartland",
-            "website": "http://www.orlagartland.com"
+            "name": "The Dead Milkmen",
+            "website": "http://www.deadmilkmen.com/"
           },
           {
-            "name": "Warren Haynes",
-            "website": "http://warrenhaynes.com"
+            "name": "The Prisoners",
+            "website": "https://theprisoners.co.uk"
           },
           {
-            "name": "Clan Gregor Society Pipe Band",
-            "website": "https://clangregor.org/"
+            "name": "Todd Coolman",
+            "website": "https://toddcoolman.me/home"
+          },
+          {
+            "name": "Etta James",
+            "website": "https://www.ettajames.com"
+          },
+          {
+            "name": "Fleshgod Apocalypse",
+            "website": "http://www.fleshgodapocalypse.com/"
+          },
+          {
+            "name": "Gold",
+            "website": "http://www.groupegold.com/"
           }
         ],
         "nameCounts": [
+          1,
+          1,
+          1,
           1,
           1,
           1,
@@ -71,85 +86,106 @@
         ],
         "results": [
           {
-            "name": "Impending Doom",
-            "website": "http://www.impendingdoommusic.com",
+            "name": "Ankit Tiwari",
+            "website": "https://ankittiwari.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Baby Bird",
+            "website": "http://www.babybird.org.uk/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "YouTube",
-            "website": "https://www.youtube.com/",
+            "name": "Jeff Martin",
+            "website": "http://jeff-martin.net/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Jeremy Fisher",
-            "website": "http://www.jeremyfishermusic.com/",
-            "tourUrl": "https://www.jeremyfishermusic.com/tour",
-            "pathPattern": "/tour",
-            "reason": "score=21 (years=2, numericDates=0, months=8, days=8, keywords=10, widget=0)"
+            "name": "Judy Carmichael",
+            "website": "http://www.judycarmichael.com/",
+            "tourUrl": "https://www.judycarmichael.com/events",
+            "pathPattern": "/events",
+            "reason": "score=238 (years=46, numericDates=0, months=113, days=56, keywords=161, widget=0)"
           },
           {
-            "name": "Ruth Laredo",
-            "website": "http://www.ruthlaredo.com",
+            "name": "Zoot Money",
+            "website": "http://www.zootmoney.org/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Dada",
+            "website": "http://dadatheband.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "DJ Sasha",
+            "website": "http://djsasha.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Lost Boyz",
+            "website": "http://lostboyzmusic.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Steve Kilbey",
-            "website": "http://thetimebeing.com",
-            "tourUrl": "https://thetimebeing.com/tickets-for-twilight-at-taronga-sat-jan-28th-2012/",
-            "pathPattern": "/tickets",
-            "reason": "score=14.5 (years=1, numericDates=1, months=4, days=3, keywords=9, widget=0)"
-          },
-          {
-            "name": "Micky & the Motorcars",
-            "website": "http://www.mickyandthemotorcars.com/",
+            "name": "The Dead Milkmen",
+            "website": "http://www.deadmilkmen.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Ultrabeat",
-            "website": "https://www.ultrabeat.co.uk",
+            "name": "The Prisoners",
+            "website": "https://theprisoners.co.uk",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Gorilla Biscuits",
-            "website": "https://www.revelationrecords.com/bands/gorilla_biscuits",
+            "name": "Todd Coolman",
+            "website": "https://toddcoolman.me/home",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Orla Gartland",
-            "website": "http://www.orlagartland.com",
+            "name": "Etta James",
+            "website": "https://www.ettajames.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Fleshgod Apocalypse",
+            "website": "http://www.fleshgodapocalypse.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Warren Haynes",
-            "website": "http://warrenhaynes.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Clan Gregor Society Pipe Band",
-            "website": "https://clangregor.org/",
+            "name": "Gold",
+            "website": "http://www.groupegold.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           }
         ],
         "skipped": [],
-        "applied": 11,
+        "applied": 14,
         "pending": null,
         "complete": true
       }
@@ -158,77 +194,83 @@
       {
         "index": 0,
         "tourUrl": null,
-        "triedAt": "2026-11-04T11:52:08.099Z"
+        "triedAt": "2026-11-05T11:52:00.553Z"
       },
       {
         "index": 1,
         "tourUrl": null,
-        "triedAt": "2026-11-04T11:52:08.112Z"
+        "triedAt": "2026-11-05T11:52:00.569Z"
       },
       {
         "index": 2,
-        "tourUrl": "https://www.jeremyfishermusic.com/tour",
-        "triedAt": "2026-11-04T11:52:08.125Z"
+        "tourUrl": null,
+        "triedAt": "2026-11-05T11:52:00.584Z"
       },
       {
         "index": 3,
-        "tourUrl": null,
-        "triedAt": "2026-11-04T11:52:08.137Z"
+        "tourUrl": "https://www.judycarmichael.com/events",
+        "triedAt": "2026-11-05T11:52:00.599Z"
       },
       {
         "index": 4,
-        "tourUrl": "https://thetimebeing.com/tickets-for-twilight-at-taronga-sat-jan-28th-2012/",
-        "triedAt": "2026-11-04T11:52:08.153Z"
+        "tourUrl": null,
+        "triedAt": "2026-11-05T11:52:00.618Z"
       },
       {
         "index": 5,
         "tourUrl": null,
-        "triedAt": "2026-11-04T11:52:08.166Z"
+        "triedAt": "2026-11-05T11:52:00.632Z"
       },
       {
         "index": 6,
         "tourUrl": null,
-        "triedAt": "2026-11-04T11:52:08.178Z"
+        "triedAt": "2026-11-05T11:52:00.647Z"
       },
       {
         "index": 7,
         "tourUrl": null,
-        "triedAt": "2026-11-04T11:52:08.191Z"
+        "triedAt": "2026-11-05T11:52:00.662Z"
       },
       {
         "index": 8,
         "tourUrl": null,
-        "triedAt": "2026-11-04T11:52:08.203Z"
+        "triedAt": "2026-11-05T11:52:00.678Z"
       },
       {
         "index": 9,
         "tourUrl": null,
-        "triedAt": "2026-11-04T11:52:08.215Z"
+        "triedAt": "2026-11-05T11:52:00.694Z"
       },
       {
         "index": 10,
         "tourUrl": null,
-        "triedAt": "2026-11-04T11:52:15.516Z"
+        "triedAt": "2026-11-05T11:52:26.755Z"
+      },
+      {
+        "index": 11,
+        "tourUrl": null,
+        "triedAt": "2026-11-05T11:52:26.770Z"
+      },
+      {
+        "index": 12,
+        "tourUrl": null,
+        "triedAt": "2026-11-05T11:52:26.785Z"
+      },
+      {
+        "index": 13,
+        "tourUrl": null,
+        "triedAt": "2026-11-05T11:52:26.801Z"
       }
     ],
     "audit": [
       {
-        "artist": "Jeremy Fisher",
-        "website": "http://www.jeremyfishermusic.com/",
-        "tourUrl": "https://www.jeremyfishermusic.com/tour",
-        "pathPattern": "/tour",
-        "reason": "score=21 (years=2, numericDates=0, months=8, days=8, keywords=10, widget=0)",
-        "appliedAt": "2026-11-04T11:52:08.125Z",
-        "discoveryOperationId": "37fa7485-4dff-4624-b842-b57b1a605a03:2"
-      },
-      {
-        "artist": "Steve Kilbey",
-        "website": "http://thetimebeing.com",
-        "tourUrl": "https://thetimebeing.com/tickets-for-twilight-at-taronga-sat-jan-28th-2012/",
-        "pathPattern": "/tickets",
-        "reason": "score=14.5 (years=1, numericDates=1, months=4, days=3, keywords=9, widget=0)",
-        "appliedAt": "2026-11-04T11:52:08.153Z",
-        "discoveryOperationId": "37fa7485-4dff-4624-b842-b57b1a605a03:4"
+        "artist": "Judy Carmichael",
+        "website": "http://www.judycarmichael.com/",
+        "tourUrl": "https://www.judycarmichael.com/events",
+        "pathPattern": "/events",
+        "reason": "score=238 (years=46, numericDates=0, months=113, days=56, keywords=161, widget=0)",
+        "appliedAt": "2026-11-05T11:52:00.599Z",
+        "discoveryOperationId": "8aaf9ed9-5980-4ff9-8ff6-aa68c37b134f:3"
       }
     ]
   }
