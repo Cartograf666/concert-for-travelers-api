@@ -1,10 +1,10 @@
 {
-  "recordedAt": "2026-11-05T20:31:44.547Z",
-  "errors": 171,
+  "recordedAt": "2026-11-06T19:55:07.496Z",
+  "errors": 172,
   "byRule": {
     "name/contains-date": 77,
+    "spotify/not-an-artist-url": 130,
     "similar/self-reference": 34,
-    "spotify/not-an-artist-url": 129,
     "name/too-long": 128,
     "url/wrong-platform": 18,
     "website/aggregator": 14,
