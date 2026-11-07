@@ -130989,7 +130989,30 @@
     "name": "bleood",
     "website": null,
     "lastConcertSeenAt": "2026-11-07T11:36:27.590Z",
-    "imageFallbackTriedAt": "2026-11-07T12:48:55.606Z"
+    "imageFallbackTriedAt": "2026-11-07T12:48:55.606Z",
+    "similarArtists": [
+      {
+        "name": "Che",
+        "slug": "che",
+        "match": 0.757392
+      },
+      {
+        "name": "OsamaSon",
+        "slug": "osamason",
+        "match": 0.660518
+      },
+      {
+        "name": "Lucy Bedroque",
+        "slug": "lucy-bedroque",
+        "match": 0.370666
+      },
+      {
+        "name": "Ken Carson",
+        "slug": "ken-carson",
+        "match": 0.228021
+      }
+    ],
+    "similarEnrichedAt": "2026-11-07T13:35:30.362Z"
   },
   {
     "name": "Blerta",
@@ -162735,7 +162758,8 @@
   {
     "name": "Bom",
     "website": null,
-    "imageFallbackTriedAt": "2026-11-07T12:48:56.022Z"
+    "imageFallbackTriedAt": "2026-11-07T12:48:56.022Z",
+    "similarTriedAt": "2026-11-07T13:35:30.820Z"
   },
   {
     "name": "BOMB",
