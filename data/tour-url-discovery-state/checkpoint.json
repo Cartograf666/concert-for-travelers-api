@@ -1,78 +1,58 @@
 {
-  "digest": "7ff938b1e2ff06be3ab5764dba2a894b6547896e212d0be49d9e1f7bd8cac524",
+  "digest": "bc4016277a1c25deb4771b92cd66134d0bf6dd76329d202e665de0ab8890cec3",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "1d9a69e4169e99a593c9a023d6993db6caeac34dd39342a00e73a9ee2c7eab69",
+      "digest": "cdad448e5da72ac8c5fe60ec53410e1f72378e6ad0d055299c23447bb303bb1b",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "06823a82-1b96-412c-8487-21440d477376",
-        "inputHash": "a2dcb516d63fd222640013d843e09cedb205d8c8645fbad4bc76df7762d7ee5f",
+        "id": "d51855a5-058d-433d-bf96-2634d4af6e4a",
+        "inputHash": "6cab1fba1acd2f028d31818c1411a3e399840d987474d9a49891e65bb587d993",
         "candidates": [
           {
-            "name": "Ian Stephens",
-            "website": "http://www.ianstephensmusic.com/"
+            "name": "Hyukoh",
+            "website": "https://hyukoh.com/"
           },
           {
-            "name": "Yoko Takahashi",
-            "website": "http://king-cr.jp/artist/takahashi/"
+            "name": "Jean Yanne",
+            "website": "http://www.jeanyanne.com"
           },
           {
-            "name": "Bebel Gilberto",
-            "website": "https://www.bebelgilberto.com"
+            "name": "KBS Symphony Orchestra",
+            "website": "http://kbssymphony.org/"
           },
           {
-            "name": "BJ the Chicago Kid",
-            "website": "http://www.bjthechicagokid.com"
+            "name": "Seth MacFarlane",
+            "website": "https://sethmacfarlane.com/"
           },
           {
-            "name": "Rahzel",
-            "website": "https://www.rahzel.com/"
+            "name": "Damage",
+            "website": "https://damageofficial.com/"
           },
           {
-            "name": "Rochester Philharmonic Orchestra",
-            "website": "http://www.rpo.org/"
+            "name": "Devil's Brigade",
+            "website": "http://www.devilsbrigade.net/"
           },
           {
-            "name": "Colin Meloy",
-            "website": "https://colinmeloy.com/"
+            "name": "Mama",
+            "website": "https://www.mama-band.co.uk/"
           },
           {
-            "name": "Soulhat",
-            "website": "http://www.soulhat.com"
+            "name": "Matt Embree",
+            "website": "http://mattembree.com/"
           },
           {
-            "name": "The Tams",
-            "website": "http://thetams.com/"
+            "name": "Utah Symphony Orchestra",
+            "website": "https://utahsymphony.org/"
           },
           {
-            "name": "Tom Hooper",
-            "website": "http://tomhooper.ca/"
-          },
-          {
-            "name": "Max Merritt",
-            "website": "http://www.maxmerritt.com.au"
-          },
-          {
-            "name": "Norah Jones",
-            "website": "http://www.norahjones.com/"
-          },
-          {
-            "name": "Nu Shooz",
-            "website": "http://www.nushoozmusic.com"
-          },
-          {
-            "name": "Gino Vannelli",
-            "website": "http://www.ginov.com"
+            "name": "Orchid",
+            "website": "https://orchid.band/"
           }
         ],
         "nameCounts": [
-          1,
-          1,
-          1,
-          1,
           1,
           1,
           1,
@@ -86,106 +66,78 @@
         ],
         "results": [
           {
-            "name": "Ian Stephens",
-            "website": "http://www.ianstephensmusic.com/",
+            "name": "Hyukoh",
+            "website": "https://hyukoh.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Yoko Takahashi",
-            "website": "http://king-cr.jp/artist/takahashi/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Bebel Gilberto",
-            "website": "https://www.bebelgilberto.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "BJ the Chicago Kid",
-            "website": "http://www.bjthechicagokid.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Rahzel",
-            "website": "https://www.rahzel.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Rochester Philharmonic Orchestra",
-            "website": "http://www.rpo.org/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Colin Meloy",
-            "website": "https://colinmeloy.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Soulhat",
-            "website": "http://www.soulhat.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "The Tams",
-            "website": "http://thetams.com/",
-            "tourUrl": "https://thetams.com/tour-dates-2/",
-            "pathPattern": "/tour",
-            "reason": "score=16 (years=2, numericDates=0, months=6, days=6, keywords=3, widget=0)"
-          },
-          {
-            "name": "Tom Hooper",
-            "website": "http://tomhooper.ca/",
+            "name": "Jean Yanne",
+            "website": "http://www.jeanyanne.com",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Max Merritt",
-            "website": "http://www.maxmerritt.com.au",
+            "name": "KBS Symphony Orchestra",
+            "website": "http://kbssymphony.org/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Seth MacFarlane",
+            "website": "https://sethmacfarlane.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Norah Jones",
-            "website": "http://www.norahjones.com/",
+            "name": "Damage",
+            "website": "https://damageofficial.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Devil's Brigade",
+            "website": "http://www.devilsbrigade.net/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Mama",
+            "website": "https://www.mama-band.co.uk/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Matt Embree",
+            "website": "http://mattembree.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Nu Shooz",
-            "website": "http://www.nushoozmusic.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
+            "name": "Utah Symphony Orchestra",
+            "website": "https://utahsymphony.org/",
+            "tourUrl": "https://utahsymphony.org/schedule/",
+            "pathPattern": "/live",
+            "reason": "score=509 (years=154, numericDates=0, months=153, days=86, keywords=145, widget=0)"
           },
           {
-            "name": "Gino Vannelli",
-            "website": "http://www.ginov.com",
-            "tourUrl": "https://ginov.com/tour/",
-            "pathPattern": "/tour",
-            "reason": "score=13 (years=0, numericDates=0, months=0, days=0, keywords=6, widget=1)"
+            "name": "Orchid",
+            "website": "https://orchid.band/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
           }
         ],
         "skipped": [],
-        "applied": 14,
+        "applied": 10,
         "pending": null,
         "complete": true
       }
@@ -194,92 +146,63 @@
       {
         "index": 0,
         "tourUrl": null,
-        "triedAt": "2026-11-06T12:23:36.731Z"
+        "triedAt": "2026-11-07T10:53:13.605Z"
       },
       {
         "index": 1,
         "tourUrl": null,
-        "triedAt": "2026-11-06T12:23:36.745Z"
+        "triedAt": "2026-11-07T10:53:13.624Z"
       },
       {
         "index": 2,
         "tourUrl": null,
-        "triedAt": "2026-11-06T12:23:36.754Z"
+        "triedAt": "2026-11-07T10:53:13.638Z"
       },
       {
         "index": 3,
         "tourUrl": null,
-        "triedAt": "2026-11-06T12:23:36.764Z"
+        "triedAt": "2026-11-07T10:53:13.650Z"
       },
       {
         "index": 4,
         "tourUrl": null,
-        "triedAt": "2026-11-06T12:23:36.771Z"
+        "triedAt": "2026-11-07T10:53:13.663Z"
       },
       {
         "index": 5,
         "tourUrl": null,
-        "triedAt": "2026-11-06T12:23:36.778Z"
+        "triedAt": "2026-11-07T10:53:13.672Z"
       },
       {
         "index": 6,
         "tourUrl": null,
-        "triedAt": "2026-11-06T12:23:36.784Z"
+        "triedAt": "2026-11-07T10:53:13.682Z"
       },
       {
         "index": 7,
         "tourUrl": null,
-        "triedAt": "2026-11-06T12:23:36.791Z"
+        "triedAt": "2026-11-07T10:53:13.691Z"
       },
       {
         "index": 8,
-        "tourUrl": "https://thetams.com/tour-dates-2/",
-        "triedAt": "2026-11-06T12:23:36.797Z"
+        "tourUrl": "https://utahsymphony.org/schedule/",
+        "triedAt": "2026-11-07T10:53:13.703Z"
       },
       {
         "index": 9,
         "tourUrl": null,
-        "triedAt": "2026-11-06T12:23:36.803Z"
-      },
-      {
-        "index": 10,
-        "tourUrl": null,
-        "triedAt": "2026-11-06T12:23:46.172Z"
-      },
-      {
-        "index": 11,
-        "tourUrl": null,
-        "triedAt": "2026-11-06T12:23:46.184Z"
-      },
-      {
-        "index": 12,
-        "tourUrl": null,
-        "triedAt": "2026-11-06T12:23:46.193Z"
-      },
-      {
-        "index": 13,
-        "tourUrl": "https://ginov.com/tour/",
-        "triedAt": "2026-11-06T12:23:46.199Z"
+        "triedAt": "2026-11-07T10:53:13.716Z"
       }
     ],
     "audit": [
       {
-        "artist": "The Tams",
-        "website": "http://thetams.com/",
-        "tourUrl": "https://thetams.com/tour-dates-2/",
-        "pathPattern": "/tour",
-        "reason": "score=16 (years=2, numericDates=0, months=6, days=6, keywords=3, widget=0)",
-        "appliedAt": "2026-11-06T12:23:36.797Z",
-        "discoveryOperationId": "06823a82-1b96-412c-8487-21440d477376:8"
-      },
-      {
-        "artist": "Gino Vannelli",
-        "website": "http://www.ginov.com",
-        "tourUrl": "https://ginov.com/tour/",
-        "pathPattern": "/tour",
-        "reason": "score=13 (years=0, numericDates=0, months=0, days=0, keywords=6, widget=1)",
-        "appliedAt": "2026-11-06T12:23:46.199Z",
-        "discoveryOperationId": "06823a82-1b96-412c-8487-21440d477376:13"
+        "artist": "Utah Symphony Orchestra",
+        "website": "https://utahsymphony.org/",
+        "tourUrl": "https://utahsymphony.org/schedule/",
+        "pathPattern": "/live",
+        "reason": "score=509 (years=154, numericDates=0, months=153, days=86, keywords=145, widget=0)",
+        "appliedAt": "2026-11-07T10:53:13.703Z",
+        "discoveryOperationId": "d51855a5-058d-433d-bf96-2634d4af6e4a:8"
       }
     ]
   }
