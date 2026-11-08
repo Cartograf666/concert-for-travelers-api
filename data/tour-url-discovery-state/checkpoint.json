@@ -1,60 +1,50 @@
 {
-  "digest": "bc4016277a1c25deb4771b92cd66134d0bf6dd76329d202e665de0ab8890cec3",
+  "digest": "c42958642d11ad48a1bc1047e75f57083e72a191c604f53ddafdd5f14af80442",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "cdad448e5da72ac8c5fe60ec53410e1f72378e6ad0d055299c23447bb303bb1b",
+      "digest": "9c0d778ae9136d8b174ebc88a4aace4ee40c63e1da7d507857d6e8eb1644f1ec",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "d51855a5-058d-433d-bf96-2634d4af6e4a",
-        "inputHash": "6cab1fba1acd2f028d31818c1411a3e399840d987474d9a49891e65bb587d993",
+        "id": "838a2756-864b-40f7-b396-149d6d8e0da3",
+        "inputHash": "f01d9b82a4cfc1fba31efa7e96ab461d6c79792f5c39cffcdb33cdb0b755d3dc",
         "candidates": [
           {
-            "name": "Hyukoh",
-            "website": "https://hyukoh.com/"
+            "name": "Bloodpit",
+            "website": "http://bloodpitband.com"
           },
           {
-            "name": "Jean Yanne",
-            "website": "http://www.jeanyanne.com"
+            "name": "Ralph Alessi",
+            "website": "http://www.ralphalessi.com"
           },
           {
-            "name": "KBS Symphony Orchestra",
-            "website": "http://kbssymphony.org/"
+            "name": "Cory Morrow",
+            "website": "https://corymorrow.com/"
           },
           {
-            "name": "Seth MacFarlane",
-            "website": "https://sethmacfarlane.com/"
+            "name": "Daniel Johns",
+            "website": "https://danieljohns.com"
           },
           {
-            "name": "Damage",
-            "website": "https://damageofficial.com/"
+            "name": "Nick Cave",
+            "website": "https://nickcave.com/"
           },
           {
-            "name": "Devil's Brigade",
-            "website": "http://www.devilsbrigade.net/"
+            "name": "Emilia",
+            "website": "http://emiliamitiku.com/"
           },
           {
-            "name": "Mama",
-            "website": "https://www.mama-band.co.uk/"
+            "name": "東京事変",
+            "website": "https://www.tokyojihen.com/"
           },
           {
-            "name": "Matt Embree",
-            "website": "http://mattembree.com/"
-          },
-          {
-            "name": "Utah Symphony Orchestra",
-            "website": "https://utahsymphony.org/"
-          },
-          {
-            "name": "Orchid",
-            "website": "https://orchid.band/"
+            "name": "Miljoonasade",
+            "website": "https://www.heikkisalo.com/miljoonasade/"
           }
         ],
         "nameCounts": [
-          1,
-          1,
           1,
           1,
           1,
@@ -66,78 +56,64 @@
         ],
         "results": [
           {
-            "name": "Hyukoh",
-            "website": "https://hyukoh.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Jean Yanne",
-            "website": "http://www.jeanyanne.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "KBS Symphony Orchestra",
-            "website": "http://kbssymphony.org/",
+            "name": "Bloodpit",
+            "website": "http://bloodpitband.com",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Seth MacFarlane",
-            "website": "https://sethmacfarlane.com/",
+            "name": "Ralph Alessi",
+            "website": "http://www.ralphalessi.com",
+            "tourUrl": "https://ralphalessi.com/shows/",
+            "pathPattern": "/shows",
+            "reason": "score=28 (years=6, numericDates=0, months=12, days=0, keywords=4, widget=0)"
+          },
+          {
+            "name": "Cory Morrow",
+            "website": "https://corymorrow.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Damage",
-            "website": "https://damageofficial.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Devil's Brigade",
-            "website": "http://www.devilsbrigade.net/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Mama",
-            "website": "https://www.mama-band.co.uk/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Matt Embree",
-            "website": "http://mattembree.com/",
+            "name": "Daniel Johns",
+            "website": "https://danieljohns.com",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Utah Symphony Orchestra",
-            "website": "https://utahsymphony.org/",
-            "tourUrl": "https://utahsymphony.org/schedule/",
-            "pathPattern": "/live",
-            "reason": "score=509 (years=154, numericDates=0, months=153, days=86, keywords=145, widget=0)"
+            "name": "Nick Cave",
+            "website": "https://nickcave.com/",
+            "tourUrl": "https://www.nickcave.com/tour-dates/",
+            "pathPattern": "/tour-dates",
+            "reason": "score=157 (years=51, numericDates=25, months=0, days=0, keywords=6, widget=0)"
           },
           {
-            "name": "Orchid",
-            "website": "https://orchid.band/",
+            "name": "Emilia",
+            "website": "http://emiliamitiku.com/",
             "tourUrl": null,
             "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "東京事変",
+            "website": "https://www.tokyojihen.com/",
+            "tourUrl": "https://www.tokyojihen.com/tour/",
+            "pathPattern": "/tour",
+            "reason": "score=327.5 (years=0, numericDates=161, months=0, days=1, keywords=75, widget=0)"
+          },
+          {
+            "name": "Miljoonasade",
+            "website": "https://www.heikkisalo.com/miljoonasade/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
           }
         ],
         "skipped": [],
-        "applied": 10,
+        "applied": 8,
         "pending": null,
         "complete": true
       }
@@ -146,63 +122,71 @@
       {
         "index": 0,
         "tourUrl": null,
-        "triedAt": "2026-11-07T10:53:13.605Z"
+        "triedAt": "2026-11-08T11:02:51.042Z"
       },
       {
         "index": 1,
-        "tourUrl": null,
-        "triedAt": "2026-11-07T10:53:13.624Z"
+        "tourUrl": "https://ralphalessi.com/shows/",
+        "triedAt": "2026-11-08T11:02:51.069Z"
       },
       {
         "index": 2,
         "tourUrl": null,
-        "triedAt": "2026-11-07T10:53:13.638Z"
+        "triedAt": "2026-11-08T11:02:51.084Z"
       },
       {
         "index": 3,
         "tourUrl": null,
-        "triedAt": "2026-11-07T10:53:13.650Z"
+        "triedAt": "2026-11-08T11:02:51.099Z"
       },
       {
         "index": 4,
-        "tourUrl": null,
-        "triedAt": "2026-11-07T10:53:13.663Z"
+        "tourUrl": "https://www.nickcave.com/tour-dates/",
+        "triedAt": "2026-11-08T11:02:51.117Z"
       },
       {
         "index": 5,
         "tourUrl": null,
-        "triedAt": "2026-11-07T10:53:13.672Z"
+        "triedAt": "2026-11-08T11:02:51.132Z"
       },
       {
         "index": 6,
-        "tourUrl": null,
-        "triedAt": "2026-11-07T10:53:13.682Z"
+        "tourUrl": "https://www.tokyojihen.com/tour/",
+        "triedAt": "2026-11-08T11:02:51.149Z"
       },
       {
         "index": 7,
         "tourUrl": null,
-        "triedAt": "2026-11-07T10:53:13.691Z"
-      },
-      {
-        "index": 8,
-        "tourUrl": "https://utahsymphony.org/schedule/",
-        "triedAt": "2026-11-07T10:53:13.703Z"
-      },
-      {
-        "index": 9,
-        "tourUrl": null,
-        "triedAt": "2026-11-07T10:53:13.716Z"
+        "triedAt": "2026-11-08T11:02:51.165Z"
       }
     ],
     "audit": [
       {
-        "artist": "Utah Symphony Orchestra",
-        "website": "https://utahsymphony.org/",
-        "tourUrl": "https://utahsymphony.org/schedule/",
-        "pathPattern": "/live",
-        "reason": "score=509 (years=154, numericDates=0, months=153, days=86, keywords=145, widget=0)",
-        "appliedAt": "2026-11-07T10:53:13.703Z",
-        "discoveryOperationId": "d51855a5-058d-433d-bf96-2634d4af6e4a:8"
+        "artist": "Ralph Alessi",
+        "website": "http://www.ralphalessi.com",
+        "tourUrl": "https://ralphalessi.com/shows/",
+        "pathPattern": "/shows",
+        "reason": "score=28 (years=6, numericDates=0, months=12, days=0, keywords=4, widget=0)",
+        "appliedAt": "2026-11-08T11:02:51.069Z",
+        "discoveryOperationId": "838a2756-864b-40f7-b396-149d6d8e0da3:1"
+      },
+      {
+        "artist": "Nick Cave",
+        "website": "https://nickcave.com/",
+        "tourUrl": "https://www.nickcave.com/tour-dates/",
+        "pathPattern": "/tour-dates",
+        "reason": "score=157 (years=51, numericDates=25, months=0, days=0, keywords=6, widget=0)",
+        "appliedAt": "2026-11-08T11:02:51.117Z",
+        "discoveryOperationId": "838a2756-864b-40f7-b396-149d6d8e0da3:4"
+      },
+      {
+        "artist": "東京事変",
+        "website": "https://www.tokyojihen.com/",
+        "tourUrl": "https://www.tokyojihen.com/tour/",
+        "pathPattern": "/tour",
+        "reason": "score=327.5 (years=0, numericDates=161, months=0, days=1, keywords=75, widget=0)",
+        "appliedAt": "2026-11-08T11:02:51.149Z",
+        "discoveryOperationId": "838a2756-864b-40f7-b396-149d6d8e0da3:6"
       }
     ]
   }
