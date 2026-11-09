@@ -1,0 +1,17 @@
+{
+  "id": "artist-cool-change",
+  "domain": "coolchangeband.net",
+  "url": "http://coolchangeband.net/schedule/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-item",
+    "artistNameFallback": "The Cool Change Band",
+    "date": "div.event-date",
+    "ticketUrl": "a.event-tickets-link",
+    "venue": "div.event-venue",
+    "city": "div.event-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "Pittsburgh area, PA",
+    "countryNameFallback": "US"
+  }
+}
