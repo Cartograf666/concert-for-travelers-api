@@ -1,52 +1,42 @@
 {
-  "digest": "c42958642d11ad48a1bc1047e75f57083e72a191c604f53ddafdd5f14af80442",
+  "digest": "1af658e1d585a1091451a2fe8c2d5c2e85c3e313645d97b35fc33fe208f02f6a",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "9c0d778ae9136d8b174ebc88a4aace4ee40c63e1da7d507857d6e8eb1644f1ec",
+      "digest": "15bed5d81626d10feca6e0b001147d4874ba3a23752b098e83be8212118b26a8",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "838a2756-864b-40f7-b396-149d6d8e0da3",
-        "inputHash": "f01d9b82a4cfc1fba31efa7e96ab461d6c79792f5c39cffcdb33cdb0b755d3dc",
+        "id": "f0c7dedd-ec52-4c12-be72-631a053f8b44",
+        "inputHash": "128855a0cd4a4f9b24dc42afa3e78b0380aad4f88116eed76d52b6b7f3396e20",
         "candidates": [
           {
-            "name": "Bloodpit",
-            "website": "http://bloodpitband.com"
+            "name": "Bono",
+            "website": "https://www.u2.com"
           },
           {
-            "name": "Ralph Alessi",
-            "website": "http://www.ralphalessi.com"
+            "name": "Radio 4",
+            "website": "http://www.radio4.net/"
           },
           {
-            "name": "Cory Morrow",
-            "website": "https://corymorrow.com/"
+            "name": "Sgt. Pepper's Lonely Hearts Club Band",
+            "website": "https://www.thebeatles.com"
           },
           {
-            "name": "Daniel Johns",
-            "website": "https://danieljohns.com"
+            "name": "The Cows",
+            "website": "https://cows-amp-reptile.com/"
           },
           {
-            "name": "Nick Cave",
-            "website": "https://nickcave.com/"
+            "name": "The Dandys",
+            "website": "https://thedandys.co.uk/"
           },
           {
-            "name": "Emilia",
-            "website": "http://emiliamitiku.com/"
-          },
-          {
-            "name": "東京事変",
-            "website": "https://www.tokyojihen.com/"
-          },
-          {
-            "name": "Miljoonasade",
-            "website": "https://www.heikkisalo.com/miljoonasade/"
+            "name": "Moon Taxi",
+            "website": "https://ridethemoontaxi.com/"
           }
         ],
         "nameCounts": [
-          1,
-          1,
           1,
           1,
           1,
@@ -56,64 +46,50 @@
         ],
         "results": [
           {
-            "name": "Bloodpit",
-            "website": "http://bloodpitband.com",
+            "name": "Bono",
+            "website": "https://www.u2.com",
+            "tourUrl": "https://www.u2.com/pages/tours",
+            "pathPattern": "/tour",
+            "reason": "score=85 (years=4, numericDates=0, months=68, days=8, keywords=41, widget=0)"
+          },
+          {
+            "name": "Radio 4",
+            "website": "http://www.radio4.net/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Ralph Alessi",
-            "website": "http://www.ralphalessi.com",
-            "tourUrl": "https://ralphalessi.com/shows/",
-            "pathPattern": "/shows",
-            "reason": "score=28 (years=6, numericDates=0, months=12, days=0, keywords=4, widget=0)"
+            "name": "Sgt. Pepper's Lonely Hearts Club Band",
+            "website": "https://www.thebeatles.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Cory Morrow",
-            "website": "https://corymorrow.com/",
+            "name": "The Cows",
+            "website": "https://cows-amp-reptile.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Daniel Johns",
-            "website": "https://danieljohns.com",
+            "name": "The Dandys",
+            "website": "https://thedandys.co.uk/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Nick Cave",
-            "website": "https://nickcave.com/",
-            "tourUrl": "https://www.nickcave.com/tour-dates/",
-            "pathPattern": "/tour-dates",
-            "reason": "score=157 (years=51, numericDates=25, months=0, days=0, keywords=6, widget=0)"
-          },
-          {
-            "name": "Emilia",
-            "website": "http://emiliamitiku.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "東京事変",
-            "website": "https://www.tokyojihen.com/",
-            "tourUrl": "https://www.tokyojihen.com/tour/",
-            "pathPattern": "/tour",
-            "reason": "score=327.5 (years=0, numericDates=161, months=0, days=1, keywords=75, widget=0)"
-          },
-          {
-            "name": "Miljoonasade",
-            "website": "https://www.heikkisalo.com/miljoonasade/",
+            "name": "Moon Taxi",
+            "website": "https://ridethemoontaxi.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           }
         ],
         "skipped": [],
-        "applied": 8,
+        "applied": 6,
         "pending": null,
         "complete": true
       }
@@ -121,72 +97,44 @@
     "rows": [
       {
         "index": 0,
-        "tourUrl": null,
-        "triedAt": "2026-11-08T11:02:51.042Z"
+        "tourUrl": "https://www.u2.com/pages/tours",
+        "triedAt": "2026-11-09T12:32:14.162Z"
       },
       {
         "index": 1,
-        "tourUrl": "https://ralphalessi.com/shows/",
-        "triedAt": "2026-11-08T11:02:51.069Z"
+        "tourUrl": null,
+        "triedAt": "2026-11-09T12:32:14.180Z"
       },
       {
         "index": 2,
         "tourUrl": null,
-        "triedAt": "2026-11-08T11:02:51.084Z"
+        "triedAt": "2026-11-09T12:32:14.191Z"
       },
       {
         "index": 3,
         "tourUrl": null,
-        "triedAt": "2026-11-08T11:02:51.099Z"
+        "triedAt": "2026-11-09T12:32:14.204Z"
       },
       {
         "index": 4,
-        "tourUrl": "https://www.nickcave.com/tour-dates/",
-        "triedAt": "2026-11-08T11:02:51.117Z"
+        "tourUrl": null,
+        "triedAt": "2026-11-09T12:32:14.214Z"
       },
       {
         "index": 5,
         "tourUrl": null,
-        "triedAt": "2026-11-08T11:02:51.132Z"
-      },
-      {
-        "index": 6,
-        "tourUrl": "https://www.tokyojihen.com/tour/",
-        "triedAt": "2026-11-08T11:02:51.149Z"
-      },
-      {
-        "index": 7,
-        "tourUrl": null,
-        "triedAt": "2026-11-08T11:02:51.165Z"
+        "triedAt": "2026-11-09T12:32:14.223Z"
       }
     ],
     "audit": [
       {
-        "artist": "Ralph Alessi",
-        "website": "http://www.ralphalessi.com",
-        "tourUrl": "https://ralphalessi.com/shows/",
-        "pathPattern": "/shows",
-        "reason": "score=28 (years=6, numericDates=0, months=12, days=0, keywords=4, widget=0)",
-        "appliedAt": "2026-11-08T11:02:51.069Z",
-        "discoveryOperationId": "838a2756-864b-40f7-b396-149d6d8e0da3:1"
-      },
-      {
-        "artist": "Nick Cave",
-        "website": "https://nickcave.com/",
-        "tourUrl": "https://www.nickcave.com/tour-dates/",
-        "pathPattern": "/tour-dates",
-        "reason": "score=157 (years=51, numericDates=25, months=0, days=0, keywords=6, widget=0)",
-        "appliedAt": "2026-11-08T11:02:51.117Z",
-        "discoveryOperationId": "838a2756-864b-40f7-b396-149d6d8e0da3:4"
-      },
-      {
-        "artist": "東京事変",
-        "website": "https://www.tokyojihen.com/",
-        "tourUrl": "https://www.tokyojihen.com/tour/",
+        "artist": "Bono",
+        "website": "https://www.u2.com",
+        "tourUrl": "https://www.u2.com/pages/tours",
         "pathPattern": "/tour",
-        "reason": "score=327.5 (years=0, numericDates=161, months=0, days=1, keywords=75, widget=0)",
-        "appliedAt": "2026-11-08T11:02:51.149Z",
-        "discoveryOperationId": "838a2756-864b-40f7-b396-149d6d8e0da3:6"
+        "reason": "score=85 (years=4, numericDates=0, months=68, days=8, keywords=41, widget=0)",
+        "appliedAt": "2026-11-09T12:32:14.162Z",
+        "discoveryOperationId": "f0c7dedd-ec52-4c12-be72-631a053f8b44:0"
       }
     ]
   }
