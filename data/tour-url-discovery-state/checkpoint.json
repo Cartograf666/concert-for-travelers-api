@@ -1,42 +1,72 @@
 {
-  "digest": "1af658e1d585a1091451a2fe8c2d5c2e85c3e313645d97b35fc33fe208f02f6a",
+  "digest": "642e1af6320dd79807bcfd720f82961ce106fad3ec7e831e18d627cf29998c5e",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "15bed5d81626d10feca6e0b001147d4874ba3a23752b098e83be8212118b26a8",
+      "digest": "e4f87fdcd7e6915dcfc13d6981ed9ea33ec752a7b2e1fe0169b22d3fa127edc9",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "f0c7dedd-ec52-4c12-be72-631a053f8b44",
-        "inputHash": "128855a0cd4a4f9b24dc42afa3e78b0380aad4f88116eed76d52b6b7f3396e20",
+        "id": "9014266f-72aa-469e-a562-df105272591c",
+        "inputHash": "e2d819c7174ea1d419b8b07d41429f92009c3250a355f02bbbb4aa5bb7d3995f",
         "candidates": [
           {
-            "name": "Bono",
-            "website": "https://www.u2.com"
+            "name": "Aditya Rikhari",
+            "website": "https://adityarikhari.com/"
           },
           {
-            "name": "Radio 4",
-            "website": "http://www.radio4.net/"
+            "name": "Beth Fowler",
+            "website": "https://www.bethfowler.com/"
           },
           {
-            "name": "Sgt. Pepper's Lonely Hearts Club Band",
-            "website": "https://www.thebeatles.com"
+            "name": "J. Stalin",
+            "website": "https://jstalinlivewire.com/"
           },
           {
-            "name": "The Cows",
-            "website": "https://cows-amp-reptile.com/"
+            "name": "Jakob Dylan",
+            "website": "https://www.jakobdylan.com/"
           },
           {
-            "name": "The Dandys",
-            "website": "https://thedandys.co.uk/"
+            "name": "Joseph Bowie",
+            "website": "http://joebowie.org/"
           },
           {
-            "name": "Moon Taxi",
-            "website": "https://ridethemoontaxi.com/"
+            "name": "Sister Ray",
+            "website": "https://www.sisterraymusic.com/"
+          },
+          {
+            "name": "Denise Julia",
+            "website": "https://www.denisejulia.com"
+          },
+          {
+            "name": "The Jimi Hendrix Experience",
+            "website": "http://www.jimihendrix.com/"
+          },
+          {
+            "name": "The Mad Hatters",
+            "website": "https://www.themadhattersband.com/"
+          },
+          {
+            "name": "Michał Szpak",
+            "website": "http://michalszpak.pl/"
+          },
+          {
+            "name": "Newton Faulkner",
+            "website": "http://www.newtonfaulkner.com/"
+          },
+          {
+            "name": "Gala",
+            "website": "http://www.galasound.com/"
           }
         ],
         "nameCounts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           1,
           1,
           1,
@@ -46,50 +76,92 @@
         ],
         "results": [
           {
-            "name": "Bono",
-            "website": "https://www.u2.com",
-            "tourUrl": "https://www.u2.com/pages/tours",
-            "pathPattern": "/tour",
-            "reason": "score=85 (years=4, numericDates=0, months=68, days=8, keywords=41, widget=0)"
-          },
-          {
-            "name": "Radio 4",
-            "website": "http://www.radio4.net/",
+            "name": "Aditya Rikhari",
+            "website": "https://adityarikhari.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Sgt. Pepper's Lonely Hearts Club Band",
-            "website": "https://www.thebeatles.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "The Cows",
-            "website": "https://cows-amp-reptile.com/",
+            "name": "Beth Fowler",
+            "website": "https://www.bethfowler.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "The Dandys",
-            "website": "https://thedandys.co.uk/",
+            "name": "J. Stalin",
+            "website": "https://jstalinlivewire.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Jakob Dylan",
+            "website": "https://www.jakobdylan.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Moon Taxi",
-            "website": "https://ridethemoontaxi.com/",
+            "name": "Joseph Bowie",
+            "website": "http://joebowie.org/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Sister Ray",
+            "website": "https://www.sisterraymusic.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Denise Julia",
+            "website": "https://www.denisejulia.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "The Jimi Hendrix Experience",
+            "website": "http://www.jimihendrix.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "The Mad Hatters",
+            "website": "https://www.themadhattersband.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Michał Szpak",
+            "website": "http://michalszpak.pl/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Newton Faulkner",
+            "website": "http://www.newtonfaulkner.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Gala",
+            "website": "http://www.galasound.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
           }
         ],
         "skipped": [],
-        "applied": 6,
+        "applied": 12,
         "pending": null,
         "complete": true
       }
@@ -97,45 +169,65 @@
     "rows": [
       {
         "index": 0,
-        "tourUrl": "https://www.u2.com/pages/tours",
-        "triedAt": "2026-11-09T12:32:14.162Z"
+        "tourUrl": null,
+        "triedAt": "2026-11-10T12:06:34.755Z"
       },
       {
         "index": 1,
         "tourUrl": null,
-        "triedAt": "2026-11-09T12:32:14.180Z"
+        "triedAt": "2026-11-10T12:06:34.769Z"
       },
       {
         "index": 2,
         "tourUrl": null,
-        "triedAt": "2026-11-09T12:32:14.191Z"
+        "triedAt": "2026-11-10T12:06:34.781Z"
       },
       {
         "index": 3,
         "tourUrl": null,
-        "triedAt": "2026-11-09T12:32:14.204Z"
+        "triedAt": "2026-11-10T12:06:34.797Z"
       },
       {
         "index": 4,
         "tourUrl": null,
-        "triedAt": "2026-11-09T12:32:14.214Z"
+        "triedAt": "2026-11-10T12:06:34.810Z"
       },
       {
         "index": 5,
         "tourUrl": null,
-        "triedAt": "2026-11-09T12:32:14.223Z"
+        "triedAt": "2026-11-10T12:06:34.822Z"
+      },
+      {
+        "index": 6,
+        "tourUrl": null,
+        "triedAt": "2026-11-10T12:06:34.836Z"
+      },
+      {
+        "index": 7,
+        "tourUrl": null,
+        "triedAt": "2026-11-10T12:06:34.851Z"
+      },
+      {
+        "index": 8,
+        "tourUrl": null,
+        "triedAt": "2026-11-10T12:06:34.866Z"
+      },
+      {
+        "index": 9,
+        "tourUrl": null,
+        "triedAt": "2026-11-10T12:06:34.884Z"
+      },
+      {
+        "index": 10,
+        "tourUrl": null,
+        "triedAt": "2026-11-10T12:06:49.094Z"
+      },
+      {
+        "index": 11,
+        "tourUrl": null,
+        "triedAt": "2026-11-10T12:06:49.112Z"
       }
     ],
-    "audit": [
-      {
-        "artist": "Bono",
-        "website": "https://www.u2.com",
-        "tourUrl": "https://www.u2.com/pages/tours",
-        "pathPattern": "/tour",
-        "reason": "score=85 (years=4, numericDates=0, months=68, days=8, keywords=41, widget=0)",
-        "appliedAt": "2026-11-09T12:32:14.162Z",
-        "discoveryOperationId": "f0c7dedd-ec52-4c12-be72-631a053f8b44:0"
-      }
-    ]
+    "audit": []
   }
 }
