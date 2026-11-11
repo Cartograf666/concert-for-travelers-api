@@ -1,0 +1,18 @@
+{
+  "id": "artist-hotel-california",
+  "domain": "hotelcalifornia.ca",
+  "url": "https://hotelcalifornia.ca/tour-dates/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".cff-item.cff-event",
+    "artistNameFallback": "Hotel California",
+    "date": ".cff-date",
+    "ticketUrl": ".cff-post-links a[href*='etix.com'], .cff-post-links a[href*='ticketmaster.ca'], .cff-post-links a[href*='tickettailor.com'], .cff-post-links a[href*='ovationtix.com']",
+    "venue": ".cff-event-place",
+    "city": ".cff-event-city",
+    "country": ".cff-event-state",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "CA"
+  }
+}
