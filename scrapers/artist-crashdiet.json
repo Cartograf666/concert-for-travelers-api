@@ -1,0 +1,16 @@
+{
+  "id": "artist-crashdiet",
+  "domain": "www.crashdiet.com",
+  "url": "https://www.crashdiet.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-item",
+    "artistNameFallback": "Crashdiet",
+    "date": "div.event-date",
+    "ticketUrl": "a.btn-tickets",
+    "city": "div.event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "SE"
+  }
+}

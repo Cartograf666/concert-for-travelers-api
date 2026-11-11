@@ -1,0 +1,18 @@
+{
+  "id": "artist-crover-dale",
+  "domain": "www.melvins.com",
+  "url": "https://www.melvins.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".gig",
+    "artistNameFallback": "Melvins",
+    "date": ".gig-date",
+    "ticketUrl": ".gig-tickets a",
+    "venue": ".gig-venue",
+    "city": ".gig-city",
+    "country": ".gig-country",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
