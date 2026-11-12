@@ -1,0 +1,16 @@
+{
+  "id": "artist-kanjani-eight",
+  "domain": "www.infinity-records.jp",
+  "url": "https://www.infinity-records.jp/schedule",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.schedule-item",
+    "artistNameFallback": "Kanjani Eight",
+    "date": "div.date",
+    "ticketUrl": "a.ticket-link",
+    "city": "div.location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

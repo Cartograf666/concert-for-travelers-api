@@ -1,0 +1,17 @@
+{
+  "id": "artist-kaleidoscope",
+  "domain": "kaleidoscope.band",
+  "url": "https://kaleidoscope.band/shows",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event",
+    "artistNameFallback": "Kaleidoscope",
+    "date": "div.event-date",
+    "ticketUrl": "a.event-tickets-link",
+    "venue": "div.event-venue",
+    "city": "div.event-location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
