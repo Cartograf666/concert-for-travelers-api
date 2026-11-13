@@ -1,62 +1,87 @@
 {
-  "digest": "6de0f514f1621023b9aff045890a4b2ad06756a0d016ef5feecf40a17049f8a1",
+  "digest": "9c6ac84a92339f37d8ed8348827d21631cf29192c26750387f4d0c9c3d425b1b",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "723845ed14aa13816fb16f5a832918b892f267fc212b235f70ce02ea6efd9fa5",
+      "digest": "34e6e09f600e5febc214332ce5fdca0e67eea3a98ae3f3f45f2c3f54a8f8462a",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "19ae717c-b257-4a61-9896-ffc2a6c49291",
-        "inputHash": "531dec07431d2671a58e6101ed011f54bd312134e7333084fea7d9de68ea0a24",
+        "id": "4bd8f18c-3fef-4f96-94a0-6b2ad3522520",
+        "inputHash": "40bdcbb3ad3e0fadc813964f4ac32414abf32dde8029406868c1035240352f12",
         "candidates": [
           {
-            "name": "Cameron Brown",
-            "website": "https://cameronbrownbass.com"
+            "name": "Brainstorm",
+            "website": "http://www.brainstorm-web.net/"
           },
           {
-            "name": "Space Bee",
-            "website": "http://www.spacebee.it/"
+            "name": "Brutha",
+            "website": "http://www.islanddefjam.com/brutha/"
           },
           {
-            "name": "Swing",
-            "website": "https://www.swing-official.be/"
+            "name": "José Cid",
+            "website": "http://josecid.com"
           },
           {
-            "name": "The Blackbyrds",
-            "website": "https://www.theblackbyrds.com"
+            "name": "Rels B",
+            "website": "https://www.elsking.com"
           },
           {
-            "name": "Traa Daniels",
-            "website": "http://www.payableondeath.com/"
+            "name": "Kyle Eastwood",
+            "website": "http://kyleeastwood.com/"
           },
           {
-            "name": "Turn",
-            "website": "http://www.turnmusic.com/"
+            "name": "Sarasota Orchestra",
+            "website": "http://www.sarasotaorchestra.org/"
           },
           {
-            "name": "Mari Iijima",
-            "website": "https://www.marimusic.com/"
+            "name": "Silver Sun",
+            "website": "http://www.silver-sun.co.uk/"
           },
           {
-            "name": "Mos Def",
-            "website": "https://yasiinbey.com/"
+            "name": "DJ Camilo",
+            "website": "http://www.djcamilo.com/"
           },
           {
-            "name": "Natalia Jiménez",
-            "website": "http://nataliajimenezmusic.com/"
+            "name": "Dynamic Duo",
+            "website": "http://www.amoebaculture.com/"
           },
           {
-            "name": "Nitro",
-            "website": "http://www.nitro-music.com"
+            "name": "Little Charlie & the Nightcats",
+            "website": "http://www.rickestrin.com"
           },
           {
-            "name": "Curtis Jones",
-            "website": "http://curtisrayjones.com/"
+            "name": "Tommy Dorsey Orchestra",
+            "website": "http://www.buddymorrowproductions.com/"
+          },
+          {
+            "name": "Modesto Symphony Orchestra",
+            "website": "https://www.modestosymphony.org"
+          },
+          {
+            "name": "Frank Stella",
+            "website": "https://frankstella.net/"
+          },
+          {
+            "name": "Generation X",
+            "website": "https://billyidol.net/"
+          },
+          {
+            "name": "George Lynch",
+            "website": "https://georgelynch.com/"
+          },
+          {
+            "name": "Kan R. Gao",
+            "website": "https://freebirdgames.com/"
           }
         ],
         "nameCounts": [
+          1,
+          1,
+          1,
+          1,
+          1,
           1,
           1,
           1,
@@ -71,85 +96,120 @@
         ],
         "results": [
           {
-            "name": "Cameron Brown",
-            "website": "https://cameronbrownbass.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Space Bee",
-            "website": "http://www.spacebee.it/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Swing",
-            "website": "https://www.swing-official.be/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "The Blackbyrds",
-            "website": "https://www.theblackbyrds.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Traa Daniels",
-            "website": "http://www.payableondeath.com/",
+            "name": "Brainstorm",
+            "website": "http://www.brainstorm-web.net/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Turn",
-            "website": "http://www.turnmusic.com/",
+            "name": "Brutha",
+            "website": "http://www.islanddefjam.com/brutha/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Mari Iijima",
-            "website": "https://www.marimusic.com/",
-            "tourUrl": "https://marimusic.com/calendar",
-            "pathPattern": "/calendar",
-            "reason": "score=17 (years=0, numericDates=0, months=9, days=6, keywords=20, widget=0)"
-          },
-          {
-            "name": "Mos Def",
-            "website": "https://yasiinbey.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Natalia Jiménez",
-            "website": "http://nataliajimenezmusic.com/",
+            "name": "José Cid",
+            "website": "http://josecid.com",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Nitro",
-            "website": "http://www.nitro-music.com",
+            "name": "Rels B",
+            "website": "https://www.elsking.com",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Curtis Jones",
-            "website": "http://curtisrayjones.com/",
+            "name": "Kyle Eastwood",
+            "website": "http://kyleeastwood.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Sarasota Orchestra",
+            "website": "http://www.sarasotaorchestra.org/",
+            "tourUrl": "https://buy.sarasotaorchestra.org/events",
+            "pathPattern": "/concerts",
+            "reason": "score=15 (years=2, numericDates=0, months=3, days=6, keywords=21, widget=0)"
+          },
+          {
+            "name": "Silver Sun",
+            "website": "http://www.silver-sun.co.uk/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "DJ Camilo",
+            "website": "http://www.djcamilo.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Dynamic Duo",
+            "website": "http://www.amoebaculture.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Little Charlie & the Nightcats",
+            "website": "http://www.rickestrin.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Tommy Dorsey Orchestra",
+            "website": "http://www.buddymorrowproductions.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Modesto Symphony Orchestra",
+            "website": "https://www.modestosymphony.org",
+            "tourUrl": "https://www.modestosymphony.org/tickets",
+            "pathPattern": "/tickets",
+            "reason": "score=19 (years=5, numericDates=0, months=3, days=2, keywords=109, widget=0)"
+          },
+          {
+            "name": "Frank Stella",
+            "website": "https://frankstella.net/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Generation X",
+            "website": "https://billyidol.net/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "George Lynch",
+            "website": "https://georgelynch.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Kan R. Gao",
+            "website": "https://freebirdgames.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           }
         ],
         "skipped": [],
-        "applied": 11,
+        "applied": 16,
         "pending": null,
         "complete": true
       }
@@ -158,68 +218,102 @@
       {
         "index": 0,
         "tourUrl": null,
-        "triedAt": "2026-11-12T12:10:49.479Z"
+        "triedAt": "2026-11-13T11:52:05.859Z"
       },
       {
         "index": 1,
         "tourUrl": null,
-        "triedAt": "2026-11-12T12:10:49.490Z"
+        "triedAt": "2026-11-13T11:52:05.873Z"
       },
       {
         "index": 2,
         "tourUrl": null,
-        "triedAt": "2026-11-12T12:10:49.501Z"
+        "triedAt": "2026-11-13T11:52:05.886Z"
       },
       {
         "index": 3,
         "tourUrl": null,
-        "triedAt": "2026-11-12T12:10:49.512Z"
+        "triedAt": "2026-11-13T11:52:05.899Z"
       },
       {
         "index": 4,
         "tourUrl": null,
-        "triedAt": "2026-11-12T12:10:49.526Z"
+        "triedAt": "2026-11-13T11:52:05.914Z"
       },
       {
         "index": 5,
-        "tourUrl": null,
-        "triedAt": "2026-11-12T12:10:49.535Z"
+        "tourUrl": "https://buy.sarasotaorchestra.org/events",
+        "triedAt": "2026-11-13T11:52:05.927Z"
       },
       {
         "index": 6,
-        "tourUrl": "https://marimusic.com/calendar",
-        "triedAt": "2026-11-12T12:10:49.543Z"
+        "tourUrl": null,
+        "triedAt": "2026-11-13T11:52:05.939Z"
       },
       {
         "index": 7,
         "tourUrl": null,
-        "triedAt": "2026-11-12T12:10:49.549Z"
+        "triedAt": "2026-11-13T11:52:05.950Z"
       },
       {
         "index": 8,
         "tourUrl": null,
-        "triedAt": "2026-11-12T12:10:49.557Z"
+        "triedAt": "2026-11-13T11:52:05.963Z"
       },
       {
         "index": 9,
         "tourUrl": null,
-        "triedAt": "2026-11-12T12:10:49.564Z"
+        "triedAt": "2026-11-13T11:52:05.975Z"
       },
       {
         "index": 10,
         "tourUrl": null,
-        "triedAt": "2026-11-12T12:11:02.244Z"
+        "triedAt": "2026-11-13T11:52:39.002Z"
+      },
+      {
+        "index": 11,
+        "tourUrl": "https://www.modestosymphony.org/tickets",
+        "triedAt": "2026-11-13T11:52:39.016Z"
+      },
+      {
+        "index": 12,
+        "tourUrl": null,
+        "triedAt": "2026-11-13T11:52:39.029Z"
+      },
+      {
+        "index": 13,
+        "tourUrl": null,
+        "triedAt": "2026-11-13T11:52:39.044Z"
+      },
+      {
+        "index": 14,
+        "tourUrl": null,
+        "triedAt": "2026-11-13T11:52:39.057Z"
+      },
+      {
+        "index": 15,
+        "tourUrl": null,
+        "triedAt": "2026-11-13T11:52:39.070Z"
       }
     ],
     "audit": [
       {
-        "artist": "Mari Iijima",
-        "website": "https://www.marimusic.com/",
-        "tourUrl": "https://marimusic.com/calendar",
-        "pathPattern": "/calendar",
-        "reason": "score=17 (years=0, numericDates=0, months=9, days=6, keywords=20, widget=0)",
-        "appliedAt": "2026-11-12T12:10:49.543Z",
-        "discoveryOperationId": "19ae717c-b257-4a61-9896-ffc2a6c49291:6"
+        "artist": "Sarasota Orchestra",
+        "website": "http://www.sarasotaorchestra.org/",
+        "tourUrl": "https://buy.sarasotaorchestra.org/events",
+        "pathPattern": "/concerts",
+        "reason": "score=15 (years=2, numericDates=0, months=3, days=6, keywords=21, widget=0)",
+        "appliedAt": "2026-11-13T11:52:05.927Z",
+        "discoveryOperationId": "4bd8f18c-3fef-4f96-94a0-6b2ad3522520:5"
+      },
+      {
+        "artist": "Modesto Symphony Orchestra",
+        "website": "https://www.modestosymphony.org",
+        "tourUrl": "https://www.modestosymphony.org/tickets",
+        "pathPattern": "/tickets",
+        "reason": "score=19 (years=5, numericDates=0, months=3, days=2, keywords=109, widget=0)",
+        "appliedAt": "2026-11-13T11:52:39.016Z",
+        "discoveryOperationId": "4bd8f18c-3fef-4f96-94a0-6b2ad3522520:11"
       }
     ]
   }
