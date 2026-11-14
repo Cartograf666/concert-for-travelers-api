@@ -1,0 +1,17 @@
+{
+  "id": "artist-cruzados",
+  "domain": "cruzadosband.com",
+  "url": "https://cruzadosband.com/shows/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event-item",
+    "artistNameFallback": "Cruzados",
+    "date": ".event-date",
+    "ticketUrl": ".event-tickets a",
+    "venue": ".event-venue",
+    "city": ".event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

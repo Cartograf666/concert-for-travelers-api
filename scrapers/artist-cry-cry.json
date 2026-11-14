@@ -1,0 +1,17 @@
+{
+  "id": "artist-cry-cry",
+  "domain": "www.cry-cry.com",
+  "url": "http://www.cry-cry.com/events.html",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event",
+    "artistNameFallback": "Cry Cry",
+    "date": "div.date",
+    "ticketUrl": "a.tickets",
+    "venue": "span.venue",
+    "city": "span.city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

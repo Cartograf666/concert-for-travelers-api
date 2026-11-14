@@ -1,0 +1,17 @@
+{
+  "id": "artist-kbs-symphony-orchestra",
+  "domain": "www.kbssymphony.org",
+  "url": "https://www.kbssymphony.org/en/concerts/calendar",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".Calendar--Item",
+    "artistNameFallback": "KBS Symphony Orchestra",
+    "date": ".Calendar--Item__date",
+    "ticketUrl": ".Calendar--Item__link",
+    "venue": ".Calendar--Item__venue",
+    "city": ".Calendar--Item__venue",
+    "venueNameFallback": "",
+    "cityNameFallback": "Seoul",
+    "countryNameFallback": "KR"
+  }
+}

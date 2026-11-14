@@ -1,0 +1,17 @@
+{
+  "id": "artist-keith-moseley",
+  "domain": "stringcheeseincident.com",
+  "url": "https://stringcheeseincident.com/tour/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".sc-tour-event",
+    "artistNameFallback": "The String Cheese Incident",
+    "date": ".month-day",
+    "ticketUrl": ".event-details .event-button",
+    "venue": ".event-details h3",
+    "city": ".event-details .location",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

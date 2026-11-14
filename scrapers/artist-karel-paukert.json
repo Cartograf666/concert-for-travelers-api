@@ -1,0 +1,17 @@
+{
+  "id": "artist-karel-paukert",
+  "domain": "www.karelpaukert.com",
+  "url": "https://www.karelpaukert.com/concerts-performances",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".sqs-block.html-block.sqs-block-html",
+    "artistNameFallback": "Karel Paukert",
+    "date": "p:nth-child(1)",
+    "ticketUrl": "a",
+    "venue": "p:nth-child(1)",
+    "city": "p:nth-child(1)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
