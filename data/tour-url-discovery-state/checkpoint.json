@@ -1,120 +1,50 @@
 {
-  "digest": "7658f22988be9eb6b4987cd0046aa9078fdee28d711756cd57d6782b4515aabe",
+  "digest": "d8e99412a9718290df9d4495f30163ec2fb578f1b715b8c8ee87f9b40d12b461",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "8eca6405ff53a67bcd75dc94f23ca1fe265f2947b92c3a91330827d1943b1cb0",
+      "digest": "aec680ace65a0b044e2d9a33d5d146a531894bbe820cbc9b08f20fd6f22c54e9",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "afadf794-2ca2-4bdb-bab5-855bd2c8c7b1",
-        "inputHash": "e877c5aa7774e7ceb6f3155acade2bb5db4ff4c47ddcc5d0c9db85502badde61",
+        "id": "647bf078-e28c-4df2-aa13-81e0e73f49db",
+        "inputHash": "72b95457232819b6e9d2fdb2fc3af70837c4922e64ab8642415645a44eb0e0fa",
         "candidates": [
           {
-            "name": "Bony King",
-            "website": "https://www.bonyking.be/"
+            "name": "BeBe & CeCe Winans",
+            "website": "https://www.bebeandcece.com"
           },
           {
-            "name": "Johnny O'Neal",
-            "website": "http://www.johnnyoneal.org/"
+            "name": "The Browns",
+            "website": "http://www.thebrownsmusic.com/"
           },
           {
-            "name": "Joseph Wölfl",
-            "website": "https://imslp.org/wiki/Category:Wölfl,_Joseph"
+            "name": "Woodie",
+            "website": "https://www.woodie.com"
           },
           {
-            "name": "Ray Ellis",
-            "website": "https://www.rayellis.com"
+            "name": "Skepta",
+            "website": "http://helloskepta.com"
           },
           {
-            "name": "Carissa's Wierd",
-            "website": "https://carissaswierd.bandcamp.com/"
+            "name": "Kate Price",
+            "website": "https://kateprice.com/"
           },
           {
-            "name": "Carolyn Dawn Johnson",
-            "website": "http://www.carolyndawnjohnson.com"
+            "name": "Keith Moon",
+            "website": "https://www.keithmoon.co.uk/"
           },
           {
-            "name": "Cloud Control",
-            "website": "http://www.cloudcontrolband.com"
+            "name": "Cruzzi",
+            "website": "https://cruzzi.com/"
           },
           {
-            "name": "Cursive",
-            "website": "http://www.cursivearmy.com"
-          },
-          {
-            "name": "Sarah Darling",
-            "website": "https://www.sarahdarling.com/"
-          },
-          {
-            "name": "Scorn",
-            "website": "https://mickharris.net/"
-          },
-          {
-            "name": "Sikkil Gurucharan",
-            "website": "http://www.sikkilgurucharan.com/"
-          },
-          {
-            "name": "Dept",
-            "website": "https://deptmusic.com"
-          },
-          {
-            "name": "Dubfire",
-            "website": "http://dubfire.com/"
-          },
-          {
-            "name": "Lucia Cifarelli",
-            "website": "https://www.luciacifarelli.com"
-          },
-          {
-            "name": "The Box",
-            "website": "http://www.theboxband.com/"
-          },
-          {
-            "name": "The Human Beinz",
-            "website": "http://www.thehumanbeinz.com"
-          },
-          {
-            "name": "The Tiger Lillies",
-            "website": "http://www.tigerlillies.com"
-          },
-          {
-            "name": "Todd Terry",
-            "website": "http://www.toddterry.com/"
-          },
-          {
-            "name": "Tom Robinson Band",
-            "website": "https://www.tomrobinson.com"
-          },
-          {
-            "name": "Mariee Sioux",
-            "website": "http://www.myspace.com/marieesioux/"
-          },
-          {
-            "name": "Naomi Campbell",
-            "website": "http://www.naomicampbell.com/main.html"
-          },
-          {
-            "name": "Old Blind Dogs",
-            "website": "http://www.oldblinddogs.co.uk/"
+            "name": "Kazuhito Yamashita",
+            "website": "https://www.kazuhitoyamashita.com"
           }
         ],
         "nameCounts": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
           1,
           1,
           1,
@@ -126,162 +56,64 @@
         ],
         "results": [
           {
-            "name": "Bony King",
-            "website": "https://www.bonyking.be/",
+            "name": "BeBe & CeCe Winans",
+            "website": "https://www.bebeandcece.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "The Browns",
+            "website": "http://www.thebrownsmusic.com/",
+            "tourUrl": "https://www.thebrownsmusic.com/tour/",
+            "pathPattern": "/tour",
+            "reason": "score=13 (years=0, numericDates=0, months=0, days=0, keywords=7, widget=1)"
+          },
+          {
+            "name": "Woodie",
+            "website": "https://www.woodie.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Skepta",
+            "website": "http://helloskepta.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Kate Price",
+            "website": "https://kateprice.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Keith Moon",
+            "website": "https://www.keithmoon.co.uk/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Johnny O'Neal",
-            "website": "http://www.johnnyoneal.org/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Joseph Wölfl",
-            "website": "https://imslp.org/wiki/Category:Wölfl,_Joseph",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Ray Ellis",
-            "website": "https://www.rayellis.com",
+            "name": "Cruzzi",
+            "website": "https://cruzzi.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Carissa's Wierd",
-            "website": "https://carissaswierd.bandcamp.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Carolyn Dawn Johnson",
-            "website": "http://www.carolyndawnjohnson.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Cloud Control",
-            "website": "http://www.cloudcontrolband.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Cursive",
-            "website": "http://www.cursivearmy.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Sarah Darling",
-            "website": "https://www.sarahdarling.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Scorn",
-            "website": "https://mickharris.net/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Sikkil Gurucharan",
-            "website": "http://www.sikkilgurucharan.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Dept",
-            "website": "https://deptmusic.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Dubfire",
-            "website": "http://dubfire.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Lucia Cifarelli",
-            "website": "https://www.luciacifarelli.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "The Box",
-            "website": "http://www.theboxband.com/",
-            "tourUrl": "http://theboxband.com/dates/",
-            "pathPattern": "/dates",
-            "reason": "score=43 (years=15, numericDates=0, months=13, days=0, keywords=0, widget=0)"
-          },
-          {
-            "name": "The Human Beinz",
-            "website": "http://www.thehumanbeinz.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "The Tiger Lillies",
-            "website": "http://www.tigerlillies.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Todd Terry",
-            "website": "http://www.toddterry.com/",
-            "tourUrl": "https://www.toddterry.com/shows",
-            "pathPattern": "/shows",
-            "reason": "score=11 (years=0, numericDates=0, months=0, days=0, keywords=3, widget=1)"
-          },
-          {
-            "name": "Tom Robinson Band",
-            "website": "https://www.tomrobinson.com",
-            "tourUrl": "https://www.tomrobinson.com/gigs/",
-            "pathPattern": "/gigs",
-            "reason": "score=13 (years=2, numericDates=0, months=4, days=0, keywords=15, widget=0)"
-          },
-          {
-            "name": "Mariee Sioux",
-            "website": "http://www.myspace.com/marieesioux/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Naomi Campbell",
-            "website": "http://www.naomicampbell.com/main.html",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Old Blind Dogs",
-            "website": "http://www.oldblinddogs.co.uk/",
-            "tourUrl": "https://www.oldblinddogs.co.uk/tour-dates",
-            "pathPattern": "/tour-dates",
-            "reason": "score=86 (years=27, numericDates=0, months=27, days=0, keywords=35, widget=0)"
+            "name": "Kazuhito Yamashita",
+            "website": "https://www.kazuhitoyamashita.com",
+            "tourUrl": "https://kazuhitoyamashita.com/live-2021/",
+            "pathPattern": "/live",
+            "reason": "score=9 (years=0, numericDates=0, months=4, days=0, keywords=5, widget=0)"
           }
         ],
         "skipped": [],
-        "applied": 22,
+        "applied": 8,
         "pending": null,
         "complete": true
       }
@@ -290,150 +122,62 @@
       {
         "index": 0,
         "tourUrl": null,
-        "triedAt": "2026-11-14T11:13:30.937Z"
+        "triedAt": "2026-11-15T11:45:58.296Z"
       },
       {
         "index": 1,
-        "tourUrl": null,
-        "triedAt": "2026-11-14T11:13:30.952Z"
+        "tourUrl": "https://www.thebrownsmusic.com/tour/",
+        "triedAt": "2026-11-15T11:45:58.310Z"
       },
       {
         "index": 2,
         "tourUrl": null,
-        "triedAt": "2026-11-14T11:13:30.965Z"
+        "triedAt": "2026-11-15T11:45:58.323Z"
       },
       {
         "index": 3,
         "tourUrl": null,
-        "triedAt": "2026-11-14T11:13:30.982Z"
+        "triedAt": "2026-11-15T11:45:58.337Z"
       },
       {
         "index": 4,
         "tourUrl": null,
-        "triedAt": "2026-11-14T11:13:30.995Z"
+        "triedAt": "2026-11-15T11:45:58.353Z"
       },
       {
         "index": 5,
         "tourUrl": null,
-        "triedAt": "2026-11-14T11:13:31.010Z"
+        "triedAt": "2026-11-15T11:45:58.367Z"
       },
       {
         "index": 6,
         "tourUrl": null,
-        "triedAt": "2026-11-14T11:13:31.024Z"
+        "triedAt": "2026-11-15T11:45:58.380Z"
       },
       {
         "index": 7,
-        "tourUrl": null,
-        "triedAt": "2026-11-14T11:13:31.038Z"
-      },
-      {
-        "index": 8,
-        "tourUrl": null,
-        "triedAt": "2026-11-14T11:13:31.051Z"
-      },
-      {
-        "index": 9,
-        "tourUrl": null,
-        "triedAt": "2026-11-14T11:13:31.063Z"
-      },
-      {
-        "index": 10,
-        "tourUrl": null,
-        "triedAt": "2026-11-14T11:13:57.159Z"
-      },
-      {
-        "index": 11,
-        "tourUrl": null,
-        "triedAt": "2026-11-14T11:13:57.171Z"
-      },
-      {
-        "index": 12,
-        "tourUrl": null,
-        "triedAt": "2026-11-14T11:13:57.183Z"
-      },
-      {
-        "index": 13,
-        "tourUrl": null,
-        "triedAt": "2026-11-14T11:13:57.197Z"
-      },
-      {
-        "index": 14,
-        "tourUrl": "http://theboxband.com/dates/",
-        "triedAt": "2026-11-14T11:13:57.213Z"
-      },
-      {
-        "index": 15,
-        "tourUrl": null,
-        "triedAt": "2026-11-14T11:13:57.227Z"
-      },
-      {
-        "index": 16,
-        "tourUrl": null,
-        "triedAt": "2026-11-14T11:13:57.241Z"
-      },
-      {
-        "index": 17,
-        "tourUrl": "https://www.toddterry.com/shows",
-        "triedAt": "2026-11-14T11:13:57.255Z"
-      },
-      {
-        "index": 18,
-        "tourUrl": "https://www.tomrobinson.com/gigs/",
-        "triedAt": "2026-11-14T11:13:57.270Z"
-      },
-      {
-        "index": 19,
-        "tourUrl": null,
-        "triedAt": "2026-11-14T11:13:57.284Z"
-      },
-      {
-        "index": 20,
-        "tourUrl": null,
-        "triedAt": "2026-11-14T11:14:07.620Z"
-      },
-      {
-        "index": 21,
-        "tourUrl": "https://www.oldblinddogs.co.uk/tour-dates",
-        "triedAt": "2026-11-14T11:14:07.633Z"
+        "tourUrl": "https://kazuhitoyamashita.com/live-2021/",
+        "triedAt": "2026-11-15T11:45:58.394Z"
       }
     ],
     "audit": [
       {
-        "artist": "The Box",
-        "website": "http://www.theboxband.com/",
-        "tourUrl": "http://theboxband.com/dates/",
-        "pathPattern": "/dates",
-        "reason": "score=43 (years=15, numericDates=0, months=13, days=0, keywords=0, widget=0)",
-        "appliedAt": "2026-11-14T11:13:57.213Z",
-        "discoveryOperationId": "afadf794-2ca2-4bdb-bab5-855bd2c8c7b1:14"
+        "artist": "The Browns",
+        "website": "http://www.thebrownsmusic.com/",
+        "tourUrl": "https://www.thebrownsmusic.com/tour/",
+        "pathPattern": "/tour",
+        "reason": "score=13 (years=0, numericDates=0, months=0, days=0, keywords=7, widget=1)",
+        "appliedAt": "2026-11-15T11:45:58.310Z",
+        "discoveryOperationId": "647bf078-e28c-4df2-aa13-81e0e73f49db:1"
       },
       {
-        "artist": "Todd Terry",
-        "website": "http://www.toddterry.com/",
-        "tourUrl": "https://www.toddterry.com/shows",
-        "pathPattern": "/shows",
-        "reason": "score=11 (years=0, numericDates=0, months=0, days=0, keywords=3, widget=1)",
-        "appliedAt": "2026-11-14T11:13:57.255Z",
-        "discoveryOperationId": "afadf794-2ca2-4bdb-bab5-855bd2c8c7b1:17"
-      },
-      {
-        "artist": "Tom Robinson Band",
-        "website": "https://www.tomrobinson.com",
-        "tourUrl": "https://www.tomrobinson.com/gigs/",
-        "pathPattern": "/gigs",
-        "reason": "score=13 (years=2, numericDates=0, months=4, days=0, keywords=15, widget=0)",
-        "appliedAt": "2026-11-14T11:13:57.270Z",
-        "discoveryOperationId": "afadf794-2ca2-4bdb-bab5-855bd2c8c7b1:18"
-      },
-      {
-        "artist": "Old Blind Dogs",
-        "website": "http://www.oldblinddogs.co.uk/",
-        "tourUrl": "https://www.oldblinddogs.co.uk/tour-dates",
-        "pathPattern": "/tour-dates",
-        "reason": "score=86 (years=27, numericDates=0, months=27, days=0, keywords=35, widget=0)",
-        "appliedAt": "2026-11-14T11:14:07.633Z",
-        "discoveryOperationId": "afadf794-2ca2-4bdb-bab5-855bd2c8c7b1:21"
+        "artist": "Kazuhito Yamashita",
+        "website": "https://www.kazuhitoyamashita.com",
+        "tourUrl": "https://kazuhitoyamashita.com/live-2021/",
+        "pathPattern": "/live",
+        "reason": "score=9 (years=0, numericDates=0, months=4, days=0, keywords=5, widget=0)",
+        "appliedAt": "2026-11-15T11:45:58.394Z",
+        "discoveryOperationId": "647bf078-e28c-4df2-aa13-81e0e73f49db:7"
       }
     ]
   }
