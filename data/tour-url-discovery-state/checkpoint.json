@@ -1,50 +1,65 @@
 {
-  "digest": "d8e99412a9718290df9d4495f30163ec2fb578f1b715b8c8ee87f9b40d12b461",
+  "digest": "b1fe85bc83336e131f7bdd7065eea59c16a14aaf7b6cdb288bfba561406c117f",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "aec680ace65a0b044e2d9a33d5d146a531894bbe820cbc9b08f20fd6f22c54e9",
+      "digest": "06fed5ebc38c13aa4cd7e915d045de648661a6f33ae7f97adf07ae7eab74656d",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "647bf078-e28c-4df2-aa13-81e0e73f49db",
-        "inputHash": "72b95457232819b6e9d2fdb2fc3af70837c4922e64ab8642415645a44eb0e0fa",
+        "id": "355cbabb-05b7-4bbd-9979-5da5acbb7513",
+        "inputHash": "d8d693cf9f5ccdef1ce793cb8e89e6332376ea0f7fe5bee4709de505224b5fd9",
         "candidates": [
           {
-            "name": "BeBe & CeCe Winans",
-            "website": "https://www.bebeandcece.com"
+            "name": "Rocko",
+            "website": "https://www.rockoalive.com/"
           },
           {
-            "name": "The Browns",
-            "website": "http://www.thebrownsmusic.com/"
+            "name": "30 Foot Fall",
+            "website": "http://www.30footfall.com/"
           },
           {
-            "name": "Woodie",
-            "website": "https://www.woodie.com"
+            "name": "Kaliber 44",
+            "website": "http://www.k44.pl/"
           },
           {
-            "name": "Skepta",
-            "website": "http://helloskepta.com"
+            "name": "Ky-Mani Marley",
+            "website": "http://www.kymanimarley.com/"
           },
           {
-            "name": "Kate Price",
-            "website": "https://kateprice.com/"
+            "name": "Shirley Bassey",
+            "website": "https://www.dameshirleybassey.world/"
           },
           {
-            "name": "Keith Moon",
-            "website": "https://www.keithmoon.co.uk/"
+            "name": "Solomon",
+            "website": "https://solomonmusic.com"
           },
           {
-            "name": "Cruzzi",
-            "website": "https://cruzzi.com/"
+            "name": "Don Miguelo",
+            "website": "http://www.donmiguelo.com"
           },
           {
-            "name": "Kazuhito Yamashita",
-            "website": "https://www.kazuhitoyamashita.com"
+            "name": "Doro",
+            "website": "http://www.doromusic.de/"
+          },
+          {
+            "name": "Mickey Rooney",
+            "website": "http://mickeyrooney.com"
+          },
+          {
+            "name": "Natalie Caine",
+            "website": "https://www.nataliecaine.com"
+          },
+          {
+            "name": "Victor Sanz",
+            "website": "https://victorsanz.net/"
           }
         ],
         "nameCounts": [
+          1,
+          1,
+          1,
           1,
           1,
           1,
@@ -56,64 +71,85 @@
         ],
         "results": [
           {
-            "name": "BeBe & CeCe Winans",
-            "website": "https://www.bebeandcece.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "The Browns",
-            "website": "http://www.thebrownsmusic.com/",
-            "tourUrl": "https://www.thebrownsmusic.com/tour/",
-            "pathPattern": "/tour",
-            "reason": "score=13 (years=0, numericDates=0, months=0, days=0, keywords=7, widget=1)"
-          },
-          {
-            "name": "Woodie",
-            "website": "https://www.woodie.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Skepta",
-            "website": "http://helloskepta.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Kate Price",
-            "website": "https://kateprice.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Keith Moon",
-            "website": "https://www.keithmoon.co.uk/",
+            "name": "Rocko",
+            "website": "https://www.rockoalive.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Cruzzi",
-            "website": "https://cruzzi.com/",
+            "name": "30 Foot Fall",
+            "website": "http://www.30footfall.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Kaliber 44",
+            "website": "http://www.k44.pl/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Ky-Mani Marley",
+            "website": "http://www.kymanimarley.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Shirley Bassey",
+            "website": "https://www.dameshirleybassey.world/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Solomon",
+            "website": "https://solomonmusic.com",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Kazuhito Yamashita",
-            "website": "https://www.kazuhitoyamashita.com",
-            "tourUrl": "https://kazuhitoyamashita.com/live-2021/",
-            "pathPattern": "/live",
-            "reason": "score=9 (years=0, numericDates=0, months=4, days=0, keywords=5, widget=0)"
+            "name": "Don Miguelo",
+            "website": "http://www.donmiguelo.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Doro",
+            "website": "http://www.doromusic.de/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Mickey Rooney",
+            "website": "http://mickeyrooney.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Natalie Caine",
+            "website": "https://www.nataliecaine.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Victor Sanz",
+            "website": "https://victorsanz.net/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
           }
         ],
         "skipped": [],
-        "applied": 8,
+        "applied": 11,
         "pending": null,
         "complete": true
       }
@@ -122,63 +158,59 @@
       {
         "index": 0,
         "tourUrl": null,
-        "triedAt": "2026-11-15T11:45:58.296Z"
+        "triedAt": "2026-11-16T12:26:50.772Z"
       },
       {
         "index": 1,
-        "tourUrl": "https://www.thebrownsmusic.com/tour/",
-        "triedAt": "2026-11-15T11:45:58.310Z"
+        "tourUrl": null,
+        "triedAt": "2026-11-16T12:26:50.794Z"
       },
       {
         "index": 2,
         "tourUrl": null,
-        "triedAt": "2026-11-15T11:45:58.323Z"
+        "triedAt": "2026-11-16T12:26:50.808Z"
       },
       {
         "index": 3,
         "tourUrl": null,
-        "triedAt": "2026-11-15T11:45:58.337Z"
+        "triedAt": "2026-11-16T12:26:50.822Z"
       },
       {
         "index": 4,
         "tourUrl": null,
-        "triedAt": "2026-11-15T11:45:58.353Z"
+        "triedAt": "2026-11-16T12:26:50.841Z"
       },
       {
         "index": 5,
         "tourUrl": null,
-        "triedAt": "2026-11-15T11:45:58.367Z"
+        "triedAt": "2026-11-16T12:26:50.855Z"
       },
       {
         "index": 6,
         "tourUrl": null,
-        "triedAt": "2026-11-15T11:45:58.380Z"
+        "triedAt": "2026-11-16T12:26:50.870Z"
       },
       {
         "index": 7,
-        "tourUrl": "https://kazuhitoyamashita.com/live-2021/",
-        "triedAt": "2026-11-15T11:45:58.394Z"
-      }
-    ],
-    "audit": [
-      {
-        "artist": "The Browns",
-        "website": "http://www.thebrownsmusic.com/",
-        "tourUrl": "https://www.thebrownsmusic.com/tour/",
-        "pathPattern": "/tour",
-        "reason": "score=13 (years=0, numericDates=0, months=0, days=0, keywords=7, widget=1)",
-        "appliedAt": "2026-11-15T11:45:58.310Z",
-        "discoveryOperationId": "647bf078-e28c-4df2-aa13-81e0e73f49db:1"
+        "tourUrl": null,
+        "triedAt": "2026-11-16T12:26:50.884Z"
       },
       {
-        "artist": "Kazuhito Yamashita",
-        "website": "https://www.kazuhitoyamashita.com",
-        "tourUrl": "https://kazuhitoyamashita.com/live-2021/",
-        "pathPattern": "/live",
-        "reason": "score=9 (years=0, numericDates=0, months=4, days=0, keywords=5, widget=0)",
-        "appliedAt": "2026-11-15T11:45:58.394Z",
-        "discoveryOperationId": "647bf078-e28c-4df2-aa13-81e0e73f49db:7"
+        "index": 8,
+        "tourUrl": null,
+        "triedAt": "2026-11-16T12:26:50.900Z"
+      },
+      {
+        "index": 9,
+        "tourUrl": null,
+        "triedAt": "2026-11-16T12:26:50.914Z"
+      },
+      {
+        "index": 10,
+        "tourUrl": null,
+        "triedAt": "2026-11-16T12:26:54.940Z"
       }
-    ]
+    ],
+    "audit": []
   }
 }
