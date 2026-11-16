@@ -1,0 +1,17 @@
+{
+  "id": "artist-ken-cowan",
+  "domain": "www.kendcowan.com",
+  "url": "https://www.kendcowan.com/schedule/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".mec-event-article",
+    "artistNameFallback": "Ken Cowan",
+    "date": ".mec-event-meta .mec-start-date-label",
+    "ticketUrl": ".mec-event-footer .mec-booking-button",
+    "venue": ".mec-event-location .mec-location-details > a",
+    "city": ".mec-address",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
