@@ -1,155 +1,47 @@
 {
-  "digest": "b1fe85bc83336e131f7bdd7065eea59c16a14aaf7b6cdb288bfba561406c117f",
+  "digest": "4e8072d5265efb2159fc7d907f6b43b5710f9ddf7156969e3f9fd66420733486",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "06fed5ebc38c13aa4cd7e915d045de648661a6f33ae7f97adf07ae7eab74656d",
+      "digest": "a6e3f22c925830ddf36a951670eabfd712fdd2b8538c957b38cde9a00d62e6a1",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "355cbabb-05b7-4bbd-9979-5da5acbb7513",
-        "inputHash": "d8d693cf9f5ccdef1ce793cb8e89e6332376ea0f7fe5bee4709de505224b5fd9",
+        "id": "7634d443-ba98-4acc-92d2-f8ce8f489594",
+        "inputHash": "412bed7e3c13726e9c764d608228cfa0129967cb79d39d0249ececab39ad5d43",
         "candidates": [
           {
-            "name": "Rocko",
-            "website": "https://www.rockoalive.com/"
+            "name": "Indecision",
+            "website": "http://www.indecisionnyhc.com/"
           },
           {
-            "name": "30 Foot Fall",
-            "website": "http://www.30footfall.com/"
-          },
-          {
-            "name": "Kaliber 44",
-            "website": "http://www.k44.pl/"
-          },
-          {
-            "name": "Ky-Mani Marley",
-            "website": "http://www.kymanimarley.com/"
-          },
-          {
-            "name": "Shirley Bassey",
-            "website": "https://www.dameshirleybassey.world/"
-          },
-          {
-            "name": "Solomon",
-            "website": "https://solomonmusic.com"
-          },
-          {
-            "name": "Don Miguelo",
-            "website": "http://www.donmiguelo.com"
-          },
-          {
-            "name": "Doro",
-            "website": "http://www.doromusic.de/"
-          },
-          {
-            "name": "Mickey Rooney",
-            "website": "http://mickeyrooney.com"
-          },
-          {
-            "name": "Natalie Caine",
-            "website": "https://www.nataliecaine.com"
-          },
-          {
-            "name": "Victor Sanz",
-            "website": "https://victorsanz.net/"
+            "name": "Capital Punishment",
+            "website": "https://www.capitalpunishmentband.com"
           }
         ],
         "nameCounts": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
           1,
           1
         ],
         "results": [
           {
-            "name": "Rocko",
-            "website": "https://www.rockoalive.com/",
+            "name": "Indecision",
+            "website": "http://www.indecisionnyhc.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "30 Foot Fall",
-            "website": "http://www.30footfall.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Kaliber 44",
-            "website": "http://www.k44.pl/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Ky-Mani Marley",
-            "website": "http://www.kymanimarley.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Shirley Bassey",
-            "website": "https://www.dameshirleybassey.world/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Solomon",
-            "website": "https://solomonmusic.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Don Miguelo",
-            "website": "http://www.donmiguelo.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Doro",
-            "website": "http://www.doromusic.de/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Mickey Rooney",
-            "website": "http://mickeyrooney.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Natalie Caine",
-            "website": "https://www.nataliecaine.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Victor Sanz",
-            "website": "https://victorsanz.net/",
+            "name": "Capital Punishment",
+            "website": "https://www.capitalpunishmentband.com",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           }
         ],
         "skipped": [],
-        "applied": 11,
+        "applied": 2,
         "pending": null,
         "complete": true
       }
@@ -158,57 +50,12 @@
       {
         "index": 0,
         "tourUrl": null,
-        "triedAt": "2026-11-16T12:26:50.772Z"
+        "triedAt": "2026-11-17T12:47:02.856Z"
       },
       {
         "index": 1,
         "tourUrl": null,
-        "triedAt": "2026-11-16T12:26:50.794Z"
-      },
-      {
-        "index": 2,
-        "tourUrl": null,
-        "triedAt": "2026-11-16T12:26:50.808Z"
-      },
-      {
-        "index": 3,
-        "tourUrl": null,
-        "triedAt": "2026-11-16T12:26:50.822Z"
-      },
-      {
-        "index": 4,
-        "tourUrl": null,
-        "triedAt": "2026-11-16T12:26:50.841Z"
-      },
-      {
-        "index": 5,
-        "tourUrl": null,
-        "triedAt": "2026-11-16T12:26:50.855Z"
-      },
-      {
-        "index": 6,
-        "tourUrl": null,
-        "triedAt": "2026-11-16T12:26:50.870Z"
-      },
-      {
-        "index": 7,
-        "tourUrl": null,
-        "triedAt": "2026-11-16T12:26:50.884Z"
-      },
-      {
-        "index": 8,
-        "tourUrl": null,
-        "triedAt": "2026-11-16T12:26:50.900Z"
-      },
-      {
-        "index": 9,
-        "tourUrl": null,
-        "triedAt": "2026-11-16T12:26:50.914Z"
-      },
-      {
-        "index": 10,
-        "tourUrl": null,
-        "triedAt": "2026-11-16T12:26:54.940Z"
+        "triedAt": "2026-11-17T12:47:02.872Z"
       }
     ],
     "audit": []
