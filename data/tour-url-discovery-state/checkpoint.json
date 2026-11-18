@@ -1,47 +1,239 @@
 {
-  "digest": "4e8072d5265efb2159fc7d907f6b43b5710f9ddf7156969e3f9fd66420733486",
+  "digest": "38c189c8de61ada03db6f49795c93df0de677046fbe8c15653ab8dc12499db34",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "a6e3f22c925830ddf36a951670eabfd712fdd2b8538c957b38cde9a00d62e6a1",
+      "digest": "45e493c954f71ec02f7f65c08f5e3238e7841d107633034cd72ce2c0b813d2c1",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "7634d443-ba98-4acc-92d2-f8ce8f489594",
-        "inputHash": "412bed7e3c13726e9c764d608228cfa0129967cb79d39d0249ececab39ad5d43",
+        "id": "210d444c-0aa0-41e4-980a-30584c725408",
+        "inputHash": "1c5a335badff3a971cd26f7d687c46901b949c9e3d4634fac274c602ff1ef42a",
         "candidates": [
           {
-            "name": "Indecision",
-            "website": "http://www.indecisionnyhc.com/"
+            "name": "Hepburn",
+            "website": "https://www.hepburnmusic.com/"
           },
           {
-            "name": "Capital Punishment",
-            "website": "https://www.capitalpunishmentband.com"
+            "name": "BeBe Winans",
+            "website": "http://www.bebewinans.net/"
+          },
+          {
+            "name": "Blush",
+            "website": "http://www.blushband.com/"
+          },
+          {
+            "name": "Raimond Lap",
+            "website": "http://www.rglmusic.com/"
+          },
+          {
+            "name": "Romeo Miller",
+            "website": "http://lilromeo.com"
+          },
+          {
+            "name": "Carpathian Forest",
+            "website": "http://www.tnbm.no/"
+          },
+          {
+            "name": "Clara Rockmore",
+            "website": "https://www.clararockmore.org/"
+          },
+          {
+            "name": "K's Choice",
+            "website": "http://www.kschoice.com/"
+          },
+          {
+            "name": "Shing02",
+            "website": "http://www.e22.com/shing02/"
+          },
+          {
+            "name": "Dash Crofts",
+            "website": "https://sealsandcrofts.com"
+          },
+          {
+            "name": "Dave Kushner",
+            "website": "http://davekushner.com/"
+          },
+          {
+            "name": "Die Antwoord",
+            "website": "https://www.dieantwoord.com/"
+          },
+          {
+            "name": "The Supervillains",
+            "website": "http://sites.google.com/site/therealsupervillains/"
+          },
+          {
+            "name": "Thomas Mann",
+            "website": "https://thomasmann.de/"
+          },
+          {
+            "name": "Toyen",
+            "website": "https://toyen.bandcamp.com/"
+          },
+          {
+            "name": "Eumir Deodato",
+            "website": "http://www.eumirdeodato.com"
+          },
+          {
+            "name": "Mille",
+            "website": "https://millemusic.com"
+          },
+          {
+            "name": "Fun Lovin Criminals",
+            "website": "http://funlovincriminals.co"
           }
         ],
         "nameCounts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           1,
           1
         ],
         "results": [
           {
-            "name": "Indecision",
-            "website": "http://www.indecisionnyhc.com/",
+            "name": "Hepburn",
+            "website": "https://www.hepburnmusic.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Capital Punishment",
-            "website": "https://www.capitalpunishmentband.com",
+            "name": "BeBe Winans",
+            "website": "http://www.bebewinans.net/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Blush",
+            "website": "http://www.blushband.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Raimond Lap",
+            "website": "http://www.rglmusic.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Romeo Miller",
+            "website": "http://lilromeo.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Carpathian Forest",
+            "website": "http://www.tnbm.no/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Clara Rockmore",
+            "website": "https://www.clararockmore.org/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "K's Choice",
+            "website": "http://www.kschoice.com/",
+            "tourUrl": "https://www.kschoice.com/tour",
+            "pathPattern": "/tour",
+            "reason": "score=24 (years=5, numericDates=0, months=12, days=0, keywords=2, widget=0)"
+          },
+          {
+            "name": "Shing02",
+            "website": "http://www.e22.com/shing02/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Dash Crofts",
+            "website": "https://sealsandcrofts.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Dave Kushner",
+            "website": "http://davekushner.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Die Antwoord",
+            "website": "https://www.dieantwoord.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "The Supervillains",
+            "website": "http://sites.google.com/site/therealsupervillains/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Thomas Mann",
+            "website": "https://thomasmann.de/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Toyen",
+            "website": "https://toyen.bandcamp.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Eumir Deodato",
+            "website": "http://www.eumirdeodato.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Mille",
+            "website": "https://millemusic.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Fun Lovin Criminals",
+            "website": "http://funlovincriminals.co",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
           }
         ],
         "skipped": [],
-        "applied": 2,
+        "applied": 18,
         "pending": null,
         "complete": true
       }
@@ -50,14 +242,104 @@
       {
         "index": 0,
         "tourUrl": null,
-        "triedAt": "2026-11-17T12:47:02.856Z"
+        "triedAt": "2026-11-18T12:39:35.177Z"
       },
       {
         "index": 1,
         "tourUrl": null,
-        "triedAt": "2026-11-17T12:47:02.872Z"
+        "triedAt": "2026-11-18T12:39:35.195Z"
+      },
+      {
+        "index": 2,
+        "tourUrl": null,
+        "triedAt": "2026-11-18T12:39:35.208Z"
+      },
+      {
+        "index": 3,
+        "tourUrl": null,
+        "triedAt": "2026-11-18T12:39:35.223Z"
+      },
+      {
+        "index": 4,
+        "tourUrl": null,
+        "triedAt": "2026-11-18T12:39:35.240Z"
+      },
+      {
+        "index": 5,
+        "tourUrl": null,
+        "triedAt": "2026-11-18T12:39:35.253Z"
+      },
+      {
+        "index": 6,
+        "tourUrl": null,
+        "triedAt": "2026-11-18T12:39:35.266Z"
+      },
+      {
+        "index": 7,
+        "tourUrl": "https://www.kschoice.com/tour",
+        "triedAt": "2026-11-18T12:39:35.279Z"
+      },
+      {
+        "index": 8,
+        "tourUrl": null,
+        "triedAt": "2026-11-18T12:39:35.293Z"
+      },
+      {
+        "index": 9,
+        "tourUrl": null,
+        "triedAt": "2026-11-18T12:39:35.306Z"
+      },
+      {
+        "index": 10,
+        "tourUrl": null,
+        "triedAt": "2026-11-18T12:39:57.081Z"
+      },
+      {
+        "index": 11,
+        "tourUrl": null,
+        "triedAt": "2026-11-18T12:39:57.094Z"
+      },
+      {
+        "index": 12,
+        "tourUrl": null,
+        "triedAt": "2026-11-18T12:39:57.106Z"
+      },
+      {
+        "index": 13,
+        "tourUrl": null,
+        "triedAt": "2026-11-18T12:39:57.123Z"
+      },
+      {
+        "index": 14,
+        "tourUrl": null,
+        "triedAt": "2026-11-18T12:39:57.136Z"
+      },
+      {
+        "index": 15,
+        "tourUrl": null,
+        "triedAt": "2026-11-18T12:39:57.148Z"
+      },
+      {
+        "index": 16,
+        "tourUrl": null,
+        "triedAt": "2026-11-18T12:39:57.161Z"
+      },
+      {
+        "index": 17,
+        "tourUrl": null,
+        "triedAt": "2026-11-18T12:39:57.174Z"
       }
     ],
-    "audit": []
+    "audit": [
+      {
+        "artist": "K's Choice",
+        "website": "http://www.kschoice.com/",
+        "tourUrl": "https://www.kschoice.com/tour",
+        "pathPattern": "/tour",
+        "reason": "score=24 (years=5, numericDates=0, months=12, days=0, keywords=2, widget=0)",
+        "appliedAt": "2026-11-18T12:39:35.279Z",
+        "discoveryOperationId": "210d444c-0aa0-41e4-980a-30584c725408:7"
+      }
+    ]
   }
 }
