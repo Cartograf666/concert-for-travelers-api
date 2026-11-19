@@ -1,0 +1,17 @@
+{
+  "id": "artist-kimberly-scott",
+  "domain": "www.kimscottmusic.com",
+  "url": "https://www.kimscottmusic.com/tour-dates",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".show-item",
+    "artistNameFallback": "Kim Scott",
+    "date": ".show-date",
+    "ticketUrl": "a.tickets-link",
+    "venue": ".show-venue",
+    "city": ".show-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

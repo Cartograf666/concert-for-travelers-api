@@ -1,0 +1,17 @@
+{
+  "id": "artist-kierra-kiki-sheard",
+  "domain": "kierrasheard.com",
+  "url": "https://kierrasheard.com/tour",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "li.tribe-events-list-item",
+    "artistNameFallback": "Kierra \"Kiki\" Sheard",
+    "date": "time.tribe-events-abbr",
+    "ticketUrl": "a.tribe-events-read-more",
+    "venue": "span.tribe-events-organizer-tel",
+    "city": "span.tribe-events-locality",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

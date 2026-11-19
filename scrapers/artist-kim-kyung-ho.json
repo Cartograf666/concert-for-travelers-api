@@ -1,0 +1,17 @@
+{
+  "id": "artist-kim-kyung-ho",
+  "domain": "kimkyungho.com",
+  "url": "http://kimkyungho.com/concert/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".board-list > ul > li",
+    "artistNameFallback": "Kim Kyung-ho",
+    "date": ".date",
+    "ticketUrl": ".ticket a",
+    "venue": ".place:nth-child(1)",
+    "city": ".place:nth-child(2)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "KR"
+  }
+}
