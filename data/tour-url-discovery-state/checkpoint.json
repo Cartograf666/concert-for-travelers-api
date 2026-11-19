@@ -1,90 +1,100 @@
 {
-  "digest": "38c189c8de61ada03db6f49795c93df0de677046fbe8c15653ab8dc12499db34",
+  "digest": "6dbb549afe2b1e7f4e9825510958407764f6f63e599c85566900a52bf2fcc479",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "45e493c954f71ec02f7f65c08f5e3238e7841d107633034cd72ce2c0b813d2c1",
+      "digest": "d45a614ea1ce2651f3efb231cfad558781a8c1046800223b63c722509452321c",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "210d444c-0aa0-41e4-980a-30584c725408",
-        "inputHash": "1c5a335badff3a971cd26f7d687c46901b949c9e3d4634fac274c602ff1ef42a",
+        "id": "e1134574-73b5-4d6e-b10d-2a7d882129e7",
+        "inputHash": "171962d1d9f47808a7c36dd4f170f99eb6303d3ff1dc9cb9ed00c52dcee0225e",
         "candidates": [
           {
-            "name": "Hepburn",
-            "website": "https://www.hepburnmusic.com/"
+            "name": "Alexander Zonjic",
+            "website": "http://zonjic.com/"
           },
           {
-            "name": "BeBe Winans",
-            "website": "http://www.bebewinans.net/"
+            "name": "Rainer Maria",
+            "website": "https://www.rainermaria.com/"
           },
           {
-            "name": "Blush",
-            "website": "http://www.blushband.com/"
+            "name": "Ricardo Arjona",
+            "website": "http://www.ricardoarjona.com"
           },
           {
-            "name": "Raimond Lap",
-            "website": "http://www.rglmusic.com/"
+            "name": "Richie Hawtin",
+            "website": "http://www.plastikman.com/"
           },
           {
-            "name": "Romeo Miller",
-            "website": "http://lilromeo.com"
+            "name": "Carl Palmer",
+            "website": "http://www.carlpalmer.com/"
           },
           {
-            "name": "Carpathian Forest",
-            "website": "http://www.tnbm.no/"
+            "name": "Casey James",
+            "website": "http://www.caseyjamesofficial.com/"
           },
           {
-            "name": "Clara Rockmore",
-            "website": "https://www.clararockmore.org/"
+            "name": "Semisonic",
+            "website": "http://www.semisonic.com/"
           },
           {
-            "name": "K's Choice",
-            "website": "http://www.kschoice.com/"
+            "name": "Skid Row",
+            "website": "http://www.skidrow.com/"
           },
           {
-            "name": "Shing02",
-            "website": "http://www.e22.com/shing02/"
+            "name": "Superchunk",
+            "website": "http://www.superchunk.com"
           },
           {
-            "name": "Dash Crofts",
-            "website": "https://sealsandcrofts.com"
+            "name": "Sven Väth",
+            "website": "http://www.cocoon.net/svenvath"
           },
           {
-            "name": "Dave Kushner",
-            "website": "http://davekushner.com/"
+            "name": "Land of Talk",
+            "website": "http://landoftalk.com"
           },
           {
-            "name": "Die Antwoord",
-            "website": "https://www.dieantwoord.com/"
+            "name": "Lenny Kaye",
+            "website": "http://lennykaye.com/"
           },
           {
-            "name": "The Supervillains",
-            "website": "http://sites.google.com/site/therealsupervillains/"
+            "name": "Liquid Soul",
+            "website": "http://www.liquidsoul.ch/"
           },
           {
-            "name": "Thomas Mann",
-            "website": "https://thomasmann.de/"
+            "name": "London Symphony Orchestra",
+            "website": "https://www.lso.co.uk/"
           },
           {
-            "name": "Toyen",
-            "website": "https://toyen.bandcamp.com/"
+            "name": "The Ark",
+            "website": "http://www.thearkworld.com/"
           },
           {
-            "name": "Eumir Deodato",
-            "website": "http://www.eumirdeodato.com"
+            "name": "Eikichi Yazawa",
+            "website": "https://sp.e-yazawa.com/"
           },
           {
-            "name": "Mille",
-            "website": "https://millemusic.com"
+            "name": "Moxy",
+            "website": "http://www.myspace.com/officialmoxy"
           },
           {
-            "name": "Fun Lovin Criminals",
-            "website": "http://funlovincriminals.co"
+            "name": "Free love",
+            "website": "https://www.freelovenrg.com/"
+          },
+          {
+            "name": "Vince Bell",
+            "website": "http://www.vincebell.com"
+          },
+          {
+            "name": "Ol' Dirty Bastard",
+            "website": "https://www.oldirtybastard.com/"
           }
         ],
         "nameCounts": [
+          1,
+          1,
           1,
           1,
           1,
@@ -106,134 +116,148 @@
         ],
         "results": [
           {
-            "name": "Hepburn",
-            "website": "https://www.hepburnmusic.com/",
+            "name": "Alexander Zonjic",
+            "website": "http://zonjic.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Rainer Maria",
+            "website": "https://www.rainermaria.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Ricardo Arjona",
+            "website": "http://www.ricardoarjona.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Richie Hawtin",
+            "website": "http://www.plastikman.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Carl Palmer",
+            "website": "http://www.carlpalmer.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Casey James",
+            "website": "http://www.caseyjamesofficial.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Semisonic",
+            "website": "http://www.semisonic.com/",
+            "tourUrl": "https://semisonic.com/dates/",
+            "pathPattern": "/dates",
+            "reason": "score=8.5 (years=1, numericDates=0, months=1, days=1, keywords=8, widget=0)"
+          },
+          {
+            "name": "Skid Row",
+            "website": "http://www.skidrow.com/",
+            "tourUrl": "https://www.skidrow.com/events",
+            "pathPattern": "/events",
+            "reason": "score=9.5 (years=1, numericDates=0, months=2, days=1, keywords=15, widget=0)"
+          },
+          {
+            "name": "Superchunk",
+            "website": "http://www.superchunk.com",
+            "tourUrl": "http://superchunk.com/shows/",
+            "pathPattern": "/shows",
+            "reason": "score=14 (years=3, numericDates=0, months=3, days=0, keywords=10, widget=0)"
+          },
+          {
+            "name": "Sven Väth",
+            "website": "http://www.cocoon.net/svenvath",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Land of Talk",
+            "website": "http://landoftalk.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Lenny Kaye",
+            "website": "http://lennykaye.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Liquid Soul",
+            "website": "http://www.liquidsoul.ch/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "London Symphony Orchestra",
+            "website": "https://www.lso.co.uk/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "The Ark",
+            "website": "http://www.thearkworld.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Eikichi Yazawa",
+            "website": "https://sp.e-yazawa.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Moxy",
+            "website": "http://www.myspace.com/officialmoxy",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Free love",
+            "website": "https://www.freelovenrg.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "BeBe Winans",
-            "website": "http://www.bebewinans.net/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
+            "name": "Vince Bell",
+            "website": "http://www.vincebell.com",
+            "tourUrl": "http://vincebell.com/shows/",
+            "pathPattern": "/shows",
+            "reason": "score=12 (years=0, numericDates=0, months=7, days=0, keywords=19, widget=0)"
           },
           {
-            "name": "Blush",
-            "website": "http://www.blushband.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Raimond Lap",
-            "website": "http://www.rglmusic.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Romeo Miller",
-            "website": "http://lilromeo.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Carpathian Forest",
-            "website": "http://www.tnbm.no/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Clara Rockmore",
-            "website": "https://www.clararockmore.org/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "K's Choice",
-            "website": "http://www.kschoice.com/",
-            "tourUrl": "https://www.kschoice.com/tour",
-            "pathPattern": "/tour",
-            "reason": "score=24 (years=5, numericDates=0, months=12, days=0, keywords=2, widget=0)"
-          },
-          {
-            "name": "Shing02",
-            "website": "http://www.e22.com/shing02/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Dash Crofts",
-            "website": "https://sealsandcrofts.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Dave Kushner",
-            "website": "http://davekushner.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Die Antwoord",
-            "website": "https://www.dieantwoord.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "The Supervillains",
-            "website": "http://sites.google.com/site/therealsupervillains/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Thomas Mann",
-            "website": "https://thomasmann.de/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Toyen",
-            "website": "https://toyen.bandcamp.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Eumir Deodato",
-            "website": "http://www.eumirdeodato.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Mille",
-            "website": "https://millemusic.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Fun Lovin Criminals",
-            "website": "http://funlovincriminals.co",
+            "name": "Ol' Dirty Bastard",
+            "website": "https://www.oldirtybastard.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           }
         ],
         "skipped": [],
-        "applied": 18,
+        "applied": 20,
         "pending": null,
         "complete": true
       }
@@ -242,103 +266,140 @@
       {
         "index": 0,
         "tourUrl": null,
-        "triedAt": "2026-11-18T12:39:35.177Z"
+        "triedAt": "2026-11-19T12:33:23.297Z"
       },
       {
         "index": 1,
         "tourUrl": null,
-        "triedAt": "2026-11-18T12:39:35.195Z"
+        "triedAt": "2026-11-19T12:33:23.312Z"
       },
       {
         "index": 2,
         "tourUrl": null,
-        "triedAt": "2026-11-18T12:39:35.208Z"
+        "triedAt": "2026-11-19T12:33:23.325Z"
       },
       {
         "index": 3,
         "tourUrl": null,
-        "triedAt": "2026-11-18T12:39:35.223Z"
+        "triedAt": "2026-11-19T12:33:23.339Z"
       },
       {
         "index": 4,
         "tourUrl": null,
-        "triedAt": "2026-11-18T12:39:35.240Z"
+        "triedAt": "2026-11-19T12:33:23.351Z"
       },
       {
         "index": 5,
         "tourUrl": null,
-        "triedAt": "2026-11-18T12:39:35.253Z"
+        "triedAt": "2026-11-19T12:33:23.361Z"
       },
       {
         "index": 6,
-        "tourUrl": null,
-        "triedAt": "2026-11-18T12:39:35.266Z"
+        "tourUrl": "https://semisonic.com/dates/",
+        "triedAt": "2026-11-19T12:33:23.371Z"
       },
       {
         "index": 7,
-        "tourUrl": "https://www.kschoice.com/tour",
-        "triedAt": "2026-11-18T12:39:35.279Z"
+        "tourUrl": "https://www.skidrow.com/events",
+        "triedAt": "2026-11-19T12:33:23.380Z"
       },
       {
         "index": 8,
-        "tourUrl": null,
-        "triedAt": "2026-11-18T12:39:35.293Z"
+        "tourUrl": "http://superchunk.com/shows/",
+        "triedAt": "2026-11-19T12:33:23.390Z"
       },
       {
         "index": 9,
         "tourUrl": null,
-        "triedAt": "2026-11-18T12:39:35.306Z"
+        "triedAt": "2026-11-19T12:33:23.399Z"
       },
       {
         "index": 10,
         "tourUrl": null,
-        "triedAt": "2026-11-18T12:39:57.081Z"
+        "triedAt": "2026-11-19T12:33:41.147Z"
       },
       {
         "index": 11,
         "tourUrl": null,
-        "triedAt": "2026-11-18T12:39:57.094Z"
+        "triedAt": "2026-11-19T12:33:41.165Z"
       },
       {
         "index": 12,
         "tourUrl": null,
-        "triedAt": "2026-11-18T12:39:57.106Z"
+        "triedAt": "2026-11-19T12:33:41.174Z"
       },
       {
         "index": 13,
         "tourUrl": null,
-        "triedAt": "2026-11-18T12:39:57.123Z"
+        "triedAt": "2026-11-19T12:33:41.183Z"
       },
       {
         "index": 14,
         "tourUrl": null,
-        "triedAt": "2026-11-18T12:39:57.136Z"
+        "triedAt": "2026-11-19T12:33:41.191Z"
       },
       {
         "index": 15,
         "tourUrl": null,
-        "triedAt": "2026-11-18T12:39:57.148Z"
+        "triedAt": "2026-11-19T12:33:41.198Z"
       },
       {
         "index": 16,
         "tourUrl": null,
-        "triedAt": "2026-11-18T12:39:57.161Z"
+        "triedAt": "2026-11-19T12:33:41.206Z"
       },
       {
         "index": 17,
         "tourUrl": null,
-        "triedAt": "2026-11-18T12:39:57.174Z"
+        "triedAt": "2026-11-19T12:33:41.212Z"
+      },
+      {
+        "index": 18,
+        "tourUrl": "http://vincebell.com/shows/",
+        "triedAt": "2026-11-19T12:33:41.220Z"
+      },
+      {
+        "index": 19,
+        "tourUrl": null,
+        "triedAt": "2026-11-19T12:33:41.226Z"
       }
     ],
     "audit": [
       {
-        "artist": "K's Choice",
-        "website": "http://www.kschoice.com/",
-        "tourUrl": "https://www.kschoice.com/tour",
-        "pathPattern": "/tour",
-        "reason": "score=24 (years=5, numericDates=0, months=12, days=0, keywords=2, widget=0)",
-        "appliedAt": "2026-11-18T12:39:35.279Z",
-        "discoveryOperationId": "210d444c-0aa0-41e4-980a-30584c725408:7"
+        "artist": "Semisonic",
+        "website": "http://www.semisonic.com/",
+        "tourUrl": "https://semisonic.com/dates/",
+        "pathPattern": "/dates",
+        "reason": "score=8.5 (years=1, numericDates=0, months=1, days=1, keywords=8, widget=0)",
+        "appliedAt": "2026-11-19T12:33:23.371Z",
+        "discoveryOperationId": "e1134574-73b5-4d6e-b10d-2a7d882129e7:6"
+      },
+      {
+        "artist": "Skid Row",
+        "website": "http://www.skidrow.com/",
+        "tourUrl": "https://www.skidrow.com/events",
+        "pathPattern": "/events",
+        "reason": "score=9.5 (years=1, numericDates=0, months=2, days=1, keywords=15, widget=0)",
+        "appliedAt": "2026-11-19T12:33:23.380Z",
+        "discoveryOperationId": "e1134574-73b5-4d6e-b10d-2a7d882129e7:7"
+      },
+      {
+        "artist": "Superchunk",
+        "website": "http://www.superchunk.com",
+        "tourUrl": "http://superchunk.com/shows/",
+        "pathPattern": "/shows",
+        "reason": "score=14 (years=3, numericDates=0, months=3, days=0, keywords=10, widget=0)",
+        "appliedAt": "2026-11-19T12:33:23.390Z",
+        "discoveryOperationId": "e1134574-73b5-4d6e-b10d-2a7d882129e7:8"
+      },
+      {
+        "artist": "Vince Bell",
+        "website": "http://www.vincebell.com",
+        "tourUrl": "http://vincebell.com/shows/",
+        "pathPattern": "/shows",
+        "reason": "score=12 (years=0, numericDates=0, months=7, days=0, keywords=19, widget=0)",
+        "appliedAt": "2026-11-19T12:33:41.220Z",
+        "discoveryOperationId": "e1134574-73b5-4d6e-b10d-2a7d882129e7:18"
       }
     ]
   }
