@@ -1,0 +1,17 @@
+{
+  "id": "artist-krum",
+  "domain": "krumofficial.com",
+  "url": "http://krumofficial.com/shows/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.event",
+    "artistNameFallback": "Krum",
+    "date": "div.event-date",
+    "ticketUrl": "a.event-tickets",
+    "venue": "span.event-venue",
+    "city": "span.event-city",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}

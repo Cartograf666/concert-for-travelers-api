@@ -1,0 +1,16 @@
+{
+  "id": "artist-kumaki-anri",
+  "domain": "www.anrikumaki.com",
+  "url": "http://www.anrikumaki.com/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "div.live_box",
+    "artistNameFallback": "Anri Kumaki",
+    "date": "div.date",
+    "ticketUrl": "p.button a",
+    "city": "p.place",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}

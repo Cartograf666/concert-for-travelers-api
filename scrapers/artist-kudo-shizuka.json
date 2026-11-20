@@ -1,0 +1,15 @@
+{
+  "id": "artist-kudo-shizuka",
+  "domain": "shizuka-kudo.net",
+  "url": "https://shizuka-kudo.net/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "section.live__archive__item",
+    "artistNameFallback": "Shizuka Kudo",
+    "date": "p.live__archive__date",
+    "city": "p.live__archive__place",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "JP"
+  }
+}
