@@ -319272,7 +319272,45 @@
     "enrichedAt": "2026-11-21T13:55:15.863Z",
     "image": "https://www.theaudiodb.com/images/media/artist/thumb/07lv8r1790314576.jpg",
     "imageSource": "audiodb",
-    "imageFallbackTriedAt": "2026-11-21T19:00:31.066Z"
+    "imageFallbackTriedAt": "2026-11-21T19:00:31.066Z",
+    "similarArtists": [
+      {
+        "name": "Pooh Shiesty",
+        "slug": "pooh-shiesty",
+        "match": 1
+      },
+      {
+        "name": "Lil Baby",
+        "slug": "lil-baby",
+        "match": 0.783947
+      },
+      {
+        "name": "YoungBoy Never Broke Again",
+        "slug": "youngboy-never-broke-again",
+        "match": 0.76996
+      },
+      {
+        "name": "Gunna",
+        "slug": "gunna",
+        "match": 0.719126
+      },
+      {
+        "name": "Kevin Gates",
+        "slug": "kevin-gates",
+        "match": 0.692277
+      },
+      {
+        "name": "Gucci Mane",
+        "slug": "gucci-mane",
+        "match": 0.684269
+      },
+      {
+        "name": "Meek Mill",
+        "slug": "meek-mill",
+        "match": 0.633155
+      }
+    ],
+    "similarEnrichedAt": "2026-11-21T19:49:27.875Z"
   },
   {
     "name": "Kodaline",

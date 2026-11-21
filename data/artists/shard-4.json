@@ -324140,7 +324140,35 @@
       "vk": null
     },
     "enrichedAt": "2026-11-21T19:38:59.695Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "Jay Park",
+        "slug": "jay-park",
+        "match": 0.448078
+      },
+      {
+        "name": "CORTIS",
+        "slug": "cortis",
+        "match": 0.337812
+      },
+      {
+        "name": "T.O.P",
+        "slug": "top",
+        "match": 0.186097
+      },
+      {
+        "name": "RIIZE",
+        "slug": "riize",
+        "match": 0.16293
+      },
+      {
+        "name": "ENHYPEN",
+        "slug": "enhypen",
+        "match": 0.161216
+      }
+    ],
+    "similarEnrichedAt": "2026-11-21T19:49:28.262Z"
   },
   {
     "name": "lo fi",

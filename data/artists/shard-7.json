@@ -106647,7 +106647,20 @@
       "vk": null
     },
     "enrichedAt": "2026-11-21T19:38:50.971Z",
-    "enrichedBy": "musicbrainz"
+    "enrichedBy": "musicbrainz",
+    "similarArtists": [
+      {
+        "name": "Quad City DJ's",
+        "slug": "quad-city-djs",
+        "match": 0.112727
+      },
+      {
+        "name": "Keith Richards",
+        "slug": "keith-richards",
+        "match": 0.047909
+      }
+    ],
+    "similarEnrichedAt": "2026-11-21T19:49:28.640Z"
   },
   {
     "name": "Grand Theft Bus",
