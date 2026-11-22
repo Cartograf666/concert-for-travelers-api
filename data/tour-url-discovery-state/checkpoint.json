@@ -1,120 +1,70 @@
 {
-  "digest": "5aab00ec0b0292682ff3c4789f4902e5f72993cb15950e63340a12c082edaf8f",
+  "digest": "d414b8d24ce08875828a85713591244d2d144e1d5c6e2dad86124851fb41be68",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "9e85a1f2e18da1aa03e0d2b846458e71849e708e41dbfc45598a136eef9020dc",
+      "digest": "bed1a8fc6dee3b28847783da4ec07c74d84a173086095a56e84093a832032c04",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "817861dc-4291-43fe-8a3b-9729e619283a",
-        "inputHash": "2dfb35b319f364fcb0f657dc86418b8a94f78957a518a52eab0045c9ef403439",
+        "id": "35714009-cb8a-4cd5-ab74-3b25bc56f9e6",
+        "inputHash": "cce3b97ad647f0e7543c973e72fef3c16dfcd439b9e6b2c3afc38bd94d28a85f",
         "candidates": [
           {
-            "name": "Alexander Bard",
-            "website": "http://www.alexanderbard.com"
+            "name": "Benjamin Britten",
+            "website": "https://www.brittenpears.org/"
           },
           {
-            "name": "Ben Daglish",
-            "website": "https://ben-daglish.net"
+            "name": "Recloose",
+            "website": "https://www.recloose.com"
           },
           {
-            "name": "Brian Bell",
-            "website": "https://www.weezer.com/"
+            "name": "rector",
+            "website": "https://www.rector.com.br/"
           },
           {
-            "name": "Raymond van het Groenewoud",
-            "website": "http://www.raymondvanhetgroenewoud.be/"
+            "name": "Kodak Black",
+            "website": "https://kodakblack.com/"
           },
           {
-            "name": "Riverboat Gamblers",
-            "website": "http://theriverboatgamblers.com"
+            "name": "Kurt Rosenwinkel",
+            "website": "http://www.kurtrosenwinkel.com"
           },
           {
-            "name": "Caesars",
-            "website": "http://www.astralwerks.com/caesars/"
+            "name": "Dolores Keane",
+            "website": "https://doloreskeane.com/"
           },
           {
-            "name": "Slaughter and the Dogs",
-            "website": "http://www.slaughterandthedogs.info/"
+            "name": "Laila",
+            "website": "https://www.lailamusic.com/"
           },
           {
-            "name": "Dan Bern",
-            "website": "http://www.danbern.com/"
+            "name": "Larry Goldings",
+            "website": "http://www.larrygoldings.com"
           },
           {
-            "name": "Dana",
-            "website": "https://www.dana-music.com/"
+            "name": "Elvis Presley",
+            "website": "http://www.elvis.com/"
           },
           {
-            "name": "David Wilcox",
-            "website": "http://davidwilcox.com/"
+            "name": "Giannis Ploutarxos",
+            "website": "https://giannisploutarxos.gr/"
           },
           {
-            "name": "Deryck Whibley",
-            "website": "http://deryckwhibley.net"
+            "name": "LNGSHOT",
+            "website": "https://lngshot4sho.com/"
           },
           {
-            "name": "DJ Skribble",
-            "website": "http://www.djskribble.com/main.html"
+            "name": "Ralphie Choo",
+            "website": "https://www.ralphiechoo.com/"
           },
           {
-            "name": "Tannahill Weavers",
-            "website": "http://www.tannahillweavers.com//"
-          },
-          {
-            "name": "The Little Ones",
-            "website": "http://wearethelittleones.com/"
-          },
-          {
-            "name": "The Motels",
-            "website": "http://www.themotels.com/"
-          },
-          {
-            "name": "The S.O.S. Band",
-            "website": "https://www.thesosband.com"
-          },
-          {
-            "name": "The Thrills",
-            "website": "http://www.thethrills.com"
-          },
-          {
-            "name": "The Varukers",
-            "website": "https://www.thevarukers.com"
-          },
-          {
-            "name": "Emy Perez",
-            "website": "https://emyperez.com"
-          },
-          {
-            "name": "Man or Astro-man?",
-            "website": "http://www.astroman.com/"
-          },
-          {
-            "name": "Matt Elliott",
-            "website": "http://www.thirdeyefoundation.com/"
-          },
-          {
-            "name": "Minnesota",
-            "website": "http://www.minnesotadubstep.com/"
-          },
-          {
-            "name": "Gail Ann Dorsey",
-            "website": "http://www.gailanndorsey.com"
+            "name": "Pehmoaino",
+            "website": "https://www.pehmoaino.fi/"
           }
         ],
         "nameCounts": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
           1,
           1,
           1,
@@ -131,169 +81,99 @@
         ],
         "results": [
           {
-            "name": "Alexander Bard",
-            "website": "http://www.alexanderbard.com",
+            "name": "Benjamin Britten",
+            "website": "https://www.brittenpears.org/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Recloose",
+            "website": "https://www.recloose.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "rector",
+            "website": "https://www.rector.com.br/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Ben Daglish",
-            "website": "https://ben-daglish.net",
+            "name": "Kodak Black",
+            "website": "https://kodakblack.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Brian Bell",
-            "website": "https://www.weezer.com/",
+            "name": "Kurt Rosenwinkel",
+            "website": "http://www.kurtrosenwinkel.com",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Raymond van het Groenewoud",
-            "website": "http://www.raymondvanhetgroenewoud.be/",
-            "tourUrl": "https://raymondvanhetgroenewoud.be/shows/",
-            "pathPattern": "/shows",
-            "reason": "score=194 (years=42, numericDates=42, months=25, days=0, keywords=1, widget=0)"
-          },
-          {
-            "name": "Riverboat Gamblers",
-            "website": "http://theriverboatgamblers.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Caesars",
-            "website": "http://www.astralwerks.com/caesars/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Slaughter and the Dogs",
-            "website": "http://www.slaughterandthedogs.info/",
+            "name": "Dolores Keane",
+            "website": "https://doloreskeane.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Dan Bern",
-            "website": "http://www.danbern.com/",
-            "tourUrl": "https://danbern.com/shows",
-            "pathPattern": "/shows",
-            "reason": "score=28 (years=1, numericDates=0, months=14, days=14, keywords=14, widget=0)"
-          },
-          {
-            "name": "Dana",
-            "website": "https://www.dana-music.com/",
+            "name": "Laila",
+            "website": "https://www.lailamusic.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "David Wilcox",
-            "website": "http://davidwilcox.com/",
-            "tourUrl": "https://www.davidwilcox.com/david-wilcox-tour-and-events",
-            "pathPattern": "/shows",
-            "reason": "score=155 (years=45, numericDates=0, months=60, days=0, keywords=24, widget=0)"
+            "name": "Larry Goldings",
+            "website": "http://www.larrygoldings.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Deryck Whibley",
-            "website": "http://deryckwhibley.net",
+            "name": "Elvis Presley",
+            "website": "http://www.elvis.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Giannis Ploutarxos",
+            "website": "https://giannisploutarxos.gr/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "DJ Skribble",
-            "website": "http://www.djskribble.com/main.html",
+            "name": "LNGSHOT",
+            "website": "https://lngshot4sho.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Tannahill Weavers",
-            "website": "http://www.tannahillweavers.com//",
-            "tourUrl": "https://tannahillweavers.com/live-shows",
-            "pathPattern": "/live-shows",
-            "reason": "score=185 (years=40, numericDates=0, months=80, days=40, keywords=22, widget=0)"
-          },
-          {
-            "name": "The Little Ones",
-            "website": "http://wearethelittleones.com/",
-            "tourUrl": "https://wearethelittleones.com/shows-which-states-lottery-is-legal-in-india/",
-            "pathPattern": "/shows",
-            "reason": "score=27198.5 (years=8884, numericDates=4, months=9387, days=61, keywords=1160, widget=0)"
-          },
-          {
-            "name": "The Motels",
-            "website": "http://www.themotels.com/",
+            "name": "Ralphie Choo",
+            "website": "https://www.ralphiechoo.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "The S.O.S. Band",
-            "website": "https://www.thesosband.com",
-            "tourUrl": "https://www.thesosband.com/tour",
-            "pathPattern": "/tour",
-            "reason": "score=32 (years=0, numericDates=0, months=18, days=18, keywords=19, widget=0)"
-          },
-          {
-            "name": "The Thrills",
-            "website": "http://www.thethrills.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "The Varukers",
-            "website": "https://www.thevarukers.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Emy Perez",
-            "website": "https://emyperez.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Man or Astro-man?",
-            "website": "http://www.astroman.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Matt Elliott",
-            "website": "http://www.thirdeyefoundation.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Minnesota",
-            "website": "http://www.minnesotadubstep.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Gail Ann Dorsey",
-            "website": "http://www.gailanndorsey.com",
+            "name": "Pehmoaino",
+            "website": "https://www.pehmoaino.fi/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           }
         ],
         "skipped": [],
-        "applied": 23,
+        "applied": 13,
         "pending": null,
         "complete": true
       }
@@ -302,174 +182,69 @@
       {
         "index": 0,
         "tourUrl": null,
-        "triedAt": "2026-11-21T12:06:42.846Z"
+        "triedAt": "2026-11-22T12:17:07.461Z"
       },
       {
         "index": 1,
         "tourUrl": null,
-        "triedAt": "2026-11-21T12:06:42.860Z"
+        "triedAt": "2026-11-22T12:17:07.474Z"
       },
       {
         "index": 2,
         "tourUrl": null,
-        "triedAt": "2026-11-21T12:06:42.873Z"
+        "triedAt": "2026-11-22T12:17:07.487Z"
       },
       {
         "index": 3,
-        "tourUrl": "https://raymondvanhetgroenewoud.be/shows/",
-        "triedAt": "2026-11-21T12:06:42.889Z"
+        "tourUrl": null,
+        "triedAt": "2026-11-22T12:17:07.499Z"
       },
       {
         "index": 4,
         "tourUrl": null,
-        "triedAt": "2026-11-21T12:06:42.902Z"
+        "triedAt": "2026-11-22T12:17:07.514Z"
       },
       {
         "index": 5,
         "tourUrl": null,
-        "triedAt": "2026-11-21T12:06:42.915Z"
+        "triedAt": "2026-11-22T12:17:07.526Z"
       },
       {
         "index": 6,
         "tourUrl": null,
-        "triedAt": "2026-11-21T12:06:42.928Z"
+        "triedAt": "2026-11-22T12:17:07.538Z"
       },
       {
         "index": 7,
-        "tourUrl": "https://danbern.com/shows",
-        "triedAt": "2026-11-21T12:06:42.941Z"
+        "tourUrl": null,
+        "triedAt": "2026-11-22T12:17:07.549Z"
       },
       {
         "index": 8,
         "tourUrl": null,
-        "triedAt": "2026-11-21T12:06:42.954Z"
+        "triedAt": "2026-11-22T12:17:07.561Z"
       },
       {
         "index": 9,
-        "tourUrl": "https://www.davidwilcox.com/david-wilcox-tour-and-events",
-        "triedAt": "2026-11-21T12:06:42.966Z"
+        "tourUrl": null,
+        "triedAt": "2026-11-22T12:17:07.572Z"
       },
       {
         "index": 10,
         "tourUrl": null,
-        "triedAt": "2026-11-21T12:07:51.844Z"
+        "triedAt": "2026-11-22T12:17:14.500Z"
       },
       {
         "index": 11,
         "tourUrl": null,
-        "triedAt": "2026-11-21T12:07:51.857Z"
+        "triedAt": "2026-11-22T12:17:14.519Z"
       },
       {
         "index": 12,
-        "tourUrl": "https://tannahillweavers.com/live-shows",
-        "triedAt": "2026-11-21T12:07:51.871Z"
-      },
-      {
-        "index": 13,
-        "tourUrl": "https://wearethelittleones.com/shows-which-states-lottery-is-legal-in-india/",
-        "triedAt": "2026-11-21T12:07:51.886Z"
-      },
-      {
-        "index": 14,
         "tourUrl": null,
-        "triedAt": "2026-11-21T12:07:51.899Z"
-      },
-      {
-        "index": 15,
-        "tourUrl": "https://www.thesosband.com/tour",
-        "triedAt": "2026-11-21T12:07:51.912Z"
-      },
-      {
-        "index": 16,
-        "tourUrl": null,
-        "triedAt": "2026-11-21T12:07:51.924Z"
-      },
-      {
-        "index": 17,
-        "tourUrl": null,
-        "triedAt": "2026-11-21T12:07:51.938Z"
-      },
-      {
-        "index": 18,
-        "tourUrl": null,
-        "triedAt": "2026-11-21T12:07:51.950Z"
-      },
-      {
-        "index": 19,
-        "tourUrl": null,
-        "triedAt": "2026-11-21T12:07:51.963Z"
-      },
-      {
-        "index": 20,
-        "tourUrl": null,
-        "triedAt": "2026-11-21T12:08:02.714Z"
-      },
-      {
-        "index": 21,
-        "tourUrl": null,
-        "triedAt": "2026-11-21T12:08:02.726Z"
-      },
-      {
-        "index": 22,
-        "tourUrl": null,
-        "triedAt": "2026-11-21T12:08:02.740Z"
+        "triedAt": "2026-11-22T12:17:14.531Z"
       }
     ],
-    "audit": [
-      {
-        "artist": "Raymond van het Groenewoud",
-        "website": "http://www.raymondvanhetgroenewoud.be/",
-        "tourUrl": "https://raymondvanhetgroenewoud.be/shows/",
-        "pathPattern": "/shows",
-        "reason": "score=194 (years=42, numericDates=42, months=25, days=0, keywords=1, widget=0)",
-        "appliedAt": "2026-11-21T12:06:42.889Z",
-        "discoveryOperationId": "817861dc-4291-43fe-8a3b-9729e619283a:3"
-      },
-      {
-        "artist": "Dan Bern",
-        "website": "http://www.danbern.com/",
-        "tourUrl": "https://danbern.com/shows",
-        "pathPattern": "/shows",
-        "reason": "score=28 (years=1, numericDates=0, months=14, days=14, keywords=14, widget=0)",
-        "appliedAt": "2026-11-21T12:06:42.941Z",
-        "discoveryOperationId": "817861dc-4291-43fe-8a3b-9729e619283a:7"
-      },
-      {
-        "artist": "David Wilcox",
-        "website": "http://davidwilcox.com/",
-        "tourUrl": "https://www.davidwilcox.com/david-wilcox-tour-and-events",
-        "pathPattern": "/shows",
-        "reason": "score=155 (years=45, numericDates=0, months=60, days=0, keywords=24, widget=0)",
-        "appliedAt": "2026-11-21T12:06:42.966Z",
-        "discoveryOperationId": "817861dc-4291-43fe-8a3b-9729e619283a:9"
-      },
-      {
-        "artist": "Tannahill Weavers",
-        "website": "http://www.tannahillweavers.com//",
-        "tourUrl": "https://tannahillweavers.com/live-shows",
-        "pathPattern": "/live-shows",
-        "reason": "score=185 (years=40, numericDates=0, months=80, days=40, keywords=22, widget=0)",
-        "appliedAt": "2026-11-21T12:07:51.871Z",
-        "discoveryOperationId": "817861dc-4291-43fe-8a3b-9729e619283a:12"
-      },
-      {
-        "artist": "The Little Ones",
-        "website": "http://wearethelittleones.com/",
-        "tourUrl": "https://wearethelittleones.com/shows-which-states-lottery-is-legal-in-india/",
-        "pathPattern": "/shows",
-        "reason": "score=27198.5 (years=8884, numericDates=4, months=9387, days=61, keywords=1160, widget=0)",
-        "appliedAt": "2026-11-21T12:07:51.886Z",
-        "discoveryOperationId": "817861dc-4291-43fe-8a3b-9729e619283a:13"
-      },
-      {
-        "artist": "The S.O.S. Band",
-        "website": "https://www.thesosband.com",
-        "tourUrl": "https://www.thesosband.com/tour",
-        "pathPattern": "/tour",
-        "reason": "score=32 (years=0, numericDates=0, months=18, days=18, keywords=19, widget=0)",
-        "appliedAt": "2026-11-21T12:07:51.912Z",
-        "discoveryOperationId": "817861dc-4291-43fe-8a3b-9729e619283a:15"
-      }
-    ]
+    "audit": []
   }
 }
