@@ -1,50 +1,80 @@
 {
-  "digest": "8330a4ccfb61f1cb90edc734892be052040a92cca8fb0f9add39860c556d082a",
+  "digest": "2f4448d2d28b53743fced9302a54f89947ee3c00e4f514c570ed2a3dd4d3b048",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "b45fb4fd631be662699e09eee9d9c3bdce720cf747417df50d8494f31321d93d",
+      "digest": "2792c0c13f5632fff51301b49b9d8630c4de811788b4f03521adf851238f0075",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "794cc478-0791-48e3-8c65-a492af79232f",
-        "inputHash": "bbd7e2df3aaffcb70c9b69e6fda4bb768102a09d802c69454721e05b1be0c8e9",
+        "id": "d01b8047-4847-4331-9713-1d965bc2c6a8",
+        "inputHash": "c4764c948f767c69346c832f8b04e189179d7ca91bf3aaf9d12a618384cc41cd",
         "candidates": [
           {
-            "name": "Yan Block",
-            "website": "https://yanblock.com/"
+            "name": "A Good Heart",
+            "website": "https://agoodheart.bandcamp.com/"
           },
           {
-            "name": "Bernhard Cossmann",
-            "website": "https://www.bernhardcossmann.com/"
+            "name": "Anne Ross",
+            "website": "https://anneross.com/"
           },
           {
-            "name": "Boye",
-            "website": "https://boyemusic.com/"
+            "name": "Asim Azhar",
+            "website": "https://www.asimazhar.com/"
           },
           {
-            "name": "Calle 24",
-            "website": "https://calle24.com.mx/"
+            "name": "bleood",
+            "website": "https://linktr.ee/bleood"
           },
           {
-            "name": "The SOS Band",
-            "website": "https://www.thesosband.com/"
+            "name": "Brian Bromberg",
+            "website": "http://www.brianbromberg.net"
           },
           {
-            "name": "Tim Scott",
-            "website": "http://www.ledfoot-gothicblues.com/"
+            "name": "Calinacho",
+            "website": "https://linktr.ee/calinacho"
           },
           {
-            "name": "Eldebrock",
-            "website": "https://eldebrockofficial.com/"
+            "name": "Chuck Loeb",
+            "website": "https://www.chuckloeb.com/"
           },
           {
-            "name": "Witchdoctor",
-            "website": "https://witchdoctormuzic.com/"
+            "name": "Kelly Hogan",
+            "website": "http://kellyhogan.com/"
+          },
+          {
+            "name": "Liam Noble",
+            "website": "http://www.liamnoble.co.uk/"
+          },
+          {
+            "name": "The Tennors",
+            "website": "https://thetennors.com/"
+          },
+          {
+            "name": "Tribe",
+            "website": "https://www.tribeband.com/"
+          },
+          {
+            "name": "Faith",
+            "website": "https://www.faithofficial.com/"
+          },
+          {
+            "name": "Gerald Veasley",
+            "website": "http://www.geraldveasley.com/"
+          },
+          {
+            "name": "Wayne Wang",
+            "website": "https://www.wayne-wang.com/"
           }
         ],
         "nameCounts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           1,
           1,
           1,
@@ -56,64 +86,106 @@
         ],
         "results": [
           {
-            "name": "Yan Block",
-            "website": "https://yanblock.com/",
+            "name": "A Good Heart",
+            "website": "https://agoodheart.bandcamp.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Bernhard Cossmann",
-            "website": "https://www.bernhardcossmann.com/",
+            "name": "Anne Ross",
+            "website": "https://anneross.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Asim Azhar",
+            "website": "https://www.asimazhar.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Boye",
-            "website": "https://boyemusic.com/",
+            "name": "bleood",
+            "website": "https://linktr.ee/bleood",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Brian Bromberg",
+            "website": "http://www.brianbromberg.net",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Calinacho",
+            "website": "https://linktr.ee/calinacho",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Chuck Loeb",
+            "website": "https://www.chuckloeb.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Kelly Hogan",
+            "website": "http://kellyhogan.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Liam Noble",
+            "website": "http://www.liamnoble.co.uk/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Calle 24",
-            "website": "https://calle24.com.mx/",
+            "name": "The Tennors",
+            "website": "https://thetennors.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Tribe",
+            "website": "https://www.tribeband.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "The SOS Band",
-            "website": "https://www.thesosband.com/",
-            "tourUrl": "https://www.thesosband.com/tour",
-            "pathPattern": "/tour",
-            "reason": "score=32 (years=0, numericDates=0, months=18, days=18, keywords=19, widget=0)"
-          },
-          {
-            "name": "Tim Scott",
-            "website": "http://www.ledfoot-gothicblues.com/",
+            "name": "Faith",
+            "website": "https://www.faithofficial.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Eldebrock",
-            "website": "https://eldebrockofficial.com/",
+            "name": "Gerald Veasley",
+            "website": "http://www.geraldveasley.com/",
             "tourUrl": null,
             "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
+            "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Witchdoctor",
-            "website": "https://witchdoctormuzic.com/",
+            "name": "Wayne Wang",
+            "website": "https://www.wayne-wang.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           }
         ],
         "skipped": [],
-        "applied": 8,
+        "applied": 14,
         "pending": null,
         "complete": true
       }
@@ -122,54 +194,74 @@
       {
         "index": 0,
         "tourUrl": null,
-        "triedAt": "2026-11-23T14:00:48.263Z"
+        "triedAt": "2026-11-24T14:33:01.060Z"
       },
       {
         "index": 1,
         "tourUrl": null,
-        "triedAt": "2026-11-23T14:00:48.276Z"
+        "triedAt": "2026-11-24T14:33:01.075Z"
       },
       {
         "index": 2,
         "tourUrl": null,
-        "triedAt": "2026-11-23T14:00:48.287Z"
+        "triedAt": "2026-11-24T14:33:01.089Z"
       },
       {
         "index": 3,
         "tourUrl": null,
-        "triedAt": "2026-11-23T14:00:48.297Z"
+        "triedAt": "2026-11-24T14:33:01.103Z"
       },
       {
         "index": 4,
-        "tourUrl": "https://www.thesosband.com/tour",
-        "triedAt": "2026-11-23T14:00:48.310Z"
+        "tourUrl": null,
+        "triedAt": "2026-11-24T14:33:01.119Z"
       },
       {
         "index": 5,
         "tourUrl": null,
-        "triedAt": "2026-11-23T14:00:48.317Z"
+        "triedAt": "2026-11-24T14:33:01.133Z"
       },
       {
         "index": 6,
         "tourUrl": null,
-        "triedAt": "2026-11-23T14:00:48.323Z"
+        "triedAt": "2026-11-24T14:33:01.148Z"
       },
       {
         "index": 7,
         "tourUrl": null,
-        "triedAt": "2026-11-23T14:00:48.329Z"
+        "triedAt": "2026-11-24T14:33:01.161Z"
+      },
+      {
+        "index": 8,
+        "tourUrl": null,
+        "triedAt": "2026-11-24T14:33:01.174Z"
+      },
+      {
+        "index": 9,
+        "tourUrl": null,
+        "triedAt": "2026-11-24T14:33:01.186Z"
+      },
+      {
+        "index": 10,
+        "tourUrl": null,
+        "triedAt": "2026-11-24T14:33:19.999Z"
+      },
+      {
+        "index": 11,
+        "tourUrl": null,
+        "triedAt": "2026-11-24T14:33:20.018Z"
+      },
+      {
+        "index": 12,
+        "tourUrl": null,
+        "triedAt": "2026-11-24T14:33:20.033Z"
+      },
+      {
+        "index": 13,
+        "tourUrl": null,
+        "triedAt": "2026-11-24T14:33:20.047Z"
       }
     ],
-    "audit": [
-      {
-        "artist": "The SOS Band",
-        "website": "https://www.thesosband.com/",
-        "tourUrl": "https://www.thesosband.com/tour",
-        "pathPattern": "/tour",
-        "reason": "score=32 (years=0, numericDates=0, months=18, days=18, keywords=19, widget=0)",
-        "appliedAt": "2026-11-23T14:00:48.310Z",
-        "discoveryOperationId": "794cc478-0791-48e3-8c65-a492af79232f:4"
-      }
-    ]
+    "audit": []
   }
 }
