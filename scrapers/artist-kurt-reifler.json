@@ -1,0 +1,14 @@
+{
+  "id": "artist-kurt-reifler",
+  "domain": "www.kurtreifler.com",
+  "url": "https://www.kurtreifler.com/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": "section.sqs-block:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > p",
+    "artistNameFallback": "Kurt Reifler",
+    "date": "em:nth-child(1)",
+    "venueNameFallback": "",
+    "cityNameFallback": "",
+    "countryNameFallback": "US"
+  }
+}
