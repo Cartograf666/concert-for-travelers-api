@@ -1,78 +1,58 @@
 {
-  "digest": "2f4448d2d28b53743fced9302a54f89947ee3c00e4f514c570ed2a3dd4d3b048",
+  "digest": "c5b8bc5803e6d4538d11f68e9314403fa2b578109b1e7a009536bb352a67a381",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "2792c0c13f5632fff51301b49b9d8630c4de811788b4f03521adf851238f0075",
+      "digest": "f8a2ab437801d05bed217bd6b0fcd075bd7cbc86b7cb1ba08889c288e63a8af3",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "d01b8047-4847-4331-9713-1d965bc2c6a8",
-        "inputHash": "c4764c948f767c69346c832f8b04e189179d7ca91bf3aaf9d12a618384cc41cd",
+        "id": "42d1c0c3-8c77-4c9b-ba92-db751c8f32f0",
+        "inputHash": "3353971c0e996445e0d349aabd06467f11600d80f867a9c0e7c5c1c945ba1280",
         "candidates": [
           {
-            "name": "A Good Heart",
-            "website": "https://agoodheart.bandcamp.com/"
+            "name": "Burton Cummings",
+            "website": "http://burtoncummings.com/"
           },
           {
-            "name": "Anne Ross",
-            "website": "https://anneross.com/"
+            "name": "James Hunter",
+            "website": "http://www.jameshuntermusic.com/"
           },
           {
-            "name": "Asim Azhar",
-            "website": "https://www.asimazhar.com/"
+            "name": "Ryan Key",
+            "website": "http://www.yellowcardrock.com/"
           },
           {
-            "name": "bleood",
-            "website": "https://linktr.ee/bleood"
+            "name": "Sheila E",
+            "website": "http://www.sheilae.com/"
           },
           {
-            "name": "Brian Bromberg",
-            "website": "http://www.brianbromberg.net"
+            "name": "Elliott BROOD",
+            "website": "http://www.elliottbrood.ca/"
           },
           {
-            "name": "Calinacho",
-            "website": "https://linktr.ee/calinacho"
+            "name": "Erin McKeown",
+            "website": "http://www.erinmckeown.com/"
           },
           {
-            "name": "Chuck Loeb",
-            "website": "https://www.chuckloeb.com/"
+            "name": "Marsha Ambrosius",
+            "website": "http://www.marshaambrosiusmusic.com/us"
           },
           {
-            "name": "Kelly Hogan",
-            "website": "http://kellyhogan.com/"
+            "name": "Martin Giroux",
+            "website": "http://www.martingiroux.com/"
           },
           {
-            "name": "Liam Noble",
-            "website": "http://www.liamnoble.co.uk/"
+            "name": "Michael Gregory Jackson",
+            "website": "http://michaelgregoryjackson.com/"
           },
           {
-            "name": "The Tennors",
-            "website": "https://thetennors.com/"
-          },
-          {
-            "name": "Tribe",
-            "website": "https://www.tribeband.com/"
-          },
-          {
-            "name": "Faith",
-            "website": "https://www.faithofficial.com/"
-          },
-          {
-            "name": "Gerald Veasley",
-            "website": "http://www.geraldveasley.com/"
-          },
-          {
-            "name": "Wayne Wang",
-            "website": "https://www.wayne-wang.com/"
+            "name": "Gregory Charles",
+            "website": "http://www.gregorycharles.com/"
           }
         ],
         "nameCounts": [
-          1,
-          1,
-          1,
-          1,
           1,
           1,
           1,
@@ -86,106 +66,78 @@
         ],
         "results": [
           {
-            "name": "A Good Heart",
-            "website": "https://agoodheart.bandcamp.com/",
+            "name": "Burton Cummings",
+            "website": "http://burtoncummings.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Anne Ross",
-            "website": "https://anneross.com/",
+            "name": "James Hunter",
+            "website": "http://www.jameshuntermusic.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Asim Azhar",
-            "website": "https://www.asimazhar.com/",
+            "name": "Ryan Key",
+            "website": "http://www.yellowcardrock.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Sheila E",
+            "website": "http://www.sheilae.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Elliott BROOD",
+            "website": "http://www.elliottbrood.ca/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "bleood",
-            "website": "https://linktr.ee/bleood",
+            "name": "Erin McKeown",
+            "website": "http://www.erinmckeown.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Brian Bromberg",
-            "website": "http://www.brianbromberg.net",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Calinacho",
-            "website": "https://linktr.ee/calinacho",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Chuck Loeb",
-            "website": "https://www.chuckloeb.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Kelly Hogan",
-            "website": "http://kellyhogan.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Liam Noble",
-            "website": "http://www.liamnoble.co.uk/",
+            "name": "Marsha Ambrosius",
+            "website": "http://www.marshaambrosiusmusic.com/us",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "The Tennors",
-            "website": "https://thetennors.com/",
+            "name": "Martin Giroux",
+            "website": "http://www.martingiroux.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Tribe",
-            "website": "https://www.tribeband.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Faith",
-            "website": "https://www.faithofficial.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Gerald Veasley",
-            "website": "http://www.geraldveasley.com/",
+            "name": "Michael Gregory Jackson",
+            "website": "http://michaelgregoryjackson.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Wayne Wang",
-            "website": "https://www.wayne-wang.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
+            "name": "Gregory Charles",
+            "website": "http://www.gregorycharles.com/",
+            "tourUrl": "https://gregorycharles.com/en/calendar/",
+            "pathPattern": "/calendar",
+            "reason": "score=20.5 (years=5, numericDates=0, months=4, days=3, keywords=18, widget=0)"
           }
         ],
         "skipped": [],
-        "applied": 14,
+        "applied": 10,
         "pending": null,
         "complete": true
       }
@@ -194,74 +146,64 @@
       {
         "index": 0,
         "tourUrl": null,
-        "triedAt": "2026-11-24T14:33:01.060Z"
+        "triedAt": "2026-11-25T13:54:26.757Z"
       },
       {
         "index": 1,
         "tourUrl": null,
-        "triedAt": "2026-11-24T14:33:01.075Z"
+        "triedAt": "2026-11-25T13:54:26.771Z"
       },
       {
         "index": 2,
         "tourUrl": null,
-        "triedAt": "2026-11-24T14:33:01.089Z"
+        "triedAt": "2026-11-25T13:54:26.785Z"
       },
       {
         "index": 3,
         "tourUrl": null,
-        "triedAt": "2026-11-24T14:33:01.103Z"
+        "triedAt": "2026-11-25T13:54:26.799Z"
       },
       {
         "index": 4,
         "tourUrl": null,
-        "triedAt": "2026-11-24T14:33:01.119Z"
+        "triedAt": "2026-11-25T13:54:26.816Z"
       },
       {
         "index": 5,
         "tourUrl": null,
-        "triedAt": "2026-11-24T14:33:01.133Z"
+        "triedAt": "2026-11-25T13:54:26.830Z"
       },
       {
         "index": 6,
         "tourUrl": null,
-        "triedAt": "2026-11-24T14:33:01.148Z"
+        "triedAt": "2026-11-25T13:54:26.845Z"
       },
       {
         "index": 7,
         "tourUrl": null,
-        "triedAt": "2026-11-24T14:33:01.161Z"
+        "triedAt": "2026-11-25T13:54:26.859Z"
       },
       {
         "index": 8,
         "tourUrl": null,
-        "triedAt": "2026-11-24T14:33:01.174Z"
+        "triedAt": "2026-11-25T13:54:26.874Z"
       },
       {
         "index": 9,
-        "tourUrl": null,
-        "triedAt": "2026-11-24T14:33:01.186Z"
-      },
-      {
-        "index": 10,
-        "tourUrl": null,
-        "triedAt": "2026-11-24T14:33:19.999Z"
-      },
-      {
-        "index": 11,
-        "tourUrl": null,
-        "triedAt": "2026-11-24T14:33:20.018Z"
-      },
-      {
-        "index": 12,
-        "tourUrl": null,
-        "triedAt": "2026-11-24T14:33:20.033Z"
-      },
-      {
-        "index": 13,
-        "tourUrl": null,
-        "triedAt": "2026-11-24T14:33:20.047Z"
+        "tourUrl": "https://gregorycharles.com/en/calendar/",
+        "triedAt": "2026-11-25T13:54:26.888Z"
       }
     ],
-    "audit": []
+    "audit": [
+      {
+        "artist": "Gregory Charles",
+        "website": "http://www.gregorycharles.com/",
+        "tourUrl": "https://gregorycharles.com/en/calendar/",
+        "pathPattern": "/calendar",
+        "reason": "score=20.5 (years=5, numericDates=0, months=4, days=3, keywords=18, widget=0)",
+        "appliedAt": "2026-11-25T13:54:26.888Z",
+        "discoveryOperationId": "42d1c0c3-8c77-4c9b-ba92-db751c8f32f0:9"
+      }
+    ]
   }
 }
