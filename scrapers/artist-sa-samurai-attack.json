@@ -1,0 +1,16 @@
+{
+  "id": "artist-sa-samurai-attack",
+  "domain": "www.sa-gen.jp",
+  "url": "http://www.sa-gen.jp/live/",
+  "type": "static_selectors",
+  "selectors": {
+    "eventBlock": ".post_box",
+    "artistNameFallback": "SA (Samurai Attack)",
+    "date": ".date",
+    "ticketUrl": "a.btn_ticket",
+    "venue": ".live_box_title",
+    "venueNameFallback": "",
+    "cityNameFallback": "Tokyo",
+    "countryNameFallback": "JP"
+  }
+}
