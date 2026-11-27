@@ -1,82 +1,102 @@
 {
-  "digest": "e07d9feb1ba929bcee9a5d7ac668c0b748f8ceba2c9a291b831c7d4bb0ee116f",
+  "digest": "31ffc513276ee603ad9d5ca2fc22e058be5c1012fa2cc63c9c390a18535fc814",
   "payload": {
     "version": 1,
     "journal": {
-      "digest": "f1fb50f0a57d8ccc6933696d341e7cef4a45cd0d2c3318646713b104d4f888ba",
+      "digest": "06dd11da09b57dc97a77b3e0b999037698afa2392feba8f9d5e7cd5b38914e25",
       "state": {
         "version": 1,
         "mode": "run",
         "limit": 800,
-        "id": "ab04344f-d426-4c75-bd38-5d3ef008c2a5",
-        "inputHash": "30def44c3109badf03572b452369c4a9a0c4c300dbadc9f924901d5f13a51257",
+        "id": "c829a97b-6a0e-4f89-85a2-9a0c1dcd1ef7",
+        "inputHash": "026483cf942306af29dfad8bfd0f21adc0610d54ed66cbbd6a3568d4c761dcee",
         "candidates": [
           {
-            "name": "Indo",
-            "website": "https://www.indo.fr/"
+            "name": "Hedy West",
+            "website": "http://www.hedywest.com"
           },
           {
-            "name": "Run the Jewels",
-            "website": "https://runthejewels.com/"
+            "name": "Papercuts",
+            "website": "http://www.papercutsmusic.com"
           },
           {
-            "name": "Zingar",
-            "website": "https://linktr.ee/zingar"
+            "name": "Aftershock",
+            "website": "https://www.aftershockdj.com/"
           },
           {
-            "name": "Showtek",
-            "website": "https://www.showtek.com"
+            "name": "Brandon Wood",
+            "website": "https://www.brandonwoodmusic.com/"
           },
           {
-            "name": "Sunny Lee",
-            "website": "https://www.sunnyleemusic.com/"
+            "name": "Broken Bones",
+            "website": "http://www.brokenbonesukhc.co.uk/"
           },
           {
-            "name": "Die Haut",
-            "website": "https://www.diehaut.de/"
+            "name": "Jedd Hughes",
+            "website": "https://jeddhughes.com/"
           },
           {
-            "name": "Edmar Castañeda",
-            "website": "http://www.edmarcastaneda.com/live/"
+            "name": "Jeff Walker",
+            "website": "https://carcass.uk.com/"
           },
           {
-            "name": "Masta Ace",
-            "website": "http://www.mastaace.com"
+            "name": "Jim Robinson",
+            "website": "https://www.jimrobinsonmusic.com/"
           },
           {
-            "name": "McGuffey Lane",
-            "website": "https://mcguffeylane.com/"
+            "name": "Rotten Sound",
+            "website": "http://www.rottensound.com/"
           },
           {
-            "name": "Memphis",
-            "website": "https://memphisband.bandcamp.com/"
+            "name": "Case",
+            "website": "https://caseontherocks.com/"
           },
           {
-            "name": "Ministry of Love",
-            "website": "https://ministryoflove.bandcamp.com/"
+            "name": "Cham",
+            "website": "https://www.babycham.com"
           },
           {
-            "name": "Fares Karam",
-            "website": "https://www.fareskaram.net/"
+            "name": "Songs",
+            "website": "http://songs.band/"
           },
           {
-            "name": "Nasrat Parsa",
-            "website": "http://nasratparsa.com/"
+            "name": "Dan Wilson",
+            "website": "http://www.danwilsonmusic.com/"
           },
           {
-            "name": "Niki and the Dove",
-            "website": "http://www.nikiandthedove.com"
+            "name": "Low Water",
+            "website": "http://lowwatermusic.com/"
           },
           {
-            "name": "Gang Of Four",
-            "website": "http://gangoffour.uk/"
+            "name": "Truckfighters",
+            "website": "http://www.truckfighters.com"
           },
           {
-            "name": "Wegh",
-            "website": "https://weghmusic.com/"
+            "name": "Michael Ivins",
+            "website": "https://www.flaminglips.com/"
+          },
+          {
+            "name": "Freakpower",
+            "website": "https://www.freakpower.com"
+          },
+          {
+            "name": "George T. Sakato",
+            "website": "https://georgetsakato.com/"
+          },
+          {
+            "name": "Georgia",
+            "website": "http://www.georgiauk.com/"
+          },
+          {
+            "name": "Overload",
+            "website": "https://overload.pk/"
           }
         ],
         "nameCounts": [
+          1,
+          1,
+          1,
+          1,
           1,
           1,
           1,
@@ -96,120 +116,148 @@
         ],
         "results": [
           {
-            "name": "Indo",
-            "website": "https://www.indo.fr/",
-            "tourUrl": "https://indo.fr/indolive/tour-88-2/",
+            "name": "Hedy West",
+            "website": "http://www.hedywest.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Papercuts",
+            "website": "http://www.papercutsmusic.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Aftershock",
+            "website": "https://www.aftershockdj.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Brandon Wood",
+            "website": "https://www.brandonwoodmusic.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Broken Bones",
+            "website": "http://www.brokenbonesukhc.co.uk/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Jedd Hughes",
+            "website": "https://jeddhughes.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Jeff Walker",
+            "website": "https://carcass.uk.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Jim Robinson",
+            "website": "https://www.jimrobinsonmusic.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Rotten Sound",
+            "website": "http://www.rottensound.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Case",
+            "website": "https://caseontherocks.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Cham",
+            "website": "https://www.babycham.com",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Songs",
+            "website": "http://songs.band/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "Base website offline or DNS resolution failed"
+          },
+          {
+            "name": "Dan Wilson",
+            "website": "http://www.danwilsonmusic.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Low Water",
+            "website": "http://lowwatermusic.com/",
+            "tourUrl": null,
+            "pathPattern": null,
+            "reason": "No suffix matched content requirements"
+          },
+          {
+            "name": "Truckfighters",
+            "website": "http://www.truckfighters.com",
+            "tourUrl": "https://www.truckfighters.com/tour-dates-updated/",
             "pathPattern": "/tour",
-            "reason": "score=52 (years=5, numericDates=0, months=37, days=0, keywords=143, widget=0)"
+            "reason": "score=109 (years=5, numericDates=0, months=86, days=0, keywords=7, widget=1)"
           },
           {
-            "name": "Run the Jewels",
-            "website": "https://runthejewels.com/",
+            "name": "Michael Ivins",
+            "website": "https://www.flaminglips.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Zingar",
-            "website": "https://linktr.ee/zingar",
+            "name": "Freakpower",
+            "website": "https://www.freakpower.com",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "No suffix matched content requirements"
           },
           {
-            "name": "Showtek",
-            "website": "https://www.showtek.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Sunny Lee",
-            "website": "https://www.sunnyleemusic.com/",
+            "name": "George T. Sakato",
+            "website": "https://georgetsakato.com/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           },
           {
-            "name": "Die Haut",
-            "website": "https://www.diehaut.de/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
+            "name": "Georgia",
+            "website": "http://www.georgiauk.com/",
+            "tourUrl": "https://georgiauk.com/tour-dates",
+            "pathPattern": "/tour-dates",
+            "reason": "score=16 (years=0, numericDates=0, months=11, days=0, keywords=7, widget=0)"
           },
           {
-            "name": "Edmar Castañeda",
-            "website": "http://www.edmarcastaneda.com/live/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Masta Ace",
-            "website": "http://www.mastaace.com",
-            "tourUrl": "https://www.mastaace.com/tours-gratuits-linscription-en-australie-available-in-new-zealand-try-your-luck/",
-            "pathPattern": "/tour",
-            "reason": "score=22 (years=1, numericDates=1, months=5, days=0, keywords=5, widget=1)"
-          },
-          {
-            "name": "McGuffey Lane",
-            "website": "https://mcguffeylane.com/",
-            "tourUrl": "https://mcguffeylane.com/gigs",
-            "pathPattern": "/gigs",
-            "reason": "score=105.5 (years=20, numericDates=0, months=40, days=41, keywords=10, widget=0)"
-          },
-          {
-            "name": "Memphis",
-            "website": "https://memphisband.bandcamp.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Ministry of Love",
-            "website": "https://ministryoflove.bandcamp.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Fares Karam",
-            "website": "https://www.fareskaram.net/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Nasrat Parsa",
-            "website": "http://nasratparsa.com/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "Base website offline or DNS resolution failed"
-          },
-          {
-            "name": "Niki and the Dove",
-            "website": "http://www.nikiandthedove.com",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Gang Of Four",
-            "website": "http://gangoffour.uk/",
-            "tourUrl": null,
-            "pathPattern": null,
-            "reason": "No suffix matched content requirements"
-          },
-          {
-            "name": "Wegh",
-            "website": "https://weghmusic.com/",
+            "name": "Overload",
+            "website": "https://overload.pk/",
             "tourUrl": null,
             "pathPattern": null,
             "reason": "Base website offline or DNS resolution failed"
           }
         ],
         "skipped": [],
-        "applied": 16,
+        "applied": 20,
         "pending": null,
         "complete": true
       }
@@ -217,112 +265,123 @@
     "rows": [
       {
         "index": 0,
-        "tourUrl": "https://indo.fr/indolive/tour-88-2/",
-        "triedAt": "2026-11-26T13:33:19.124Z"
+        "tourUrl": null,
+        "triedAt": "2026-11-27T13:29:22.381Z"
       },
       {
         "index": 1,
         "tourUrl": null,
-        "triedAt": "2026-11-26T13:33:19.148Z"
+        "triedAt": "2026-11-27T13:29:22.396Z"
       },
       {
         "index": 2,
         "tourUrl": null,
-        "triedAt": "2026-11-26T13:33:19.161Z"
+        "triedAt": "2026-11-27T13:29:22.408Z"
       },
       {
         "index": 3,
         "tourUrl": null,
-        "triedAt": "2026-11-26T13:33:19.173Z"
+        "triedAt": "2026-11-27T13:29:22.423Z"
       },
       {
         "index": 4,
         "tourUrl": null,
-        "triedAt": "2026-11-26T13:33:19.190Z"
+        "triedAt": "2026-11-27T13:29:22.435Z"
       },
       {
         "index": 5,
         "tourUrl": null,
-        "triedAt": "2026-11-26T13:33:19.202Z"
+        "triedAt": "2026-11-27T13:29:22.446Z"
       },
       {
         "index": 6,
         "tourUrl": null,
-        "triedAt": "2026-11-26T13:33:19.213Z"
+        "triedAt": "2026-11-27T13:29:22.457Z"
       },
       {
         "index": 7,
-        "tourUrl": "https://www.mastaace.com/tours-gratuits-linscription-en-australie-available-in-new-zealand-try-your-luck/",
-        "triedAt": "2026-11-26T13:33:19.224Z"
+        "tourUrl": null,
+        "triedAt": "2026-11-27T13:29:22.469Z"
       },
       {
         "index": 8,
-        "tourUrl": "https://mcguffeylane.com/gigs",
-        "triedAt": "2026-11-26T13:33:19.236Z"
+        "tourUrl": null,
+        "triedAt": "2026-11-27T13:29:22.480Z"
       },
       {
         "index": 9,
         "tourUrl": null,
-        "triedAt": "2026-11-26T13:33:19.246Z"
+        "triedAt": "2026-11-27T13:29:22.488Z"
       },
       {
         "index": 10,
         "tourUrl": null,
-        "triedAt": "2026-11-26T13:33:31.745Z"
+        "triedAt": "2026-11-27T13:29:52.121Z"
       },
       {
         "index": 11,
         "tourUrl": null,
-        "triedAt": "2026-11-26T13:33:31.757Z"
+        "triedAt": "2026-11-27T13:29:52.140Z"
       },
       {
         "index": 12,
         "tourUrl": null,
-        "triedAt": "2026-11-26T13:33:31.771Z"
+        "triedAt": "2026-11-27T13:29:52.153Z"
       },
       {
         "index": 13,
         "tourUrl": null,
-        "triedAt": "2026-11-26T13:33:31.786Z"
+        "triedAt": "2026-11-27T13:29:52.164Z"
       },
       {
         "index": 14,
-        "tourUrl": null,
-        "triedAt": "2026-11-26T13:33:31.798Z"
+        "tourUrl": "https://www.truckfighters.com/tour-dates-updated/",
+        "triedAt": "2026-11-27T13:29:52.177Z"
       },
       {
         "index": 15,
         "tourUrl": null,
-        "triedAt": "2026-11-26T13:33:31.810Z"
+        "triedAt": "2026-11-27T13:29:52.190Z"
+      },
+      {
+        "index": 16,
+        "tourUrl": null,
+        "triedAt": "2026-11-27T13:29:52.201Z"
+      },
+      {
+        "index": 17,
+        "tourUrl": null,
+        "triedAt": "2026-11-27T13:29:52.212Z"
+      },
+      {
+        "index": 18,
+        "tourUrl": "https://georgiauk.com/tour-dates",
+        "triedAt": "2026-11-27T13:29:52.224Z"
+      },
+      {
+        "index": 19,
+        "tourUrl": null,
+        "triedAt": "2026-11-27T13:29:52.233Z"
       }
     ],
     "audit": [
       {
-        "artist": "Indo",
-        "website": "https://www.indo.fr/",
-        "tourUrl": "https://indo.fr/indolive/tour-88-2/",
+        "artist": "Truckfighters",
+        "website": "http://www.truckfighters.com",
+        "tourUrl": "https://www.truckfighters.com/tour-dates-updated/",
         "pathPattern": "/tour",
-        "reason": "score=52 (years=5, numericDates=0, months=37, days=0, keywords=143, widget=0)",
-        "appliedAt": "2026-11-26T13:33:19.124Z",
-        "discoveryOperationId": "ab04344f-d426-4c75-bd38-5d3ef008c2a5:0"
+        "reason": "score=109 (years=5, numericDates=0, months=86, days=0, keywords=7, widget=1)",
+        "appliedAt": "2026-11-27T13:29:52.177Z",
+        "discoveryOperationId": "c829a97b-6a0e-4f89-85a2-9a0c1dcd1ef7:14"
       },
       {
-        "artist": "Masta Ace",
-        "website": "http://www.mastaace.com",
-        "tourUrl": "https://www.mastaace.com/tours-gratuits-linscription-en-australie-available-in-new-zealand-try-your-luck/",
-        "pathPattern": "/tour",
-        "reason": "score=22 (years=1, numericDates=1, months=5, days=0, keywords=5, widget=1)",
-        "appliedAt": "2026-11-26T13:33:19.224Z",
-        "discoveryOperationId": "ab04344f-d426-4c75-bd38-5d3ef008c2a5:7"
-      },
-      {
-        "artist": "McGuffey Lane",
-        "website": "https://mcguffeylane.com/",
-        "tourUrl": "https://mcguffeylane.com/gigs",
-        "pathPattern": "/gigs",
-        "reason": "score=105.5 (years=20, numericDates=0, months=40, days=41, keywords=10, widget=0)",
-        "appliedAt": "2026-11-26T13:33:19.236Z",
-        "discoveryOperationId": "ab04344f-d426-4c75-bd38-5d3ef008c2a5:8"
+        "artist": "Georgia",
+        "website": "http://www.georgiauk.com/",
+        "tourUrl": "https://georgiauk.com/tour-dates",
+        "pathPattern": "/tour-dates",
+        "reason": "score=16 (years=0, numericDates=0, months=11, days=0, keywords=7, widget=0)",
+        "appliedAt": "2026-11-27T13:29:52.224Z",
+        "discoveryOperationId": "c829a97b-6a0e-4f89-85a2-9a0c1dcd1ef7:18"
       }
     ]
   }
